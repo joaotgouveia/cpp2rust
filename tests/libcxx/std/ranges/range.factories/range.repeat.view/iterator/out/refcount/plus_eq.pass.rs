@@ -23,8 +23,9 @@ pub fn test_0() -> bool {
     ));
     assert!(({ (*iter1.borrow()) == (*iter2.borrow()) }));
     {
+        let __a1 = 5_isize;
         iter1.as_pointer().with_mut(|__it| {
-            __it.iter_add_assign(5_isize);
+            __it.iter_add_assign(__a1);
         });
         iter1.as_pointer()
     };
@@ -35,8 +36,9 @@ pub fn test_0() -> bool {
         (({ addressof_1(iter2.as_pointer(),) })
             == ({
                 addressof_1({
+                    let __a1 = 5_isize;
                     iter2.as_pointer().with_mut(|__it| {
-                        __it.iter_add_assign(5_isize);
+                        __it.iter_add_assign(__a1);
                     });
                     iter2.as_pointer()
                 })

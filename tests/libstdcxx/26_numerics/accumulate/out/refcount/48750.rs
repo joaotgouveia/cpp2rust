@@ -89,9 +89,12 @@ impl NaturalParametersImpl for Ptr<NaturalParameters> {
         return (*self).clone();
     }
     fn move_assign(&self, _a0: Ptr<NaturalParameters>) -> Ptr<NaturalParameters> {
-        field_ref!((*self), m_data)
-            .as_pointer()
-            .write(field!(_a0, m_data).with_mut(std::mem::take));
+        {
+            field_ref!((*self), m_data)
+                .as_pointer()
+                .write(field!(_a0, m_data).with_mut(std::mem::take));
+            field_ref!((*self), m_data).as_pointer()
+        };
         return (*self).clone();
     }
 }

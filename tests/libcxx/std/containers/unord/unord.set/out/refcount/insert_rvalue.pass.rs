@@ -230,30 +230,48 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
         assert!(({ (((*(*r.borrow()).0.borrow()).iter_deref().read()) == 3.5_f64) }));
         assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
-        r.as_pointer().write(
-            ({
-                let ___x: Value<f64> = Rc::new(RefCell::new(3.5_f64));
-                (*c.borrow()).insert_36(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+                        (*c.borrow()).insert_36(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
         assert!(({ (((*(*r.borrow()).0.borrow()).iter_deref().read()) == 3.5_f64) }));
         assert!(({ !(*(*r.borrow()).1.borrow()) }));
-        r.as_pointer().write(
-            ({
-                let ___x: Value<f64> = Rc::new(RefCell::new(4.5_f64));
-                (*c.borrow()).insert_36(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<f64> = Rc::new(RefCell::new(4.5_f64));
+                        (*c.borrow()).insert_36(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(({ (((*(*r.borrow()).0.borrow()).iter_deref().read()) == 4.5_f64) }));
         assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
-        r.as_pointer().write(
-            ({
-                let ___x: Value<f64> = Rc::new(RefCell::new(5.5_f64));
-                (*c.borrow()).insert_36(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<f64> = Rc::new(RefCell::new(5.5_f64));
+                        (*c.borrow()).insert_36(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(({ (((*(*r.borrow()).0.borrow()).iter_deref().read()) == 5.5_f64) }));
         assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
@@ -278,12 +296,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             })
         );
         assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
-        r.as_pointer().write(
-            ({
-                let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
-                (*c.borrow()).insert_36(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<MoveOnly> =
+                            Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+                        (*c.borrow()).insert_36(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
         assert!(
             ({
@@ -293,12 +318,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             })
         );
         assert!(({ !(*(*r.borrow()).1.borrow()) }));
-        r.as_pointer().write(
-            ({
-                let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(4) })));
-                (*c.borrow()).insert_36(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<MoveOnly> =
+                            Rc::new(RefCell::new(MoveOnly::new({ Some(4) })));
+                        (*c.borrow()).insert_36(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(
             ({
@@ -308,12 +340,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             })
         );
         assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
-        r.as_pointer().write(
-            ({
-                let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(5) })));
-                (*c.borrow()).insert_36(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<MoveOnly> =
+                            Rc::new(RefCell::new(MoveOnly::new({ Some(5) })));
+                        (*c.borrow()).insert_36(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(
             ({
@@ -338,30 +377,48 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
         assert!(({ (((*(*r.borrow()).0.borrow()).iter_deref().read()) == 3.5_f64) }));
         assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
-        r.as_pointer().write(
-            ({
-                let ___x: Value<f64> = Rc::new(RefCell::new(3.5_f64));
-                (*c.borrow()).insert_36(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+                        (*c.borrow()).insert_36(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
         assert!(({ (((*(*r.borrow()).0.borrow()).iter_deref().read()) == 3.5_f64) }));
         assert!(({ !(*(*r.borrow()).1.borrow()) }));
-        r.as_pointer().write(
-            ({
-                let ___x: Value<f64> = Rc::new(RefCell::new(4.5_f64));
-                (*c.borrow()).insert_36(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<f64> = Rc::new(RefCell::new(4.5_f64));
+                        (*c.borrow()).insert_36(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(({ (((*(*r.borrow()).0.borrow()).iter_deref().read()) == 4.5_f64) }));
         assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
-        r.as_pointer().write(
-            ({
-                let ___x: Value<f64> = Rc::new(RefCell::new(5.5_f64));
-                (*c.borrow()).insert_36(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<f64> = Rc::new(RefCell::new(5.5_f64));
+                        (*c.borrow()).insert_36(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(({ (((*(*r.borrow()).0.borrow()).iter_deref().read()) == 5.5_f64) }));
         assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
@@ -386,12 +443,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             })
         );
         assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
-        r.as_pointer().write(
-            ({
-                let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
-                (*c.borrow()).insert_36(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<MoveOnly> =
+                            Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+                        (*c.borrow()).insert_36(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
         assert!(
             ({
@@ -401,12 +465,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             })
         );
         assert!(({ !(*(*r.borrow()).1.borrow()) }));
-        r.as_pointer().write(
-            ({
-                let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(4) })));
-                (*c.borrow()).insert_36(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<MoveOnly> =
+                            Rc::new(RefCell::new(MoveOnly::new({ Some(4) })));
+                        (*c.borrow()).insert_36(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(
             ({
@@ -416,12 +487,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             })
         );
         assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
-        r.as_pointer().write(
-            ({
-                let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(5) })));
-                (*c.borrow()).insert_36(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<MoveOnly> =
+                            Rc::new(RefCell::new(MoveOnly::new({ Some(5) })));
+                        (*c.borrow()).insert_36(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(
             ({

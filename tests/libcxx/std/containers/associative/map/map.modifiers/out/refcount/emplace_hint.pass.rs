@@ -164,21 +164,14 @@ pub fn test_7() -> bool {
                         m.as_pointer()
                             .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.end()),
                     );
-                    let __init = (
-                        Rc::new(RefCell::new(0_i32)),
-                        Rc::new(RefCell::new(<DefaultOnly>::default())),
-                    );
-                    let __key = __init.0.as_pointer();
-                    if m.as_pointer()
-                        .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| {
-                            __m.get(&__key).is_none()
-                        })
-                    {
-                        Map::subscript(m.as_pointer().clone(), __key.clone())
-                            .write(__init.1.borrow().clone());
-                    }
-                    m.as_pointer()
-                        .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.find(&__key))
+                    Map::emplace(
+                        m.as_pointer(),
+                        (
+                            Rc::new(RefCell::new(0_i32)),
+                            Rc::new(RefCell::new(<DefaultOnly>::default())),
+                        ),
+                    )
+                    .0
                 }));
             assert!(
                 (*r.borrow())
@@ -212,39 +205,36 @@ pub fn test_7() -> bool {
                 })
             );
             assert!((count_0.with(|rc| *rc.borrow()) == 1));
-            (*r.borrow_mut()) = {
-                let _ = <BidirectionalIterator<(Value<i32>, Value<DefaultOnly>)>>::from(
-                    m.as_pointer()
-                        .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.end()),
-                );
-                let __init = std_pair_const_int__DefaultOnly_::new_1(
-                    { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
-                    {
-                        ({
-                            let ___args: Value<i32> = Rc::new(RefCell::new(1));
-                            forward_as_tuple_9(___args.as_pointer())
-                        })
-                    },
-                    { ({ forward_as_tuple_10() }) },
-                );
-                let __key = __init.0.as_pointer();
-                if m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| {
-                        __m.get(&__key).is_none()
-                    })
-                {
-                    Map::subscript(m.as_pointer().clone(), __key.clone())
-                        .write(__init.1.borrow().clone());
-                }
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.find(&__key))
+            {
+                let __a1 = {
+                    let _ = <BidirectionalIterator<(Value<i32>, Value<DefaultOnly>)>>::from(
+                        m.as_pointer()
+                            .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.end()),
+                    );
+                    Map::emplace(
+                        m.as_pointer(),
+                        std_pair_const_int__DefaultOnly_::new_1(
+                            { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
+                            {
+                                ({
+                                    let ___args: Value<i32> = Rc::new(RefCell::new(1));
+                                    forward_as_tuple_9(___args.as_pointer())
+                                })
+                            },
+                            { ({ forward_as_tuple_10() }) },
+                        ),
+                    )
+                    .0
+                };
+                r.as_pointer().with_mut(|__it| *__it = __a1);
+                r.as_pointer()
             };
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
                         m.as_pointer()
                             .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.begin()),
-                        1_isize
+                        1_isize as isize
                     )
             );
             assert!(({ ((*m.borrow()).len() == 2_usize) }));
@@ -252,7 +242,7 @@ pub fn test_7() -> bool {
                 ((*(*libcc2rs::next_refcount(
                     m.as_pointer()
                         .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.begin()),
-                    1_isize
+                    1_isize as isize
                 )
                 .iter_deref()
                 .upgrade()
@@ -266,7 +256,7 @@ pub fn test_7() -> bool {
                     let _x: Ptr<DefaultOnly> = (*libcc2rs::next_refcount(
                         m.as_pointer()
                             .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.begin()),
-                        1_isize,
+                        1_isize as isize,
                     )
                     .iter_deref()
                     .upgrade()
@@ -278,39 +268,36 @@ pub fn test_7() -> bool {
                 })
             );
             assert!((count_0.with(|rc| *rc.borrow()) == 2));
-            (*r.borrow_mut()) = {
-                let _ = <BidirectionalIterator<(Value<i32>, Value<DefaultOnly>)>>::from(
-                    m.as_pointer()
-                        .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.end()),
-                );
-                let __init = std_pair_const_int__DefaultOnly_::new_1(
-                    { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
-                    {
-                        ({
-                            let ___args: Value<i32> = Rc::new(RefCell::new(1));
-                            forward_as_tuple_9(___args.as_pointer())
-                        })
-                    },
-                    { ({ forward_as_tuple_10() }) },
-                );
-                let __key = __init.0.as_pointer();
-                if m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| {
-                        __m.get(&__key).is_none()
-                    })
-                {
-                    Map::subscript(m.as_pointer().clone(), __key.clone())
-                        .write(__init.1.borrow().clone());
-                }
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.find(&__key))
+            {
+                let __a1 = {
+                    let _ = <BidirectionalIterator<(Value<i32>, Value<DefaultOnly>)>>::from(
+                        m.as_pointer()
+                            .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.end()),
+                    );
+                    Map::emplace(
+                        m.as_pointer(),
+                        std_pair_const_int__DefaultOnly_::new_1(
+                            { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
+                            {
+                                ({
+                                    let ___args: Value<i32> = Rc::new(RefCell::new(1));
+                                    forward_as_tuple_9(___args.as_pointer())
+                                })
+                            },
+                            { ({ forward_as_tuple_10() }) },
+                        ),
+                    )
+                    .0
+                };
+                r.as_pointer().with_mut(|__it| *__it = __a1);
+                r.as_pointer()
             };
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
                         m.as_pointer()
                             .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.begin()),
-                        1_isize
+                        1_isize as isize
                     )
             );
             assert!(({ ((*m.borrow()).len() == 2_usize) }));
@@ -318,7 +305,7 @@ pub fn test_7() -> bool {
                 ((*(*libcc2rs::next_refcount(
                     m.as_pointer()
                         .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.begin()),
-                    1_isize
+                    1_isize as isize
                 )
                 .iter_deref()
                 .upgrade()
@@ -332,7 +319,7 @@ pub fn test_7() -> bool {
                     let _x: Ptr<DefaultOnly> = (*libcc2rs::next_refcount(
                         m.as_pointer()
                             .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.begin()),
-                        1_isize,
+                        1_isize as isize,
                     )
                     .iter_deref()
                     .upgrade()
@@ -356,27 +343,20 @@ pub fn test_7() -> bool {
                     m.as_pointer()
                         .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.end()),
                 );
-                let __init = std_pair_const_int__Emplaceable_::new_1(
-                    { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
-                    {
-                        ({
-                            let ___args: Value<i32> = Rc::new(RefCell::new(2));
-                            forward_as_tuple_9(___args.as_pointer())
-                        })
-                    },
-                    { ({ forward_as_tuple_10() }) },
-                );
-                let __key = __init.0.as_pointer();
-                if m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| {
-                        __m.get(&__key).is_none()
-                    })
-                {
-                    Map::subscript(m.as_pointer().clone(), __key.clone())
-                        .write(__init.1.borrow().clone());
-                }
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.find(&__key))
+                Map::emplace(
+                    m.as_pointer(),
+                    std_pair_const_int__Emplaceable_::new_1(
+                        { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
+                        {
+                            ({
+                                let ___args: Value<i32> = Rc::new(RefCell::new(2));
+                                forward_as_tuple_9(___args.as_pointer())
+                            })
+                        },
+                        { ({ forward_as_tuple_10() }) },
+                    ),
+                )
+                .0
             }));
         assert!(
             (*r.borrow())
@@ -410,36 +390,35 @@ pub fn test_7() -> bool {
                 )
             })
         );
-        (*r.borrow_mut()) = {
-            let _ = <BidirectionalIterator<(Value<i32>, Value<Emplaceable>)>>::from(
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.end()),
-            );
-            let __init = std_pair_const_int__Emplaceable_::new_2(
-                { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
-                {
-                    ({
-                        let ___args: Value<i32> = Rc::new(RefCell::new(1));
-                        forward_as_tuple_9(___args.as_pointer())
-                    })
-                },
-                {
-                    ({
-                        let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
-                        let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
-                        forward_as_tuple_11(___args_0.as_pointer(), ___args_1.as_pointer())
-                    })
-                },
-            );
-            let __key = __init.0.as_pointer();
-            if m.as_pointer()
-                .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.get(&__key).is_none())
-            {
-                Map::subscript(m.as_pointer().clone(), __key.clone())
-                    .write(__init.1.borrow().clone());
-            }
-            m.as_pointer()
-                .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.find(&__key))
+        {
+            let __a1 = {
+                let _ = <BidirectionalIterator<(Value<i32>, Value<Emplaceable>)>>::from(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.end()),
+                );
+                Map::emplace(
+                    m.as_pointer(),
+                    std_pair_const_int__Emplaceable_::new_2(
+                        { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
+                        {
+                            ({
+                                let ___args: Value<i32> = Rc::new(RefCell::new(1));
+                                forward_as_tuple_9(___args.as_pointer())
+                            })
+                        },
+                        {
+                            ({
+                                let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
+                                let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+                                forward_as_tuple_11(___args_0.as_pointer(), ___args_1.as_pointer())
+                            })
+                        },
+                    ),
+                )
+                .0
+            };
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
         };
         assert!(
             (*r.borrow())
@@ -474,36 +453,35 @@ pub fn test_7() -> bool {
                 )
             })
         );
-        (*r.borrow_mut()) = {
-            let _ = <BidirectionalIterator<(Value<i32>, Value<Emplaceable>)>>::from(
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.end()),
-            );
-            let __init = std_pair_const_int__Emplaceable_::new_2(
-                { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
-                {
-                    ({
-                        let ___args: Value<i32> = Rc::new(RefCell::new(1));
-                        forward_as_tuple_9(___args.as_pointer())
-                    })
-                },
-                {
-                    ({
-                        let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
-                        let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
-                        forward_as_tuple_11(___args_0.as_pointer(), ___args_1.as_pointer())
-                    })
-                },
-            );
-            let __key = __init.0.as_pointer();
-            if m.as_pointer()
-                .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.get(&__key).is_none())
-            {
-                Map::subscript(m.as_pointer().clone(), __key.clone())
-                    .write(__init.1.borrow().clone());
-            }
-            m.as_pointer()
-                .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.find(&__key))
+        {
+            let __a1 = {
+                let _ = <BidirectionalIterator<(Value<i32>, Value<Emplaceable>)>>::from(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.end()),
+                );
+                Map::emplace(
+                    m.as_pointer(),
+                    std_pair_const_int__Emplaceable_::new_2(
+                        { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
+                        {
+                            ({
+                                let ___args: Value<i32> = Rc::new(RefCell::new(1));
+                                forward_as_tuple_9(___args.as_pointer())
+                            })
+                        },
+                        {
+                            ({
+                                let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
+                                let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+                                forward_as_tuple_11(___args_0.as_pointer(), ___args_1.as_pointer())
+                            })
+                        },
+                    ),
+                )
+                .0
+            };
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
         };
         assert!(
             (*r.borrow())
@@ -546,16 +524,11 @@ pub fn test_7() -> bool {
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
             );
-            let __init = (Rc::new(RefCell::new(2)), Rc::new(RefCell::new(3.5_f64)));
-            let __key = __init.0.as_pointer();
-            if m.as_pointer()
-                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.get(&__key).is_none())
-            {
-                Map::subscript(m.as_pointer().clone(), __key.clone())
-                    .write(__init.1.borrow().clone());
-            }
-            m.as_pointer()
-                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.find(&__key))
+            Map::emplace(
+                m.as_pointer(),
+                (Rc::new(RefCell::new(2)), Rc::new(RefCell::new(3.5_f64))),
+            )
+            .0
         }));
         assert!(
             (*r.borrow())
@@ -597,21 +570,14 @@ pub fn test_7() -> bool {
                         m.as_pointer()
                             .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.end()),
                     );
-                    let __init = (
-                        Rc::new(RefCell::new(0_i32)),
-                        Rc::new(RefCell::new(<DefaultOnly>::default())),
-                    );
-                    let __key = __init.0.as_pointer();
-                    if m.as_pointer()
-                        .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| {
-                            __m.get(&__key).is_none()
-                        })
-                    {
-                        Map::subscript(m.as_pointer().clone(), __key.clone())
-                            .write(__init.1.borrow().clone());
-                    }
-                    m.as_pointer()
-                        .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.find(&__key))
+                    Map::emplace(
+                        m.as_pointer(),
+                        (
+                            Rc::new(RefCell::new(0_i32)),
+                            Rc::new(RefCell::new(<DefaultOnly>::default())),
+                        ),
+                    )
+                    .0
                 }));
             assert!(
                 (*r.borrow())
@@ -645,40 +611,36 @@ pub fn test_7() -> bool {
                 })
             );
             assert!((count_0.with(|rc| *rc.borrow()) == 1));
-            (*r.borrow_mut()) = {
-                let _ = <BidirectionalIterator<(Value<i32>, Value<DefaultOnly>)>>::from(
-                    m.as_pointer()
-                        .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.end()),
-                );
-                let __init = std_pair_const_int__DefaultOnly_::new_1(
-                    { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
-                    {
-                        ({
-                            let ___args: Value<i32> = Rc::new(RefCell::new(1));
-                            forward_as_tuple_9(___args.as_pointer())
-                        })
-                    },
-                    { ({ forward_as_tuple_10() }) },
-                );
-                let __key = __init.0.as_pointer();
-                if m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| {
-                        __m.get(&__key).is_none()
-                    })
-                {
-                    Map::subscript(m.as_pointer().clone(), __key.clone())
-                        .write(__init.1.borrow().clone());
-                }
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.find(&__key))
-            }
-            .clone();
+            {
+                let __a1 = {
+                    let _ = <BidirectionalIterator<(Value<i32>, Value<DefaultOnly>)>>::from(
+                        m.as_pointer()
+                            .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.end()),
+                    );
+                    Map::emplace(
+                        m.as_pointer(),
+                        std_pair_const_int__DefaultOnly_::new_1(
+                            { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
+                            {
+                                ({
+                                    let ___args: Value<i32> = Rc::new(RefCell::new(1));
+                                    forward_as_tuple_9(___args.as_pointer())
+                                })
+                            },
+                            { ({ forward_as_tuple_10() }) },
+                        ),
+                    )
+                    .0
+                };
+                r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+                r.as_pointer()
+            };
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
                         m.as_pointer()
                             .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.begin()),
-                        1_isize
+                        1_isize as isize
                     )
             );
             assert!(({ ((*m.borrow()).len() == 2_usize) }));
@@ -686,7 +648,7 @@ pub fn test_7() -> bool {
                 ((*(*libcc2rs::next_refcount(
                     m.as_pointer()
                         .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.begin()),
-                    1_isize
+                    1_isize as isize
                 )
                 .iter_deref()
                 .upgrade()
@@ -700,7 +662,7 @@ pub fn test_7() -> bool {
                     let _x: Ptr<DefaultOnly> = (*libcc2rs::next_refcount(
                         m.as_pointer()
                             .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.begin()),
-                        1_isize,
+                        1_isize as isize,
                     )
                     .iter_deref()
                     .upgrade()
@@ -712,40 +674,36 @@ pub fn test_7() -> bool {
                 })
             );
             assert!((count_0.with(|rc| *rc.borrow()) == 2));
-            (*r.borrow_mut()) = {
-                let _ = <BidirectionalIterator<(Value<i32>, Value<DefaultOnly>)>>::from(
-                    m.as_pointer()
-                        .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.end()),
-                );
-                let __init = std_pair_const_int__DefaultOnly_::new_1(
-                    { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
-                    {
-                        ({
-                            let ___args: Value<i32> = Rc::new(RefCell::new(1));
-                            forward_as_tuple_9(___args.as_pointer())
-                        })
-                    },
-                    { ({ forward_as_tuple_10() }) },
-                );
-                let __key = __init.0.as_pointer();
-                if m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| {
-                        __m.get(&__key).is_none()
-                    })
-                {
-                    Map::subscript(m.as_pointer().clone(), __key.clone())
-                        .write(__init.1.borrow().clone());
-                }
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.find(&__key))
-            }
-            .clone();
+            {
+                let __a1 = {
+                    let _ = <BidirectionalIterator<(Value<i32>, Value<DefaultOnly>)>>::from(
+                        m.as_pointer()
+                            .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.end()),
+                    );
+                    Map::emplace(
+                        m.as_pointer(),
+                        std_pair_const_int__DefaultOnly_::new_1(
+                            { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
+                            {
+                                ({
+                                    let ___args: Value<i32> = Rc::new(RefCell::new(1));
+                                    forward_as_tuple_9(___args.as_pointer())
+                                })
+                            },
+                            { ({ forward_as_tuple_10() }) },
+                        ),
+                    )
+                    .0
+                };
+                r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+                r.as_pointer()
+            };
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
                         m.as_pointer()
                             .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.begin()),
-                        1_isize
+                        1_isize as isize
                     )
             );
             assert!(({ ((*m.borrow()).len() == 2_usize) }));
@@ -753,7 +711,7 @@ pub fn test_7() -> bool {
                 ((*(*libcc2rs::next_refcount(
                     m.as_pointer()
                         .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.begin()),
-                    1_isize
+                    1_isize as isize
                 )
                 .iter_deref()
                 .upgrade()
@@ -767,7 +725,7 @@ pub fn test_7() -> bool {
                     let _x: Ptr<DefaultOnly> = (*libcc2rs::next_refcount(
                         m.as_pointer()
                             .with(|__m: &Map<i32, (Value<i32>, Value<DefaultOnly>)>| __m.begin()),
-                        1_isize,
+                        1_isize as isize,
                     )
                     .iter_deref()
                     .upgrade()
@@ -791,27 +749,20 @@ pub fn test_7() -> bool {
                     m.as_pointer()
                         .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.end()),
                 );
-                let __init = std_pair_const_int__Emplaceable_::new_1(
-                    { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
-                    {
-                        ({
-                            let ___args: Value<i32> = Rc::new(RefCell::new(2));
-                            forward_as_tuple_9(___args.as_pointer())
-                        })
-                    },
-                    { ({ forward_as_tuple_10() }) },
-                );
-                let __key = __init.0.as_pointer();
-                if m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| {
-                        __m.get(&__key).is_none()
-                    })
-                {
-                    Map::subscript(m.as_pointer().clone(), __key.clone())
-                        .write(__init.1.borrow().clone());
-                }
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.find(&__key))
+                Map::emplace(
+                    m.as_pointer(),
+                    std_pair_const_int__Emplaceable_::new_1(
+                        { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
+                        {
+                            ({
+                                let ___args: Value<i32> = Rc::new(RefCell::new(2));
+                                forward_as_tuple_9(___args.as_pointer())
+                            })
+                        },
+                        { ({ forward_as_tuple_10() }) },
+                    ),
+                )
+                .0
             }));
         assert!(
             (*r.borrow())
@@ -845,38 +796,36 @@ pub fn test_7() -> bool {
                 )
             })
         );
-        (*r.borrow_mut()) = {
-            let _ = <BidirectionalIterator<(Value<i32>, Value<Emplaceable>)>>::from(
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.end()),
-            );
-            let __init = std_pair_const_int__Emplaceable_::new_2(
-                { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
-                {
-                    ({
-                        let ___args: Value<i32> = Rc::new(RefCell::new(1));
-                        forward_as_tuple_9(___args.as_pointer())
-                    })
-                },
-                {
-                    ({
-                        let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
-                        let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
-                        forward_as_tuple_11(___args_0.as_pointer(), ___args_1.as_pointer())
-                    })
-                },
-            );
-            let __key = __init.0.as_pointer();
-            if m.as_pointer()
-                .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.get(&__key).is_none())
-            {
-                Map::subscript(m.as_pointer().clone(), __key.clone())
-                    .write(__init.1.borrow().clone());
-            }
-            m.as_pointer()
-                .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.find(&__key))
-        }
-        .clone();
+        {
+            let __a1 = {
+                let _ = <BidirectionalIterator<(Value<i32>, Value<Emplaceable>)>>::from(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.end()),
+                );
+                Map::emplace(
+                    m.as_pointer(),
+                    std_pair_const_int__Emplaceable_::new_2(
+                        { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
+                        {
+                            ({
+                                let ___args: Value<i32> = Rc::new(RefCell::new(1));
+                                forward_as_tuple_9(___args.as_pointer())
+                            })
+                        },
+                        {
+                            ({
+                                let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
+                                let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+                                forward_as_tuple_11(___args_0.as_pointer(), ___args_1.as_pointer())
+                            })
+                        },
+                    ),
+                )
+                .0
+            };
+            r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            r.as_pointer()
+        };
         assert!(
             (*r.borrow())
                 == m.as_pointer()
@@ -910,38 +859,36 @@ pub fn test_7() -> bool {
                 )
             })
         );
-        (*r.borrow_mut()) = {
-            let _ = <BidirectionalIterator<(Value<i32>, Value<Emplaceable>)>>::from(
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.end()),
-            );
-            let __init = std_pair_const_int__Emplaceable_::new_2(
-                { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
-                {
-                    ({
-                        let ___args: Value<i32> = Rc::new(RefCell::new(1));
-                        forward_as_tuple_9(___args.as_pointer())
-                    })
-                },
-                {
-                    ({
-                        let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
-                        let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
-                        forward_as_tuple_11(___args_0.as_pointer(), ___args_1.as_pointer())
-                    })
-                },
-            );
-            let __key = __init.0.as_pointer();
-            if m.as_pointer()
-                .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.get(&__key).is_none())
-            {
-                Map::subscript(m.as_pointer().clone(), __key.clone())
-                    .write(__init.1.borrow().clone());
-            }
-            m.as_pointer()
-                .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.find(&__key))
-        }
-        .clone();
+        {
+            let __a1 = {
+                let _ = <BidirectionalIterator<(Value<i32>, Value<Emplaceable>)>>::from(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<Emplaceable>)>| __m.end()),
+                );
+                Map::emplace(
+                    m.as_pointer(),
+                    std_pair_const_int__Emplaceable_::new_2(
+                        { (*piecewise_construct_8.with(Value::clone).borrow()).clone() },
+                        {
+                            ({
+                                let ___args: Value<i32> = Rc::new(RefCell::new(1));
+                                forward_as_tuple_9(___args.as_pointer())
+                            })
+                        },
+                        {
+                            ({
+                                let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
+                                let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+                                forward_as_tuple_11(___args_0.as_pointer(), ___args_1.as_pointer())
+                            })
+                        },
+                    ),
+                )
+                .0
+            };
+            r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            r.as_pointer()
+        };
         assert!(
             (*r.borrow())
                 == m.as_pointer()
@@ -983,16 +930,11 @@ pub fn test_7() -> bool {
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
             );
-            let __init = (Rc::new(RefCell::new(2)), Rc::new(RefCell::new(3.5_f64)));
-            let __key = __init.0.as_pointer();
-            if m.as_pointer()
-                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.get(&__key).is_none())
-            {
-                Map::subscript(m.as_pointer().clone(), __key.clone())
-                    .write(__init.1.borrow().clone());
-            }
-            m.as_pointer()
-                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.find(&__key))
+            Map::emplace(
+                m.as_pointer(),
+                (Rc::new(RefCell::new(2)), Rc::new(RefCell::new(3.5_f64))),
+            )
+            .0
         }));
         assert!(
             (*r.borrow())

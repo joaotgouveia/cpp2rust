@@ -433,7 +433,9 @@ fn main_0() -> i32 {
     };
     {
         let __init = Buffer::move_from({ bufs.decay().offset(0_usize as isize) });
-        (*bufs.borrow_mut()).push(__init)
+        bufs.as_pointer()
+            .with_mut(|__v: &mut Vec<Buffer>| __v.push(__init));
+        bufs.as_pointer().decay().to_last()
     };
     assert!(
         ({
@@ -545,12 +547,18 @@ pub trait BufferImpl {
 }
 impl BufferImpl for Ptr<Buffer> {
     fn move_assign(&self, _a0: Ptr<Buffer>) -> Ptr<Buffer> {
-        field_ref!((*self), data)
-            .as_pointer()
-            .write(field!(_a0, data).with_mut(std::mem::take));
-        field_ref!((*self), rows)
-            .as_pointer()
-            .write(field!(_a0, rows).with_mut(std::mem::take));
+        {
+            field_ref!((*self), data)
+                .as_pointer()
+                .write(field!(_a0, data).with_mut(std::mem::take));
+            field_ref!((*self), data).as_pointer()
+        };
+        {
+            field_ref!((*self), rows)
+                .as_pointer()
+                .write(field!(_a0, rows).with_mut(std::mem::take));
+            field_ref!((*self), rows).as_pointer()
+        };
         field!((*self), n).write({ { (*_a0.upgrade().deref()).n } });
         match ({ ((array_field_ptr!((*self), arr)) as Ptr<i32>).to_any() },) {
             (mut __tmp_0,) => {
@@ -569,9 +577,12 @@ pub trait CopyableImpl {
 }
 impl CopyableImpl for Ptr<Copyable> {
     fn move_assign(&self, _a0: Ptr<Copyable>) -> Ptr<Copyable> {
-        field_ref!((*self), data)
-            .as_pointer()
-            .write(field!(_a0, data).with_mut(std::mem::take));
+        {
+            field_ref!((*self), data)
+                .as_pointer()
+                .write(field!(_a0, data).with_mut(std::mem::take));
+            field_ref!((*self), data).as_pointer()
+        };
         return (*self).clone();
     }
 }
@@ -599,8 +610,11 @@ impl HolderImpl for Ptr<Holder> {
     fn move_assign(&self, _a0: Ptr<Holder>) -> Ptr<Holder> {
         field!((*self), inner).write({ { (*_a0.upgrade().deref()).inner.clone() } });
         field!((*self), e).write({ { (*_a0.upgrade().deref()).e.clone() } });
-        field_ptr!((*self), p)
-            .write(field!(_a0, p).with_mut(|__v: &mut Option<Value<i32>>| __v.take()));
+        {
+            field_ptr!((*self), p)
+                .write(field!(_a0, p).with_mut(|__v: &mut Option<Value<i32>>| __v.take()));
+            field_ptr!((*self), p)
+        };
         return (*self).clone();
     }
     fn destructor(&self) {
@@ -612,9 +626,12 @@ pub trait OwnerImpl {
 }
 impl OwnerImpl for Ptr<Owner> {
     fn move_assign(&self, _a0: Ptr<Owner>) -> Ptr<Owner> {
-        field_ref!((*self), data)
-            .as_pointer()
-            .write(field!(_a0, data).with_mut(std::mem::take));
+        {
+            field_ref!((*self), data)
+                .as_pointer()
+                .write(field!(_a0, data).with_mut(std::mem::take));
+            field_ref!((*self), data).as_pointer()
+        };
         field!((*self), n).write({ { (*_a0.upgrade().deref()).n } });
         match ({ ((array_field_ptr!((*self), arr)) as Ptr<i32>).to_any() },) {
             (mut __tmp_1,) => {
@@ -625,8 +642,11 @@ impl OwnerImpl for Ptr<Owner> {
                 (__tmp_1).clone()
             }
         };
-        field_ptr!((*self), p)
-            .write(field!(_a0, p).with_mut(|__v: &mut Option<Value<i32>>| __v.take()));
+        {
+            field_ptr!((*self), p)
+                .write(field!(_a0, p).with_mut(|__v: &mut Option<Value<i32>>| __v.take()));
+            field_ptr!((*self), p)
+        };
         return (*self).clone();
     }
 }

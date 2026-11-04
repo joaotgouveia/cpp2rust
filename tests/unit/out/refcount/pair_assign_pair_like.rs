@@ -19,10 +19,13 @@ fn main_0() -> i32 {
         Rc::new(RefCell::new((7 as i16))),
         Rc::new(RefCell::new(8)),
     )));
-    a.as_pointer().write((
-        Rc::new(RefCell::new((((*b.borrow()).0.as_pointer().read()) as i32))),
-        Rc::new(RefCell::new((((*b.borrow()).1.as_pointer().read()) as i64))),
-    ));
+    {
+        a.as_pointer().write((
+            Rc::new(RefCell::new((((*b.borrow()).0.as_pointer().read()) as i32))),
+            Rc::new(RefCell::new((((*b.borrow()).1.as_pointer().read()) as i64))),
+        ));
+        a.as_pointer()
+    };
     assert!(({ ((*(*a.borrow()).0.borrow()) == 7) && ((*(*a.borrow()).1.borrow()) == 8_i64) }));
     (*(*b.borrow()).0.borrow_mut()) = 9_i16;
     assert!(({ ((*(*a.borrow()).0.borrow()) == 7) }));

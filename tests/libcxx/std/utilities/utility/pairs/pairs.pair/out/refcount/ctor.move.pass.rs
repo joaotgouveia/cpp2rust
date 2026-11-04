@@ -49,7 +49,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new(4_i16)),
         )));
         let p2: Value<(Value<i32>, Value<i16>)> =
-            Rc::new(RefCell::new(({ std::mem::take(&mut (*p1.borrow_mut())) })));
+            Rc::new(RefCell::new(CppMove::cpp_move(p1.as_pointer())));
         assert!(({ ((*(*p2.borrow()).0.borrow()) == 3) }));
         assert!(({ (((*(*p2.borrow()).1.borrow()) as i32) == 4) }));
     }
@@ -68,7 +68,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                     Rc::new(RefCell::new(3)),
                 )));
             let p1: Value<(Value<Ptr<NotCopyOrMoveConstructible>>, Value<i32>)> =
-                Rc::new(RefCell::new(({ std::mem::take(&mut (*p2.borrow_mut())) })));
+                Rc::new(RefCell::new(CppMove::cpp_move(p2.as_pointer())));
             assert!(
                 ({ ({ ((*p1.borrow()).0.borrow().clone()).clone() } == { (obj.as_pointer()) }) })
             );
@@ -86,7 +86,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                     Rc::new(RefCell::new(3)),
                 )));
             let p1: Value<(Value<Ptr<NotCopyOrMoveConstructible>>, Value<i32>)> =
-                Rc::new(RefCell::new(({ std::mem::take(&mut (*p2.borrow_mut())) })));
+                Rc::new(RefCell::new(CppMove::cpp_move(p2.as_pointer())));
             assert!(
                 ({ ({ ((*p1.borrow()).0.borrow().clone()).clone() } == { (obj.as_pointer()) }) })
             );

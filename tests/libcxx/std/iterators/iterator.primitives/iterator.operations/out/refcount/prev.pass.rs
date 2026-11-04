@@ -597,8 +597,9 @@ pub fn check_prev_n_10(
     const _: () = assert!(true, "std::is_same<decltype(std::prev(it, n)), It>::value");;
     assert!(
         ({
-            let _x: Value<forward_iterator_const_char_ptr_> =
-                Rc::new(RefCell::new(libcc2rs::prev_refcount((it).clone(), n)));
+            let _x: Value<forward_iterator_const_char_ptr_> = Rc::new(RefCell::new(
+                libcc2rs::prev_refcount((it).clone(), n as isize),
+            ));
             operator_eq_0(_x.as_pointer(), result.as_pointer())
         })
     );
@@ -620,8 +621,9 @@ pub fn check_prev_n_11(
     const _: () = assert!(true, "std::is_same<decltype(std::prev(it, n)), It>::value");;
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_char_ptr_> =
-                Rc::new(RefCell::new(libcc2rs::prev_refcount((it).clone(), n)));
+            let _x: Value<bidirectional_iterator_const_char_ptr_> = Rc::new(RefCell::new(
+                libcc2rs::prev_refcount((it).clone(), n as isize),
+            ));
             operator_eq_1(_x.as_pointer(), result.as_pointer())
         })
     );
@@ -647,8 +649,9 @@ pub fn check_prev_n_12(
     const _: () = assert!(true, "std::is_same<decltype(std::prev(it, n)), It>::value");;
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_char_ptr_> =
-                Rc::new(RefCell::new(libcc2rs::prev_refcount((it).clone(), n)));
+            let _x: Value<random_access_iterator_const_char_ptr_> = Rc::new(RefCell::new(
+                libcc2rs::prev_refcount((it).clone(), n as isize),
+            ));
             operator_eq_2(_x.as_pointer(), result.as_pointer())
         })
     );
@@ -667,7 +670,7 @@ pub fn check_prev_n_12(
 }
 pub fn check_prev_n_13(mut it: Ptr<i8>, mut n: isize, mut result: Ptr<i8>) {
     const _: () = assert!(true, "std::is_same<decltype(std::prev(it, n)), It>::value");;
-    assert!(({ libcc2rs::prev_refcount((it).clone(), n) } == { (result).clone() }));
+    assert!(({ libcc2rs::prev_refcount((it).clone(), n as isize) } == { (result).clone() }));
     let mut prev_ptr: FnPtr<fn(Ptr<i8>, isize) -> Ptr<i8>> =
         FnPtr::<fn(Ptr<i8>, isize) -> Ptr<i8>>::new(libcc2rs::prev_refcount);
     assert!(({ ({ prev_ptr.call((it).clone(), n,) }) } == { (result).clone() }));
@@ -680,8 +683,9 @@ pub fn check_prev_1_14(
     const _: () = assert!(true, "std::is_same<decltype(std::prev(it)), It>::value");;
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_char_ptr_> =
-                Rc::new(RefCell::new(libcc2rs::prev_refcount((it).clone(), 1_isize)));
+            let _x: Value<bidirectional_iterator_const_char_ptr_> = Rc::new(RefCell::new(
+                libcc2rs::prev_refcount((it).clone(), 1_isize as isize),
+            ));
             operator_eq_1(_x.as_pointer(), result.as_pointer())
         })
     );
@@ -694,15 +698,16 @@ pub fn check_prev_1_15(
     const _: () = assert!(true, "std::is_same<decltype(std::prev(it)), It>::value");;
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_char_ptr_> =
-                Rc::new(RefCell::new(libcc2rs::prev_refcount((it).clone(), 1_isize)));
+            let _x: Value<random_access_iterator_const_char_ptr_> = Rc::new(RefCell::new(
+                libcc2rs::prev_refcount((it).clone(), 1_isize as isize),
+            ));
             operator_eq_2(_x.as_pointer(), result.as_pointer())
         })
     );
 }
 pub fn check_prev_1_16(mut it: Ptr<i8>, mut result: Ptr<i8>) {
     const _: () = assert!(true, "std::is_same<decltype(std::prev(it)), It>::value");;
-    assert!(({ libcc2rs::prev_refcount((it).clone(), 1_isize) } == { (result).clone() }));
+    assert!(({ libcc2rs::prev_refcount((it).clone(), 1_isize as isize) } == { (result).clone() }));
 }
 pub fn tests_17() -> bool {
     let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"1234567890");

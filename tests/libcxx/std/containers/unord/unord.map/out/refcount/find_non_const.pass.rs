@@ -149,10 +149,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }
             })
         );
-        (*i.borrow_mut()) = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(5));
-            (*c.borrow()).find_68(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(5));
+                (*c.borrow()).find_68(___x.as_pointer())
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!((*i.borrow()) == ({ (*c.borrow()).end_30() }));
     }
     {
@@ -239,10 +243,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }
             })
         );
-        (*i.borrow_mut()) = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(5));
-            (*c.borrow()).find_68(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(5));
+                (*c.borrow()).find_68(___x.as_pointer())
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!((*i.borrow()) == ({ (*c.borrow()).end_30() }));
     }
     return 0;

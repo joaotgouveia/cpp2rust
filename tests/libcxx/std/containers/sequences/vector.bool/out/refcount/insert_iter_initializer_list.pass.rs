@@ -71,7 +71,7 @@ pub fn tests_4() -> bool {
                 .collect::<Vec<bool>>(),
         ));
         let i: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
-            match ({ d.decay().begin().iter_add(2_i64) },) {
+            match ({ d.decay().begin().iter_add((2_i64 as isize)) },) {
                 (mut __tmp_0,) => {
                     let __off = __tmp_0.index();
                     (*d.borrow_mut()).splice(__off..__off, Vec::from([false, true, true, false]));
@@ -80,7 +80,7 @@ pub fn tests_4() -> bool {
             },
         ));
         assert!(({ ((&(*d.borrow())).len() == 14_usize) }));
-        assert!((*i.borrow()) == d.decay().begin().iter_add(2_i64));
+        assert!((*i.borrow()) == d.decay().begin().iter_add((2_i64 as isize)));
         assert!(((d.decay().offset(0_usize as isize).read() as i32) == (true as i32)));
         assert!(((d.decay().offset(1_usize as isize).read() as i32) == (true as i32)));
         assert!(((d.decay().offset(2_usize as isize).read() as i32) == (false as i32)));
@@ -103,7 +103,7 @@ pub fn tests_4() -> bool {
                 .collect::<Vec<bool>>(),
         ));
         let i: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
-            match ({ d.decay().begin().iter_add(2_i64) },) {
+            match ({ d.decay().begin().iter_add((2_i64 as isize)) },) {
                 (mut __tmp_1,) => {
                     let __off = __tmp_1.index();
                     (*d.borrow_mut()).splice(__off..__off, Vec::from([false, true, true, false]));
@@ -112,7 +112,7 @@ pub fn tests_4() -> bool {
             },
         ));
         assert!(({ ((&(*d.borrow())).len() == 14_usize) }));
-        assert!((*i.borrow()) == d.decay().begin().iter_add(2_i64));
+        assert!((*i.borrow()) == d.decay().begin().iter_add((2_i64 as isize)));
         assert!(((d.decay().offset(0_usize as isize).read() as i32) == (true as i32)));
         assert!(((d.decay().offset(1_usize as isize).read() as i32) == (true as i32)));
         assert!(((d.decay().offset(2_usize as isize).read() as i32) == (false as i32)));

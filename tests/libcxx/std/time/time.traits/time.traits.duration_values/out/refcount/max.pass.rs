@@ -76,7 +76,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     assert!((({ std_chrono_duration_values_double_::max() }) == f64::MAX));
     assert!(
         ({
-            let _r: Value<Rep> = Rc::new(RefCell::new(<Rep>::MAX));
+            let _r: Value<Rep> = Rc::new(RefCell::new(({ std_numeric_limits_Rep_::max() })));
             RepImpl::operator_eq_4(
                 &Rc::new(RefCell::new(({ std_chrono_duration_values_Rep_::max() }))).as_pointer(),
                 _r.as_pointer(),

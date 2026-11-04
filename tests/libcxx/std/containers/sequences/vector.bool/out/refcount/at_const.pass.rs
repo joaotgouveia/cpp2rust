@@ -405,43 +405,48 @@ pub fn test_9() {
     ));
     const _: () = assert!(true, "");;
     assert!(
-        ((if 0_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
+        (((if 0_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
             panic!("out of bounds access")
         } else {
             v.as_pointer().decay().offset(0_usize as isize)
-        } as i32)
+        }
+        .read()) as i32)
             == (true as i32))
     );
     assert!(
-        ((if 1_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
+        (((if 1_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
             panic!("out of bounds access")
         } else {
             v.as_pointer().decay().offset(1_usize as isize)
-        } as i32)
+        }
+        .read()) as i32)
             == (false as i32))
     );
     assert!(
-        ((if 2_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
+        (((if 2_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
             panic!("out of bounds access")
         } else {
             v.as_pointer().decay().offset(2_usize as isize)
-        } as i32)
+        }
+        .read()) as i32)
             == (true as i32))
     );
     assert!(
-        ((if 3_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
+        (((if 3_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
             panic!("out of bounds access")
         } else {
             v.as_pointer().decay().offset(3_usize as isize)
-        } as i32)
+        }
+        .read()) as i32)
             == (false as i32))
     );
     assert!(
-        ((if 4_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
+        (((if 4_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
             panic!("out of bounds access")
         } else {
             v.as_pointer().decay().offset(4_usize as isize)
-        } as i32)
+        }
+        .read()) as i32)
             == (true as i32))
     );
 }
@@ -475,43 +480,48 @@ pub fn test_10() {
     ));
     const _: () = assert!(true, "");;
     assert!(
-        ((if 0_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
+        (((if 0_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
             panic!("out of bounds access")
         } else {
             v.as_pointer().decay().offset(0_usize as isize)
-        } as i32)
+        }
+        .read()) as i32)
             == (true as i32))
     );
     assert!(
-        ((if 1_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
+        (((if 1_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
             panic!("out of bounds access")
         } else {
             v.as_pointer().decay().offset(1_usize as isize)
-        } as i32)
+        }
+        .read()) as i32)
             == (false as i32))
     );
     assert!(
-        ((if 2_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
+        (((if 2_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
             panic!("out of bounds access")
         } else {
             v.as_pointer().decay().offset(2_usize as isize)
-        } as i32)
+        }
+        .read()) as i32)
             == (true as i32))
     );
     assert!(
-        ((if 3_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
+        (((if 3_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
             panic!("out of bounds access")
         } else {
             v.as_pointer().decay().offset(3_usize as isize)
-        } as i32)
+        }
+        .read()) as i32)
             == (false as i32))
     );
     assert!(
-        ((if 4_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
+        (((if 4_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
             panic!("out of bounds access")
         } else {
             v.as_pointer().decay().offset(4_usize as isize)
-        } as i32)
+        }
+        .read()) as i32)
             == (true as i32))
     );
 }

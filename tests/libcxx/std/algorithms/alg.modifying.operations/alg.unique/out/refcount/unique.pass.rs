@@ -988,32 +988,36 @@ pub fn test_31() {
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1])));
     let mut sb: u32 = (((::std::mem::size_of::<[i32; 2]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }) },
-        {
-            forward_iterator_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_4, mut __tmp_5) => {
-            if __tmp_4 == __tmp_5 {
-                (__tmp_5).clone()
-            } else {
-                let mut __write = __tmp_4.clone();
-                let mut __it = (__tmp_4).clone();
-                __it.iter_inc();
-                while __it != __tmp_5 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }) },
+            {
+                forward_iterator_int_ptr_::new_1({
+                    (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_4, mut __tmp_5) => {
+                if __tmp_4 == __tmp_5 {
+                    (__tmp_5).clone()
+                } else {
+                    let mut __write = __tmp_4.clone();
+                    let mut __it = (__tmp_4).clone();
                     __it.iter_inc();
+                    while __it != __tmp_5 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_2(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((sb) as isize))
@@ -1023,32 +1027,36 @@ pub fn test_31() {
     let ic: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0])));
     let mut sc: u32 = (((::std::mem::size_of::<[i32; 2]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { forward_iterator_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) }) },
-        {
-            forward_iterator_int_ptr_::new_1({
-                (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_6, mut __tmp_7) => {
-            if __tmp_6 == __tmp_7 {
-                (__tmp_7).clone()
-            } else {
-                let mut __write = __tmp_6.clone();
-                let mut __it = (__tmp_6).clone();
-                __it.iter_inc();
-                while __it != __tmp_7 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { forward_iterator_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) }) },
+            {
+                forward_iterator_int_ptr_::new_1({
+                    (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_6, mut __tmp_7) => {
+                if __tmp_6 == __tmp_7 {
+                    (__tmp_7).clone()
+                } else {
+                    let mut __write = __tmp_6.clone();
+                    let mut __it = (__tmp_6).clone();
                     __it.iter_inc();
+                    while __it != __tmp_7 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_2(r.as_pointer(),) }) == (ic.as_pointer() as Ptr::<i32>).offset((1) as isize))
@@ -1057,32 +1065,36 @@ pub fn test_31() {
     let id: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 1])));
     let mut sd: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { forward_iterator_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) }) },
-        {
-            forward_iterator_int_ptr_::new_1({
-                (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_8, mut __tmp_9) => {
-            if __tmp_8 == __tmp_9 {
-                (__tmp_9).clone()
-            } else {
-                let mut __write = __tmp_8.clone();
-                let mut __it = (__tmp_8).clone();
-                __it.iter_inc();
-                while __it != __tmp_9 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { forward_iterator_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) }) },
+            {
+                forward_iterator_int_ptr_::new_1({
+                    (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_8, mut __tmp_9) => {
+                if __tmp_8 == __tmp_9 {
+                    (__tmp_9).clone()
+                } else {
+                    let mut __write = __tmp_8.clone();
+                    let mut __it = (__tmp_8).clone();
                     __it.iter_inc();
+                    while __it != __tmp_9 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_2(r.as_pointer(),) }) == (id.as_pointer() as Ptr::<i32>).offset((2) as isize))
@@ -1092,32 +1104,36 @@ pub fn test_31() {
     let ie: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 1, 0])));
     let mut se: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { forward_iterator_int_ptr_::new_1({ (ie.as_pointer() as Ptr<i32>) }) },
-        {
-            forward_iterator_int_ptr_::new_1({
-                (ie.as_pointer() as Ptr<i32>).offset((se) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_10, mut __tmp_11) => {
-            if __tmp_10 == __tmp_11 {
-                (__tmp_11).clone()
-            } else {
-                let mut __write = __tmp_10.clone();
-                let mut __it = (__tmp_10).clone();
-                __it.iter_inc();
-                while __it != __tmp_11 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { forward_iterator_int_ptr_::new_1({ (ie.as_pointer() as Ptr<i32>) }) },
+            {
+                forward_iterator_int_ptr_::new_1({
+                    (ie.as_pointer() as Ptr<i32>).offset((se) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_10, mut __tmp_11) => {
+                if __tmp_10 == __tmp_11 {
+                    (__tmp_11).clone()
+                } else {
+                    let mut __write = __tmp_10.clone();
+                    let mut __it = (__tmp_10).clone();
                     __it.iter_inc();
+                    while __it != __tmp_11 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_2(r.as_pointer(),) }) == (ie.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -1128,32 +1144,36 @@ pub fn test_31() {
     let ig: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 1, 1])));
     let mut sg: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { forward_iterator_int_ptr_::new_1({ (ig.as_pointer() as Ptr<i32>) }) },
-        {
-            forward_iterator_int_ptr_::new_1({
-                (ig.as_pointer() as Ptr<i32>).offset((sg) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_12, mut __tmp_13) => {
-            if __tmp_12 == __tmp_13 {
-                (__tmp_13).clone()
-            } else {
-                let mut __write = __tmp_12.clone();
-                let mut __it = (__tmp_12).clone();
-                __it.iter_inc();
-                while __it != __tmp_13 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { forward_iterator_int_ptr_::new_1({ (ig.as_pointer() as Ptr<i32>) }) },
+            {
+                forward_iterator_int_ptr_::new_1({
+                    (ig.as_pointer() as Ptr<i32>).offset((sg) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_12, mut __tmp_13) => {
+                if __tmp_12 == __tmp_13 {
+                    (__tmp_13).clone()
+                } else {
+                    let mut __write = __tmp_12.clone();
+                    let mut __it = (__tmp_12).clone();
                     __it.iter_inc();
+                    while __it != __tmp_13 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_2(r.as_pointer(),) }) == (ig.as_pointer() as Ptr::<i32>).offset((2) as isize))
@@ -1163,32 +1183,36 @@ pub fn test_31() {
     let ih: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 1])));
     let mut sh: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { forward_iterator_int_ptr_::new_1({ (ih.as_pointer() as Ptr<i32>) }) },
-        {
-            forward_iterator_int_ptr_::new_1({
-                (ih.as_pointer() as Ptr<i32>).offset((sh) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_14, mut __tmp_15) => {
-            if __tmp_14 == __tmp_15 {
-                (__tmp_15).clone()
-            } else {
-                let mut __write = __tmp_14.clone();
-                let mut __it = (__tmp_14).clone();
-                __it.iter_inc();
-                while __it != __tmp_15 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { forward_iterator_int_ptr_::new_1({ (ih.as_pointer() as Ptr<i32>) }) },
+            {
+                forward_iterator_int_ptr_::new_1({
+                    (ih.as_pointer() as Ptr<i32>).offset((sh) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_14, mut __tmp_15) => {
+                if __tmp_14 == __tmp_15 {
+                    (__tmp_15).clone()
+                } else {
+                    let mut __write = __tmp_14.clone();
+                    let mut __it = (__tmp_14).clone();
                     __it.iter_inc();
+                    while __it != __tmp_15 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_2(r.as_pointer(),) }) == (ih.as_pointer() as Ptr::<i32>).offset((2) as isize))
@@ -1198,32 +1222,36 @@ pub fn test_31() {
     let ii: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 1, 1, 2, 2, 2])));
     let mut si: u32 = (((::std::mem::size_of::<[i32; 7]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { forward_iterator_int_ptr_::new_1({ (ii.as_pointer() as Ptr<i32>) }) },
-        {
-            forward_iterator_int_ptr_::new_1({
-                (ii.as_pointer() as Ptr<i32>).offset((si) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_16, mut __tmp_17) => {
-            if __tmp_16 == __tmp_17 {
-                (__tmp_17).clone()
-            } else {
-                let mut __write = __tmp_16.clone();
-                let mut __it = (__tmp_16).clone();
-                __it.iter_inc();
-                while __it != __tmp_17 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { forward_iterator_int_ptr_::new_1({ (ii.as_pointer() as Ptr<i32>) }) },
+            {
+                forward_iterator_int_ptr_::new_1({
+                    (ii.as_pointer() as Ptr<i32>).offset((si) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_16, mut __tmp_17) => {
+                if __tmp_16 == __tmp_17 {
+                    (__tmp_17).clone()
+                } else {
+                    let mut __write = __tmp_16.clone();
+                    let mut __it = (__tmp_16).clone();
                     __it.iter_inc();
+                    while __it != __tmp_17 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_2(r.as_pointer(),) }) == (ii.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -1272,32 +1300,36 @@ pub fn test_32() {
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1])));
     let mut sb: u32 = (((::std::mem::size_of::<[i32; 2]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }) },
-        {
-            bidirectional_iterator_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_20, mut __tmp_21) => {
-            if __tmp_20 == __tmp_21 {
-                (__tmp_21).clone()
-            } else {
-                let mut __write = __tmp_20.clone();
-                let mut __it = (__tmp_20).clone();
-                __it.iter_inc();
-                while __it != __tmp_21 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }) },
+            {
+                bidirectional_iterator_int_ptr_::new_1({
+                    (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_20, mut __tmp_21) => {
+                if __tmp_20 == __tmp_21 {
+                    (__tmp_21).clone()
+                } else {
+                    let mut __write = __tmp_20.clone();
+                    let mut __it = (__tmp_20).clone();
                     __it.iter_inc();
+                    while __it != __tmp_21 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((sb) as isize))
@@ -1307,32 +1339,36 @@ pub fn test_32() {
     let ic: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0])));
     let mut sc: u32 = (((::std::mem::size_of::<[i32; 2]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { bidirectional_iterator_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) }) },
-        {
-            bidirectional_iterator_int_ptr_::new_1({
-                (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_22, mut __tmp_23) => {
-            if __tmp_22 == __tmp_23 {
-                (__tmp_23).clone()
-            } else {
-                let mut __write = __tmp_22.clone();
-                let mut __it = (__tmp_22).clone();
-                __it.iter_inc();
-                while __it != __tmp_23 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { bidirectional_iterator_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) }) },
+            {
+                bidirectional_iterator_int_ptr_::new_1({
+                    (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_22, mut __tmp_23) => {
+                if __tmp_22 == __tmp_23 {
+                    (__tmp_23).clone()
+                } else {
+                    let mut __write = __tmp_22.clone();
+                    let mut __it = (__tmp_22).clone();
                     __it.iter_inc();
+                    while __it != __tmp_23 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_8(r.as_pointer(),) }) == (ic.as_pointer() as Ptr::<i32>).offset((1) as isize))
@@ -1341,32 +1377,36 @@ pub fn test_32() {
     let id: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 1])));
     let mut sd: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { bidirectional_iterator_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) }) },
-        {
-            bidirectional_iterator_int_ptr_::new_1({
-                (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_24, mut __tmp_25) => {
-            if __tmp_24 == __tmp_25 {
-                (__tmp_25).clone()
-            } else {
-                let mut __write = __tmp_24.clone();
-                let mut __it = (__tmp_24).clone();
-                __it.iter_inc();
-                while __it != __tmp_25 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { bidirectional_iterator_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) }) },
+            {
+                bidirectional_iterator_int_ptr_::new_1({
+                    (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_24, mut __tmp_25) => {
+                if __tmp_24 == __tmp_25 {
+                    (__tmp_25).clone()
+                } else {
+                    let mut __write = __tmp_24.clone();
+                    let mut __it = (__tmp_24).clone();
                     __it.iter_inc();
+                    while __it != __tmp_25 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_8(r.as_pointer(),) }) == (id.as_pointer() as Ptr::<i32>).offset((2) as isize))
@@ -1376,32 +1416,36 @@ pub fn test_32() {
     let ie: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 1, 0])));
     let mut se: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { bidirectional_iterator_int_ptr_::new_1({ (ie.as_pointer() as Ptr<i32>) }) },
-        {
-            bidirectional_iterator_int_ptr_::new_1({
-                (ie.as_pointer() as Ptr<i32>).offset((se) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_26, mut __tmp_27) => {
-            if __tmp_26 == __tmp_27 {
-                (__tmp_27).clone()
-            } else {
-                let mut __write = __tmp_26.clone();
-                let mut __it = (__tmp_26).clone();
-                __it.iter_inc();
-                while __it != __tmp_27 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { bidirectional_iterator_int_ptr_::new_1({ (ie.as_pointer() as Ptr<i32>) }) },
+            {
+                bidirectional_iterator_int_ptr_::new_1({
+                    (ie.as_pointer() as Ptr<i32>).offset((se) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_26, mut __tmp_27) => {
+                if __tmp_26 == __tmp_27 {
+                    (__tmp_27).clone()
+                } else {
+                    let mut __write = __tmp_26.clone();
+                    let mut __it = (__tmp_26).clone();
                     __it.iter_inc();
+                    while __it != __tmp_27 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_8(r.as_pointer(),) }) == (ie.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -1412,32 +1456,36 @@ pub fn test_32() {
     let ig: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 1, 1])));
     let mut sg: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { bidirectional_iterator_int_ptr_::new_1({ (ig.as_pointer() as Ptr<i32>) }) },
-        {
-            bidirectional_iterator_int_ptr_::new_1({
-                (ig.as_pointer() as Ptr<i32>).offset((sg) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_28, mut __tmp_29) => {
-            if __tmp_28 == __tmp_29 {
-                (__tmp_29).clone()
-            } else {
-                let mut __write = __tmp_28.clone();
-                let mut __it = (__tmp_28).clone();
-                __it.iter_inc();
-                while __it != __tmp_29 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { bidirectional_iterator_int_ptr_::new_1({ (ig.as_pointer() as Ptr<i32>) }) },
+            {
+                bidirectional_iterator_int_ptr_::new_1({
+                    (ig.as_pointer() as Ptr<i32>).offset((sg) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_28, mut __tmp_29) => {
+                if __tmp_28 == __tmp_29 {
+                    (__tmp_29).clone()
+                } else {
+                    let mut __write = __tmp_28.clone();
+                    let mut __it = (__tmp_28).clone();
                     __it.iter_inc();
+                    while __it != __tmp_29 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_8(r.as_pointer(),) }) == (ig.as_pointer() as Ptr::<i32>).offset((2) as isize))
@@ -1447,32 +1495,36 @@ pub fn test_32() {
     let ih: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 1])));
     let mut sh: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { bidirectional_iterator_int_ptr_::new_1({ (ih.as_pointer() as Ptr<i32>) }) },
-        {
-            bidirectional_iterator_int_ptr_::new_1({
-                (ih.as_pointer() as Ptr<i32>).offset((sh) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_30, mut __tmp_31) => {
-            if __tmp_30 == __tmp_31 {
-                (__tmp_31).clone()
-            } else {
-                let mut __write = __tmp_30.clone();
-                let mut __it = (__tmp_30).clone();
-                __it.iter_inc();
-                while __it != __tmp_31 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { bidirectional_iterator_int_ptr_::new_1({ (ih.as_pointer() as Ptr<i32>) }) },
+            {
+                bidirectional_iterator_int_ptr_::new_1({
+                    (ih.as_pointer() as Ptr<i32>).offset((sh) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_30, mut __tmp_31) => {
+                if __tmp_30 == __tmp_31 {
+                    (__tmp_31).clone()
+                } else {
+                    let mut __write = __tmp_30.clone();
+                    let mut __it = (__tmp_30).clone();
                     __it.iter_inc();
+                    while __it != __tmp_31 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_8(r.as_pointer(),) }) == (ih.as_pointer() as Ptr::<i32>).offset((2) as isize))
@@ -1482,32 +1534,36 @@ pub fn test_32() {
     let ii: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 1, 1, 2, 2, 2])));
     let mut si: u32 = (((::std::mem::size_of::<[i32; 7]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { bidirectional_iterator_int_ptr_::new_1({ (ii.as_pointer() as Ptr<i32>) }) },
-        {
-            bidirectional_iterator_int_ptr_::new_1({
-                (ii.as_pointer() as Ptr<i32>).offset((si) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_32, mut __tmp_33) => {
-            if __tmp_32 == __tmp_33 {
-                (__tmp_33).clone()
-            } else {
-                let mut __write = __tmp_32.clone();
-                let mut __it = (__tmp_32).clone();
-                __it.iter_inc();
-                while __it != __tmp_33 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { bidirectional_iterator_int_ptr_::new_1({ (ii.as_pointer() as Ptr<i32>) }) },
+            {
+                bidirectional_iterator_int_ptr_::new_1({
+                    (ii.as_pointer() as Ptr<i32>).offset((si) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_32, mut __tmp_33) => {
+                if __tmp_32 == __tmp_33 {
+                    (__tmp_33).clone()
+                } else {
+                    let mut __write = __tmp_32.clone();
+                    let mut __it = (__tmp_32).clone();
                     __it.iter_inc();
+                    while __it != __tmp_33 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_8(r.as_pointer(),) }) == (ii.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -1556,32 +1612,36 @@ pub fn test_33() {
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1])));
     let mut sb: u32 = (((::std::mem::size_of::<[i32; 2]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }) },
-        {
-            random_access_iterator_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_36, mut __tmp_37) => {
-            if __tmp_36 == __tmp_37 {
-                (__tmp_37).clone()
-            } else {
-                let mut __write = __tmp_36.clone();
-                let mut __it = (__tmp_36).clone();
-                __it.iter_inc();
-                while __it != __tmp_37 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }) },
+            {
+                random_access_iterator_int_ptr_::new_1({
+                    (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_36, mut __tmp_37) => {
+                if __tmp_36 == __tmp_37 {
+                    (__tmp_37).clone()
+                } else {
+                    let mut __write = __tmp_36.clone();
+                    let mut __it = (__tmp_36).clone();
                     __it.iter_inc();
+                    while __it != __tmp_37 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_14(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((sb) as isize))
@@ -1591,32 +1651,36 @@ pub fn test_33() {
     let ic: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0])));
     let mut sc: u32 = (((::std::mem::size_of::<[i32; 2]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { random_access_iterator_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) }) },
-        {
-            random_access_iterator_int_ptr_::new_1({
-                (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_38, mut __tmp_39) => {
-            if __tmp_38 == __tmp_39 {
-                (__tmp_39).clone()
-            } else {
-                let mut __write = __tmp_38.clone();
-                let mut __it = (__tmp_38).clone();
-                __it.iter_inc();
-                while __it != __tmp_39 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { random_access_iterator_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) }) },
+            {
+                random_access_iterator_int_ptr_::new_1({
+                    (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_38, mut __tmp_39) => {
+                if __tmp_38 == __tmp_39 {
+                    (__tmp_39).clone()
+                } else {
+                    let mut __write = __tmp_38.clone();
+                    let mut __it = (__tmp_38).clone();
                     __it.iter_inc();
+                    while __it != __tmp_39 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_14(r.as_pointer(),) }) == (ic.as_pointer() as Ptr::<i32>).offset((1) as isize))
@@ -1625,32 +1689,36 @@ pub fn test_33() {
     let id: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 1])));
     let mut sd: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { random_access_iterator_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) }) },
-        {
-            random_access_iterator_int_ptr_::new_1({
-                (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_40, mut __tmp_41) => {
-            if __tmp_40 == __tmp_41 {
-                (__tmp_41).clone()
-            } else {
-                let mut __write = __tmp_40.clone();
-                let mut __it = (__tmp_40).clone();
-                __it.iter_inc();
-                while __it != __tmp_41 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { random_access_iterator_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) }) },
+            {
+                random_access_iterator_int_ptr_::new_1({
+                    (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_40, mut __tmp_41) => {
+                if __tmp_40 == __tmp_41 {
+                    (__tmp_41).clone()
+                } else {
+                    let mut __write = __tmp_40.clone();
+                    let mut __it = (__tmp_40).clone();
                     __it.iter_inc();
+                    while __it != __tmp_41 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_14(r.as_pointer(),) }) == (id.as_pointer() as Ptr::<i32>).offset((2) as isize))
@@ -1660,32 +1728,36 @@ pub fn test_33() {
     let ie: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 1, 0])));
     let mut se: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { random_access_iterator_int_ptr_::new_1({ (ie.as_pointer() as Ptr<i32>) }) },
-        {
-            random_access_iterator_int_ptr_::new_1({
-                (ie.as_pointer() as Ptr<i32>).offset((se) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_42, mut __tmp_43) => {
-            if __tmp_42 == __tmp_43 {
-                (__tmp_43).clone()
-            } else {
-                let mut __write = __tmp_42.clone();
-                let mut __it = (__tmp_42).clone();
-                __it.iter_inc();
-                while __it != __tmp_43 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { random_access_iterator_int_ptr_::new_1({ (ie.as_pointer() as Ptr<i32>) }) },
+            {
+                random_access_iterator_int_ptr_::new_1({
+                    (ie.as_pointer() as Ptr<i32>).offset((se) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_42, mut __tmp_43) => {
+                if __tmp_42 == __tmp_43 {
+                    (__tmp_43).clone()
+                } else {
+                    let mut __write = __tmp_42.clone();
+                    let mut __it = (__tmp_42).clone();
                     __it.iter_inc();
+                    while __it != __tmp_43 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_14(r.as_pointer(),) }) == (ie.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -1696,32 +1768,36 @@ pub fn test_33() {
     let ig: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 1, 1])));
     let mut sg: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { random_access_iterator_int_ptr_::new_1({ (ig.as_pointer() as Ptr<i32>) }) },
-        {
-            random_access_iterator_int_ptr_::new_1({
-                (ig.as_pointer() as Ptr<i32>).offset((sg) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_44, mut __tmp_45) => {
-            if __tmp_44 == __tmp_45 {
-                (__tmp_45).clone()
-            } else {
-                let mut __write = __tmp_44.clone();
-                let mut __it = (__tmp_44).clone();
-                __it.iter_inc();
-                while __it != __tmp_45 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { random_access_iterator_int_ptr_::new_1({ (ig.as_pointer() as Ptr<i32>) }) },
+            {
+                random_access_iterator_int_ptr_::new_1({
+                    (ig.as_pointer() as Ptr<i32>).offset((sg) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_44, mut __tmp_45) => {
+                if __tmp_44 == __tmp_45 {
+                    (__tmp_45).clone()
+                } else {
+                    let mut __write = __tmp_44.clone();
+                    let mut __it = (__tmp_44).clone();
                     __it.iter_inc();
+                    while __it != __tmp_45 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_14(r.as_pointer(),) }) == (ig.as_pointer() as Ptr::<i32>).offset((2) as isize))
@@ -1731,32 +1807,36 @@ pub fn test_33() {
     let ih: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 1])));
     let mut sh: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { random_access_iterator_int_ptr_::new_1({ (ih.as_pointer() as Ptr<i32>) }) },
-        {
-            random_access_iterator_int_ptr_::new_1({
-                (ih.as_pointer() as Ptr<i32>).offset((sh) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_46, mut __tmp_47) => {
-            if __tmp_46 == __tmp_47 {
-                (__tmp_47).clone()
-            } else {
-                let mut __write = __tmp_46.clone();
-                let mut __it = (__tmp_46).clone();
-                __it.iter_inc();
-                while __it != __tmp_47 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { random_access_iterator_int_ptr_::new_1({ (ih.as_pointer() as Ptr<i32>) }) },
+            {
+                random_access_iterator_int_ptr_::new_1({
+                    (ih.as_pointer() as Ptr<i32>).offset((sh) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_46, mut __tmp_47) => {
+                if __tmp_46 == __tmp_47 {
+                    (__tmp_47).clone()
+                } else {
+                    let mut __write = __tmp_46.clone();
+                    let mut __it = (__tmp_46).clone();
                     __it.iter_inc();
+                    while __it != __tmp_47 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_14(r.as_pointer(),) }) == (ih.as_pointer() as Ptr::<i32>).offset((2) as isize))
@@ -1766,32 +1846,36 @@ pub fn test_33() {
     let ii: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 1, 1, 2, 2, 2])));
     let mut si: u32 = (((::std::mem::size_of::<[i32; 7]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        { random_access_iterator_int_ptr_::new_1({ (ii.as_pointer() as Ptr<i32>) }) },
-        {
-            random_access_iterator_int_ptr_::new_1({
-                (ii.as_pointer() as Ptr<i32>).offset((si) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_48, mut __tmp_49) => {
-            if __tmp_48 == __tmp_49 {
-                (__tmp_49).clone()
-            } else {
-                let mut __write = __tmp_48.clone();
-                let mut __it = (__tmp_48).clone();
-                __it.iter_inc();
-                while __it != __tmp_49 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            { random_access_iterator_int_ptr_::new_1({ (ii.as_pointer() as Ptr<i32>) }) },
+            {
+                random_access_iterator_int_ptr_::new_1({
+                    (ii.as_pointer() as Ptr<i32>).offset((si) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_48, mut __tmp_49) => {
+                if __tmp_48 == __tmp_49 {
+                    (__tmp_49).clone()
+                } else {
+                    let mut __write = __tmp_48.clone();
+                    let mut __it = (__tmp_48).clone();
                     __it.iter_inc();
+                    while __it != __tmp_49 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_14(r.as_pointer(),) }) == (ii.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -2128,36 +2212,40 @@ pub fn test1_35() {
             .write(_p.to_owned_opt())
     };
     let mut sb: u32 = (((16usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ib.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ib.as_pointer() as Ptr<Option<Value<i32>>>).offset((sb) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_68, mut __tmp_69) => {
-            if __tmp_68 == __tmp_69 {
-                (__tmp_69).clone()
-            } else {
-                let mut __write = __tmp_68.clone();
-                let mut __it = (__tmp_68).clone();
-                __it.iter_inc();
-                while __it != __tmp_69 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ib.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ib.as_pointer() as Ptr<Option<Value<i32>>>).offset((sb) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_68, mut __tmp_69) => {
+                if __tmp_68 == __tmp_69 {
+                    (__tmp_69).clone()
+                } else {
+                    let mut __write = __tmp_68.clone();
+                    let mut __it = (__tmp_68).clone();
                     __it.iter_inc();
+                    while __it != __tmp_69 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_5(r.as_pointer(),) })
@@ -2169,36 +2257,40 @@ pub fn test1_35() {
         (0..2).map(|_| None).collect::<Box<[Option<Value<i32>>]>>(),
     ));
     let mut sc: u32 = (((16usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ic.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ic.as_pointer() as Ptr<Option<Value<i32>>>).offset((sc) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_70, mut __tmp_71) => {
-            if __tmp_70 == __tmp_71 {
-                (__tmp_71).clone()
-            } else {
-                let mut __write = __tmp_70.clone();
-                let mut __it = (__tmp_70).clone();
-                __it.iter_inc();
-                while __it != __tmp_71 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ic.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ic.as_pointer() as Ptr<Option<Value<i32>>>).offset((sc) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_70, mut __tmp_71) => {
+                if __tmp_70 == __tmp_71 {
+                    (__tmp_71).clone()
+                } else {
+                    let mut __write = __tmp_70.clone();
+                    let mut __it = (__tmp_70).clone();
                     __it.iter_inc();
+                    while __it != __tmp_71 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_5(r.as_pointer(),) })
@@ -2215,36 +2307,40 @@ pub fn test1_35() {
             .write(_p.to_owned_opt())
     };
     let mut sd: u32 = (((24usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (id.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (id.as_pointer() as Ptr<Option<Value<i32>>>).offset((sd) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_72, mut __tmp_73) => {
-            if __tmp_72 == __tmp_73 {
-                (__tmp_73).clone()
-            } else {
-                let mut __write = __tmp_72.clone();
-                let mut __it = (__tmp_72).clone();
-                __it.iter_inc();
-                while __it != __tmp_73 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (id.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (id.as_pointer() as Ptr<Option<Value<i32>>>).offset((sd) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_72, mut __tmp_73) => {
+                if __tmp_72 == __tmp_73 {
+                    (__tmp_73).clone()
+                } else {
+                    let mut __write = __tmp_72.clone();
+                    let mut __it = (__tmp_72).clone();
                     __it.iter_inc();
+                    while __it != __tmp_73 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_5(r.as_pointer(),) })
@@ -2262,36 +2358,40 @@ pub fn test1_35() {
             .write(_p.to_owned_opt())
     };
     let mut se: u32 = (((32usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ie.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ie.as_pointer() as Ptr<Option<Value<i32>>>).offset((se) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_74, mut __tmp_75) => {
-            if __tmp_74 == __tmp_75 {
-                (__tmp_75).clone()
-            } else {
-                let mut __write = __tmp_74.clone();
-                let mut __it = (__tmp_74).clone();
-                __it.iter_inc();
-                while __it != __tmp_75 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ie.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ie.as_pointer() as Ptr<Option<Value<i32>>>).offset((se) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_74, mut __tmp_75) => {
+                if __tmp_74 == __tmp_75 {
+                    (__tmp_75).clone()
+                } else {
+                    let mut __write = __tmp_74.clone();
+                    let mut __it = (__tmp_74).clone();
                     __it.iter_inc();
+                    while __it != __tmp_75 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_5(r.as_pointer(),) })
@@ -2316,36 +2416,40 @@ pub fn test1_35() {
             .write(_p.to_owned_opt())
     };
     let mut sg: u32 = (((32usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ig.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ig.as_pointer() as Ptr<Option<Value<i32>>>).offset((sg) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_76, mut __tmp_77) => {
-            if __tmp_76 == __tmp_77 {
-                (__tmp_77).clone()
-            } else {
-                let mut __write = __tmp_76.clone();
-                let mut __it = (__tmp_76).clone();
-                __it.iter_inc();
-                while __it != __tmp_77 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ig.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ig.as_pointer() as Ptr<Option<Value<i32>>>).offset((sg) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_76, mut __tmp_77) => {
+                if __tmp_76 == __tmp_77 {
+                    (__tmp_77).clone()
+                } else {
+                    let mut __write = __tmp_76.clone();
+                    let mut __it = (__tmp_76).clone();
                     __it.iter_inc();
+                    while __it != __tmp_77 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_5(r.as_pointer(),) })
@@ -2369,36 +2473,40 @@ pub fn test1_35() {
             .write(_p.to_owned_opt())
     };
     let mut sh: u32 = (((24usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ih.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ih.as_pointer() as Ptr<Option<Value<i32>>>).offset((sh) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_78, mut __tmp_79) => {
-            if __tmp_78 == __tmp_79 {
-                (__tmp_79).clone()
-            } else {
-                let mut __write = __tmp_78.clone();
-                let mut __it = (__tmp_78).clone();
-                __it.iter_inc();
-                while __it != __tmp_79 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ih.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ih.as_pointer() as Ptr<Option<Value<i32>>>).offset((sh) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_78, mut __tmp_79) => {
+                if __tmp_78 == __tmp_79 {
+                    (__tmp_79).clone()
+                } else {
+                    let mut __write = __tmp_78.clone();
+                    let mut __it = (__tmp_78).clone();
                     __it.iter_inc();
+                    while __it != __tmp_79 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_5(r.as_pointer(),) })
@@ -2446,36 +2554,40 @@ pub fn test1_35() {
             .write(_p.to_owned_opt())
     };
     let mut si: u32 = (((56usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ii.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ii.as_pointer() as Ptr<Option<Value<i32>>>).offset((si) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_80, mut __tmp_81) => {
-            if __tmp_80 == __tmp_81 {
-                (__tmp_81).clone()
-            } else {
-                let mut __write = __tmp_80.clone();
-                let mut __it = (__tmp_80).clone();
-                __it.iter_inc();
-                while __it != __tmp_81 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ii.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                forward_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ii.as_pointer() as Ptr<Option<Value<i32>>>).offset((si) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_80, mut __tmp_81) => {
+                if __tmp_80 == __tmp_81 {
+                    (__tmp_81).clone()
+                } else {
+                    let mut __write = __tmp_80.clone();
+                    let mut __it = (__tmp_80).clone();
                     __it.iter_inc();
+                    while __it != __tmp_81 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_5(r.as_pointer(),) })
@@ -2541,36 +2653,40 @@ pub fn test1_36() {
             .write(_p.to_owned_opt())
     };
     let mut sb: u32 = (((16usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ib.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ib.as_pointer() as Ptr<Option<Value<i32>>>).offset((sb) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_84, mut __tmp_85) => {
-            if __tmp_84 == __tmp_85 {
-                (__tmp_85).clone()
-            } else {
-                let mut __write = __tmp_84.clone();
-                let mut __it = (__tmp_84).clone();
-                __it.iter_inc();
-                while __it != __tmp_85 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ib.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ib.as_pointer() as Ptr<Option<Value<i32>>>).offset((sb) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_84, mut __tmp_85) => {
+                if __tmp_84 == __tmp_85 {
+                    (__tmp_85).clone()
+                } else {
+                    let mut __write = __tmp_84.clone();
+                    let mut __it = (__tmp_84).clone();
                     __it.iter_inc();
+                    while __it != __tmp_85 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_11(r.as_pointer(),) })
@@ -2582,36 +2698,40 @@ pub fn test1_36() {
         (0..2).map(|_| None).collect::<Box<[Option<Value<i32>>]>>(),
     ));
     let mut sc: u32 = (((16usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ic.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ic.as_pointer() as Ptr<Option<Value<i32>>>).offset((sc) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_86, mut __tmp_87) => {
-            if __tmp_86 == __tmp_87 {
-                (__tmp_87).clone()
-            } else {
-                let mut __write = __tmp_86.clone();
-                let mut __it = (__tmp_86).clone();
-                __it.iter_inc();
-                while __it != __tmp_87 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ic.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ic.as_pointer() as Ptr<Option<Value<i32>>>).offset((sc) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_86, mut __tmp_87) => {
+                if __tmp_86 == __tmp_87 {
+                    (__tmp_87).clone()
+                } else {
+                    let mut __write = __tmp_86.clone();
+                    let mut __it = (__tmp_86).clone();
                     __it.iter_inc();
+                    while __it != __tmp_87 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_11(r.as_pointer(),) })
@@ -2628,36 +2748,40 @@ pub fn test1_36() {
             .write(_p.to_owned_opt())
     };
     let mut sd: u32 = (((24usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (id.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (id.as_pointer() as Ptr<Option<Value<i32>>>).offset((sd) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_88, mut __tmp_89) => {
-            if __tmp_88 == __tmp_89 {
-                (__tmp_89).clone()
-            } else {
-                let mut __write = __tmp_88.clone();
-                let mut __it = (__tmp_88).clone();
-                __it.iter_inc();
-                while __it != __tmp_89 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (id.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (id.as_pointer() as Ptr<Option<Value<i32>>>).offset((sd) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_88, mut __tmp_89) => {
+                if __tmp_88 == __tmp_89 {
+                    (__tmp_89).clone()
+                } else {
+                    let mut __write = __tmp_88.clone();
+                    let mut __it = (__tmp_88).clone();
                     __it.iter_inc();
+                    while __it != __tmp_89 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_11(r.as_pointer(),) })
@@ -2675,36 +2799,40 @@ pub fn test1_36() {
             .write(_p.to_owned_opt())
     };
     let mut se: u32 = (((32usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ie.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ie.as_pointer() as Ptr<Option<Value<i32>>>).offset((se) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_90, mut __tmp_91) => {
-            if __tmp_90 == __tmp_91 {
-                (__tmp_91).clone()
-            } else {
-                let mut __write = __tmp_90.clone();
-                let mut __it = (__tmp_90).clone();
-                __it.iter_inc();
-                while __it != __tmp_91 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ie.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ie.as_pointer() as Ptr<Option<Value<i32>>>).offset((se) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_90, mut __tmp_91) => {
+                if __tmp_90 == __tmp_91 {
+                    (__tmp_91).clone()
+                } else {
+                    let mut __write = __tmp_90.clone();
+                    let mut __it = (__tmp_90).clone();
                     __it.iter_inc();
+                    while __it != __tmp_91 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_11(r.as_pointer(),) })
@@ -2729,36 +2857,40 @@ pub fn test1_36() {
             .write(_p.to_owned_opt())
     };
     let mut sg: u32 = (((32usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ig.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ig.as_pointer() as Ptr<Option<Value<i32>>>).offset((sg) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_92, mut __tmp_93) => {
-            if __tmp_92 == __tmp_93 {
-                (__tmp_93).clone()
-            } else {
-                let mut __write = __tmp_92.clone();
-                let mut __it = (__tmp_92).clone();
-                __it.iter_inc();
-                while __it != __tmp_93 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ig.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ig.as_pointer() as Ptr<Option<Value<i32>>>).offset((sg) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_92, mut __tmp_93) => {
+                if __tmp_92 == __tmp_93 {
+                    (__tmp_93).clone()
+                } else {
+                    let mut __write = __tmp_92.clone();
+                    let mut __it = (__tmp_92).clone();
                     __it.iter_inc();
+                    while __it != __tmp_93 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_11(r.as_pointer(),) })
@@ -2782,36 +2914,40 @@ pub fn test1_36() {
             .write(_p.to_owned_opt())
     };
     let mut sh: u32 = (((24usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ih.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ih.as_pointer() as Ptr<Option<Value<i32>>>).offset((sh) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_94, mut __tmp_95) => {
-            if __tmp_94 == __tmp_95 {
-                (__tmp_95).clone()
-            } else {
-                let mut __write = __tmp_94.clone();
-                let mut __it = (__tmp_94).clone();
-                __it.iter_inc();
-                while __it != __tmp_95 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ih.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ih.as_pointer() as Ptr<Option<Value<i32>>>).offset((sh) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_94, mut __tmp_95) => {
+                if __tmp_94 == __tmp_95 {
+                    (__tmp_95).clone()
+                } else {
+                    let mut __write = __tmp_94.clone();
+                    let mut __it = (__tmp_94).clone();
                     __it.iter_inc();
+                    while __it != __tmp_95 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_11(r.as_pointer(),) })
@@ -2859,36 +2995,40 @@ pub fn test1_36() {
             .write(_p.to_owned_opt())
     };
     let mut si: u32 = (((56usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ii.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ii.as_pointer() as Ptr<Option<Value<i32>>>).offset((si) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_96, mut __tmp_97) => {
-            if __tmp_96 == __tmp_97 {
-                (__tmp_97).clone()
-            } else {
-                let mut __write = __tmp_96.clone();
-                let mut __it = (__tmp_96).clone();
-                __it.iter_inc();
-                while __it != __tmp_97 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ii.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                bidirectional_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ii.as_pointer() as Ptr<Option<Value<i32>>>).offset((si) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_96, mut __tmp_97) => {
+                if __tmp_96 == __tmp_97 {
+                    (__tmp_97).clone()
+                } else {
+                    let mut __write = __tmp_96.clone();
+                    let mut __it = (__tmp_96).clone();
                     __it.iter_inc();
+                    while __it != __tmp_97 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_11(r.as_pointer(),) })
@@ -2954,36 +3094,40 @@ pub fn test1_37() {
             .write(_p.to_owned_opt())
     };
     let mut sb: u32 = (((16usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ib.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ib.as_pointer() as Ptr<Option<Value<i32>>>).offset((sb) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_100, mut __tmp_101) => {
-            if __tmp_100 == __tmp_101 {
-                (__tmp_101).clone()
-            } else {
-                let mut __write = __tmp_100.clone();
-                let mut __it = (__tmp_100).clone();
-                __it.iter_inc();
-                while __it != __tmp_101 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ib.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ib.as_pointer() as Ptr<Option<Value<i32>>>).offset((sb) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_100, mut __tmp_101) => {
+                if __tmp_100 == __tmp_101 {
+                    (__tmp_101).clone()
+                } else {
+                    let mut __write = __tmp_100.clone();
+                    let mut __it = (__tmp_100).clone();
                     __it.iter_inc();
+                    while __it != __tmp_101 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_17(r.as_pointer(),) })
@@ -2995,36 +3139,40 @@ pub fn test1_37() {
         (0..2).map(|_| None).collect::<Box<[Option<Value<i32>>]>>(),
     ));
     let mut sc: u32 = (((16usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ic.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ic.as_pointer() as Ptr<Option<Value<i32>>>).offset((sc) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_102, mut __tmp_103) => {
-            if __tmp_102 == __tmp_103 {
-                (__tmp_103).clone()
-            } else {
-                let mut __write = __tmp_102.clone();
-                let mut __it = (__tmp_102).clone();
-                __it.iter_inc();
-                while __it != __tmp_103 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ic.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ic.as_pointer() as Ptr<Option<Value<i32>>>).offset((sc) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_102, mut __tmp_103) => {
+                if __tmp_102 == __tmp_103 {
+                    (__tmp_103).clone()
+                } else {
+                    let mut __write = __tmp_102.clone();
+                    let mut __it = (__tmp_102).clone();
                     __it.iter_inc();
+                    while __it != __tmp_103 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_17(r.as_pointer(),) })
@@ -3041,36 +3189,40 @@ pub fn test1_37() {
             .write(_p.to_owned_opt())
     };
     let mut sd: u32 = (((24usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (id.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (id.as_pointer() as Ptr<Option<Value<i32>>>).offset((sd) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_104, mut __tmp_105) => {
-            if __tmp_104 == __tmp_105 {
-                (__tmp_105).clone()
-            } else {
-                let mut __write = __tmp_104.clone();
-                let mut __it = (__tmp_104).clone();
-                __it.iter_inc();
-                while __it != __tmp_105 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (id.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (id.as_pointer() as Ptr<Option<Value<i32>>>).offset((sd) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_104, mut __tmp_105) => {
+                if __tmp_104 == __tmp_105 {
+                    (__tmp_105).clone()
+                } else {
+                    let mut __write = __tmp_104.clone();
+                    let mut __it = (__tmp_104).clone();
                     __it.iter_inc();
+                    while __it != __tmp_105 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_17(r.as_pointer(),) })
@@ -3088,36 +3240,40 @@ pub fn test1_37() {
             .write(_p.to_owned_opt())
     };
     let mut se: u32 = (((32usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ie.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ie.as_pointer() as Ptr<Option<Value<i32>>>).offset((se) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_106, mut __tmp_107) => {
-            if __tmp_106 == __tmp_107 {
-                (__tmp_107).clone()
-            } else {
-                let mut __write = __tmp_106.clone();
-                let mut __it = (__tmp_106).clone();
-                __it.iter_inc();
-                while __it != __tmp_107 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ie.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ie.as_pointer() as Ptr<Option<Value<i32>>>).offset((se) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_106, mut __tmp_107) => {
+                if __tmp_106 == __tmp_107 {
+                    (__tmp_107).clone()
+                } else {
+                    let mut __write = __tmp_106.clone();
+                    let mut __it = (__tmp_106).clone();
                     __it.iter_inc();
+                    while __it != __tmp_107 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_17(r.as_pointer(),) })
@@ -3142,36 +3298,40 @@ pub fn test1_37() {
             .write(_p.to_owned_opt())
     };
     let mut sg: u32 = (((32usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ig.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ig.as_pointer() as Ptr<Option<Value<i32>>>).offset((sg) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_108, mut __tmp_109) => {
-            if __tmp_108 == __tmp_109 {
-                (__tmp_109).clone()
-            } else {
-                let mut __write = __tmp_108.clone();
-                let mut __it = (__tmp_108).clone();
-                __it.iter_inc();
-                while __it != __tmp_109 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ig.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ig.as_pointer() as Ptr<Option<Value<i32>>>).offset((sg) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_108, mut __tmp_109) => {
+                if __tmp_108 == __tmp_109 {
+                    (__tmp_109).clone()
+                } else {
+                    let mut __write = __tmp_108.clone();
+                    let mut __it = (__tmp_108).clone();
                     __it.iter_inc();
+                    while __it != __tmp_109 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_17(r.as_pointer(),) })
@@ -3195,36 +3355,40 @@ pub fn test1_37() {
             .write(_p.to_owned_opt())
     };
     let mut sh: u32 = (((24usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ih.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ih.as_pointer() as Ptr<Option<Value<i32>>>).offset((sh) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_110, mut __tmp_111) => {
-            if __tmp_110 == __tmp_111 {
-                (__tmp_111).clone()
-            } else {
-                let mut __write = __tmp_110.clone();
-                let mut __it = (__tmp_110).clone();
-                __it.iter_inc();
-                while __it != __tmp_111 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ih.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ih.as_pointer() as Ptr<Option<Value<i32>>>).offset((sh) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_110, mut __tmp_111) => {
+                if __tmp_110 == __tmp_111 {
+                    (__tmp_111).clone()
+                } else {
+                    let mut __write = __tmp_110.clone();
+                    let mut __it = (__tmp_110).clone();
                     __it.iter_inc();
+                    while __it != __tmp_111 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_17(r.as_pointer(),) })
@@ -3272,36 +3436,40 @@ pub fn test1_37() {
             .write(_p.to_owned_opt())
     };
     let mut si: u32 = (((56usize as usize).wrapping_div((8usize as usize))) as u32);
-    (*r.borrow_mut()) = match (
-        {
-            random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ii.as_pointer() as Ptr<Option<Value<i32>>>)
-            })
-        },
-        {
-            random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
-                (ii.as_pointer() as Ptr<Option<Value<i32>>>).offset((si) as isize)
-            })
-        },
-    ) {
-        (mut __tmp_112, mut __tmp_113) => {
-            if __tmp_112 == __tmp_113 {
-                (__tmp_113).clone()
-            } else {
-                let mut __write = __tmp_112.clone();
-                let mut __it = (__tmp_112).clone();
-                __it.iter_inc();
-                while __it != __tmp_113 {
-                    if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
-                        __write.iter_inc();
-                        __write.iter_deref().write(__it.iter_deref().read());
-                    }
+    {
+        let __a1 = match (
+            {
+                random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ii.as_pointer() as Ptr<Option<Value<i32>>>)
+                })
+            },
+            {
+                random_access_iterator_std_unique_ptr_int__do_nothing__ptr_::new_1({
+                    (ii.as_pointer() as Ptr<Option<Value<i32>>>).offset((si) as isize)
+                })
+            },
+        ) {
+            (mut __tmp_112, mut __tmp_113) => {
+                if __tmp_112 == __tmp_113 {
+                    (__tmp_113).clone()
+                } else {
+                    let mut __write = __tmp_112.clone();
+                    let mut __it = (__tmp_112).clone();
                     __it.iter_inc();
+                    while __it != __tmp_113 {
+                        if !CppEq::equal(&__write.iter_deref(), &__it.iter_deref()) {
+                            __write.iter_inc();
+                            __write.iter_deref().write(__it.iter_deref().read());
+                        }
+                        __it.iter_inc();
+                    }
+                    __write.iter_inc();
+                    __write
                 }
-                __write.iter_inc();
-                __write
             }
-        }
+        };
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
     };
     assert!(
         (({ base_17(r.as_pointer(),) })

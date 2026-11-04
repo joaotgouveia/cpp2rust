@@ -157,13 +157,13 @@ pub fn test_42(mut expected: i64) {
     assert!((is_bounded_43.with(|rc| *rc.borrow())) || (!(is_signed_44.with(|rc| *rc.borrow()))));
 }
 pub fn test_45(mut expected: u64) {
-    assert!((<u64>::MIN == expected));
+    assert!((({ std_numeric_limits_unsigned_long_long_::min() }) == expected));
     assert!((is_bounded_46.with(|rc| *rc.borrow())) || (!(is_signed_47.with(|rc| *rc.borrow()))));
-    assert!((<u64>::MIN == expected));
+    assert!((({ std_numeric_limits_unsigned_long_long_::min() }) == expected));
     assert!((is_bounded_46.with(|rc| *rc.borrow())) || (!(is_signed_47.with(|rc| *rc.borrow()))));
-    assert!((<u64>::MIN == expected));
+    assert!((({ std_numeric_limits_unsigned_long_long_::min() }) == expected));
     assert!((is_bounded_46.with(|rc| *rc.borrow())) || (!(is_signed_47.with(|rc| *rc.borrow()))));
-    assert!((<u64>::MIN == expected));
+    assert!((({ std_numeric_limits_unsigned_long_long_::min() }) == expected));
     assert!((is_bounded_46.with(|rc| *rc.borrow())) || (!(is_signed_47.with(|rc| *rc.borrow()))));
 }
 pub fn test_48(mut expected: i128) {
@@ -177,13 +177,13 @@ pub fn test_48(mut expected: i128) {
     assert!((is_bounded_49.with(|rc| *rc.borrow())) || (!(is_signed_50.with(|rc| *rc.borrow()))));
 }
 pub fn test_51(mut expected: u128) {
-    assert!((<u128>::MIN == expected));
+    assert!((({ std_numeric_limits_unsigned___int128_::min() }) == expected));
     assert!((is_bounded_52.with(|rc| *rc.borrow())) || (!(is_signed_53.with(|rc| *rc.borrow()))));
-    assert!((<u128>::MIN == expected));
+    assert!((({ std_numeric_limits_unsigned___int128_::min() }) == expected));
     assert!((is_bounded_52.with(|rc| *rc.borrow())) || (!(is_signed_53.with(|rc| *rc.borrow()))));
-    assert!((<u128>::MIN == expected));
+    assert!((({ std_numeric_limits_unsigned___int128_::min() }) == expected));
     assert!((is_bounded_52.with(|rc| *rc.borrow())) || (!(is_signed_53.with(|rc| *rc.borrow()))));
-    assert!((<u128>::MIN == expected));
+    assert!((({ std_numeric_limits_unsigned___int128_::min() }) == expected));
     assert!((is_bounded_52.with(|rc| *rc.borrow())) || (!(is_signed_53.with(|rc| *rc.borrow()))));
 }
 pub fn test_54(mut expected: f32) {

@@ -94,13 +94,14 @@ pub fn test_5() -> bool {
         let i: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
             ({
                 let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 3_isize);
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 3_isize as isize);
                 (*m.borrow()).erase_54(___position)
             }),
         ));
         assert!(({ (({ (*m.borrow()).size() }) == 8_u64) }));
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
         );
         assert!(
             ((*(*({ (*m.borrow()).begin_20() })
@@ -121,7 +122,7 @@ pub fn test_5() -> bool {
                 == 1_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -130,7 +131,7 @@ pub fn test_5() -> bool {
                 == 1)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -139,7 +140,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -148,7 +149,7 @@ pub fn test_5() -> bool {
                 == 1)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -157,7 +158,7 @@ pub fn test_5() -> bool {
                 == 2_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -166,7 +167,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -175,7 +176,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -184,7 +185,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -193,7 +194,7 @@ pub fn test_5() -> bool {
                 == 2_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -202,7 +203,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -211,7 +212,7 @@ pub fn test_5() -> bool {
                 == 1_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -220,7 +221,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -229,7 +230,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 7_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 7_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -238,7 +239,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 7_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 7_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -246,15 +247,19 @@ pub fn test_5() -> bool {
             .borrow())
                 == 2_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 0_isize);
-            (*m.borrow()).erase_54(___position)
-        });
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 0_isize as isize);
+                (*m.borrow()).erase_54(___position)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(({ (({ (*m.borrow()).size() }) == 7_u64) }));
         assert!((*i.borrow()) == ({ (*m.borrow()).begin_20() }));
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -263,7 +268,7 @@ pub fn test_5() -> bool {
                 == 1)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -272,7 +277,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -281,7 +286,7 @@ pub fn test_5() -> bool {
                 == 1)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -290,7 +295,7 @@ pub fn test_5() -> bool {
                 == 2_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -299,7 +304,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -308,7 +313,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -317,7 +322,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -326,7 +331,7 @@ pub fn test_5() -> bool {
                 == 2_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -335,7 +340,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -344,7 +349,7 @@ pub fn test_5() -> bool {
                 == 1_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -353,7 +358,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -362,7 +367,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -371,7 +376,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -379,17 +384,22 @@ pub fn test_5() -> bool {
             .borrow())
                 == 2_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 5_isize);
-            (*m.borrow()).erase_54(___position)
-        });
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 5_isize as isize);
+                (*m.borrow()).erase_54(___position)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(({ (({ (*m.borrow()).size() }) == 6_u64) }));
         assert!(
-            (*i.borrow()) == libcc2rs::prev_refcount(({ ({ (*m.borrow()).end_22() }) }), 1_isize)
+            (*i.borrow())
+                == libcc2rs::prev_refcount(({ ({ (*m.borrow()).end_22() }) }), 1_isize as isize)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -398,7 +408,7 @@ pub fn test_5() -> bool {
                 == 1)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -407,7 +417,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -416,7 +426,7 @@ pub fn test_5() -> bool {
                 == 1)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -425,7 +435,7 @@ pub fn test_5() -> bool {
                 == 2_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -434,7 +444,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -443,7 +453,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -452,7 +462,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -461,7 +471,7 @@ pub fn test_5() -> bool {
                 == 2_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -470,7 +480,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -479,7 +489,7 @@ pub fn test_5() -> bool {
                 == 1_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -488,7 +498,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -496,17 +506,22 @@ pub fn test_5() -> bool {
             .borrow())
                 == 2_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 1_isize);
-            (*m.borrow()).erase_54(___position)
-        });
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 1_isize as isize);
+                (*m.borrow()).erase_54(___position)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(({ (({ (*m.borrow()).size() }) == 5_u64) }));
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -515,7 +530,7 @@ pub fn test_5() -> bool {
                 == 1)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -524,7 +539,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -533,7 +548,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -542,7 +557,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -551,7 +566,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -560,7 +575,7 @@ pub fn test_5() -> bool {
                 == 2_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -569,7 +584,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -578,7 +593,7 @@ pub fn test_5() -> bool {
                 == 1_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -587,7 +602,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -595,17 +610,22 @@ pub fn test_5() -> bool {
             .borrow())
                 == 2_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize);
-            (*m.borrow()).erase_54(___position)
-        });
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize as isize);
+                (*m.borrow()).erase_54(___position)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(({ (({ (*m.borrow()).size() }) == 4_u64) }));
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -614,7 +634,7 @@ pub fn test_5() -> bool {
                 == 1)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -623,7 +643,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -632,7 +652,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -641,7 +661,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -650,7 +670,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -659,7 +679,7 @@ pub fn test_5() -> bool {
                 == 1_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -668,7 +688,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -676,17 +696,22 @@ pub fn test_5() -> bool {
             .borrow())
                 == 2_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize);
-            (*m.borrow()).erase_54(___position)
-        });
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize as isize);
+                (*m.borrow()).erase_54(___position)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(({ (({ (*m.borrow()).size() }) == 3_u64) }));
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -695,7 +720,7 @@ pub fn test_5() -> bool {
                 == 1)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -704,7 +729,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -713,7 +738,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -722,7 +747,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -731,7 +756,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -739,17 +764,22 @@ pub fn test_5() -> bool {
             .borrow())
                 == 2_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 0_isize);
-            (*m.borrow()).erase_54(___position)
-        });
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 0_isize as isize);
+                (*m.borrow()).erase_54(___position)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -758,7 +788,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -767,7 +797,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -776,7 +806,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -784,15 +814,19 @@ pub fn test_5() -> bool {
             .borrow())
                 == 2_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 1_isize);
-            (*m.borrow()).erase_54(___position)
-        });
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 1_isize as isize);
+                (*m.borrow()).erase_54(___position)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(({ (({ (*m.borrow()).size() }) == 1_u64) }));
         assert!((*i.borrow()) == ({ (*m.borrow()).end_22() }));
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -801,7 +835,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -809,11 +843,15 @@ pub fn test_5() -> bool {
             .borrow())
                 == 1.5_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                ({ (*m.borrow()).cbegin() });
-            (*m.borrow()).erase_54(___position)
-        });
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    ({ (*m.borrow()).cbegin() });
+                (*m.borrow()).erase_54(___position)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(({ (({ (*m.borrow()).size() }) == 0_u64) }));
         assert!((*i.borrow()) == ({ (*m.borrow()).begin_20() }));
         assert!((*i.borrow()) == ({ (*m.borrow()).end_22() }));
@@ -835,13 +873,14 @@ pub fn test_5() -> bool {
         let i: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
             ({
                 let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 3_isize);
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 3_isize as isize);
                 (*m.borrow()).erase_54(___position)
             }),
         ));
         assert!(({ (({ (*m.borrow()).size() }) == 8_u64) }));
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
         );
         assert!(
             ((*(*({ (*m.borrow()).begin_20() })
@@ -862,7 +901,7 @@ pub fn test_5() -> bool {
                 == 1_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -871,7 +910,7 @@ pub fn test_5() -> bool {
                 == 1)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -880,7 +919,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -889,7 +928,7 @@ pub fn test_5() -> bool {
                 == 1)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -898,7 +937,7 @@ pub fn test_5() -> bool {
                 == 2_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -907,7 +946,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -916,7 +955,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -925,7 +964,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -934,7 +973,7 @@ pub fn test_5() -> bool {
                 == 2_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -943,7 +982,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -952,7 +991,7 @@ pub fn test_5() -> bool {
                 == 1_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -961,7 +1000,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -970,7 +1009,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 7_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 7_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -979,7 +1018,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 7_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 7_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -987,16 +1026,19 @@ pub fn test_5() -> bool {
             .borrow())
                 == 2_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 0_isize);
-            (*m.borrow()).erase_54(___position)
-        })
-        .clone();
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 0_isize as isize);
+                (*m.borrow()).erase_54(___position)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(({ (({ (*m.borrow()).size() }) == 7_u64) }));
         assert!((*i.borrow()) == ({ (*m.borrow()).begin_20() }));
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1005,7 +1047,7 @@ pub fn test_5() -> bool {
                 == 1)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1014,7 +1056,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1023,7 +1065,7 @@ pub fn test_5() -> bool {
                 == 1)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1032,7 +1074,7 @@ pub fn test_5() -> bool {
                 == 2_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1041,7 +1083,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1050,7 +1092,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1059,7 +1101,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1068,7 +1110,7 @@ pub fn test_5() -> bool {
                 == 2_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1077,7 +1119,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1086,7 +1128,7 @@ pub fn test_5() -> bool {
                 == 1_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1095,7 +1137,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1104,7 +1146,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1113,7 +1155,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1121,18 +1163,22 @@ pub fn test_5() -> bool {
             .borrow())
                 == 2_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 5_isize);
-            (*m.borrow()).erase_54(___position)
-        })
-        .clone();
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 5_isize as isize);
+                (*m.borrow()).erase_54(___position)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(({ (({ (*m.borrow()).size() }) == 6_u64) }));
         assert!(
-            (*i.borrow()) == libcc2rs::prev_refcount(({ ({ (*m.borrow()).end_22() }) }), 1_isize)
+            (*i.borrow())
+                == libcc2rs::prev_refcount(({ ({ (*m.borrow()).end_22() }) }), 1_isize as isize)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1141,7 +1187,7 @@ pub fn test_5() -> bool {
                 == 1)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1150,7 +1196,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1159,7 +1205,7 @@ pub fn test_5() -> bool {
                 == 1)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1168,7 +1214,7 @@ pub fn test_5() -> bool {
                 == 2_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1177,7 +1223,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1186,7 +1232,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1195,7 +1241,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1204,7 +1250,7 @@ pub fn test_5() -> bool {
                 == 2_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1213,7 +1259,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1222,7 +1268,7 @@ pub fn test_5() -> bool {
                 == 1_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1231,7 +1277,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 5_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1239,18 +1285,22 @@ pub fn test_5() -> bool {
             .borrow())
                 == 2_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 1_isize);
-            (*m.borrow()).erase_54(___position)
-        })
-        .clone();
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 1_isize as isize);
+                (*m.borrow()).erase_54(___position)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(({ (({ (*m.borrow()).size() }) == 5_u64) }));
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1259,7 +1309,7 @@ pub fn test_5() -> bool {
                 == 1)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1268,7 +1318,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1277,7 +1327,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1286,7 +1336,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1295,7 +1345,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1304,7 +1354,7 @@ pub fn test_5() -> bool {
                 == 2_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1313,7 +1363,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1322,7 +1372,7 @@ pub fn test_5() -> bool {
                 == 1_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1331,7 +1381,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 4_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1339,18 +1389,22 @@ pub fn test_5() -> bool {
             .borrow())
                 == 2_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize);
-            (*m.borrow()).erase_54(___position)
-        })
-        .clone();
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize as isize);
+                (*m.borrow()).erase_54(___position)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(({ (({ (*m.borrow()).size() }) == 4_u64) }));
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1359,7 +1413,7 @@ pub fn test_5() -> bool {
                 == 1)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1368,7 +1422,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1377,7 +1431,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1386,7 +1440,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1395,7 +1449,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1404,7 +1458,7 @@ pub fn test_5() -> bool {
                 == 1_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1413,7 +1467,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1421,18 +1475,22 @@ pub fn test_5() -> bool {
             .borrow())
                 == 2_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize);
-            (*m.borrow()).erase_54(___position)
-        })
-        .clone();
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize as isize);
+                (*m.borrow()).erase_54(___position)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(({ (({ (*m.borrow()).size() }) == 3_u64) }));
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1441,7 +1499,7 @@ pub fn test_5() -> bool {
                 == 1)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1450,7 +1508,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1459,7 +1517,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1468,7 +1526,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1477,7 +1535,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1485,18 +1543,22 @@ pub fn test_5() -> bool {
             .borrow())
                 == 2_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 0_isize);
-            (*m.borrow()).erase_54(___position)
-        })
-        .clone();
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 0_isize as isize);
+                (*m.borrow()).erase_54(___position)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1505,7 +1567,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1514,7 +1576,7 @@ pub fn test_5() -> bool {
                 == 1.5_f64)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1523,7 +1585,7 @@ pub fn test_5() -> bool {
                 == 3)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1531,16 +1593,19 @@ pub fn test_5() -> bool {
             .borrow())
                 == 2_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 1_isize);
-            (*m.borrow()).erase_54(___position)
-        })
-        .clone();
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 1_isize as isize);
+                (*m.borrow()).erase_54(___position)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(({ (({ (*m.borrow()).size() }) == 1_u64) }));
         assert!((*i.borrow()) == ({ (*m.borrow()).end_22() }));
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1549,7 +1614,7 @@ pub fn test_5() -> bool {
                 == 2)
         );
         assert!(
-            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize)
+            ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize as isize)
                 .iter_deref()
                 .upgrade()
                 .deref())
@@ -1557,12 +1622,15 @@ pub fn test_5() -> bool {
             .borrow())
                 == 1.5_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                ({ (*m.borrow()).cbegin() });
-            (*m.borrow()).erase_54(___position)
-        })
-        .clone();
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    ({ (*m.borrow()).cbegin() });
+                (*m.borrow()).erase_54(___position)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(({ (({ (*m.borrow()).size() }) == 0_u64) }));
         assert!((*i.borrow()) == ({ (*m.borrow()).begin_20() }));
         assert!((*i.borrow()) == ({ (*m.borrow()).end_22() }));

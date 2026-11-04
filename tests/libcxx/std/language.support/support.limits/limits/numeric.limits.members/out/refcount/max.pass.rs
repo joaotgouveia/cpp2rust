@@ -157,13 +157,13 @@ pub fn test_28(mut expected: i64) {
     assert!(is_bounded_29.with(|rc| *rc.borrow()));
 }
 pub fn test_30(mut expected: u64) {
-    assert!((<u64>::MAX == expected));
+    assert!((({ std_numeric_limits_unsigned_long_long_::max() }) == expected));
     assert!(is_bounded_31.with(|rc| *rc.borrow()));
-    assert!((<u64>::MAX == expected));
+    assert!((({ std_numeric_limits_unsigned_long_long_::max() }) == expected));
     assert!(is_bounded_31.with(|rc| *rc.borrow()));
-    assert!((<u64>::MAX == expected));
+    assert!((({ std_numeric_limits_unsigned_long_long_::max() }) == expected));
     assert!(is_bounded_31.with(|rc| *rc.borrow()));
-    assert!((<u64>::MAX == expected));
+    assert!((({ std_numeric_limits_unsigned_long_long_::max() }) == expected));
     assert!(is_bounded_31.with(|rc| *rc.borrow()));
 }
 pub fn test_32(mut expected: i128) {
@@ -177,13 +177,13 @@ pub fn test_32(mut expected: i128) {
     assert!(is_bounded_33.with(|rc| *rc.borrow()));
 }
 pub fn test_34(mut expected: u128) {
-    assert!((<u128>::MAX == expected));
+    assert!((({ std_numeric_limits_unsigned___int128_::max() }) == expected));
     assert!(is_bounded_35.with(|rc| *rc.borrow()));
-    assert!((<u128>::MAX == expected));
+    assert!((({ std_numeric_limits_unsigned___int128_::max() }) == expected));
     assert!(is_bounded_35.with(|rc| *rc.borrow()));
-    assert!((<u128>::MAX == expected));
+    assert!((({ std_numeric_limits_unsigned___int128_::max() }) == expected));
     assert!(is_bounded_35.with(|rc| *rc.borrow()));
-    assert!((<u128>::MAX == expected));
+    assert!((({ std_numeric_limits_unsigned___int128_::max() }) == expected));
     assert!(is_bounded_35.with(|rc| *rc.borrow()));
 }
 pub fn test_36(mut expected: f32) {

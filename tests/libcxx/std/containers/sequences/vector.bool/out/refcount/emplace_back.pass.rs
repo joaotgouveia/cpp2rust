@@ -61,7 +61,9 @@ pub fn tests_4() -> bool {
         let c: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
         let mut r1: Ptr<bool> = {
             let __init = false;
-            (*c.borrow_mut()).push(__init)
+            c.as_pointer()
+                .with_mut(|__v: &mut Vec<bool>| __v.push(__init));
+            c.as_pointer().decay().to_last()
         };
         assert!(({ ((&(*c.borrow())).len() == 1_usize) }));
         assert!(((c.decay().read() as i32) == (false as i32)));
@@ -76,7 +78,9 @@ pub fn tests_4() -> bool {
         };
         let mut r2: Ptr<bool> = {
             let __init = true;
-            (*c.borrow_mut()).push(__init)
+            c.as_pointer()
+                .with_mut(|__v: &mut Vec<bool>| __v.push(__init));
+            c.as_pointer().decay().to_last()
         };
         assert!(({ ((&(*c.borrow())).len() == 2_usize) }));
         assert!(((c.decay().read() as i32) == (false as i32)));
@@ -92,7 +96,9 @@ pub fn tests_4() -> bool {
         };
         {
             let __init = true;
-            (*c.borrow_mut()).push(__init)
+            c.as_pointer()
+                .with_mut(|__v: &mut Vec<bool>| __v.push(__init));
+            c.as_pointer().decay().to_last()
         };
         assert!(({ ((&(*c.borrow())).len() == 3_usize) }));
         assert!(((c.decay().read() as i32) == (false as i32)));
@@ -103,7 +109,9 @@ pub fn tests_4() -> bool {
         let c: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
         let mut r1: Ptr<bool> = {
             let __init = false;
-            (*c.borrow_mut()).push(__init)
+            c.as_pointer()
+                .with_mut(|__v: &mut Vec<bool>| __v.push(__init));
+            c.as_pointer().decay().to_last()
         };
         assert!(({ ((&(*c.borrow())).len() == 1_usize) }));
         assert!(((c.decay().read() as i32) == (false as i32)));
@@ -118,7 +126,9 @@ pub fn tests_4() -> bool {
         };
         let mut r2: Ptr<bool> = {
             let __init = true;
-            (*c.borrow_mut()).push(__init)
+            c.as_pointer()
+                .with_mut(|__v: &mut Vec<bool>| __v.push(__init));
+            c.as_pointer().decay().to_last()
         };
         assert!(({ ((&(*c.borrow())).len() == 2_usize) }));
         assert!(((c.decay().read() as i32) == (false as i32)));
@@ -134,7 +144,9 @@ pub fn tests_4() -> bool {
         };
         {
             let __init = true;
-            (*c.borrow_mut()).push(__init)
+            c.as_pointer()
+                .with_mut(|__v: &mut Vec<bool>| __v.push(__init));
+            c.as_pointer().decay().to_last()
         };
         assert!(({ ((&(*c.borrow())).len() == 3_usize) }));
         assert!(((c.decay().read() as i32) == (false as i32)));

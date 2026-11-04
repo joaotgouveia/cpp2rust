@@ -488,14 +488,16 @@ pub fn test_unsigned_26() {
         );
     }
     {
-        let s: Value<Vec<i8>> = Rc::new(RefCell::new(({ to_string_27(<u64>::MAX) })));
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new(
+            ({ to_string_27(({ std_numeric_limits_unsigned_long_long_::max() })) }),
+        ));
         assert!(
             ({
                 (((*s.borrow()).len() - 1) == ((digits10_28.with(|rc| *rc.borrow()) + 1) as usize))
             })
         );
         let mut t: u64 = ({ parse_integer_10((s.as_pointer()).reinterpret_cast::<Vec<i8>>()) });
-        assert!((t == <u64>::MAX));
+        assert!((t == ({ std_numeric_limits_unsigned_long_long_::max() })));
     }
 }
 pub fn test_float_29() {

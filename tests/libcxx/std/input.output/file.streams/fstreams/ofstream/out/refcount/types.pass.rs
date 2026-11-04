@@ -184,7 +184,10 @@ impl UserManagedBufferImpl for Ptr<UserManagedBuffer> {
                     .map(|_| 0_i8)
                     .collect::<Box<[i8]>>(),
             );
-            field!((*self), buffers_).with_mut(|__v: &mut Vec<Ptr<i8>>| __v.push(__init))
+            field_ref!((*self), buffers_)
+                .as_pointer()
+                .with_mut(|__v: &mut Vec<Ptr<i8>>| __v.push(__init));
+            field_ref!((*self), buffers_).as_pointer().decay().to_last()
         };
         ({
             let ___s: Ptr<i8> = (field_ref!((*self), buffers_).decay().to_last().read());
@@ -202,7 +205,10 @@ impl UserManagedBufferImpl for Ptr<UserManagedBuffer> {
                     .map(|_| 0_i8)
                     .collect::<Box<[i8]>>(),
             );
-            field!((*self), buffers_).with_mut(|__v: &mut Vec<Ptr<i8>>| __v.push(__init))
+            field_ref!((*self), buffers_)
+                .as_pointer()
+                .with_mut(|__v: &mut Vec<Ptr<i8>>| __v.push(__init));
+            field_ref!((*self), buffers_).as_pointer().decay().to_last()
         };
         ({
             let ___s: Ptr<i8> = (field_ref!((*self), buffers_).decay().to_last().read());
@@ -220,7 +226,13 @@ impl UserManagedBufferImpl for Ptr<UserManagedBuffer> {
                     .map(|_| 0_i32)
                     .collect::<Box<[i32]>>(),
             );
-            field!((*self), wbuffers_).with_mut(|__v: &mut Vec<Ptr<i32>>| __v.push(__init))
+            field_ref!((*self), wbuffers_)
+                .as_pointer()
+                .with_mut(|__v: &mut Vec<Ptr<i32>>| __v.push(__init));
+            field_ref!((*self), wbuffers_)
+                .as_pointer()
+                .decay()
+                .to_last()
         };
         ({
             let ___s: Ptr<i32> = (field_ref!((*self), wbuffers_).decay().to_last().read());
@@ -238,7 +250,13 @@ impl UserManagedBufferImpl for Ptr<UserManagedBuffer> {
                     .map(|_| 0_i32)
                     .collect::<Box<[i32]>>(),
             );
-            field!((*self), wbuffers_).with_mut(|__v: &mut Vec<Ptr<i32>>| __v.push(__init))
+            field_ref!((*self), wbuffers_)
+                .as_pointer()
+                .with_mut(|__v: &mut Vec<Ptr<i32>>| __v.push(__init));
+            field_ref!((*self), wbuffers_)
+                .as_pointer()
+                .decay()
+                .to_last()
         };
         ({
             let ___s: Ptr<i32> = (field_ref!((*self), wbuffers_).decay().to_last().read());

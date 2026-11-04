@@ -27,7 +27,7 @@ pub fn test_node_container_0(conv: FnPtr<fn(i32) -> (Value<i32>, Value<i32>)>) {
                     libcc2rs::next_refcount(
                         c.as_pointer()
                             .with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.begin()),
-                        (i as isize),
+                        (i as isize) as isize,
                     );
                 let ___last: BidirectionalIterator<(Value<i32>, Value<i32>)> = c
                     .as_pointer()
@@ -42,7 +42,8 @@ pub fn test_node_container_0(conv: FnPtr<fn(i32) -> (Value<i32>, Value<i32>)>) {
                             ({ (val).clone() } == {
                                 (libcc2rs::next_refcount(
                                     c.with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.begin()),
-                                    (invoke_count.with_mut(|__v| __v.postfix_inc()) as isize),
+                                    (invoke_count.with_mut(|__v| __v.postfix_inc()) as isize)
+                                        as isize,
                                 )
                                 .iter_deref())
                             })
@@ -67,7 +68,7 @@ pub fn test_node_container_0(conv: FnPtr<fn(i32) -> (Value<i32>, Value<i32>)>) {
                     libcc2rs::prev_refcount(
                         c.as_pointer()
                             .with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.end()),
-                        (i as isize),
+                        (i as isize) as isize,
                     );
                 let ___f: FnPtr<fn(Ptr<(Value<i32>, Value<i32>)>)> = lambda!(
                     {
@@ -79,7 +80,8 @@ pub fn test_node_container_0(conv: FnPtr<fn(i32) -> (Value<i32>, Value<i32>)>) {
                             ({ (val).clone() } == {
                                 (libcc2rs::next_refcount(
                                     c.with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.begin()),
-                                    (invoke_count.with_mut(|__v| __v.postfix_inc()) as isize),
+                                    (invoke_count.with_mut(|__v| __v.postfix_inc()) as isize)
+                                        as isize,
                                 )
                                 .iter_deref())
                             })
@@ -112,7 +114,8 @@ pub fn test_node_container_0(conv: FnPtr<fn(i32) -> (Value<i32>, Value<i32>)>) {
                             ({ (i).clone() } == {
                                 (libcc2rs::next_refcount(
                                     c.with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.begin()),
-                                    (invoke_count.with_mut(|__v| __v.postfix_inc()) as isize),
+                                    (invoke_count.with_mut(|__v| __v.postfix_inc()) as isize)
+                                        as isize,
                                 )
                                 .iter_deref())
                             })
@@ -142,7 +145,8 @@ pub fn test_node_container_0(conv: FnPtr<fn(i32) -> (Value<i32>, Value<i32>)>) {
                             ({ (i).clone() } == {
                                 (libcc2rs::next_refcount(
                                     c.with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.begin()),
-                                    (invoke_count.with_mut(|__v| __v.postfix_inc()) as isize),
+                                    (invoke_count.with_mut(|__v| __v.postfix_inc()) as isize)
+                                        as isize,
                                 )
                                 .iter_deref())
                             })
@@ -163,7 +167,7 @@ pub fn test_node_container_0(conv: FnPtr<fn(i32) -> (Value<i32>, Value<i32>)>) {
             let ___last: BidirectionalIterator<(Value<i32>, Value<i32>)> = libcc2rs::next_refcount(
                 c.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.begin()),
-                1_isize,
+                1_isize as isize,
             );
             let ___f: FnPtr<fn(Ptr<(Value<i32>, Value<i32>)>)> = lambda!(
                 {
@@ -175,7 +179,7 @@ pub fn test_node_container_0(conv: FnPtr<fn(i32) -> (Value<i32>, Value<i32>)>) {
                         ({ (i).clone() } == {
                             (libcc2rs::next_refcount(
                                 c.with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.begin()),
-                                (invoke_count.with_mut(|__v| __v.postfix_inc()) as isize),
+                                (invoke_count.with_mut(|__v| __v.postfix_inc()) as isize) as isize,
                             )
                             .iter_deref())
                         })

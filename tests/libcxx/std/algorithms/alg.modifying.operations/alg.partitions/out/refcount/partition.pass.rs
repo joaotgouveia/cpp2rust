@@ -730,27 +730,35 @@ pub fn test_15() -> bool {
         );
         i.prefix_inc();
     }
-    (*r.borrow_mut()) = ({
-        let ___first: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        partition_16(___first, ___last, <is_odd>::default())
-    });
+    {
+        let __a1 = ({
+            let ___first: forward_iterator_int_ptr_ =
+                forward_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: forward_iterator_int_ptr_ =
+                forward_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            partition_16(___first, ___last, <is_odd>::default())
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!((({ base_2(r.as_pointer(),) }) == (ia.as_pointer() as Ptr::<i32>)));
     let mut i: u32 = 0_u32;
     'loop_: while (i < sa) {
         (*ia.borrow_mut())[(i) as usize] = { (((2_u32).wrapping_mul(i)) as i32) };
         i.prefix_inc();
     }
-    (*r.borrow_mut()) = ({
-        let ___first: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+    {
+        let __a1 = ({
+            let ___first: forward_iterator_int_ptr_ =
+                forward_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+            });
+            partition_16(___first, ___last, <is_odd>::default())
         });
-        partition_16(___first, ___last, <is_odd>::default())
-    });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!((({ base_2(r.as_pointer(),) }) == (ia.as_pointer() as Ptr::<i32>)));
     let mut i: u32 = 0_u32;
     'loop_: while (i < sa) {
@@ -758,14 +766,18 @@ pub fn test_15() -> bool {
             { ((((2_u32).wrapping_mul(i)).wrapping_add(1_u32)) as i32) };
         i.prefix_inc();
     }
-    (*r.borrow_mut()) = ({
-        let ___first: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+    {
+        let __a1 = ({
+            let ___first: forward_iterator_int_ptr_ =
+                forward_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+            });
+            partition_16(___first, ___last, <is_odd>::default())
         });
-        partition_16(___first, ___last, <is_odd>::default())
-    });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_2(r.as_pointer(),) }) == (ia.as_pointer() as Ptr::<i32>).offset((sa) as isize))
     );
@@ -776,14 +788,18 @@ pub fn test_15() -> bool {
         i.prefix_inc();
     }
     (*ia.borrow_mut())[((sa).wrapping_sub(1_u32)) as usize] = 10;
-    (*r.borrow_mut()) = ({
-        let ___first: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+    {
+        let __a1 = ({
+            let ___first: forward_iterator_int_ptr_ =
+                forward_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+            });
+            partition_16(___first, ___last, <is_odd>::default())
         });
-        partition_16(___first, ___last, <is_odd>::default())
-    });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_2(r.as_pointer(),) })
             == (ia.as_pointer() as Ptr::<i32>)
@@ -821,14 +837,18 @@ pub fn test_15() -> bool {
         i.prefix_inc();
     }
     (*ia.borrow_mut())[(0) as usize] = 10;
-    (*r.borrow_mut()) = ({
-        let ___first: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+    {
+        let __a1 = ({
+            let ___first: forward_iterator_int_ptr_ =
+                forward_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+            });
+            partition_16(___first, ___last, <is_odd>::default())
         });
-        partition_16(___first, ___last, <is_odd>::default())
-    });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_2(r.as_pointer(),) })
             == (ia.as_pointer() as Ptr::<i32>)
@@ -865,14 +885,18 @@ pub fn test_15() -> bool {
         i.prefix_inc();
     }
     (*ia.borrow_mut())[((sa).wrapping_sub(1_u32)) as usize] = 11;
-    (*r.borrow_mut()) = ({
-        let ___first: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+    {
+        let __a1 = ({
+            let ___first: forward_iterator_int_ptr_ =
+                forward_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+            });
+            partition_16(___first, ___last, <is_odd>::default())
         });
-        partition_16(___first, ___last, <is_odd>::default())
-    });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_2(r.as_pointer(),) }) == (ia.as_pointer() as Ptr::<i32>).offset((1) as isize))
     );
@@ -906,14 +930,18 @@ pub fn test_15() -> bool {
         i.prefix_inc();
     }
     (*ia.borrow_mut())[(0) as usize] = 11;
-    (*r.borrow_mut()) = ({
-        let ___first: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+    {
+        let __a1 = ({
+            let ___first: forward_iterator_int_ptr_ =
+                forward_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+            });
+            partition_16(___first, ___last, <is_odd>::default())
         });
-        partition_16(___first, ___last, <is_odd>::default())
-    });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_2(r.as_pointer(),) }) == (ia.as_pointer() as Ptr::<i32>).offset((1) as isize))
     );
@@ -985,27 +1013,36 @@ pub fn test_17() -> bool {
         );
         i.prefix_inc();
     }
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        partition_18(___first, ___last, <is_odd>::default())
-    });
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_int_ptr_ =
+                bidirectional_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_int_ptr_ =
+                bidirectional_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            partition_18(___first, ___last, <is_odd>::default())
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!((({ base_4(r.as_pointer(),) }) == (ia.as_pointer() as Ptr::<i32>)));
     let mut i: u32 = 0_u32;
     'loop_: while (i < sa) {
         (*ia.borrow_mut())[(i) as usize] = { (((2_u32).wrapping_mul(i)) as i32) };
         i.prefix_inc();
     }
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_int_ptr_ =
+                bidirectional_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_int_ptr_ =
+                bidirectional_iterator_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            partition_18(___first, ___last, <is_odd>::default())
         });
-        partition_18(___first, ___last, <is_odd>::default())
-    });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!((({ base_4(r.as_pointer(),) }) == (ia.as_pointer() as Ptr::<i32>)));
     let mut i: u32 = 0_u32;
     'loop_: while (i < sa) {
@@ -1013,14 +1050,19 @@ pub fn test_17() -> bool {
             { ((((2_u32).wrapping_mul(i)).wrapping_add(1_u32)) as i32) };
         i.prefix_inc();
     }
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_int_ptr_ =
+                bidirectional_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_int_ptr_ =
+                bidirectional_iterator_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            partition_18(___first, ___last, <is_odd>::default())
         });
-        partition_18(___first, ___last, <is_odd>::default())
-    });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_4(r.as_pointer(),) }) == (ia.as_pointer() as Ptr::<i32>).offset((sa) as isize))
     );
@@ -1031,14 +1073,19 @@ pub fn test_17() -> bool {
         i.prefix_inc();
     }
     (*ia.borrow_mut())[((sa).wrapping_sub(1_u32)) as usize] = 10;
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_int_ptr_ =
+                bidirectional_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_int_ptr_ =
+                bidirectional_iterator_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            partition_18(___first, ___last, <is_odd>::default())
         });
-        partition_18(___first, ___last, <is_odd>::default())
-    });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_4(r.as_pointer(),) })
             == (ia.as_pointer() as Ptr::<i32>)
@@ -1076,14 +1123,19 @@ pub fn test_17() -> bool {
         i.prefix_inc();
     }
     (*ia.borrow_mut())[(0) as usize] = 10;
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_int_ptr_ =
+                bidirectional_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_int_ptr_ =
+                bidirectional_iterator_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            partition_18(___first, ___last, <is_odd>::default())
         });
-        partition_18(___first, ___last, <is_odd>::default())
-    });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_4(r.as_pointer(),) })
             == (ia.as_pointer() as Ptr::<i32>)
@@ -1120,14 +1172,19 @@ pub fn test_17() -> bool {
         i.prefix_inc();
     }
     (*ia.borrow_mut())[((sa).wrapping_sub(1_u32)) as usize] = 11;
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_int_ptr_ =
+                bidirectional_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_int_ptr_ =
+                bidirectional_iterator_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            partition_18(___first, ___last, <is_odd>::default())
         });
-        partition_18(___first, ___last, <is_odd>::default())
-    });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_4(r.as_pointer(),) }) == (ia.as_pointer() as Ptr::<i32>).offset((1) as isize))
     );
@@ -1161,14 +1218,19 @@ pub fn test_17() -> bool {
         i.prefix_inc();
     }
     (*ia.borrow_mut())[(0) as usize] = 11;
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_int_ptr_ = bidirectional_iterator_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_int_ptr_ =
+                bidirectional_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_int_ptr_ =
+                bidirectional_iterator_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            partition_18(___first, ___last, <is_odd>::default())
         });
-        partition_18(___first, ___last, <is_odd>::default())
-    });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_4(r.as_pointer(),) }) == (ia.as_pointer() as Ptr::<i32>).offset((1) as isize))
     );
@@ -1240,27 +1302,36 @@ pub fn test_19() -> bool {
         );
         i.prefix_inc();
     }
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        partition_20(___first, ___last, <is_odd>::default())
-    });
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_int_ptr_ =
+                random_access_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_int_ptr_ =
+                random_access_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            partition_20(___first, ___last, <is_odd>::default())
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!((({ base_6(r.as_pointer(),) }) == (ia.as_pointer() as Ptr::<i32>)));
     let mut i: u32 = 0_u32;
     'loop_: while (i < sa) {
         (*ia.borrow_mut())[(i) as usize] = { (((2_u32).wrapping_mul(i)) as i32) };
         i.prefix_inc();
     }
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_int_ptr_ =
+                random_access_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_int_ptr_ =
+                random_access_iterator_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            partition_20(___first, ___last, <is_odd>::default())
         });
-        partition_20(___first, ___last, <is_odd>::default())
-    });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!((({ base_6(r.as_pointer(),) }) == (ia.as_pointer() as Ptr::<i32>)));
     let mut i: u32 = 0_u32;
     'loop_: while (i < sa) {
@@ -1268,14 +1339,19 @@ pub fn test_19() -> bool {
             { ((((2_u32).wrapping_mul(i)).wrapping_add(1_u32)) as i32) };
         i.prefix_inc();
     }
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_int_ptr_ =
+                random_access_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_int_ptr_ =
+                random_access_iterator_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            partition_20(___first, ___last, <is_odd>::default())
         });
-        partition_20(___first, ___last, <is_odd>::default())
-    });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_6(r.as_pointer(),) }) == (ia.as_pointer() as Ptr::<i32>).offset((sa) as isize))
     );
@@ -1286,14 +1362,19 @@ pub fn test_19() -> bool {
         i.prefix_inc();
     }
     (*ia.borrow_mut())[((sa).wrapping_sub(1_u32)) as usize] = 10;
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_int_ptr_ =
+                random_access_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_int_ptr_ =
+                random_access_iterator_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            partition_20(___first, ___last, <is_odd>::default())
         });
-        partition_20(___first, ___last, <is_odd>::default())
-    });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_6(r.as_pointer(),) })
             == (ia.as_pointer() as Ptr::<i32>)
@@ -1331,14 +1412,19 @@ pub fn test_19() -> bool {
         i.prefix_inc();
     }
     (*ia.borrow_mut())[(0) as usize] = 10;
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_int_ptr_ =
+                random_access_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_int_ptr_ =
+                random_access_iterator_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            partition_20(___first, ___last, <is_odd>::default())
         });
-        partition_20(___first, ___last, <is_odd>::default())
-    });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_6(r.as_pointer(),) })
             == (ia.as_pointer() as Ptr::<i32>)
@@ -1375,14 +1461,19 @@ pub fn test_19() -> bool {
         i.prefix_inc();
     }
     (*ia.borrow_mut())[((sa).wrapping_sub(1_u32)) as usize] = 11;
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_int_ptr_ =
+                random_access_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_int_ptr_ =
+                random_access_iterator_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            partition_20(___first, ___last, <is_odd>::default())
         });
-        partition_20(___first, ___last, <is_odd>::default())
-    });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_6(r.as_pointer(),) }) == (ia.as_pointer() as Ptr::<i32>).offset((1) as isize))
     );
@@ -1416,14 +1507,19 @@ pub fn test_19() -> bool {
         i.prefix_inc();
     }
     (*ia.borrow_mut())[(0) as usize] = 11;
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_int_ptr_ = random_access_iterator_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_int_ptr_ =
+                random_access_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_int_ptr_ =
+                random_access_iterator_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            partition_20(___first, ___last, <is_odd>::default())
         });
-        partition_20(___first, ___last, <is_odd>::default())
-    });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_6(r.as_pointer(),) }) == (ia.as_pointer() as Ptr::<i32>).offset((1) as isize))
     );

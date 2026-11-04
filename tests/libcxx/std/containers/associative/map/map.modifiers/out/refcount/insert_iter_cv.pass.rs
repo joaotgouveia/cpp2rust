@@ -76,14 +76,18 @@ pub fn do_insert_iter_cv_test_4() -> bool {
         Rc::new(RefCell::new(1)),
         Rc::new(RefCell::new(1.5_f64)),
     )));
-    (*r.borrow_mut()) = ({
-        let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-            <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-            );
-        (*m.borrow()).insert_58(___position, v2.as_pointer())
-    });
+    {
+        let __a1 = ({
+            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
+                );
+            (*m.borrow()).insert_58(___position, v2.as_pointer())
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (*r.borrow())
             == m.as_pointer()
@@ -96,20 +100,24 @@ pub fn do_insert_iter_cv_test_4() -> bool {
         Rc::new(RefCell::new(3)),
         Rc::new(RefCell::new(3.5_f64)),
     )));
-    (*r.borrow_mut()) = ({
-        let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-            <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-            );
-        (*m.borrow()).insert_58(___position, v3.as_pointer())
-    });
+    {
+        let __a1 = ({
+            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
+                );
+            (*m.borrow()).insert_58(___position, v3.as_pointer())
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (*r.borrow())
             == libcc2rs::prev_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                1_isize
+                1_isize as isize
             )
     );
     assert!(({ ((*m.borrow()).len() == 3_usize) }));
@@ -119,20 +127,24 @@ pub fn do_insert_iter_cv_test_4() -> bool {
         Rc::new(RefCell::new(3)),
         Rc::new(RefCell::new(4.5_f64)),
     )));
-    (*r.borrow_mut()) = ({
-        let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-            <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-            );
-        (*m.borrow()).insert_58(___position, v4.as_pointer())
-    });
+    {
+        let __a1 = ({
+            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
+                );
+            (*m.borrow()).insert_58(___position, v4.as_pointer())
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (*r.borrow())
             == libcc2rs::prev_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                1_isize
+                1_isize as isize
             )
     );
     assert!(({ ((*m.borrow()).len() == 3_usize) }));
@@ -168,15 +180,18 @@ pub fn do_insert_iter_cv_test_5() -> bool {
         Rc::new(RefCell::new(1)),
         Rc::new(RefCell::new(1.5_f64)),
     )));
-    (*r.borrow_mut()) = ({
-        let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-            <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-            );
-        (*m.borrow()).insert_58(___position, v2.as_pointer())
-    })
-    .clone();
+    {
+        let __a1 = ({
+            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
+                );
+            (*m.borrow()).insert_58(___position, v2.as_pointer())
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+        r.as_pointer()
+    };
     assert!(
         (*r.borrow())
             == m.as_pointer()
@@ -189,21 +204,24 @@ pub fn do_insert_iter_cv_test_5() -> bool {
         Rc::new(RefCell::new(3)),
         Rc::new(RefCell::new(3.5_f64)),
     )));
-    (*r.borrow_mut()) = ({
-        let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-            <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-            );
-        (*m.borrow()).insert_58(___position, v3.as_pointer())
-    })
-    .clone();
+    {
+        let __a1 = ({
+            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
+                );
+            (*m.borrow()).insert_58(___position, v3.as_pointer())
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+        r.as_pointer()
+    };
     assert!(
         (*r.borrow())
             == libcc2rs::prev_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                1_isize
+                1_isize as isize
             )
     );
     assert!(({ ((*m.borrow()).len() == 3_usize) }));
@@ -213,21 +231,24 @@ pub fn do_insert_iter_cv_test_5() -> bool {
         Rc::new(RefCell::new(3)),
         Rc::new(RefCell::new(4.5_f64)),
     )));
-    (*r.borrow_mut()) = ({
-        let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-            <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-            );
-        (*m.borrow()).insert_58(___position, v4.as_pointer())
-    })
-    .clone();
+    {
+        let __a1 = ({
+            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
+                );
+            (*m.borrow()).insert_58(___position, v4.as_pointer())
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+        r.as_pointer()
+    };
     assert!(
         (*r.borrow())
             == libcc2rs::prev_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                1_isize
+                1_isize as isize
             )
     );
     assert!(({ ((*m.borrow()).len() == 3_usize) }));

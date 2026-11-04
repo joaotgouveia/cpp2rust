@@ -397,18 +397,18 @@ pub fn test_alloc_11(new_alloc: Ptr<min_allocator_std_pair_const_int__int__>) {
                 std___detail__Node_iterator_std_pair_const_int__int___false__false_,
             > = Rc::new(RefCell::new(libcc2rs::next_refcount(
                 ({ (*(*range.borrow()).0.borrow()).clone() }),
-                0_isize,
+                0_isize as isize,
             )));
             let second_element: Value<
                 std___detail__Node_iterator_std_pair_const_int__int___false__false_,
             > = Rc::new(RefCell::new(libcc2rs::next_refcount(
                 ({ (*(*range.borrow()).0.borrow()).clone() }),
-                1_isize,
+                1_isize as isize,
             )));
             let end: Value<std___detail__Node_iterator_std_pair_const_int__int___false__false_> =
                 Rc::new(RefCell::new(libcc2rs::next_refcount(
                     ({ (*(*range.borrow()).0.borrow()).clone() }),
-                    2_isize,
+                    2_isize as isize,
                 )));
             assert!(({ (*(*range.borrow()).1.borrow()) == (*end.borrow()) }));
             assert!(
@@ -522,19 +522,19 @@ pub fn test_alloc_11(new_alloc: Ptr<min_allocator_std_pair_const_int__int__>) {
                 std___detail__Node_const_iterator_std_pair_const_int__int___false__false_,
             > = Rc::new(RefCell::new(libcc2rs::next_refcount(
                 ({ (*(*range.borrow()).0.borrow()).clone() }),
-                0_isize,
+                0_isize as isize,
             )));
             let second_element: Value<
                 std___detail__Node_const_iterator_std_pair_const_int__int___false__false_,
             > = Rc::new(RefCell::new(libcc2rs::next_refcount(
                 ({ (*(*range.borrow()).0.borrow()).clone() }),
-                1_isize,
+                1_isize as isize,
             )));
             let end: Value<
                 std___detail__Node_const_iterator_std_pair_const_int__int___false__false_,
             > = Rc::new(RefCell::new(libcc2rs::next_refcount(
                 ({ (*(*range.borrow()).0.borrow()).clone() }),
-                2_isize,
+                2_isize as isize,
             )));
             assert!(({ (*(*range.borrow()).1.borrow()) == (*end.borrow()) }));
             assert!(
@@ -794,18 +794,18 @@ pub fn test_alloc_16(new_alloc: Ptr<test_allocator_std_pair_const_int__int__>) {
                 std___detail__Node_iterator_std_pair_const_int__int___false__false_,
             > = Rc::new(RefCell::new(libcc2rs::next_refcount(
                 ({ (*(*range.borrow()).0.borrow()).clone() }),
-                0_isize,
+                0_isize as isize,
             )));
             let second_element: Value<
                 std___detail__Node_iterator_std_pair_const_int__int___false__false_,
             > = Rc::new(RefCell::new(libcc2rs::next_refcount(
                 ({ (*(*range.borrow()).0.borrow()).clone() }),
-                1_isize,
+                1_isize as isize,
             )));
             let end: Value<std___detail__Node_iterator_std_pair_const_int__int___false__false_> =
                 Rc::new(RefCell::new(libcc2rs::next_refcount(
                     ({ (*(*range.borrow()).0.borrow()).clone() }),
-                    2_isize,
+                    2_isize as isize,
                 )));
             assert!(({ (*(*range.borrow()).1.borrow()) == (*end.borrow()) }));
             assert!(
@@ -916,19 +916,19 @@ pub fn test_alloc_16(new_alloc: Ptr<test_allocator_std_pair_const_int__int__>) {
                 std___detail__Node_const_iterator_std_pair_const_int__int___false__false_,
             > = Rc::new(RefCell::new(libcc2rs::next_refcount(
                 ({ (*(*range.borrow()).0.borrow()).clone() }),
-                0_isize,
+                0_isize as isize,
             )));
             let second_element: Value<
                 std___detail__Node_const_iterator_std_pair_const_int__int___false__false_,
             > = Rc::new(RefCell::new(libcc2rs::next_refcount(
                 ({ (*(*range.borrow()).0.borrow()).clone() }),
-                1_isize,
+                1_isize as isize,
             )));
             let end: Value<
                 std___detail__Node_const_iterator_std_pair_const_int__int___false__false_,
             > = Rc::new(RefCell::new(libcc2rs::next_refcount(
                 ({ (*(*range.borrow()).0.borrow()).clone() }),
-                2_isize,
+                2_isize as isize,
             )));
             assert!(({ (*(*range.borrow()).1.borrow()) == (*end.borrow()) }));
             assert!(

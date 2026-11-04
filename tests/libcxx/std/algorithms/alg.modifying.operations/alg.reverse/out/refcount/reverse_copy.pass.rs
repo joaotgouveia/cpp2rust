@@ -747,37 +747,45 @@ pub fn test_21() {
     ));
     assert!((({ base_0(r.as_pointer(),) }) == (ja.as_pointer() as Ptr::<i32>)));
     assert!(({ ((*ja.borrow())[(0) as usize] == -1_i32) }));
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-            });
-        reverse_copy_22(
-            ___first,
-            ___last,
-            cpp17_output_iterator_int_ptr_::new({ (ja.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            reverse_copy_22(
+                ___first,
+                ___last,
+                cpp17_output_iterator_int_ptr_::new({ (ja.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(({ ((*ja.borrow())[(0) as usize] == 0) }));
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1])));
     let mut sb: u32 = (((::std::mem::size_of::<[i32; 2]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jb: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
-            });
-        reverse_copy_22(
-            ___first,
-            ___last,
-            cpp17_output_iterator_int_ptr_::new({ (jb.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                });
+            reverse_copy_22(
+                ___first,
+                ___last,
+                cpp17_output_iterator_int_ptr_::new({ (jb.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_0(r.as_pointer(),) }) == (jb.as_pointer() as Ptr::<i32>).offset((sb) as isize))
     );
@@ -787,19 +795,23 @@ pub fn test_21() {
     let mut sc: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jc: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
-            });
-        reverse_copy_22(
-            ___first,
-            ___last,
-            cpp17_output_iterator_int_ptr_::new({ (jc.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                });
+            reverse_copy_22(
+                ___first,
+                ___last,
+                cpp17_output_iterator_int_ptr_::new({ (jc.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_0(r.as_pointer(),) }) == (jc.as_pointer() as Ptr::<i32>).offset((sc) as isize))
     );
@@ -810,19 +822,23 @@ pub fn test_21() {
     let mut sd: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jd: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
-            });
-        reverse_copy_22(
-            ___first,
-            ___last,
-            cpp17_output_iterator_int_ptr_::new({ (jd.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
+                });
+            reverse_copy_22(
+                ___first,
+                ___last,
+                cpp17_output_iterator_int_ptr_::new({ (jd.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_0(r.as_pointer(),) }) == (jd.as_pointer() as Ptr::<i32>).offset((sd) as isize))
     );
@@ -851,37 +867,45 @@ pub fn test_23() {
     ));
     assert!((({ base_1(r.as_pointer(),) }) == (ja.as_pointer() as Ptr::<i32>)));
     assert!(({ ((*ja.borrow())[(0) as usize] == -1_i32) }));
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-            });
-        reverse_copy_24(
-            ___first,
-            ___last,
-            forward_iterator_int_ptr_::new_1({ (ja.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            reverse_copy_24(
+                ___first,
+                ___last,
+                forward_iterator_int_ptr_::new_1({ (ja.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(({ ((*ja.borrow())[(0) as usize] == 0) }));
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1])));
     let mut sb: u32 = (((::std::mem::size_of::<[i32; 2]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jb: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
-            });
-        reverse_copy_24(
-            ___first,
-            ___last,
-            forward_iterator_int_ptr_::new_1({ (jb.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                });
+            reverse_copy_24(
+                ___first,
+                ___last,
+                forward_iterator_int_ptr_::new_1({ (jb.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_1(r.as_pointer(),) }) == (jb.as_pointer() as Ptr::<i32>).offset((sb) as isize))
     );
@@ -891,19 +915,23 @@ pub fn test_23() {
     let mut sc: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jc: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
-            });
-        reverse_copy_24(
-            ___first,
-            ___last,
-            forward_iterator_int_ptr_::new_1({ (jc.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                });
+            reverse_copy_24(
+                ___first,
+                ___last,
+                forward_iterator_int_ptr_::new_1({ (jc.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_1(r.as_pointer(),) }) == (jc.as_pointer() as Ptr::<i32>).offset((sc) as isize))
     );
@@ -914,19 +942,23 @@ pub fn test_23() {
     let mut sd: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jd: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
-            });
-        reverse_copy_24(
-            ___first,
-            ___last,
-            forward_iterator_int_ptr_::new_1({ (jd.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
+                });
+            reverse_copy_24(
+                ___first,
+                ___last,
+                forward_iterator_int_ptr_::new_1({ (jd.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_1(r.as_pointer(),) }) == (jd.as_pointer() as Ptr::<i32>).offset((sd) as isize))
     );
@@ -955,37 +987,45 @@ pub fn test_25() {
     ));
     assert!((({ base_3(r.as_pointer(),) }) == (ja.as_pointer() as Ptr::<i32>)));
     assert!(({ ((*ja.borrow())[(0) as usize] == -1_i32) }));
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-            });
-        reverse_copy_26(
-            ___first,
-            ___last,
-            bidirectional_iterator_int_ptr_::new_1({ (ja.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            reverse_copy_26(
+                ___first,
+                ___last,
+                bidirectional_iterator_int_ptr_::new_1({ (ja.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(({ ((*ja.borrow())[(0) as usize] == 0) }));
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1])));
     let mut sb: u32 = (((::std::mem::size_of::<[i32; 2]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jb: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
-            });
-        reverse_copy_26(
-            ___first,
-            ___last,
-            bidirectional_iterator_int_ptr_::new_1({ (jb.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                });
+            reverse_copy_26(
+                ___first,
+                ___last,
+                bidirectional_iterator_int_ptr_::new_1({ (jb.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_3(r.as_pointer(),) }) == (jb.as_pointer() as Ptr::<i32>).offset((sb) as isize))
     );
@@ -995,19 +1035,23 @@ pub fn test_25() {
     let mut sc: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jc: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
-            });
-        reverse_copy_26(
-            ___first,
-            ___last,
-            bidirectional_iterator_int_ptr_::new_1({ (jc.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                });
+            reverse_copy_26(
+                ___first,
+                ___last,
+                bidirectional_iterator_int_ptr_::new_1({ (jc.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_3(r.as_pointer(),) }) == (jc.as_pointer() as Ptr::<i32>).offset((sc) as isize))
     );
@@ -1018,19 +1062,23 @@ pub fn test_25() {
     let mut sd: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jd: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
-            });
-        reverse_copy_26(
-            ___first,
-            ___last,
-            bidirectional_iterator_int_ptr_::new_1({ (jd.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
+                });
+            reverse_copy_26(
+                ___first,
+                ___last,
+                bidirectional_iterator_int_ptr_::new_1({ (jd.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_3(r.as_pointer(),) }) == (jd.as_pointer() as Ptr::<i32>).offset((sd) as isize))
     );
@@ -1059,37 +1107,45 @@ pub fn test_27() {
     ));
     assert!((({ base_4(r.as_pointer(),) }) == (ja.as_pointer() as Ptr::<i32>)));
     assert!(({ ((*ja.borrow())[(0) as usize] == -1_i32) }));
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-            });
-        reverse_copy_28(
-            ___first,
-            ___last,
-            random_access_iterator_int_ptr_::new_1({ (ja.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            reverse_copy_28(
+                ___first,
+                ___last,
+                random_access_iterator_int_ptr_::new_1({ (ja.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(({ ((*ja.borrow())[(0) as usize] == 0) }));
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1])));
     let mut sb: u32 = (((::std::mem::size_of::<[i32; 2]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jb: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
-            });
-        reverse_copy_28(
-            ___first,
-            ___last,
-            random_access_iterator_int_ptr_::new_1({ (jb.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                });
+            reverse_copy_28(
+                ___first,
+                ___last,
+                random_access_iterator_int_ptr_::new_1({ (jb.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_4(r.as_pointer(),) }) == (jb.as_pointer() as Ptr::<i32>).offset((sb) as isize))
     );
@@ -1099,19 +1155,23 @@ pub fn test_27() {
     let mut sc: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jc: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
-            });
-        reverse_copy_28(
-            ___first,
-            ___last,
-            random_access_iterator_int_ptr_::new_1({ (jc.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                });
+            reverse_copy_28(
+                ___first,
+                ___last,
+                random_access_iterator_int_ptr_::new_1({ (jc.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_4(r.as_pointer(),) }) == (jc.as_pointer() as Ptr::<i32>).offset((sc) as isize))
     );
@@ -1122,19 +1182,23 @@ pub fn test_27() {
     let mut sd: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jd: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) });
-        let ___last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
-            });
-        reverse_copy_28(
-            ___first,
-            ___last,
-            random_access_iterator_int_ptr_::new_1({ (jd.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) });
+            let ___last: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
+                });
+            reverse_copy_28(
+                ___first,
+                ___last,
+                random_access_iterator_int_ptr_::new_1({ (jd.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_4(r.as_pointer(),) }) == (jd.as_pointer() as Ptr::<i32>).offset((sd) as isize))
     );
@@ -1251,37 +1315,45 @@ pub fn test_31() {
     ));
     assert!((({ base_0(r.as_pointer(),) }) == (ja.as_pointer() as Ptr::<i32>)));
     assert!(({ ((*ja.borrow())[(0) as usize] == -1_i32) }));
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-            });
-        reverse_copy_32(
-            ___first,
-            ___last,
-            cpp17_output_iterator_int_ptr_::new({ (ja.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            reverse_copy_32(
+                ___first,
+                ___last,
+                cpp17_output_iterator_int_ptr_::new({ (ja.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(({ ((*ja.borrow())[(0) as usize] == 0) }));
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1])));
     let mut sb: u32 = (((::std::mem::size_of::<[i32; 2]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jb: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
-            });
-        reverse_copy_32(
-            ___first,
-            ___last,
-            cpp17_output_iterator_int_ptr_::new({ (jb.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                });
+            reverse_copy_32(
+                ___first,
+                ___last,
+                cpp17_output_iterator_int_ptr_::new({ (jb.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_0(r.as_pointer(),) }) == (jb.as_pointer() as Ptr::<i32>).offset((sb) as isize))
     );
@@ -1291,19 +1363,23 @@ pub fn test_31() {
     let mut sc: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jc: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
-            });
-        reverse_copy_32(
-            ___first,
-            ___last,
-            cpp17_output_iterator_int_ptr_::new({ (jc.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                });
+            reverse_copy_32(
+                ___first,
+                ___last,
+                cpp17_output_iterator_int_ptr_::new({ (jc.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_0(r.as_pointer(),) }) == (jc.as_pointer() as Ptr::<i32>).offset((sc) as isize))
     );
@@ -1314,19 +1390,23 @@ pub fn test_31() {
     let mut sd: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jd: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
-            });
-        reverse_copy_32(
-            ___first,
-            ___last,
-            cpp17_output_iterator_int_ptr_::new({ (jd.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
+                });
+            reverse_copy_32(
+                ___first,
+                ___last,
+                cpp17_output_iterator_int_ptr_::new({ (jd.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_0(r.as_pointer(),) }) == (jd.as_pointer() as Ptr::<i32>).offset((sd) as isize))
     );
@@ -1355,37 +1435,45 @@ pub fn test_33() {
     ));
     assert!((({ base_1(r.as_pointer(),) }) == (ja.as_pointer() as Ptr::<i32>)));
     assert!(({ ((*ja.borrow())[(0) as usize] == -1_i32) }));
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-            });
-        reverse_copy_34(
-            ___first,
-            ___last,
-            forward_iterator_int_ptr_::new_1({ (ja.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            reverse_copy_34(
+                ___first,
+                ___last,
+                forward_iterator_int_ptr_::new_1({ (ja.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(({ ((*ja.borrow())[(0) as usize] == 0) }));
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1])));
     let mut sb: u32 = (((::std::mem::size_of::<[i32; 2]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jb: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
-            });
-        reverse_copy_34(
-            ___first,
-            ___last,
-            forward_iterator_int_ptr_::new_1({ (jb.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                });
+            reverse_copy_34(
+                ___first,
+                ___last,
+                forward_iterator_int_ptr_::new_1({ (jb.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_1(r.as_pointer(),) }) == (jb.as_pointer() as Ptr::<i32>).offset((sb) as isize))
     );
@@ -1395,19 +1483,23 @@ pub fn test_33() {
     let mut sc: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jc: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
-            });
-        reverse_copy_34(
-            ___first,
-            ___last,
-            forward_iterator_int_ptr_::new_1({ (jc.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                });
+            reverse_copy_34(
+                ___first,
+                ___last,
+                forward_iterator_int_ptr_::new_1({ (jc.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_1(r.as_pointer(),) }) == (jc.as_pointer() as Ptr::<i32>).offset((sc) as isize))
     );
@@ -1418,19 +1510,23 @@ pub fn test_33() {
     let mut sd: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jd: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
-            });
-        reverse_copy_34(
-            ___first,
-            ___last,
-            forward_iterator_int_ptr_::new_1({ (jd.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
+                });
+            reverse_copy_34(
+                ___first,
+                ___last,
+                forward_iterator_int_ptr_::new_1({ (jd.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_1(r.as_pointer(),) }) == (jd.as_pointer() as Ptr::<i32>).offset((sd) as isize))
     );
@@ -1459,37 +1555,45 @@ pub fn test_35() {
     ));
     assert!((({ base_3(r.as_pointer(),) }) == (ja.as_pointer() as Ptr::<i32>)));
     assert!(({ ((*ja.borrow())[(0) as usize] == -1_i32) }));
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-            });
-        reverse_copy_36(
-            ___first,
-            ___last,
-            bidirectional_iterator_int_ptr_::new_1({ (ja.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            reverse_copy_36(
+                ___first,
+                ___last,
+                bidirectional_iterator_int_ptr_::new_1({ (ja.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(({ ((*ja.borrow())[(0) as usize] == 0) }));
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1])));
     let mut sb: u32 = (((::std::mem::size_of::<[i32; 2]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jb: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
-            });
-        reverse_copy_36(
-            ___first,
-            ___last,
-            bidirectional_iterator_int_ptr_::new_1({ (jb.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                });
+            reverse_copy_36(
+                ___first,
+                ___last,
+                bidirectional_iterator_int_ptr_::new_1({ (jb.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_3(r.as_pointer(),) }) == (jb.as_pointer() as Ptr::<i32>).offset((sb) as isize))
     );
@@ -1499,19 +1603,23 @@ pub fn test_35() {
     let mut sc: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jc: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
-            });
-        reverse_copy_36(
-            ___first,
-            ___last,
-            bidirectional_iterator_int_ptr_::new_1({ (jc.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                });
+            reverse_copy_36(
+                ___first,
+                ___last,
+                bidirectional_iterator_int_ptr_::new_1({ (jc.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_3(r.as_pointer(),) }) == (jc.as_pointer() as Ptr::<i32>).offset((sc) as isize))
     );
@@ -1522,19 +1630,23 @@ pub fn test_35() {
     let mut sd: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jd: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
-            });
-        reverse_copy_36(
-            ___first,
-            ___last,
-            bidirectional_iterator_int_ptr_::new_1({ (jd.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
+                });
+            reverse_copy_36(
+                ___first,
+                ___last,
+                bidirectional_iterator_int_ptr_::new_1({ (jd.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_3(r.as_pointer(),) }) == (jd.as_pointer() as Ptr::<i32>).offset((sd) as isize))
     );
@@ -1563,37 +1675,45 @@ pub fn test_37() {
     ));
     assert!((({ base_4(r.as_pointer(),) }) == (ja.as_pointer() as Ptr::<i32>)));
     assert!(({ ((*ja.borrow())[(0) as usize] == -1_i32) }));
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-            });
-        reverse_copy_38(
-            ___first,
-            ___last,
-            random_access_iterator_int_ptr_::new_1({ (ja.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                });
+            reverse_copy_38(
+                ___first,
+                ___last,
+                random_access_iterator_int_ptr_::new_1({ (ja.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(({ ((*ja.borrow())[(0) as usize] == 0) }));
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1])));
     let mut sb: u32 = (((::std::mem::size_of::<[i32; 2]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jb: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
-            });
-        reverse_copy_38(
-            ___first,
-            ___last,
-            random_access_iterator_int_ptr_::new_1({ (jb.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                });
+            reverse_copy_38(
+                ___first,
+                ___last,
+                random_access_iterator_int_ptr_::new_1({ (jb.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_4(r.as_pointer(),) }) == (jb.as_pointer() as Ptr::<i32>).offset((sb) as isize))
     );
@@ -1603,19 +1723,23 @@ pub fn test_37() {
     let mut sc: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jc: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
-            });
-        reverse_copy_38(
-            ___first,
-            ___last,
-            random_access_iterator_int_ptr_::new_1({ (jc.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                });
+            reverse_copy_38(
+                ___first,
+                ___last,
+                random_access_iterator_int_ptr_::new_1({ (jc.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_4(r.as_pointer(),) }) == (jc.as_pointer() as Ptr::<i32>).offset((sc) as isize))
     );
@@ -1626,19 +1750,23 @@ pub fn test_37() {
     let mut sd: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jd: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) });
-        let ___last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
-            });
-        reverse_copy_38(
-            ___first,
-            ___last,
-            random_access_iterator_int_ptr_::new_1({ (jd.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ (id.as_pointer() as Ptr<i32>) });
+            let ___last: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    (id.as_pointer() as Ptr<i32>).offset((sd) as isize)
+                });
+            reverse_copy_38(
+                ___first,
+                ___last,
+                random_access_iterator_int_ptr_::new_1({ (jd.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_4(r.as_pointer(),) }) == (jd.as_pointer() as Ptr::<i32>).offset((sd) as isize))
     );
@@ -1753,29 +1881,37 @@ pub fn test_41() {
     ));
     assert!((({ base_0(r.as_pointer(),) }) == (ja.as_pointer() as Ptr::<i32>)));
     assert!(({ ((*ja.borrow())[(0) as usize] == -1_i32) }));
-    (*r.borrow_mut()) = ({
-        let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
-        reverse_copy_42(
-            ___first,
-            ___last,
-            cpp17_output_iterator_int_ptr_::new({ (ja.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+            reverse_copy_42(
+                ___first,
+                ___last,
+                cpp17_output_iterator_int_ptr_::new({ (ja.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(({ ((*ja.borrow())[(0) as usize] == 0) }));
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1])));
     let mut sb: u32 = (((::std::mem::size_of::<[i32; 2]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jb: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: Ptr<i32> = (ib.as_pointer() as Ptr<i32>);
-        let ___last: Ptr<i32> = (ib.as_pointer() as Ptr<i32>).offset((sb) as isize);
-        reverse_copy_42(
-            ___first,
-            ___last,
-            cpp17_output_iterator_int_ptr_::new({ (jb.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: Ptr<i32> = (ib.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (ib.as_pointer() as Ptr<i32>).offset((sb) as isize);
+            reverse_copy_42(
+                ___first,
+                ___last,
+                cpp17_output_iterator_int_ptr_::new({ (jb.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_0(r.as_pointer(),) }) == (jb.as_pointer() as Ptr::<i32>).offset((sb) as isize))
     );
@@ -1785,15 +1921,19 @@ pub fn test_41() {
     let mut sc: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jc: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: Ptr<i32> = (ic.as_pointer() as Ptr<i32>);
-        let ___last: Ptr<i32> = (ic.as_pointer() as Ptr<i32>).offset((sc) as isize);
-        reverse_copy_42(
-            ___first,
-            ___last,
-            cpp17_output_iterator_int_ptr_::new({ (jc.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: Ptr<i32> = (ic.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (ic.as_pointer() as Ptr<i32>).offset((sc) as isize);
+            reverse_copy_42(
+                ___first,
+                ___last,
+                cpp17_output_iterator_int_ptr_::new({ (jc.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_0(r.as_pointer(),) }) == (jc.as_pointer() as Ptr::<i32>).offset((sc) as isize))
     );
@@ -1804,15 +1944,19 @@ pub fn test_41() {
     let mut sd: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jd: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: Ptr<i32> = (id.as_pointer() as Ptr<i32>);
-        let ___last: Ptr<i32> = (id.as_pointer() as Ptr<i32>).offset((sd) as isize);
-        reverse_copy_42(
-            ___first,
-            ___last,
-            cpp17_output_iterator_int_ptr_::new({ (jd.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: Ptr<i32> = (id.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (id.as_pointer() as Ptr<i32>).offset((sd) as isize);
+            reverse_copy_42(
+                ___first,
+                ___last,
+                cpp17_output_iterator_int_ptr_::new({ (jd.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_0(r.as_pointer(),) }) == (jd.as_pointer() as Ptr::<i32>).offset((sd) as isize))
     );
@@ -1839,29 +1983,37 @@ pub fn test_43() {
     ));
     assert!((({ base_1(r.as_pointer(),) }) == (ja.as_pointer() as Ptr::<i32>)));
     assert!(({ ((*ja.borrow())[(0) as usize] == -1_i32) }));
-    (*r.borrow_mut()) = ({
-        let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
-        reverse_copy_44(
-            ___first,
-            ___last,
-            forward_iterator_int_ptr_::new_1({ (ja.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+            reverse_copy_44(
+                ___first,
+                ___last,
+                forward_iterator_int_ptr_::new_1({ (ja.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(({ ((*ja.borrow())[(0) as usize] == 0) }));
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1])));
     let mut sb: u32 = (((::std::mem::size_of::<[i32; 2]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jb: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: Ptr<i32> = (ib.as_pointer() as Ptr<i32>);
-        let ___last: Ptr<i32> = (ib.as_pointer() as Ptr<i32>).offset((sb) as isize);
-        reverse_copy_44(
-            ___first,
-            ___last,
-            forward_iterator_int_ptr_::new_1({ (jb.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: Ptr<i32> = (ib.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (ib.as_pointer() as Ptr<i32>).offset((sb) as isize);
+            reverse_copy_44(
+                ___first,
+                ___last,
+                forward_iterator_int_ptr_::new_1({ (jb.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_1(r.as_pointer(),) }) == (jb.as_pointer() as Ptr::<i32>).offset((sb) as isize))
     );
@@ -1871,15 +2023,19 @@ pub fn test_43() {
     let mut sc: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jc: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: Ptr<i32> = (ic.as_pointer() as Ptr<i32>);
-        let ___last: Ptr<i32> = (ic.as_pointer() as Ptr<i32>).offset((sc) as isize);
-        reverse_copy_44(
-            ___first,
-            ___last,
-            forward_iterator_int_ptr_::new_1({ (jc.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: Ptr<i32> = (ic.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (ic.as_pointer() as Ptr<i32>).offset((sc) as isize);
+            reverse_copy_44(
+                ___first,
+                ___last,
+                forward_iterator_int_ptr_::new_1({ (jc.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_1(r.as_pointer(),) }) == (jc.as_pointer() as Ptr::<i32>).offset((sc) as isize))
     );
@@ -1890,15 +2046,19 @@ pub fn test_43() {
     let mut sd: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jd: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: Ptr<i32> = (id.as_pointer() as Ptr<i32>);
-        let ___last: Ptr<i32> = (id.as_pointer() as Ptr<i32>).offset((sd) as isize);
-        reverse_copy_44(
-            ___first,
-            ___last,
-            forward_iterator_int_ptr_::new_1({ (jd.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: Ptr<i32> = (id.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (id.as_pointer() as Ptr<i32>).offset((sd) as isize);
+            reverse_copy_44(
+                ___first,
+                ___last,
+                forward_iterator_int_ptr_::new_1({ (jd.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_1(r.as_pointer(),) }) == (jd.as_pointer() as Ptr::<i32>).offset((sd) as isize))
     );
@@ -1925,29 +2085,37 @@ pub fn test_45() {
     ));
     assert!((({ base_3(r.as_pointer(),) }) == (ja.as_pointer() as Ptr::<i32>)));
     assert!(({ ((*ja.borrow())[(0) as usize] == -1_i32) }));
-    (*r.borrow_mut()) = ({
-        let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
-        reverse_copy_46(
-            ___first,
-            ___last,
-            bidirectional_iterator_int_ptr_::new_1({ (ja.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+            reverse_copy_46(
+                ___first,
+                ___last,
+                bidirectional_iterator_int_ptr_::new_1({ (ja.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(({ ((*ja.borrow())[(0) as usize] == 0) }));
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1])));
     let mut sb: u32 = (((::std::mem::size_of::<[i32; 2]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jb: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: Ptr<i32> = (ib.as_pointer() as Ptr<i32>);
-        let ___last: Ptr<i32> = (ib.as_pointer() as Ptr<i32>).offset((sb) as isize);
-        reverse_copy_46(
-            ___first,
-            ___last,
-            bidirectional_iterator_int_ptr_::new_1({ (jb.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: Ptr<i32> = (ib.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (ib.as_pointer() as Ptr<i32>).offset((sb) as isize);
+            reverse_copy_46(
+                ___first,
+                ___last,
+                bidirectional_iterator_int_ptr_::new_1({ (jb.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_3(r.as_pointer(),) }) == (jb.as_pointer() as Ptr::<i32>).offset((sb) as isize))
     );
@@ -1957,15 +2125,19 @@ pub fn test_45() {
     let mut sc: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jc: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: Ptr<i32> = (ic.as_pointer() as Ptr<i32>);
-        let ___last: Ptr<i32> = (ic.as_pointer() as Ptr<i32>).offset((sc) as isize);
-        reverse_copy_46(
-            ___first,
-            ___last,
-            bidirectional_iterator_int_ptr_::new_1({ (jc.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: Ptr<i32> = (ic.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (ic.as_pointer() as Ptr<i32>).offset((sc) as isize);
+            reverse_copy_46(
+                ___first,
+                ___last,
+                bidirectional_iterator_int_ptr_::new_1({ (jc.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_3(r.as_pointer(),) }) == (jc.as_pointer() as Ptr::<i32>).offset((sc) as isize))
     );
@@ -1976,15 +2148,19 @@ pub fn test_45() {
     let mut sd: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jd: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: Ptr<i32> = (id.as_pointer() as Ptr<i32>);
-        let ___last: Ptr<i32> = (id.as_pointer() as Ptr<i32>).offset((sd) as isize);
-        reverse_copy_46(
-            ___first,
-            ___last,
-            bidirectional_iterator_int_ptr_::new_1({ (jd.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: Ptr<i32> = (id.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (id.as_pointer() as Ptr<i32>).offset((sd) as isize);
+            reverse_copy_46(
+                ___first,
+                ___last,
+                bidirectional_iterator_int_ptr_::new_1({ (jd.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_3(r.as_pointer(),) }) == (jd.as_pointer() as Ptr::<i32>).offset((sd) as isize))
     );
@@ -2011,29 +2187,37 @@ pub fn test_47() {
     ));
     assert!((({ base_4(r.as_pointer(),) }) == (ja.as_pointer() as Ptr::<i32>)));
     assert!(({ ((*ja.borrow())[(0) as usize] == -1_i32) }));
-    (*r.borrow_mut()) = ({
-        let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
-        reverse_copy_48(
-            ___first,
-            ___last,
-            random_access_iterator_int_ptr_::new_1({ (ja.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+            reverse_copy_48(
+                ___first,
+                ___last,
+                random_access_iterator_int_ptr_::new_1({ (ja.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(({ ((*ja.borrow())[(0) as usize] == 0) }));
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1])));
     let mut sb: u32 = (((::std::mem::size_of::<[i32; 2]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jb: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: Ptr<i32> = (ib.as_pointer() as Ptr<i32>);
-        let ___last: Ptr<i32> = (ib.as_pointer() as Ptr<i32>).offset((sb) as isize);
-        reverse_copy_48(
-            ___first,
-            ___last,
-            random_access_iterator_int_ptr_::new_1({ (jb.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: Ptr<i32> = (ib.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (ib.as_pointer() as Ptr<i32>).offset((sb) as isize);
+            reverse_copy_48(
+                ___first,
+                ___last,
+                random_access_iterator_int_ptr_::new_1({ (jb.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_4(r.as_pointer(),) }) == (jb.as_pointer() as Ptr::<i32>).offset((sb) as isize))
     );
@@ -2043,15 +2227,19 @@ pub fn test_47() {
     let mut sc: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jc: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: Ptr<i32> = (ic.as_pointer() as Ptr<i32>);
-        let ___last: Ptr<i32> = (ic.as_pointer() as Ptr<i32>).offset((sc) as isize);
-        reverse_copy_48(
-            ___first,
-            ___last,
-            random_access_iterator_int_ptr_::new_1({ (jc.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: Ptr<i32> = (ic.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (ic.as_pointer() as Ptr<i32>).offset((sc) as isize);
+            reverse_copy_48(
+                ___first,
+                ___last,
+                random_access_iterator_int_ptr_::new_1({ (jc.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_4(r.as_pointer(),) }) == (jc.as_pointer() as Ptr::<i32>).offset((sc) as isize))
     );
@@ -2062,15 +2250,19 @@ pub fn test_47() {
     let mut sd: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let jd: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([-1_i32, 0_i32, 0_i32, 0_i32])));
-    (*r.borrow_mut()) = ({
-        let ___first: Ptr<i32> = (id.as_pointer() as Ptr<i32>);
-        let ___last: Ptr<i32> = (id.as_pointer() as Ptr<i32>).offset((sd) as isize);
-        reverse_copy_48(
-            ___first,
-            ___last,
-            random_access_iterator_int_ptr_::new_1({ (jd.as_pointer() as Ptr<i32>) }),
-        )
-    });
+    {
+        let __a1 = ({
+            let ___first: Ptr<i32> = (id.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (id.as_pointer() as Ptr<i32>).offset((sd) as isize);
+            reverse_copy_48(
+                ___first,
+                ___last,
+                random_access_iterator_int_ptr_::new_1({ (jd.as_pointer() as Ptr<i32>) }),
+            )
+        });
+        r.as_pointer().with_mut(|__it| *__it = __a1);
+        r.as_pointer()
+    };
     assert!(
         (({ base_4(r.as_pointer(),) }) == (jd.as_pointer() as Ptr::<i32>).offset((sd) as isize))
     );

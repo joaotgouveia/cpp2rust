@@ -84,10 +84,16 @@ impl AImpl for Ptr<A> {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
         field!((*self), data).write({ { (*_a0.upgrade().deref()).data } });
         field!((*self), m).write({ { (*_a0.upgrade().deref()).m.clone() } });
-        field!((*self), it)
-            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).it.clone() } }));
-        field!((*self), cit)
-            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).cit.clone() } }));
+        {
+            let __a1 = ({ { (*_a0.upgrade().deref()).it.clone() } });
+            field_ptr!((*self), it).with_mut(|__it| *__it = __a1);
+            field_ptr!((*self), it)
+        };
+        {
+            let __a1 = ({ { (*_a0.upgrade().deref()).cit.clone() } });
+            field_ptr!((*self), cit).with_mut(|__it| *__it = __a1);
+            field_ptr!((*self), cit)
+        };
         return (*self).clone();
     }
 }

@@ -924,7 +924,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                                 let ___x: Value<i32> = Rc::new(RefCell::new(1));
                                 (*c2.borrow()).find_60(___x.as_pointer())
                             }),
-                            1_isize,
+                            1_isize as isize,
                         )
                         .iter_deref()
                         .upgrade()
@@ -992,7 +992,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                                 let ___x: Value<i32> = Rc::new(RefCell::new(2));
                                 (*c2.borrow()).find_60(___x.as_pointer())
                             }),
-                            1_isize,
+                            1_isize as isize,
                         )
                         .iter_deref()
                         .upgrade()
@@ -1456,7 +1456,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                                 let ___x: Value<i32> = Rc::new(RefCell::new(1));
                                 (*c2.borrow()).find_60(___x.as_pointer())
                             }),
-                            1_isize,
+                            1_isize as isize,
                         )
                         .iter_deref()
                         .upgrade()
@@ -1524,7 +1524,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                                 let ___x: Value<i32> = Rc::new(RefCell::new(2));
                                 (*c2.borrow()).find_60(___x.as_pointer())
                             }),
-                            1_isize,
+                            1_isize as isize,
                         )
                         .iter_deref()
                         .upgrade()
@@ -2198,7 +2198,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                                 let ___x: Value<i32> = Rc::new(RefCell::new(1));
                                 (*c2.borrow()).find_60(___x.as_pointer())
                             }),
-                            1_isize,
+                            1_isize as isize,
                         )
                         .iter_deref()
                         .upgrade()
@@ -2266,7 +2266,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                                 let ___x: Value<i32> = Rc::new(RefCell::new(2));
                                 (*c2.borrow()).find_60(___x.as_pointer())
                             }),
-                            1_isize,
+                            1_isize as isize,
                         )
                         .iter_deref()
                         .upgrade()
@@ -2734,7 +2734,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                                 let ___x: Value<i32> = Rc::new(RefCell::new(1));
                                 (*c2.borrow()).find_60(___x.as_pointer())
                             }),
-                            1_isize,
+                            1_isize as isize,
                         )
                         .iter_deref()
                         .upgrade()
@@ -2802,7 +2802,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                                 let ___x: Value<i32> = Rc::new(RefCell::new(2));
                                 (*c2.borrow()).find_60(___x.as_pointer())
                             }),
-                            1_isize,
+                            1_isize as isize,
                         )
                         .iter_deref()
                         .upgrade()
@@ -3483,7 +3483,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                                 let ___x: Value<i32> = Rc::new(RefCell::new(1));
                                 (*c2.borrow()).find_60(___x.as_pointer())
                             }),
-                            1_isize,
+                            1_isize as isize,
                         )
                         .iter_deref()
                         .upgrade()
@@ -3551,7 +3551,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                                 let ___x: Value<i32> = Rc::new(RefCell::new(2));
                                 (*c2.borrow()).find_60(___x.as_pointer())
                             }),
-                            1_isize,
+                            1_isize as isize,
                         )
                         .iter_deref()
                         .upgrade()
@@ -4021,7 +4021,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                                 let ___x: Value<i32> = Rc::new(RefCell::new(1));
                                 (*c2.borrow()).find_60(___x.as_pointer())
                             }),
-                            1_isize,
+                            1_isize as isize,
                         )
                         .iter_deref()
                         .upgrade()
@@ -4089,7 +4089,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                                 let ___x: Value<i32> = Rc::new(RefCell::new(2));
                                 (*c2.borrow()).find_60(___x.as_pointer())
                             }),
-                            1_isize,
+                            1_isize as isize,
                         )
                         .iter_deref()
                         .upgrade()

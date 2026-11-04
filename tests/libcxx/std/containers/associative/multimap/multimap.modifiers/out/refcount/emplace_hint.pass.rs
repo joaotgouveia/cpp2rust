@@ -189,93 +189,117 @@ pub fn test_7() -> bool {
                 })
             );
             assert!((count_0.with(|rc| *rc.borrow()) == 1));
-            (*r.borrow_mut()) = ({
-                let ___pos: BidirectionalIterator<(Value<i32>, Value<DefaultOnly>)> =
-                    ({ (*m.borrow()).cend() });
-                let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
-                    ({
-                        let ___args: Value<i32> = Rc::new(RefCell::new(1));
-                        forward_as_tuple_8(___args.as_pointer())
-                    }),
-                ));
-                let ___args_3: Value<std_tuple__> =
-                    Rc::new(RefCell::new(({ forward_as_tuple_9() })));
-                (*m.borrow()).emplace_hint(
-                    ___pos,
-                    piecewise_construct_10.with(|v| v.as_pointer()),
-                    ___args_2.as_pointer(),
-                    ___args_3.as_pointer(),
-                )
-            });
+            {
+                let __a1 = ({
+                    let ___pos: BidirectionalIterator<(Value<i32>, Value<DefaultOnly>)> =
+                        ({ (*m.borrow()).cend() });
+                    let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
+                        ({
+                            let ___args: Value<i32> = Rc::new(RefCell::new(1));
+                            forward_as_tuple_8(___args.as_pointer())
+                        }),
+                    ));
+                    let ___args_3: Value<std_tuple__> =
+                        Rc::new(RefCell::new(({ forward_as_tuple_9() })));
+                    (*m.borrow()).emplace_hint(
+                        ___pos,
+                        piecewise_construct_10.with(|v| v.as_pointer()),
+                        ___args_2.as_pointer(),
+                        ___args_3.as_pointer(),
+                    )
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1);
+                r.as_pointer()
+            };
             assert!(
                 (*r.borrow())
-                    == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+                    == libcc2rs::next_refcount(
+                        ({ ({ (*m.borrow()).begin_20() }) }),
+                        1_isize as isize
+                    )
             );
             assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
             assert!(
-                ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
-                    .iter_deref()
-                    .upgrade()
-                    .deref())
+                ((*(*libcc2rs::next_refcount(
+                    ({ ({ (*m.borrow()).begin_20() }) }),
+                    1_isize as isize
+                )
+                .iter_deref()
+                .upgrade()
+                .deref())
                 .0
                 .borrow())
                     == 1)
             );
             assert!(
                 ({
-                    let _x: Ptr<DefaultOnly> =
-                        (*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
-                            .iter_deref()
-                            .upgrade()
-                            .deref())
-                        .1
-                        .as_pointer();
+                    let _x: Ptr<DefaultOnly> = (*libcc2rs::next_refcount(
+                        ({ ({ (*m.borrow()).begin_20() }) }),
+                        1_isize as isize,
+                    )
+                    .iter_deref()
+                    .upgrade()
+                    .deref())
+                    .1
+                    .as_pointer();
                     let _y: Value<DefaultOnly> = Rc::new(RefCell::new(DefaultOnly::new()));
                     operator_eq_1(_x, _y.as_pointer())
                 })
             );
             assert!((count_0.with(|rc| *rc.borrow()) == 2));
-            (*r.borrow_mut()) = ({
-                let ___pos: BidirectionalIterator<(Value<i32>, Value<DefaultOnly>)> =
-                    ({ (*m.borrow()).cend() });
-                let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
-                    ({
-                        let ___args: Value<i32> = Rc::new(RefCell::new(1));
-                        forward_as_tuple_8(___args.as_pointer())
-                    }),
-                ));
-                let ___args_3: Value<std_tuple__> =
-                    Rc::new(RefCell::new(({ forward_as_tuple_9() })));
-                (*m.borrow()).emplace_hint(
-                    ___pos,
-                    piecewise_construct_10.with(|v| v.as_pointer()),
-                    ___args_2.as_pointer(),
-                    ___args_3.as_pointer(),
-                )
-            });
+            {
+                let __a1 = ({
+                    let ___pos: BidirectionalIterator<(Value<i32>, Value<DefaultOnly>)> =
+                        ({ (*m.borrow()).cend() });
+                    let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
+                        ({
+                            let ___args: Value<i32> = Rc::new(RefCell::new(1));
+                            forward_as_tuple_8(___args.as_pointer())
+                        }),
+                    ));
+                    let ___args_3: Value<std_tuple__> =
+                        Rc::new(RefCell::new(({ forward_as_tuple_9() })));
+                    (*m.borrow()).emplace_hint(
+                        ___pos,
+                        piecewise_construct_10.with(|v| v.as_pointer()),
+                        ___args_2.as_pointer(),
+                        ___args_3.as_pointer(),
+                    )
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1);
+                r.as_pointer()
+            };
             assert!(
                 (*r.borrow())
-                    == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+                    == libcc2rs::next_refcount(
+                        ({ ({ (*m.borrow()).begin_20() }) }),
+                        2_isize as isize
+                    )
             );
             assert!(({ (({ (*m.borrow()).size() }) == 3_u64) }));
             assert!(
-                ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
-                    .iter_deref()
-                    .upgrade()
-                    .deref())
+                ((*(*libcc2rs::next_refcount(
+                    ({ ({ (*m.borrow()).begin_20() }) }),
+                    2_isize as isize
+                )
+                .iter_deref()
+                .upgrade()
+                .deref())
                 .0
                 .borrow())
                     == 1)
             );
             assert!(
                 ({
-                    let _x: Ptr<DefaultOnly> =
-                        (*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
-                            .iter_deref()
-                            .upgrade()
-                            .deref())
-                        .1
-                        .as_pointer();
+                    let _x: Ptr<DefaultOnly> = (*libcc2rs::next_refcount(
+                        ({ ({ (*m.borrow()).begin_20() }) }),
+                        2_isize as isize,
+                    )
+                    .iter_deref()
+                    .upgrade()
+                    .deref())
+                    .1
+                    .as_pointer();
                     let _y: Value<DefaultOnly> = Rc::new(RefCell::new(DefaultOnly::new()));
                     operator_eq_1(_x, _y.as_pointer())
                 })
@@ -332,29 +356,33 @@ pub fn test_7() -> bool {
                 )
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___pos: BidirectionalIterator<(Value<i32>, Value<Emplaceable>)> =
-                ({ (*m.borrow()).cbegin() });
-            let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
-                ({
-                    let ___args: Value<i32> = Rc::new(RefCell::new(1));
-                    forward_as_tuple_8(___args.as_pointer())
-                }),
-            ));
-            let ___args_3: Value<std_tuple_int_refref__double_refref_> = Rc::new(RefCell::new(
-                ({
-                    let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
-                    let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
-                    forward_as_tuple_11(___args_0.as_pointer(), ___args_1.as_pointer())
-                }),
-            ));
-            (*m.borrow()).emplace_hint(
-                ___pos,
-                piecewise_construct_10.with(|v| v.as_pointer()),
-                ___args_2.as_pointer(),
-                ___args_3.as_pointer(),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___pos: BidirectionalIterator<(Value<i32>, Value<Emplaceable>)> =
+                    ({ (*m.borrow()).cbegin() });
+                let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
+                    ({
+                        let ___args: Value<i32> = Rc::new(RefCell::new(1));
+                        forward_as_tuple_8(___args.as_pointer())
+                    }),
+                ));
+                let ___args_3: Value<std_tuple_int_refref__double_refref_> = Rc::new(RefCell::new(
+                    ({
+                        let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
+                        let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+                        forward_as_tuple_11(___args_0.as_pointer(), ___args_1.as_pointer())
+                    }),
+                ));
+                (*m.borrow()).emplace_hint(
+                    ___pos,
+                    piecewise_construct_10.with(|v| v.as_pointer()),
+                    ___args_2.as_pointer(),
+                    ___args_3.as_pointer(),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!((*r.borrow()) == ({ (*m.borrow()).begin_20() }));
         assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
         assert!(
@@ -381,29 +409,33 @@ pub fn test_7() -> bool {
                 )
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___pos: BidirectionalIterator<(Value<i32>, Value<Emplaceable>)> =
-                ({ (*m.borrow()).cbegin() });
-            let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
-                ({
-                    let ___args: Value<i32> = Rc::new(RefCell::new(1));
-                    forward_as_tuple_8(___args.as_pointer())
-                }),
-            ));
-            let ___args_3: Value<std_tuple_int_refref__double_refref_> = Rc::new(RefCell::new(
-                ({
-                    let ___args_0: Value<i32> = Rc::new(RefCell::new(3));
-                    let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
-                    forward_as_tuple_11(___args_0.as_pointer(), ___args_1.as_pointer())
-                }),
-            ));
-            (*m.borrow()).emplace_hint(
-                ___pos,
-                piecewise_construct_10.with(|v| v.as_pointer()),
-                ___args_2.as_pointer(),
-                ___args_3.as_pointer(),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___pos: BidirectionalIterator<(Value<i32>, Value<Emplaceable>)> =
+                    ({ (*m.borrow()).cbegin() });
+                let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
+                    ({
+                        let ___args: Value<i32> = Rc::new(RefCell::new(1));
+                        forward_as_tuple_8(___args.as_pointer())
+                    }),
+                ));
+                let ___args_3: Value<std_tuple_int_refref__double_refref_> = Rc::new(RefCell::new(
+                    ({
+                        let ___args_0: Value<i32> = Rc::new(RefCell::new(3));
+                        let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+                        forward_as_tuple_11(___args_0.as_pointer(), ___args_1.as_pointer())
+                    }),
+                ));
+                (*m.borrow()).emplace_hint(
+                    ___pos,
+                    piecewise_construct_10.with(|v| v.as_pointer()),
+                    ___args_2.as_pointer(),
+                    ___args_3.as_pointer(),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!((*r.borrow()) == ({ (*m.borrow()).begin_20() }));
         assert!(({ (({ (*m.borrow()).size() }) == 3_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1) }));
@@ -490,95 +522,117 @@ pub fn test_7() -> bool {
                 })
             );
             assert!((count_0.with(|rc| *rc.borrow()) == 1));
-            (*r.borrow_mut()) = ({
-                let ___pos: BidirectionalIterator<(Value<i32>, Value<DefaultOnly>)> =
-                    ({ (*m.borrow()).cend() });
-                let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
-                    ({
-                        let ___args: Value<i32> = Rc::new(RefCell::new(1));
-                        forward_as_tuple_8(___args.as_pointer())
-                    }),
-                ));
-                let ___args_3: Value<std_tuple__> =
-                    Rc::new(RefCell::new(({ forward_as_tuple_9() })));
-                (*m.borrow()).emplace_hint(
-                    ___pos,
-                    piecewise_construct_10.with(|v| v.as_pointer()),
-                    ___args_2.as_pointer(),
-                    ___args_3.as_pointer(),
-                )
-            })
-            .clone();
+            {
+                let __a1 = ({
+                    let ___pos: BidirectionalIterator<(Value<i32>, Value<DefaultOnly>)> =
+                        ({ (*m.borrow()).cend() });
+                    let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
+                        ({
+                            let ___args: Value<i32> = Rc::new(RefCell::new(1));
+                            forward_as_tuple_8(___args.as_pointer())
+                        }),
+                    ));
+                    let ___args_3: Value<std_tuple__> =
+                        Rc::new(RefCell::new(({ forward_as_tuple_9() })));
+                    (*m.borrow()).emplace_hint(
+                        ___pos,
+                        piecewise_construct_10.with(|v| v.as_pointer()),
+                        ___args_2.as_pointer(),
+                        ___args_3.as_pointer(),
+                    )
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+                r.as_pointer()
+            };
             assert!(
                 (*r.borrow())
-                    == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
+                    == libcc2rs::next_refcount(
+                        ({ ({ (*m.borrow()).begin_20() }) }),
+                        1_isize as isize
+                    )
             );
             assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
             assert!(
-                ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
-                    .iter_deref()
-                    .upgrade()
-                    .deref())
+                ((*(*libcc2rs::next_refcount(
+                    ({ ({ (*m.borrow()).begin_20() }) }),
+                    1_isize as isize
+                )
+                .iter_deref()
+                .upgrade()
+                .deref())
                 .0
                 .borrow())
                     == 1)
             );
             assert!(
                 ({
-                    let _x: Ptr<DefaultOnly> =
-                        (*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 1_isize)
-                            .iter_deref()
-                            .upgrade()
-                            .deref())
-                        .1
-                        .as_pointer();
+                    let _x: Ptr<DefaultOnly> = (*libcc2rs::next_refcount(
+                        ({ ({ (*m.borrow()).begin_20() }) }),
+                        1_isize as isize,
+                    )
+                    .iter_deref()
+                    .upgrade()
+                    .deref())
+                    .1
+                    .as_pointer();
                     let _y: Value<DefaultOnly> = Rc::new(RefCell::new(DefaultOnly::new()));
                     operator_eq_1(_x, _y.as_pointer())
                 })
             );
             assert!((count_0.with(|rc| *rc.borrow()) == 2));
-            (*r.borrow_mut()) = ({
-                let ___pos: BidirectionalIterator<(Value<i32>, Value<DefaultOnly>)> =
-                    ({ (*m.borrow()).cend() });
-                let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
-                    ({
-                        let ___args: Value<i32> = Rc::new(RefCell::new(1));
-                        forward_as_tuple_8(___args.as_pointer())
-                    }),
-                ));
-                let ___args_3: Value<std_tuple__> =
-                    Rc::new(RefCell::new(({ forward_as_tuple_9() })));
-                (*m.borrow()).emplace_hint(
-                    ___pos,
-                    piecewise_construct_10.with(|v| v.as_pointer()),
-                    ___args_2.as_pointer(),
-                    ___args_3.as_pointer(),
-                )
-            })
-            .clone();
+            {
+                let __a1 = ({
+                    let ___pos: BidirectionalIterator<(Value<i32>, Value<DefaultOnly>)> =
+                        ({ (*m.borrow()).cend() });
+                    let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
+                        ({
+                            let ___args: Value<i32> = Rc::new(RefCell::new(1));
+                            forward_as_tuple_8(___args.as_pointer())
+                        }),
+                    ));
+                    let ___args_3: Value<std_tuple__> =
+                        Rc::new(RefCell::new(({ forward_as_tuple_9() })));
+                    (*m.borrow()).emplace_hint(
+                        ___pos,
+                        piecewise_construct_10.with(|v| v.as_pointer()),
+                        ___args_2.as_pointer(),
+                        ___args_3.as_pointer(),
+                    )
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+                r.as_pointer()
+            };
             assert!(
                 (*r.borrow())
-                    == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
+                    == libcc2rs::next_refcount(
+                        ({ ({ (*m.borrow()).begin_20() }) }),
+                        2_isize as isize
+                    )
             );
             assert!(({ (({ (*m.borrow()).size() }) == 3_u64) }));
             assert!(
-                ((*(*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
-                    .iter_deref()
-                    .upgrade()
-                    .deref())
+                ((*(*libcc2rs::next_refcount(
+                    ({ ({ (*m.borrow()).begin_20() }) }),
+                    2_isize as isize
+                )
+                .iter_deref()
+                .upgrade()
+                .deref())
                 .0
                 .borrow())
                     == 1)
             );
             assert!(
                 ({
-                    let _x: Ptr<DefaultOnly> =
-                        (*libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 2_isize)
-                            .iter_deref()
-                            .upgrade()
-                            .deref())
-                        .1
-                        .as_pointer();
+                    let _x: Ptr<DefaultOnly> = (*libcc2rs::next_refcount(
+                        ({ ({ (*m.borrow()).begin_20() }) }),
+                        2_isize as isize,
+                    )
+                    .iter_deref()
+                    .upgrade()
+                    .deref())
+                    .1
+                    .as_pointer();
                     let _y: Value<DefaultOnly> = Rc::new(RefCell::new(DefaultOnly::new()));
                     operator_eq_1(_x, _y.as_pointer())
                 })
@@ -635,30 +689,33 @@ pub fn test_7() -> bool {
                 )
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___pos: BidirectionalIterator<(Value<i32>, Value<Emplaceable>)> =
-                ({ (*m.borrow()).cbegin() });
-            let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
-                ({
-                    let ___args: Value<i32> = Rc::new(RefCell::new(1));
-                    forward_as_tuple_8(___args.as_pointer())
-                }),
-            ));
-            let ___args_3: Value<std_tuple_int_refref__double_refref_> = Rc::new(RefCell::new(
-                ({
-                    let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
-                    let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
-                    forward_as_tuple_11(___args_0.as_pointer(), ___args_1.as_pointer())
-                }),
-            ));
-            (*m.borrow()).emplace_hint(
-                ___pos,
-                piecewise_construct_10.with(|v| v.as_pointer()),
-                ___args_2.as_pointer(),
-                ___args_3.as_pointer(),
-            )
-        })
-        .clone();
+        {
+            let __a1 = ({
+                let ___pos: BidirectionalIterator<(Value<i32>, Value<Emplaceable>)> =
+                    ({ (*m.borrow()).cbegin() });
+                let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
+                    ({
+                        let ___args: Value<i32> = Rc::new(RefCell::new(1));
+                        forward_as_tuple_8(___args.as_pointer())
+                    }),
+                ));
+                let ___args_3: Value<std_tuple_int_refref__double_refref_> = Rc::new(RefCell::new(
+                    ({
+                        let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
+                        let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+                        forward_as_tuple_11(___args_0.as_pointer(), ___args_1.as_pointer())
+                    }),
+                ));
+                (*m.borrow()).emplace_hint(
+                    ___pos,
+                    piecewise_construct_10.with(|v| v.as_pointer()),
+                    ___args_2.as_pointer(),
+                    ___args_3.as_pointer(),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            r.as_pointer()
+        };
         assert!((*r.borrow()) == ({ (*m.borrow()).begin_20() }));
         assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
         assert!(
@@ -685,30 +742,33 @@ pub fn test_7() -> bool {
                 )
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___pos: BidirectionalIterator<(Value<i32>, Value<Emplaceable>)> =
-                ({ (*m.borrow()).cbegin() });
-            let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
-                ({
-                    let ___args: Value<i32> = Rc::new(RefCell::new(1));
-                    forward_as_tuple_8(___args.as_pointer())
-                }),
-            ));
-            let ___args_3: Value<std_tuple_int_refref__double_refref_> = Rc::new(RefCell::new(
-                ({
-                    let ___args_0: Value<i32> = Rc::new(RefCell::new(3));
-                    let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
-                    forward_as_tuple_11(___args_0.as_pointer(), ___args_1.as_pointer())
-                }),
-            ));
-            (*m.borrow()).emplace_hint(
-                ___pos,
-                piecewise_construct_10.with(|v| v.as_pointer()),
-                ___args_2.as_pointer(),
-                ___args_3.as_pointer(),
-            )
-        })
-        .clone();
+        {
+            let __a1 = ({
+                let ___pos: BidirectionalIterator<(Value<i32>, Value<Emplaceable>)> =
+                    ({ (*m.borrow()).cbegin() });
+                let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
+                    ({
+                        let ___args: Value<i32> = Rc::new(RefCell::new(1));
+                        forward_as_tuple_8(___args.as_pointer())
+                    }),
+                ));
+                let ___args_3: Value<std_tuple_int_refref__double_refref_> = Rc::new(RefCell::new(
+                    ({
+                        let ___args_0: Value<i32> = Rc::new(RefCell::new(3));
+                        let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+                        forward_as_tuple_11(___args_0.as_pointer(), ___args_1.as_pointer())
+                    }),
+                ));
+                (*m.borrow()).emplace_hint(
+                    ___pos,
+                    piecewise_construct_10.with(|v| v.as_pointer()),
+                    ___args_2.as_pointer(),
+                    ___args_3.as_pointer(),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            r.as_pointer()
+        };
         assert!((*r.borrow()) == ({ (*m.borrow()).begin_20() }));
         assert!(({ (({ (*m.borrow()).size() }) == 3_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1) }));

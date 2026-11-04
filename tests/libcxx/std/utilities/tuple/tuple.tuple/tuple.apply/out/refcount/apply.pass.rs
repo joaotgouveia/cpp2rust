@@ -583,13 +583,13 @@ pub fn f_38(mut _a0: ReturnTypeTest_index_6_) -> Ptr<i32> {
     return my_int_31.with(|v| v.as_pointer());
 }
 pub fn f_39(mut _a0: ReturnTypeTest_index_7_) -> Ptr<i32> {
-    return (my_int_31.with(|v| v.as_pointer())).cast_const();
+    return my_int_31.with(|v| v.as_pointer());
 }
 pub fn f_40(mut _a0: ReturnTypeTest_index_8_) -> Ptr<i32> {
     return my_int_31.with(|v| v.as_pointer());
 }
 pub fn f_41(mut _a0: ReturnTypeTest_index_9_) -> Ptr<i32> {
-    return (my_int_31.with(|v| v.as_pointer())).cast_const();
+    return my_int_31.with(|v| v.as_pointer());
 }
 pub fn f_42(mut _a0: ReturnTypeTest_index_10_) -> Ptr<i32> {
     return (my_int_31.with(|v| v.as_pointer())).reinterpret_cast::<i32>();

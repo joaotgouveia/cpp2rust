@@ -49,7 +49,11 @@ pub fn test_0() {
             Rc::new(RefCell::new(RandomAccessIterator::Vec(a.decay())));
         let i2: Value<RandomAccessIterator<i8>> =
             Rc::new(RefCell::new(RandomAccessIterator::default()));
-        (*i2.borrow_mut()) = (*i1.borrow()).clone();
+        {
+            let __a1 = ({ (*i1.borrow()).clone() });
+            i2.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i2.as_pointer()
+        };
         assert!(({ (*i1.borrow()) == (*i2.borrow()) }));
     }
 }
@@ -96,7 +100,11 @@ pub fn test_1() {
             Rc::new(RefCell::new(RandomAccessIterator::Vec(a.decay())));
         let i2: Value<RandomAccessIterator<i32>> =
             Rc::new(RefCell::new(RandomAccessIterator::default()));
-        (*i2.borrow_mut()) = (*i1.borrow()).clone();
+        {
+            let __a1 = ({ (*i1.borrow()).clone() });
+            i2.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i2.as_pointer()
+        };
         assert!(({ (*i1.borrow()) == (*i2.borrow()) }));
     }
 }
@@ -143,7 +151,11 @@ pub fn test_2() {
             Rc::new(RefCell::new(RandomAccessIterator::Vec(a.decay())));
         let i2: Value<RandomAccessIterator<u8>> =
             Rc::new(RefCell::new(RandomAccessIterator::default()));
-        (*i2.borrow_mut()) = (*i1.borrow()).clone();
+        {
+            let __a1 = ({ (*i1.borrow()).clone() });
+            i2.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i2.as_pointer()
+        };
         assert!(({ (*i1.borrow()) == (*i2.borrow()) }));
     }
 }
@@ -190,7 +202,11 @@ pub fn test_3() {
             Rc::new(RefCell::new(RandomAccessIterator::Vec(a.decay())));
         let i2: Value<RandomAccessIterator<u16>> =
             Rc::new(RefCell::new(RandomAccessIterator::default()));
-        (*i2.borrow_mut()) = (*i1.borrow()).clone();
+        {
+            let __a1 = ({ (*i1.borrow()).clone() });
+            i2.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i2.as_pointer()
+        };
         assert!(({ (*i1.borrow()) == (*i2.borrow()) }));
     }
 }
@@ -237,7 +253,11 @@ pub fn test_4() {
             Rc::new(RefCell::new(RandomAccessIterator::Vec(a.decay())));
         let i2: Value<RandomAccessIterator<u32>> =
             Rc::new(RefCell::new(RandomAccessIterator::default()));
-        (*i2.borrow_mut()) = (*i1.borrow()).clone();
+        {
+            let __a1 = ({ (*i1.borrow()).clone() });
+            i2.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i2.as_pointer()
+        };
         assert!(({ (*i1.borrow()) == (*i2.borrow()) }));
     }
 }

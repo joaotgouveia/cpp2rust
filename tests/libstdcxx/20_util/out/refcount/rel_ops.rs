@@ -14,7 +14,11 @@ pub fn test01_0() {
         let __a1 = 1;
         (*v.borrow_mut()).push(__a1)
     };
-    (*vi.borrow_mut()) = CppRange::end(&v.decay());
+    {
+        let __a1 = CppRange::end(&v.decay());
+        vi.as_pointer().with_mut(|__it| *__it = __a1);
+        vi.as_pointer()
+    };
     (*vi.borrow()) != CppRange::begin(&v.decay());
     (*vi.borrow()) > CppRange::begin(&v.decay());
     (*vi.borrow()) <= CppRange::begin(&v.decay());

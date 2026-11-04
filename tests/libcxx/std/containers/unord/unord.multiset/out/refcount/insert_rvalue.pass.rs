@@ -226,22 +226,34 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ));
         assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
         assert!(({ (((*r.borrow()).iter_deref().read()) == 3.5_f64) }));
-        (*r.borrow_mut()) = ({
-            let ___x: Value<f64> = Rc::new(RefCell::new(3.5_f64));
-            (*c.borrow()).insert_36(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+                (*c.borrow()).insert_36(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(({ (((*r.borrow()).iter_deref().read()) == 3.5_f64) }));
-        (*r.borrow_mut()) = ({
-            let ___x: Value<f64> = Rc::new(RefCell::new(4.5_f64));
-            (*c.borrow()).insert_36(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<f64> = Rc::new(RefCell::new(4.5_f64));
+                (*c.borrow()).insert_36(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(({ (((*r.borrow()).iter_deref().read()) == 4.5_f64) }));
-        (*r.borrow_mut()) = ({
-            let ___x: Value<f64> = Rc::new(RefCell::new(5.5_f64));
-            (*c.borrow()).insert_36(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<f64> = Rc::new(RefCell::new(5.5_f64));
+                (*c.borrow()).insert_36(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 4_u64) }));
         assert!(({ (((*r.borrow()).iter_deref().read()) == 5.5_f64) }));
     }
@@ -261,10 +273,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
-            (*c.borrow()).insert_36(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+                (*c.borrow()).insert_36(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(
             ({
@@ -273,10 +289,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(4) })));
-            (*c.borrow()).insert_36(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(4) })));
+                (*c.borrow()).insert_36(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(
             ({
@@ -285,10 +305,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(5) })));
-            (*c.borrow()).insert_36(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(5) })));
+                (*c.borrow()).insert_36(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 4_u64) }));
         assert!(
             ({
@@ -308,22 +332,34 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ));
         assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
         assert!(({ (((*r.borrow()).iter_deref().read()) == 3.5_f64) }));
-        (*r.borrow_mut()) = ({
-            let ___x: Value<f64> = Rc::new(RefCell::new(3.5_f64));
-            (*c.borrow()).insert_36(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+                (*c.borrow()).insert_36(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(({ (((*r.borrow()).iter_deref().read()) == 3.5_f64) }));
-        (*r.borrow_mut()) = ({
-            let ___x: Value<f64> = Rc::new(RefCell::new(4.5_f64));
-            (*c.borrow()).insert_36(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<f64> = Rc::new(RefCell::new(4.5_f64));
+                (*c.borrow()).insert_36(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(({ (((*r.borrow()).iter_deref().read()) == 4.5_f64) }));
-        (*r.borrow_mut()) = ({
-            let ___x: Value<f64> = Rc::new(RefCell::new(5.5_f64));
-            (*c.borrow()).insert_36(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<f64> = Rc::new(RefCell::new(5.5_f64));
+                (*c.borrow()).insert_36(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 4_u64) }));
         assert!(({ (((*r.borrow()).iter_deref().read()) == 5.5_f64) }));
     }
@@ -343,10 +379,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
-            (*c.borrow()).insert_36(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+                (*c.borrow()).insert_36(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(
             ({
@@ -355,10 +395,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(4) })));
-            (*c.borrow()).insert_36(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(4) })));
+                (*c.borrow()).insert_36(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(
             ({
@@ -367,10 +411,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(5) })));
-            (*c.borrow()).insert_36(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(5) })));
+                (*c.borrow()).insert_36(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 4_u64) }));
         assert!(
             ({

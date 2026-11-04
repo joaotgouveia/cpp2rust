@@ -160,10 +160,14 @@ pub fn test_7() -> bool {
             })
         );
         assert!((count_0.with(|rc| *rc.borrow()) == 1));
-        (*r.borrow_mut()) = ({
-            let ___pos: BidirectionalIterator<DefaultOnly> = ({ (*m.borrow()).cbegin() });
-            (*m.borrow()).emplace_hint(___pos)
-        });
+        {
+            let __a1 = ({
+                let ___pos: BidirectionalIterator<DefaultOnly> = ({ (*m.borrow()).cbegin() });
+                (*m.borrow()).emplace_hint(___pos)
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!((*r.borrow()) == ({ (*m.borrow()).begin() }));
         assert!(({ (({ (*m.borrow()).size() }) == 1_u64) }));
         assert!(
@@ -201,14 +205,19 @@ pub fn test_7() -> bool {
                 )
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___pos: BidirectionalIterator<Emplaceable> = ({ (*m.borrow()).cend() });
-            let ___args_1: Value<i32> = Rc::new(RefCell::new(2));
-            let ___args_2: Value<f64> = Rc::new(RefCell::new(3.5_f64));
-            (*m.borrow()).emplace_hint(___pos, ___args_1.as_pointer(), ___args_2.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___pos: BidirectionalIterator<Emplaceable> = ({ (*m.borrow()).cend() });
+                let ___args_1: Value<i32> = Rc::new(RefCell::new(2));
+                let ___args_2: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+                (*m.borrow()).emplace_hint(___pos, ___args_1.as_pointer(), ___args_2.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
-            (*r.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
+            (*r.borrow())
+                == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
         );
         assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
         assert!(
@@ -218,14 +227,19 @@ pub fn test_7() -> bool {
                 EmplaceableImpl::operator_eq(&(*r.borrow()).iter_deref(), _x.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___pos: BidirectionalIterator<Emplaceable> = ({ (*m.borrow()).cbegin() });
-            let ___args_1: Value<i32> = Rc::new(RefCell::new(2));
-            let ___args_2: Value<f64> = Rc::new(RefCell::new(3.5_f64));
-            (*m.borrow()).emplace_hint(___pos, ___args_1.as_pointer(), ___args_2.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___pos: BidirectionalIterator<Emplaceable> = ({ (*m.borrow()).cbegin() });
+                let ___args_1: Value<i32> = Rc::new(RefCell::new(2));
+                let ___args_2: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+                (*m.borrow()).emplace_hint(___pos, ___args_1.as_pointer(), ___args_2.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
-            (*r.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
+            (*r.borrow())
+                == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
         );
         assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
         assert!(

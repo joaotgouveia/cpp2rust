@@ -162,15 +162,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 )
             })
         );
-        r.as_pointer().write(
-            ({
-                let ___args: Value<(Value<i32>, Value<Emplaceable>)> = Rc::new(RefCell::new((
-                    Rc::new(RefCell::new(4)),
-                    Rc::new(RefCell::new(Emplaceable::new_2({ 5 }, { 6_f64 }))),
-                )));
-                (*c.borrow()).emplace(___args.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___args: Value<(Value<i32>, Value<Emplaceable>)> =
+                            Rc::new(RefCell::new((
+                                Rc::new(RefCell::new(4)),
+                                Rc::new(RefCell::new(Emplaceable::new_2({ 5 }, { 6_f64 }))),
+                            )));
+                        (*c.borrow()).emplace(___args.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(
@@ -193,28 +200,38 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 )
             })
         );
-        r.as_pointer().write(
-            ({
-                let ___args_1: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
                     ({
-                        let ___args: Value<i32> = Rc::new(RefCell::new(5));
-                        forward_as_tuple_4(___args.as_pointer())
+                        let ___args_1: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
+                            ({
+                                let ___args: Value<i32> = Rc::new(RefCell::new(5));
+                                forward_as_tuple_4(___args.as_pointer())
+                            }),
+                        ));
+                        let ___args_2: Value<std_tuple_int_refref__int_refref_> =
+                            Rc::new(RefCell::new(
+                                ({
+                                    let ___args_0: Value<i32> = Rc::new(RefCell::new(6));
+                                    let ___args_1: Value<i32> = Rc::new(RefCell::new(7));
+                                    forward_as_tuple_7(
+                                        ___args_0.as_pointer(),
+                                        ___args_1.as_pointer(),
+                                    )
+                                }),
+                            ));
+                        (*c.borrow()).emplace(
+                            piecewise_construct_6.with(|v| v.as_pointer()),
+                            ___args_1.as_pointer(),
+                            ___args_2.as_pointer(),
+                        )
                     }),
-                ));
-                let ___args_2: Value<std_tuple_int_refref__int_refref_> = Rc::new(RefCell::new(
-                    ({
-                        let ___args_0: Value<i32> = Rc::new(RefCell::new(6));
-                        let ___args_1: Value<i32> = Rc::new(RefCell::new(7));
-                        forward_as_tuple_7(___args_0.as_pointer(), ___args_1.as_pointer())
-                    }),
-                ));
-                (*c.borrow()).emplace(
-                    piecewise_construct_6.with(|v| v.as_pointer()),
-                    ___args_1.as_pointer(),
-                    ___args_2.as_pointer(),
-                )
-            }),
-        );
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(
@@ -281,15 +298,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 )
             })
         );
-        r.as_pointer().write(
-            ({
-                let ___args: Value<(Value<i32>, Value<Emplaceable>)> = Rc::new(RefCell::new((
-                    Rc::new(RefCell::new(4)),
-                    Rc::new(RefCell::new(Emplaceable::new_2({ 5 }, { 6_f64 }))),
-                )));
-                (*c.borrow()).emplace(___args.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___args: Value<(Value<i32>, Value<Emplaceable>)> =
+                            Rc::new(RefCell::new((
+                                Rc::new(RefCell::new(4)),
+                                Rc::new(RefCell::new(Emplaceable::new_2({ 5 }, { 6_f64 }))),
+                            )));
+                        (*c.borrow()).emplace(___args.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(
@@ -312,28 +336,38 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 )
             })
         );
-        r.as_pointer().write(
-            ({
-                let ___args_1: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
                     ({
-                        let ___args: Value<i32> = Rc::new(RefCell::new(5));
-                        forward_as_tuple_4(___args.as_pointer())
+                        let ___args_1: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
+                            ({
+                                let ___args: Value<i32> = Rc::new(RefCell::new(5));
+                                forward_as_tuple_4(___args.as_pointer())
+                            }),
+                        ));
+                        let ___args_2: Value<std_tuple_int_refref__int_refref_> =
+                            Rc::new(RefCell::new(
+                                ({
+                                    let ___args_0: Value<i32> = Rc::new(RefCell::new(6));
+                                    let ___args_1: Value<i32> = Rc::new(RefCell::new(7));
+                                    forward_as_tuple_7(
+                                        ___args_0.as_pointer(),
+                                        ___args_1.as_pointer(),
+                                    )
+                                }),
+                            ));
+                        (*c.borrow()).emplace(
+                            piecewise_construct_6.with(|v| v.as_pointer()),
+                            ___args_1.as_pointer(),
+                            ___args_2.as_pointer(),
+                        )
                     }),
-                ));
-                let ___args_2: Value<std_tuple_int_refref__int_refref_> = Rc::new(RefCell::new(
-                    ({
-                        let ___args_0: Value<i32> = Rc::new(RefCell::new(6));
-                        let ___args_1: Value<i32> = Rc::new(RefCell::new(7));
-                        forward_as_tuple_7(___args_0.as_pointer(), ___args_1.as_pointer())
-                    }),
-                ));
-                (*c.borrow()).emplace(
-                    piecewise_construct_6.with(|v| v.as_pointer()),
-                    ___args_1.as_pointer(),
-                    ___args_2.as_pointer(),
-                )
-            }),
-        );
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(

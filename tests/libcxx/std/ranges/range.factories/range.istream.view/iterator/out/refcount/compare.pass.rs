@@ -7,78 +7,96 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn make_string_0(in_: Ptr<i8>) -> Vec<i8> {
-    return {
-        use std::io::Read;
-        let mut __bytes: Vec<u8> = Vec::new();
-        let mut __f = &(in_).offset((0) as isize);
-        __f.read_to_end(&mut __bytes)
-            .expect("couldn't read the file");
-        __bytes.push(0);
-        CChar::from_byte_vec(__bytes)
+    return match ({ (in_).offset(((7_u64 as u64).wrapping_sub(1_u64)) as isize) },) {
+        (mut __tmp_0,) => {
+            let mut __v = Vec::new();
+            let mut __it = (in_).offset((0) as isize);
+            while __it != __tmp_0 {
+                __v.push(<i8>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                __it.iter_inc();
+            }
+            __v.push(0_i8);
+            __v
+        }
     };
 }
 pub fn make_string_1(in_: Ptr<i8>) -> Vec<i8> {
-    return {
-        use std::io::Read;
-        let mut __bytes: Vec<u8> = Vec::new();
-        let mut __f = &(in_).offset((0) as isize);
-        __f.read_to_end(&mut __bytes)
-            .expect("couldn't read the file");
-        __bytes.push(0);
-        CChar::from_byte_vec(__bytes)
+    return match ({ (in_).offset(((5_u64 as u64).wrapping_sub(1_u64)) as isize) },) {
+        (mut __tmp_1,) => {
+            let mut __v = Vec::new();
+            let mut __it = (in_).offset((0) as isize);
+            while __it != __tmp_1 {
+                __v.push(<i8>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                __it.iter_inc();
+            }
+            __v.push(0_i8);
+            __v
+        }
     };
 }
 pub fn make_string_2(in_: Ptr<i8>) -> Vec<i8> {
-    return {
-        use std::io::Read;
-        let mut __bytes: Vec<u8> = Vec::new();
-        let mut __f = &(in_).offset((0) as isize);
-        __f.read_to_end(&mut __bytes)
-            .expect("couldn't read the file");
-        __bytes.push(0);
-        CChar::from_byte_vec(__bytes)
+    return match ({ (in_).offset(((1_u64 as u64).wrapping_sub(1_u64)) as isize) },) {
+        (mut __tmp_2,) => {
+            let mut __v = Vec::new();
+            let mut __it = (in_).offset((0) as isize);
+            while __it != __tmp_2 {
+                __v.push(<i8>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                __it.iter_inc();
+            }
+            __v.push(0_i8);
+            __v
+        }
     };
 }
 pub fn make_string_3(in_: Ptr<i8>) -> Vec<i32> {
-    return {
-        use std::io::Read;
-        let mut __bytes: Vec<u8> = Vec::new();
-        let mut __f = &(in_).offset((0) as isize);
-        __f.read_to_end(&mut __bytes)
-            .expect("couldn't read the file");
-        __bytes.push(0);
-        CChar::from_byte_vec(__bytes)
+    return match ({ (in_).offset(((7_u64 as u64).wrapping_sub(1_u64)) as isize) },) {
+        (mut __tmp_3,) => {
+            let mut __v = Vec::new();
+            let mut __it = (in_).offset((0) as isize);
+            while __it != __tmp_3 {
+                __v.push(<i32>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                __it.iter_inc();
+            }
+            __v.push(0_i32);
+            __v
+        }
     };
 }
 pub fn make_string_4(in_: Ptr<i8>) -> Vec<i32> {
-    return {
-        use std::io::Read;
-        let mut __bytes: Vec<u8> = Vec::new();
-        let mut __f = &(in_).offset((0) as isize);
-        __f.read_to_end(&mut __bytes)
-            .expect("couldn't read the file");
-        __bytes.push(0);
-        CChar::from_byte_vec(__bytes)
+    return match ({ (in_).offset(((5_u64 as u64).wrapping_sub(1_u64)) as isize) },) {
+        (mut __tmp_4,) => {
+            let mut __v = Vec::new();
+            let mut __it = (in_).offset((0) as isize);
+            while __it != __tmp_4 {
+                __v.push(<i32>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                __it.iter_inc();
+            }
+            __v.push(0_i32);
+            __v
+        }
     };
 }
 pub fn make_string_5(in_: Ptr<i8>) -> Vec<i32> {
-    return {
-        use std::io::Read;
-        let mut __bytes: Vec<u8> = Vec::new();
-        let mut __f = &(in_).offset((0) as isize);
-        __f.read_to_end(&mut __bytes)
-            .expect("couldn't read the file");
-        __bytes.push(0);
-        CChar::from_byte_vec(__bytes)
+    return match ({ (in_).offset(((1_u64 as u64).wrapping_sub(1_u64)) as isize) },) {
+        (mut __tmp_5,) => {
+            let mut __v = Vec::new();
+            let mut __it = (in_).offset((0) as isize);
+            while __it != __tmp_5 {
+                __v.push(<i32>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                __it.iter_inc();
+            }
+            __v.push(0_i32);
+            __v
+        }
     };
 }
 pub fn make_string_stream_6(
     in_: Ptr<i8>,
 ) -> std_basic_istringstream_char__std_char_traits_char___std_allocator_char__ {
     return {
-        let __tmp_0: Value<Vec<i8>> = Rc::new(RefCell::new(({ make_string_0((in_).clone()) })));
+        let __tmp_6: Value<Vec<i8>> = Rc::new(RefCell::new(({ make_string_0((in_).clone()) })));
         std_basic_istringstream_char__std_char_traits_char___std_allocator_char__::new_1(
-            { __tmp_0.as_pointer() },
+            { __tmp_6.as_pointer() },
             None,
         )
     };
@@ -87,9 +105,9 @@ pub fn make_string_stream_7(
     in_: Ptr<i8>,
 ) -> std_basic_istringstream_char__std_char_traits_char___std_allocator_char__ {
     return {
-        let __tmp_1: Value<Vec<i8>> = Rc::new(RefCell::new(({ make_string_1((in_).clone()) })));
+        let __tmp_7: Value<Vec<i8>> = Rc::new(RefCell::new(({ make_string_1((in_).clone()) })));
         std_basic_istringstream_char__std_char_traits_char___std_allocator_char__::new_1(
-            { __tmp_1.as_pointer() },
+            { __tmp_7.as_pointer() },
             None,
         )
     };
@@ -98,9 +116,9 @@ pub fn make_string_stream_8(
     in_: Ptr<i8>,
 ) -> std_basic_istringstream_char__std_char_traits_char___std_allocator_char__ {
     return {
-        let __tmp_2: Value<Vec<i8>> = Rc::new(RefCell::new(({ make_string_2((in_).clone()) })));
+        let __tmp_8: Value<Vec<i8>> = Rc::new(RefCell::new(({ make_string_2((in_).clone()) })));
         std_basic_istringstream_char__std_char_traits_char___std_allocator_char__::new_1(
-            { __tmp_2.as_pointer() },
+            { __tmp_8.as_pointer() },
             None,
         )
     };
@@ -109,9 +127,9 @@ pub fn make_string_stream_9(
     in_: Ptr<i8>,
 ) -> std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ {
     return {
-        let __tmp_3: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_string_3((in_).clone()) })));
+        let __tmp_9: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_string_3((in_).clone()) })));
         std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            { __tmp_3.as_pointer() },
+            { __tmp_9.as_pointer() },
             None,
         )
     };
@@ -120,9 +138,9 @@ pub fn make_string_stream_10(
     in_: Ptr<i8>,
 ) -> std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ {
     return {
-        let __tmp_4: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_string_4((in_).clone()) })));
+        let __tmp_10: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_string_4((in_).clone()) })));
         std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            { __tmp_4.as_pointer() },
+            { __tmp_10.as_pointer() },
             None,
         )
     };
@@ -131,9 +149,9 @@ pub fn make_string_stream_11(
     in_: Ptr<i8>,
 ) -> std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ {
     return {
-        let __tmp_5: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_string_5((in_).clone()) })));
+        let __tmp_11: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_string_5((in_).clone()) })));
         std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            { __tmp_5.as_pointer() },
+            { __tmp_11.as_pointer() },
             None,
         )
     };

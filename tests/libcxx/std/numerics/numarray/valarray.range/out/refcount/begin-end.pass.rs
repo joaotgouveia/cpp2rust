@@ -90,12 +90,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         assert!(
-            ((libcc2rs::prev_refcount(({ libcc2rs::end_refcount(v.as_pointer(),) }), 1_isize))
-                == (v.as_pointer().offset(4_usize)))
+            ((libcc2rs::prev_refcount(
+                ({ libcc2rs::end_refcount(v.as_pointer(),) }),
+                1_isize as isize
+            )) == (v.as_pointer().offset(4_usize)))
         );
         assert!(
-            ({ (libcc2rs::prev_refcount(({ libcc2rs::end_refcount((cv).clone(),) }), 1_isize)) }
-                == { (cv.offset(4_usize)) })
+            ({
+                (libcc2rs::prev_refcount(
+                    ({ libcc2rs::end_refcount((cv).clone()) }),
+                    1_isize as isize,
+                ))
+            } == { (cv.offset(4_usize)) })
         );
     }
     {

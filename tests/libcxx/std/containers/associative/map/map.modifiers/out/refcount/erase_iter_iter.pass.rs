@@ -111,7 +111,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -124,7 +124,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -137,7 +137,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -150,7 +150,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -163,7 +163,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -176,7 +176,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -189,7 +189,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -202,7 +202,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -215,7 +215,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -228,7 +228,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -241,7 +241,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                6_isize
+                6_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -254,7 +254,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                6_isize
+                6_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -267,7 +267,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                7_isize
+                7_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -280,7 +280,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                7_isize
+                7_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -289,13 +289,17 @@ pub fn test_4() -> bool {
             .borrow())
                 == 8.5_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                ({ (*m.borrow()).cbegin() });
-            let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize);
-            (*m.borrow()).erase_69(___first, ___last)
-        });
+        {
+            let __a1 = ({
+                let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    ({ (*m.borrow()).cbegin() });
+                let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize as isize);
+                (*m.borrow()).erase_69(___first, ___last)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(({ ((*m.borrow()).len() == 6_usize) }));
         assert!(
             (*i.borrow())
@@ -306,7 +310,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                0_isize
+                0_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -319,7 +323,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                0_isize
+                0_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -332,7 +336,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -345,7 +349,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -358,7 +362,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -371,7 +375,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -384,7 +388,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -397,7 +401,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -410,7 +414,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -423,7 +427,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -436,7 +440,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -449,7 +453,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -458,27 +462,31 @@ pub fn test_4() -> bool {
             .borrow())
                 == 8.5_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize);
-            let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 6_isize);
-            (*m.borrow()).erase_69(___first, ___last)
-        });
+        {
+            let __a1 = ({
+                let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize as isize);
+                let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 6_isize as isize);
+                (*m.borrow()).erase_69(___first, ___last)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(({ ((*m.borrow()).len() == 2_usize) }));
         assert!(
             (*i.borrow())
                 == libcc2rs::next_refcount(
                     m.as_pointer()
                         .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                    2_isize
+                    2_isize as isize
                 )
         );
         assert!(
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                0_isize
+                0_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -491,7 +499,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                0_isize
+                0_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -504,7 +512,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -517,7 +525,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -526,13 +534,17 @@ pub fn test_4() -> bool {
             .borrow())
                 == 4.5_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                ({ (*m.borrow()).cbegin() });
-            let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                ({ (*m.borrow()).cend() });
-            (*m.borrow()).erase_69(___first, ___last)
-        });
+        {
+            let __a1 = ({
+                let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    ({ (*m.borrow()).cbegin() });
+                let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    ({ (*m.borrow()).cend() });
+                (*m.borrow()).erase_69(___first, ___last)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(({ ((*m.borrow()).len() == 0_usize) }));
         assert!(
             (*i.borrow())
@@ -607,7 +619,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -620,7 +632,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -633,7 +645,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -646,7 +658,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -659,7 +671,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -672,7 +684,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -685,7 +697,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -698,7 +710,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -711,7 +723,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -724,7 +736,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -737,7 +749,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                6_isize
+                6_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -750,7 +762,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                6_isize
+                6_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -763,7 +775,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                7_isize
+                7_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -776,7 +788,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                7_isize
+                7_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -785,14 +797,17 @@ pub fn test_4() -> bool {
             .borrow())
                 == 8.5_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                ({ (*m.borrow()).cbegin() });
-            let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize);
-            (*m.borrow()).erase_69(___first, ___last)
-        })
-        .clone();
+        {
+            let __a1 = ({
+                let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    ({ (*m.borrow()).cbegin() });
+                let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize as isize);
+                (*m.borrow()).erase_69(___first, ___last)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(({ ((*m.borrow()).len() == 6_usize) }));
         assert!(
             (*i.borrow())
@@ -803,7 +818,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                0_isize
+                0_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -816,7 +831,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                0_isize
+                0_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -829,7 +844,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -842,7 +857,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -855,7 +870,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -868,7 +883,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -881,7 +896,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -894,7 +909,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -907,7 +922,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -920,7 +935,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -933,7 +948,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -946,7 +961,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -955,28 +970,31 @@ pub fn test_4() -> bool {
             .borrow())
                 == 8.5_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize);
-            let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 6_isize);
-            (*m.borrow()).erase_69(___first, ___last)
-        })
-        .clone();
+        {
+            let __a1 = ({
+                let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize as isize);
+                let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 6_isize as isize);
+                (*m.borrow()).erase_69(___first, ___last)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(({ ((*m.borrow()).len() == 2_usize) }));
         assert!(
             (*i.borrow())
                 == libcc2rs::next_refcount(
                     m.as_pointer()
                         .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                    2_isize
+                    2_isize as isize
                 )
         );
         assert!(
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                0_isize
+                0_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -989,7 +1007,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                0_isize
+                0_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1002,7 +1020,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1015,7 +1033,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1024,14 +1042,17 @@ pub fn test_4() -> bool {
             .borrow())
                 == 4.5_f64)
         );
-        (*i.borrow_mut()) = ({
-            let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                ({ (*m.borrow()).cbegin() });
-            let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                ({ (*m.borrow()).cend() });
-            (*m.borrow()).erase_69(___first, ___last)
-        })
-        .clone();
+        {
+            let __a1 = ({
+                let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    ({ (*m.borrow()).cbegin() });
+                let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                    ({ (*m.borrow()).cend() });
+                (*m.borrow()).erase_69(___first, ___last)
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(({ ((*m.borrow()).len() == 0_usize) }));
         assert!(
             (*i.borrow())

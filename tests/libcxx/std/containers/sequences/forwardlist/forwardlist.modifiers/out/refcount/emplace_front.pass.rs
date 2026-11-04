@@ -139,8 +139,11 @@ pub fn test_4() -> bool {
             ({
                 let _x: Value<Emplaceable> = Rc::new(RefCell::new(Emplaceable::new_1()));
                 EmplaceableImpl::operator_eq(
-                    &libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
-                        .iter_deref(),
+                    &libcc2rs::next_refcount(
+                        ({ ({ (*c.borrow()).begin_25() }) }),
+                        1_isize as isize,
+                    )
+                    .iter_deref(),
                     _x.as_pointer(),
                 )
             })
@@ -194,8 +197,11 @@ pub fn test_4() -> bool {
             ({
                 let _x: Value<Emplaceable> = Rc::new(RefCell::new(Emplaceable::new_1()));
                 EmplaceableImpl::operator_eq(
-                    &libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
-                        .iter_deref(),
+                    &libcc2rs::next_refcount(
+                        ({ ({ (*c.borrow()).begin_25() }) }),
+                        1_isize as isize,
+                    )
+                    .iter_deref(),
                     _x.as_pointer(),
                 )
             })

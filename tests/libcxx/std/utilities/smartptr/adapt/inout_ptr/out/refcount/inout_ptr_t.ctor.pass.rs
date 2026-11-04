@@ -154,8 +154,11 @@ pub trait ConstructiblePtr_int_Impl {
 }
 impl ConstructiblePtr_int_Impl for Ptr<ConstructiblePtr_int_> {
     fn move_assign(&self, _a0: Ptr<ConstructiblePtr_int_>) -> Ptr<ConstructiblePtr_int_> {
-        field_ptr!((*self), ptr)
-            .write(field!(_a0, ptr).with_mut(|__v: &mut Option<Value<i32>>| __v.take()));
+        {
+            field_ptr!((*self), ptr)
+                .write(field!(_a0, ptr).with_mut(|__v: &mut Option<Value<i32>>| __v.take()));
+            field_ptr!((*self), ptr)
+        };
         return (*self).clone();
     }
 }
@@ -193,8 +196,11 @@ pub trait ResettablePtr_int_Impl {
 }
 impl ResettablePtr_int_Impl for Ptr<ResettablePtr_int_> {
     fn move_assign(&self, _a0: Ptr<ResettablePtr_int_>) -> Ptr<ResettablePtr_int_> {
-        field_ptr!((*self), ptr)
-            .write(field!(_a0, ptr).with_mut(|__v: &mut Option<Value<i32>>| __v.take()));
+        {
+            field_ptr!((*self), ptr)
+                .write(field!(_a0, ptr).with_mut(|__v: &mut Option<Value<i32>>| __v.take()));
+            field_ptr!((*self), ptr)
+        };
         return (*self).clone();
     }
 }

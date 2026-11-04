@@ -96,7 +96,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             ),
         ));
         let j: Value<std___detail__Node_const_iterator_int__true__false_> = Rc::new(RefCell::new(
-            libcc2rs::next_refcount(({ (*i.borrow()).clone() }), 1_isize),
+            libcc2rs::next_refcount(({ (*i.borrow()).clone() }), 1_isize as isize),
         ));
         let k: Value<std___detail__Node_iterator_int__true__false_> = Rc::new(RefCell::new(
             ({
@@ -133,8 +133,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 (*c.borrow()).count(___x.as_pointer())
             }) == 1_u64)
         );
-        (*k.borrow_mut()) =
-            ({ (*c.borrow()).erase_49((*i.borrow()).clone(), (*j.borrow()).clone()) });
+        {
+            let __a1 = ({ (*c.borrow()).erase_49((*i.borrow()).clone(), (*j.borrow()).clone()) });
+            k.as_pointer().with_mut(|__it| *__it = __a1);
+            k.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(
             (({
@@ -154,13 +157,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 (*c.borrow()).count(___x.as_pointer())
             }) == 1_u64)
         );
-        (*k.borrow_mut()) = ({
-            let ___first: std___detail__Node_const_iterator_int__true__false_ =
-                ({ (*c.borrow()).cbegin_31() });
-            let ___last: std___detail__Node_const_iterator_int__true__false_ =
-                ({ (*c.borrow()).cend_32() });
-            (*c.borrow()).erase_49(___first, ___last)
-        });
+        {
+            let __a1 = ({
+                let ___first: std___detail__Node_const_iterator_int__true__false_ =
+                    ({ (*c.borrow()).cbegin_31() });
+                let ___last: std___detail__Node_const_iterator_int__true__false_ =
+                    ({ (*c.borrow()).cend_32() });
+                (*c.borrow()).erase_49(___first, ___last)
+            });
+            k.as_pointer().with_mut(|__it| *__it = __a1);
+            k.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 0_u64) }));
         assert!((*k.borrow()) == ({ (*c.borrow()).end_29() }));
     }
@@ -270,7 +277,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             ),
         ));
         let j: Value<std___detail__Node_const_iterator_int__true__false_> = Rc::new(RefCell::new(
-            libcc2rs::next_refcount(({ (*i.borrow()).clone() }), 1_isize),
+            libcc2rs::next_refcount(({ (*i.borrow()).clone() }), 1_isize as isize),
         ));
         let k: Value<std___detail__Node_iterator_int__true__false_> = Rc::new(RefCell::new(
             ({
@@ -307,8 +314,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 (*c.borrow()).count(___x.as_pointer())
             }) == 1_u64)
         );
-        (*k.borrow_mut()) =
-            ({ (*c.borrow()).erase_49((*i.borrow()).clone(), (*j.borrow()).clone()) });
+        {
+            let __a1 = ({ (*c.borrow()).erase_49((*i.borrow()).clone(), (*j.borrow()).clone()) });
+            k.as_pointer().with_mut(|__it| *__it = __a1);
+            k.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(
             (({
@@ -328,13 +338,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 (*c.borrow()).count(___x.as_pointer())
             }) == 1_u64)
         );
-        (*k.borrow_mut()) = ({
-            let ___first: std___detail__Node_const_iterator_int__true__false_ =
-                ({ (*c.borrow()).cbegin_31() });
-            let ___last: std___detail__Node_const_iterator_int__true__false_ =
-                ({ (*c.borrow()).cend_32() });
-            (*c.borrow()).erase_49(___first, ___last)
-        });
+        {
+            let __a1 = ({
+                let ___first: std___detail__Node_const_iterator_int__true__false_ =
+                    ({ (*c.borrow()).cbegin_31() });
+                let ___last: std___detail__Node_const_iterator_int__true__false_ =
+                    ({ (*c.borrow()).cend_32() });
+                (*c.borrow()).erase_49(___first, ___last)
+            });
+            k.as_pointer().with_mut(|__it| *__it = __a1);
+            k.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 0_u64) }));
         assert!((*k.borrow()) == ({ (*c.borrow()).end_29() }));
     }

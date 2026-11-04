@@ -137,15 +137,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 EmplaceableImpl::operator_eq(&(*r.borrow()).iter_deref(), _x.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___pos: std___detail__Node_const_iterator_Emplaceable__true__true_ =
-                <std___detail__Node_const_iterator_Emplaceable__true__true_>::from(
-                    ({ (*c.borrow()).end_29() }),
-                );
-            let ___args: Value<Emplaceable> =
-                Rc::new(RefCell::new(Emplaceable::new_2({ 5 }, { 6_f64 })));
-            (*c.borrow()).emplace_hint(___pos, ___args.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___pos: std___detail__Node_const_iterator_Emplaceable__true__true_ =
+                    <std___detail__Node_const_iterator_Emplaceable__true__true_>::from(
+                        ({ (*c.borrow()).end_29() }),
+                    );
+                let ___args: Value<Emplaceable> =
+                    Rc::new(RefCell::new(Emplaceable::new_2({ 5 }, { 6_f64 })));
+                (*c.borrow()).emplace_hint(___pos, ___args.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(
             ({
@@ -154,17 +158,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 EmplaceableImpl::operator_eq(&(*r.borrow()).iter_deref(), _x.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___args_1: Value<i32> = Rc::new(RefCell::new(5));
-            let ___args_2: Value<i32> = Rc::new(RefCell::new(6));
-            (*c.borrow()).emplace_hint(
-                <std___detail__Node_const_iterator_Emplaceable__true__true_>::from(
-                    ({ (*r.borrow()).clone() }),
-                ),
-                ___args_1.as_pointer(),
-                ___args_2.as_pointer(),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___args_1: Value<i32> = Rc::new(RefCell::new(5));
+                let ___args_2: Value<i32> = Rc::new(RefCell::new(6));
+                (*c.borrow()).emplace_hint(
+                    <std___detail__Node_const_iterator_Emplaceable__true__true_>::from(
+                        ({ (*r.borrow()).clone() }),
+                    ),
+                    ___args_1.as_pointer(),
+                    ___args_2.as_pointer(),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(
             ({
@@ -192,15 +200,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 EmplaceableImpl::operator_eq(&(*r.borrow()).iter_deref(), _x.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___pos: std___detail__Node_const_iterator_Emplaceable__true__true_ =
-                <std___detail__Node_const_iterator_Emplaceable__true__true_>::from(
-                    ({ (*c.borrow()).end_29() }),
-                );
-            let ___args: Value<Emplaceable> =
-                Rc::new(RefCell::new(Emplaceable::new_2({ 5 }, { 6_f64 })));
-            (*c.borrow()).emplace_hint(___pos, ___args.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___pos: std___detail__Node_const_iterator_Emplaceable__true__true_ =
+                    <std___detail__Node_const_iterator_Emplaceable__true__true_>::from(
+                        ({ (*c.borrow()).end_29() }),
+                    );
+                let ___args: Value<Emplaceable> =
+                    Rc::new(RefCell::new(Emplaceable::new_2({ 5 }, { 6_f64 })));
+                (*c.borrow()).emplace_hint(___pos, ___args.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(
             ({
@@ -209,17 +221,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 EmplaceableImpl::operator_eq(&(*r.borrow()).iter_deref(), _x.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___args_1: Value<i32> = Rc::new(RefCell::new(5));
-            let ___args_2: Value<i32> = Rc::new(RefCell::new(6));
-            (*c.borrow()).emplace_hint(
-                <std___detail__Node_const_iterator_Emplaceable__true__true_>::from(
-                    ({ (*r.borrow()).clone() }),
-                ),
-                ___args_1.as_pointer(),
-                ___args_2.as_pointer(),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___args_1: Value<i32> = Rc::new(RefCell::new(5));
+                let ___args_2: Value<i32> = Rc::new(RefCell::new(6));
+                (*c.borrow()).emplace_hint(
+                    <std___detail__Node_const_iterator_Emplaceable__true__true_>::from(
+                        ({ (*r.borrow()).clone() }),
+                    ),
+                    ___args_1.as_pointer(),
+                    ___args_2.as_pointer(),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(
             ({

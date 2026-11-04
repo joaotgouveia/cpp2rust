@@ -87,7 +87,11 @@ pub fn test_4() -> bool {
         );
         let i: Value<BidirectionalIterator<i32>> =
             Rc::new(RefCell::new(BidirectionalIterator::default()));
-        (*i.borrow_mut()) = ({ (*m.borrow()).begin() });
+        {
+            let __a1 = ({ (*m.borrow()).begin() });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         let k: Value<BidirectionalIterator<i32>> = Rc::new(RefCell::new((*i.borrow()).clone()));
         assert!(({ (*i.borrow()) == (*k.borrow()) }));
         let mut j: i32 = 1;
@@ -175,7 +179,11 @@ pub fn test_4() -> bool {
         );
         let i: Value<BidirectionalIterator<i32>> =
             Rc::new(RefCell::new(BidirectionalIterator::default()));
-        (*i.borrow_mut()) = ({ (*m.borrow()).begin() });
+        {
+            let __a1 = ({ (*m.borrow()).begin() });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         let mut j: i32 = 1;
         'loop_: while (j <= (({ (*m.borrow()).size() }) as i32)) {
             assert!(({ (((*i.borrow()).iter_deref().read()) == j) }));
@@ -241,7 +249,11 @@ pub fn test_4() -> bool {
         );
         let i: Value<BidirectionalIterator<i32>> =
             Rc::new(RefCell::new(BidirectionalIterator::default()));
-        (*i.borrow_mut()) = ({ (*m.borrow()).begin() }).clone();
+        {
+            let __a1 = ({ (*m.borrow()).begin() });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         let k: Value<BidirectionalIterator<i32>> = Rc::new(RefCell::new((*i.borrow()).clone()));
         assert!(({ (*i.borrow()) == (*k.borrow()) }));
         let mut j: i32 = 1;
@@ -329,7 +341,11 @@ pub fn test_4() -> bool {
         );
         let i: Value<BidirectionalIterator<i32>> =
             Rc::new(RefCell::new(BidirectionalIterator::default()));
-        (*i.borrow_mut()) = ({ (*m.borrow()).begin() }).clone();
+        {
+            let __a1 = ({ (*m.borrow()).begin() });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         let mut j: i32 = 1;
         'loop_: while (j <= (({ (*m.borrow()).size() }) as i32)) {
             assert!(({ (((*i.borrow()).iter_deref().read()) == j) }));

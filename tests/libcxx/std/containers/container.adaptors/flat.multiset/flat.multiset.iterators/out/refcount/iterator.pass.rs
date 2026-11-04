@@ -845,11 +845,13 @@ pub fn test_one_22() {
     );
     let i: Value<RandomAccessIterator<i32>> =
         Rc::new(RefCell::new(RandomAccessIterator::default()));
-    (*i.borrow_mut()) = ({
-        ((*m.borrow())
-            as std__Flat_set_impl_int__std_less_int___std_vector_int__std_allocator_int____true_)
-            .begin()
-    });
+    {
+        let __a1 = ({
+            ( (*m.borrow()) as std__Flat_set_impl_int__std_less_int___std_vector_int__std_allocator_int____true_ ) . begin ( )
+        });
+        i.as_pointer().with_mut(|__it| *__it = __a1);
+        i.as_pointer()
+    };
     let k: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new((*i.borrow()).clone()));
     assert!(({ (*i.borrow()) == (*k.borrow()) }));
     let mut j: i32 = 0;
@@ -961,12 +963,15 @@ pub fn test_one_24() {
     let i: Value<std__Deque_iterator_int__const_int_ref__const_int_ptr_> = Rc::new(RefCell::new(
         <std__Deque_iterator_int__const_int_ref__const_int_ptr_>::default(),
     ));
-    (*i.borrow_mut()) = ({
-        ((*m.borrow())
-            as std__Flat_set_impl_int__std_less_int___std_deque_int__std_allocator_int____true_)
-            .begin()
-    })
-    .clone();
+    {
+        let __a1 = ({
+            ((*m.borrow())
+                as std__Flat_set_impl_int__std_less_int___std_deque_int__std_allocator_int____true_)
+                .begin()
+        });
+        i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+        i.as_pointer()
+    };
     let k: Value<std__Deque_iterator_int__const_int_ref__const_int_ptr_> =
         Rc::new(RefCell::new((*i.borrow()).clone()));
     assert!(({ (*i.borrow()) == (*k.borrow()) }));
@@ -1072,9 +1077,13 @@ pub fn test_one_26() {
     let i: Value<three_way_random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
         three_way_random_access_iterator_const_int_ptr_::new_2(),
     ));
-    (*i.borrow_mut()) = ({
-        ( (*m.borrow()) as std__Flat_set_impl_int__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr____true_ ) . begin ( )
-    });
+    {
+        let __a1 = ({
+            ( (*m.borrow()) as std__Flat_set_impl_int__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr____true_ ) . begin ( )
+        });
+        i.as_pointer().with_mut(|__it| *__it = __a1);
+        i.as_pointer()
+    };
     let k: Value<three_way_random_access_iterator_const_int_ptr_> =
         Rc::new(RefCell::new((*i.borrow()).clone()));
     assert!(
@@ -1193,11 +1202,13 @@ pub fn test_one_28() {
     );
     let i: Value<RandomAccessIterator<i32>> =
         Rc::new(RefCell::new(RandomAccessIterator::default()));
-    (*i.borrow_mut()) = ({
-        ((*m.borrow())
-            as std__Flat_set_impl_int__std_less_int___std_vector_int__min_allocator_int____true_)
-            .begin()
-    });
+    {
+        let __a1 = ({
+            ( (*m.borrow()) as std__Flat_set_impl_int__std_less_int___std_vector_int__min_allocator_int____true_ ) . begin ( )
+        });
+        i.as_pointer().with_mut(|__it| *__it = __a1);
+        i.as_pointer()
+    };
     let k: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new((*i.borrow()).clone()));
     assert!(({ (*i.borrow()) == (*k.borrow()) }));
     let mut j: i32 = 0;
@@ -1374,7 +1385,8 @@ fn begin_11 ( &self , ) -> three_way_random_access_iterator_int_ptr_  { return t
  } fn to_vector_iterator ( &self , mut cit : three_way_random_access_iterator_const_int_ptr_  , ) -> RandomAccessIterator<i32  >  { return match ({ ( { let _x: three_way_random_access_iterator_const_int_ptr_   = (cit ).clone()  ; operator_sub_9 ( _x , ( { MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__Impl :: cbegin ( self , ) } )   , ) } )   },) { (mut __tmp_0,) => { CppRange::begin(&field_ref!((* self )  , data_).decay() )  .iter_add(__tmp_0 ) } }    ;
  } fn from_vector_iterator ( &self , it : RandomAccessIterator<i32  >  , ) -> three_way_random_access_iterator_int_ptr_  { let it : Value<RandomAccessIterator<i32  > >  = Rc::new(RefCell::new(it)) ;
  return ( { let _n: isize   = ((*it.borrow()) .iter_distance(&CppRange::begin(&field_ref!((* self )  , data_).decay() )  .into()) as i64 as isize)   ; let _x: three_way_random_access_iterator_int_ptr_   = ( { MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__Impl :: begin_11 ( self , ) } )   ; operator_add_3 ( _n , _x , ) } )    ;
- } fn move_assign ( &self , _a0 : Ptr< MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__  > , ) -> Ptr< MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__  > { field_ref!((* self )  , data_).as_pointer() .write(field!(_a0, data_).with_mut(std::mem::take))  ;
+ } fn move_assign ( &self , _a0 : Ptr< MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__  > , ) -> Ptr< MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__  > { {field_ref!((* self )  , data_).as_pointer() .write(field!(_a0, data_).with_mut(std::mem::take));
+    field_ref!((* self )  , data_).as_pointer() }  ;
  return ((* self )  ).clone()  ;
  } fn insert_20_const_int_ptr ( &self , mut p : three_way_random_access_iterator_const_int_ptr_  , mut first : Ptr< i32  >  , mut last : Ptr< i32  >  , ) -> three_way_random_access_iterator_int_ptr_  { return ( { let _it: RandomAccessIterator<i32  >   = match ({ ( { MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__Impl :: to_vector_iterator ( self , (p ).clone()  , ) } )   },) { (mut __tmp_1,) => { {let __start = __tmp_1 .index();
     let mut __tmp: Vec<i32  > = Vec::new();

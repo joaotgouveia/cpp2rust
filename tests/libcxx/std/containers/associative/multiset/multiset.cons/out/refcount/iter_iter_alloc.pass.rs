@@ -871,55 +871,55 @@ pub fn test_14() -> bool {
             })
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 4_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 5_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 5_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 6_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 6_isize as isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 7_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 7_isize as isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 8_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 8_isize as isize)
                 .iter_deref()
                 .read())
                 == 3)
@@ -954,55 +954,55 @@ pub fn test_14() -> bool {
             })
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 4_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 5_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 5_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 6_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 6_isize as isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 7_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 7_isize as isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 8_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 8_isize as isize)
                 .iter_deref()
                 .read())
                 == 3)

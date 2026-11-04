@@ -225,13 +225,18 @@ pub fn test_18() -> bool {
                 }) == 1_isize)
             })
         );
-        (*i.borrow_mut()) = ({
-            let ___pos: std__Fwd_list_const_iterator_MoveOnly_ = ({ (*c.borrow()).cbegin() });
-            let ___val: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
-            (*c.borrow()).insert_after_43(___pos, ___val.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___pos: std__Fwd_list_const_iterator_MoveOnly_ = ({ (*c.borrow()).cbegin() });
+                let ___val: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
+                (*c.borrow()).insert_after_43(___pos, ___val.as_pointer())
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
         );
         assert!(
             ({
@@ -243,7 +248,7 @@ pub fn test_18() -> bool {
         assert!(
             ({
                 let _x: Ptr<MoveOnly> =
-                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
                         .iter_deref();
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
                 operator_eq_0(_x, _y.as_pointer())
@@ -258,14 +263,19 @@ pub fn test_18() -> bool {
                 }) == 2_isize)
             })
         );
-        (*i.borrow_mut()) = ({
-            let ___pos: std__Fwd_list_const_iterator_MoveOnly_ =
-                libcc2rs::next_refcount(({ ({ (*c.borrow()).cbegin() }) }), 1_isize);
-            let ___val: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
-            (*c.borrow()).insert_after_43(___pos, ___val.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___pos: std__Fwd_list_const_iterator_MoveOnly_ =
+                    libcc2rs::next_refcount(({ ({ (*c.borrow()).cbegin() }) }), 1_isize as isize);
+                let ___val: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
+                (*c.borrow()).insert_after_43(___pos, ___val.as_pointer())
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize as isize)
         );
         assert!(
             ({
@@ -277,7 +287,7 @@ pub fn test_18() -> bool {
         assert!(
             ({
                 let _x: Ptr<MoveOnly> =
-                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
                         .iter_deref();
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
                 operator_eq_0(_x, _y.as_pointer())
@@ -286,7 +296,7 @@ pub fn test_18() -> bool {
         assert!(
             ({
                 let _x: Ptr<MoveOnly> =
-                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
+                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize as isize)
                         .iter_deref();
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
                 operator_eq_0(_x, _y.as_pointer())
@@ -301,13 +311,18 @@ pub fn test_18() -> bool {
                 }) == 3_isize)
             })
         );
-        (*i.borrow_mut()) = ({
-            let ___pos: std__Fwd_list_const_iterator_MoveOnly_ = ({ (*c.borrow()).cbegin() });
-            let ___val: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
-            (*c.borrow()).insert_after_43(___pos, ___val.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___pos: std__Fwd_list_const_iterator_MoveOnly_ = ({ (*c.borrow()).cbegin() });
+                let ___val: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+                (*c.borrow()).insert_after_43(___pos, ___val.as_pointer())
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
         );
         assert!(
             ({
@@ -319,7 +334,7 @@ pub fn test_18() -> bool {
         assert!(
             ({
                 let _x: Ptr<MoveOnly> =
-                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
                         .iter_deref();
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
                 operator_eq_0(_x, _y.as_pointer())
@@ -328,7 +343,7 @@ pub fn test_18() -> bool {
         assert!(
             ({
                 let _x: Ptr<MoveOnly> =
-                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
+                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize as isize)
                         .iter_deref();
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
                 operator_eq_0(_x, _y.as_pointer())
@@ -337,7 +352,7 @@ pub fn test_18() -> bool {
         assert!(
             ({
                 let _x: Ptr<MoveOnly> =
-                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 3_isize)
+                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 3_isize as isize)
                         .iter_deref();
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
                 operator_eq_0(_x, _y.as_pointer())
@@ -382,9 +397,18 @@ pub fn test_18() -> bool {
                 }) == 1_isize)
             })
         );
-        (*i.borrow_mut())  = ( { let ___pos: std___fwdlist__Iterator_true__min_pointer_MoveOnly__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . cbegin ( ) } )   ; let ___val : Value<MoveOnly > = Rc::new(RefCell::new(MoveOnly :: new ( { Some ( 1  ) } , )  )); (*c.borrow()) . insert_after_43 ( ___pos , ___val.as_pointer() , ) } )  .clone()  ;
+        {
+            let __a1 = ({
+                let ___pos: std___fwdlist__Iterator_true__min_pointer_MoveOnly__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . cbegin ( ) } )   ;
+                let ___val: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
+                (*c.borrow()).insert_after_43(___pos, ___val.as_pointer())
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
         );
         assert!(
             ({
@@ -396,7 +420,7 @@ pub fn test_18() -> bool {
         assert!(
             ({
                 let _x: Ptr<MoveOnly> =
-                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
                         .iter_deref();
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
                 operator_eq_0(_x, _y.as_pointer())
@@ -411,9 +435,18 @@ pub fn test_18() -> bool {
                 }) == 2_isize)
             })
         );
-        (*i.borrow_mut())  = ( { let ___pos: std___fwdlist__Iterator_true__min_pointer_MoveOnly__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c.borrow()) . cbegin ( ) } )   }), 1_isize )   ; let ___val : Value<MoveOnly > = Rc::new(RefCell::new(MoveOnly :: new ( { Some ( 2  ) } , )  )); (*c.borrow()) . insert_after_43 ( ___pos , ___val.as_pointer() , ) } )  .clone()  ;
+        {
+            let __a1 = ({
+                let ___pos: std___fwdlist__Iterator_true__min_pointer_MoveOnly__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c.borrow()) . cbegin ( ) } )   }), 1_isize  as isize)   ;
+                let ___val: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
+                (*c.borrow()).insert_after_43(___pos, ___val.as_pointer())
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize as isize)
         );
         assert!(
             ({
@@ -425,7 +458,7 @@ pub fn test_18() -> bool {
         assert!(
             ({
                 let _x: Ptr<MoveOnly> =
-                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
                         .iter_deref();
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
                 operator_eq_0(_x, _y.as_pointer())
@@ -434,7 +467,7 @@ pub fn test_18() -> bool {
         assert!(
             ({
                 let _x: Ptr<MoveOnly> =
-                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
+                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize as isize)
                         .iter_deref();
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
                 operator_eq_0(_x, _y.as_pointer())
@@ -449,9 +482,18 @@ pub fn test_18() -> bool {
                 }) == 3_isize)
             })
         );
-        (*i.borrow_mut())  = ( { let ___pos: std___fwdlist__Iterator_true__min_pointer_MoveOnly__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . cbegin ( ) } )   ; let ___val : Value<MoveOnly > = Rc::new(RefCell::new(MoveOnly :: new ( { Some ( 3  ) } , )  )); (*c.borrow()) . insert_after_43 ( ___pos , ___val.as_pointer() , ) } )  .clone()  ;
+        {
+            let __a1 = ({
+                let ___pos: std___fwdlist__Iterator_true__min_pointer_MoveOnly__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . cbegin ( ) } )   ;
+                let ___val: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+                (*c.borrow()).insert_after_43(___pos, ___val.as_pointer())
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
         );
         assert!(
             ({
@@ -463,7 +505,7 @@ pub fn test_18() -> bool {
         assert!(
             ({
                 let _x: Ptr<MoveOnly> =
-                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
                         .iter_deref();
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
                 operator_eq_0(_x, _y.as_pointer())
@@ -472,7 +514,7 @@ pub fn test_18() -> bool {
         assert!(
             ({
                 let _x: Ptr<MoveOnly> =
-                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
+                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize as isize)
                         .iter_deref();
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
                 operator_eq_0(_x, _y.as_pointer())
@@ -481,7 +523,7 @@ pub fn test_18() -> bool {
         assert!(
             ({
                 let _x: Ptr<MoveOnly> =
-                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 3_isize)
+                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 3_isize as isize)
                         .iter_deref();
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
                 operator_eq_0(_x, _y.as_pointer())

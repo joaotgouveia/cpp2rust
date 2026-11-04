@@ -54,24 +54,29 @@ fn main_0() -> i32 {
             })
             .collect::<Vec<_>>(),
     ));
-    match (Rc::new(RefCell::new((
-        Rc::new(RefCell::new(
-            (arr.as_pointer() as Ptr<i32>).offset((1) as isize),
-        )),
-        Rc::new(RefCell::new(n)),
-    )))
-    .as_pointer(),)
-    {
-        (__tmp_1,) => const_ptr_pairs.decay().offset(0_usize as isize).write((
+    match (
+        const_ptr_pairs.decay().offset(0_usize as isize),
+        Rc::new(RefCell::new((
             Rc::new(RefCell::new(
-                <Ptr<i32> as CppFrom<Ptr<i32>>>::cpp_from_move(
-                    (*__tmp_1.upgrade().deref()).0.as_pointer(),
-                ),
+                (arr.as_pointer() as Ptr<i32>).offset((1) as isize),
             )),
-            Rc::new(RefCell::new(
-                (((*__tmp_1.upgrade().deref()).1.as_pointer().read()) as u64),
-            )),
-        )),
+            Rc::new(RefCell::new(n)),
+        )))
+        .as_pointer(),
+    ) {
+        (__tmp_1, __tmp_2) => {
+            __tmp_1.write((
+                Rc::new(RefCell::new(
+                    <Ptr<i32> as CppFrom<Ptr<i32>>>::cpp_from_move(
+                        (*__tmp_2.upgrade().deref()).0.as_pointer(),
+                    ),
+                )),
+                Rc::new(RefCell::new(
+                    (((*__tmp_2.upgrade().deref()).1.as_pointer().read()) as u64),
+                )),
+            ));
+            (__tmp_1).clone()
+        }
     };
     assert!(
         ({

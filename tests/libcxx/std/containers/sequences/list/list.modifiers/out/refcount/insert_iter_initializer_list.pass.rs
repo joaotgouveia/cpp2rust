@@ -57,15 +57,20 @@ pub fn test_4() -> bool {
         let i: Value<BidirectionalIterator<i32>> = Rc::new(RefCell::new(
             ({
                 let ___p: BidirectionalIterator<i32> =
-                    libcc2rs::next_refcount(({ ({ (*d.borrow()).cbegin() }) }), 2_isize);
+                    libcc2rs::next_refcount(({ ({ (*d.borrow()).cbegin() }) }), 2_isize as isize);
                 (*d.borrow()).insert_58(___p, Vec::from([3, 4, 5, 6]))
             }),
         ));
         assert!(({ (({ (*d.borrow()).size() }) == 14_u64) }));
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*d.borrow()).begin_24() }) }), 2_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*d.borrow()).begin_24() }) }), 2_isize as isize)
         );
-        (*i.borrow_mut()) = ({ (*d.borrow()).begin_24() });
+        {
+            let __a1 = ({ (*d.borrow()).begin_24() });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!((((*i.borrow_mut()).iter_post_inc().iter_deref().read()) == 1));
         assert!((((*i.borrow_mut()).iter_post_inc().iter_deref().read()) == 1));
         assert!((((*i.borrow_mut()).iter_post_inc().iter_deref().read()) == 3));
@@ -89,15 +94,20 @@ pub fn test_4() -> bool {
         let i: Value<BidirectionalIterator<i32>> = Rc::new(RefCell::new(
             ({
                 let ___p: BidirectionalIterator<i32> =
-                    libcc2rs::next_refcount(({ ({ (*d.borrow()).cbegin() }) }), 2_isize);
+                    libcc2rs::next_refcount(({ ({ (*d.borrow()).cbegin() }) }), 2_isize as isize);
                 (*d.borrow()).insert_58(___p, Vec::from([3, 4, 5, 6]))
             }),
         ));
         assert!(({ (({ (*d.borrow()).size() }) == 14_u64) }));
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*d.borrow()).begin_24() }) }), 2_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*d.borrow()).begin_24() }) }), 2_isize as isize)
         );
-        (*i.borrow_mut()) = ({ (*d.borrow()).begin_24() }).clone();
+        {
+            let __a1 = ({ (*d.borrow()).begin_24() });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!((((*i.borrow_mut()).iter_post_inc().iter_deref().read()) == 1));
         assert!((((*i.borrow_mut()).iter_post_inc().iter_deref().read()) == 1));
         assert!((((*i.borrow_mut()).iter_post_inc().iter_deref().read()) == 3));

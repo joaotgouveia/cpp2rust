@@ -386,48 +386,48 @@ pub fn test_alloc_11() {
             Rc::new(RefCell::new((*orig.borrow()).clone()));
         assert!(({ (({ (*copy.borrow()).size() }) == 3_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 0_isize)
+            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 0_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 1_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 2_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 3_isize)
+            libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 3_isize as isize)
                 == ({ (*copy.borrow()).end() })
         );
         assert!(({ (({ (*orig.borrow()).size() }) == 3_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 0_isize)
+            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 0_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 1_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 2_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 3_isize)
+            libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 3_isize as isize)
                 == ({ (*orig.borrow()).end() })
         );
     }
@@ -454,72 +454,72 @@ pub fn test_alloc_11() {
             Rc::new(RefCell::new((*orig.borrow()).clone()));
         assert!(({ (({ (*copy.borrow()).size() }) == 5_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 0_isize)
+            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 0_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 1_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 2_isize as isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 3_isize as isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 4_isize as isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
         assert!(
-            libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 5_isize)
+            libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 5_isize as isize)
                 == ({ (*copy.borrow()).end() })
         );
         assert!(({ (({ (*orig.borrow()).size() }) == 5_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 0_isize)
+            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 0_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 1_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 2_isize as isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 3_isize as isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 4_isize as isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
         assert!(
-            libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 5_isize)
+            libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 5_isize as isize)
                 == ({ (*orig.borrow()).end() })
         );
     }
@@ -537,48 +537,48 @@ pub fn test_alloc_14() {
             Rc::new(RefCell::new((*orig.borrow()).clone()));
         assert!(({ (({ (*copy.borrow()).size() }) == 3_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 0_isize)
+            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 0_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 1_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 2_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 3_isize)
+            libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 3_isize as isize)
                 == ({ (*copy.borrow()).end() })
         );
         assert!(({ (({ (*orig.borrow()).size() }) == 3_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 0_isize)
+            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 0_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 1_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 2_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 3_isize)
+            libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 3_isize as isize)
                 == ({ (*orig.borrow()).end() })
         );
     }
@@ -605,72 +605,72 @@ pub fn test_alloc_14() {
             Rc::new(RefCell::new((*orig.borrow()).clone()));
         assert!(({ (({ (*copy.borrow()).size() }) == 5_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 0_isize)
+            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 0_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 1_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 2_isize as isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 3_isize as isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 4_isize as isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
         assert!(
-            libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 5_isize)
+            libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 5_isize as isize)
                 == ({ (*copy.borrow()).end() })
         );
         assert!(({ (({ (*orig.borrow()).size() }) == 5_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 0_isize)
+            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 0_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 1_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 2_isize as isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 3_isize as isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 4_isize as isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
         assert!(
-            libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 5_isize)
+            libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 5_isize as isize)
                 == ({ (*orig.borrow()).end() })
         );
     }

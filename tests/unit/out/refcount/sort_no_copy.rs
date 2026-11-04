@@ -143,19 +143,27 @@ fn main_0() -> i32 {
     };
     {
         let __init = Tracked::new_1({ 2 });
-        (*vec_.borrow_mut()).push(__init)
+        vec_.as_pointer()
+            .with_mut(|__v: &mut Vec<Tracked>| __v.push(__init));
+        vec_.as_pointer().decay().to_last()
     };
     {
         let __init = Tracked::new_1({ 7 });
-        (*vec_.borrow_mut()).push(__init)
+        vec_.as_pointer()
+            .with_mut(|__v: &mut Vec<Tracked>| __v.push(__init));
+        vec_.as_pointer().decay().to_last()
     };
     {
         let __init = Tracked::new_1({ 1 });
-        (*vec_.borrow_mut()).push(__init)
+        vec_.as_pointer()
+            .with_mut(|__v: &mut Vec<Tracked>| __v.push(__init));
+        vec_.as_pointer().decay().to_last()
     };
     {
         let __init = Tracked::new_1({ 8 });
-        (*vec_.borrow_mut()).push(__init)
+        vec_.as_pointer()
+            .with_mut(|__v: &mut Vec<Tracked>| __v.push(__init));
+        vec_.as_pointer().decay().to_last()
     };
     match ({ CppRange::begin(&vec_.decay()) },) {
         (mut __tmp_1,) => {
@@ -263,15 +271,33 @@ fn main_0() -> i32 {
     ));
     {
         let __init = Tracked::new_1({ 1 });
-        (*bags.borrow_mut())[(0) as usize].items.push(__init)
+        field_ref!((bags.as_pointer() as Ptr<Bag>).offset(0), items)
+            .as_pointer()
+            .with_mut(|__v: &mut Vec<Tracked>| __v.push(__init));
+        field_ref!((bags.as_pointer() as Ptr<Bag>).offset(0), items)
+            .as_pointer()
+            .decay()
+            .to_last()
     };
     {
         let __init = Tracked::new_1({ 2 });
-        (*bags.borrow_mut())[(0) as usize].items.push(__init)
+        field_ref!((bags.as_pointer() as Ptr<Bag>).offset(0), items)
+            .as_pointer()
+            .with_mut(|__v: &mut Vec<Tracked>| __v.push(__init));
+        field_ref!((bags.as_pointer() as Ptr<Bag>).offset(0), items)
+            .as_pointer()
+            .decay()
+            .to_last()
     };
     {
         let __init = Tracked::new_1({ 3 });
-        (*bags.borrow_mut())[(2) as usize].items.push(__init)
+        field_ref!((bags.as_pointer() as Ptr<Bag>).offset(2), items)
+            .as_pointer()
+            .with_mut(|__v: &mut Vec<Tracked>| __v.push(__init));
+        field_ref!((bags.as_pointer() as Ptr<Bag>).offset(2), items)
+            .as_pointer()
+            .decay()
+            .to_last()
     };
     match ({ (bags.as_pointer() as Ptr<Bag>) },) {
         (mut __tmp_5,) => {
@@ -296,27 +322,33 @@ fn main_0() -> i32 {
             .map(|_| <Bag>::default())
             .collect::<Vec<_>>(),
     ));
-    {
-        let __init = Tracked::new_1({ 4 });
-        field!(bag_vec.decay().offset(1_usize as isize), items)
-            .with_mut(|__v: &mut Vec<Tracked>| __v.push(__init))
+    match (field_ref!(bag_vec.decay().offset(1_usize as isize), items).as_pointer(),) {
+        (__tmp_6,) => {
+            let __init = Tracked::new_1({ 4 });
+            __tmp_6.with_mut(|__v: &mut Vec<Tracked>| __v.push(__init));
+            __tmp_6.decay().to_last()
+        }
     };
-    {
-        let __init = Tracked::new_1({ 5 });
-        field!(bag_vec.decay().offset(1_usize as isize), items)
-            .with_mut(|__v: &mut Vec<Tracked>| __v.push(__init))
+    match (field_ref!(bag_vec.decay().offset(1_usize as isize), items).as_pointer(),) {
+        (__tmp_7,) => {
+            let __init = Tracked::new_1({ 5 });
+            __tmp_7.with_mut(|__v: &mut Vec<Tracked>| __v.push(__init));
+            __tmp_7.decay().to_last()
+        }
     };
-    {
-        let __init = Tracked::new_1({ 6 });
-        field!(bag_vec.decay().offset(2_usize as isize), items)
-            .with_mut(|__v: &mut Vec<Tracked>| __v.push(__init))
+    match (field_ref!(bag_vec.decay().offset(2_usize as isize), items).as_pointer(),) {
+        (__tmp_8,) => {
+            let __init = Tracked::new_1({ 6 });
+            __tmp_8.with_mut(|__v: &mut Vec<Tracked>| __v.push(__init));
+            __tmp_8.decay().to_last()
+        }
     };
     match ({ CppRange::begin(&bag_vec.decay()) },) {
-        (mut __tmp_6,) => {
-            let __n = CppRange::end(&bag_vec.decay()).iter_distance(&__tmp_6);
+        (mut __tmp_9,) => {
+            let __n = CppRange::end(&bag_vec.decay()).iter_distance(&__tmp_9);
             let mut __order: Vec<isize> = (0..__n).collect();
-            __order.sort_by(|&__x, &__y| cpp_cmp(&__tmp_6.iter_at(__x), &__tmp_6.iter_at(__y)));
-            reorder(__order, |__i| __tmp_6.iter_at(__i));
+            __order.sort_by(|&__x, &__y| cpp_cmp(&__tmp_9.iter_at(__x), &__tmp_9.iter_at(__y)));
+            reorder(__order, |__i| __tmp_9.iter_at(__i));
         }
     };
     assert!(
@@ -341,10 +373,10 @@ fn main_0() -> i32 {
             CppRange::end(&bag_vec.decay())
         },)
         {
-            (mut __tmp_7, mut __tmp_8) => {
+            (mut __tmp_10, mut __tmp_11) => {
                 {
-                    let mut __it = (__tmp_7).clone();
-                    while __it != __tmp_8
+                    let mut __it = (__tmp_10).clone();
+                    while __it != __tmp_11
                         && !CppEq::equal(
                             &__it.iter_deref(),
                             &(bags.as_pointer() as Ptr<Bag>).offset(1),
@@ -362,13 +394,13 @@ fn main_0() -> i32 {
             CppRange::end(&bag_vec.decay())
         },)
         {
-            (mut __tmp_9, mut __tmp_10) => {
+            (mut __tmp_12, mut __tmp_13) => {
                 {
-                    let mut __best = __tmp_9.clone();
-                    if __tmp_9 != __tmp_10 {
-                        let mut __it = (__tmp_9).clone();
+                    let mut __best = __tmp_12.clone();
+                    if __tmp_12 != __tmp_13 {
+                        let mut __it = (__tmp_12).clone();
                         __it.iter_inc();
-                        while __it != __tmp_10 {
+                        while __it != __tmp_13 {
                             if CppLess::less(&__best.iter_deref(), &__it.iter_deref()) {
                                 __best = __it.clone();
                             }
@@ -443,9 +475,12 @@ pub trait BagImpl {
 }
 impl BagImpl for Ptr<Bag> {
     fn move_assign(&self, _a0: Ptr<Bag>) -> Ptr<Bag> {
-        field_ref!((*self), items)
-            .as_pointer()
-            .write(field!(_a0, items).with_mut(std::mem::take));
+        {
+            field_ref!((*self), items)
+                .as_pointer()
+                .write(field!(_a0, items).with_mut(std::mem::take));
+            field_ref!((*self), items).as_pointer()
+        };
         return (*self).clone();
     }
 }

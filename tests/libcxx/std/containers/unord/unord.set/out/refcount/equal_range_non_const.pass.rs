@@ -104,12 +104,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             })
         );
         assert!(({ (((*(*r.borrow()).0.borrow()).iter_deref().read()) == 30) }));
-        r.as_pointer().write(
-            ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(5));
-                (*c.borrow()).equal_range_66(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<i32> = Rc::new(RefCell::new(5));
+                        (*c.borrow()).equal_range_66(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(
             ({
                 (({
@@ -121,12 +127,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 0_isize)
             })
         );
-        r.as_pointer().write(
-            ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(50));
-                (*c.borrow()).equal_range_66(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<i32> = Rc::new(RefCell::new(50));
+                        (*c.borrow()).equal_range_66(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(
             ({
                 (({
@@ -176,12 +188,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             })
         );
         assert!(({ (((*(*r.borrow()).0.borrow()).iter_deref().read()) == 30) }));
-        r.as_pointer().write(
-            ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(5));
-                (*c.borrow()).equal_range_66(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<i32> = Rc::new(RefCell::new(5));
+                        (*c.borrow()).equal_range_66(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(
             ({
                 (({
@@ -193,12 +211,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 0_isize)
             })
         );
-        r.as_pointer().write(
-            ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(50));
-                (*c.borrow()).equal_range_66(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<i32> = Rc::new(RefCell::new(50));
+                        (*c.borrow()).equal_range_66(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(
             ({
                 (({

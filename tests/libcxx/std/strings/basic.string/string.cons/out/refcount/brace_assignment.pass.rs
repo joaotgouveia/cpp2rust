@@ -23,13 +23,16 @@ pub fn test_0() -> bool {
             __bytes.push(0_i8);
             __bytes
         }));
-        s.as_pointer().write({
-            let mut __v = Vec::with_capacity(2_usize as usize + 1);
-            Ptr::<i8>::from_string_literal(b"abc")
-                .with_slice(2_usize as usize, |__s| __v.extend_from_slice(__s));
-            __v.push(0_i8);
-            __v
-        });
+        {
+            s.as_pointer().write({
+                let mut __v = Vec::with_capacity(2_usize as usize + 1);
+                Ptr::<i8>::from_string_literal(b"abc")
+                    .with_slice(2_usize as usize, |__s| __v.extend_from_slice(__s));
+                __v.push(0_i8);
+                __v
+            });
+            s.as_pointer()
+        };
         assert!(
             ({
                 Ptr::<i8>::from_string_literal(b"ab").with_c_str(|__s| {
@@ -45,13 +48,16 @@ pub fn test_0() -> bool {
             __bytes.push(0_i8);
             __bytes
         }));
-        s.as_pointer().write({
-            let mut __v = Vec::with_capacity(30_usize as usize + 1);
-            Ptr::<i8>::from_string_literal(b"It\'sALongString!NoSSO!qwertyuiop")
-                .with_slice(30_usize as usize, |__s| __v.extend_from_slice(__s));
-            __v.push(0_i8);
-            __v
-        });
+        {
+            s.as_pointer().write({
+                let mut __v = Vec::with_capacity(30_usize as usize + 1);
+                Ptr::<i8>::from_string_literal(b"It\'sALongString!NoSSO!qwertyuiop")
+                    .with_slice(30_usize as usize, |__s| __v.extend_from_slice(__s));
+                __v.push(0_i8);
+                __v
+            });
+            s.as_pointer()
+        };
         assert!(
             ({
                 Ptr::<i8>::from_string_literal(b"It\'sALongString!NoSSO!qwertyui").with_c_str(
@@ -70,13 +76,16 @@ pub fn test_0() -> bool {
             __bytes.push(0_i8);
             __bytes
         }));
-        s.as_pointer().write({
-            let mut __v = Vec::with_capacity(30_usize as usize + 1);
-            Ptr::<i8>::from_string_literal(b"It\'sALongString!NoSSO!qwertyuiop")
-                .with_slice(30_usize as usize, |__s| __v.extend_from_slice(__s));
-            __v.push(0_i8);
-            __v
-        });
+        {
+            s.as_pointer().write({
+                let mut __v = Vec::with_capacity(30_usize as usize + 1);
+                Ptr::<i8>::from_string_literal(b"It\'sALongString!NoSSO!qwertyuiop")
+                    .with_slice(30_usize as usize, |__s| __v.extend_from_slice(__s));
+                __v.push(0_i8);
+                __v
+            });
+            s.as_pointer()
+        };
         assert!(
             ({
                 Ptr::<i8>::from_string_literal(b"It\'sALongString!NoSSO!qwertyui").with_c_str(
@@ -95,13 +104,16 @@ pub fn test_0() -> bool {
             __bytes.push(0_i8);
             __bytes
         }));
-        s.as_pointer().write({
-            let mut __v = Vec::with_capacity(2_usize as usize + 1);
-            Ptr::<i8>::from_string_literal(b"abc")
-                .with_slice(2_usize as usize, |__s| __v.extend_from_slice(__s));
-            __v.push(0_i8);
-            __v
-        });
+        {
+            s.as_pointer().write({
+                let mut __v = Vec::with_capacity(2_usize as usize + 1);
+                Ptr::<i8>::from_string_literal(b"abc")
+                    .with_slice(2_usize as usize, |__s| __v.extend_from_slice(__s));
+                __v.push(0_i8);
+                __v
+            });
+            s.as_pointer()
+        };
         assert!(
             ({
                 Ptr::<i8>::from_string_literal(b"ab").with_c_str(|__s| {
@@ -120,13 +132,16 @@ pub fn test_0() -> bool {
             __bytes.push(0_i8);
             __bytes
         }));
-        s.as_pointer().write({
-            let mut __v = Vec::with_capacity(0_usize as usize + 1);
-            Ptr::<i8>::from_string_literal(b"abc")
-                .with_slice(0_usize as usize, |__s| __v.extend_from_slice(__s));
-            __v.push(0_i8);
-            __v
-        });
+        {
+            s.as_pointer().write({
+                let mut __v = Vec::with_capacity(0_usize as usize + 1);
+                Ptr::<i8>::from_string_literal(b"abc")
+                    .with_slice(0_usize as usize, |__s| __v.extend_from_slice(__s));
+                __v.push(0_i8);
+                __v
+            });
+            s.as_pointer()
+        };
         assert!(
             ({
                 Ptr::<i8>::from_string_literal(b"").with_c_str(|__s| {

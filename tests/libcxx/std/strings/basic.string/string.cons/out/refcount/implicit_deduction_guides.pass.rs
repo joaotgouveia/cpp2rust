@@ -1425,16 +1425,27 @@ pub fn test_20() -> bool {
     }
     {
         let mut input: Ptr<i8> = Ptr::<i8>::from_string_literal(b"abcdef");
-        let s: Value<Vec<i8>> = Rc::new(RefCell::new({
-            use std::io::Read;
-            let mut __bytes: Vec<u8> = Vec::new();
-            let mut __f =
-                &cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (input).clone() });
-            __f.read_to_end(&mut __bytes)
-                .expect("couldn't read the file");
-            __bytes.push(0);
-            CChar::from_byte_vec(__bytes)
-        }));
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new(
+            match (
+                { cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (input).clone() }) },
+                {
+                    cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                        input.offset((3) as isize)
+                    })
+                },
+            ) {
+                (mut __tmp_4, mut __tmp_5) => {
+                    let mut __v = Vec::new();
+                    let mut __it = (__tmp_4).clone();
+                    while __it != __tmp_5 {
+                        __v.push(<i8>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                        __it.iter_inc();
+                    }
+                    __v.push(0_i8);
+                    __v
+                }
+            },
+        ));
         const _: () = assert!(true, "");;
         assert!(
             ({
@@ -1447,16 +1458,31 @@ pub fn test_20() -> bool {
     {
         {
             let mut input: Ptr<i8> = Ptr::<i8>::from_string_literal(b"abcdef");
-            let s: Value<Vec<i8>> = Rc::new(RefCell::new({
-                use std::io::Read;
-                let mut __bytes: Vec<u8> = Vec::new();
-                let mut __f =
-                    &cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (input).clone() });
-                __f.read_to_end(&mut __bytes)
-                    .expect("couldn't read the file");
-                __bytes.push(0);
-                CChar::from_byte_vec(__bytes)
-            }));
+            let s: Value<Vec<i8>> = Rc::new(RefCell::new(
+                match (
+                    {
+                        cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                            (input).clone()
+                        })
+                    },
+                    {
+                        cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                            input.offset((3) as isize)
+                        })
+                    },
+                ) {
+                    (mut __tmp_6, mut __tmp_7) => {
+                        let mut __v = Vec::new();
+                        let mut __it = (__tmp_6).clone();
+                        while __it != __tmp_7 {
+                            __v.push(<i8>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                            __it.iter_inc();
+                        }
+                        __v.push(0_i8);
+                        __v
+                    }
+                },
+            ));
             const _: () = assert!(true, "");;
             assert!(
                 ({
@@ -1470,17 +1496,31 @@ pub fn test_20() -> bool {
             let mut input: Ptr<i32> = Ptr::<i32>::from_string_literal(&[
                 97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
             ]);
-            let s: Value<Vec<i32>> = Rc::new(RefCell::new({
-                use std::io::Read;
-                let mut __bytes: Vec<u8> = Vec::new();
-                let mut __f = &cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_::new({
-                    (input).clone()
-                });
-                __f.read_to_end(&mut __bytes)
-                    .expect("couldn't read the file");
-                __bytes.push(0);
-                CChar::from_byte_vec(__bytes)
-            }));
+            let s: Value<Vec<i32>> = Rc::new(RefCell::new(
+                match (
+                    {
+                        cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_::new({
+                            (input).clone()
+                        })
+                    },
+                    {
+                        cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_::new({
+                            input.offset((3) as isize)
+                        })
+                    },
+                ) {
+                    (mut __tmp_8, mut __tmp_9) => {
+                        let mut __v = Vec::new();
+                        let mut __it = (__tmp_8).clone();
+                        while __it != __tmp_9 {
+                            __v.push(<i32>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                            __it.iter_inc();
+                        }
+                        __v.push(0_i32);
+                        __v
+                    }
+                },
+            ));
             const _: () = assert!(true, "");;
             assert!(
                 ({
@@ -1533,11 +1573,11 @@ pub fn test_20() -> bool {
             __bytes
         }));
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let __tmp_4: Value<std_allocator_char_> =
+            let __tmp_10: Value<std_allocator_char_> =
                 Rc::new(RefCell::new(<std_allocator_char_>::default()));
             std_basic_string_char__std_char_traits_char___std_allocator_char__::new_4(
                 { (sin.as_pointer()).reinterpret_cast::<Vec<i8>>() },
-                { __tmp_4.as_pointer() },
+                { __tmp_10.as_pointer() },
             )
         }));
         const _: () = assert!(true, "");;
@@ -1557,9 +1597,9 @@ pub fn test_20() -> bool {
             __bytes
         }));
         let w: Value<Vec<i32>> = Rc::new(RefCell::new({
-            let __tmp_5: Value<test_allocator_wchar_t_> =
+            let __tmp_11: Value<test_allocator_wchar_t_> =
                 Rc::new(RefCell::new(<test_allocator_wchar_t_>::default()));
-            std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_4 ( { win .as_pointer()  } , { __tmp_5.as_pointer() } , )
+            std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_4 ( { win .as_pointer()  } , { __tmp_11.as_pointer() } , )
         }));
         const _: () = assert!(true, "");;
         assert!(
@@ -1612,11 +1652,11 @@ pub fn test_20() -> bool {
             __bytes
         }));
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let __tmp_6: Value<std_allocator_char_> =
+            let __tmp_12: Value<std_allocator_char_> =
                 Rc::new(RefCell::new(<std_allocator_char_>::default()));
             std_basic_string_char__std_char_traits_char___std_allocator_char__::new_5(
                 { sin.as_pointer() },
-                { __tmp_6.as_pointer() },
+                { __tmp_12.as_pointer() },
             )
         }));
         const _: () = assert!(true, "");;
@@ -1636,9 +1676,9 @@ pub fn test_20() -> bool {
             __bytes
         }));
         let w: Value<Vec<i32>> = Rc::new(RefCell::new({
-            let __tmp_7: Value<test_allocator_wchar_t_> =
+            let __tmp_13: Value<test_allocator_wchar_t_> =
                 Rc::new(RefCell::new(<test_allocator_wchar_t_>::default()));
-            std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_5 ( { win .as_pointer()  } , { __tmp_7.as_pointer() } , )
+            std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_5 ( { win .as_pointer()  } , { __tmp_13.as_pointer() } , )
         }));
         const _: () = assert!(true, "");;
         assert!(
@@ -1683,11 +1723,11 @@ pub fn test_20() -> bool {
     }
     {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let __tmp_8: Value<test_allocator_char_> =
+            let __tmp_14: Value<test_allocator_char_> =
                 Rc::new(RefCell::new(<test_allocator_char_>::default()));
             std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
                 { Vec::from([('a' as i8), ('b' as i8), ('c' as i8)]) },
-                { __tmp_8.as_pointer() },
+                { __tmp_14.as_pointer() },
             )
         }));
         const _: () = assert!(true, "");;
@@ -1699,11 +1739,11 @@ pub fn test_20() -> bool {
             })
         );
         let w: Value<Vec<i32>> = Rc::new(RefCell::new({
-            let __tmp_9: Value<test_allocator_wchar_t_> =
+            let __tmp_15: Value<test_allocator_wchar_t_> =
                 Rc::new(RefCell::new(<test_allocator_wchar_t_>::default()));
             std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_1(
                 { Vec::from([(97 as i32), (98 as i32), (99 as i32)]) },
-                { __tmp_9.as_pointer() },
+                { __tmp_15.as_pointer() },
             )
         }));
         const _: () = assert!(true, "");;
@@ -1763,11 +1803,11 @@ pub fn test_20() -> bool {
             }),
         ));
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let __tmp_10: Value<test_allocator_char_> =
+            let __tmp_16: Value<test_allocator_char_> =
                 Rc::new(RefCell::new(<test_allocator_char_>::default()));
             std_basic_string_char__std_char_traits_char___test_allocator_char__::new_2(
                 { sv.as_pointer() },
-                { __tmp_10.as_pointer() },
+                { __tmp_16.as_pointer() },
             )
         }));
         const _: () = assert!(true, "");;
@@ -1788,9 +1828,9 @@ pub fn test_20() -> bool {
                 }),
             ));
         let w: Value<Vec<i32>> = Rc::new(RefCell::new({
-            let __tmp_11: Value<test_allocator_wchar_t_> =
+            let __tmp_17: Value<test_allocator_wchar_t_> =
                 Rc::new(RefCell::new(<test_allocator_wchar_t_>::default()));
-            std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_6 ( { BSV .as_pointer()  } , { __tmp_11.as_pointer() } , )
+            std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_6 ( { BSV .as_pointer()  } , { __tmp_17.as_pointer() } , )
         }));
         const _: () = assert!(true, "");;
         assert!(
@@ -1854,13 +1894,13 @@ pub fn test_20() -> bool {
             __bytes
         }));
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let __tmp_12: Value<test_allocator_char_> =
+            let __tmp_18: Value<test_allocator_char_> =
                 Rc::new(RefCell::new(test_allocator_char_::new_1({ 4 })));
             std_basic_string_char__std_char_traits_char___test_allocator_char__::new_3(
                 { s0.as_pointer() },
                 { 1_usize },
                 { 1_usize },
-                { __tmp_12.as_pointer() },
+                { __tmp_18.as_pointer() },
             )
         }));
         const _: () = assert!(true, "");;
@@ -1880,13 +1920,13 @@ pub fn test_20() -> bool {
             __bytes
         }));
         let w: Value<Vec<i32>> = Rc::new(RefCell::new({
-            let __tmp_13: Value<test_allocator_wchar_t_> =
+            let __tmp_19: Value<test_allocator_wchar_t_> =
                 Rc::new(RefCell::new(test_allocator_wchar_t_::new_1({ 6 })));
             std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_2(
                 { w0.as_pointer() },
                 { 2_usize },
                 { 2_usize },
-                { __tmp_13.as_pointer() },
+                { __tmp_19.as_pointer() },
             )
         }));
         const _: () = assert!(true, "");;

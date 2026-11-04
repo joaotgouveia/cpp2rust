@@ -152,7 +152,7 @@ pub fn test_stable_6(mut N: i32) {
         != <std__Fwd_list_const_iterator_Payload_>::from(({ (*c.borrow()).end_27() }))
     {
         let next: Value<std__Fwd_list_const_iterator_Payload_> = Rc::new(RefCell::new(
-            libcc2rs::next_refcount(({ (*it.borrow()).clone() }), 1_isize),
+            libcc2rs::next_refcount(({ (*it.borrow()).clone() }), 1_isize as isize),
         ));
         if ((*next.borrow())
             != <std__Fwd_list_const_iterator_Payload_>::from(({ (*c.borrow()).end_27() })))

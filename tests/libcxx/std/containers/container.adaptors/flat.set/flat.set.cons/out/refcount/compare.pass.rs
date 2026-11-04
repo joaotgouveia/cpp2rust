@@ -1529,7 +1529,8 @@ fn begin_12 ( &self , ) -> three_way_random_access_iterator_const_int_ptr_  { re
  } fn end_15 ( &self , ) -> three_way_random_access_iterator_const_int_ptr_  { return ( { let _x: three_way_random_access_iterator_const_int_ptr_   = ( { MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__Impl :: begin_12 ( self , ) } )   ; let _n: isize   = ( ( { MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__Impl :: size ( self , ) } )  as isize )  ; operator_add_6 ( _x , _n , ) } )    ;
  } fn size ( &self , ) -> u32  { return ( (*(* self ) .upgrade().deref()) . data_  .len()  as u32 )   ;
  } fn empty ( &self , ) -> bool  { return (*(* self ) .upgrade().deref()) . data_  .is_empty()    ;
- } fn move_assign ( &self , _a0 : Ptr< MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__  > , ) -> Ptr< MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__  > { field_ref!((* self )  , data_).as_pointer() .write(field!(_a0, data_).with_mut(std::mem::take))  ;
+ } fn move_assign ( &self , _a0 : Ptr< MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__  > , ) -> Ptr< MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__  > { {field_ref!((* self )  , data_).as_pointer() .write(field!(_a0, data_).with_mut(std::mem::take));
+    field_ref!((* self )  , data_).as_pointer() }  ;
  return ((* self )  ).clone()  ;
  } }
 pub trait Tag_XImpl {

@@ -85,15 +85,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         __bytes.push(0_i8);
         __bytes
     }));
-    let pathstr_value: Value<Vec<i8>> = Rc::new(RefCell::new({
-        use std::io::Read;
-        let mut __bytes: Vec<u8> = Vec::new();
-        let mut __f = &({ ({ (*str_value.borrow()).begin_64() }) });
-        __f.read_to_end(&mut __bytes)
-            .expect("couldn't read the file");
-        __bytes.push(0);
-        CChar::from_byte_vec(__bytes)
-    }));
+    let pathstr_value: Value<Vec<i8>> = Rc::new(RefCell::new(
+        match ({ ({ (*str_value.borrow()).begin_64() }) }, {
+            ({ (*str_value.borrow()).end_66() })
+        }) {
+            (mut __tmp_0, mut __tmp_1) => {
+                let mut __v = Vec::new();
+                let mut __it = (__tmp_0).clone();
+                while __it != __tmp_1 {
+                    __v.push(<i8>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                    __it.iter_inc();
+                }
+                __v.push(0_i8);
+                __v
+            }
+        },
+    ));
     {
         let p: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __v: Vec<i8> = value

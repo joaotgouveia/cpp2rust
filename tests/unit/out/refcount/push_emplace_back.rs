@@ -114,14 +114,17 @@ pub fn emplace_local_from_field_4(mut jpg: Ptr<JPEGData>, mut cond: bool) {
                 __v
             }
         };
-        dest.with_mut(|__v: &mut Vec<Vec<u8>>| __v.push(__init))
+        dest.with_mut(|__v: &mut Vec<Vec<u8>>| __v.push(__init));
+        dest.decay().to_last()
     };
 }
 pub fn nested_emplace_move_5(mut bw: Ptr<Writer>) {
-    {
-        let __init = ((*bw.upgrade().deref()).chunk).clone();
-        bw.with(|__s| __s.output.clone())
-            .with_mut(|__v: &mut Vec<Chunk>| __v.push(__init))
+    match ({ bw.with(|__s| __s.output.clone()) },) {
+        (mut __tmp_2,) => {
+            let __init = ((*bw.upgrade().deref()).chunk).clone();
+            __tmp_2.with_mut(|__v: &mut Vec<Chunk>| __v.push(__init));
+            __tmp_2.decay().to_last()
+        }
     };
 }
 pub fn self_ref_push_6(mut comps: Ptr<Vec<Chunk>>) {
@@ -172,15 +175,18 @@ impl Default for Pair {
 pub fn emplace_ctor_args_7(mut pairs: Ptr<Vec<Pair>>) {
     {
         let __init = Pair::new_2();
-        pairs.with_mut(|__v: &mut Vec<Pair>| __v.push(__init))
+        pairs.with_mut(|__v: &mut Vec<Pair>| __v.push(__init));
+        pairs.decay().to_last()
     };
     {
         let __init = Pair::new_1({ 3 });
-        pairs.with_mut(|__v: &mut Vec<Pair>| __v.push(__init))
+        pairs.with_mut(|__v: &mut Vec<Pair>| __v.push(__init));
+        pairs.decay().to_last()
     };
     {
         let __init = Pair::new_3({ 4 }, { 5 });
-        pairs.with_mut(|__v: &mut Vec<Pair>| __v.push(__init))
+        pairs.with_mut(|__v: &mut Vec<Pair>| __v.push(__init));
+        pairs.decay().to_last()
     };
 }
 pub fn emplace_deque_8(mut queue: Ptr<Vec<Pair>>) {
@@ -199,11 +205,13 @@ pub fn emplace_scalar_9(mut values: Ptr<Vec<i64>>, x: i32) {
     let x: Value<i32> = Rc::new(RefCell::new(x));
     {
         let __init = 0_i64;
-        values.with_mut(|__v: &mut Vec<i64>| __v.push(__init))
+        values.with_mut(|__v: &mut Vec<i64>| __v.push(__init));
+        values.decay().to_last()
     };
     {
         let __init = ((*x.borrow()) as i64);
-        values.with_mut(|__v: &mut Vec<i64>| __v.push(__init))
+        values.with_mut(|__v: &mut Vec<i64>| __v.push(__init));
+        values.decay().to_last()
     };
 }
 pub fn main() {
@@ -354,12 +362,18 @@ pub trait JPEGDataImpl {
 }
 impl JPEGDataImpl for Ptr<JPEGData> {
     fn move_assign(&self, _a0: Ptr<JPEGData>) -> Ptr<JPEGData> {
-        field_ref!((*self), com_data)
-            .as_pointer()
-            .write(field!(_a0, com_data).with_mut(std::mem::take));
-        field_ref!((*self), app_data)
-            .as_pointer()
-            .write(field!(_a0, app_data).with_mut(std::mem::take));
+        {
+            field_ref!((*self), com_data)
+                .as_pointer()
+                .write(field!(_a0, com_data).with_mut(std::mem::take));
+            field_ref!((*self), com_data).as_pointer()
+        };
+        {
+            field_ref!((*self), app_data)
+                .as_pointer()
+                .write(field!(_a0, app_data).with_mut(std::mem::take));
+            field_ref!((*self), app_data).as_pointer()
+        };
         return (*self).clone();
     }
 }

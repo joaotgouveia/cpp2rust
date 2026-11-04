@@ -424,11 +424,15 @@ fn main_0() -> i32 {
     let vec_: Value<Vec<Tracked>> = Rc::new(RefCell::new(Vec::new()));
     {
         let __init = Tracked::new_1({ 4 });
-        (*vec_.borrow_mut()).push(__init)
+        vec_.as_pointer()
+            .with_mut(|__v: &mut Vec<Tracked>| __v.push(__init));
+        vec_.as_pointer().decay().to_last()
     };
     {
         let __init = Tracked::new_1({ 5 });
-        (*vec_.borrow_mut()).push(__init)
+        vec_.as_pointer()
+            .with_mut(|__v: &mut Vec<Tracked>| __v.push(__init));
+        vec_.as_pointer().decay().to_last()
     };
     cpp_swap!(
         vec_.decay().offset(0_usize as isize),
@@ -507,23 +511,26 @@ fn main_0() -> i32 {
             .map(|_| Default::default())
             .collect::<Vec<_>>(),
     ));
-    {
-        let __init = Tracked::new_1({ 1 });
-        grid.decay()
-            .offset(0_usize as isize)
-            .with_mut(|__v: &mut Vec<Tracked>| __v.push(__init))
+    match (grid.decay().offset(0_usize as isize),) {
+        (__tmp_0,) => {
+            let __init = Tracked::new_1({ 1 });
+            __tmp_0.with_mut(|__v: &mut Vec<Tracked>| __v.push(__init));
+            __tmp_0.decay().to_last()
+        }
     };
-    {
-        let __init = Tracked::new_1({ 2 });
-        grid.decay()
-            .offset(0_usize as isize)
-            .with_mut(|__v: &mut Vec<Tracked>| __v.push(__init))
+    match (grid.decay().offset(0_usize as isize),) {
+        (__tmp_1,) => {
+            let __init = Tracked::new_1({ 2 });
+            __tmp_1.with_mut(|__v: &mut Vec<Tracked>| __v.push(__init));
+            __tmp_1.decay().to_last()
+        }
     };
-    {
-        let __init = Tracked::new_1({ 3 });
-        grid.decay()
-            .offset(1_usize as isize)
-            .with_mut(|__v: &mut Vec<Tracked>| __v.push(__init))
+    match (grid.decay().offset(1_usize as isize),) {
+        (__tmp_2,) => {
+            let __init = Tracked::new_1({ 3 });
+            __tmp_2.with_mut(|__v: &mut Vec<Tracked>| __v.push(__init));
+            __tmp_2.decay().to_last()
+        }
     };
     cpp_swap!(
         grid.decay()
@@ -555,14 +562,14 @@ fn main_0() -> i32 {
         grid.decay().offset(0_usize as isize),
         grid.decay().offset(1_usize as isize),
     ) {
-        (__tmp_0, __tmp_1) => {
-            let __src = (__tmp_1)
+        (__tmp_3, __tmp_4) => {
+            let __src = (__tmp_4)
                 .clone()
                 .with_mut(|__v: &mut Vec<Tracked>| std::mem::take(__v));
-            let __dst = (__tmp_0)
+            let __dst = (__tmp_3)
                 .clone()
                 .with_mut(|__v: &mut Vec<Tracked>| std::mem::replace(__v, __src));
-            (__tmp_1).clone().write(__dst)
+            (__tmp_4).clone().write(__dst)
         }
     };
     assert!(
@@ -885,8 +892,11 @@ pub trait OwnerImpl {
 }
 impl OwnerImpl for Ptr<Owner> {
     fn move_assign(&self, _a0: Ptr<Owner>) -> Ptr<Owner> {
-        field_ptr!((*self), p)
-            .write(field!(_a0, p).with_mut(|__v: &mut Option<Value<i32>>| __v.take()));
+        {
+            field_ptr!((*self), p)
+                .write(field!(_a0, p).with_mut(|__v: &mut Option<Value<i32>>| __v.take()));
+            field_ptr!((*self), p)
+        };
         return (*self).clone();
     }
 }

@@ -759,12 +759,16 @@ pub fn test_counted_19() {
     );
     assert!((count_13.with(|rc| *rc.borrow()) == 1));
     assert!((constructed_14.with(|rc| *rc.borrow()) == 1));
-    (*e.borrow_mut()) = ({
-        uninitialized_default_construct_n_20(
-            forward_iterator_Counted_ptr_::new_1({ p.offset((1) as isize) }),
-            4,
-        )
-    });
+    {
+        let __a1 = ({
+            uninitialized_default_construct_n_20(
+                forward_iterator_Counted_ptr_::new_1({ p.offset((1) as isize) }),
+                4,
+            )
+        });
+        e.as_pointer().with_mut(|__it| *__it = __a1);
+        e.as_pointer()
+    };
     assert!(
         ({
             let _x: Ptr<forward_iterator_Counted_ptr_> = e.as_pointer();

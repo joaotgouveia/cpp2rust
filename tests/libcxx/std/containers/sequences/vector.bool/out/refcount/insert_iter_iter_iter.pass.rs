@@ -681,7 +681,7 @@ pub fn tests_13() -> bool {
             as u32);
         let i: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
             match (
-                { v.decay().begin().iter_add(10_i64) },
+                { v.decay().begin().iter_add((10_i64 as isize)) },
                 {
                     cpp17_input_iterator_const_bool_ptr__const_bool_ptr_::new({
                         (a.as_pointer() as Ptr<bool>)
@@ -709,7 +709,7 @@ pub fn tests_13() -> bool {
             },
         ));
         assert!(({ ((&(*v.borrow())).len() == (((100_u32).wrapping_add(N)) as usize)) }));
-        assert!((*i.borrow()) == v.decay().begin().iter_add(10_i64));
+        assert!((*i.borrow()) == v.decay().begin().iter_add((10_i64 as isize)));
         let mut j: usize = 0_usize;
         j = 0_usize;
         'loop_: while (j < 10_usize) {
@@ -746,7 +746,7 @@ pub fn tests_13() -> bool {
             as u32);
         let i: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
             match (
-                { v.decay().begin().iter_add(10_i64) },
+                { v.decay().begin().iter_add((10_i64 as isize)) },
                 { forward_iterator_const_bool_ptr_::new_1({ (a.as_pointer() as Ptr<bool>) }) },
                 {
                     forward_iterator_const_bool_ptr_::new_1({
@@ -770,7 +770,7 @@ pub fn tests_13() -> bool {
             },
         ));
         assert!(({ ((&(*v.borrow())).len() == (((100_u32).wrapping_add(N)) as usize)) }));
-        assert!((*i.borrow()) == v.decay().begin().iter_add(10_i64));
+        assert!((*i.borrow()) == v.decay().begin().iter_add((10_i64 as isize)));
         let mut j: i32 = 0_i32;
         j = 0;
         'loop_: while (j < 10) {
@@ -814,7 +814,7 @@ pub fn tests_13() -> bool {
             as u32);
         let i: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
             match (
-                { v.decay().begin().iter_add(10_i64) },
+                { v.decay().begin().iter_add((10_i64 as isize)) },
                 { forward_iterator_const_bool_ptr_::new_1({ (a.as_pointer() as Ptr<bool>) }) },
                 {
                     forward_iterator_const_bool_ptr_::new_1({
@@ -838,7 +838,7 @@ pub fn tests_13() -> bool {
             },
         ));
         assert!(({ ((&(*v.borrow())).len() == (sz).wrapping_add((N as usize))) }));
-        assert!((*i.borrow()) == v.decay().begin().iter_add(10_i64));
+        assert!((*i.borrow()) == v.decay().begin().iter_add((10_i64 as isize)));
         let mut j: usize = 0_usize;
         j = 0_usize;
         'loop_: while (j < 10_usize) {
@@ -885,7 +885,7 @@ pub fn tests_13() -> bool {
             as u32);
         let i: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
             match (
-                { v.decay().begin().iter_add(10_i64) },
+                { v.decay().begin().iter_add((10_i64 as isize)) },
                 { forward_iterator_const_bool_ptr_::new_1({ (a.as_pointer() as Ptr<bool>) }) },
                 {
                     forward_iterator_const_bool_ptr_::new_1({
@@ -909,7 +909,7 @@ pub fn tests_13() -> bool {
             },
         ));
         assert!(({ ((&(*v.borrow())).len() == (sz).wrapping_add((N as usize))) }));
-        assert!((*i.borrow()) == v.decay().begin().iter_add(10_i64));
+        assert!((*i.borrow()) == v.decay().begin().iter_add((10_i64 as isize)));
         let mut j: usize = 0_usize;
         j = 0_usize;
         'loop_: while (j < 10_usize) {
@@ -946,7 +946,7 @@ pub fn tests_13() -> bool {
             as u32);
         let i: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
             match (
-                { v.decay().begin().iter_add(10_i64) },
+                { v.decay().begin().iter_add((10_i64 as isize)) },
                 {
                     cpp17_input_iterator_const_bool_ptr__const_bool_ptr_::new({
                         (a.as_pointer() as Ptr<bool>)
@@ -974,7 +974,7 @@ pub fn tests_13() -> bool {
             },
         ));
         assert!(({ ((&(*v.borrow())).len() == (((100_u32).wrapping_add(N)) as usize)) }));
-        assert!((*i.borrow()) == v.decay().begin().iter_add(10_i64));
+        assert!((*i.borrow()) == v.decay().begin().iter_add((10_i64 as isize)));
         let mut j: usize = 0_usize;
         j = 0_usize;
         'loop_: while (j < 10_usize) {
@@ -1011,7 +1011,7 @@ pub fn tests_13() -> bool {
             as u32);
         let i: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
             match (
-                { v.decay().begin().iter_add(10_i64) },
+                { v.decay().begin().iter_add((10_i64 as isize)) },
                 {
                     cpp17_input_iterator_const_bool_ptr__const_bool_ptr_::new({
                         (a.as_pointer() as Ptr<bool>)
@@ -1039,7 +1039,7 @@ pub fn tests_13() -> bool {
             },
         ));
         assert!(({ ((&(*v.borrow())).len() == (((100_u32).wrapping_add(N)) as usize)) }));
-        assert!((*i.borrow()) == v.decay().begin().iter_add(10_i64));
+        assert!((*i.borrow()) == v.decay().begin().iter_add((10_i64 as isize)));
         let mut j: usize = 0_usize;
         j = 0_usize;
         'loop_: while (j < 10_usize) {
@@ -1076,7 +1076,7 @@ pub fn tests_13() -> bool {
             as u32);
         let i: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
             match (
-                { v.decay().begin().iter_add(10_i64) },
+                { v.decay().begin().iter_add((10_i64 as isize)) },
                 { forward_iterator_const_bool_ptr_::new_1({ (a.as_pointer() as Ptr<bool>) }) },
                 {
                     forward_iterator_const_bool_ptr_::new_1({
@@ -1100,7 +1100,7 @@ pub fn tests_13() -> bool {
             },
         ));
         assert!(({ ((&(*v.borrow())).len() == (((100_u32).wrapping_add(N)) as usize)) }));
-        assert!((*i.borrow()) == v.decay().begin().iter_add(10_i64));
+        assert!((*i.borrow()) == v.decay().begin().iter_add((10_i64 as isize)));
         let mut j: usize = 0_usize;
         j = 0_usize;
         'loop_: while (j < 10_usize) {

@@ -64,15 +64,19 @@ pub fn test_0() -> bool {
                     .as_pointer()
                     .with(|__m: &Map<Key, (Value<Key>, Value<i32>)>| __m.end())
         );
-        (*it.borrow_mut()) = match (Rc::new(RefCell::new({
-            let __tmp_4: Value<i32> = Rc::new(RefCell::new(0));
-            Key::new({ __tmp_4.as_pointer() })
-        }))
-        .as_pointer(),)
         {
-            (__tmp_3,) => m_contains
-                .as_pointer()
-                .with(|__m: &Map<Key, (Value<Key>, Value<i32>)>| __m.find(&(__tmp_3).clone())),
+            let __a1 = match (Rc::new(RefCell::new({
+                let __tmp_4: Value<i32> = Rc::new(RefCell::new(0));
+                Key::new({ __tmp_4.as_pointer() })
+            }))
+            .as_pointer(),)
+            {
+                (__tmp_3,) => m_contains
+                    .as_pointer()
+                    .with(|__m: &Map<Key, (Value<Key>, Value<i32>)>| __m.find(&(__tmp_3).clone())),
+            };
+            it.as_pointer().with_mut(|__it| *__it = __a1);
+            it.as_pointer()
         };
         assert!(
             (*it.borrow())

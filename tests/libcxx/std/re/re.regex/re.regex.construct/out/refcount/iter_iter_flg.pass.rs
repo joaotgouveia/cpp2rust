@@ -899,13 +899,15 @@ pub trait forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic
     fn move_assign ( &self , _a0 : Ptr< forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____  > , ) -> Ptr< forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____  > ;
 }
 impl forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl for Ptr<forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____> {
-fn operator_deref ( &self , ) -> Ptr<i8  > { return field_ptr!((* self )  , it_)   ;
+fn operator_deref ( &self , ) -> Ptr<i8  > { return (*(* self ) .upgrade().deref()) . it_  .iter_deref()    ;
  } fn operator_inc_6 ( &self , ) -> Ptr< forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____  > { {field_ptr!((* self )  , it_) .with_mut(|__it| {
         __it.iter_inc();
     });
     field_ptr!((* self )  , it_) }  ;
  return ((* self )  ).clone()  ;
- } fn move_assign ( &self , _a0 : Ptr< forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____  > , ) -> Ptr< forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____  > { field!((* self ) , it_).with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()) . it_ .clone() }  }))  ;
+ } fn move_assign ( &self , _a0 : Ptr< forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____  > , ) -> Ptr< forward_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char____  > { {let __a1 = ({ { (*_a0.upgrade().deref()) . it_ .clone() }  });
+    field_ptr!((* self )  , it_) .with_mut(|__it| *__it = __a1);
+    field_ptr!((* self )  , it_) }  ;
  ( { let _other: Ptr< support_double_move_tracker  >  = field_ptr!(_a0 , tracker_)  ; support_double_move_trackerImpl :: move_assign ( &field_ptr!((* self )  , tracker_)  , _other , ) } )  ;
  return ((* self )  ).clone()  ;
  } }

@@ -103,8 +103,10 @@ pub fn test_4() -> bool {
             })
         );
         assert!(
-            libcc2rs::next_refcount(({ ({ (*c.borrow()).before_begin_23() }) }), 1_isize)
-                == ({ (*c.borrow()).begin_25() })
+            libcc2rs::next_refcount(
+                ({ ({ (*c.borrow()).before_begin_23() }) }),
+                1_isize as isize
+            ) == ({ (*c.borrow()).begin_25() })
         );
     }
     {
@@ -174,8 +176,10 @@ pub fn test_4() -> bool {
             })
         );
         assert!(
-            libcc2rs::next_refcount(({ ({ (*c.borrow()).before_begin_23() }) }), 1_isize)
-                == ({ (*c.borrow()).begin_25() })
+            libcc2rs::next_refcount(
+                ({ ({ (*c.borrow()).before_begin_23() }) }),
+                1_isize as isize
+            ) == ({ (*c.borrow()).begin_25() })
         );
     }
     {

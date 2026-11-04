@@ -83,7 +83,7 @@ pub fn test_8() -> bool {
                 ({
                     let ___pos: std__Fwd_list_const_iterator_int_ = libcc2rs::next_refcount(
                         ({ ({ (*c1.borrow()).cbefore_begin() }) }),
-                        (p as isize),
+                        (p as isize) as isize,
                     );
                     (*c1.borrow()).splice_after_54(___pos, c2.as_pointer())
                 });
@@ -113,7 +113,7 @@ pub fn test_8() -> bool {
                     ),
                 ));
                 ({
-                    let ___pos: std___fwdlist__Iterator_true__min_pointer_int__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c1.borrow()) . cbefore_begin ( ) } )   }), ( p as isize ) )   ;
+                    let ___pos: std___fwdlist__Iterator_true__min_pointer_int__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c1.borrow()) . cbefore_begin ( ) } )   }), ( p as isize )  as isize)   ;
                     (*c1.borrow()).splice_after_54(___pos, c2.as_pointer())
                 });
                 ({ testd_11(c1.as_pointer(), p, l) });

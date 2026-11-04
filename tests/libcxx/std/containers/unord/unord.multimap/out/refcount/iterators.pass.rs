@@ -140,7 +140,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             })
         );
         let i : Value<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_ > = Rc::new(RefCell::new(<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >::default() )) ;
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_27() });
+        {
+            let __a1 = ({ (*c.borrow()).begin_27() });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         match ((*(*i.borrow()).iter_deref().upgrade().deref())
             .1
             .as_pointer(),)
@@ -318,7 +322,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             })
         );
         let i : Value<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_ > = Rc::new(RefCell::new(<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >::default() )) ;
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_27() });
+        {
+            let __a1 = ({ (*c.borrow()).begin_27() });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         match ((*(*i.borrow()).iter_deref().upgrade().deref())
             .1
             .as_pointer(),)

@@ -284,7 +284,7 @@ pub fn test_floating_points_30() -> bool {
     let mut min_v: f32 = 1.1754944e-38_f32;
     let mut denorm_min: f32 = 1e-45_f32;
     let mut inf: f32 = f32::INFINITY;
-    let mut qnan: f32 = nan_f32;
+    let mut qnan: f32 = f32::from_bits(0x7fc00000);
     assert!(({ check_exact_21(0_f32, 0_f32, 0_f32,) }));
     assert!(({ check_exact_21(2_f32, 4_f32, 3_f32,) }));
     assert!(({ check_exact_21(4_f32, 2_f32, 3_f32,) }));
@@ -481,7 +481,7 @@ pub fn test_floating_points_31() -> bool {
     let mut min_v: f64 = 2.2250738585072014e-308_f64;
     let mut denorm_min: f64 = 5e-324_f64;
     let mut inf: f64 = f64::INFINITY;
-    let mut qnan: f64 = nan_f64;
+    let mut qnan: f64 = f64::from_bits(0x7ff8000000000000);
     assert!(({ check_exact_22(0_f64, 0_f64, 0_f64,) }));
     assert!(({ check_exact_22(2_f64, 4_f64, 3_f64,) }));
     assert!(({ check_exact_22(4_f64, 2_f64, 3_f64,) }));
@@ -670,7 +670,7 @@ pub fn test_floating_points_32() -> bool {
     let mut min_v: f64 = 0_f64;
     let mut denorm_min: f64 = 0_f64;
     let mut inf: f64 = f64::INFINITY;
-    let mut qnan: f64 = nan_f64;
+    let mut qnan: f64 = f64::from_bits(0x7ff8000000000000);
     assert!(({ check_exact_23(0_f64, 0_f64, 0_f64,) }));
     assert!(({ check_exact_23(2_f64, 4_f64, 3_f64,) }));
     assert!(({ check_exact_23(4_f64, 2_f64, 3_f64,) }));

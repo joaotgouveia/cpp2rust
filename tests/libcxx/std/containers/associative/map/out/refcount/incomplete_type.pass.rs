@@ -133,12 +133,19 @@ impl AImpl for Ptr<A> {
         {
             let __src = field_ptr!(_a0, m)
                 .with_mut(|__m: &mut Map<A, (Value<A>, Value<A>)>| std::mem::take(__m));
-            field_ptr!((*self), m).write(__src)
+            field_ptr!((*self), m).write(__src);
+            field_ptr!((*self), m)
         };
-        field!((*self), it)
-            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).it.clone() } }));
-        field!((*self), cit)
-            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).cit.clone() } }));
+        {
+            let __a1 = ({ { (*_a0.upgrade().deref()).it.clone() } });
+            field_ptr!((*self), it).with_mut(|__it| *__it = __a1);
+            field_ptr!((*self), it)
+        };
+        {
+            let __a1 = ({ { (*_a0.upgrade().deref()).cit.clone() } });
+            field_ptr!((*self), cit).with_mut(|__it| *__it = __a1);
+            field_ptr!((*self), cit)
+        };
         return (*self).clone();
     }
 }

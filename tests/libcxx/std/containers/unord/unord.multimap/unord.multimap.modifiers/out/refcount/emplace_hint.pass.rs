@@ -154,14 +154,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 )
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___pos: std___detail__Node_const_iterator_std_pair_const_int__Emplaceable___false__false_   = <std___detail__Node_const_iterator_std_pair_const_int__Emplaceable___false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
-            let ___args: Value<(Value<i32>, Value<Emplaceable>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(3)),
-                Rc::new(RefCell::new(Emplaceable::new_2({ 5 }, { 6_f64 }))),
-            )));
-            (*c.borrow()).emplace_hint(___pos, ___args.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___pos: std___detail__Node_const_iterator_std_pair_const_int__Emplaceable___false__false_   = <std___detail__Node_const_iterator_std_pair_const_int__Emplaceable___false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
+                let ___args: Value<(Value<i32>, Value<Emplaceable>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(3)),
+                    Rc::new(RefCell::new(Emplaceable::new_2({ 5 }, { 6_f64 }))),
+                )));
+                (*c.borrow()).emplace_hint(___pos, ___args.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
@@ -177,22 +181,26 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             })
         );
         const _: () = assert!(true, "");;
-        (*r.borrow_mut()) = ({
-            let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
-                ({
-                    let ___args: Value<i32> = Rc::new(RefCell::new(3));
-                    forward_as_tuple_4(___args.as_pointer())
-                }),
-            ));
-            let ___args_3: Value<std_tuple_int_refref__int_refref_> = Rc::new(RefCell::new(
-                ({
-                    let ___args_0: Value<i32> = Rc::new(RefCell::new(6));
-                    let ___args_1: Value<i32> = Rc::new(RefCell::new(7));
-                    forward_as_tuple_7(___args_0.as_pointer(), ___args_1.as_pointer())
-                }),
-            ));
-            (*c.borrow()) . emplace_hint ( <std___detail__Node_const_iterator_std_pair_const_int__Emplaceable___false__false_  >::from(({ ((*r.borrow()) ).clone() }))  , piecewise_construct_6.with(|v| v.as_pointer())  , ___args_2.as_pointer() , ___args_3.as_pointer() , )
-        });
+        {
+            let __a1 = ({
+                let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
+                    ({
+                        let ___args: Value<i32> = Rc::new(RefCell::new(3));
+                        forward_as_tuple_4(___args.as_pointer())
+                    }),
+                ));
+                let ___args_3: Value<std_tuple_int_refref__int_refref_> = Rc::new(RefCell::new(
+                    ({
+                        let ___args_0: Value<i32> = Rc::new(RefCell::new(6));
+                        let ___args_1: Value<i32> = Rc::new(RefCell::new(7));
+                        forward_as_tuple_7(___args_0.as_pointer(), ___args_1.as_pointer())
+                    }),
+                ));
+                (*c.borrow()) . emplace_hint ( <std___detail__Node_const_iterator_std_pair_const_int__Emplaceable___false__false_  >::from(({ ((*r.borrow()) ).clone() }))  , piecewise_construct_6.with(|v| v.as_pointer())  , ___args_2.as_pointer() , ___args_3.as_pointer() , )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
@@ -208,10 +216,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             })
         );
         const _: () = assert!(true, "");;
-        (*r.borrow_mut()) = ({ (*c.borrow()).begin_27() });
+        {
+            let __a1 = ({ (*c.borrow()).begin_27() });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         const _: () = assert!(true, "");;
-        (*r.borrow_mut()) = libcc2rs::next_refcount(({ (*r.borrow()).clone() }), 2_isize);
+        {
+            let __a1 = libcc2rs::next_refcount(({ (*r.borrow()).clone() }), 2_isize as isize);
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         const _: () = assert!(true, "");;
     }
@@ -250,14 +266,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 )
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___pos: std___detail__Node_const_iterator_std_pair_const_int__Emplaceable___false__false_   = <std___detail__Node_const_iterator_std_pair_const_int__Emplaceable___false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
-            let ___args: Value<(Value<i32>, Value<Emplaceable>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(3)),
-                Rc::new(RefCell::new(Emplaceable::new_2({ 5 }, { 6_f64 }))),
-            )));
-            (*c.borrow()).emplace_hint(___pos, ___args.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___pos: std___detail__Node_const_iterator_std_pair_const_int__Emplaceable___false__false_   = <std___detail__Node_const_iterator_std_pair_const_int__Emplaceable___false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
+                let ___args: Value<(Value<i32>, Value<Emplaceable>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(3)),
+                    Rc::new(RefCell::new(Emplaceable::new_2({ 5 }, { 6_f64 }))),
+                )));
+                (*c.borrow()).emplace_hint(___pos, ___args.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
@@ -273,22 +293,26 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             })
         );
         const _: () = assert!(true, "");;
-        (*r.borrow_mut()) = ({
-            let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
-                ({
-                    let ___args: Value<i32> = Rc::new(RefCell::new(3));
-                    forward_as_tuple_4(___args.as_pointer())
-                }),
-            ));
-            let ___args_3: Value<std_tuple_int_refref__int_refref_> = Rc::new(RefCell::new(
-                ({
-                    let ___args_0: Value<i32> = Rc::new(RefCell::new(6));
-                    let ___args_1: Value<i32> = Rc::new(RefCell::new(7));
-                    forward_as_tuple_7(___args_0.as_pointer(), ___args_1.as_pointer())
-                }),
-            ));
-            (*c.borrow()) . emplace_hint ( <std___detail__Node_const_iterator_std_pair_const_int__Emplaceable___false__false_  >::from(({ ((*r.borrow()) ).clone() }))  , piecewise_construct_6.with(|v| v.as_pointer())  , ___args_2.as_pointer() , ___args_3.as_pointer() , )
-        });
+        {
+            let __a1 = ({
+                let ___args_2: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
+                    ({
+                        let ___args: Value<i32> = Rc::new(RefCell::new(3));
+                        forward_as_tuple_4(___args.as_pointer())
+                    }),
+                ));
+                let ___args_3: Value<std_tuple_int_refref__int_refref_> = Rc::new(RefCell::new(
+                    ({
+                        let ___args_0: Value<i32> = Rc::new(RefCell::new(6));
+                        let ___args_1: Value<i32> = Rc::new(RefCell::new(7));
+                        forward_as_tuple_7(___args_0.as_pointer(), ___args_1.as_pointer())
+                    }),
+                ));
+                (*c.borrow()) . emplace_hint ( <std___detail__Node_const_iterator_std_pair_const_int__Emplaceable___false__false_  >::from(({ ((*r.borrow()) ).clone() }))  , piecewise_construct_6.with(|v| v.as_pointer())  , ___args_2.as_pointer() , ___args_3.as_pointer() , )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
@@ -304,10 +328,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             })
         );
         const _: () = assert!(true, "");;
-        (*r.borrow_mut()) = ({ (*c.borrow()).begin_27() });
+        {
+            let __a1 = ({ (*c.borrow()).begin_27() });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         const _: () = assert!(true, "");;
-        (*r.borrow_mut()) = libcc2rs::next_refcount(({ (*r.borrow()).clone() }), 2_isize);
+        {
+            let __a1 = libcc2rs::next_refcount(({ (*r.borrow()).clone() }), 2_isize as isize);
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         const _: () = assert!(true, "");;
     }

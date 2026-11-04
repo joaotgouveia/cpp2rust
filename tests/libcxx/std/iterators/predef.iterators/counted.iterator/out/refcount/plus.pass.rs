@@ -730,8 +730,9 @@ pub fn test_9() -> bool {
                 ));
             assert!(
                 (*{
+                    let __a1 = 2_i64;
                     iter.as_pointer().with_mut(|__it| {
-                        __it.iter_add_assign(2_i64);
+                        __it.iter_add_assign(__a1);
                     });
                     iter.as_pointer()
                 }
@@ -748,8 +749,9 @@ pub fn test_9() -> bool {
             );
             assert!(
                 (*{
+                    let __a1 = 0_i64;
                     iter.as_pointer().with_mut(|__it| {
-                        __it.iter_add_assign(0_i64);
+                        __it.iter_add_assign(__a1);
                     });
                     iter.as_pointer()
                 }
@@ -775,8 +777,9 @@ pub fn test_9() -> bool {
             ));
             assert!(
                 (*{
+                    let __a1 = 8_i64;
                     iter.as_pointer().with_mut(|__it| {
-                        __it.iter_add_assign(8_i64);
+                        __it.iter_add_assign(__a1);
                     });
                     iter.as_pointer()
                 }
@@ -793,8 +796,9 @@ pub fn test_9() -> bool {
             );
             assert!(
                 (*{
+                    let __a1 = 0_i64;
                     iter.as_pointer().with_mut(|__it| {
-                        __it.iter_add_assign(0_i64);
+                        __it.iter_add_assign(__a1);
                     });
                     iter.as_pointer()
                 }

@@ -106,14 +106,30 @@ pub fn test_4() -> bool {
     {
         let a: Value<A> = Rc::new(RefCell::new(<A>::default()));
         assert!(({ ({ (*a.borrow()).d.empty() }) }));
-        (*a.borrow_mut()).it = ({ (*a.borrow()).d.begin_25() });
-        (*a.borrow_mut()).it2 = ({ (*a.borrow()).d.cbefore_begin() });
+        {
+            let __a1 = ({ (*a.borrow()).d.begin_25() });
+            field_ptr!(a.as_pointer(), it).with_mut(|__it| *__it = __a1);
+            field_ptr!(a.as_pointer(), it)
+        };
+        {
+            let __a1 = ({ (*a.borrow()).d.cbefore_begin() });
+            field_ptr!(a.as_pointer(), it2).with_mut(|__it| *__it = __a1);
+            field_ptr!(a.as_pointer(), it2)
+        };
     }
     {
         let b: Value<B> = Rc::new(RefCell::new(<B>::default()));
         assert!(({ ({ (*b.borrow()).d.empty() }) }));
-        (*b.borrow_mut()).it = ({ (*b.borrow()).d.begin_25() }).clone();
-        (*b.borrow_mut()).it2 = ({ (*b.borrow()).d.cbefore_begin() }).clone();
+        {
+            let __a1 = ({ (*b.borrow()).d.begin_25() });
+            field_ptr!(b.as_pointer(), it).with_mut(|__it| *__it = __a1.clone());
+            field_ptr!(b.as_pointer(), it)
+        };
+        {
+            let __a1 = ({ (*b.borrow()).d.cbefore_begin() });
+            field_ptr!(b.as_pointer(), it2).with_mut(|__it| *__it = __a1.clone());
+            field_ptr!(b.as_pointer(), it2)
+        };
     }
     return true;
 }
@@ -149,10 +165,16 @@ pub trait AImpl {
 impl AImpl for Ptr<A> {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
         field!((*self), d).write({ { (*_a0.upgrade().deref()).d.clone() } });
-        field!((*self), it)
-            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).it.clone() } }));
-        field!((*self), it2)
-            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).it2.clone() } }));
+        {
+            let __a1 = ({ { (*_a0.upgrade().deref()).it.clone() } });
+            field_ptr!((*self), it).with_mut(|__it| *__it = __a1);
+            field_ptr!((*self), it)
+        };
+        {
+            let __a1 = ({ { (*_a0.upgrade().deref()).it2.clone() } });
+            field_ptr!((*self), it2).with_mut(|__it| *__it = __a1);
+            field_ptr!((*self), it2)
+        };
         return (*self).clone();
     }
 }
@@ -162,8 +184,16 @@ pub trait BImpl {
 impl BImpl for Ptr<B> {
     fn move_assign(&self, _a0: Ptr<B>) -> Ptr<B> {
         field!((*self), d).write({ { (*_a0.upgrade().deref()).d.clone() } });
-        field!((*self), it).with_mut(|__b0| (*__b0) = (*_a0.upgrade().deref()).it.clone());
-        field!((*self), it2).with_mut(|__b0| (*__b0) = (*_a0.upgrade().deref()).it2.clone());
+        {
+            let __a1 = ({ { (*_a0.upgrade().deref()).it.clone() } });
+            field_ptr!((*self), it).with_mut(|__it| *__it = __a1.clone());
+            field_ptr!((*self), it)
+        };
+        {
+            let __a1 = ({ { (*_a0.upgrade().deref()).it2.clone() } });
+            field_ptr!((*self), it2).with_mut(|__it| *__it = __a1.clone());
+            field_ptr!((*self), it2)
+        };
         return (*self).clone();
     }
 }

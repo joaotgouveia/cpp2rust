@@ -584,13 +584,13 @@ pub fn test_9() -> bool {
     );
     assert!(((({ (*m.borrow()).begin() }).iter_deref().read()) == 1));
     assert!(
-        ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
+        ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
             .iter_deref()
             .read())
             == 2)
     );
     assert!(
-        ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize)
+        ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize as isize)
             .iter_deref()
             .read())
             == 3)

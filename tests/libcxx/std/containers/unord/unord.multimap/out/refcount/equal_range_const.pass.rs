@@ -182,12 +182,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }
             })
         );
-        r.as_pointer().write(
-            ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(5));
-                (*c.borrow()).equal_range_70(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<i32> = Rc::new(RefCell::new(5));
+                        (*c.borrow()).equal_range_70(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(
             ({
                 (({
@@ -197,12 +203,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 0_isize)
             })
         );
-        r.as_pointer().write(
-            ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(50));
-                (*c.borrow()).equal_range_70(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<i32> = Rc::new(RefCell::new(50));
+                        (*c.borrow()).equal_range_70(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
         ({
             let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
@@ -383,12 +395,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }
             })
         );
-        r.as_pointer().write(
-            ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(5));
-                (*c.borrow()).equal_range_70(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<i32> = Rc::new(RefCell::new(5));
+                        (*c.borrow()).equal_range_70(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         assert!(
             ({
                 (({
@@ -398,12 +416,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 0_isize)
             })
         );
-        r.as_pointer().write(
-            ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(50));
-                (*c.borrow()).equal_range_70(___x.as_pointer())
-            }),
-        );
+        {
+            r.as_pointer().write(CppMove::cpp_move(
+                Rc::new(RefCell::new(
+                    ({
+                        let ___x: Value<i32> = Rc::new(RefCell::new(50));
+                        (*c.borrow()).equal_range_70(___x.as_pointer())
+                    }),
+                ))
+                .as_pointer(),
+            ));
+            r.as_pointer()
+        };
         let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
         ({
             let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({

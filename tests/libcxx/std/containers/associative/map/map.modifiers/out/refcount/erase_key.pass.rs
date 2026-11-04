@@ -102,7 +102,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -115,7 +115,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -128,7 +128,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -141,7 +141,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -154,7 +154,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -167,7 +167,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -180,7 +180,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -193,7 +193,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -206,7 +206,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -219,7 +219,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -232,7 +232,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                6_isize
+                6_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -245,7 +245,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                6_isize
+                6_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -258,7 +258,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                7_isize
+                7_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -271,7 +271,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                7_isize
+                7_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -312,7 +312,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -325,7 +325,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -338,7 +338,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -351,7 +351,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -364,7 +364,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -377,7 +377,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -390,7 +390,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -403,7 +403,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -416,7 +416,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -429,7 +429,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -442,7 +442,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                6_isize
+                6_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -455,7 +455,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                6_isize
+                6_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -496,7 +496,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -509,7 +509,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -522,7 +522,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -535,7 +535,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -548,7 +548,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -561,7 +561,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -574,7 +574,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -587,7 +587,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -600,7 +600,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -613,7 +613,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -654,7 +654,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -667,7 +667,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -680,7 +680,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -693,7 +693,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -706,7 +706,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -719,7 +719,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -732,7 +732,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -745,7 +745,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -786,7 +786,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -799,7 +799,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -812,7 +812,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -825,7 +825,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -838,7 +838,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -851,7 +851,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -892,7 +892,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -905,7 +905,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -918,7 +918,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -931,7 +931,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -972,7 +972,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -985,7 +985,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1082,7 +1082,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1095,7 +1095,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1108,7 +1108,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1121,7 +1121,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1134,7 +1134,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1147,7 +1147,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1160,7 +1160,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1173,7 +1173,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1186,7 +1186,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1199,7 +1199,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1212,7 +1212,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                6_isize
+                6_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1225,7 +1225,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                6_isize
+                6_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1238,7 +1238,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                7_isize
+                7_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1251,7 +1251,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                7_isize
+                7_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1292,7 +1292,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1305,7 +1305,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1318,7 +1318,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1331,7 +1331,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1344,7 +1344,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1357,7 +1357,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1370,7 +1370,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1383,7 +1383,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1396,7 +1396,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1409,7 +1409,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1422,7 +1422,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                6_isize
+                6_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1435,7 +1435,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                6_isize
+                6_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1476,7 +1476,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1489,7 +1489,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1502,7 +1502,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1515,7 +1515,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1528,7 +1528,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1541,7 +1541,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1554,7 +1554,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1567,7 +1567,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1580,7 +1580,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1593,7 +1593,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                5_isize
+                5_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1634,7 +1634,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1647,7 +1647,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1660,7 +1660,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1673,7 +1673,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1686,7 +1686,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1699,7 +1699,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1712,7 +1712,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1725,7 +1725,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                4_isize
+                4_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1766,7 +1766,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1779,7 +1779,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1792,7 +1792,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1805,7 +1805,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1818,7 +1818,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1831,7 +1831,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                3_isize
+                3_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1872,7 +1872,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1885,7 +1885,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1898,7 +1898,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1911,7 +1911,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                2_isize
+                2_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1952,7 +1952,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()
@@ -1965,7 +1965,7 @@ pub fn test_4() -> bool {
             ((*(*libcc2rs::next_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
-                1_isize
+                1_isize as isize
             )
             .iter_deref()
             .upgrade()

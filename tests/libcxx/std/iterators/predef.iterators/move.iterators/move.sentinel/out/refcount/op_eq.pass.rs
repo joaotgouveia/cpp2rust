@@ -1988,9 +1988,12 @@ impl sentinel_wrapper_three_way_contiguous_iterator_char_ptr__Impl
         &self,
         _a0: Ptr<sentinel_wrapper_three_way_contiguous_iterator_char_ptr__>,
     ) -> Ptr<sentinel_wrapper_three_way_contiguous_iterator_char_ptr__> {
-        field!((*self), base_).with_mut(|__b0| {
-            (*__b0) = three_way_contiguous_iterator_char_ptr_::move_from({ field_ptr!(_a0, base_) })
-        });
+        {
+            let __a1 =
+                three_way_contiguous_iterator_char_ptr_::move_from({ field_ptr!(_a0, base_) });
+            field_ptr!((*self), base_).with_mut(|__it| *__it = __a1);
+            field_ptr!((*self), base_)
+        };
         return (*self).clone();
     }
 }

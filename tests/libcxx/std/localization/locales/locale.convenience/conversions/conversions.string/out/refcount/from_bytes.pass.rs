@@ -29,8 +29,11 @@ impl TestHelper_wchar_t__4_ {
                     })
                 })
             );
-            ws.as_pointer()
-                .write(({ (*myconv.borrow()).from_bytes_9(bs.decay()) }));
+            {
+                ws.as_pointer()
+                    .write(({ (*myconv.borrow()).from_bytes_9(bs.decay()) }));
+                ws.as_pointer()
+            };
             assert!(
                 ({
                     Ptr::<i32>::from_string_literal(&[262147 as i32, 0 as i32]).with_c_str(|__s| {
@@ -38,12 +41,15 @@ impl TestHelper_wchar_t__4_ {
                     })
                 })
             );
-            ws.as_pointer().write(
-                ({
-                    (*myconv.borrow())
-                        .from_bytes_10((bs.as_pointer()).reinterpret_cast::<Vec<i8>>())
-                }),
-            );
+            {
+                ws.as_pointer().write(
+                    ({
+                        (*myconv.borrow())
+                            .from_bytes_10((bs.as_pointer()).reinterpret_cast::<Vec<i8>>())
+                    }),
+                );
+                ws.as_pointer()
+            };
             assert!(
                 ({
                     Ptr::<i32>::from_string_literal(&[262147 as i32, 0 as i32]).with_c_str(|__s| {
@@ -51,13 +57,17 @@ impl TestHelper_wchar_t__4_ {
                     })
                 })
             );
-            ws.as_pointer().write(
-                ({
-                    let ___first: Ptr<i8> = bs.decay();
-                    let ___last: Ptr<i8> = bs.decay().offset(((*bs.borrow()).len() - 1) as isize);
-                    (*myconv.borrow()).from_bytes_11(___first, ___last)
-                }),
-            );
+            {
+                ws.as_pointer().write(
+                    ({
+                        let ___first: Ptr<i8> = bs.decay();
+                        let ___last: Ptr<i8> =
+                            bs.decay().offset(((*bs.borrow()).len() - 1) as isize);
+                        (*myconv.borrow()).from_bytes_11(___first, ___last)
+                    }),
+                );
+                ws.as_pointer()
+            };
             assert!(
                 ({
                     Ptr::<i32>::from_string_literal(&[262147 as i32, 0 as i32]).with_c_str(|__s| {
@@ -65,8 +75,12 @@ impl TestHelper_wchar_t__4_ {
                     })
                 })
             );
-            ws.as_pointer()
-                .write(({ (*myconv.borrow()).from_bytes_9(Ptr::<i8>::from_string_literal(b"")) }));
+            {
+                ws.as_pointer().write(
+                    ({ (*myconv.borrow()).from_bytes_9(Ptr::<i8>::from_string_literal(b"")) }),
+                );
+                ws.as_pointer()
+            };
             assert!(({ (((*ws.borrow()).len() - 1) == 0_usize) }));
         }
     }

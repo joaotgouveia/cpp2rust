@@ -72,17 +72,22 @@ pub fn test_4() -> bool {
                 }) == 1_isize)
             })
         );
-        (*i.borrow_mut()) = ({
-            let ___pos: std__Fwd_list_const_iterator_int_ = ({ (*c.borrow()).cbegin() });
-            let ___val: Value<i32> = Rc::new(RefCell::new(1));
-            (*c.borrow()).insert_after_43(___pos, ___val.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___pos: std__Fwd_list_const_iterator_int_ = ({ (*c.borrow()).cbegin() });
+                let ___val: Value<i32> = Rc::new(RefCell::new(1));
+                (*c.borrow()).insert_after_43(___pos, ___val.as_pointer())
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
         );
         assert!(({ ((({ (*c.borrow()).front_34() }).read()) == 0) }));
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
@@ -96,24 +101,29 @@ pub fn test_4() -> bool {
                 }) == 2_isize)
             })
         );
-        (*i.borrow_mut()) = ({
-            let ___pos: std__Fwd_list_const_iterator_int_ =
-                libcc2rs::next_refcount(({ ({ (*c.borrow()).cbegin() }) }), 1_isize);
-            let ___val: Value<i32> = Rc::new(RefCell::new(2));
-            (*c.borrow()).insert_after_43(___pos, ___val.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___pos: std__Fwd_list_const_iterator_int_ =
+                    libcc2rs::next_refcount(({ ({ (*c.borrow()).cbegin() }) }), 1_isize as isize);
+                let ___val: Value<i32> = Rc::new(RefCell::new(2));
+                (*c.borrow()).insert_after_43(___pos, ___val.as_pointer())
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize as isize)
         );
         assert!(({ ((({ (*c.borrow()).front_34() }).read()) == 0) }));
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
@@ -127,29 +137,34 @@ pub fn test_4() -> bool {
                 }) == 3_isize)
             })
         );
-        (*i.borrow_mut()) = ({
-            let ___pos: std__Fwd_list_const_iterator_int_ = ({ (*c.borrow()).cbegin() });
-            let ___val: Value<i32> = Rc::new(RefCell::new(3));
-            (*c.borrow()).insert_after_43(___pos, ___val.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___pos: std__Fwd_list_const_iterator_int_ = ({ (*c.borrow()).cbegin() });
+                let ___val: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).insert_after_43(___pos, ___val.as_pointer())
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
         );
         assert!(({ ((({ (*c.borrow()).front_34() }).read()) == 0) }));
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 3_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
@@ -181,13 +196,22 @@ pub fn test_4() -> bool {
                 }) == 1_isize)
             })
         );
-        (*i.borrow_mut())  = ( { let ___pos: std___fwdlist__Iterator_true__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . cbegin ( ) } )   ; let ___val : Value<i32 > = Rc::new(RefCell::new(1 )); (*c.borrow()) . insert_after_43 ( ___pos , ___val.as_pointer() , ) } )  .clone()  ;
+        {
+            let __a1 = ({
+                let ___pos: std___fwdlist__Iterator_true__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . cbegin ( ) } )   ;
+                let ___val: Value<i32> = Rc::new(RefCell::new(1));
+                (*c.borrow()).insert_after_43(___pos, ___val.as_pointer())
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
         );
         assert!(({ ((({ (*c.borrow()).front_34() }).read()) == 0) }));
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
@@ -201,19 +225,28 @@ pub fn test_4() -> bool {
                 }) == 2_isize)
             })
         );
-        (*i.borrow_mut())  = ( { let ___pos: std___fwdlist__Iterator_true__min_pointer_int__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c.borrow()) . cbegin ( ) } )   }), 1_isize )   ; let ___val : Value<i32 > = Rc::new(RefCell::new(2 )); (*c.borrow()) . insert_after_43 ( ___pos , ___val.as_pointer() , ) } )  .clone()  ;
+        {
+            let __a1 = ({
+                let ___pos: std___fwdlist__Iterator_true__min_pointer_int__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c.borrow()) . cbegin ( ) } )   }), 1_isize  as isize)   ;
+                let ___val: Value<i32> = Rc::new(RefCell::new(2));
+                (*c.borrow()).insert_after_43(___pos, ___val.as_pointer())
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize as isize)
         );
         assert!(({ ((({ (*c.borrow()).front_34() }).read()) == 0) }));
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)
@@ -227,25 +260,34 @@ pub fn test_4() -> bool {
                 }) == 3_isize)
             })
         );
-        (*i.borrow_mut())  = ( { let ___pos: std___fwdlist__Iterator_true__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . cbegin ( ) } )   ; let ___val : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . insert_after_43 ( ___pos , ___val.as_pointer() , ) } )  .clone()  ;
+        {
+            let __a1 = ({
+                let ___pos: std___fwdlist__Iterator_true__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . cbegin ( ) } )   ;
+                let ___val: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).insert_after_43(___pos, ___val.as_pointer())
+            });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(
-            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+            (*i.borrow())
+                == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
         );
         assert!(({ ((({ (*c.borrow()).front_34() }).read()) == 0) }));
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize as isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 3_isize as isize)
                 .iter_deref()
                 .read())
                 == 2)

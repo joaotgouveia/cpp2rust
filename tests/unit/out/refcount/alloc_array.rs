@@ -17,7 +17,10 @@ pub fn All_0(arr: Ptr<Option<Value<Box<[i32]>>>>, mut N: i32, mut element: i32) 
             .write(element);
         i.prefix_inc();
     }
-    arr.write(all.take());
+    {
+        arr.write(all.take());
+        (arr).clone()
+    };
 }
 pub fn Consume_1(mut arr: Option<Value<Box<[i32]>>>, mut N: i32) -> i32 {
     let sum: Value<i32> = Rc::new(RefCell::new(0));

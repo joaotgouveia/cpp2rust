@@ -227,7 +227,7 @@ pub fn test_18() -> bool {
         assert!(
             ({
                 let _x: Ptr<MoveOnly> =
-                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
                         .iter_deref();
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
                 operator_eq_0(_x, _y.as_pointer())
@@ -281,7 +281,7 @@ pub fn test_18() -> bool {
         assert!(
             ({
                 let _x: Ptr<MoveOnly> =
-                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+                    libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize as isize)
                         .iter_deref();
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
                 operator_eq_0(_x, _y.as_pointer())

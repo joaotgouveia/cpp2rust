@@ -136,7 +136,11 @@ pub fn test_4() -> bool {
                 ({ (*l1.borrow()).begin_24() }),
             )));
         assert!(({ (((*i.borrow()).iter_deref().read()) == 4) }));
-        (*i.borrow_mut()) = <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() }));
+        {
+            let __a1 = <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() }));
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(({ (((*i.borrow()).iter_deref().read()) == 5) }));
     }
     {
@@ -153,7 +157,7 @@ pub fn test_4() -> bool {
                 <BidirectionalIterator<i32>>::from(({ (*l1.borrow()).end_26() }));
             let ___x: Ptr<std_list_int__std_allocator_int__> = l2.as_pointer();
             let ___i: BidirectionalIterator<i32> = <BidirectionalIterator<i32>>::from(
-                libcc2rs::next_refcount(({ ({ (*l2.borrow()).begin_24() }) }), 1_isize),
+                libcc2rs::next_refcount(({ ({ (*l2.borrow()).begin_24() }) }), 1_isize as isize),
             );
             (*l1.borrow()).splice_69(___position, ___x, ___i)
         });
@@ -182,7 +186,11 @@ pub fn test_4() -> bool {
                 ({ (*l1.borrow()).begin_24() }),
             )));
         assert!(({ (((*i.borrow()).iter_deref().read()) == 5) }));
-        (*i.borrow_mut()) = <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() }));
+        {
+            let __a1 = <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() }));
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(({ (((*i.borrow()).iter_deref().read()) == 4) }));
     }
     {
@@ -227,7 +235,11 @@ pub fn test_4() -> bool {
                 ({ (*l1.borrow()).begin_24() }),
             )));
         assert!(({ (((*i.borrow()).iter_deref().read()) == 4) }));
-        (*i.borrow_mut()) = <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() }));
+        {
+            let __a1 = <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() }));
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(({ (((*i.borrow()).iter_deref().read()) == 5) }));
         {
             i.as_pointer().with_mut(|__it| {
@@ -251,7 +263,7 @@ pub fn test_4() -> bool {
                 <BidirectionalIterator<i32>>::from(({ (*l1.borrow()).end_26() }));
             let ___x: Ptr<std_list_int__std_allocator_int__> = l2.as_pointer();
             let ___i: BidirectionalIterator<i32> = <BidirectionalIterator<i32>>::from(
-                libcc2rs::next_refcount(({ ({ (*l2.borrow()).begin_24() }) }), 1_isize),
+                libcc2rs::next_refcount(({ ({ (*l2.borrow()).begin_24() }) }), 1_isize as isize),
             );
             (*l1.borrow()).splice_69(___position, ___x, ___i)
         });
@@ -280,7 +292,11 @@ pub fn test_4() -> bool {
                 ({ (*l1.borrow()).begin_24() }),
             )));
         assert!(({ (((*i.borrow()).iter_deref().read()) == 5) }));
-        (*i.borrow_mut()) = <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() }));
+        {
+            let __a1 = <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() }));
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(({ (((*i.borrow()).iter_deref().read()) == 4) }));
         {
             i.as_pointer().with_mut(|__it| {
@@ -304,7 +320,7 @@ pub fn test_4() -> bool {
                 <BidirectionalIterator<i32>>::from(({ (*l1.borrow()).end_26() }));
             let ___x: Ptr<std_list_int__std_allocator_int__> = l2.as_pointer();
             let ___i: BidirectionalIterator<i32> = <BidirectionalIterator<i32>>::from(
-                libcc2rs::next_refcount(({ ({ (*l2.borrow()).begin_24() }) }), 2_isize),
+                libcc2rs::next_refcount(({ ({ (*l2.borrow()).begin_24() }) }), 2_isize as isize),
             );
             (*l1.borrow()).splice_69(___position, ___x, ___i)
         });
@@ -333,7 +349,11 @@ pub fn test_4() -> bool {
                 ({ (*l1.borrow()).begin_24() }),
             )));
         assert!(({ (((*i.borrow()).iter_deref().read()) == 6) }));
-        (*i.borrow_mut()) = <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() }));
+        {
+            let __a1 = <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() }));
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         assert!(({ (((*i.borrow()).iter_deref().read()) == 4) }));
         {
             i.as_pointer().with_mut(|__it| {
@@ -443,7 +463,7 @@ pub fn test_4() -> bool {
             )));
         ({
             let ___position: BidirectionalIterator<i32> = <BidirectionalIterator<i32>>::from(
-                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize),
+                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize as isize),
             );
             let ___x: Ptr<std_list_int__std_allocator_int__> = l2.as_pointer();
             let ___i: BidirectionalIterator<i32> =
@@ -533,7 +553,7 @@ pub fn test_4() -> bool {
                 <BidirectionalIterator<i32>>::from(({ (*l1.borrow()).begin_24() }));
             let ___x: Ptr<std_list_int__std_allocator_int__> = l1.as_pointer();
             let ___i: BidirectionalIterator<i32> = <BidirectionalIterator<i32>>::from(
-                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize),
+                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize as isize),
             );
             (*l1.borrow()).splice_69(___position, ___x, ___i)
         });
@@ -569,7 +589,7 @@ pub fn test_4() -> bool {
             )));
         ({
             let ___position: BidirectionalIterator<i32> = <BidirectionalIterator<i32>>::from(
-                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize),
+                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize as isize),
             );
             let ___x: Ptr<std_list_int__std_allocator_int__> = l1.as_pointer();
             let ___i: BidirectionalIterator<i32> =
@@ -608,11 +628,11 @@ pub fn test_4() -> bool {
             )));
         ({
             let ___position: BidirectionalIterator<i32> = <BidirectionalIterator<i32>>::from(
-                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize),
+                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize as isize),
             );
             let ___x: Ptr<std_list_int__std_allocator_int__> = l1.as_pointer();
             let ___i: BidirectionalIterator<i32> = <BidirectionalIterator<i32>>::from(
-                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize),
+                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize as isize),
             );
             (*l1.borrow()).splice_69(___position, ___x, ___i)
         });
@@ -724,8 +744,11 @@ pub fn test_4() -> bool {
                 ({ (*l1.borrow()).begin_24() }),
             )));
         assert!(({ (((*i.borrow()).iter_deref().read()) == 4) }));
-        (*i.borrow_mut()) =
-            <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() })).clone();
+        {
+            let __a1 = <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() }));
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(({ (((*i.borrow()).iter_deref().read()) == 5) }));
     }
     {
@@ -742,7 +765,7 @@ pub fn test_4() -> bool {
                 <BidirectionalIterator<i32>>::from(({ (*l1.borrow()).end_26() }));
             let ___x: Ptr<std_list_int__min_allocator_int__> = l2.as_pointer();
             let ___i: BidirectionalIterator<i32> = <BidirectionalIterator<i32>>::from(
-                libcc2rs::next_refcount(({ ({ (*l2.borrow()).begin_24() }) }), 1_isize),
+                libcc2rs::next_refcount(({ ({ (*l2.borrow()).begin_24() }) }), 1_isize as isize),
             );
             (*l1.borrow()).splice_69(___position, ___x, ___i)
         });
@@ -771,8 +794,11 @@ pub fn test_4() -> bool {
                 ({ (*l1.borrow()).begin_24() }),
             )));
         assert!(({ (((*i.borrow()).iter_deref().read()) == 5) }));
-        (*i.borrow_mut()) =
-            <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() })).clone();
+        {
+            let __a1 = <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() }));
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(({ (((*i.borrow()).iter_deref().read()) == 4) }));
     }
     {
@@ -817,8 +843,11 @@ pub fn test_4() -> bool {
                 ({ (*l1.borrow()).begin_24() }),
             )));
         assert!(({ (((*i.borrow()).iter_deref().read()) == 4) }));
-        (*i.borrow_mut()) =
-            <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() })).clone();
+        {
+            let __a1 = <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() }));
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(({ (((*i.borrow()).iter_deref().read()) == 5) }));
         {
             i.as_pointer().with_mut(|__it| {
@@ -842,7 +871,7 @@ pub fn test_4() -> bool {
                 <BidirectionalIterator<i32>>::from(({ (*l1.borrow()).end_26() }));
             let ___x: Ptr<std_list_int__min_allocator_int__> = l2.as_pointer();
             let ___i: BidirectionalIterator<i32> = <BidirectionalIterator<i32>>::from(
-                libcc2rs::next_refcount(({ ({ (*l2.borrow()).begin_24() }) }), 1_isize),
+                libcc2rs::next_refcount(({ ({ (*l2.borrow()).begin_24() }) }), 1_isize as isize),
             );
             (*l1.borrow()).splice_69(___position, ___x, ___i)
         });
@@ -871,8 +900,11 @@ pub fn test_4() -> bool {
                 ({ (*l1.borrow()).begin_24() }),
             )));
         assert!(({ (((*i.borrow()).iter_deref().read()) == 5) }));
-        (*i.borrow_mut()) =
-            <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() })).clone();
+        {
+            let __a1 = <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() }));
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(({ (((*i.borrow()).iter_deref().read()) == 4) }));
         {
             i.as_pointer().with_mut(|__it| {
@@ -896,7 +928,7 @@ pub fn test_4() -> bool {
                 <BidirectionalIterator<i32>>::from(({ (*l1.borrow()).end_26() }));
             let ___x: Ptr<std_list_int__min_allocator_int__> = l2.as_pointer();
             let ___i: BidirectionalIterator<i32> = <BidirectionalIterator<i32>>::from(
-                libcc2rs::next_refcount(({ ({ (*l2.borrow()).begin_24() }) }), 2_isize),
+                libcc2rs::next_refcount(({ ({ (*l2.borrow()).begin_24() }) }), 2_isize as isize),
             );
             (*l1.borrow()).splice_69(___position, ___x, ___i)
         });
@@ -925,8 +957,11 @@ pub fn test_4() -> bool {
                 ({ (*l1.borrow()).begin_24() }),
             )));
         assert!(({ (((*i.borrow()).iter_deref().read()) == 6) }));
-        (*i.borrow_mut()) =
-            <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() })).clone();
+        {
+            let __a1 = <BidirectionalIterator<i32>>::from(({ (*l2.borrow()).begin_24() }));
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         assert!(({ (((*i.borrow()).iter_deref().read()) == 4) }));
         {
             i.as_pointer().with_mut(|__it| {
@@ -1036,7 +1071,7 @@ pub fn test_4() -> bool {
             )));
         ({
             let ___position: BidirectionalIterator<i32> = <BidirectionalIterator<i32>>::from(
-                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize),
+                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize as isize),
             );
             let ___x: Ptr<std_list_int__min_allocator_int__> = l2.as_pointer();
             let ___i: BidirectionalIterator<i32> =
@@ -1126,7 +1161,7 @@ pub fn test_4() -> bool {
                 <BidirectionalIterator<i32>>::from(({ (*l1.borrow()).begin_24() }));
             let ___x: Ptr<std_list_int__min_allocator_int__> = l1.as_pointer();
             let ___i: BidirectionalIterator<i32> = <BidirectionalIterator<i32>>::from(
-                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize),
+                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize as isize),
             );
             (*l1.borrow()).splice_69(___position, ___x, ___i)
         });
@@ -1162,7 +1197,7 @@ pub fn test_4() -> bool {
             )));
         ({
             let ___position: BidirectionalIterator<i32> = <BidirectionalIterator<i32>>::from(
-                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize),
+                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize as isize),
             );
             let ___x: Ptr<std_list_int__min_allocator_int__> = l1.as_pointer();
             let ___i: BidirectionalIterator<i32> =
@@ -1201,11 +1236,11 @@ pub fn test_4() -> bool {
             )));
         ({
             let ___position: BidirectionalIterator<i32> = <BidirectionalIterator<i32>>::from(
-                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize),
+                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize as isize),
             );
             let ___x: Ptr<std_list_int__min_allocator_int__> = l1.as_pointer();
             let ___i: BidirectionalIterator<i32> = <BidirectionalIterator<i32>>::from(
-                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize),
+                libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize as isize),
             );
             (*l1.borrow()).splice_69(___position, ___x, ___i)
         });

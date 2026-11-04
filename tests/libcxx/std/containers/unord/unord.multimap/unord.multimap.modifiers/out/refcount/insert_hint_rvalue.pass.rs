@@ -235,35 +235,47 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3.5_f64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___x: Value<(Value<f64>, Value<i16>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(3.5_f64)),
-                Rc::new(RefCell::new(4_i16)),
-            )));
-            (*c.borrow()) . insert_40_struct_std_pair_double__short_ ( <std___detail__Node_const_iterator_std_pair_const_double__int___false__false_  >::from(({ ((*r.borrow()) ).clone() }))  , ___x.as_pointer() , )
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<(Value<f64>, Value<i16>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(3.5_f64)),
+                    Rc::new(RefCell::new(4_i16)),
+                )));
+                (*c.borrow()) . insert_40_struct_std_pair_double__short_ ( <std___detail__Node_const_iterator_std_pair_const_double__int___false__false_  >::from(({ ((*r.borrow()) ).clone() }))  , ___x.as_pointer() , )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3.5_f64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 4) }));
-        (*r.borrow_mut()) = ({
-            let ___hint: std___detail__Node_const_iterator_std_pair_const_double__int___false__false_   = <std___detail__Node_const_iterator_std_pair_const_double__int___false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
-            let ___x: Value<(Value<f64>, Value<i16>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(4.5_f64)),
-                Rc::new(RefCell::new(4_i16)),
-            )));
-            (*c.borrow()).insert_40_struct_std_pair_double__short_(___hint, ___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___hint: std___detail__Node_const_iterator_std_pair_const_double__int___false__false_   = <std___detail__Node_const_iterator_std_pair_const_double__int___false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
+                let ___x: Value<(Value<f64>, Value<i16>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(4.5_f64)),
+                    Rc::new(RefCell::new(4_i16)),
+                )));
+                (*c.borrow()).insert_40_struct_std_pair_double__short_(___hint, ___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4.5_f64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 4) }));
-        (*r.borrow_mut()) = ({
-            let ___hint: std___detail__Node_const_iterator_std_pair_const_double__int___false__false_   = <std___detail__Node_const_iterator_std_pair_const_double__int___false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
-            let ___x: Value<(Value<f64>, Value<i16>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(5.5_f64)),
-                Rc::new(RefCell::new(4_i16)),
-            )));
-            (*c.borrow()).insert_40_struct_std_pair_double__short_(___hint, ___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___hint: std___detail__Node_const_iterator_std_pair_const_double__int___false__false_   = <std___detail__Node_const_iterator_std_pair_const_double__int___false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
+                let ___x: Value<(Value<f64>, Value<i16>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(5.5_f64)),
+                    Rc::new(RefCell::new(4_i16)),
+                )));
+                (*c.borrow()).insert_40_struct_std_pair_double__short_(___hint, ___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 4_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 5.5_f64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 4) }));
@@ -303,13 +315,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<(Value<MoveOnly>, Value<MoveOnly>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(MoveOnly::new({ Some(3) }))),
-                Rc::new(RefCell::new(MoveOnly::new({ Some(4) }))),
-            )));
-            (*c.borrow()) . insert_40_struct_std_pair_class_MoveOnly__class_MoveOnly_ ( <std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_  >::from(({ ((*r.borrow()) ).clone() }))  , ___x.as_pointer() , )
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<(Value<MoveOnly>, Value<MoveOnly>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(MoveOnly::new({ Some(3) }))),
+                    Rc::new(RefCell::new(MoveOnly::new({ Some(4) }))),
+                )));
+                (*c.borrow()) . insert_40_struct_std_pair_class_MoveOnly__class_MoveOnly_ ( <std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_  >::from(({ ((*r.borrow()) ).clone() }))  , ___x.as_pointer() , )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(
             ({
@@ -329,17 +345,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___hint: std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_   = <std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
-            let ___x: Value<(Value<MoveOnly>, Value<MoveOnly>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(MoveOnly::new({ Some(4) }))),
-                Rc::new(RefCell::new(MoveOnly::new({ Some(4) }))),
-            )));
-            (*c.borrow()).insert_40_struct_std_pair_class_MoveOnly__class_MoveOnly_(
-                ___hint,
-                ___x.as_pointer(),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___hint: std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_   = <std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
+                let ___x: Value<(Value<MoveOnly>, Value<MoveOnly>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(MoveOnly::new({ Some(4) }))),
+                    Rc::new(RefCell::new(MoveOnly::new({ Some(4) }))),
+                )));
+                (*c.borrow()).insert_40_struct_std_pair_class_MoveOnly__class_MoveOnly_(
+                    ___hint,
+                    ___x.as_pointer(),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(
             ({
@@ -359,17 +379,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___hint: std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_   = <std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
-            let ___x: Value<(Value<MoveOnly>, Value<MoveOnly>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(MoveOnly::new({ Some(5) }))),
-                Rc::new(RefCell::new(MoveOnly::new({ Some(4) }))),
-            )));
-            (*c.borrow()).insert_40_struct_std_pair_class_MoveOnly__class_MoveOnly_(
-                ___hint,
-                ___x.as_pointer(),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___hint: std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_   = <std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
+                let ___x: Value<(Value<MoveOnly>, Value<MoveOnly>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(MoveOnly::new({ Some(5) }))),
+                    Rc::new(RefCell::new(MoveOnly::new({ Some(4) }))),
+                )));
+                (*c.borrow()).insert_40_struct_std_pair_class_MoveOnly__class_MoveOnly_(
+                    ___hint,
+                    ___x.as_pointer(),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 4_u64) }));
         assert!(
             ({
@@ -409,35 +433,47 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3.5_f64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___x: Value<(Value<f64>, Value<i16>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(3.5_f64)),
-                Rc::new(RefCell::new(4_i16)),
-            )));
-            (*c.borrow()) . insert_40_struct_std_pair_double__short_ ( <std___detail__Node_const_iterator_std_pair_const_double__int___false__false_  >::from(({ ((*r.borrow()) ).clone() }))  , ___x.as_pointer() , )
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<(Value<f64>, Value<i16>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(3.5_f64)),
+                    Rc::new(RefCell::new(4_i16)),
+                )));
+                (*c.borrow()) . insert_40_struct_std_pair_double__short_ ( <std___detail__Node_const_iterator_std_pair_const_double__int___false__false_  >::from(({ ((*r.borrow()) ).clone() }))  , ___x.as_pointer() , )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3.5_f64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 4) }));
-        (*r.borrow_mut()) = ({
-            let ___hint: std___detail__Node_const_iterator_std_pair_const_double__int___false__false_   = <std___detail__Node_const_iterator_std_pair_const_double__int___false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
-            let ___x: Value<(Value<f64>, Value<i16>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(4.5_f64)),
-                Rc::new(RefCell::new(4_i16)),
-            )));
-            (*c.borrow()).insert_40_struct_std_pair_double__short_(___hint, ___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___hint: std___detail__Node_const_iterator_std_pair_const_double__int___false__false_   = <std___detail__Node_const_iterator_std_pair_const_double__int___false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
+                let ___x: Value<(Value<f64>, Value<i16>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(4.5_f64)),
+                    Rc::new(RefCell::new(4_i16)),
+                )));
+                (*c.borrow()).insert_40_struct_std_pair_double__short_(___hint, ___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4.5_f64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 4) }));
-        (*r.borrow_mut()) = ({
-            let ___hint: std___detail__Node_const_iterator_std_pair_const_double__int___false__false_   = <std___detail__Node_const_iterator_std_pair_const_double__int___false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
-            let ___x: Value<(Value<f64>, Value<i16>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(5.5_f64)),
-                Rc::new(RefCell::new(4_i16)),
-            )));
-            (*c.borrow()).insert_40_struct_std_pair_double__short_(___hint, ___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___hint: std___detail__Node_const_iterator_std_pair_const_double__int___false__false_   = <std___detail__Node_const_iterator_std_pair_const_double__int___false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
+                let ___x: Value<(Value<f64>, Value<i16>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(5.5_f64)),
+                    Rc::new(RefCell::new(4_i16)),
+                )));
+                (*c.borrow()).insert_40_struct_std_pair_double__short_(___hint, ___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 4_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 5.5_f64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 4) }));
@@ -477,13 +513,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<(Value<MoveOnly>, Value<MoveOnly>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(MoveOnly::new({ Some(3) }))),
-                Rc::new(RefCell::new(MoveOnly::new({ Some(4) }))),
-            )));
-            (*c.borrow()) . insert_40_struct_std_pair_class_MoveOnly__class_MoveOnly_ ( <std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_  >::from(({ ((*r.borrow()) ).clone() }))  , ___x.as_pointer() , )
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<(Value<MoveOnly>, Value<MoveOnly>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(MoveOnly::new({ Some(3) }))),
+                    Rc::new(RefCell::new(MoveOnly::new({ Some(4) }))),
+                )));
+                (*c.borrow()) . insert_40_struct_std_pair_class_MoveOnly__class_MoveOnly_ ( <std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_  >::from(({ ((*r.borrow()) ).clone() }))  , ___x.as_pointer() , )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(
             ({
@@ -503,17 +543,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___hint: std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_   = <std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
-            let ___x: Value<(Value<MoveOnly>, Value<MoveOnly>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(MoveOnly::new({ Some(4) }))),
-                Rc::new(RefCell::new(MoveOnly::new({ Some(4) }))),
-            )));
-            (*c.borrow()).insert_40_struct_std_pair_class_MoveOnly__class_MoveOnly_(
-                ___hint,
-                ___x.as_pointer(),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___hint: std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_   = <std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
+                let ___x: Value<(Value<MoveOnly>, Value<MoveOnly>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(MoveOnly::new({ Some(4) }))),
+                    Rc::new(RefCell::new(MoveOnly::new({ Some(4) }))),
+                )));
+                (*c.borrow()).insert_40_struct_std_pair_class_MoveOnly__class_MoveOnly_(
+                    ___hint,
+                    ___x.as_pointer(),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(
             ({
@@ -533,17 +577,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___hint: std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_   = <std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
-            let ___x: Value<(Value<MoveOnly>, Value<MoveOnly>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(MoveOnly::new({ Some(5) }))),
-                Rc::new(RefCell::new(MoveOnly::new({ Some(4) }))),
-            )));
-            (*c.borrow()).insert_40_struct_std_pair_class_MoveOnly__class_MoveOnly_(
-                ___hint,
-                ___x.as_pointer(),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___hint: std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_   = <std___detail__Node_const_iterator_std_pair_const_MoveOnly__MoveOnly___false__true_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
+                let ___x: Value<(Value<MoveOnly>, Value<MoveOnly>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(MoveOnly::new({ Some(5) }))),
+                    Rc::new(RefCell::new(MoveOnly::new({ Some(4) }))),
+                )));
+                (*c.borrow()).insert_40_struct_std_pair_class_MoveOnly__class_MoveOnly_(
+                    ___hint,
+                    ___x.as_pointer(),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 4_u64) }));
         assert!(
             ({
@@ -580,35 +628,47 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3.5_f64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___x: Value<(Value<f64>, Value<i32>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(3.5_f64)),
-                Rc::new(RefCell::new(4)),
-            )));
-            (*c.borrow()) . insert_39 ( <std___detail__Node_const_iterator_std_pair_const_double__int___false__false_  >::from(({ ((*r.borrow()) ).clone() }))  , ___x.as_pointer() , )
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<(Value<f64>, Value<i32>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(3.5_f64)),
+                    Rc::new(RefCell::new(4)),
+                )));
+                (*c.borrow()) . insert_39 ( <std___detail__Node_const_iterator_std_pair_const_double__int___false__false_  >::from(({ ((*r.borrow()) ).clone() }))  , ___x.as_pointer() , )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3.5_f64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 4) }));
-        (*r.borrow_mut()) = ({
-            let ___hint: std___detail__Node_const_iterator_std_pair_const_double__int___false__false_   = <std___detail__Node_const_iterator_std_pair_const_double__int___false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
-            let ___x: Value<(Value<f64>, Value<i32>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(4.5_f64)),
-                Rc::new(RefCell::new(4)),
-            )));
-            (*c.borrow()).insert_39(___hint, ___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___hint: std___detail__Node_const_iterator_std_pair_const_double__int___false__false_   = <std___detail__Node_const_iterator_std_pair_const_double__int___false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
+                let ___x: Value<(Value<f64>, Value<i32>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(4.5_f64)),
+                    Rc::new(RefCell::new(4)),
+                )));
+                (*c.borrow()).insert_39(___hint, ___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4.5_f64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 4) }));
-        (*r.borrow_mut()) = ({
-            let ___hint: std___detail__Node_const_iterator_std_pair_const_double__int___false__false_   = <std___detail__Node_const_iterator_std_pair_const_double__int___false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
-            let ___x: Value<(Value<f64>, Value<i32>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(5.5_f64)),
-                Rc::new(RefCell::new(4)),
-            )));
-            (*c.borrow()).insert_39(___hint, ___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___hint: std___detail__Node_const_iterator_std_pair_const_double__int___false__false_   = <std___detail__Node_const_iterator_std_pair_const_double__int___false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
+                let ___x: Value<(Value<f64>, Value<i32>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(5.5_f64)),
+                    Rc::new(RefCell::new(4)),
+                )));
+                (*c.borrow()).insert_39(___hint, ___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(({ (({ (*c.borrow()).size() }) == 4_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 5.5_f64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 4) }));

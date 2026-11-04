@@ -498,8 +498,9 @@ pub fn test_8(
             std_move_iterator_random_access_iterator_const_char_ptr__::new_1({ (i).clone() }),
         ));
     let rr: Ptr<std_move_iterator_random_access_iterator_const_char_ptr__> = {
+        let __a1 = (n as i64);
         r.as_pointer().with_mut(|__it| {
-            __it.iter_add_assign(-(n as i64));
+            __it.iter_add_assign(-__a1);
         });
         r.as_pointer()
     };
@@ -519,8 +520,9 @@ pub fn test_9(mut i: Ptr<i8>, mut n: isize, mut x: Ptr<i8>) {
             (i).clone()
         })));
     let rr: Ptr<std_move_iterator_const_char_ptr_> = {
+        let __a1 = (n as i64);
         r.as_pointer().with_mut(|__it| {
-            __it.iter_add_assign(-(n as i64));
+            __it.iter_add_assign(-__a1);
         });
         r.as_pointer()
     };
@@ -571,8 +573,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             .as_pointer(),)
             {
                 (__tmp_0,) => {
+                    let __a1 = 5_i64;
                     __tmp_0.with_mut(|__it| {
-                        __it.iter_add_assign(-5_i64);
+                        __it.iter_add_assign(-__a1);
                     });
                     (__tmp_0).clone()
                 }

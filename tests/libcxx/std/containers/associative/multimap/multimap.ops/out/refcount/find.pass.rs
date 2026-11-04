@@ -362,57 +362,95 @@ pub fn test_16() -> bool {
                 ({
                     ({
                         let _first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_20() }) }),
+                                0_isize as isize,
+                            );
                         let _last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_20() }) }),
+                                3_isize as isize,
+                            );
                         iter_in_range_10(_first, _last, (*r.borrow()).clone())
                     })
                 })
             );
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(6));
-                (*m.borrow()).find_62(___x.as_pointer())
-            });
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(6));
+                    (*m.borrow()).find_62(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1);
+                r.as_pointer()
+            };
             assert!((*r.borrow()) == ({ (*m.borrow()).end_22() }));
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(7));
-                (*m.borrow()).find_62(___x.as_pointer())
-            });
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(7));
+                    (*m.borrow()).find_62(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1);
+                r.as_pointer()
+            };
             assert!(
                 ({
                     ({
                         let _first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_20() }) }),
+                                3_isize as isize,
+                            );
                         let _last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_20() }) }),
+                                6_isize as isize,
+                            );
                         iter_in_range_10(_first, _last, (*r.borrow()).clone())
                     })
                 })
             );
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(8));
-                (*m.borrow()).find_62(___x.as_pointer())
-            });
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(8));
+                    (*m.borrow()).find_62(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1);
+                r.as_pointer()
+            };
             assert!((*r.borrow()) == ({ (*m.borrow()).end_22() }));
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(9));
-                (*m.borrow()).find_62(___x.as_pointer())
-            });
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(9));
+                    (*m.borrow()).find_62(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1);
+                r.as_pointer()
+            };
             assert!(
                 ({
                     ({
                         let _first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_20() }) }),
+                                6_isize as isize,
+                            );
                         let _last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 9_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_20() }) }),
+                                9_isize as isize,
+                            );
                         iter_in_range_10(_first, _last, (*r.borrow()).clone())
                     })
                 })
             );
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(10));
-                (*m.borrow()).find_62(___x.as_pointer())
-            });
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(10));
+                    (*m.borrow()).find_62(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1);
+                r.as_pointer()
+            };
             assert!((*r.borrow()) == ({ (*m.borrow()).end_22() }));
         }
         {
@@ -438,57 +476,95 @@ pub fn test_16() -> bool {
                 ({
                     ({
                         let _first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 0_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_21() }) }),
+                                0_isize as isize,
+                            );
                         let _last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 3_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_21() }) }),
+                                3_isize as isize,
+                            );
                         iter_in_range_11(_first, _last, (*r.borrow()).clone())
                     })
                 })
             );
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(6));
-                (*m.borrow()).find_64(___x.as_pointer())
-            });
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(6));
+                    (*m.borrow()).find_64(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1);
+                r.as_pointer()
+            };
             assert!((*r.borrow()) == ({ (*m.borrow()).end_23() }));
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(7));
-                (*m.borrow()).find_64(___x.as_pointer())
-            });
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(7));
+                    (*m.borrow()).find_64(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1);
+                r.as_pointer()
+            };
             assert!(
                 ({
                     ({
                         let _first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 3_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_21() }) }),
+                                3_isize as isize,
+                            );
                         let _last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 6_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_21() }) }),
+                                6_isize as isize,
+                            );
                         iter_in_range_11(_first, _last, (*r.borrow()).clone())
                     })
                 })
             );
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(8));
-                (*m.borrow()).find_64(___x.as_pointer())
-            });
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(8));
+                    (*m.borrow()).find_64(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1);
+                r.as_pointer()
+            };
             assert!((*r.borrow()) == ({ (*m.borrow()).end_23() }));
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(9));
-                (*m.borrow()).find_64(___x.as_pointer())
-            });
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(9));
+                    (*m.borrow()).find_64(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1);
+                r.as_pointer()
+            };
             assert!(
                 ({
                     ({
                         let _first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 6_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_21() }) }),
+                                6_isize as isize,
+                            );
                         let _last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 9_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_21() }) }),
+                                9_isize as isize,
+                            );
                         iter_in_range_11(_first, _last, (*r.borrow()).clone())
                     })
                 })
             );
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(10));
-                (*m.borrow()).find_64(___x.as_pointer())
-            });
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(10));
+                    (*m.borrow()).find_64(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1);
+                r.as_pointer()
+            };
             assert!((*r.borrow()) == ({ (*m.borrow()).end_23() }));
         }
     }
@@ -508,9 +584,9 @@ pub fn test_16() -> bool {
         assert!(
             ({
                 let _first: BidirectionalIterator<(Value<i32>, Value<i32>)> =
-                    libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 6_isize);
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 6_isize as isize);
                 let _last: BidirectionalIterator<(Value<i32>, Value<i32>)> =
-                    libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 9_isize);
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 9_isize as isize);
                 let _to_find: BidirectionalIterator<(Value<i32>, Value<i32>)> = ({
                     let ___x: Value<i32> = Rc::new(RefCell::new(5));
                     (*m.borrow()).find_64(___x.as_pointer())
@@ -527,9 +603,9 @@ pub fn test_16() -> bool {
         assert!(
             ({
                 let _first: BidirectionalIterator<(Value<i32>, Value<i32>)> =
-                    libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 3_isize);
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 3_isize as isize);
                 let _last: BidirectionalIterator<(Value<i32>, Value<i32>)> =
-                    libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 6_isize);
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 6_isize as isize);
                 let _to_find: BidirectionalIterator<(Value<i32>, Value<i32>)> = ({
                     let ___x: Value<i32> = Rc::new(RefCell::new(7));
                     (*m.borrow()).find_64(___x.as_pointer())
@@ -546,9 +622,9 @@ pub fn test_16() -> bool {
         assert!(
             ({
                 let _first: BidirectionalIterator<(Value<i32>, Value<i32>)> =
-                    libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 0_isize);
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 0_isize as isize);
                 let _last: BidirectionalIterator<(Value<i32>, Value<i32>)> =
-                    libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 3_isize);
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 3_isize as isize);
                 let _to_find: BidirectionalIterator<(Value<i32>, Value<i32>)> = ({
                     let ___x: Value<i32> = Rc::new(RefCell::new(9));
                     (*m.borrow()).find_64(___x.as_pointer())
@@ -587,62 +663,95 @@ pub fn test_16() -> bool {
                 ({
                     ({
                         let _first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_20() }) }),
+                                0_isize as isize,
+                            );
                         let _last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_20() }) }),
+                                3_isize as isize,
+                            );
                         iter_in_range_13(_first, _last, (*r.borrow()).clone())
                     })
                 })
             );
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(6));
-                (*m.borrow()).find_62(___x.as_pointer())
-            })
-            .clone();
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(6));
+                    (*m.borrow()).find_62(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+                r.as_pointer()
+            };
             assert!((*r.borrow()) == ({ (*m.borrow()).end_22() }));
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(7));
-                (*m.borrow()).find_62(___x.as_pointer())
-            })
-            .clone();
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(7));
+                    (*m.borrow()).find_62(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+                r.as_pointer()
+            };
             assert!(
                 ({
                     ({
                         let _first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_20() }) }),
+                                3_isize as isize,
+                            );
                         let _last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_20() }) }),
+                                6_isize as isize,
+                            );
                         iter_in_range_13(_first, _last, (*r.borrow()).clone())
                     })
                 })
             );
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(8));
-                (*m.borrow()).find_62(___x.as_pointer())
-            })
-            .clone();
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(8));
+                    (*m.borrow()).find_62(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+                r.as_pointer()
+            };
             assert!((*r.borrow()) == ({ (*m.borrow()).end_22() }));
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(9));
-                (*m.borrow()).find_62(___x.as_pointer())
-            })
-            .clone();
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(9));
+                    (*m.borrow()).find_62(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+                r.as_pointer()
+            };
             assert!(
                 ({
                     ({
                         let _first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_20() }) }),
+                                6_isize as isize,
+                            );
                         let _last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 9_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_20() }) }),
+                                9_isize as isize,
+                            );
                         iter_in_range_13(_first, _last, (*r.borrow()).clone())
                     })
                 })
             );
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(10));
-                (*m.borrow()).find_62(___x.as_pointer())
-            })
-            .clone();
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(10));
+                    (*m.borrow()).find_62(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+                r.as_pointer()
+            };
             assert!((*r.borrow()) == ({ (*m.borrow()).end_22() }));
         }
         {
@@ -668,62 +777,95 @@ pub fn test_16() -> bool {
                 ({
                     ({
                         let _first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 0_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_21() }) }),
+                                0_isize as isize,
+                            );
                         let _last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 3_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_21() }) }),
+                                3_isize as isize,
+                            );
                         iter_in_range_14(_first, _last, (*r.borrow()).clone())
                     })
                 })
             );
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(6));
-                (*m.borrow()).find_64(___x.as_pointer())
-            })
-            .clone();
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(6));
+                    (*m.borrow()).find_64(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+                r.as_pointer()
+            };
             assert!((*r.borrow()) == ({ (*m.borrow()).end_23() }));
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(7));
-                (*m.borrow()).find_64(___x.as_pointer())
-            })
-            .clone();
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(7));
+                    (*m.borrow()).find_64(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+                r.as_pointer()
+            };
             assert!(
                 ({
                     ({
                         let _first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 3_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_21() }) }),
+                                3_isize as isize,
+                            );
                         let _last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 6_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_21() }) }),
+                                6_isize as isize,
+                            );
                         iter_in_range_14(_first, _last, (*r.borrow()).clone())
                     })
                 })
             );
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(8));
-                (*m.borrow()).find_64(___x.as_pointer())
-            })
-            .clone();
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(8));
+                    (*m.borrow()).find_64(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+                r.as_pointer()
+            };
             assert!((*r.borrow()) == ({ (*m.borrow()).end_23() }));
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(9));
-                (*m.borrow()).find_64(___x.as_pointer())
-            })
-            .clone();
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(9));
+                    (*m.borrow()).find_64(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+                r.as_pointer()
+            };
             assert!(
                 ({
                     ({
                         let _first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 6_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_21() }) }),
+                                6_isize as isize,
+                            );
                         let _last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                            libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_21() }) }), 9_isize);
+                            libcc2rs::next_refcount(
+                                ({ ({ (*m.borrow()).begin_21() }) }),
+                                9_isize as isize,
+                            );
                         iter_in_range_14(_first, _last, (*r.borrow()).clone())
                     })
                 })
             );
-            (*r.borrow_mut()) = ({
-                let ___x: Value<i32> = Rc::new(RefCell::new(10));
-                (*m.borrow()).find_64(___x.as_pointer())
-            })
-            .clone();
+            {
+                let __a1 = ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(10));
+                    (*m.borrow()).find_64(___x.as_pointer())
+                });
+                r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+                r.as_pointer()
+            };
             assert!((*r.borrow()) == ({ (*m.borrow()).end_23() }));
         }
     }
@@ -750,117 +892,197 @@ pub fn test_16() -> bool {
             ({
                 ({
                     let _first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                        libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize);
+                        libcc2rs::next_refcount(
+                            ({ ({ (*m.borrow()).begin_20() }) }),
+                            0_isize as isize,
+                        );
                     let _last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                        libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize);
+                        libcc2rs::next_refcount(
+                            ({ ({ (*m.borrow()).begin_20() }) }),
+                            3_isize as isize,
+                        );
                     iter_in_range_10(_first, _last, (*r.borrow()).clone())
                 })
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(6));
-            (*m.borrow()).find_62(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(6));
+                (*m.borrow()).find_62(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!((*r.borrow()) == ({ (*m.borrow()).end_22() }));
-        (*r.borrow_mut()) = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(7));
-            (*m.borrow()).find_62(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(7));
+                (*m.borrow()).find_62(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             ({
                 ({
                     let _first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                        libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize);
+                        libcc2rs::next_refcount(
+                            ({ ({ (*m.borrow()).begin_20() }) }),
+                            3_isize as isize,
+                        );
                     let _last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                        libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize);
+                        libcc2rs::next_refcount(
+                            ({ ({ (*m.borrow()).begin_20() }) }),
+                            6_isize as isize,
+                        );
                     iter_in_range_10(_first, _last, (*r.borrow()).clone())
                 })
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(8));
-            (*m.borrow()).find_62(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(8));
+                (*m.borrow()).find_62(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!((*r.borrow()) == ({ (*m.borrow()).end_22() }));
-        (*r.borrow_mut()) = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(9));
-            (*m.borrow()).find_62(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(9));
+                (*m.borrow()).find_62(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             ({
                 ({
                     let _first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                        libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize);
+                        libcc2rs::next_refcount(
+                            ({ ({ (*m.borrow()).begin_20() }) }),
+                            6_isize as isize,
+                        );
                     let _last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                        libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 9_isize);
+                        libcc2rs::next_refcount(
+                            ({ ({ (*m.borrow()).begin_20() }) }),
+                            9_isize as isize,
+                        );
                     iter_in_range_10(_first, _last, (*r.borrow()).clone())
                 })
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(10));
-            (*m.borrow()).find_62(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(10));
+                (*m.borrow()).find_62(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!((*r.borrow()) == ({ (*m.borrow()).end_22() }));
-        (*r.borrow_mut()) = ({
-            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 5 })));
-            (*m.borrow()).find_63_struct_C2Int(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 5 })));
+                (*m.borrow()).find_63_struct_C2Int(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             ({
                 ({
                     let _first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                        libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize);
+                        libcc2rs::next_refcount(
+                            ({ ({ (*m.borrow()).begin_20() }) }),
+                            0_isize as isize,
+                        );
                     let _last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                        libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize);
+                        libcc2rs::next_refcount(
+                            ({ ({ (*m.borrow()).begin_20() }) }),
+                            3_isize as isize,
+                        );
                     iter_in_range_10(_first, _last, (*r.borrow()).clone())
                 })
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 6 })));
-            (*m.borrow()).find_63_struct_C2Int(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 6 })));
+                (*m.borrow()).find_63_struct_C2Int(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!((*r.borrow()) == ({ (*m.borrow()).end_22() }));
-        (*r.borrow_mut()) = ({
-            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 7 })));
-            (*m.borrow()).find_63_struct_C2Int(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 7 })));
+                (*m.borrow()).find_63_struct_C2Int(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             ({
                 ({
                     let _first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                        libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize);
+                        libcc2rs::next_refcount(
+                            ({ ({ (*m.borrow()).begin_20() }) }),
+                            3_isize as isize,
+                        );
                     let _last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                        libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize);
+                        libcc2rs::next_refcount(
+                            ({ ({ (*m.borrow()).begin_20() }) }),
+                            6_isize as isize,
+                        );
                     iter_in_range_10(_first, _last, (*r.borrow()).clone())
                 })
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 8 })));
-            (*m.borrow()).find_63_struct_C2Int(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 8 })));
+                (*m.borrow()).find_63_struct_C2Int(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!((*r.borrow()) == ({ (*m.borrow()).end_22() }));
-        (*r.borrow_mut()) = ({
-            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 9 })));
-            (*m.borrow()).find_63_struct_C2Int(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 9 })));
+                (*m.borrow()).find_63_struct_C2Int(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             ({
                 ({
                     let _first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                        libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize);
+                        libcc2rs::next_refcount(
+                            ({ ({ (*m.borrow()).begin_20() }) }),
+                            6_isize as isize,
+                        );
                     let _last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                        libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 9_isize);
+                        libcc2rs::next_refcount(
+                            ({ ({ (*m.borrow()).begin_20() }) }),
+                            9_isize as isize,
+                        );
                     iter_in_range_10(_first, _last, (*r.borrow()).clone())
                 })
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 10 })));
-            (*m.borrow()).find_63_struct_C2Int(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 10 })));
+                (*m.borrow()).find_63_struct_C2Int(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!((*r.borrow()) == ({ (*m.borrow()).end_22() }));
     }
     {
@@ -984,57 +1206,95 @@ pub fn test_16() -> bool {
             ({
                 ({
                     let _first: BidirectionalIterator<(Value<PrivateConstructor>, Value<f64>)> =
-                        libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 0_isize);
+                        libcc2rs::next_refcount(
+                            ({ ({ (*m.borrow()).begin_20() }) }),
+                            0_isize as isize,
+                        );
                     let _last: BidirectionalIterator<(Value<PrivateConstructor>, Value<f64>)> =
-                        libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize);
+                        libcc2rs::next_refcount(
+                            ({ ({ (*m.borrow()).begin_20() }) }),
+                            3_isize as isize,
+                        );
                     iter_in_range_15(_first, _last, (*r.borrow()).clone())
                 })
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(6));
-            (*m.borrow()).find_63_int(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(6));
+                (*m.borrow()).find_63_int(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!((*r.borrow()) == ({ (*m.borrow()).end_22() }));
-        (*r.borrow_mut()) = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(7));
-            (*m.borrow()).find_63_int(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(7));
+                (*m.borrow()).find_63_int(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             ({
                 ({
                     let _first: BidirectionalIterator<(Value<PrivateConstructor>, Value<f64>)> =
-                        libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 3_isize);
+                        libcc2rs::next_refcount(
+                            ({ ({ (*m.borrow()).begin_20() }) }),
+                            3_isize as isize,
+                        );
                     let _last: BidirectionalIterator<(Value<PrivateConstructor>, Value<f64>)> =
-                        libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize);
+                        libcc2rs::next_refcount(
+                            ({ ({ (*m.borrow()).begin_20() }) }),
+                            6_isize as isize,
+                        );
                     iter_in_range_15(_first, _last, (*r.borrow()).clone())
                 })
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(8));
-            (*m.borrow()).find_63_int(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(8));
+                (*m.borrow()).find_63_int(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!((*r.borrow()) == ({ (*m.borrow()).end_22() }));
-        (*r.borrow_mut()) = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(9));
-            (*m.borrow()).find_63_int(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(9));
+                (*m.borrow()).find_63_int(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             ({
                 ({
                     let _first: BidirectionalIterator<(Value<PrivateConstructor>, Value<f64>)> =
-                        libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 6_isize);
+                        libcc2rs::next_refcount(
+                            ({ ({ (*m.borrow()).begin_20() }) }),
+                            6_isize as isize,
+                        );
                     let _last: BidirectionalIterator<(Value<PrivateConstructor>, Value<f64>)> =
-                        libcc2rs::next_refcount(({ ({ (*m.borrow()).begin_20() }) }), 9_isize);
+                        libcc2rs::next_refcount(
+                            ({ ({ (*m.borrow()).begin_20() }) }),
+                            9_isize as isize,
+                        );
                     iter_in_range_15(_first, _last, (*r.borrow()).clone())
                 })
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(10));
-            (*m.borrow()).find_63_int(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(10));
+                (*m.borrow()).find_63_int(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!((*r.borrow()) == ({ (*m.borrow()).end_22() }));
     }
     return true;

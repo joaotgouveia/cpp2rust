@@ -19,8 +19,9 @@ pub fn test_0() -> bool {
         ({ ({ (*v.borrow()).begin() }) }).iter_add(10_isize),
     ));
     {
+        let __a1 = 5_isize;
         iter.as_pointer().with_mut(|__it| {
-            __it.iter_add_assign(-5_isize);
+            __it.iter_add_assign(-__a1);
         });
         iter.as_pointer()
     };

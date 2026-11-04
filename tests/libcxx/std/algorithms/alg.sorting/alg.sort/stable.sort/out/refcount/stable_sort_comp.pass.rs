@@ -46,16 +46,18 @@ pub fn generate_sawtooth_0(mut N: i32, mut M: i32) -> Vec<(Value<i32>, Value<i32
     let mut ver: i32 = 0;
     let mut i: i32 = 0;
     'loop_: while (i < N) {
-        match (Rc::new(RefCell::new((
-            Rc::new(RefCell::new(x)),
-            Rc::new(RefCell::new(ver)),
-        )))
-        .as_pointer(),)
-        {
-            (__tmp_0,) => v
-                .decay()
-                .offset((i as usize) as isize)
-                .write(__tmp_0.with_mut(std::mem::take)),
+        match (
+            v.decay().offset((i as usize) as isize),
+            Rc::new(RefCell::new((
+                Rc::new(RefCell::new(x)),
+                Rc::new(RefCell::new(ver)),
+            )))
+            .as_pointer(),
+        ) {
+            (__tmp_0, __tmp_1) => {
+                __tmp_0.write(CppMove::cpp_move((__tmp_1).clone()));
+                (__tmp_0).clone()
+            }
         };
         if ((*x.prefix_inc()) == M) {
             x = 0;
@@ -72,12 +74,12 @@ pub fn test_1() -> bool {
         let v: Value<Vec<(Value<i32>, Value<i32>)>> =
             Rc::new(RefCell::new(({ generate_sawtooth_0(N, M) })));
         match ({ CppRange::begin(&v.decay()) },) {
-            (mut __tmp_1,) => {
-                let __n = CppRange::end(&v.decay()).iter_distance(&__tmp_1);
+            (mut __tmp_2,) => {
+                let __n = CppRange::end(&v.decay()).iter_distance(&__tmp_2);
                 let mut __order: Vec<isize> = (0..__n).collect();
                 __order.sort_by(|&__x, &__y| {
-                    let __a = __tmp_1.iter_at(__x);
-                    let __b = __tmp_1.iter_at(__y);
+                    let __a = __tmp_2.iter_at(__x);
+                    let __b = __tmp_2.iter_at(__y);
                     if <first_only>::default().less(__a.clone(), __b.clone()) {
                         std::cmp::Ordering::Less
                     } else if <first_only>::default().less(__b, __a) {
@@ -86,7 +88,7 @@ pub fn test_1() -> bool {
                         std::cmp::Ordering::Equal
                     }
                 });
-                reorder(__order, |__i| __tmp_1.iter_at(__i));
+                reorder(__order, |__i| __tmp_2.iter_at(__i));
             }
         };
         assert!(
@@ -118,12 +120,12 @@ pub fn test_1() -> bool {
                 i += M;
             }
             match ({ CppRange::begin(&v.decay()) },) {
-                (mut __tmp_2,) => {
-                    let __n = CppRange::end(&v.decay()).iter_distance(&__tmp_2);
+                (mut __tmp_3,) => {
+                    let __n = CppRange::end(&v.decay()).iter_distance(&__tmp_3);
                     let mut __order: Vec<isize> = (0..__n).collect();
                     __order.sort_by(|&__x, &__y| {
-                        let __a = __tmp_2.iter_at(__x);
-                        let __b = __tmp_2.iter_at(__y);
+                        let __a = __tmp_3.iter_at(__x);
+                        let __b = __tmp_3.iter_at(__y);
                         if <first_only>::default().less(__a.clone(), __b.clone()) {
                             std::cmp::Ordering::Less
                         } else if <first_only>::default().less(__b, __a) {
@@ -132,7 +134,7 @@ pub fn test_1() -> bool {
                             std::cmp::Ordering::Equal
                         }
                     });
-                    reorder(__order, |__i| __tmp_2.iter_at(__i));
+                    reorder(__order, |__i| __tmp_3.iter_at(__i));
                 }
             };
             assert!(
@@ -153,20 +155,20 @@ pub fn test_1() -> bool {
         let mut i: i32 = 0;
         'loop_: while ((i as usize) < (*v.borrow()).len()) {
             match (v.decay().offset((i as usize) as isize),) {
-                (__tmp_3,) => {
+                (__tmp_4,) => {
                     let _p: Ptr<_> = Ptr::alloc(i);
-                    __tmp_3.write(_p.to_owned_opt())
+                    __tmp_4.write(_p.to_owned_opt())
                 }
             };
             i.prefix_inc();
         }
         match ({ CppRange::begin(&v.decay()) },) {
-            (mut __tmp_4,) => {
-                let __n = CppRange::end(&v.decay()).iter_distance(&__tmp_4);
+            (mut __tmp_5,) => {
+                let __n = CppRange::end(&v.decay()).iter_distance(&__tmp_5);
                 let mut __order: Vec<isize> = (0..__n).collect();
                 __order.sort_by(|&__x, &__y| {
-                    let __a = __tmp_4.iter_at(__x);
-                    let __b = __tmp_4.iter_at(__y);
+                    let __a = __tmp_5.iter_at(__x);
+                    let __b = __tmp_5.iter_at(__y);
                     if <indirect_less>::default().less(__a.clone(), __b.clone()) {
                         std::cmp::Ordering::Less
                     } else if <indirect_less>::default().less(__b, __a) {
@@ -175,7 +177,7 @@ pub fn test_1() -> bool {
                         std::cmp::Ordering::Equal
                     }
                 });
-                reorder(__order, |__i| __tmp_4.iter_at(__i));
+                reorder(__order, |__i| __tmp_5.iter_at(__i));
             }
         };
         assert!(

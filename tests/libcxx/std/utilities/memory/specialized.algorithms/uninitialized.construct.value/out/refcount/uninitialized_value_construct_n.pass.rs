@@ -735,11 +735,15 @@ pub fn test_16() -> bool {
         );
         assert!(({ ((*pool.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*pool.borrow())[(1) as usize] == -1_i32) }));
-        (*e.borrow_mut()) = ({
-            let ___first: forward_iterator_int_ptr_ =
-                forward_iterator_int_ptr_::new_1({ p.offset((1) as isize) });
-            uninitialized_value_construct_n_19(___first, 4)
-        });
+        {
+            let __a1 = ({
+                let ___first: forward_iterator_int_ptr_ =
+                    forward_iterator_int_ptr_::new_1({ p.offset((1) as isize) });
+                uninitialized_value_construct_n_19(___first, 4)
+            });
+            e.as_pointer().with_mut(|__it| *__it = __a1);
+            e.as_pointer()
+        };
         assert!(
             ({
                 let _x: Ptr<forward_iterator_int_ptr_> = e.as_pointer();
@@ -782,12 +786,16 @@ pub fn test_counted_21() {
     );
     assert!((count_11.with(|rc| *rc.borrow()) == 1));
     assert!((constructed_12.with(|rc| *rc.borrow()) == 1));
-    (*e.borrow_mut()) = ({
-        uninitialized_value_construct_n_22(
-            forward_iterator_Counted_ptr_::new_1({ p.offset((1) as isize) }),
-            4,
-        )
-    });
+    {
+        let __a1 = ({
+            uninitialized_value_construct_n_22(
+                forward_iterator_Counted_ptr_::new_1({ p.offset((1) as isize) }),
+                4,
+            )
+        });
+        e.as_pointer().with_mut(|__it| *__it = __a1);
+        e.as_pointer()
+    };
     assert!(
         ({
             let _x: Ptr<forward_iterator_Counted_ptr_> = e.as_pointer();

@@ -251,9 +251,9 @@ pub fn test_10(mut fmt: std__Ios_Fmtflags, mut expected: Ptr<i8>) {
         write_int_refcount(
             &__s,
             (if value_4.with(|rc| *rc.borrow()) {
-                <u64>::MIN
+                ({ std_numeric_limits_unsigned_long_long_::min() })
             } else {
-                <u64>::MAX
+                ({ std_numeric_limits_unsigned_long_long_::max() })
             }),
         );
         __s

@@ -99,7 +99,7 @@ pub fn tests_4() -> bool {
     {
         let v: Value<Vec<bool>> = Rc::new(RefCell::new(vec![false; 100_usize]));
         let i: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
-            match ({ v.decay().begin().iter_add(10_i64) },) {
+            match ({ v.decay().begin().iter_add((10_i64 as isize)) },) {
                 (mut __tmp_0,) => {
                     let __off = __tmp_0.index();
                     (*v.borrow_mut()).splice(__off..__off, std::iter::repeat_n((1 != 0), 5_usize));
@@ -108,7 +108,7 @@ pub fn tests_4() -> bool {
             },
         ));
         assert!(({ ((&(*v.borrow())).len() == 105_usize) }));
-        assert!((*i.borrow()) == v.decay().begin().iter_add(10_i64));
+        assert!((*i.borrow()) == v.decay().begin().iter_add((10_i64 as isize)));
         let mut j: usize = 0_usize;
         j = 0_usize;
         'loop_: while (j < 10_usize) {
@@ -135,7 +135,7 @@ pub fn tests_4() -> bool {
         }
         let mut sz: usize = (&(*v.borrow())).len();
         let i: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
-            match ({ v.decay().begin().iter_add(10_i64) },) {
+            match ({ v.decay().begin().iter_add((10_i64 as isize)) },) {
                 (mut __tmp_1,) => {
                     let __off = __tmp_1.index();
                     (*v.borrow_mut()).splice(__off..__off, std::iter::repeat_n((1 != 0), 5_usize));
@@ -144,7 +144,7 @@ pub fn tests_4() -> bool {
             },
         ));
         assert!(({ ((&(*v.borrow())).len() == (sz).wrapping_add(5_usize)) }));
-        assert!((*i.borrow()) == v.decay().begin().iter_add(10_i64));
+        assert!((*i.borrow()) == v.decay().begin().iter_add((10_i64 as isize)));
         let mut j: usize = 0_usize;
         j = 0_usize;
         'loop_: while (j < 10_usize) {
@@ -173,7 +173,7 @@ pub fn tests_4() -> bool {
         (*v.borrow_mut()).pop();
         let mut sz: usize = (&(*v.borrow())).len();
         let i: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
-            match ({ v.decay().begin().iter_add(10_i64) },) {
+            match ({ v.decay().begin().iter_add((10_i64 as isize)) },) {
                 (mut __tmp_2,) => {
                     let __off = __tmp_2.index();
                     (*v.borrow_mut()).splice(__off..__off, std::iter::repeat_n((1 != 0), 5_usize));
@@ -182,7 +182,7 @@ pub fn tests_4() -> bool {
             },
         ));
         assert!(({ ((&(*v.borrow())).len() == (sz).wrapping_add(5_usize)) }));
-        assert!((*i.borrow()) == v.decay().begin().iter_add(10_i64));
+        assert!((*i.borrow()) == v.decay().begin().iter_add((10_i64 as isize)));
         let mut j: usize = 0_usize;
         j = 0_usize;
         'loop_: while (j < 10_usize) {
@@ -202,7 +202,7 @@ pub fn tests_4() -> bool {
     {
         let v: Value<Vec<bool>> = Rc::new(RefCell::new(vec![false; 10_usize]));
         let i: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
-            match ({ v.decay().begin().iter_add(10_i64) },) {
+            match ({ v.decay().begin().iter_add((10_i64 as isize)) },) {
                 (mut __tmp_3,) => {
                     let __off = __tmp_3.index();
                     (*v.borrow_mut()).splice(__off..__off, std::iter::repeat_n((1 != 0), 5_usize));
@@ -211,12 +211,12 @@ pub fn tests_4() -> bool {
             },
         ));
         assert!(({ ((&(*v.borrow())).len() == 15_usize) }));
-        assert!((*i.borrow()) == v.decay().begin().iter_add(10_i64));
+        assert!((*i.borrow()) == v.decay().begin().iter_add((10_i64 as isize)));
     }
     {
         let v: Value<Vec<bool>> = Rc::new(RefCell::new(vec![false; 100_usize]));
         let i: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
-            match ({ v.decay().begin().iter_add(10_i64) },) {
+            match ({ v.decay().begin().iter_add((10_i64 as isize)) },) {
                 (mut __tmp_4,) => {
                     let __off = __tmp_4.index();
                     (*v.borrow_mut()).splice(__off..__off, std::iter::repeat_n((1 != 0), 5_usize));
@@ -225,7 +225,7 @@ pub fn tests_4() -> bool {
             },
         ));
         assert!(({ ((&(*v.borrow())).len() == 105_usize) }));
-        assert!((*i.borrow()) == v.decay().begin().iter_add(10_i64));
+        assert!((*i.borrow()) == v.decay().begin().iter_add((10_i64 as isize)));
         let mut j: usize = 0_usize;
         j = 0_usize;
         'loop_: while (j < 10_usize) {

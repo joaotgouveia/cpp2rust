@@ -159,10 +159,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let _end: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   = <std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
             CheckConsecutiveKeys_5(_pos, _end, 1, s.as_pointer())
         });
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(2 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_1,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(2));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_1,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_1.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_1.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -193,10 +205,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let _end: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   = <std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
             CheckConsecutiveKeys_5(_pos, _end, 2, s.as_pointer())
         });
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_2,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_2,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_2.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_2.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -222,10 +246,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }
             })
         );
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(4 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_4,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(4));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_4,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_4.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_4.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -235,7 +271,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 1_isize)
             })
         );
-        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        {
+            let __a1 = ({ (*(*eq.borrow()).0.borrow()).clone() });
+            k.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            k.as_pointer()
+        };
         assert!(({ ((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
         assert!(
             ({
@@ -278,10 +318,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }) == 2_u64)
         );
         assert!(({ (({ (*c.borrow()).size() }) == 4_u64) }));
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(1 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_6,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_6,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_6.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_6.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -312,10 +364,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let _end: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   = <std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
             CheckConsecutiveKeys_5(_pos, _end, 1, s.as_pointer())
         });
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_7,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_7,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_7.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_7.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -325,7 +389,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 1_isize)
             })
         );
-        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        {
+            let __a1 = ({ (*(*eq.borrow()).0.borrow()).clone() });
+            k.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            k.as_pointer()
+        };
         assert!(({ ((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
             ({
@@ -341,10 +409,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }
             })
         );
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(4 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_9,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(4));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_9,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_9.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_9.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -354,7 +434,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 1_isize)
             })
         );
-        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        {
+            let __a1 = ({ (*(*eq.borrow()).0.borrow()).clone() });
+            k.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            k.as_pointer()
+        };
         assert!(({ ((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
         assert!(
             ({
@@ -397,10 +481,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }) == 0_u64)
         );
         assert!(({ (({ (*c.borrow()).size() }) == 4_u64) }));
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(1 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_11,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_11,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_11.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_11.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -431,10 +527,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let _end: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   = <std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
             CheckConsecutiveKeys_5(_pos, _end, 1, s.as_pointer())
         });
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_12,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_12,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_12.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_12.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -444,7 +552,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 1_isize)
             })
         );
-        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        {
+            let __a1 = ({ (*(*eq.borrow()).0.borrow()).clone() });
+            k.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            k.as_pointer()
+        };
         assert!(({ ((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
             ({
@@ -460,10 +572,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }
             })
         );
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(4 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_14,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(4));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_14,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_14.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_14.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -473,7 +597,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 1_isize)
             })
         );
-        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        {
+            let __a1 = ({ (*(*eq.borrow()).0.borrow()).clone() });
+            k.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            k.as_pointer()
+        };
         assert!(({ ((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
         assert!(
             ({
@@ -516,10 +644,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }) == 1_u64)
         );
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(1 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_16,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_16,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_16.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_16.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -550,10 +690,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let _end: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   = <std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
             CheckConsecutiveKeys_5(_pos, _end, 1, s.as_pointer())
         });
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_17,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_17,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_17.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_17.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -563,7 +715,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 1_isize)
             })
         );
-        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        {
+            let __a1 = ({ (*(*eq.borrow()).0.borrow()).clone() });
+            k.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            k.as_pointer()
+        };
         assert!(({ ((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
             ({
@@ -606,10 +762,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }) == 0_u64)
         );
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(1 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_19,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_19,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_19.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_19.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -640,10 +808,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let _end: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   = <std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
             CheckConsecutiveKeys_5(_pos, _end, 1, s.as_pointer())
         });
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_20,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_20,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_20.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_20.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -653,7 +833,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 1_isize)
             })
         );
-        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        {
+            let __a1 = ({ (*(*eq.borrow()).0.borrow()).clone() });
+            k.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            k.as_pointer()
+        };
         assert!(({ ((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
             ({
@@ -696,10 +880,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }) == 2_u64)
         );
         assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_22,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_22,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_22.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_22.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -709,7 +905,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 1_isize)
             })
         );
-        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        {
+            let __a1 = ({ (*(*eq.borrow()).0.borrow()).clone() });
+            k.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            k.as_pointer()
+        };
         assert!(({ ((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
             ({
@@ -752,10 +952,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }) == 0_u64)
         );
         assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_24,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_24,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_24.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_24.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -765,7 +977,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 1_isize)
             })
         );
-        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        {
+            let __a1 = ({ (*(*eq.borrow()).0.borrow()).clone() });
+            k.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            k.as_pointer()
+        };
         assert!(({ ((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
             ({
@@ -808,10 +1024,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }) == 1_u64)
         );
         assert!(({ (({ (*c.borrow()).size() }) == 0_u64) }));
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_26,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_26,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_26.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_26.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -848,10 +1076,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }) == 0_u64)
         );
         assert!(({ (({ (*c.borrow()).size() }) == 0_u64) }));
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_27,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_27,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_27.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_27.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -976,10 +1216,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let _end: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   = <std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
             CheckConsecutiveKeys_5(_pos, _end, 1, s.as_pointer())
         });
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(2 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_29,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(2));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_29,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_29.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_29.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -1010,10 +1262,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let _end: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   = <std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
             CheckConsecutiveKeys_5(_pos, _end, 2, s.as_pointer())
         });
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_30,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_30,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_30.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_30.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -1039,10 +1303,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }
             })
         );
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(4 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_32,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(4));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_32,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_32.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_32.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -1052,7 +1328,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 1_isize)
             })
         );
-        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        {
+            let __a1 = ({ (*(*eq.borrow()).0.borrow()).clone() });
+            k.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            k.as_pointer()
+        };
         assert!(({ ((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
         assert!(
             ({
@@ -1095,10 +1375,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }) == 2_u64)
         );
         assert!(({ (({ (*c.borrow()).size() }) == 4_u64) }));
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(1 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_34,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_34,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_34.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_34.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -1129,10 +1421,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let _end: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   = <std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
             CheckConsecutiveKeys_5(_pos, _end, 1, s.as_pointer())
         });
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_35,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_35,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_35.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_35.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -1142,7 +1446,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 1_isize)
             })
         );
-        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        {
+            let __a1 = ({ (*(*eq.borrow()).0.borrow()).clone() });
+            k.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            k.as_pointer()
+        };
         assert!(({ ((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
             ({
@@ -1158,10 +1466,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }
             })
         );
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(4 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_37,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(4));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_37,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_37.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_37.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -1171,7 +1491,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 1_isize)
             })
         );
-        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        {
+            let __a1 = ({ (*(*eq.borrow()).0.borrow()).clone() });
+            k.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            k.as_pointer()
+        };
         assert!(({ ((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
         assert!(
             ({
@@ -1214,10 +1538,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }) == 0_u64)
         );
         assert!(({ (({ (*c.borrow()).size() }) == 4_u64) }));
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(1 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_39,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_39,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_39.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_39.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -1248,10 +1584,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let _end: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   = <std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
             CheckConsecutiveKeys_5(_pos, _end, 1, s.as_pointer())
         });
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_40,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_40,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_40.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_40.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -1261,7 +1609,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 1_isize)
             })
         );
-        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        {
+            let __a1 = ({ (*(*eq.borrow()).0.borrow()).clone() });
+            k.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            k.as_pointer()
+        };
         assert!(({ ((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
             ({
@@ -1277,10 +1629,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }
             })
         );
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(4 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_42,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(4));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_42,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_42.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_42.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -1290,7 +1654,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 1_isize)
             })
         );
-        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        {
+            let __a1 = ({ (*(*eq.borrow()).0.borrow()).clone() });
+            k.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            k.as_pointer()
+        };
         assert!(({ ((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
         assert!(
             ({
@@ -1333,10 +1701,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }) == 1_u64)
         );
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(1 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_44,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_44,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_44.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_44.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -1367,10 +1747,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let _end: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   = <std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
             CheckConsecutiveKeys_5(_pos, _end, 1, s.as_pointer())
         });
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_45,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_45,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_45.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_45.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -1380,7 +1772,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 1_isize)
             })
         );
-        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        {
+            let __a1 = ({ (*(*eq.borrow()).0.borrow()).clone() });
+            k.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            k.as_pointer()
+        };
         assert!(({ ((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
             ({
@@ -1423,10 +1819,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }) == 0_u64)
         );
         assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(1 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_47,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_47,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_47.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_47.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -1457,10 +1865,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let _end: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   = <std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >::from(( { (*c.borrow()) . end_30 ( ) } )  )  ;
             CheckConsecutiveKeys_5(_pos, _end, 1, s.as_pointer())
         });
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_48,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_48,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_48.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_48.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -1470,7 +1890,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 1_isize)
             })
         );
-        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        {
+            let __a1 = ({ (*(*eq.borrow()).0.borrow()).clone() });
+            k.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            k.as_pointer()
+        };
         assert!(({ ((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
             ({
@@ -1513,10 +1937,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }) == 2_u64)
         );
         assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_50,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_50,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_50.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_50.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -1526,7 +1962,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 1_isize)
             })
         );
-        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        {
+            let __a1 = ({ (*(*eq.borrow()).0.borrow()).clone() });
+            k.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            k.as_pointer()
+        };
         assert!(({ ((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
             ({
@@ -1569,10 +2009,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }) == 0_u64)
         );
         assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_52,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_52,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_52.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_52.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -1582,7 +2034,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }) == 1_isize)
             })
         );
-        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        {
+            let __a1 = ({ (*(*eq.borrow()).0.borrow()).clone() });
+            k.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            k.as_pointer()
+        };
         assert!(({ ((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
             ({
@@ -1625,10 +2081,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }) == 1_u64)
         );
         assert!(({ (({ (*c.borrow()).size() }) == 0_u64) }));
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_54,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_54,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_54.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_54.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({
@@ -1665,10 +2133,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }) == 0_u64)
         );
         assert!(({ (({ (*c.borrow()).size() }) == 0_u64) }));
-        match (Rc::new(RefCell::new(( { let ___x : Value<i32 > = Rc::new(RefCell::new(3 )); (*c.borrow()) . equal_range_68 ( ___x.as_pointer() , ) } )  )).as_pointer(),) { (__tmp_55,) => { eq .as_pointer() .write((
+        match (Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).equal_range_68(___x.as_pointer())
+            }),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_55,) => {
+                eq .as_pointer() .write((
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_55.upgrade().deref()) .0.as_pointer()))),
         Rc::new(RefCell::new(<std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_   as CppFrom<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >>::cpp_from_move((*__tmp_55.upgrade().deref()) .1.as_pointer()))),
-    )) } }  ;
+    ));
+                eq.as_pointer()
+            }
+        };
         assert!(
             ({
                 (({

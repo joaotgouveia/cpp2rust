@@ -129,8 +129,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(1));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_76(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_79(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
             let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
@@ -185,8 +193,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(2));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_76(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_79(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
             let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
@@ -241,8 +257,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(3));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_76(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_79(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
         assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
@@ -263,8 +287,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(4));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_76(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_79(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
         assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
         assert!(
@@ -285,15 +317,31 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(5));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_76(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_79(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
         b = ({
             let ___key: Value<i32> = Rc::new(RefCell::new(6));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_76(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_79(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
     }
     {
@@ -360,8 +408,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(1));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_77(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_80(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
             let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
@@ -416,8 +472,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(2));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_77(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_80(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
             let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
@@ -472,8 +536,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(3));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_77(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_80(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
         assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
@@ -494,8 +566,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(4));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_77(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_80(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
         assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
         assert!(
@@ -516,15 +596,31 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(5));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_77(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_80(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
         b = ({
             let ___key: Value<i32> = Rc::new(RefCell::new(6));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_77(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_80(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
     }
     {
@@ -591,8 +687,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(1));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
             let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
@@ -647,8 +751,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(2));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
             let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
@@ -703,8 +815,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(3));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
         assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
@@ -725,8 +845,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(4));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
         assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
         assert!(
@@ -747,15 +875,31 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(5));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
         b = ({
             let ___key: Value<i32> = Rc::new(RefCell::new(6));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
     }
     {
@@ -822,8 +966,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(1));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
             let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
@@ -878,8 +1030,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(2));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
             let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
@@ -934,8 +1094,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(3));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
         assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
@@ -956,8 +1124,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(4));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
         assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
         assert!(
@@ -978,15 +1154,31 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(5));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
         b = ({
             let ___key: Value<i32> = Rc::new(RefCell::new(6));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
     }
     {
@@ -1053,8 +1245,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(1));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_76(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_79(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
             let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
@@ -1109,8 +1309,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(2));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_76(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_79(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
             let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
@@ -1165,8 +1373,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(3));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_76(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_79(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
         assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
@@ -1187,8 +1403,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(4));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_76(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_79(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
         assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
         assert!(
@@ -1209,15 +1433,31 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(5));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_76(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_79(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
         b = ({
             let ___key: Value<i32> = Rc::new(RefCell::new(6));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_76(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_79(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
     }
     {
@@ -1284,8 +1524,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(1));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_77(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_80(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
             let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
@@ -1340,8 +1588,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(2));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_77(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_80(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
             let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
@@ -1396,8 +1652,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(3));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_77(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_80(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
         assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
@@ -1418,8 +1682,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(4));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_77(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_80(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
         assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
         assert!(
@@ -1440,15 +1712,31 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(5));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_77(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_80(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
         b = ({
             let ___key: Value<i32> = Rc::new(RefCell::new(6));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        {
+            let __a1 = ({ (*c.borrow()).begin_77(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).end_80(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
     }
     {
@@ -1515,8 +1803,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(1));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
             let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
@@ -1571,8 +1867,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(2));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
             let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
@@ -1627,8 +1931,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(3));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
         assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
@@ -1649,8 +1961,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(4));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
         assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
         assert!(
@@ -1671,15 +1991,31 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(5));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
         b = ({
             let ___key: Value<i32> = Rc::new(RefCell::new(6));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
     }
     {
@@ -1746,8 +2082,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(1));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
             let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
@@ -1802,8 +2146,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(2));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
             let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
@@ -1858,8 +2210,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(3));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
         assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
         assert!(
@@ -1880,8 +2240,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(4));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
         assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
         assert!(
@@ -1902,15 +2270,31 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___key: Value<i32> = Rc::new(RefCell::new(5));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
         b = ({
             let ___key: Value<i32> = Rc::new(RefCell::new(6));
             (*c.borrow()).bucket(___key.as_pointer())
         });
-        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
-        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        {
+            let __a1 = ({ (*c.borrow()).cbegin_78(b) });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
+        {
+            let __a1 = ({ (*c.borrow()).cend_81(b) });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
     }
     return 0;

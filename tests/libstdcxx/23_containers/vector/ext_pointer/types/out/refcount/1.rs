@@ -82,7 +82,10 @@ fn main_0() -> i32 {
             (__tmp_2).clone()
         }
     };
-    v.as_pointer().write(({ (*w.borrow()).clone() }));
+    {
+        v.as_pointer().write(({ (*w.borrow()).clone() }));
+        v.as_pointer()
+    };
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

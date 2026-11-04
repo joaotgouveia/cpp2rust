@@ -85,8 +85,12 @@ pub fn do_insert_cv_test_4() -> bool {
         Rc::new(RefCell::new(1)),
         Rc::new(RefCell::new(1.5_f64)),
     )));
-    r.as_pointer()
-        .write(({ (*m.borrow()).insert_53(v2.as_pointer()) }));
+    {
+        r.as_pointer().write(CppMove::cpp_move(
+            Rc::new(RefCell::new(({ (*m.borrow()).insert_53(v2.as_pointer()) }))).as_pointer(),
+        ));
+        r.as_pointer()
+    };
     assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
     assert!(
         (*(*r.borrow()).0.borrow())
@@ -114,15 +118,19 @@ pub fn do_insert_cv_test_4() -> bool {
         Rc::new(RefCell::new(3)),
         Rc::new(RefCell::new(3.5_f64)),
     )));
-    r.as_pointer()
-        .write(({ (*m.borrow()).insert_53(v3.as_pointer()) }));
+    {
+        r.as_pointer().write(CppMove::cpp_move(
+            Rc::new(RefCell::new(({ (*m.borrow()).insert_53(v3.as_pointer()) }))).as_pointer(),
+        ));
+        r.as_pointer()
+    };
     assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
     assert!(
         (*(*r.borrow()).0.borrow())
             == libcc2rs::prev_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                1_isize
+                1_isize as isize
             )
     );
     assert!(({ ((*m.borrow()).len() == 3_usize) }));
@@ -146,15 +154,19 @@ pub fn do_insert_cv_test_4() -> bool {
         Rc::new(RefCell::new(3)),
         Rc::new(RefCell::new(4.5_f64)),
     )));
-    r.as_pointer()
-        .write(({ (*m.borrow()).insert_53(v4.as_pointer()) }));
+    {
+        r.as_pointer().write(CppMove::cpp_move(
+            Rc::new(RefCell::new(({ (*m.borrow()).insert_53(v4.as_pointer()) }))).as_pointer(),
+        ));
+        r.as_pointer()
+    };
     assert!(({ !(*(*r.borrow()).1.borrow()) }));
     assert!(
         (*(*r.borrow()).0.borrow())
             == libcc2rs::prev_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                1_isize
+                1_isize as isize
             )
     );
     assert!(({ ((*m.borrow()).len() == 3_usize) }));
@@ -213,8 +225,12 @@ pub fn do_insert_cv_test_5() -> bool {
         Rc::new(RefCell::new(1)),
         Rc::new(RefCell::new(1.5_f64)),
     )));
-    r.as_pointer()
-        .write(({ (*m.borrow()).insert_53(v2.as_pointer()) }));
+    {
+        r.as_pointer().write(CppMove::cpp_move(
+            Rc::new(RefCell::new(({ (*m.borrow()).insert_53(v2.as_pointer()) }))).as_pointer(),
+        ));
+        r.as_pointer()
+    };
     assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
     assert!(
         (*(*r.borrow()).0.borrow())
@@ -242,15 +258,19 @@ pub fn do_insert_cv_test_5() -> bool {
         Rc::new(RefCell::new(3)),
         Rc::new(RefCell::new(3.5_f64)),
     )));
-    r.as_pointer()
-        .write(({ (*m.borrow()).insert_53(v3.as_pointer()) }));
+    {
+        r.as_pointer().write(CppMove::cpp_move(
+            Rc::new(RefCell::new(({ (*m.borrow()).insert_53(v3.as_pointer()) }))).as_pointer(),
+        ));
+        r.as_pointer()
+    };
     assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
     assert!(
         (*(*r.borrow()).0.borrow())
             == libcc2rs::prev_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                1_isize
+                1_isize as isize
             )
     );
     assert!(({ ((*m.borrow()).len() == 3_usize) }));
@@ -274,15 +294,19 @@ pub fn do_insert_cv_test_5() -> bool {
         Rc::new(RefCell::new(3)),
         Rc::new(RefCell::new(4.5_f64)),
     )));
-    r.as_pointer()
-        .write(({ (*m.borrow()).insert_53(v4.as_pointer()) }));
+    {
+        r.as_pointer().write(CppMove::cpp_move(
+            Rc::new(RefCell::new(({ (*m.borrow()).insert_53(v4.as_pointer()) }))).as_pointer(),
+        ));
+        r.as_pointer()
+    };
     assert!(({ !(*(*r.borrow()).1.borrow()) }));
     assert!(
         (*(*r.borrow()).0.borrow())
             == libcc2rs::prev_refcount(
                 m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                1_isize
+                1_isize as isize
             )
     );
     assert!(({ ((*m.borrow()).len() == 3_usize) }));

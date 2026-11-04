@@ -1647,136 +1647,160 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
             }),
         ));
         assert!((({ base_13(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_47(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_47(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_47(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_47(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_47(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_47(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_47(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_47(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_47(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_47(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_47(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_47(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -1784,24 +1808,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_47(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_47(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -1809,24 +1837,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_47(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_47(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -1834,24 +1866,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_47(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_47(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -1859,22 +1895,26 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_47(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_47(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -1883,24 +1923,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_47(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_47(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -1909,24 +1953,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_47(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_47(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -1935,24 +1983,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_47(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_47(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -1961,24 +2013,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_47(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_47(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -2051,136 +2107,160 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
             }),
         ));
         assert!((({ base_11(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_48(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_48(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_48(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_48(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_48(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_48(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_48(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_48(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_48(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_48(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_48(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_48(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -2188,24 +2268,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_48(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_48(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -2213,24 +2297,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_48(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_48(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -2238,24 +2326,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_48(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_48(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -2263,22 +2355,26 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_48(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_48(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -2287,24 +2383,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_48(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_48(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -2313,24 +2413,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_48(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_48(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -2339,24 +2443,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_48(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_48(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -2365,24 +2473,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_48(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_48(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -2455,225 +2567,265 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
             }),
         ));
         assert!((({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_49(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_49(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_49(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_49(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_49(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_49(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_49(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_49(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_49(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_49(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_49(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_49(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_49(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_49(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_49(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_49(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_49(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_49(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_49(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_49(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -2681,24 +2833,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_49(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_49(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -2706,24 +2862,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_49(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_49(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -2731,24 +2891,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_49(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_49(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -2756,24 +2920,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_49(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_49(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -2845,225 +3013,265 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
             }),
         ));
         assert!((({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_50(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_50(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_50(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_50(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_50(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_50(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_50(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_50(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_50(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_50(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_50(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_50(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_50(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_50(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_50(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_50(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_50(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_50(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_50(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_50(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -3071,24 +3279,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_50(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_50(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -3096,24 +3308,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_50(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_50(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -3121,24 +3337,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_50(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_50(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -3146,24 +3366,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_50(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_50(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -3235,225 +3459,265 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
             }),
         ));
         assert!((({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_51(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_51(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_51(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_51(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_51(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_51(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_51(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_51(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_51(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_51(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_51(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_51(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_51(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_51(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_51(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_51(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_51(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_51(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_51(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_51(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -3461,24 +3725,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_51(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_51(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -3486,24 +3754,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_51(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_51(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -3511,24 +3783,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_51(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_51(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -3536,24 +3812,28 @@ impl TestIter_TestImpl_bidirectional_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            let ___last: bidirectional_iterator_const_int_ptr_ =
-                bidirectional_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_51(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                let ___last: bidirectional_iterator_const_int_ptr_ =
+                    bidirectional_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_51(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -3880,100 +4160,124 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
             }),
         ));
         assert!((({ base_13(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            rotate_copy_29(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                rotate_copy_29(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            rotate_copy_29(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                rotate_copy_29(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            rotate_copy_29(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                rotate_copy_29(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            rotate_copy_29(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                rotate_copy_29(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            rotate_copy_29(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                rotate_copy_29(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_29(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_29(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -3981,17 +4285,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_29(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_29(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -3999,17 +4307,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_29(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_29(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -4017,17 +4329,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_29(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_29(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -4035,17 +4351,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_29(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_29(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -4054,17 +4374,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_29(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_29(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -4073,17 +4397,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_29(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_29(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -4092,17 +4420,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_29(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_29(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -4111,17 +4443,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_29(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_29(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -4191,100 +4527,124 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
             }),
         ));
         assert!((({ base_11(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            rotate_copy_30(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                rotate_copy_30(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            rotate_copy_30(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                rotate_copy_30(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            rotate_copy_30(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                rotate_copy_30(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            rotate_copy_30(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                rotate_copy_30(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            rotate_copy_30(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                rotate_copy_30(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_30(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_30(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -4292,17 +4652,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_30(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_30(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -4310,17 +4674,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_30(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_30(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -4328,17 +4696,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_30(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_30(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -4346,17 +4718,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_30(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_30(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -4365,17 +4741,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_30(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_30(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -4384,17 +4764,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_30(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_30(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -4403,17 +4787,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_30(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_30(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -4422,17 +4810,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_30(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_30(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -4502,163 +4894,203 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
             }),
         ));
         assert!((({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            rotate_copy_31(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                rotate_copy_31(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            rotate_copy_31(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                rotate_copy_31(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            rotate_copy_31(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                rotate_copy_31(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            rotate_copy_31(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                rotate_copy_31(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            rotate_copy_31(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                rotate_copy_31(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_31(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_31(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_31(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_31(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_31(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_31(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_31(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_31(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_31(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_31(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -4666,17 +5098,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_31(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_31(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -4684,17 +5120,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_31(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_31(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -4702,17 +5142,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_31(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_31(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -4720,17 +5164,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_31(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_31(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -4799,163 +5247,203 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
             }),
         ));
         assert!((({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            rotate_copy_32(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                rotate_copy_32(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            rotate_copy_32(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                rotate_copy_32(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            rotate_copy_32(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                rotate_copy_32(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            rotate_copy_32(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                rotate_copy_32(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            rotate_copy_32(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                rotate_copy_32(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_32(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_32(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_32(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_32(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_32(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_32(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_32(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_32(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_32(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_32(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -4963,17 +5451,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_32(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_32(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -4981,17 +5473,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_32(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_32(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -4999,17 +5495,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_32(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_32(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -5017,17 +5517,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_32(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_32(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -5096,163 +5600,203 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
             }),
         ));
         assert!((({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            rotate_copy_33(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                rotate_copy_33(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            rotate_copy_33(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                rotate_copy_33(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            rotate_copy_33(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                rotate_copy_33(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            rotate_copy_33(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                rotate_copy_33(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            rotate_copy_33(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                rotate_copy_33(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_33(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_33(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_33(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_33(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_33(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_33(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            rotate_copy_33(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                rotate_copy_33(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_33(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_33(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -5260,17 +5804,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_33(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_33(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -5278,17 +5826,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_33(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_33(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -5296,17 +5848,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_33(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_33(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -5314,17 +5870,21 @@ impl TestIter_TestImpl_const_int_ptr_Impl for Ptr<TestIter_TestImpl_const_int_pt
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-            let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
-            rotate_copy_33(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                let ___middle: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((4) as isize);
+                rotate_copy_33(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -5749,136 +6309,160 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
             }),
         ));
         assert!((({ base_13(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_35(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_35(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_35(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_35(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_35(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_35(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_35(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_35(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_35(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_35(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_35(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_35(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -5886,24 +6470,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_35(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_35(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -5911,24 +6499,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_35(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_35(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -5936,24 +6528,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_35(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_35(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -5961,22 +6557,26 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_35(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_35(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -5985,24 +6585,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_35(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_35(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -6011,24 +6615,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_35(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_35(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -6037,24 +6645,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_35(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_35(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -6063,24 +6675,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_35(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_35(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -6153,136 +6769,160 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
             }),
         ));
         assert!((({ base_11(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_36(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_36(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_36(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_36(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_36(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_36(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_36(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_36(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_36(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_36(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_36(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_36(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -6290,24 +6930,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_36(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_36(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -6315,24 +6959,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_36(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_36(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -6340,24 +6988,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_36(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_36(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -6365,22 +7017,26 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_36(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_36(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -6389,24 +7045,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_36(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_36(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -6415,24 +7075,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_36(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_36(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -6441,24 +7105,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_36(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_36(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -6467,24 +7135,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_36(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_36(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -6557,225 +7229,265 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
             }),
         ));
         assert!((({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_37(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_37(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_37(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_37(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_37(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_37(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_37(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_37(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_37(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_37(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_37(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_37(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_37(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_37(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_37(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_37(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_37(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_37(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_37(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_37(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -6783,24 +7495,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_37(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_37(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -6808,24 +7524,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_37(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_37(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -6833,24 +7553,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_37(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_37(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -6858,24 +7582,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_37(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_37(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -6947,225 +7675,265 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
             }),
         ));
         assert!((({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_38(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_38(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_38(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_38(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_38(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_38(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_38(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_38(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_38(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_38(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_38(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_38(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_38(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_38(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_38(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_38(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_38(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_38(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_38(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_38(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -7173,24 +7941,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_38(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_38(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -7198,24 +7970,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_38(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_38(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -7223,24 +7999,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_38(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_38(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -7248,24 +8028,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_38(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_38(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -7337,225 +8121,265 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
             }),
         ));
         assert!((({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_39(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_39(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_39(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_39(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_39(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_39(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_39(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_39(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_39(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_39(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_39(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_39(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_39(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_39(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_39(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_39(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_39(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_39(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_39(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_39(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -7563,24 +8387,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_39(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_39(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -7588,24 +8416,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_39(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_39(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -7613,24 +8445,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_39(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_39(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -7638,24 +8474,28 @@ impl TestIter_TestImpl_contiguous_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            let ___last: contiguous_iterator_const_int_ptr_ =
-                contiguous_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_39(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                let ___last: contiguous_iterator_const_int_ptr_ =
+                    contiguous_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_39(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -8080,136 +8920,160 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
             }),
         ));
         assert!((({ base_13(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_41(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_41(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_41(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_41(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_41(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_41(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_41(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_41(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_41(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_41(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_41(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_41(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -8217,24 +9081,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_41(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_41(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -8242,24 +9110,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_41(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_41(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -8267,24 +9139,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_41(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_41(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -8292,22 +9168,26 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_41(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_41(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -8316,24 +9196,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_41(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_41(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -8342,24 +9226,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_41(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_41(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -8368,24 +9256,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_41(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_41(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -8394,24 +9286,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_41(
-                ___first,
-                ___middle,
-                ___last,
-                contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_41(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    contiguous_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_13(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -8484,136 +9380,160 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
             }),
         ));
         assert!((({ base_11(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_42(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_42(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_42(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_42(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_42(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_42(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_42(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_42(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_42(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_42(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_42(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_42(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -8621,24 +9541,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_42(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_42(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -8646,24 +9570,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_42(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_42(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -8671,24 +9599,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_42(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_42(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
@@ -8696,22 +9628,26 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_42(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_42(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -8720,24 +9656,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_42(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_42(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -8746,24 +9686,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_42(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_42(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -8772,24 +9716,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_42(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_42(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -8798,24 +9746,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_42(
-                ___first,
-                ___middle,
-                ___last,
-                random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_42(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    random_access_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_11(r.as_pointer(),) })
                 == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
@@ -8888,225 +9840,265 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
             }),
         ));
         assert!((({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_43(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_43(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_43(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_43(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_43(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_43(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_43(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_43(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_43(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_43(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_43(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_43(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_43(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_43(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_43(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_43(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_43(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_43(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_43(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_43(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -9114,24 +10106,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_43(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_43(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -9139,24 +10135,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_43(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_43(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -9164,24 +10164,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_43(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_43(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -9189,24 +10193,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_43(
-                ___first,
-                ___middle,
-                ___last,
-                bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_43(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    bidirectional_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_9(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -9278,225 +10286,265 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
             }),
         ));
         assert!((({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_44(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_44(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_44(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_44(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_44(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_44(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_44(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_44(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_44(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_44(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_44(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_44(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_44(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_44(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_44(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_44(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_44(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_44(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_44(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_44(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -9504,24 +10552,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_44(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_44(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -9529,24 +10581,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_44(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_44(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -9554,24 +10610,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_44(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_44(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -9579,24 +10639,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_44(
-                ___first,
-                ___middle,
-                ___last,
-                forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_44(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    forward_iterator_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_8(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -9668,225 +10732,265 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
             }),
         ));
         assert!((({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>)));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_45(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_45(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            rotate_copy_45(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                rotate_copy_45(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((1) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_45(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_45(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_45(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_45(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            rotate_copy_45(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                rotate_copy_45(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((2) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_45(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_45(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_45(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_45(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_45(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_45(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            rotate_copy_45(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                rotate_copy_45(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((3) as isize))
         );
         assert!(({ ((*ib.borrow())[(0) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_45(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_45(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -9894,24 +10998,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 3) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_45(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_45(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -9919,24 +11027,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 2) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 0) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_45(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_45(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -9944,24 +11056,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 3) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 1) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_45(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_45(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );
@@ -9969,24 +11085,28 @@ impl TestIter_TestImpl_random_access_iterator_const_int_ptr__Impl
         assert!(({ ((*ib.borrow())[(1) as usize] == 0) }));
         assert!(({ ((*ib.borrow())[(2) as usize] == 1) }));
         assert!(({ ((*ib.borrow())[(3) as usize] == 2) }));
-        (*r.borrow_mut()) = ({
-            let ___first: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-            let ___middle: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            let ___last: random_access_iterator_const_int_ptr_ =
-                random_access_iterator_const_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
-                });
-            rotate_copy_45(
-                ___first,
-                ___middle,
-                ___last,
-                cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
-            )
-        });
+        {
+            let __a1 = ({
+                let ___first: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                let ___middle: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                let ___last: random_access_iterator_const_int_ptr_ =
+                    random_access_iterator_const_int_ptr_::new_1({
+                        (ia.as_pointer() as Ptr<i32>).offset((4) as isize)
+                    });
+                rotate_copy_45(
+                    ___first,
+                    ___middle,
+                    ___last,
+                    cpp17_output_iterator_int_ptr_::new({ (ib.as_pointer() as Ptr<i32>) }),
+                )
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
             (({ base_7(r.as_pointer(),) }) == (ib.as_pointer() as Ptr::<i32>).offset((4) as isize))
         );

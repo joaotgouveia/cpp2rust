@@ -76,19 +76,20 @@ pub fn tests_4() -> bool {
             });
             (*i.borrow()).clone()
         };
-        assert!((*i.borrow()) == c.decay().end().iter_add(-1_i64));
+        assert!((*i.borrow()) == c.decay().end().iter_add(-(1_i64 as isize)));
         assert!(({ ((&(*c.borrow())).len() == 2_usize) }));
         assert!(((c.decay().read() as i32) == (false as i32)));
         assert!(((c.decay().to_last().read() as i32) == (true as i32)));
         {
             (*i.borrow_mut()) = ({
-                let ___pos: RandomAccessIterator<bool> = c.decay().begin().iter_add(1_i64);
+                let ___pos: RandomAccessIterator<bool> =
+                    c.decay().begin().iter_add((1_i64 as isize));
                 let ___args: Value<bool> = Rc::new(RefCell::new(true));
                 (*c.borrow_mut()).emplace(___pos, ___args.as_pointer())
             });
             (*i.borrow()).clone()
         };
-        assert!((*i.borrow()) == c.decay().begin().iter_add(1_i64));
+        assert!((*i.borrow()) == c.decay().begin().iter_add((1_i64 as isize)));
         assert!(({ ((&(*c.borrow())).len() == 3_usize) }));
         assert!(((c.decay().read() as i32) == (false as i32)));
         assert!(((c.decay().offset(1_usize as isize).read() as i32) == (true as i32)));
@@ -113,19 +114,20 @@ pub fn tests_4() -> bool {
             });
             (*i.borrow()).clone()
         };
-        assert!((*i.borrow()) == c.decay().end().iter_add(-1_i64));
+        assert!((*i.borrow()) == c.decay().end().iter_add(-(1_i64 as isize)));
         assert!(({ ((&(*c.borrow())).len() == 2_usize) }));
         assert!(((c.decay().read() as i32) == (false as i32)));
         assert!(((c.decay().to_last().read() as i32) == (true as i32)));
         {
             (*i.borrow_mut()) = ({
-                let ___pos: RandomAccessIterator<bool> = c.decay().begin().iter_add(1_i64);
+                let ___pos: RandomAccessIterator<bool> =
+                    c.decay().begin().iter_add((1_i64 as isize));
                 let ___args: Value<bool> = Rc::new(RefCell::new(true));
                 (*c.borrow_mut()).emplace(___pos, ___args.as_pointer())
             });
             (*i.borrow()).clone()
         };
-        assert!((*i.borrow()) == c.decay().begin().iter_add(1_i64));
+        assert!((*i.borrow()) == c.decay().begin().iter_add((1_i64 as isize)));
         assert!(({ ((&(*c.borrow())).len() == 3_usize) }));
         assert!(({ ((&(*c.borrow())).len() == 3_usize) }));
         assert!(((c.decay().read() as i32) == (false as i32)));

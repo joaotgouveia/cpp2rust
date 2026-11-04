@@ -103,7 +103,11 @@ pub fn test_4() -> bool {
         );
         let i: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
             Rc::new(RefCell::new(BidirectionalIterator::default()));
-        (*i.borrow_mut()) = ({ (*m.borrow()).begin_20() });
+        {
+            let __a1 = ({ (*m.borrow()).begin_20() });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         let k: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
             <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(({ (*i.borrow()).clone() })),
         ));
@@ -242,7 +246,11 @@ pub fn test_4() -> bool {
         );
         let i: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
             Rc::new(RefCell::new(BidirectionalIterator::default()));
-        (*i.borrow_mut()) = ({ (*m.borrow()).begin_21() });
+        {
+            let __a1 = ({ (*m.borrow()).begin_21() });
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         let mut j: i32 = 1;
         'loop_: while (j <= 8) {
             let mut d: f64 = 1_f64;
@@ -334,7 +342,11 @@ pub fn test_4() -> bool {
         );
         let i: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
             Rc::new(RefCell::new(BidirectionalIterator::default()));
-        (*i.borrow_mut()) = ({ (*m.borrow()).begin_20() }).clone();
+        {
+            let __a1 = ({ (*m.borrow()).begin_20() });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         let k: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
             <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(({ (*i.borrow()).clone() })),
         ));
@@ -473,7 +485,11 @@ pub fn test_4() -> bool {
         );
         let i: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
             Rc::new(RefCell::new(BidirectionalIterator::default()));
-        (*i.borrow_mut()) = ({ (*m.borrow()).begin_21() }).clone();
+        {
+            let __a1 = ({ (*m.borrow()).begin_21() });
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         let mut j: i32 = 1;
         'loop_: while (j <= 8) {
             let mut d: f64 = 1_f64;

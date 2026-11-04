@@ -60,14 +60,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::numeric_limits<A>::is_specialized == false");;
     assert!(
         ({
-            let _x: Value<A> = Rc::new(RefCell::new(<A>::MIN));
+            let _x: Value<A> = Rc::new(RefCell::new(({ std_numeric_limits_A_::min() })));
             let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
     assert!(
         ({
-            let _x: Value<A> = Rc::new(RefCell::new(<A>::MAX));
+            let _x: Value<A> = Rc::new(RefCell::new(({ std_numeric_limits_A_::max() })));
             let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })

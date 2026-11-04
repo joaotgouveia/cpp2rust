@@ -19,7 +19,11 @@ pub fn test01_0() {
     let ci1: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(
         <RandomAccessIterator<i32>>::from(({ (*i2.borrow()).clone() })),
     ));
-    (*i2.borrow_mut()) = (*i3.borrow()).clone();
+    {
+        let __a1 = ({ (*i3.borrow()).clone() });
+        i2.as_pointer().with_mut(|__it| *__it = __a1.clone());
+        i2.as_pointer()
+    };
 }
 pub fn main() {
     __cpp2rust_init_globals();

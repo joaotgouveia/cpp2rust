@@ -110,24 +110,28 @@ const _: () = assert!(
 const _: () = assert!(true, "");
 pub fn tests_0() -> bool {
     let track: Value<Tracker> = Rc::new(RefCell::new(<Tracker>::default()));
-    let mut v: Vec<NotTriviallyMovable> = Vec::new();
-    if 5_usize as usize > v.capacity() as usize {
-        let len_0 = v.len();
-        v.reserve_exact(5_usize as usize - len_0 as usize);
+    let v: Value<Vec<NotTriviallyMovable>> = Rc::new(RefCell::new(Vec::new()));
+    if 5_usize as usize > (*v.borrow()).capacity() as usize {
+        let len_0 = (*v.borrow()).len();
+        (*v.borrow_mut()).reserve_exact(5_usize as usize - len_0 as usize);
     };
-    let mut capacity: usize = v.capacity();
-    'loop_: while (v.len() < v.capacity()) {
+    let mut capacity: usize = (*v.borrow()).capacity();
+    'loop_: while ((*v.borrow()).len() < (*v.borrow()).capacity()) {
         {
             let __init = NotTriviallyMovable::new({ (track.as_pointer()) });
-            v.push(__init)
+            v.as_pointer()
+                .with_mut(|__v: &mut Vec<NotTriviallyMovable>| __v.push(__init));
+            v.as_pointer().decay().to_last()
         };
     }
     assert!(({ ({ (*track.borrow()).move_constructs } == 0_usize) }));
-    assert!((v.capacity() == capacity));
-    assert!((v.len() == capacity));
+    assert!(({ ((*v.borrow()).capacity() == capacity) }));
+    assert!(({ ((*v.borrow()).len() == capacity) }));
     {
         let __init = NotTriviallyMovable::new({ (track.as_pointer()) });
-        v.push(__init)
+        v.as_pointer()
+            .with_mut(|__v: &mut Vec<NotTriviallyMovable>| __v.push(__init));
+        v.as_pointer().decay().to_last()
     };
     assert!(({ ({ (*track.borrow()).move_constructs } == capacity) }));
     return true;

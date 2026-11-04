@@ -221,10 +221,10 @@ pub fn test_18() -> bool {
             RefCell::new(std_ranges_iota_view_int__std_unreachable_sentinel_t_::new_1({ 0 })),
         );
         let iter1: Value<std_ranges_iota_view_int___Iterator> = Rc::new(RefCell::new(
-            libcc2rs::next_refcount(({ ({ (*io.borrow()).begin() }) }), 1_i64),
+            libcc2rs::next_refcount(({ ({ (*io.borrow()).begin() }) }), 1_i64 as isize),
         ));
         let iter2: Value<std_ranges_iota_view_int___Iterator> = Rc::new(RefCell::new(
-            libcc2rs::next_refcount(({ ({ (*io.borrow()).begin() }) }), 1_i64),
+            libcc2rs::next_refcount(({ ({ (*io.borrow()).begin() }) }), 1_i64 as isize),
         ));
         assert!(({ (*iter1.borrow()) == (*iter2.borrow()) }));
         assert!(
@@ -254,10 +254,10 @@ pub fn test_18() -> bool {
                 }),
             ));
         let iter1: Value<std_ranges_iota_view_SomeInt___Iterator> = Rc::new(RefCell::new(
-            libcc2rs::next_refcount(({ ({ (*io.borrow()).begin() }) }), 1),
+            libcc2rs::next_refcount(({ ({ (*io.borrow()).begin() }) }), 1 as isize),
         ));
         let iter2: Value<std_ranges_iota_view_SomeInt___Iterator> = Rc::new(RefCell::new(
-            libcc2rs::next_refcount(({ ({ (*io.borrow()).begin() }) }), 1),
+            libcc2rs::next_refcount(({ ({ (*io.borrow()).begin() }) }), 1 as isize),
         ));
         assert!(({ (*iter1.borrow()) == (*iter2.borrow()) }));
         assert!(

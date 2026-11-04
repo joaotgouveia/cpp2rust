@@ -10,8 +10,11 @@ pub fn test_0() -> bool {
     {
         let p1: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Some(Rc::new(RefCell::new(1)))));
         assert!(({ (((*p1.borrow()).as_pointer().read()) == 1) }));
-        p1.as_pointer()
-            .write(Some(Rc::new(RefCell::new(0_i32))).take());
+        {
+            p1.as_pointer()
+                .write(Some(Rc::new(RefCell::new(0_i32))).take());
+            p1.as_pointer()
+        };
         assert!(({ (((*p1.borrow()).as_pointer().read()) == 0) }));
     }
     {
@@ -32,8 +35,11 @@ pub fn test_0() -> bool {
                 }
             })
         );
-        p2.as_pointer()
-            .write(Some(Rc::new(RefCell::new(vec![i8::default()]))).take());
+        {
+            p2.as_pointer()
+                .write(Some(Rc::new(RefCell::new(vec![i8::default()]))).take());
+            p2.as_pointer()
+        };
         assert!(
             ({
                 match ((*p2.borrow()).as_pointer(),) {
@@ -45,16 +51,19 @@ pub fn test_0() -> bool {
                 }
             })
         );
-        p2.as_pointer().write(
-            Some(Rc::new(RefCell::new(
-                vec![('z' as i8); (6 as usize) as usize]
-                    .iter()
-                    .cloned()
-                    .chain(std::iter::once(0_i8))
-                    .collect(),
-            )))
-            .take(),
-        );
+        {
+            p2.as_pointer().write(
+                Some(Rc::new(RefCell::new(
+                    vec![('z' as i8); (6 as usize) as usize]
+                        .iter()
+                        .cloned()
+                        .chain(std::iter::once(0_i8))
+                        .collect(),
+                )))
+                .take(),
+            );
+            p2.as_pointer()
+        };
         assert!(
             ({
                 match ((*p2.borrow()).as_pointer(),) {

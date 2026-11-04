@@ -424,9 +424,12 @@ impl ElemImpl for Ptr<Elem> {
                 (__tmp_0).clone()
             }
         };
-        field_ref!((*self), coeffs)
-            .as_pointer()
-            .write(field!(_a0, coeffs).with_mut(std::mem::take));
+        {
+            field_ref!((*self), coeffs)
+                .as_pointer()
+                .write(field!(_a0, coeffs).with_mut(std::mem::take));
+            field_ref!((*self), coeffs).as_pointer()
+        };
         return (*self).clone();
     }
 }
@@ -445,15 +448,24 @@ impl StateImpl for Ptr<State> {
                 (__tmp_1).clone()
             }
         };
-        field_ref!((*self), arr)
-            .as_pointer()
-            .write(field!(_a0, arr).with_mut(std::mem::take));
-        field_ref!((*self), elems)
-            .as_pointer()
-            .write(field!(_a0, elems).with_mut(std::mem::take));
-        field_ref!((*self), rows)
-            .as_pointer()
-            .write(field!(_a0, rows).with_mut(std::mem::take));
+        {
+            field_ref!((*self), arr)
+                .as_pointer()
+                .write(field!(_a0, arr).with_mut(std::mem::take));
+            field_ref!((*self), arr).as_pointer()
+        };
+        {
+            field_ref!((*self), elems)
+                .as_pointer()
+                .write(field!(_a0, elems).with_mut(std::mem::take));
+            field_ref!((*self), elems).as_pointer()
+        };
+        {
+            field_ref!((*self), rows)
+                .as_pointer()
+                .write(field!(_a0, rows).with_mut(std::mem::take));
+            field_ref!((*self), rows).as_pointer()
+        };
         return (*self).clone();
     }
 }

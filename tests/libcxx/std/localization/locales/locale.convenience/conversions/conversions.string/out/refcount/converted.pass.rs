@@ -22,15 +22,18 @@ impl TestHelper_wchar_t__4_ {
                 }),
             ));
             assert!(({ (({ (*myconv.borrow()).converted() }) == 1_usize) }));
-            bs.as_pointer().write(
-                ({
-                    (*myconv.borrow()).to_bytes_13(Ptr::<i32>::from_string_literal(&[
-                        262147 as i32,
-                        101 as i32,
-                        0 as i32,
-                    ]))
-                }),
-            );
+            {
+                bs.as_pointer().write(
+                    ({
+                        (*myconv.borrow()).to_bytes_13(Ptr::<i32>::from_string_literal(&[
+                            262147 as i32,
+                            101 as i32,
+                            0 as i32,
+                        ]))
+                    }),
+                );
+                bs.as_pointer()
+            };
             assert!(({ (({ (*myconv.borrow()).converted() }) == 2_usize) }));
             let mut ws: Vec<i32> = ({
                 (*myconv.borrow()).from_bytes_9(Ptr::<i8>::from_string_literal(b"\xf1\x80\x80\x83"))

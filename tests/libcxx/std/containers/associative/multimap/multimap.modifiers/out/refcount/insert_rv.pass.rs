@@ -208,13 +208,17 @@ pub fn test_18() -> bool {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<(Value<i32>, Value<MoveOnly>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(1)),
-                Rc::new(RefCell::new(MoveOnly::new({ Some(1) }))),
-            )));
-            (*m.borrow()).insert_38(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<(Value<i32>, Value<MoveOnly>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(1)),
+                    Rc::new(RefCell::new(MoveOnly::new({ Some(1) }))),
+                )));
+                (*m.borrow()).insert_38(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!((*r.borrow()) == ({ (*m.borrow()).begin_20() }));
         assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1) }));
@@ -227,15 +231,20 @@ pub fn test_18() -> bool {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<(Value<i32>, Value<MoveOnly>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(3)),
-                Rc::new(RefCell::new(MoveOnly::new({ Some(3) }))),
-            )));
-            (*m.borrow()).insert_38(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<(Value<i32>, Value<MoveOnly>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(3)),
+                    Rc::new(RefCell::new(MoveOnly::new({ Some(3) }))),
+                )));
+                (*m.borrow()).insert_38(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
-            (*r.borrow()) == libcc2rs::prev_refcount(({ ({ (*m.borrow()).end_22() }) }), 1_isize)
+            (*r.borrow())
+                == libcc2rs::prev_refcount(({ ({ (*m.borrow()).end_22() }) }), 1_isize as isize)
         );
         assert!(({ (({ (*m.borrow()).size() }) == 3_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
@@ -248,15 +257,20 @@ pub fn test_18() -> bool {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___x: Value<(Value<i32>, Value<MoveOnly>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(3)),
-                Rc::new(RefCell::new(MoveOnly::new({ Some(3) }))),
-            )));
-            (*m.borrow()).insert_38(___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___x: Value<(Value<i32>, Value<MoveOnly>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(3)),
+                    Rc::new(RefCell::new(MoveOnly::new({ Some(3) }))),
+                )));
+                (*m.borrow()).insert_38(___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!(
-            (*r.borrow()) == libcc2rs::prev_refcount(({ ({ (*m.borrow()).end_22() }) }), 1_isize)
+            (*r.borrow())
+                == libcc2rs::prev_refcount(({ ({ (*m.borrow()).end_22() }) }), 1_isize as isize)
         );
         assert!(({ (({ (*m.borrow()).size() }) == 4_u64) }));
         assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));

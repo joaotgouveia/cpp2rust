@@ -210,11 +210,15 @@ pub fn test_18() -> bool {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<MoveOnly> = ({ (*m.borrow()).cend() });
-            let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
-            (*m.borrow()).insert_39(___position, ___x.as_pointer())
-        });
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<MoveOnly> = ({ (*m.borrow()).cend() });
+                let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
+                (*m.borrow()).insert_39(___position, ___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
         assert!((*r.borrow()) == ({ (*m.borrow()).begin() }));
         assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
         assert!(
@@ -224,12 +228,19 @@ pub fn test_18() -> bool {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<MoveOnly> = ({ (*m.borrow()).cend() });
-            let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
-            (*m.borrow()).insert_39(___position, ___x.as_pointer())
-        });
-        assert!((*r.borrow()) == libcc2rs::prev_refcount(({ ({ (*m.borrow()).end() }) }), 1_isize));
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<MoveOnly> = ({ (*m.borrow()).cend() });
+                let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+                (*m.borrow()).insert_39(___position, ___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
+        assert!(
+            (*r.borrow())
+                == libcc2rs::prev_refcount(({ ({ (*m.borrow()).end() }) }), 1_isize as isize)
+        );
         assert!(({ (({ (*m.borrow()).size() }) == 3_u64) }));
         assert!(
             ({
@@ -238,12 +249,19 @@ pub fn test_18() -> bool {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<MoveOnly> = ({ (*m.borrow()).cend() });
-            let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
-            (*m.borrow()).insert_39(___position, ___x.as_pointer())
-        });
-        assert!((*r.borrow()) == libcc2rs::prev_refcount(({ ({ (*m.borrow()).end() }) }), 1_isize));
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<MoveOnly> = ({ (*m.borrow()).cend() });
+                let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+                (*m.borrow()).insert_39(___position, ___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1);
+            r.as_pointer()
+        };
+        assert!(
+            (*r.borrow())
+                == libcc2rs::prev_refcount(({ ({ (*m.borrow()).end() }) }), 1_isize as isize)
+        );
         assert!(({ (({ (*m.borrow()).size() }) == 4_u64) }));
         assert!(
             ({
@@ -274,12 +292,15 @@ pub fn test_18() -> bool {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<MoveOnly> = ({ (*m.borrow()).cend() });
-            let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
-            (*m.borrow()).insert_39(___position, ___x.as_pointer())
-        })
-        .clone();
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<MoveOnly> = ({ (*m.borrow()).cend() });
+                let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
+                (*m.borrow()).insert_39(___position, ___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            r.as_pointer()
+        };
         assert!((*r.borrow()) == ({ (*m.borrow()).begin() }));
         assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
         assert!(
@@ -289,13 +310,19 @@ pub fn test_18() -> bool {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<MoveOnly> = ({ (*m.borrow()).cend() });
-            let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
-            (*m.borrow()).insert_39(___position, ___x.as_pointer())
-        })
-        .clone();
-        assert!((*r.borrow()) == libcc2rs::prev_refcount(({ ({ (*m.borrow()).end() }) }), 1_isize));
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<MoveOnly> = ({ (*m.borrow()).cend() });
+                let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+                (*m.borrow()).insert_39(___position, ___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            r.as_pointer()
+        };
+        assert!(
+            (*r.borrow())
+                == libcc2rs::prev_refcount(({ ({ (*m.borrow()).end() }) }), 1_isize as isize)
+        );
         assert!(({ (({ (*m.borrow()).size() }) == 3_u64) }));
         assert!(
             ({
@@ -304,13 +331,19 @@ pub fn test_18() -> bool {
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
-        (*r.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<MoveOnly> = ({ (*m.borrow()).cend() });
-            let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
-            (*m.borrow()).insert_39(___position, ___x.as_pointer())
-        })
-        .clone();
-        assert!((*r.borrow()) == libcc2rs::prev_refcount(({ ({ (*m.borrow()).end() }) }), 1_isize));
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<MoveOnly> = ({ (*m.borrow()).cend() });
+                let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+                (*m.borrow()).insert_39(___position, ___x.as_pointer())
+            });
+            r.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            r.as_pointer()
+        };
+        assert!(
+            (*r.borrow())
+                == libcc2rs::prev_refcount(({ ({ (*m.borrow()).end() }) }), 1_isize as isize)
+        );
         assert!(({ (({ (*m.borrow()).size() }) == 4_u64) }));
         assert!(
             ({

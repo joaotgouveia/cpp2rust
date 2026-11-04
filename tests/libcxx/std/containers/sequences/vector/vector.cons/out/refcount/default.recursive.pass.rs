@@ -52,9 +52,12 @@ pub trait XImpl {
 }
 impl XImpl for Ptr<X> {
     fn move_assign(&self, _a0: Ptr<X>) -> Ptr<X> {
-        field_ref!((*self), q)
-            .as_pointer()
-            .write(field!(_a0, q).with_mut(std::mem::take));
+        {
+            field_ref!((*self), q)
+                .as_pointer()
+                .write(field!(_a0, q).with_mut(std::mem::take));
+            field_ref!((*self), q).as_pointer()
+        };
         return (*self).clone();
     }
 }

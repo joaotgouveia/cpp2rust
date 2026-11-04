@@ -101,14 +101,20 @@ pub fn test_8() -> bool {
                         )),
                     );
                     ({
-                        let ___pos: std__Fwd_list_const_iterator_long_ =
-                            libcc2rs::next_refcount(({ ({ (*c1.borrow()).cbefore_begin() }) }), p);
+                        let ___pos: std__Fwd_list_const_iterator_long_ = libcc2rs::next_refcount(
+                            ({ ({ (*c1.borrow()).cbefore_begin() }) }),
+                            p as isize,
+                        );
                         let _arg1: Ptr<std_forward_list_long__std_allocator_long__> =
                             c2.as_pointer();
-                        let ___before: std__Fwd_list_const_iterator_long_ =
-                            libcc2rs::next_refcount(({ ({ (*c2.borrow()).cbefore_begin() }) }), f);
-                        let ___last: std__Fwd_list_const_iterator_long_ =
-                            libcc2rs::next_refcount(({ ({ (*c2.borrow()).cbefore_begin() }) }), l);
+                        let ___before: std__Fwd_list_const_iterator_long_ = libcc2rs::next_refcount(
+                            ({ ({ (*c2.borrow()).cbefore_begin() }) }),
+                            f as isize,
+                        );
+                        let ___last: std__Fwd_list_const_iterator_long_ = libcc2rs::next_refcount(
+                            ({ ({ (*c2.borrow()).cbefore_begin() }) }),
+                            l as isize,
+                        );
                         (*c1.borrow()).splice_after_58(___pos, _arg1, ___before, ___last)
                     });
                     ({ testd_11(c1.as_pointer(), p, f, l) });
@@ -139,14 +145,20 @@ pub fn test_8() -> bool {
                         )),
                     );
                     ({
-                        let ___pos: std__Fwd_list_const_iterator_long_ =
-                            libcc2rs::next_refcount(({ ({ (*c1.borrow()).cbefore_begin() }) }), p);
+                        let ___pos: std__Fwd_list_const_iterator_long_ = libcc2rs::next_refcount(
+                            ({ ({ (*c1.borrow()).cbefore_begin() }) }),
+                            p as isize,
+                        );
                         let _arg1: Ptr<std_forward_list_long__std_allocator_long__> =
                             c1.as_pointer();
-                        let ___before: std__Fwd_list_const_iterator_long_ =
-                            libcc2rs::next_refcount(({ ({ (*c1.borrow()).cbefore_begin() }) }), f);
-                        let ___last: std__Fwd_list_const_iterator_long_ =
-                            libcc2rs::next_refcount(({ ({ (*c1.borrow()).cbefore_begin() }) }), l);
+                        let ___before: std__Fwd_list_const_iterator_long_ = libcc2rs::next_refcount(
+                            ({ ({ (*c1.borrow()).cbefore_begin() }) }),
+                            f as isize,
+                        );
+                        let ___last: std__Fwd_list_const_iterator_long_ = libcc2rs::next_refcount(
+                            ({ ({ (*c1.borrow()).cbefore_begin() }) }),
+                            l as isize,
+                        );
                         (*c1.borrow()).splice_after_58(___pos, _arg1, ___before, ___last)
                     });
                     ({ tests_12(c1.as_pointer(), p, f, l) });
@@ -169,14 +181,20 @@ pub fn test_8() -> bool {
                         )),
                     );
                     ({
-                        let ___pos: std__Fwd_list_const_iterator_long_ =
-                            libcc2rs::next_refcount(({ ({ (*c1.borrow()).cbefore_begin() }) }), p);
+                        let ___pos: std__Fwd_list_const_iterator_long_ = libcc2rs::next_refcount(
+                            ({ ({ (*c1.borrow()).cbefore_begin() }) }),
+                            p as isize,
+                        );
                         let _arg1: Ptr<std_forward_list_long__std_allocator_long__> =
                             c1.as_pointer();
-                        let ___before: std__Fwd_list_const_iterator_long_ =
-                            libcc2rs::next_refcount(({ ({ (*c1.borrow()).cbefore_begin() }) }), f);
-                        let ___last: std__Fwd_list_const_iterator_long_ =
-                            libcc2rs::next_refcount(({ ({ (*c1.borrow()).cbefore_begin() }) }), l);
+                        let ___before: std__Fwd_list_const_iterator_long_ = libcc2rs::next_refcount(
+                            ({ ({ (*c1.borrow()).cbefore_begin() }) }),
+                            f as isize,
+                        );
+                        let ___last: std__Fwd_list_const_iterator_long_ = libcc2rs::next_refcount(
+                            ({ ({ (*c1.borrow()).cbefore_begin() }) }),
+                            l as isize,
+                        );
                         (*c1.borrow()).splice_after_58(___pos, _arg1, ___before, ___last)
                     });
                     ({ tests_12(c1.as_pointer(), p, f, l) });
@@ -223,11 +241,11 @@ pub fn test_8() -> bool {
                         )),
                     );
                     ({
-                        let ___pos: std___fwdlist__Iterator_true__min_pointer_long__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c1.borrow()) . cbefore_begin ( ) } )   }), p )   ;
+                        let ___pos: std___fwdlist__Iterator_true__min_pointer_long__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c1.borrow()) . cbefore_begin ( ) } )   }), p  as isize)   ;
                         let _arg1: Ptr<std_forward_list_long__min_allocator_long__> =
                             c2.as_pointer();
-                        let ___before: std___fwdlist__Iterator_true__min_pointer_long__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c2.borrow()) . cbefore_begin ( ) } )   }), f )   ;
-                        let ___last: std___fwdlist__Iterator_true__min_pointer_long__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c2.borrow()) . cbefore_begin ( ) } )   }), l )   ;
+                        let ___before: std___fwdlist__Iterator_true__min_pointer_long__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c2.borrow()) . cbefore_begin ( ) } )   }), f  as isize)   ;
+                        let ___last: std___fwdlist__Iterator_true__min_pointer_long__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c2.borrow()) . cbefore_begin ( ) } )   }), l  as isize)   ;
                         (*c1.borrow()).splice_after_58(___pos, _arg1, ___before, ___last)
                     });
                     ({ testd_13(c1.as_pointer(), p, f, l) });
@@ -258,11 +276,11 @@ pub fn test_8() -> bool {
                         )),
                     );
                     ({
-                        let ___pos: std___fwdlist__Iterator_true__min_pointer_long__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c1.borrow()) . cbefore_begin ( ) } )   }), p )   ;
+                        let ___pos: std___fwdlist__Iterator_true__min_pointer_long__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c1.borrow()) . cbefore_begin ( ) } )   }), p  as isize)   ;
                         let _arg1: Ptr<std_forward_list_long__min_allocator_long__> =
                             c1.as_pointer();
-                        let ___before: std___fwdlist__Iterator_true__min_pointer_long__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c1.borrow()) . cbefore_begin ( ) } )   }), f )   ;
-                        let ___last: std___fwdlist__Iterator_true__min_pointer_long__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c1.borrow()) . cbefore_begin ( ) } )   }), l )   ;
+                        let ___before: std___fwdlist__Iterator_true__min_pointer_long__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c1.borrow()) . cbefore_begin ( ) } )   }), f  as isize)   ;
+                        let ___last: std___fwdlist__Iterator_true__min_pointer_long__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c1.borrow()) . cbefore_begin ( ) } )   }), l  as isize)   ;
                         (*c1.borrow()).splice_after_58(___pos, _arg1, ___before, ___last)
                     });
                     ({ tests_14(c1.as_pointer(), p, f, l) });
@@ -285,11 +303,11 @@ pub fn test_8() -> bool {
                         )),
                     );
                     ({
-                        let ___pos: std___fwdlist__Iterator_true__min_pointer_long__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c1.borrow()) . cbefore_begin ( ) } )   }), p )   ;
+                        let ___pos: std___fwdlist__Iterator_true__min_pointer_long__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c1.borrow()) . cbefore_begin ( ) } )   }), p  as isize)   ;
                         let _arg1: Ptr<std_forward_list_long__min_allocator_long__> =
                             c1.as_pointer();
-                        let ___before: std___fwdlist__Iterator_true__min_pointer_long__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c1.borrow()) . cbefore_begin ( ) } )   }), f )   ;
-                        let ___last: std___fwdlist__Iterator_true__min_pointer_long__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c1.borrow()) . cbefore_begin ( ) } )   }), l )   ;
+                        let ___before: std___fwdlist__Iterator_true__min_pointer_long__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c1.borrow()) . cbefore_begin ( ) } )   }), f  as isize)   ;
+                        let ___last: std___fwdlist__Iterator_true__min_pointer_long__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c1.borrow()) . cbefore_begin ( ) } )   }), l  as isize)   ;
                         (*c1.borrow()).splice_after_58(___pos, _arg1, ___before, ___last)
                     });
                     ({ tests_14(c1.as_pointer(), p, f, l) });

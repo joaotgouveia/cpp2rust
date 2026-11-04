@@ -83,16 +83,20 @@ pub fn test_4() -> bool {
         assert!(({ (((*j.borrow()).iter_deref().read()) == 3) }));
         assert!(((({ (*l1.borrow()).begin_24() }).iter_deref().read()) == 1));
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize as isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
-        (*j.borrow_mut()) = ({
-            (*l1.borrow()).erase_62(<BidirectionalIterator<i32>>::from(
-                ({ (*j.borrow()).clone() }),
-            ))
-        });
+        {
+            let __a1 = ({
+                (*l1.borrow()).erase_62(<BidirectionalIterator<i32>>::from(
+                    ({ (*j.borrow()).clone() }),
+                ))
+            });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!((*j.borrow()) == ({ (*l1.borrow()).end_26() }));
         assert!(({ (({ (*l1.borrow()).size() }) == 1_u64) }));
         assert!(
@@ -105,11 +109,15 @@ pub fn test_4() -> bool {
             })
         );
         assert!(((({ (*l1.borrow()).begin_24() }).iter_deref().read()) == 1));
-        (*j.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<i32> =
-                <BidirectionalIterator<i32>>::from(({ (*l1.borrow()).begin_24() }));
-            (*l1.borrow()).erase_62(___position)
-        });
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<i32> =
+                    <BidirectionalIterator<i32>>::from(({ (*l1.borrow()).begin_24() }));
+                (*l1.borrow()).erase_62(___position)
+            });
+            j.as_pointer().with_mut(|__it| *__it = __a1);
+            j.as_pointer()
+        };
         assert!((*j.borrow()) == ({ (*l1.borrow()).end_26() }));
         assert!(({ (({ (*l1.borrow()).size() }) == 0_u64) }));
         assert!(
@@ -156,17 +164,20 @@ pub fn test_4() -> bool {
         assert!(({ (((*j.borrow()).iter_deref().read()) == 3) }));
         assert!(((({ (*l1.borrow()).begin_24() }).iter_deref().read()) == 1));
         assert!(
-            ((libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize as isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
-        (*j.borrow_mut()) = ({
-            (*l1.borrow()).erase_62(<BidirectionalIterator<i32>>::from(
-                ({ (*j.borrow()).clone() }),
-            ))
-        })
-        .clone();
+        {
+            let __a1 = ({
+                (*l1.borrow()).erase_62(<BidirectionalIterator<i32>>::from(
+                    ({ (*j.borrow()).clone() }),
+                ))
+            });
+            j.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            j.as_pointer()
+        };
         assert!((*j.borrow()) == ({ (*l1.borrow()).end_26() }));
         assert!(({ (({ (*l1.borrow()).size() }) == 1_u64) }));
         assert!(
@@ -179,12 +190,15 @@ pub fn test_4() -> bool {
             })
         );
         assert!(((({ (*l1.borrow()).begin_24() }).iter_deref().read()) == 1));
-        (*j.borrow_mut()) = ({
-            let ___position: BidirectionalIterator<i32> =
-                <BidirectionalIterator<i32>>::from(({ (*l1.borrow()).begin_24() }));
-            (*l1.borrow()).erase_62(___position)
-        })
-        .clone();
+        {
+            let __a1 = ({
+                let ___position: BidirectionalIterator<i32> =
+                    <BidirectionalIterator<i32>>::from(({ (*l1.borrow()).begin_24() }));
+                (*l1.borrow()).erase_62(___position)
+            });
+            j.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            j.as_pointer()
+        };
         assert!((*j.borrow()) == ({ (*l1.borrow()).end_26() }));
         assert!(({ (({ (*l1.borrow()).size() }) == 0_u64) }));
         assert!(

@@ -98,7 +98,7 @@ pub fn tests_4() -> bool {
         assert!((((*j.borrow()).iter_deref().read() as i32) == (true as i32)));
         assert!(((l1.decay().begin().iter_deref().read() as i32) == 1));
         assert!(
-            ((libcc2rs::next_refcount(l1.decay().begin(), 1_i64)
+            ((libcc2rs::next_refcount(l1.decay().begin(), 1_i64 as isize)
                 .iter_deref()
                 .read() as i32)
                 == (true as i32))
@@ -172,7 +172,7 @@ pub fn tests_4() -> bool {
         assert!((((*j.borrow()).iter_deref().read() as i32) == (true as i32)));
         assert!(((l1.decay().begin().iter_deref().read() as i32) == 1));
         assert!(
-            ((libcc2rs::next_refcount(l1.decay().begin(), 1_i64)
+            ((libcc2rs::next_refcount(l1.decay().begin(), 1_i64 as isize)
                 .iter_deref()
                 .read() as i32)
                 == (true as i32))

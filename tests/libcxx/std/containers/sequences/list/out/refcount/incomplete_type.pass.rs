@@ -75,12 +75,26 @@ pub trait AImpl {
 impl AImpl for Ptr<A> {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
         field!((*self), l).write({ { (*_a0.upgrade().deref()).l.clone() } });
-        field!((*self), it)
-            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).it.clone() } }));
-        field!((*self), cit)
-            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).cit.clone() } }));
-        field!((*self), rit).with_mut(|__b0| (*__b0) = (*_a0.upgrade().deref()).rit.clone());
-        field!((*self), crit).with_mut(|__b0| (*__b0) = (*_a0.upgrade().deref()).crit.clone());
+        {
+            let __a1 = ({ { (*_a0.upgrade().deref()).it.clone() } });
+            field_ptr!((*self), it).with_mut(|__it| *__it = __a1);
+            field_ptr!((*self), it)
+        };
+        {
+            let __a1 = ({ { (*_a0.upgrade().deref()).cit.clone() } });
+            field_ptr!((*self), cit).with_mut(|__it| *__it = __a1);
+            field_ptr!((*self), cit)
+        };
+        {
+            let __a1 = ({ { (*_a0.upgrade().deref()).rit.clone() } });
+            field_ptr!((*self), rit).with_mut(|__it| *__it = __a1.clone());
+            field_ptr!((*self), rit)
+        };
+        {
+            let __a1 = ({ { (*_a0.upgrade().deref()).crit.clone() } });
+            field_ptr!((*self), crit).with_mut(|__it| *__it = __a1.clone());
+            field_ptr!((*self), crit)
+        };
         return (*self).clone();
     }
 }

@@ -142,18 +142,20 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     }
     {
         let a: Value<std_function_R__A1__> = Rc::new(RefCell::new(std_function_R__A1__::new_1({
-            FnPtr::<fn(A1) -> R>::new(f4_4)
+            FnPtr::<fn(A1) -> R>::new(|a0| f4_4(Some(a0)))
         })));
         const _: () = assert!(true, "");;
-        let b: Value<std_function_R__A1__> =
-            Rc::new(RefCell::new((FnPtr::<fn(A1) -> R>::new(f4_4))));
+        let b: Value<std_function_R__A1__> = Rc::new(RefCell::new(
+            (FnPtr::<fn(A1) -> R>::new(|a0| f4_4(Some(a0)))),
+        ));
         const _: () = assert!(true, "");;
         let c: Value<std_function_R__A1__> = Rc::new(RefCell::new(std_function_R__A1__::new_1({
-            FnPtr::<fn(A1) -> R>::new(f4_4)
+            FnPtr::<fn(A1) -> R>::new(|a0| f4_4(Some(a0)))
         })));
         const _: () = assert!(true, "");;
-        let d: Value<std_function_R__A1__> =
-            Rc::new(RefCell::new((FnPtr::<fn(A1) -> R>::new(f4_4))));
+        let d: Value<std_function_R__A1__> = Rc::new(RefCell::new(
+            (FnPtr::<fn(A1) -> R>::new(|a0| f4_4(Some(a0)))),
+        ));
         const _: () = assert!(true, "");;
     }
     return 0;

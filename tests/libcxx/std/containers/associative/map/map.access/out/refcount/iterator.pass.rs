@@ -113,9 +113,13 @@ pub fn test_4() -> bool {
         );
         let i: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
             Rc::new(RefCell::new(BidirectionalIterator::default()));
-        (*i.borrow_mut()) = m
-            .as_pointer()
-            .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin());
+        {
+            let __a1 = m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin());
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         let k: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
             <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(({ (*i.borrow()).clone() })),
         ));
@@ -260,9 +264,13 @@ pub fn test_4() -> bool {
         );
         let i: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
             Rc::new(RefCell::new(BidirectionalIterator::default()));
-        (*i.borrow_mut()) = m
-            .as_pointer()
-            .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin());
+        {
+            let __a1 = m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin());
+            i.as_pointer().with_mut(|__it| *__it = __a1);
+            i.as_pointer()
+        };
         let mut j: i32 = 1;
         'loop_: while ((j as usize) <= (*m.borrow()).len()) {
             assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == j) }));
@@ -364,10 +372,13 @@ pub fn test_4() -> bool {
         );
         let i: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
             Rc::new(RefCell::new(BidirectionalIterator::default()));
-        (*i.borrow_mut()) = m
-            .as_pointer()
-            .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
-            .clone();
+        {
+            let __a1 = m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin());
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         let k: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
             <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(({ (*i.borrow()).clone() })),
         ));
@@ -512,10 +523,13 @@ pub fn test_4() -> bool {
         );
         let i: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
             Rc::new(RefCell::new(BidirectionalIterator::default()));
-        (*i.borrow_mut()) = m
-            .as_pointer()
-            .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
-            .clone();
+        {
+            let __a1 = m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin());
+            i.as_pointer().with_mut(|__it| *__it = __a1.clone());
+            i.as_pointer()
+        };
         let mut j: i32 = 1;
         'loop_: while ((j as usize) <= (*m.borrow()).len()) {
             assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == j) }));

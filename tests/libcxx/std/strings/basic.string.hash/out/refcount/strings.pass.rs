@@ -23,24 +23,38 @@ pub fn test_0() {
         __bytes.push(0_i8);
         __bytes
     }));
-    let s1: Value<Vec<i8>> = Rc::new(RefCell::new({
-        use std::io::Read;
-        let mut __bytes: Vec<u8> = Vec::new();
-        let mut __f = &RandomAccessIterator::Vec(g1.decay());
-        __f.read_to_end(&mut __bytes)
-            .expect("couldn't read the file");
-        __bytes.push(0);
-        CChar::from_byte_vec(__bytes)
-    }));
-    let s2: Value<Vec<i8>> = Rc::new(RefCell::new({
-        use std::io::Read;
-        let mut __bytes: Vec<u8> = Vec::new();
-        let mut __f = &RandomAccessIterator::Vec(g2.decay());
-        __f.read_to_end(&mut __bytes)
-            .expect("couldn't read the file");
-        __bytes.push(0);
-        CChar::from_byte_vec(__bytes)
-    }));
+    let s1: Value<Vec<i8>> = Rc::new(RefCell::new(
+        match ({ RandomAccessIterator::Vec(g1.decay()) }, {
+            RandomAccessIterator::Vec(g1.decay().to_last())
+        }) {
+            (mut __tmp_0, mut __tmp_1) => {
+                let mut __v = Vec::new();
+                let mut __it = (__tmp_0).clone();
+                while __it != __tmp_1 {
+                    __v.push(<i8>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                    __it.iter_inc();
+                }
+                __v.push(0_i8);
+                __v
+            }
+        },
+    ));
+    let s2: Value<Vec<i8>> = Rc::new(RefCell::new(
+        match ({ RandomAccessIterator::Vec(g2.decay()) }, {
+            RandomAccessIterator::Vec(g2.decay().to_last())
+        }) {
+            (mut __tmp_2, mut __tmp_3) => {
+                let mut __v = Vec::new();
+                let mut __it = (__tmp_2).clone();
+                while __it != __tmp_3 {
+                    __v.push(<i8>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                    __it.iter_inc();
+                }
+                __v.push(0_i8);
+                __v
+            }
+        },
+    ));
     assert!(
         ({
             (({
@@ -64,24 +78,38 @@ pub fn test_1() {
         __bytes.push(0_i8);
         __bytes
     }));
-    let s1: Value<Vec<u8>> = Rc::new(RefCell::new({
-        use std::io::Read;
-        let mut __bytes: Vec<u8> = Vec::new();
-        let mut __f = &RandomAccessIterator::Vec(g1.decay());
-        __f.read_to_end(&mut __bytes)
-            .expect("couldn't read the file");
-        __bytes.push(0);
-        CChar::from_byte_vec(__bytes)
-    }));
-    let s2: Value<Vec<u8>> = Rc::new(RefCell::new({
-        use std::io::Read;
-        let mut __bytes: Vec<u8> = Vec::new();
-        let mut __f = &RandomAccessIterator::Vec(g2.decay());
-        __f.read_to_end(&mut __bytes)
-            .expect("couldn't read the file");
-        __bytes.push(0);
-        CChar::from_byte_vec(__bytes)
-    }));
+    let s1: Value<Vec<u8>> = Rc::new(RefCell::new(
+        match ({ RandomAccessIterator::Vec(g1.decay()) }, {
+            RandomAccessIterator::Vec(g1.decay().to_last())
+        }) {
+            (mut __tmp_4, mut __tmp_5) => {
+                let mut __v = Vec::new();
+                let mut __it = (__tmp_4).clone();
+                while __it != __tmp_5 {
+                    __v.push(<u8>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                    __it.iter_inc();
+                }
+                __v.push(0_u8);
+                __v
+            }
+        },
+    ));
+    let s2: Value<Vec<u8>> = Rc::new(RefCell::new(
+        match ({ RandomAccessIterator::Vec(g2.decay()) }, {
+            RandomAccessIterator::Vec(g2.decay().to_last())
+        }) {
+            (mut __tmp_6, mut __tmp_7) => {
+                let mut __v = Vec::new();
+                let mut __it = (__tmp_6).clone();
+                while __it != __tmp_7 {
+                    __v.push(<u8>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                    __it.iter_inc();
+                }
+                __v.push(0_u8);
+                __v
+            }
+        },
+    ));
     assert!(
         ({
             (({
@@ -105,24 +133,38 @@ pub fn test_2() {
         __bytes.push(0_i8);
         __bytes
     }));
-    let s1: Value<Vec<u16>> = Rc::new(RefCell::new({
-        use std::io::Read;
-        let mut __bytes: Vec<u8> = Vec::new();
-        let mut __f = &RandomAccessIterator::Vec(g1.decay());
-        __f.read_to_end(&mut __bytes)
-            .expect("couldn't read the file");
-        __bytes.push(0);
-        CChar::from_byte_vec(__bytes)
-    }));
-    let s2: Value<Vec<u16>> = Rc::new(RefCell::new({
-        use std::io::Read;
-        let mut __bytes: Vec<u8> = Vec::new();
-        let mut __f = &RandomAccessIterator::Vec(g2.decay());
-        __f.read_to_end(&mut __bytes)
-            .expect("couldn't read the file");
-        __bytes.push(0);
-        CChar::from_byte_vec(__bytes)
-    }));
+    let s1: Value<Vec<u16>> = Rc::new(RefCell::new(
+        match ({ RandomAccessIterator::Vec(g1.decay()) }, {
+            RandomAccessIterator::Vec(g1.decay().to_last())
+        }) {
+            (mut __tmp_8, mut __tmp_9) => {
+                let mut __v = Vec::new();
+                let mut __it = (__tmp_8).clone();
+                while __it != __tmp_9 {
+                    __v.push(<u16>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                    __it.iter_inc();
+                }
+                __v.push(0_u16);
+                __v
+            }
+        },
+    ));
+    let s2: Value<Vec<u16>> = Rc::new(RefCell::new(
+        match ({ RandomAccessIterator::Vec(g2.decay()) }, {
+            RandomAccessIterator::Vec(g2.decay().to_last())
+        }) {
+            (mut __tmp_10, mut __tmp_11) => {
+                let mut __v = Vec::new();
+                let mut __it = (__tmp_10).clone();
+                while __it != __tmp_11 {
+                    __v.push(<u16>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                    __it.iter_inc();
+                }
+                __v.push(0_u16);
+                __v
+            }
+        },
+    ));
     assert!(
         ({
             (({
@@ -146,24 +188,38 @@ pub fn test_3() {
         __bytes.push(0_i8);
         __bytes
     }));
-    let s1: Value<Vec<u32>> = Rc::new(RefCell::new({
-        use std::io::Read;
-        let mut __bytes: Vec<u8> = Vec::new();
-        let mut __f = &RandomAccessIterator::Vec(g1.decay());
-        __f.read_to_end(&mut __bytes)
-            .expect("couldn't read the file");
-        __bytes.push(0);
-        CChar::from_byte_vec(__bytes)
-    }));
-    let s2: Value<Vec<u32>> = Rc::new(RefCell::new({
-        use std::io::Read;
-        let mut __bytes: Vec<u8> = Vec::new();
-        let mut __f = &RandomAccessIterator::Vec(g2.decay());
-        __f.read_to_end(&mut __bytes)
-            .expect("couldn't read the file");
-        __bytes.push(0);
-        CChar::from_byte_vec(__bytes)
-    }));
+    let s1: Value<Vec<u32>> = Rc::new(RefCell::new(
+        match ({ RandomAccessIterator::Vec(g1.decay()) }, {
+            RandomAccessIterator::Vec(g1.decay().to_last())
+        }) {
+            (mut __tmp_12, mut __tmp_13) => {
+                let mut __v = Vec::new();
+                let mut __it = (__tmp_12).clone();
+                while __it != __tmp_13 {
+                    __v.push(<u32>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                    __it.iter_inc();
+                }
+                __v.push(0_u32);
+                __v
+            }
+        },
+    ));
+    let s2: Value<Vec<u32>> = Rc::new(RefCell::new(
+        match ({ RandomAccessIterator::Vec(g2.decay()) }, {
+            RandomAccessIterator::Vec(g2.decay().to_last())
+        }) {
+            (mut __tmp_14, mut __tmp_15) => {
+                let mut __v = Vec::new();
+                let mut __it = (__tmp_14).clone();
+                while __it != __tmp_15 {
+                    __v.push(<u32>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                    __it.iter_inc();
+                }
+                __v.push(0_u32);
+                __v
+            }
+        },
+    ));
     assert!(
         ({
             (({
@@ -187,24 +243,38 @@ pub fn test_4() {
         __bytes.push(0_i8);
         __bytes
     }));
-    let s1: Value<Vec<i32>> = Rc::new(RefCell::new({
-        use std::io::Read;
-        let mut __bytes: Vec<u8> = Vec::new();
-        let mut __f = &RandomAccessIterator::Vec(g1.decay());
-        __f.read_to_end(&mut __bytes)
-            .expect("couldn't read the file");
-        __bytes.push(0);
-        CChar::from_byte_vec(__bytes)
-    }));
-    let s2: Value<Vec<i32>> = Rc::new(RefCell::new({
-        use std::io::Read;
-        let mut __bytes: Vec<u8> = Vec::new();
-        let mut __f = &RandomAccessIterator::Vec(g2.decay());
-        __f.read_to_end(&mut __bytes)
-            .expect("couldn't read the file");
-        __bytes.push(0);
-        CChar::from_byte_vec(__bytes)
-    }));
+    let s1: Value<Vec<i32>> = Rc::new(RefCell::new(
+        match ({ RandomAccessIterator::Vec(g1.decay()) }, {
+            RandomAccessIterator::Vec(g1.decay().to_last())
+        }) {
+            (mut __tmp_16, mut __tmp_17) => {
+                let mut __v = Vec::new();
+                let mut __it = (__tmp_16).clone();
+                while __it != __tmp_17 {
+                    __v.push(<i32>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                    __it.iter_inc();
+                }
+                __v.push(0_i32);
+                __v
+            }
+        },
+    ));
+    let s2: Value<Vec<i32>> = Rc::new(RefCell::new(
+        match ({ RandomAccessIterator::Vec(g2.decay()) }, {
+            RandomAccessIterator::Vec(g2.decay().to_last())
+        }) {
+            (mut __tmp_18, mut __tmp_19) => {
+                let mut __v = Vec::new();
+                let mut __it = (__tmp_18).clone();
+                while __it != __tmp_19 {
+                    __v.push(<i32>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+                    __it.iter_inc();
+                }
+                __v.push(0_i32);
+                __v
+            }
+        },
+    ));
     assert!(
         ({
             (({

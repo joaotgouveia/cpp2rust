@@ -264,7 +264,7 @@ pub fn test_0() {
     ({ test_13((u16::MAX as u64)) });
     ({ test_13((u32::MAX as u64)) });
     ({ test_13(u64::MAX) });
-    ({ test_13(<u64>::MAX) });
+    ({ test_13(({ std_numeric_limits_unsigned_long_long_::max() })) });
     ({ test_handle_14(0_u128) });
     ({ test_15(-f32::MAX) });
     ({ test_15(-f32::MIN_POSITIVE) });
@@ -488,7 +488,7 @@ pub fn test_22() {
     ({ test_36((u16::MAX as u64)) });
     ({ test_36((u32::MAX as u64)) });
     ({ test_36(u64::MAX) });
-    ({ test_36(<u64>::MAX) });
+    ({ test_36(({ std_numeric_limits_unsigned_long_long_::max() })) });
     ({ test_handle_37(0_u128) });
     ({ test_38(-f32::MAX) });
     ({ test_38(-f32::MIN_POSITIVE) });
