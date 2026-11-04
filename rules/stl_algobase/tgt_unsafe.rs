@@ -22,9 +22,8 @@ unsafe fn f1<T1: UnsafeCppInputIterator<T3>, T2: UnsafeCppIterator<T4>, T3, T4: 
     a2: T2,
 ) -> T2 {
     let mut __first = a0;
-    let __last = a1;
     let mut __out = a2;
-    while __first != __last {
+    while __first != a1 {
         *__out.iter_deref() = T4::cpp_from(__first.iter_deref());
         __first.iter_inc();
         __out.iter_inc();

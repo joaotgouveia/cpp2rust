@@ -15,7 +15,10 @@ pub fn main() {
 unsafe fn main_0() -> i32 {
     let mut x: Vec<libc::c_char> = std::slice::from_raw_parts(
         c"hello".as_ptr(),
-        libcc2rs::c_str_len(c"hello".as_ptr()) + 1,
+        (0..)
+            .take_while(|&i| *c"hello".as_ptr().add(i) != 0)
+            .count()
+            + 1,
     )
     .to_vec();
     'loop_: for c in IterRange::new(

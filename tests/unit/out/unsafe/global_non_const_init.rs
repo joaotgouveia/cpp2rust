@@ -55,8 +55,11 @@ pub static mut arg_ctor_8: std::cell::LazyCell<Ctor> =
     std::cell::LazyCell::new(|| unsafe { Ctor::new_2({ 7 }) });
 pub static mut str_9: std::cell::LazyCell<Vec<libc::c_char>> =
     std::cell::LazyCell::new(|| unsafe {
-        std::slice::from_raw_parts(c"abc".as_ptr(), libcc2rs::c_str_len(c"abc".as_ptr()) + 1)
-            .to_vec()
+        std::slice::from_raw_parts(
+            c"abc".as_ptr(),
+            (0..).take_while(|&i| *c"abc".as_ptr().add(i) != 0).count() + 1,
+        )
+        .to_vec()
     });
 pub static mut inline_member_11: std::cell::LazyCell<Ctor> =
     std::cell::LazyCell::new(|| unsafe { Ctor::new_2({ 5 }) });
@@ -115,12 +118,13 @@ unsafe fn main_0() -> i32 {
     assert!((((*std::cell::LazyCell::force_mut(&mut *&raw mut default_ctor_7)).v) == (2)));
     assert!((((*std::cell::LazyCell::force_mut(&mut *&raw mut arg_ctor_8)).v) == (7)));
     assert!(
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut str_9))
-            == std::slice::from_raw_parts(
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut str_9)) == {
+            std::slice::from_raw_parts(
                 c"abc".as_ptr(),
-                libcc2rs::c_str_len(c"abc".as_ptr()) + 1
+                (0..).take_while(|&i| *c"abc".as_ptr().add(i) != 0).count() + 1,
             )
             .to_vec()
+        }
     );
     assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut member_10)) == (3)));
     assert!((((*std::cell::LazyCell::force_mut(&mut *&raw mut inline_member_11)).v) == (5)));

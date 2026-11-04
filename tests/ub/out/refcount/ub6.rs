@@ -39,19 +39,19 @@ pub fn fill_1(arr: Ptr<Option<Value<Box<[Ptr<i32>]>>>>, n1: Ptr<i32>) {
         .write(({ (*pair.borrow()).x2.clone() }).clone());
 }
 pub fn any_2(arr: Ptr<Option<Value<Box<[Ptr<i32>]>>>>, n1: Ptr<i32>) -> bool {
-    let out: Value<bool> = Rc::new(RefCell::new(false));
+    let mut out: bool = false;
     let mut i: i32 = 0;
     'loop_: while ({ i } < { (n1.read()) }) {
-        let __rhs = (*out.borrow())
+        let __rhs = (out)
             || (((((*arr.upgrade().deref()).as_pointer() as Ptr<Ptr<i32>>)
                 .offset((i as usize) as isize)
                 .read())
             .read())
                 == 0);
-        (*out.borrow_mut()) = __rhs;
+        out = __rhs;
         i.prefix_inc();
     }
-    return (*out.borrow());
+    return out;
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -61,7 +61,7 @@ fn main_0() -> i32 {
     let n: Value<i32> = Rc::new(RefCell::new(2));
     let arr: Value<Option<Value<Box<[Ptr<i32>]>>>> =
         Rc::new(RefCell::new(Some(Rc::new(RefCell::new(
-            (0..((*n.borrow()) as usize))
+            (0..({ ((*n.borrow()) as usize) }))
                 .map(|_| Ptr::<i32>::null())
                 .collect::<Box<[_]>>(),
         )))));

@@ -26,24 +26,28 @@ fn main_0() -> i32 {
         (r2).clone()
     };
     assert!(v1.decay().offset(0_usize as isize).read());
-    {
-        v1.decay().offset(0_usize as isize).write(false);
-        v1.decay().offset(0_usize as isize)
+    match (Rc::new(RefCell::new(v1.decay().offset(0_usize as isize))).as_pointer(),) {
+        (__tmp_0,) => {
+            (*__tmp_0.upgrade().deref()).write(false);
+            ({ (*__tmp_0.upgrade().deref()).clone() })
+        }
     };
     assert!(!(v1.decay().offset(0_usize as isize).read()));
     {
         let v: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::from([false, false, false])));
         let mut i: i32 = 0;
-        let mut b: bool = (*{
-            v.decay()
-                .offset((i.postfix_inc() as usize) as isize)
-                .write(true);
-            v.decay().offset((i.postfix_inc() as usize) as isize)
+        let mut b: bool = match (Rc::new(RefCell::new(
+            v.decay().offset((i.postfix_inc() as usize) as isize),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_1,) => {
+                (*__tmp_1.upgrade().deref()).write(true);
+                ({ (*__tmp_1.upgrade().deref()).clone() })
+            }
         }
-        .upgrade()
-        .deref())
         .read();
-        assert!(b);
+        assert!((b) && (i == 1));
     }
     return 0;
 }

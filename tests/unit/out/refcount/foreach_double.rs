@@ -54,19 +54,19 @@ fn main_0() -> i32 {
         }
     }
     let m: Value<Vec<Vec<i32>>> = Rc::new(RefCell::new(Vec::new()));
-    let mut v1: Vec<i32> = Vec::new();
+    let v1: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
     {
-        let __a1 = std::mem::take(&mut v1);
+        let __a1 = ({ std::mem::take(&mut (*v1.borrow_mut())) });
         (*m.borrow_mut()).push(__a1)
     };
-    let mut v2: Vec<i32> = Vec::new();
+    let v2: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
     {
-        let __a1 = std::mem::take(&mut v2);
+        let __a1 = ({ std::mem::take(&mut (*v2.borrow_mut())) });
         (*m.borrow_mut()).push(__a1)
     };
-    let mut v3: Vec<i32> = Vec::new();
+    let v3: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
     {
-        let __a1 = std::mem::take(&mut v3);
+        let __a1 = ({ std::mem::take(&mut (*v3.borrow_mut())) });
         (*m.borrow_mut()).push(__a1)
     };
     'loop_: for row in IterRange::new(m.decay().begin(), m.decay().end()) {

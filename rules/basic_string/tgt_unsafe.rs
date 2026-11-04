@@ -109,8 +109,9 @@ unsafe fn f110<T1: CChar, T2, T3>(a0: Vec<T1>, a1: *const T1, a2: usize) -> usiz
         .unwrap_or(usize::MAX)
 }
 
-unsafe fn f132<T1: CChar, T2, T3>(a0: Vec<T1>, a1: usize, a2: usize) -> Vec<T1> {
-    let mut __tmp1 = a0[(a1) as usize..::std::cmp::min((a1 + a2) as usize, a0.len() - 1)].to_vec();
+unsafe fn f132<T1: CChar, T2, T3>(a0: *const Vec<T1>, a1: usize, a2: usize) -> Vec<T1> {
+    let __range = a1..::std::cmp::min(a1 + a2, (*a0).len() - 1);
+    let mut __tmp1 = (&*a0)[__range].to_vec();
     __tmp1.push(T1::default());
     __tmp1
 }

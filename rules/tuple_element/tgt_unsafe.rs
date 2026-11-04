@@ -10,3 +10,7 @@ fn t10<T1>() -> T1 {
 fn t12<T1, T2>() -> T2 {
     unimplemented!()
 }
+
+fn t14<T2>() -> T2 {
+    unimplemented!()
+}

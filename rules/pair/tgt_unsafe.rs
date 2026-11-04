@@ -20,23 +20,19 @@ unsafe fn f8<T1: Default, T2: Default>(a0: &mut (T1, T2), a1: &mut (T1, T2)) {
 }
 
 unsafe fn f13<T1: CppFromUnsafe<T3>, T2: CppFromUnsafe<T4>, T3, T4>(a0: &(T3, T4)) -> (T1, T2) {
-    let __a0 = a0;
-    (T1::cpp_from(&__a0.0), T2::cpp_from(&__a0.1))
+    (T1::cpp_from(&a0.0), T2::cpp_from(&a0.1))
 }
 
 unsafe fn f14<T1: CppFromUnsafe<T3>, T2: CppFromUnsafe<T4>, T3, T4>(a0: &mut (T3, T4)) -> (T1, T2) {
-    let mut __a0 = a0;
-    (T1::cpp_from_move(&mut __a0.0), T2::cpp_from_move(&mut __a0.1))
+    (T1::cpp_from_move(&mut a0.0), T2::cpp_from_move(&mut a0.1))
 }
 
 unsafe fn f18<T1: CppFromUnsafe<T3>, T2: CppFromUnsafe<T4>, T3, T4>(a0: &mut (T1, T2), a1: &(T3, T4)) {
-    let __a1 = a1;
-    *a0 = (T1::cpp_from(&__a1.0), T2::cpp_from(&__a1.1))
+    *a0 = (T1::cpp_from(&a1.0), T2::cpp_from(&a1.1))
 }
 
 unsafe fn f19<T1: CppFromUnsafe<T3>, T2: CppFromUnsafe<T4>, T3, T4>(a0: &mut (T1, T2), a1: &mut (T3, T4)) {
-    let mut __a1 = a1;
-    *a0 = (T1::cpp_from_move(&mut __a1.0), T2::cpp_from_move(&mut __a1.1))
+    *a0 = (T1::cpp_from_move(&mut a1.0), T2::cpp_from_move(&mut a1.1))
 }
 
 fn t1<T1: Default, T2: Default>() -> (T1, T2) {
@@ -48,6 +44,5 @@ unsafe fn f12<T1, T2, T3, T4>(a0: T1, a1: T2) -> (T1, T2) {
 }
 
 unsafe fn f15<T1: CppFromUnsafe<T3>, T2: CppFromUnsafe<T4>, T3, T4>(a0: &mut (T3, T4)) -> (T1, T2) {
-    let __a0 = a0;
-    (T1::cpp_from(&__a0.0), T2::cpp_from(&__a0.1))
+    (T1::cpp_from(&a0.0), T2::cpp_from(&a0.1))
 }

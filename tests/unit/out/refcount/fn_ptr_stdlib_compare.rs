@@ -49,29 +49,30 @@ fn main_0() -> i32 {
         assert!(!((stream).is_null()));
         let buf: Value<Box<[i8]>> =
             Rc::new(RefCell::new((0..16).map(|_| 0_i8).collect::<Box<[i8]>>()));
-        {
-            ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any().memset(
-                (('X' as i8) as i32) as u8,
-                ::std::mem::size_of::<[i8; 16]>() as usize,
-            );
-            ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any()
+        match ({ ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any() },) {
+            (mut __tmp_0,) => {
+                __tmp_0.memset(
+                    (('X' as i8) as i32) as u8,
+                    ::std::mem::size_of::<[i8; 16]>() as usize,
+                );
+                (__tmp_0).clone()
+            }
         };
-        let mut n: usize = {
-            let __a0 = ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any();
-            let __a1 = 1_usize;
-            let __a2 = 10_usize;
-            let __a3 = (stream).clone();
-            libcc2rs::fread_refcount(__a0, __a1, __a2, __a3)
-        };
+        let mut n: usize = libcc2rs::fread_refcount(
+            ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any(),
+            1_usize,
+            10_usize,
+            (stream).clone(),
+        );
         assert!((n == 10_usize));
         let mut i: i32 = 0;
         'loop_: while (i < 10) {
-            assert!((((*buf.borrow())[(i) as usize] as i32) == 0));
+            assert!(({ (((*buf.borrow())[(i) as usize] as i32) == 0) }));
             i.prefix_inc();
         }
         let mut i: i32 = 10;
         'loop_: while (i < 16) {
-            assert!((((*buf.borrow())[(i) as usize] as i32) == (('X' as i8) as i32)));
+            assert!(({ (((*buf.borrow())[(i) as usize] as i32) == (('X' as i8) as i32)) }));
             i.prefix_inc();
         }
         {
@@ -93,12 +94,14 @@ fn main_0() -> i32 {
         assert!(!((stream).is_null()));
         let buf: Value<Box<[i8]>> =
             Rc::new(RefCell::new((0..16).map(|_| 0_i8).collect::<Box<[i8]>>()));
-        {
-            ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any().memset(
-                (('X' as i8) as i32) as u8,
-                ::std::mem::size_of::<[i8; 16]>() as usize,
-            );
-            ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any()
+        match ({ ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any() },) {
+            (mut __tmp_1,) => {
+                __tmp_1.memset(
+                    (('X' as i8) as i32) as u8,
+                    ::std::mem::size_of::<[i8; 16]>() as usize,
+                );
+                (__tmp_1).clone()
+            }
         };
         let mut n: usize = ({
             (fn1).call(
@@ -111,12 +114,12 @@ fn main_0() -> i32 {
         assert!((n == 10_usize));
         let mut i: i32 = 0;
         'loop_: while (i < 10) {
-            assert!((((*buf.borrow())[(i) as usize] as i32) == 0));
+            assert!(({ (((*buf.borrow())[(i) as usize] as i32) == 0) }));
             i.prefix_inc();
         }
         let mut i: i32 = 10;
         'loop_: while (i < 16) {
-            assert!((((*buf.borrow())[(i) as usize] as i32) == (('X' as i8) as i32)));
+            assert!(({ (((*buf.borrow())[(i) as usize] as i32) == (('X' as i8) as i32)) }));
             i.prefix_inc();
         }
         {
@@ -154,20 +157,21 @@ fn main_0() -> i32 {
         assert!(!((stream).is_null()));
         let buf: Value<Box<[i8]>> =
             Rc::new(RefCell::new((0..10).map(|_| 0_i8).collect::<Box<[i8]>>()));
-        {
-            ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any().memset(
-                (('Y' as i8) as i32) as u8,
-                ::std::mem::size_of::<[i8; 10]>() as usize,
-            );
-            ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any()
+        match ({ ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any() },) {
+            (mut __tmp_2,) => {
+                __tmp_2.memset(
+                    (('Y' as i8) as i32) as u8,
+                    ::std::mem::size_of::<[i8; 10]>() as usize,
+                );
+                (__tmp_2).clone()
+            }
         };
-        let mut n: usize = {
-            let __a0 = ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any();
-            let __a1 = 1_usize;
-            let __a2 = 10_usize;
-            let __a3 = (stream).clone();
-            libcc2rs::fwrite_refcount(__a0, __a1, __a2, __a3)
-        };
+        let mut n: usize = libcc2rs::fwrite_refcount(
+            ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any(),
+            1_usize,
+            10_usize,
+            (stream).clone(),
+        );
         assert!((n == 10_usize));
         {
             let __r = stream.with(|__f| __f.close());
@@ -188,12 +192,14 @@ fn main_0() -> i32 {
         assert!(!((stream).is_null()));
         let buf: Value<Box<[i8]>> =
             Rc::new(RefCell::new((0..10).map(|_| 0_i8).collect::<Box<[i8]>>()));
-        {
-            ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any().memset(
-                (('Y' as i8) as i32) as u8,
-                ::std::mem::size_of::<[i8; 10]>() as usize,
-            );
-            ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any()
+        match ({ ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any() },) {
+            (mut __tmp_3,) => {
+                __tmp_3.memset(
+                    (('Y' as i8) as i32) as u8,
+                    ::std::mem::size_of::<[i8; 10]>() as usize,
+                );
+                (__tmp_3).clone()
+            }
         };
         let mut n: usize = ({
             (gn1).call(

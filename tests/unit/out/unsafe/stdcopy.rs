@@ -27,63 +27,62 @@ pub fn main() {
 unsafe fn main_0() -> i32 {
     let mut input: [i32; 3] = [1, 2, 3];
     let mut output: [i32; 3] = [0_i32; 3];
-    {
-        let mut __first = input.as_mut_ptr();
-        let __last = input.as_mut_ptr().offset((3) as isize);
-        let mut __out = output.as_mut_ptr();
-        while __first != __last {
-            *__out.iter_deref() = (*__first.iter_deref());
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ input.as_mut_ptr().offset((3) as isize) },) {
+        (mut __tmp_0,) => {
+            let mut __first = input.as_mut_ptr();
+            let mut __out = output.as_mut_ptr();
+            while __first != __tmp_0 {
+                *__out.iter_deref() = (*__first.iter_deref());
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     let mut widened: Vec<i64> = vec![0_i64; 3_usize as usize];
-    {
-        let mut __first = input.as_mut_ptr();
-        let __last = input.as_mut_ptr().offset((3) as isize);
-        let mut __out = widened.begin();
-        while __first != __last {
-            *__out.iter_deref() = ((*__first.iter_deref()) as i64);
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ input.as_mut_ptr().offset((3) as isize) },) {
+        (mut __tmp_1,) => {
+            let mut __first = input.as_mut_ptr();
+            let mut __out = widened.begin();
+            while __first != __tmp_1 {
+                *__out.iter_deref() = ((*__first.iter_deref()) as i64);
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
-    assert!(
-        ((*(&mut widened).as_mut_ptr().add(0_usize as usize)) == (1_i64))
-            && ((*(&mut widened).as_mut_ptr().add(2_usize as usize)) == (3_i64))
-    );
+    assert!(((widened[(0_usize)]) == (1_i64)) && ((widened[(2_usize)]) == (3_i64)));
     let mut constructed: Vec<Degrees> = vec![Degrees::new({ 0 },); 3_usize as usize];
-    {
-        let mut __first = input.as_mut_ptr();
-        let __last = input.as_mut_ptr().offset((3) as isize);
-        let mut __out = constructed.begin();
-        while __first != __last {
-            *__out.iter_deref() = <Degrees as CppFromUnsafe<i32>>::cpp_from(__first.iter_deref());
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ input.as_mut_ptr().offset((3) as isize) },) {
+        (mut __tmp_2,) => {
+            let mut __first = input.as_mut_ptr();
+            let mut __out = constructed.begin();
+            while __first != __tmp_2 {
+                *__out.iter_deref() =
+                    <Degrees as CppFromUnsafe<i32>>::cpp_from(__first.iter_deref());
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
-    assert!(
-        (((*(&mut constructed).as_mut_ptr().add(0_usize as usize)).value) == (1))
-            && (((*(&mut constructed).as_mut_ptr().add(2_usize as usize)).value) == (3))
-    );
+    assert!(((constructed[(0_usize)].value) == (1)) && ((constructed[(2_usize)].value) == (3)));
     let mut wide: [i64; 2] = [7_i64, 8_i64];
     let mut floating: Vec<f64> = vec![0_f64; 2_usize as usize];
-    {
-        let mut __first = wide.as_mut_ptr();
-        let __last = wide.as_mut_ptr().offset((2) as isize);
-        let mut __out = floating.begin();
-        while __first != __last {
-            *__out.iter_deref() = ((*__first.iter_deref()) as f64);
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ wide.as_mut_ptr().offset((2) as isize) },) {
+        (mut __tmp_3,) => {
+            let mut __first = wide.as_mut_ptr();
+            let mut __out = floating.begin();
+            while __first != __tmp_3 {
+                *__out.iter_deref() = ((*__first.iter_deref()) as f64);
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
-    assert!(((*(&mut floating).as_mut_ptr().add(1_usize as usize)) == (8_f64)));
+    assert!(((floating[(1_usize)]) == (8_f64)));
     return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

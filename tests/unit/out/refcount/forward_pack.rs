@@ -70,23 +70,21 @@ pub fn chosen_overload_3(_a0: Ptr<i32>) -> Overload {
     return Overload_kIntRvalueOverload;
 }
 pub fn forward_pack_4() -> i32 {
-    let digits: Value<i32> = Rc::new(RefCell::new(0));
+    let mut digits: i32 = 0;
     ();
-    return (*digits.borrow());
+    return digits;
 }
 pub fn forward_pack_5(args: Ptr<Tracked>) -> i32 {
-    let digits: Value<i32> = Rc::new(RefCell::new(0));
-    let __rhs =
-        ({ ((*digits.borrow()) * 10) } + { (({ chosen_overload_0((args).clone()) }) as i32) });
-    (*digits.borrow_mut()) = __rhs;
-    return (*digits.borrow());
+    let mut digits: i32 = 0;
+    let __rhs = ({ (digits * 10) } + { (({ chosen_overload_0((args).clone()) }) as i32) });
+    digits = __rhs;
+    return digits;
 }
 pub fn forward_pack_6(args: Ptr<Tracked>) -> i32 {
-    let digits: Value<i32> = Rc::new(RefCell::new(0));
-    let __rhs =
-        ({ ((*digits.borrow()) * 10) } + { (({ chosen_overload_1((args).clone()) }) as i32) });
-    (*digits.borrow_mut()) = __rhs;
-    return (*digits.borrow());
+    let mut digits: i32 = 0;
+    let __rhs = ({ (digits * 10) } + { (({ chosen_overload_1((args).clone()) }) as i32) });
+    digits = __rhs;
+    return digits;
 }
 pub fn forward_pack_7(
     args_0: Ptr<Tracked>,
@@ -94,30 +92,25 @@ pub fn forward_pack_7(
     args_2: Ptr<i32>,
     args_3: Ptr<i32>,
 ) -> i32 {
-    let digits: Value<i32> = Rc::new(RefCell::new(0));
+    let mut digits: i32 = 0;
     {
-        let __rhs = ({ ((*digits.borrow()) * 10) } + {
-            (({ chosen_overload_0((args_0).clone()) }) as i32)
-        });
-        (*digits.borrow_mut()) = __rhs;
+        let __rhs = ({ (digits * 10) } + { (({ chosen_overload_0((args_0).clone()) }) as i32) });
+        digits = __rhs;
         {
-            let __rhs = ({ ((*digits.borrow()) * 10) } + {
-                (({ chosen_overload_1((args_1).clone()) }) as i32)
-            });
-            (*digits.borrow_mut()) = __rhs;
+            let __rhs =
+                ({ (digits * 10) } + { (({ chosen_overload_1((args_1).clone()) }) as i32) });
+            digits = __rhs;
             {
-                let __rhs = ({ ((*digits.borrow()) * 10) } + {
-                    (({ chosen_overload_2((args_2).clone()) }) as i32)
-                });
-                (*digits.borrow_mut()) = __rhs;
-                let __rhs = ({ ((*digits.borrow()) * 10) } + {
-                    (({ chosen_overload_3((args_3).clone()) }) as i32)
-                });
-                (*digits.borrow_mut()) = __rhs
+                let __rhs =
+                    ({ (digits * 10) } + { (({ chosen_overload_2((args_2).clone()) }) as i32) });
+                digits = __rhs;
+                let __rhs =
+                    ({ (digits * 10) } + { (({ chosen_overload_3((args_3).clone()) }) as i32) });
+                digits = __rhs
             }
         }
     };
-    return (*digits.borrow());
+    return digits;
 }
 impl Pair {
     pub fn new(x: Ptr<Tracked>, y: Ptr<Tracked>) -> Self {
@@ -156,7 +149,7 @@ fn main_0() -> i32 {
     assert!((({ forward_pack_4() }) == 0));
     let a: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 1 })));
     assert!((({ forward_pack_5(a.as_pointer(),) }) == (Overload_kLvalueOverload as i32)));
-    assert!(({ (*a.borrow()).v } == 1));
+    assert!(({ ({ (*a.borrow()).v } == 1) }));
     assert!(
         (({
             let _args: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 2 })));
@@ -176,8 +169,8 @@ fn main_0() -> i32 {
             )
         }) == 1234)
     );
-    assert!(({ (*a.borrow()).v } == 1));
-    assert!(((*i.borrow()) == 3));
+    assert!(({ ({ (*a.borrow()).v } == 1) }));
+    assert!(({ ((*i.borrow()) == 3) }));
     let lhs: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 6 })));
     let mut p: Pair = ({
         let _args_1: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 7 })));
@@ -188,7 +181,7 @@ fn main_0() -> i32 {
     assert!((p.b.v == 7));
     assert!((p.b.copies == 0));
     assert!((p.b.moves == 1));
-    assert!(({ (*lhs.borrow()).v } == 6));
+    assert!(({ ({ (*lhs.borrow()).v } == 6) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

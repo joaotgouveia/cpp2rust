@@ -32,16 +32,16 @@ pub fn partition_0(arr: Ptr<Option<Value<Box<[Edge]>>>>, mut start: i32, mut end
         }
         i.prefix_inc();
     }
-    let pidx: Value<i32> = Rc::new(RefCell::new((start + count)));
+    let mut pidx: i32 = (start + count);
     let mut tmp: Edge = Edge {
         u: ((*arr.upgrade().deref()).as_pointer() as Ptr<Edge>)
-            .offset(((*pidx.borrow()) as usize) as isize)
+            .offset((pidx as usize) as isize)
             .with(|__s| __s.u),
         v: ((*arr.upgrade().deref()).as_pointer() as Ptr<Edge>)
-            .offset(((*pidx.borrow()) as usize) as isize)
+            .offset((pidx as usize) as isize)
             .with(|__s| __s.v),
         weight: ((*arr.upgrade().deref()).as_pointer() as Ptr<Edge>)
-            .offset(((*pidx.borrow()) as usize) as isize)
+            .offset((pidx as usize) as isize)
             .with(|__s| __s.weight),
     };
     let __rhs = Edge {
@@ -56,7 +56,7 @@ pub fn partition_0(arr: Ptr<Option<Value<Box<[Edge]>>>>, mut start: i32, mut end
             .with(|__s| __s.weight),
     };
     ((*arr.upgrade().deref()).as_pointer() as Ptr<Edge>)
-        .offset(((*pidx.borrow()) as usize) as isize)
+        .offset((pidx as usize) as isize)
         .write(__rhs);
     ((*arr.upgrade().deref()).as_pointer() as Ptr<Edge>)
         .offset((start as usize) as isize)
@@ -67,7 +67,7 @@ pub fn partition_0(arr: Ptr<Option<Value<Box<[Edge]>>>>, mut start: i32, mut end
         });
     let mut i: i32 = start;
     let mut j: i32 = end;
-    'loop_: while (i < (*pidx.borrow())) && (j > (*pidx.borrow())) {
+    'loop_: while (i < pidx) && (j > pidx) {
         'loop_: while ({
             ((*arr.upgrade().deref()).as_pointer() as Ptr<Edge>)
                 .offset((i as usize) as isize)
@@ -84,7 +84,7 @@ pub fn partition_0(arr: Ptr<Option<Value<Box<[Edge]>>>>, mut start: i32, mut end
         {
             j.prefix_dec();
         }
-        if (i < (*pidx.borrow())) && (j > (*pidx.borrow())) {
+        if (i < pidx) && (j > pidx) {
             tmp = Edge {
                 u: ((*arr.upgrade().deref()).as_pointer() as Ptr<Edge>)
                     .offset((i as usize) as isize)
@@ -121,7 +121,7 @@ pub fn partition_0(arr: Ptr<Option<Value<Box<[Edge]>>>>, mut start: i32, mut end
             j.postfix_dec();
         }
     }
-    return (*pidx.borrow());
+    return pidx;
 }
 pub fn quicksort_1(arr: Ptr<Option<Value<Box<[Edge]>>>>, mut start: i32, mut end: i32) {
     if (start >= end) {
@@ -207,7 +207,7 @@ pub fn MSTKruskal_2(graph: Ptr<Graph>) -> f64 {
         n: graph.with(|__s| __s.V),
     }));
     ({ DisjointSetImpl::makeSet(&set.as_pointer()) });
-    let total_weight: Value<f64> = Rc::new(RefCell::new(0_f64));
+    let mut total_weight: f64 = 0_f64;
     let mut i: i32 = 0;
     'loop_: while ({ i } < { graph.with(|__s| __s.E) }) {
         let mut x: i32 = (graph.with(|__s| __s.edges.clone()).as_pointer() as Ptr<Edge>)
@@ -223,11 +223,11 @@ pub fn MSTKruskal_2(graph: Ptr<Graph>) -> f64 {
             != ({ DisjointSetImpl::find(&set.as_pointer(), y) }))
         {
             ({ DisjointSetImpl::merge(&set.as_pointer(), x, y) });
-            (*total_weight.borrow_mut()) += w;
+            total_weight += w;
         }
         i.prefix_inc();
     }
-    return (*total_weight.borrow());
+    return total_weight;
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -245,35 +245,35 @@ fn main_0() -> i32 {
         V: V,
         E: E,
     }));
-    ({ (*graph.borrow()).edges.clone() }.as_pointer() as Ptr<Edge>)
+    (({ { (*graph.borrow()).edges.clone() } }).as_pointer() as Ptr<Edge>)
         .offset(0_usize as isize)
         .write(Edge {
             u: 0,
             v: 1,
             weight: 10_f64,
         });
-    ({ (*graph.borrow()).edges.clone() }.as_pointer() as Ptr<Edge>)
+    (({ { (*graph.borrow()).edges.clone() } }).as_pointer() as Ptr<Edge>)
         .offset(1_usize as isize)
         .write(Edge {
             u: 1,
             v: 3,
             weight: 15_f64,
         });
-    ({ (*graph.borrow()).edges.clone() }.as_pointer() as Ptr<Edge>)
+    (({ { (*graph.borrow()).edges.clone() } }).as_pointer() as Ptr<Edge>)
         .offset(2_usize as isize)
         .write(Edge {
             u: 2,
             v: 3,
             weight: 4_f64,
         });
-    ({ (*graph.borrow()).edges.clone() }.as_pointer() as Ptr<Edge>)
+    (({ { (*graph.borrow()).edges.clone() } }).as_pointer() as Ptr<Edge>)
         .offset(3_usize as isize)
         .write(Edge {
             u: 2,
             v: 0,
             weight: 6_f64,
         });
-    ({ (*graph.borrow()).edges.clone() }.as_pointer() as Ptr<Edge>)
+    (({ { (*graph.borrow()).edges.clone() } }).as_pointer() as Ptr<Edge>)
         .offset(4_usize as isize)
         .write(Edge {
             u: 0,

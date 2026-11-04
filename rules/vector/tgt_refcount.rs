@@ -38,11 +38,10 @@ fn f151<T1>(a0: Ptr<T1>, a1: usize) -> Ptr<T1> {
 }
 
 fn f152<T1: ByteRepr + 'static>(a0: Ptr<Vec<T1>>, a1: usize) -> Ptr<T1> {
-    let __idx = a1;
-    if __idx as usize >= (*a0.upgrade().deref()).len() {
+    if a1 as usize >= (*a0.upgrade().deref()).len() {
         panic!("out of bounds access")
     } else {
-        a0.decay().offset(__idx as isize)
+        a0.decay().offset(a1 as isize)
     }
 }
 
@@ -67,38 +66,33 @@ fn f158<T1>(a0: Ptr<T1>) -> Ptr<T1> {
 }
 
 fn f162<T1: ByteRepr>(a0: &mut Vec<T1>, a1: RandomAccessIterator<T1>, a2: T1) -> RandomAccessIterator<T1> {
-    let __it = a1;
-    let __off = __it.index();
+    let __off = a1.index();
     a0.insert(__off, a2);
-    __it
+    a1
 }
 
 fn f163<T1: ByteRepr>(a0: &mut Vec<T1>, a1: RandomAccessIterator<T1>, a2: T1) -> RandomAccessIterator<T1> {
-    let __it = a1;
-    let __off = __it.index();
+    let __off = a1.index();
     a0.insert(__off, a2);
-    __it
+    a1
 }
 
 fn f164<T1: ByteRepr>(a0: &mut Vec<T1>, a1: RandomAccessIterator<T1>, a2: Vec<T1>) -> RandomAccessIterator<T1> {
-    let __it = a1;
-    let __off = __it.index();
+    let __off = a1.index();
     a0.splice(__off..__off, a2);
-    __it
+    a1
 }
 
 fn f165<T1: Clone + ByteRepr>(a0: &mut Vec<T1>, a1: RandomAccessIterator<T1>, a2: usize, a3: T1) -> RandomAccessIterator<T1> {
-    let __it = a1;
-    let __off = __it.index();
+    let __off = a1.index();
     a0.splice(__off..__off, std::iter::repeat_n(a3, a2));
-    __it
+    a1
 }
 
 fn f166<T1: ByteRepr>(a0: Ptr<Vec<T1>>, a1: RandomAccessIterator<T1>) -> RandomAccessIterator<T1> {
-    let __it = a1;
-    let __off = __it.index();
+    let __off = a1.index();
     a0.with_mut(|__v: &mut Vec<T1>| __v.remove(__off));
-    __it
+    a1
 }
 
 fn t8() -> Ptr<bool> {
@@ -134,11 +128,10 @@ fn f149<T1, T2>(a0: Ptr<T1>, a1: usize) -> Ptr<T1> {
 }
 
 fn f150<T1: ByteRepr + 'static, T2>(a0: Ptr<Vec<T1>>, a1: usize) -> Ptr<T1> {
-    let __idx = a1;
-    if __idx as usize >= (*a0.upgrade().deref()).len() {
+    if a1 as usize >= (*a0.upgrade().deref()).len() {
         panic!("out of bounds access")
     } else {
-        a0.decay().offset(__idx as isize)
+        a0.decay().offset(a1 as isize)
     }
 }
 
@@ -162,8 +155,7 @@ fn f176<T1: CppFrom<T5> + ByteRepr, T2, T3: CppInputIterator<T5>, T4, T5: ByteRe
     a2: T3,
     a3: T3,
 ) -> RandomAccessIterator<T1> {
-    let __pos = a1;
-    let __start = __pos.index();
+    let __start = a1.index();
     let mut __tmp: Vec<T1> = Vec::new();
     let mut __it = a2;
     while __it != a3 {
@@ -173,7 +165,7 @@ fn f176<T1: CppFrom<T5> + ByteRepr, T2, T3: CppInputIterator<T5>, T4, T5: ByteRe
     a0.with_mut(|__v: &mut Vec<T1>| {
         __v.splice(__start..__start, __tmp);
     });
-    __pos
+    a1
 }
 
 fn t10<T1>() -> RandomAccessIterator<bool> {

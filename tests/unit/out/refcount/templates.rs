@@ -6,13 +6,11 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn foo_0(x: i32) -> i32 {
-    let x: Value<i32> = Rc::new(RefCell::new(x));
-    return (*x.borrow());
+pub fn foo_0(mut x: i32) -> i32 {
+    return x;
 }
-pub fn foo_1(x: f64) -> f64 {
-    let x: Value<f64> = Rc::new(RefCell::new(x));
-    return (*x.borrow());
+pub fn foo_1(mut x: f64) -> f64 {
+    return x;
 }
 pub fn pick_2() -> i32 {
     return 0;
@@ -49,21 +47,23 @@ fn main_0() -> i32 {
     let x: Value<i32> = Rc::new(RefCell::new(10));
     let y: Value<f64> = Rc::new(RefCell::new(((*x.borrow()) as f64)));
     assert!(
-        (((((((({ foo_0((*x.borrow()),) }) as f64) + ({ foo_1((*y.borrow()),) }))
-            + ((({ bar_4((x.as_pointer()), true,) }).read()) as f64))
-            + (({ bar_5((y.as_pointer()), true,) }).read()))
-            + (({ func_6(1, 2, 3,) }) as f64))
-            + (({ func_7(2_f64, (*x.borrow()), (*y.borrow()),) }) as f64))
-            == 68_f64)
+        ({
+            (((((((({ foo_0((*x.borrow())) }) as f64) + ({ foo_1((*y.borrow())) }))
+                + ((({ bar_4((x.as_pointer()), true) }).read()) as f64))
+                + (({ bar_5((y.as_pointer()), true) }).read()))
+                + (({ func_6(1, 2, 3) }) as f64))
+                + (({ func_7(2_f64, (*x.borrow()), (*y.borrow())) }) as f64))
+                == 68_f64)
+        })
     );
     assert!((half_8.with(|rc| *rc.borrow()) == 0));
     assert!((half_9.with(|rc| *rc.borrow()) == 0.5_f64));
     half_8.with(|rc| *rc.borrow_mut() = 7);
     assert!((half_8.with(|rc| *rc.borrow()) == 7));
     assert!((half_9.with(|rc| *rc.borrow()) == 0.5_f64));
-    assert!((*half_10.with(Value::clone).borrow()).is_null());
+    assert!(({ (*half_10.with(Value::clone).borrow()).is_null() }));
     half_10.with(|rc| *rc.borrow_mut() = (x.as_pointer()));
-    assert!((((*half_10.with(Value::clone).borrow()).read()) == 10));
+    assert!(({ (((*half_10.with(Value::clone).borrow()).read()) == 10) }));
     assert!((({ pick_3() }) == 1));
     assert!((({ pick_2() }) == 0));
     return 0;

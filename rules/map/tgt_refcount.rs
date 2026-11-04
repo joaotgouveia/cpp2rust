@@ -2,6 +2,8 @@
 // Distributed under the MIT license that can be found in the LICENSE file.
 
 use libcc2rs::*;
+use std::cell::RefCell;
+use std::rc::Rc;
 
 fn f3<T1, T2>() -> Map<T1, (Value<T1>, Value<T2>)> {
     Map::new()
@@ -60,14 +62,18 @@ fn f34<T1: CppLess + 'static, T2>(a0: &mut Map<T1, (Value<T1>, Value<T2>)>, a1: 
     a0.get(&a1).expect("out of range!").borrow().1.as_pointer()
 }
 
-fn f44<T1: CppLess + 'static, T2: 'static>(a0: Ptr<Map<T1, (Value<T1>, Value<T2>)>>, a1: BidirectionalIterator<(Value<T1>, Value<T2>)>) -> BidirectionalIterator<(Value<T1>, Value<T2>)> {
-    let __it = a1;
-    Map::erase(a0, &__it)
+fn f44<T1: CppLess + 'static, T2: 'static>(
+    a0: Ptr<Map<T1, (Value<T1>, Value<T2>)>>,
+    a1: BidirectionalIterator<(Value<T1>, Value<T2>)>,
+) -> BidirectionalIterator<(Value<T1>, Value<T2>)> {
+    Map::erase(a0, &a1)
 }
 
-fn f45<T1: CppLess + 'static, T2: 'static>(a0: Ptr<Map<T1, (Value<T1>, Value<T2>)>>, a1: BidirectionalIterator<(Value<T1>, Value<T2>)>) -> BidirectionalIterator<(Value<T1>, Value<T2>)> {
-    let __it = a1;
-    Map::erase(a0, &__it)
+fn f45<T1: CppLess + 'static, T2: 'static>(
+    a0: Ptr<Map<T1, (Value<T1>, Value<T2>)>>,
+    a1: BidirectionalIterator<(Value<T1>, Value<T2>)>,
+) -> BidirectionalIterator<(Value<T1>, Value<T2>)> {
+    Map::erase(a0, &a1)
 }
 
 fn f46<T1: CppLess + 'static, T2: 'static>(a0: Ptr<Map<T1, (Value<T1>, Value<T2>)>>, a1: Ptr<T1>) -> usize {
@@ -92,4 +98,53 @@ fn t12<T1, T2>() -> BidirectionalIterator<(Value<T1>, Value<T2>)> {
 
 fn t13<T1, T2>() -> BidirectionalIterator<(Value<T1>, Value<T2>)> {
     BidirectionalIterator::default()
+}
+
+fn f67<T1: CppLess + Clone + ByteRepr + 'static, T2: Default + Clone + ByteRepr + 'static>(
+    a0: Ptr<Map<T1, (Value<T1>, Value<T2>)>>,
+    init: cpp_type!("typename std::map<T1, T2, T3, T4>::value_type", (Value<T1>, Value<T2>)),
+) -> (Value<BidirectionalIterator<(Value<T1>, Value<T2>)>>, Value<bool>) {
+    let __init = init;
+    let __key = __init.0.as_pointer();
+    let __inserted = a0.with(|__m: &Map<T1, (Value<T1>, Value<T2>)>| __m.get(&__key).is_none());
+    if __inserted {
+        Map::subscript(a0.clone(), __key.clone()).write(__init.1.borrow().clone());
+    }
+    (
+        Rc::new(RefCell::new(
+            a0.with(|__m: &Map<T1, (Value<T1>, Value<T2>)>| __m.find(&__key)),
+        )),
+        Rc::new(RefCell::new(__inserted)),
+    )
+}
+
+fn f68<T1: CppLess + Clone + ByteRepr + 'static, T2: Default + Clone + ByteRepr + 'static>(
+    a0: Ptr<Map<T1, (Value<T1>, Value<T2>)>>,
+    a1: BidirectionalIterator<(Value<T1>, Value<T2>)>,
+    init: cpp_type!("typename std::map<T1, T2, T3, T4>::value_type", (Value<T1>, Value<T2>)),
+) -> BidirectionalIterator<(Value<T1>, Value<T2>)> {
+    let _ = a1;
+    let __init = init;
+    let __key = __init.0.as_pointer();
+    if a0.with(|__m: &Map<T1, (Value<T1>, Value<T2>)>| __m.get(&__key).is_none()) {
+        Map::subscript(a0.clone(), __key.clone()).write(__init.1.borrow().clone());
+    }
+    a0.with(|__m: &Map<T1, (Value<T1>, Value<T2>)>| __m.find(&__key))
+}
+
+fn f73<T1: CppLess + Clone + ByteRepr + 'static, T2: Default + ByteRepr + 'static>(
+    a0: Ptr<Map<T1, (Value<T1>, Value<T2>)>>,
+    a1: Ptr<T1>,
+    init: T2,
+) -> (Value<BidirectionalIterator<(Value<T1>, Value<T2>)>>, Value<bool>) {
+    let __inserted = a0.with(|__m: &Map<T1, (Value<T1>, Value<T2>)>| __m.get(&a1).is_none());
+    if __inserted {
+        Map::subscript(a0.clone(), a1.clone()).write(init);
+    }
+    (
+        Rc::new(RefCell::new(
+            a0.with(|__m: &Map<T1, (Value<T1>, Value<T2>)>| __m.find(&a1)),
+        )),
+        Rc::new(RefCell::new(__inserted)),
+    )
 }

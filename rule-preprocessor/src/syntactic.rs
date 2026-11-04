@@ -4,9 +4,10 @@
 use cfg_expr::Expression;
 use cfg_expr::expr::{Predicate, TargetPredicate};
 use ra_ap_syntax::ast::{
-    HasArgList, HasAttrs, HasGenericArgs, HasGenericParams, HasName, HasTypeBounds,
+    HasArgList, HasAttrs, HasGenericArgs, HasGenericParams, HasLoopBody, HasName, HasTypeBounds,
+    IsString,
 };
-use ra_ap_syntax::{AstNode, SyntaxKind, ast, match_ast};
+use ra_ap_syntax::{AstNode, AstToken, SyntaxKind, ast, match_ast};
 use std::collections::BTreeMap;
 use std::path::{Path, PathBuf};
 
@@ -95,6 +96,30 @@ fn is_projection(ty: &ast::Type) -> bool {
         .descendants()
         .filter_map(ast::PathSegment::cast)
         .any(|segment| segment.as_token().is_some())
+}
+
+fn cpp_type_of(ty: &ast::Type) -> Option<String> {
+    let ast::Type::MacroType(macro_type) = ty else {
+        return None;
+    };
+    let call = macro_type.macro_call()?;
+    if call.path()?.segment()?.name_ref()?.text() != "cpp_type" {
+        return None;
+    }
+    let token = call
+        .token_tree()?
+        .syntax()
+        .descendants_with_tokens()
+        .filter_map(|element| element.into_token())
+        .find(|token| token.kind() == SyntaxKind::STRING)
+        .expect("cpp_type! must start with a string literal");
+    let string = ast::String::cast(token).expect("cpp_type! literal is not a string");
+    let text = string.text_without_quotes();
+    assert!(
+        !text.contains('\\'),
+        "cpp_type! literal must not contain escapes"
+    );
+    Some(text.to_string())
 }
 
 fn is_va_args_type(ty: &ast::Type) -> bool {
@@ -299,6 +324,7 @@ impl<'a> FragmentCtx<'a> {
                         arg: token.text()[1..].parse().unwrap_or(0),
                         access,
                         is_index_base: false,
+                        conditional: Self::is_conditional(token),
                     },
                 });
                 return;
@@ -313,6 +339,35 @@ impl<'a> FragmentCtx<'a> {
             }
         }
         self.text_buf.push_str(token.text());
+    }
+
+    /// Whether a token is in a loop, a closure or a branch, which may evaluate
+    /// it other than once.
+    fn is_conditional(token: &ra_ap_syntax::SyntaxToken) -> bool {
+        fn contains(node: Option<impl AstNode>, token: &ra_ap_syntax::SyntaxToken) -> bool {
+            node.is_some_and(|node| {
+                node.syntax()
+                    .text_range()
+                    .contains_range(token.text_range())
+            })
+        }
+        token.parent_ancestors().any(|node| {
+            match_ast! {
+                match node {
+                    ast::ClosureExpr(_) => true,
+                    ast::LoopExpr(_) => true,
+                    ast::WhileExpr(_) => true,
+                    ast::ForExpr(it) => contains(it.loop_body(), token),
+                    ast::IfExpr(it) => !contains(it.condition(), token),
+                    ast::MatchExpr(it) => !contains(it.expr(), token),
+                    ast::BinExpr(it) => {
+                        matches!(it.op_kind(), Some(ast::BinaryOp::LogicOp(_)))
+                            && contains(it.rhs(), token)
+                    },
+                    _ => false,
+                }
+            }
+        })
     }
 
     fn generic_of_path(&self, path: &ast::Path) -> Option<i32> {
@@ -400,6 +455,7 @@ struct ParamInfo {
     is_mut_ref: bool,
     is_va_args: bool,
     is_init: bool,
+    cpp_type: Option<String>,
 }
 
 struct FnIrBuilder<'a> {
@@ -436,6 +492,11 @@ impl<'a> FnIrBuilder<'a> {
             );
             let is_init = name == "init";
             let (is_mut_raw_pointer, is_const_raw_pointer) = raw_pointer_flags(&ty);
+            let cpp_type = cpp_type_of(&ty);
+            assert!(
+                cpp_type.is_none() || is_init,
+                "cpp_type! is only allowed as the type of `init`, found on `{name}`"
+            );
             params.push(ParamInfo {
                 name,
                 ty: ty.syntax().text().to_string(),
@@ -448,6 +509,7 @@ impl<'a> FnIrBuilder<'a> {
                 is_mut_ref: matches!(&ty, ast::Type::RefType(r) if r.mut_token().is_some()),
                 is_va_args,
                 is_init,
+                cpp_type,
             });
         }
         assert!(
@@ -479,6 +541,7 @@ impl<'a> FnIrBuilder<'a> {
                 is_mut_raw_pointer,
                 is_const_raw_pointer,
                 derives: Vec::new(),
+                cpp_type: None,
             })
         }
     }
@@ -693,7 +756,7 @@ impl<'a> FnIrBuilder<'a> {
 
         let params_map: BTreeMap<String, TypeInfo> = params
             .iter()
-            .filter(|p| !p.is_va_args && !p.is_init)
+            .filter(|p| !p.is_va_args)
             .map(|p| {
                 (
                     p.name.clone(),
@@ -707,6 +770,7 @@ impl<'a> FnIrBuilder<'a> {
                         is_mut_raw_pointer: p.is_mut_raw_pointer,
                         is_const_raw_pointer: p.is_const_raw_pointer,
                         derives: Vec::new(),
+                        cpp_type: p.cpp_type.clone(),
                     },
                 )
             })
@@ -727,17 +791,6 @@ impl<'a> FnIrBuilder<'a> {
         });
 
         let body = self.body_fragments(&params, &generic_names);
-        let init_generic = params
-            .iter()
-            .find(|p| p.is_init)
-            .map(|p| {
-                assert!(
-                    generic_names.contains(&p.ty),
-                    "init parameter must be typed by a generic, got {}",
-                    p.ty
-                );
-                p.ty[1..].parse().expect("generic name is T<n>")
-            });
 
         let ir = FnIr {
             params: if params_map.is_empty() {
@@ -754,7 +807,6 @@ impl<'a> FnIrBuilder<'a> {
             multi_statement,
             body,
             is_extern: self.is_extern().then_some(true),
-            init_generic,
         };
         ir.validate(&format!("{}:{}", path.display(), fn_name));
         ir
@@ -836,6 +888,7 @@ impl<'a> TypeIrBuilder<'a> {
                 is_mut_raw_pointer,
                 is_const_raw_pointer,
                 derives: Vec::new(),
+                cpp_type: None,
             },
         }
     }

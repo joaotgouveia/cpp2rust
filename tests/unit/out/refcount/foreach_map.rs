@@ -37,12 +37,15 @@ fn main_0() -> i32 {
         m.as_pointer()
             .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
     ) {
-        let i: Value<(Value<i32>, Value<f64>)> = Rc::new(RefCell::new({
-            let __a0 = (*i.iter_deref().upgrade().deref()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-            )
+        let i: Value<(Value<i32>, Value<f64>)> = Rc::new(RefCell::new(match (i.iter_deref(),) {
+            (__tmp_0,) => (
+                Rc::new(RefCell::new(
+                    (*__tmp_0.upgrade().deref()).0.borrow().clone(),
+                )),
+                Rc::new(RefCell::new(
+                    (*__tmp_0.upgrade().deref()).1.borrow().clone(),
+                )),
+            ),
         }));
         sum += ((*(*i.borrow()).0.borrow()) as f64);
     }
@@ -53,15 +56,18 @@ fn main_0() -> i32 {
         m.as_pointer()
             .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
     ) {
-        let i: Value<(Value<i32>, Value<f64>)> = Rc::new(RefCell::new({
-            let __a0 = (*i.iter_deref().upgrade().deref()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-            )
+        let i: Value<(Value<i32>, Value<f64>)> = Rc::new(RefCell::new(match (i.iter_deref(),) {
+            (__tmp_1,) => (
+                Rc::new(RefCell::new(
+                    (*__tmp_1.upgrade().deref()).0.borrow().clone(),
+                )),
+                Rc::new(RefCell::new(
+                    (*__tmp_1.upgrade().deref()).1.borrow().clone(),
+                )),
+            ),
         }));
         (*(*i.borrow()).1.borrow_mut()) = (-1_i32 as f64);
-        assert!(((*(*i.borrow()).1.borrow()) == (-1_i32 as f64)));
+        assert!(({ ((*(*i.borrow()).1.borrow()) == (-1_i32 as f64)) }));
     }
     'loop_: for i in IterRange::new(
         m.as_pointer()
@@ -70,7 +76,7 @@ fn main_0() -> i32 {
             .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
     ) {
         let i: Ptr<(Value<i32>, Value<f64>)> = i.iter_deref();
-        assert!(((*(*i.upgrade().deref()).1.borrow()) != (-1_i32 as f64)));
+        assert!(({ ((*(*i.upgrade().deref()).1.borrow()) != (-1_i32 as f64)) }));
     }
     return 0;
 }

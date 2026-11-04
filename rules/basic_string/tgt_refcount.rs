@@ -79,7 +79,8 @@ fn f64<T1: CChar, T2, T3>(a0: Ptr<Vec<T1>>, a1: Ptr<T1>, a2: usize) -> Ptr<Vec<T
 
 fn f66<T1: CChar, T2, T3>(a0: &mut Vec<T1>, a1: usize, a2: T1) -> Vec<T1> {
     a0.pop();
-    a0.resize(a0.len() + (a1) as usize, a2);
+    let __len = a0.len() + (a1) as usize;
+    a0.resize(__len, a2);
     a0.push(T1::default());
     a0.clone()
 }
@@ -119,11 +120,12 @@ fn f110<T1: CChar, T2, T3>(a0: Vec<T1>, a1: Ptr<T1>, a2: usize) -> usize {
     })
 }
 
-fn f132<T1: CChar, T2, T3>(a0: Vec<T1>, a1: usize, a2: usize) -> Vec<T1> {
-    let mut __tmp1 =
-        a0[(a1) as usize..::std::cmp::min((a1 + a2) as usize, a0.len().saturating_sub(1))].to_vec();
-    __tmp1.push(T1::default());
-    __tmp1
+fn f132<T1: CChar, T2, T3>(a0: Ptr<Vec<T1>>, a1: usize, a2: usize) -> Vec<T1> {
+    a0.with(|__s: &Vec<T1>| {
+        let mut __tmp1 = __s[a1..::std::cmp::min(a1 + a2, __s.len().saturating_sub(1))].to_vec();
+        __tmp1.push(T1::default());
+        __tmp1
+    })
 }
 
 fn f189<T1: CChar, T2, T3>(a0: Vec<T1>, a1: Ptr<T1>) -> Vec<T1> {

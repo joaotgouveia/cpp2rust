@@ -95,16 +95,16 @@ fn main_0() -> i32 {
     assert!((({ CounterImpl::Get(&pc,) }) == 3));
     assert!(({ CounterImpl::operator_eq(&c1.as_pointer(), c2.as_pointer(),) }));
     assert!(({ CounterImpl::operator_eq(&c2.as_pointer(), c1.as_pointer(),) }));
-    assert!(({ (*c1.borrow()).calls } == 3));
-    assert!(({ (*c2.borrow()).calls } == 2));
+    assert!(({ ({ (*c1.borrow()).calls } == 3) }));
+    assert!(({ ({ (*c2.borrow()).calls } == 2) }));
     let t: Value<Tally> = Rc::new(RefCell::new(Tally { calls: 0 }));
     let ct: Value<Tally> = Rc::new(RefCell::new(Tally { calls: 0 }));
     let rt: Ptr<Tally> = t.as_pointer();
     assert!((({ TallyImpl::SameNameBetweenConstAndNonConst_1(&t.as_pointer(),) }) == 1));
     assert!((({ TallyImpl::SameNameBetweenConstAndNonConst_2(&ct.as_pointer(),) }) == 2));
     assert!((({ TallyImpl::SameNameBetweenConstAndNonConst_2(&rt,) }) == 2));
-    assert!(({ (*t.borrow()).calls } == 11));
-    assert!(({ (*ct.borrow()).calls } == 10));
+    assert!(({ ({ (*t.borrow()).calls } == 11) }));
+    assert!(({ ({ (*ct.borrow()).calls } == 10) }));
     return 0;
 }
 pub trait CounterImpl {
@@ -139,9 +139,9 @@ impl PairImpl for Ptr<Pair> {
     }
     fn Set(&self, field: Ptr<i32>, mut new_val: i32) -> i32 {
         ({ PairImpl::NOP(self) });
-        let old_val: Value<i32> = Rc::new(RefCell::new((field.read())));
+        let mut old_val: i32 = (field.read());
         field.write({ new_val });
-        return (*old_val.borrow());
+        return old_val;
     }
     fn SetFirst(&self, mut new_first: i32) -> i32 {
         return (({ PairImpl::GetFirst(self) })
@@ -163,9 +163,9 @@ pub trait RouteImpl {
 }
 impl RouteImpl for Ptr<Route> {
     fn SetCost(&self, mut new_cost: f64) -> f64 {
-        let old_cost: Value<f64> = Rc::new(RefCell::new((*self).with(|__s| __s.cost)));
+        let mut old_cost: f64 = (*self).with(|__s| __s.cost);
         field!((*self), cost).write(new_cost);
-        return (*old_cost.borrow());
+        return old_cost;
     }
 }
 pub trait TallyImpl {

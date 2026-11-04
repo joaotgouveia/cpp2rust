@@ -108,15 +108,16 @@ impl Holder {
             let _arg0: *const Counted = &(*_a0).c;
             Counted::copy_assign(&mut self.c, _arg0)
         });
-        {
-            if 8_usize != 0 {
-                ::std::ptr::copy_nonoverlapping(
-                    ((&(*_a0).arr as *const [Counted; 2]) as *const ::libc::c_void),
-                    ((&mut self.arr as *mut [Counted; 2]) as *mut ::libc::c_void),
-                    8_usize as usize,
-                )
+        match (
+            { ((&mut self.arr as *mut [Counted; 2]) as *mut ::libc::c_void) },
+            { ((&(*_a0).arr as *const [Counted; 2]) as *const ::libc::c_void) },
+        ) {
+            (mut __tmp_0, mut __tmp_1) => {
+                if 8_usize != 0 {
+                    ::std::ptr::copy_nonoverlapping(__tmp_1, __tmp_0, 8_usize as usize)
+                }
+                __tmp_0
             }
-            ((&mut self.arr as *mut [Counted; 2]) as *mut ::libc::c_void)
         };
         return &mut (*(self as *mut Holder));
     }
@@ -264,7 +265,7 @@ unsafe fn main_0() -> i32 {
         let a0_clone = a.clone();
         vec_.push(a0_clone)
     };
-    assert!((((*(&mut vec_).as_mut_ptr().add(0_usize as usize)).v) == (1)));
+    assert!(((vec_[(0_usize)].v) == (1)));
     assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0)) == (10)));
     let mut i1: Ignored = Ignored::new({ 1 });
     let mut i2: Ignored = Ignored::copy_from({ &i1 });

@@ -140,15 +140,16 @@ impl Buffer {
         self.data = std::mem::take(&mut (*_a0).data);
         self.rows = std::mem::take(&mut (*_a0).rows);
         self.n = (*_a0).n;
-        {
-            if 8_usize != 0 {
-                ::std::ptr::copy_nonoverlapping(
-                    ((&mut (*_a0).arr as *mut [i32; 2]) as *const ::libc::c_void),
-                    ((&mut self.arr as *mut [i32; 2]) as *mut ::libc::c_void),
-                    8_usize as usize,
-                )
+        match (
+            { ((&mut self.arr as *mut [i32; 2]) as *mut ::libc::c_void) },
+            { ((&mut (*_a0).arr as *mut [i32; 2]) as *const ::libc::c_void) },
+        ) {
+            (mut __tmp_0, mut __tmp_1) => {
+                if 8_usize != 0 {
+                    ::std::ptr::copy_nonoverlapping(__tmp_1, __tmp_0, 8_usize as usize)
+                }
+                __tmp_0
             }
-            ((&mut self.arr as *mut [i32; 2]) as *mut ::libc::c_void)
         };
         return &mut (*(self as *mut Buffer));
     }
@@ -174,15 +175,16 @@ impl Owner {
     pub unsafe fn move_assign(&mut self, _a0: *mut Owner) -> *mut Owner {
         self.data = std::mem::take(&mut (*_a0).data);
         self.n = (*_a0).n;
-        {
-            if 8_usize != 0 {
-                ::std::ptr::copy_nonoverlapping(
-                    ((&mut (*_a0).arr as *mut [i32; 2]) as *const ::libc::c_void),
-                    ((&mut self.arr as *mut [i32; 2]) as *mut ::libc::c_void),
-                    8_usize as usize,
-                )
+        match (
+            { ((&mut self.arr as *mut [i32; 2]) as *mut ::libc::c_void) },
+            { ((&mut (*_a0).arr as *mut [i32; 2]) as *const ::libc::c_void) },
+        ) {
+            (mut __tmp_2, mut __tmp_3) => {
+                if 8_usize != 0 {
+                    ::std::ptr::copy_nonoverlapping(__tmp_3, __tmp_2, 8_usize as usize)
+                }
+                __tmp_2
             }
-            ((&mut self.arr as *mut [i32; 2]) as *mut ::libc::c_void)
         };
         self.p = (*_a0).p.take();
         return &mut (*(self as *mut Owner));
@@ -305,10 +307,7 @@ unsafe fn main_0() -> i32 {
         let __a1 = Explicit::new({ 9 });
         vec_.push(__a1)
     };
-    assert!(
-        (((*(&mut vec_).as_mut_ptr().add(0_usize as usize)).v) == (1))
-            && (((*(&mut vec_).as_mut_ptr().add(1_usize as usize)).v) == (9))
-    );
+    assert!(((vec_[(0_usize)].v) == (1)) && ((vec_[(1_usize)].v) == (9)));
     let mut m: DefaultCopyUserMove = DefaultCopyUserMove::new({ 7 });
     let mut m1: DefaultCopyUserMove = m;
     let mut m2: DefaultCopyUserMove = DefaultCopyUserMove::move_from({ &mut m });
@@ -330,8 +329,7 @@ unsafe fn main_0() -> i32 {
     let mut p: Buffer = Buffer::new({ 3 });
     let mut q: Buffer = Buffer::move_from({ &mut p });
     assert!(
-        ((((q.n) == (3)) && ((q.data.len()) == (3_usize)))
-            && ((*(&mut q.data).as_mut_ptr().add(2_usize as usize)) == (3)))
+        ((((q.n) == (3)) && ((q.data.len()) == (3_usize))) && ((q.data[(2_usize)]) == (3)))
             && (p.data.is_empty())
     );
     let mut r: Buffer = Buffer::new({ 1 });
@@ -341,8 +339,7 @@ unsafe fn main_0() -> i32 {
             && (q.data.is_empty())
     );
     assert!(
-        (((r.rows.len()) == (1_usize))
-            && (((*(&mut r.rows).as_mut_ptr().add(0_usize as usize)).len()) == (3_usize)))
+        (((r.rows.len()) == (1_usize)) && ((r.rows[(0_usize)].len()) == (3_usize)))
             && (q.rows.is_empty())
     );
     let mut bufs: Vec<Buffer> = Vec::new();
@@ -351,15 +348,12 @@ unsafe fn main_0() -> i32 {
         bufs.push(__a1)
     };
     {
-        let __init = Buffer::move_from({ &mut (*(&mut bufs).as_mut_ptr().add(0_usize as usize)) });
+        let __init = Buffer::move_from({ &mut bufs[(0_usize)] });
         bufs.push(__init)
     };
     assert!(
-        ((((*(&mut bufs).as_mut_ptr().add(1_usize as usize)).n) == (3))
-            && (((*(&mut bufs).as_mut_ptr().add(1_usize as usize)).data.len()) == (3_usize)))
-            && ((*(&mut bufs).as_mut_ptr().add(0_usize as usize))
-                .data
-                .is_empty())
+        (((bufs[(1_usize)].n) == (3)) && ((bufs[(1_usize)].data.len()) == (3_usize)))
+            && (bufs[(0_usize)].data.is_empty())
     );
     let mut o1: Owner = <Owner>::default();
     {
@@ -397,8 +391,7 @@ unsafe fn main_0() -> i32 {
     let mut o3: Owner = <Owner>::default();
     (unsafe { Owner::move_assign(&mut o3, &mut o2) });
     assert!(
-        ((((o3.n) == (5)) && ((*(&mut o3.data).as_mut_ptr().add(0_usize as usize)) == (5)))
-            && ((o3.arr[(0) as usize]) == (5)))
+        ((((o3.n) == (5)) && ((o3.data[(0_usize)]) == (5))) && ((o3.arr[(0) as usize]) == (5)))
             && ((*o3
                 .p
                 .as_deref()
@@ -422,7 +415,7 @@ unsafe fn main_0() -> i32 {
     assert!(c1.data.is_empty());
     let mut c4: Copyable = <Copyable>::default();
     (unsafe { Copyable::move_assign(&mut c4, &mut c3) });
-    assert!(((*(&mut c4.data).as_mut_ptr().add(1_usize as usize)) == (2)) && (c3.data.is_empty()));
+    assert!(((c4.data[(1_usize)]) == (2)) && (c3.data.is_empty()));
     let mut h1: Holder = Holder::new({ 4 });
     let _dtor_h1 = ScopedDestructorUnsafe::new(&raw mut h1, Holder::destructor);
     {

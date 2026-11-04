@@ -35,13 +35,10 @@ pub fn sum_1(v: Ptr<Vec<i32>>) -> i32 {
         (*it.borrow_mut()).iter_inc();
     }
     return ({ total } + {
-        ({
-            let __idx = 0_usize;
-            if __idx as usize >= (*v.upgrade().deref()).len() {
-                panic!("out of bounds access")
-            } else {
-                v.decay().offset(__idx as isize)
-            }
+        (if 0_usize as usize >= (*v.upgrade().deref()).len() {
+            panic!("out of bounds access")
+        } else {
+            v.decay().offset(0_usize as isize)
         }
         .read())
     });
@@ -56,10 +53,10 @@ fn main_0() -> i32 {
         ref_: v.as_pointer(),
         vec_: Vec::from([4, 5]),
     }));
-    assert!((({ (*h.borrow()).ref_.clone() }.decay().read()) == 1));
-    { (*h.borrow()).ref_.clone() }.decay().write(9);
-    assert!(((v.decay().offset(0_usize as isize).read()) == 9));
-    { (*h.borrow()).ref_.clone() }.decay().write(1);
+    assert!(((({ { (*h.borrow()).ref_.clone() }.decay() }).read()) == 1));
+    ({ { (*h.borrow()).ref_.clone() }.decay() }).write(9);
+    assert!(({ ({ (*v.borrow())[0_usize] } == 9) }));
+    ({ { (*h.borrow()).ref_.clone() }.decay() }).write(1);
     assert!(((field_ref!(h.as_pointer(), vec_).decay().to_last().read()) == 5));
     let mut p: Ptr<Vec<i32>> = (field_ref!(h.as_pointer(), vec_).as_pointer());
     assert!(((p.decay().read()) == 4));
@@ -72,13 +69,7 @@ fn main_0() -> i32 {
     })
     .decay()
     .write(7);
-    assert!(
-        ((field_ref!(h.as_pointer(), vec_)
-            .decay()
-            .offset(0_usize as isize)
-            .read())
-            == 7)
-    );
+    assert!(((vec_elem!(h.as_pointer(), vec_, 0_usize).read()) == 7));
     let m: Value<Map<i32, (Value<i32>, Value<Vec<i32>>)>> = Rc::new(RefCell::new(Map::new()));
     {
         let __a1 = 8;
@@ -103,13 +94,10 @@ fn main_0() -> i32 {
     );
     let c: Ptr<Vec<i32>> = v.as_pointer();
     assert!(
-        (({
-            let __idx = 2_usize;
-            if __idx as usize >= (*c.upgrade().deref()).len() {
-                panic!("out of bounds access")
-            } else {
-                c.decay().offset(__idx as isize)
-            }
+        ((if 2_usize as usize >= (*c.upgrade().deref()).len() {
+            panic!("out of bounds access")
+        } else {
+            c.decay().offset(2_usize as isize)
         }
         .read())
             == 3)

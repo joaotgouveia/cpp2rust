@@ -6,9 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn identity_0(x: i32) -> i32 {
-    let x: Value<i32> = Rc::new(RefCell::new(x));
-    return (*x.borrow());
+pub fn identity_0(mut x: i32) -> i32 {
+    return x;
 }
 pub fn swap_by_ptr_1(mut a: Ptr<i32>, mut b: Ptr<i32>) {
     let mut tmp: i32 = (a.read());
@@ -34,7 +33,7 @@ fn main_0() -> i32 {
     p = (a.as_pointer());
     ({ swap_by_ptr_1((p).clone(), (b.as_pointer())) });
     ({ swap_by_ref_2(a.as_pointer(), c.as_pointer()) });
-    assert!(((*c.borrow()) == 2));
+    assert!(({ ((*c.borrow()) == 2) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

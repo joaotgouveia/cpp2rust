@@ -18,22 +18,27 @@ unsafe fn main_0() -> i32 {
     assert!(((d) == (17_u32)));
     let mut name: *const libc::c_char = c"dir/file.txt".as_ptr();
     let mut p: Vec<libc::c_char> = {
-        let mut __v: Vec<libc::c_char> = name
-            .path_bytes()
-            .into_iter()
-            .map(|__b| __b as libc::c_char)
-            .collect();
+        let mut __v = ::std::ffi::CStr::from_ptr(name)
+            .to_bytes()
+            .iter()
+            .map(|&__b| __b as libc::c_char)
+            .collect::<Vec<libc::c_char>>();
         __v.push(0);
         __v
     };
     let mut s: Vec<libc::c_char> = p;
     assert!(((s.len() - 1) == (12_usize)));
     assert!(
-        s == std::slice::from_raw_parts(
-            c"dir/file.txt".as_ptr(),
-            libcc2rs::c_str_len(c"dir/file.txt".as_ptr()) + 1
-        )
-        .to_vec()
+        s == {
+            std::slice::from_raw_parts(
+                c"dir/file.txt".as_ptr(),
+                (0..)
+                    .take_while(|&i| *c"dir/file.txt".as_ptr().add(i) != 0)
+                    .count()
+                    + 1,
+            )
+            .to_vec()
+        }
     );
     return 0;
 }

@@ -21,30 +21,30 @@ pub struct Pair {
     pub second: i32,
 }
 pub fn total_2(v: Ptr<Vec<i32>>) -> i32 {
-    let s: Value<i32> = Rc::new(RefCell::new(0));
+    let mut s: i32 = 0;
     'loop_: for x in IterRange::new(v.decay().begin(), v.decay().end()) {
         let mut x: i32 = (x.iter_deref().read());
-        (*s.borrow_mut()) += x;
+        s += x;
     }
-    return (*s.borrow());
+    return s;
 }
 pub fn sum_3(mut arr: Ptr<i32>, mut n: i32) -> i32 {
-    let s: Value<i32> = Rc::new(RefCell::new(0));
+    let mut s: i32 = 0;
     let mut i: i32 = 0;
     'loop_: while (i < n) {
-        (*s.borrow_mut()) += { (elem!(arr, i).read()) };
+        s += { (elem!(arr, i).read()) };
         i.prefix_inc();
     }
-    return (*s.borrow());
+    return s;
 }
 pub fn countdown_4(mut n: i32, step: Option<i32>) -> i32 {
     let mut step: i32 = step.unwrap_or_else(|| 1);
-    let steps: Value<i32> = Rc::new(RefCell::new(0));
+    let mut steps: i32 = 0;
     'loop_: while (n > 0) {
         n -= step;
-        (*steps.borrow_mut()).postfix_inc();
+        steps.postfix_inc();
     }
-    return (*steps.borrow());
+    return steps;
 }
 pub trait Shape {
     fn scale(&mut self, factor: i32) -> i32;
@@ -72,12 +72,12 @@ fn main_0() -> i32 {
     &(::std::mem::size_of::<i32>());
     let addr: Value<i32> = Rc::new(RefCell::new(0));
     ({ set_0((addr.as_pointer()), 5) });
-    assert!(((*addr.borrow()) == 5));
+    assert!(({ ((*addr.borrow()) == 5) }));
     let ref_: Value<i32> = Rc::new(RefCell::new(1));
     ({ inc_1(ref_.as_pointer()) });
     let alias: Ptr<i32> = ref_.as_pointer();
     alias.with_mut(|__v| __v.postfix_inc());
-    assert!(((*ref_.borrow()) == 3));
+    assert!(({ ((*ref_.borrow()) == 3) }));
     let captured: Value<i32> = Rc::new(RefCell::new(7));
     let get: Value<FnPtr<fn() -> i32>> = Rc::new(RefCell::new(lambda!(
         {
@@ -88,23 +88,23 @@ fn main_0() -> i32 {
         }
     )));
     (*captured.borrow_mut()) = 8;
-    assert!((({ (*get.borrow()).call() }) == 8));
+    assert!(({ (({ (*get.borrow()).call() }) == 8) }));
     let mut arr: [i32; 4] = [1, 2, 3, 4];
     arr[(0) as usize] = { (arr[(3) as usize] * 2) };
     arr[(1) as usize].postfix_inc();
     assert!(((arr[(0) as usize] + arr[(1) as usize]) == 11));
     let elem: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0])));
     ({ set_0(((elem.as_pointer() as Ptr<i32>).offset(1)), 6) });
-    assert!(((*elem.borrow())[(1) as usize] == 6));
+    assert!(({ ((*elem.borrow())[(1) as usize] == 6) }));
     let decayed: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
     assert!((({ sum_3((decayed.as_pointer() as Ptr::<i32>), 3,) }) == 6));
     let elem_ref: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1])));
     ({ inc_1((elem_ref.as_pointer() as Ptr<i32>).offset(0)) });
-    assert!(((*elem_ref.borrow())[(0) as usize] == 2));
+    assert!(({ ((*elem_ref.borrow())[(0) as usize] == 2) }));
     let mut p: Ptr<i32> = (addr.as_pointer());
     p = ((elem.as_pointer() as Ptr<i32>).offset(0));
     p.write(9);
-    assert!(((*elem.borrow())[(0) as usize] == 9));
+    assert!(({ ((*elem.borrow())[(0) as usize] == 9) }));
     let mut str: [i8; 8] = b"abc\0\0\0\0\0".map(i8::from_byte);
     str[(0) as usize] = ('x' as i8);
     assert!(
@@ -130,29 +130,23 @@ fn main_0() -> i32 {
     });
     assert!((pair.second == 4) && (heap.with(|__s| __s.first) == 3));
     heap.delete();
-    let vec_: Value<Vec<i32>> = Rc::new(RefCell::new(vec![1; 3_usize as usize]));
+    let mut vec_: Vec<i32> = vec![1; 3_usize as usize];
     let mut four: i32 = 4;
     {
         let a0_clone = four.clone();
-        (*vec_.borrow_mut()).push(a0_clone)
+        vec_.push(a0_clone)
     };
-    let __rhs = ((vec_.decay().offset(3_usize as isize).read()) + 1);
-    vec_.decay().offset(0_usize as isize).write(__rhs);
-    vec_.decay()
-        .offset(1_usize as isize)
-        .with_mut(|__v| __v.postfix_inc());
-    assert!(
-        (((*vec_.borrow()).len() == 4_usize)
-            && ((vec_.decay().offset(0_usize as isize).read()) == 5))
-            && ((vec_.decay().offset(1_usize as isize).read()) == 2)
-    );
+    let __rhs = (vec_[3_usize] + 1);
+    vec_[0_usize] = __rhs;
+    vec_[1_usize].postfix_inc();
+    assert!(((vec_.len() == 4_usize) && (vec_[0_usize] == 5)) && (vec_[1_usize] == 2));
     let high: Value<i32> = Rc::new(RefCell::new(3));
     let mut low: i32 = {
         let __tmp_0: Value<i32> = Rc::new(RefCell::new(2));
-        ({
-            let __a = high.as_pointer();
-            let __b = __tmp_0.as_pointer();
-            if CppLess::less(&__b, &__a) { __b } else { __a }
+        (if CppLess::less(&__tmp_0.as_pointer(), &high.as_pointer()) {
+            __tmp_0.as_pointer()
+        } else {
+            high.as_pointer()
         }
         .read())
     };
@@ -160,11 +154,11 @@ fn main_0() -> i32 {
     let by_ref: Value<Vec<i32>> = Rc::new(RefCell::new(vec![3; 2_usize as usize]));
     assert!((({ total_2(by_ref.as_pointer(),) }) == 6));
     let elem_ptr: Value<Vec<i32>> = Rc::new(RefCell::new(vec![0; 2_usize as usize]));
-    ({ set_0((elem_ptr.decay().offset(1_usize as isize)), 7) });
-    assert!(((elem_ptr.decay().offset(1_usize as isize).read()) == 7));
+    ({ set_0((elem_ptr.decay().offset(1_usize)), 7) });
+    assert!(({ ({ (*elem_ptr.borrow())[1_usize] } == 7) }));
     let data: Value<Vec<i32>> = Rc::new(RefCell::new(vec![0; 2_usize as usize]));
     ({ set_0(data.decay(), 8) });
-    assert!(((data.decay().offset(0_usize as isize).read()) == 8));
+    assert!(({ ({ (*data.borrow())[0_usize] } == 8) }));
     let square: Value<Square> = Rc::new(RefCell::new(<Square>::default()));
     let mut shape: PtrDyn<dyn Shape> = (square.as_pointer()).to_dyn::<dyn Shape>(|w| w);
     assert!((({ (*shape.upgrade().deref_mut()).scale(3,) }) == 6));

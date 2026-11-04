@@ -78,10 +78,10 @@ fn main_0() -> i32 {
 pub fn shuffle_1(mut x: i32) -> i32 {
     let a: Value<S> = Rc::new(RefCell::new(S::new({ x })));
     let b: Value<S> = Rc::new(RefCell::new(S::move_from({ a.as_pointer() })));
-    assert!((*a.borrow()).v.is_empty());
+    assert!(({ (*a.borrow()).v.is_empty() }));
     let c: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
     ({ SImpl::move_assign(&c.as_pointer(), b.as_pointer()) });
-    assert!((*b.borrow()).v.is_empty());
+    assert!(({ (*b.borrow()).v.is_empty() }));
     let t: Value<T> = Rc::new(RefCell::new(T { v: Vec::from([1]) }));
     let u: Value<T> = Rc::new(RefCell::new(T::move_from({ t.as_pointer() })));
     let w: Value<T> = Rc::new(RefCell::new(<T>::default()));
@@ -100,14 +100,14 @@ impl SImpl for Ptr<S> {
         field_ref!((*self), v)
             .as_pointer()
             .write(field!(_a0, v).with_mut(std::mem::take));
-        {
-            ((array_field_ptr!((*self), n)) as Ptr<i32>)
-                .to_any()
-                .memcpy(
+        match ({ ((array_field_ptr!((*self), n)) as Ptr<i32>).to_any() },) {
+            (mut __tmp_0,) => {
+                __tmp_0.memcpy(
                     &((array_field_ptr!(_a0, n)) as Ptr<i32>).to_any(),
                     8_usize as usize,
                 );
-            ((array_field_ptr!((*self), n)) as Ptr<i32>).to_any()
+                (__tmp_0).clone()
+            }
         };
         return (*self).clone();
     }

@@ -179,7 +179,7 @@ bool ConverterRefCount::NeedsMut(const clang::VarDecl *decl,
 
 bool ConverterRefCount::IsUnboxedVar(const clang::ValueDecl *decl) const {
   auto *var = clang::dyn_cast<clang::VarDecl>(decl);
-  return var && !boxed_vars_->contains(var);
+  return var && (bound_values_.contains(var) || !boxed_vars_->contains(var));
 }
 
 bool ConverterRefCount::IsUnboxedPlace(const clang::Expr *expr) const {
@@ -400,8 +400,12 @@ std::string ConverterRefCount::AsPointerMethod(clang::QualType type) {
   return ".as_pointer()";
 }
 
-std::string ConverterRefCount::ConvertPointerReceiver(clang::Expr *arg,
-                                                      std::string_view) {
+std::string ConverterRefCount::ConvertPointerReceiver(
+    clang::Expr *arg, std::string_view,
+    std::optional<clang::QualType> implicit_convert_to) {
+  if (clang::isa<clang::MaterializeTemporaryExpr>(arg->IgnoreImpCasts())) {
+    return ConvertTemporaryPointer(arg, implicit_convert_to);
+  }
   return isObject() ? ConvertObject(arg) : ConvertFreshObject(arg);
 }
 
@@ -436,40 +440,6 @@ bool ConverterRefCount::ParamIsElementPtr(clang::Expr *expr, clang::Expr *arg,
 
 std::string ConverterRefCount::ConvertElementPtr(clang::Expr *arg) {
   return ConvertObject(arg, ObjectShape::Element);
-}
-
-void ConverterRefCount::CheckRuleReturnType(clang::Expr *expr) {
-  auto *call = clang::dyn_cast<clang::CallExpr>(expr);
-  if (!call) {
-    return;
-  }
-  auto &return_type = RuleRegistry::GetExprRule(ctx_, expr)->return_type;
-  if (!return_type.is_refcount_pointer || return_type.is_projection) {
-    return;
-  }
-  // A reference is returned as a pointer. The library may spell the pointer
-  // or reference type with a typedef of its own, e.g., iterator::pointer,
-  // which is not what the pointee is spelled with.
-  auto type = GetReturnTypeOfFunction(call).getDesugaredType(ctx_);
-  auto ret = NormalizeType(Mapper::GetReturnType(*this, expr));
-  std::optional<std::string> proxy;
-  if (auto *ref = type->getAs<clang::ReferenceType>()) {
-    auto pointee = ref->getPointeeType();
-    type = ctx_.getPointerType(pointee);
-    // a reference to a class that is itself a pointer is either a pointer to
-    // it (reference_wrapper<T>&) or, for a proxy reference whose rules treat
-    // it as the reference (vector<bool>'s reference), that pointer
-    if (pointee->isRecordType() &&
-        RuleRegistry::MapsToRefcountPointer(ctx_, pointee)) {
-      proxy = NormalizeType(ToString(pointee));
-    }
-  }
-  auto expected = NormalizeType(ToString(type));
-  if (ret != expected && ret != proxy) {
-    llvm::errs() << "rule return type " << ret << " is not " << expected
-                 << '\n';
-    llvm::report_fatal_error("rule return type does not match the C++ one");
-  }
 }
 
 std::string ConverterRefCount::ConvertFreshObject(clang::Expr *expr) {
@@ -1139,17 +1109,20 @@ void ConverterRefCount::ConvertDeclRefValue(clang::Expr *expr,
     if (is_global_value && TypeIsCopyable(decl_t)) {
       StrCat(str, ".with(|rc| *rc.borrow())");
     } else if (is_global_value) {
+      borrows_ = true;
       // Borrow the global in place, like a local. Cloning it would be
       // expensive for arrays, and writes through its fields would be lost.
       StrCat(std::format("(*{}.with(Value::clone).borrow())", std::move(str)));
     } else {
       StrCat(std::format("(*{}.borrow())", std::move(str)));
+      borrows_ = true;
     }
   } else {
     if (is_global_value) {
       str += ".with(Value::clone)";
     }
     StrCat(std::format("(*{}.borrow_mut())", std::move(str)));
+    borrows_ = true;
   }
 
   // A copied global is read into a new value.
@@ -1356,7 +1329,7 @@ void ConverterRefCount::EmitCallResult(clang::CallExpr *expr, std::string str,
     EmitFresh(std::format("({}).clone()", wrap(std::move(str))));
     return;
   }
-  if (ref && !isAddrOf() && !isVoid()) {
+  if (ref && !isAddrOf() && !isVoid() && !ExprMapsValueToPointer(expr)) {
     if (isLValue()) {
       pending_deref_.set(wrap(std::move(str)), /*fresh=*/true);
       return;
@@ -1970,6 +1943,7 @@ bool ConverterRefCount::VisitMemberExpr(clang::MemberExpr *expr) {
   } else {
     StrCat(std::format("(*{}.borrow_mut())", std::move(str)));
   }
+  borrows_ = true;
   SetValueFreshness(expr->getType());
   return false;
 }
@@ -2174,14 +2148,15 @@ bool ConverterRefCount::VisitCXXConstructExpr(clang::CXXConstructExpr *expr) {
 
   if (auto str = GetMappedAsString(expr, expr->getArgs(), expr->getNumArgs());
       !str.empty()) {
+    if (!IsPassThroughRule(expr)) {
+      MarkFresh();
+    }
     if (isAddrOf()) {
-      EmitFresh(std::format("Rc::new(RefCell::new({})){}", std::move(str),
+      EmitFresh(std::format("Rc::new(RefCell::new({})){}",
+                            MakeFresh(std::move(str)),
                             AsPointerMethod(expr->getType())));
     } else {
       StrCat(str);
-      if (!IsPassThroughRule(expr)) {
-        MarkFresh();
-      }
     }
     return false;
   }
@@ -3045,7 +3020,11 @@ bool ConverterRefCount::DerefReadsValue(clang::QualType pointee_type) {
 
 const char *
 ConverterRefCount::GetPointerDerefSuffix(clang::QualType pointee_type) {
-  return DerefReadsValue(pointee_type) ? ".read()" : ".upgrade().deref()";
+  if (DerefReadsValue(pointee_type)) {
+    return ".read()";
+  }
+  borrows_ = true;
+  return ".upgrade().deref()";
 }
 
 void ConverterRefCount::EmitPointee(std::string ptr,
@@ -3117,17 +3096,16 @@ std::string ConverterRefCount::ConvertTake(clang::Expr *arg) {
 
 std::string ConverterRefCount::ConvertMappedMethodCall(
     clang::Expr *expr, const TranslationRule::MethodCallFragment &mc,
-    llvm::ArrayRef<clang::TemplateArgument> bindings, clang::Expr **args,
-    unsigned num_args, TempMaterializationCtx *ctx) {
+    llvm::ArrayRef<clang::TemplateArgument> bindings,
+    llvm::ArrayRef<clang::Expr *> args, TempMaterializationCtx *ctx) {
   auto receiver_ph = mc.getReceiverPlaceholder();
   if (!receiver_ph || receiver_ph->access == TranslationRule::Access::kBorrow ||
       receiver_ph->access == TranslationRule::Access::kMove) {
-    return Converter::ConvertMappedMethodCall(expr, mc, bindings, args,
-                                              num_args, ctx);
+    return Converter::ConvertMappedMethodCall(expr, mc, bindings, args, ctx);
   }
 
   auto arg_idx = receiver_ph->n;
-  auto *arg = BuildUnifiedArgs(expr, args, num_args)[arg_idx];
+  auto *arg = args[arg_idx];
   if (auto *call = clang::dyn_cast<clang::CallExpr>(arg->IgnoreCasts());
       call && IsTransparentStdCall(call)) {
     arg = call->getArg(0);
@@ -3136,9 +3114,9 @@ std::string ConverterRefCount::ConvertMappedMethodCall(
   auto param_type = Mapper::GetParamType(*this, expr, arg_idx);
 
   if (arg->getType()->isPointerType()) {
-    return std::format(
-        "{}.with_mut(|__v: {}| __v{})", ConvertPointer(arg), param_type,
-        ConvertIRFragment(mc.body, bindings, expr, args, num_args, ctx));
+    return std::format("{}.with_mut(|__v: {}| __v{})", ConvertPointer(arg),
+                       param_type,
+                       ConvertIRFragment(mc.body, bindings, expr, args, ctx));
   }
 
   // A receiver reached through a pointer is modified through it, only for
@@ -3146,16 +3124,14 @@ std::string ConverterRefCount::ConvertMappedMethodCall(
   std::string receiver;
   {
     ScopedValue in_receiver(in_receiver_, true);
-    receiver =
-        ConvertIRFragment(mc.receiver, bindings, expr, args, num_args, ctx);
+    receiver = ConvertIRFragment(mc.receiver, bindings, expr, args, ctx);
   }
   if (pending_deref_.empty()) {
-    return receiver +
-           ConvertIRFragment(mc.body, bindings, expr, args, num_args, ctx);
+    return receiver + ConvertIRFragment(mc.body, bindings, expr, args, ctx);
   }
 
   auto ptr = pending_deref_.take();
-  auto body = ConvertIRFragment(mc.body, bindings, expr, args, num_args, ctx);
+  auto body = ConvertIRFragment(mc.body, bindings, expr, args, ctx);
   MarkFresh();
 
   return std::format("{}.with_mut(|__v: {}| __v{})", ptr, param_type, body);

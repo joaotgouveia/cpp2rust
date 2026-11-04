@@ -58,9 +58,8 @@ thread_local!(
         },
     ])));
 );
-pub fn as_int_4(c: Color) -> i32 {
-    let c: Value<Color> = Rc::new(RefCell::new(c));
-    return ((*c.borrow()) as i32);
+pub fn as_int_4(mut c: Color) -> i32 {
+    return (c as i32);
 }
 pub fn classify_option_5(mut option: i32) -> i32 {
     'switch: {
@@ -166,28 +165,40 @@ fn main_0() -> i32 {
     assert!(((global_opt_1.with(|rc| *rc.borrow()) as i32) == (Option_OPT_B as i32)));
     assert!(((global_tag_2.with(|rc| *rc.borrow()) as i32) == (Tag_TAG_TWO as i32)));
     assert!(
-        (({ (*entries_3.with(Value::clone).borrow())[(0) as usize].color } as i32)
-            == (Color_RED as i32))
+        ({
+            (({ (*entries_3.with(Value::clone).borrow())[(0) as usize].color } as i32)
+                == (Color_RED as i32))
+        })
     );
     assert!(
-        (({ (*entries_3.with(Value::clone).borrow())[(0) as usize].opt } as i32)
-            == (Option_OPT_NONE as i32))
+        ({
+            (({ (*entries_3.with(Value::clone).borrow())[(0) as usize].opt } as i32)
+                == (Option_OPT_NONE as i32))
+        })
     );
     assert!(
-        (({ (*entries_3.with(Value::clone).borrow())[(1) as usize].color } as i32)
-            == (Color_GREEN as i32))
+        ({
+            (({ (*entries_3.with(Value::clone).borrow())[(1) as usize].color } as i32)
+                == (Color_GREEN as i32))
+        })
     );
     assert!(
-        (({ (*entries_3.with(Value::clone).borrow())[(1) as usize].opt } as i32)
-            == (Option_OPT_A as i32))
+        ({
+            (({ (*entries_3.with(Value::clone).borrow())[(1) as usize].opt } as i32)
+                == (Option_OPT_A as i32))
+        })
     );
     assert!(
-        (({ (*entries_3.with(Value::clone).borrow())[(2) as usize].color } as i32)
-            == (Color_BLUE as i32))
+        ({
+            (({ (*entries_3.with(Value::clone).borrow())[(2) as usize].color } as i32)
+                == (Color_BLUE as i32))
+        })
     );
     assert!(
-        (({ (*entries_3.with(Value::clone).borrow())[(2) as usize].opt } as i32)
-            == (Option_OPT_C as i32))
+        ({
+            (({ (*entries_3.with(Value::clone).borrow())[(2) as usize].opt } as i32)
+                == (Option_OPT_C as i32))
+        })
     );
     return 0;
 }

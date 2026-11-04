@@ -48,3 +48,19 @@ unsafe fn f18<T1, const T2: usize>(mut a0: &mut Vec<T1>, a1: usize) -> *mut T1 {
     let __v: &mut Vec<T1> = &mut a0;
     __v.as_mut_ptr().add(__idx)
 }
+
+unsafe fn f28<const T1: usize, T2>(a0: &Vec<T2>) -> *const T2 {
+    a0.as_ptr().offset(T1 as isize)
+}
+
+unsafe fn f29<const T1: usize, T2>(a0: &mut Vec<T2>) -> *mut T2 {
+    a0.as_mut_ptr().offset(T1 as isize)
+}
+
+unsafe fn f30<const T1: usize, T2>(a0: &Vec<T2>) -> *const T2 {
+    a0.as_ptr().offset(T1 as isize)
+}
+
+unsafe fn f31<const T1: usize, T2>(a0: &mut Vec<T2>) -> *mut T2 {
+    a0.as_mut_ptr().offset(T1 as isize)
+}

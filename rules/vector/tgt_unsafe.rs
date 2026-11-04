@@ -89,11 +89,10 @@ unsafe fn f151<T1>(mut a0: &mut Vec<T1>, a1: usize) -> *mut T1 {
 }
 
 unsafe fn f152<T1: Copy>(a0: &Vec<T1>, a1: usize) -> *const T1 {
-    let __idx = a1;
-    if __idx as usize >= (&a0).len() {
+    if a1 as usize >= (&a0).len() {
         panic!("out of bounds access")
     } else {
-        (&a0).as_ptr().add(__idx as usize)
+        (&a0).as_ptr().add(a1 as usize)
     }
 }
 
@@ -132,17 +131,15 @@ unsafe fn f161<T1>(a0: &mut Vec<T1>) {
 }
 
 unsafe fn f162<T1>(a0: &mut Vec<T1>, a1: UnsafeRandomAccessIterator<T1>, a2: T1) -> UnsafeRandomAccessIterator<T1> {
-    let __it = a1;
-    let pos = __it.iter_distance(&UnsafeRandomAccessIterator::Vec(a0.as_mut_ptr())) as usize;
+    let pos = a1.iter_distance(&UnsafeRandomAccessIterator::Vec(a0.as_mut_ptr())) as usize;
     a0.insert(pos, a2);
-    __it
+    a1
 }
 
 unsafe fn f163<T1>(a0: &mut Vec<T1>, a1: UnsafeRandomAccessIterator<T1>, a2: T1) -> UnsafeRandomAccessIterator<T1> {
-    let __it = a1;
-    let pos = __it.iter_distance(&UnsafeRandomAccessIterator::Vec(a0.as_mut_ptr())) as usize;
+    let pos = a1.iter_distance(&UnsafeRandomAccessIterator::Vec(a0.as_mut_ptr())) as usize;
     a0.insert(pos, a2);
-    __it
+    a1
 }
 
 unsafe fn f164<T1>(a0: &mut Vec<T1>, a1: UnsafeRandomAccessIterator<T1>, a2: Vec<T1>) -> UnsafeRandomAccessIterator<T1> {
@@ -158,10 +155,9 @@ unsafe fn f165<T1: Clone>(a0: &mut Vec<T1>, a1: UnsafeRandomAccessIterator<T1>, 
 }
 
 unsafe fn f166<T1>(a0: &mut Vec<T1>, a1: UnsafeRandomAccessIterator<T1>) -> UnsafeRandomAccessIterator<T1> {
-    let __it = a1;
-    let pos = __it.iter_distance(&UnsafeRandomAccessIterator::Vec(a0.as_mut_ptr())) as usize;
+    let pos = a1.iter_distance(&UnsafeRandomAccessIterator::Vec(a0.as_mut_ptr())) as usize;
     a0.remove(pos);
-    __it
+    a1
 }
 
 unsafe fn f168(a0: &mut Vec<bool>, a1: &mut Vec<bool>) {

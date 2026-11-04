@@ -19,15 +19,7 @@ unsafe fn main_0() -> i32 {
         let a0_clone = v2.clone();
         v1.push(a0_clone)
     };
-    assert!(
-        ((*if 0_usize as usize >= (&mut (*((&mut v1).last_mut().unwrap()))).len() {
-            panic!("out of bounds access")
-        } else {
-            (&mut (*((&mut v1).last_mut().unwrap())))
-                .as_mut_ptr()
-                .add(0_usize as usize)
-        }) == (1))
-    );
+    assert!(((*(&mut (&mut (*((v1).last_mut().unwrap())))[0_usize as usize] as *mut i32)) == (1)));
     return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

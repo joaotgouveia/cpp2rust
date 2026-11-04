@@ -21,9 +21,7 @@ fn f1005(a0: usize, a1: usize) -> AnyPtr {
 
 fn f1006(a0: Ptr<i8>) -> Ptr<i8> {
     match ::std::env::var(a0.to_rust_string()) {
-        Ok(__val) => {
-            Ptr::alloc_c_str(__val.as_bytes())
-        }
+        Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     }
 }
@@ -83,16 +81,15 @@ fn f1009(a0: AnyPtr, a1: usize, a2: usize, a3: fn(AnyPtr, AnyPtr) -> i32) {
 }
 
 fn f1010(a0: Ptr<i8>, a1: Ptr<i8>) -> Ptr<i8> {
-    let __resolved = a1;
     match ::std::fs::canonicalize(a0.to_rust_string()) {
         Ok(__p) => {
             let mut __bytes = __p.into_os_string().into_encoded_bytes();
             __bytes.push(0);
-            if __resolved.is_null() {
+            if a1.is_null() {
                 Ptr::alloc_array(CChar::from_byte_vec(__bytes).into_boxed_slice())
             } else {
-                __resolved.write_c_bytes(&__bytes);
-                __resolved
+                a1.write_c_bytes(&__bytes);
+                a1
             }
         }
         Err(__e) => {

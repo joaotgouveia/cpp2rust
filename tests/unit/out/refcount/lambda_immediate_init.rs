@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn pick_0(x: Option<i32>) -> i32 {
-    let x: Value<i32> = Rc::new(RefCell::new(x.unwrap_or_else(|| {
+    let mut x: i32 = x.unwrap_or_else(|| {
         ({
             FnPtr::<fn() -> i32>::new(|| -> i32 {
                 {
@@ -16,8 +16,8 @@ pub fn pick_0(x: Option<i32>) -> i32 {
             })
             .call()
         })
-    })));
-    return (*x.borrow());
+    });
+    return x;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(8)]
@@ -49,13 +49,13 @@ thread_local!(
         ({
             FnPtr::<fn() -> i32>::new(|| -> i32 {
                 {
-                    let s: Value<i32> = Rc::new(RefCell::new(0));
+                    let mut s: i32 = 0;
                     let mut i: i32 = 1;
                     'loop_: while (i <= 4) {
-                        (*s.borrow_mut()) += i;
+                        s += i;
                         i.postfix_inc();
                     }
-                    return (*s.borrow());
+                    return s;
                 }
             })
             .call()
@@ -86,7 +86,7 @@ fn main_0() -> i32 {
         .call()
     });
     assert!((c == 30));
-    assert!(((*a.borrow()) == 3));
+    assert!(({ ((*a.borrow()) == 3) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {

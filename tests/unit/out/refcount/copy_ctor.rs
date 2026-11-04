@@ -121,8 +121,9 @@ pub struct Box_int_ {
     pub val: i32,
 }
 impl Box_int_ {
-    pub fn new(mut v: i32) -> Self {
-        Self { val: v }
+    pub fn new(v: i32) -> Self {
+        let v: Value<i32> = Rc::new(RefCell::new(v));
+        Self { val: (*v.borrow()) }
     }
     pub fn copy_from(o: Ptr<Box_int_>) -> Self {
         Self {
@@ -251,16 +252,16 @@ fn main_0() -> i32 {
         ((hold2.c.v == 8) && (hold2.arr[(0) as usize].v == 9)) && (hold2.arr[(1) as usize].v == 10)
     );
     assert!((copies_0.with(|rc| *rc.borrow()) == 9));
-    let vec_: Value<Vec<Counted>> = Rc::new(RefCell::new(Vec::new()));
+    let mut vec_: Vec<Counted> = Vec::new();
     {
         let a0_clone = (*a.borrow()).clone();
-        (*vec_.borrow_mut()).push(a0_clone)
+        vec_.push(a0_clone)
     };
-    assert!((vec_.decay().offset(0_usize as isize).with(|__s| __s.v) == 1));
+    assert!((vec_[0_usize].v == 1));
     assert!((copies_0.with(|rc| *rc.borrow()) == 10));
     let i1: Value<Ignored> = Rc::new(RefCell::new(Ignored::new({ 1 })));
     let mut i2: Ignored = Ignored::copy_from({ i1.as_pointer() });
-    assert!(({ (*i1.borrow()).v } == 1) && (i2.v == -1_i32));
+    assert!(({ ({ (*i1.borrow()).v } == 1) && (i2.v == -1_i32) }));
     assert!((copies_0.with(|rc| *rc.borrow()) == 11));
     let o: Value<Owner> = Rc::new(RefCell::new(Owner {
         box_: Box_int_::new({ 3 }),
@@ -280,11 +281,11 @@ fn main_0() -> i32 {
     let t1: Value<Tracked> = Rc::new(RefCell::new(<Tracked>::default()));
     let t2: Value<Tracked> = Rc::new(RefCell::new(Tracked::copy_from({ t1.as_pointer() })));
     ({ TrackedImpl::copy_assign(&t2.as_pointer(), t1.as_pointer()) });
-    assert!(({ (*t1.borrow()).copied_from } == 2));
+    assert!(({ ({ (*t1.borrow()).copied_from } == 2) }));
     let ct: Value<Tracked> = Rc::new(RefCell::new(<Tracked>::default()));
     let mut t3: Tracked = Tracked::copy_from({ ct.as_pointer() });
     ({ touch_1((ct.as_pointer())) });
-    assert!(({ (*ct.borrow()).copied_from } == 2));
+    assert!(({ ({ (*ct.borrow()).copied_from } == 2) }));
     return 0;
 }
 pub trait CountedImpl {
@@ -305,14 +306,14 @@ impl HolderImpl for Ptr<Holder> {
             let _arg0: Ptr<Counted> = field_ptr!(_a0, c);
             CountedImpl::copy_assign(&field_ptr!((*self), c), _arg0)
         });
-        {
-            ((array_field_ptr!((*self), arr)) as Ptr<Counted>)
-                .to_any()
-                .memcpy(
+        match ({ ((array_field_ptr!((*self), arr)) as Ptr<Counted>).to_any() },) {
+            (mut __tmp_0,) => {
+                __tmp_0.memcpy(
                     &((array_field_ptr!(_a0, arr)) as Ptr<Counted>).to_any(),
                     8_usize as usize,
                 );
-            ((array_field_ptr!((*self), arr)) as Ptr<Counted>).to_any()
+                (__tmp_0).clone()
+            }
         };
         return (*self).clone();
     }

@@ -28,19 +28,25 @@ unsafe fn main_0() -> i32 {
         r2
     };
     assert!(*(&mut (v1)[0_usize as usize] as *mut bool));
-    {
-        *(&mut (v1)[0_usize as usize] as *mut bool) = false;
-        (&mut (v1)[0_usize as usize] as *mut bool)
+    match ((&mut (&mut (v1)[0_usize as usize] as *mut bool) as *mut *mut bool),) {
+        (__tmp_0,) => {
+            *(*__tmp_0) = false;
+            (*__tmp_0)
+        }
     };
     assert!(!(*(&mut (v1)[0_usize as usize] as *mut bool)));
     {
         let mut v: Vec<bool> = Vec::from([false, false, false]);
         let mut i: i32 = 0;
-        let mut b: bool = *(*{
-            *(&mut (v)[(i.postfix_inc() as usize) as usize] as *mut bool) = true;
-            (&mut (v)[(i.postfix_inc() as usize) as usize] as *mut bool)
-        });
-        assert!(b);
+        let mut b: bool = *match (
+            (&mut (&mut (v)[(i.postfix_inc() as usize) as usize] as *mut bool) as *mut *mut bool),
+        ) {
+            (__tmp_1,) => {
+                *(*__tmp_1) = true;
+                (*__tmp_1)
+            }
+        };
+        assert!((b) && ((i) == (1)));
     }
     return 0;
 }

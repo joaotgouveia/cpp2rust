@@ -32,3 +32,19 @@ fn t8<T1>() -> Ptr<T1> {
 fn f18<T1, const T2: usize>(a0: Ptr<T1>, a1: usize) -> Ptr<T1> {
     a0.offset(a1 as isize)
 }
+
+fn f28<const T1: usize, T2>(a0: Ptr<T2>) -> Ptr<T2> {
+    a0.offset(T1 as isize)
+}
+
+fn f29<const T1: usize, T2>(a0: Ptr<T2>) -> Ptr<T2> {
+    a0.offset(T1 as isize)
+}
+
+fn f30<const T1: usize, T2>(a0: Ptr<T2>) -> Ptr<T2> {
+    a0.offset(T1 as isize)
+}
+
+fn f31<const T1: usize, T2>(a0: Ptr<T2>) -> Ptr<T2> {
+    a0.offset(T1 as isize)
+}

@@ -341,6 +341,9 @@ bool ReferencesThis(const clang::Stmt *stmt);
 // Whether evaluating `stmt` reads a value from memory, e.g., a pointer.
 bool ReadsMemory(const clang::Stmt *stmt);
 
+// Whether stmt materializes a temporary, which a value may point to.
+bool CreatesTemporary(const clang::Stmt *stmt);
+
 bool MayCauseBorrowMutError(const clang::Expr *lhs, const clang::Expr *rhs);
 
 bool ArgsMayAlias(const clang::Expr *a, const clang::Expr *b);
@@ -378,6 +381,15 @@ bool NeedsImplicitPointeeCast(clang::ASTContext &ctx, const clang::Expr *from,
 
 bool NeedsRefBindingTemp(clang::ASTContext &ctx, const clang::Expr *arg,
                          clang::QualType param_type);
+
+// The type of the reference parameter that argument i of call is bound to
+// through a temporary, if it is.
+std::optional<clang::QualType>
+GetRefBindingTempType(clang::ASTContext &ctx, const clang::CallExpr *call,
+                      unsigned i);
+
+// The value that a transparent union argument is initialized with, or expr.
+clang::Expr *IgnoreTransparentUnion(clang::Expr *expr);
 
 bool IsSizeType(clang::ASTContext &ctx, clang::QualType type);
 

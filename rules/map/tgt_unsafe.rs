@@ -102,3 +102,40 @@ fn t12<T1, T2>() -> UnsafeBidirectionalIterator<(T1, T2)> {
 fn t13<T1, T2>() -> UnsafeBidirectionalIterator<(T1, T2)> {
     UnsafeBidirectionalIterator::default()
 }
+
+unsafe fn f67<T1: Ord + Clone, T2: Default>(
+    a0: &mut UnsafeMap<T1, (T1, T2)>,
+    init: cpp_type!("typename std::map<T1, T2, T3, T4>::value_type", (T1, T2)),
+) -> (UnsafeBidirectionalIterator<(T1, T2)>, bool) {
+    let __init = init;
+    let __inserted = a0.get(&__init.0).is_none();
+    if __inserted {
+        *a0.subscript(&__init.0) = __init.1;
+    }
+    (a0.find(&__init.0), __inserted)
+}
+
+unsafe fn f68<T1: Ord + Clone, T2: Default>(
+    a0: &mut UnsafeMap<T1, (T1, T2)>,
+    a1: UnsafeBidirectionalIterator<(T1, T2)>,
+    init: cpp_type!("typename std::map<T1, T2, T3, T4>::value_type", (T1, T2)),
+) -> UnsafeBidirectionalIterator<(T1, T2)> {
+    let _ = a1;
+    let __init = init;
+    if a0.get(&__init.0).is_none() {
+        *a0.subscript(&__init.0) = __init.1;
+    }
+    a0.find(&__init.0)
+}
+
+unsafe fn f73<T1: Ord + Clone, T2: Default>(
+    a0: &mut UnsafeMap<T1, (T1, T2)>,
+    a1: T1,
+    init: T2,
+) -> (UnsafeBidirectionalIterator<(T1, T2)>, bool) {
+    let __inserted = a0.get(&a1).is_none();
+    if __inserted {
+        *a0.subscript(&a1) = init;
+    }
+    (a0.find(&a1), __inserted)
+}

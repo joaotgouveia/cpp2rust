@@ -196,12 +196,11 @@ fn main_0() -> i32 {
             != 0;
         ok = rhs_0
     };
-    {
-        let __it = m
-            .as_pointer()
-            .with(|__m: &Map<Key, (Value<Key>, Value<i32>)>| __m.find(&a.as_pointer()));
-        Map::erase(m.as_pointer(), &__it)
-    };
+    Map::erase(
+        m.as_pointer(),
+        &m.as_pointer()
+            .with(|__m: &Map<Key, (Value<Key>, Value<i32>)>| __m.find(&a.as_pointer())),
+    );
     {
         let rhs_0 = ((ok as i32)
             & ((Map::erase_key(m.as_pointer(), &b.as_pointer()) == 1_usize) as i32))

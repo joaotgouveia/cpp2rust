@@ -54,30 +54,38 @@ fn main_0() -> i32 {
         },
     ])));
     let mut table_size: usize = 4_usize;
-    {
-        (((table.as_pointer() as Ptr<Entry>).offset(table_size)) as Ptr<Entry>)
-            .to_any()
-            .memcpy(
+    match ({ (((table.as_pointer() as Ptr<Entry>).offset(table_size)) as Ptr<Entry>).to_any() },) {
+        (mut __tmp_0,) => {
+            __tmp_0.memcpy(
                 &(((table.as_pointer() as Ptr<Entry>).offset(0)) as Ptr<Entry>).to_any(),
                 ((table_size as u64).wrapping_mul((4usize as u64)) as usize) as usize,
             );
-        (((table.as_pointer() as Ptr<Entry>).offset(table_size)) as Ptr<Entry>).to_any()
+            (__tmp_0).clone()
+        }
     };
     assert!(
-        (({ (*table.borrow())[(4) as usize].bits } as i32) == 1)
-            && (({ (*table.borrow())[(4) as usize].value } as i32) == 4369)
+        ({
+            (({ (*table.borrow())[(4) as usize].bits } as i32) == 1)
+                && (({ (*table.borrow())[(4) as usize].value } as i32) == 4369)
+        })
     );
     assert!(
-        (({ (*table.borrow())[(5) as usize].bits } as i32) == 2)
-            && (({ (*table.borrow())[(5) as usize].value } as i32) == 8738)
+        ({
+            (({ (*table.borrow())[(5) as usize].bits } as i32) == 2)
+                && (({ (*table.borrow())[(5) as usize].value } as i32) == 8738)
+        })
     );
     assert!(
-        (({ (*table.borrow())[(6) as usize].bits } as i32) == 3)
-            && (({ (*table.borrow())[(6) as usize].value } as i32) == 13107)
+        ({
+            (({ (*table.borrow())[(6) as usize].bits } as i32) == 3)
+                && (({ (*table.borrow())[(6) as usize].value } as i32) == 13107)
+        })
     );
     assert!(
-        (({ (*table.borrow())[(7) as usize].bits } as i32) == 4)
-            && (({ (*table.borrow())[(7) as usize].value } as i32) == 17476)
+        ({
+            (({ (*table.borrow())[(7) as usize].bits } as i32) == 4)
+                && (({ (*table.borrow())[(7) as usize].value } as i32) == 17476)
+        })
     );
     return 0;
 }

@@ -16,14 +16,15 @@ pub fn matalloc_0(
     )));
     let mut i: i32 = 0;
     'loop_: while (i < n) {
-        (m.as_pointer() as Ptr<Option<Value<Box<[i32]>>>>)
-            .offset((i as usize) as isize)
-            .write(
-                Some(Rc::new(RefCell::new(
-                    (0..(p as usize)).map(|_| 0_i32).collect::<Box<[_]>>(),
-                )))
-                .take(),
-            );
+        match (Rc::new(RefCell::new(Some(Rc::new(RefCell::new(
+            (0..(p as usize)).map(|_| 0_i32).collect::<Box<[_]>>(),
+        )))))
+        .as_pointer(),)
+        {
+            (__tmp_0,) => (m.as_pointer() as Ptr<Option<Value<Box<[i32]>>>>)
+                .offset((i as usize) as isize)
+                .write(__tmp_0.with_mut(|__v: &mut Option<Value<Box<[i32]>>>| __v.take())),
+        };
         let mut j: i32 = 0;
         'loop_: while (j < p) {
             ((*(m.as_pointer() as Ptr<Option<Value<Box<[i32]>>>>)
@@ -91,26 +92,30 @@ pub fn main() {
 fn main_0() -> i32 {
     let mut n: i32 = 1;
     let mut p: i32 = 10;
-    let mut m1: Option<Value<Box<[Option<Value<Box<[i32]>>>]>>> = ({ matalloc_0(n, p, 1) });
-    let mut m2: Option<Value<Box<[Option<Value<Box<[i32]>>>]>>> = ({ matalloc_0(p, n, 2) });
+    let m1: Value<Option<Value<Box<[Option<Value<Box<[i32]>>>]>>>> =
+        Rc::new(RefCell::new(({ matalloc_0(n, p, 1) })));
+    let m2: Value<Option<Value<Box<[Option<Value<Box<[i32]>>>]>>>> =
+        Rc::new(RefCell::new(({ matalloc_0(p, n, 2) })));
     let mut m3: Option<Value<Box<[Option<Value<Box<[i32]>>>]>>> = ({
-        let _m1: Option<Value<Box<[Option<Value<Box<[i32]>>>]>>> = m1.take();
+        let _m1: Option<Value<Box<[Option<Value<Box<[i32]>>>]>>> = (*m1.borrow_mut()).take();
         let _n1: i32 = n;
         let _p1: i32 = p;
-        let _m2: Option<Value<Box<[Option<Value<Box<[i32]>>>]>>> = m2.take();
+        let _m2: Option<Value<Box<[Option<Value<Box<[i32]>>>]>>> = (*m2.borrow_mut()).take();
         let _n2: i32 = p;
         let _p2: i32 = n;
         matmul_1(_m1, _n1, _p1, _m2, _n2, _p2)
     });
     assert!(
-        ((((*(m3.as_pointer() as Ptr<Option<Value<Box<[i32]>>>>)
-            .offset(0_usize as isize)
-            .upgrade()
-            .deref())
-        .as_pointer() as Ptr<i32>)
-            .offset(0_usize as isize)
-            .read())
-            == 20)
+        ({
+            ((((*(m3.as_pointer() as Ptr<Option<Value<Box<[i32]>>>>)
+                .offset(0_usize as isize)
+                .upgrade()
+                .deref())
+            .as_pointer() as Ptr<i32>)
+                .offset(0_usize as isize)
+                .read())
+                == 20)
+        })
     );
     return 0;
 }

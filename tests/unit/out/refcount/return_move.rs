@@ -27,9 +27,8 @@ pub struct pair_t {
 thread_local!(
     pub static global_node_0: Value<Ptr<node>> = Rc::new(RefCell::new(Ptr::<node>::null()));
 );
-pub fn id_1(n: Ptr<node>) -> Ptr<node> {
-    let n: Value<Ptr<node>> = Rc::new(RefCell::new(n));
-    return (*n.borrow()).clone();
+pub fn id_1(mut n: Ptr<node>) -> Ptr<node> {
+    return n;
 }
 pub fn pick_2(mut a: Ptr<node>, mut b: Ptr<node>) -> Ptr<node> {
     return if !(a).is_null() {
@@ -39,8 +38,8 @@ pub fn pick_2(mut a: Ptr<node>, mut b: Ptr<node>) -> Ptr<node> {
     };
 }
 pub fn local_ptr_3(mut n: Ptr<node>) -> Ptr<node> {
-    let p: Value<Ptr<node>> = Rc::new(RefCell::new(n.with(|__s| __s.next.clone())));
-    return (*p.borrow()).clone();
+    let mut p: Ptr<node> = n.with(|__s| __s.next.clone());
+    return p;
 }
 pub fn call_once_4(mut n: Ptr<node>, mut m: Ptr<node>) -> Ptr<node> {
     return ({ pick_2(n, m) });
@@ -90,15 +89,14 @@ pub fn ret_vec_local_13() -> Vec<i32> {
     };
     return std::mem::take(&mut v);
 }
-pub fn ret_loop_14(n: Ptr<node>) -> Ptr<node> {
-    let n: Value<Ptr<node>> = Rc::new(RefCell::new(n));
-    'loop_: while !((*n.borrow()).with(|__s| __s.next.clone())).is_null() {
-        if ((*n.borrow()).with(|__s| __s.value) == 2) {
-            return (*n.borrow()).clone();
+pub fn ret_loop_14(mut n: Ptr<node>) -> Ptr<node> {
+    'loop_: while !(n.with(|__s| __s.next.clone())).is_null() {
+        if (n.with(|__s| __s.value) == 2) {
+            return n;
         }
-        (*n.borrow_mut()) = { (*n.borrow()).with(|__s| __s.next.clone()) };
+        n = { n.with(|__s| __s.next.clone()) };
     }
-    return (*n.borrow()).clone();
+    return n;
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -129,7 +127,9 @@ fn main_0() -> i32 {
     assert!((p.a == 4) && ({ (p.n).clone() } == { (a.as_pointer()) }));
     let q: Value<pair_t> = Rc::new(RefCell::new(({ ret_struct_param_10((p).clone()) })));
     assert!(
-        ({ (*q.borrow()).a } == 4) && ({ { (*q.borrow()).n.clone() } } == { (a.as_pointer()) })
+        ({
+            ({ (*q.borrow()).a } == 4) && ({ { (*q.borrow()).n.clone() } } == { (a.as_pointer()) })
+        })
     );
     let mut r: pair_t = ({ ret_struct_ref_11(q.as_pointer()) });
     assert!((r.a == 4) && ({ (r.n).clone() } == { (a.as_pointer()) }));

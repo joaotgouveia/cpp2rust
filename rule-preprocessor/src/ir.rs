@@ -80,6 +80,8 @@ pub struct TypeInfo {
     pub is_const_raw_pointer: bool,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub derives: Vec<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub cpp_type: Option<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -95,8 +97,6 @@ pub struct FnIr {
     pub return_type: Option<TypeInfo>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub is_extern: Option<bool>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub init_generic: Option<i32>,
 }
 
 impl FnIr {
@@ -133,7 +133,12 @@ impl FnIr {
 
     pub fn validate(&self, name: &str) {
         validate_consecutive_keys(
-            self.params.as_ref().map(|p| p.keys()).into_iter().flatten(),
+            self.params
+                .as_ref()
+                .map(|p| p.keys())
+                .into_iter()
+                .flatten()
+                .filter(|key| *key != "init"),
             'a',
             0,
             &format!("Rule {name} params"),
@@ -211,6 +216,10 @@ pub struct PlaceholderInner {
     pub access: Access,
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     pub is_index_base: bool,
+    /// Whether the placeholder is in a loop, a closure or a branch, which may
+    /// evaluate it other than once.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub conditional: bool,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]

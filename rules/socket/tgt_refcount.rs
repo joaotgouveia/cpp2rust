@@ -32,11 +32,7 @@ fn f6(a0: i32, a1: i32, a2: i32) -> i32 {
 }
 
 fn f7(a0: i32, a1: i32, a2: i32, a3: AnyPtr, a4: u32) -> i32 {
-    let __a0 = a0;
-    let __a1 = a1;
-    let __a2 = a2;
-    let __a3 = a3;
-    libcc2rs::setsockopt_refcount(__a0, __a1, __a2, __a3)
+    libcc2rs::setsockopt_refcount(a0, a1, a2, a3)
 }
 
 fn f8(a0: i32, a1: i32, a2: i32, a3: AnyPtr, a4: Ptr<u32>) -> i32 {
@@ -110,9 +106,8 @@ fn f11(a0: i32, a1: i32, a2: i32, a3: Ptr<i32>) -> i32 {
     };
     match nix::sys::socket::socketpair(__family, __ty, __proto, __flags) {
         Ok((__a, __b)) => {
-            let __sv = a3;
-            __sv.write(FdRegistry::register(__a));
-            elem!(__sv, 1).write(FdRegistry::register(__b));
+            a3.write(FdRegistry::register(__a));
+            elem!(a3, 1).write(FdRegistry::register(__b));
             0
         }
         Err(__e) => {
