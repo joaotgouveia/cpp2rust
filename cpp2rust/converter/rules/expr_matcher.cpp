@@ -585,14 +585,17 @@ deduceFromCallee(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
   if (auto call = llvm::dyn_cast<clang::CallExpr>(returned)) {
     returned = call->getCallee()->IgnoreParenImpCasts();
   }
+  // the rule's call, with the template arguments it writes, if any
   llvm::ArrayRef<clang::TemplateArgumentLoc> written;
-  if (auto overload = llvm::dyn_cast<clang::OverloadExpr>(returned);
-      overload && overload->hasExplicitTemplateArgs()) {
-    written = overload->template_arguments();
+  if (auto overload = llvm::dyn_cast<clang::OverloadExpr>(returned)) {
+    if (overload->hasExplicitTemplateArgs()) {
+      written = overload->template_arguments();
+    }
   } else if (auto ref =
-                 llvm::dyn_cast<clang::DependentScopeDeclRefExpr>(returned);
-             ref && ref->hasExplicitTemplateArgs()) {
-    written = ref->template_arguments();
+                 llvm::dyn_cast<clang::DependentScopeDeclRefExpr>(returned)) {
+    if (ref->hasExplicitTemplateArgs()) {
+      written = ref->template_arguments();
+    }
   } else {
     return std::nullopt;
   }
