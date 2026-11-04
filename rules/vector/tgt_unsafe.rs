@@ -19,12 +19,14 @@ unsafe fn f120<T1>(a0: &mut Vec<T1>) -> Vec<T1> {
     std::mem::take(&mut *a0)
 }
 
-unsafe fn f124<T1: Clone>(a0: &mut Vec<T1>, a1: Vec<T1>) {
-    *a0 = a1.clone()
+unsafe fn f124<T1: Clone>(a0: &mut Vec<T1>, a1: Vec<T1>) -> *mut Vec<T1> {
+    *a0 = a1.clone();
+    a0 as *mut Vec<T1>
 }
 
-unsafe fn f125<T1: Clone>(a0: &mut Vec<T1>, a1: &mut Vec<T1>) {
-    *a0 = std::mem::take(&mut *a1)
+unsafe fn f125<T1: Clone>(a0: &mut Vec<T1>, a1: &mut Vec<T1>) -> *mut Vec<T1> {
+    *a0 = std::mem::take(&mut *a1);
+    a0 as *mut Vec<T1>
 }
 
 unsafe fn f129<T1>(a0: &mut Vec<T1>) -> UnsafeRandomAccessIterator<T1> {
@@ -168,9 +170,10 @@ unsafe fn f169<T1>(a0: &mut Vec<T1>) {
     a0.clear()
 }
 
-unsafe fn f174<T1>(a0: &mut Vec<T1>, init: T1) {
+unsafe fn f174<T1>(a0: &mut Vec<T1>, init: T1) -> *mut T1 {
     let __init = init;
-    a0.push(__init)
+    a0.push(__init);
+    a0.last_mut().unwrap()
 }
 
 fn t4() -> usize {
@@ -373,12 +376,12 @@ unsafe fn f82<T1>(a0: &mut UnsafeRandomAccessIterator<bool>, a1: i32) -> UnsafeR
     a0.iter_post_dec()
 }
 
-unsafe fn f83<T1>(a0: &mut UnsafeRandomAccessIterator<bool>, a1: isize) -> UnsafeRandomAccessIterator<bool> {
-    a0.iter_add_assign(a1)
+unsafe fn f83<T1>(a0: &mut UnsafeRandomAccessIterator<bool>, a1: i64) -> UnsafeRandomAccessIterator<bool> {
+    a0.iter_add_assign((a1 as isize))
 }
 
-unsafe fn f84<T1>(a0: &mut UnsafeRandomAccessIterator<bool>, a1: isize) -> UnsafeRandomAccessIterator<bool> {
-    a0.iter_add_assign(-a1)
+unsafe fn f84<T1>(a0: &mut UnsafeRandomAccessIterator<bool>, a1: i64) -> UnsafeRandomAccessIterator<bool> {
+    a0.iter_add_assign(-(a1 as isize))
 }
 
 unsafe fn f85<T1>(a0: UnsafeRandomAccessIterator<bool>) -> UnsafeRandomAccessIterator<bool> {
@@ -399,16 +402,16 @@ unsafe fn f88<T1>(a0: &mut UnsafeRandomAccessIterator<bool>, a1: UnsafeRandomAcc
     a0.clone()
 }
 
-unsafe fn f89<T1>(a0: UnsafeRandomAccessIterator<bool>, a1: isize) -> UnsafeRandomAccessIterator<bool> {
-    a0.iter_add(-a1)
+unsafe fn f89<T1>(a0: UnsafeRandomAccessIterator<bool>, a1: i64) -> UnsafeRandomAccessIterator<bool> {
+    a0.iter_add(-(a1 as isize))
 }
 
-unsafe fn f90<T1>(a0: isize, a1: UnsafeRandomAccessIterator<bool>) -> UnsafeRandomAccessIterator<bool> {
-    a1.iter_add(a0)
+unsafe fn f90<T1>(a0: i64, a1: UnsafeRandomAccessIterator<bool>) -> UnsafeRandomAccessIterator<bool> {
+    a1.iter_add((a0 as isize))
 }
 
-unsafe fn f91<T1>(a0: UnsafeRandomAccessIterator<bool>, a1: isize) -> UnsafeRandomAccessIterator<bool> {
-    a0.iter_add(a1)
+unsafe fn f91<T1>(a0: UnsafeRandomAccessIterator<bool>, a1: i64) -> UnsafeRandomAccessIterator<bool> {
+    a0.iter_add((a1 as isize))
 }
 
 unsafe fn f92<T1>(a0: UnsafeRandomAccessIterator<bool>, a1: UnsafeRandomAccessIterator<bool>) -> isize {
@@ -467,16 +470,16 @@ unsafe fn f101<T1>(a0: &mut UnsafeRandomAccessIterator<bool>, a1: i32) -> Unsafe
     a0.iter_post_dec()
 }
 
-unsafe fn f102<T1>(a0: &mut UnsafeRandomAccessIterator<bool>, a1: isize) -> UnsafeRandomAccessIterator<bool> {
-    a0.iter_add_assign(a1)
+unsafe fn f102<T1>(a0: &mut UnsafeRandomAccessIterator<bool>, a1: i64) -> UnsafeRandomAccessIterator<bool> {
+    a0.iter_add_assign((a1 as isize))
 }
 
-unsafe fn f103<T1>(a0: &mut UnsafeRandomAccessIterator<bool>, a1: isize) -> UnsafeRandomAccessIterator<bool> {
-    a0.iter_add_assign(-a1)
+unsafe fn f103<T1>(a0: &mut UnsafeRandomAccessIterator<bool>, a1: i64) -> UnsafeRandomAccessIterator<bool> {
+    a0.iter_add_assign(-(a1 as isize))
 }
 
-unsafe fn f104<T1>(a0: UnsafeRandomAccessIterator<bool>, a1: isize) -> bool {
-    *a0.iter_at(a1)
+unsafe fn f104<T1>(a0: UnsafeRandomAccessIterator<bool>, a1: i64) -> bool {
+    *a0.iter_at((a1 as isize))
 }
 
 unsafe fn f105<T1>(a0: UnsafeRandomAccessIterator<bool>) -> UnsafeRandomAccessIterator<bool> {
@@ -497,16 +500,16 @@ unsafe fn f108<T1>(a0: &mut UnsafeRandomAccessIterator<bool>, a1: UnsafeRandomAc
     a0.clone()
 }
 
-unsafe fn f109<T1>(a0: isize, a1: UnsafeRandomAccessIterator<bool>) -> UnsafeRandomAccessIterator<bool> {
-    a1.iter_add(a0)
+unsafe fn f109<T1>(a0: i64, a1: UnsafeRandomAccessIterator<bool>) -> UnsafeRandomAccessIterator<bool> {
+    a1.iter_add((a0 as isize))
 }
 
-unsafe fn f110<T1>(a0: UnsafeRandomAccessIterator<bool>, a1: isize) -> UnsafeRandomAccessIterator<bool> {
-    a0.iter_add(-a1)
+unsafe fn f110<T1>(a0: UnsafeRandomAccessIterator<bool>, a1: i64) -> UnsafeRandomAccessIterator<bool> {
+    a0.iter_add(-(a1 as isize))
 }
 
-unsafe fn f111<T1>(a0: UnsafeRandomAccessIterator<bool>, a1: isize) -> UnsafeRandomAccessIterator<bool> {
-    a0.iter_add(a1)
+unsafe fn f111<T1>(a0: UnsafeRandomAccessIterator<bool>, a1: i64) -> UnsafeRandomAccessIterator<bool> {
+    a0.iter_add((a1 as isize))
 }
 
 unsafe fn f112<T1>(a0: UnsafeRandomAccessIterator<bool>, a1: UnsafeRandomAccessIterator<bool>) -> isize {

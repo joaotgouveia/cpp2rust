@@ -13,8 +13,9 @@ fn f23<T1>(a0: &mut Option<Value<Box<[T1]>>>) -> Option<Value<Box<[T1]>>> {
     a0.take()
 }
 
-fn f24<T1: ByteRepr>(a0: Ptr<Option<Value<Box<[T1]>>>>, a1: &mut Option<Value<Box<[T1]>>>) {
-    a0.write(a1.take())
+fn f24<T1: ByteRepr>(a0: Ptr<Option<Value<Box<[T1]>>>>, a1: &mut Option<Value<Box<[T1]>>>) -> Ptr<Option<Value<Box<[T1]>>>> {
+    a0.write(a1.take());
+    a0
 }
 
 fn f26<T1>(a0: Value<T1>, a1: usize) -> Ptr<T1> {
@@ -41,8 +42,9 @@ fn f42<T1>(a0: &mut Option<Value<T1>>) -> Option<Value<T1>> {
     a0.take()
 }
 
-fn f43<T1: ByteRepr>(a0: Ptr<Option<Value<T1>>>, a1: &mut Option<Value<T1>>) {
-    a0.write(a1.take())
+fn f43<T1: ByteRepr>(a0: Ptr<Option<Value<T1>>>, a1: &mut Option<Value<T1>>) -> Ptr<Option<Value<T1>>> {
+    a0.write(a1.take());
+    a0
 }
 
 fn f45<T1>(a0: Value<T1>) -> Ptr<T1> {

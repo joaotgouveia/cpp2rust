@@ -23,6 +23,10 @@ pub trait CChar: Copy + Default + PartialEq + ByteRepr + 'static {
     // Conversions between vectors of Self and of bytes, without reallocating.
     fn into_byte_vec(v: Vec<Self>) -> Vec<u8>;
     fn from_byte_vec(v: Vec<u8>) -> Vec<Self>;
+    // The C++ integral conversions between character types, e.g., char to
+    // wchar_t, go through i64.
+    fn to_i64(self) -> i64;
+    fn from_i64(v: i64) -> Self;
 
     // The array initialized by a narrow string literal, e.g., char s[] = "abc".
     fn array_from_literal<const N: usize>(s: &[u8; N]) -> Box<[Self]> {
@@ -54,6 +58,14 @@ impl CChar for u8 {
     #[inline(always)]
     fn from_byte_vec(v: Vec<u8>) -> Vec<Self> {
         v
+    }
+    #[inline(always)]
+    fn to_i64(self) -> i64 {
+        self as i64
+    }
+    #[inline(always)]
+    fn from_i64(v: i64) -> Self {
+        v as Self
     }
 }
 
@@ -92,6 +104,14 @@ impl CChar for i8 {
     }
     fn from_byte_vec(v: Vec<u8>) -> Vec<Self> {
         v.into_iter().map(|b| b as i8).collect()
+    }
+    #[inline(always)]
+    fn to_i64(self) -> i64 {
+        self as i64
+    }
+    #[inline(always)]
+    fn from_i64(v: i64) -> Self {
+        v as Self
     }
 }
 
@@ -136,6 +156,14 @@ macro_rules! impl_cchar_wide {
             }
             fn from_byte_vec(v: Vec<u8>) -> Vec<Self> {
                 v.chunks_exact(std::mem::size_of::<$t>()).map(<$t>::from_bytes).collect()
+            }
+            #[inline(always)]
+            fn to_i64(self) -> i64 {
+                self as i64
+            }
+            #[inline(always)]
+            fn from_i64(v: i64) -> Self {
+                v as Self
             }
         })*
     };

@@ -106,11 +106,13 @@ fn f1(a0: i32, a1: Ptr<CFdSet>, a2: Ptr<CFdSet>, a3: Ptr<CFdSet>, a4: Ptr<Timeva
 }
 
 fn f2(a0: i32, a1: Ptr<CFdSet>) {
-    a1.with_mut(|__s| __s.set(a0));
+    let __a0 = a0;
+    a1.with_mut(|__s| __s.set(__a0));
 }
 
 fn f3(a0: i32, a1: Ptr<CFdSet>) {
-    a1.with_mut(|__s| __s.clr(a0));
+    let __a0 = a0;
+    a1.with_mut(|__s| __s.clr(__a0));
 }
 
 fn f4(a0: i32, a1: Ptr<CFdSet>) -> i32 {

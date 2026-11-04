@@ -8,7 +8,7 @@ fn f1(a0: AnyPtr, a1: AnyPtr, a2: usize) -> AnyPtr {
     a0
 }
 
-fn f2(a0: AnyPtr, a1: u8, a2: usize) -> AnyPtr {
+fn f2(a0: AnyPtr, a1: i32, a2: usize) -> AnyPtr {
     a0.memset((a1) as u8, a2 as usize);
     a0
 }

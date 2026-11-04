@@ -6,3 +6,7 @@ use libcc2rs::*;
 unsafe fn f1<T1: UnsafeCppIterator<T2>, T2>(a0: T1) -> *mut T2 {
     a0.iter_deref()
 }
+
+unsafe fn f2<T1: UnsafeCppIterator<T2>, T2>(a0: T1) -> *mut T2 {
+    a0.iter_deref()
+}

@@ -1663,7 +1663,7 @@ void ConverterRefCount::ConvertFunctionToFunctionPointer(
       std::format("FnPtr::<{}>::new({})",
                   ConvertFunctionPointerType(
                       fn_decl->getType()->getAs<clang::FunctionProtoType>()),
-                  GetFunctionRefName(fn_decl)));
+                  GetFunctionPointerTarget(fn_decl)));
 }
 
 std::string ConverterRefCount::ConvertFnPtrPlaceholder(clang::Expr *arg) {
@@ -1709,6 +1709,15 @@ bool ConverterRefCount::VisitExplicitCastExpr(clang::ExplicitCastExpr *expr) {
   if (expr->getCastKind() == clang::CK_NullToPointer) {
     PushConversionKind push(*this, ConversionKind::Unboxed);
     EmitFresh(GetDefaultAsString(expr->getType()));
+    return false;
+  }
+  // A Ptr has no constness, so a cast to a reference to the operand's own
+  // type only rebinds it.
+  if (auto type = expr->getTypeAsWritten();
+      type->isReferenceType() &&
+      ctx_.hasSameUnqualifiedType(type.getNonReferenceType(),
+                                  expr->getSubExpr()->getType())) {
+    Convert(expr->getSubExpr());
     return false;
   }
   switch (expr->getStmtClass()) {
@@ -2767,6 +2776,9 @@ bool ConverterRefCount::ConvertCXXOperatorCallExpr(
 
   case clang::OverloadedOperatorKind::OO_Arrow:
   case clang::OverloadedOperatorKind::OO_Star:
+    if (expr->getNumArgs() != 1) {
+      return Converter::ConvertCXXOperatorCallExpr(expr);
+    }
     if (isLValue()) {
       auto ptr = ToString(expr->getArg(0));
       pending_deref_.set(std::move(ptr), isFresh());

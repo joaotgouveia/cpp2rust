@@ -3,10 +3,10 @@
 
 use libcc2rs::*;
 
-unsafe fn f3<T1: UnsafeCppAdvance>(a0: T1, a1: isize) -> T1 {
-    libcc2rs::next_unsafe(a0, a1)
+unsafe fn f3<T1: UnsafeCppAdvance>(a0: T1, a1: i64) -> T1 {
+    libcc2rs::next_unsafe(a0, a1 as isize)
 }
 
-unsafe fn f4<T1: UnsafeCppAdvance>(a0: T1, a1: isize) -> T1 {
-    libcc2rs::prev_unsafe(a0, a1)
+unsafe fn f4<T1: UnsafeCppAdvance>(a0: T1, a1: i64) -> T1 {
+    libcc2rs::prev_unsafe(a0, a1 as isize)
 }

@@ -17,13 +17,15 @@ fn f6<T1: 'static, T2: 'static>(a0: Ptr<Map<T1, (Value<T1>, Value<T2>)>>) -> Map
     a0.with_mut(|__m: &mut Map<T1, (Value<T1>, Value<T2>)>| std::mem::take(__m))
 }
 
-fn f12<T1: CppLess + Clone + 'static, T2: Clone + 'static>(a0: Ptr<Map<T1, (Value<T1>, Value<T2>)>>, a1: Map<T1, (Value<T1>, Value<T2>)>) {
-    a0.write(a1.clone())
+fn f12<T1: CppLess + Clone + 'static, T2: Clone + 'static>(a0: Ptr<Map<T1, (Value<T1>, Value<T2>)>>, a1: Map<T1, (Value<T1>, Value<T2>)>) -> Ptr<Map<T1, (Value<T1>, Value<T2>)>> {
+    a0.write(a1.clone());
+    a0
 }
 
-fn f13<T1: 'static, T2: 'static>(a0: Ptr<Map<T1, (Value<T1>, Value<T2>)>>, a1: Ptr<Map<T1, (Value<T1>, Value<T2>)>>) {
+fn f13<T1: 'static, T2: 'static>(a0: Ptr<Map<T1, (Value<T1>, Value<T2>)>>, a1: Ptr<Map<T1, (Value<T1>, Value<T2>)>>) -> Ptr<Map<T1, (Value<T1>, Value<T2>)>> {
     let __src = a1.with_mut(|__m: &mut Map<T1, (Value<T1>, Value<T2>)>| std::mem::take(__m));
-    a0.write(__src)
+    a0.write(__src);
+    a0
 }
 
 fn f16<T1: 'static, T2: 'static>(a0: Ptr<Map<T1, (Value<T1>, Value<T2>)>>) -> BidirectionalIterator<(Value<T1>, Value<T2>)> {
@@ -100,36 +102,21 @@ fn t13<T1, T2>() -> BidirectionalIterator<(Value<T1>, Value<T2>)> {
     BidirectionalIterator::default()
 }
 
-fn f67<T1: CppLess + Clone + ByteRepr + 'static, T2: Default + Clone + ByteRepr + 'static>(
+fn f67<T1: CppLess + ByteRepr + 'static, T2: ByteRepr + 'static>(
     a0: Ptr<Map<T1, (Value<T1>, Value<T2>)>>,
     init: cpp_type!("typename std::map<T1, T2, T3, T4>::value_type", (Value<T1>, Value<T2>)),
 ) -> (Value<BidirectionalIterator<(Value<T1>, Value<T2>)>>, Value<bool>) {
-    let __init = init;
-    let __key = __init.0.as_pointer();
-    let __inserted = a0.with(|__m: &Map<T1, (Value<T1>, Value<T2>)>| __m.get(&__key).is_none());
-    if __inserted {
-        Map::subscript(a0.clone(), __key.clone()).write(__init.1.borrow().clone());
-    }
-    (
-        Rc::new(RefCell::new(
-            a0.with(|__m: &Map<T1, (Value<T1>, Value<T2>)>| __m.find(&__key)),
-        )),
-        Rc::new(RefCell::new(__inserted)),
-    )
+    let (__it, __inserted) = Map::emplace(a0, init);
+    (Rc::new(RefCell::new(__it)), Rc::new(RefCell::new(__inserted)))
 }
 
-fn f68<T1: CppLess + Clone + ByteRepr + 'static, T2: Default + Clone + ByteRepr + 'static>(
+fn f68<T1: CppLess + ByteRepr + 'static, T2: ByteRepr + 'static>(
     a0: Ptr<Map<T1, (Value<T1>, Value<T2>)>>,
     a1: BidirectionalIterator<(Value<T1>, Value<T2>)>,
     init: cpp_type!("typename std::map<T1, T2, T3, T4>::value_type", (Value<T1>, Value<T2>)),
 ) -> BidirectionalIterator<(Value<T1>, Value<T2>)> {
     let _ = a1;
-    let __init = init;
-    let __key = __init.0.as_pointer();
-    if a0.with(|__m: &Map<T1, (Value<T1>, Value<T2>)>| __m.get(&__key).is_none()) {
-        Map::subscript(a0.clone(), __key.clone()).write(__init.1.borrow().clone());
-    }
-    a0.with(|__m: &Map<T1, (Value<T1>, Value<T2>)>| __m.find(&__key))
+    Map::emplace(a0, init).0
 }
 
 fn f73<T1: CppLess + Clone + ByteRepr + 'static, T2: Default + ByteRepr + 'static>(

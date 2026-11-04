@@ -448,6 +448,8 @@ public:
 
   std::string GetFunctionRefName(const clang::FunctionDecl *fn_decl);
 
+  std::string GetFunctionPointerTarget(const clang::FunctionDecl *fn_decl);
+
   std::string ConvertFnPtrCallee(clang::Expr *arg);
   virtual std::string ConvertFnPtrPlaceholder(clang::Expr *arg);
 

@@ -104,6 +104,8 @@ pub struct OstreamIterator<T> {
     slot: Value<T>,
 }
 
+impl<T: 'static> ByteRepr for OstreamIterator<T> {}
+
 impl<T: Default> OstreamIterator<T> {
     pub fn new(stream: Ptr<File>, delim: Ptr<i8>) -> Self {
         Self {

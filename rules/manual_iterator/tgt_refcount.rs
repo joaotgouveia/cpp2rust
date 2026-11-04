@@ -6,3 +6,7 @@ use libcc2rs::*;
 fn f1<T1: CppIterator<T2>, T2>(a0: T1) -> Ptr<T2> {
     a0.iter_deref()
 }
+
+fn f2<T1: CppIterator<T2>, T2>(a0: T1) -> Ptr<T2> {
+    a0.iter_deref()
+}

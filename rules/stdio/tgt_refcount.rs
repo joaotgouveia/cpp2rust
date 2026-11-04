@@ -136,7 +136,9 @@ fn f18(a0: Ptr<i8>, a1: Ptr<i8>, a2: Ptr<CFile>) -> Ptr<CFile> {
 }
 
 fn f19(a0: Ptr<CFile>, a1: i64, a2: i32) -> i32 {
-    match a0.with_mut(|__f| __f.seek(a1, a2)) {
+    let __a1 = a1;
+    let __a2 = a2;
+    match a0.with_mut(|__f| __f.seek(__a1, __a2)) {
         -1 => -1,
         _ => 0,
     }

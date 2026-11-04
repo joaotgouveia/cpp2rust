@@ -3,10 +3,10 @@
 
 use libcc2rs::*;
 
-fn f3<T1: CppAdvance + 'static>(a0: T1, a1: isize) -> T1 {
-    libcc2rs::next_refcount(a0, a1)
+fn f3<T1: CppAdvance + 'static>(a0: T1, a1: i64) -> T1 {
+    libcc2rs::next_refcount(a0, a1 as isize)
 }
 
-fn f4<T1: CppAdvance + 'static>(a0: T1, a1: isize) -> T1 {
-    libcc2rs::prev_refcount(a0, a1)
+fn f4<T1: CppAdvance + 'static>(a0: T1, a1: i64) -> T1 {
+    libcc2rs::prev_refcount(a0, a1 as isize)
 }

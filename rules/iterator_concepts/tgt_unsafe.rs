@@ -15,16 +15,19 @@ unsafe fn f3<T1: UnsafeCppInputIterator<T2>, T2>(a0: T1) -> *mut T2 {
     a0.iter_deref()
 }
 
-unsafe fn f11<T1: UnsafeCppIterator<T2>, T2>(a0: &mut T1, a1: T1) {
-    *a0 = a1.clone()
+unsafe fn f11<T1: UnsafeCppIterator<T2>, T2>(a0: &mut T1, a1: T1) -> *mut T1 {
+    *a0 = a1.clone();
+    a0 as *mut T1
 }
 
-unsafe fn f12<T1: UnsafeCppIterator<T2>, T2>(a0: &mut T1, a1: T1) {
-    *a0 = a1.clone()
+unsafe fn f12<T1: UnsafeCppIterator<T2>, T2>(a0: &mut T1, a1: T1) -> *mut T1 {
+    *a0 = a1.clone();
+    a0 as *mut T1
 }
 
-unsafe fn f13<T1: UnsafeCppIterator<T2>, T2>(a0: &mut T1, a1: T1) {
-    *a0 = a1.clone()
+unsafe fn f13<T1: UnsafeCppIterator<T2>, T2>(a0: &mut T1, a1: T1) -> *mut T1 {
+    *a0 = a1.clone();
+    a0 as *mut T1
 }
 
 unsafe fn f14<T1: UnsafeCppInputIterator<T2>, T2>(a0: T1, a1: T1) -> bool {
@@ -43,8 +46,9 @@ unsafe fn f17<T1: UnsafeCppIterator<T2>, T2>(a0: T1) -> *mut T2 {
     a0.iter_deref()
 }
 
-unsafe fn f18<T1: UnsafeCppIterator<T2>, T2>(a0: &mut T1, a1: T1) {
-    *a0 = a1
+unsafe fn f18<T1: UnsafeCppIterator<T2>, T2>(a0: &mut T1, a1: T1) -> *mut T1 {
+    *a0 = a1;
+    a0 as *mut T1
 }
 
 unsafe fn f20<T1: UnsafeCppIterator<T2>, T2>(a0: &mut T1) -> &mut T1 {

@@ -17,12 +17,14 @@ fn f17<T1: CChar, T2, T3>(a0: &mut Vec<T1>) -> Vec<T1> {
     std::mem::take(&mut *a0)
 }
 
-fn f21<T1: CChar, T2, T3>(a0: Ptr<Vec<T1>>, a1: Vec<T1>) {
-    a0.write(a1)
+fn f21<T1: CChar, T2, T3>(a0: Ptr<Vec<T1>>, a1: Vec<T1>) -> Ptr<Vec<T1>> {
+    a0.write(a1);
+    a0
 }
 
-fn f24<T1: CChar, T2, T3>(a0: Ptr<Vec<T1>>, a1: &mut Vec<T1>) {
-    a0.write(std::mem::take(&mut *a1))
+fn f24<T1: CChar, T2, T3>(a0: Ptr<Vec<T1>>, a1: &mut Vec<T1>) -> Ptr<Vec<T1>> {
+    a0.write(std::mem::take(&mut *a1));
+    a0
 }
 
 fn f27<T1: CChar, T2, T3>(a0: Ptr<T1>) -> RandomAccessIterator<T1> {
@@ -69,20 +71,25 @@ fn f53<T1: CChar, T2, T3>(a0: Ptr<Vec<T1>>, a1: usize) -> Ptr<T1> {
 }
 
 fn f64<T1: CChar, T2, T3>(a0: Ptr<Vec<T1>>, a1: Ptr<T1>, a2: usize) -> Ptr<Vec<T1>> {
+    let __src: Vec<T1> = a1.with_slice(a2 as usize, |__s| __s.to_vec());
     a0.with_mut(|__v: &mut Vec<T1>| {
         __v.pop();
-        a1.with_slice(a2 as usize, |__s| __v.extend_from_slice(__s));
+        __v.extend_from_slice(&__src);
         __v.push(T1::default());
     });
     a0
 }
 
-fn f66<T1: CChar, T2, T3>(a0: &mut Vec<T1>, a1: usize, a2: T1) -> Vec<T1> {
-    a0.pop();
-    let __len = a0.len() + (a1) as usize;
-    a0.resize(__len, a2);
-    a0.push(T1::default());
-    a0.clone()
+fn f66<T1: CChar, T2, T3>(a0: Ptr<Vec<T1>>, a1: usize, a2: T1) -> Ptr<Vec<T1>> {
+    let __a1 = a1;
+    let __a2 = a2;
+    a0.with_mut(|__v: &mut Vec<T1>| {
+        __v.pop();
+        let __len = __v.len() + __a1;
+        __v.resize(__len, __a2);
+        __v.push(T1::default());
+    });
+    a0
 }
 
 fn f90<T1: CChar, T2, T3>(a0: Ptr<Vec<T1>>, a1: usize, a2: usize, a3: Ptr<T1>, a4: usize) -> Ptr<Vec<T1>> {
@@ -91,10 +98,9 @@ fn f90<T1: CChar, T2, T3>(a0: Ptr<Vec<T1>>, a1: usize, a2: usize, a3: Ptr<T1>, a
         __pos + a2 as usize,
         (*a0.upgrade().deref()).len().saturating_sub(1),
     );
+    let __src: Vec<T1> = a3.with_slice(a4 as usize, |__s| __s.to_vec());
     a0.with_mut(|__v: &mut Vec<T1>| {
-        a3.with_slice(a4 as usize, |__s| {
-            __v.splice(__pos..__end, __s.iter().copied());
-        });
+        __v.splice(__pos..__end, __src);
     });
     a0
 }
@@ -222,14 +228,15 @@ fn f200<T1: StreamChar, T2, T3>(a0: Ptr<::std::fs::File>, a1: Vec<T1>) -> Ptr<::
     __s
 }
 
-fn f151<T1, T2, T3, T4, T5>(a0: std::fs::File, a1: std::fs::File, a2: T3) -> Vec<i8> {
-    use std::io::Read;
-    let mut __bytes: Vec<u8> = Vec::new();
-    let mut __f = &a0;
-    __f.read_to_end(&mut __bytes)
-        .expect("couldn't read the file");
-    __bytes.push(0);
-    CChar::from_byte_vec(__bytes)
+fn f151<T1: CChar, T2, T3, T4: CppInputIterator<T6>, T5, T6: CChar>(a0: T4, a1: T4, a2: T3) -> Vec<T1> {
+    let mut __v = Vec::new();
+    let mut __it = a0;
+    while __it != a1 {
+        __v.push(<T1 as CChar>::from_i64(CChar::to_i64(__it.iter_deref().read())));
+        __it.iter_inc();
+    }
+    __v.push(T1::default());
+    __v
 }
 
 fn f22<T1: CChar, T2, T3>(a0: Ptr<Vec<T1>>, a1: Ptr<T1>) -> Ptr<Vec<T1>> {

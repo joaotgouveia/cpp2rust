@@ -1,7 +1,7 @@
 // Copyright (c) 2022-present INESC-ID.
 // Distributed under the MIT license that can be found in the LICENSE file.
 
-unsafe fn f1(a0: usize, a1: usize) -> usize {
+unsafe fn f1(a0: i64, a1: i64) -> i64 {
     a0
 }
 

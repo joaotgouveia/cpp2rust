@@ -16,12 +16,14 @@ unsafe fn f17<T1: CChar, T2, T3>(a0: &mut Vec<T1>) -> Vec<T1> {
     std::mem::take(&mut *a0)
 }
 
-unsafe fn f21<T1: CChar, T2, T3>(a0: &mut Vec<T1>, a1: Vec<T1>) {
-    *a0 = a1.clone()
+unsafe fn f21<T1: CChar, T2, T3>(a0: &mut Vec<T1>, a1: Vec<T1>) -> *mut Vec<T1> {
+    *a0 = a1.clone();
+    a0 as *mut Vec<T1>
 }
 
-unsafe fn f24<T1: CChar, T2, T3>(a0: &mut Vec<T1>, a1: &mut Vec<T1>) {
-    *a0 = std::mem::take(&mut *a1)
+unsafe fn f24<T1: CChar, T2, T3>(a0: &mut Vec<T1>, a1: &mut Vec<T1>) -> *mut Vec<T1> {
+    *a0 = std::mem::take(&mut *a1);
+    a0 as *mut Vec<T1>
 }
 
 unsafe fn f27<T1: CChar, T2, T3>(a0: &mut Vec<T1>) -> UnsafeRandomAccessIterator<T1> {
@@ -67,26 +69,29 @@ unsafe fn f53<T1: CChar, T2, T3>(mut a0: &mut Vec<T1>, a1: usize) -> *mut T1 {
     }
 }
 
-unsafe fn f64<T1: CChar, T2, T3>(a0: &mut Vec<T1>, a1: *mut T1, a2: usize) {
+unsafe fn f64<T1: CChar, T2, T3>(a0: &mut Vec<T1>, a1: *mut T1, a2: usize) -> *mut Vec<T1> {
     a0.splice(a0.len().saturating_sub(1)..a0.len(), {
         let mut v = ::std::slice::from_raw_parts(a1, a2 as usize).to_vec();
         v.push(T1::default());
         v
     });
+    a0 as *mut Vec<T1>
 }
 
-unsafe fn f66<T1: CChar, T2, T3>(a0: &mut Vec<T1>, a1: usize, a2: T1) {
+unsafe fn f66<T1: CChar, T2, T3>(a0: &mut Vec<T1>, a1: usize, a2: T1) -> *mut Vec<T1> {
     a0.splice(
         a0.len() - 1..a0.len() - 1,
         ::std::vec::from_elem(a2, a1 as usize),
     );
+    a0 as *mut Vec<T1>
 }
 
-unsafe fn f90<T1: CChar, T2, T3>(a0: &mut Vec<T1>, a1: usize, a2: usize, a3: *const T1, a4: usize) {
+unsafe fn f90<T1: CChar, T2, T3>(a0: &mut Vec<T1>, a1: usize, a2: usize, a3: *const T1, a4: usize) -> *mut Vec<T1> {
     a0.splice(
         a1 as usize..a1 as usize + a2 as usize,
         ::std::slice::from_raw_parts(a3, a4 as usize).to_vec(),
     );
+    a0 as *mut Vec<T1>
 }
 
 unsafe fn f104<T1: CChar, T2, T3>(a0: Vec<T1>) -> *const T1 {
@@ -222,12 +227,13 @@ unsafe fn f200<T1: StreamChar, T2, T3>(mut a0: &mut ::std::fs::File, a1: Vec<T1>
     __s
 }
 
-unsafe fn f151<T1, T2, T3, T4, T5>(a0: std::fs::File, a1: std::fs::File, a2: T3) -> Vec<libc::c_char> {
-    let mut __bytes: Vec<u8> = Vec::new();
-    let mut __f = &a0;
-    __f.read_to_end(&mut __bytes)
-        .expect("couldn't read the file");
-    let mut __buf: Vec<libc::c_char> = __bytes.iter().map(|&b| b as libc::c_char).collect();
-    __buf.push(0);
-    __buf
+unsafe fn f151<T1: CChar, T2, T3, T4: UnsafeCppInputIterator<T6>, T5, T6: CChar>(a0: T4, a1: T4, a2: T3) -> Vec<T1> {
+    let mut __v = Vec::new();
+    let mut __it = a0;
+    while __it != a1 {
+        __v.push(<T1 as CChar>::from_i64(CChar::to_i64(*__it.iter_deref())));
+        __it.iter_inc();
+    }
+    __v.push(T1::default());
+    __v
 }

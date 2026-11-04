@@ -5,12 +5,14 @@ use libcc2rs::*;
 use std::cell::RefCell;
 use std::rc::Rc;
 
-fn f124<T1: Clone + ByteRepr>(a0: Ptr<Vec<T1>>, a1: Vec<T1>) {
-    a0.write(a1)
+fn f124<T1: Clone + ByteRepr>(a0: Ptr<Vec<T1>>, a1: Vec<T1>) -> Ptr<Vec<T1>> {
+    a0.write(a1);
+    a0
 }
 
-fn f125<T1: ByteRepr + Clone>(a0: Ptr<Vec<T1>>, a1: &mut Vec<T1>) {
-    a0.write(std::mem::take(&mut *a1))
+fn f125<T1: ByteRepr + Clone>(a0: Ptr<Vec<T1>>, a1: &mut Vec<T1>) -> Ptr<Vec<T1>> {
+    a0.write(std::mem::take(&mut *a1));
+    a0
 }
 
 fn f129<T1>(a0: Ptr<T1>) -> RandomAccessIterator<T1> {
@@ -265,12 +267,12 @@ fn f82<T1>(a0: &mut RandomAccessIterator<bool>, a1: i32) -> RandomAccessIterator
     a0.iter_post_dec()
 }
 
-fn f83<T1>(a0: &mut RandomAccessIterator<bool>, a1: isize) -> RandomAccessIterator<bool> {
-    a0.iter_add_assign(a1)
+fn f83<T1>(a0: &mut RandomAccessIterator<bool>, a1: i64) -> RandomAccessIterator<bool> {
+    a0.iter_add_assign((a1 as isize))
 }
 
-fn f84<T1>(a0: &mut RandomAccessIterator<bool>, a1: isize) -> RandomAccessIterator<bool> {
-    a0.iter_add_assign(-a1)
+fn f84<T1>(a0: &mut RandomAccessIterator<bool>, a1: i64) -> RandomAccessIterator<bool> {
+    a0.iter_add_assign(-(a1 as isize))
 }
 
 fn f85<T1>(a0: RandomAccessIterator<bool>) -> RandomAccessIterator<bool> {
@@ -291,16 +293,16 @@ fn f88<T1>(a0: &mut RandomAccessIterator<bool>, a1: RandomAccessIterator<bool>) 
     a0.clone()
 }
 
-fn f89<T1>(a0: RandomAccessIterator<bool>, a1: isize) -> RandomAccessIterator<bool> {
-    a0.iter_add(-a1)
+fn f89<T1>(a0: RandomAccessIterator<bool>, a1: i64) -> RandomAccessIterator<bool> {
+    a0.iter_add(-(a1 as isize))
 }
 
-fn f90<T1>(a0: isize, a1: RandomAccessIterator<bool>) -> RandomAccessIterator<bool> {
-    a1.iter_add(a0)
+fn f90<T1>(a0: i64, a1: RandomAccessIterator<bool>) -> RandomAccessIterator<bool> {
+    a1.iter_add((a0 as isize))
 }
 
-fn f91<T1>(a0: RandomAccessIterator<bool>, a1: isize) -> RandomAccessIterator<bool> {
-    a0.iter_add(a1)
+fn f91<T1>(a0: RandomAccessIterator<bool>, a1: i64) -> RandomAccessIterator<bool> {
+    a0.iter_add((a1 as isize))
 }
 
 fn f92<T1>(a0: RandomAccessIterator<bool>, a1: RandomAccessIterator<bool>) -> isize {
@@ -359,16 +361,16 @@ fn f101<T1>(a0: &mut RandomAccessIterator<bool>, a1: i32) -> RandomAccessIterato
     a0.iter_post_dec()
 }
 
-fn f102<T1>(a0: &mut RandomAccessIterator<bool>, a1: isize) -> RandomAccessIterator<bool> {
-    a0.iter_add_assign(a1)
+fn f102<T1>(a0: &mut RandomAccessIterator<bool>, a1: i64) -> RandomAccessIterator<bool> {
+    a0.iter_add_assign((a1 as isize))
 }
 
-fn f103<T1>(a0: &mut RandomAccessIterator<bool>, a1: isize) -> RandomAccessIterator<bool> {
-    a0.iter_add_assign(-a1)
+fn f103<T1>(a0: &mut RandomAccessIterator<bool>, a1: i64) -> RandomAccessIterator<bool> {
+    a0.iter_add_assign(-(a1 as isize))
 }
 
-fn f104<T1>(a0: RandomAccessIterator<bool>, a1: isize) -> bool {
-    a0.iter_at(a1).read()
+fn f104<T1>(a0: RandomAccessIterator<bool>, a1: i64) -> bool {
+    a0.iter_at((a1 as isize)).read()
 }
 
 fn f105<T1>(a0: RandomAccessIterator<bool>) -> RandomAccessIterator<bool> {
@@ -389,16 +391,16 @@ fn f108<T1>(a0: &mut RandomAccessIterator<bool>, a1: RandomAccessIterator<bool>)
     a0.clone()
 }
 
-fn f109<T1>(a0: isize, a1: RandomAccessIterator<bool>) -> RandomAccessIterator<bool> {
-    a1.iter_add(a0)
+fn f109<T1>(a0: i64, a1: RandomAccessIterator<bool>) -> RandomAccessIterator<bool> {
+    a1.iter_add((a0 as isize))
 }
 
-fn f110<T1>(a0: RandomAccessIterator<bool>, a1: isize) -> RandomAccessIterator<bool> {
-    a0.iter_add(-a1)
+fn f110<T1>(a0: RandomAccessIterator<bool>, a1: i64) -> RandomAccessIterator<bool> {
+    a0.iter_add(-(a1 as isize))
 }
 
-fn f111<T1>(a0: RandomAccessIterator<bool>, a1: isize) -> RandomAccessIterator<bool> {
-    a0.iter_add(a1)
+fn f111<T1>(a0: RandomAccessIterator<bool>, a1: i64) -> RandomAccessIterator<bool> {
+    a0.iter_add((a1 as isize))
 }
 
 fn f112<T1>(a0: RandomAccessIterator<bool>, a1: RandomAccessIterator<bool>) -> isize {
@@ -445,4 +447,10 @@ fn f57<T1, T2: CppInputIterator<T4>, T3, T4: ByteRepr + Clone + PartialEq + Defa
         __it.iter_inc();
     }
     __v
+}
+
+fn f174<T1: ByteRepr + 'static>(a0: Ptr<Vec<T1>>, init: T1) -> Ptr<T1> {
+    let __init = init;
+    a0.with_mut(|__v: &mut Vec<T1>| __v.push(__init));
+    a0.decay().to_last()
 }

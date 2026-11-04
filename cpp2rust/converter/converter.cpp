@@ -2002,6 +2002,28 @@ std::string Converter::GetFunctionRefName(const clang::FunctionDecl *fn_decl) {
   return Mapper::MapFunctionName(ctx_, fn_decl);
 }
 
+// A converted function with default arguments takes those parameters as
+// Options, so a pointer to it is a closure that passes each such argument in
+// Some.
+std::string
+Converter::GetFunctionPointerTarget(const clang::FunctionDecl *fn_decl) {
+  auto name = GetFunctionRefName(fn_decl);
+  auto params = DefinitionParameters(fn_decl);
+  if (!IsUserDefinedDecl(fn_decl) ||
+      std::ranges::none_of(params, HasUsableDefaultArg)) {
+    return name;
+  }
+  std::string closure_params;
+  std::string args;
+  for (unsigned i = 0; i < params.size(); ++i) {
+    closure_params += std::format("{}a{}", i ? ", " : "", i);
+    args += HasUsableDefaultArg(params[i]) ? std::format("Some(a{}), ", i)
+                                           : std::format("a{}, ", i);
+  }
+  return std::format("|{}| {} {{ {}({}) }}", closure_params, keyword_unsafe_,
+                     name, args);
+}
+
 void Converter::ConvertFunctionToFunctionPointer(
     const clang::FunctionDecl *fn_decl) {
   if (auto *method = clang::dyn_cast<clang::CXXMethodDecl>(fn_decl);
@@ -2011,7 +2033,7 @@ void Converter::ConvertFunctionToFunctionPointer(
                               method->getParent()->getLambdaCallOperator());
     return;
   }
-  EmitFresh(std::format("Some({})", GetFunctionRefName(fn_decl)));
+  EmitFresh(std::format("Some({})", GetFunctionPointerTarget(fn_decl)));
 }
 
 std::string Converter::ConvertFnPtrCallee(clang::Expr *arg) {
@@ -3252,12 +3274,27 @@ bool Converter::VisitParenExpr(clang::ParenExpr *expr) {
   return false;
 }
 
+static void ReportUnsupportedOperatorCall(clang::CXXOperatorCallExpr *expr) {
+  // FIXME: improve error handling
+  llvm::errs() << "unsupported CXXOperatorCallExpr: "
+               << clang::getOperatorSpelling(expr->getOperator()) << '\n';
+  expr->dump();
+  if (auto *callee = expr->getCalleeDecl()) {
+    callee->dump();
+  }
+  assert(0);
+}
+
 bool Converter::ConvertCXXOperatorCallExpr(clang::CXXOperatorCallExpr *expr) {
   switch (expr->getOperator()) {
   case clang::OverloadedOperatorKind::OO_Equal:
     ConvertAssignment(expr->getArg(0), expr->getArg(1), "=");
     break;
   case clang::OverloadedOperatorKind::OO_Star: {
+    if (expr->getNumArgs() != 1) {
+      ReportUnsupportedOperatorCall(expr);
+      break;
+    }
     PushParen paren(*this);
     StrCat(token::kStar);
     Convert(expr->getArg(0));
@@ -3317,6 +3354,7 @@ bool Converter::ConvertCXXOperatorCallExpr(clang::CXXOperatorCallExpr *expr) {
       ConvertCallToOstream(expr);
       return false;
     }
+    ReportUnsupportedOperatorCall(expr);
     break;
   case clang::OverloadedOperatorKind::OO_Call:
     ConvertGenericCallExpr(expr);
@@ -3343,14 +3381,7 @@ bool Converter::ConvertCXXOperatorCallExpr(clang::CXXOperatorCallExpr *expr) {
     MarkFresh();
     break;
   default:
-    // FIXME: improve error handling
-    llvm::errs() << "unsupported CXXOperatorCallExpr: "
-                 << clang::getOperatorSpelling(expr->getOperator()) << '\n';
-    expr->dump();
-    if (auto *callee = expr->getCalleeDecl()) {
-      callee->dump();
-    }
-    assert(0);
+    ReportUnsupportedOperatorCall(expr);
   }
   return false;
 }

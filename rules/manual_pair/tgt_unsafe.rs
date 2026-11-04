@@ -11,6 +11,7 @@ unsafe fn f16<T1, T2>(a0: (T1, T2)) -> T1 {
     a0.0
 }
 
-unsafe fn f17<T1: CppFromUnsafe<T3>, T2: CppFromUnsafe<T4>, T3, T4>(a0: &mut (T1, T2), a1: &mut (T3, T4)) {
-    *a0 = (T1::cpp_from(&a1.0), T2::cpp_from(&a1.1))
+unsafe fn f17<T1: CppFromUnsafe<T3>, T2: CppFromUnsafe<T4>, T3, T4>(a0: &mut (T1, T2), a1: &mut (T3, T4)) -> *mut (T1, T2) {
+    *a0 = (T1::cpp_from(&a1.0), T2::cpp_from(&a1.1));
+    a0 as *mut (T1, T2)
 }

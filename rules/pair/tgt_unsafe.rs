@@ -11,12 +11,14 @@ unsafe fn f2<T1: Default, T2: Default>(a0: &mut (T1, T2)) -> (T1, T2) {
     std::mem::take(&mut *a0)
 }
 
-unsafe fn f7<T1: Clone, T2: Clone>(a0: &mut (T1, T2), a1: (T1, T2)) {
-    *a0 = a1.clone()
+unsafe fn f7<T1: Clone, T2: Clone>(a0: &mut (T1, T2), a1: (T1, T2)) -> *mut (T1, T2) {
+    *a0 = a1.clone();
+    a0 as *mut (T1, T2)
 }
 
-unsafe fn f8<T1: Default, T2: Default>(a0: &mut (T1, T2), a1: &mut (T1, T2)) {
-    *a0 = std::mem::take(&mut *a1)
+unsafe fn f8<T1: Default, T2: Default>(a0: &mut (T1, T2), a1: &mut (T1, T2)) -> *mut (T1, T2) {
+    *a0 = std::mem::take(&mut *a1);
+    a0 as *mut (T1, T2)
 }
 
 unsafe fn f13<T1: CppFromUnsafe<T3>, T2: CppFromUnsafe<T4>, T3, T4>(a0: &(T3, T4)) -> (T1, T2) {
@@ -27,12 +29,14 @@ unsafe fn f14<T1: CppFromUnsafe<T3>, T2: CppFromUnsafe<T4>, T3, T4>(a0: &mut (T3
     (T1::cpp_from_move(&mut a0.0), T2::cpp_from_move(&mut a0.1))
 }
 
-unsafe fn f18<T1: CppFromUnsafe<T3>, T2: CppFromUnsafe<T4>, T3, T4>(a0: &mut (T1, T2), a1: &(T3, T4)) {
-    *a0 = (T1::cpp_from(&a1.0), T2::cpp_from(&a1.1))
+unsafe fn f18<T1: CppFromUnsafe<T3>, T2: CppFromUnsafe<T4>, T3, T4>(a0: &mut (T1, T2), a1: &(T3, T4)) -> *mut (T1, T2) {
+    *a0 = (T1::cpp_from(&a1.0), T2::cpp_from(&a1.1));
+    a0 as *mut (T1, T2)
 }
 
-unsafe fn f19<T1: CppFromUnsafe<T3>, T2: CppFromUnsafe<T4>, T3, T4>(a0: &mut (T1, T2), a1: &mut (T3, T4)) {
-    *a0 = (T1::cpp_from_move(&mut a1.0), T2::cpp_from_move(&mut a1.1))
+unsafe fn f19<T1: CppFromUnsafe<T3>, T2: CppFromUnsafe<T4>, T3, T4>(a0: &mut (T1, T2), a1: &mut (T3, T4)) -> *mut (T1, T2) {
+    *a0 = (T1::cpp_from_move(&mut a1.0), T2::cpp_from_move(&mut a1.1));
+    a0 as *mut (T1, T2)
 }
 
 fn t1<T1: Default, T2: Default>() -> (T1, T2) {

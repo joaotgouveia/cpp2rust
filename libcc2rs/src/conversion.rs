@@ -65,6 +65,25 @@ impl<T: 'static> CppMove for *mut T {
     }
 }
 
+// An iterator is a handle, moving it copies it.
+macro_rules! impl_cpp_move_by_clone {
+    ($($ty:ident),* $(,)?) => {$(
+        impl<T: 'static> CppMove for crate::iterators::$ty<T> {
+            fn cpp_move(src: Ptr<Self>) -> Self {
+                src.with(|it| it.clone())
+            }
+        }
+    )*};
+}
+
+impl_cpp_move_by_clone!(
+    InputIterator,
+    OutputIterator,
+    ForwardIterator,
+    BidirectionalIterator,
+    RandomAccessIterator,
+);
+
 macro_rules! impl_cpp_move_with_ctor {
     ($(<$($param:ident $(: $bound:ident)?),*> $ty:ty),* $(,)?) => {$(
         impl<$($param $(: $bound)?),*> CppMove for $ty

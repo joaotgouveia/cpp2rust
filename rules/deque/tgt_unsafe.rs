@@ -15,12 +15,14 @@ unsafe fn f6<T1>(a0: &mut Vec<T1>) -> Vec<T1> {
     std::mem::take(&mut *a0)
 }
 
-unsafe fn f10<T1: Clone>(a0: &mut Vec<T1>, a1: Vec<T1>) {
-    *a0 = a1.clone()
+unsafe fn f10<T1: Clone>(a0: &mut Vec<T1>, a1: Vec<T1>) -> *mut Vec<T1> {
+    *a0 = a1.clone();
+    a0 as *mut Vec<T1>
 }
 
-unsafe fn f11<T1>(a0: &mut Vec<T1>, a1: &mut Vec<T1>) {
-    *a0 = std::mem::take(&mut *a1)
+unsafe fn f11<T1>(a0: &mut Vec<T1>, a1: &mut Vec<T1>) -> *mut Vec<T1> {
+    *a0 = std::mem::take(&mut *a1);
+    a0 as *mut Vec<T1>
 }
 
 unsafe fn f33<T1>(a0: Vec<T1>) -> bool {
@@ -47,9 +49,10 @@ unsafe fn f46<T1>(a0: &mut Vec<T1>) -> T1 {
     a0.remove(0)
 }
 
-unsafe fn f61<T1>(a0: &mut Vec<T1>, init: T1) {
+unsafe fn f61<T1>(a0: &mut Vec<T1>, init: T1) -> *mut T1 {
     let __init = init;
-    a0.push(__init)
+    a0.push(__init);
+    a0.last_mut().unwrap()
 }
 
 fn t1<T1>() -> Vec<T1> {
