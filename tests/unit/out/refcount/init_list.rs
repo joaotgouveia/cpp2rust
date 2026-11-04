@@ -17,22 +17,12 @@ pub struct Pair {
     #[offset(4)]
     pub b: i32,
 }
-impl CppMove for Pair {
-    fn cpp_move(src: Ptr<Self>) -> Self {
-        src.read()
-    }
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(8)]
 pub struct Holder {
     #[offset(0)]
     #[byte_size(8)]
     pub p: Pair,
-}
-impl CppMove for Holder {
-    fn cpp_move(src: Ptr<Self>) -> Self {
-        src.read()
-    }
 }
 impl Default for Holder {
     fn default() -> Self {
@@ -55,7 +45,7 @@ fn main_0() -> i32 {
     let mut i2: i32 = 0_i32;
     let mut carr1: [i32; 2] = [1, 2];
     let mut carr2: [i32; 3] = [1, 0_i32, 0_i32];
-    let arr: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3])));
+    let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::<[i32]>::from([1, 2, 3])));
     let mut vec_: Vec<i32> = Vec::from([1, 2, 3]);
     ({ f_0(Vec::from([1, 2, 3, 4])) });
     let p: Value<Pair> = Rc::new(RefCell::new(Pair { a: 1, b: 2 }));

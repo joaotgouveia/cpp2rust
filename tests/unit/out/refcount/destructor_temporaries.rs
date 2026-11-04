@@ -18,11 +18,6 @@ pub struct S {
     #[offset(0)]
     pub v: i32,
 }
-impl CppMove for S {
-    fn cpp_move(src: Ptr<Self>) -> Self {
-        src.read()
-    }
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(8)]
 pub struct Outer {
@@ -31,11 +26,6 @@ pub struct Outer {
     pub inner: S,
     #[offset(4)]
     pub w: i32,
-}
-impl CppMove for Outer {
-    fn cpp_move(src: Ptr<Self>) -> Self {
-        src.read()
-    }
 }
 pub fn make_2(mut v: i32) -> S {
     return S { v: v };
