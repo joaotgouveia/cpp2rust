@@ -1449,10 +1449,21 @@ void Converter::ConvertBody(clang::Stmt *body) {
   ConvertBodyStmts(body);
 }
 
+// The temporaries an expression statement materializes, e.g., for a prvalue
+// bound to a reference parameter, are bound right before it.
+void Converter::ConvertBodyStmt(clang::Stmt *stmt) {
+  if (!clang::isa_and_nonnull<clang::Expr>(stmt)) {
+    Convert(stmt);
+    return;
+  }
+  HoistMaterializedTempBindings hoist_temps(*this);
+  Convert(stmt);
+}
+
 void Converter::ConvertBodyStmts(clang::Stmt *body) {
   auto *compound = clang::dyn_cast_or_null<clang::CompoundStmt>(body);
   if (!compound) {
-    Convert(body);
+    ConvertBodyStmt(body);
     return;
   }
   if (CompoundHasTopLevelLabel(compound)) {
@@ -1460,7 +1471,7 @@ void Converter::ConvertBodyStmts(clang::Stmt *body) {
     return;
   }
   for (auto *child : compound->body()) {
-    Convert(child);
+    ConvertBodyStmt(child);
   }
 }
 

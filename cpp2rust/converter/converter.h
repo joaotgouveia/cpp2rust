@@ -146,6 +146,8 @@ public:
 
   void ConvertBody(clang::Stmt *body);
 
+  void ConvertBodyStmt(clang::Stmt *stmt);
+
   void ConvertBodyStmts(clang::Stmt *body);
 
   void EmitHoistedDecls(clang::CompoundStmt *body);
