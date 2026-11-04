@@ -12,15 +12,15 @@ pub fn get_temp_file_name_0() -> Vec<i8> {
         __bytes.push(0_i8);
         __bytes
     }));
-    let mut FD: i32 = unimplemented!();
+    let mut FD: i32 = ({ mkstemp_1((Name.decay().offset(0_usize as isize))) });
     if (FD == -1_i32) {
-        unimplemented!();
+        ({ perror_2(Ptr::<i8>::from_string_literal(b"mkstemp")) });
         std::process::abort();
     }
     FdRegistry::close(FD);
-    return std::mem::take(&mut (*Name.borrow_mut()));
+    return ({ std::mem::take(&mut (*Name.borrow_mut())) });
 }
-pub fn glibc_version_less_than_1(mut version: Ptr<i8>) -> bool {
+pub fn glibc_version_less_than_3(mut version: Ptr<i8>) -> bool {
     let test_version: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __tmp2 = {
             let mut __bytes = Ptr::<i8>::from_string_literal(b"glibc ").to_c_bytes();
@@ -32,15 +32,29 @@ pub fn glibc_version_less_than_1(mut version: Ptr<i8>) -> bool {
         __tmp2.push(0_i8);
         __tmp2
     }));
-    let mut n: usize = unimplemented!();
+    let mut n: usize = ({
+        confstr_4(
+            (anon_5__CS_GNU_LIBC_VERSION as i32),
+            Ptr::<i8>::null(),
+            0_usize,
+        )
+    });
     let mut current_version: Ptr<i8> =
         Ptr::alloc_array((0..n).map(|_| 0_i8).collect::<Box<[i8]>>());
-    unimplemented!();
-    let result: Value<bool> = Rc::new(RefCell::new((unimplemented!() < 0)));
+    ({
+        confstr_4(
+            (anon_5__CS_GNU_LIBC_VERSION as i32),
+            (current_version).clone(),
+            n,
+        )
+    });
+    let result: Value<bool> = Rc::new(RefCell::new(
+        (({ strverscmp_6((current_version).clone(), test_version.decay()) }) < 0),
+    ));
     current_version.delete();
     return (*result.borrow());
 }
-pub fn count_bytes_2(mut filename: Ptr<i8>) -> usize {
+pub fn count_bytes_7(mut filename: Ptr<i8>) -> usize {
     let mut f: Ptr<CFile> = match CFile::open(
         &filename.to_rust_string(),
         &Ptr::<i8>::from_string_literal(b"rb").to_rust_string(),
@@ -49,7 +63,7 @@ pub fn count_bytes_2(mut filename: Ptr<i8>) -> usize {
         None => Ptr::null(),
     };
     let count: Value<usize> = Rc::new(RefCell::new(0_usize));
-    'loop_: while (unimplemented!() != (-1_i32)) {
+    'loop_: while (({ fgetc_8((f).clone()) }) != (-1_i32)) {
         (*count.borrow_mut()).prefix_inc();
     }
     {
@@ -80,21 +94,32 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut sz: () = unimplemented!();
-        assert!((sz == 1_()));
-        assert!(((unimplemented!().len() - 1) == 1_usize));
+        let buf: Value<std_basic_stringbuf_char__std_char_traits_char___std_allocator_char__> =
+            Rc::new(RefCell::new(
+                <std_basic_stringbuf_char__std_char_traits_char___std_allocator_char__>::default(),
+            ));
+        let mut sz: i64 = ({
+            ((*buf.borrow()) as ::std::fs::File)
+                .sputn(Ptr::<i8>::from_string_literal(b"\xff"), 1_i64)
+        });
+        assert!((sz == 1_i64));
+        assert!(((({ (*buf.borrow()).str_17() }).len() - 1) == 1_usize));
     }
     {
         let temp: Value<Vec<i8>> = Rc::new(RefCell::new(({ get_temp_file_name_0() })));
         {
-            let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            let mut sz: () = unimplemented!();
-            assert!((sz == 1_()));
+            let buf: Value<std_basic_filebuf_char__std_char_traits_char__> = Rc::new(RefCell::new(
+                <std_basic_filebuf_char__std_char_traits_char__>::default(),
+            ));
+            ({ (*buf.borrow()).open_11(temp.decay(), 16_i32) });
+            let mut sz: i64 = ({
+                ((*buf.borrow()) as ::std::fs::File)
+                    .sputn(Ptr::<i8>::from_string_literal(b"\xff"), 1_i64)
+            });
+            assert!((sz == 1_i64));
         }
-        assert!((({ count_bytes_2(temp.decay(),) }) == 1_usize));
-        unimplemented!();
+        assert!((({ count_bytes_7(temp.decay(),) }) == 1_usize));
+        ({ remove_9(temp.decay()) });
     }
     return 0;
 }

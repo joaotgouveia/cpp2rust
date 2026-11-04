@@ -3,6 +3,10 @@
 
 use libcc2rs::*;
 
+fn t1() -> *mut ::libc::c_void {
+    std::ptr::null_mut::<::libc::c_void>()
+}
+
 fn t10() -> bool {
     false
 }

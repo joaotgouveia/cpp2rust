@@ -6,48 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() {
-    const _: () = assert!(true, "std::variant_size<V>::value == E");;
-    const _: () = assert!(true, "std::variant_size<const V>::value == E");;
-    const _: () = assert!(true, "std::variant_size<volatile V>::value == E");;
-    const _: () = assert!(true, "std::variant_size<const volatile V>::value == E");;
-    const _: () = assert!(true, "std::variant_size_v<V> == E");;
-    const _: () = assert!(true, "std::variant_size_v<const V> == E");;
-    const _: () = assert!(true, "std::variant_size_v<volatile V> == E");;
-    const _: () = assert!(true, "std::variant_size_v<const volatile V> == E");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<std::size_t, E>,\n                                std::variant_size<V>>::value"
-    );;
-}
-pub fn test_1() {
-    const _: () = assert!(true, "std::variant_size<V>::value == E");;
-    const _: () = assert!(true, "std::variant_size<const V>::value == E");;
-    const _: () = assert!(true, "std::variant_size<volatile V>::value == E");;
-    const _: () = assert!(true, "std::variant_size<const volatile V>::value == E");;
-    const _: () = assert!(true, "std::variant_size_v<V> == E");;
-    const _: () = assert!(true, "std::variant_size_v<const V> == E");;
-    const _: () = assert!(true, "std::variant_size_v<volatile V> == E");;
-    const _: () = assert!(true, "std::variant_size_v<const volatile V> == E");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<std::size_t, E>,\n                                std::variant_size<V>>::value"
-    );;
-}
-pub fn test_2() {
-    const _: () = assert!(true, "std::variant_size<V>::value == E");;
-    const _: () = assert!(true, "std::variant_size<const V>::value == E");;
-    const _: () = assert!(true, "std::variant_size<volatile V>::value == E");;
-    const _: () = assert!(true, "std::variant_size<const volatile V>::value == E");;
-    const _: () = assert!(true, "std::variant_size_v<V> == E");;
-    const _: () = assert!(true, "std::variant_size_v<const V> == E");;
-    const _: () = assert!(true, "std::variant_size_v<volatile V> == E");;
-    const _: () = assert!(true, "std::variant_size_v<const volatile V> == E");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<std::size_t, E>,\n                                std::variant_size<V>>::value"
-    );;
-}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

@@ -24,6 +24,11 @@ impl CppEq for A {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for A {
     fn default() -> Self {
         { A::new(None) }
@@ -55,21 +60,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::numeric_limits<A>::is_specialized == false");;
     assert!(
         ({
-            let _x: Value<A> = Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<A> = Rc::new(RefCell::new(<A>::MIN));
             let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
     assert!(
         ({
-            let _x: Value<A> = Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<A> = Rc::new(RefCell::new(<A>::MAX));
             let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
     assert!(
         ({
-            let _x: Value<A> = Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<A> = Rc::new(RefCell::new(({ std_numeric_limits_A_::lowest() })));
             let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
@@ -83,14 +88,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::numeric_limits<A>::radix == 0");;
     assert!(
         ({
-            let _x: Value<A> = Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<A> = Rc::new(RefCell::new(({ std_numeric_limits_A_::epsilon() })));
             let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
     assert!(
         ({
-            let _x: Value<A> = Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<A> = Rc::new(RefCell::new(({ std_numeric_limits_A_::round_error() })));
             let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
@@ -109,28 +114,28 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::numeric_limits<A>::has_denorm_loss == false");;
     assert!(
         ({
-            let _x: Value<A> = Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<A> = Rc::new(RefCell::new(({ std_numeric_limits_A_::infinity() })));
             let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
     assert!(
         ({
-            let _x: Value<A> = Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<A> = Rc::new(RefCell::new(({ std_numeric_limits_A_::quiet_NaN() })));
             let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
     assert!(
         ({
-            let _x: Value<A> = Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<A> = Rc::new(RefCell::new(({ std_numeric_limits_A_::signaling_NaN() })));
             let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
     assert!(
         ({
-            let _x: Value<A> = Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<A> = Rc::new(RefCell::new(({ std_numeric_limits_A_::denorm_min() })));
             let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })

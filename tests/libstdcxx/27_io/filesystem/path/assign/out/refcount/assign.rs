@@ -215,7 +215,7 @@ pub fn nonexistent_path_3(file: Option<Vec<i8>>) -> Vec<i8> {
         {
             (*file.borrow_mut()).pop();
             (*file.borrow_mut()).resize(
-                (((*file.borrow()).len() - 1).wrapping_sub(3_usize)) as usize,
+                ({ ((*file.borrow()).len() - 1).wrapping_sub(3_usize) }) as usize,
                 0_i8,
             );
             (*file.borrow_mut()).push(0_i8)
@@ -296,6 +296,11 @@ impl __gnu_test_scoped_file {
         }
     }
 }
+impl CppMove for __gnu_test_scoped_file {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for __gnu_test_scoped_file {
     fn default() -> Self {
         { __gnu_test_scoped_file::new_1(None) }
@@ -349,7 +354,23 @@ pub fn test01_6() {
         ({ compare_paths_0(p0.as_pointer(), p1.as_pointer()) });
         unimplemented!();
         ({ compare_paths_0(p0.as_pointer(), p2.as_pointer()) });
-        let ws: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        let ws: Value<Vec<i32>> = Rc::new(RefCell::new(
+            match (Rc::new(RefCell::new(RandomAccessIterator::Vec(s.decay()))).as_pointer(),) {
+                (__tmp_0,) => {
+                    let mut __bytes: Vec<u8> = Vec::new();
+                    if !(__tmp_0).clone().is_null() {
+                        (__tmp_0)
+                            .clone()
+                            .with_mut(|__f: &mut std::fs::File| {
+                                std::io::Read::read_to_end(__f, &mut __bytes)
+                            })
+                            .expect("couldn't read the file");
+                    }
+                    __bytes.push(0);
+                    CChar::from_byte_vec(__bytes)
+                }
+            },
+        ));
         unimplemented!();
         ({ compare_paths_0(p0.as_pointer(), p3.as_pointer()) });
         unimplemented!();
@@ -388,7 +409,23 @@ pub fn test02_7() {
         ({ compare_paths_0(p0.as_pointer(), p3.as_pointer()) });
         unimplemented!();
         ({ compare_paths_0(p0.as_pointer(), p4.as_pointer()) });
-        let ws: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        let ws: Value<Vec<i32>> = Rc::new(RefCell::new(
+            match (Rc::new(RefCell::new(RandomAccessIterator::Vec(s.decay()))).as_pointer(),) {
+                (__tmp_1,) => {
+                    let mut __bytes: Vec<u8> = Vec::new();
+                    if !(__tmp_1).clone().is_null() {
+                        (__tmp_1)
+                            .clone()
+                            .with_mut(|__f: &mut std::fs::File| {
+                                std::io::Read::read_to_end(__f, &mut __bytes)
+                            })
+                            .expect("couldn't read the file");
+                    }
+                    __bytes.push(0);
+                    CChar::from_byte_vec(__bytes)
+                }
+            },
+        ));
         unimplemented!();
         ({ compare_paths_0(p0.as_pointer(), p5.as_pointer()) });
         unimplemented!();

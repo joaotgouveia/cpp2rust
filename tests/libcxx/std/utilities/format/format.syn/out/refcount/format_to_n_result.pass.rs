@@ -10,23 +10,27 @@ pub fn test_0() {
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let __decomp_1: Value<()> = Rc::new(RefCell::new((*v.borrow()).clone()));
     const _: () = assert!(true, "std::same_as<decltype(out), CharT*>");;
-    assert!(({ { (*__decomp_1.borrow()).out.clone() } } == { { (*v.borrow()).out.clone() } }));
+    assert!(
+        ({ ({ { (*__decomp_1.borrow()).out.clone() } } == { { (*v.borrow()).out.clone() } }) })
+    );
     const _: () = assert!(
         true,
         "std::same_as<decltype(size), std::iter_difference_t<CharT*>>"
     );;
-    assert!(({ (*__decomp_1.borrow()).size } == { (*v.borrow()).size }));
+    assert!(({ ({ (*__decomp_1.borrow()).size } == { (*v.borrow()).size }) }));
 }
 pub fn test_2() {
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let __decomp_3: Value<()> = Rc::new(RefCell::new((*v.borrow()).clone()));
     const _: () = assert!(true, "std::same_as<decltype(out), CharT*>");;
-    assert!(({ { (*__decomp_3.borrow()).out.clone() } } == { { (*v.borrow()).out.clone() } }));
+    assert!(
+        ({ ({ { (*__decomp_3.borrow()).out.clone() } } == { { (*v.borrow()).out.clone() } }) })
+    );
     const _: () = assert!(
         true,
         "std::same_as<decltype(size), std::iter_difference_t<CharT*>>"
     );;
-    assert!(({ (*__decomp_3.borrow()).size } == { (*v.borrow()).size }));
+    assert!(({ ({ (*__decomp_3.borrow()).size } == { (*v.borrow()).size }) }));
 }
 pub fn test_4() -> bool {
     ({ test_0() });

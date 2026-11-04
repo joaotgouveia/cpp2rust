@@ -13,6 +13,11 @@ pub struct BigType {
     #[byte_size(64)]
     pub buffer: Box<[i8]>,
 }
+impl CppMove for BigType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for BigType {
     fn default() -> Self {
         {
@@ -31,9 +36,19 @@ impl Default for BigType {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct IsDefaultConstructible_true_ {}
+impl CppMove for IsDefaultConstructible_true_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct IsDefaultConstructible_false_ {}
+impl CppMove for IsDefaultConstructible_false_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0() -> bool {
     const _: () = assert!(
         true,
@@ -44,14 +59,20 @@ pub fn test_0() -> bool {
         "!std::default_initializable<std::ranges::single_view<IsDefaultConstructible<false>>>"
     );;
     {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((array_elem!(unimplemented!(), buffer, 0).read()) as i32) == 10));
-        assert!((unimplemented!() == 1_usize));
+        let sv: Value<std_ranges_single_view_BigType_> =
+            Rc::new(RefCell::new(<std_ranges_single_view_BigType_>::default()));
+        assert!(
+            ({ (((array_elem!(({ (*sv.borrow()).data_11() }), buffer, 0).read()) as i32) == 10) })
+        );
+        assert!((({ std_ranges_single_view_BigType_::size() }) == 1_usize));
     }
     {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((array_elem!(unimplemented!(), buffer, 0).read()) as i32) == 10));
-        assert!((unimplemented!() == 1_usize));
+        let sv: Value<std_ranges_single_view_BigType_> =
+            Rc::new(RefCell::new(<std_ranges_single_view_BigType_>::default()));
+        assert!(
+            ({ (((array_elem!(({ (*sv.borrow()).data_12() }), buffer, 0).read()) as i32) == 10) })
+        );
+        assert!((({ std_ranges_single_view_BigType_::size() }) == 1_usize));
     }
     return true;
 }

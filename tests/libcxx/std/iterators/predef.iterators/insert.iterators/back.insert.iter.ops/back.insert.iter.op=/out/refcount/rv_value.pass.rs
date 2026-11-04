@@ -15,6 +15,11 @@ pub struct ConstexprFixedCapacityDeque_int__10_ {
     #[offset(40)]
     size_: i32,
 }
+impl CppMove for ConstexprFixedCapacityDeque_int__10_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for ConstexprFixedCapacityDeque_int__10_ {
     fn default() -> Self {
         {

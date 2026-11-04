@@ -28,32 +28,55 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let i: Value<()> = Rc::new(RefCell::new(Ptr::<()>::null()));
-        assert!(unimplemented!());
+        let mut i: Ptr<::std::fs::File> = Ptr::<::std::fs::File>::null();
+        assert!(i == Ptr::null());
     }
     {
-        let inf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let inf : Value<std_basic_istringstream_char__std_char_traits_char___std_allocator_char__ > = Rc::new(RefCell::new(<std_basic_istringstream_char__std_char_traits_char___std_allocator_char__  >::default() )) ;
+        let mut i: Ptr<::std::fs::File> = ({ ({ (*inf.borrow()).rdbuf() }) });
+        assert!(i == Ptr::null());
     }
     {
-        let inf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((*i.borrow()) != unimplemented!());
+        let inf: Value<std_basic_istringstream_char__std_char_traits_char___std_allocator_char__> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"a").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                std_basic_istringstream_char__std_char_traits_char___std_allocator_char__::new_1(
+                    { __tmp_0.as_pointer() },
+                    None,
+                )
+            }));
+        let i: Value<Ptr<::std::fs::File>> =
+            Rc::new(RefCell::new(({ ({ (*inf.borrow()).rdbuf() }) })));
+        assert!((*i.borrow()) != Ptr::null());
     }
     {
-        let i: Value<()> = Rc::new(RefCell::new(Ptr::<()>::null()));
-        assert!(unimplemented!());
+        let mut i: Ptr<::std::fs::File> = Ptr::<::std::fs::File>::null();
+        assert!(i == Ptr::null());
     }
     {
-        let inf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let inf : Value<std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ > = Rc::new(RefCell::new(<std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__  >::default() )) ;
+        let mut i: Ptr<::std::fs::File> = ({ ({ (*inf.borrow()).rdbuf() }) });
+        assert!(i == Ptr::null());
     }
     {
-        let inf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((*i.borrow()) != unimplemented!());
+        let inf: Value<
+            std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__,
+        > = Rc::new(RefCell::new({
+            let __tmp_1: Value<Vec<i32>> = Rc::new(RefCell::new({
+                let mut __bytes =
+                    Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32]).to_c_bytes();
+                __bytes.push(0_i32);
+                __bytes
+            }));
+            std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { __tmp_1.as_pointer() } , None , )
+        }));
+        let i: Value<Ptr<::std::fs::File>> =
+            Rc::new(RefCell::new(({ ({ (*inf.borrow()).rdbuf() }) })));
+        assert!((*i.borrow()) != Ptr::null());
     }
     return 0;
 }

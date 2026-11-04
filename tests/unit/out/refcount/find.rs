@@ -24,8 +24,9 @@ fn main_0() -> i32 {
         let __a1 = 3;
         (*v.borrow_mut()).push(__a1)
     };
-    let v_begin: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(v.decay().begin()));
-    let v_end: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(v.decay().end()));
+    let v_begin: Value<RandomAccessIterator<i32>> =
+        Rc::new(RefCell::new(CppRange::begin(&v.decay())));
+    let v_end: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(CppRange::end(&v.decay())));
     let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(
         ({
             let __tmp_1: Value<i32> = Rc::new(RefCell::new(2));
@@ -42,7 +43,7 @@ fn main_0() -> i32 {
             }
         }),
     ));
-    let mut v_result_true: bool = (*it.borrow()) != v.decay().end();
+    let mut v_result_true: bool = (*it.borrow()) != CppRange::end(&v.decay());
     let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(Map::new()));
     Map::subscript_move(
         m.as_pointer(),
@@ -70,12 +71,14 @@ fn main_0() -> i32 {
         m.as_pointer()
             .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
     ));
-    let mut m_result_true: bool = (*m_begin.borrow()) != (*m_end.borrow());
+    let mut m_result_true: bool = ((*m_begin.borrow()) != (*m_end.borrow())).clone();
     assert!(
         ((v_result_true) && (m_result_true))
             && (({
                 let __tmp_4: Value<i32> = Rc::new(RefCell::new(2));
-                match ({ v.decay().begin() }, { v.decay().begin() }) {
+                match ({ CppRange::begin(&v.decay()) }, {
+                    CppRange::begin(&v.decay())
+                }) {
                     (mut __tmp_2, mut __tmp_3) => {
                         let mut __it = (__tmp_2).clone();
                         while __it != __tmp_3
@@ -86,13 +89,15 @@ fn main_0() -> i32 {
                         __it
                     }
                 }
-            }) == v.decay().begin())
+            }) == CppRange::begin(&v.decay()))
     );
     let w: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3, 4, 5])));
     assert!(
         ({
             let __tmp_7: Value<i32> = Rc::new(RefCell::new(4));
-            match ({ w.decay().begin().iter_add(2_isize) }, { w.decay().end() }) {
+            match ({ CppRange::begin(&w.decay()).iter_add(2_isize) }, {
+                CppRange::end(&w.decay())
+            }) {
                 (mut __tmp_5, mut __tmp_6) => {
                     let mut __it = (__tmp_5).clone();
                     while __it != __tmp_6
@@ -103,12 +108,14 @@ fn main_0() -> i32 {
                     __it
                 }
             }
-        }) == w.decay().begin().iter_add(3_isize)
+        }) == CppRange::begin(&w.decay()).iter_add(3_isize)
     );
     assert!(
         ({
             let __tmp_10: Value<i32> = Rc::new(RefCell::new(1));
-            match ({ w.decay().begin().iter_add(2_isize) }, { w.decay().end() }) {
+            match ({ CppRange::begin(&w.decay()).iter_add(2_isize) }, {
+                CppRange::end(&w.decay())
+            }) {
                 (mut __tmp_8, mut __tmp_9) => {
                     let mut __it = (__tmp_8).clone();
                     while __it != __tmp_9
@@ -119,13 +126,13 @@ fn main_0() -> i32 {
                     __it
                 }
             }
-        }) == w.decay().end()
+        }) == CppRange::end(&w.decay())
     );
     assert!(
         ({
             let __tmp_13: Value<i32> = Rc::new(RefCell::new(5));
-            match ({ w.decay().begin().iter_add(2_isize) }, {
-                w.decay().begin().iter_add(4_isize)
+            match ({ CppRange::begin(&w.decay()).iter_add(2_isize) }, {
+                CppRange::begin(&w.decay()).iter_add(4_isize)
             }) {
                 (mut __tmp_11, mut __tmp_12) => {
                     let mut __it = (__tmp_11).clone();
@@ -137,7 +144,7 @@ fn main_0() -> i32 {
                     __it
                 }
             }
-        }) == w.decay().begin().iter_add(4_isize)
+        }) == CppRange::begin(&w.decay()).iter_add(4_isize)
     );
     return 0;
 }

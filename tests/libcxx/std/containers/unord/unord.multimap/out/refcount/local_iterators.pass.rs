@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -36,26 +41,10 @@ thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__
-{
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<(Value<i32>, Value<Vec<i8>>)>,
-}
-impl min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__ { }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____
 {}
+impl CppMove for min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -127,86 +116,185 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() >= 7_()));
-        let mut b: () = unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_isize));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 2_isize));
+        let c : Value<std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new(std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   )  } , { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   ) . offset ( ( ( ( 240usize as usize ) ) . wrapping_div ( ( 40usize as usize ) ) ) as isize )  } , None , None , None , None , )  )) ;
+        assert!(({ (({ (*c.borrow()).bucket_count() }) >= 7_u64) }));
+        let mut b: u64 = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(0));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        let i : Value<std___detail__Local_iterator_int__std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std___detail__Select1st__std_hash_int___std___detail__Mod_range_hashing__std___detail__Default_ranged_hash__false__false_ > = Rc::new(RefCell::new(( { (*c.borrow()) . begin_76 ( b  , ) } )  )) ;
+        let j : Value<std___detail__Local_iterator_int__std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std___detail__Select1st__std_hash_int___std___detail__Mod_range_hashing__std___detail__Default_ranged_hash__false__false_ > = Rc::new(RefCell::new(( { (*c.borrow()) . end_79 ( b  , ) } )  )) ;
+        assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"one").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
             let mut n: i32 = 0;
             'loop_: while (n < 2) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1));
-                assert!(unimplemented!() != unimplemented!());
-                unimplemented!();
-                (*i.borrow_mut()).iter_inc();
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1) }));
+                assert!(
+                    ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    }) != ({ (*s.borrow()).end() })
+                );
+                ({
+                    let ___position: BidirectionalIterator<Vec<i8>> = ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    });
+                    (*s.borrow()).erase_51(___position)
+                });
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 n.prefix_inc();
             }
         }
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 2_isize));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(2));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"two").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
             let mut n: i32 = 0;
             'loop_: while (n < 2) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2));
-                assert!(unimplemented!() != unimplemented!());
-                unimplemented!();
-                (*i.borrow_mut()).iter_inc();
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2) }));
+                assert!(
+                    ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    }) != ({ (*s.borrow()).end() })
+                );
+                ({
+                    let ___position: BidirectionalIterator<Vec<i8>> = ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    });
+                    (*s.borrow()).erase_51(___position)
+                });
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 n.prefix_inc();
             }
         }
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 1_isize));
-        assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
-        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
-            (*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*i.borrow())
-                .iter_deref()
-                .upgrade()
-                .deref())
-            .1
-            .borrow())
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        }));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 1_isize));
-        assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4));
-        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
-            (*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*i.borrow())
-                .iter_deref()
-                .upgrade()
-                .deref())
-            .1
-            .borrow())
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        }));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 0_isize));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 0_isize));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
+        assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
+        assert!(
+            ({
+                match ((*(*i.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer(),)
+                {
+                    (__tmp_0,) => Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                        (*__tmp_0.upgrade().deref())
+                            [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
+        );
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(4));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
+        assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
+        assert!(
+            ({
+                match ((*(*i.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer(),)
+                {
+                    (__tmp_1,) => Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                        (*__tmp_1.upgrade().deref())
+                            [..(*__tmp_1.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
+        );
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(5));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(6));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
     }
     {
         let a: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -259,86 +347,185 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() >= 7_()));
-        let mut b: () = unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_isize));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 2_isize));
+        let c : Value<std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new(std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   )  } , { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   ) . offset ( ( ( ( 240usize as usize ) ) . wrapping_div ( ( 40usize as usize ) ) ) as isize )  } , None , None , None , None , )  )) ;
+        assert!(({ (({ (*c.borrow()).bucket_count() }) >= 7_u64) }));
+        let mut b: u64 = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(0));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        let i : Value<std___detail__Local_const_iterator_int__std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std___detail__Select1st__std_hash_int___std___detail__Mod_range_hashing__std___detail__Default_ranged_hash__false__false_ > = Rc::new(RefCell::new(( { (*c.borrow()) . begin_77 ( b  , ) } )  )) ;
+        let j : Value<std___detail__Local_const_iterator_int__std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std___detail__Select1st__std_hash_int___std___detail__Mod_range_hashing__std___detail__Default_ranged_hash__false__false_ > = Rc::new(RefCell::new(( { (*c.borrow()) . end_80 ( b  , ) } )  )) ;
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"one").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
             let mut n: i32 = 0;
             'loop_: while (n < 2) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1));
-                assert!(unimplemented!() != unimplemented!());
-                unimplemented!();
-                (*i.borrow_mut()).iter_inc();
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1) }));
+                assert!(
+                    ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    }) != ({ (*s.borrow()).end() })
+                );
+                ({
+                    let ___position: BidirectionalIterator<Vec<i8>> = ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    });
+                    (*s.borrow()).erase_51(___position)
+                });
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 n.prefix_inc();
             }
         }
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 2_isize));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(2));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"two").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
             let mut n: i32 = 0;
             'loop_: while (n < 2) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2));
-                assert!(unimplemented!() != unimplemented!());
-                unimplemented!();
-                (*i.borrow_mut()).iter_inc();
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2) }));
+                assert!(
+                    ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    }) != ({ (*s.borrow()).end() })
+                );
+                ({
+                    let ___position: BidirectionalIterator<Vec<i8>> = ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    });
+                    (*s.borrow()).erase_51(___position)
+                });
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 n.prefix_inc();
             }
         }
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 1_isize));
-        assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
-        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
-            (*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*i.borrow())
-                .iter_deref()
-                .upgrade()
-                .deref())
-            .1
-            .borrow())
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        }));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 1_isize));
-        assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4));
-        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
-            (*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*i.borrow())
-                .iter_deref()
-                .upgrade()
-                .deref())
-            .1
-            .borrow())
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        }));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 0_isize));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 0_isize));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
+        assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
+        assert!(
+            ({
+                match ((*(*i.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer(),)
+                {
+                    (__tmp_2,) => Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                        (*__tmp_2.upgrade().deref())
+                            [..(*__tmp_2.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
+        );
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(4));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
+        assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
+        assert!(
+            ({
+                match ((*(*i.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer(),)
+                {
+                    (__tmp_3,) => Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                        (*__tmp_3.upgrade().deref())
+                            [..(*__tmp_3.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
+        );
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(5));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(6));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
     }
     {
         let a: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -391,86 +578,185 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() >= 7_()));
-        let mut b: () = unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_isize));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 2_isize));
+        let c : Value<std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new(std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   )  } , { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   ) . offset ( ( ( ( 240usize as usize ) ) . wrapping_div ( ( 40usize as usize ) ) ) as isize )  } , None , None , None , None , )  )) ;
+        assert!(({ (({ (*c.borrow()).bucket_count() }) >= 7_u64) }));
+        let mut b: u64 = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(0));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        let i : Value<std___detail__Local_const_iterator_int__std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std___detail__Select1st__std_hash_int___std___detail__Mod_range_hashing__std___detail__Default_ranged_hash__false__false_ > = Rc::new(RefCell::new(( { (*c.borrow()) . cbegin_78 ( b  , ) } )  )) ;
+        let j : Value<std___detail__Local_const_iterator_int__std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std___detail__Select1st__std_hash_int___std___detail__Mod_range_hashing__std___detail__Default_ranged_hash__false__false_ > = Rc::new(RefCell::new(( { (*c.borrow()) . cend_81 ( b  , ) } )  )) ;
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"one").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
             let mut n: i32 = 0;
             'loop_: while (n < 2) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1));
-                assert!(unimplemented!() != unimplemented!());
-                unimplemented!();
-                (*i.borrow_mut()).iter_inc();
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1) }));
+                assert!(
+                    ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    }) != ({ (*s.borrow()).end() })
+                );
+                ({
+                    let ___position: BidirectionalIterator<Vec<i8>> = ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    });
+                    (*s.borrow()).erase_51(___position)
+                });
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 n.prefix_inc();
             }
         }
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 2_isize));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(2));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"two").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
             let mut n: i32 = 0;
             'loop_: while (n < 2) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2));
-                assert!(unimplemented!() != unimplemented!());
-                unimplemented!();
-                (*i.borrow_mut()).iter_inc();
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2) }));
+                assert!(
+                    ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    }) != ({ (*s.borrow()).end() })
+                );
+                ({
+                    let ___position: BidirectionalIterator<Vec<i8>> = ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    });
+                    (*s.borrow()).erase_51(___position)
+                });
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 n.prefix_inc();
             }
         }
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 1_isize));
-        assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
-        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
-            (*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*i.borrow())
-                .iter_deref()
-                .upgrade()
-                .deref())
-            .1
-            .borrow())
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        }));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 1_isize));
-        assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4));
-        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
-            (*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*i.borrow())
-                .iter_deref()
-                .upgrade()
-                .deref())
-            .1
-            .borrow())
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        }));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 0_isize));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 0_isize));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
+        assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
+        assert!(
+            ({
+                match ((*(*i.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer(),)
+                {
+                    (__tmp_4,) => Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                        (*__tmp_4.upgrade().deref())
+                            [..(*__tmp_4.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
+        );
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(4));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
+        assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
+        assert!(
+            ({
+                match ((*(*i.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer(),)
+                {
+                    (__tmp_5,) => Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                        (*__tmp_5.upgrade().deref())
+                            [..(*__tmp_5.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
+        );
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(5));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(6));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
     }
     {
         let a: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -523,86 +809,185 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() >= 7_()));
-        let mut b: () = unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_isize));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 2_isize));
+        let c : Value<std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new(std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   )  } , { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   ) . offset ( ( ( ( 240usize as usize ) ) . wrapping_div ( ( 40usize as usize ) ) ) as isize )  } , None , None , None , None , )  )) ;
+        assert!(({ (({ (*c.borrow()).bucket_count() }) >= 7_u64) }));
+        let mut b: u64 = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(0));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        let i : Value<std___detail__Local_const_iterator_int__std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std___detail__Select1st__std_hash_int___std___detail__Mod_range_hashing__std___detail__Default_ranged_hash__false__false_ > = Rc::new(RefCell::new(( { (*c.borrow()) . cbegin_78 ( b  , ) } )  )) ;
+        let j : Value<std___detail__Local_const_iterator_int__std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std___detail__Select1st__std_hash_int___std___detail__Mod_range_hashing__std___detail__Default_ranged_hash__false__false_ > = Rc::new(RefCell::new(( { (*c.borrow()) . cend_81 ( b  , ) } )  )) ;
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"one").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
             let mut n: i32 = 0;
             'loop_: while (n < 2) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1));
-                assert!(unimplemented!() != unimplemented!());
-                unimplemented!();
-                (*i.borrow_mut()).iter_inc();
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1) }));
+                assert!(
+                    ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    }) != ({ (*s.borrow()).end() })
+                );
+                ({
+                    let ___position: BidirectionalIterator<Vec<i8>> = ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    });
+                    (*s.borrow()).erase_51(___position)
+                });
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 n.prefix_inc();
             }
         }
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 2_isize));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(2));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"two").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
             let mut n: i32 = 0;
             'loop_: while (n < 2) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2));
-                assert!(unimplemented!() != unimplemented!());
-                unimplemented!();
-                (*i.borrow_mut()).iter_inc();
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2) }));
+                assert!(
+                    ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    }) != ({ (*s.borrow()).end() })
+                );
+                ({
+                    let ___position: BidirectionalIterator<Vec<i8>> = ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    });
+                    (*s.borrow()).erase_51(___position)
+                });
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 n.prefix_inc();
             }
         }
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 1_isize));
-        assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
-        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
-            (*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*i.borrow())
-                .iter_deref()
-                .upgrade()
-                .deref())
-            .1
-            .borrow())
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        }));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 1_isize));
-        assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4));
-        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
-            (*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*i.borrow())
-                .iter_deref()
-                .upgrade()
-                .deref())
-            .1
-            .borrow())
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        }));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 0_isize));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 0_isize));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
+        assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
+        assert!(
+            ({
+                match ((*(*i.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer(),)
+                {
+                    (__tmp_6,) => Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                        (*__tmp_6.upgrade().deref())
+                            [..(*__tmp_6.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
+        );
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(4));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
+        assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
+        assert!(
+            ({
+                match ((*(*i.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer(),)
+                {
+                    (__tmp_7,) => Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                        (*__tmp_7.upgrade().deref())
+                            [..(*__tmp_7.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
+        );
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(5));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(6));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
     }
     {
         let a: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -655,86 +1040,185 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() >= 7_()));
-        let mut b: () = unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_isize));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 2_isize));
+        let c : Value<std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new(std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   )  } , { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   ) . offset ( ( ( ( 240usize as usize ) ) . wrapping_div ( ( 40usize as usize ) ) ) as isize )  } , None , None , None , None , )  )) ;
+        assert!(({ (({ (*c.borrow()).bucket_count() }) >= 7_u64) }));
+        let mut b: u64 = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(0));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        let i : Value<std___detail__Local_iterator_int__std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std___detail__Select1st__std_hash_int___std___detail__Mod_range_hashing__std___detail__Default_ranged_hash__false__false_ > = Rc::new(RefCell::new(( { (*c.borrow()) . begin_76 ( b  , ) } )  )) ;
+        let j : Value<std___detail__Local_iterator_int__std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std___detail__Select1st__std_hash_int___std___detail__Mod_range_hashing__std___detail__Default_ranged_hash__false__false_ > = Rc::new(RefCell::new(( { (*c.borrow()) . end_79 ( b  , ) } )  )) ;
+        assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"one").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
             let mut n: i32 = 0;
             'loop_: while (n < 2) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1));
-                assert!(unimplemented!() != unimplemented!());
-                unimplemented!();
-                (*i.borrow_mut()).iter_inc();
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1) }));
+                assert!(
+                    ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    }) != ({ (*s.borrow()).end() })
+                );
+                ({
+                    let ___position: BidirectionalIterator<Vec<i8>> = ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    });
+                    (*s.borrow()).erase_51(___position)
+                });
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 n.prefix_inc();
             }
         }
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 2_isize));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(2));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"two").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
             let mut n: i32 = 0;
             'loop_: while (n < 2) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2));
-                assert!(unimplemented!() != unimplemented!());
-                unimplemented!();
-                (*i.borrow_mut()).iter_inc();
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2) }));
+                assert!(
+                    ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    }) != ({ (*s.borrow()).end() })
+                );
+                ({
+                    let ___position: BidirectionalIterator<Vec<i8>> = ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    });
+                    (*s.borrow()).erase_51(___position)
+                });
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 n.prefix_inc();
             }
         }
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 1_isize));
-        assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
-        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
-            (*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*i.borrow())
-                .iter_deref()
-                .upgrade()
-                .deref())
-            .1
-            .borrow())
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        }));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 1_isize));
-        assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4));
-        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
-            (*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*i.borrow())
-                .iter_deref()
-                .upgrade()
-                .deref())
-            .1
-            .borrow())
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        }));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 0_isize));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 0_isize));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
+        assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
+        assert!(
+            ({
+                match ((*(*i.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer(),)
+                {
+                    (__tmp_8,) => Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                        (*__tmp_8.upgrade().deref())
+                            [..(*__tmp_8.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
+        );
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(4));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
+        assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
+        assert!(
+            ({
+                match ((*(*i.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer(),)
+                {
+                    (__tmp_9,) => Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                        (*__tmp_9.upgrade().deref())
+                            [..(*__tmp_9.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
+        );
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(5));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(6));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_76(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_79(b) });
+        assert!(({ (({ distance_4((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
     }
     {
         let a: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -787,86 +1271,185 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() >= 7_()));
-        let mut b: () = unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_isize));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 2_isize));
+        let c : Value<std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new(std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   )  } , { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   ) . offset ( ( ( ( 240usize as usize ) ) . wrapping_div ( ( 40usize as usize ) ) ) as isize )  } , None , None , None , None , )  )) ;
+        assert!(({ (({ (*c.borrow()).bucket_count() }) >= 7_u64) }));
+        let mut b: u64 = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(0));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        let i : Value<std___detail__Local_const_iterator_int__std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std___detail__Select1st__std_hash_int___std___detail__Mod_range_hashing__std___detail__Default_ranged_hash__false__false_ > = Rc::new(RefCell::new(( { (*c.borrow()) . begin_77 ( b  , ) } )  )) ;
+        let j : Value<std___detail__Local_const_iterator_int__std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std___detail__Select1st__std_hash_int___std___detail__Mod_range_hashing__std___detail__Default_ranged_hash__false__false_ > = Rc::new(RefCell::new(( { (*c.borrow()) . end_80 ( b  , ) } )  )) ;
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"one").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
             let mut n: i32 = 0;
             'loop_: while (n < 2) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1));
-                assert!(unimplemented!() != unimplemented!());
-                unimplemented!();
-                (*i.borrow_mut()).iter_inc();
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1) }));
+                assert!(
+                    ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    }) != ({ (*s.borrow()).end() })
+                );
+                ({
+                    let ___position: BidirectionalIterator<Vec<i8>> = ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    });
+                    (*s.borrow()).erase_51(___position)
+                });
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 n.prefix_inc();
             }
         }
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 2_isize));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(2));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"two").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
             let mut n: i32 = 0;
             'loop_: while (n < 2) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2));
-                assert!(unimplemented!() != unimplemented!());
-                unimplemented!();
-                (*i.borrow_mut()).iter_inc();
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2) }));
+                assert!(
+                    ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    }) != ({ (*s.borrow()).end() })
+                );
+                ({
+                    let ___position: BidirectionalIterator<Vec<i8>> = ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    });
+                    (*s.borrow()).erase_51(___position)
+                });
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 n.prefix_inc();
             }
         }
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 1_isize));
-        assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
-        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
-            (*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*i.borrow())
-                .iter_deref()
-                .upgrade()
-                .deref())
-            .1
-            .borrow())
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        }));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 1_isize));
-        assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4));
-        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
-            (*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*i.borrow())
-                .iter_deref()
-                .upgrade()
-                .deref())
-            .1
-            .borrow())
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        }));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 0_isize));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 0_isize));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
+        assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
+        assert!(
+            ({
+                match ((*(*i.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer(),)
+                {
+                    (__tmp_10,) => Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                        (*__tmp_10.upgrade().deref())
+                            [..(*__tmp_10.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
+        );
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(4));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
+        assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
+        assert!(
+            ({
+                match ((*(*i.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer(),)
+                {
+                    (__tmp_11,) => Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                        (*__tmp_11.upgrade().deref())
+                            [..(*__tmp_11.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
+        );
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(5));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(6));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).begin_77(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).end_80(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
     }
     {
         let a: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -919,86 +1502,185 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() >= 7_()));
-        let mut b: () = unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_isize));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 2_isize));
+        let c : Value<std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new(std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   )  } , { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   ) . offset ( ( ( ( 240usize as usize ) ) . wrapping_div ( ( 40usize as usize ) ) ) as isize )  } , None , None , None , None , )  )) ;
+        assert!(({ (({ (*c.borrow()).bucket_count() }) >= 7_u64) }));
+        let mut b: u64 = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(0));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        let i : Value<std___detail__Local_const_iterator_int__std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std___detail__Select1st__std_hash_int___std___detail__Mod_range_hashing__std___detail__Default_ranged_hash__false__false_ > = Rc::new(RefCell::new(( { (*c.borrow()) . cbegin_78 ( b  , ) } )  )) ;
+        let j : Value<std___detail__Local_const_iterator_int__std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std___detail__Select1st__std_hash_int___std___detail__Mod_range_hashing__std___detail__Default_ranged_hash__false__false_ > = Rc::new(RefCell::new(( { (*c.borrow()) . cend_81 ( b  , ) } )  )) ;
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"one").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
             let mut n: i32 = 0;
             'loop_: while (n < 2) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1));
-                assert!(unimplemented!() != unimplemented!());
-                unimplemented!();
-                (*i.borrow_mut()).iter_inc();
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1) }));
+                assert!(
+                    ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    }) != ({ (*s.borrow()).end() })
+                );
+                ({
+                    let ___position: BidirectionalIterator<Vec<i8>> = ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    });
+                    (*s.borrow()).erase_51(___position)
+                });
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 n.prefix_inc();
             }
         }
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 2_isize));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(2));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"two").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
             let mut n: i32 = 0;
             'loop_: while (n < 2) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2));
-                assert!(unimplemented!() != unimplemented!());
-                unimplemented!();
-                (*i.borrow_mut()).iter_inc();
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2) }));
+                assert!(
+                    ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    }) != ({ (*s.borrow()).end() })
+                );
+                ({
+                    let ___position: BidirectionalIterator<Vec<i8>> = ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    });
+                    (*s.borrow()).erase_51(___position)
+                });
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 n.prefix_inc();
             }
         }
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 1_isize));
-        assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
-        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
-            (*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*i.borrow())
-                .iter_deref()
-                .upgrade()
-                .deref())
-            .1
-            .borrow())
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        }));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 1_isize));
-        assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4));
-        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
-            (*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*i.borrow())
-                .iter_deref()
-                .upgrade()
-                .deref())
-            .1
-            .borrow())
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        }));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 0_isize));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 0_isize));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
+        assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
+        assert!(
+            ({
+                match ((*(*i.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer(),)
+                {
+                    (__tmp_12,) => Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                        (*__tmp_12.upgrade().deref())
+                            [..(*__tmp_12.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
+        );
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(4));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
+        assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
+        assert!(
+            ({
+                match ((*(*i.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer(),)
+                {
+                    (__tmp_13,) => Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                        (*__tmp_13.upgrade().deref())
+                            [..(*__tmp_13.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
+        );
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(5));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(6));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
     }
     {
         let a: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -1051,89 +1733,191 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() >= 7_()));
-        let mut b: () = unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_isize));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 2_isize));
+        let c : Value<std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new(std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   )  } , { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   ) . offset ( ( ( ( 240usize as usize ) ) . wrapping_div ( ( 40usize as usize ) ) ) as isize )  } , None , None , None , None , )  )) ;
+        assert!(({ (({ (*c.borrow()).bucket_count() }) >= 7_u64) }));
+        let mut b: u64 = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(0));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        let i : Value<std___detail__Local_const_iterator_int__std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std___detail__Select1st__std_hash_int___std___detail__Mod_range_hashing__std___detail__Default_ranged_hash__false__false_ > = Rc::new(RefCell::new(( { (*c.borrow()) . cbegin_78 ( b  , ) } )  )) ;
+        let j : Value<std___detail__Local_const_iterator_int__std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std___detail__Select1st__std_hash_int___std___detail__Mod_range_hashing__std___detail__Default_ranged_hash__false__false_ > = Rc::new(RefCell::new(( { (*c.borrow()) . cend_81 ( b  , ) } )  )) ;
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"one").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
             let mut n: i32 = 0;
             'loop_: while (n < 2) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1));
-                assert!(unimplemented!() != unimplemented!());
-                unimplemented!();
-                (*i.borrow_mut()).iter_inc();
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1) }));
+                assert!(
+                    ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    }) != ({ (*s.borrow()).end() })
+                );
+                ({
+                    let ___position: BidirectionalIterator<Vec<i8>> = ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    });
+                    (*s.borrow()).erase_51(___position)
+                });
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 n.prefix_inc();
             }
         }
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 2_isize));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(2));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 2_isize) }));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let s : Value<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<std_set_std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"two").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
+            ({
+                let ___x: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                (*s.borrow()).insert_37(___x.as_pointer())
+            });
             let mut n: i32 = 0;
             'loop_: while (n < 2) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2));
-                assert!(unimplemented!() != unimplemented!());
-                unimplemented!();
-                (*i.borrow_mut()).iter_inc();
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2) }));
+                assert!(
+                    ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    }) != ({ (*s.borrow()).end() })
+                );
+                ({
+                    let ___position: BidirectionalIterator<Vec<i8>> = ({
+                        (*s.borrow()).find_59(
+                            (*(*i.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    });
+                    (*s.borrow()).erase_51(___position)
+                });
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 n.prefix_inc();
             }
         }
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 1_isize));
-        assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
-        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
-            (*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*i.borrow())
-                .iter_deref()
-                .upgrade()
-                .deref())
-            .1
-            .borrow())
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        }));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 1_isize));
-        assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4));
-        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
-            (*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*i.borrow())
-                .iter_deref()
-                .upgrade()
-                .deref())
-            .1
-            .borrow())
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        }));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 0_isize));
-        b = unimplemented!();
-        (*i.borrow_mut()) = unimplemented!();
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 0_isize));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
+        assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
+        assert!(
+            ({
+                match ((*(*i.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer(),)
+                {
+                    (__tmp_14,) => Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                        (*__tmp_14.upgrade().deref())
+                            [..(*__tmp_14.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
+        );
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(4));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 1_isize) }));
+        assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
+        assert!(
+            ({
+                match ((*(*i.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer(),)
+                {
+                    (__tmp_15,) => Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                        (*__tmp_15.upgrade().deref())
+                            [..(*__tmp_15.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
+        );
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(5));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
+        b = ({
+            let ___key: Value<i32> = Rc::new(RefCell::new(6));
+            (*c.borrow()).bucket(___key.as_pointer())
+        });
+        (*i.borrow_mut()) = ({ (*c.borrow()).cbegin_78(b) });
+        (*j.borrow_mut()) = ({ (*c.borrow()).cend_81(b) });
+        assert!(({ (({ distance_5((*i.borrow()).clone(), (*j.borrow()).clone(),) }) == 0_isize) }));
     }
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__;
 pub trait min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl
 {
     fn allocate ( &self , mut n : usize  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
@@ -1148,48 +1932,6 @@ pub trait min_allocator_std_pair_const_int__std_basic_string_char__std_char_trai
     }
 }
 impl min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl for Ptr<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____> {
-}
-pub trait min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__Impl
-{
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
-        unimplemented!()
-    }    fn operator_inc_8 ( &self , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_inc_9 ( &self , mut _a0 : i32  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_dec_10 ( &self , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_dec_11 ( &self , mut _a0 : i32  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_add_assign ( &self , mut n : isize  , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_sub_assign ( &self , mut n : isize  , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_add ( &self , mut n : isize  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_sub ( &self , mut n : isize  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
-        unimplemented!()
-    }
-}
-impl min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__Impl for Ptr<min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__> {
-}
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
-{
 }
 pub fn __cpp2rust_init_globals() {
     let _ = outstanding_bytes_0.with(|_| ());

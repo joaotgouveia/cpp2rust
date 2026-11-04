@@ -9,8 +9,9 @@ use std::rc::{Rc, Weak};
 pub fn add_sizes_0(mut a: usize, mut b: usize) -> usize {
     return (a).wrapping_add(b);
 }
-pub fn take_ulong_1(mut x: u64) -> u64 {
-    return x;
+pub fn take_ulong_1(x: u64) -> u64 {
+    let x: Value<u64> = Rc::new(RefCell::new(x));
+    return (*x.borrow());
 }
 pub fn sub_signed_2(mut a: isize, mut b: isize) -> isize {
     return (a - b);
@@ -202,19 +203,6 @@ fn main_0() -> i32 {
         ((sizes.as_pointer() as Ptr<usize>).to_end()).reinterpret_cast::<usize>();
     assert!((((sizes_end).clone() - (sizes.as_pointer() as Ptr::<usize>)) as i64 == 4_i64));
     assert!((((sizes_end.offset(-((1) as isize))).read()) == 4_usize));
-    let set: Value<CFdSet> = Rc::new(RefCell::new(Default::default()));
-    (set.as_pointer()).with_mut(|__s| __s.zero());
-    (set.as_pointer()).with_mut(|__s| __s.set(3));
-    assert!(
-        (if (set.as_pointer()).with(|__s| __s.isset(3)) {
-            1
-        } else {
-            0
-        } != 0)
-    );
-    libcc2rs::cpp2rust_errno().write(42);
-    assert!(((libcc2rs::cpp2rust_errno().read()) == 42));
-    assert!((u32::from_be(u32::to_be(7_u32)) == 7_u32));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

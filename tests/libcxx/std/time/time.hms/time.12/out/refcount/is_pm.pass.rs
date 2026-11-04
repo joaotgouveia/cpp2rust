@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_bool__bool_ {}
+impl CppMove for test_macros_detail_is_same_bool__bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -37,15 +42,31 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "!std::chrono::is_pm(hours(11))");;
     const _: () = assert!(true, "std::chrono::is_pm(hours(12))");;
     const _: () = assert!(true, "std::chrono::is_pm(hours(23))");;
-    let mut i: i32 = 0;
-    'loop_: while (i < 12) {
-        assert!(!(unimplemented!()));
-        i.prefix_inc();
+    let i: Value<i32> = Rc::new(RefCell::new(0));
+    'loop_: while ((*i.borrow()) < 12) {
+        assert!(
+            !({
+                let ___h: Value<std_chrono_duration_long__std_ratio_3600__1__> =
+                    Rc::new(RefCell::new(
+                        std_chrono_duration_long__std_ratio_3600__1__::new_1({ i.as_pointer() }),
+                    ));
+                is_pm_1(___h.as_pointer())
+            })
+        );
+        (*i.borrow_mut()).prefix_inc();
     }
-    let mut i: i32 = 12;
-    'loop_: while (i < 24) {
-        assert!(unimplemented!());
-        i.prefix_inc();
+    let i: Value<i32> = Rc::new(RefCell::new(12));
+    'loop_: while ((*i.borrow()) < 24) {
+        assert!(
+            ({
+                let ___h: Value<std_chrono_duration_long__std_ratio_3600__1__> =
+                    Rc::new(RefCell::new(
+                        std_chrono_duration_long__std_ratio_3600__1__::new_1({ i.as_pointer() }),
+                    ));
+                is_pm_1(___h.as_pointer())
+            })
+        );
+        (*i.borrow_mut()).prefix_inc();
     }
     return 0;
 }

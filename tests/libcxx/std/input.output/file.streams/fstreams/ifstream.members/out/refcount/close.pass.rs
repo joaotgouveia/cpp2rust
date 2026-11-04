@@ -28,20 +28,22 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let fs: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(!(unimplemented!()));
-        unimplemented!();
-        assert!(unimplemented!());
-        unimplemented!();
-        assert!(!(unimplemented!()));
+        let fs: Value<::std::fs::File> = Rc::new(RefCell::new(::std::fs::File::open("").unwrap()));
+        assert!(({ !({ (*fs.borrow()).is_open_12() }) }));
+        ({ (*fs.borrow()).open_14(Ptr::<i8>::from_string_literal(b"test.dat"), None) });
+        assert!(({ ({ (*fs.borrow()).is_open_12() }) }));
+        ({ (*fs.borrow()).close() });
+        assert!(({ !({ (*fs.borrow()).is_open_12() }) }));
     }
     {
-        let fs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(!(unimplemented!()));
-        unimplemented!();
-        assert!(unimplemented!());
-        unimplemented!();
-        assert!(!(unimplemented!()));
+        let fs: Value<std_basic_ifstream_wchar_t__std_char_traits_wchar_t__> = Rc::new(
+            RefCell::new(<std_basic_ifstream_wchar_t__std_char_traits_wchar_t__>::default()),
+        );
+        assert!(({ !({ (*fs.borrow()).is_open_12() }) }));
+        ({ (*fs.borrow()).open_14(Ptr::<i8>::from_string_literal(b"test.dat"), None) });
+        assert!(({ ({ (*fs.borrow()).is_open_12() }) }));
+        ({ (*fs.borrow()).close() });
+        assert!(({ !({ (*fs.borrow()).is_open_12() }) }));
     }
     return 0;
 }

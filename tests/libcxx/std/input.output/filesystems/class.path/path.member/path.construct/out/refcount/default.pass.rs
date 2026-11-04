@@ -28,8 +28,8 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::is_nothrow_default_constructible<path>::value");;
-    let p: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
+    let p: Value<Vec<i8>> = Rc::new(RefCell::new(vec![0]));
+    assert!(({ ({ (*p.borrow()).empty() }) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

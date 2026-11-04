@@ -9,12 +9,27 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less {}
+impl CppMove for transparent_less {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less_not_referenceable {}
+impl CppMove for transparent_less_not_referenceable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less_nonempty_is_transparent {}
+impl CppMove for transparent_less_nonempty_is_transparent {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less_nonempty {
@@ -22,17 +37,37 @@ pub struct transparent_less_nonempty {
     #[byte_size(1)]
     pub pad_: transparent_less_nonempty_is_transparent,
 }
+impl CppMove for transparent_less_nonempty {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less_no_type {}
+impl CppMove for transparent_less_no_type {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less_private {}
+impl CppMove for transparent_less_private {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct transparent_less_not_a_type {
     #[offset(0)]
     pub is_transparent: i32,
+}
+impl CppMove for transparent_less_not_a_type {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
 #[cpp_from(i32, new_1, value)]
@@ -58,6 +93,11 @@ impl CppEq for C2Int {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         !(operator_lt_0(__lhs.clone(), __rhs.clone()))
             && !(operator_lt_0(__rhs.clone(), __lhs.clone()))
+    }
+}
+impl CppMove for C2Int {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for C2Int {
@@ -97,6 +137,11 @@ impl CppEq for StoredType_int_ {
         operator_eq_3(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for StoredType_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(StoredType_int_, to_StoredType_int_)]
 #[byte_size(16)]
@@ -113,6 +158,11 @@ impl SearchedType_int_ {
             value_: value,
             conversions_: (counter).clone(),
         }
+    }
+}
+impl CppMove for SearchedType_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -132,139 +182,42 @@ impl Callable1<Ptr<StoredType_int_>, usize> for hash_impl {
         })
     }
 }
+impl CppMove for hash_impl {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct non_transparent_hash {}
+impl CppMove for non_transparent_hash {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_hash {}
+impl CppMove for transparent_hash {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_hash_final {}
+impl CppMove for transparent_hash_final {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_equal_final {}
-pub fn test_transparent_equal_range_5(c: ()) {
-    let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<i32> = Rc::new(RefCell::new(0));
-    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() > 0_isize));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() > 0_isize));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() == 0_isize));
-    assert!(((*conversions.borrow()) == 0));
-}
-pub fn test_transparent_equal_range_6(c: ()) {
-    let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<i32> = Rc::new(RefCell::new(0));
-    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() > 0_isize));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() > 0_isize));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() == 0_isize));
-    assert!(((*conversions.borrow()) == 0));
-}
-pub fn test_transparent_equal_range_7(c: ()) {
-    let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<i32> = Rc::new(RefCell::new(0));
-    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() > 0_isize));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() > 0_isize));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() == 0_isize));
-    assert!(((*conversions.borrow()) == 0));
-}
-pub fn test_transparent_equal_range_8(c: ()) {
-    let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<i32> = Rc::new(RefCell::new(0));
-    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() > 0_isize));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() > 0_isize));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() == 0_isize));
-    assert!(((*conversions.borrow()) == 0));
-}
-pub fn test_non_transparent_equal_range_9(c: ()) {
-    let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<i32> = Rc::new(RefCell::new(0));
-    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() > 0_isize));
-    assert!(((*conversions.borrow()) == 1));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() > 0_isize));
-    assert!(((*conversions.borrow()) == 2));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() == 0_isize));
-    assert!(((*conversions.borrow()) == 3));
-}
-pub fn test_non_transparent_equal_range_10(c: ()) {
-    let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<i32> = Rc::new(RefCell::new(0));
-    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() > 0_isize));
-    assert!(((*conversions.borrow()) == 1));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() > 0_isize));
-    assert!(((*conversions.borrow()) == 2));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() == 0_isize));
-    assert!(((*conversions.borrow()) == 3));
-}
-pub fn test_non_transparent_equal_range_11(c: ()) {
-    let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<i32> = Rc::new(RefCell::new(0));
-    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() > 0_isize));
-    assert!(((*conversions.borrow()) == 1));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() > 0_isize));
-    assert!(((*conversions.borrow()) == 2));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() == 0_isize));
-    assert!(((*conversions.borrow()) == 3));
-}
-pub fn test_non_transparent_equal_range_12(c: ()) {
-    let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<i32> = Rc::new(RefCell::new(0));
-    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() > 0_isize));
-    assert!(((*conversions.borrow()) == 1));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() > 0_isize));
-    assert!(((*conversions.borrow()) == 2));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() == 0_isize));
-    assert!(((*conversions.borrow()) == 3));
-}
-pub fn test_non_transparent_equal_range_13(c: ()) {
-    let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<i32> = Rc::new(RefCell::new(0));
-    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() > 0_isize));
-    assert!(((*conversions.borrow()) == 1));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() > 0_isize));
-    assert!(((*conversions.borrow()) == 2));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() == 0_isize));
-    assert!(((*conversions.borrow()) == 3));
-}
-pub fn test_non_transparent_equal_range_14(c: ()) {
-    let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<i32> = Rc::new(RefCell::new(0));
-    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() > 0_isize));
-    assert!(((*conversions.borrow()) == 1));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() > 0_isize));
-    assert!(((*conversions.borrow()) == 2));
-    iters.as_pointer().write(unimplemented!());
-    assert!((unimplemented!() == 0_isize));
-    assert!(((*conversions.borrow()) == 3));
+impl CppMove for transparent_equal_final {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -287,24 +240,44 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        ({ test_transparent_equal_range_5(unimplemented!()) });
-        ({ test_transparent_equal_range_6(unimplemented!()) });
+        ({
+            test_transparent_equal_range_5 ( std_unordered_multimap_StoredType_int___int__transparent_hash__std_equal_to_void___std_allocator_std_pair_const_StoredType_int___int___ :: new_1 ( { Vec::from([ (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(2 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(3 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 2  } , )   )), Rc::new(RefCell::new(3 )))  , ] )  } , None , None , None , None , )   , )
+        });
+        ({
+            test_transparent_equal_range_6 ( std_unordered_multimap_StoredType_int___int__transparent_hash__std_equal_to_void___std_allocator_std_pair_const_StoredType_int___int___ :: new_1 ( { Vec::from([ (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(2 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(3 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 2  } , )   )), Rc::new(RefCell::new(3 )))  , ] )  } , None , None , None , None , )   , )
+        });
     }
     {
-        ({ test_transparent_equal_range_7(unimplemented!()) });
-        ({ test_transparent_equal_range_8(unimplemented!()) });
+        ({
+            test_transparent_equal_range_7 ( std_unordered_multimap_StoredType_int___int__transparent_hash_final__transparent_equal_final__std_allocator_std_pair_const_StoredType_int___int___ :: new_1 ( { Vec::from([ (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(2 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(3 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 2  } , )   )), Rc::new(RefCell::new(3 )))  , ] )  } , None , None , None , None , )   , )
+        });
+        ({
+            test_transparent_equal_range_8 ( std_unordered_multimap_StoredType_int___int__transparent_hash_final__transparent_equal_final__std_allocator_std_pair_const_StoredType_int___int___ :: new_1 ( { Vec::from([ (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(2 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(3 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 2  } , )   )), Rc::new(RefCell::new(3 )))  , ] )  } , None , None , None , None , )   , )
+        });
     }
     {
-        ({ test_non_transparent_equal_range_9(unimplemented!()) });
-        ({ test_non_transparent_equal_range_10(unimplemented!()) });
+        ({
+            test_non_transparent_equal_range_9 ( std_unordered_multimap_StoredType_int___int__non_transparent_hash__std_equal_to_void___std_allocator_std_pair_const_StoredType_int___int___ :: new_1 ( { Vec::from([ (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(2 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(3 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 2  } , )   )), Rc::new(RefCell::new(3 )))  , ] )  } , None , None , None , None , )   , )
+        });
+        ({
+            test_non_transparent_equal_range_10 ( std_unordered_multimap_StoredType_int___int__non_transparent_hash__std_equal_to_void___std_allocator_std_pair_const_StoredType_int___int___ :: new_1 ( { Vec::from([ (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(2 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(3 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 2  } , )   )), Rc::new(RefCell::new(3 )))  , ] )  } , None , None , None , None , )   , )
+        });
     }
     {
-        ({ test_non_transparent_equal_range_11(unimplemented!()) });
-        ({ test_non_transparent_equal_range_12(unimplemented!()) });
+        ({
+            test_non_transparent_equal_range_11 ( std_unordered_multimap_StoredType_int___int__transparent_hash__std_equal_to_StoredType_int____std_allocator_std_pair_const_StoredType_int___int___ :: new_1 ( { Vec::from([ (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(2 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(3 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 2  } , )   )), Rc::new(RefCell::new(3 )))  , ] )  } , None , None , None , None , )   , )
+        });
+        ({
+            test_non_transparent_equal_range_12 ( std_unordered_multimap_StoredType_int___int__transparent_hash__std_equal_to_StoredType_int____std_allocator_std_pair_const_StoredType_int___int___ :: new_1 ( { Vec::from([ (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(2 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(3 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 2  } , )   )), Rc::new(RefCell::new(3 )))  , ] )  } , None , None , None , None , )   , )
+        });
     }
     {
-        ({ test_non_transparent_equal_range_13(unimplemented!()) });
-        ({ test_non_transparent_equal_range_14(unimplemented!()) });
+        ({
+            test_non_transparent_equal_range_13 ( std_unordered_multimap_StoredType_int___int__non_transparent_hash__std_equal_to_StoredType_int____std_allocator_std_pair_const_StoredType_int___int___ :: new_1 ( { Vec::from([ (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(2 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(3 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 2  } , )   )), Rc::new(RefCell::new(3 )))  , ] )  } , None , None , None , None , )   , )
+        });
+        ({
+            test_non_transparent_equal_range_14 ( std_unordered_multimap_StoredType_int___int__non_transparent_hash__std_equal_to_StoredType_int____std_allocator_std_pair_const_StoredType_int___int___ :: new_1 ( { Vec::from([ (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(2 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 1  } , )   )), Rc::new(RefCell::new(3 )))  , (Rc::new(RefCell::new(StoredType_int_ :: new_1 ( { 2  } , )   )), Rc::new(RefCell::new(3 )))  , ] )  } , None , None , None , None , )   , )
+        });
     }
     return 0;
 }
@@ -324,7 +297,9 @@ impl SearchedType_int_Impl for Ptr<SearchedType_int_> {
     fn to_StoredType_int_(&self) -> StoredType_int_ {
         (*self)
             .with(|__s| __s.conversions_.clone())
-            .with_mut(|__v| __v.prefix_inc());
+            .with_mut(|__v| {
+                __v.prefix_inc();
+            });
         return StoredType_int_::new_1({ (*self).with(|__s| __s.value_) });
     }
     fn get_value(&self) -> i32 {

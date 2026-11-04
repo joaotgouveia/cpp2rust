@@ -74,6 +74,11 @@ impl ImplicitDefault {
         Self {}
     }
 }
+impl CppMove for ImplicitDefault {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for ImplicitDefault {
     fn default() -> Self {
         { ImplicitDefault::new() }
@@ -86,6 +91,11 @@ pub struct ExplicitDefault {}
 impl ExplicitDefault {
     pub fn new() -> Self {
         Self {}
+    }
+}
+impl CppMove for ExplicitDefault {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for ExplicitDefault {
@@ -103,6 +113,11 @@ impl ImplicitInt {
         Self {}
     }
 }
+impl CppMove for ImplicitInt {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "test_convertible<ImplicitInt, int>()");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -110,6 +125,11 @@ pub struct ExplicitInt {}
 impl ExplicitInt {
     pub fn new(mut _a0: i32) -> Self {
         Self {}
+    }
+}
+impl CppMove for ExplicitInt {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 const _: () = assert!(true, "!test_convertible<ExplicitInt, int>()");
@@ -127,6 +147,11 @@ impl Clone for ImplicitCopy {
         ImplicitCopy::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for ImplicitCopy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "test_convertible<ImplicitCopy, ImplicitCopy>()");
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Default)]
 #[byte_size(1)]
@@ -142,6 +167,11 @@ impl Clone for ExplicitCopy {
         ExplicitCopy::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for ExplicitCopy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "!test_convertible<ExplicitCopy, ExplicitCopy>()");
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, Default)]
 #[byte_size(1)]
@@ -149,6 +179,11 @@ pub struct ImplicitMove {}
 impl ImplicitMove {
     pub fn move_from(_a0: Ptr<ImplicitMove>) -> Self {
         Self {}
+    }
+}
+impl CppMove for ImplicitMove {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(true, "test_convertible<ImplicitMove, ImplicitMove>()");
@@ -160,6 +195,11 @@ impl ExplicitMove {
         Self {}
     }
 }
+impl CppMove for ExplicitMove {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "!test_convertible<ExplicitMove, ExplicitMove>()");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -169,6 +209,11 @@ impl ImplicitArgs {
         Self {}
     }
 }
+impl CppMove for ImplicitArgs {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "test_convertible<ImplicitArgs, int, int, int>()");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -176,6 +221,11 @@ pub struct ExplicitArgs {}
 impl ExplicitArgs {
     pub fn new(mut _a0: i32, mut _a1: i32, mut _a2: i32) -> Self {
         Self {}
+    }
+}
+impl CppMove for ExplicitArgs {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 const _: () = assert!(true, "!test_convertible<ExplicitArgs, int, int, int>()");

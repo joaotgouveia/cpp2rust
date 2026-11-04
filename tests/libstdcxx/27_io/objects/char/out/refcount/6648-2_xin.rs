@@ -14,7 +14,7 @@ pub fn test09_0() {
         });
         __s
     };
-    unimplemented!();
+    ({ (*cin_1.with(Value::clone).borrow()).ignore_29(2048_i64, (('\n' as i8) as i32)) });
 }
 pub fn main() {
     __cpp2rust_init_globals();

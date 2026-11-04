@@ -29,28 +29,32 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
     {
-        let sd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let wd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sd : Value<std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_86400__1___ > = Rc::new(RefCell::new(<std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_86400__1___  >::default() )) ;
+        let wd: Value<std_chrono_weekday> =
+            Rc::new(RefCell::new(std_chrono_weekday::new_1({ sd.as_pointer() })));
         const _: () = assert!(true, "wd.ok()");;
         const _: () = assert!(true, "wd.c_encoding() == 4");;
     }
     {
-        let sd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let wd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sd : Value<std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_86400__1___ > = Rc::new(RefCell::new({ let __tmp_0 : Value<std_chrono_duration_long__std_ratio_86400__1__ > = Rc::new(RefCell::new({ let __tmp_1 : Value<i32 > = Rc::new(RefCell::new(( 10957 + 32 ) )); std_chrono_duration_long__std_ratio_86400__1__ :: new_1 ( { __tmp_1.as_pointer() } , )  } )); std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_86400__1___ :: new_1 ( { __tmp_0.as_pointer() } , )  } )) ;
+        let wd: Value<std_chrono_weekday> =
+            Rc::new(RefCell::new(std_chrono_weekday::new_1({ sd.as_pointer() })));
         const _: () = assert!(true, "wd.ok()");;
         const _: () = assert!(true, "wd.c_encoding() == 3");;
     }
     {
-        let sd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let wd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sd : Value<std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_86400__1___ > = Rc::new(RefCell::new({ let __tmp_2 : Value<std_chrono_duration_long__std_ratio_86400__1__ > = Rc::new(RefCell::new({ let __tmp_3 : Value<i32 > = Rc::new(RefCell::new(- 10957_i32 )); std_chrono_duration_long__std_ratio_86400__1__ :: new_1 ( { __tmp_3.as_pointer() } , )  } )); std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_86400__1___ :: new_1 ( { __tmp_2.as_pointer() } , )  } )) ;
+        let wd: Value<std_chrono_weekday> =
+            Rc::new(RefCell::new(std_chrono_weekday::new_1({ sd.as_pointer() })));
         const _: () = assert!(true, "wd.ok()");;
         const _: () = assert!(true, "wd.c_encoding() == 2");;
     }
     {
-        let sd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let wd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
-        assert!((unimplemented!() == 3_u32));
+        let sd : Value<std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_86400__1___ > = Rc::new(RefCell::new({ let __tmp_4 : Value<std_chrono_duration_long__std_ratio_86400__1__ > = Rc::new(RefCell::new({ let __tmp_5 : Value<i32 > = Rc::new(RefCell::new(- ( ( 10957 + 34 ) ) )); std_chrono_duration_long__std_ratio_86400__1__ :: new_1 ( { __tmp_5.as_pointer() } , )  } )); std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_86400__1___ :: new_1 ( { __tmp_4.as_pointer() } , )  } )) ;
+        let wd: Value<std_chrono_weekday> =
+            Rc::new(RefCell::new(std_chrono_weekday::new_1({ sd.as_pointer() })));
+        assert!(({ ({ (*wd.borrow()).ok() }) }));
+        assert!(({ (({ (*wd.borrow()).c_encoding() }) == 3_u32) }));
     }
     return 0;
 }

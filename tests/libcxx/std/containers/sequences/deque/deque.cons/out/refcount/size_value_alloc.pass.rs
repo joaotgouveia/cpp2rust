@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -35,105 +40,7 @@ thread_local!(
 thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
-pub fn operator_sub_4(
-    mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> isize {
-    return (((x.ptr_).clone() - (y.ptr_).clone()) as i64 as isize);
-}
-pub fn operator_eq_5(
-    mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> bool {
-    return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
-}
-pub fn operator_ne_6(
-    mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
-    mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> bool {
-    return !({
-        let _x: min_pointer_int__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_5(_x, y)
-    });
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<i32>,
-}
-impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    fn new_1(mut p: Ptr<i32>) -> Self {
-        Self { ptr_: (p).clone() }
-    }
-}
-impl CppEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_5(__lhs.read(), __rhs.read())
-    }
-}
-impl CppAdvance for min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    fn cpp_inc(__it: &Ptr<Self>) {
-        __it.operator_inc_8();
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<i32>,
-}
-impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
-pub fn operator_sub_7(
-    mut x : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-) -> isize {
-    return (((x.ptr_).clone() - (y.ptr_).clone()) as i64 as isize);
-}
-pub fn operator_lt_8(
-    mut x : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-) -> bool {
-    return ({ (x.ptr_).clone() } < { (y.ptr_).clone() });
-}
-pub fn operator_eq_9(
-    mut x : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-) -> bool {
-    return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
-}
-pub fn operator_ne_10(
-    mut x : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-    mut y : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-) -> bool {
-    return !({
-        let _x: min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__   = x   ;
-        operator_eq_9(_x, y)
-    });
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__
-{
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>,
-}
-impl min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn new_1 ( mut p : Ptr< min_pointer_int__std_integral_constant_unsigned_long__0__  >  , ) -> Self { Self { ptr_ : (p ).clone() , }  } }
-impl CppLess for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool { operator_lt_8(__lhs.read(), __rhs.read()) } }
-impl CppEq for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool { operator_eq_9(__lhs.read(), __rhs.read()) } }
-impl CppAdvance for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn cpp_inc(__it: &Ptr<Self>) { __it.operator_inc_8(); } }
-pub fn operator_eq_11(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> bool {
+pub fn operator_eq_4(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> bool {
     return true;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -141,7 +48,12 @@ pub fn operator_eq_11(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) 
 pub struct min_allocator_int_ {}
 impl CppEq for min_allocator_int_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_11(__lhs.read(), __rhs.read())
+        operator_eq_4(__lhs.read(), __rhs.read())
+    }
+}
+impl CppMove for min_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {
@@ -153,37 +65,49 @@ impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {
 #[cpp_from(min_allocator_int_, new_1, value)]
 #[byte_size(1)]
 pub struct min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {}
-impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {}
-pub fn test_12(mut n: u32, x: Ptr<i32>, a: Ptr<()>) {
-    let d: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
-    assert!((unimplemented!() == (n as usize)));
-    assert!(((unimplemented!() as usize) == unimplemented!()));
-    const _: () = assert!(true, "");;
-    let i: Value<()> = Rc::new(RefCell::new(<()>::from(unimplemented!())));
-    let e: Value<()> = Rc::new(RefCell::new(<()>::from(unimplemented!())));
-    'loop_: while (*i.borrow()) != (*e.borrow()) {
-        assert!(({ ((*i.borrow()).iter_deref().read()) } == { (x.read()) }));
-        (*i.borrow_mut()).iter_inc();
+impl CppMove for min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
-pub fn test_13(mut n: u32, x: Ptr<i32>, a: Ptr<min_allocator_int_>) {
-    let d: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {}
+pub fn test_5(mut n: u32, x: Ptr<i32>, a: Ptr<min_allocator_int_>) {
+    let d: Value<Vec<i32>> = Rc::new(RefCell::new(std_deque_int__min_allocator_int__::new_1(
+        { (n as usize) },
+        { (x).clone() },
+        { (a).clone() },
+    )));
     assert!(
         ({
-            let _arg0: min_allocator_int_ = unimplemented!();
-            let _arg1: min_allocator_int_ = (*a.upgrade().deref()).clone();
-            operator_eq_11(_arg0, _arg1)
+            ({
+                let _arg0: min_allocator_int_ = ({ (*d.borrow()).get_allocator() });
+                let _arg1: min_allocator_int_ = (*a.upgrade().deref()).clone();
+                operator_eq_4(_arg0, _arg1)
+            })
         })
     );
-    assert!((unimplemented!() == (n as usize)));
-    assert!(((unimplemented!() as usize) == unimplemented!()));
+    assert!(({ (({ (*d.borrow()).size() }) == (n as usize)) }));
+    assert!(
+        ({
+            ((({
+                let ___first: std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*d.borrow_mut()) . begin_24 ( ) } )   ;
+                let ___last: std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*d.borrow_mut()) . end_26 ( ) } )   ;
+                distance_6(___first, ___last)
+            }) as usize)
+                == ({ (*d.borrow()).size() }))
+        })
+    );
     const _: () = assert!(true, "");;
-    let i: Value<()> = Rc::new(RefCell::new(<()>::from(unimplemented!())));
-    let e: Value<()> = Rc::new(RefCell::new(<()>::from(unimplemented!())));
+    let i : Value<std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0___ > = Rc::new(RefCell::new(<std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0___  >::from(( { (*d.borrow_mut()) . begin_24 ( ) } )  ) )) ;
+    let e : Value<std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0___ > = Rc::new(RefCell::new(<std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0___  >::from(( { (*d.borrow_mut()) . end_26 ( ) } )  ) )) ;
     'loop_: while (*i.borrow()) != (*e.borrow()) {
-        assert!(({ ((*i.borrow()).iter_deref().read()) } == { (x.read()) }));
-        (*i.borrow_mut()).iter_inc();
+        assert!(({ ({ ((*i.borrow()).iter_deref().read()) } == { (x.read()) }) }));
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
     }
 }
 pub fn main() {
@@ -207,109 +131,115 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_allocator_int_> = Rc::new(RefCell::new(<std_allocator_int_>::default()));
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(5));
-            test_12(0_u32, _x.as_pointer(), a.as_pointer())
+            test_7(0_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(10));
-            test_12(1_u32, _x.as_pointer(), a.as_pointer())
+            test_7(1_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(11));
-            test_12(10_u32, _x.as_pointer(), a.as_pointer())
+            test_7(10_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(-11_i32));
-            test_12(1023_u32, _x.as_pointer(), a.as_pointer())
+            test_7(1023_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(25));
-            test_12(1024_u32, _x.as_pointer(), a.as_pointer())
+            test_7(1024_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(0));
-            test_12(1025_u32, _x.as_pointer(), a.as_pointer())
+            test_7(1025_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(110));
-            test_12(2047_u32, _x.as_pointer(), a.as_pointer())
+            test_7(2047_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(-500_i32));
-            test_12(2048_u32, _x.as_pointer(), a.as_pointer())
+            test_7(2048_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(654));
-            test_12(2049_u32, _x.as_pointer(), a.as_pointer())
+            test_7(2049_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(78));
-            test_12(4095_u32, _x.as_pointer(), a.as_pointer())
+            test_7(4095_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(1165));
-            test_12(4096_u32, _x.as_pointer(), a.as_pointer())
+            test_7(4096_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(157));
-            test_12(4097_u32, _x.as_pointer(), a.as_pointer())
+            test_7(4097_u32, _x.as_pointer(), a.as_pointer())
         });
     }
     {
         let a: Value<min_allocator_int_> = Rc::new(RefCell::new(<min_allocator_int_>::default()));
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(5));
-            test_13(0_u32, _x.as_pointer(), a.as_pointer())
+            test_5(0_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(10));
-            test_13(1_u32, _x.as_pointer(), a.as_pointer())
+            test_5(1_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(11));
-            test_13(10_u32, _x.as_pointer(), a.as_pointer())
+            test_5(10_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(-11_i32));
-            test_13(1023_u32, _x.as_pointer(), a.as_pointer())
+            test_5(1023_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(25));
-            test_13(1024_u32, _x.as_pointer(), a.as_pointer())
+            test_5(1024_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(0));
-            test_13(1025_u32, _x.as_pointer(), a.as_pointer())
+            test_5(1025_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(110));
-            test_13(2047_u32, _x.as_pointer(), a.as_pointer())
+            test_5(2047_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(-500_i32));
-            test_13(2048_u32, _x.as_pointer(), a.as_pointer())
+            test_5(2048_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(654));
-            test_13(2049_u32, _x.as_pointer(), a.as_pointer())
+            test_5(2049_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(78));
-            test_13(4095_u32, _x.as_pointer(), a.as_pointer())
+            test_5(4095_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(1165));
-            test_13(4096_u32, _x.as_pointer(), a.as_pointer())
+            test_5(4096_u32, _x.as_pointer(), a.as_pointer())
         });
         ({
             let _x: Value<i32> = Rc::new(RefCell::new(157));
-            test_13(4097_u32, _x.as_pointer(), a.as_pointer())
+            test_5(4097_u32, _x.as_pointer(), a.as_pointer())
         });
     }
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__;
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
 pub trait min_allocator_int_Impl {
     fn allocate(&self, n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
     fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: usize);
@@ -317,7 +247,7 @@ pub trait min_allocator_int_Impl {
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
     fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
-            unimplemented!()
+            ({ <std_allocator_int_>::default().allocate(n) })
         });
     }
     fn deallocate(
@@ -325,7 +255,7 @@ impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
         mut n: usize,
     ) {
-        unimplemented!();
+        ({ <std_allocator_int_>::default().deallocate((p.ptr_).clone(), n) });
     }
 }
 pub trait min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___Impl {
@@ -340,214 +270,18 @@ impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___Imp
     for Ptr<min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___>
 {
     fn allocate ( &self , mut n : usize  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
-        return min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()   } , )    ;
+        return min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: new_1 ( { ( { <std_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___  >::default() . allocate ( n  , ) } )   } , )    ;
     }
     fn deallocate(
         &self,
         mut p : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
         mut n: usize,
     ) {
-        unimplemented!();
-    }
-}
-pub trait min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_inc_9(
-        &self,
-    ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_10(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_11(
-        &self,
-    ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_12(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
-        unimplemented!()
-    }
-}
-impl min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<i32>;
-    fn operator_arrow(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>;
-    fn operator_post_inc_9(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_10(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_11(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>;
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(&self, n: isize) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
-        unimplemented!()
-    }
-}
-impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>
-{
-    fn operator_deref(&self) -> Ptr<i32> {
-        return (*self).with(|__s| __s.ptr_.clone());
-    }
-    fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
-        return (*self).clone();
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        {
-            let _ptr = field!((*self), ptr_);
-            _ptr.write(_ptr.read() + n)
-        };
-        return (*self).clone();
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        let tmp: Value<min_pointer_int__std_integral_constant_unsigned_long__0__> =
-            Rc::new(RefCell::new((*(*self).upgrade().deref()).clone()));
         ({
-            min_pointer_int__std_integral_constant_unsigned_long__0__Impl::operator_add_assign(
-                &tmp.as_pointer(),
-                n,
-            )
+            <std_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___>::default()
+                .deallocate((p.ptr_).clone(), n)
         });
-        return (*tmp.borrow()).clone();
     }
-}
-pub trait min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__Impl
-{
-    fn to_bool(&self) -> bool;
-    fn operator_deref(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>;
-    fn operator_arrow(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_inc_8 ( &self , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  > ;
-    fn operator_post_inc_9 ( &self , mut _a0 : i32  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_dec_10 ( &self , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_dec_11 ( &self , mut _a0 : i32  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }
-    fn operator_add_assign ( &self , n : isize  , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  > ;
-    fn operator_sub_assign ( &self , n : isize  , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  > ;
-    fn operator_add ( &self , n : isize  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  ;
-    fn operator_sub ( &self , n : isize  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  ;
-    fn operator_index(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-}
-impl min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__Impl for Ptr<min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__> {
-fn to_bool ( &self , ) -> bool  { return ! ( ( (* self ) .with(|__s| __s . ptr_ .clone()) ).is_null() )   ;
- } fn operator_deref ( &self , ) -> Ptr< min_pointer_int__std_integral_constant_unsigned_long__0__  > { return (* self ) .with(|__s| __s . ptr_ .clone())    ;
- } fn operator_inc_8 ( &self , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  > { field!((* self ) , ptr_) .with_mut(|__v| __v. prefix_inc ()) ;
- return ((* self )  ).clone()  ;
- } fn operator_add_assign ( &self , mut n : isize  , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  > { { let _ptr = field!((* self ) , ptr_); _ptr.write(_ptr.read() + n ) } ;
- return ((* self )  ).clone()  ;
- } fn operator_sub_assign ( &self , mut n : isize  , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  > { { let _ptr = field!((* self ) , ptr_); _ptr.write(_ptr.read() - n ) } ;
- return ((* self )  ).clone()  ;
- } fn operator_add ( &self , mut n : isize  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  { let tmp : Value<min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ > = Rc::new(RefCell::new((( * (* self ) .upgrade().deref() )  ).clone() )) ;
-  ;
- ;
- ( { min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__Impl :: operator_add_assign ( &tmp .as_pointer()  , n  , ) } )  ;
- return ((*tmp.borrow()) ).clone()   ;
- } fn operator_sub ( &self , mut n : isize  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  { let tmp : Value<min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ > = Rc::new(RefCell::new((( * (* self ) .upgrade().deref() )  ).clone() )) ;
-  ;
- ;
- ( { min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__Impl :: operator_sub_assign ( &tmp .as_pointer()  , n  , ) } )  ;
- return ((*tmp.borrow()) ).clone()   ;
- } }
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
-{
 }
 pub fn __cpp2rust_init_globals() {
     let _ = outstanding_bytes_0.with(|_| ());

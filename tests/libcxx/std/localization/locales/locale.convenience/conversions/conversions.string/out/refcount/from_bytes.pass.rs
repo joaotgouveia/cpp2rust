@@ -13,39 +13,67 @@ impl TestHelper_wchar_t__4_ {
     pub fn test() {
         const _: () = assert!(true, "(std::is_same<CharT, wchar_t>::value)");;
         {
-            let myconv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let myconv : Value<std_wstring_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__ > = Rc::new(RefCell::new(<std_wstring_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__  >::default() )) ;
             let bs: Value<Vec<i8>> = Rc::new(RefCell::new({
                 let mut __bytes = Ptr::<i8>::from_string_literal(b"\xf1\x80\x80\x83").to_c_bytes();
                 __bytes.push(0_i8);
                 __bytes
             }));
-            let ws: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+            let ws: Value<Vec<i32>> = Rc::new(RefCell::new(
+                ({ (*myconv.borrow()).from_bytes_8(('a' as i8)) }),
+            ));
             assert!(
-                Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32,]).with_c_str(|__s| (*ws
-                    .borrow())[..(*ws.borrow()).len().saturating_sub(1)]
-                    == *__s)
+                ({
+                    Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32]).with_c_str(|__s| {
+                        (*ws.borrow())[..(*ws.borrow()).len().saturating_sub(1)] == *__s
+                    })
+                })
             );
-            ws.as_pointer().write(unimplemented!());
+            ws.as_pointer()
+                .write(({ (*myconv.borrow()).from_bytes_9(bs.decay()) }));
             assert!(
-                Ptr::<i32>::from_string_literal(&[262147 as i32, 0 as i32,]).with_c_str(|__s| (*ws
-                    .borrow())[..(*ws.borrow()).len().saturating_sub(1)]
-                    == *__s)
+                ({
+                    Ptr::<i32>::from_string_literal(&[262147 as i32, 0 as i32]).with_c_str(|__s| {
+                        (*ws.borrow())[..(*ws.borrow()).len().saturating_sub(1)] == *__s
+                    })
+                })
             );
-            ws.as_pointer().write(unimplemented!());
+            ws.as_pointer().write(
+                ({
+                    (*myconv.borrow())
+                        .from_bytes_10((bs.as_pointer()).reinterpret_cast::<Vec<i8>>())
+                }),
+            );
             assert!(
-                Ptr::<i32>::from_string_literal(&[262147 as i32, 0 as i32,]).with_c_str(|__s| (*ws
-                    .borrow())[..(*ws.borrow()).len().saturating_sub(1)]
-                    == *__s)
+                ({
+                    Ptr::<i32>::from_string_literal(&[262147 as i32, 0 as i32]).with_c_str(|__s| {
+                        (*ws.borrow())[..(*ws.borrow()).len().saturating_sub(1)] == *__s
+                    })
+                })
             );
-            ws.as_pointer().write(unimplemented!());
+            ws.as_pointer().write(
+                ({
+                    let ___first: Ptr<i8> = bs.decay();
+                    let ___last: Ptr<i8> = bs.decay().offset(((*bs.borrow()).len() - 1) as isize);
+                    (*myconv.borrow()).from_bytes_11(___first, ___last)
+                }),
+            );
             assert!(
-                Ptr::<i32>::from_string_literal(&[262147 as i32, 0 as i32,]).with_c_str(|__s| (*ws
-                    .borrow())[..(*ws.borrow()).len().saturating_sub(1)]
-                    == *__s)
+                ({
+                    Ptr::<i32>::from_string_literal(&[262147 as i32, 0 as i32]).with_c_str(|__s| {
+                        (*ws.borrow())[..(*ws.borrow()).len().saturating_sub(1)] == *__s
+                    })
+                })
             );
-            ws.as_pointer().write(unimplemented!());
-            assert!((((*ws.borrow()).len() - 1) == 0_usize));
+            ws.as_pointer()
+                .write(({ (*myconv.borrow()).from_bytes_9(Ptr::<i8>::from_string_literal(b"")) }));
+            assert!(({ (((*ws.borrow()).len() - 1) == 0_usize) }));
         }
+    }
+}
+impl CppMove for TestHelper_wchar_t__4_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

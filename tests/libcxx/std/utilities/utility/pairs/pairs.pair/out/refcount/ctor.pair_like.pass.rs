@@ -9,6 +9,11 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct my_ns_MyPairLike {}
+impl CppMove for my_ns_MyPairLike {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "!std::is_constructible_v<std::pair<int,int>, my_ns::MyPairLike const&>"
@@ -18,8 +23,8 @@ pub fn test_0() -> bool {
         {
             let a: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2])));
             let p: Value<(Value<i32>, Value<i32>)> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((*(*p.borrow()).0.borrow()) == 1));
-            assert!(((*(*p.borrow()).1.borrow()) == 2));
+            assert!(({ ((*(*p.borrow()).0.borrow()) == 1) }));
+            assert!(({ ((*(*p.borrow()).1.borrow()) == 2) }));
             const _: () = assert!(
                 true,
                 "!std::is_constructible_v<std::pair<int, int>, std::array<int, 1>>"
@@ -36,8 +41,8 @@ pub fn test_0() -> bool {
         {
             let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let p: Value<(Value<i32>, Value<i32>)> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((*(*p.borrow()).0.borrow()) == 1));
-            assert!(((*(*p.borrow()).1.borrow()) == 2));
+            assert!(({ ((*(*p.borrow()).0.borrow()) == 1) }));
+            assert!(({ ((*(*p.borrow()).1.borrow()) == 2) }));
             const _: () = assert!(
                 true,
                 "!std::is_constructible_v<std::pair<int, int>, std::tuple<int>>"
@@ -57,13 +62,17 @@ pub fn test_0() -> bool {
             let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> =
                 Rc::new(RefCell::new(({ (*a.borrow())() })));
             assert!(
-                ({ (*(*p.borrow()).0.borrow()).clone() } == {
-                    (data.as_pointer() as Ptr<i32>).offset((0) as isize)
+                ({
+                    ({ (*(*p.borrow()).0.borrow()).clone() } == {
+                        (data.as_pointer() as Ptr<i32>).offset((0) as isize)
+                    })
                 })
             );
             assert!(
-                ({ (*(*p.borrow()).1.borrow()).clone() } == {
-                    (data.as_pointer() as Ptr<i32>).offset((5) as isize)
+                ({
+                    ({ (*(*p.borrow()).1.borrow()).clone() } == {
+                        (data.as_pointer() as Ptr<i32>).offset((5) as isize)
+                    })
                 })
             );
         }
@@ -71,7 +80,7 @@ pub fn test_0() -> bool {
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p: Value<(Value<i64>, Value<Vec<i8>>)> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*(*p.borrow()).0.borrow()) == 34_i64));
+        assert!(({ ((*(*p.borrow()).0.borrow()) == 34_i64) }));
         assert!(unimplemented!());
         const _: () = assert!(
             true,
@@ -138,16 +147,36 @@ impl NoCopy_1 {
         Self {}
     }
 }
+impl CppMove for NoCopy_1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct To_2 {}
+impl CppMove for To_2 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(To_2, to_To_2)]
 #[byte_size(1)]
 pub struct FromImplicit_3 {}
+impl CppMove for FromImplicit_3 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct FromExplicit_4 {}
+impl CppMove for FromExplicit_4 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

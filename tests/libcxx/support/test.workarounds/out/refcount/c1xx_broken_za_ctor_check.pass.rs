@@ -15,6 +15,11 @@ impl X {
         Self {}
     }
 }
+impl CppMove for X {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn PushFront_0(_a0: Ptr<X>) {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

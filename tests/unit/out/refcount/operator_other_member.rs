@@ -14,6 +14,11 @@ impl Static {
         return (a * b);
     }
 }
+impl CppMove for Static {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(i32, to_i32)]
 #[byte_size(4)]
@@ -36,6 +41,11 @@ impl Callable2<i32, i32, i32> for S {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             SImpl::operator_call_3(__it, a1, a2)
         })
+    }
+}
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

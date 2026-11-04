@@ -155,10 +155,13 @@ pub fn AssertOrderAreNoexcept_3() {
 }
 pub fn testOrder_4(t1: Ptr<()>, t2: Ptr<()>, order: std::cmp::Ordering) -> bool {
     let order: Value<std::cmp::Ordering> = Rc::new(RefCell::new(order));
-    let mut equal: bool = (*order.borrow()) == std::cmp::Ordering::Equal;
-    let mut less: bool = (*order.borrow()) == std::cmp::Ordering::Less;
-    let mut greater: bool = (*order.borrow()) == std::cmp::Ordering::Greater;
-    return (unimplemented!() == (*order.borrow()))
+    let mut equal: bool = ({ (*order.borrow()) })
+        == ({ (*libcc2rs::strong_ordering_equivalent().upgrade().deref()) });
+    let mut less: bool =
+        ({ (*order.borrow()) }) == ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) });
+    let mut greater: bool =
+        ({ (*order.borrow()) }) == ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) });
+    return (unimplemented!() == ({ (*order.borrow()) }))
         && ({
             let _t1: Ptr<()> = (t1).clone();
             let _t2: Ptr<()> = (t2).clone();
@@ -196,15 +199,20 @@ impl CppEq for LessAndEqComp {
         operator_eq_6(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for LessAndEqComp {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_cmp_7(mut _a0: StrongOrder, mut _a1: StrongOrder) -> std::cmp::Ordering {
     {
         let cmp: Value<std::cmp::Ordering> =
             Rc::new(RefCell::new(std::cmp::Ord::cmp(&(_a0.value), &(_a1.value))));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(i32, new, value)]
@@ -226,6 +234,11 @@ impl CppLess for StrongOrder {
 impl CppEq for StrongOrder {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_cmp_7(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
+    }
+}
+impl CppMove for StrongOrder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_cmp_8(mut _a0: WeakOrder, mut _a1: WeakOrder) -> () {
@@ -257,6 +270,11 @@ impl CppLess for WeakOrder {
 impl CppEq for WeakOrder {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_cmp_8(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
+    }
+}
+impl CppMove for WeakOrder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_cmp_9(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
@@ -293,9 +311,19 @@ impl CppEq for PartialOrder {
         operator_eq_10(__lhs.read(), __rhs.read())
     }
 }
+impl CppMove for PartialOrder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NonComparable {}
+impl CppMove for NonComparable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(!(false), "!std::equality_comparable<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorEqual<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorGreaterThan<NonComparable>");
@@ -324,6 +352,11 @@ impl CppEq for EqualityComparable {
         operator_eq_11(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for EqualityComparable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::equality_comparable<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorEqual<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorNotEqual<EqualityComparable>");
@@ -339,11 +372,11 @@ pub fn operator_cmp_13(
             &(_a0.with(|__s| __s.value_)),
             &(_a1.with(|__s| __s.value_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(i32, new, value)]
@@ -367,6 +400,11 @@ impl CppEq for ThreeWayComparable {
         operator_eq_12(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for ThreeWayComparable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::equality_comparable<ThreeWayComparable>");
 const _: () = assert!(true, "std::three_way_comparable<ThreeWayComparable>");
 const _: () = assert!(true, "HasOperatorEqual<ThreeWayComparable>");
@@ -382,11 +420,21 @@ pub struct ImplicitBool_E1 {
     #[offset(0)]
     pub x: i32,
 }
+impl CppMove for ImplicitBool_E1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct ImplicitBool_E2 {
     #[offset(0)]
     pub y: i32,
+}
+impl CppMove for ImplicitBool_E2 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(bool, to_bool_1)]
@@ -394,6 +442,11 @@ pub struct ImplicitBool_E2 {
 pub struct ImplicitBool {
     #[offset(0)]
     pub val: bool,
+}
+impl CppMove for ImplicitBool {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn operator_eq_14(mut lhs: ImplicitBool_E1, mut rhs: ImplicitBool_E2) -> ImplicitBool {
     return ImplicitBool {
@@ -405,7 +458,15 @@ pub fn test_15() -> bool {
     let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     assert!(({ testComparisons_1(m1.as_pointer(), m2.as_pointer(), true, false,) }));
     ({ AssertComparisonsAreNoexcept_2() });
-    assert!(({ testOrder_4(m1.as_pointer(), m2.as_pointer(), std::cmp::Ordering::Equal,) }));
+    assert!(
+        ({
+            testOrder_4(
+                m1.as_pointer(),
+                m2.as_pointer(),
+                ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+            )
+        })
+    );
     ({ AssertOrderAreNoexcept_3() });
     return true;
 }

@@ -9,38 +9,74 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_type_list_NumT_0___NumT_1___NumT_2__ {}
+impl CppMove for types_type_list_NumT_0___NumT_1___NumT_2__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list___ {}
+impl CppMove for types_concatenate_types_type_list___ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_int__ {}
+impl CppMove for types_concatenate_types_type_list_int__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_int___types_type_list_long__ {}
+impl CppMove for types_concatenate_types_type_list_int___types_type_list_long__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_int___types_type_list_long___types_type_list_long_long__
 {}
+impl CppMove
+    for types_concatenate_types_type_list_int___types_type_list_long___types_type_list_long_long__
+{
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_int__long___types_type_list_long_long__ {}
+impl CppMove for types_concatenate_types_type_list_int__long___types_type_list_long_long__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn for_each_0(mut _a0: types_type_list_NumT_0___NumT_1___NumT_2__, f: ApplyAllTest) {
     let f: Value<ApplyAllTest> = Rc::new(RefCell::new(f));
     ({
@@ -79,12 +115,27 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NumT_0_ {}
+impl CppMove for NumT_0_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NumT_1_ {}
+impl CppMove for NumT_1_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NumT_2_ {}
+impl CppMove for NumT_2_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Ptr< bool  >  , new, value)]
 #[byte_size(8)]
@@ -107,6 +158,11 @@ impl Callable0<()> for ApplyAllTest {
         })
     }
 }
+impl CppMove for ApplyAllTest {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Identity {}
@@ -115,6 +171,11 @@ impl Callable1<bool, bool> for Identity {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             IdentityImpl::operator_call(__it, a1)
         })
+    }
+}
+impl CppMove for Identity {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn test_for_each_2() {
@@ -126,9 +187,16 @@ pub fn test_for_each_2() {
             ApplyAllTest::new({ (is_called_array.as_pointer() as Ptr<bool>) }),
         )
     });
-    assert!(unimplemented!());
+    assert!(
+        ({
+            let ___first: Ptr<bool> = (is_called_array.as_pointer() as Ptr<bool>);
+            let ___last: Ptr<bool> =
+                (is_called_array.as_pointer() as Ptr<bool>).offset((3) as isize);
+            all_of_3(___first, ___last, <Identity>::default())
+        })
+    );
 }
-pub fn test_3() -> bool {
+pub fn test_4() -> bool {
     ({ test_for_each_2() });
     return true;
 }
@@ -152,7 +220,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_3() });
+    ({ test_4() });
     const _: () = assert!(true, "test()");;
     return 0;
 }

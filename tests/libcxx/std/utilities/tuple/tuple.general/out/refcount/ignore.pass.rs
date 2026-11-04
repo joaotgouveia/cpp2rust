@@ -19,38 +19,49 @@ pub fn test_nodiscard_0() -> i32 {
 }
 pub fn test_1() -> bool {
     {
-        let ignore_v: Ptr<()> = unimplemented!();
+        let ignore_v: Ptr<std__Swallow_assign> = ignore_2.with(|v| v.as_pointer());
     }
     {
-        let res: Ptr<()> = (unimplemented!());
+        let res: Ptr<std__Swallow_assign> = (ignore_2.with(|rc| *rc.borrow_mut() = 42));
         const _: () = assert!(true, "noexcept(res = (std::ignore = 42))");;
-        assert!(({ (res).clone() } == { (unimplemented!()) }));
+        assert!(({ (res).clone() } == { (ignore_2.with(|v| v.as_pointer())) }));
     }
     {
-        let mut s: S_2 = S_2 { bf: 2_u32 };
-        let res: Ptr<()> = (unimplemented!());
-        assert!(({ (res).clone() } == { (unimplemented!()) }));
+        let mut s: S_3 = S_3 { bf: 2_u32 };
+        let res: Ptr<std__Swallow_assign> = (ignore_2.with(|rc| *rc.borrow_mut() = s.bf));
+        assert!(({ (res).clone() } == { (ignore_2.with(|v| v.as_pointer())) }));
     }
     {
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let moved: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let copy: Value<std__Swallow_assign> = Rc::new(RefCell::new(
+            (*ignore_2.with(Value::clone).borrow()).clone(),
+        ));
+        let moved: Value<std__Swallow_assign> = Rc::new(RefCell::new((*copy.borrow_mut()).clone()));
     }
     {
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let moved: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let copy: Value<std__Swallow_assign> = Rc::new(RefCell::new(
+            (*ignore_2.with(Value::clone).borrow()).clone(),
+        ));
+        (*copy.borrow_mut()) = (*ignore_2.with(Value::clone).borrow()).clone();
+        let moved: Value<std__Swallow_assign> = Rc::new(RefCell::new(
+            (*ignore_2.with(Value::clone).borrow()).clone(),
+        ));
+        (*moved.borrow_mut()) = (*copy.borrow()).clone();
     }
     {
-        unimplemented!();
+        ignore_2.with(|rc| *rc.borrow_mut() = ({ test_nodiscard_0() }));
     }
     return true;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
-pub struct S_2 {
+pub struct S_3 {
     #[offset(0)]
     pub bf: u32,
+}
+impl CppMove for S_3 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

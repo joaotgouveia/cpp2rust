@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -36,44 +41,38 @@ thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_B__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<B>,
-}
-impl min_pointer_B__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_B_ {}
+impl CppMove for min_allocator_B_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(24)]
 pub struct A {
     #[offset(0)]
     #[byte_size(8)]
-    pub d: (),
+    pub d: std_forward_list_A__std_allocator_A__,
     #[offset(8)]
     #[byte_size(8)]
-    pub it: (),
+    pub it: std__Fwd_list_iterator_A_,
     #[offset(16)]
     #[byte_size(8)]
-    pub it2: (),
+    pub it2: std__Fwd_list_const_iterator_A_,
 }
 impl A {
     pub fn move_from(_a0: Ptr<A>) -> Self {
         Self {
-            d: unimplemented!(),
+            d: field!(_a0, d).with_mut(std::mem::take),
             it: field!(_a0, it).with_mut(std::mem::take),
             it2: field!(_a0, it2).with_mut(std::mem::take),
         }
+    }
+}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -81,35 +80,40 @@ impl A {
 pub struct B {
     #[offset(0)]
     #[byte_size(8)]
-    pub d: (),
+    pub d: std_forward_list_B__min_allocator_B__,
     #[offset(8)]
     #[byte_size(8)]
-    pub it: (),
+    pub it: std___fwdlist__Iterator_false__min_pointer_B__std_integral_constant_unsigned_long__0___,
     #[offset(16)]
     #[byte_size(8)]
-    pub it2: (),
+    pub it2: std___fwdlist__Iterator_true__min_pointer_B__std_integral_constant_unsigned_long__0___,
 }
 impl B {
     pub fn move_from(_a0: Ptr<B>) -> Self {
         Self {
-            d: unimplemented!(),
+            d: field!(_a0, d).with_mut(std::mem::take),
             it: { (*_a0.upgrade().deref()).it.clone() },
             it2: { (*_a0.upgrade().deref()).it2.clone() },
         }
     }
 }
+impl CppMove for B {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn test_4() -> bool {
     {
-        let mut a: A = <A>::default();
-        assert!(unimplemented!());
-        a.it = unimplemented!();
-        a.it2 = unimplemented!();
+        let a: Value<A> = Rc::new(RefCell::new(<A>::default()));
+        assert!(({ ({ (*a.borrow()).d.empty() }) }));
+        (*a.borrow_mut()).it = ({ (*a.borrow()).d.begin_25() });
+        (*a.borrow_mut()).it2 = ({ (*a.borrow()).d.cbefore_begin() });
     }
     {
-        let mut b: B = <B>::default();
-        assert!(unimplemented!());
-        b.it = unimplemented!().clone();
-        b.it2 = unimplemented!().clone();
+        let b: Value<B> = Rc::new(RefCell::new(<B>::default()));
+        assert!(({ ({ (*b.borrow()).d.empty() }) }));
+        (*b.borrow_mut()).it = ({ (*b.borrow()).d.begin_25() }).clone();
+        (*b.borrow_mut()).it2 = ({ (*b.borrow()).d.cbefore_begin() }).clone();
     }
     return true;
 }
@@ -136,14 +140,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     assert!(({ test_4() }));
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_B__std_integral_constant_unsigned_long__0__;
 pub trait AImpl {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A>;
 }
 impl AImpl for Ptr<A> {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
-        unimplemented!();
-        field!((*self), it).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).it.clone() });
-        field!((*self), it2).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).it2.clone() });
+        field!((*self), d).write({ { (*_a0.upgrade().deref()).d.clone() } });
+        field!((*self), it)
+            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).it.clone() } }));
+        field!((*self), it2)
+            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).it2.clone() } }));
         return (*self).clone();
     }
 }
@@ -152,7 +161,7 @@ pub trait BImpl {
 }
 impl BImpl for Ptr<B> {
     fn move_assign(&self, _a0: Ptr<B>) -> Ptr<B> {
-        unimplemented!();
+        field!((*self), d).write({ { (*_a0.upgrade().deref()).d.clone() } });
         field!((*self), it).with_mut(|__b0| (*__b0) = (*_a0.upgrade().deref()).it.clone());
         field!((*self), it2).with_mut(|__b0| (*__b0) = (*_a0.upgrade().deref()).it2.clone());
         return (*self).clone();
@@ -171,75 +180,6 @@ pub trait min_allocator_B_Impl {
     }
 }
 impl min_allocator_B_Impl for Ptr<min_allocator_B_> {}
-pub trait min_pointer_B__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<B> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<B> {
-        unimplemented!()
-    }
-    fn operator_inc_8(&self) -> Ptr<min_pointer_B__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_9(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_B__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_10(&self) -> Ptr<min_pointer_B__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_11(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_B__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_B__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_B__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_B__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_B__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<B> {
-        unimplemented!()
-    }
-}
-impl min_pointer_B__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_B__std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
-{
-}
 pub fn __cpp2rust_init_globals() {
     let _ = outstanding_bytes_0.with(|_| ());
     let _ = alloc_count_1.with(|_| ());

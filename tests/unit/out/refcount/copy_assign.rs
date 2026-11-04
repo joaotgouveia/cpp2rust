@@ -37,6 +37,11 @@ impl Clone for Partial {
         Partial::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Partial {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct NonConstAssign {
@@ -46,6 +51,11 @@ pub struct NonConstAssign {
 impl NonConstAssign {
     pub fn new() -> Self {
         Self { mark: 0 }
+    }
+}
+impl CppMove for NonConstAssign {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for NonConstAssign {
@@ -64,6 +74,11 @@ impl RefQualified {
         Self { mark: 0 }
     }
 }
+impl CppMove for RefQualified {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for RefQualified {
     fn default() -> Self {
         { RefQualified::new() }
@@ -78,6 +93,11 @@ pub struct Holder {
     #[offset(8)]
     #[byte_size(16)]
     pub arr: Box<[Partial]>,
+}
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for Holder {
     fn default() -> Self {
@@ -119,6 +139,11 @@ impl Clone for CopyCounted {
         CopyCounted::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for CopyCounted {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CopyAssign)]
 #[byte_size(12)]
 pub struct HasCopyCounted {
@@ -128,6 +153,11 @@ pub struct HasCopyCounted {
     #[offset(4)]
     #[byte_size(8)]
     pub arr: Box<[CopyCounted]>,
+}
+impl CppMove for HasCopyCounted {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for HasCopyCounted {
     fn default() -> Self {

@@ -11,11 +11,18 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_unsigned_int__unsigned_int_ {}
+impl CppMove for test_macros_detail_is_same_unsigned_int__unsigned_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_1() -> bool {
     let mut i: u32 = 0_u32;
     'loop_: while (i <= 10_u32) {
-        let wd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == (if (i == 0_u32) { 7_u32 } else { i })));
+        let wd: Value<std_chrono_weekday> = Rc::new(RefCell::new(std_chrono_weekday::new_1({ i })));
+        assert!(
+            ({ (({ (*wd.borrow()).iso_encoding() }) == (if (i == 0_u32) { 7_u32 } else { i })) })
+        );
         i.prefix_inc();
     }
     return true;

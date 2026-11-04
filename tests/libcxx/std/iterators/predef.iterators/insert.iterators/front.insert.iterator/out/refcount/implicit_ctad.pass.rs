@@ -6,18 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = u32;
-pub const anon_0_value: anon_0 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_front_insert_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_front_insert_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char____
-{}
-pub type anon_1 = u32;
-pub const anon_1_value: anon_1 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_front_insert_iterator_std_deque_int__std_allocator_int_____std_front_insert_iterator_std_deque_int__std_allocator_int____
-{}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -39,14 +28,20 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut s: Vec<i8> = vec![i8::default()];
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new(vec![i8::default()]));
+        let it : Value<std_front_insert_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ > = Rc::new(RefCell::new(std_front_insert_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ :: new ( { (s .as_pointer() ).reinterpret_cast::<Vec<i8  >  >()  } , )  )) ;
         const _: () = assert!(true, "");;
     }
     {
         let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let copy: Value<()> = Rc::new(RefCell::new((*it.borrow()).clone()));
+        let it: Value<std_front_insert_iterator_std_deque_int__std_allocator_int___> =
+            Rc::new(RefCell::new(
+                std_front_insert_iterator_std_deque_int__std_allocator_int___::new({
+                    v.as_pointer()
+                }),
+            ));
+        let copy: Value<std_front_insert_iterator_std_deque_int__std_allocator_int___> =
+            Rc::new(RefCell::new((*it.borrow()).clone()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }

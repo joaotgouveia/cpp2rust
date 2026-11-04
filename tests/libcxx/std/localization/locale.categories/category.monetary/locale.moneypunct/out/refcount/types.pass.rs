@@ -43,8 +43,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         true,
         "(std::is_same<std::moneypunct<char>::string_type, std::string>::value)"
     );;
-    ({ test_0(unimplemented!()) });
-    ({ test_0(unimplemented!()) });
+    ({ test_0(intl_1.with(|v| v.as_pointer())) });
+    ({ test_0(intl_2.with(|v| v.as_pointer())) });
     const _: () = assert!(
         true,
         "(std::is_base_of<std::locale::facet, std::moneypunct<wchar_t> >::value)"
@@ -61,8 +61,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         true,
         "(std::is_same<std::moneypunct<wchar_t>::string_type, std::wstring>::value)"
     );;
-    ({ test_0(unimplemented!()) });
-    ({ test_0(unimplemented!()) });
+    ({ test_0(intl_3.with(|v| v.as_pointer())) });
+    ({ test_0(intl_4.with(|v| v.as_pointer())) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

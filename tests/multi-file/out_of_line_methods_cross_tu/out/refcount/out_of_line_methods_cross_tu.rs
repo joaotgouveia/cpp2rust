@@ -13,6 +13,11 @@ pub struct S {
     pub v: i32,
 }
 impl S {}
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub trait Base {
     fn apply(&mut self, x: i32) -> i32;
 }
@@ -23,6 +28,11 @@ pub struct Derived {
     pub factor: i32,
 }
 impl Derived {}
+impl CppMove for Derived {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct Pair {
@@ -30,6 +40,11 @@ pub struct Pair {
     pub first: i32,
     #[offset(4)]
     pub second: i32,
+}
+impl CppMove for Pair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn pair_diff_0(mut p: Ptr<Pair>) -> i32 {
     return ({ p.with(|__s| __s.first) } - { p.with(|__s| __s.second) });

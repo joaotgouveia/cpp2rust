@@ -7,10 +7,16 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let vec_: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let vec_: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
     const _: () = assert!(true, "std::is_convertible<Ref, bool>::value");;
-    unimplemented!();
-    unimplemented!();
+    {
+        let a0_clone = true.clone();
+        (*vec_.borrow_mut()).push(a0_clone)
+    };
+    {
+        let a0_clone = false.clone();
+        (*vec_.borrow_mut()).push(a0_clone)
+    };
     let mut true_ref: Ptr<bool> = vec_.decay().offset(0_usize as isize);
     let mut false_ref: Ptr<bool> = vec_.decay().offset(1_usize as isize);
     let mut b: bool = true_ref.read();

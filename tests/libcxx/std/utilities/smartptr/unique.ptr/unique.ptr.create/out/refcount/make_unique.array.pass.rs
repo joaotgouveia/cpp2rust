@@ -17,6 +17,11 @@ impl foo {
         Self { val_: 3 }
     }
 }
+impl CppMove for foo {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for foo {
     fn default() -> Self {
         { foo::new() }
@@ -47,13 +52,15 @@ pub fn test_0() -> bool {
         let mut i: i32 = 0;
         'loop_: while (i < 5) {
             assert!(
-                (((*(p2.as_pointer() as Ptr<Vec<i8>>)
-                    .offset((i as usize) as isize)
-                    .upgrade()
-                    .deref())
-                .len()
-                    - 1)
-                    == 0_usize)
+                ({
+                    (((*(p2.as_pointer() as Ptr<Vec<i8>>)
+                        .offset((i as usize) as isize)
+                        .upgrade()
+                        .deref())
+                    .len()
+                        - 1)
+                        == 0_usize)
+                })
             );
             i.prefix_inc();
         }

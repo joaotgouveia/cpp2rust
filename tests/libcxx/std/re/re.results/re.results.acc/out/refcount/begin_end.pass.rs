@@ -13,8 +13,11 @@ pub fn test_0() {
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     assert!(
-        ((((*e.borrow()).iter_distance(&(*i.borrow()).clone().into()) as i64 as isize) as usize)
-            == (unimplemented!() as usize))
+        ({
+            ((((*e.borrow()).iter_distance(&({ (*i.borrow()).clone() }).into()) as i64 as isize)
+                as usize)
+                == (unimplemented!() as usize))
+        })
     );
     let mut j: i32 = 0;
     'loop_: while (*i.borrow()) != (*e.borrow()) {

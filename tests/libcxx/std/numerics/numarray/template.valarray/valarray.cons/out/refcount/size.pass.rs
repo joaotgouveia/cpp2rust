@@ -17,6 +17,11 @@ impl S {
         Self { x: 1 }
     }
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for S {
     fn default() -> Self {
         { S::new() }
@@ -47,38 +52,44 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 100_usize));
+        let v: Value<std_valarray_int_> =
+            Rc::new(RefCell::new(std_valarray_int_::new_1({ 100_usize })));
+        assert!(({ (({ (*v.borrow()).size() }) == 100_usize) }));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!(((unimplemented!().read()) == 0));
+            assert!(({ ({ (*v.borrow())[(i as usize)] } == 0) }));
             i.prefix_inc();
         }
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 100_usize));
+        let v: Value<std_valarray_double_> =
+            Rc::new(RefCell::new(std_valarray_double_::new_1({ 100_usize })));
+        assert!(({ (({ (*v.borrow()).size() }) == 100_usize) }));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!(((unimplemented!().read()) == 0_f64));
+            assert!(({ ({ (*v.borrow())[(i as usize)] } == 0_f64) }));
             i.prefix_inc();
         }
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 100_usize));
+        let v: Value<std_valarray_std_valarray_double__> =
+            Rc::new(RefCell::new(std_valarray_std_valarray_double__::new_1({
+                100_usize
+            })));
+        assert!(({ (({ (*v.borrow()).size() }) == 100_usize) }));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == 0_usize));
+            assert!(({ (({ (*v.borrow())[(i as usize)].size() }) == 0_usize) }));
             i.prefix_inc();
         }
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 100_usize));
+        let v: Value<std_valarray_S_> =
+            Rc::new(RefCell::new(std_valarray_S_::new_1({ 100_usize })));
+        assert!(({ (({ (*v.borrow()).size() }) == 100_usize) }));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!(({ (unimplemented!()).clone().x } == 1));
+            assert!(({ ({ (*v.borrow())[(i as usize)].x } == 1) }));
             i.prefix_inc();
         }
     }

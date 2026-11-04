@@ -25,6 +25,11 @@ impl NoCopy {
         __this
     }
 }
+impl CppMove for NoCopy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(4)]
 pub struct PrivateCopy {
@@ -41,6 +46,11 @@ impl PrivateCopy {
         };
         field!(o, v).write(0);
         __this
+    }
+}
+impl CppMove for PrivateCopy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for PrivateCopy {
@@ -81,6 +91,11 @@ impl Container {
         }
     }
 }
+impl CppMove for Container {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(24)]
 pub struct VecHolder {
@@ -93,6 +108,11 @@ impl VecHolder {
         Self {
             items: field!(_a0, items).with_mut(std::mem::take),
         }
+    }
+}
+impl CppMove for VecHolder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn bump_0(mut p: Ptr<NoCopy>) {

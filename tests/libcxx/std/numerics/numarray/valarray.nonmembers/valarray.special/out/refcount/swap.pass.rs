@@ -36,21 +36,27 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let mut N2: u32 = (((::std::mem::size_of::<[i32; 7]>() as usize)
             .wrapping_div((::std::mem::size_of::<i32>() as usize)))
             as u32);
-        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v1_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v1: Value<std_valarray_int_> = Rc::new(RefCell::new(std_valarray_int_::new_1(
+            { (a1.as_pointer() as Ptr<i32>) },
+            { (N1 as usize) },
+        )));
+        let v2: Value<std_valarray_int_> = Rc::new(RefCell::new(std_valarray_int_::new_1(
+            { (a2.as_pointer() as Ptr<i32>) },
+            { (N2 as usize) },
+        )));
+        let v1_save: Value<std_valarray_int_> = Rc::new(RefCell::new((*v1.borrow()).clone()));
+        let v2_save: Value<std_valarray_int_> = Rc::new(RefCell::new((*v2.borrow()).clone()));
         cpp_swap!(v1.as_pointer(), v2.as_pointer());
-        assert!((unimplemented!() == unimplemented!()));
+        assert!(({ (({ (*v1.borrow()).size() }) == ({ (*v2_save.borrow()).size() })) }));
         let mut i: usize = 0_usize;
-        'loop_: while (i < unimplemented!()) {
-            assert!(((unimplemented!().read()) == (unimplemented!().read())));
+        'loop_: while (i < ({ (*v1.borrow()).size() })) {
+            assert!(({ ({ (*v1.borrow())[i] } == { (*v2_save.borrow())[i] }) }));
             i.prefix_inc();
         }
-        assert!((unimplemented!() == unimplemented!()));
+        assert!(({ (({ (*v2.borrow()).size() }) == ({ (*v1_save.borrow()).size() })) }));
         let mut i: usize = 0_usize;
-        'loop_: while (i < unimplemented!()) {
-            assert!(((unimplemented!().read()) == (unimplemented!().read())));
+        'loop_: while (i < ({ (*v2.borrow()).size() })) {
+            assert!(({ ({ (*v2.borrow())[i] } == { (*v1_save.borrow())[i] }) }));
             i.prefix_inc();
         }
     }
@@ -59,21 +65,24 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let mut N1: u32 = (((::std::mem::size_of::<[i32; 5]>() as usize)
             .wrapping_div((::std::mem::size_of::<i32>() as usize)))
             as u32);
-        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v1_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v1: Value<std_valarray_int_> = Rc::new(RefCell::new(std_valarray_int_::new_1(
+            { (a1.as_pointer() as Ptr<i32>) },
+            { (N1 as usize) },
+        )));
+        let v2: Value<std_valarray_int_> = Rc::new(RefCell::new(<std_valarray_int_>::default()));
+        let v1_save: Value<std_valarray_int_> = Rc::new(RefCell::new((*v1.borrow()).clone()));
+        let v2_save: Value<std_valarray_int_> = Rc::new(RefCell::new((*v2.borrow()).clone()));
         cpp_swap!(v1.as_pointer(), v2.as_pointer());
-        assert!((unimplemented!() == unimplemented!()));
+        assert!(({ (({ (*v1.borrow()).size() }) == ({ (*v2_save.borrow()).size() })) }));
         let mut i: usize = 0_usize;
-        'loop_: while (i < unimplemented!()) {
-            assert!(((unimplemented!().read()) == (unimplemented!().read())));
+        'loop_: while (i < ({ (*v1.borrow()).size() })) {
+            assert!(({ ({ (*v1.borrow())[i] } == { (*v2_save.borrow())[i] }) }));
             i.prefix_inc();
         }
-        assert!((unimplemented!() == unimplemented!()));
+        assert!(({ (({ (*v2.borrow()).size() }) == ({ (*v1_save.borrow()).size() })) }));
         let mut i: usize = 0_usize;
-        'loop_: while (i < unimplemented!()) {
-            assert!(((unimplemented!().read()) == (unimplemented!().read())));
+        'loop_: while (i < ({ (*v2.borrow()).size() })) {
+            assert!(({ ({ (*v2.borrow())[i] } == { (*v1_save.borrow())[i] }) }));
             i.prefix_inc();
         }
     }
@@ -82,40 +91,43 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let mut N2: u32 = (((::std::mem::size_of::<[i32; 7]>() as usize)
             .wrapping_div((::std::mem::size_of::<i32>() as usize)))
             as u32);
-        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v1_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v1: Value<std_valarray_int_> = Rc::new(RefCell::new(<std_valarray_int_>::default()));
+        let v2: Value<std_valarray_int_> = Rc::new(RefCell::new(std_valarray_int_::new_1(
+            { (a2.as_pointer() as Ptr<i32>) },
+            { (N2 as usize) },
+        )));
+        let v1_save: Value<std_valarray_int_> = Rc::new(RefCell::new((*v1.borrow()).clone()));
+        let v2_save: Value<std_valarray_int_> = Rc::new(RefCell::new((*v2.borrow()).clone()));
         cpp_swap!(v1.as_pointer(), v2.as_pointer());
-        assert!((unimplemented!() == unimplemented!()));
+        assert!(({ (({ (*v1.borrow()).size() }) == ({ (*v2_save.borrow()).size() })) }));
         let mut i: usize = 0_usize;
-        'loop_: while (i < unimplemented!()) {
-            assert!(((unimplemented!().read()) == (unimplemented!().read())));
+        'loop_: while (i < ({ (*v1.borrow()).size() })) {
+            assert!(({ ({ (*v1.borrow())[i] } == { (*v2_save.borrow())[i] }) }));
             i.prefix_inc();
         }
-        assert!((unimplemented!() == unimplemented!()));
+        assert!(({ (({ (*v2.borrow()).size() }) == ({ (*v1_save.borrow()).size() })) }));
         let mut i: usize = 0_usize;
-        'loop_: while (i < unimplemented!()) {
-            assert!(((unimplemented!().read()) == (unimplemented!().read())));
+        'loop_: while (i < ({ (*v2.borrow()).size() })) {
+            assert!(({ ({ (*v2.borrow())[i] } == { (*v1_save.borrow())[i] }) }));
             i.prefix_inc();
         }
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v1_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2_save: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v1: Value<std_valarray_int_> = Rc::new(RefCell::new(<std_valarray_int_>::default()));
+        let v2: Value<std_valarray_int_> = Rc::new(RefCell::new(<std_valarray_int_>::default()));
+        let v1_save: Value<std_valarray_int_> = Rc::new(RefCell::new((*v1.borrow()).clone()));
+        let v2_save: Value<std_valarray_int_> = Rc::new(RefCell::new((*v2.borrow()).clone()));
         cpp_swap!(v1.as_pointer(), v2.as_pointer());
-        assert!((unimplemented!() == unimplemented!()));
+        assert!(({ (({ (*v1.borrow()).size() }) == ({ (*v2_save.borrow()).size() })) }));
         let mut i: usize = 0_usize;
-        'loop_: while (i < unimplemented!()) {
-            assert!(((unimplemented!().read()) == (unimplemented!().read())));
+        'loop_: while (i < ({ (*v1.borrow()).size() })) {
+            assert!(({ ({ (*v1.borrow())[i] } == { (*v2_save.borrow())[i] }) }));
             i.prefix_inc();
         }
-        assert!((unimplemented!() == unimplemented!()));
+        assert!(({ (({ (*v2.borrow()).size() }) == ({ (*v1_save.borrow()).size() })) }));
         let mut i: usize = 0_usize;
-        'loop_: while (i < unimplemented!()) {
-            assert!(((unimplemented!().read()) == (unimplemented!().read())));
+        'loop_: while (i < ({ (*v2.borrow()).size() })) {
+            assert!(({ ({ (*v2.borrow())[i] } == { (*v1_save.borrow())[i] }) }));
             i.prefix_inc();
         }
     }

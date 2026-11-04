@@ -23,6 +23,11 @@ impl Clone for CopyOnly {
         CopyOnly::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for CopyOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for CopyOnly {
     fn default() -> Self {
         { CopyOnly::new() }
@@ -37,6 +42,11 @@ impl NoexceptMoveOnly {
     }
     pub fn move_from(_a0: Ptr<NoexceptMoveOnly>) -> Self {
         Self {}
+    }
+}
+impl CppMove for NoexceptMoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for NoexceptMoveOnly {
@@ -58,15 +68,15 @@ impl Default for NotMoveConstructible {
     }
 }
 pub fn can_swap_0() -> bool {
-    return unimplemented!();
-}
-pub fn can_swap_1() -> bool {
-    return unimplemented!();
+    return value_1.with(|rc| *rc.borrow());
 }
 pub fn can_swap_2() -> bool {
-    return unimplemented!();
+    return value_1.with(|rc| *rc.borrow());
 }
-pub fn test_unique_ptr_3() {
+pub fn can_swap_3() -> bool {
+    return value_4.with(|rc| *rc.borrow());
+}
+pub fn test_unique_ptr_5() {
     let i: Value<Box<[Option<Value<i32>>]>> = Rc::new(RefCell::new(
         (0..3).map(|_| None).collect::<Box<[Option<Value<i32>>]>>(),
     ));
@@ -93,40 +103,46 @@ pub fn test_unique_ptr_3() {
         };
         k.prefix_inc();
     }
-    unimplemented!();
-    assert!((((*i.borrow())[(0) as usize].as_pointer().read()) == 4));
-    assert!((((*i.borrow())[(1) as usize].as_pointer().read()) == 5));
-    assert!((((*i.borrow())[(2) as usize].as_pointer().read()) == 6));
-    assert!((((*j.borrow())[(0) as usize].as_pointer().read()) == 1));
-    assert!((((*j.borrow())[(1) as usize].as_pointer().read()) == 2));
-    assert!((((*j.borrow())[(2) as usize].as_pointer().read()) == 3));
+    cpp_swap!(
+        (i.as_pointer() as Ptr<Option<Value<i32>>>),
+        (j.as_pointer() as Ptr<Option<Value<i32>>>)
+    );
+    assert!(({ (((*i.borrow())[(0) as usize].as_pointer().read()) == 4) }));
+    assert!(({ (((*i.borrow())[(1) as usize].as_pointer().read()) == 5) }));
+    assert!(({ (((*i.borrow())[(2) as usize].as_pointer().read()) == 6) }));
+    assert!(({ (((*j.borrow())[(0) as usize].as_pointer().read()) == 1) }));
+    assert!(({ (((*j.borrow())[(1) as usize].as_pointer().read()) == 2) }));
+    assert!(({ (((*j.borrow())[(2) as usize].as_pointer().read()) == 3) }));
 }
-pub fn test_4() -> bool {
+pub fn test_6() -> bool {
     {
-        let mut i: [i32; 3] = [1, 2, 3];
-        let mut j: [i32; 3] = [4, 5, 6];
-        unimplemented!();
-        assert!((i[(0) as usize] == 4));
-        assert!((i[(1) as usize] == 5));
-        assert!((i[(2) as usize] == 6));
-        assert!((j[(0) as usize] == 1));
-        assert!((j[(1) as usize] == 2));
-        assert!((j[(2) as usize] == 3));
+        let i: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        let j: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5, 6])));
+        cpp_swap!((i.as_pointer() as Ptr<i32>), (j.as_pointer() as Ptr<i32>));
+        assert!(({ ((*i.borrow())[(0) as usize] == 4) }));
+        assert!(({ ((*i.borrow())[(1) as usize] == 5) }));
+        assert!(({ ((*i.borrow())[(2) as usize] == 6) }));
+        assert!(({ ((*j.borrow())[(0) as usize] == 1) }));
+        assert!(({ ((*j.borrow())[(1) as usize] == 2) }));
+        assert!(({ ((*j.borrow())[(2) as usize] == 3) }));
     }
     {
         let a: Value<Box<[Box<[i32]>]>> =
             Rc::new(RefCell::new(Box::new([Box::new([0, 1]), Box::new([2, 3])])));
         let b: Value<Box<[Box<[i32]>]>> =
             Rc::new(RefCell::new(Box::new([Box::new([9, 8]), Box::new([7, 6])])));
-        unimplemented!();
-        assert!(((*a.borrow())[(0) as usize][(0) as usize] == 9));
-        assert!(((*a.borrow())[(0) as usize][(1) as usize] == 8));
-        assert!(((*a.borrow())[(1) as usize][(0) as usize] == 7));
-        assert!(((*a.borrow())[(1) as usize][(1) as usize] == 6));
-        assert!(((*b.borrow())[(0) as usize][(0) as usize] == 0));
-        assert!(((*b.borrow())[(0) as usize][(1) as usize] == 1));
-        assert!(((*b.borrow())[(1) as usize][(0) as usize] == 2));
-        assert!(((*b.borrow())[(1) as usize][(1) as usize] == 3));
+        cpp_swap!(
+            (a.as_pointer() as Ptr<Box<[i32]>>),
+            (b.as_pointer() as Ptr<Box<[i32]>>)
+        );
+        assert!(({ ((*a.borrow())[(0) as usize][(0) as usize] == 9) }));
+        assert!(({ ((*a.borrow())[(0) as usize][(1) as usize] == 8) }));
+        assert!(({ ((*a.borrow())[(1) as usize][(0) as usize] == 7) }));
+        assert!(({ ((*a.borrow())[(1) as usize][(1) as usize] == 6) }));
+        assert!(({ ((*b.borrow())[(0) as usize][(0) as usize] == 0) }));
+        assert!(({ ((*b.borrow())[(0) as usize][(1) as usize] == 1) }));
+        assert!(({ ((*b.borrow())[(1) as usize][(0) as usize] == 2) }));
+        assert!(({ ((*b.borrow())[(1) as usize][(1) as usize] == 3) }));
     }
     {
         let a: Value<Box<[Box<[i32]>]>> = Rc::new(RefCell::new(Box::new([
@@ -139,38 +155,45 @@ pub fn test_4() -> bool {
             Box::new([6, 5, 4]),
             Box::new([3, 2, 1]),
         ])));
-        unimplemented!();
-        assert!(((*a.borrow())[(0) as usize][(0) as usize] == 9));
-        assert!(((*a.borrow())[(0) as usize][(1) as usize] == 8));
-        assert!(((*a.borrow())[(0) as usize][(2) as usize] == 7));
-        assert!(((*a.borrow())[(1) as usize][(0) as usize] == 6));
-        assert!(((*a.borrow())[(1) as usize][(1) as usize] == 5));
-        assert!(((*a.borrow())[(1) as usize][(2) as usize] == 4));
-        assert!(((*a.borrow())[(2) as usize][(0) as usize] == 3));
-        assert!(((*a.borrow())[(2) as usize][(1) as usize] == 2));
-        assert!(((*a.borrow())[(2) as usize][(2) as usize] == 1));
-        assert!(((*b.borrow())[(0) as usize][(0) as usize] == 0));
-        assert!(((*b.borrow())[(0) as usize][(1) as usize] == 1));
-        assert!(((*b.borrow())[(0) as usize][(2) as usize] == 2));
-        assert!(((*b.borrow())[(1) as usize][(0) as usize] == 3));
-        assert!(((*b.borrow())[(1) as usize][(1) as usize] == 4));
-        assert!(((*b.borrow())[(1) as usize][(2) as usize] == 5));
-        assert!(((*b.borrow())[(2) as usize][(0) as usize] == 6));
-        assert!(((*b.borrow())[(2) as usize][(1) as usize] == 7));
-        assert!(((*b.borrow())[(2) as usize][(2) as usize] == 8));
+        cpp_swap!(
+            (a.as_pointer() as Ptr<Box<[i32]>>),
+            (b.as_pointer() as Ptr<Box<[i32]>>)
+        );
+        assert!(({ ((*a.borrow())[(0) as usize][(0) as usize] == 9) }));
+        assert!(({ ((*a.borrow())[(0) as usize][(1) as usize] == 8) }));
+        assert!(({ ((*a.borrow())[(0) as usize][(2) as usize] == 7) }));
+        assert!(({ ((*a.borrow())[(1) as usize][(0) as usize] == 6) }));
+        assert!(({ ((*a.borrow())[(1) as usize][(1) as usize] == 5) }));
+        assert!(({ ((*a.borrow())[(1) as usize][(2) as usize] == 4) }));
+        assert!(({ ((*a.borrow())[(2) as usize][(0) as usize] == 3) }));
+        assert!(({ ((*a.borrow())[(2) as usize][(1) as usize] == 2) }));
+        assert!(({ ((*a.borrow())[(2) as usize][(2) as usize] == 1) }));
+        assert!(({ ((*b.borrow())[(0) as usize][(0) as usize] == 0) }));
+        assert!(({ ((*b.borrow())[(0) as usize][(1) as usize] == 1) }));
+        assert!(({ ((*b.borrow())[(0) as usize][(2) as usize] == 2) }));
+        assert!(({ ((*b.borrow())[(1) as usize][(0) as usize] == 3) }));
+        assert!(({ ((*b.borrow())[(1) as usize][(1) as usize] == 4) }));
+        assert!(({ ((*b.borrow())[(1) as usize][(2) as usize] == 5) }));
+        assert!(({ ((*b.borrow())[(2) as usize][(0) as usize] == 6) }));
+        assert!(({ ((*b.borrow())[(2) as usize][(1) as usize] == 7) }));
+        assert!(({ ((*b.borrow())[(2) as usize][(2) as usize] == 8) }));
     }
     {
         const _: () = assert!(true, "can_swap<CA&>()");;
         const _: () = assert!(true, "can_swap<MA&>()");;
         const _: () = assert!(true, "!can_swap<NA&>()");;
-        let mut ca: [CopyOnly; 42] = std::array::from_fn::<_, 42, _>(|_| CopyOnly::new());
-        let mut ma: [NoexceptMoveOnly; 42] =
-            std::array::from_fn::<_, 42, _>(|_| NoexceptMoveOnly::new());
+        let ca: Value<Box<[CopyOnly]>> =
+            Rc::new(RefCell::new(Box::new(std::array::from_fn::<_, 42, _>(
+                |_| CopyOnly::new(),
+            ))));
+        let ma: Value<Box<[NoexceptMoveOnly]>> = Rc::new(RefCell::new(Box::new(
+            std::array::from_fn::<_, 42, _>(|_| NoexceptMoveOnly::new()),
+        )));
         const _: () = assert!(true, "!noexcept(std::swap(ca, ca))");;
         const _: () = assert!(true, "noexcept(std::swap(ma, ma))");;
     }
     {
-        ({ test_unique_ptr_3() });
+        ({ test_unique_ptr_5() });
     }
     return true;
 }
@@ -194,7 +217,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_4() });
+    ({ test_6() });
     const _: () = assert!(true, "test()");;
     return 0;
 }

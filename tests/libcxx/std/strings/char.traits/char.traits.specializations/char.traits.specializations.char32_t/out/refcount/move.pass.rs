@@ -8,17 +8,46 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     let s1: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([1_u32, 2_u32, 3_u32])));
-    assert!((unimplemented!() == (s1.as_pointer() as Ptr::<u32>)));
-    assert!(((*s1.borrow())[(0) as usize] == 2_u32));
-    assert!(((*s1.borrow())[(1) as usize] == 3_u32));
-    assert!(((*s1.borrow())[(2) as usize] == 3_u32));
+    assert!(
+        (({
+            let ___s1: Ptr<u32> = (s1.as_pointer() as Ptr<u32>);
+            let ___s2: Ptr<u32> = (s1.as_pointer() as Ptr<u32>).offset((1) as isize);
+            std_char_traits_char32_t_::move_(___s1, ___s2, 2_usize)
+        }) == (s1.as_pointer() as Ptr::<u32>))
+    );
+    assert!(({ ((*s1.borrow())[(0) as usize] == 2_u32) }));
+    assert!(({ ((*s1.borrow())[(1) as usize] == 3_u32) }));
+    assert!(({ ((*s1.borrow())[(2) as usize] == 3_u32) }));
     (*s1.borrow_mut())[(2) as usize] = 0_u32;
-    assert!((unimplemented!() == (s1.as_pointer() as Ptr::<u32>).offset((1) as isize)));
-    assert!(((*s1.borrow())[(0) as usize] == 2_u32));
-    assert!(((*s1.borrow())[(1) as usize] == 2_u32));
-    assert!(((*s1.borrow())[(2) as usize] == 3_u32));
-    assert!((unimplemented!()).is_null());
-    assert!((unimplemented!() == (s1.as_pointer() as Ptr::<u32>)));
+    assert!(
+        (({
+            let ___s1: Ptr<u32> = (s1.as_pointer() as Ptr<u32>).offset((1) as isize);
+            let ___s2: Ptr<u32> = (s1.as_pointer() as Ptr<u32>);
+            std_char_traits_char32_t_::move_(___s1, ___s2, 2_usize)
+        }) == (s1.as_pointer() as Ptr::<u32>).offset((1) as isize))
+    );
+    assert!(({ ((*s1.borrow())[(0) as usize] == 2_u32) }));
+    assert!(({ ((*s1.borrow())[(1) as usize] == 2_u32) }));
+    assert!(({ ((*s1.borrow())[(2) as usize] == 3_u32) }));
+    assert!(
+        ({
+            std_char_traits_char32_t_::move_(
+                Ptr::<u32>::null(),
+                (s1.as_pointer() as Ptr<u32>),
+                0_usize,
+            )
+        })
+        .is_null()
+    );
+    assert!(
+        (({
+            std_char_traits_char32_t_::move_(
+                (s1.as_pointer() as Ptr<u32>),
+                Ptr::<u32>::null(),
+                0_usize,
+            )
+        }) == (s1.as_pointer() as Ptr::<u32>))
+    );
     return true;
 }
 pub fn main() {

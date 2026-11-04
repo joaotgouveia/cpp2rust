@@ -11,11 +11,21 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_Deleter_ref__const_Deleter_ref_ {}
+impl CppMove for test_macros_detail_is_same_const_Deleter_ref__const_Deleter_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_Deleter_ref__Deleter_ref_ {}
+impl CppMove for test_macros_detail_is_same_Deleter_ref__Deleter_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
 pub struct Deleter {}
@@ -31,6 +41,11 @@ impl Callable1<AnyPtr, ()> for Deleter {
         })
     }
 }
+impl CppMove for Deleter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Deleter {
     fn default() -> Self {
         { Deleter::new() }
@@ -38,58 +53,86 @@ impl Default for Deleter {
 }
 pub fn test_basic_2() {
     {
-        let mut p: Option<Value<i32>> = None;
-        assert!((({ DeleterImpl::test_3(&unimplemented!(),) }) == 5));
+        let p: Value<Option<Value<i32>>> = Rc::new(RefCell::new(None));
+        assert!(({ (({ DeleterImpl::test_3(&({ (*p.borrow()).get_deleter_17() }),) }) == 5) }));
     }
     {
-        let mut p: Option<Value<i32>> = None;
-        assert!((({ DeleterImpl::test_4(&unimplemented!(),) }) == 6));
+        let p: Value<Option<Value<i32>>> = Rc::new(RefCell::new(None));
+        assert!(({ (({ DeleterImpl::test_4(&({ (*p.borrow()).get_deleter_18() }),) }) == 6) }));
     }
     {
-        let mut d: Deleter = Deleter::new();
-        let p: Value<Option<Value<i32>>> = Rc::new(RefCell::new(unimplemented!()));
+        let d: Value<Deleter> = Rc::new(RefCell::new(Deleter::new()));
+        let p: Value<Option<Value<i32>>> = Rc::new(RefCell::new(
+            std_unique_ptr_int__const_Deleter_ref_::new_1({ Ptr::null() }, { d.as_pointer() }),
+        ));
         let cp: Ptr<Option<Value<i32>>> = p.as_pointer();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!((({ DeleterImpl::test_4(&unimplemented!(),) }) == 6));
-        assert!((({ DeleterImpl::test_4(&unimplemented!(),) }) == 6));
+        assert!(({ (({ DeleterImpl::test_4(&({ (*p.borrow()).get_deleter_17() }),) }) == 6) }));
+        assert!(
+            ({
+                (({ DeleterImpl::test_4(&({ (*cp.upgrade().deref()).get_deleter_18() })) }) == 6)
+            })
+        );
     }
     {
-        let mut d: Deleter = Deleter::new();
-        let p: Value<Option<Value<i32>>> = Rc::new(RefCell::new(unimplemented!()));
+        let d: Value<Deleter> = Rc::new(RefCell::new(Deleter::new()));
+        let p: Value<Option<Value<i32>>> = Rc::new(RefCell::new(
+            std_unique_ptr_int__Deleter_ref_::new_1({ Ptr::null() }, { d.as_pointer() }),
+        ));
         let cp: Ptr<Option<Value<i32>>> = p.as_pointer();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!((({ DeleterImpl::test_3(&unimplemented!(),) }) == 5));
-        assert!((({ DeleterImpl::test_3(&unimplemented!(),) }) == 5));
+        assert!(({ (({ DeleterImpl::test_3(&({ (*p.borrow()).get_deleter_17() }),) }) == 5) }));
+        assert!(
+            ({
+                (({ DeleterImpl::test_3(&({ (*cp.upgrade().deref()).get_deleter_18() })) }) == 5)
+            })
+        );
     }
 }
 pub fn test_basic_3() {
     {
-        let mut p: Option<Value<i32>> = None;
-        assert!((({ DeleterImpl::test_3(&unimplemented!(),) }) == 5));
+        let p: Value<Option<Value<i32>>> = Rc::new(RefCell::new(None));
+        assert!(({ (({ DeleterImpl::test_3(&({ (*p.borrow()).get_deleter_17() }),) }) == 5) }));
     }
     {
-        let mut p: Option<Value<Box<[i32]>>> = None;
-        assert!((({ DeleterImpl::test_4(&unimplemented!(),) }) == 6));
+        let p: Value<Option<Value<Box<[i32]>>>> = Rc::new(RefCell::new(None));
+        assert!(({ (({ DeleterImpl::test_4(&({ (*p.borrow()).get_deleter_16() }),) }) == 6) }));
     }
     {
-        let mut d: Deleter = Deleter::new();
-        let p: Value<Option<Value<Box<[i32]>>>> = Rc::new(RefCell::new(unimplemented!()));
+        let d: Value<Deleter> = Rc::new(RefCell::new(Deleter::new()));
+        let p: Value<Option<Value<Box<[i32]>>>> = Rc::new(RefCell::new(
+            std_unique_ptr_intarrarr__const_Deleter_ref_::new_1({ Default::default() }, {
+                d.as_pointer()
+            }),
+        ));
         let cp: Ptr<Option<Value<Box<[i32]>>>> = p.as_pointer();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!((({ DeleterImpl::test_4(&unimplemented!(),) }) == 6));
-        assert!((({ DeleterImpl::test_4(&unimplemented!(),) }) == 6));
+        assert!(({ (({ DeleterImpl::test_4(&({ (*p.borrow()).get_deleter_15() }),) }) == 6) }));
+        assert!(
+            ({
+                (({ DeleterImpl::test_4(&({ (*cp.upgrade().deref()).get_deleter_16() })) }) == 6)
+            })
+        );
     }
     {
-        let mut d: Deleter = Deleter::new();
-        let p: Value<Option<Value<Box<[i32]>>>> = Rc::new(RefCell::new(unimplemented!()));
+        let d: Value<Deleter> = Rc::new(RefCell::new(Deleter::new()));
+        let p: Value<Option<Value<Box<[i32]>>>> = Rc::new(RefCell::new(
+            std_unique_ptr_intarrarr__Deleter_ref_::new_1({ Default::default() }, {
+                d.as_pointer()
+            }),
+        ));
         let cp: Ptr<Option<Value<Box<[i32]>>>> = p.as_pointer();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!((({ DeleterImpl::test_3(&unimplemented!(),) }) == 5));
-        assert!((({ DeleterImpl::test_3(&unimplemented!(),) }) == 5));
+        assert!(({ (({ DeleterImpl::test_3(&({ (*p.borrow()).get_deleter_15() }),) }) == 5) }));
+        assert!(
+            ({
+                (({ DeleterImpl::test_3(&({ (*cp.upgrade().deref()).get_deleter_16() })) }) == 5)
+            })
+        );
     }
 }
 pub fn test_4() -> bool {

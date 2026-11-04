@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_bool__bool_ {}
+impl CppMove for test_macros_detail_is_same_bool__bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -39,12 +44,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "!weekday{{8}}.ok()");;
     let mut i: u32 = 0_u32;
     'loop_: while (i <= 7_u32) {
-        assert!(unimplemented!());
+        assert!(({ std_chrono_weekday::new_1({ i },).ok() }));
         i.prefix_inc();
     }
     let mut i: u32 = 8_u32;
     'loop_: while (i <= 255_u32) {
-        assert!(!(unimplemented!()));
+        assert!(!({ std_chrono_weekday::new_1({ i },).ok() }));
         i.prefix_inc();
     }
     return 0;

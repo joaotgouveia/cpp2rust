@@ -18,6 +18,11 @@ impl moveable {
         Self {}
     }
 }
+impl CppMove for moveable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for moveable {
     fn default() -> Self {
         { moveable::new() }

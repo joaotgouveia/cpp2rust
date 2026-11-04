@@ -84,39 +84,76 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_scoped_allocator_adaptor_A1_int__> = Rc::new(RefCell::new(
+            <std_scoped_allocator_adaptor_A1_int__>::default(),
+        ));
         allocate_called_2.with(|rc| *rc.borrow_mut() = false);
-        assert!((unimplemented!() == <Ptr<i32>>::from_int(10)));
+        assert!(
+            ({
+                (({ (*a.borrow()).allocate_17(10_u64, AnyPtr::default()) })
+                    == <Ptr<i32>>::from_int(10))
+            })
+        );
         assert!(((allocate_called_2.with(|rc| *rc.borrow()) as i32) == (true as i32)));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_scoped_allocator_adaptor_A1_int___A2_int__> = Rc::new(RefCell::new(
+            <std_scoped_allocator_adaptor_A1_int___A2_int__>::default(),
+        ));
         allocate_called_2.with(|rc| *rc.borrow_mut() = false);
-        assert!((unimplemented!() == <Ptr<i32>>::from_int(10)));
+        assert!(
+            ({
+                (({ (*a.borrow()).allocate_17(10_u64, <AnyPtr>::from_int(10)) })
+                    == <Ptr<i32>>::from_int(10))
+            })
+        );
         assert!(((allocate_called_2.with(|rc| *rc.borrow()) as i32) == (true as i32)));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__> = Rc::new(
+            RefCell::new(<std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__>::default()),
+        );
         allocate_called_2.with(|rc| *rc.borrow_mut() = false);
-        assert!((unimplemented!() == <Ptr<i32>>::from_int(10)));
+        assert!(
+            ({
+                (({ (*a.borrow()).allocate_17(10_u64, <AnyPtr>::from_int(20)) })
+                    == <Ptr<i32>>::from_int(10))
+            })
+        );
         assert!(((allocate_called_2.with(|rc| *rc.borrow()) as i32) == (true as i32)));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_scoped_allocator_adaptor_A2_int__> = Rc::new(RefCell::new(
+            <std_scoped_allocator_adaptor_A2_int__>::default(),
+        ));
         allocate_called_6.with(|rc| *rc.borrow_mut() = false);
-        assert!((unimplemented!()).is_null());
+        assert!(({ ({ (*a.borrow()).allocate_17(10_u32, AnyPtr::default(),) }).is_null() }));
         assert!(((allocate_called_6.with(|rc| *rc.borrow()) as i32) == (true as i32)));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_scoped_allocator_adaptor_A2_int___A2_int__> = Rc::new(RefCell::new(
+            <std_scoped_allocator_adaptor_A2_int___A2_int__>::default(),
+        ));
         allocate_called_6.with(|rc| *rc.borrow_mut() = false);
-        assert!((unimplemented!() == <Ptr<i32>>::from_int(10)));
+        assert!(
+            ({
+                (({ (*a.borrow()).allocate_17(10_u32, <AnyPtr>::from_int(10)) })
+                    == <Ptr<i32>>::from_int(10))
+            })
+        );
         assert!(((allocate_called_6.with(|rc| *rc.borrow()) as i32) == (true as i32)));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_scoped_allocator_adaptor_A2_int___A2_int___A3_int__> = Rc::new(
+            RefCell::new(<std_scoped_allocator_adaptor_A2_int___A2_int___A3_int__>::default()),
+        );
         allocate_called_6.with(|rc| *rc.borrow_mut() = false);
-        assert!((unimplemented!() == <Ptr<i32>>::from_int(20)));
+        assert!(
+            ({
+                (({ (*a.borrow()).allocate_17(10_u32, <AnyPtr>::from_int(20)) })
+                    == <Ptr<i32>>::from_int(20))
+            })
+        );
         assert!(((allocate_called_6.with(|rc| *rc.borrow()) as i32) == (true as i32)));
     }
     return 0;

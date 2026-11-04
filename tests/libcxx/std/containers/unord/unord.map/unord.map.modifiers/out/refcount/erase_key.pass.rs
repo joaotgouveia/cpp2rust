@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -36,37 +41,10 @@ thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__
-{
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<(Value<i32>, Value<Vec<i8>>)>,
-}
-impl min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__ { }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____
 {}
-pub fn only_deletions_4(whole: Ptr<()>, part: Ptr<()>) -> bool {
-    let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    'loop_: while ((*w.borrow()) != unimplemented!()) && ((*p.borrow()) != unimplemented!()) {
-        if unimplemented!() {
-            (*p.borrow_mut()).iter_post_inc();
-        }
-        (*w.borrow_mut()).iter_post_inc();
-    }
-    return (*p.borrow()) == unimplemented!();
-}
+impl CppMove for min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -138,105 +116,278 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_()));
-        assert!((unimplemented!() == 4_()));
+        let c : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new(std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   )  } , { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   ) . offset ( ( ( ( 240usize as usize ) ) . wrapping_div ( ( 40usize as usize ) ) ) as isize )  } , None , None , None , None , )  )) ;
         assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(5));
+                (*c.borrow()).erase_58(___x.as_pointer())
+            }) == 0_u64)
         );
+        assert!(({ (({ (*c.borrow()).size() }) == 4_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_0,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_0.upgrade().deref())
+                        [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(2));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_1,) => {
+                Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| {
+                    (*__tmp_1.upgrade().deref())
+                        [..(*__tmp_1.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_2,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_2.upgrade().deref())
+                        [..(*__tmp_2.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(4));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_3,) => {
+                Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                    (*__tmp_3.upgrade().deref())
+                        [..(*__tmp_3.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
-            Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(2));
+                (*c.borrow()).erase_58(___x.as_pointer())
+            }) == 1_u64)
         );
+        assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_4,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_4.upgrade().deref())
+                        [..(*__tmp_4.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_5,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_5.upgrade().deref())
+                        [..(*__tmp_5.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(4));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_6,) => {
+                Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                    (*__tmp_6.upgrade().deref())
+                        [..(*__tmp_6.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(2));
+                (*c.borrow()).erase_58(___x.as_pointer())
+            }) == 0_u64)
         );
+        assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_7,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_7.upgrade().deref())
+                        [..(*__tmp_7.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_8,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_8.upgrade().deref())
+                        [..(*__tmp_8.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(4));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_9,) => {
+                Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                    (*__tmp_9.upgrade().deref())
+                        [..(*__tmp_9.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
-            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(4));
+                (*c.borrow()).erase_58(___x.as_pointer())
+            }) == 1_u64)
         );
-        assert!((unimplemented!() == 1_()));
-        assert!((unimplemented!() == 3_()));
+        assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_10,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_10.upgrade().deref())
+                        [..(*__tmp_10.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_11,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_11.upgrade().deref())
+                        [..(*__tmp_11.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(4));
+                (*c.borrow()).erase_58(___x.as_pointer())
+            }) == 0_u64)
         );
+        assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_12,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_12.upgrade().deref())
+                        [..(*__tmp_12.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_13,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_13.upgrade().deref())
+                        [..(*__tmp_13.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*c.borrow()).erase_58(___x.as_pointer())
+            }) == 1_u64)
         );
+        assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_14,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_14.upgrade().deref())
+                        [..(*__tmp_14.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
-            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*c.borrow()).erase_58(___x.as_pointer())
+            }) == 0_u64)
         );
-        assert!((unimplemented!() == 0_()));
-        assert!((unimplemented!() == 3_()));
+        assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_15,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_15.upgrade().deref())
+                        [..(*__tmp_15.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).erase_58(___x.as_pointer())
+            }) == 1_u64)
         );
+        assert!(({ (({ (*c.borrow()).size() }) == 0_u64) }));
         assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).erase_58(___x.as_pointer())
+            }) == 0_u64)
         );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!((unimplemented!() == 1_()));
-        assert!((unimplemented!() == 2_()));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!((unimplemented!() == 0_()));
-        assert!((unimplemented!() == 2_()));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!((unimplemented!() == 1_()));
-        assert!((unimplemented!() == 1_()));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!((unimplemented!() == 0_()));
-        assert!((unimplemented!() == 1_()));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!((unimplemented!() == 1_()));
-        assert!((unimplemented!() == 0_()));
-        assert!((unimplemented!() == 0_()));
-        assert!((unimplemented!() == 0_()));
+        assert!(({ (({ (*c.borrow()).size() }) == 0_u64) }));
     }
     {
         let a: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -289,130 +440,312 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_()));
-        assert!((unimplemented!() == 4_()));
+        let c : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new(std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   )  } , { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   ) . offset ( ( ( ( 240usize as usize ) ) . wrapping_div ( ( 40usize as usize ) ) ) as isize )  } , None , None , None , None , )  )) ;
         assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(5));
+                (*c.borrow()).erase_58(___x.as_pointer())
+            }) == 0_u64)
         );
+        assert!(({ (({ (*c.borrow()).size() }) == 4_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_16,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_16.upgrade().deref())
+                        [..(*__tmp_16.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(2));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_17,) => {
+                Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| {
+                    (*__tmp_17.upgrade().deref())
+                        [..(*__tmp_17.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_18,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_18.upgrade().deref())
+                        [..(*__tmp_18.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(4));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_19,) => {
+                Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                    (*__tmp_19.upgrade().deref())
+                        [..(*__tmp_19.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
-            Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(2));
+                (*c.borrow()).erase_58(___x.as_pointer())
+            }) == 1_u64)
         );
+        assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_20,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_20.upgrade().deref())
+                        [..(*__tmp_20.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_21,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_21.upgrade().deref())
+                        [..(*__tmp_21.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(4));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_22,) => {
+                Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                    (*__tmp_22.upgrade().deref())
+                        [..(*__tmp_22.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(2));
+                (*c.borrow()).erase_58(___x.as_pointer())
+            }) == 0_u64)
         );
+        assert!(({ (({ (*c.borrow()).size() }) == 3_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_23,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_23.upgrade().deref())
+                        [..(*__tmp_23.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_24,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_24.upgrade().deref())
+                        [..(*__tmp_24.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(4));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_25,) => {
+                Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                    (*__tmp_25.upgrade().deref())
+                        [..(*__tmp_25.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
-            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(4));
+                (*c.borrow()).erase_58(___x.as_pointer())
+            }) == 1_u64)
         );
-        assert!((unimplemented!() == 1_()));
-        assert!((unimplemented!() == 3_()));
+        assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_26,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_26.upgrade().deref())
+                        [..(*__tmp_26.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_27,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_27.upgrade().deref())
+                        [..(*__tmp_27.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(4));
+                (*c.borrow()).erase_58(___x.as_pointer())
+            }) == 0_u64)
         );
+        assert!(({ (({ (*c.borrow()).size() }) == 2_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_28,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_28.upgrade().deref())
+                        [..(*__tmp_28.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_29,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_29.upgrade().deref())
+                        [..(*__tmp_29.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*c.borrow()).erase_58(___x.as_pointer())
+            }) == 1_u64)
         );
+        assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_30,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_30.upgrade().deref())
+                        [..(*__tmp_30.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
-            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*c.borrow()).erase_58(___x.as_pointer())
+            }) == 0_u64)
         );
-        assert!((unimplemented!() == 0_()));
-        assert!((unimplemented!() == 3_()));
+        assert!(({ (({ (*c.borrow()).size() }) == 1_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_31,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_31.upgrade().deref())
+                        [..(*__tmp_31.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).erase_58(___x.as_pointer())
+            }) == 1_u64)
         );
+        assert!(({ (({ (*c.borrow()).size() }) == 0_u64) }));
         assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*c.borrow()).erase_58(___x.as_pointer())
+            }) == 0_u64)
         );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!((unimplemented!() == 1_()));
-        assert!((unimplemented!() == 2_()));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!((unimplemented!() == 0_()));
-        assert!((unimplemented!() == 2_()));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!((unimplemented!() == 1_()));
-        assert!((unimplemented!() == 1_()));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!((unimplemented!() == 0_()));
-        assert!((unimplemented!() == 1_()));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!((unimplemented!() == 1_()));
-        assert!((unimplemented!() == 0_()));
-        assert!((unimplemented!() == 0_()));
-        assert!((unimplemented!() == 0_()));
+        assert!(({ (({ (*c.borrow()).size() }) == 0_u64) }));
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut i: i32 = 0;
-        'loop_: while (i < 10) {
-            let __rhs = (i as ());
-            unimplemented!().write(__rhs);
-            let __rhs = (i as ());
-            unimplemented!().write(__rhs);
-            i.prefix_inc();
+        let m : Value<std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(<std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___  >::default() )) ;
+        let m2 : Value<std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(<std_unordered_map_int__int__std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__int___  >::default() )) ;
+        let i: Value<i32> = Rc::new(RefCell::new(0));
+        'loop_: while ((*i.borrow()) < 10) {
+            let __rhs = (*i.borrow());
+            (*m.borrow_mut())[(*i.borrow())] = __rhs;
+            let __rhs = (*i.borrow());
+            (*m2.borrow_mut())[(*i.borrow())] = __rhs;
+            (*i.borrow_mut()).prefix_inc();
         }
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let i: Value<std___detail__Node_iterator_std_pair_const_int__int___false__false_> =
+            Rc::new(RefCell::new(({ (*m2.borrow()).begin_27() })));
         let mut ctr: i32 = 0;
-        'loop_: while (*i.borrow()) != unimplemented!() {
+        'loop_: while (*i.borrow()) != ({ (*m2.borrow()).end_30() }) {
             if ((ctr.postfix_inc() % 2) == 0) {
-                unimplemented!();
+                ({ (*m2.borrow()).erase_57((*i.borrow_mut()).iter_post_inc()) });
             } else {
-                (*i.borrow_mut()).iter_inc();
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
             }
         }
         assert!(({ only_deletions_4(m.as_pointer(), m2.as_pointer(),) }));
     }
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__;
 pub trait min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl
 {
     fn allocate ( &self , mut n : usize  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
@@ -427,48 +760,6 @@ pub trait min_allocator_std_pair_const_int__std_basic_string_char__std_char_trai
     }
 }
 impl min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl for Ptr<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____> {
-}
-pub trait min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__Impl
-{
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
-        unimplemented!()
-    }    fn operator_inc_8 ( &self , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_inc_9 ( &self , mut _a0 : i32  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_dec_10 ( &self , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_dec_11 ( &self , mut _a0 : i32  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_add_assign ( &self , mut n : isize  , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_sub_assign ( &self , mut n : isize  , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_add ( &self , mut n : isize  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_sub ( &self , mut n : isize  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
-        unimplemented!()
-    }
-}
-impl min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__Impl for Ptr<min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__> {
-}
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
-{
 }
 pub fn __cpp2rust_init_globals() {
     let _ = outstanding_bytes_0.with(|_| ());

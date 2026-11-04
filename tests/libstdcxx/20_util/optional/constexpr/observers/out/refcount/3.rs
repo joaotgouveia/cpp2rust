@@ -12,12 +12,17 @@ pub struct value_type {
     #[offset(0)]
     pub i: i32,
 }
+impl CppMove for value_type {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let o: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let o: Value<std_optional_value_type_> = Rc::new(RefCell::new(value_type { i: 51 }));
     const _: () = assert!(true, "o.value().i == 51");;
     const _: () = assert!(true, "o.value().i == (*o).i");;
     const _: () = assert!(true, "&o.value().i == &(*o).i");;

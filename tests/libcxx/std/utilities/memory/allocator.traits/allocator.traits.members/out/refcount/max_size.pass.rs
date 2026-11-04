@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -38,41 +43,62 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A_int_ {}
+impl CppMove for A_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct B_int_ {}
+impl CppMove for B_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct B_Holder_NS_Incomplete__ptr_ {}
+impl CppMove for B_Holder_NS_Incomplete__ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_4() -> bool {
     {
-        let mut b: B_int_ = <B_int_>::default();
-        assert!((unimplemented!() == 100_()));
+        let b: Value<B_int_> = Rc::new(RefCell::new(<B_int_>::default()));
+        assert!((({ std_allocator_traits_B_int__::max_size(b.as_pointer(),) }) == 100_usize));
     }
     {
-        let mut b: B_int_ = <B_int_>::default();
-        assert!((unimplemented!() == 100_()));
+        let b: Value<B_int_> = Rc::new(RefCell::new(<B_int_>::default()));
+        assert!((({ std_allocator_traits_B_int__::max_size(b.as_pointer(),) }) == 100_usize));
     }
     {
-        let mut a: B_Holder_NS_Incomplete__ptr_ = <B_Holder_NS_Incomplete__ptr_>::default();
-        assert!((unimplemented!() == 100_()));
-    }
-    {
-        let mut a: A_int_ = <A_int_>::default();
+        let a: Value<B_Holder_NS_Incomplete__ptr_> =
+            Rc::new(RefCell::new(<B_Holder_NS_Incomplete__ptr_>::default()));
         assert!(
-            (unimplemented!()
-                == (u64::MAX as u64).wrapping_div((::std::mem::size_of::<i32>() as u64)))
+            (({ std_allocator_traits_B_Holder_NS_Incomplete__ptr__::max_size(a.as_pointer(),) })
+                == 100_usize)
         );
     }
     {
-        let mut a: A_int_ = <A_int_>::default();
+        let a: Value<A_int_> = Rc::new(RefCell::new(<A_int_>::default()));
         assert!(
-            (unimplemented!()
-                == (u64::MAX as u64).wrapping_div((::std::mem::size_of::<i32>() as u64)))
+            (({ std_allocator_traits_A_int__::max_size(a.as_pointer(),) })
+                == ((u64::MAX as u64).wrapping_div((::std::mem::size_of::<i32>() as u64))
+                    as usize))
         );
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<A_int_> = Rc::new(RefCell::new(<A_int_>::default()));
+        assert!(
+            (({ std_allocator_traits_A_int__::max_size(a.as_pointer(),) })
+                == ((u64::MAX as u64).wrapping_div((::std::mem::size_of::<i32>() as u64))
+                    as usize))
+        );
+    }
+    {
+        let a: Value<std_allocator_int_> = Rc::new(RefCell::new(<std_allocator_int_>::default()));
         const _: () = assert!(
             true,
             "noexcept(std::allocator_traits<std::allocator<int>>::max_size(a)) == true"

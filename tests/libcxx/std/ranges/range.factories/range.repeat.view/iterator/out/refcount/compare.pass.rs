@@ -12,34 +12,53 @@ pub fn test_0() -> bool {
             true,
             "std::three_way_comparable<std::ranges::iterator_t<R>>"
         );;
-        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let r: Value<std_ranges_repeat_view_int__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<i32> = Rc::new(RefCell::new(42));
+                std_ranges_repeat_view_int__std_unreachable_sentinel_t_::new_1(
+                    { __tmp_0.as_pointer() },
+                    None,
+                )
+            }));
+        let iter1: Value<std_ranges_repeat_view_int___Iterator> =
+            Rc::new(RefCell::new(({ (*r.borrow()).begin() })));
+        let iter2: Value<std_ranges_repeat_view_int___Iterator> = Rc::new(RefCell::new(
+            ({ (*iter1.borrow()).clone() }).iter_add(1_isize),
+        ));
         const _: () = assert!(true, "std::same_as<decltype(iter1 == iter2), bool>");;
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!((*iter1.borrow()) < (*iter1.borrow())));
+        assert!(({ (*iter1.borrow()) == (*iter1.borrow()) }));
+        assert!(({ !((*iter1.borrow()) == (*iter2.borrow())) }));
+        assert!(({ (*iter2.borrow()) == (*iter2.borrow()) }));
+        assert!(({ !((*iter1.borrow()) < (*iter1.borrow())) }));
         assert!((*iter1.borrow()) < (*iter2.borrow()));
-        assert!(!((*iter2.borrow()) < (*iter1.borrow())));
+        assert!(({ !((*iter2.borrow()) < (*iter1.borrow())) }));
         assert!((*iter1.borrow()) <= (*iter1.borrow()));
         assert!((*iter1.borrow()) <= (*iter2.borrow()));
-        assert!(!((*iter2.borrow()) <= (*iter1.borrow())));
-        assert!(!((*iter1.borrow()) > (*iter1.borrow())));
-        assert!(!((*iter1.borrow()) > (*iter2.borrow())));
+        assert!(({ !((*iter2.borrow()) <= (*iter1.borrow())) }));
+        assert!(({ !((*iter1.borrow()) > (*iter1.borrow())) }));
+        assert!(({ !((*iter1.borrow()) > (*iter2.borrow())) }));
         assert!((*iter2.borrow()) > (*iter1.borrow()));
         assert!((*iter1.borrow()) >= (*iter1.borrow()));
-        assert!(!((*iter1.borrow()) >= (*iter2.borrow())));
+        assert!(({ !((*iter1.borrow()) >= (*iter2.borrow())) }));
         assert!((*iter2.borrow()) >= (*iter1.borrow()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!((*iter1.borrow()) != (*iter1.borrow())));
+        assert!(({ (*iter1.borrow()) == (*iter1.borrow()) }));
+        assert!(({ !((*iter1.borrow()) == (*iter2.borrow())) }));
+        assert!(({ (*iter2.borrow()) == (*iter2.borrow()) }));
+        assert!(({ !((*iter1.borrow()) != (*iter1.borrow())) }));
         assert!((*iter1.borrow()) != (*iter2.borrow()));
-        assert!(!((*iter2.borrow()) != (*iter2.borrow())));
-        assert!((unimplemented!()) == std::cmp::Ordering::Less);
-        assert!((unimplemented!()) == std::cmp::Ordering::Equal);
-        assert!((unimplemented!()) == std::cmp::Ordering::Greater);
+        assert!(({ !((*iter2.borrow()) != (*iter2.borrow())) }));
+        assert!(
+            ({ ((*iter1.borrow()).partial_cmp(&(*iter2.borrow())).unwrap()) })
+                == ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) })
+        );
+        assert!(
+            ({ ((*iter1.borrow()).partial_cmp(&(*iter1.borrow())).unwrap()) })
+                == ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) })
+        );
+        assert!(
+            ({ ((*iter2.borrow()).partial_cmp(&(*iter1.borrow())).unwrap()) })
+                == ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) })
+        );
         const _: () = assert!(
             true,
             "std::same_as<decltype(iter1 <=> iter2), std::strong_ordering>"
@@ -50,34 +69,48 @@ pub fn test_0() -> bool {
             true,
             "std::three_way_comparable<std::ranges::iterator_t<R>>"
         );;
-        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let r: Value<std_ranges_repeat_view_int__int_> = Rc::new(RefCell::new({
+            let __tmp_1: Value<i32> = Rc::new(RefCell::new(42));
+            std_ranges_repeat_view_int__int_::new_1({ __tmp_1.as_pointer() }, { 10 })
+        }));
+        let iter1: Value<std_ranges_repeat_view_int__int___Iterator> =
+            Rc::new(RefCell::new(({ (*r.borrow()).begin() })));
+        let iter2: Value<std_ranges_repeat_view_int__int___Iterator> =
+            Rc::new(RefCell::new(({ (*iter1.borrow()).clone() }).iter_add(1)));
         const _: () = assert!(true, "std::same_as<decltype(iter1 == iter2), bool>");;
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!((*iter1.borrow()) < (*iter1.borrow())));
+        assert!(({ (*iter1.borrow()) == (*iter1.borrow()) }));
+        assert!(({ !((*iter1.borrow()) == (*iter2.borrow())) }));
+        assert!(({ (*iter2.borrow()) == (*iter2.borrow()) }));
+        assert!(({ !((*iter1.borrow()) < (*iter1.borrow())) }));
         assert!((*iter1.borrow()) < (*iter2.borrow()));
-        assert!(!((*iter2.borrow()) < (*iter1.borrow())));
+        assert!(({ !((*iter2.borrow()) < (*iter1.borrow())) }));
         assert!((*iter1.borrow()) <= (*iter1.borrow()));
         assert!((*iter1.borrow()) <= (*iter2.borrow()));
-        assert!(!((*iter2.borrow()) <= (*iter1.borrow())));
-        assert!(!((*iter1.borrow()) > (*iter1.borrow())));
-        assert!(!((*iter1.borrow()) > (*iter2.borrow())));
+        assert!(({ !((*iter2.borrow()) <= (*iter1.borrow())) }));
+        assert!(({ !((*iter1.borrow()) > (*iter1.borrow())) }));
+        assert!(({ !((*iter1.borrow()) > (*iter2.borrow())) }));
         assert!((*iter2.borrow()) > (*iter1.borrow()));
         assert!((*iter1.borrow()) >= (*iter1.borrow()));
-        assert!(!((*iter1.borrow()) >= (*iter2.borrow())));
+        assert!(({ !((*iter1.borrow()) >= (*iter2.borrow())) }));
         assert!((*iter2.borrow()) >= (*iter1.borrow()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!((*iter1.borrow()) != (*iter1.borrow())));
+        assert!(({ (*iter1.borrow()) == (*iter1.borrow()) }));
+        assert!(({ !((*iter1.borrow()) == (*iter2.borrow())) }));
+        assert!(({ (*iter2.borrow()) == (*iter2.borrow()) }));
+        assert!(({ !((*iter1.borrow()) != (*iter1.borrow())) }));
         assert!((*iter1.borrow()) != (*iter2.borrow()));
-        assert!(!((*iter2.borrow()) != (*iter2.borrow())));
-        assert!((unimplemented!()) == std::cmp::Ordering::Less);
-        assert!((unimplemented!()) == std::cmp::Ordering::Equal);
-        assert!((unimplemented!()) == std::cmp::Ordering::Greater);
+        assert!(({ !((*iter2.borrow()) != (*iter2.borrow())) }));
+        assert!(
+            ({ ((*iter1.borrow()).partial_cmp(&(*iter2.borrow())).unwrap()) })
+                == ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) })
+        );
+        assert!(
+            ({ ((*iter1.borrow()).partial_cmp(&(*iter1.borrow())).unwrap()) })
+                == ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) })
+        );
+        assert!(
+            ({ ((*iter2.borrow()).partial_cmp(&(*iter1.borrow())).unwrap()) })
+                == ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) })
+        );
     }
     return true;
 }

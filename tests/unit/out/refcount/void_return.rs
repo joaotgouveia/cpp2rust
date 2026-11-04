@@ -35,8 +35,8 @@ pub fn main() {
 fn main_0() -> i32 {
     let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 3, 0, 2, 8, 7])));
     ({
-        let _first: RandomAccessIterator<i32> = v.decay().begin();
-        let _last: RandomAccessIterator<i32> = v.decay().end();
+        let _first: RandomAccessIterator<i32> = CppRange::begin(&v.decay());
+        let _last: RandomAccessIterator<i32> = CppRange::end(&v.decay());
         f1_0(_first, _last)
     });
     let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));

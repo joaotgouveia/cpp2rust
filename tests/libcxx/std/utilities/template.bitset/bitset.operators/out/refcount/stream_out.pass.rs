@@ -27,12 +27,22 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let os: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let os: Value<std_basic_ostringstream_char__std_char_traits_char___std_allocator_char__> =
+        Rc::new(RefCell::new(
+            <std_basic_ostringstream_char__std_char_traits_char___std_allocator_char__>::default(),
+        ));
+    let b: Value<std_bitset_8_> = Rc::new(RefCell::new(std_bitset_8_::new_1({ 90_u64 })));
+    write!(os.as_pointer(), "{:}", (*b.borrow_mut()),);
     assert!(
-        Ptr::<i8>::from_string_literal(b"01011010")
-            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+        match (Rc::new(RefCell::new(({ (*os.borrow()).str_16() }))).as_pointer(),) {
+            (__tmp_0,) => {
+                Ptr::<i8>::from_string_literal(b"01011010").with_c_str(|__s| {
+                    (*__tmp_0.upgrade().deref())
+                        [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        }
     );
     return 0;
 }

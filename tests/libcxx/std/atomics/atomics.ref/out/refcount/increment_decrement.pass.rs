@@ -60,6 +60,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_char_ {}
+impl CppMove for LockFreeStatusInfo_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_2: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i16>() == ::std::mem::size_of::<i8>())
@@ -109,6 +114,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_short_ {}
+impl CppMove for LockFreeStatusInfo_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_4: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i32>() == ::std::mem::size_of::<i8>())
@@ -158,6 +168,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_int_ {}
+impl CppMove for LockFreeStatusInfo_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_6: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i8>())
@@ -207,6 +222,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_long_ {}
+impl CppMove for LockFreeStatusInfo_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_8: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((8usize == ::std::mem::size_of::<i8>()) && (8usize >= 8usize)) {
@@ -244,6 +264,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_void_ptr_ {}
+impl CppMove for LockFreeStatusInfo_void_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_10: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i8>())
@@ -293,6 +318,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_long_long_ {}
+impl CppMove for LockFreeStatusInfo_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "LockFreeStatusInfo<char>::status_known");
 const _: () = assert!(true, "LockFreeStatusInfo<short>::status_known");
 const _: () = assert!(true, "LockFreeStatusInfo<int>::status_known");
@@ -332,6 +362,11 @@ impl UserAtomicType {
 impl CppEq for UserAtomicType {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_12(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for UserAtomicType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for UserAtomicType {
@@ -380,6 +415,11 @@ impl CppEq for LargeUserAtomicType {
         operator_eq_13(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for LargeUserAtomicType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for LargeUserAtomicType {
     fn default() -> Self {
         { LargeUserAtomicType::new(None) }
@@ -395,6 +435,11 @@ impl Callable0<()> for TestEachIntegralType_TestIncrementDecrement_ {
         })
     }
 }
+impl CppMove for TestEachIntegralType_TestIncrementDecrement_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestEachFloatingPointType_TestDoesNotHaveIncrementDecrement_ {}
@@ -405,6 +450,11 @@ impl Callable0<()> for TestEachFloatingPointType_TestDoesNotHaveIncrementDecreme
         })
     }
 }
+impl CppMove for TestEachFloatingPointType_TestDoesNotHaveIncrementDecrement_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestEachPointerType_TestIncrementDecrement_ {}
@@ -413,6 +463,11 @@ impl Callable0<()> for TestEachPointerType_TestIncrementDecrement_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestEachPointerType_TestIncrementDecrement_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestEachPointerType_TestIncrementDecrement_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn does_not_have_increment_nor_decrement_operators_14() -> bool {
@@ -443,6 +498,11 @@ impl Callable0<()> for TestDoesNotHaveIncrementDecrement_bool_ {
         })
     }
 }
+impl CppMove for TestDoesNotHaveIncrementDecrement_bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveIncrementDecrement_UserAtomicType_ {}
@@ -451,6 +511,11 @@ impl Callable0<()> for TestDoesNotHaveIncrementDecrement_UserAtomicType_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestDoesNotHaveIncrementDecrement_UserAtomicType_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestDoesNotHaveIncrementDecrement_UserAtomicType_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -463,6 +528,11 @@ impl Callable0<()> for TestDoesNotHaveIncrementDecrement_LargeUserAtomicType_ {
         })
     }
 }
+impl CppMove for TestDoesNotHaveIncrementDecrement_LargeUserAtomicType_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveIncrementDecrement_float_ {}
@@ -471,6 +541,11 @@ impl Callable0<()> for TestDoesNotHaveIncrementDecrement_float_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestDoesNotHaveIncrementDecrement_float_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestDoesNotHaveIncrementDecrement_float_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -483,6 +558,11 @@ impl Callable0<()> for TestDoesNotHaveIncrementDecrement_double_ {
         })
     }
 }
+impl CppMove for TestDoesNotHaveIncrementDecrement_double_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveIncrementDecrement_long_double_ {}
@@ -491,6 +571,11 @@ impl Callable0<()> for TestDoesNotHaveIncrementDecrement_long_double_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestDoesNotHaveIncrementDecrement_long_double_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestDoesNotHaveIncrementDecrement_long_double_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -503,6 +588,11 @@ impl Callable0<()> for TestIncrementDecrement_char_ {
         })
     }
 }
+impl CppMove for TestIncrementDecrement_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_signed_char_ {}
@@ -511,6 +601,11 @@ impl Callable0<()> for TestIncrementDecrement_signed_char_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestIncrementDecrement_signed_char_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestIncrementDecrement_signed_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -523,6 +618,11 @@ impl Callable0<()> for TestIncrementDecrement_unsigned_char_ {
         })
     }
 }
+impl CppMove for TestIncrementDecrement_unsigned_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_short_ {}
@@ -531,6 +631,11 @@ impl Callable0<()> for TestIncrementDecrement_short_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestIncrementDecrement_short_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestIncrementDecrement_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -543,6 +648,11 @@ impl Callable0<()> for TestIncrementDecrement_unsigned_short_ {
         })
     }
 }
+impl CppMove for TestIncrementDecrement_unsigned_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_int_ {}
@@ -551,6 +661,11 @@ impl Callable0<()> for TestIncrementDecrement_int_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestIncrementDecrement_int_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestIncrementDecrement_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -563,6 +678,11 @@ impl Callable0<()> for TestIncrementDecrement_unsigned_int_ {
         })
     }
 }
+impl CppMove for TestIncrementDecrement_unsigned_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_long_ {}
@@ -571,6 +691,11 @@ impl Callable0<()> for TestIncrementDecrement_long_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestIncrementDecrement_long_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestIncrementDecrement_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -583,6 +708,11 @@ impl Callable0<()> for TestIncrementDecrement_unsigned_long_ {
         })
     }
 }
+impl CppMove for TestIncrementDecrement_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_long_long_ {}
@@ -591,6 +721,11 @@ impl Callable0<()> for TestIncrementDecrement_long_long_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestIncrementDecrement_long_long_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestIncrementDecrement_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -603,6 +738,11 @@ impl Callable0<()> for TestIncrementDecrement_unsigned_long_long_ {
         })
     }
 }
+impl CppMove for TestIncrementDecrement_unsigned_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_wchar_t_ {}
@@ -611,6 +751,11 @@ impl Callable0<()> for TestIncrementDecrement_wchar_t_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestIncrementDecrement_wchar_t_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestIncrementDecrement_wchar_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -623,6 +768,11 @@ impl Callable0<()> for TestIncrementDecrement_char8_t_ {
         })
     }
 }
+impl CppMove for TestIncrementDecrement_char8_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_char16_t_ {}
@@ -631,6 +781,11 @@ impl Callable0<()> for TestIncrementDecrement_char16_t_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestIncrementDecrement_char16_t_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestIncrementDecrement_char16_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -643,6 +798,11 @@ impl Callable0<()> for TestIncrementDecrement_char32_t_ {
         })
     }
 }
+impl CppMove for TestIncrementDecrement_char32_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_int_ptr_ {}
@@ -653,6 +813,11 @@ impl Callable0<()> for TestIncrementDecrement_int_ptr_ {
         })
     }
 }
+impl CppMove for TestIncrementDecrement_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_const_int_ptr_ {}
@@ -661,6 +826,11 @@ impl Callable0<()> for TestIncrementDecrement_const_int_ptr_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestIncrementDecrement_const_int_ptr_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestIncrementDecrement_const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

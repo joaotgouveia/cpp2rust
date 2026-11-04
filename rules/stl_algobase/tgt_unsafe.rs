@@ -30,3 +30,11 @@ unsafe fn f1<T1: UnsafeCppInputIterator<T3>, T2: UnsafeCppIterator<T4>, T3, T4: 
     }
     __out
 }
+
+unsafe fn f7<T1: UnsafeCppInputIterator<T2>, T2: Clone>(a0: T1, a1: T1, a2: T2) {
+    let mut __it = a0;
+    while __it != a1 {
+        *__it.iter_deref() = Clone::clone(&a2);
+        __it.iter_inc();
+    }
+}

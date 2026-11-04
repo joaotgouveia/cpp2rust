@@ -337,6 +337,11 @@ pub fn test_array_73() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Empty {}
+impl CppMove for Empty {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
 #[byte_size(1)]
 pub struct Union {
@@ -345,6 +350,11 @@ pub struct Union {
     __bytes: Box<[u8]>,
 }
 impl Union {}
+impl CppMove for Union {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Union {
     fn default() -> Self {
         Union {

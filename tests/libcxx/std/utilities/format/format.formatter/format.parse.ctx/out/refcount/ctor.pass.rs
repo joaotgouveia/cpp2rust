@@ -30,15 +30,36 @@ pub fn test_0(mut fmt: Ptr<i8>) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     {
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ unimplemented!() } == { (fmt.offset((0) as isize)) }));
-        assert!(({ unimplemented!() } == { (fmt.offset((3) as isize)) }));
+        let context: Value<std_basic_format_parse_context_char_> =
+            Rc::new(RefCell::new(std_basic_format_parse_context_char_::new_1({
+                std_basic_string_view_char__std_char_traits_char__::new_1({ (fmt).clone() })
+            })));
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    (fmt.offset((0) as isize))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).end() })) }) } == {
+                    (fmt.offset((3) as isize))
+                })
+            })
+        );
     }
     {
-        let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
+        let view: Value<std_basic_string_view_char__std_char_traits_char__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char__std_char_traits_char__::new_1({ (fmt).clone() }),
+            ));
+        let context: Value<std_basic_format_parse_context_char_> =
+            Rc::new(RefCell::new(std_basic_format_parse_context_char_::new_1({
+                (*view.borrow()).clone()
+            })));
+        assert!(({ (({ (*context.borrow()).begin() }) == ({ (*view.borrow()).begin() })) }));
+        assert!(({ (({ (*context.borrow()).end() }) == ({ (*view.borrow()).end() })) }));
     }
 }
 pub fn test_1(mut fmt: Ptr<i32>) {
@@ -65,15 +86,36 @@ pub fn test_1(mut fmt: Ptr<i32>) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     {
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ unimplemented!() } == { (fmt.offset((0) as isize)) }));
-        assert!(({ unimplemented!() } == { (fmt.offset((3) as isize)) }));
+        let context: Value<std_basic_format_parse_context_wchar_t_> = Rc::new(RefCell::new(
+            std_basic_format_parse_context_wchar_t_::new_1({
+                std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_1({ (fmt).clone() })
+            }),
+        ));
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    (fmt.offset((0) as isize))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).end() })) }) } == {
+                    (fmt.offset((3) as isize))
+                })
+            })
+        );
     }
     {
-        let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
+        let view: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_1({ (fmt).clone() }),
+            ));
+        let context: Value<std_basic_format_parse_context_wchar_t_> = Rc::new(RefCell::new(
+            std_basic_format_parse_context_wchar_t_::new_1({ (*view.borrow()).clone() }),
+        ));
+        assert!(({ (({ (*context.borrow()).begin() }) == ({ (*view.borrow()).begin() })) }));
+        assert!(({ (({ (*context.borrow()).end() }) == ({ (*view.borrow()).end() })) }));
     }
 }
 pub fn test_2(mut fmt: Ptr<u8>) {
@@ -100,15 +142,36 @@ pub fn test_2(mut fmt: Ptr<u8>) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     {
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ unimplemented!() } == { (fmt.offset((0) as isize)) }));
-        assert!(({ unimplemented!() } == { (fmt.offset((3) as isize)) }));
+        let context: Value<std_basic_format_parse_context_char8_t_> = Rc::new(RefCell::new(
+            std_basic_format_parse_context_char8_t_::new_1({
+                std_basic_string_view_char8_t__std_char_traits_char8_t__::new_1({ (fmt).clone() })
+            }),
+        ));
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    (fmt.offset((0) as isize))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).end() })) }) } == {
+                    (fmt.offset((3) as isize))
+                })
+            })
+        );
     }
     {
-        let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
+        let view: Value<std_basic_string_view_char8_t__std_char_traits_char8_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char8_t__std_char_traits_char8_t__::new_1({ (fmt).clone() }),
+            ));
+        let context: Value<std_basic_format_parse_context_char8_t_> = Rc::new(RefCell::new(
+            std_basic_format_parse_context_char8_t_::new_1({ (*view.borrow()).clone() }),
+        ));
+        assert!(({ (({ (*context.borrow()).begin() }) == ({ (*view.borrow()).begin() })) }));
+        assert!(({ (({ (*context.borrow()).end() }) == ({ (*view.borrow()).end() })) }));
     }
 }
 pub fn test_3(mut fmt: Ptr<u16>) {
@@ -135,15 +198,38 @@ pub fn test_3(mut fmt: Ptr<u16>) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     {
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ unimplemented!() } == { (fmt.offset((0) as isize)) }));
-        assert!(({ unimplemented!() } == { (fmt.offset((3) as isize)) }));
+        let context: Value<std_basic_format_parse_context_char16_t_> = Rc::new(RefCell::new(
+            std_basic_format_parse_context_char16_t_::new_1({
+                std_basic_string_view_char16_t__std_char_traits_char16_t__::new_1({ (fmt).clone() })
+            }),
+        ));
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    (fmt.offset((0) as isize))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).end() })) }) } == {
+                    (fmt.offset((3) as isize))
+                })
+            })
+        );
     }
     {
-        let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
+        let view: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char16_t__std_char_traits_char16_t__::new_1({
+                    (fmt).clone()
+                }),
+            ));
+        let context: Value<std_basic_format_parse_context_char16_t_> = Rc::new(RefCell::new(
+            std_basic_format_parse_context_char16_t_::new_1({ (*view.borrow()).clone() }),
+        ));
+        assert!(({ (({ (*context.borrow()).begin() }) == ({ (*view.borrow()).begin() })) }));
+        assert!(({ (({ (*context.borrow()).end() }) == ({ (*view.borrow()).end() })) }));
     }
 }
 pub fn test_4(mut fmt: Ptr<u32>) {
@@ -170,15 +256,38 @@ pub fn test_4(mut fmt: Ptr<u32>) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     {
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ unimplemented!() } == { (fmt.offset((0) as isize)) }));
-        assert!(({ unimplemented!() } == { (fmt.offset((3) as isize)) }));
+        let context: Value<std_basic_format_parse_context_char32_t_> = Rc::new(RefCell::new(
+            std_basic_format_parse_context_char32_t_::new_1({
+                std_basic_string_view_char32_t__std_char_traits_char32_t__::new_1({ (fmt).clone() })
+            }),
+        ));
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    (fmt.offset((0) as isize))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).end() })) }) } == {
+                    (fmt.offset((3) as isize))
+                })
+            })
+        );
     }
     {
-        let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
+        let view: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char32_t__std_char_traits_char32_t__::new_1({
+                    (fmt).clone()
+                }),
+            ));
+        let context: Value<std_basic_format_parse_context_char32_t_> = Rc::new(RefCell::new(
+            std_basic_format_parse_context_char32_t_::new_1({ (*view.borrow()).clone() }),
+        ));
+        assert!(({ (({ (*context.borrow()).begin() }) == ({ (*view.borrow()).begin() })) }));
+        assert!(({ (({ (*context.borrow()).end() }) == ({ (*view.borrow()).end() })) }));
     }
 }
 pub fn test_5() -> bool {

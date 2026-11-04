@@ -14,6 +14,11 @@ impl constexpr_char_traits_char_ {
         return ((c1 as i32) == (c2 as i32));
     }
 }
+impl CppMove for constexpr_char_traits_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -35,17 +40,32 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv1: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            <std_basic_string_view_char__std_char_traits_char__>::default(),
+        ));
+        let sv2: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_basic_string_view_char__std_char_traits_char__::new_1(
+                { Ptr::<i8>::from_string_literal(b"abcde") },
+                { 5_u64 },
+            ),
+        ));
         const _: () = assert!(true, "");;
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
+        assert!(({ !({ (*sv1.borrow()).starts_with_38(('a' as i8),) }) }));
+        assert!(({ !({ (*sv1.borrow()).starts_with_38(('x' as i8),) }) }));
+        assert!(({ ({ (*sv2.borrow()).starts_with_38(('a' as i8),) }) }));
+        assert!(({ !({ (*sv2.borrow()).starts_with_38(('x' as i8),) }) }));
     }
     {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv1: Value<std_basic_string_view_char__constexpr_char_traits_char__> = Rc::new(
+            RefCell::new(<std_basic_string_view_char__constexpr_char_traits_char__>::default()),
+        );
+        let sv2: Value<std_basic_string_view_char__constexpr_char_traits_char__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char__constexpr_char_traits_char__::new_1(
+                    { Ptr::<i8>::from_string_literal(b"abcde") },
+                    { 5_u64 },
+                ),
+            ));
         const _: () = assert!(true, "!sv1.starts_with(\'a\')");;
         const _: () = assert!(true, "!sv1.starts_with(\'x\')");;
         const _: () = assert!(true, "sv2.starts_with(\'a\')");;

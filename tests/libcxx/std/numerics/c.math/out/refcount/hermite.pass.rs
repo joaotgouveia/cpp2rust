@@ -9,25 +9,39 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_type_list_float__double__long_double_ {}
+impl CppMove for types_type_list_float__double__long_double_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_type_list_short__int__long__long_long_ {}
+impl CppMove for types_type_list_short__int__long__long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn for_each_0(mut _a0: types_type_list_float__double__long_double_, f: TestFloat) {
     let f: Value<TestFloat> = Rc::new(RefCell::new(f));
     ({
@@ -154,6 +168,12 @@ impl Callable2<f32, f32, bool> for CompareFloatingValues_float_ {
         })
     }
 }
+value_comparator!(CompareFloatingValues_float_, f32);
+impl CppMove for CompareFloatingValues_float_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for CompareFloatingValues_float_ {
     fn default() -> Self {
         { CompareFloatingValues_float_::new() }
@@ -198,6 +218,12 @@ impl Callable2<f64, f64, bool> for CompareFloatingValues_double_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             CompareFloatingValues_double_Impl::operator_call(__it, a1, a2)
         })
+    }
+}
+value_comparator!(CompareFloatingValues_double_, f64);
+impl CppMove for CompareFloatingValues_double_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for CompareFloatingValues_double_ {
@@ -246,6 +272,12 @@ impl Callable2<f64, f64, bool> for CompareFloatingValues_long_double_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             CompareFloatingValues_long_double_Impl::operator_call(__it, a1, a2)
         })
+    }
+}
+value_comparator!(CompareFloatingValues_long_double_, f64);
+impl CppMove for CompareFloatingValues_long_double_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for CompareFloatingValues_long_double_ {
@@ -912,68 +944,80 @@ pub fn test_13() {
                 Rc::new(RefCell::new(CompareFloatingValues_float_::new()));
             assert!(
                 ({
-                    let _result: f32 = unimplemented!();
-                    let _expected: f32 = ({ (*h0.borrow()).call(x) });
-                    CompareFloatingValues_float_Impl::operator_call(
-                        &compare.as_pointer(),
-                        _result,
-                        _expected,
-                    )
+                    ({
+                        let _result: f32 = unimplemented!();
+                        let _expected: f32 = ({ (*h0.borrow()).call(x) });
+                        CompareFloatingValues_float_Impl::operator_call(
+                            &compare.as_pointer(),
+                            _result,
+                            _expected,
+                        )
+                    })
                 })
             );
             assert!(
                 ({
-                    let _result: f32 = unimplemented!();
-                    let _expected: f32 = ({ (*h1.borrow()).call(x) });
-                    CompareFloatingValues_float_Impl::operator_call(
-                        &compare.as_pointer(),
-                        _result,
-                        _expected,
-                    )
+                    ({
+                        let _result: f32 = unimplemented!();
+                        let _expected: f32 = ({ (*h1.borrow()).call(x) });
+                        CompareFloatingValues_float_Impl::operator_call(
+                            &compare.as_pointer(),
+                            _result,
+                            _expected,
+                        )
+                    })
                 })
             );
             assert!(
                 ({
-                    let _result: f32 = unimplemented!();
-                    let _expected: f32 = ({ (*h2.borrow()).call(x) });
-                    CompareFloatingValues_float_Impl::operator_call(
-                        &compare.as_pointer(),
-                        _result,
-                        _expected,
-                    )
+                    ({
+                        let _result: f32 = unimplemented!();
+                        let _expected: f32 = ({ (*h2.borrow()).call(x) });
+                        CompareFloatingValues_float_Impl::operator_call(
+                            &compare.as_pointer(),
+                            _result,
+                            _expected,
+                        )
+                    })
                 })
             );
             assert!(
                 ({
-                    let _result: f32 = unimplemented!();
-                    let _expected: f32 = ({ (*h3.borrow()).call(x) });
-                    CompareFloatingValues_float_Impl::operator_call(
-                        &compare.as_pointer(),
-                        _result,
-                        _expected,
-                    )
+                    ({
+                        let _result: f32 = unimplemented!();
+                        let _expected: f32 = ({ (*h3.borrow()).call(x) });
+                        CompareFloatingValues_float_Impl::operator_call(
+                            &compare.as_pointer(),
+                            _result,
+                            _expected,
+                        )
+                    })
                 })
             );
             assert!(
                 ({
-                    let _result: f32 = unimplemented!();
-                    let _expected: f32 = ({ (*h4.borrow()).call(x) });
-                    CompareFloatingValues_float_Impl::operator_call(
-                        &compare.as_pointer(),
-                        _result,
-                        _expected,
-                    )
+                    ({
+                        let _result: f32 = unimplemented!();
+                        let _expected: f32 = ({ (*h4.borrow()).call(x) });
+                        CompareFloatingValues_float_Impl::operator_call(
+                            &compare.as_pointer(),
+                            _result,
+                            _expected,
+                        )
+                    })
                 })
             );
             assert!(
                 ({
-                    let _result: f32 = unimplemented!();
-                    let _expected: f32 = ({ (*h5.borrow()).call(x) });
-                    CompareFloatingValues_float_Impl::operator_call(
-                        &compare.as_pointer(),
-                        _result,
-                        _expected,
-                    )
+                    ({
+                        let _result: f32 = unimplemented!();
+                        let _expected: f32 = ({ (*h5.borrow()).call(x) });
+                        CompareFloatingValues_float_Impl::operator_call(
+                            &compare.as_pointer(),
+                            _result,
+                            _expected,
+                        )
+                    })
                 })
             );
         }
@@ -1052,9 +1096,9 @@ pub fn test_13() {
             'loop_: for x in IterRange::new(__range3.decay().begin(), __range3.decay().end()) {
                 let mut x: f32 = (x.iter_deref().read());
                 if (x > 0_f32) {
-                    assert!(({ (*is_sign_change.borrow()).call(n, -x,) }));
+                    assert!(({ ({ (*is_sign_change.borrow()).call(n, -x,) }) }));
                 }
-                assert!(({ (*is_sign_change.borrow()).call(n, x,) }));
+                assert!(({ ({ (*is_sign_change.borrow()).call(n, x,) }) }));
             }
             n.prefix_inc();
         }
@@ -1149,68 +1193,80 @@ pub fn test_14() {
                 Rc::new(RefCell::new(CompareFloatingValues_double_::new()));
             assert!(
                 ({
-                    let _result: f64 = unimplemented!();
-                    let _expected: f64 = ({ (*h0.borrow()).call(x) });
-                    CompareFloatingValues_double_Impl::operator_call(
-                        &compare.as_pointer(),
-                        _result,
-                        _expected,
-                    )
+                    ({
+                        let _result: f64 = unimplemented!();
+                        let _expected: f64 = ({ (*h0.borrow()).call(x) });
+                        CompareFloatingValues_double_Impl::operator_call(
+                            &compare.as_pointer(),
+                            _result,
+                            _expected,
+                        )
+                    })
                 })
             );
             assert!(
                 ({
-                    let _result: f64 = unimplemented!();
-                    let _expected: f64 = ({ (*h1.borrow()).call(x) });
-                    CompareFloatingValues_double_Impl::operator_call(
-                        &compare.as_pointer(),
-                        _result,
-                        _expected,
-                    )
+                    ({
+                        let _result: f64 = unimplemented!();
+                        let _expected: f64 = ({ (*h1.borrow()).call(x) });
+                        CompareFloatingValues_double_Impl::operator_call(
+                            &compare.as_pointer(),
+                            _result,
+                            _expected,
+                        )
+                    })
                 })
             );
             assert!(
                 ({
-                    let _result: f64 = unimplemented!();
-                    let _expected: f64 = ({ (*h2.borrow()).call(x) });
-                    CompareFloatingValues_double_Impl::operator_call(
-                        &compare.as_pointer(),
-                        _result,
-                        _expected,
-                    )
+                    ({
+                        let _result: f64 = unimplemented!();
+                        let _expected: f64 = ({ (*h2.borrow()).call(x) });
+                        CompareFloatingValues_double_Impl::operator_call(
+                            &compare.as_pointer(),
+                            _result,
+                            _expected,
+                        )
+                    })
                 })
             );
             assert!(
                 ({
-                    let _result: f64 = unimplemented!();
-                    let _expected: f64 = ({ (*h3.borrow()).call(x) });
-                    CompareFloatingValues_double_Impl::operator_call(
-                        &compare.as_pointer(),
-                        _result,
-                        _expected,
-                    )
+                    ({
+                        let _result: f64 = unimplemented!();
+                        let _expected: f64 = ({ (*h3.borrow()).call(x) });
+                        CompareFloatingValues_double_Impl::operator_call(
+                            &compare.as_pointer(),
+                            _result,
+                            _expected,
+                        )
+                    })
                 })
             );
             assert!(
                 ({
-                    let _result: f64 = unimplemented!();
-                    let _expected: f64 = ({ (*h4.borrow()).call(x) });
-                    CompareFloatingValues_double_Impl::operator_call(
-                        &compare.as_pointer(),
-                        _result,
-                        _expected,
-                    )
+                    ({
+                        let _result: f64 = unimplemented!();
+                        let _expected: f64 = ({ (*h4.borrow()).call(x) });
+                        CompareFloatingValues_double_Impl::operator_call(
+                            &compare.as_pointer(),
+                            _result,
+                            _expected,
+                        )
+                    })
                 })
             );
             assert!(
                 ({
-                    let _result: f64 = unimplemented!();
-                    let _expected: f64 = ({ (*h5.borrow()).call(x) });
-                    CompareFloatingValues_double_Impl::operator_call(
-                        &compare.as_pointer(),
-                        _result,
-                        _expected,
-                    )
+                    ({
+                        let _result: f64 = unimplemented!();
+                        let _expected: f64 = ({ (*h5.borrow()).call(x) });
+                        CompareFloatingValues_double_Impl::operator_call(
+                            &compare.as_pointer(),
+                            _result,
+                            _expected,
+                        )
+                    })
                 })
             );
         }
@@ -1280,9 +1336,9 @@ pub fn test_14() {
             'loop_: for x in IterRange::new(__range3.decay().begin(), __range3.decay().end()) {
                 let mut x: f64 = (x.iter_deref().read());
                 if (x > 0_f64) {
-                    assert!(({ (*is_sign_change.borrow()).call(n, -x,) }));
+                    assert!(({ ({ (*is_sign_change.borrow()).call(n, -x,) }) }));
                 }
-                assert!(({ (*is_sign_change.borrow()).call(n, x,) }));
+                assert!(({ ({ (*is_sign_change.borrow()).call(n, x,) }) }));
             }
             n.prefix_inc();
         }
@@ -1396,68 +1452,80 @@ pub fn test_15() {
                 Rc::new(RefCell::new(CompareFloatingValues_long_double_::new()));
             assert!(
                 ({
-                    let _result: f64 = unimplemented!();
-                    let _expected: f64 = ({ (*h0.borrow()).call(x) });
-                    CompareFloatingValues_long_double_Impl::operator_call(
-                        &compare.as_pointer(),
-                        _result,
-                        _expected,
-                    )
+                    ({
+                        let _result: f64 = unimplemented!();
+                        let _expected: f64 = ({ (*h0.borrow()).call(x) });
+                        CompareFloatingValues_long_double_Impl::operator_call(
+                            &compare.as_pointer(),
+                            _result,
+                            _expected,
+                        )
+                    })
                 })
             );
             assert!(
                 ({
-                    let _result: f64 = unimplemented!();
-                    let _expected: f64 = ({ (*h1.borrow()).call(x) });
-                    CompareFloatingValues_long_double_Impl::operator_call(
-                        &compare.as_pointer(),
-                        _result,
-                        _expected,
-                    )
+                    ({
+                        let _result: f64 = unimplemented!();
+                        let _expected: f64 = ({ (*h1.borrow()).call(x) });
+                        CompareFloatingValues_long_double_Impl::operator_call(
+                            &compare.as_pointer(),
+                            _result,
+                            _expected,
+                        )
+                    })
                 })
             );
             assert!(
                 ({
-                    let _result: f64 = unimplemented!();
-                    let _expected: f64 = ({ (*h2.borrow()).call(x) });
-                    CompareFloatingValues_long_double_Impl::operator_call(
-                        &compare.as_pointer(),
-                        _result,
-                        _expected,
-                    )
+                    ({
+                        let _result: f64 = unimplemented!();
+                        let _expected: f64 = ({ (*h2.borrow()).call(x) });
+                        CompareFloatingValues_long_double_Impl::operator_call(
+                            &compare.as_pointer(),
+                            _result,
+                            _expected,
+                        )
+                    })
                 })
             );
             assert!(
                 ({
-                    let _result: f64 = unimplemented!();
-                    let _expected: f64 = ({ (*h3.borrow()).call(x) });
-                    CompareFloatingValues_long_double_Impl::operator_call(
-                        &compare.as_pointer(),
-                        _result,
-                        _expected,
-                    )
+                    ({
+                        let _result: f64 = unimplemented!();
+                        let _expected: f64 = ({ (*h3.borrow()).call(x) });
+                        CompareFloatingValues_long_double_Impl::operator_call(
+                            &compare.as_pointer(),
+                            _result,
+                            _expected,
+                        )
+                    })
                 })
             );
             assert!(
                 ({
-                    let _result: f64 = unimplemented!();
-                    let _expected: f64 = ({ (*h4.borrow()).call(x) });
-                    CompareFloatingValues_long_double_Impl::operator_call(
-                        &compare.as_pointer(),
-                        _result,
-                        _expected,
-                    )
+                    ({
+                        let _result: f64 = unimplemented!();
+                        let _expected: f64 = ({ (*h4.borrow()).call(x) });
+                        CompareFloatingValues_long_double_Impl::operator_call(
+                            &compare.as_pointer(),
+                            _result,
+                            _expected,
+                        )
+                    })
                 })
             );
             assert!(
                 ({
-                    let _result: f64 = unimplemented!();
-                    let _expected: f64 = ({ (*h5.borrow()).call(x) });
-                    CompareFloatingValues_long_double_Impl::operator_call(
-                        &compare.as_pointer(),
-                        _result,
-                        _expected,
-                    )
+                    ({
+                        let _result: f64 = unimplemented!();
+                        let _expected: f64 = ({ (*h5.borrow()).call(x) });
+                        CompareFloatingValues_long_double_Impl::operator_call(
+                            &compare.as_pointer(),
+                            _result,
+                            _expected,
+                        )
+                    })
                 })
             );
         }
@@ -1538,9 +1606,9 @@ pub fn test_15() {
             'loop_: for x in IterRange::new(__range3.decay().begin(), __range3.decay().end()) {
                 let mut x: f64 = (x.iter_deref().read());
                 if (x > 0_f64) {
-                    assert!(({ (*is_sign_change.borrow()).call(n, -x,) }));
+                    assert!(({ ({ (*is_sign_change.borrow()).call(n, -x,) }) }));
                 }
-                assert!(({ (*is_sign_change.borrow()).call(n, x,) }));
+                assert!(({ ({ (*is_sign_change.borrow()).call(n, x,) }) }));
             }
             n.prefix_inc();
         }
@@ -1566,6 +1634,11 @@ impl Callable0<()> for TestFloat {
         })
     }
 }
+impl CppMove for TestFloat {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestInt {}
@@ -1574,6 +1647,11 @@ impl Callable0<()> for TestInt {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestIntImpl::operator_call_1_short(__it)
         })
+    }
+}
+impl CppMove for TestInt {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

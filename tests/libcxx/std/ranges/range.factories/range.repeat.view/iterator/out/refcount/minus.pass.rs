@@ -8,31 +8,86 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let v: Value<std_ranges_repeat_view_int__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<i32> = Rc::new(RefCell::new(0));
+                std_ranges_repeat_view_int__std_unreachable_sentinel_t_::new_1(
+                    { __tmp_0.as_pointer() },
+                    None,
+                )
+            }));
+        let iter: Value<std_ranges_repeat_view_int___Iterator> = Rc::new(RefCell::new(
+            ({ ({ (*v.borrow()).begin() }) }).iter_add(10_isize),
+        ));
+        assert!(
+            ({ (*iter.borrow()).clone() }).iter_add(-5_isize)
+                == ({ ({ (*v.borrow()).begin() }) }).iter_add(5_isize)
+        );
         const _: () = assert!(true, "std::same_as<decltype(iter - 5), Iter>");;
     }
     {
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 5_isize));
+            let v: Value<std_ranges_repeat_view_int__std_unreachable_sentinel_t_> =
+                Rc::new(RefCell::new({
+                    let __tmp_1: Value<i32> = Rc::new(RefCell::new(0));
+                    std_ranges_repeat_view_int__std_unreachable_sentinel_t_::new_1(
+                        { __tmp_1.as_pointer() },
+                        None,
+                    )
+                }));
+            let iter1: Value<std_ranges_repeat_view_int___Iterator> = Rc::new(RefCell::new(
+                ({ ({ (*v.borrow()).begin() }) }).iter_add(10_isize),
+            ));
+            let iter2: Value<std_ranges_repeat_view_int___Iterator> = Rc::new(RefCell::new(
+                ({ ({ (*v.borrow()).begin() }) }).iter_add(5_isize),
+            ));
+            assert!(
+                ({
+                    (((*iter1.borrow()).iter_distance(&({ (*iter2.borrow()).clone() }).into())
+                        as i64 as isize)
+                        == 5_isize)
+                })
+            );
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), ptrdiff_t>");;
         }
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 5));
+            let v: Value<std_ranges_repeat_view_int__int_> = Rc::new(RefCell::new({
+                let __tmp_2: Value<i32> = Rc::new(RefCell::new(0));
+                std_ranges_repeat_view_int__int_::new_1({ __tmp_2.as_pointer() }, { 20 })
+            }));
+            let iter1: Value<std_ranges_repeat_view_int__int___Iterator> =
+                Rc::new(RefCell::new(({ ({ (*v.borrow()).begin() }) }).iter_add(10)));
+            let iter2: Value<std_ranges_repeat_view_int__int___Iterator> =
+                Rc::new(RefCell::new(({ ({ (*v.borrow()).begin() }) }).iter_add(5)));
+            assert!(
+                ({
+                    ((*iter1.borrow()).iter_distance(&({ (*iter2.borrow()).clone() }).into())
+                        as i64
+                        == 5)
+                })
+            );
             const _: () = assert!(true, "std::same_as<decltype(iter1 - iter2), int>");;
         }
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 5_isize));
+            let v: Value<std_ranges_repeat_view_int__unsigned_int_> = Rc::new(RefCell::new({
+                let __tmp_3: Value<i32> = Rc::new(RefCell::new(0));
+                std_ranges_repeat_view_int__unsigned_int_::new_1({ __tmp_3.as_pointer() }, {
+                    20_u32
+                })
+            }));
+            let iter1: Value<std_ranges_repeat_view_int__unsigned_int___Iterator> = Rc::new(
+                RefCell::new(({ ({ (*v.borrow()).begin() }) }).iter_add(10_isize)),
+            );
+            let iter2: Value<std_ranges_repeat_view_int__unsigned_int___Iterator> = Rc::new(
+                RefCell::new(({ ({ (*v.borrow()).begin() }) }).iter_add(5_isize)),
+            );
+            assert!(
+                ({
+                    (((*iter1.borrow()).iter_distance(&({ (*iter2.borrow()).clone() }).into())
+                        as i64 as isize)
+                        == 5_isize)
+                })
+            );
             const _: () = assert!(
                 (::std::mem::size_of::<isize>() > ::std::mem::size_of::<u32>()),
                 "sizeof(decltype(iter1 - iter2)) > sizeof(unsigned)"

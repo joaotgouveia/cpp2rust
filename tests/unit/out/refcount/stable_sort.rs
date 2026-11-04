@@ -26,7 +26,7 @@ fn main_0() -> i32 {
                         return (x < y);
                     }
                 })
-                .call(__a.read(), __b.read())
+                .less(__a.clone(), __b.clone())
                 {
                     std::cmp::Ordering::Less
                 } else if FnPtr::<fn(i32, i32) -> bool>::new(|mut x: i32, mut y: i32| -> bool {
@@ -34,7 +34,7 @@ fn main_0() -> i32 {
                         return (x < y);
                     }
                 })
-                .call(__b.read(), __a.read())
+                .less(__b, __a)
                 {
                     std::cmp::Ordering::Greater
                 } else {

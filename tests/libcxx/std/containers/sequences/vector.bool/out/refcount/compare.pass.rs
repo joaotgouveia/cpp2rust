@@ -222,15 +222,20 @@ impl CppEq for LessAndEqComp {
         operator_eq_3(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for LessAndEqComp {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_cmp_4(mut _a0: StrongOrder, mut _a1: StrongOrder) -> std::cmp::Ordering {
     {
         let cmp: Value<std::cmp::Ordering> =
             Rc::new(RefCell::new(std::cmp::Ord::cmp(&(_a0.value), &(_a1.value))));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(i32, new, value)]
@@ -252,6 +257,11 @@ impl CppLess for StrongOrder {
 impl CppEq for StrongOrder {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_cmp_4(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
+    }
+}
+impl CppMove for StrongOrder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_cmp_5(mut _a0: WeakOrder, mut _a1: WeakOrder) -> () {
@@ -283,6 +293,11 @@ impl CppLess for WeakOrder {
 impl CppEq for WeakOrder {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_cmp_5(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
+    }
+}
+impl CppMove for WeakOrder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_cmp_6(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
@@ -319,9 +334,19 @@ impl CppEq for PartialOrder {
         operator_eq_7(__lhs.read(), __rhs.read())
     }
 }
+impl CppMove for PartialOrder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NonComparable {}
+impl CppMove for NonComparable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(!(false), "!std::equality_comparable<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorEqual<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorGreaterThan<NonComparable>");
@@ -350,6 +375,11 @@ impl CppEq for EqualityComparable {
         operator_eq_8(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for EqualityComparable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::equality_comparable<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorEqual<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorNotEqual<EqualityComparable>");
@@ -365,11 +395,11 @@ pub fn operator_cmp_10(
             &(_a0.with(|__s| __s.value_)),
             &(_a1.with(|__s| __s.value_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(i32, new, value)]
@@ -393,6 +423,11 @@ impl CppEq for ThreeWayComparable {
         operator_eq_9(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for ThreeWayComparable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::equality_comparable<ThreeWayComparable>");
 const _: () = assert!(true, "std::three_way_comparable<ThreeWayComparable>");
 const _: () = assert!(true, "HasOperatorEqual<ThreeWayComparable>");
@@ -408,11 +443,21 @@ pub struct ImplicitBool_E1 {
     #[offset(0)]
     pub x: i32,
 }
+impl CppMove for ImplicitBool_E1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct ImplicitBool_E2 {
     #[offset(0)]
     pub y: i32,
+}
+impl CppMove for ImplicitBool_E2 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(bool, to_bool_1)]
@@ -420,6 +465,11 @@ pub struct ImplicitBool_E2 {
 pub struct ImplicitBool {
     #[offset(0)]
     pub val: bool,
+}
+impl CppMove for ImplicitBool {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn operator_eq_11(mut lhs: ImplicitBool_E1, mut rhs: ImplicitBool_E2) -> ImplicitBool {
     return ImplicitBool {
@@ -433,101 +483,143 @@ pub fn test_12() -> bool {
         assert!(({ testComparisons_1(v1.as_pointer(), v2.as_pointer(), true, false,) }));
     }
     {
-        let v1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+        let v1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..(1_usize) as usize).map(|_| true).collect::<Vec<bool>>(),
+        ));
+        let v2: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..(1_usize) as usize).map(|_| true).collect::<Vec<bool>>(),
+        ));
         assert!(({ testComparisons_1(v1.as_pointer(), v2.as_pointer(), true, false,) }));
     }
     {
-        let v1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+        let v1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..(1_usize) as usize)
+                .map(|_| false)
+                .collect::<Vec<bool>>(),
+        ));
+        let v2: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..(1_usize) as usize).map(|_| true).collect::<Vec<bool>>(),
+        ));
         assert!(({ testComparisons_1(v1.as_pointer(), v2.as_pointer(), false, true,) }));
     }
     {
         let v1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..(1_usize) as usize).map(|_| true).collect::<Vec<bool>>(),
+        ));
         assert!(({ testComparisons_1(v1.as_pointer(), v2.as_pointer(), false, true,) }));
     }
     {
         let items1: Value<Box<[bool]>> = Rc::new(RefCell::new(Box::new([false, true, false])));
         let items2: Value<Box<[bool]>> = Rc::new(RefCell::new(Box::new([false, true, true])));
-        let v1: Value<Vec<bool>> = Rc::new(RefCell::new({
-            let mut __v = Vec::new();
-            let mut __it = (items1.as_pointer() as Ptr<bool>);
-            while __it != (items1.as_pointer() as Ptr<bool>).offset((3) as isize) {
-                __v.push(__it.iter_deref().read() != false);
-                __it.iter_inc();
-            }
-            __v
-        }));
-        let v2: Value<Vec<bool>> = Rc::new(RefCell::new({
-            let mut __v = Vec::new();
-            let mut __it = (items2.as_pointer() as Ptr<bool>);
-            while __it != (items2.as_pointer() as Ptr<bool>).offset((3) as isize) {
-                __v.push(__it.iter_deref().read() != false);
-                __it.iter_inc();
-            }
-            __v
-        }));
+        let v1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            match ({ (items1.as_pointer() as Ptr<bool>).offset((3) as isize) },) {
+                (mut __tmp_0,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = (items1.as_pointer() as Ptr<bool>);
+                    while __it != __tmp_0 {
+                        __v.push(__it.iter_deref().read() != false);
+                        __it.iter_inc();
+                    }
+                    __v
+                }
+            },
+        ));
+        let v2: Value<Vec<bool>> = Rc::new(RefCell::new(
+            match ({ (items2.as_pointer() as Ptr<bool>).offset((3) as isize) },) {
+                (mut __tmp_1,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = (items2.as_pointer() as Ptr<bool>);
+                    while __it != __tmp_1 {
+                        __v.push(__it.iter_deref().read() != false);
+                        __it.iter_inc();
+                    }
+                    __v
+                }
+            },
+        ));
         assert!(({ testComparisons_1(v1.as_pointer(), v2.as_pointer(), false, true,) }));
     }
     {
         let items1: Value<Box<[bool]>> = Rc::new(RefCell::new(Box::new([false, false, false])));
         let items2: Value<Box<[bool]>> = Rc::new(RefCell::new(Box::new([false, true, false])));
-        let v1: Value<Vec<bool>> = Rc::new(RefCell::new({
-            let mut __v = Vec::new();
-            let mut __it = (items1.as_pointer() as Ptr<bool>);
-            while __it != (items1.as_pointer() as Ptr<bool>).offset((3) as isize) {
-                __v.push(__it.iter_deref().read() != false);
-                __it.iter_inc();
-            }
-            __v
-        }));
-        let v2: Value<Vec<bool>> = Rc::new(RefCell::new({
-            let mut __v = Vec::new();
-            let mut __it = (items2.as_pointer() as Ptr<bool>);
-            while __it != (items2.as_pointer() as Ptr<bool>).offset((3) as isize) {
-                __v.push(__it.iter_deref().read() != false);
-                __it.iter_inc();
-            }
-            __v
-        }));
+        let v1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            match ({ (items1.as_pointer() as Ptr<bool>).offset((3) as isize) },) {
+                (mut __tmp_2,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = (items1.as_pointer() as Ptr<bool>);
+                    while __it != __tmp_2 {
+                        __v.push(__it.iter_deref().read() != false);
+                        __it.iter_inc();
+                    }
+                    __v
+                }
+            },
+        ));
+        let v2: Value<Vec<bool>> = Rc::new(RefCell::new(
+            match ({ (items2.as_pointer() as Ptr<bool>).offset((3) as isize) },) {
+                (mut __tmp_3,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = (items2.as_pointer() as Ptr<bool>);
+                    while __it != __tmp_3 {
+                        __v.push(__it.iter_deref().read() != false);
+                        __it.iter_inc();
+                    }
+                    __v
+                }
+            },
+        ));
         assert!(({ testComparisons_1(v1.as_pointer(), v2.as_pointer(), false, true,) }));
     }
     {
         let items1: Value<Box<[bool]>> = Rc::new(RefCell::new(Box::new([false, true])));
         let items2: Value<Box<[bool]>> = Rc::new(RefCell::new(Box::new([false, true, false])));
-        let v1: Value<Vec<bool>> = Rc::new(RefCell::new({
-            let mut __v = Vec::new();
-            let mut __it = (items1.as_pointer() as Ptr<bool>);
-            while __it != (items1.as_pointer() as Ptr<bool>).offset((2) as isize) {
-                __v.push(__it.iter_deref().read() != false);
-                __it.iter_inc();
-            }
-            __v
-        }));
-        let v2: Value<Vec<bool>> = Rc::new(RefCell::new({
-            let mut __v = Vec::new();
-            let mut __it = (items2.as_pointer() as Ptr<bool>);
-            while __it != (items2.as_pointer() as Ptr<bool>).offset((3) as isize) {
-                __v.push(__it.iter_deref().read() != false);
-                __it.iter_inc();
-            }
-            __v
-        }));
+        let v1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            match ({ (items1.as_pointer() as Ptr<bool>).offset((2) as isize) },) {
+                (mut __tmp_4,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = (items1.as_pointer() as Ptr<bool>);
+                    while __it != __tmp_4 {
+                        __v.push(__it.iter_deref().read() != false);
+                        __it.iter_inc();
+                    }
+                    __v
+                }
+            },
+        ));
+        let v2: Value<Vec<bool>> = Rc::new(RefCell::new(
+            match ({ (items2.as_pointer() as Ptr<bool>).offset((3) as isize) },) {
+                (mut __tmp_5,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = (items2.as_pointer() as Ptr<bool>);
+                    while __it != __tmp_5 {
+                        __v.push(__it.iter_deref().read() != false);
+                        __it.iter_inc();
+                    }
+                    __v
+                }
+            },
+        ));
         assert!(({ testComparisons_1(v1.as_pointer(), v2.as_pointer(), false, true,) }));
     }
     {
         let items: Value<Box<[bool]>> = Rc::new(RefCell::new(Box::new([false, true, false])));
-        let v1: Value<Vec<bool>> = Rc::new(RefCell::new({
-            let mut __v = Vec::new();
-            let mut __it = (items.as_pointer() as Ptr<bool>);
-            while __it != (items.as_pointer() as Ptr<bool>).offset((3) as isize) {
-                __v.push(__it.iter_deref().read() != false);
-                __it.iter_inc();
-            }
-            __v
-        }));
-        let v2: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+        let v1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            match ({ (items.as_pointer() as Ptr<bool>).offset((3) as isize) },) {
+                (mut __tmp_6,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = (items.as_pointer() as Ptr<bool>);
+                    while __it != __tmp_6 {
+                        __v.push(__it.iter_deref().read() != false);
+                        __it.iter_inc();
+                    }
+                    __v
+                }
+            },
+        ));
+        let v2: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..(1_usize) as usize).map(|_| true).collect::<Vec<bool>>(),
+        ));
         assert!(({ testComparisons_1(v1.as_pointer(), v2.as_pointer(), false, true,) }));
     }
     {

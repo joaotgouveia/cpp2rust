@@ -60,6 +60,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_char_ {}
+impl CppMove for LockFreeStatusInfo_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_2: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i16>() == ::std::mem::size_of::<i8>())
@@ -109,6 +114,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_short_ {}
+impl CppMove for LockFreeStatusInfo_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_4: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i32>() == ::std::mem::size_of::<i8>())
@@ -158,6 +168,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_int_ {}
+impl CppMove for LockFreeStatusInfo_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_6: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i8>())
@@ -207,6 +222,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_long_ {}
+impl CppMove for LockFreeStatusInfo_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_8: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((8usize == ::std::mem::size_of::<i8>()) && (8usize >= 8usize)) {
@@ -244,6 +264,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_void_ptr_ {}
+impl CppMove for LockFreeStatusInfo_void_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_10: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i8>())
@@ -293,6 +318,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_long_long_ {}
+impl CppMove for LockFreeStatusInfo_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "LockFreeStatusInfo<char>::status_known");
 const _: () = assert!(true, "LockFreeStatusInfo<short>::status_known");
 const _: () = assert!(true, "LockFreeStatusInfo<int>::status_known");
@@ -332,6 +362,11 @@ impl UserAtomicType {
 impl CppEq for UserAtomicType {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_12(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for UserAtomicType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for UserAtomicType {
@@ -380,6 +415,11 @@ impl CppEq for LargeUserAtomicType {
         operator_eq_13(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for LargeUserAtomicType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for LargeUserAtomicType {
     fn default() -> Self {
         { LargeUserAtomicType::new(None) }
@@ -395,6 +435,11 @@ impl Callable0<()> for TestEachIntegralType_TestFetchOr_ {
         })
     }
 }
+impl CppMove for TestEachIntegralType_TestFetchOr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestEachFloatingPointType_TestDoesNotHaveFetchOr_ {}
@@ -403,6 +448,11 @@ impl Callable0<()> for TestEachFloatingPointType_TestDoesNotHaveFetchOr_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestEachFloatingPointType_TestDoesNotHaveFetchOr_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestEachFloatingPointType_TestDoesNotHaveFetchOr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -415,6 +465,11 @@ impl Callable0<()> for TestEachPointerType_TestDoesNotHaveFetchOr_ {
         })
     }
 }
+impl CppMove for TestEachPointerType_TestDoesNotHaveFetchOr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveFetchOr_bool_ {}
@@ -423,6 +478,11 @@ impl Callable0<()> for TestDoesNotHaveFetchOr_bool_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestDoesNotHaveFetchOr_bool_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestDoesNotHaveFetchOr_bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -435,6 +495,11 @@ impl Callable0<()> for TestDoesNotHaveFetchOr_UserAtomicType_ {
         })
     }
 }
+impl CppMove for TestDoesNotHaveFetchOr_UserAtomicType_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveFetchOr_LargeUserAtomicType_ {}
@@ -443,6 +508,11 @@ impl Callable0<()> for TestDoesNotHaveFetchOr_LargeUserAtomicType_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestDoesNotHaveFetchOr_LargeUserAtomicType_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestDoesNotHaveFetchOr_LargeUserAtomicType_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -455,6 +525,11 @@ impl Callable0<()> for TestDoesNotHaveFetchOr_float_ {
         })
     }
 }
+impl CppMove for TestDoesNotHaveFetchOr_float_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveFetchOr_double_ {}
@@ -463,6 +538,11 @@ impl Callable0<()> for TestDoesNotHaveFetchOr_double_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestDoesNotHaveFetchOr_double_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestDoesNotHaveFetchOr_double_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -475,6 +555,11 @@ impl Callable0<()> for TestDoesNotHaveFetchOr_long_double_ {
         })
     }
 }
+impl CppMove for TestDoesNotHaveFetchOr_long_double_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveFetchOr_int_ptr_ {}
@@ -483,6 +568,11 @@ impl Callable0<()> for TestDoesNotHaveFetchOr_int_ptr_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestDoesNotHaveFetchOr_int_ptr_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestDoesNotHaveFetchOr_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -495,6 +585,11 @@ impl Callable0<()> for TestDoesNotHaveFetchOr_const_int_ptr_ {
         })
     }
 }
+impl CppMove for TestDoesNotHaveFetchOr_const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchOr_char_ {}
@@ -503,6 +598,11 @@ impl Callable0<()> for TestFetchOr_char_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFetchOr_char_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFetchOr_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -515,6 +615,11 @@ impl Callable0<()> for TestFetchOr_signed_char_ {
         })
     }
 }
+impl CppMove for TestFetchOr_signed_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchOr_unsigned_char_ {}
@@ -523,6 +628,11 @@ impl Callable0<()> for TestFetchOr_unsigned_char_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFetchOr_unsigned_char_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFetchOr_unsigned_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -535,6 +645,11 @@ impl Callable0<()> for TestFetchOr_short_ {
         })
     }
 }
+impl CppMove for TestFetchOr_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchOr_unsigned_short_ {}
@@ -543,6 +658,11 @@ impl Callable0<()> for TestFetchOr_unsigned_short_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFetchOr_unsigned_short_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFetchOr_unsigned_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -555,6 +675,11 @@ impl Callable0<()> for TestFetchOr_int_ {
         })
     }
 }
+impl CppMove for TestFetchOr_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchOr_unsigned_int_ {}
@@ -563,6 +688,11 @@ impl Callable0<()> for TestFetchOr_unsigned_int_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFetchOr_unsigned_int_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFetchOr_unsigned_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -575,6 +705,11 @@ impl Callable0<()> for TestFetchOr_long_ {
         })
     }
 }
+impl CppMove for TestFetchOr_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchOr_unsigned_long_ {}
@@ -583,6 +718,11 @@ impl Callable0<()> for TestFetchOr_unsigned_long_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFetchOr_unsigned_long_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFetchOr_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -595,6 +735,11 @@ impl Callable0<()> for TestFetchOr_long_long_ {
         })
     }
 }
+impl CppMove for TestFetchOr_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchOr_unsigned_long_long_ {}
@@ -603,6 +748,11 @@ impl Callable0<()> for TestFetchOr_unsigned_long_long_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFetchOr_unsigned_long_long_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFetchOr_unsigned_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -615,6 +765,11 @@ impl Callable0<()> for TestFetchOr_wchar_t_ {
         })
     }
 }
+impl CppMove for TestFetchOr_wchar_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchOr_char8_t_ {}
@@ -623,6 +778,11 @@ impl Callable0<()> for TestFetchOr_char8_t_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFetchOr_char8_t_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFetchOr_char8_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -635,6 +795,11 @@ impl Callable0<()> for TestFetchOr_char16_t_ {
         })
     }
 }
+impl CppMove for TestFetchOr_char16_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchOr_char32_t_ {}
@@ -643,6 +808,11 @@ impl Callable0<()> for TestFetchOr_char32_t_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFetchOr_char32_t_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFetchOr_char32_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {
@@ -952,18 +1122,26 @@ pub trait TestFetchOr_char16_t_Impl {
 impl TestFetchOr_char16_t_Impl for Ptr<TestFetchOr_char16_t_> {
     fn operator_call(&self) {
         const _: () = assert!(true, "std::is_integral_v<T>");;
-        let mut x: u16 = 1_u16;
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<u16> = Rc::new(RefCell::new(1_u16));
+        let a: Value<std_atomic_ref_char16_t_> =
+            Rc::new(RefCell::new(std_atomic_ref_char16_t_::new({
+                x.as_pointer()
+            })));
         {
-            let mut y: u16 = unimplemented!();
+            let mut y: u16 = ({
+                ((*a.borrow()) as std___atomic_ref_char16_t__true__false_).fetch_or(2_u16, None)
+            });
             assert!(((y as i32) == (1_u16 as i32)));
-            assert!(((x as i32) == (3_u16 as i32)));
+            assert!(({ (((*x.borrow()) as i32) == (3_u16 as i32)) }));
             const _: () = assert!(true, "");;
         }
         {
-            let mut y: u16 = unimplemented!();
+            let mut y: u16 = ({
+                ((*a.borrow()) as std___atomic_ref_char16_t__true__false_)
+                    .fetch_or(2_u16, Some(memory_order_relaxed_14.with(|rc| *rc.borrow())))
+            });
             assert!(((y as i32) == (3_u16 as i32)));
-            assert!(((x as i32) == (3_u16 as i32)));
+            assert!(({ (((*x.borrow()) as i32) == (3_u16 as i32)) }));
             const _: () = assert!(true, "");;
         }
     }
@@ -974,18 +1152,26 @@ pub trait TestFetchOr_char32_t_Impl {
 impl TestFetchOr_char32_t_Impl for Ptr<TestFetchOr_char32_t_> {
     fn operator_call(&self) {
         const _: () = assert!(true, "std::is_integral_v<T>");;
-        let mut x: u32 = 1_u32;
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<u32> = Rc::new(RefCell::new(1_u32));
+        let a: Value<std_atomic_ref_char32_t_> =
+            Rc::new(RefCell::new(std_atomic_ref_char32_t_::new({
+                x.as_pointer()
+            })));
         {
-            let mut y: u32 = unimplemented!();
+            let mut y: u32 = ({
+                ((*a.borrow()) as std___atomic_ref_char32_t__true__false_).fetch_or(2_u32, None)
+            });
             assert!((y == 1_u32));
-            assert!((x == 3_u32));
+            assert!(({ ((*x.borrow()) == 3_u32) }));
             const _: () = assert!(true, "");;
         }
         {
-            let mut y: u32 = unimplemented!();
+            let mut y: u32 = ({
+                ((*a.borrow()) as std___atomic_ref_char32_t__true__false_)
+                    .fetch_or(2_u32, Some(memory_order_relaxed_14.with(|rc| *rc.borrow())))
+            });
             assert!((y == 3_u32));
-            assert!((x == 3_u32));
+            assert!(({ ((*x.borrow()) == 3_u32) }));
             const _: () = assert!(true, "");;
         }
     }
@@ -996,18 +1182,26 @@ pub trait TestFetchOr_char8_t_Impl {
 impl TestFetchOr_char8_t_Impl for Ptr<TestFetchOr_char8_t_> {
     fn operator_call(&self) {
         const _: () = assert!(true, "std::is_integral_v<T>");;
-        let mut x: u8 = 1_u8;
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<u8> = Rc::new(RefCell::new(1_u8));
+        let a: Value<std_atomic_ref_char8_t_> =
+            Rc::new(RefCell::new(std_atomic_ref_char8_t_::new({
+                x.as_pointer()
+            })));
         {
-            let mut y: u8 = unimplemented!();
+            let mut y: u8 = ({
+                ((*a.borrow()) as std___atomic_ref_char8_t__true__false_).fetch_or(2_u8, None)
+            });
             assert!(((y as i32) == (1_u8 as i32)));
-            assert!(((x as i32) == (3_u8 as i32)));
+            assert!(({ (((*x.borrow()) as i32) == (3_u8 as i32)) }));
             const _: () = assert!(true, "");;
         }
         {
-            let mut y: u8 = unimplemented!();
+            let mut y: u8 = ({
+                ((*a.borrow()) as std___atomic_ref_char8_t__true__false_)
+                    .fetch_or(2_u8, Some(memory_order_relaxed_14.with(|rc| *rc.borrow())))
+            });
             assert!(((y as i32) == (3_u8 as i32)));
-            assert!(((x as i32) == (3_u8 as i32)));
+            assert!(({ (((*x.borrow()) as i32) == (3_u8 as i32)) }));
             const _: () = assert!(true, "");;
         }
     }
@@ -1018,18 +1212,23 @@ pub trait TestFetchOr_char_Impl {
 impl TestFetchOr_char_Impl for Ptr<TestFetchOr_char_> {
     fn operator_call(&self) {
         const _: () = assert!(true, "std::is_integral_v<T>");;
-        let mut x: i8 = 1_i8;
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<i8> = Rc::new(RefCell::new(1_i8));
+        let a: Value<std_atomic_ref_char_> =
+            Rc::new(RefCell::new(std_atomic_ref_char_::new({ x.as_pointer() })));
         {
-            let mut y: i8 = unimplemented!();
+            let mut y: i8 =
+                ({ ((*a.borrow()) as std___atomic_ref_char__true__false_).fetch_or(2_i8, None) });
             assert!(((y as i32) == (1_i8 as i32)));
-            assert!(((x as i32) == (3_i8 as i32)));
+            assert!(({ (((*x.borrow()) as i32) == (3_i8 as i32)) }));
             const _: () = assert!(true, "");;
         }
         {
-            let mut y: i8 = unimplemented!();
+            let mut y: i8 = ({
+                ((*a.borrow()) as std___atomic_ref_char__true__false_)
+                    .fetch_or(2_i8, Some(memory_order_relaxed_14.with(|rc| *rc.borrow())))
+            });
             assert!(((y as i32) == (3_i8 as i32)));
-            assert!(((x as i32) == (3_i8 as i32)));
+            assert!(({ (((*x.borrow()) as i32) == (3_i8 as i32)) }));
             const _: () = assert!(true, "");;
         }
     }
@@ -1040,18 +1239,23 @@ pub trait TestFetchOr_int_Impl {
 impl TestFetchOr_int_Impl for Ptr<TestFetchOr_int_> {
     fn operator_call(&self) {
         const _: () = assert!(true, "std::is_integral_v<T>");;
-        let mut x: i32 = 1;
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<i32> = Rc::new(RefCell::new(1));
+        let a: Value<std_atomic_ref_int_> =
+            Rc::new(RefCell::new(std_atomic_ref_int_::new({ x.as_pointer() })));
         {
-            let mut y: i32 = unimplemented!();
+            let mut y: i32 =
+                ({ ((*a.borrow()) as std___atomic_ref_int__true__false_).fetch_or(2, None) });
             assert!((y == 1));
-            assert!((x == 3));
+            assert!(({ ((*x.borrow()) == 3) }));
             const _: () = assert!(true, "");;
         }
         {
-            let mut y: i32 = unimplemented!();
+            let mut y: i32 = ({
+                ((*a.borrow()) as std___atomic_ref_int__true__false_)
+                    .fetch_or(2, Some(memory_order_relaxed_14.with(|rc| *rc.borrow())))
+            });
             assert!((y == 3));
-            assert!((x == 3));
+            assert!(({ ((*x.borrow()) == 3) }));
             const _: () = assert!(true, "");;
         }
     }
@@ -1062,18 +1266,23 @@ pub trait TestFetchOr_long_Impl {
 impl TestFetchOr_long_Impl for Ptr<TestFetchOr_long_> {
     fn operator_call(&self) {
         const _: () = assert!(true, "std::is_integral_v<T>");;
-        let mut x: i64 = 1_i64;
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<i64> = Rc::new(RefCell::new(1_i64));
+        let a: Value<std_atomic_ref_long_> =
+            Rc::new(RefCell::new(std_atomic_ref_long_::new({ x.as_pointer() })));
         {
-            let mut y: i64 = unimplemented!();
+            let mut y: i64 =
+                ({ ((*a.borrow()) as std___atomic_ref_long__true__false_).fetch_or(2_i64, None) });
             assert!((y == 1_i64));
-            assert!((x == 3_i64));
+            assert!(({ ((*x.borrow()) == 3_i64) }));
             const _: () = assert!(true, "");;
         }
         {
-            let mut y: i64 = unimplemented!();
+            let mut y: i64 = ({
+                ((*a.borrow()) as std___atomic_ref_long__true__false_)
+                    .fetch_or(2_i64, Some(memory_order_relaxed_14.with(|rc| *rc.borrow())))
+            });
             assert!((y == 3_i64));
-            assert!((x == 3_i64));
+            assert!(({ ((*x.borrow()) == 3_i64) }));
             const _: () = assert!(true, "");;
         }
     }
@@ -1084,18 +1293,26 @@ pub trait TestFetchOr_long_long_Impl {
 impl TestFetchOr_long_long_Impl for Ptr<TestFetchOr_long_long_> {
     fn operator_call(&self) {
         const _: () = assert!(true, "std::is_integral_v<T>");;
-        let mut x: i64 = 1_i64;
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<i64> = Rc::new(RefCell::new(1_i64));
+        let a: Value<std_atomic_ref_long_long_> =
+            Rc::new(RefCell::new(std_atomic_ref_long_long_::new({
+                x.as_pointer()
+            })));
         {
-            let mut y: i64 = unimplemented!();
+            let mut y: i64 = ({
+                ((*a.borrow()) as std___atomic_ref_long_long__true__false_).fetch_or(2_i64, None)
+            });
             assert!((y == 1_i64));
-            assert!((x == 3_i64));
+            assert!(({ ((*x.borrow()) == 3_i64) }));
             const _: () = assert!(true, "");;
         }
         {
-            let mut y: i64 = unimplemented!();
+            let mut y: i64 = ({
+                ((*a.borrow()) as std___atomic_ref_long_long__true__false_)
+                    .fetch_or(2_i64, Some(memory_order_relaxed_14.with(|rc| *rc.borrow())))
+            });
             assert!((y == 3_i64));
-            assert!((x == 3_i64));
+            assert!(({ ((*x.borrow()) == 3_i64) }));
             const _: () = assert!(true, "");;
         }
     }
@@ -1106,18 +1323,23 @@ pub trait TestFetchOr_short_Impl {
 impl TestFetchOr_short_Impl for Ptr<TestFetchOr_short_> {
     fn operator_call(&self) {
         const _: () = assert!(true, "std::is_integral_v<T>");;
-        let mut x: i16 = 1_i16;
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<i16> = Rc::new(RefCell::new(1_i16));
+        let a: Value<std_atomic_ref_short_> =
+            Rc::new(RefCell::new(std_atomic_ref_short_::new({ x.as_pointer() })));
         {
-            let mut y: i16 = unimplemented!();
+            let mut y: i16 =
+                ({ ((*a.borrow()) as std___atomic_ref_short__true__false_).fetch_or(2_i16, None) });
             assert!(((y as i32) == (1_i16 as i32)));
-            assert!(((x as i32) == (3_i16 as i32)));
+            assert!(({ (((*x.borrow()) as i32) == (3_i16 as i32)) }));
             const _: () = assert!(true, "");;
         }
         {
-            let mut y: i16 = unimplemented!();
+            let mut y: i16 = ({
+                ((*a.borrow()) as std___atomic_ref_short__true__false_)
+                    .fetch_or(2_i16, Some(memory_order_relaxed_14.with(|rc| *rc.borrow())))
+            });
             assert!(((y as i32) == (3_i16 as i32)));
-            assert!(((x as i32) == (3_i16 as i32)));
+            assert!(({ (((*x.borrow()) as i32) == (3_i16 as i32)) }));
             const _: () = assert!(true, "");;
         }
     }
@@ -1128,18 +1350,26 @@ pub trait TestFetchOr_signed_char_Impl {
 impl TestFetchOr_signed_char_Impl for Ptr<TestFetchOr_signed_char_> {
     fn operator_call(&self) {
         const _: () = assert!(true, "std::is_integral_v<T>");;
-        let mut x: i8 = 1_i8;
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<i8> = Rc::new(RefCell::new(1_i8));
+        let a: Value<std_atomic_ref_signed_char_> =
+            Rc::new(RefCell::new(std_atomic_ref_signed_char_::new({
+                x.as_pointer()
+            })));
         {
-            let mut y: i8 = unimplemented!();
+            let mut y: i8 = ({
+                ((*a.borrow()) as std___atomic_ref_signed_char__true__false_).fetch_or(2_i8, None)
+            });
             assert!(((y as i32) == (1_i8 as i32)));
-            assert!(((x as i32) == (3_i8 as i32)));
+            assert!(({ (((*x.borrow()) as i32) == (3_i8 as i32)) }));
             const _: () = assert!(true, "");;
         }
         {
-            let mut y: i8 = unimplemented!();
+            let mut y: i8 = ({
+                ((*a.borrow()) as std___atomic_ref_signed_char__true__false_)
+                    .fetch_or(2_i8, Some(memory_order_relaxed_14.with(|rc| *rc.borrow())))
+            });
             assert!(((y as i32) == (3_i8 as i32)));
-            assert!(((x as i32) == (3_i8 as i32)));
+            assert!(({ (((*x.borrow()) as i32) == (3_i8 as i32)) }));
             const _: () = assert!(true, "");;
         }
     }
@@ -1150,18 +1380,26 @@ pub trait TestFetchOr_unsigned_char_Impl {
 impl TestFetchOr_unsigned_char_Impl for Ptr<TestFetchOr_unsigned_char_> {
     fn operator_call(&self) {
         const _: () = assert!(true, "std::is_integral_v<T>");;
-        let mut x: u8 = 1_u8;
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<u8> = Rc::new(RefCell::new(1_u8));
+        let a: Value<std_atomic_ref_unsigned_char_> =
+            Rc::new(RefCell::new(std_atomic_ref_unsigned_char_::new({
+                x.as_pointer()
+            })));
         {
-            let mut y: u8 = unimplemented!();
+            let mut y: u8 = ({
+                ((*a.borrow()) as std___atomic_ref_unsigned_char__true__false_).fetch_or(2_u8, None)
+            });
             assert!(((y as i32) == (1_u8 as i32)));
-            assert!(((x as i32) == (3_u8 as i32)));
+            assert!(({ (((*x.borrow()) as i32) == (3_u8 as i32)) }));
             const _: () = assert!(true, "");;
         }
         {
-            let mut y: u8 = unimplemented!();
+            let mut y: u8 = ({
+                ((*a.borrow()) as std___atomic_ref_unsigned_char__true__false_)
+                    .fetch_or(2_u8, Some(memory_order_relaxed_14.with(|rc| *rc.borrow())))
+            });
             assert!(((y as i32) == (3_u8 as i32)));
-            assert!(((x as i32) == (3_u8 as i32)));
+            assert!(({ (((*x.borrow()) as i32) == (3_u8 as i32)) }));
             const _: () = assert!(true, "");;
         }
     }
@@ -1172,18 +1410,26 @@ pub trait TestFetchOr_unsigned_int_Impl {
 impl TestFetchOr_unsigned_int_Impl for Ptr<TestFetchOr_unsigned_int_> {
     fn operator_call(&self) {
         const _: () = assert!(true, "std::is_integral_v<T>");;
-        let mut x: u32 = 1_u32;
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<u32> = Rc::new(RefCell::new(1_u32));
+        let a: Value<std_atomic_ref_unsigned_int_> =
+            Rc::new(RefCell::new(std_atomic_ref_unsigned_int_::new({
+                x.as_pointer()
+            })));
         {
-            let mut y: u32 = unimplemented!();
+            let mut y: u32 = ({
+                ((*a.borrow()) as std___atomic_ref_unsigned_int__true__false_).fetch_or(2_u32, None)
+            });
             assert!((y == 1_u32));
-            assert!((x == 3_u32));
+            assert!(({ ((*x.borrow()) == 3_u32) }));
             const _: () = assert!(true, "");;
         }
         {
-            let mut y: u32 = unimplemented!();
+            let mut y: u32 = ({
+                ((*a.borrow()) as std___atomic_ref_unsigned_int__true__false_)
+                    .fetch_or(2_u32, Some(memory_order_relaxed_14.with(|rc| *rc.borrow())))
+            });
             assert!((y == 3_u32));
-            assert!((x == 3_u32));
+            assert!(({ ((*x.borrow()) == 3_u32) }));
             const _: () = assert!(true, "");;
         }
     }
@@ -1194,18 +1440,27 @@ pub trait TestFetchOr_unsigned_long_Impl {
 impl TestFetchOr_unsigned_long_Impl for Ptr<TestFetchOr_unsigned_long_> {
     fn operator_call(&self) {
         const _: () = assert!(true, "std::is_integral_v<T>");;
-        let mut x: u64 = 1_u64;
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<u64> = Rc::new(RefCell::new(1_u64));
+        let a: Value<std_atomic_ref_unsigned_long_> =
+            Rc::new(RefCell::new(std_atomic_ref_unsigned_long_::new({
+                x.as_pointer()
+            })));
         {
-            let mut y: u64 = unimplemented!();
+            let mut y: u64 = ({
+                ((*a.borrow()) as std___atomic_ref_unsigned_long__true__false_)
+                    .fetch_or(2_u64, None)
+            });
             assert!((y == 1_u64));
-            assert!((x == 3_u64));
+            assert!(({ ((*x.borrow()) == 3_u64) }));
             const _: () = assert!(true, "");;
         }
         {
-            let mut y: u64 = unimplemented!();
+            let mut y: u64 = ({
+                ((*a.borrow()) as std___atomic_ref_unsigned_long__true__false_)
+                    .fetch_or(2_u64, Some(memory_order_relaxed_14.with(|rc| *rc.borrow())))
+            });
             assert!((y == 3_u64));
-            assert!((x == 3_u64));
+            assert!(({ ((*x.borrow()) == 3_u64) }));
             const _: () = assert!(true, "");;
         }
     }
@@ -1216,18 +1471,27 @@ pub trait TestFetchOr_unsigned_long_long_Impl {
 impl TestFetchOr_unsigned_long_long_Impl for Ptr<TestFetchOr_unsigned_long_long_> {
     fn operator_call(&self) {
         const _: () = assert!(true, "std::is_integral_v<T>");;
-        let mut x: u64 = 1_u64;
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<u64> = Rc::new(RefCell::new(1_u64));
+        let a: Value<std_atomic_ref_unsigned_long_long_> =
+            Rc::new(RefCell::new(std_atomic_ref_unsigned_long_long_::new({
+                x.as_pointer()
+            })));
         {
-            let mut y: u64 = unimplemented!();
+            let mut y: u64 = ({
+                ((*a.borrow()) as std___atomic_ref_unsigned_long_long__true__false_)
+                    .fetch_or(2_u64, None)
+            });
             assert!((y == 1_u64));
-            assert!((x == 3_u64));
+            assert!(({ ((*x.borrow()) == 3_u64) }));
             const _: () = assert!(true, "");;
         }
         {
-            let mut y: u64 = unimplemented!();
+            let mut y: u64 = ({
+                ((*a.borrow()) as std___atomic_ref_unsigned_long_long__true__false_)
+                    .fetch_or(2_u64, Some(memory_order_relaxed_14.with(|rc| *rc.borrow())))
+            });
             assert!((y == 3_u64));
-            assert!((x == 3_u64));
+            assert!(({ ((*x.borrow()) == 3_u64) }));
             const _: () = assert!(true, "");;
         }
     }
@@ -1238,18 +1502,27 @@ pub trait TestFetchOr_unsigned_short_Impl {
 impl TestFetchOr_unsigned_short_Impl for Ptr<TestFetchOr_unsigned_short_> {
     fn operator_call(&self) {
         const _: () = assert!(true, "std::is_integral_v<T>");;
-        let mut x: u16 = 1_u16;
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<u16> = Rc::new(RefCell::new(1_u16));
+        let a: Value<std_atomic_ref_unsigned_short_> =
+            Rc::new(RefCell::new(std_atomic_ref_unsigned_short_::new({
+                x.as_pointer()
+            })));
         {
-            let mut y: u16 = unimplemented!();
+            let mut y: u16 = ({
+                ((*a.borrow()) as std___atomic_ref_unsigned_short__true__false_)
+                    .fetch_or(2_u16, None)
+            });
             assert!(((y as i32) == (1_u16 as i32)));
-            assert!(((x as i32) == (3_u16 as i32)));
+            assert!(({ (((*x.borrow()) as i32) == (3_u16 as i32)) }));
             const _: () = assert!(true, "");;
         }
         {
-            let mut y: u16 = unimplemented!();
+            let mut y: u16 = ({
+                ((*a.borrow()) as std___atomic_ref_unsigned_short__true__false_)
+                    .fetch_or(2_u16, Some(memory_order_relaxed_14.with(|rc| *rc.borrow())))
+            });
             assert!(((y as i32) == (3_u16 as i32)));
-            assert!(((x as i32) == (3_u16 as i32)));
+            assert!(({ (((*x.borrow()) as i32) == (3_u16 as i32)) }));
             const _: () = assert!(true, "");;
         }
     }
@@ -1260,18 +1533,26 @@ pub trait TestFetchOr_wchar_t_Impl {
 impl TestFetchOr_wchar_t_Impl for Ptr<TestFetchOr_wchar_t_> {
     fn operator_call(&self) {
         const _: () = assert!(true, "std::is_integral_v<T>");;
-        let mut x: i32 = 1_i32;
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<i32> = Rc::new(RefCell::new(1_i32));
+        let a: Value<std_atomic_ref_wchar_t_> =
+            Rc::new(RefCell::new(std_atomic_ref_wchar_t_::new({
+                x.as_pointer()
+            })));
         {
-            let mut y: i32 = unimplemented!();
+            let mut y: i32 = ({
+                ((*a.borrow()) as std___atomic_ref_wchar_t__true__false_).fetch_or(2_i32, None)
+            });
             assert!((y == 1_i32));
-            assert!((x == 3_i32));
+            assert!(({ ((*x.borrow()) == 3_i32) }));
             const _: () = assert!(true, "");;
         }
         {
-            let mut y: i32 = unimplemented!();
+            let mut y: i32 = ({
+                ((*a.borrow()) as std___atomic_ref_wchar_t__true__false_)
+                    .fetch_or(2_i32, Some(memory_order_relaxed_14.with(|rc| *rc.borrow())))
+            });
             assert!((y == 3_i32));
-            assert!((x == 3_i32));
+            assert!(({ ((*x.borrow()) == 3_i32) }));
             const _: () = assert!(true, "");;
         }
     }

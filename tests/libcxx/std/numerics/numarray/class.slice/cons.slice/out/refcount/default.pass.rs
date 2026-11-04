@@ -27,10 +27,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_usize));
-    assert!((unimplemented!() == 0_usize));
-    assert!((unimplemented!() == 0_usize));
+    let s: Value<std_slice> = Rc::new(RefCell::new(<std_slice>::default()));
+    assert!(({ (({ (*s.borrow()).start() }) == 0_usize) }));
+    assert!(({ (({ (*s.borrow()).size() }) == 0_usize) }));
+    assert!(({ (({ (*s.borrow()).stride() }) == 0_usize) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

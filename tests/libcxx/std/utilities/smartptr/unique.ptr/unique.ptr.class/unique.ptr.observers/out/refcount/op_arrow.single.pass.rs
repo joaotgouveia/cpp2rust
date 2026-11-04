@@ -17,6 +17,11 @@ impl A {
         Self { i_: 7 }
     }
 }
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for A {
     fn default() -> Self {
         { A::new() }

@@ -33,16 +33,43 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             __bytes.push(0_i8);
             __bytes
         }));
-        let re: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let end: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_()));
-        assert!((unimplemented!() == 1_()));
-        unimplemented!();
-        assert!((unimplemented!() == 5_()));
-        assert!((unimplemented!() == 1_()));
-        unimplemented!();
-        assert!(unimplemented!());
+        let re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
+            std_basic_regex_char__std_regex_traits_char__::new_1(
+                { Ptr::<i8>::from_string_literal(b"\\ba") },
+                None,
+            ),
+        ));
+        let it : Value<std_regex_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char_____char__std_regex_traits_char__ > = Rc::new(RefCell::new(std_regex_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char_____char__std_regex_traits_char__ :: new_1 ( { <RandomAccessIterator<i8  >  >::from(RandomAccessIterator::Vec(s .decay() )  )  } , { <RandomAccessIterator<i8  >  >::from(RandomAccessIterator::Vec(s .decay() .to_last())  )  } , { re .as_pointer()  } , None , )  )) ;
+        let end : Value<std_regex_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char_____char__std_regex_traits_char__ > = Rc::new(RefCell::new(<std_regex_iterator___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char_____char__std_regex_traits_char__  >::default() )) ;
+        assert!(
+            ({
+                (({ (*(*it.borrow()).iter_deref().upgrade().deref()).position(0_u64) }) == 0_i64)
+            })
+        );
+        assert!(
+            ({ (({ (*(*it.borrow()).iter_deref().upgrade().deref()).length(0_u64,) }) == 1_i64) })
+        );
+        {
+            it.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            it.as_pointer()
+        };
+        assert!(
+            ({
+                (({ (*(*it.borrow()).iter_deref().upgrade().deref()).position(0_u64) }) == 5_i64)
+            })
+        );
+        assert!(
+            ({ (({ (*(*it.borrow()).iter_deref().upgrade().deref()).length(0_u64,) }) == 1_i64) })
+        );
+        {
+            it.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            it.as_pointer()
+        };
+        assert!(({ (*it.borrow()) == (*end.borrow()) }));
     }
     {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
@@ -50,17 +77,57 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             __bytes.push(0_i8);
             __bytes
         }));
-        let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let re: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let end: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_()));
-        assert!((unimplemented!() == 1_()));
-        unimplemented!();
-        assert!((unimplemented!() == 5_()));
-        assert!((unimplemented!() == 1_()));
-        unimplemented!();
-        assert!(unimplemented!());
+        let l: Value<std_list_char__std_allocator_char__> =
+            Rc::new(RefCell::new(std_list_char__std_allocator_char__::new_1(
+                { RandomAccessIterator::Vec(s.decay()) },
+                { RandomAccessIterator::Vec(s.decay().to_last()) },
+                None,
+            )));
+        let re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
+            std_basic_regex_char__std_regex_traits_char__::new_1(
+                { Ptr::<i8>::from_string_literal(b"\\ba") },
+                None,
+            ),
+        ));
+        let it: Value<std_regex_iterator_std__List_iterator_char___char__std_regex_traits_char__> =
+            Rc::new(RefCell::new(
+                std_regex_iterator_std__List_iterator_char___char__std_regex_traits_char__::new_1(
+                    { ({ (*l.borrow()).begin_24() }) },
+                    { ({ (*l.borrow()).end_26() }) },
+                    { re.as_pointer() },
+                    None,
+                ),
+            ));
+        let end : Value<std_regex_iterator_std__List_iterator_char___char__std_regex_traits_char__ > = Rc::new(RefCell::new(<std_regex_iterator_std__List_iterator_char___char__std_regex_traits_char__  >::default() )) ;
+        assert!(
+            ({
+                (({ (*(*it.borrow()).iter_deref().upgrade().deref()).position(0_u64) }) == 0_i64)
+            })
+        );
+        assert!(
+            ({ (({ (*(*it.borrow()).iter_deref().upgrade().deref()).length(0_u64,) }) == 1_i64) })
+        );
+        {
+            it.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            it.as_pointer()
+        };
+        assert!(
+            ({
+                (({ (*(*it.borrow()).iter_deref().upgrade().deref()).position(0_u64) }) == 5_i64)
+            })
+        );
+        assert!(
+            ({ (({ (*(*it.borrow()).iter_deref().upgrade().deref()).length(0_u64,) }) == 1_i64) })
+        );
+        {
+            it.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            it.as_pointer()
+        };
+        assert!(({ (*it.borrow()) == (*end.borrow()) }));
     }
     return 0;
 }

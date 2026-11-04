@@ -11,7 +11,12 @@ use std::rc::{Rc, Weak};
 pub struct StaticInit {
     #[offset(0)]
     #[byte_size(8)]
-    pub ec: Ptr<()>,
+    pub ec: Ptr<std_error_category>,
+}
+impl CppMove for StaticInit {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 thread_local!(
     pub static foo_0: Value<StaticInit> = Rc::new(RefCell::new(<StaticInit>::default()));
@@ -38,29 +43,53 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let e_cat1: Ptr<()> = unimplemented!();
-        let e_cond: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let e_cat1: Ptr<std_error_category> = ({ system_category_1() });
+        let e_cond: Value<std_error_condition> = Rc::new(RefCell::new(
+            ({ (*e_cat1.upgrade().deref()).default_error_condition(5) }),
+        ));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(unimplemented!());
-        unimplemented!();
+        assert!(
+            ({
+                ({
+                    let ___cond: Ptr<std_error_condition> = e_cond.as_pointer();
+                    (*e_cat1.upgrade().deref()).equivalent_9(5, ___cond)
+                })
+            })
+        );
+        (*e_cond.borrow_mut()) = ({ (*e_cat1.upgrade().deref()).default_error_condition(5000) });
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(unimplemented!());
+        assert!(
+            ({
+                ({
+                    let ___cond: Ptr<std_error_condition> = e_cond.as_pointer();
+                    (*e_cat1.upgrade().deref()).equivalent_9(5000, ___cond)
+                })
+            })
+        );
     }
     {
         libcc2rs::cpp2rust_errno().write(libc::E2BIG);
-        let e_cat1: Ptr<()> = unimplemented!();
-        let mut msg: Vec<i8> = unimplemented!();
+        let e_cat1: Ptr<std_error_category> = ({ system_category_1() });
+        let mut msg: Vec<i8> = ({ (*e_cat1.upgrade().deref()).message(-1_i32) });
         let mut is_newlib: bool = false;
         &(is_newlib);
         const _: () = assert!(true, "");;
         assert!(((libcc2rs::cpp2rust_errno().read()) == libc::E2BIG));
     }
     {
-        (*foo_0.with(Value::clone).borrow_mut()).ec = (unimplemented!());
+        (*foo_0.with(Value::clone).borrow_mut()).ec = ({ system_category_1() });
         let mut m: Vec<i8> = {
-            let mut __bytes = unimplemented!().to_c_bytes();
+            let mut __bytes = ({
+                ({
+                    (*{ (*foo_0.with(Value::clone).borrow()).ec.clone() }
+                        .upgrade()
+                        .deref())
+                    .name()
+                })
+            })
+            .to_c_bytes();
             __bytes.push(0_i8);
             __bytes
         };
@@ -77,7 +106,9 @@ pub trait StaticInitImpl {
 impl StaticInitImpl for Ptr<StaticInit> {
     fn destructor(&self) {
         let mut str: Vec<i8> = {
-            let mut __bytes = unimplemented!().to_c_bytes();
+            let mut __bytes =
+                ({ ({ (*(*self).with(|__s| __s.ec.clone()).upgrade().deref()).name() }) })
+                    .to_c_bytes();
             __bytes.push(0_i8);
             __bytes
         };

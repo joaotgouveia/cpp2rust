@@ -27,17 +27,18 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let mut i: i32 = unimplemented!();
+    let mut i: i32 =
+        ({ libcc2rs::max_refcount(Vec::from([2, 3, 1]), <std_greater_int_>::default()) });
     assert!((i == 1));
-    i = unimplemented!();
+    i = ({ libcc2rs::max_refcount(Vec::from([2, 1, 3]), <std_greater_int_>::default()) });
     assert!((i == 1));
-    i = unimplemented!();
+    i = ({ libcc2rs::max_refcount(Vec::from([3, 1, 2]), <std_greater_int_>::default()) });
     assert!((i == 1));
-    i = unimplemented!();
+    i = ({ libcc2rs::max_refcount(Vec::from([3, 2, 1]), <std_greater_int_>::default()) });
     assert!((i == 1));
-    i = unimplemented!();
+    i = ({ libcc2rs::max_refcount(Vec::from([1, 2, 3]), <std_greater_int_>::default()) });
     assert!((i == 1));
-    i = unimplemented!();
+    i = ({ libcc2rs::max_refcount(Vec::from([1, 3, 2]), <std_greater_int_>::default()) });
     assert!((i == 1));
     {
         const _: () = assert!(true, "std::max({{1, 3, 2}}, std::greater<int>()) == 1");;

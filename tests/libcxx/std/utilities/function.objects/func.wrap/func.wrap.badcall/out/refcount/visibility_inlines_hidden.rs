@@ -8,8 +8,10 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn foo_0() {}
 pub fn test_call_1() {
-    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let r: Value<std_function_void____> = Rc::new(RefCell::new(std_function_void____::new_1({
+        FnPtr::<fn()>::new(foo_0)
+    })));
+    ({ (*r.borrow_mut())() });
 }
 pub fn test_throw_2() {}
 pub fn main() {

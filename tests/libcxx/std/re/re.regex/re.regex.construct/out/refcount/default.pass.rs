@@ -7,14 +7,26 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
-    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as u32) == (unimplemented!() as u32)));
-    assert!((unimplemented!() == 0_u32));
+    let r: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
+        <std_basic_regex_char__std_regex_traits_char__>::default(),
+    ));
+    assert!(
+        ({
+            ((({ (*r.borrow()).flags() }) as u32) == (ECMAScript_1.with(|rc| *rc.borrow()) as u32))
+        })
+    );
+    assert!(({ (({ (*r.borrow()).mark_count() }) == 0_u32) }));
 }
-pub fn test_1() {
-    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as u32) == (unimplemented!() as u32)));
-    assert!((unimplemented!() == 0_u32));
+pub fn test_2() {
+    let r: Value<std_basic_regex_wchar_t__std_regex_traits_wchar_t__> = Rc::new(RefCell::new(
+        <std_basic_regex_wchar_t__std_regex_traits_wchar_t__>::default(),
+    ));
+    assert!(
+        ({
+            ((({ (*r.borrow()).flags() }) as u32) == (ECMAScript_1.with(|rc| *rc.borrow()) as u32))
+        })
+    );
+    assert!(({ (({ (*r.borrow()).mark_count() }) == 0_u32) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -37,7 +49,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
-    ({ test_1() });
+    ({ test_2() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

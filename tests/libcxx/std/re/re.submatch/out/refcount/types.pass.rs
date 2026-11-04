@@ -47,11 +47,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             true,
             "(std::is_same<std::ssub_match, std::sub_match<std::string::const_iterator> >::value)"
         );;
-        let sm: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*((*sm.borrow()) as (Value<*mut i8>, Value<*mut i8>))
+        let sm: Value<std_sub_match_char_ptr_> =
+            Rc::new(RefCell::new(<std_sub_match_char_ptr_>::default()));
+        (*({ ((*sm.borrow()) as (Value<*mut i8>, Value<*mut i8>)) })
             .0
             .borrow_mut()) = Ptr::<i8>::null();
-        (*((*sm.borrow()) as (Value<*mut i8>, Value<*mut i8>))
+        (*({ ((*sm.borrow()) as (Value<*mut i8>, Value<*mut i8>)) })
             .1
             .borrow_mut()) = Ptr::<i8>::null();
         (*sm.borrow_mut()).matched = false;
@@ -76,11 +77,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             true,
             "(std::is_same<std::wssub_match, std::sub_match<std::wstring::const_iterator> >::value)"
         );;
-        let sm: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*((*sm.borrow()) as (Value<*mut i32>, Value<*mut i32>))
+        let sm: Value<std_sub_match_wchar_t_ptr_> =
+            Rc::new(RefCell::new(<std_sub_match_wchar_t_ptr_>::default()));
+        (*({ ((*sm.borrow()) as (Value<*mut i32>, Value<*mut i32>)) })
             .0
             .borrow_mut()) = Ptr::<i32>::null();
-        (*((*sm.borrow()) as (Value<*mut i32>, Value<*mut i32>))
+        (*({ ((*sm.borrow()) as (Value<*mut i32>, Value<*mut i32>)) })
             .1
             .borrow_mut()) = Ptr::<i32>::null();
         (*sm.borrow_mut()).matched = false;

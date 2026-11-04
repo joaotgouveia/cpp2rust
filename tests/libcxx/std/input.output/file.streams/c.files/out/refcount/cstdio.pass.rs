@@ -28,7 +28,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let mut fp: Ptr<CFile> = Ptr::null();
-    let fpos: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fpos: Value<_G_fpos_t> = Rc::new(RefCell::new(<_G_fpos_t>::default()));
     let mut s: usize = 0_usize;
     let mut cp: Ptr<i8> = Ptr::<i8>::null();
     let va: Value<Ptr<VaArg>> = Rc::new(RefCell::new(Ptr::<VaArg>::default()));

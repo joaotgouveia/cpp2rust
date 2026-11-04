@@ -37,14 +37,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             "std::is_same<const std::unique_ptr<int>&&, decltype(std::get<0>(std::move(p)))>::value"
         );;
         const _: () = assert!(true, "noexcept(std::get<0>(std::move(p)))");;
-        let ptr: Ptr<Option<Value<i32>>> =
-            <(Value<Option<Value<i32>>>, Value<i16>) as PairGetRef<0>>::pair_get(&(*p.borrow()));
-        assert!((((*ptr.upgrade().deref()).as_pointer().read()) == 3));
+        let ptr: Ptr<Option<Value<i32>>> = (*p.borrow()).get_value::<0>().as_pointer();
+        assert!(({ (((*ptr.upgrade().deref()).as_pointer().read()) == 3) }));
     }
     {
-        let mut x: i32 = 42;
-        let mut y: i32 = 43;
-        let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<i32> = Rc::new(RefCell::new(42));
+        let y: Value<i32> = Rc::new(RefCell::new(43));
+        let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(
+            std_pair_int_ref__const_int_ref_::new_1({ x.as_pointer() }, { y.as_pointer() }),
+        ));
         const _: () = assert!(
             true,
             "std::is_same<int&, decltype(std::get<0>(std::move(p)))>::value"

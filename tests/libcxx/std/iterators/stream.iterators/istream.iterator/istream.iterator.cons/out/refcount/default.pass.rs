@@ -10,6 +10,11 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct S {}
 impl S {}
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_trivial_int__true_ {}
@@ -18,6 +23,11 @@ impl Callable0<()> for test_trivial_int__true_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             test_trivial_int__true_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for test_trivial_int__true_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -30,6 +40,11 @@ impl Callable0<()> for test_trivial_char__true_ {
         })
     }
 }
+impl CppMove for test_trivial_char__true_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_trivial_double__true_ {}
@@ -40,6 +55,11 @@ impl Callable0<()> for test_trivial_double__true_ {
         })
     }
 }
+impl CppMove for test_trivial_double__true_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_trivial_S__false_ {}
@@ -48,6 +68,11 @@ impl Callable0<()> for test_trivial_S__false_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             test_trivial_S__false_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for test_trivial_S__false_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -61,6 +86,13 @@ impl Callable0<()>
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             test_trivial_std_basic_string_char__std_char_traits_char___std_allocator_char____false_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove
+    for test_trivial_std_basic_string_char__std_char_traits_char___std_allocator_char____false_
+{
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {
@@ -84,9 +116,16 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
-        let it2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let it: Value<std_istream_iterator_int__char__std_char_traits_char___long_> = Rc::new(
+            RefCell::new(<std_istream_iterator_int__char__std_char_traits_char___long_>::default()),
+        );
+        assert!(
+            (*it.borrow())
+                == <std_istream_iterator_int__char__std_char_traits_char___long_>::default()
+        );
+        let it2: Value<std_istream_iterator_int__char__std_char_traits_char___long_> = Rc::new(
+            RefCell::new(<std_istream_iterator_int__char__std_char_traits_char___long_>::default()),
+        );
         &(*it2.borrow_mut());
     }
     ({
@@ -125,7 +164,10 @@ pub trait test_trivial_char__true_Impl {
 }
 impl test_trivial_char__true_Impl for Ptr<test_trivial_char__true_> {
     fn operator_call(&self) {
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let it: Value<std_istream_iterator_char__char__std_char_traits_char___long_> =
+            Rc::new(RefCell::new(
+                <std_istream_iterator_char__char__std_char_traits_char___long_>::default(),
+            ));
         &(*it.borrow_mut());
     }
 }
@@ -134,7 +176,10 @@ pub trait test_trivial_double__true_Impl {
 }
 impl test_trivial_double__true_Impl for Ptr<test_trivial_double__true_> {
     fn operator_call(&self) {
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let it: Value<std_istream_iterator_double__char__std_char_traits_char___long_> =
+            Rc::new(RefCell::new(
+                <std_istream_iterator_double__char__std_char_traits_char___long_>::default(),
+            ));
         &(*it.borrow_mut());
     }
 }
@@ -143,7 +188,9 @@ pub trait test_trivial_int__true_Impl {
 }
 impl test_trivial_int__true_Impl for Ptr<test_trivial_int__true_> {
     fn operator_call(&self) {
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let it: Value<std_istream_iterator_int__char__std_char_traits_char___long_> = Rc::new(
+            RefCell::new(<std_istream_iterator_int__char__std_char_traits_char___long_>::default()),
+        );
         &(*it.borrow_mut());
     }
 }

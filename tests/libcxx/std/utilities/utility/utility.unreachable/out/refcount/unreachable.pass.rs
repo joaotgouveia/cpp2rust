@@ -29,7 +29,7 @@ pub fn main() {
 fn main_0(argc: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     assert!((argc == 1));
     if (argc != 1) {
-        unimplemented!();
+        ({ unreachable_0() });
     }
     const _: () = assert!(true, "std::is_same_v<decltype(std::unreachable()), void>");;
     return 0;

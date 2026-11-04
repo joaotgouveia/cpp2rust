@@ -27,9 +27,24 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!((unimplemented!() == (('a' as i8) as i32)));
-    assert!((unimplemented!() == (('A' as i8) as i32)));
-    assert!((unimplemented!() == 0));
+    assert!(
+        (({
+            let ___c: Value<i8> = Rc::new(RefCell::new(('a' as i8)));
+            std_char_traits_char_::to_int_type(___c.as_pointer())
+        }) == (('a' as i8) as i32))
+    );
+    assert!(
+        (({
+            let ___c: Value<i8> = Rc::new(RefCell::new(('A' as i8)));
+            std_char_traits_char_::to_int_type(___c.as_pointer())
+        }) == (('A' as i8) as i32))
+    );
+    assert!(
+        (({
+            let ___c: Value<i8> = Rc::new(RefCell::new(0_i8));
+            std_char_traits_char_::to_int_type(___c.as_pointer())
+        }) == 0)
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

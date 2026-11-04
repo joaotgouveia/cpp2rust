@@ -181,9 +181,6 @@ file(GLOB_RECURSE rule_preprocessor_sources
 file(GLOB_RECURSE libcc2rs_sources CONFIGURE_DEPENDS
      ${PROJECT_SOURCE_DIR}/libcc2rs/src/*.rs
      ${PROJECT_SOURCE_DIR}/libcc2rs-macros/src/*.rs)
-file(GLOB rule_shim_sources CONFIGURE_DEPENDS
-     ${PROJECT_SOURCE_DIR}/rules/*/shim.rs)
-list(APPEND libcc2rs_sources ${rule_shim_sources})
 list(APPEND libcc2rs_sources
      ${PROJECT_SOURCE_DIR}/libcc2rs/Cargo.toml
      ${PROJECT_SOURCE_DIR}/libcc2rs-macros/Cargo.toml)
@@ -221,6 +218,10 @@ add_custom_command(
   VERBATIM
 )
 
+if (NOT INDEXER_CXX_FLAGS)
+    set(INDEXER_CXX_FLAGS "-std=c++23")
+endif()
+message(STATUS "rule-indexer C++ flags: ${INDEXER_CXX_FLAGS}")
 file(GLOB rule_subdirs CONFIGURE_DEPENDS ${PROJECT_SOURCE_DIR}/rules/*)
 file(GLOB rule_common_headers CONFIGURE_DEPENDS ${PROJECT_SOURCE_DIR}/rules/common/*.h)
 file(GLOB rule_indexer_sources CONFIGURE_DEPENDS
@@ -230,6 +231,10 @@ file(GLOB rule_indexer_sources CONFIGURE_DEPENDS
 set(_common_headers)
 foreach(_header IN LISTS rule_common_headers)
   list(APPEND _common_headers --common-header=${_header})
+endforeach()
+set(_indexer_cxx_flags)
+foreach(_flag IN LISTS INDEXER_CXX_FLAGS)
+  list(APPEND _indexer_cxx_flags --cxxflags=${_flag})
 endforeach()
 set(rules_index_parts)
 set(rules_index_parts_dir ${CMAKE_BINARY_DIR}/rules_index/parts)
@@ -245,7 +250,7 @@ foreach(_rule_dir IN LISTS rule_subdirs)
   add_custom_command(
     OUTPUT ${_part}
     COMMAND ${CMAKE_COMMAND} -E make_directory ${rules_index_parts_dir}
-    COMMAND $<TARGET_FILE:cpp-rule-indexer> --dir ${_rule_dir} -o ${_part}
+    COMMAND $<TARGET_FILE:cpp-rule-indexer> ${_indexer_cxx_flags} --dir ${_rule_dir} -o ${_part}
     DEPENDS ${_cpp_srcs} ${rule_common_headers} ${rule_indexer_sources} ${RUSTLS_HEADER} ${BROTLI_HEADERS}
     VERBATIM
   )

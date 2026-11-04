@@ -1438,10 +1438,13 @@ pub fn testComparisonsComplete_9(
 }
 pub fn testOrder_10(t1: Ptr<Vec<i32>>, t2: Ptr<Vec<i32>>, order: std::cmp::Ordering) -> bool {
     let order: Value<std::cmp::Ordering> = Rc::new(RefCell::new(order));
-    let mut equal: bool = (*order.borrow()) == std::cmp::Ordering::Equal;
-    let mut less: bool = (*order.borrow()) == std::cmp::Ordering::Less;
-    let mut greater: bool = (*order.borrow()) == std::cmp::Ordering::Greater;
-    return (unimplemented!() == (*order.borrow()))
+    let mut equal: bool = ({ (*order.borrow()) })
+        == ({ (*libcc2rs::strong_ordering_equivalent().upgrade().deref()) });
+    let mut less: bool =
+        ({ (*order.borrow()) }) == ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) });
+    let mut greater: bool =
+        ({ (*order.borrow()) }) == ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) });
+    return (unimplemented!() == ({ (*order.borrow()) }))
         && ({
             let _t1: Ptr<Vec<i32>> = (t1).clone();
             let _t2: Ptr<Vec<i32>> = (t2).clone();
@@ -1453,10 +1456,13 @@ pub fn testOrder_10(t1: Ptr<Vec<i32>>, t2: Ptr<Vec<i32>>, order: std::cmp::Order
 }
 pub fn testOrder_11(t1: Ptr<Vec<i32>>, t2: Ptr<Vec<i32>>, order: std::cmp::Ordering) -> bool {
     let order: Value<std::cmp::Ordering> = Rc::new(RefCell::new(order));
-    let mut equal: bool = (*order.borrow()) == std::cmp::Ordering::Equal;
-    let mut less: bool = (*order.borrow()) == std::cmp::Ordering::Less;
-    let mut greater: bool = (*order.borrow()) == std::cmp::Ordering::Greater;
-    return (unimplemented!() == (*order.borrow()))
+    let mut equal: bool = ({ (*order.borrow()) })
+        == ({ (*libcc2rs::strong_ordering_equivalent().upgrade().deref()) });
+    let mut less: bool =
+        ({ (*order.borrow()) }) == ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) });
+    let mut greater: bool =
+        ({ (*order.borrow()) }) == ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) });
+    return (unimplemented!() == ({ (*order.borrow()) }))
         && ({
             let _t1: Ptr<Vec<i32>> = (t1).clone();
             let _t2: Ptr<Vec<i32>> = (t2).clone();
@@ -1472,10 +1478,13 @@ pub fn testOrder_12(
     order: std::cmp::Ordering,
 ) -> bool {
     let order: Value<std::cmp::Ordering> = Rc::new(RefCell::new(order));
-    let mut equal: bool = (*order.borrow()) == std::cmp::Ordering::Equal;
-    let mut less: bool = (*order.borrow()) == std::cmp::Ordering::Less;
-    let mut greater: bool = (*order.borrow()) == std::cmp::Ordering::Greater;
-    return (unimplemented!() == (*order.borrow()))
+    let mut equal: bool = ({ (*order.borrow()) })
+        == ({ (*libcc2rs::strong_ordering_equivalent().upgrade().deref()) });
+    let mut less: bool =
+        ({ (*order.borrow()) }) == ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) });
+    let mut greater: bool =
+        ({ (*order.borrow()) }) == ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) });
+    return (unimplemented!() == ({ (*order.borrow()) }))
         && ({
             let _t1: Ptr<Vec<StrongOrder>> = (t1).clone();
             let _t2: Ptr<Vec<StrongOrder>> = (t2).clone();
@@ -1491,10 +1500,13 @@ pub fn testOrder_13(
     order: std::cmp::Ordering,
 ) -> bool {
     let order: Value<std::cmp::Ordering> = Rc::new(RefCell::new(order));
-    let mut equal: bool = (*order.borrow()) == std::cmp::Ordering::Equal;
-    let mut less: bool = (*order.borrow()) == std::cmp::Ordering::Less;
-    let mut greater: bool = (*order.borrow()) == std::cmp::Ordering::Greater;
-    return (unimplemented!() == (*order.borrow()))
+    let mut equal: bool = ({ (*order.borrow()) })
+        == ({ (*libcc2rs::strong_ordering_equivalent().upgrade().deref()) });
+    let mut less: bool =
+        ({ (*order.borrow()) }) == ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) });
+    let mut greater: bool =
+        ({ (*order.borrow()) }) == ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) });
+    return (unimplemented!() == ({ (*order.borrow()) }))
         && ({
             let _t1: Ptr<Vec<StrongOrder>> = (t1).clone();
             let _t2: Ptr<Vec<StrongOrder>> = (t2).clone();
@@ -1622,15 +1634,20 @@ impl CppEq for LessAndEqComp {
         operator_eq_21(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for LessAndEqComp {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_cmp_22(mut _a0: StrongOrder, mut _a1: StrongOrder) -> std::cmp::Ordering {
     {
         let cmp: Value<std::cmp::Ordering> =
             Rc::new(RefCell::new(std::cmp::Ord::cmp(&(_a0.value), &(_a1.value))));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(i32, new, value)]
@@ -1652,6 +1669,11 @@ impl CppLess for StrongOrder {
 impl CppEq for StrongOrder {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_cmp_22(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
+    }
+}
+impl CppMove for StrongOrder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_cmp_23(mut _a0: WeakOrder, mut _a1: WeakOrder) -> () {
@@ -1683,6 +1705,11 @@ impl CppLess for WeakOrder {
 impl CppEq for WeakOrder {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_cmp_23(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
+    }
+}
+impl CppMove for WeakOrder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_cmp_24(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
@@ -1719,9 +1746,19 @@ impl CppEq for PartialOrder {
         operator_eq_25(__lhs.read(), __rhs.read())
     }
 }
+impl CppMove for PartialOrder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NonComparable {}
+impl CppMove for NonComparable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(!(false), "!std::equality_comparable<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorEqual<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorGreaterThan<NonComparable>");
@@ -1750,6 +1787,11 @@ impl CppEq for EqualityComparable {
         operator_eq_26(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for EqualityComparable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::equality_comparable<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorEqual<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorNotEqual<EqualityComparable>");
@@ -1765,11 +1807,11 @@ pub fn operator_cmp_28(
             &(_a0.with(|__s| __s.value_)),
             &(_a1.with(|__s| __s.value_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(i32, new, value)]
@@ -1793,6 +1835,11 @@ impl CppEq for ThreeWayComparable {
         operator_eq_27(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for ThreeWayComparable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::equality_comparable<ThreeWayComparable>");
 const _: () = assert!(true, "std::three_way_comparable<ThreeWayComparable>");
 const _: () = assert!(true, "HasOperatorEqual<ThreeWayComparable>");
@@ -1808,11 +1855,21 @@ pub struct ImplicitBool_E1 {
     #[offset(0)]
     pub x: i32,
 }
+impl CppMove for ImplicitBool_E1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct ImplicitBool_E2 {
     #[offset(0)]
     pub y: i32,
+}
+impl CppMove for ImplicitBool_E2 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(bool, to_bool_1)]
@@ -1820,6 +1877,11 @@ pub struct ImplicitBool_E2 {
 pub struct ImplicitBool {
     #[offset(0)]
     pub val: bool,
+}
+impl CppMove for ImplicitBool {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn operator_eq_29(mut lhs: ImplicitBool_E1, mut rhs: ImplicitBool_E2) -> ImplicitBool {
     return ImplicitBool {
@@ -1842,17 +1904,41 @@ pub fn test_sequence_container_array_spaceship_with_type_31() {
         let l2: Value<Vec<i32>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
         ));
-        assert!(({ testOrder_10(l1.as_pointer(), l2.as_pointer(), std::cmp::Ordering::Equal,) }));
+        assert!(
+            ({
+                testOrder_10(
+                    l1.as_pointer(),
+                    l2.as_pointer(),
+                    ({ (*libcc2rs::strong_ordering_equivalent().upgrade().deref()) }),
+                )
+            })
+        );
     }
     {
         let l1: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 1])));
         let l2: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 1])));
-        assert!(({ testOrder_11(l1.as_pointer(), l2.as_pointer(), std::cmp::Ordering::Equal,) }));
+        assert!(
+            ({
+                testOrder_11(
+                    l1.as_pointer(),
+                    l2.as_pointer(),
+                    ({ (*libcc2rs::strong_ordering_equivalent().upgrade().deref()) }),
+                )
+            })
+        );
     }
     {
         let l1: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 1])));
         let l2: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2])));
-        assert!(({ testOrder_11(l1.as_pointer(), l2.as_pointer(), std::cmp::Ordering::Less,) }));
+        assert!(
+            ({
+                testOrder_11(
+                    l1.as_pointer(),
+                    l2.as_pointer(),
+                    ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+                )
+            })
+        );
     }
     {
         let l1: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 3])));
@@ -1862,7 +1948,7 @@ pub fn test_sequence_container_array_spaceship_with_type_31() {
                 testOrder_11(
                     l1.as_pointer(),
                     l2.as_pointer(),
-                    std::cmp::Ordering::Greater,
+                    ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
                 )
             })
         );
@@ -1877,7 +1963,15 @@ pub fn test_sequence_container_array_spaceship_with_type_32() {
         let l2: Value<Vec<StrongOrder>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 0, _>(|_| <StrongOrder>::default()).to_vec(),
         ));
-        assert!(({ testOrder_12(l1.as_pointer(), l2.as_pointer(), std::cmp::Ordering::Equal,) }));
+        assert!(
+            ({
+                testOrder_12(
+                    l1.as_pointer(),
+                    l2.as_pointer(),
+                    ({ (*libcc2rs::strong_ordering_equivalent().upgrade().deref()) }),
+                )
+            })
+        );
     }
     {
         let l1: Value<Vec<StrongOrder>> = Rc::new(RefCell::new(Vec::from([
@@ -1888,7 +1982,15 @@ pub fn test_sequence_container_array_spaceship_with_type_32() {
             StrongOrder::new({ 1 }),
             StrongOrder::new({ 1 }),
         ])));
-        assert!(({ testOrder_13(l1.as_pointer(), l2.as_pointer(), std::cmp::Ordering::Equal,) }));
+        assert!(
+            ({
+                testOrder_13(
+                    l1.as_pointer(),
+                    l2.as_pointer(),
+                    ({ (*libcc2rs::strong_ordering_equivalent().upgrade().deref()) }),
+                )
+            })
+        );
     }
     {
         let l1: Value<Vec<StrongOrder>> = Rc::new(RefCell::new(Vec::from([
@@ -1899,7 +2001,15 @@ pub fn test_sequence_container_array_spaceship_with_type_32() {
             StrongOrder::new({ 1 }),
             StrongOrder::new({ 2 }),
         ])));
-        assert!(({ testOrder_13(l1.as_pointer(), l2.as_pointer(), std::cmp::Ordering::Less,) }));
+        assert!(
+            ({
+                testOrder_13(
+                    l1.as_pointer(),
+                    l2.as_pointer(),
+                    ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+                )
+            })
+        );
     }
     {
         let l1: Value<Vec<StrongOrder>> = Rc::new(RefCell::new(Vec::from([
@@ -1915,7 +2025,7 @@ pub fn test_sequence_container_array_spaceship_with_type_32() {
                 testOrder_13(
                     l1.as_pointer(),
                     l2.as_pointer(),
-                    std::cmp::Ordering::Greater,
+                    ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
                 )
             })
         );

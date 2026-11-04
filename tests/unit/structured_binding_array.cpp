@@ -1,4 +1,3 @@
-// ADDITIONAL_COMPILE_FLAGS: -std=c++17
 #include <array>
 #include <assert.h>
 

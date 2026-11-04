@@ -11,19 +11,30 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int__int_ {}
+impl CppMove for test_macros_detail_is_same_int__int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_int_ptr__const_int_ptr_ {}
+impl CppMove for test_macros_detail_is_same_const_int_ptr__const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_2() -> bool {
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let cm: Ptr<()> = m.as_pointer();
-        assert!((unimplemented!() == 42));
-        assert!((unimplemented!() == 42));
-        assert!((unimplemented!() == 42));
-        assert!((unimplemented!() == 42));
+        let m: Value<std_move_sentinel_int_> =
+            Rc::new(RefCell::new(std_move_sentinel_int_::new_1({ 42 })));
+        let cm: Ptr<std_move_sentinel_int_> = m.as_pointer();
+        assert!(({ (({ (*m.borrow()).base() }) == 42) }));
+        assert!(({ (({ (*cm.upgrade().deref()).base() }) == 42) }));
+        assert!(({ (({ (*m.borrow()).base() }) == 42) }));
+        assert!(({ (({ (*cm.upgrade().deref()).base() }) == 42) }));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -31,12 +42,19 @@ pub fn test_2() -> bool {
     }
     {
         let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let cm: Ptr<()> = m.as_pointer();
-        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>)));
-        assert!(({ unimplemented!() } == { (a.as_pointer() as Ptr::<i32>) }));
-        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>)));
-        assert!(({ unimplemented!() } == { (a.as_pointer() as Ptr::<i32>) }));
+        let m: Value<std_move_sentinel_const_int_ptr_> =
+            Rc::new(RefCell::new(std_move_sentinel_const_int_ptr_::new_1({
+                (a.as_pointer() as Ptr<i32>)
+            })));
+        let cm: Ptr<std_move_sentinel_const_int_ptr_> = m.as_pointer();
+        assert!(({ (({ (*m.borrow()).base() }) == (a.as_pointer() as Ptr::<i32>)) }));
+        assert!(
+            ({ ({ ({ (*cm.upgrade().deref()).base() }) } == { (a.as_pointer() as Ptr::<i32>) }) })
+        );
+        assert!(({ (({ (*m.borrow()).base() }) == (a.as_pointer() as Ptr::<i32>)) }));
+        assert!(
+            ({ ({ ({ (*cm.upgrade().deref()).base() }) } == { (a.as_pointer() as Ptr::<i32>) }) })
+        );
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;

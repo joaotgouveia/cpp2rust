@@ -18,6 +18,11 @@ impl cpp20_bidirectional_iterator_with_arrow_B_ptr_ {
         Self { it_: (it).clone() }
     }
 }
+impl CppMove for cpp20_bidirectional_iterator_with_arrow_B_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_0(x: Ptr<A>, y: Ptr<A>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -37,6 +42,11 @@ impl CppEq for A {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for A {
     fn default() -> Self {
         { A::new() }
@@ -44,8 +54,16 @@ impl Default for A {
 }
 pub fn test_1(mut i: Ptr<A>, x: A) {
     let x: Value<A> = Rc::new(RefCell::new(x));
-    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((({ AImpl::get(&unimplemented!(),) }) == ({ AImpl::get(&x.as_pointer(),) })));
+    let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
+    let r: Value<std_reverse_iterator_A_ptr_> =
+        Rc::new(RefCell::new(std_reverse_iterator_A_ptr_::new_1({
+            (i).clone()
+        })));
+    assert!(
+        ({
+            (({ AImpl::get(&(*r.borrow()).iter_deref()) }) == ({ AImpl::get(&x.as_pointer()) }))
+        })
+    );
 }
 pub fn operator_eq_2(x: Ptr<B>, y: Ptr<B>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
@@ -66,6 +84,11 @@ impl B {
 impl CppEq for B {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_2(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for B {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for B {
@@ -90,6 +113,11 @@ impl C {
 impl CppEq for C {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_3(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for C {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for C {
@@ -125,35 +153,82 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
     ({ test_1((a.as_pointer()).offset((1) as isize), A::new()) });
     {
-        let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let l: Value<std_list_B__std_allocator_B__> =
+            Rc::new(RefCell::new(<std_list_B__std_allocator_B__>::default()));
+        ({
+            let ___x: Value<B> = Rc::new(RefCell::new(B::new({ Some(0) })));
+            (*l.borrow()).push_back_52(___x.as_pointer())
+        });
+        ({
+            let ___x: Value<B> = Rc::new(RefCell::new(B::new({ Some(1) })));
+            (*l.borrow()).push_back_52(___x.as_pointer())
+        });
+        ({
+            let ___x: Value<B> = Rc::new(RefCell::new(B::new({ Some(2) })));
+            (*l.borrow()).push_back_52(___x.as_pointer())
+        });
         {
-            let i: Value<()> = Rc::new(RefCell::new(<BidirectionalIterator<B>>::from(
-                unimplemented!(),
-            )));
-            assert!((({ BImpl::get(&(*i.borrow()).iter_deref(),) }) == 0));
-            (*i.borrow_mut()).iter_inc();
-            assert!((({ BImpl::get(&(*i.borrow()).iter_deref(),) }) == 1));
-            (*i.borrow_mut()).iter_inc();
-            assert!((({ BImpl::get(&(*i.borrow()).iter_deref(),) }) == 2));
-            (*i.borrow_mut()).iter_inc();
-            assert!((*i.borrow()) == <BidirectionalIterator<B>>::from(unimplemented!()));
+            let i: Value<BidirectionalIterator<B>> =
+                Rc::new(RefCell::new(<BidirectionalIterator<B>>::from(
+                    ({ (*l.borrow()).begin_24() }),
+                )));
+            assert!(({ (({ BImpl::get(&(*i.borrow()).iter_deref(),) }) == 0) }));
+            {
+                i.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                i.as_pointer()
+            };
+            assert!(({ (({ BImpl::get(&(*i.borrow()).iter_deref(),) }) == 1) }));
+            {
+                i.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                i.as_pointer()
+            };
+            assert!(({ (({ BImpl::get(&(*i.borrow()).iter_deref(),) }) == 2) }));
+            {
+                i.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                i.as_pointer()
+            };
+            assert!(
+                (*i.borrow()) == <BidirectionalIterator<B>>::from(({ (*l.borrow()).end_26() }))
+            );
         }
         {
-            let ri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((({ BImpl::get(&unimplemented!(),) }) == 2));
-            unimplemented!();
-            assert!((({ BImpl::get(&unimplemented!(),) }) == 1));
-            unimplemented!();
-            assert!((({ BImpl::get(&unimplemented!(),) }) == 0));
-            unimplemented!();
-            assert!(unimplemented!());
+            let ri: Value<BidirectionalIterator<B>> = Rc::new(RefCell::new(
+                <BidirectionalIterator<B>>::from(({ (*l.borrow()).rbegin_28() })),
+            ));
+            assert!(({ (({ BImpl::get(&(*ri.borrow()).iter_deref(),) }) == 2) }));
+            {
+                ri.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                ri.as_pointer()
+            };
+            assert!(({ (({ BImpl::get(&(*ri.borrow()).iter_deref(),) }) == 1) }));
+            {
+                ri.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                ri.as_pointer()
+            };
+            assert!(({ (({ BImpl::get(&(*ri.borrow()).iter_deref(),) }) == 0) }));
+            {
+                ri.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                ri.as_pointer()
+            };
+            assert!((*ri.borrow()) == ({ (*l.borrow()).rend_30() }));
         }
     }
     {
-        let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let it1: Value<std_reverse_iterator_const_C_ptr_> = Rc::new(RefCell::new(
+            ({ make_reverse_iterator_5((gC_4.with(|v| v.as_pointer())).offset((1) as isize)) }),
+        ));
         const _: () = assert!(true, "it1->get() == gC.get()");;
     }
     {
@@ -166,8 +241,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             cpp20_bidirectional_iterator_with_arrow_B_ptr_::new_1({
                 (data.as_pointer() as Ptr<B>).offset((3) as isize)
             });
-        let ri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((({ BImpl::get(&unimplemented!(),) }) == 3));
+        let ri: Value<BidirectionalIterator<B>> =
+            Rc::new(RefCell::new(({ make_reverse_iterator_6((iter).clone()) })));
+        assert!(({ (({ BImpl::get(&(*ri.borrow()).iter_deref(),) }) == 3) }));
     }
     {
         (&(*gC_4.with(Value::clone).borrow_mut()));
@@ -241,7 +317,9 @@ impl cpp20_bidirectional_iterator_with_arrow_B_ptr_Impl
         panic!("ub: non-void function does not return a value")
     }
     fn operator_dec_6(&self) -> Ptr<cpp20_bidirectional_iterator_with_arrow_B_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
 }

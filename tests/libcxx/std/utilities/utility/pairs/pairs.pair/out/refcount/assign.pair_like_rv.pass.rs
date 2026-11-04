@@ -13,8 +13,8 @@ pub fn test_0() -> bool {
             let p: Value<(Value<i32>, Value<i32>)> = Rc::new(RefCell::new(unimplemented!()));
             let result: Ptr<(Value<i32>, Value<i32>)> = (unimplemented!());
             assert!(({ (result).clone() } == { (p.as_pointer()) }));
-            assert!(((*(*p.borrow()).0.borrow()) == 1));
-            assert!(((*(*p.borrow()).1.borrow()) == 2));
+            assert!(({ ((*(*p.borrow()).0.borrow()) == 1) }));
+            assert!(({ ((*(*p.borrow()).1.borrow()) == 2) }));
             const _: () = assert!(
                 true,
                 "!std::is_assignable_v<std::pair<int, int>&, std::array<int, 1>>"
@@ -33,8 +33,8 @@ pub fn test_0() -> bool {
             let p: Value<(Value<i32>, Value<i32>)> = Rc::new(RefCell::new(unimplemented!()));
             let result: Ptr<(Value<i32>, Value<i32>)> = (unimplemented!());
             assert!(({ (result).clone() } == { (p.as_pointer()) }));
-            assert!(((*(*p.borrow()).0.borrow()) == 1));
-            assert!(((*(*p.borrow()).1.borrow()) == 2));
+            assert!(({ ((*(*p.borrow()).0.borrow()) == 1) }));
+            assert!(({ ((*(*p.borrow()).1.borrow()) == 2) }));
             const _: () = assert!(
                 true,
                 "!std::is_assignable_v<std::pair<int, int>&, std::tuple<int>>"
@@ -57,13 +57,17 @@ pub fn test_0() -> bool {
                 (p.as_pointer().write(({ (*a.borrow())() })));
             assert!(({ (result).clone() } == { (p.as_pointer()) }));
             assert!(
-                ({ { (*(*p.borrow()).0.borrow()).ptr.clone() } } == {
-                    (data.as_pointer() as Ptr<i32>)
+                ({
+                    ({ { (*(*p.borrow()).0.borrow()).ptr.clone() } } == {
+                        (data.as_pointer() as Ptr<i32>)
+                    })
                 })
             );
             assert!(
-                ({ { (*(*p.borrow()).1.borrow()).ptr.clone() } } == {
-                    (data.as_pointer() as Ptr<i32>).offset((5) as isize)
+                ({
+                    ({ { (*(*p.borrow()).1.borrow()).ptr.clone() } } == {
+                        (data.as_pointer() as Ptr<i32>).offset((5) as isize)
+                    })
                 })
             );
         }
@@ -73,7 +77,7 @@ pub fn test_0() -> bool {
         let p: Value<(Value<i64>, Value<Vec<i8>>)> = Rc::new(RefCell::new(unimplemented!()));
         let result: Ptr<(Value<i64>, Value<Vec<i8>>)> = (unimplemented!());
         assert!(({ (result).clone() } == { (p.as_pointer()) }));
-        assert!(((*(*p.borrow()).0.borrow()) == 34_i64));
+        assert!(({ ((*(*p.borrow()).0.borrow()) == 34_i64) }));
         assert!(unimplemented!());
         const _: () = assert!(
             true,
@@ -108,6 +112,11 @@ impl Assignable_1 {
         Self { ptr: (p).clone() }
     }
 }
+impl CppMove for Assignable_1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Assignable_1 {
     fn default() -> Self {
         {
@@ -123,6 +132,11 @@ pub struct NoCopy_2 {}
 impl NoCopy_2 {
     pub fn move_from(_a0: Ptr<NoCopy_2>) -> Self {
         Self {}
+    }
+}
+impl CppMove for NoCopy_2 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn main() {

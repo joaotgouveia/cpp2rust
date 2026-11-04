@@ -20,6 +20,11 @@ impl nasty_list_int_ {
         }
     }
 }
+impl CppMove for nasty_list_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for nasty_list_int_ {
     fn default() -> Self {
         { nasty_list_int_::new_1() }
@@ -44,6 +49,11 @@ impl Clone for nasty_mutex {
         nasty_mutex::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for nasty_mutex {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for nasty_mutex {
     fn default() -> Self {
         { nasty_mutex::new() }
@@ -57,6 +67,11 @@ pub struct ConstexprFixedCapacityDeque_int__10_ {
     data_: Box<[i32]>,
     #[offset(40)]
     size_: i32,
+}
+impl CppMove for ConstexprFixedCapacityDeque_int__10_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for ConstexprFixedCapacityDeque_int__10_ {
     fn default() -> Self {

@@ -7,16 +7,20 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test1_0() {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 15039276_()));
-    assert!((unimplemented!() == 16323925_()));
-    assert!((unimplemented!() == 14283486_()));
+    let e: Value<std_subtract_with_carry_engine_unsigned_long__24__10__24_> = Rc::new(
+        RefCell::new(<std_subtract_with_carry_engine_unsigned_long__24__10__24_>::default()),
+    );
+    assert!(({ (({ (*e.borrow_mut())() }) == 15039276_u64) }));
+    assert!(({ (({ (*e.borrow_mut())() }) == 16323925_u64) }));
+    assert!(({ (({ (*e.borrow_mut())() }) == 14283486_u64) }));
 }
 pub fn test2_1() {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as u64) == 23459059301164_u64));
-    assert!(((unimplemented!() as u64) == 28639057539807_u64));
-    assert!(((unimplemented!() as u64) == 276846226770426_u64));
+    let e: Value<std_subtract_with_carry_engine_unsigned_long__48__5__12_> = Rc::new(RefCell::new(
+        <std_subtract_with_carry_engine_unsigned_long__48__5__12_>::default(),
+    ));
+    assert!(({ (({ (*e.borrow_mut())() }) == 23459059301164_u64) }));
+    assert!(({ (({ (*e.borrow_mut())() }) == 28639057539807_u64) }));
+    assert!(({ (({ (*e.borrow_mut())() }) == 276846226770426_u64) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

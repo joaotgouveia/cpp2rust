@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -36,24 +41,13 @@ thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<(Value<i32>, Value<f64>)>,
-}
-impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_std_pair_const_int__double__ {}
+impl CppMove for min_allocator_std_pair_const_int__double__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(i32, new, value)]
 #[byte_size(4)]
@@ -80,6 +74,11 @@ impl CppEq for PrivateConstructor {
             && !(operator_lt_4(__rhs.clone(), __lhs.clone()))
     }
 }
+impl CppMove for PrivateConstructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_lt_4(lhs: Ptr<PrivateConstructor>, rhs: Ptr<PrivateConstructor>) -> bool {
     return ({ ({ PrivateConstructorImpl::get(&lhs) }) } < {
         ({ PrivateConstructorImpl::get(&rhs) })
@@ -94,12 +93,27 @@ pub fn operator_lt_6(mut lhs: i32, rhs: Ptr<PrivateConstructor>) -> bool {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less {}
+impl CppMove for transparent_less {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less_not_referenceable {}
+impl CppMove for transparent_less_not_referenceable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less_nonempty_is_transparent {}
+impl CppMove for transparent_less_nonempty_is_transparent {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less_nonempty {
@@ -107,17 +121,37 @@ pub struct transparent_less_nonempty {
     #[byte_size(1)]
     pub pad_: transparent_less_nonempty_is_transparent,
 }
+impl CppMove for transparent_less_nonempty {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less_no_type {}
+impl CppMove for transparent_less_no_type {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less_private {}
+impl CppMove for transparent_less_private {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct transparent_less_not_a_type {
     #[offset(0)]
     pub is_transparent: i32,
+}
+impl CppMove for transparent_less_not_a_type {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
 #[cpp_from(i32, new_1, value)]
@@ -143,6 +177,11 @@ impl CppEq for C2Int {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         !(operator_lt_7(__lhs.clone(), __rhs.clone()))
             && !(operator_lt_7(__rhs.clone(), __lhs.clone()))
+    }
+}
+impl CppMove for C2Int {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for C2Int {
@@ -181,16 +220,22 @@ pub fn test_10() -> bool {
                     Rc::new(RefCell::new((12 as f64))),
                 ),
             ])));
-            let m: Value<Map<i32, (Value<i32>, Value<f64>)>> =
-                Rc::new(RefCell::new(unimplemented!()));
-            let r: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let m : Value<Map<i32  , (Value<i32  >, Value<f64  >)> > = Rc::new(RefCell::new(std_map_int__double__std_less_int___std_allocator_std_pair_const_int__double___ :: new_1 ( { ( ar .as_pointer()  as Ptr< (Value<i32  >, Value<f64  >)  >   )  } , { ( ar .as_pointer()  as Ptr< (Value<i32  >, Value<f64  >)  >   ) . offset ( ( ( ( 128usize as usize ) ) . wrapping_div ( ( 16usize as usize ) ) ) as isize )  } , )  )) ;
+            let r: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
+                ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(5));
+                    (*m.borrow()).lower_bound_82(___x.as_pointer())
+                }),
+            ));
             assert!(
                 (*r.borrow())
                     == m.as_pointer()
                         .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(7));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -199,7 +244,10 @@ pub fn test_10() -> bool {
                         1_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(9));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -208,7 +256,10 @@ pub fn test_10() -> bool {
                         2_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(11));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -217,7 +268,10 @@ pub fn test_10() -> bool {
                         3_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(13));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -226,7 +280,10 @@ pub fn test_10() -> bool {
                         4_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(15));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -235,7 +292,10 @@ pub fn test_10() -> bool {
                         5_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(17));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -244,7 +304,10 @@ pub fn test_10() -> bool {
                         6_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(19));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -253,7 +316,10 @@ pub fn test_10() -> bool {
                         7_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(4));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -262,7 +328,10 @@ pub fn test_10() -> bool {
                         0_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(6));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -271,7 +340,10 @@ pub fn test_10() -> bool {
                         1_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(8));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -280,7 +352,10 @@ pub fn test_10() -> bool {
                         2_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(10));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -289,7 +364,10 @@ pub fn test_10() -> bool {
                         3_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(12));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -298,7 +376,10 @@ pub fn test_10() -> bool {
                         4_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(14));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -307,7 +388,10 @@ pub fn test_10() -> bool {
                         5_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(16));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -316,7 +400,10 @@ pub fn test_10() -> bool {
                         6_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(18));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -325,7 +412,10 @@ pub fn test_10() -> bool {
                         7_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(20));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -355,16 +445,22 @@ pub fn test_10() -> bool {
                     Rc::new(RefCell::new((12 as f64))),
                 ),
             ])));
-            let m: Value<Map<i32, (Value<i32>, Value<f64>)>> =
-                Rc::new(RefCell::new(unimplemented!()));
-            let r: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let m : Value<Map<i32  , (Value<i32  >, Value<f64  >)> > = Rc::new(RefCell::new(std_map_int__double__std_less_int___std_allocator_std_pair_const_int__double___ :: new_1 ( { ( ar .as_pointer()  as Ptr< (Value<i32  >, Value<f64  >)  >   )  } , { ( ar .as_pointer()  as Ptr< (Value<i32  >, Value<f64  >)  >   ) . offset ( ( ( ( 128usize as usize ) ) . wrapping_div ( ( 16usize as usize ) ) ) as isize )  } , )  )) ;
+            let r: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
+                ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(5));
+                    (*m.borrow()).lower_bound_84(___x.as_pointer())
+                }),
+            ));
             assert!(
                 (*r.borrow())
                     == m.as_pointer()
                         .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(7));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -373,7 +469,10 @@ pub fn test_10() -> bool {
                         1_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(9));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -382,7 +481,10 @@ pub fn test_10() -> bool {
                         2_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(11));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -391,7 +493,10 @@ pub fn test_10() -> bool {
                         3_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(13));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -400,7 +505,10 @@ pub fn test_10() -> bool {
                         4_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(15));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -409,7 +517,10 @@ pub fn test_10() -> bool {
                         5_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(17));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -418,7 +529,10 @@ pub fn test_10() -> bool {
                         6_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(19));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -427,7 +541,10 @@ pub fn test_10() -> bool {
                         7_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(4));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -436,7 +553,10 @@ pub fn test_10() -> bool {
                         0_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(6));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -445,7 +565,10 @@ pub fn test_10() -> bool {
                         1_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(8));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -454,7 +577,10 @@ pub fn test_10() -> bool {
                         2_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(10));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -463,7 +589,10 @@ pub fn test_10() -> bool {
                         3_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(12));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -472,7 +601,10 @@ pub fn test_10() -> bool {
                         4_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(14));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -481,7 +613,10 @@ pub fn test_10() -> bool {
                         5_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(16));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -490,7 +625,10 @@ pub fn test_10() -> bool {
                         6_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(18));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -499,7 +637,10 @@ pub fn test_10() -> bool {
                         7_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(20));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            });
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -531,16 +672,23 @@ pub fn test_10() -> bool {
                     Rc::new(RefCell::new((12 as f64))),
                 ),
             ])));
-            let m: Value<Map<i32, (Value<i32>, Value<f64>)>> =
-                Rc::new(RefCell::new(unimplemented!()));
-            let r: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let m : Value<Map<i32  , (Value<i32  >, Value<f64  >)> > = Rc::new(RefCell::new(std_map_int__double__std_less_int___min_allocator_std_pair_const_int__double___ :: new_1 ( { ( ar .as_pointer()  as Ptr< (Value<i32  >, Value<f64  >)  >   )  } , { ( ar .as_pointer()  as Ptr< (Value<i32  >, Value<f64  >)  >   ) . offset ( ( ( ( 128usize as usize ) ) . wrapping_div ( ( 16usize as usize ) ) ) as isize )  } , )  )) ;
+            let r: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
+                ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(5));
+                    (*m.borrow()).lower_bound_82(___x.as_pointer())
+                }),
+            ));
             assert!(
                 (*r.borrow())
                     == m.as_pointer()
                         .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(7));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -549,7 +697,11 @@ pub fn test_10() -> bool {
                         1_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(9));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -558,7 +710,11 @@ pub fn test_10() -> bool {
                         2_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(11));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -567,7 +723,11 @@ pub fn test_10() -> bool {
                         3_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(13));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -576,7 +736,11 @@ pub fn test_10() -> bool {
                         4_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(15));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -585,7 +749,11 @@ pub fn test_10() -> bool {
                         5_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(17));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -594,7 +762,11 @@ pub fn test_10() -> bool {
                         6_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(19));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -603,7 +775,11 @@ pub fn test_10() -> bool {
                         7_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(4));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -612,7 +788,11 @@ pub fn test_10() -> bool {
                         0_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(6));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -621,7 +801,11 @@ pub fn test_10() -> bool {
                         1_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(8));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -630,7 +814,11 @@ pub fn test_10() -> bool {
                         2_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(10));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -639,7 +827,11 @@ pub fn test_10() -> bool {
                         3_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(12));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -648,7 +840,11 @@ pub fn test_10() -> bool {
                         4_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(14));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -657,7 +853,11 @@ pub fn test_10() -> bool {
                         5_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(16));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -666,7 +866,11 @@ pub fn test_10() -> bool {
                         6_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(18));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -675,7 +879,11 @@ pub fn test_10() -> bool {
                         7_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(20));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -705,16 +913,23 @@ pub fn test_10() -> bool {
                     Rc::new(RefCell::new((12 as f64))),
                 ),
             ])));
-            let m: Value<Map<i32, (Value<i32>, Value<f64>)>> =
-                Rc::new(RefCell::new(unimplemented!()));
-            let r: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let m : Value<Map<i32  , (Value<i32  >, Value<f64  >)> > = Rc::new(RefCell::new(std_map_int__double__std_less_int___min_allocator_std_pair_const_int__double___ :: new_1 ( { ( ar .as_pointer()  as Ptr< (Value<i32  >, Value<f64  >)  >   )  } , { ( ar .as_pointer()  as Ptr< (Value<i32  >, Value<f64  >)  >   ) . offset ( ( ( ( 128usize as usize ) ) . wrapping_div ( ( 16usize as usize ) ) ) as isize )  } , )  )) ;
+            let r: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
+                ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(5));
+                    (*m.borrow()).lower_bound_84(___x.as_pointer())
+                }),
+            ));
             assert!(
                 (*r.borrow())
                     == m.as_pointer()
                         .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(7));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -723,7 +938,11 @@ pub fn test_10() -> bool {
                         1_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(9));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -732,7 +951,11 @@ pub fn test_10() -> bool {
                         2_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(11));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -741,7 +964,11 @@ pub fn test_10() -> bool {
                         3_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(13));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -750,7 +977,11 @@ pub fn test_10() -> bool {
                         4_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(15));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -759,7 +990,11 @@ pub fn test_10() -> bool {
                         5_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(17));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -768,7 +1003,11 @@ pub fn test_10() -> bool {
                         6_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(19));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -777,7 +1016,11 @@ pub fn test_10() -> bool {
                         7_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(4));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -786,7 +1029,11 @@ pub fn test_10() -> bool {
                         0_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(6));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -795,7 +1042,11 @@ pub fn test_10() -> bool {
                         1_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(8));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -804,7 +1055,11 @@ pub fn test_10() -> bool {
                         2_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(10));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -813,7 +1068,11 @@ pub fn test_10() -> bool {
                         3_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(12));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -822,7 +1081,11 @@ pub fn test_10() -> bool {
                         4_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(14));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -831,7 +1094,11 @@ pub fn test_10() -> bool {
                         5_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(16));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -840,7 +1107,11 @@ pub fn test_10() -> bool {
                         6_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(18));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -849,7 +1120,11 @@ pub fn test_10() -> bool {
                         7_isize
                     )
             );
-            (*r.borrow_mut()) = unimplemented!().clone();
+            (*r.borrow_mut()) = ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(20));
+                (*m.borrow()).lower_bound_84(___x.as_pointer())
+            })
+            .clone();
             assert!(
                 (*r.borrow())
                     == libcc2rs::next_refcount(
@@ -880,15 +1155,30 @@ pub fn test_10() -> bool {
                 Rc::new(RefCell::new((12 as f64))),
             ),
         ])));
-        let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(unimplemented!()));
-        let r: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
+            std_map_int__double__std_less_void___std_allocator_std_pair_const_int__double___::new_1(
+                { (ar.as_pointer() as Ptr<(Value<i32>, Value<f64>)>) },
+                {
+                    (ar.as_pointer() as Ptr<(Value<i32>, Value<f64>)>)
+                        .offset(((128usize as usize).wrapping_div((16usize as usize))) as isize)
+                },
+            ),
+        ));
+        let r: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(5));
+                (*m.borrow()).lower_bound_82(___x.as_pointer())
+            }),
+        ));
         assert!(
             (*r.borrow())
                 == m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(7));
+            (*m.borrow()).lower_bound_82(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -897,7 +1187,10 @@ pub fn test_10() -> bool {
                     1_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(9));
+            (*m.borrow()).lower_bound_82(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -906,7 +1199,10 @@ pub fn test_10() -> bool {
                     2_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(11));
+            (*m.borrow()).lower_bound_82(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -915,7 +1211,10 @@ pub fn test_10() -> bool {
                     3_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(13));
+            (*m.borrow()).lower_bound_82(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -924,7 +1223,10 @@ pub fn test_10() -> bool {
                     4_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(15));
+            (*m.borrow()).lower_bound_82(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -933,7 +1235,10 @@ pub fn test_10() -> bool {
                     5_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(17));
+            (*m.borrow()).lower_bound_82(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -942,7 +1247,10 @@ pub fn test_10() -> bool {
                     6_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(19));
+            (*m.borrow()).lower_bound_82(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -951,7 +1259,10 @@ pub fn test_10() -> bool {
                     7_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(4));
+            (*m.borrow()).lower_bound_82(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -960,7 +1271,10 @@ pub fn test_10() -> bool {
                     0_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(6));
+            (*m.borrow()).lower_bound_82(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -969,7 +1283,10 @@ pub fn test_10() -> bool {
                     1_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(8));
+            (*m.borrow()).lower_bound_82(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -978,7 +1295,10 @@ pub fn test_10() -> bool {
                     2_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(10));
+            (*m.borrow()).lower_bound_82(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -987,7 +1307,10 @@ pub fn test_10() -> bool {
                     3_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(12));
+            (*m.borrow()).lower_bound_82(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -996,7 +1319,10 @@ pub fn test_10() -> bool {
                     4_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(14));
+            (*m.borrow()).lower_bound_82(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1005,7 +1331,10 @@ pub fn test_10() -> bool {
                     5_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(16));
+            (*m.borrow()).lower_bound_82(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1014,7 +1343,10 @@ pub fn test_10() -> bool {
                     6_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(18));
+            (*m.borrow()).lower_bound_82(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1023,7 +1355,10 @@ pub fn test_10() -> bool {
                     7_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(20));
+            (*m.borrow()).lower_bound_82(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1032,13 +1367,19 @@ pub fn test_10() -> bool {
                     8_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 5 })));
+            (*m.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == m.as_pointer()
                     .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 7 })));
+            (*m.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1047,7 +1388,10 @@ pub fn test_10() -> bool {
                     1_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 9 })));
+            (*m.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1056,7 +1400,10 @@ pub fn test_10() -> bool {
                     2_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 11 })));
+            (*m.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1065,7 +1412,10 @@ pub fn test_10() -> bool {
                     3_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 13 })));
+            (*m.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1074,7 +1424,10 @@ pub fn test_10() -> bool {
                     4_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 15 })));
+            (*m.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1083,7 +1436,10 @@ pub fn test_10() -> bool {
                     5_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 17 })));
+            (*m.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1092,7 +1448,10 @@ pub fn test_10() -> bool {
                     6_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 19 })));
+            (*m.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1101,7 +1460,10 @@ pub fn test_10() -> bool {
                     7_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 4 })));
+            (*m.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1110,7 +1472,10 @@ pub fn test_10() -> bool {
                     0_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 6 })));
+            (*m.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1119,7 +1484,10 @@ pub fn test_10() -> bool {
                     1_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 8 })));
+            (*m.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1128,7 +1496,10 @@ pub fn test_10() -> bool {
                     2_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 10 })));
+            (*m.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1137,7 +1508,10 @@ pub fn test_10() -> bool {
                     3_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 12 })));
+            (*m.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1146,7 +1520,10 @@ pub fn test_10() -> bool {
                     4_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 14 })));
+            (*m.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1155,7 +1532,10 @@ pub fn test_10() -> bool {
                     5_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 16 })));
+            (*m.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1164,7 +1544,10 @@ pub fn test_10() -> bool {
                     6_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 18 })));
+            (*m.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1173,7 +1556,10 @@ pub fn test_10() -> bool {
                     7_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 20 })));
+            (*m.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1235,7 +1621,12 @@ pub fn test_10() -> bool {
         )
         .write(12_f64);
         let r: Value<BidirectionalIterator<(Value<PrivateConstructor>, Value<f64>)>> =
-            Rc::new(RefCell::new(unimplemented!()));
+            Rc::new(RefCell::new(
+                ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(5));
+                    (*m.borrow()).lower_bound_83_int(___x.as_pointer())
+                }),
+            ));
         assert!(
             (*r.borrow())
                 == m.as_pointer().with(
@@ -1243,7 +1634,10 @@ pub fn test_10() -> bool {
                         .begin()
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(7));
+            (*m.borrow()).lower_bound_83_int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1255,7 +1649,10 @@ pub fn test_10() -> bool {
                     1_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(9));
+            (*m.borrow()).lower_bound_83_int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1267,7 +1664,10 @@ pub fn test_10() -> bool {
                     2_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(11));
+            (*m.borrow()).lower_bound_83_int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1279,7 +1679,10 @@ pub fn test_10() -> bool {
                     3_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(13));
+            (*m.borrow()).lower_bound_83_int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1291,7 +1694,10 @@ pub fn test_10() -> bool {
                     4_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(15));
+            (*m.borrow()).lower_bound_83_int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1303,7 +1709,10 @@ pub fn test_10() -> bool {
                     5_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(17));
+            (*m.borrow()).lower_bound_83_int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1315,7 +1724,10 @@ pub fn test_10() -> bool {
                     6_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(19));
+            (*m.borrow()).lower_bound_83_int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1327,7 +1739,10 @@ pub fn test_10() -> bool {
                     7_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(4));
+            (*m.borrow()).lower_bound_83_int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1339,7 +1754,10 @@ pub fn test_10() -> bool {
                     0_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(6));
+            (*m.borrow()).lower_bound_83_int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1351,7 +1769,10 @@ pub fn test_10() -> bool {
                     1_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(8));
+            (*m.borrow()).lower_bound_83_int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1363,7 +1784,10 @@ pub fn test_10() -> bool {
                     2_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(10));
+            (*m.borrow()).lower_bound_83_int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1375,7 +1799,10 @@ pub fn test_10() -> bool {
                     3_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(12));
+            (*m.borrow()).lower_bound_83_int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1387,7 +1814,10 @@ pub fn test_10() -> bool {
                     4_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(14));
+            (*m.borrow()).lower_bound_83_int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1399,7 +1829,10 @@ pub fn test_10() -> bool {
                     5_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(16));
+            (*m.borrow()).lower_bound_83_int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1411,7 +1844,10 @@ pub fn test_10() -> bool {
                     6_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(18));
+            (*m.borrow()).lower_bound_83_int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1423,7 +1859,10 @@ pub fn test_10() -> bool {
                     7_isize
                 )
         );
-        (*r.borrow_mut()) = unimplemented!();
+        (*r.borrow_mut()) = ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(20));
+            (*m.borrow()).lower_bound_83_int(___x.as_pointer())
+        });
         assert!(
             (*r.borrow())
                 == libcc2rs::next_refcount(
@@ -1461,6 +1900,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_10() });
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__;
 pub trait C2IntImpl {
     fn get(&self) -> i32;
 }
@@ -1494,83 +1936,6 @@ pub trait min_allocator_std_pair_const_int__double__Impl {
 }
 impl min_allocator_std_pair_const_int__double__Impl
     for Ptr<min_allocator_std_pair_const_int__double__>
-{
-}
-pub trait min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<(Value<i32>, Value<f64>)> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<(Value<i32>, Value<f64>)> {
-        unimplemented!()
-    }
-    fn operator_inc_8(
-        &self,
-    ) -> Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
-    {
-        unimplemented!()
-    }
-    fn operator_post_inc_9(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_10(
-        &self,
-    ) -> Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
-    {
-        unimplemented!()
-    }
-    fn operator_post_dec_11(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
-    {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
-    {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<(Value<i32>, Value<f64>)> {
-        unimplemented!()
-    }
-}
-impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
 {
 }
 pub fn __cpp2rust_init_globals() {

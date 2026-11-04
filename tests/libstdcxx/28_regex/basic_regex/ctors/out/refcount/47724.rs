@@ -7,7 +7,12 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test01_0() {
-    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let s: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
+        std_basic_regex_char__std_regex_traits_char__::new_1(
+            { Ptr::<i8>::from_string_literal(b"^$") },
+            None,
+        ),
+    ));
 }
 pub fn main() {
     __cpp2rust_init_globals();

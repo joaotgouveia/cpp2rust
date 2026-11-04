@@ -17,7 +17,8 @@ fn main_0() -> i32 {
     let vec_: Value<Vec<i32>> = Rc::new(RefCell::new(
         (0..(4_usize) as usize).map(|_| 0_i32).collect::<Vec<_>>(),
     ));
-    let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(vec_.decay().begin()));
+    let it: Value<RandomAccessIterator<i32>> =
+        Rc::new(RefCell::new(CppRange::begin(&vec_.decay())));
     ({ foo_0((*it.borrow()).clone()) });
     return 0;
 }

@@ -8,20 +8,42 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test1_0() {
     let mut a : Ptr< i8  >  = Ptr::<i8 >::from_string_literal(b"15136306 8587749 2346244 16479026 15515802 9510553 16090340 14501685 13839944 10789678 11581259 9590790 5840316 5953700 13398366 8134459 16629731 6851902 15583892 1317475 4231148 9092691 5707268 2355175 0 0" )  ;
-    let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let os: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let e1 : Value<std_independent_bits_engine_std_discard_block_engine_std_subtract_with_carry_engine_unsigned_long__24__10__24___223__23___32__unsigned_int_ > = Rc::new(RefCell::new(std_independent_bits_engine_std_discard_block_engine_std_subtract_with_carry_engine_unsigned_long__24__10__24___223__23___32__unsigned_int_ :: new_1 ( { 0_u32  } , )  )) ;
+    let os: Value<std_basic_ostringstream_char__std_char_traits_char___std_allocator_char__> =
+        Rc::new(RefCell::new(
+            <std_basic_ostringstream_char__std_char_traits_char___std_allocator_char__>::default(),
+        ));
+    write!(os.as_pointer(), "{:}", (*e1.borrow_mut()),);
     assert!(
-        a.with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+        match (Rc::new(RefCell::new(({ (*os.borrow()).str_16() }))).as_pointer(),) {
+            (__tmp_0,) => {
+                a.with_c_str(|__s| {
+                    (*__tmp_0.upgrade().deref())
+                        [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        }
     );
 }
 pub fn test2_1() {
     let mut a : Ptr< i8  >  = Ptr::<i8 >::from_string_literal(b"10880375256626 126660097854724 33643165434010 78293780235492 179418984296008 96783156950859 238199764491708 34339434557790 155299155394531 29014415493780 209265474179052 263777435457028 0 0" )  ;
-    let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let os: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let e1 : Value<std_independent_bits_engine_std_discard_block_engine_std_subtract_with_carry_engine_unsigned_long__48__5__12___389__11___64__unsigned_long_long_ > = Rc::new(RefCell::new(std_independent_bits_engine_std_discard_block_engine_std_subtract_with_carry_engine_unsigned_long__48__5__12___389__11___64__unsigned_long_long_ :: new_1 ( { 0_u64  } , )  )) ;
+    let os: Value<std_basic_ostringstream_char__std_char_traits_char___std_allocator_char__> =
+        Rc::new(RefCell::new(
+            <std_basic_ostringstream_char__std_char_traits_char___std_allocator_char__>::default(),
+        ));
+    write!(os.as_pointer(), "{:}", (*e1.borrow_mut()),);
     assert!(
-        a.with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+        match (Rc::new(RefCell::new(({ (*os.borrow()).str_16() }))).as_pointer(),) {
+            (__tmp_1,) => {
+                a.with_c_str(|__s| {
+                    (*__tmp_1.upgrade().deref())
+                        [..(*__tmp_1.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        }
     );
 }
 pub fn main() {

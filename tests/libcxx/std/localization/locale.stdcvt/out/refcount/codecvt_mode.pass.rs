@@ -27,10 +27,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(((unimplemented!() as i32) == 4));
-    assert!(((unimplemented!() as i32) == 2));
-    assert!(((unimplemented!() as i32) == 1));
-    let mut e: () = unimplemented!();
+    assert!(((std_codecvt_mode_consume_header as i32) == 4));
+    assert!(((std_codecvt_mode_generate_header as i32) == 2));
+    assert!(((std_codecvt_mode_little_endian as i32) == 1));
+    let mut e: std_codecvt_mode = std_codecvt_mode_consume_header;
     assert!(((e as i32) == 4));
     return 0;
 }

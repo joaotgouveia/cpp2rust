@@ -36,6 +36,11 @@ impl Callable0<u32> for rand1_unsigned_int__0__10_ {
         })
     }
 }
+impl CppMove for rand1_unsigned_int__0__10_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for rand1_unsigned_int__0__10_ {
     fn default() -> Self {
         { rand1_unsigned_int__0__10_::new(None) }
@@ -69,6 +74,11 @@ impl Callable0<u32> for rand1_unsigned_int__0__100_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             rand1_unsigned_int__0__100_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for rand1_unsigned_int__0__100_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for rand1_unsigned_int__0__100_ {
@@ -106,6 +116,11 @@ impl Callable0<u32> for rand1_unsigned_int__0__4294967295_ {
         })
     }
 }
+impl CppMove for rand1_unsigned_int__0__4294967295_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct rand1_unsigned_int__2__3_ {
@@ -135,37 +150,74 @@ impl Callable0<u32> for rand1_unsigned_int__2__3_ {
         })
     }
 }
+impl CppMove for rand1_unsigned_int__2__3_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test1_0() {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 6958_()));
+    let e: Value<std_independent_bits_engine_rand1_unsigned_int__0__10___16__unsigned_int_> =
+        Rc::new(RefCell::new(
+            <std_independent_bits_engine_rand1_unsigned_int__0__10___16__unsigned_int_>::default(),
+        ));
+    assert!(({ (({ (*e.borrow_mut())() }) == 6958_u32) }));
 }
 pub fn test2_1() {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 66_()));
+    let e: Value<std_independent_bits_engine_rand1_unsigned_int__0__100___16__unsigned_int_> =
+        Rc::new(RefCell::new(
+            <std_independent_bits_engine_rand1_unsigned_int__0__100___16__unsigned_int_>::default(),
+        ));
+    assert!(({ (({ (*e.borrow_mut())() }) == 66_u32) }));
 }
 pub fn test3_2() {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 5_()));
+    let e: Value<
+        std_independent_bits_engine_rand1_unsigned_int__0__4294967295___32__unsigned_int_,
+    > = Rc::new(RefCell::new(
+        std_independent_bits_engine_rand1_unsigned_int__0__4294967295___32__unsigned_int_::new_1({
+            5_u32
+        }),
+    ));
+    assert!(({ (({ (*e.borrow_mut())() }) == 5_u32) }));
 }
 pub fn test4_3() {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 1_()));
+    let e: Value<std_independent_bits_engine_rand1_unsigned_int__0__4294967295___7__unsigned_int_> =
+        Rc::new(RefCell::new(
+            std_independent_bits_engine_rand1_unsigned_int__0__4294967295___7__unsigned_int_::new_1(
+                { 129_u32 },
+            ),
+        ));
+    assert!(({ (({ (*e.borrow_mut())() }) == 1_u32) }));
 }
 pub fn test5_4() {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 1_()));
+    let e: Value<std_independent_bits_engine_rand1_unsigned_int__2__3___1__unsigned_int_> =
+        Rc::new(RefCell::new(
+            std_independent_bits_engine_rand1_unsigned_int__2__3___1__unsigned_int_::new_1({
+                6_u32
+            }),
+        ));
+    assert!(({ (({ (*e.borrow_mut())() }) == 1_u32) }));
 }
 pub fn test6_5() {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 1365_()));
+    let e: Value<std_independent_bits_engine_rand1_unsigned_int__2__3___11__unsigned_int_> =
+        Rc::new(RefCell::new(
+            std_independent_bits_engine_rand1_unsigned_int__2__3___11__unsigned_int_::new_1({
+                6_u32
+            }),
+        ));
+    assert!(({ (({ (*e.borrow_mut())() }) == 1365_u32) }));
 }
 pub fn test7_6() {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 2863311530_u32));
+    let e: Value<std_independent_bits_engine_rand1_unsigned_int__2__3___32__unsigned_int_> =
+        Rc::new(RefCell::new(
+            std_independent_bits_engine_rand1_unsigned_int__2__3___32__unsigned_int_::new_1({
+                6_u32
+            }),
+        ));
+    assert!(({ (({ (*e.borrow_mut())() }) == 2863311530_u32) }));
 }
 pub fn test8_7() {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 16470362623952407241_u64));
+    let e : Value<std_independent_bits_engine_std_mersenne_twister_engine_unsigned_long__32__624__397__31__2567483615__11__4294967295__7__2636928640__15__4022730752__18__1812433253___64__unsigned_long_long_ > = Rc::new(RefCell::new(std_independent_bits_engine_std_mersenne_twister_engine_unsigned_long__32__624__397__31__2567483615__11__4294967295__7__2636928640__15__4022730752__18__1812433253___64__unsigned_long_long_ :: new_1 ( { 6_u64  } , )  )) ;
+    assert!(({ (({ (*e.borrow_mut())() }) == 16470362623952407241_u64) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -204,7 +256,9 @@ impl rand1_unsigned_int__0__100_Impl for Ptr<rand1_unsigned_int__0__100_> {
     fn operator_call(&self) -> u32 {
         let r: Value<u32> = Rc::new(RefCell::new((*self).with(|__s| __s.x_)));
         if ((*self).with(|__s| __s.x_) < 100_u32) {
-            field!((*self), x_).with_mut(|__v| __v.prefix_inc());
+            field!((*self), x_).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         } else {
             field!((*self), x_).write(0_u32);
         }
@@ -218,7 +272,9 @@ impl rand1_unsigned_int__0__10_Impl for Ptr<rand1_unsigned_int__0__10_> {
     fn operator_call(&self) -> u32 {
         let r: Value<u32> = Rc::new(RefCell::new((*self).with(|__s| __s.x_)));
         if ((*self).with(|__s| __s.x_) < 10_u32) {
-            field!((*self), x_).with_mut(|__v| __v.prefix_inc());
+            field!((*self), x_).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         } else {
             field!((*self), x_).write(0_u32);
         }
@@ -232,7 +288,9 @@ impl rand1_unsigned_int__0__4294967295_Impl for Ptr<rand1_unsigned_int__0__42949
     fn operator_call(&self) -> u32 {
         let r: Value<u32> = Rc::new(RefCell::new((*self).with(|__s| __s.x_)));
         if ((*self).with(|__s| __s.x_) < 4294967295_u32) {
-            field!((*self), x_).with_mut(|__v| __v.prefix_inc());
+            field!((*self), x_).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         } else {
             field!((*self), x_).write(0_u32);
         }
@@ -246,7 +304,9 @@ impl rand1_unsigned_int__2__3_Impl for Ptr<rand1_unsigned_int__2__3_> {
     fn operator_call(&self) -> u32 {
         let r: Value<u32> = Rc::new(RefCell::new((*self).with(|__s| __s.x_)));
         if ((*self).with(|__s| __s.x_) < 3_u32) {
-            field!((*self), x_).with_mut(|__v| __v.prefix_inc());
+            field!((*self), x_).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         } else {
             field!((*self), x_).write(2_u32);
         }

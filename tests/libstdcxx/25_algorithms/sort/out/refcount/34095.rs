@@ -12,12 +12,13 @@ pub fn test01_0() {
             .map(|_| Default::default())
             .collect::<Vec<_>>(),
     ));
-    {
-        let __first = v.decay().begin();
-        let __n = v.decay().end().iter_distance(&__first);
-        let mut __order: Vec<isize> = (0..__n).collect();
-        __order.sort_by(|&__x, &__y| cpp_cmp(&__first.iter_at(__x), &__first.iter_at(__y)));
-        reorder(__order, |__i| __first.iter_at(__i));
+    match ({ CppRange::begin(&v.decay()) },) {
+        (mut __tmp_0,) => {
+            let __n = CppRange::end(&v.decay()).iter_distance(&__tmp_0);
+            let mut __order: Vec<isize> = (0..__n).collect();
+            __order.sort_by(|&__x, &__y| cpp_cmp(&__tmp_0.iter_at(__x), &__tmp_0.iter_at(__y)));
+            reorder(__order, |__i| __tmp_0.iter_at(__i));
+        }
     };
 }
 pub fn main() {

@@ -19,6 +19,11 @@ const _: () = assert!(
 #[byte_size(1)]
 pub struct CstrFromInplace {}
 impl CstrFromInplace {}
+impl CppMove for CstrFromInplace {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     !(false),
     "!std::constructible_from<std::unexpected<CstrFromInplace>, std::in_place_t>"
@@ -26,6 +31,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Foo {}
+impl CppMove for Foo {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     !(false),
     "!std::constructible_from<std::unexpected<Foo>, int>"
@@ -69,27 +79,44 @@ impl Clone for Error {
         Error::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Error {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn test_0() -> bool {
     {
-        let mut e: Error = Error::new_1({ 5 });
-        let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (unimplemented!()).clone().i } == 5));
-        assert!((e.i == 5));
+        let e: Value<Error> = Rc::new(RefCell::new(Error::new_1({ 5 })));
+        let unex: Value<std_unexpected_Error_> =
+            Rc::new(RefCell::new(std_unexpected_Error_::new_1({
+                e.as_pointer()
+            })));
+        assert!(({ (({ (*unex.borrow()).error_9() }).with(|__s| __s.i) == 5) }));
+        assert!(({ ({ (*e.borrow()).i } == 5) }));
     }
     {
         let e: Value<Error> = Rc::new(RefCell::new(Error::new_1({ 5 })));
-        let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (unimplemented!()).clone().i } == 5));
-        assert!(({ (*e.borrow()).i } == 0));
+        let unex: Value<std_unexpected_Error_> =
+            Rc::new(RefCell::new(std_unexpected_Error_::new_2({
+                e.as_pointer()
+            })));
+        assert!(({ (({ (*unex.borrow()).error_9() }).with(|__s| __s.i) == 5) }));
+        assert!(({ ({ (*e.borrow()).i } == 0) }));
     }
     {
-        let mut e: Error = Error::new_1({ 5 });
-        let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let e: Value<Error> = Rc::new(RefCell::new(Error::new_1({ 5 })));
+        let unex: Value<std_unexpected_Error_> =
+            Rc::new(RefCell::new(std_unexpected_Error_::new_1({
+                e.as_pointer()
+            })));
     }
     {
-        let ue: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (unimplemented!()).clone().i } == 5));
-        assert!(({ (unimplemented!()).clone().j } == 6));
+        let ue: Value<std_unexpected_Bar_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<Bar_1> = Rc::new(RefCell::new(Bar_1::new({ 5 }, { 6 })));
+            std_unexpected_Bar_::new({ __tmp_0.as_pointer() })
+        }));
+        assert!(({ (({ (*ue.borrow()).error_9() }).with(|__s| __s.i) == 5) }));
+        assert!(({ (({ (*ue.borrow()).error_9() }).with(|__s| __s.j) == 6) }));
     }
     return true;
 }
@@ -104,6 +131,11 @@ pub struct Bar_1 {
 impl Bar_1 {
     pub fn new(mut ii: i32, mut jj: i32) -> Self {
         Self { i: ii, j: jj }
+    }
+}
+impl CppMove for Bar_1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn testException_2() {}

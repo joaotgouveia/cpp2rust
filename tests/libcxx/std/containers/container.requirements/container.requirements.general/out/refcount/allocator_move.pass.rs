@@ -30,6 +30,11 @@ pub struct test_allocator_statistics {
     #[offset(36)]
     pub converted: i32,
 }
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_statistics {
     fn default() -> Self {
         {
@@ -57,6 +62,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_2(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -137,6 +147,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -154,12 +169,19 @@ pub fn operator_eq_4(x: Ptr<test_allocator_int_>, y: Ptr<test_allocator_int_>) -
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_int__rebind_int_ {}
+impl CppMove for test_allocator_int__rebind_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_int__rebind_int_ptr_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_int__rebind_unsigned_long_ {}
+impl CppMove for test_allocator_int__rebind_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_int_ {
@@ -180,7 +202,9 @@ impl test_allocator_int_ {
         }));
         let this: Ptr<test_allocator_int_> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -198,8 +222,12 @@ impl test_allocator_int_ {
                     .is_null())
         );
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -211,8 +239,12 @@ impl test_allocator_int_ {
         }));
         let this: Ptr<test_allocator_int_> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         assert!(
             (({ a.with(|__s| __s.data_) } != { destructed_value_0.with(|rc| *rc.borrow()) })
@@ -239,6 +271,11 @@ impl Clone for test_allocator_int_ {
         test_allocator_int_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for test_allocator_int_ {
     fn default() -> Self {
         {
@@ -259,8 +296,12 @@ impl test_allocator_bool_ {
         }));
         let this: Ptr<test_allocator_bool_> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -271,9 +312,19 @@ pub fn operator_eq_5(x: Ptr<test_allocator_bool_>, y: Ptr<test_allocator_bool_>)
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_bool__rebind_unsigned_long_ {}
+impl CppMove for test_allocator_bool__rebind_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_bool__rebind_bool_ {}
+impl CppMove for test_allocator_bool__rebind_bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, Destructor)]
 #[cpp_from(test_allocator_unsigned_long_, new_1, ptr)]
 #[byte_size(16)]
@@ -295,7 +346,9 @@ impl test_allocator_bool_ {
         }));
         let this: Ptr<test_allocator_bool_> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -325,6 +378,11 @@ pub fn operator_eq_6(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_std_pair_const_int__int___rebind_std_pair_const_int__int__ {}
+impl CppMove for test_allocator_std_pair_const_int__int___rebind_std_pair_const_int__int__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_std_pair_const_int__int__ {
@@ -345,7 +403,9 @@ impl test_allocator_std_pair_const_int__int__ {
         }));
         let this: Ptr<test_allocator_std_pair_const_int__int__> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -363,8 +423,12 @@ impl test_allocator_std_pair_const_int__int__ {
                     .is_null())
         );
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -383,6 +447,11 @@ impl Clone for test_allocator_std_pair_const_int__int__ {
                 stats_: self.stats_.clone(),
             }));
         test_allocator_std_pair_const_int__int__::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for test_allocator_std_pair_const_int__int__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for test_allocator_std_pair_const_int__int__ {
@@ -405,8 +474,12 @@ impl test_allocator_unsigned_long_ {
         }));
         let this: Ptr<test_allocator_unsigned_long_> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -438,8 +511,12 @@ impl test_allocator_unsigned_long_ {
                     .is_null())
         );
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -451,8 +528,12 @@ impl test_allocator_unsigned_long_ {
         }));
         let this: Ptr<test_allocator_unsigned_long_> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         assert!(
             (({ a.with(|__s| __s.data_) } != { destructed_value_0.with(|rc| *rc.borrow()) })
@@ -475,6 +556,11 @@ impl Clone for test_allocator_unsigned_long_ {
         test_allocator_unsigned_long_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for test_allocator_unsigned_long_ {
     fn default() -> Self {
         {
@@ -495,8 +581,12 @@ impl test_allocator_int_ptr_ {
         }));
         let this: Ptr<test_allocator_int_ptr_> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -528,6 +618,11 @@ impl Default for test_allocator_int_ptr_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -549,33 +644,48 @@ pub fn test_7(expected_num_allocs: Option<i32>) {
         Rc::new(RefCell::new(<test_allocator_statistics>::default()));
     {
         ({ test_allocator_statisticsImpl::clear(&alloc_stats.as_pointer()) });
-        let v: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == expected_num_allocs));
+        let v: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let __tmp_0: Value<test_allocator_int_> =
+                Rc::new(RefCell::new(test_allocator_int_::new_1({ 42 }, { 101 }, {
+                    (alloc_stats.as_pointer())
+                })));
+            std_vector_int__test_allocator_int__::new_1({ __tmp_0.as_pointer() })
+        }));
+        assert!(({ ({ (*alloc_stats.borrow()).count } == expected_num_allocs) }));
         let mut num_stored_allocs: i32 = { (*alloc_stats.borrow()).count };
         {
-            let __tmp_0: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a: Ptr<test_allocator_int_> = __tmp_0.as_pointer();
-            assert!(({ (*alloc_stats.borrow()).count } == (1 + num_stored_allocs)));
+            let __tmp_1: Value<test_allocator_int_> = Rc::new(RefCell::new(
+                ({ ((*v.borrow()) as std__Vector_base_int__test_allocator_int__).get_allocator() }),
+            ));
+            let a: Ptr<test_allocator_int_> = __tmp_1.as_pointer();
+            assert!(({ ({ (*alloc_stats.borrow()).count } == (1 + num_stored_allocs)) }));
             assert!((({ test_allocator_int_Impl::get_data(&a,) }) == 42));
             assert!((({ test_allocator_int_Impl::get_id(&a,) }) == 101));
         }
-        assert!(({ (*alloc_stats.borrow()).count } == num_stored_allocs));
+        assert!(({ ({ (*alloc_stats.borrow()).count } == num_stored_allocs) }));
         ({ test_allocator_statisticsImpl::clear_ctor_counters(&alloc_stats.as_pointer()) });
-        let v2: Value<Vec<i32>> = Rc::new(RefCell::new(std::mem::take(&mut (*v.borrow_mut()))));
-        assert!(({ (*alloc_stats.borrow()).count } == (num_stored_allocs * 2)));
-        assert!(({ (*alloc_stats.borrow()).copied } == 0));
-        assert!(({ (*alloc_stats.borrow()).moved } == num_stored_allocs));
+        let v2: Value<Vec<i32>> =
+            Rc::new(RefCell::new(({ std::mem::take(&mut (*v.borrow_mut())) })));
+        assert!(({ ({ (*alloc_stats.borrow()).count } == (num_stored_allocs * 2)) }));
+        assert!(({ ({ (*alloc_stats.borrow()).copied } == 0) }));
+        assert!(({ ({ (*alloc_stats.borrow()).moved } == num_stored_allocs) }));
         {
-            let __tmp_1: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a1: Ptr<test_allocator_int_> = __tmp_1.as_pointer();
+            let __tmp_2: Value<test_allocator_int_> = Rc::new(RefCell::new(
+                ({ ((*v.borrow()) as std__Vector_base_int__test_allocator_int__).get_allocator() }),
+            ));
+            let a1: Ptr<test_allocator_int_> = __tmp_2.as_pointer();
             assert!(
                 ({ ({ test_allocator_int_Impl::get_id(&a1,) }) } == {
                     moved_value_1.with(|rc| *rc.borrow())
                 })
             );
             assert!((({ test_allocator_int_Impl::get_data(&a1,) }) == 42));
-            let __tmp_2: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a2: Ptr<test_allocator_int_> = __tmp_2.as_pointer();
+            let __tmp_3: Value<test_allocator_int_> = Rc::new(RefCell::new(
+                ({
+                    ((*v2.borrow()) as std__Vector_base_int__test_allocator_int__).get_allocator()
+                }),
+            ));
+            let a2: Ptr<test_allocator_int_> = __tmp_3.as_pointer();
             assert!((({ test_allocator_int_Impl::get_id(&a2,) }) == 101));
             assert!((({ test_allocator_int_Impl::get_data(&a2,) }) == 42));
             assert!(
@@ -594,33 +704,42 @@ pub fn test_8(expected_num_allocs: Option<i32>) {
         Rc::new(RefCell::new(<test_allocator_statistics>::default()));
     {
         ({ test_allocator_statisticsImpl::clear(&alloc_stats.as_pointer()) });
-        let mut v: Vec<bool> = unimplemented!();
-        assert!(({ (*alloc_stats.borrow()).count } == expected_num_allocs));
+        let v: Value<Vec<bool>> = Rc::new(RefCell::new({
+            let __tmp_4: Value<test_allocator_bool_> = Rc::new(RefCell::new(
+                test_allocator_bool_::new_2({ 42 }, { 101 }, { (alloc_stats.as_pointer()) }),
+            ));
+            std_vector_bool__test_allocator_bool__::new_1({ __tmp_4.as_pointer() })
+        }));
+        assert!(({ ({ (*alloc_stats.borrow()).count } == expected_num_allocs) }));
         let mut num_stored_allocs: i32 = { (*alloc_stats.borrow()).count };
         {
-            let __tmp_3: Value<test_allocator_bool_> = Rc::new(RefCell::new(unimplemented!()));
-            let a: Ptr<test_allocator_bool_> = __tmp_3.as_pointer();
-            assert!(({ (*alloc_stats.borrow()).count } == (1 + num_stored_allocs)));
+            let __tmp_5: Value<test_allocator_bool_> =
+                Rc::new(RefCell::new(({ (*v.borrow()).get_allocator() })));
+            let a: Ptr<test_allocator_bool_> = __tmp_5.as_pointer();
+            assert!(({ ({ (*alloc_stats.borrow()).count } == (1 + num_stored_allocs)) }));
             assert!((({ test_allocator_bool_Impl::get_data(&a,) }) == 42));
             assert!((({ test_allocator_bool_Impl::get_id(&a,) }) == 101));
         }
-        assert!(({ (*alloc_stats.borrow()).count } == num_stored_allocs));
+        assert!(({ ({ (*alloc_stats.borrow()).count } == num_stored_allocs) }));
         ({ test_allocator_statisticsImpl::clear_ctor_counters(&alloc_stats.as_pointer()) });
-        let mut v2: Vec<bool> = unimplemented!();
-        assert!(({ (*alloc_stats.borrow()).count } == (num_stored_allocs * 2)));
-        assert!(({ (*alloc_stats.borrow()).copied } == 0));
-        assert!(({ (*alloc_stats.borrow()).moved } == num_stored_allocs));
+        let v2: Value<Vec<bool>> =
+            Rc::new(RefCell::new(({ std::mem::take(&mut (*v.borrow_mut())) })));
+        assert!(({ ({ (*alloc_stats.borrow()).count } == (num_stored_allocs * 2)) }));
+        assert!(({ ({ (*alloc_stats.borrow()).copied } == 0) }));
+        assert!(({ ({ (*alloc_stats.borrow()).moved } == num_stored_allocs) }));
         {
-            let __tmp_4: Value<test_allocator_bool_> = Rc::new(RefCell::new(unimplemented!()));
-            let a1: Ptr<test_allocator_bool_> = __tmp_4.as_pointer();
+            let __tmp_6: Value<test_allocator_bool_> =
+                Rc::new(RefCell::new(({ (*v.borrow()).get_allocator() })));
+            let a1: Ptr<test_allocator_bool_> = __tmp_6.as_pointer();
             assert!(
                 ({ ({ test_allocator_bool_Impl::get_id(&a1,) }) } == {
                     moved_value_1.with(|rc| *rc.borrow())
                 })
             );
             assert!((({ test_allocator_bool_Impl::get_data(&a1,) }) == 42));
-            let __tmp_5: Value<test_allocator_bool_> = Rc::new(RefCell::new(unimplemented!()));
-            let a2: Ptr<test_allocator_bool_> = __tmp_5.as_pointer();
+            let __tmp_7: Value<test_allocator_bool_> =
+                Rc::new(RefCell::new(({ (*v2.borrow()).get_allocator() })));
+            let a2: Ptr<test_allocator_bool_> = __tmp_7.as_pointer();
             assert!((({ test_allocator_bool_Impl::get_id(&a2,) }) == 101));
             assert!((({ test_allocator_bool_Impl::get_data(&a2,) }) == 42));
             assert!(
@@ -633,39 +752,48 @@ pub fn test_8(expected_num_allocs: Option<i32>) {
         }
     }
 }
-pub fn test_9(expected_num_allocs: Option<i32>) {
-    let mut expected_num_allocs: i32 = expected_num_allocs.unwrap_or_else(|| 1);
+pub fn test_9(mut expected_num_allocs: i32) {
     let alloc_stats: Value<test_allocator_statistics> =
         Rc::new(RefCell::new(<test_allocator_statistics>::default()));
     {
         ({ test_allocator_statisticsImpl::clear(&alloc_stats.as_pointer()) });
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == expected_num_allocs));
+        let v: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let __tmp_8: Value<test_allocator_int_> =
+                Rc::new(RefCell::new(test_allocator_int_::new_1({ 42 }, { 101 }, {
+                    (alloc_stats.as_pointer())
+                })));
+            std_deque_int__test_allocator_int__::new_1({ __tmp_8.as_pointer() })
+        }));
+        assert!(({ ({ (*alloc_stats.borrow()).count } == expected_num_allocs) }));
         let mut num_stored_allocs: i32 = { (*alloc_stats.borrow()).count };
         {
-            let __tmp_6: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a: Ptr<test_allocator_int_> = __tmp_6.as_pointer();
-            assert!(({ (*alloc_stats.borrow()).count } == (1 + num_stored_allocs)));
+            let __tmp_9: Value<test_allocator_int_> =
+                Rc::new(RefCell::new(({ (*v.borrow()).get_allocator() })));
+            let a: Ptr<test_allocator_int_> = __tmp_9.as_pointer();
+            assert!(({ ({ (*alloc_stats.borrow()).count } == (1 + num_stored_allocs)) }));
             assert!((({ test_allocator_int_Impl::get_data(&a,) }) == 42));
             assert!((({ test_allocator_int_Impl::get_id(&a,) }) == 101));
         }
-        assert!(({ (*alloc_stats.borrow()).count } == num_stored_allocs));
+        assert!(({ ({ (*alloc_stats.borrow()).count } == num_stored_allocs) }));
         ({ test_allocator_statisticsImpl::clear_ctor_counters(&alloc_stats.as_pointer()) });
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == (num_stored_allocs * 2)));
-        assert!(({ (*alloc_stats.borrow()).copied } == 0));
-        assert!(({ (*alloc_stats.borrow()).moved } == num_stored_allocs));
+        let v2: Value<Vec<i32>> =
+            Rc::new(RefCell::new(({ std::mem::take(&mut (*v.borrow_mut())) })));
+        assert!(({ ({ (*alloc_stats.borrow()).count } == (num_stored_allocs * 2)) }));
+        assert!(({ ({ (*alloc_stats.borrow()).copied } == 0) }));
+        assert!(({ ({ (*alloc_stats.borrow()).moved } == num_stored_allocs) }));
         {
-            let __tmp_7: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a1: Ptr<test_allocator_int_> = __tmp_7.as_pointer();
+            let __tmp_10: Value<test_allocator_int_> =
+                Rc::new(RefCell::new(({ (*v.borrow()).get_allocator() })));
+            let a1: Ptr<test_allocator_int_> = __tmp_10.as_pointer();
             assert!(
                 ({ ({ test_allocator_int_Impl::get_id(&a1,) }) } == {
                     moved_value_1.with(|rc| *rc.borrow())
                 })
             );
             assert!((({ test_allocator_int_Impl::get_data(&a1,) }) == 42));
-            let __tmp_8: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a2: Ptr<test_allocator_int_> = __tmp_8.as_pointer();
+            let __tmp_11: Value<test_allocator_int_> =
+                Rc::new(RefCell::new(({ (*v2.borrow()).get_allocator() })));
+            let a2: Ptr<test_allocator_int_> = __tmp_11.as_pointer();
             assert!((({ test_allocator_int_Impl::get_id(&a2,) }) == 101));
             assert!((({ test_allocator_int_Impl::get_data(&a2,) }) == 42));
             assert!(
@@ -684,448 +812,48 @@ pub fn test_10(expected_num_allocs: Option<i32>) {
         Rc::new(RefCell::new(<test_allocator_statistics>::default()));
     {
         ({ test_allocator_statisticsImpl::clear(&alloc_stats.as_pointer()) });
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == expected_num_allocs));
+        let v: Value<Map<i32, (Value<i32>, Value<i32>)>> = Rc::new(RefCell::new({
+            let __tmp_12: Value<test_allocator_std_pair_const_int__int__> = Rc::new(RefCell::new(
+                test_allocator_std_pair_const_int__int__::new_1({ 42 }, { 101 }, {
+                    (alloc_stats.as_pointer())
+                }),
+            ));
+            std_map_int__int__std_less_int___test_allocator_std_pair_const_int__int___::new_1({
+                __tmp_12.as_pointer()
+            })
+        }));
+        assert!(({ ({ (*alloc_stats.borrow()).count } == expected_num_allocs) }));
         let mut num_stored_allocs: i32 = { (*alloc_stats.borrow()).count };
         {
-            let __tmp_9: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a: Ptr<test_allocator_int_> = __tmp_9.as_pointer();
-            assert!(({ (*alloc_stats.borrow()).count } == (1 + num_stored_allocs)));
-            assert!((({ test_allocator_int_Impl::get_data(&a,) }) == 42));
-            assert!((({ test_allocator_int_Impl::get_id(&a,) }) == 101));
-        }
-        assert!(({ (*alloc_stats.borrow()).count } == num_stored_allocs));
-        ({ test_allocator_statisticsImpl::clear_ctor_counters(&alloc_stats.as_pointer()) });
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == (num_stored_allocs * 2)));
-        assert!(({ (*alloc_stats.borrow()).copied } == 0));
-        assert!(({ (*alloc_stats.borrow()).moved } == num_stored_allocs));
-        {
-            let __tmp_10: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a1: Ptr<test_allocator_int_> = __tmp_10.as_pointer();
-            assert!(
-                ({ ({ test_allocator_int_Impl::get_id(&a1,) }) } == {
-                    moved_value_1.with(|rc| *rc.borrow())
-                })
-            );
-            assert!((({ test_allocator_int_Impl::get_data(&a1,) }) == 42));
-            let __tmp_11: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a2: Ptr<test_allocator_int_> = __tmp_11.as_pointer();
-            assert!((({ test_allocator_int_Impl::get_id(&a2,) }) == 101));
-            assert!((({ test_allocator_int_Impl::get_data(&a2,) }) == 42));
-            assert!(
-                ({
-                    let _x: Ptr<test_allocator_int_> = (a1).clone();
-                    let _y: Ptr<test_allocator_int_> = (a2).clone();
-                    operator_eq_4(_x, _y)
-                })
-            );
-        }
-    }
-}
-pub fn test_11(mut expected_num_allocs: i32) {
-    let alloc_stats: Value<test_allocator_statistics> =
-        Rc::new(RefCell::new(<test_allocator_statistics>::default()));
-    {
-        ({ test_allocator_statisticsImpl::clear(&alloc_stats.as_pointer()) });
-        let v: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == expected_num_allocs));
-        let mut num_stored_allocs: i32 = { (*alloc_stats.borrow()).count };
-        {
-            let __tmp_12: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a: Ptr<test_allocator_int_> = __tmp_12.as_pointer();
-            assert!(({ (*alloc_stats.borrow()).count } == (1 + num_stored_allocs)));
-            assert!((({ test_allocator_int_Impl::get_data(&a,) }) == 42));
-            assert!((({ test_allocator_int_Impl::get_id(&a,) }) == 101));
-        }
-        assert!(({ (*alloc_stats.borrow()).count } == num_stored_allocs));
-        ({ test_allocator_statisticsImpl::clear_ctor_counters(&alloc_stats.as_pointer()) });
-        let v2: Value<Vec<i32>> = Rc::new(RefCell::new(std::mem::take(&mut (*v.borrow_mut()))));
-        assert!(({ (*alloc_stats.borrow()).count } == (num_stored_allocs * 2)));
-        assert!(({ (*alloc_stats.borrow()).copied } == 0));
-        assert!(({ (*alloc_stats.borrow()).moved } == num_stored_allocs));
-        {
-            let __tmp_13: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a1: Ptr<test_allocator_int_> = __tmp_13.as_pointer();
-            assert!(
-                ({ ({ test_allocator_int_Impl::get_id(&a1,) }) } == {
-                    moved_value_1.with(|rc| *rc.borrow())
-                })
-            );
-            assert!((({ test_allocator_int_Impl::get_data(&a1,) }) == 42));
-            let __tmp_14: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a2: Ptr<test_allocator_int_> = __tmp_14.as_pointer();
-            assert!((({ test_allocator_int_Impl::get_id(&a2,) }) == 101));
-            assert!((({ test_allocator_int_Impl::get_data(&a2,) }) == 42));
-            assert!(
-                ({
-                    let _x: Ptr<test_allocator_int_> = (a1).clone();
-                    let _y: Ptr<test_allocator_int_> = (a2).clone();
-                    operator_eq_4(_x, _y)
-                })
-            );
-        }
-    }
-}
-pub fn test_12(expected_num_allocs: Option<i32>) {
-    let mut expected_num_allocs: i32 = expected_num_allocs.unwrap_or_else(|| 1);
-    let alloc_stats: Value<test_allocator_statistics> =
-        Rc::new(RefCell::new(<test_allocator_statistics>::default()));
-    {
-        ({ test_allocator_statisticsImpl::clear(&alloc_stats.as_pointer()) });
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == expected_num_allocs));
-        let mut num_stored_allocs: i32 = { (*alloc_stats.borrow()).count };
-        {
-            let __tmp_15: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a: Ptr<test_allocator_int_> = __tmp_15.as_pointer();
-            assert!(({ (*alloc_stats.borrow()).count } == (1 + num_stored_allocs)));
-            assert!((({ test_allocator_int_Impl::get_data(&a,) }) == 42));
-            assert!((({ test_allocator_int_Impl::get_id(&a,) }) == 101));
-        }
-        assert!(({ (*alloc_stats.borrow()).count } == num_stored_allocs));
-        ({ test_allocator_statisticsImpl::clear_ctor_counters(&alloc_stats.as_pointer()) });
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == (num_stored_allocs * 2)));
-        assert!(({ (*alloc_stats.borrow()).copied } == 0));
-        assert!(({ (*alloc_stats.borrow()).moved } == num_stored_allocs));
-        {
-            let __tmp_16: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a1: Ptr<test_allocator_int_> = __tmp_16.as_pointer();
-            assert!(
-                ({ ({ test_allocator_int_Impl::get_id(&a1,) }) } == {
-                    moved_value_1.with(|rc| *rc.borrow())
-                })
-            );
-            assert!((({ test_allocator_int_Impl::get_data(&a1,) }) == 42));
-            let __tmp_17: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a2: Ptr<test_allocator_int_> = __tmp_17.as_pointer();
-            assert!((({ test_allocator_int_Impl::get_id(&a2,) }) == 101));
-            assert!((({ test_allocator_int_Impl::get_data(&a2,) }) == 42));
-            assert!(
-                ({
-                    let _x: Ptr<test_allocator_int_> = (a1).clone();
-                    let _y: Ptr<test_allocator_int_> = (a2).clone();
-                    operator_eq_4(_x, _y)
-                })
-            );
-        }
-    }
-}
-pub fn test_13(expected_num_allocs: Option<i32>) {
-    let mut expected_num_allocs: i32 = expected_num_allocs.unwrap_or_else(|| 1);
-    let alloc_stats: Value<test_allocator_statistics> =
-        Rc::new(RefCell::new(<test_allocator_statistics>::default()));
-    {
-        ({ test_allocator_statisticsImpl::clear(&alloc_stats.as_pointer()) });
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == expected_num_allocs));
-        let mut num_stored_allocs: i32 = { (*alloc_stats.borrow()).count };
-        {
-            let __tmp_18: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a: Ptr<test_allocator_int_> = __tmp_18.as_pointer();
-            assert!(({ (*alloc_stats.borrow()).count } == (1 + num_stored_allocs)));
-            assert!((({ test_allocator_int_Impl::get_data(&a,) }) == 42));
-            assert!((({ test_allocator_int_Impl::get_id(&a,) }) == 101));
-        }
-        assert!(({ (*alloc_stats.borrow()).count } == num_stored_allocs));
-        ({ test_allocator_statisticsImpl::clear_ctor_counters(&alloc_stats.as_pointer()) });
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == (num_stored_allocs * 2)));
-        assert!(({ (*alloc_stats.borrow()).copied } == 0));
-        assert!(({ (*alloc_stats.borrow()).moved } == num_stored_allocs));
-        {
-            let __tmp_19: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a1: Ptr<test_allocator_int_> = __tmp_19.as_pointer();
-            assert!(
-                ({ ({ test_allocator_int_Impl::get_id(&a1,) }) } == {
-                    moved_value_1.with(|rc| *rc.borrow())
-                })
-            );
-            assert!((({ test_allocator_int_Impl::get_data(&a1,) }) == 42));
-            let __tmp_20: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a2: Ptr<test_allocator_int_> = __tmp_20.as_pointer();
-            assert!((({ test_allocator_int_Impl::get_id(&a2,) }) == 101));
-            assert!((({ test_allocator_int_Impl::get_data(&a2,) }) == 42));
-            assert!(
-                ({
-                    let _x: Ptr<test_allocator_int_> = (a1).clone();
-                    let _y: Ptr<test_allocator_int_> = (a2).clone();
-                    operator_eq_4(_x, _y)
-                })
-            );
-        }
-    }
-}
-pub fn test_14(expected_num_allocs: Option<i32>) {
-    let mut expected_num_allocs: i32 = expected_num_allocs.unwrap_or_else(|| 1);
-    let alloc_stats: Value<test_allocator_statistics> =
-        Rc::new(RefCell::new(<test_allocator_statistics>::default()));
-    {
-        ({ test_allocator_statisticsImpl::clear(&alloc_stats.as_pointer()) });
-        let v: Value<Map<i32, (Value<i32>, Value<i32>)>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == expected_num_allocs));
-        let mut num_stored_allocs: i32 = { (*alloc_stats.borrow()).count };
-        {
-            let __tmp_21: Value<test_allocator_std_pair_const_int__int__> =
-                Rc::new(RefCell::new(unimplemented!()));
-            let a: Ptr<test_allocator_std_pair_const_int__int__> = __tmp_21.as_pointer();
-            assert!(({ (*alloc_stats.borrow()).count } == (1 + num_stored_allocs)));
+            let __tmp_13: Value<test_allocator_std_pair_const_int__int__> =
+                Rc::new(RefCell::new(({ (*v.borrow()).get_allocator() })));
+            let a: Ptr<test_allocator_std_pair_const_int__int__> = __tmp_13.as_pointer();
+            assert!(({ ({ (*alloc_stats.borrow()).count } == (1 + num_stored_allocs)) }));
             assert!((({ test_allocator_std_pair_const_int__int__Impl::get_data(&a,) }) == 42));
             assert!((({ test_allocator_std_pair_const_int__int__Impl::get_id(&a,) }) == 101));
         }
-        assert!(({ (*alloc_stats.borrow()).count } == num_stored_allocs));
+        assert!(({ ({ (*alloc_stats.borrow()).count } == num_stored_allocs) }));
         ({ test_allocator_statisticsImpl::clear_ctor_counters(&alloc_stats.as_pointer()) });
         let v2: Value<Map<i32, (Value<i32>, Value<i32>)>> = Rc::new(RefCell::new(
             v.as_pointer()
                 .with_mut(|__m: &mut Map<i32, (Value<i32>, Value<i32>)>| std::mem::take(__m)),
         ));
-        assert!(({ (*alloc_stats.borrow()).count } == (num_stored_allocs * 2)));
-        assert!(({ (*alloc_stats.borrow()).copied } == 0));
-        assert!(({ (*alloc_stats.borrow()).moved } == num_stored_allocs));
+        assert!(({ ({ (*alloc_stats.borrow()).count } == (num_stored_allocs * 2)) }));
+        assert!(({ ({ (*alloc_stats.borrow()).copied } == 0) }));
+        assert!(({ ({ (*alloc_stats.borrow()).moved } == num_stored_allocs) }));
         {
-            let __tmp_22: Value<test_allocator_std_pair_const_int__int__> =
-                Rc::new(RefCell::new(unimplemented!()));
-            let a1: Ptr<test_allocator_std_pair_const_int__int__> = __tmp_22.as_pointer();
+            let __tmp_14: Value<test_allocator_std_pair_const_int__int__> =
+                Rc::new(RefCell::new(({ (*v.borrow()).get_allocator() })));
+            let a1: Ptr<test_allocator_std_pair_const_int__int__> = __tmp_14.as_pointer();
             assert!(
                 ({ ({ test_allocator_std_pair_const_int__int__Impl::get_id(&a1,) }) } == {
                     moved_value_1.with(|rc| *rc.borrow())
                 })
             );
             assert!((({ test_allocator_std_pair_const_int__int__Impl::get_data(&a1,) }) == 42));
-            let __tmp_23: Value<test_allocator_std_pair_const_int__int__> =
-                Rc::new(RefCell::new(unimplemented!()));
-            let a2: Ptr<test_allocator_std_pair_const_int__int__> = __tmp_23.as_pointer();
-            assert!((({ test_allocator_std_pair_const_int__int__Impl::get_id(&a2,) }) == 101));
-            assert!((({ test_allocator_std_pair_const_int__int__Impl::get_data(&a2,) }) == 42));
-            assert!(
-                ({
-                    let _x: Ptr<test_allocator_std_pair_const_int__int__> = (a1).clone();
-                    let _y: Ptr<test_allocator_std_pair_const_int__int__> = (a2).clone();
-                    operator_eq_6(_x, _y)
-                })
-            );
-        }
-    }
-}
-pub fn test_15(expected_num_allocs: Option<i32>) {
-    let mut expected_num_allocs: i32 = expected_num_allocs.unwrap_or_else(|| 1);
-    let alloc_stats: Value<test_allocator_statistics> =
-        Rc::new(RefCell::new(<test_allocator_statistics>::default()));
-    {
-        ({ test_allocator_statisticsImpl::clear(&alloc_stats.as_pointer()) });
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == expected_num_allocs));
-        let mut num_stored_allocs: i32 = { (*alloc_stats.borrow()).count };
-        {
-            let __tmp_24: Value<test_allocator_std_pair_const_int__int__> =
-                Rc::new(RefCell::new(unimplemented!()));
-            let a: Ptr<test_allocator_std_pair_const_int__int__> = __tmp_24.as_pointer();
-            assert!(({ (*alloc_stats.borrow()).count } == (1 + num_stored_allocs)));
-            assert!((({ test_allocator_std_pair_const_int__int__Impl::get_data(&a,) }) == 42));
-            assert!((({ test_allocator_std_pair_const_int__int__Impl::get_id(&a,) }) == 101));
-        }
-        assert!(({ (*alloc_stats.borrow()).count } == num_stored_allocs));
-        ({ test_allocator_statisticsImpl::clear_ctor_counters(&alloc_stats.as_pointer()) });
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == (num_stored_allocs * 2)));
-        assert!(({ (*alloc_stats.borrow()).copied } == 0));
-        assert!(({ (*alloc_stats.borrow()).moved } == num_stored_allocs));
-        {
-            let __tmp_25: Value<test_allocator_std_pair_const_int__int__> =
-                Rc::new(RefCell::new(unimplemented!()));
-            let a1: Ptr<test_allocator_std_pair_const_int__int__> = __tmp_25.as_pointer();
-            assert!(
-                ({ ({ test_allocator_std_pair_const_int__int__Impl::get_id(&a1,) }) } == {
-                    moved_value_1.with(|rc| *rc.borrow())
-                })
-            );
-            assert!((({ test_allocator_std_pair_const_int__int__Impl::get_data(&a1,) }) == 42));
-            let __tmp_26: Value<test_allocator_std_pair_const_int__int__> =
-                Rc::new(RefCell::new(unimplemented!()));
-            let a2: Ptr<test_allocator_std_pair_const_int__int__> = __tmp_26.as_pointer();
-            assert!((({ test_allocator_std_pair_const_int__int__Impl::get_id(&a2,) }) == 101));
-            assert!((({ test_allocator_std_pair_const_int__int__Impl::get_data(&a2,) }) == 42));
-            assert!(
-                ({
-                    let _x: Ptr<test_allocator_std_pair_const_int__int__> = (a1).clone();
-                    let _y: Ptr<test_allocator_std_pair_const_int__int__> = (a2).clone();
-                    operator_eq_6(_x, _y)
-                })
-            );
-        }
-    }
-}
-pub fn test_16(mut expected_num_allocs: i32) {
-    let alloc_stats: Value<test_allocator_statistics> =
-        Rc::new(RefCell::new(<test_allocator_statistics>::default()));
-    {
-        ({ test_allocator_statisticsImpl::clear(&alloc_stats.as_pointer()) });
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == expected_num_allocs));
-        let mut num_stored_allocs: i32 = { (*alloc_stats.borrow()).count };
-        {
-            let __tmp_27: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a: Ptr<test_allocator_int_> = __tmp_27.as_pointer();
-            assert!(({ (*alloc_stats.borrow()).count } == (1 + num_stored_allocs)));
-            assert!((({ test_allocator_int_Impl::get_data(&a,) }) == 42));
-            assert!((({ test_allocator_int_Impl::get_id(&a,) }) == 101));
-        }
-        assert!(({ (*alloc_stats.borrow()).count } == num_stored_allocs));
-        ({ test_allocator_statisticsImpl::clear_ctor_counters(&alloc_stats.as_pointer()) });
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == (num_stored_allocs * 2)));
-        assert!(({ (*alloc_stats.borrow()).copied } == 0));
-        assert!(({ (*alloc_stats.borrow()).moved } == num_stored_allocs));
-        {
-            let __tmp_28: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a1: Ptr<test_allocator_int_> = __tmp_28.as_pointer();
-            assert!(
-                ({ ({ test_allocator_int_Impl::get_id(&a1,) }) } == {
-                    moved_value_1.with(|rc| *rc.borrow())
-                })
-            );
-            assert!((({ test_allocator_int_Impl::get_data(&a1,) }) == 42));
-            let __tmp_29: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a2: Ptr<test_allocator_int_> = __tmp_29.as_pointer();
-            assert!((({ test_allocator_int_Impl::get_id(&a2,) }) == 101));
-            assert!((({ test_allocator_int_Impl::get_data(&a2,) }) == 42));
-            assert!(
-                ({
-                    let _x: Ptr<test_allocator_int_> = (a1).clone();
-                    let _y: Ptr<test_allocator_int_> = (a2).clone();
-                    operator_eq_4(_x, _y)
-                })
-            );
-        }
-    }
-}
-pub fn test_17(mut expected_num_allocs: i32) {
-    let alloc_stats: Value<test_allocator_statistics> =
-        Rc::new(RefCell::new(<test_allocator_statistics>::default()));
-    {
-        ({ test_allocator_statisticsImpl::clear(&alloc_stats.as_pointer()) });
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == expected_num_allocs));
-        let mut num_stored_allocs: i32 = { (*alloc_stats.borrow()).count };
-        {
-            let __tmp_30: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a: Ptr<test_allocator_int_> = __tmp_30.as_pointer();
-            assert!(({ (*alloc_stats.borrow()).count } == (1 + num_stored_allocs)));
-            assert!((({ test_allocator_int_Impl::get_data(&a,) }) == 42));
-            assert!((({ test_allocator_int_Impl::get_id(&a,) }) == 101));
-        }
-        assert!(({ (*alloc_stats.borrow()).count } == num_stored_allocs));
-        ({ test_allocator_statisticsImpl::clear_ctor_counters(&alloc_stats.as_pointer()) });
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == (num_stored_allocs * 2)));
-        assert!(({ (*alloc_stats.borrow()).copied } == 0));
-        assert!(({ (*alloc_stats.borrow()).moved } == num_stored_allocs));
-        {
-            let __tmp_31: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a1: Ptr<test_allocator_int_> = __tmp_31.as_pointer();
-            assert!(
-                ({ ({ test_allocator_int_Impl::get_id(&a1,) }) } == {
-                    moved_value_1.with(|rc| *rc.borrow())
-                })
-            );
-            assert!((({ test_allocator_int_Impl::get_data(&a1,) }) == 42));
-            let __tmp_32: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a2: Ptr<test_allocator_int_> = __tmp_32.as_pointer();
-            assert!((({ test_allocator_int_Impl::get_id(&a2,) }) == 101));
-            assert!((({ test_allocator_int_Impl::get_data(&a2,) }) == 42));
-            assert!(
-                ({
-                    let _x: Ptr<test_allocator_int_> = (a1).clone();
-                    let _y: Ptr<test_allocator_int_> = (a2).clone();
-                    operator_eq_4(_x, _y)
-                })
-            );
-        }
-    }
-}
-pub fn test_18(mut expected_num_allocs: i32) {
-    let alloc_stats: Value<test_allocator_statistics> =
-        Rc::new(RefCell::new(<test_allocator_statistics>::default()));
-    {
-        ({ test_allocator_statisticsImpl::clear(&alloc_stats.as_pointer()) });
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == expected_num_allocs));
-        let mut num_stored_allocs: i32 = { (*alloc_stats.borrow()).count };
-        {
-            let __tmp_33: Value<test_allocator_std_pair_const_int__int__> =
-                Rc::new(RefCell::new(unimplemented!()));
-            let a: Ptr<test_allocator_std_pair_const_int__int__> = __tmp_33.as_pointer();
-            assert!(({ (*alloc_stats.borrow()).count } == (1 + num_stored_allocs)));
-            assert!((({ test_allocator_std_pair_const_int__int__Impl::get_data(&a,) }) == 42));
-            assert!((({ test_allocator_std_pair_const_int__int__Impl::get_id(&a,) }) == 101));
-        }
-        assert!(({ (*alloc_stats.borrow()).count } == num_stored_allocs));
-        ({ test_allocator_statisticsImpl::clear_ctor_counters(&alloc_stats.as_pointer()) });
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == (num_stored_allocs * 2)));
-        assert!(({ (*alloc_stats.borrow()).copied } == 0));
-        assert!(({ (*alloc_stats.borrow()).moved } == num_stored_allocs));
-        {
-            let __tmp_34: Value<test_allocator_std_pair_const_int__int__> =
-                Rc::new(RefCell::new(unimplemented!()));
-            let a1: Ptr<test_allocator_std_pair_const_int__int__> = __tmp_34.as_pointer();
-            assert!(
-                ({ ({ test_allocator_std_pair_const_int__int__Impl::get_id(&a1,) }) } == {
-                    moved_value_1.with(|rc| *rc.borrow())
-                })
-            );
-            assert!((({ test_allocator_std_pair_const_int__int__Impl::get_data(&a1,) }) == 42));
-            let __tmp_35: Value<test_allocator_std_pair_const_int__int__> =
-                Rc::new(RefCell::new(unimplemented!()));
-            let a2: Ptr<test_allocator_std_pair_const_int__int__> = __tmp_35.as_pointer();
-            assert!((({ test_allocator_std_pair_const_int__int__Impl::get_id(&a2,) }) == 101));
-            assert!((({ test_allocator_std_pair_const_int__int__Impl::get_data(&a2,) }) == 42));
-            assert!(
-                ({
-                    let _x: Ptr<test_allocator_std_pair_const_int__int__> = (a1).clone();
-                    let _y: Ptr<test_allocator_std_pair_const_int__int__> = (a2).clone();
-                    operator_eq_6(_x, _y)
-                })
-            );
-        }
-    }
-}
-pub fn test_19(mut expected_num_allocs: i32) {
-    let alloc_stats: Value<test_allocator_statistics> =
-        Rc::new(RefCell::new(<test_allocator_statistics>::default()));
-    {
-        ({ test_allocator_statisticsImpl::clear(&alloc_stats.as_pointer()) });
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == expected_num_allocs));
-        let mut num_stored_allocs: i32 = { (*alloc_stats.borrow()).count };
-        {
-            let __tmp_36: Value<test_allocator_std_pair_const_int__int__> =
-                Rc::new(RefCell::new(unimplemented!()));
-            let a: Ptr<test_allocator_std_pair_const_int__int__> = __tmp_36.as_pointer();
-            assert!(({ (*alloc_stats.borrow()).count } == (1 + num_stored_allocs)));
-            assert!((({ test_allocator_std_pair_const_int__int__Impl::get_data(&a,) }) == 42));
-            assert!((({ test_allocator_std_pair_const_int__int__Impl::get_id(&a,) }) == 101));
-        }
-        assert!(({ (*alloc_stats.borrow()).count } == num_stored_allocs));
-        ({ test_allocator_statisticsImpl::clear_ctor_counters(&alloc_stats.as_pointer()) });
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*alloc_stats.borrow()).count } == (num_stored_allocs * 2)));
-        assert!(({ (*alloc_stats.borrow()).copied } == 0));
-        assert!(({ (*alloc_stats.borrow()).moved } == num_stored_allocs));
-        {
-            let __tmp_37: Value<test_allocator_std_pair_const_int__int__> =
-                Rc::new(RefCell::new(unimplemented!()));
-            let a1: Ptr<test_allocator_std_pair_const_int__int__> = __tmp_37.as_pointer();
-            assert!(
-                ({ ({ test_allocator_std_pair_const_int__int__Impl::get_id(&a1,) }) } == {
-                    moved_value_1.with(|rc| *rc.borrow())
-                })
-            );
-            assert!((({ test_allocator_std_pair_const_int__int__Impl::get_data(&a1,) }) == 42));
-            let __tmp_38: Value<test_allocator_std_pair_const_int__int__> =
-                Rc::new(RefCell::new(unimplemented!()));
-            let a2: Ptr<test_allocator_std_pair_const_int__int__> = __tmp_38.as_pointer();
+            let __tmp_15: Value<test_allocator_std_pair_const_int__int__> =
+                Rc::new(RefCell::new(({ (*v2.borrow()).get_allocator() })));
+            let a2: Ptr<test_allocator_std_pair_const_int__int__> = __tmp_15.as_pointer();
             assert!((({ test_allocator_std_pair_const_int__int__Impl::get_id(&a2,) }) == 101));
             assert!((({ test_allocator_std_pair_const_int__int__Impl::get_data(&a2,) }) == 42));
             assert!(
@@ -1161,15 +889,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         ({ test_7(None) });
         ({ test_8(None) });
-        ({ test_9(None) });
-        ({ test_10(None) });
+        ({ test_11(None) });
+        ({ test_12(None) });
         let mut stored_allocators: i32 = 1;
-        ({ test_11(stored_allocators) });
+        ({ test_9(stored_allocators) });
     }
     {
-        ({ test_12(None) });
         ({ test_13(None) });
         ({ test_14(None) });
+        ({ test_10(None) });
         ({ test_15(None) });
     }
     {
@@ -1195,10 +923,10 @@ impl Tag_XImpl for Ptr<Tag_X> {
 }
 pub trait test_allocator_bool_Impl {
     fn destructor(&self);
-    fn address_11(&self, x: ()) -> Ptr<bool> {
+    fn address_11(&self, x: Ptr<bool>) -> Ptr<bool> {
         unimplemented!()
     }
-    fn address_12(&self, x: ()) -> Ptr<bool> {
+    fn address_12(&self, x: Ptr<bool>) -> Ptr<bool> {
         unimplemented!()
     }
     fn allocate(&self, mut n: u32, mut _a1: AnyPtr) -> Ptr<bool> {
@@ -1221,7 +949,9 @@ impl test_allocator_bool_Impl for Ptr<test_allocator_bool_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_0.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_0.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_0.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_0.with(|rc| *rc.borrow()));
@@ -1235,10 +965,10 @@ impl test_allocator_bool_Impl for Ptr<test_allocator_bool_> {
 }
 pub trait test_allocator_int_Impl {
     fn destructor(&self);
-    fn address_11(&self, x: ()) -> Ptr<i32> {
+    fn address_11(&self, x: Ptr<i32>) -> Ptr<i32> {
         unimplemented!()
     }
-    fn address_12(&self, x: ()) -> Ptr<i32> {
+    fn address_12(&self, x: Ptr<i32>) -> Ptr<i32> {
         unimplemented!()
     }
     fn allocate(&self, n: u32, _a1: Option<AnyPtr>) -> Ptr<i32>;
@@ -1255,7 +985,9 @@ impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_0.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_0.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_0.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_0.with(|rc| *rc.borrow()));
@@ -1275,10 +1007,12 @@ impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
             }) {
                 std::process::abort();
             }
-            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
-                .with_mut(|__v| __v.prefix_inc());
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -1286,13 +1020,14 @@ impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
                     .wrapping_add(n)) as i32
             });
         }
-        return unimplemented!();
+        return ({ <std_allocator_int_>::default().allocate((n as usize)) });
     }
     fn deallocate(&self, mut p: Ptr<i32>, mut s: u32) {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_0.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -1300,12 +1035,13 @@ impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
                     .wrapping_sub(s)) as i32
             });
         }
-        unimplemented!();
+        ({ <std_allocator_int_>::default().deallocate((p).clone(), (s as usize)) });
     }
     fn destroy(&self, mut p: Ptr<i32>) {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), destroy_count)
-                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), destroy_count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         };
     }
     fn get_data(&self) -> i32 {
@@ -1317,10 +1053,10 @@ impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
 }
 pub trait test_allocator_int_ptr_Impl {
     fn destructor(&self);
-    fn address_11(&self, x: ()) -> Ptr<Ptr<i32>> {
+    fn address_11(&self, x: Ptr<Ptr<i32>>) -> Ptr<Ptr<i32>> {
         unimplemented!()
     }
-    fn address_12(&self, x: ()) -> Ptr<Ptr<i32>> {
+    fn address_12(&self, x: Ptr<Ptr<i32>>) -> Ptr<Ptr<i32>> {
         unimplemented!()
     }
     fn allocate(&self, n: u32, _a1: Option<AnyPtr>) -> Ptr<Ptr<i32>>;
@@ -1343,7 +1079,9 @@ impl test_allocator_int_ptr_Impl for Ptr<test_allocator_int_ptr_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_0.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_0.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_0.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_0.with(|rc| *rc.borrow()));
@@ -1363,10 +1101,12 @@ impl test_allocator_int_ptr_Impl for Ptr<test_allocator_int_ptr_> {
             }) {
                 std::process::abort();
             }
-            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
-                .with_mut(|__v| __v.prefix_inc());
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -1374,13 +1114,14 @@ impl test_allocator_int_ptr_Impl for Ptr<test_allocator_int_ptr_> {
                     .wrapping_add(n)) as i32
             });
         }
-        return unimplemented!();
+        return ({ <std_allocator_int_ptr_>::default().allocate((n as usize)) });
     }
     fn deallocate(&self, mut p: Ptr<Ptr<i32>>, mut s: u32) {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_0.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -1388,7 +1129,7 @@ impl test_allocator_int_ptr_Impl for Ptr<test_allocator_int_ptr_> {
                     .wrapping_sub(s)) as i32
             });
         }
-        unimplemented!();
+        ({ <std_allocator_int_ptr_>::default().deallocate((p).clone(), (s as usize)) });
     }
 }
 pub trait test_allocator_statisticsImpl {
@@ -1419,10 +1160,10 @@ impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
 }
 pub trait test_allocator_std_pair_const_int__int__Impl {
     fn destructor(&self);
-    fn address_11(&self, x: ()) -> Ptr<(Value<i32>, Value<i32>)> {
+    fn address_11(&self, x: Ptr<(Value<i32>, Value<i32>)>) -> Ptr<(Value<i32>, Value<i32>)> {
         unimplemented!()
     }
-    fn address_12(&self, x: ()) -> Ptr<(Value<i32>, Value<i32>)> {
+    fn address_12(&self, x: Ptr<(Value<i32>, Value<i32>)>) -> Ptr<(Value<i32>, Value<i32>)> {
         unimplemented!()
     }
     fn allocate(&self, mut n: u32, mut _a1: AnyPtr) -> Ptr<(Value<i32>, Value<i32>)> {
@@ -1447,7 +1188,9 @@ impl test_allocator_std_pair_const_int__int__Impl
         assert!(((*self).with(|__s| __s.data_) != destructed_value_0.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_0.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_0.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_0.with(|rc| *rc.borrow()));
@@ -1461,10 +1204,10 @@ impl test_allocator_std_pair_const_int__int__Impl
 }
 pub trait test_allocator_unsigned_long_Impl {
     fn destructor(&self);
-    fn address_11(&self, x: ()) -> Ptr<u64> {
+    fn address_11(&self, x: Ptr<u64>) -> Ptr<u64> {
         unimplemented!()
     }
-    fn address_12(&self, x: ()) -> Ptr<u64> {
+    fn address_12(&self, x: Ptr<u64>) -> Ptr<u64> {
         unimplemented!()
     }
     fn allocate(&self, mut n: u32, mut _a1: AnyPtr) -> Ptr<u64> {
@@ -1489,7 +1232,9 @@ impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_0.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_0.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_0.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_0.with(|rc| *rc.borrow()));
@@ -1497,8 +1242,9 @@ impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
     fn deallocate(&self, mut p: Ptr<u64>, mut s: u32) {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_0.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -1506,7 +1252,11 @@ impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
                     .wrapping_sub(s)) as i32
             });
         }
-        unimplemented!();
+        ({
+            let ___p: Ptr<u64> = (p).clone();
+            let ___n: usize = (s as usize);
+            <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
+        });
     }
 }
 pub trait test_allocator_void_Impl {

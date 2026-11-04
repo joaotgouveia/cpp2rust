@@ -7,42 +7,77 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0(mut s: Ptr<i8>, mut len: usize) {
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as usize) == len));
+    let sv: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1({ (s).clone() }, {
+            (len as u64)
+        }),
+    ));
+    assert!(({ ((({ (*sv.borrow()).length() }) as usize) == len) }));
     let mut i: usize = 0_usize;
     'loop_: while (i < len) {
-        assert!(({ ((unimplemented!().read()) as i32) } == { ((elem!(s, i).read()) as i32) }));
-        assert!(({ (unimplemented!()) } == { s.offset((i) as isize) }));
+        assert!(
+            ({
+                ({ ((({ (*sv.borrow()).at((i as u64)) }).read()) as i32) } == {
+                    ((elem!(s, i).read()) as i32)
+                })
+            })
+        );
+        assert!(({ ({ ({ (*sv.borrow()).at((i as u64),) }) } == { s.offset((i) as isize) }) }));
         i.prefix_inc();
     }
 }
 pub fn test_1(mut s: Ptr<i32>, mut len: usize) {
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as usize) == len));
+    let sv: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_1({ (s).clone() }, {
+                (len as u64)
+            }),
+        ));
+    assert!(({ ((({ (*sv.borrow()).length() }) as usize) == len) }));
     let mut i: usize = 0_usize;
     'loop_: while (i < len) {
-        assert!(({ ((unimplemented!().read()) as i32) } == { (elem!(s, i).read()) }));
-        assert!(({ (unimplemented!()) } == { s.offset((i) as isize) }));
+        assert!(
+            ({ ({ (({ (*sv.borrow()).at((i as u64),) }).read()) } == { (elem!(s, i).read()) }) })
+        );
+        assert!(({ ({ ({ (*sv.borrow()).at((i as u64),) }) } == { s.offset((i) as isize) }) }));
         i.prefix_inc();
     }
 }
 pub fn test_2(mut s: Ptr<u16>, mut len: usize) {
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as usize) == len));
+    let sv: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char16_t__std_char_traits_char16_t__::new_1({ (s).clone() }, {
+                (len as u64)
+            }),
+        ));
+    assert!(({ ((({ (*sv.borrow()).length() }) as usize) == len) }));
     let mut i: usize = 0_usize;
     'loop_: while (i < len) {
-        assert!(({ ((unimplemented!().read()) as i32) } == { ((elem!(s, i).read()) as i32) }));
-        assert!(({ (unimplemented!()) } == { s.offset((i) as isize) }));
+        assert!(
+            ({
+                ({ ((({ (*sv.borrow()).at((i as u64)) }).read()) as i32) } == {
+                    ((elem!(s, i).read()) as i32)
+                })
+            })
+        );
+        assert!(({ ({ ({ (*sv.borrow()).at((i as u64),) }) } == { s.offset((i) as isize) }) }));
         i.prefix_inc();
     }
 }
 pub fn test_3(mut s: Ptr<u32>, mut len: usize) {
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as usize) == len));
+    let sv: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char32_t__std_char_traits_char32_t__::new_1({ (s).clone() }, {
+                (len as u64)
+            }),
+        ));
+    assert!(({ ((({ (*sv.borrow()).length() }) as usize) == len) }));
     let mut i: usize = 0_usize;
     'loop_: while (i < len) {
-        assert!(({ ((unimplemented!().read()) as u32) } == { (elem!(s, i).read()) }));
-        assert!(({ (unimplemented!()) } == { s.offset((i) as isize) }));
+        assert!(
+            ({ ({ (({ (*sv.borrow()).at((i as u64),) }).read()) } == { (elem!(s, i).read()) }) })
+        );
+        assert!(({ ({ ({ (*sv.borrow()).at((i as u64),) }) } == { s.offset((i) as isize) }) }));
         i.prefix_inc();
     }
 }
@@ -111,7 +146,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         )
     });
     {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_basic_string_view_char__std_char_traits_char__::new_1(
+                { Ptr::<i8>::from_string_literal(b"ABC") },
+                { 2_u64 },
+            ),
+        ));
         const _: () = assert!(true, "sv.length() == 2");;
         const _: () = assert!(true, "sv.at(0) == \'A\'");;
         const _: () = assert!(true, "sv.at(1) == \'B\'");;

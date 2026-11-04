@@ -26,6 +26,11 @@ impl CppEq for Key {
             && !(KeyImpl::operator_lt(__rhs, __lhs.clone()))
     }
 }
+impl CppMove for Key {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0() -> bool {
     {
         let m_empty: Value<Map<Key, (Value<Key>, Value<i32>)>> = Rc::new(RefCell::new(Map::new()));
@@ -42,17 +47,16 @@ pub fn test_0() -> bool {
         )
         .write(42);
         let it: Value<BidirectionalIterator<(Value<Key>, Value<i32>)>> = Rc::new(RefCell::new(
-            ({
-                let __tmp_1: Value<Key> = Rc::new(RefCell::new({
-                    let __tmp_2: Value<i32> = Rc::new(RefCell::new(0));
-                    Key::new({ __tmp_2.as_pointer() })
-                }));
-                m_empty
+            match (Rc::new(RefCell::new({
+                let __tmp_2: Value<i32> = Rc::new(RefCell::new(0));
+                Key::new({ __tmp_2.as_pointer() })
+            }))
+            .as_pointer(),)
+            {
+                (__tmp_1,) => m_empty
                     .as_pointer()
-                    .with(|__m: &Map<Key, (Value<Key>, Value<i32>)>| {
-                        __m.find(&__tmp_1.as_pointer())
-                    })
-            }),
+                    .with(|__m: &Map<Key, (Value<Key>, Value<i32>)>| __m.find(&(__tmp_1).clone())),
+            },
         ));
         assert!(
             (*it.borrow())
@@ -60,15 +64,16 @@ pub fn test_0() -> bool {
                     .as_pointer()
                     .with(|__m: &Map<Key, (Value<Key>, Value<i32>)>| __m.end())
         );
-        (*it.borrow_mut()) = ({
-            let __tmp_3: Value<Key> = Rc::new(RefCell::new({
-                let __tmp_4: Value<i32> = Rc::new(RefCell::new(0));
-                Key::new({ __tmp_4.as_pointer() })
-            }));
-            m_contains
+        (*it.borrow_mut()) = match (Rc::new(RefCell::new({
+            let __tmp_4: Value<i32> = Rc::new(RefCell::new(0));
+            Key::new({ __tmp_4.as_pointer() })
+        }))
+        .as_pointer(),)
+        {
+            (__tmp_3,) => m_contains
                 .as_pointer()
-                .with(|__m: &Map<Key, (Value<Key>, Value<i32>)>| __m.find(&__tmp_3.as_pointer()))
-        });
+                .with(|__m: &Map<Key, (Value<Key>, Value<i32>)>| __m.find(&(__tmp_3).clone())),
+        };
         assert!(
             (*it.borrow())
                 != m_contains
@@ -81,28 +86,52 @@ pub fn test_0() -> bool {
         let result: Value<(
             Value<BidirectionalIterator<(Value<Key>, Value<i32>)>>,
             Value<bool>,
-        )> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*(*result.borrow()).1.borrow()) as bool));
+        )> = Rc::new(RefCell::new(
+            ({
+                let ___x: Value<(Value<Key>, Value<i32>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new({
+                        let __tmp_5: Value<i32> = Rc::new(RefCell::new(0));
+                        Key::new({ __tmp_5.as_pointer() })
+                    })),
+                    Rc::new(RefCell::new(42)),
+                )));
+                (*map.borrow()).insert_55_struct_std_pair_struct_Key__int_(___x.as_pointer())
+            }),
+        ));
+        assert!(({ ((*(*result.borrow()).1.borrow()) as bool) }));
         assert!(
-            ((*(*(*(*result.borrow()).0.borrow())
-                .iter_deref()
-                .upgrade()
-                .deref())
-            .1
-            .borrow())
-                == 42)
+            ({
+                ((*(*(*(*result.borrow()).0.borrow())
+                    .iter_deref()
+                    .upgrade()
+                    .deref())
+                .1
+                .borrow())
+                    == 42)
+            })
         );
         let result2: Value<(
             Value<BidirectionalIterator<(Value<Key>, Value<i32>)>>,
             Value<bool>,
-        )> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(!(*(*result2.borrow()).1.borrow()));
+        )> = Rc::new(RefCell::new(
+            ({
+                let ___x: Value<(Value<Key>, Value<i32>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new({
+                        let __tmp_6: Value<i32> = Rc::new(RefCell::new(0));
+                        Key::new({ __tmp_6.as_pointer() })
+                    })),
+                    Rc::new(RefCell::new(43)),
+                )));
+                (*map.borrow()).insert_55_struct_std_pair_struct_Key__int_(___x.as_pointer())
+            }),
+        ));
+        assert!(({ !(*(*result2.borrow()).1.borrow()) }));
         assert!(
             ((Map::subscript_move(
                 map.as_pointer(),
                 Rc::new(RefCell::new({
-                    let __tmp_5: Value<i32> = Rc::new(RefCell::new(0));
-                    Key::new({ __tmp_5.as_pointer() })
+                    let __tmp_7: Value<i32> = Rc::new(RefCell::new(0));
+                    Key::new({ __tmp_7.as_pointer() })
                 }))
                 .as_pointer(),
                 |__k| cpp_move!(__k)

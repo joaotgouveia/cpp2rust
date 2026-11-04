@@ -25,6 +25,11 @@ impl CppEq for Rep {
         RepImpl::operator_eq_4(__lhs, __rhs.clone())
     }
 }
+impl CppMove for Rep {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Rep {
     fn default() -> Self {
         { Rep::new_1() }
@@ -33,49 +38,35 @@ impl Default for Rep {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NotARep {}
+impl CppMove for NotARep {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(i64, to_i64_2)]
 #[byte_size(1)]
 pub struct RepConstConvertibleLWG3050 {}
+impl CppMove for RepConstConvertibleLWG3050 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(i32, to_i32_2)]
 #[byte_size(1)]
 pub struct NotValueConvertible {}
-pub fn check_0(mut r: i32) {
-    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == r));
+impl CppMove for NotValueConvertible {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
-pub fn check_1(mut r: i32) {
-    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == r));
-}
-pub fn check_2(r: Rep) {
-    let r: Value<Rep> = Rc::new(RefCell::new(r));
-    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(
-        ({
-            RepImpl::operator_eq_4(
-                &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
-                r.as_pointer(),
-            )
-        })
-    );
-}
-pub fn check_3(mut r: f64) {
-    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == r));
-}
-pub fn check_4(r: NotValueConvertible) {
-    let r: Value<NotValueConvertible> = Rc::new(RefCell::new(r));
-    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == ({ NotValueConvertibleImpl::to_i32_2(&r.as_pointer(),) })));
-}
-pub fn test_5() -> bool {
-    ({ check_0(5) });
+pub fn test_0() -> bool {
     ({ check_1(5) });
-    ({ check_2(Rep::new_2({ 3 })) });
-    ({ check_3(5.5_f64) });
-    ({ check_4(<NotValueConvertible>::default()) });
+    ({ check_2(5) });
+    ({ check_3(Rep::new_2({ 3 })) });
+    ({ check_4(5.5_f64) });
+    ({ check_5(<NotValueConvertible>::default()) });
     return true;
 }
 pub fn main() {
@@ -98,10 +89,13 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_5() });
+    ({ test_0() });
     const _: () = assert!(true, "test()");;
     {
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let d: Value<std_chrono_duration_int__std_ratio_1__1__> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(5));
+            std_chrono_duration_int__std_ratio_1__1__::new_1({ __tmp_0.as_pointer() })
+        }));
         const _: () = assert!(true, "d.count() == 5");;
     }
     return 0;

@@ -7,373 +7,164 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0(
-    mut bad: i8,
+    bad: i8,
     args_1: (Value<i8>, Value<i32>),
     args_2: (Value<i8>, Value<i32>),
     args_3: (Value<i8>, Value<i32>),
     args_4: (Value<i8>, Value<i32>),
 ) -> bool {
+    let bad: Value<i8> = Rc::new(RefCell::new(bad));
     let args_1: Value<(Value<i8>, Value<i32>)> = Rc::new(RefCell::new(args_1));
     let args_2: Value<(Value<i8>, Value<i32>)> = Rc::new(RefCell::new(args_2));
     let args_3: Value<(Value<i8>, Value<i32>)> = Rc::new(RefCell::new(args_3));
     let args_4: Value<(Value<i8>, Value<i32>)> = Rc::new(RefCell::new(args_4));
     let map: Value<Map<i8, (Value<i8>, Value<i32>)>> = Rc::new(RefCell::new(Map::new()));
     let pairs: Value<Box<[(Value<i8>, Value<i32>)]>> = Rc::new(RefCell::new(Box::new([
-        {
-            let __a0 = (*args_1.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-            )
-        },
-        {
-            let __a0 = (*args_2.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-            )
-        },
-        {
-            let __a0 = (*args_3.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-            )
-        },
-        {
-            let __a0 = (*args_4.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-            )
-        },
+        (
+            Rc::new(RefCell::new(((*args_1.borrow()).0.as_pointer().read()))),
+            Rc::new(RefCell::new(((*args_1.borrow()).1.as_pointer().read()))),
+        ),
+        (
+            Rc::new(RefCell::new(((*args_2.borrow()).0.as_pointer().read()))),
+            Rc::new(RefCell::new(((*args_2.borrow()).1.as_pointer().read()))),
+        ),
+        (
+            Rc::new(RefCell::new(((*args_3.borrow()).0.as_pointer().read()))),
+            Rc::new(RefCell::new(((*args_3.borrow()).1.as_pointer().read()))),
+        ),
+        (
+            Rc::new(RefCell::new(((*args_4.borrow()).0.as_pointer().read()))),
+            Rc::new(RefCell::new(((*args_4.borrow()).1.as_pointer().read()))),
+        ),
     ])));
     'loop_: for p in IterRange::new(
         (pairs.as_pointer() as Ptr<(Value<i8>, Value<i32>)>),
         (pairs.as_pointer() as Ptr<(Value<i8>, Value<i32>)>).offset((4_i64) as isize),
     ) {
         let p: Ptr<(Value<i8>, Value<i32>)> = (p).clone();
-        unimplemented!();
+        ({
+            let ___x: Ptr<(Value<i8>, Value<i32>)> = (p).clone();
+            (*map.borrow()).insert_55_struct_std_pair_char__int__ref(___x)
+        });
     }
     'loop_: for p in IterRange::new(
         (pairs.as_pointer() as Ptr<(Value<i8>, Value<i32>)>),
         (pairs.as_pointer() as Ptr<(Value<i8>, Value<i32>)>).offset((4_i64) as isize),
     ) {
         let p: Ptr<(Value<i8>, Value<i32>)> = (p).clone();
-        assert!(unimplemented!());
+        assert!(({ ({ (*map.borrow()).contains((*p.upgrade().deref()).0.as_pointer(),) }) }));
     }
-    assert!(!(unimplemented!()));
+    assert!(({ !({ (*map.borrow()).contains(bad.as_pointer(),) }) }));
     return true;
 }
 pub fn test_1(
-    mut bad: i8,
+    bad: i8,
     args_1: (Value<i8>, Value<i8>),
     args_2: (Value<i8>, Value<i8>),
     args_3: (Value<i8>, Value<i8>),
     args_4: (Value<i8>, Value<i8>),
 ) -> bool {
+    let bad: Value<i8> = Rc::new(RefCell::new(bad));
     let args_1: Value<(Value<i8>, Value<i8>)> = Rc::new(RefCell::new(args_1));
     let args_2: Value<(Value<i8>, Value<i8>)> = Rc::new(RefCell::new(args_2));
     let args_3: Value<(Value<i8>, Value<i8>)> = Rc::new(RefCell::new(args_3));
     let args_4: Value<(Value<i8>, Value<i8>)> = Rc::new(RefCell::new(args_4));
     let map: Value<Map<i8, (Value<i8>, Value<i8>)>> = Rc::new(RefCell::new(Map::new()));
     let pairs: Value<Box<[(Value<i8>, Value<i8>)]>> = Rc::new(RefCell::new(Box::new([
-        {
-            let __a0 = (*args_1.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-            )
-        },
-        {
-            let __a0 = (*args_2.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-            )
-        },
-        {
-            let __a0 = (*args_3.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-            )
-        },
-        {
-            let __a0 = (*args_4.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-            )
-        },
+        (
+            Rc::new(RefCell::new(((*args_1.borrow()).0.as_pointer().read()))),
+            Rc::new(RefCell::new(((*args_1.borrow()).1.as_pointer().read()))),
+        ),
+        (
+            Rc::new(RefCell::new(((*args_2.borrow()).0.as_pointer().read()))),
+            Rc::new(RefCell::new(((*args_2.borrow()).1.as_pointer().read()))),
+        ),
+        (
+            Rc::new(RefCell::new(((*args_3.borrow()).0.as_pointer().read()))),
+            Rc::new(RefCell::new(((*args_3.borrow()).1.as_pointer().read()))),
+        ),
+        (
+            Rc::new(RefCell::new(((*args_4.borrow()).0.as_pointer().read()))),
+            Rc::new(RefCell::new(((*args_4.borrow()).1.as_pointer().read()))),
+        ),
     ])));
     'loop_: for p in IterRange::new(
         (pairs.as_pointer() as Ptr<(Value<i8>, Value<i8>)>),
         (pairs.as_pointer() as Ptr<(Value<i8>, Value<i8>)>).offset((4_i64) as isize),
     ) {
         let p: Ptr<(Value<i8>, Value<i8>)> = (p).clone();
-        unimplemented!();
+        ({
+            let ___x: Ptr<(Value<i8>, Value<i8>)> = (p).clone();
+            (*map.borrow()).insert_55_struct_std_pair_char__char__ref(___x)
+        });
     }
     'loop_: for p in IterRange::new(
         (pairs.as_pointer() as Ptr<(Value<i8>, Value<i8>)>),
         (pairs.as_pointer() as Ptr<(Value<i8>, Value<i8>)>).offset((4_i64) as isize),
     ) {
         let p: Ptr<(Value<i8>, Value<i8>)> = (p).clone();
-        assert!(unimplemented!());
+        assert!(({ ({ (*map.borrow()).contains((*p.upgrade().deref()).0.as_pointer(),) }) }));
     }
-    assert!(!(unimplemented!()));
+    assert!(({ !({ (*map.borrow()).contains(bad.as_pointer(),) }) }));
     return true;
 }
 pub fn test_2(
-    mut bad: i32,
+    bad: i32,
     args_1: (Value<i32>, Value<E>),
     args_2: (Value<i32>, Value<E>),
     args_3: (Value<i32>, Value<E>),
     args_4: (Value<i32>, Value<E>),
 ) -> bool {
+    let bad: Value<i32> = Rc::new(RefCell::new(bad));
     let args_1: Value<(Value<i32>, Value<E>)> = Rc::new(RefCell::new(args_1));
     let args_2: Value<(Value<i32>, Value<E>)> = Rc::new(RefCell::new(args_2));
     let args_3: Value<(Value<i32>, Value<E>)> = Rc::new(RefCell::new(args_3));
     let args_4: Value<(Value<i32>, Value<E>)> = Rc::new(RefCell::new(args_4));
     let map: Value<Map<i32, (Value<i32>, Value<E>)>> = Rc::new(RefCell::new(Map::new()));
     let pairs: Value<Box<[(Value<i32>, Value<E>)]>> = Rc::new(RefCell::new(Box::new([
-        {
-            let __a0 = (*args_1.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new(<E as CppFrom<E>>::cpp_from(
-                    __a0.1.as_pointer(),
-                ))),
-            )
-        },
-        {
-            let __a0 = (*args_2.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new(<E as CppFrom<E>>::cpp_from(
-                    __a0.1.as_pointer(),
-                ))),
-            )
-        },
-        {
-            let __a0 = (*args_3.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new(<E as CppFrom<E>>::cpp_from(
-                    __a0.1.as_pointer(),
-                ))),
-            )
-        },
-        {
-            let __a0 = (*args_4.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new(<E as CppFrom<E>>::cpp_from(
-                    __a0.1.as_pointer(),
-                ))),
-            )
-        },
+        (
+            Rc::new(RefCell::new(((*args_1.borrow()).0.as_pointer().read()))),
+            Rc::new(RefCell::new(<E as CppFrom<E>>::cpp_from(
+                (*args_1.borrow()).1.as_pointer(),
+            ))),
+        ),
+        (
+            Rc::new(RefCell::new(((*args_2.borrow()).0.as_pointer().read()))),
+            Rc::new(RefCell::new(<E as CppFrom<E>>::cpp_from(
+                (*args_2.borrow()).1.as_pointer(),
+            ))),
+        ),
+        (
+            Rc::new(RefCell::new(((*args_3.borrow()).0.as_pointer().read()))),
+            Rc::new(RefCell::new(<E as CppFrom<E>>::cpp_from(
+                (*args_3.borrow()).1.as_pointer(),
+            ))),
+        ),
+        (
+            Rc::new(RefCell::new(((*args_4.borrow()).0.as_pointer().read()))),
+            Rc::new(RefCell::new(<E as CppFrom<E>>::cpp_from(
+                (*args_4.borrow()).1.as_pointer(),
+            ))),
+        ),
     ])));
     'loop_: for p in IterRange::new(
         (pairs.as_pointer() as Ptr<(Value<i32>, Value<E>)>),
         (pairs.as_pointer() as Ptr<(Value<i32>, Value<E>)>).offset((4_i64) as isize),
     ) {
         let p: Ptr<(Value<i32>, Value<E>)> = (p).clone();
-        unimplemented!();
+        ({
+            let ___x: Ptr<(Value<i32>, Value<E>)> = (p).clone();
+            (*map.borrow()).insert_55_struct_std_pair_int__struct_E__ref(___x)
+        });
     }
     'loop_: for p in IterRange::new(
         (pairs.as_pointer() as Ptr<(Value<i32>, Value<E>)>),
         (pairs.as_pointer() as Ptr<(Value<i32>, Value<E>)>).offset((4_i64) as isize),
     ) {
         let p: Ptr<(Value<i32>, Value<E>)> = (p).clone();
-        assert!(unimplemented!());
+        assert!(({ ({ (*map.borrow()).contains((*p.upgrade().deref()).0.as_pointer(),) }) }));
     }
-    assert!(!(unimplemented!()));
-    return true;
-}
-pub fn test_3(
-    mut bad: i8,
-    args_1: (Value<i8>, Value<i32>),
-    args_2: (Value<i8>, Value<i32>),
-    args_3: (Value<i8>, Value<i32>),
-    args_4: (Value<i8>, Value<i32>),
-) -> bool {
-    let args_1: Value<(Value<i8>, Value<i32>)> = Rc::new(RefCell::new(args_1));
-    let args_2: Value<(Value<i8>, Value<i32>)> = Rc::new(RefCell::new(args_2));
-    let args_3: Value<(Value<i8>, Value<i32>)> = Rc::new(RefCell::new(args_3));
-    let args_4: Value<(Value<i8>, Value<i32>)> = Rc::new(RefCell::new(args_4));
-    let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let pairs: Value<Box<[(Value<i8>, Value<i32>)]>> = Rc::new(RefCell::new(Box::new([
-        {
-            let __a0 = (*args_1.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-            )
-        },
-        {
-            let __a0 = (*args_2.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-            )
-        },
-        {
-            let __a0 = (*args_3.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-            )
-        },
-        {
-            let __a0 = (*args_4.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-            )
-        },
-    ])));
-    'loop_: for p in IterRange::new(
-        (pairs.as_pointer() as Ptr<(Value<i8>, Value<i32>)>),
-        (pairs.as_pointer() as Ptr<(Value<i8>, Value<i32>)>).offset((4_i64) as isize),
-    ) {
-        let p: Ptr<(Value<i8>, Value<i32>)> = (p).clone();
-        unimplemented!();
-    }
-    'loop_: for p in IterRange::new(
-        (pairs.as_pointer() as Ptr<(Value<i8>, Value<i32>)>),
-        (pairs.as_pointer() as Ptr<(Value<i8>, Value<i32>)>).offset((4_i64) as isize),
-    ) {
-        let p: Ptr<(Value<i8>, Value<i32>)> = (p).clone();
-        assert!(unimplemented!());
-    }
-    assert!(!(unimplemented!()));
-    return true;
-}
-pub fn test_4(
-    mut bad: i8,
-    args_1: (Value<i8>, Value<i8>),
-    args_2: (Value<i8>, Value<i8>),
-    args_3: (Value<i8>, Value<i8>),
-    args_4: (Value<i8>, Value<i8>),
-) -> bool {
-    let args_1: Value<(Value<i8>, Value<i8>)> = Rc::new(RefCell::new(args_1));
-    let args_2: Value<(Value<i8>, Value<i8>)> = Rc::new(RefCell::new(args_2));
-    let args_3: Value<(Value<i8>, Value<i8>)> = Rc::new(RefCell::new(args_3));
-    let args_4: Value<(Value<i8>, Value<i8>)> = Rc::new(RefCell::new(args_4));
-    let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let pairs: Value<Box<[(Value<i8>, Value<i8>)]>> = Rc::new(RefCell::new(Box::new([
-        {
-            let __a0 = (*args_1.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-            )
-        },
-        {
-            let __a0 = (*args_2.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-            )
-        },
-        {
-            let __a0 = (*args_3.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-            )
-        },
-        {
-            let __a0 = (*args_4.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-            )
-        },
-    ])));
-    'loop_: for p in IterRange::new(
-        (pairs.as_pointer() as Ptr<(Value<i8>, Value<i8>)>),
-        (pairs.as_pointer() as Ptr<(Value<i8>, Value<i8>)>).offset((4_i64) as isize),
-    ) {
-        let p: Ptr<(Value<i8>, Value<i8>)> = (p).clone();
-        unimplemented!();
-    }
-    'loop_: for p in IterRange::new(
-        (pairs.as_pointer() as Ptr<(Value<i8>, Value<i8>)>),
-        (pairs.as_pointer() as Ptr<(Value<i8>, Value<i8>)>).offset((4_i64) as isize),
-    ) {
-        let p: Ptr<(Value<i8>, Value<i8>)> = (p).clone();
-        assert!(unimplemented!());
-    }
-    assert!(!(unimplemented!()));
-    return true;
-}
-pub fn test_5(
-    mut bad: i32,
-    args_1: (Value<i32>, Value<E>),
-    args_2: (Value<i32>, Value<E>),
-    args_3: (Value<i32>, Value<E>),
-    args_4: (Value<i32>, Value<E>),
-) -> bool {
-    let args_1: Value<(Value<i32>, Value<E>)> = Rc::new(RefCell::new(args_1));
-    let args_2: Value<(Value<i32>, Value<E>)> = Rc::new(RefCell::new(args_2));
-    let args_3: Value<(Value<i32>, Value<E>)> = Rc::new(RefCell::new(args_3));
-    let args_4: Value<(Value<i32>, Value<E>)> = Rc::new(RefCell::new(args_4));
-    let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let pairs: Value<Box<[(Value<i32>, Value<E>)]>> = Rc::new(RefCell::new(Box::new([
-        {
-            let __a0 = (*args_1.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new(<E as CppFrom<E>>::cpp_from(
-                    __a0.1.as_pointer(),
-                ))),
-            )
-        },
-        {
-            let __a0 = (*args_2.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new(<E as CppFrom<E>>::cpp_from(
-                    __a0.1.as_pointer(),
-                ))),
-            )
-        },
-        {
-            let __a0 = (*args_3.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new(<E as CppFrom<E>>::cpp_from(
-                    __a0.1.as_pointer(),
-                ))),
-            )
-        },
-        {
-            let __a0 = (*args_4.borrow()).clone();
-            (
-                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-                Rc::new(RefCell::new(<E as CppFrom<E>>::cpp_from(
-                    __a0.1.as_pointer(),
-                ))),
-            )
-        },
-    ])));
-    'loop_: for p in IterRange::new(
-        (pairs.as_pointer() as Ptr<(Value<i32>, Value<E>)>),
-        (pairs.as_pointer() as Ptr<(Value<i32>, Value<E>)>).offset((4_i64) as isize),
-    ) {
-        let p: Ptr<(Value<i32>, Value<E>)> = (p).clone();
-        unimplemented!();
-    }
-    'loop_: for p in IterRange::new(
-        (pairs.as_pointer() as Ptr<(Value<i32>, Value<E>)>),
-        (pairs.as_pointer() as Ptr<(Value<i32>, Value<E>)>).offset((4_i64) as isize),
-    ) {
-        let p: Ptr<(Value<i32>, Value<E>)> = (p).clone();
-        assert!(unimplemented!());
-    }
-    assert!(!(unimplemented!()));
+    assert!(({ !({ (*map.borrow()).contains(bad.as_pointer(),) }) }));
     return true;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -386,6 +177,11 @@ pub struct E {
     #[offset(16)]
     pub c: i8,
 }
+impl CppMove for E {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for E {
     fn default() -> Self {
         {
@@ -397,7 +193,7 @@ impl Default for E {
         }
     }
 }
-pub fn test_6() -> bool {
+pub fn test_3() -> bool {
     {
         ({
             let _args_1: (Value<i8>, Value<i32>) = (
@@ -475,7 +271,7 @@ pub fn test_6() -> bool {
                 Rc::new(RefCell::new(('d' as i8))),
                 Rc::new(RefCell::new(13)),
             );
-            test_3(('e' as i8), _args_1, _args_2, _args_3, _args_4)
+            test_4(('e' as i8), _args_1, _args_2, _args_3, _args_4)
         });
         ({
             let _args_1: (Value<i8>, Value<i8>) = (
@@ -494,7 +290,7 @@ pub fn test_6() -> bool {
                 Rc::new(RefCell::new(('d' as i8))),
                 Rc::new(RefCell::new(('b' as i8))),
             );
-            test_4(('e' as i8), _args_1, _args_2, _args_3, _args_4)
+            test_5(('e' as i8), _args_1, _args_2, _args_3, _args_4)
         });
         ({
             let _args_1: (Value<i32>, Value<E>) = (
@@ -513,7 +309,7 @@ pub fn test_6() -> bool {
                 Rc::new(RefCell::new(4)),
                 Rc::new(RefCell::new(<E>::default())),
             );
-            test_5(-1_i32, _args_1, _args_2, _args_3, _args_4)
+            test_6(-1_i32, _args_1, _args_2, _args_3, _args_4)
         });
     }
     return true;
@@ -538,7 +334,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_6() });
+    ({ test_3() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

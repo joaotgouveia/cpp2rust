@@ -18,6 +18,11 @@ pub struct S {
     #[offset(0)]
     pub v: i32,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(8)]
 pub struct Outer {
@@ -26,6 +31,11 @@ pub struct Outer {
     pub inner: S,
     #[offset(4)]
     pub w: i32,
+}
+impl CppMove for Outer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn make_2(mut v: i32) -> S {
     return S { v: v };
@@ -119,8 +129,11 @@ fn main_0() -> i32 {
         let _dtor_s = ScopedDestructor::new(&s, |__p| __p.destructor());
         (*s.borrow_mut()) = ({ make_2(13) });
         assert!(
-            ((destroyed_0.with(|rc| *rc.borrow()) == 1) && (last_1.with(|rc| *rc.borrow()) == 13))
-                && ({ (*s.borrow()).v } == 13)
+            ({
+                ((destroyed_0.with(|rc| *rc.borrow()) == 1)
+                    && (last_1.with(|rc| *rc.borrow()) == 13))
+                    && ({ (*s.borrow()).v } == 13)
+            })
         );
     }
     assert!((destroyed_0.with(|rc| *rc.borrow()) == 2) && (last_1.with(|rc| *rc.borrow()) == 13));

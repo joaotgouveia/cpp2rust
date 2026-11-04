@@ -27,10 +27,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let mut index: i32 = unimplemented!();
+    let mut index: i32 = ({ std_ios_base::xalloc() });
     let mut i: i32 = 0;
     'loop_: while (i < 10000) {
-        assert!((unimplemented!() == index.prefix_inc()));
+        assert!((({ std_ios_base::xalloc() }) == (*index.prefix_inc())));
         i.prefix_inc();
     }
     return 0;

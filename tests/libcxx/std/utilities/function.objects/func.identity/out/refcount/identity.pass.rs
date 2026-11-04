@@ -30,11 +30,11 @@ pub fn operator_cmp_6(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> std::cmp::Order
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -66,6 +66,11 @@ impl CppEq for MoveOnly {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for MoveOnly {
     fn default() -> Self {
         { MoveOnly::new(None) }
@@ -95,11 +100,11 @@ pub fn operator_cmp_13(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> 
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -129,6 +134,11 @@ impl CppEq for TrivialMoveOnly {
         operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for TrivialMoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for TrivialMoveOnly {
     fn default() -> Self {
         { TrivialMoveOnly::new(None) }
@@ -140,20 +150,37 @@ const _: () = assert!(
     "requires {{ typename std::identity::is_transparent; }}"
 );
 pub fn test_14() -> bool {
-    let id: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let id: Value<std_identity> = Rc::new(RefCell::new(<std_identity>::default()));
     let i: Value<i32> = Rc::new(RefCell::new(42));
-    assert!(((unimplemented!().read()) == 42));
-    assert!(((unimplemented!().read()) == 42));
+    assert!(({ (({ (*id.borrow_mut())(i.as_pointer(),) }) == 42) }));
+    assert!(({ (({ (*id.borrow_mut())(i.as_pointer(),) }) == 42) }));
     let m1: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
-    let m2: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::move_from({ unimplemented!() })));
+    let m2: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::move_from({
+        ({ (*id.borrow_mut())(m1.as_pointer()) })
+    })));
     assert!((({ MoveOnlyImpl::get(&m2.as_pointer(),) }) == 2));
-    assert!(((unimplemented!()) == (i.as_pointer())));
+    assert!(({ (({ (*id.borrow_mut())(i.as_pointer(),) }) == (i.as_pointer())) }));
     const _: () = assert!(true, "&id(id) == &id");;
-    let idc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!().read()) == 1));
-    assert!(((unimplemented!().read()) == 1));
-    assert!(((unimplemented!().read()) == 1));
-    unimplemented!();
+    let idc: Value<std_identity> = Rc::new(RefCell::new(<std_identity>::default()));
+    assert!(
+        (({
+            let ___t: Value<i32> = Rc::new(RefCell::new(1));
+            (*idc.borrow_mut())(___t.as_pointer())
+        }) == 1)
+    );
+    assert!(
+        (({
+            let ___t: Value<i32> = Rc::new(RefCell::new(1));
+            (*id.borrow_mut())(___t.as_pointer())
+        }) == 1)
+    );
+    assert!(
+        (({
+            let ___t: Value<i32> = Rc::new(RefCell::new(1));
+            (*idc.borrow_mut())(___t.as_pointer())
+        }) == 1)
+    );
+    (*id.borrow_mut()) = (*idc.borrow()).clone();
     const _: () = assert!(true, "std::is_same_v<decltype(id(i)), int&>");;
     const _: () = assert!(
         true,
@@ -183,7 +210,7 @@ pub fn test_14() -> bool {
         true,
         "std::is_same_v<decltype(id(std::declval<int const volatile&&>())),\n                     int const volatile&&>"
     );;
-    let mut x: S_15 = <S_15>::default();
+    let x: Value<S_15> = Rc::new(RefCell::new(<S_15>::default()));
     const _: () = assert!(true, "noexcept(id(x))");;
     const _: () = assert!(true, "noexcept(id(S()))");;
     return true;
@@ -203,6 +230,11 @@ impl Clone for S_15 {
     fn clone(&self) -> Self {
         let __src: Value<S_15> = Rc::new(RefCell::new(S_15 {}));
         S_15::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for S_15 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn main() {

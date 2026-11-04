@@ -27,31 +27,187 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let l: Value<std_locale> = Rc::new(RefCell::new(
+        (*({ std_locale::classic() }).upgrade().deref()).clone(),
+    ));
     {
-        let f: Ptr<()> = unimplemented!();
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
+        let f: Ptr<std_ctype_char_> = ({ use_facet_0(l.as_pointer()) });
+        assert!(
+            ({
+                ({
+                    let ___m: u16 = space_1.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, (' ' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                !({
+                    let ___m: u16 = space_1.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('A' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({
+                    let ___m: u16 = print_2.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, (' ' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                !({
+                    let ___m: u16 = print_2.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('\x07' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({
+                    let ___m: u16 = cntrl_3.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('\x07' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                !({
+                    let ___m: u16 = cntrl_3.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, (' ' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({
+                    let ___m: u16 = upper_4.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('A' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                !({
+                    let ___m: u16 = upper_4.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('a' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({
+                    let ___m: u16 = lower_5.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('a' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                !({
+                    let ___m: u16 = lower_5.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('A' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({
+                    let ___m: u16 = alpha_6.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('a' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                !({
+                    let ___m: u16 = alpha_6.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('1' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({
+                    let ___m: u16 = digit_7.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('1' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                !({
+                    let ___m: u16 = digit_7.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('a' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({
+                    let ___m: u16 = punct_8.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('.' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                !({
+                    let ___m: u16 = punct_8.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('a' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({
+                    let ___m: u16 = xdigit_9.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('a' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                !({
+                    let ___m: u16 = xdigit_9.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('g' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({
+                    let ___m: u16 = alnum_10.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('a' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                !({
+                    let ___m: u16 = alnum_10.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('.' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({
+                    let ___m: u16 = graph_11.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('.' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                !({
+                    let ___m: u16 = graph_11.with(|rc| *rc.borrow());
+                    (*f.upgrade().deref()).is_3(___m, ('\x07' as i8))
+                })
+            })
+        );
     }
     return 0;
 }

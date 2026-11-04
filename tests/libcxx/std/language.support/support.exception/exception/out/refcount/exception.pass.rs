@@ -28,10 +28,10 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::is_polymorphic<std::exception>::value");;
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let b2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut w: Ptr<i8> = unimplemented!();
+    let b: Value<std_exception> = Rc::new(RefCell::new(<std_exception>::default()));
+    let b2: Value<std_exception> = Rc::new(RefCell::new((*b.borrow()).clone()));
+    (*b2.borrow_mut()) = (*b.borrow()).clone();
+    let mut w: Ptr<i8> = ({ (*b2.borrow()).what() });
     assert!(!(w).is_null());
     return 0;
 }

@@ -9,9 +9,18 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NotAssignable {}
+impl CppMove for NotAssignable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0() -> bool {
-    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let a: Value<std_ranges_single_view_NotAssignable_> = Rc::new(RefCell::new(
+        <std_ranges_single_view_NotAssignable_>::default(),
+    ));
+    let b: Value<std_ranges_single_view_NotAssignable_> = Rc::new(RefCell::new(
+        <std_ranges_single_view_NotAssignable_>::default(),
+    ));
     (*b.borrow_mut()) = (*a.borrow()).clone();
     (*b.borrow_mut()) = (*a.borrow()).clone();
     return true;

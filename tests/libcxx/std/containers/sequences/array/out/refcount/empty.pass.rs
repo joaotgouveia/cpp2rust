@@ -12,14 +12,14 @@ pub fn tests_0() -> bool {
             std::array::from_fn::<_, 2, _>(|_| 0_i32).to_vec(),
         ));
         const _: () = assert!(true, "");;
-        assert!(!(unimplemented!()));
+        assert!(({ !({ (*c.borrow()).empty() }) }));
     }
     {
         let c: Value<Vec<i32>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
         ));
         const _: () = assert!(true, "");;
-        assert!(unimplemented!());
+        assert!(({ ({ (*c.borrow()).empty() }) }));
     }
     return true;
 }

@@ -34,11 +34,11 @@ pub fn operator_cmp_7(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> std::cmp::Order
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -70,6 +70,11 @@ impl CppEq for MoveOnly {
         operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for MoveOnly {
     fn default() -> Self {
         { MoveOnly::new(None) }
@@ -99,11 +104,11 @@ pub fn operator_cmp_14(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> 
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -133,6 +138,11 @@ impl CppEq for TrivialMoveOnly {
         operator_eq_8(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for TrivialMoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for TrivialMoveOnly {
     fn default() -> Self {
         { TrivialMoveOnly::new(None) }
@@ -157,6 +167,11 @@ impl malloc_allocator_base {
         dealloc_count_17.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_15: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -177,6 +192,11 @@ impl safe_allocator_MoveOnly_ {
         Self {}
     }
 }
+impl CppMove for safe_allocator_MoveOnly_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for safe_allocator_MoveOnly_ {
     fn default() -> Self {
         { safe_allocator_MoveOnly_::new() }
@@ -191,6 +211,11 @@ impl safe_allocator_MoveOnly_ptr_ {
 #[byte_size(1)]
 pub struct safe_allocator_MoveOnly_ptr_ {}
 impl safe_allocator_MoveOnly_ptr_ {}
+impl CppMove for safe_allocator_MoveOnly_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn make_19(mut size: i32, mut start: i32) -> Vec<MoveOnly> {
     let mut b: i32 = (((4096_usize).wrapping_div((::std::mem::size_of::<i32>() as usize))) as i32);
     let mut init: i32 = 0;
@@ -215,7 +240,7 @@ pub fn make_19(mut size: i32, mut start: i32) -> Vec<MoveOnly> {
         (*c.borrow_mut()).remove(0);
         i.prefix_inc();
     }
-    return std::mem::take(&mut (*c.borrow_mut()));
+    return ({ std::mem::take(&mut (*c.borrow_mut())) });
 }
 pub fn make_20(mut size: i32, mut start: i32) -> Vec<MoveOnly> {
     let mut b: i32 = (((4096_usize).wrapping_div((::std::mem::size_of::<i32>() as usize))) as i32);
@@ -241,7 +266,7 @@ pub fn make_20(mut size: i32, mut start: i32) -> Vec<MoveOnly> {
         (*c.borrow_mut()).remove(0);
         i.prefix_inc();
     }
-    return std::mem::take(&mut (*c.borrow_mut()));
+    return ({ std::mem::take(&mut (*c.borrow_mut())) });
 }
 pub fn test_21(c1: Ptr<Vec<MoveOnly>>, mut x: i32) {
     let mut c1_osize: usize = unimplemented!();
@@ -430,12 +455,14 @@ impl safe_allocator_MoveOnly_Impl for Ptr<safe_allocator_MoveOnly_> {
     fn allocate(&self, mut n: usize) -> Ptr<MoveOnly> {
         let memory: Value<Ptr<MoveOnly>> = Rc::new(RefCell::new(unimplemented!()));
         {
-            {
-                (*memory.borrow()).to_any().memset(
-                    (0) as u8,
-                    ((4usize as u64).wrapping_mul((n as u64)) as usize) as usize,
-                );
-                (*memory.borrow()).to_any()
+            match ({ (*memory.borrow()).to_any() },) {
+                (mut __tmp_0,) => {
+                    __tmp_0.memset(
+                        (0) as u8,
+                        ((4usize as u64).wrapping_mul((n as u64)) as usize) as usize,
+                    );
+                    (__tmp_0).clone()
+                }
             };
         }
         return (*memory.borrow()).clone();
@@ -443,12 +470,14 @@ impl safe_allocator_MoveOnly_Impl for Ptr<safe_allocator_MoveOnly_> {
     fn deallocate(&self, mut p: Ptr<MoveOnly>, mut n: usize) {
         {
             ({
-                let _value: Value<AnyPtr> = Rc::new(RefCell::new({
-                    (p).to_any().memset(
-                        (0) as u8,
-                        ((4usize as u64).wrapping_mul((n as u64)) as usize) as usize,
-                    );
-                    (p).to_any()
+                let _value: Value<AnyPtr> = Rc::new(RefCell::new(match ({ (p).to_any() },) {
+                    (mut __tmp_1,) => {
+                        __tmp_1.memset(
+                            (0) as u8,
+                            ((4usize as u64).wrapping_mul((n as u64)) as usize) as usize,
+                        );
+                        (__tmp_1).clone()
+                    }
                 }));
                 DoNotOptimize_0(_value.as_pointer())
             });
@@ -464,12 +493,14 @@ impl safe_allocator_MoveOnly_ptr_Impl for Ptr<safe_allocator_MoveOnly_ptr_> {
     fn allocate(&self, mut n: usize) -> Ptr<Ptr<MoveOnly>> {
         let memory: Value<Ptr<Ptr<MoveOnly>>> = Rc::new(RefCell::new(unimplemented!()));
         {
-            {
-                (*memory.borrow()).to_any().memset(
-                    (0) as u8,
-                    ((8usize as u64).wrapping_mul((n as u64)) as usize) as usize,
-                );
-                (*memory.borrow()).to_any()
+            match ({ (*memory.borrow()).to_any() },) {
+                (mut __tmp_2,) => {
+                    __tmp_2.memset(
+                        (0) as u8,
+                        ((8usize as u64).wrapping_mul((n as u64)) as usize) as usize,
+                    );
+                    (__tmp_2).clone()
+                }
             };
         }
         return (*memory.borrow()).clone();
@@ -477,12 +508,14 @@ impl safe_allocator_MoveOnly_ptr_Impl for Ptr<safe_allocator_MoveOnly_ptr_> {
     fn deallocate(&self, mut p: Ptr<Ptr<MoveOnly>>, mut n: usize) {
         {
             ({
-                let _value: Value<AnyPtr> = Rc::new(RefCell::new({
-                    (p).to_any().memset(
-                        (0) as u8,
-                        ((8usize as u64).wrapping_mul((n as u64)) as usize) as usize,
-                    );
-                    (p).to_any()
+                let _value: Value<AnyPtr> = Rc::new(RefCell::new(match ({ (p).to_any() },) {
+                    (mut __tmp_3,) => {
+                        __tmp_3.memset(
+                            (0) as u8,
+                            ((8usize as u64).wrapping_mul((n as u64)) as usize) as usize,
+                        );
+                        (__tmp_3).clone()
+                    }
                 }));
                 DoNotOptimize_0(_value.as_pointer())
             });

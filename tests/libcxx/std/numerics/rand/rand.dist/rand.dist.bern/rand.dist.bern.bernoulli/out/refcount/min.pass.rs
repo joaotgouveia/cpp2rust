@@ -28,8 +28,9 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as i32) == (false as i32)));
+        let d: Value<std_bernoulli_distribution> =
+            Rc::new(RefCell::new(std_bernoulli_distribution::new_1({ 0.5_f64 })));
+        assert!(({ ((({ (*d.borrow()).min() }) as i32) == (false as i32)) }));
     }
     return 0;
 }

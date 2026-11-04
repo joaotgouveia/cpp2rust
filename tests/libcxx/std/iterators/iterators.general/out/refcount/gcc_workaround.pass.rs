@@ -7,10 +7,10 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn f_0(s: Ptr<Vec<i8>>) {
-    &(unimplemented!());
+    &({ (*s.upgrade().deref()).begin_64() });
 }
 pub fn AppendTo_1(v: Ptr<Vec<i8>>) {
-    &(v.decay().begin());
+    &(CppRange::begin(&v.decay()));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

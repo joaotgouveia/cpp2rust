@@ -31,12 +31,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         true,
         "(std::is_base_of<std::exception, std::bad_weak_ptr>::value)"
     );;
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let e: Value<std_bad_weak_ptr> = Rc::new(RefCell::new(<std_bad_weak_ptr>::default()));
+    let e2: Value<std_bad_weak_ptr> = Rc::new(RefCell::new((*e.borrow()).clone()));
+    (*e2.borrow_mut()) = (*e.borrow()).clone();
     assert!(
         ({
-            let mut __it1 = unimplemented!().to_c_string_iterator();
+            let mut __it1 = ({ ({ (*e.borrow()).what() }) }).to_c_string_iterator();
             let mut __it2 = Ptr::<i8>::from_string_literal(b"bad_weak_ptr").to_c_string_iterator();
             loop {
                 let __c1 = __it1.next();

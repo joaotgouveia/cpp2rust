@@ -30,11 +30,11 @@ pub fn operator_cmp_6(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> std::cmp::Order
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -66,6 +66,11 @@ impl CppEq for MoveOnly {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for MoveOnly {
     fn default() -> Self {
         { MoveOnly::new(None) }
@@ -95,11 +100,11 @@ pub fn operator_cmp_13(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> 
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -129,6 +134,11 @@ impl CppEq for TrivialMoveOnly {
         operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for TrivialMoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for TrivialMoveOnly {
     fn default() -> Self {
         { TrivialMoveOnly::new(None) }
@@ -138,6 +148,11 @@ impl Default for TrivialMoveOnly {
 #[byte_size(1)]
 pub struct A {}
 impl A {}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "!std::is_constructible_v<std::ranges::in_value_result<A, A>, std::ranges::in_value_result<int, int>>"
@@ -146,6 +161,11 @@ const _: () = assert!(
 #[byte_size(1)]
 pub struct B {}
 impl B {}
+impl CppMove for B {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "std::is_constructible_v<std::ranges::in_value_result<B, B>, std::ranges::in_value_result<int, int>>"
@@ -166,6 +186,11 @@ const _: () = assert!(
 #[byte_size(1)]
 pub struct C {}
 impl C {}
+impl CppMove for C {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "!std::is_constructible_v<std::ranges::in_value_result<C, C>, std::ranges::in_value_result<int, int>&>"
@@ -205,6 +230,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NotConvertible {}
+impl CppMove for NotConvertible {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "!std::is_convertible_v<std::ranges::in_value_result<NotConvertible, int>, std::ranges::in_value_result<int, int>>"
@@ -225,6 +255,11 @@ impl ConvertibleFrom_int_ {
         Self { content: c }
     }
 }
+impl CppMove for ConvertibleFrom_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(f64, new, value)]
 #[byte_size(8)]
@@ -237,28 +272,33 @@ impl ConvertibleFrom_double_ {
         Self { content: c }
     }
 }
+impl CppMove for ConvertibleFrom_double_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_14() -> bool {
     {
         let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*res.borrow()).in_ } == 10));
-        assert!(({ (*res.borrow()).value } == 0_f64));
+        assert!(({ ({ (*res.borrow()).in_ } == 10) }));
+        assert!(({ ({ (*res.borrow()).value } == 0_f64) }));
         let res2: Value<()> = Rc::new(RefCell::new(({ (*res.borrow())() })));
-        assert!(({ (*res2.borrow()).in_.content } == 10));
-        assert!(({ (*res2.borrow()).value.content } == 0_f64));
+        assert!(({ ({ (*res2.borrow()).in_.content } == 10) }));
+        assert!(({ ({ (*res2.borrow()).value.content } == 0_f64) }));
     }
     {
         let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!((({ MoveOnlyImpl::get(&field_ptr!(res.as_pointer(), in_),) }) == 1));
-        assert!(({ (*res.borrow()).value } == 2));
+        assert!(({ ({ (*res.borrow()).value } == 2) }));
         let res2: Value<()> = Rc::new(RefCell::new((*res.borrow_mut()).clone()));
         assert!((({ MoveOnlyImpl::get(&field_ptr!(res.as_pointer(), in_),) }) == 0));
         assert!((({ MoveOnlyImpl::get(&field_ptr!(res2.as_pointer(), in_),) }) == 1));
-        assert!(({ (*res2.borrow()).value } == 2));
+        assert!(({ ({ (*res2.borrow()).value } == 2) }));
     }
     {
         let __decomp_15: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (*__decomp_15.borrow()).in_ } == 1));
-        assert!(({ (*__decomp_15.borrow()).value } == 2));
+        assert!(({ ({ (*__decomp_15.borrow()).in_ } == 1) }));
+        assert!(({ ({ (*__decomp_15.borrow()).value } == 2) }));
     }
     return true;
 }

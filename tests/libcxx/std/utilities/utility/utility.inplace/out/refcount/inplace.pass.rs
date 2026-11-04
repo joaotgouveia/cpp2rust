@@ -6,34 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn check_tag_0(_a0: ()) -> bool {
-    let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    return (unimplemented!()) && (unimplemented!());
-}
-pub fn check_tag_1(_a0: ()) -> bool {
-    let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    return (unimplemented!()) && (unimplemented!());
-}
-pub fn check_tag_2(_a0: ()) -> bool {
-    let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    return (unimplemented!()) && (unimplemented!());
-}
-pub fn check_tag_3(_a0: ()) -> bool {
-    let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    return (unimplemented!()) && (unimplemented!());
-}
-pub fn check_tag_4(_a0: ()) -> bool {
-    let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    return (unimplemented!()) && (unimplemented!());
-}
-pub fn check_tag_5(_a0: ()) -> bool {
-    let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    return (unimplemented!()) && (unimplemented!());
-}
-pub fn check_tag_6(_a0: ()) -> bool {
-    let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    return (unimplemented!()) && (unimplemented!());
-}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

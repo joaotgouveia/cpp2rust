@@ -9,6 +9,11 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct functor1 {}
+impl CppMove for functor1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0(t: Ptr<FnPtr<fn()>>) {
     let mut r: Ptr<FnPtr<fn()>> = (t).clone();
     assert!(({ (r).clone() } == { (t).clone() }));

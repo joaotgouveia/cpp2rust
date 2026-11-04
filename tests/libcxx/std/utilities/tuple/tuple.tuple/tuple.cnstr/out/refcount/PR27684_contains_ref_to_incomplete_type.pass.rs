@@ -34,20 +34,37 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!()) == (inc1_0.with(|v| v.as_pointer()))));
-        assert!(((unimplemented!()) == (inc2_1.with(|v| v.as_pointer()))));
+        let t: Value<std_tuple_const_IncompleteType_ref__const_IncompleteType_ref_> =
+            Rc::new(RefCell::new(
+                std_tuple_const_IncompleteType_ref__const_IncompleteType_ref_::new_1(
+                    { (cinc1_2.with(Ptr::clone)).clone() },
+                    { (cinc2_3.with(Ptr::clone)).clone() },
+                ),
+            ));
+        assert!((({ get_4(t.as_pointer(),) }) == (inc1_0.with(|v| v.as_pointer()))));
+        assert!((({ get_5(t.as_pointer(),) }) == (inc2_1.with(|v| v.as_pointer()))));
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!()) == (inc1_0.with(|v| v.as_pointer()))));
-        assert!(((unimplemented!()) == (inc2_1.with(|v| v.as_pointer()))));
+        let t: Value<std_tuple_const_IncompleteType_ref__const_IncompleteType_ref_> =
+            Rc::new(RefCell::new(
+                std_tuple_const_IncompleteType_ref__const_IncompleteType_ref_::new_2(
+                    { inc1_0.with(|v| v.as_pointer()) },
+                    { inc2_1.with(|v| v.as_pointer()) },
+                ),
+            ));
+        assert!((({ get_4(t.as_pointer(),) }) == (inc1_0.with(|v| v.as_pointer()))));
+        assert!((({ get_5(t.as_pointer(),) }) == (inc2_1.with(|v| v.as_pointer()))));
     }
     return 0;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct IncompleteType {}
+impl CppMove for IncompleteType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static inc1_0: Value<IncompleteType> = Rc::new(RefCell::new(<IncompleteType>::default()));
 );

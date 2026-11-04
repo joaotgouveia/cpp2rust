@@ -15,6 +15,11 @@ impl NoDefault {
         Self {}
     }
 }
+impl CppMove for NoDefault {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn check_noexcept_0(c: Ptr<Vec<i32>>) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -101,8 +106,8 @@ pub fn tests_5() -> bool {
             std::array::from_fn::<_, 5, _>(|_| 0_i32).to_vec(),
         ));
         ({ check_noexcept_0(array.as_pointer()) });
-        let mut i: Ptr<i32> = unimplemented!();
-        let mut j: Ptr<i32> = unimplemented!();
+        let mut i: Ptr<i32> = ({ (*array.borrow_mut()).begin_3() });
+        let mut j: Ptr<i32> = ({ (*array.borrow()).cbegin() });
         assert!(({ (i).clone() } == { (j).clone() }));
     }
     {
@@ -110,8 +115,8 @@ pub fn tests_5() -> bool {
             std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
         ));
         ({ check_noexcept_1(array.as_pointer()) });
-        let mut i: Ptr<i32> = unimplemented!();
-        let mut j: Ptr<i32> = unimplemented!();
+        let mut i: Ptr<i32> = ({ (*array.borrow_mut()).begin_3() });
+        let mut j: Ptr<i32> = ({ (*array.borrow()).cbegin() });
         assert!(({ (i).clone() } == { (j).clone() }));
     }
     {
@@ -119,15 +124,15 @@ pub fn tests_5() -> bool {
             std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
         ));
         ({ check_noexcept_1(array.as_pointer()) });
-        let mut i: Ptr<i32> = unimplemented!();
-        let mut j: Ptr<i32> = unimplemented!();
-        assert!(({ (i).clone() } == { unimplemented!() }));
-        assert!(({ (j).clone() } == { unimplemented!() }));
+        let mut i: Ptr<i32> = ({ (*array.borrow_mut()).begin_3() });
+        let mut j: Ptr<i32> = ({ (*array.borrow()).cbegin() });
+        assert!(({ ({ (i).clone() } == { ({ (*array.borrow_mut()).end_5() }) }) }));
+        assert!(({ ({ (j).clone() } == { ({ (*array.borrow()).cend() }) }) }));
     }
     {
         let array: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1])));
         ({ check_noexcept_2(array.as_pointer()) });
-        let mut i: Ptr<i32> = unimplemented!();
+        let mut i: Ptr<i32> = ({ (*array.borrow_mut()).begin_3() });
         assert!(((i.read()) == 1));
         assert!(({ (i).clone() } == { array.decay() }));
         i.write(99);
@@ -136,7 +141,7 @@ pub fn tests_5() -> bool {
     {
         let array: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2])));
         ({ check_noexcept_3(array.as_pointer()) });
-        let mut i: Ptr<i32> = unimplemented!();
+        let mut i: Ptr<i32> = ({ (*array.borrow_mut()).begin_3() });
         assert!(((i.read()) == 1));
         assert!(({ (i).clone() } == { array.decay() }));
         i.write(99);
@@ -146,7 +151,7 @@ pub fn tests_5() -> bool {
     {
         let array: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([1_f64, 2_f64, 3.5_f64])));
         ({ check_noexcept_4(array.as_pointer()) });
-        let mut i: Ptr<f64> = unimplemented!();
+        let mut i: Ptr<f64> = ({ (*array.borrow_mut()).begin_3() });
         assert!(((i.read()) == 1_f64));
         assert!(({ (i).clone() } == { array.decay() }));
         i.write(5.5_f64);
@@ -157,8 +162,8 @@ pub fn tests_5() -> bool {
         let array: Value<Vec<NoDefault>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 0, _>(|_| <NoDefault>::default()).to_vec(),
         ));
-        let mut ib: Ptr<NoDefault> = unimplemented!();
-        let mut ie: Ptr<NoDefault> = unimplemented!();
+        let mut ib: Ptr<NoDefault> = ({ (*array.borrow_mut()).begin_3() });
+        let mut ie: Ptr<NoDefault> = ({ (*array.borrow_mut()).end_5() });
         assert!(({ (ib).clone() } == { (ie).clone() }));
     }
     {
@@ -176,24 +181,37 @@ pub fn tests_5() -> bool {
                 std::array::from_fn::<_, 5, _>(|_| 0_i32).to_vec(),
             ));
             ({ check_noexcept_0(c.as_pointer()) });
-            assert!((unimplemented!() == unimplemented!()));
-            assert!((unimplemented!() == unimplemented!()));
-            assert!(unimplemented!());
-            assert!(unimplemented!());
-            assert!((unimplemented!() == unimplemented!()));
-            assert!((unimplemented!() == unimplemented!()));
-            assert!(unimplemented!());
-            assert!(unimplemented!());
-            assert!((unimplemented!() != unimplemented!()));
-            assert!(unimplemented!() != unimplemented!());
-            assert!((unimplemented!() != unimplemented!()));
-            assert!(unimplemented!() != unimplemented!());
+            assert!(({ (({ (*c.borrow_mut()).begin_3() }) == ({ begin_6(c.as_pointer(),) })) }));
+            assert!(({ (({ (*c.borrow()).cbegin() }) == ({ cbegin_7(c.as_pointer(),) })) }));
+            assert!(({ (*c.borrow_mut()).rbegin_7() }) == ({ rbegin_8(c.as_pointer(),) }));
+            assert!(({ (*c.borrow()).crbegin() }) == ({ crbegin_9(c.as_pointer(),) }));
+            assert!(
+                ({
+                    (({ (*c.borrow_mut()).end_5() })
+                        == ({ libcc2rs::end_refcount(c.as_pointer()) }))
+                })
+            );
+            assert!(({ (({ (*c.borrow()).cend() }) == ({ cend_10(c.as_pointer(),) })) }));
+            assert!(({ (*c.borrow_mut()).rend_9() }) == ({ rend_11(c.as_pointer(),) }));
+            assert!(({ (*c.borrow()).crend() }) == ({ crend_12(c.as_pointer(),) }));
+            assert!(
+                (({ begin_6(c.as_pointer(),) }) != ({ libcc2rs::end_refcount(c.as_pointer(),) }))
+            );
+            assert!(({ rbegin_8(c.as_pointer(),) }) != ({ rend_11(c.as_pointer(),) }));
+            assert!((({ cbegin_7(c.as_pointer(),) }) != ({ cend_10(c.as_pointer(),) })));
+            assert!(({ crbegin_9(c.as_pointer(),) }) != ({ crend_12(c.as_pointer(),) }));
             let r1: Value<std::cmp::Ordering> =
                 Rc::new(RefCell::new(std::cmp::Ord::cmp(&(ii1), &(ii2))));
-            assert!((*r1.borrow()) == std::cmp::Ordering::Equal);
+            assert!(
+                ({ (*r1.borrow()) })
+                    == ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) })
+            );
             let r2: Value<std::cmp::Ordering> =
                 Rc::new(RefCell::new(std::cmp::Ord::cmp(&(cii), &(ii2))));
-            assert!((*r2.borrow()) == std::cmp::Ordering::Equal);
+            assert!(
+                ({ (*r2.borrow()) })
+                    == ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) })
+            );
         }
         {
             let mut ii1: Ptr<i32> = Ptr::null();
@@ -221,24 +239,37 @@ pub fn tests_5() -> bool {
                 std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
             ));
             ({ check_noexcept_1(c.as_pointer()) });
-            assert!((unimplemented!() == unimplemented!()));
-            assert!((unimplemented!() == unimplemented!()));
-            assert!(unimplemented!());
-            assert!(unimplemented!());
-            assert!((unimplemented!() == unimplemented!()));
-            assert!((unimplemented!() == unimplemented!()));
-            assert!(unimplemented!());
-            assert!(unimplemented!());
-            assert!((unimplemented!() == unimplemented!()));
-            assert!(unimplemented!());
-            assert!((unimplemented!() == unimplemented!()));
-            assert!(unimplemented!());
+            assert!(({ (({ (*c.borrow_mut()).begin_3() }) == ({ begin_13(c.as_pointer(),) })) }));
+            assert!(({ (({ (*c.borrow()).cbegin() }) == ({ cbegin_14(c.as_pointer(),) })) }));
+            assert!(({ (*c.borrow_mut()).rbegin_7() }) == ({ rbegin_15(c.as_pointer(),) }));
+            assert!(({ (*c.borrow()).crbegin() }) == ({ crbegin_16(c.as_pointer(),) }));
+            assert!(
+                ({
+                    (({ (*c.borrow_mut()).end_5() })
+                        == ({ libcc2rs::end_refcount(c.as_pointer()) }))
+                })
+            );
+            assert!(({ (({ (*c.borrow()).cend() }) == ({ cend_17(c.as_pointer(),) })) }));
+            assert!(({ (*c.borrow_mut()).rend_9() }) == ({ rend_18(c.as_pointer(),) }));
+            assert!(({ (*c.borrow()).crend() }) == ({ crend_19(c.as_pointer(),) }));
+            assert!(
+                (({ begin_13(c.as_pointer(),) }) == ({ libcc2rs::end_refcount(c.as_pointer(),) }))
+            );
+            assert!(({ rbegin_15(c.as_pointer(),) }) == ({ rend_18(c.as_pointer(),) }));
+            assert!((({ cbegin_14(c.as_pointer(),) }) == ({ cend_17(c.as_pointer(),) })));
+            assert!(({ crbegin_16(c.as_pointer(),) }) == ({ crend_19(c.as_pointer(),) }));
             let r1: Value<std::cmp::Ordering> =
                 Rc::new(RefCell::new(std::cmp::Ord::cmp(&(ii1), &(ii2))));
-            assert!((*r1.borrow()) == std::cmp::Ordering::Equal);
+            assert!(
+                ({ (*r1.borrow()) })
+                    == ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) })
+            );
             let r2: Value<std::cmp::Ordering> =
                 Rc::new(RefCell::new(std::cmp::Ord::cmp(&(cii), &(ii2))));
-            assert!((*r2.borrow()) == std::cmp::Ordering::Equal);
+            assert!(
+                ({ (*r2.borrow()) })
+                    == ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) })
+            );
         }
     }
     return true;

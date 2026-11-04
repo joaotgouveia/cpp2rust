@@ -11,18 +11,28 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_day__std_chrono_day_ {}
+impl CppMove for test_macros_detail_is_same_std_chrono_day__std_chrono_day_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_day_ref__std_chrono_day_ref_ {}
+impl CppMove for test_macros_detail_is_same_std_chrono_day_ref__std_chrono_day_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_2() -> bool {
     let mut i: u32 = 10_u32;
     'loop_: while (i <= 20_u32) {
         let d: Value<u32> = Rc::new(RefCell::new(i));
         assert!(((unimplemented!()).clone() == (i).wrapping_add(1_u32)));
         assert!((unimplemented!() == (i).wrapping_add(1_u32)));
-        assert!(((*d.borrow()) == (i).wrapping_add(2_u32)));
+        assert!((({ (*d.borrow()) }) == (i).wrapping_add(2_u32)));
         i.prefix_inc();
     }
     return true;

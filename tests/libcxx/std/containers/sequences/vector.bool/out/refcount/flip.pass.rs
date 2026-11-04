@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -43,6 +48,11 @@ pub struct min_pointer_bool__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<bool>,
 }
 impl min_pointer_bool__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_bool__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -51,6 +61,11 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
@@ -63,6 +78,11 @@ impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
         Self { ptr_: (p).clone() }
     }
 }
+impl CppMove for min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl min_allocator_bool_ {
     pub fn new_1(mut _a0: min_allocator_unsigned_long_) -> Self {
         Self {}
@@ -72,6 +92,11 @@ impl min_allocator_bool_ {
 #[cpp_from(min_allocator_unsigned_long_, new_1, value)]
 #[byte_size(1)]
 pub struct min_allocator_bool_ {}
+impl CppMove for min_allocator_bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl min_allocator_unsigned_long_ {
     pub fn new_1(mut _a0: min_allocator_bool_) -> Self {
         Self {}
@@ -81,6 +106,11 @@ impl min_allocator_unsigned_long_ {
 #[cpp_from(min_allocator_bool_, new_1, value)]
 #[byte_size(1)]
 pub struct min_allocator_unsigned_long_ {}
+impl CppMove for min_allocator_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl min_allocator_bool_ {}
 impl min_allocator_unsigned_long_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -106,6 +136,11 @@ pub struct test_allocator_statistics {
     pub moved: i32,
     #[offset(36)]
     pub converted: i32,
+}
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for test_allocator_statistics {
     fn default() -> Self {
@@ -134,6 +169,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_6(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -214,6 +254,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -234,8 +279,12 @@ impl test_allocator_bool_ {
         }));
         let this: Ptr<test_allocator_bool_> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -243,9 +292,19 @@ impl test_allocator_bool_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_bool__rebind_unsigned_long_ {}
+impl CppMove for test_allocator_bool__rebind_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_bool__rebind_bool_ {}
+impl CppMove for test_allocator_bool__rebind_bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, Destructor)]
 #[cpp_from(test_allocator_unsigned_long_, new_1, ptr)]
 #[byte_size(16)]
@@ -287,8 +346,12 @@ impl test_allocator_unsigned_long_ {
         }));
         let this: Ptr<test_allocator_unsigned_long_> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -320,8 +383,12 @@ impl test_allocator_unsigned_long_ {
                     .is_null())
         );
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -335,6 +402,11 @@ impl Clone for test_allocator_unsigned_long_ {
                 stats_: self.stats_.clone(),
             }));
         test_allocator_unsigned_long_::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for test_allocator_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for test_allocator_unsigned_long_ {
@@ -351,6 +423,11 @@ impl Default for test_allocator_unsigned_long_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -368,12 +445,16 @@ impl Tag_X {
 }
 pub fn test_vector_flip_8(mut n: usize, a: ()) {
     let a: Value<()> = Rc::new(RefCell::new(a));
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(n) as usize).map(|_| false).collect::<Vec<bool>>(),
+    ));
     let mut i: usize = 0_usize;
     'loop_: while (i < n) {
-        {
-            v.decay().offset(i as isize).write(((i & 1_usize) != 0));
-            v.decay().offset(i as isize)
+        match (Rc::new(RefCell::new(v.decay().offset(i as isize))).as_pointer(),) {
+            (__tmp_0,) => {
+                __tmp_0.write(((i & 1_usize) != 0));
+                (__tmp_0).clone()
+            }
         };
         i.prefix_inc();
     }
@@ -391,12 +472,16 @@ pub fn test_vector_flip_8(mut n: usize, a: ()) {
     assert!(unimplemented!());
 }
 pub fn test_vector_flip_9(mut n: usize, mut a: min_allocator_bool_) {
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(n) as usize).map(|_| false).collect::<Vec<bool>>(),
+    ));
     let mut i: usize = 0_usize;
     'loop_: while (i < n) {
-        {
-            v.decay().offset(i as isize).write(((i & 1_usize) != 0));
-            v.decay().offset(i as isize)
+        match (Rc::new(RefCell::new(v.decay().offset(i as isize))).as_pointer(),) {
+            (__tmp_1,) => {
+                __tmp_1.write(((i & 1_usize) != 0));
+                (__tmp_1).clone()
+            }
         };
         i.prefix_inc();
     }
@@ -415,12 +500,16 @@ pub fn test_vector_flip_9(mut n: usize, mut a: min_allocator_bool_) {
 }
 pub fn test_vector_flip_10(mut n: usize, a: test_allocator_bool_) {
     let a: Value<test_allocator_bool_> = Rc::new(RefCell::new(a));
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(n) as usize).map(|_| false).collect::<Vec<bool>>(),
+    ));
     let mut i: usize = 0_usize;
     'loop_: while (i < n) {
-        {
-            v.decay().offset(i as isize).write(((i & 1_usize) != 0));
-            v.decay().offset(i as isize)
+        match (Rc::new(RefCell::new(v.decay().offset(i as isize))).as_pointer(),) {
+            (__tmp_2,) => {
+                __tmp_2.write(((i & 1_usize) != 0));
+                (__tmp_2).clone()
+            }
         };
         i.prefix_inc();
     }
@@ -729,7 +818,9 @@ impl test_allocator_bool_Impl for Ptr<test_allocator_bool_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_4.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_4.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_4.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_4.with(|rc| *rc.borrow()));
@@ -789,7 +880,9 @@ impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_4.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_4.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_4.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_4.with(|rc| *rc.borrow()));
@@ -809,10 +902,12 @@ impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
             }) {
                 std::process::abort();
             }
-            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
-                .with_mut(|__v| __v.prefix_inc());
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -825,8 +920,9 @@ impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
     fn deallocate(&self, mut p: Ptr<u64>, mut s: u32) {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_4.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())

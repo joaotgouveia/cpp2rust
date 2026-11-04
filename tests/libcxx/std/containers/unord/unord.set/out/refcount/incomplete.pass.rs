@@ -14,6 +14,11 @@ impl MyHash_A_ {
         Self {}
     }
 }
+impl CppMove for MyHash_A_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for MyHash_A_ {
     fn default() -> Self {
         { MyHash_A_::new() }
@@ -21,27 +26,11 @@ impl Default for MyHash_A_ {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(120)]
-pub struct A {
-    #[offset(0)]
-    #[byte_size(56)]
-    pub m: (),
-    #[offset(56)]
-    #[byte_size(8)]
-    pub it: (),
-    #[offset(64)]
-    #[byte_size(8)]
-    pub cit: (),
-    #[offset(72)]
-    #[byte_size(24)]
-    pub lit: (),
-    #[offset(96)]
-    #[byte_size(24)]
-    pub clit: (),
-}
+pub struct A { #[offset(0)] #[byte_size(56)] pub m : std_unordered_set_A__MyHash_A___std_equal_to_A___std_allocator_A__  , #[offset(56)] #[byte_size(8)] pub it : std___detail__Node_iterator_A__true__true_  , #[offset(64)] #[byte_size(8)] pub cit : std___detail__Node_const_iterator_A__true__true_  , #[offset(72)] #[byte_size(24)] pub lit : std___detail__Local_iterator_A__A__std___detail__Identity__MyHash_A___std___detail__Mod_range_hashing__std___detail__Default_ranged_hash__true__true_  , #[offset(96)] #[byte_size(24)] pub clit : std___detail__Local_const_iterator_A__A__std___detail__Identity__MyHash_A___std___detail__Mod_range_hashing__std___detail__Default_ranged_hash__true__true_  , }
 impl A {
     pub fn move_from(_a0: Ptr<A>) -> Self {
         Self {
-            m: unimplemented!(),
+            m: field!(_a0, m).with_mut(std::mem::take),
             it: field!(_a0, it).with_mut(std::mem::take),
             cit: field!(_a0, cit).with_mut(std::mem::take),
             lit: field!(_a0, lit).with_mut(std::mem::take),
@@ -52,6 +41,11 @@ impl A {
 impl CppEq for A {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_0(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_eq_0(L: Ptr<A>, R: Ptr<A>) -> bool {
@@ -85,11 +79,15 @@ pub trait AImpl {
 }
 impl AImpl for Ptr<A> {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
-        unimplemented!();
-        field!((*self), it).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).it.clone() });
-        field!((*self), cit).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).cit.clone() });
-        field!((*self), lit).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).lit.clone() });
-        field!((*self), clit).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).clit.clone() });
+        field!((*self), m).write({ { (*_a0.upgrade().deref()).m.clone() } });
+        field!((*self), it)
+            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).it.clone() } }));
+        field!((*self), cit)
+            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).cit.clone() } }));
+        field!((*self), lit)
+            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).lit.clone() } }));
+        field!((*self), clit)
+            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).clit.clone() } }));
         return (*self).clone();
     }
 }

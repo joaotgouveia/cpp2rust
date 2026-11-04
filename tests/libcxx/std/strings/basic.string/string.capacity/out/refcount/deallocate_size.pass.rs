@@ -20,6 +20,11 @@ impl test_alloc_char__unsigned_int_ {
         Self {}
     }
 }
+impl CppMove for test_alloc_char__unsigned_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_alloc_char__unsigned_int_ {
     fn default() -> Self {
         { test_alloc_char__unsigned_int_::new() }
@@ -31,6 +36,11 @@ pub struct test_alloc_char__unsigned_long_ {}
 impl test_alloc_char__unsigned_long_ {
     pub fn new() -> Self {
         Self {}
+    }
+}
+impl CppMove for test_alloc_char__unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for test_alloc_char__unsigned_long_ {
@@ -103,13 +113,13 @@ impl test_alloc_char__unsigned_int_Impl for Ptr<test_alloc_char__unsigned_int_> 
         allocated__0.with(|rc| {
             *rc.borrow_mut() = { (allocated__0.with(|rc| *rc.borrow())).wrapping_add((n as u64)) }
         });
-        return unimplemented!();
+        return ({ <std_allocator_char_>::default().allocate((n as usize)) });
     }
     fn deallocate(&self, mut p: Ptr<i8>, mut s: u32) {
         deallocated__1.with(|rc| {
             *rc.borrow_mut() = { (deallocated__1.with(|rc| *rc.borrow())).wrapping_add((s as u64)) }
         });
-        unimplemented!();
+        ({ <std_allocator_char_>::default().deallocate((p).clone(), (s as usize)) });
     }
 }
 pub trait test_alloc_char__unsigned_long_Impl {
@@ -122,13 +132,13 @@ impl test_alloc_char__unsigned_long_Impl for Ptr<test_alloc_char__unsigned_long_
         allocated__0.with(|rc| {
             *rc.borrow_mut() = { (allocated__0.with(|rc| *rc.borrow())).wrapping_add(n) }
         });
-        return unimplemented!();
+        return ({ <std_allocator_char_>::default().allocate((n as usize)) });
     }
     fn deallocate(&self, mut p: Ptr<i8>, mut s: u64) {
         deallocated__1.with(|rc| {
             *rc.borrow_mut() = { (deallocated__1.with(|rc| *rc.borrow())).wrapping_add(s) }
         });
-        unimplemented!();
+        ({ <std_allocator_char_>::default().deallocate((p).clone(), (s as usize)) });
     }
 }
 pub fn __cpp2rust_init_globals() {

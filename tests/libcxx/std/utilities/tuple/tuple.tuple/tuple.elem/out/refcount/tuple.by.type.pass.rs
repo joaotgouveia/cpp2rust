@@ -31,9 +31,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(((unimplemented!().read()) == 42));
         assert!(
-            Ptr::<i8>::from_string_literal(b"Hi").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                match (unimplemented!(),) {
+                    (__tmp_0,) => Ptr::<i8>::from_string_literal(b"Hi").with_c_str(|__s| {
+                        (*__tmp_0.upgrade().deref())
+                            [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
         );
         assert!((unimplemented!() == 1_f32));
         assert!((unimplemented!() == 2_f32));
@@ -41,9 +47,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"Hi").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                match (unimplemented!(),) {
+                    (__tmp_1,) => Ptr::<i8>::from_string_literal(b"Hi").with_c_str(|__s| {
+                        (*__tmp_1.upgrade().deref())
+                            [..(*__tmp_1.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
         );
         assert!((unimplemented!()));
     }
@@ -68,7 +80,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p: Ptr<Option<Value<i32>>> = unimplemented!();
-        assert!((((*p.upgrade().deref()).as_pointer().read()) == 4));
+        assert!(({ (((*p.upgrade().deref()).as_pointer().read()) == 4) }));
         assert!(!((unimplemented!()).clone().is_none()));
     }
     {

@@ -27,8 +27,26 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
+    assert!(
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(36));
+            ({
+                let ___pred: Value<std_logical_not_int_> =
+                    Rc::new(RefCell::new(<std_logical_not_int_>::default()));
+                not1_0(___pred.as_pointer())
+            })(___x.as_pointer())
+        })
+    );
+    assert!(
+        !({
+            let ___x: Value<i32> = Rc::new(RefCell::new(0));
+            ({
+                let ___pred: Value<std_logical_not_int_> =
+                    Rc::new(RefCell::new(<std_logical_not_int_>::default()));
+                not1_0(___pred.as_pointer())
+            })(___x.as_pointer())
+        })
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

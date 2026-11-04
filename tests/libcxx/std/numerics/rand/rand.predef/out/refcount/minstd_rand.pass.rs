@@ -27,9 +27,12 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 399268537_()));
+    let e: Value<std_linear_congruential_engine_unsigned_long__48271__0__2147483647_> =
+        Rc::new(RefCell::new(
+            <std_linear_congruential_engine_unsigned_long__48271__0__2147483647_>::default(),
+        ));
+    ({ (*e.borrow()).discard(9999_u64) });
+    assert!(({ (({ (*e.borrow_mut())() }) == 399268537_u64) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

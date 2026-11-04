@@ -15,61 +15,81 @@ pub fn test_0() -> bool {
                 Rc::new(RefCell::new(i.as_pointer())),
                 Rc::new(RefCell::new(j.as_pointer())),
             )));
-            assert!(((unimplemented!()) == (i.as_pointer())));
-            assert!(((unimplemented!()) == (j.as_pointer())));
-            assert!(((unimplemented!()) == (i.as_pointer())));
-            assert!(((unimplemented!().read()) == 2));
+            assert!((({ libcc2rs::get_refcount(p.as_pointer(),) }) == (i.as_pointer())));
+            assert!((({ libcc2rs::get_refcount(p.as_pointer(),) }) == (j.as_pointer())));
+            assert!((({ libcc2rs::get_refcount(p.as_pointer(),) }) == (i.as_pointer())));
+            assert!(((({ libcc2rs::get_refcount(p.as_pointer(),) }).read()) == 2));
             let cp: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new((
                 Rc::new(RefCell::new(i.as_pointer())),
                 Rc::new(RefCell::new(j.as_pointer())),
             )));
-            assert!(((unimplemented!()) == (i.as_pointer())));
-            assert!(((unimplemented!()) == (j.as_pointer())));
-            assert!(((unimplemented!()) == (i.as_pointer())));
-            assert!(((unimplemented!().read()) == 2));
+            assert!((({ libcc2rs::get_refcount(cp.as_pointer(),) }) == (i.as_pointer())));
+            assert!((({ libcc2rs::get_refcount(cp.as_pointer(),) }) == (j.as_pointer())));
+            assert!((({ libcc2rs::get_refcount(cp.as_pointer(),) }) == (i.as_pointer())));
+            assert!(((({ libcc2rs::get_refcount(cp.as_pointer(),) }).read()) == 2));
         }
         {
             let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new((
                 Rc::new(RefCell::new(i.as_pointer())),
                 Rc::new(RefCell::new(j.as_pointer())),
             )));
-            assert!(((unimplemented!()) == (j.as_pointer())));
-            assert!(((unimplemented!()) == (i.as_pointer())));
-            assert!(((unimplemented!()) == (j.as_pointer())));
-            assert!(((unimplemented!().read()) == 1));
+            assert!((({ libcc2rs::get_refcount(p.as_pointer(),) }) == (j.as_pointer())));
+            assert!((({ libcc2rs::get_refcount(p.as_pointer(),) }) == (i.as_pointer())));
+            assert!((({ libcc2rs::get_refcount(p.as_pointer(),) }) == (j.as_pointer())));
+            assert!(((({ libcc2rs::get_refcount(p.as_pointer(),) }).read()) == 1));
             let cp: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new((
                 Rc::new(RefCell::new(i.as_pointer())),
                 Rc::new(RefCell::new(j.as_pointer())),
             )));
-            assert!(((unimplemented!()) == (j.as_pointer())));
-            assert!(((unimplemented!()) == (i.as_pointer())));
-            assert!(((unimplemented!()) == (j.as_pointer())));
-            assert!(((unimplemented!().read()) == 1));
+            assert!((({ libcc2rs::get_refcount(cp.as_pointer(),) }) == (j.as_pointer())));
+            assert!((({ libcc2rs::get_refcount(cp.as_pointer(),) }) == (i.as_pointer())));
+            assert!((({ libcc2rs::get_refcount(cp.as_pointer(),) }) == (j.as_pointer())));
+            assert!(((({ libcc2rs::get_refcount(cp.as_pointer(),) }).read()) == 1));
         }
     }
     {
-        let t1: Value<(Value<i32>, Value<()>)> = Rc::new(RefCell::new((
+        let t1: Value<(Value<i32>, Value<std_complex_float_>)> = Rc::new(RefCell::new((
             Rc::new(RefCell::new(42)),
-            Rc::new(RefCell::new(unimplemented!())),
+            Rc::new(RefCell::new(<std_complex_float_>::default())),
         )));
-        assert!(((unimplemented!().read()) == 42));
-        assert!((unimplemented!() == 1_f32));
-        assert!((unimplemented!() == 2_f32));
+        assert!(((({ libcc2rs::get_refcount(t1.as_pointer(),) }).read()) == 42));
+        assert!(
+            ({
+                (({
+                    (*({ libcc2rs::get_refcount(t1.as_pointer()) })
+                        .upgrade()
+                        .deref())
+                    .real_5()
+                }) == 1_f32)
+            })
+        );
+        assert!(
+            ({
+                (({
+                    (*({ libcc2rs::get_refcount(t1.as_pointer()) })
+                        .upgrade()
+                        .deref())
+                    .imag_6()
+                }) == 2_f32)
+            })
+        );
     }
     {
         let p1: Value<(Value<i32>, Value<i32>)> = Rc::new(RefCell::new((
             Rc::new(RefCell::new(1)),
             Rc::new(RefCell::new(2)),
         )));
-        let i1: Ptr<i32> = unimplemented!();
-        let i2: Ptr<i32> = unimplemented!();
+        let i1: Ptr<i32> = ({ libcc2rs::get_refcount(p1.as_pointer()) });
+        let i2: Ptr<i32> = ({ libcc2rs::get_refcount(p1.as_pointer()) });
         assert!(((i1.read()) == 1));
         assert!(((i2.read()) == 2));
     }
     {
-        let mut x: i32 = 42;
-        let mut y: i32 = 43;
-        let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<i32> = Rc::new(RefCell::new(42));
+        let y: Value<i32> = Rc::new(RefCell::new(43));
+        let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(
+            std_pair_int_ref__const_int_ref_::new_1({ x.as_pointer() }, { y.as_pointer() }),
+        ));
         const _: () = assert!(
             true,
             "std::is_same<int&, decltype(std::get<int&>(std::move(p)))>::value"
@@ -136,9 +156,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new(Ptr::alloc(4).to_owned_opt())),
             Rc::new(RefCell::new(42)),
         )));
-        let mut p: Option<Value<i32>> = unimplemented!().take();
+        let mut p: Option<Value<i32>> = ({ libcc2rs::get_refcount(t.as_pointer()) })
+            .with_mut(|__v: &mut Option<Value<i32>>| __v.take());
         assert!(((p.as_pointer().read()) == 4));
-        assert!((unimplemented!()).clone().is_none());
+        assert!(
+            ({
+                (*({ libcc2rs::get_refcount(t.as_pointer()) })
+                    .upgrade()
+                    .deref())
+                .is_none()
+            })
+        );
     }
     {
         let t: Value<(Value<Option<Value<i32>>>, Value<i32>)> = Rc::new(RefCell::new((
@@ -155,11 +183,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             "std::is_same<const int&&, decltype(std::get<int>(std::move(t)))>::value"
         );;
         const _: () = assert!(true, "noexcept(std::get<int>(std::move(t)))");;
-        let p: Ptr<Option<Value<i32>>> = unimplemented!();
-        let i: Ptr<i32> = unimplemented!();
-        assert!((((*p.upgrade().deref()).as_pointer().read()) == 4));
+        let p: Ptr<Option<Value<i32>>> = ({ libcc2rs::get_refcount(t.as_pointer()) });
+        let i: Ptr<i32> = ({ libcc2rs::get_refcount(t.as_pointer()) });
+        assert!(({ (((*p.upgrade().deref()).as_pointer().read()) == 4) }));
         assert!(((i.read()) == 42));
-        assert!(!((unimplemented!()).clone().is_none()));
+        assert!(
+            ({
+                !((*({ libcc2rs::get_refcount(t.as_pointer()) })
+                    .upgrade()
+                    .deref())
+                .is_none())
+            })
+        );
     }
     return 0;
 }

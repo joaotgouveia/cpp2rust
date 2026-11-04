@@ -27,7 +27,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let tag: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let tag: Value<std_bidirectional_iterator_tag> =
+        Rc::new(RefCell::new(<std_bidirectional_iterator_tag>::default()));
     (&(*tag.borrow_mut()));
     const _: () = assert!(
         true,

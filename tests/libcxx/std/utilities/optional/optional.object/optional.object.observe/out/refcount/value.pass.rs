@@ -11,86 +11,171 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int_ref__int_ref_ {}
+impl CppMove for test_macros_detail_is_same_int_ref__int_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_int_ref__const_int_ref_ {}
+impl CppMove for test_macros_detail_is_same_const_int_ref__const_int_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int_refref__int_refref_ {}
+impl CppMove for test_macros_detail_is_same_int_refref__int_refref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_int_refref__const_int_refref_ {}
+impl CppMove for test_macros_detail_is_same_const_int_refref__const_int_refref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_4 = u32;
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_float_ref__float_ref_ {}
+impl CppMove for test_macros_detail_is_same_float_ref__float_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_5 = u32;
 pub const anon_5_value: anon_5 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_float_ref__const_float_ref_ {}
+impl CppMove for test_macros_detail_is_same_const_float_ref__const_float_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_6 = u32;
 pub const anon_6_value: anon_6 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_float_refref__float_refref_ {}
+impl CppMove for test_macros_detail_is_same_float_refref__float_refref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_7 = u32;
 pub const anon_7_value: anon_7 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_float_refref__const_float_refref_ {}
+impl CppMove for test_macros_detail_is_same_const_float_refref__const_float_refref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_8 = u32;
 pub const anon_8_value: anon_8 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_double_ref__double_ref_ {}
+impl CppMove for test_macros_detail_is_same_double_ref__double_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_9 = u32;
 pub const anon_9_value: anon_9 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_double_ref__const_double_ref_ {}
+impl CppMove for test_macros_detail_is_same_const_double_ref__const_double_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_10 = u32;
 pub const anon_10_value: anon_10 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_double_refref__double_refref_ {}
+impl CppMove for test_macros_detail_is_same_double_refref__double_refref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_11 = u32;
 pub const anon_11_value: anon_11 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_double_refref__const_double_refref_ {}
+impl CppMove for test_macros_detail_is_same_const_double_refref__const_double_refref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_12 = u32;
 pub const anon_12_value: anon_12 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_X_ref__X_ref_ {}
+impl CppMove for test_macros_detail_is_same_X_ref__X_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_13 = u32;
 pub const anon_13_value: anon_13 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_X_ref__const_X_ref_ {}
+impl CppMove for test_macros_detail_is_same_const_X_ref__const_X_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_14 = u32;
 pub const anon_14_value: anon_14 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_X_refref__X_refref_ {}
+impl CppMove for test_macros_detail_is_same_X_refref__X_refref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_15 = u32;
 pub const anon_15_value: anon_15 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_X_refref__const_X_refref_ {}
+impl CppMove for test_macros_detail_is_same_const_X_refref__const_X_refref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct X {}
+impl CppMove for X {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_contract_16() {
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<std_optional_int_> = Rc::new(RefCell::new(<std_optional_int_>::default()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -101,7 +186,7 @@ pub fn test_contract_16() {
     const _: () = assert!(true, "");;
 }
 pub fn test_contract_17() {
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<std_optional_float_> = Rc::new(RefCell::new(<std_optional_float_>::default()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -112,7 +197,7 @@ pub fn test_contract_17() {
     const _: () = assert!(true, "");;
 }
 pub fn test_contract_18() {
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<std_optional_double_> = Rc::new(RefCell::new(<std_optional_double_>::default()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -123,7 +208,7 @@ pub fn test_contract_18() {
     const _: () = assert!(true, "");;
 }
 pub fn test_contract_19() {
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<std_optional_X_> = Rc::new(RefCell::new(<std_optional_X_>::default()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -134,7 +219,8 @@ pub fn test_contract_19() {
     const _: () = assert!(true, "");;
 }
 pub fn test_contract_20() {
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<std_optional_const_int_> =
+        Rc::new(RefCell::new(<std_optional_const_int_>::default()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -145,7 +231,8 @@ pub fn test_contract_20() {
     const _: () = assert!(true, "");;
 }
 pub fn test_contract_21() {
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<std_optional_const_float_> =
+        Rc::new(RefCell::new(<std_optional_const_float_>::default()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -156,7 +243,8 @@ pub fn test_contract_21() {
     const _: () = assert!(true, "");;
 }
 pub fn test_contract_22() {
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<std_optional_const_double_> =
+        Rc::new(RefCell::new(<std_optional_const_double_>::default()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -167,7 +255,8 @@ pub fn test_contract_22() {
     const _: () = assert!(true, "");;
 }
 pub fn test_contract_23() {
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<std_optional_const_X_> =
+        Rc::new(RefCell::new(<std_optional_const_X_>::default()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -187,11 +276,11 @@ pub fn test_24() -> bool {
     ({ test_contract_22() });
     ({ test_contract_23() });
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((({ XImpl::test_2(&unimplemented!(),) }) == 3));
-        assert!((({ XImpl::test_3(&unimplemented!(),) }) == 4));
-        assert!((({ XImpl::test_4(&unimplemented!(),) }) == 5));
-        assert!((({ XImpl::test_5(&unimplemented!(),) }) == 6));
+        let opt: Value<std_optional_X_> = Rc::new(RefCell::new(<X>::default()));
+        assert!(({ (({ XImpl::test_2(&({ (*opt.borrow()).value_23() }),) }) == 3) }));
+        assert!(({ (({ XImpl::test_3(&({ (*opt.borrow()).value_24() }),) }) == 4) }));
+        assert!(({ (({ XImpl::test_4(&({ (*opt.borrow()).value_26() }),) }) == 5) }));
+        assert!(({ (({ XImpl::test_5(&({ (*opt.borrow()).value_25() }),) }) == 6) }));
     }
     return true;
 }

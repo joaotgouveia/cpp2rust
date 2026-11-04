@@ -34,18 +34,21 @@ pub fn test01_0() {
             (*a.borrow_mut()).reserve_exact(7_usize as usize - len_0 as usize);
         };
     }
-    {
-        let mut __first = a.decay().begin();
-        let __last = a.decay().begin().iter_add(2_isize);
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ a.decay().begin() }, {
+        a.decay().begin().iter_add(2_isize)
+    }) {
+        (mut __tmp_0, mut __tmp_1) => {
+            let mut __first = (__tmp_0).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_1 {
+                __out
+                    .iter_deref()
+                    .write(<Vec<u32> as CppFrom<u32>>::cpp_from(__first.iter_deref()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(<Vec<u32> as CppFrom<u32>>::cpp_from(__first.iter_deref()));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
 }
 pub fn main() {

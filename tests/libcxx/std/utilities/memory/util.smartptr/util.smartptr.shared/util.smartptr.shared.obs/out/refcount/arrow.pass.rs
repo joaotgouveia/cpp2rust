@@ -27,13 +27,44 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((*(*unimplemented!().upgrade().deref()).0.borrow()) == 3));
-    assert!(((*(*unimplemented!().upgrade().deref()).1.borrow()) == 4));
-    (*(*unimplemented!().upgrade().deref()).0.borrow_mut()) = 5;
-    (*(*unimplemented!().upgrade().deref()).1.borrow_mut()) = 6;
-    assert!(((*(*unimplemented!().upgrade().deref()).0.borrow()) == 5));
-    assert!(((*(*unimplemented!().upgrade().deref()).1.borrow()) == 6));
+    let p: Value<std_shared_ptr_std_pair_int__int__> =
+        Rc::new(RefCell::new(std_shared_ptr_std_pair_int__int__::new_1({
+            Ptr::alloc((Rc::new(RefCell::new(3)), Rc::new(RefCell::new(4))))
+        })));
+    assert!(
+        ({
+            ( (*( * ( ( (*p.borrow()) as std___shared_ptr_access_std_pair_int__int_____gnu_cxx__S_atomic__false__false_ ) .read() ) .upgrade().deref() )  .0.borrow()) == 3 )
+        })
+    );
+    assert!(
+        ({
+            ( (*( * ( ( (*p.borrow()) as std___shared_ptr_access_std_pair_int__int_____gnu_cxx__S_atomic__false__false_ ) .read() ) .upgrade().deref() )  .1.borrow()) == 4 )
+        })
+    );
+    (*(*(((*p.borrow())
+        as std___shared_ptr_access_std_pair_int__int_____gnu_cxx__S_atomic__false__false_)
+        .read())
+    .upgrade()
+    .deref())
+    .0
+    .borrow_mut()) = 5;
+    (*(*(((*p.borrow())
+        as std___shared_ptr_access_std_pair_int__int_____gnu_cxx__S_atomic__false__false_)
+        .read())
+    .upgrade()
+    .deref())
+    .1
+    .borrow_mut()) = 6;
+    assert!(
+        ({
+            ( (*( * ( ( (*p.borrow()) as std___shared_ptr_access_std_pair_int__int_____gnu_cxx__S_atomic__false__false_ ) .read() ) .upgrade().deref() )  .0.borrow()) == 5 )
+        })
+    );
+    assert!(
+        ({
+            ( (*( * ( ( (*p.borrow()) as std___shared_ptr_access_std_pair_int__int_____gnu_cxx__S_atomic__false__false_ ) .read() ) .upgrade().deref() )  .1.borrow()) == 6 )
+        })
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

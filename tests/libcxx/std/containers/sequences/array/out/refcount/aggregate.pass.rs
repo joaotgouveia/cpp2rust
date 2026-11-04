@@ -72,6 +72,11 @@ pub fn check_aggregate_8() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Empty {}
+impl CppMove for Empty {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct Trivial {
@@ -79,6 +84,11 @@ pub struct Trivial {
     pub i: i32,
     #[offset(4)]
     pub j: i32,
+}
+impl CppMove for Trivial {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Default)]
 #[byte_size(8)]
@@ -100,6 +110,11 @@ impl Clone for NonTrivial {
             j: self.j.clone(),
         }));
         NonTrivial::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for NonTrivial {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

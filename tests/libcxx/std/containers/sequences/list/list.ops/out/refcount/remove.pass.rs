@@ -11,9 +11,19 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_unsigned_long__unsigned_long_ {}
+impl CppMove for test_macros_detail_is_same_unsigned_long__unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 struct no_default_allocator_int__construct_tag {}
+impl CppMove for no_default_allocator_int__construct_tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct no_default_allocator_int_ {}
@@ -25,6 +35,11 @@ impl no_default_allocator_int_ {
         let mut tag: no_default_allocator_int__construct_tag =
             <no_default_allocator_int__construct_tag>::default();
         return no_default_allocator_int_::new_1({ (tag).clone() });
+    }
+}
+impl CppMove for no_default_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -42,6 +57,11 @@ impl malloc_allocator_base {
         outstanding_bytes_1.with(|rc| *rc.borrow_mut() = 0_usize);
         alloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
         dealloc_count_3.with(|rc| *rc.borrow_mut() = 0_usize);
+    }
+}
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 thread_local!(
@@ -64,6 +84,11 @@ pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<i32>,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -72,9 +97,19 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
+impl CppMove for min_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CppFrom, CopyAssign, Destructor, Default)]
 #[cpp_from(i32, new, value)]
 #[byte_size(8)]
@@ -104,6 +139,11 @@ impl Clone for S {
             i_: self.i_.clone(),
         }));
         S::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn test_5() -> bool {
@@ -138,7 +178,7 @@ pub fn test_5() -> bool {
         let mut ip: Ptr<i32> = (a2.as_pointer() as Ptr<i32>);
         'loop_: while ({ (ip).clone() } < { (a2.as_pointer() as Ptr<i32>).offset((5) as isize) }) {
             assert!((*it.borrow()) != <BidirectionalIterator<S>>::from(unimplemented!()));
-            assert!(({ (ip.read()) } == { ({ SImpl::get(&(*it.borrow()).iter_deref(),) }) }));
+            assert!(({ ({ (ip.read()) } == { ({ SImpl::get(&(*it.borrow()).iter_deref(),) }) }) }));
             {
                 ip.prefix_inc();
                 (*it.borrow_mut()).iter_inc()

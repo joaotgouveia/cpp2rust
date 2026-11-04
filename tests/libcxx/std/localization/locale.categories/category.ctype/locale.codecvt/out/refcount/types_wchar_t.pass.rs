@@ -32,11 +32,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "(std::is_same<F::intern_type, wchar_t>::value)");;
     const _: () = assert!(true, "(std::is_same<F::extern_type, char>::value)");;
     const _: () = assert!(true, "(std::is_same<F::state_type, std::mbstate_t>::value)");;
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
-    let f: Ptr<()> = unimplemented!();
+    let l: Value<std_locale> = Rc::new(RefCell::new(
+        (*({ std_locale::classic() }).upgrade().deref()).clone(),
+    ));
+    assert!(({ has_facet_0(l.as_pointer(),) }));
+    let f: Ptr<std_codecvt_wchar_t__char____mbstate_t_> = ({ use_facet_1(l.as_pointer()) });
     (&(*f.upgrade().deref()));
-    &(unimplemented!());
+    &(*id_2.with(Value::clone).borrow_mut());
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

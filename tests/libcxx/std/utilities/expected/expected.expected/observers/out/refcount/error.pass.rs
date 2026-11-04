@@ -13,26 +13,46 @@ const _: () = assert!(true, "ErrorNoexcept<std::expected<int, int>&&>");
 const _: () = assert!(true, "ErrorNoexcept<const std::expected<int, int>&&>");
 pub fn test_0() -> bool {
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Ptr<i32> = unimplemented!();
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(5));
+            std_expected_int__int_::new_1({ (*unexpect_1.with(Value::clone).borrow()).clone() }, {
+                __tmp_0.as_pointer()
+            })
+        }));
+        let x: Ptr<i32> = ({ (*e.borrow()).error_39() });
         const _: () = assert!(true, "std::same_as<decltype(x), int&>");;
         assert!(((x.read()) == 5));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Ptr<i32> = unimplemented!();
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new({
+            let __tmp_1: Value<i32> = Rc::new(RefCell::new(5));
+            std_expected_int__int_::new_1({ (*unexpect_1.with(Value::clone).borrow()).clone() }, {
+                __tmp_1.as_pointer()
+            })
+        }));
+        let x: Ptr<i32> = ({ (*e.borrow()).error_38() });
         const _: () = assert!(true, "std::same_as<decltype(x), const int&>");;
         assert!(((x.read()) == 5));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Ptr<i32> = unimplemented!();
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<i32> = Rc::new(RefCell::new(5));
+            std_expected_int__int_::new_1({ (*unexpect_1.with(Value::clone).borrow()).clone() }, {
+                __tmp_2.as_pointer()
+            })
+        }));
+        let x: Ptr<i32> = ({ (*e.borrow()).error_41() });
         const _: () = assert!(true, "std::same_as<decltype(x), int&&>");;
         assert!(((x.read()) == 5));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Ptr<i32> = unimplemented!();
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new({
+            let __tmp_3: Value<i32> = Rc::new(RefCell::new(5));
+            std_expected_int__int_::new_1({ (*unexpect_1.with(Value::clone).borrow()).clone() }, {
+                __tmp_3.as_pointer()
+            })
+        }));
+        let x: Ptr<i32> = ({ (*e.borrow()).error_40() });
         const _: () = assert!(true, "std::same_as<decltype(x), const int&&>");;
         assert!(((x.read()) == 5));
     }

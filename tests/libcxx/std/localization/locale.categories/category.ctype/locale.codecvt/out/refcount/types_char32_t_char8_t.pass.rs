@@ -32,10 +32,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::is_same_v<F::intern_type, char32_t>");;
     const _: () = assert!(true, "std::is_same_v<F::extern_type, char8_t>");;
     const _: () = assert!(true, "std::is_same_v<F::state_type, std::mbstate_t>");;
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
-    let f: Ptr<()> = unimplemented!();
-    &(unimplemented!());
+    let l: Value<std_locale> = Rc::new(RefCell::new(
+        (*({ std_locale::classic() }).upgrade().deref()).clone(),
+    ));
+    assert!(({ has_facet_0(l.as_pointer(),) }));
+    let f: Ptr<std_codecvt_char32_t__char8_t____mbstate_t_> = ({ use_facet_1(l.as_pointer()) });
+    &(*id_2.with(Value::clone).borrow_mut());
     &(*f.upgrade().deref());
     return 0;
 }

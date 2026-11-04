@@ -7,18 +7,44 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test1_0() {
-    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let m : Value<std_match_results_const_char_ptr__std_allocator_std_sub_match_const_char_ptr___ > = Rc::new(RefCell::new(<std_match_results_const_char_ptr__std_allocator_std_sub_match_const_char_ptr___  >::default() )) ;
     let s: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(b"abcdefghijk\0")));
-    assert!(((unimplemented!() as i32) == (false as i32)));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(({ ((({ (*m.borrow()).ready() }) as i32) == (false as i32)) }));
+    ({
+        let ___e: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
+            std_basic_regex_char__std_regex_traits_char__::new_1(
+                { Ptr::<i8>::from_string_literal(b"cd((e)fg)hi") },
+                None,
+            ),
+        ));
+        regex_search_1(
+            (s.as_pointer() as Ptr<i8>),
+            m.as_pointer(),
+            ___e.as_pointer(),
+            None,
+        )
+    });
+    assert!(({ ((({ (*m.borrow()).ready() }) as i32) == (true as i32)) }));
 }
-pub fn test2_1() {
-    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test2_2() {
+    let m : Value<std_match_results_const_char_ptr__std_allocator_std_sub_match_const_char_ptr___ > = Rc::new(RefCell::new(<std_match_results_const_char_ptr__std_allocator_std_sub_match_const_char_ptr___  >::default() )) ;
     let s: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(b"abcdefghijk\0")));
-    assert!(((unimplemented!() as i32) == (false as i32)));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(({ ((({ (*m.borrow()).ready() }) as i32) == (false as i32)) }));
+    ({
+        let ___e: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
+            std_basic_regex_char__std_regex_traits_char__::new_1(
+                { Ptr::<i8>::from_string_literal(b"z") },
+                None,
+            ),
+        ));
+        regex_search_1(
+            (s.as_pointer() as Ptr<i8>),
+            m.as_pointer(),
+            ___e.as_pointer(),
+            None,
+        )
+    });
+    assert!(({ ((({ (*m.borrow()).ready() }) as i32) == (true as i32)) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -41,7 +67,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test1_0() });
-    ({ test2_1() });
+    ({ test2_2() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

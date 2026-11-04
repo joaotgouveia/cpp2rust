@@ -21,6 +21,11 @@ impl S {
         Self { i: j }
     }
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for S {
     fn default() -> Self {
         { S::new_2() }
@@ -36,11 +41,11 @@ pub fn test_0() -> bool {
             Rc::new(RefCell::new(5)),
             Rc::new(RefCell::new(6_i16)),
         )));
-        unimplemented!();
-        assert!(((*(*p1.borrow()).0.borrow()) == 5));
-        assert!((((*(*p1.borrow()).1.borrow()) as i32) == 6));
-        assert!(((*(*p2.borrow()).0.borrow()) == 3));
-        assert!((((*(*p2.borrow()).1.borrow()) as i32) == 4));
+        ({ (*p1.borrow()).swap_4(p2.as_pointer()) });
+        assert!(({ ((*(*p1.borrow()).0.borrow()) == 5) }));
+        assert!(({ (((*(*p1.borrow()).1.borrow()) as i32) == 6) }));
+        assert!(({ ((*(*p2.borrow()).0.borrow()) == 3) }));
+        assert!(({ (((*(*p2.borrow()).1.borrow()) as i32) == 4) }));
     }
     {
         let p1: Value<(Value<i32>, Value<S>)> = Rc::new(RefCell::new((
@@ -51,11 +56,11 @@ pub fn test_0() -> bool {
             Rc::new(RefCell::new(5)),
             Rc::new(RefCell::new(S::new_1({ 6 }))),
         )));
-        unimplemented!();
-        assert!(((*(*p1.borrow()).0.borrow()) == 5));
-        assert!(({ SImpl::operator_eq(&(*p1.borrow()).1.as_pointer(), 6,) }));
-        assert!(((*(*p2.borrow()).0.borrow()) == 3));
-        assert!(({ SImpl::operator_eq(&(*p2.borrow()).1.as_pointer(), 4,) }));
+        ({ (*p1.borrow()).swap_4(p2.as_pointer()) });
+        assert!(({ ((*(*p1.borrow()).0.borrow()) == 5) }));
+        assert!(({ ({ SImpl::operator_eq(&(*p1.borrow()).1.as_pointer(), 6,) }) }));
+        assert!(({ ((*(*p2.borrow()).0.borrow()) == 3) }));
+        assert!(({ ({ SImpl::operator_eq(&(*p2.borrow()).1.as_pointer(), 4,) }) }));
     }
     return true;
 }

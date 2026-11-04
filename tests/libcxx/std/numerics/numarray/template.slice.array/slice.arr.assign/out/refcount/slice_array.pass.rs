@@ -35,33 +35,70 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             -1_i32, -2_i32, -3_i32, -4_i32, -5_i32, -6_i32, -7_i32, -8_i32, -9_i32, -10_i32,
             -11_i32, -12_i32,
         ])));
-        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 16_usize));
-        assert!(((unimplemented!().read()) == 0));
-        assert!(((unimplemented!().read()) == -3_i32));
-        assert!(((unimplemented!().read()) == 2));
-        assert!(((unimplemented!().read()) == 3));
-        assert!(((unimplemented!().read()) == -5_i32));
-        assert!(((unimplemented!().read()) == 5));
-        assert!(((unimplemented!().read()) == 6));
-        assert!(((unimplemented!().read()) == -7_i32));
-        assert!(((unimplemented!().read()) == 8));
-        assert!(((unimplemented!().read()) == 9));
-        assert!(((unimplemented!().read()) == -9_i32));
-        assert!(((unimplemented!().read()) == 11));
-        assert!(((unimplemented!().read()) == 12));
-        assert!(((unimplemented!().read()) == -11_i32));
-        assert!(((unimplemented!().read()) == 14));
-        assert!(((unimplemented!().read()) == 15));
+        let v1: Value<std_valarray_int_> = Rc::new(RefCell::new(std_valarray_int_::new_1(
+            { (a1.as_pointer() as Ptr<i32>) },
+            {
+                (::std::mem::size_of::<[i32; 16]>() as usize)
+                    .wrapping_div((::std::mem::size_of::<i32>() as usize))
+            },
+        )));
+        let v2: Value<std_valarray_int_> = Rc::new(RefCell::new(std_valarray_int_::new_1(
+            { (a2.as_pointer() as Ptr<i32>) },
+            {
+                (::std::mem::size_of::<[i32; 12]>() as usize)
+                    .wrapping_div((::std::mem::size_of::<i32>() as usize))
+            },
+        )));
+        elem!(
+            v1.as_pointer(),
+            std_slice::new_1({ 1_usize }, { 5_usize }, { 3_usize },)
+        )
+        .write(
+            elem!(
+                v2.as_pointer(),
+                std_slice::new_1({ 2_usize }, { 5_usize }, { 2_usize },)
+            )
+            .read(),
+        );
+        assert!(({ (({ (*v1.borrow()).size() }) == 16_usize) }));
+        assert!(({ ({ (*v1.borrow())[0_usize] } == 0) }));
+        assert!(({ ({ (*v1.borrow())[1_usize] } == -3_i32) }));
+        assert!(({ ({ (*v1.borrow())[2_usize] } == 2) }));
+        assert!(({ ({ (*v1.borrow())[3_usize] } == 3) }));
+        assert!(({ ({ (*v1.borrow())[4_usize] } == -5_i32) }));
+        assert!(({ ({ (*v1.borrow())[5_usize] } == 5) }));
+        assert!(({ ({ (*v1.borrow())[6_usize] } == 6) }));
+        assert!(({ ({ (*v1.borrow())[7_usize] } == -7_i32) }));
+        assert!(({ ({ (*v1.borrow())[8_usize] } == 8) }));
+        assert!(({ ({ (*v1.borrow())[9_usize] } == 9) }));
+        assert!(({ ({ (*v1.borrow())[10_usize] } == -9_i32) }));
+        assert!(({ ({ (*v1.borrow())[11_usize] } == 11) }));
+        assert!(({ ({ (*v1.borrow())[12_usize] } == 12) }));
+        assert!(({ ({ (*v1.borrow())[13_usize] } == -11_i32) }));
+        assert!(({ ({ (*v1.borrow())[14_usize] } == 14) }));
+        assert!(({ ({ (*v1.borrow())[15_usize] } == 15) }));
     }
     {
         let a1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2])));
-        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s3: Ptr<()> = (unimplemented!());
+        let v1: Value<std_valarray_int_> = Rc::new(RefCell::new(std_valarray_int_::new_1(
+            { (a1.as_pointer() as Ptr<i32>) },
+            { 3_usize },
+        )));
+        let s1: Value<std_slice_array_int_> = Rc::new(RefCell::new(
+            elem!(
+                v1.as_pointer(),
+                std_slice::new_1({ 1_usize }, { 1_usize }, { 1_usize },)
+            )
+            .read(),
+        ));
+        let s2: Value<std_slice_array_int_> = Rc::new(RefCell::new(
+            elem!(
+                v1.as_pointer(),
+                std_slice::new_1({ 0_usize }, { 1_usize }, { 1_usize },)
+            )
+            .read(),
+        ));
+        let s3: Ptr<std_slice_array_int_> = ((*s1.borrow_mut()) = (*s2.borrow()).clone());
         assert!(({ (s1.as_pointer()) } == { (s3).clone() }));
     }
     return 0;

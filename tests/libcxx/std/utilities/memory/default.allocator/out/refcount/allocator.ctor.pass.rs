@@ -7,26 +7,32 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let a1_copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let a1: Value<std_allocator_char_> = Rc::new(RefCell::new(<std_allocator_char_>::default()));
+    let a1_copy: Value<std_allocator_char_> = Rc::new(RefCell::new((*a1.borrow()).clone()));
     &(*a1_copy.borrow_mut());
-    let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let a2: Value<std_allocator_long_> = Rc::new(RefCell::new(std_allocator_long_::new_1({
+        a1.as_pointer()
+    })));
     &(*a2.borrow_mut());
     return true;
 }
 pub fn test_1() -> bool {
-    let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let a1_copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let a1: Value<std_allocator_int_> = Rc::new(RefCell::new(<std_allocator_int_>::default()));
+    let a1_copy: Value<std_allocator_int_> = Rc::new(RefCell::new((*a1.borrow()).clone()));
     &(*a1_copy.borrow_mut());
-    let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let a2: Value<std_allocator_long_> = Rc::new(RefCell::new(std_allocator_long_::new_2({
+        a1.as_pointer()
+    })));
     &(*a2.borrow_mut());
     return true;
 }
 pub fn test_2() -> bool {
-    let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let a1_copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let a1: Value<std_allocator_void_> = Rc::new(RefCell::new(<std_allocator_void_>::default()));
+    let a1_copy: Value<std_allocator_void_> = Rc::new(RefCell::new((*a1.borrow()).clone()));
     &(*a1_copy.borrow_mut());
-    let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let a2: Value<std_allocator_long_> = Rc::new(RefCell::new(std_allocator_long_::new_3({
+        a1.as_pointer()
+    })));
     &(*a2.borrow_mut());
     return true;
 }

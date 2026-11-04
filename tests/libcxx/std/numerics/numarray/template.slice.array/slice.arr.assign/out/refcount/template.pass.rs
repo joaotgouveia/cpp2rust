@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_void__void_ {}
+impl CppMove for test_macros_detail_is_same_void__void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -32,12 +37,24 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let a: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64, 0_f64])));
-    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((unimplemented!().read()) == 42_f64));
-    assert!(((unimplemented!().read()) == 42_f64));
-    assert!(((unimplemented!().read()) == 42_f64));
+    let m: Value<std_valarray_double_> = Rc::new(RefCell::new(std_valarray_double_::new_1(
+        { (a.as_pointer() as Ptr<f64>) },
+        {
+            (::std::mem::size_of::<[f64; 3]>() as usize)
+                .wrapping_div((::std::mem::size_of::<f64>() as usize))
+        },
+    )));
+    let s: Value<std_slice_array_double_> = Rc::new(RefCell::new(
+        elem!(
+            m.as_pointer(),
+            std_slice::new_1({ 0_usize }, { 3_usize }, { 1_usize },)
+        )
+        .read(),
+    ));
+    (*s.borrow_mut()) = 42_f64;
+    assert!(({ ({ (*m.borrow())[0_usize] } == 42_f64) }));
+    assert!(({ ({ (*m.borrow())[1_usize] } == 42_f64) }));
+    assert!(({ ({ (*m.borrow())[2_usize] } == 42_f64) }));
     const _: () = assert!(true, "");;
     return 0;
 }

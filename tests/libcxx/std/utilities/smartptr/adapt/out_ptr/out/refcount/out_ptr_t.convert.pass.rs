@@ -28,24 +28,34 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut uPtr: Option<Value<i32>> = None;
-        let oPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let uPtr: Value<Option<Value<i32>>> = Rc::new(RefCell::new(None));
+        let oPtr: Value<std_out_ptr_t_std_unique_ptr_int__std_default_delete_int____int_ptr_> =
+            Rc::new(RefCell::new(
+                std_out_ptr_t_std_unique_ptr_int__std_default_delete_int____int_ptr_::new({
+                    uPtr.as_pointer()
+                }),
+            ));
         const _: () = assert!(true, "noexcept(oPtr.operator int**())");;
-        let mut pPtr: Ptr<Ptr<i32>> = unimplemented!();
+        let mut pPtr: Ptr<Ptr<i32>> = ({ (*oPtr.borrow())() });
         assert!((pPtr.read()).is_null());
     }
     {
         let uPtr: Value<Option<Value<i32>>> = Rc::new(RefCell::new(None));
-        let oPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let oPtr : Value<std_out_ptr_t_std_unique_ptr_int__std_default_delete_int____int_ptr__std_default_delete_int__ > = Rc::new(RefCell::new(std_out_ptr_t_std_unique_ptr_int__std_default_delete_int____int_ptr__std_default_delete_int__ :: new ( { uPtr .as_pointer()  } , { <std_default_delete_int_  >::default()  } , )  )) ;
         const _: () = assert!(true, "noexcept(oPtr.operator int**())");;
-        let mut pPtr: Ptr<Ptr<i32>> = unimplemented!();
+        let mut pPtr: Ptr<Ptr<i32>> = ({ (*oPtr.borrow())() });
         assert!((pPtr.read()).is_null());
     }
     {
-        let mut uPtr: Option<Value<i32>> = None;
-        let oPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let uPtr: Value<Option<Value<i32>>> = Rc::new(RefCell::new(None));
+        let oPtr: Value<std_out_ptr_t_std_unique_ptr_int__std_default_delete_int____void_ptr_> =
+            Rc::new(RefCell::new(
+                std_out_ptr_t_std_unique_ptr_int__std_default_delete_int____void_ptr_::new({
+                    uPtr.as_pointer()
+                }),
+            ));
         const _: () = assert!(true, "noexcept(oPtr.operator void**())");;
-        let mut pPtr: Ptr<AnyPtr> = unimplemented!();
+        let mut pPtr: Ptr<AnyPtr> = ({ (*oPtr.borrow()).to_pmutAnyPtr_4() });
         assert!((pPtr.read()).is_null());
     }
     return 0;

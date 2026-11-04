@@ -10,65 +10,127 @@ pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_less_int___std_less_int__ {}
-pub type anon_1 = u32;
-pub const anon_1_value: anon_1 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_function_bool__int__int____std_function_bool__int__int___
-{}
-pub type anon_2 = u32;
-pub const anon_2_value: anon_2 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_less_void___std_less_void__ {}
-pub type anon_3 = u32;
-pub const anon_3_value: anon_3 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
 pub struct test_macros_detail_is_same_bool__bool_ {}
-pub fn test_4() -> bool {
+impl CppMove for test_macros_detail_is_same_bool__bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn test_1() -> bool {
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m : Value<std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int___ > = Rc::new(RefCell::new(<std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int___  >::default() )) ;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        let kc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        let vc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
+        let kc: Value<std_less_int_> = Rc::new(RefCell::new(
+            ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__std_less_int___std_vector_int__std_allocator_int____true_ ) . key_comp ( )
+            }),
+        ));
+        assert!(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                let ___y: Value<i32> = Rc::new(RefCell::new(2));
+                (*kc.borrow_mut())(___x.as_pointer(), ___y.as_pointer())
+            })
+        );
+        assert!(
+            !({
+                let ___x: Value<i32> = Rc::new(RefCell::new(2));
+                let ___y: Value<i32> = Rc::new(RefCell::new(1));
+                (*kc.borrow_mut())(___x.as_pointer(), ___y.as_pointer())
+            })
+        );
+        let vc: Value<std_less_int_> = Rc::new(RefCell::new(
+            ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__std_less_int___std_vector_int__std_allocator_int____true_ ) . value_comp ( )
+            }),
+        ));
+        assert!(
+            ({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                let ___y: Value<i32> = Rc::new(RefCell::new(2));
+                (*vc.borrow_mut())(___x.as_pointer(), ___y.as_pointer())
+            })
+        );
+        assert!(
+            !({
+                let ___x: Value<i32> = Rc::new(RefCell::new(2));
+                let ___y: Value<i32> = Rc::new(RefCell::new(1));
+                (*vc.borrow_mut())(___x.as_pointer(), ___y.as_pointer())
+            })
+        );
     }
     {
-        let comp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let comp: Value<std_function_bool__int__int__> =
+            Rc::new(RefCell::new(<std_greater_int_>::default()));
+        let m : Value<std_flat_multiset_int__std_function_bool__int__int____std_vector_int__std_allocator_int___ > = Rc::new(RefCell::new(std_flat_multiset_int__std_function_bool__int__int____std_vector_int__std_allocator_int___ :: new_1 ( { Default::default()  } , { comp .as_pointer()  } , )  )) ;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        let kc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!((unimplemented!() as bool));
-        let vc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!((unimplemented!() as bool));
+        let kc: Value<std_function_bool__int__int__> = Rc::new(RefCell::new(
+            ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__std_function_bool__int__int____std_vector_int__std_allocator_int____true_ ) . key_comp ( )
+            }),
+        ));
+        assert!(({ !({ (*kc.borrow_mut())(1, 2,) }) }));
+        assert!(({ (({ (*kc.borrow_mut())(2, 1,) }) as bool) }));
+        let vc: Value<std_function_bool__int__int__> = Rc::new(RefCell::new(
+            ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__std_function_bool__int__int____std_vector_int__std_allocator_int____true_ ) . value_comp ( )
+            }),
+        ));
+        assert!(({ !({ (*vc.borrow_mut())(1, 2,) }) }));
+        assert!(({ (({ (*vc.borrow_mut())(2, 1,) }) as bool) }));
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m : Value<std_flat_multiset_int__std_less_void___std_vector_int__std_allocator_int___ > = Rc::new(RefCell::new(<std_flat_multiset_int__std_less_void___std_vector_int__std_allocator_int___  >::default() )) ;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        let kc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() as bool));
-        assert!(!(unimplemented!()));
-        let vc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let kc: Value<std_less_void_> = Rc::new(RefCell::new(
+            ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__std_less_void___std_vector_int__std_allocator_int____true_ ) . key_comp ( )
+            }),
+        ));
+        assert!(
+            (({
+                let ___t: Value<i32> = Rc::new(RefCell::new(1));
+                let ___u: Value<i32> = Rc::new(RefCell::new(2));
+                (*kc.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+            }) as bool)
+        );
+        assert!(
+            !({
+                let ___t: Value<i32> = Rc::new(RefCell::new(2));
+                let ___u: Value<i32> = Rc::new(RefCell::new(1));
+                (*kc.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+            })
+        );
+        let vc: Value<std_less_void_> = Rc::new(RefCell::new(
+            ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__std_less_void___std_vector_int__std_allocator_int____true_ ) . value_comp ( )
+            }),
+        ));
         let a: Value<(Value<i32>, Value<i32>)> = Rc::new(RefCell::new((
             Rc::new(RefCell::new(1)),
             Rc::new(RefCell::new(2)),
         )));
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() as bool));
-        assert!(!(unimplemented!()));
+        assert!(
+            (({
+                let ___t: Value<i32> = Rc::new(RefCell::new(1));
+                let ___u: Value<i32> = Rc::new(RefCell::new(2));
+                (*vc.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+            }) as bool)
+        );
+        assert!(
+            !({
+                let ___t: Value<i32> = Rc::new(RefCell::new(2));
+                let ___u: Value<i32> = Rc::new(RefCell::new(1));
+                (*vc.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+            })
+        );
     }
     return true;
 }
@@ -92,7 +154,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_4() });
+    ({ test_1() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

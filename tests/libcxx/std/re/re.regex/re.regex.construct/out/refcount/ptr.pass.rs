@@ -7,9 +7,15 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0(mut p: Ptr<i8>, mut mc: u32) {
-    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as u32) == (unimplemented!() as u32)));
-    assert!((unimplemented!() == mc));
+    let r: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
+        std_basic_regex_char__std_regex_traits_char__::new_1({ (p).clone() }, None),
+    ));
+    assert!(
+        ({
+            ((({ (*r.borrow()).flags() }) as u32) == (ECMAScript_1.with(|rc| *rc.borrow()) as u32))
+        })
+    );
+    assert!(({ (({ (*r.borrow()).mark_count() }) == mc) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

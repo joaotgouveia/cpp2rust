@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_year_month__std_chrono_year_month_ {}
+impl CppMove for test_macros_detail_is_same_std_chrono_year_month__std_chrono_year_month_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_ym_plus_y_1() -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;

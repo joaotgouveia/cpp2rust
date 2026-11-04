@@ -52,6 +52,11 @@ impl Clone for __gnu_test_object_counter {
         __gnu_test_object_counter::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_object_counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_object_counter {
     fn default() -> Self {
         { __gnu_test_object_counter::new() }
@@ -78,6 +83,11 @@ impl __gnu_test_copy_constructor {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_copy_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
@@ -99,6 +109,11 @@ impl __gnu_test_assignment_operator {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_assignment_operator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
@@ -111,6 +126,11 @@ impl __gnu_test_destructor {
     }
     pub fn reset() {
         _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
+    }
+}
+impl CppMove for __gnu_test_destructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -173,6 +193,11 @@ impl Clone for __gnu_test_copy_tracker {
         __gnu_test_copy_tracker::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_copy_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_copy_tracker {
     fn default() -> Self {
         { __gnu_test_copy_tracker::new(None, None) }
@@ -197,24 +222,33 @@ pub struct __gnu_test_semaphore {
     pid_: (),
 }
 impl __gnu_test_semaphore {}
+impl CppMove for __gnu_test_semaphore {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A {}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test01_9() -> bool {
     let p2a0: Value<(Value<A>, Value<i32>)> = Rc::new(RefCell::new(unimplemented!()));
-    let p2b0: Value<(Value<B_10>, Value<i32>)> = Rc::new(RefCell::new({
-        let __a0 = (*p2a0.borrow()).clone();
-        (
-            Rc::new(RefCell::new(<B_10 as CppFrom<A>>::cpp_from(
-                __a0.0.as_pointer(),
-            ))),
-            Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-        )
-    }));
+    let p2b0: Value<(Value<B_10>, Value<i32>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(<B_10 as CppFrom<A>>::cpp_from(
+            (*p2a0.borrow()).0.as_pointer(),
+        ))),
+        Rc::new(RefCell::new(((*p2a0.borrow()).1.as_pointer().read()))),
+    )));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(<(Value<B_10>, Value<i32>) as PairGetRef<0>>::pair_get(&(*p2b0.borrow()))
+        if !((*p2b0.borrow())
+            .get_value::<0>()
+            .as_pointer()
             .with(|__s| __s.v))
         {
             unimplemented!();
@@ -222,19 +256,18 @@ pub fn test01_9() -> bool {
         }
     }
     let p2a1: Value<(Value<i32>, Value<A>)> = Rc::new(RefCell::new(unimplemented!()));
-    let p2b1: Value<(Value<i32>, Value<B_10>)> = Rc::new(RefCell::new({
-        let __a0 = (*p2a1.borrow()).clone();
-        (
-            Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-            Rc::new(RefCell::new(<B_10 as CppFrom<A>>::cpp_from(
-                __a0.1.as_pointer(),
-            ))),
-        )
-    }));
+    let p2b1: Value<(Value<i32>, Value<B_10>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(((*p2a1.borrow()).0.as_pointer().read()))),
+        Rc::new(RefCell::new(<B_10 as CppFrom<A>>::cpp_from(
+            (*p2a1.borrow()).1.as_pointer(),
+        ))),
+    )));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(<(Value<i32>, Value<B_10>) as PairGetRef<1>>::pair_get(&(*p2b1.borrow()))
+        if !((*p2b1.borrow())
+            .get_value::<1>()
+            .as_pointer()
             .with(|__s| __s.v))
         {
             unimplemented!();
@@ -255,23 +288,27 @@ impl B_10 {
         Self { v: true }
     }
 }
+impl CppMove for B_10 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test02_11() -> bool {
     const _: () = assert!(true, "!std::is_convertible_v<pair<A, int>&, pair<B, int>>");;
     const _: () = assert!(true, "!std::is_convertible_v<pair<int, A>&, pair<int, B>>");;
     let p2a0: Value<(Value<A>, Value<i32>)> = Rc::new(RefCell::new(unimplemented!()));
-    let p2b0: Value<(Value<B_12>, Value<i32>)> = Rc::new(RefCell::new({
-        let __a0 = (*p2a0.borrow()).clone();
-        (
-            Rc::new(RefCell::new(<B_12 as CppFrom<A>>::cpp_from(
-                __a0.0.as_pointer(),
-            ))),
-            Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
-        )
-    }));
+    let p2b0: Value<(Value<B_12>, Value<i32>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(<B_12 as CppFrom<A>>::cpp_from(
+            (*p2a0.borrow()).0.as_pointer(),
+        ))),
+        Rc::new(RefCell::new(((*p2a0.borrow()).1.as_pointer().read()))),
+    )));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(<(Value<B_12>, Value<i32>) as PairGetRef<0>>::pair_get(&(*p2b0.borrow()))
+        if !((*p2b0.borrow())
+            .get_value::<0>()
+            .as_pointer()
             .with(|__s| __s.v))
         {
             unimplemented!();
@@ -279,19 +316,18 @@ pub fn test02_11() -> bool {
         }
     }
     let p2a1: Value<(Value<i32>, Value<A>)> = Rc::new(RefCell::new(unimplemented!()));
-    let p2b1: Value<(Value<i32>, Value<B_12>)> = Rc::new(RefCell::new({
-        let __a0 = (*p2a1.borrow()).clone();
-        (
-            Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
-            Rc::new(RefCell::new(<B_12 as CppFrom<A>>::cpp_from(
-                __a0.1.as_pointer(),
-            ))),
-        )
-    }));
+    let p2b1: Value<(Value<i32>, Value<B_12>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(((*p2a1.borrow()).0.as_pointer().read()))),
+        Rc::new(RefCell::new(<B_12 as CppFrom<A>>::cpp_from(
+            (*p2a1.borrow()).1.as_pointer(),
+        ))),
+    )));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(<(Value<i32>, Value<B_12>) as PairGetRef<1>>::pair_get(&(*p2b1.borrow()))
+        if !((*p2b1.borrow())
+            .get_value::<1>()
+            .as_pointer()
             .with(|__s| __s.v))
         {
             unimplemented!();
@@ -311,13 +347,20 @@ impl B_12 {
         Self { v: true }
     }
 }
+impl CppMove for B_12 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test03_13() -> bool {
     let p2a0: Value<(Value<A>, Value<i32>)> = Rc::new(RefCell::new(unimplemented!()));
     let p2b0: Value<(Value<B_14>, Value<i32>)> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(<(Value<B_14>, Value<i32>) as PairGetRef<0>>::pair_get(&(*p2b0.borrow()))
+        if !((*p2b0.borrow())
+            .get_value::<0>()
+            .as_pointer()
             .with(|__s| __s.v))
         {
             unimplemented!();
@@ -329,7 +372,9 @@ pub fn test03_13() -> bool {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(<(Value<i32>, Value<B_14>) as PairGetRef<1>>::pair_get(&(*p2b1.borrow()))
+        if !((*p2b1.borrow())
+            .get_value::<1>()
+            .as_pointer()
             .with(|__s| __s.v))
         {
             unimplemented!();
@@ -350,6 +395,11 @@ impl B_14 {
         Self { v: true }
     }
 }
+impl CppMove for B_14 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test04_15() -> bool {
     const _: () = assert!(
         true,
@@ -364,7 +414,9 @@ pub fn test04_15() -> bool {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(<(Value<B_16>, Value<i32>) as PairGetRef<0>>::pair_get(&(*p2b0.borrow()))
+        if !((*p2b0.borrow())
+            .get_value::<0>()
+            .as_pointer()
             .with(|__s| __s.v))
         {
             unimplemented!();
@@ -376,7 +428,9 @@ pub fn test04_15() -> bool {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(<(Value<i32>, Value<B_16>) as PairGetRef<1>>::pair_get(&(*p2b1.borrow()))
+        if !((*p2b1.borrow())
+            .get_value::<1>()
+            .as_pointer()
             .with(|__s| __s.v))
         {
             unimplemented!();
@@ -396,6 +450,11 @@ impl B_16 {
         Self { v: true }
     }
 }
+impl CppMove for B_16 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test05_17() -> bool {
     let p2a: Value<(Value<A>, Value<A>)> = Rc::new(RefCell::new(unimplemented!()));
     let p2b: Value<(Value<B_18>, Value<B_18>)> = Rc::new(RefCell::new(unimplemented!()));
@@ -407,6 +466,11 @@ pub fn test05_17() -> bool {
 pub struct B_18 {
     #[offset(0)]
     pub v: bool,
+}
+impl CppMove for B_18 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn test06_19() -> bool {
     let p2a: Value<(Value<A>, Value<A>)> = Rc::new(RefCell::new(unimplemented!()));
@@ -420,6 +484,11 @@ pub struct B_20 {
     #[offset(0)]
     pub v: bool,
 }
+impl CppMove for B_20 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test07_21() -> bool {
     let t2a: Value<(Value<B_22>, Value<B_22>)> = Rc::new(RefCell::new(unimplemented!()));
     let t2b: Value<(Value<B_22>, Value<B_22>)> = Rc::new(RefCell::new(unimplemented!()));
@@ -427,7 +496,9 @@ pub fn test07_21() -> bool {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(<(Value<B_22>, Value<B_22>) as PairGetRef<0>>::pair_get(&(*t2b.borrow()))
+        if !((*t2b.borrow())
+            .get_value::<0>()
+            .as_pointer()
             .with(|__s| __s.v))
         {
             unimplemented!();
@@ -437,7 +508,9 @@ pub fn test07_21() -> bool {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(<(Value<B_22>, Value<B_22>) as PairGetRef<1>>::pair_get(&(*t2b.borrow()))
+        if !((*t2b.borrow())
+            .get_value::<1>()
+            .as_pointer()
             .with(|__s| __s.v))
         {
             unimplemented!();
@@ -452,6 +525,11 @@ pub struct B_22 {
     #[offset(0)]
     pub v: bool,
 }
+impl CppMove for B_22 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test08_23() -> bool {
     let t2a: Value<(Value<B_24>, Value<B_24>)> = Rc::new(RefCell::new(unimplemented!()));
     let t2b: Value<(Value<B_24>, Value<B_24>)> = Rc::new(RefCell::new(unimplemented!()));
@@ -459,7 +537,9 @@ pub fn test08_23() -> bool {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(<(Value<B_24>, Value<B_24>) as PairGetRef<0>>::pair_get(&(*t2b.borrow()))
+        if !((*t2b.borrow())
+            .get_value::<0>()
+            .as_pointer()
             .with(|__s| __s.v))
         {
             unimplemented!();
@@ -469,7 +549,9 @@ pub fn test08_23() -> bool {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(<(Value<B_24>, Value<B_24>) as PairGetRef<1>>::pair_get(&(*t2b.borrow()))
+        if !((*t2b.borrow())
+            .get_value::<1>()
+            .as_pointer()
             .with(|__s| __s.v))
         {
             unimplemented!();
@@ -485,14 +567,23 @@ pub struct B_24 {
     pub v: bool,
 }
 pub fn swap_25(x: Ptr<S>, y: Ptr<S>) {
-    field!(x, v).with_mut(|__v| __v.prefix_inc());
-    field!(y, v).with_mut(|__v| __v.prefix_inc());
+    field!(x, v).with_mut(|__v| {
+        __v.prefix_inc();
+    });
+    field!(y, v).with_mut(|__v| {
+        __v.prefix_inc();
+    });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct S {
     #[offset(0)]
     pub v: i32,
+}
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for S {
     fn default() -> Self {
@@ -506,7 +597,10 @@ pub fn test09_26() -> bool {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(<(Value<S>, Value<S>) as PairGetRef<0>>::pair_get(&(*t2.borrow())).with(|__s| __s.v)
+        if !((*t2.borrow())
+            .get_value::<0>()
+            .as_pointer()
+            .with(|__s| __s.v)
             == 1)
         {
             unimplemented!();
@@ -516,7 +610,10 @@ pub fn test09_26() -> bool {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(<(Value<S>, Value<S>) as PairGetRef<0>>::pair_get(&(*u2.borrow())).with(|__s| __s.v)
+        if !((*u2.borrow())
+            .get_value::<0>()
+            .as_pointer()
+            .with(|__s| __s.v)
             == 1)
         {
             unimplemented!();
@@ -526,7 +623,10 @@ pub fn test09_26() -> bool {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(<(Value<S>, Value<S>) as PairGetRef<1>>::pair_get(&(*t2.borrow())).with(|__s| __s.v)
+        if !((*t2.borrow())
+            .get_value::<1>()
+            .as_pointer()
+            .with(|__s| __s.v)
             == 1)
         {
             unimplemented!();
@@ -536,7 +636,10 @@ pub fn test09_26() -> bool {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(<(Value<S>, Value<S>) as PairGetRef<1>>::pair_get(&(*u2.borrow())).with(|__s| __s.v)
+        if !((*u2.borrow())
+            .get_value::<1>()
+            .as_pointer()
+            .with(|__s| __s.v)
             == 1)
         {
             unimplemented!();
@@ -696,12 +799,12 @@ pub fn run_tests_wrapped_env_31(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !({
-        let __name = env.to_rust_string();
-        if 1 != 0 || ::std::env::var_os(&__name).is_none() {
-            unsafe { ::std::env::set_var(__name, name.to_rust_string()) };
+    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+        true => {
+            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
+            0
         }
-        0
+        false => 0,
     } != 0)
     {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
@@ -710,22 +813,21 @@ pub fn run_tests_wrapped_env_31(
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        {
-            let __name = env.to_rust_string();
-            if 1 != 0 || ::std::env::var_os(&__name).is_none() {
-                unsafe {
-                    ::std::env::set_var(
-                        __name,
-                        if !(oldENV).is_null() {
-                            (oldENV).clone()
-                        } else {
-                            Ptr::<i8>::from_string_literal(b"")
-                        }
-                        .to_rust_string(),
-                    )
-                };
+        match ({
+            if !(oldENV).is_null() {
+                (oldENV).clone()
+            } else {
+                Ptr::<i8>::from_string_literal(b"")
             }
-            0
+        },)
+        {
+            (mut __tmp_0,) => match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+                true => {
+                    unsafe { ::std::env::set_var(env.to_rust_string(), __tmp_0.to_rust_string()) };
+                    0
+                }
+                false => 0,
+            },
         };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
@@ -775,6 +877,11 @@ impl __gnu_test_semun {
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<u16>> {
         this.reinterpret_cast()
+    }
+}
+impl CppMove for __gnu_test_semun {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for __gnu_test_semun {
@@ -888,7 +995,9 @@ impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
     }
     fn push_back(&self, mut test: FnPtr<fn()>) {
         array_elem!((*self), _M_tests, (*self).with(|__s| __s._M_size)).write((test).clone());
-        field!((*self), _M_size).with_mut(|__v| __v.prefix_inc());
+        field!((*self), _M_size).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait __gnu_test_object_counterImpl {

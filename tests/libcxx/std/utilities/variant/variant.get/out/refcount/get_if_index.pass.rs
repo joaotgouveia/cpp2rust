@@ -11,16 +11,31 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_int_ptr__const_int_ptr_ {}
+impl CppMove for test_macros_detail_is_same_const_int_ptr__const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_long_ptr__const_long_ptr_ {}
+impl CppMove for test_macros_detail_is_same_const_long_ptr__const_long_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int_ptr__int_ptr_ {}
+impl CppMove for test_macros_detail_is_same_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_3(LHS: Ptr<TypeID>, RHS: Ptr<TypeID>) -> bool {
     return ({ LHS.with(|__s| __s.m_id.clone()) } == { RHS.with(|__s| __s.m_id.clone()) });
 }
@@ -59,6 +74,11 @@ pub fn operator_bitor_5(mut LHS: CallType, mut RHS: CallType) -> CallType {
 #[cpp_into(i32, to_i32)]
 #[byte_size(1)]
 pub struct ForwardingCallObject {}
+impl CppMove for ForwardingCallObject {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static last_call_type_6: Value<CallType> = Rc::new(RefCell::new(CallType_CT_None));
 );
@@ -68,23 +88,33 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnFirst {}
+impl CppMove for ReturnFirst {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnArity {}
+impl CppMove for ReturnArity {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_const_get_if_8() {
     {
-        let mut v: Ptr<()> = Ptr::<()>::null();
+        let mut v: Ptr<std_variant_int_> = Ptr::<std_variant_int_>::null();
         const _: () = assert!(true, "std::get_if<0>(v) == nullptr");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "*std::get_if<0>(&v) == 42");;
         const _: () = assert!(true, "std::get_if<1>(&v) == nullptr");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42_i64));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "*std::get_if<1>(&v) == 42");;
         const _: () = assert!(true, "std::get_if<0>(&v) == nullptr");;
@@ -92,21 +122,21 @@ pub fn test_const_get_if_8() {
 }
 pub fn test_get_if_9() {
     {
-        let mut v: Ptr<()> = Ptr::<()>::null();
-        assert!((unimplemented!()).is_null());
+        let mut v: Ptr<std_variant_int_> = Ptr::<std_variant_int_>::null();
+        assert!(({ get_if_10((v).clone(),) }).is_null());
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__long_> = Rc::new(RefCell::new(42));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(((unimplemented!().read()) == 42));
-        assert!((unimplemented!()).is_null());
+        assert!(((({ get_if_11((v.as_pointer()),) }).read()) == 42));
+        assert!(({ get_if_12((v.as_pointer()),) }).is_null());
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42_i64));
         const _: () = assert!(true, "");;
-        assert!(((unimplemented!().read()) == 42_i64));
-        assert!((unimplemented!()).is_null());
+        assert!(((({ get_if_13((v.as_pointer()),) }).read()) == 42_i64));
+        assert!(({ get_if_14((v.as_pointer()),) }).is_null());
     }
 }
 pub fn main() {

@@ -19,18 +19,39 @@ impl TakesTwoInts {
         Self { a_: a, b_: b }
     }
 }
+impl CppMove for TakesTwoInts {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0() -> bool {
     {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.a_) == 1));
-        assert!((unimplemented!().with(|__s| __s.b_) == 2));
-        assert!((unimplemented!() == 1_usize));
+        let sv: Value<std_ranges_single_view_TakesTwoInts_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(1));
+            let __tmp_1: Value<i32> = Rc::new(RefCell::new(2));
+            std_ranges_single_view_TakesTwoInts_::new_1(
+                { (*in_place_1.with(Value::clone).borrow()).clone() },
+                { __tmp_0.as_pointer() },
+                { __tmp_1.as_pointer() },
+            )
+        }));
+        assert!(({ (({ (*sv.borrow()).data_11() }).with(|__s| __s.a_) == 1) }));
+        assert!(({ (({ (*sv.borrow()).data_11() }).with(|__s| __s.b_) == 2) }));
+        assert!((({ std_ranges_single_view_TakesTwoInts_::size() }) == 1_usize));
     }
     {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.a_) == 1));
-        assert!((unimplemented!().with(|__s| __s.b_) == 2));
-        assert!((unimplemented!() == 1_usize));
+        let sv: Value<std_ranges_single_view_TakesTwoInts_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<i32> = Rc::new(RefCell::new(1));
+            let __tmp_3: Value<i32> = Rc::new(RefCell::new(2));
+            std_ranges_single_view_TakesTwoInts_::new_1(
+                { (*in_place_1.with(Value::clone).borrow()).clone() },
+                { __tmp_2.as_pointer() },
+                { __tmp_3.as_pointer() },
+            )
+        }));
+        assert!(({ (({ (*sv.borrow()).data_12() }).with(|__s| __s.a_) == 1) }));
+        assert!(({ (({ (*sv.borrow()).data_12() }).with(|__s| __s.b_) == 2) }));
+        assert!((({ std_ranges_single_view_TakesTwoInts_::size() }) == 1_usize));
     }
     return true;
 }

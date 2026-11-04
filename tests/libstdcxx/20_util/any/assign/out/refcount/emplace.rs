@@ -52,6 +52,11 @@ impl Clone for __gnu_test_object_counter {
         __gnu_test_object_counter::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_object_counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_object_counter {
     fn default() -> Self {
         { __gnu_test_object_counter::new() }
@@ -78,6 +83,11 @@ impl __gnu_test_copy_constructor {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_copy_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
@@ -99,6 +109,11 @@ impl __gnu_test_assignment_operator {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_assignment_operator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
@@ -111,6 +126,11 @@ impl __gnu_test_destructor {
     }
     pub fn reset() {
         _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
+    }
+}
+impl CppMove for __gnu_test_destructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -173,6 +193,11 @@ impl Clone for __gnu_test_copy_tracker {
         __gnu_test_copy_tracker::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_copy_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_copy_tracker {
     fn default() -> Self {
         { __gnu_test_copy_tracker::new(None, None) }
@@ -197,11 +222,16 @@ pub struct __gnu_test_semaphore {
     pid_: (),
 }
 impl __gnu_test_semaphore {}
+impl CppMove for __gnu_test_semaphore {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl combined {
     pub fn new_1(il: Vec<i32>) -> Self {
         let il: Value<Vec<i32>> = Rc::new(RefCell::new(il));
         Self {
-            v: (*il.borrow()).clone(),
+            v: ({ (*il.borrow()).clone() }),
             t: unimplemented!(),
         }
     }
@@ -210,7 +240,7 @@ impl combined {
     pub fn new_2(il: Vec<i32>, args_1: Ptr<i32>, args_2: Ptr<i32>) -> Self {
         let il: Value<Vec<i32>> = Rc::new(RefCell::new(il));
         Self {
-            v: (*il.borrow()).clone(),
+            v: ({ (*il.borrow()).clone() }),
             t: unimplemented!(),
         }
     }
@@ -234,14 +264,24 @@ impl combined {
         }
     }
 }
+impl CppMove for combined {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
     let i: Value<i32> = Rc::new(RefCell::new(42));
-    let o: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let o: Value<Option<Rc<dyn std::any::Any>>> = Rc::new(RefCell::new(None));
+    {
+        let __value: Value<i32> = Rc::new(RefCell::new((*i.borrow())));
+        let __ptr = __value.as_pointer();
+        (*o.borrow_mut()) = Some(__value);
+        __ptr
+    };
     let i2: Ptr<i32> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -259,8 +299,13 @@ fn main_0() -> i32 {
             std::process::abort();
         }
     }
-    let o2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let o2: Value<Option<Rc<dyn std::any::Any>>> = Rc::new(RefCell::new(None));
+    {
+        let __value: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let __ptr = __value.as_pointer();
+        (*o2.borrow_mut()) = Some(__value);
+        __ptr
+    };
     let t: Ptr<()> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -270,7 +315,7 @@ fn main_0() -> i32 {
             std::process::abort();
         }
     }
-    let o3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let o3: Value<Option<Rc<dyn std::any::Any>>> = Rc::new(RefCell::new(None));
     unimplemented!();
     let v: Ptr<Vec<i32>> = unimplemented!();
     let mut __do_while = true;
@@ -283,7 +328,7 @@ fn main_0() -> i32 {
             std::process::abort();
         }
     }
-    let o4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let o4: Value<Option<Rc<dyn std::any::Any>>> = Rc::new(RefCell::new(None));
     unimplemented!();
     let c: Ptr<combined> = unimplemented!();
     let mut __do_while = true;
@@ -298,7 +343,7 @@ fn main_0() -> i32 {
             std::process::abort();
         }
     }
-    let o5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let o5: Value<Option<Rc<dyn std::any::Any>>> = Rc::new(RefCell::new(None));
     unimplemented!();
     let c2: Ptr<combined> = unimplemented!();
     let mut __do_while = true;
@@ -313,8 +358,13 @@ fn main_0() -> i32 {
             std::process::abort();
         }
     }
-    let o6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let o6: Value<Option<Rc<dyn std::any::Any>>> = Rc::new(RefCell::new(None));
+    {
+        let __value: Value<Ptr<i32>> = Rc::new(RefCell::new((*i.borrow())));
+        let __ptr = __value.as_pointer();
+        (*o6.borrow_mut()) = Some(__value);
+        __ptr
+    };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -323,10 +373,20 @@ fn main_0() -> i32 {
             std::process::abort();
         }
     }
-    let o7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let o8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let o7: Value<Option<Rc<dyn std::any::Any>>> = Rc::new(RefCell::new(None));
+    {
+        let __value: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let __ptr = __value.as_pointer();
+        (*o7.borrow_mut()) = Some(__value);
+        __ptr
+    };
+    let o8: Value<Option<Rc<dyn std::any::Any>>> = Rc::new(RefCell::new(None));
+    {
+        let __value: Value<FnPtr<fn()>> = Rc::new(RefCell::new(unimplemented!()));
+        let __ptr = __value.as_pointer();
+        (*o8.borrow_mut()) = Some(__value);
+        __ptr
+    };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -335,10 +395,20 @@ fn main_0() -> i32 {
             std::process::abort();
         }
     }
-    let o9: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let o10: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let o9: Value<Option<Rc<dyn std::any::Any>>> = Rc::new(RefCell::new(None));
+    {
+        let __value: Value<Ptr<i8>> = Rc::new(RefCell::new(unimplemented!()));
+        let __ptr = __value.as_pointer();
+        (*o9.borrow_mut()) = Some(__value);
+        __ptr
+    };
+    let o10: Value<Option<Rc<dyn std::any::Any>>> = Rc::new(RefCell::new(None));
+    {
+        let __value: Value<Ptr<i8>> = Rc::new(RefCell::new(unimplemented!()));
+        let __ptr = __value.as_pointer();
+        (*o10.borrow_mut()) = Some(__value);
+        __ptr
+    };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -347,11 +417,17 @@ fn main_0() -> i32 {
             std::process::abort();
         }
     }
-    let o11: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let o11: Value<Option<Rc<dyn std::any::Any>>> = Rc::new(RefCell::new(None));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (unimplemented!())) {
+        if !(({
+            let __value: Value<i32> = Rc::new(RefCell::new(42));
+            let __ptr = __value.as_pointer();
+            (*o11.borrow_mut()) = Some(__value);
+            __ptr
+        }) == (unimplemented!()))
+        {
             unimplemented!();
             std::process::abort();
         }
@@ -499,12 +575,12 @@ pub fn run_tests_wrapped_env_13(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !({
-        let __name = env.to_rust_string();
-        if 1 != 0 || ::std::env::var_os(&__name).is_none() {
-            unsafe { ::std::env::set_var(__name, name.to_rust_string()) };
+    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+        true => {
+            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
+            0
         }
-        0
+        false => 0,
     } != 0)
     {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
@@ -513,22 +589,21 @@ pub fn run_tests_wrapped_env_13(
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        {
-            let __name = env.to_rust_string();
-            if 1 != 0 || ::std::env::var_os(&__name).is_none() {
-                unsafe {
-                    ::std::env::set_var(
-                        __name,
-                        if !(oldENV).is_null() {
-                            (oldENV).clone()
-                        } else {
-                            Ptr::<i8>::from_string_literal(b"")
-                        }
-                        .to_rust_string(),
-                    )
-                };
+        match ({
+            if !(oldENV).is_null() {
+                (oldENV).clone()
+            } else {
+                Ptr::<i8>::from_string_literal(b"")
             }
-            0
+        },)
+        {
+            (mut __tmp_0,) => match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+                true => {
+                    unsafe { ::std::env::set_var(env.to_rust_string(), __tmp_0.to_rust_string()) };
+                    0
+                }
+                false => 0,
+            },
         };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
@@ -578,6 +653,11 @@ impl __gnu_test_semun {
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<u16>> {
         this.reinterpret_cast()
+    }
+}
+impl CppMove for __gnu_test_semun {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for __gnu_test_semun {
@@ -655,7 +735,9 @@ impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
     }
     fn push_back(&self, mut test: FnPtr<fn()>) {
         array_elem!((*self), _M_tests, (*self).with(|__s| __s._M_size)).write((test).clone());
-        field!((*self), _M_size).with_mut(|__v| __v.prefix_inc());
+        field!((*self), _M_size).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait __gnu_test_object_counterImpl {

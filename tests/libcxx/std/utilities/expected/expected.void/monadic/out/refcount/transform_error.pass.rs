@@ -23,36 +23,56 @@ pub fn test_val_types_0() {
             Rc::new(RefCell::new(lambda!(Generic, {}, |mut _a0: i32| -> i32 {
                 return 1;
             })));
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!().read()) == 1));
+        let v: Value<std_expected_void__int_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(2));
+            std_unexpected_int_::new({ __tmp_0.as_pointer() })
+        }));
+        let val: Value<std_expected_void__int_> = Rc::new(RefCell::new(
+            ({ (*v.borrow()).transform_error(l.as_pointer()) }),
+        ));
+        assert!(({ ((({ (*val.borrow()).error_28() }).read()) == 1) }));
     }
     {
         let l: Value<FnPtr<Generic>> =
             Rc::new(RefCell::new(lambda!(Generic, {}, |mut _a0: i32| -> i32 {
                 return 1;
             })));
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!().read()) == 1));
+        let v: Value<std_expected_void__int_> = Rc::new(RefCell::new({
+            let __tmp_1: Value<i32> = Rc::new(RefCell::new(2));
+            std_unexpected_int_::new({ __tmp_1.as_pointer() })
+        }));
+        let val: Value<std_expected_void__int_> = Rc::new(RefCell::new(
+            ({ (*v.borrow()).transform_error(l.as_pointer()) }),
+        ));
+        assert!(({ ((({ (*val.borrow()).error_28() }).read()) == 1) }));
     }
     {
         let l: Value<FnPtr<Generic>> =
             Rc::new(RefCell::new(lambda!(Generic, {}, |mut _a0: i32| -> i32 {
                 return 1;
             })));
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!().read()) == 1));
+        let v: Value<std_expected_void__int_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<i32> = Rc::new(RefCell::new(2));
+            std_unexpected_int_::new({ __tmp_2.as_pointer() })
+        }));
+        let val: Value<std_expected_void__int_> = Rc::new(RefCell::new(
+            ({ (*v.borrow()).transform_error(l.as_pointer()) }),
+        ));
+        assert!(({ ((({ (*val.borrow()).error_28() }).read()) == 1) }));
     }
     {
         let l: Value<FnPtr<Generic>> =
             Rc::new(RefCell::new(lambda!(Generic, {}, |mut _a0: i32| -> i32 {
                 return 1;
             })));
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!().read()) == 1));
+        let v: Value<std_expected_void__int_> = Rc::new(RefCell::new({
+            let __tmp_3: Value<i32> = Rc::new(RefCell::new(2));
+            std_unexpected_int_::new({ __tmp_3.as_pointer() })
+        }));
+        let val: Value<std_expected_void__int_> = Rc::new(RefCell::new(
+            ({ (*v.borrow()).transform_error(l.as_pointer()) }),
+        ));
+        assert!(({ ((({ (*val.borrow()).error_28() }).read()) == 1) }));
     }
 }
 pub fn test_fail_1() {
@@ -62,9 +82,12 @@ pub fn test_fail_1() {
                 assert!(false);
                 return 0;
             })));
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let v: Value<std_expected_void__int_> =
+            Rc::new(RefCell::new(<std_expected_void__int_>::default()));
+        let val: Value<std_expected_void__int_> = Rc::new(RefCell::new(
+            ({ (*v.borrow()).transform_error(l.as_pointer()) }),
+        ));
+        assert!(({ ({ (*val.borrow()).has_value() }) }));
     }
     {
         let l: Value<FnPtr<Generic>> =
@@ -72,9 +95,12 @@ pub fn test_fail_1() {
                 assert!(false);
                 return 0;
             })));
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let v: Value<std_expected_void__int_> =
+            Rc::new(RefCell::new(<std_expected_void__int_>::default()));
+        let val: Value<std_expected_void__int_> = Rc::new(RefCell::new(
+            ({ (*v.borrow()).transform_error(l.as_pointer()) }),
+        ));
+        assert!(({ ({ (*val.borrow()).has_value() }) }));
     }
     {
         let l: Value<FnPtr<Generic>> =
@@ -82,9 +108,12 @@ pub fn test_fail_1() {
                 assert!(false);
                 return 0;
             })));
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let v: Value<std_expected_void__int_> =
+            Rc::new(RefCell::new(<std_expected_void__int_>::default()));
+        let val: Value<std_expected_void__int_> = Rc::new(RefCell::new(
+            ({ (*v.borrow()).transform_error(l.as_pointer()) }),
+        ));
+        assert!(({ ({ (*val.borrow()).has_value() }) }));
     }
     {
         let l: Value<FnPtr<Generic>> =
@@ -92,9 +121,12 @@ pub fn test_fail_1() {
                 assert!(false);
                 return 0;
             })));
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let v: Value<std_expected_void__int_> =
+            Rc::new(RefCell::new(<std_expected_void__int_>::default()));
+        let val: Value<std_expected_void__int_> = Rc::new(RefCell::new(
+            ({ (*v.borrow()).transform_error(l.as_pointer()) }),
+        ));
+        assert!(({ ({ (*val.borrow()).has_value() }) }));
     }
 }
 pub fn test_direct_non_list_init_2() {
@@ -105,9 +137,14 @@ pub fn test_direct_non_list_init_2() {
             }
         }),
     ));
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let nv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(({ (unimplemented!()).clone().value } == 2));
+    let v: Value<std_expected_void__int_> = Rc::new(RefCell::new({
+        let __tmp_4: Value<i32> = Rc::new(RefCell::new(2));
+        std_unexpected_int_::new({ __tmp_4.as_pointer() })
+    }));
+    let nv: Value<std_expected_void__NonCopy_> = Rc::new(RefCell::new(
+        ({ (*v.borrow()).transform_error(x.as_pointer()) }),
+    ));
+    assert!(({ (({ (*nv.borrow()).error_28() }).with(|__s| __s.value) == 2) }));
 }
 pub fn test_3() -> bool {
     ({ test_fail_1() });

@@ -8,28 +8,42 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
     const _: () = assert!(true, "");;
-    let format_arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(!(unimplemented!()));
+    let format_arg: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char__> = Rc::new(
+        RefCell::new(<std_basic_format_arg_std_basic_format_context_char_ptr__char__>::default()),
+    );
+    assert!(({ !({ (*format_arg.borrow())() }) }));
 }
 pub fn test_1() {
     const _: () = assert!(true, "");;
-    let format_arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(!(unimplemented!()));
+    let format_arg: Value<std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t__> =
+        Rc::new(RefCell::new(
+            <std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t__>::default(),
+        ));
+    assert!(({ !({ (*format_arg.borrow())() }) }));
 }
 pub fn test_2() {
     const _: () = assert!(true, "");;
-    let format_arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(!(unimplemented!()));
+    let format_arg: Value<std_basic_format_arg_std_basic_format_context_char8_t_ptr__char8_t__> =
+        Rc::new(RefCell::new(
+            <std_basic_format_arg_std_basic_format_context_char8_t_ptr__char8_t__>::default(),
+        ));
+    assert!(({ !({ (*format_arg.borrow())() }) }));
 }
 pub fn test_3() {
     const _: () = assert!(true, "");;
-    let format_arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(!(unimplemented!()));
+    let format_arg: Value<std_basic_format_arg_std_basic_format_context_char16_t_ptr__char16_t__> =
+        Rc::new(RefCell::new(
+            <std_basic_format_arg_std_basic_format_context_char16_t_ptr__char16_t__>::default(),
+        ));
+    assert!(({ !({ (*format_arg.borrow())() }) }));
 }
 pub fn test_4() {
     const _: () = assert!(true, "");;
-    let format_arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(!(unimplemented!()));
+    let format_arg: Value<std_basic_format_arg_std_basic_format_context_char32_t_ptr__char32_t__> =
+        Rc::new(RefCell::new(
+            <std_basic_format_arg_std_basic_format_context_char32_t_ptr__char32_t__>::default(),
+        ));
+    assert!(({ !({ (*format_arg.borrow())() }) }));
 }
 pub fn test_5() {
     ({ test_0() });

@@ -28,18 +28,18 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == 0));
+        let f: Value<std_atomic_flag> = Rc::new(RefCell::new(<std_atomic_flag>::default()));
+        ({ (*f.borrow()).clear_14(None) });
+        ({ (*f.borrow()).test_and_set_7(None) });
+        ({ libcc2rs::atomic_flag_clear_refcount((f.as_pointer())) });
+        assert!(({ ((({ (*f.borrow()).test_and_set_7(None,) }) as i32) == 0) }));
     }
     {
-        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let f: Value<std_atomic_flag> = Rc::new(RefCell::new(<std_atomic_flag>::default()));
+        ({ (*f.borrow()).clear_15(None) });
+        ({ (*f.borrow()).test_and_set_8(None) });
         (*(f.as_pointer())).store(false, ::std::sync::atomic::Ordering::SeqCst);
-        assert!(((unimplemented!() as i32) == 0));
+        assert!(({ ((({ (*f.borrow()).test_and_set_8(None,) }) as i32) == 0) }));
     }
     return 0;
 }

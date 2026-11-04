@@ -14,6 +14,11 @@ pub struct Pair {
     #[offset(4)]
     pub second: i32,
 }
+impl CppMove for Pair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn twice_0(v: Ptr<i64>) -> i64 {
     return ((v.read()) * 2_i64);
 }

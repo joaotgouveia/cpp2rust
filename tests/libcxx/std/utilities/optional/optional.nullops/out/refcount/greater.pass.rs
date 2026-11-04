@@ -28,8 +28,8 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let o1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let o2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let o1: Value<std_optional_int_> = Rc::new(RefCell::new(<std_optional_int_>::default()));
+        let o2: Value<std_optional_int_> = Rc::new(RefCell::new(1));
         const _: () = assert!(true, "!(nullopt > o1)");;
         const _: () = assert!(true, "!(nullopt > o2)");;
         const _: () = assert!(true, "!(o1 > nullopt)");;

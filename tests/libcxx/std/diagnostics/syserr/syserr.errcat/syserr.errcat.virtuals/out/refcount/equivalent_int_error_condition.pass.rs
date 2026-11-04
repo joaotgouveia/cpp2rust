@@ -27,10 +27,26 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let e_cat: Ptr<()> = unimplemented!();
-    let e_cond: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
+    let e_cat: Ptr<std_error_category> = ({ generic_category_0() });
+    let e_cond: Value<std_error_condition> = Rc::new(RefCell::new(
+        ({ (*e_cat.upgrade().deref()).default_error_condition(5) }),
+    ));
+    assert!(
+        ({
+            ({
+                let ___cond: Ptr<std_error_condition> = e_cond.as_pointer();
+                (*e_cat.upgrade().deref()).equivalent_9(5, ___cond)
+            })
+        })
+    );
+    assert!(
+        ({
+            !({
+                let ___cond: Ptr<std_error_condition> = e_cond.as_pointer();
+                (*e_cat.upgrade().deref()).equivalent_9(6, ___cond)
+            })
+        })
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

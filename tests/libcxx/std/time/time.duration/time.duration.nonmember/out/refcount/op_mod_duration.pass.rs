@@ -12,6 +12,7 @@ pub const anon_0_value: anon_0 = 1;
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1____std_chrono_duration_long__std_ratio_1__1___
 {}
+impl CppMove for test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1____std_chrono_duration_long__std_ratio_1__1___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct Rep {
@@ -31,6 +32,11 @@ impl CppEq for Rep {
         RepImpl::operator_eq_4(__lhs, __rhs.clone())
     }
 }
+impl CppMove for Rep {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Rep {
     fn default() -> Self {
         { Rep::new_1() }
@@ -39,10 +45,20 @@ impl Default for Rep {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NotARep {}
+impl CppMove for NotARep {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(i64, to_i64_2)]
 #[byte_size(1)]
 pub struct RepConstConvertibleLWG3050 {}
+impl CppMove for RepConstConvertibleLWG3050 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

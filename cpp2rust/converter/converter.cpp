@@ -44,6 +44,7 @@ use std::collections::BTreeMap;
 use std::io::{Read, Write, Seek};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
+use num_traits;
 )");
 }
 
@@ -576,8 +577,46 @@ bool Converter::ConvertVarDeclSkipInit(clang::VarDecl *decl) {
   return true;
 }
 
+bool Converter::ConvertConstexprScalarInit(clang::VarDecl *decl) {
+  if (!decl->isConstexpr()) {
+    return false;
+  }
+  auto type = decl->getType().getUnqualifiedType();
+  if (!type->isIntegerType() && !type->isFloatingType()) {
+    return false;
+  }
+  auto *value = decl->evaluateValue();
+  assert(value && "constexpr variable without a constant value");
+  auto loc = decl->getInit()->getExprLoc();
+  clang::Expr *literal = nullptr;
+  if (type->isBooleanType()) {
+    assert(value->isInt());
+    literal = new (ctx_)
+        clang::CXXBoolLiteralExpr(value->getInt().getBoolValue(), type, loc);
+  } else if (type->isIntegerType()) {
+    assert(value->isInt());
+    auto num = value->getInt();
+    literal = clang::IntegerLiteral::Create(ctx_, num.isNegative() ? -num : num,
+                                            type, loc);
+    if (num.isNegative()) {
+      literal = clang::UnaryOperator::Create(
+          ctx_, literal, clang::UO_Minus, type, clang::VK_PRValue,
+          clang::OK_Ordinary, loc, false, clang::FPOptionsOverride());
+    }
+  } else {
+    assert(value->isFloat());
+    literal = clang::FloatingLiteral::Create(ctx_, value->getFloat(),
+                                             /*isexact=*/true, type, loc);
+  }
+  ConvertVarInit(decl->getType(), literal);
+  return true;
+}
+
 void Converter::ConvertVarDeclInitializer(clang::VarDecl *decl) {
   if (decl->hasInit()) {
+    if (ConvertConstexprScalarInit(decl)) {
+      return;
+    }
     ConvertVarInit(decl->getType(), decl->getInit());
   } else if (!clang::isa<clang::ParmVarDecl>(decl)) {
     StrCat(ConvertVarDefaultInit(decl));
@@ -675,7 +714,10 @@ bool Converter::VisitVarDecl(clang::VarDecl *decl) {
 }
 
 bool Converter::NeedsScopedDestructor(const clang::VarDecl *decl) const {
-  if (in_function_formals_ || !decl->isLocalVarDecl() || IsGlobalVar(decl)) {
+  // A parameter taken by value is destroyed when the function returns.
+  if (in_function_formals_ ||
+      (!decl->isLocalVarDecl() && !clang::isa<clang::ParmVarDecl>(decl)) ||
+      IsGlobalVar(decl)) {
     return false;
   }
   auto type = decl->getType();
@@ -688,19 +730,21 @@ bool Converter::NeedsScopedDestructor(const clang::VarDecl *decl) const {
 }
 
 void Converter::EmitScopedDestructor(const clang::VarDecl *decl) {
-  if (!NeedsScopedDestructor(decl)) {
-    return;
+  if (NeedsScopedDestructor(decl)) {
+    StrCat(token::kSemiColon, ScopedDestructorStmt(decl));
   }
+}
+
+std::string Converter::ScopedDestructorStmt(const clang::VarDecl *decl) {
   auto type = decl->getType();
   auto destroy =
       AsLambdaClass(type)
           ? std::string("|__f| __f.destroy()")
           : std::format("{}::{}", GetRecordName(type->getAsCXXRecordDecl()),
                         kDestructorName);
-  StrCat(token::kSemiColon,
-         std::format("let _dtor_{0} = ScopedDestructorUnsafe::new(&raw mut "
-                     "{0}, {1})",
-                     GetNamedDeclAsString(decl), destroy));
+  return std::format(
+      "let _dtor_{0} = ScopedDestructorUnsafe::new(&raw mut {0}, {1})",
+      GetNamedDeclAsString(decl), destroy);
 }
 
 bool Converter::RecordDerivesDefault(const clang::RecordDecl *decl) {
@@ -926,6 +970,7 @@ void Converter::EmitRustStructOrUnion(clang::RecordDecl *decl) {
     AddCallableTraits(cxx);
   }
   AddCloneTrait(decl);
+  AddMoveTrait(decl);
   AddDefaultTrait(decl);
 }
 
@@ -1317,6 +1362,15 @@ void Converter::EmitFunctionPreamble(clang::FunctionDecl *decl) {
     StrCat(std::format("let mut {} : {} = {}.unwrap_or_else(|| {} {{ {} }})",
                        name, type, name, keyword_unsafe_, value),
            token::kSemiColon);
+  }
+  EmitParamDestructors(decl);
+}
+
+void Converter::EmitParamDestructors(clang::FunctionDecl *decl) {
+  for (auto *param : DefinitionParameters(decl)) {
+    if (NeedsScopedDestructor(param)) {
+      StrCat(ScopedDestructorStmt(param), token::kSemiColon);
+    }
   }
 }
 
@@ -2934,6 +2988,11 @@ bool Converter::ConvertIncAndDec(clang::UnaryOperator *expr) {
   const char *method = GetIncDecMethod(expr->getOpcode());
   if (!method) {
     return false;
+  }
+  bool deref_prefix = expr->isPrefix() && !isVoid();
+  PushParen paren(*this, deref_prefix);
+  if (deref_prefix) {
+    StrCat(token::kStar);
   }
   {
     PushExprKind push(*this, ExprKind::LValue);
@@ -5023,6 +5082,8 @@ bool Converter::RecordImplementsClone(const clang::RecordDecl *decl) {
          GetUserDefinedCopyConstructor(decl) != nullptr;
 }
 
+void Converter::AddMoveTrait(const clang::RecordDecl *) {}
+
 void Converter::AddDefaultTraitForUnion(const clang::RecordDecl *decl) {
   EmitDefaultImpl(decl, [&] { StrCat("unsafe { std::mem::zeroed() }"); });
 }
@@ -5318,26 +5379,20 @@ std::string Converter::ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
 
   // The rule takes the argument by value from an rvalue reference parameter,
   // e.g., push_back(T &&), and so C++ moves it.
-  auto param_type = GetParamType(expr, ph_ctx.arg_idx);
-  bool moved = ph_ctx.access == TranslationRule::Access::kTake ||
-               (ph_ctx.access == TranslationRule::Access::kMove && param_type &&
-                (*param_type)->isRValueReferenceType());
-  if (moved && !clang::isa<clang::MaterializeTemporaryExpr>(arg)) {
-    if (auto *record = arg->getType()->getAsCXXRecordDecl();
-        record && IsUserDefinedDecl(record)) {
-      for (auto *ctor : record->ctors()) {
-        if (!IsConvertibleMoveConstructor(ctor)) {
-          continue;
-        }
-        Buffer buf(*this);
-        Convert(MakeConstructExpr(ctx_, arg->getType(), ctor, arg));
-        return std::move(buf).str();
-      }
-      if (TypeIsCopyable(arg->getType())) {
-        return ConvertRValue(arg);
-      }
-      return ConvertFreshRValue(arg);
+  if (auto *init = BuildMoveConstruction(ctx_, expr, ph_ctx.arg_idx, arg,
+                                         ph_ctx.access)) {
+    Buffer buf(*this);
+    Convert(init);
+    return std::move(buf).str();
+  }
+  if (MovesLibraryArg(ctx_, expr, ph_ctx.arg_idx, arg, ph_ctx.access)) {
+    return ConvertLibraryMove(arg);
+  }
+  if (MovesRuleArg(expr, ph_ctx.arg_idx, arg, ph_ctx.access)) {
+    if (TypeIsCopyable(arg->getType())) {
+      return ConvertRValue(arg);
     }
+    return ConvertFreshRValue(arg);
   }
 
   if (ph_ctx.access == TranslationRule::Access::kTake) {
@@ -5356,6 +5411,10 @@ std::string Converter::ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
 
 std::string Converter::ConvertBorrowMut(clang::Expr *arg) {
   return ConvertLValue(arg);
+}
+
+std::string Converter::ConvertLibraryMove(clang::Expr *arg) {
+  return ConvertFreshRValue(arg);
 }
 
 std::string Converter::ConvertTake(clang::Expr *arg) {
@@ -5395,7 +5454,11 @@ std::string Converter::GetMappedAsString(clang::Expr *expr, clang::Expr **args,
     // The rule takes the value of a transparent union.
     auto *arg = IgnoreTransparentUnion(all_args[i]);
     auto type = arg->getType();
-    bool by_value = arg->isPRValue() && !tgt_ir->takesAddress(ctx_, i, arg);
+    // A proxy (vector<bool>::reference) is a pointer itself, a copy of it
+    // refers to the same object, unless the rule takes a pointer to the proxy.
+    bool by_value = (arg->isPRValue() && !tgt_ir->takesAddress(ctx_, i, arg)) ||
+                    (RuleRegistry::IsProxyRecord(ctx_, type) &&
+                     !RuleRegistry::ParamPointsTo(ctx_, expr, i, type));
     if (!by_value && arg->isPRValue()) {
       arg = new (ctx_) clang::MaterializeTemporaryExpr(type, arg, false);
     }
@@ -5519,8 +5582,11 @@ std::string Converter::ConvertIRFragment(
           // pointer to its own type (reference_wrapper<reference_wrapper<T>>).
           .maps_to_rust_ptr =
               !is_cpp_ptr &&
-              RuleRegistry::MapsToPointer(ctx_, arg->getType()) &&
-              !RuleRegistry::ParamPointsTo(ctx_, expr, arg_idx, arg->getType()),
+              RuleRegistry::MapsToPointer(
+                  ctx_, arg->IgnoreParenNoopCasts(ctx_)->getType()) &&
+              !RuleRegistry::ParamPointsTo(
+                  ctx_, expr, arg_idx,
+                  arg->IgnoreParenNoopCasts(ctx_)->getType()),
           .declared_in_rule_as_rust_ptr =
               RuleRegistry::ParamIsPointer(ctx_, expr, arg_idx) ||
               RuleRegistry::ParamIsReference(ctx_, expr, arg_idx),

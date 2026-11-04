@@ -9,8 +9,11 @@ use std::rc::{Rc, Weak};
 const _: () = assert!(!(false), "!ErrorNoexcept<int>");
 const _: () = assert!(true, "ErrorNoexcept<std::unexpected<int>>");
 pub fn test_0() -> bool {
-    let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i: Ptr<i32> = unimplemented!();
+    let unex: Value<std_unexpected_int_> = Rc::new(RefCell::new({
+        let __tmp_0: Value<i32> = Rc::new(RefCell::new(5));
+        std_unexpected_int_::new({ __tmp_0.as_pointer() })
+    }));
+    let i: Ptr<i32> = ({ (*unex.borrow()).error_10() });
     const _: () = assert!(true, "std::same_as<decltype(i), const int&&>");;
     assert!(((i.read()) == 5));
     return true;

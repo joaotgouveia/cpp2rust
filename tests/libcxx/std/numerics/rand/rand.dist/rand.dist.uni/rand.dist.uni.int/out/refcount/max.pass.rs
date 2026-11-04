@@ -28,8 +28,10 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 8));
+        let d: Value<std_uniform_int_distribution_int_> = Rc::new(RefCell::new(
+            std_uniform_int_distribution_int_::new_1({ 3 }, { 8 }),
+        ));
+        assert!(({ (({ (*d.borrow()).max() }) == 8) }));
     }
     return 0;
 }

@@ -18,6 +18,11 @@ impl NonTDtor {
         Self { count: (a).clone() }
     }
 }
+impl CppMove for NonTDtor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "!std::is_trivially_destructible<NonTDtor>::value");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(8)]
@@ -29,6 +34,11 @@ pub struct NonTDtor1 {
 impl NonTDtor1 {
     pub fn new(mut _a0: Ptr<i32>, mut b: Ptr<i32>) -> Self {
         Self { count: (b).clone() }
+    }
+}
+impl CppMove for NonTDtor1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 const _: () = assert!(true, "!std::is_trivially_destructible<NonTDtor1>::value");
@@ -46,12 +56,20 @@ impl Clone for TDtor {
         TDtor::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for TDtor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "!std::is_trivially_copy_constructible<TDtor>::value");
 const _: () = assert!(true, "std::is_trivially_destructible<TDtor>::value");
 pub fn test_0() -> bool {
     {
         const _: () = assert!(true, "std::is_trivially_destructible<V>::value");;
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__long__TDtor_> =
+            Rc::new(RefCell::new(std_variant_int__long__TDtor_::new_1({
+                (*in_place_index_1.with(Value::clone).borrow()).clone()
+            })));
     }
     {
         const _: () = assert!(true, "!std::is_trivially_destructible<V>::value");;
@@ -59,18 +77,29 @@ pub fn test_0() -> bool {
             let count0: Value<i32> = Rc::new(RefCell::new(0));
             let count1: Value<i32> = Rc::new(RefCell::new(0));
             {
-                let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                assert!(((*count0.borrow()) == 0));
-                assert!(((*count1.borrow()) == 0));
+                let v: Value<std_variant_NonTDtor__int__NonTDtor1_> = Rc::new(RefCell::new({
+                    let __tmp_0: Value<Ptr<i32>> = Rc::new(RefCell::new((count0.as_pointer())));
+                    let __tmp_1: Value<Ptr<i32>> = Rc::new(RefCell::new((count1.as_pointer())));
+                    std_variant_NonTDtor__int__NonTDtor1_::new_1(
+                        { (*in_place_index_2.with(Value::clone).borrow()).clone() },
+                        { __tmp_0.as_pointer() },
+                        { __tmp_1.as_pointer() },
+                    )
+                }));
+                assert!(({ ((*count0.borrow()) == 0) }));
+                assert!(({ ((*count1.borrow()) == 0) }));
             }
-            assert!(((*count0.borrow()) == 1));
-            assert!(((*count1.borrow()) == 0));
+            assert!(({ ((*count0.borrow()) == 1) }));
+            assert!(({ ((*count1.borrow()) == 0) }));
         }
         {
             let mut count0: i32 = 0;
             let mut count1: i32 = 0;
             {
-                let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let v: Value<std_variant_NonTDtor__int__NonTDtor1_> =
+                    Rc::new(RefCell::new(std_variant_NonTDtor__int__NonTDtor1_::new_2(
+                        { (*in_place_index_3.with(Value::clone).borrow()).clone() },
+                    )));
             }
             assert!((count0 == 0));
             assert!((count1 == 0));
@@ -79,12 +108,20 @@ pub fn test_0() -> bool {
             let count0: Value<i32> = Rc::new(RefCell::new(0));
             let count1: Value<i32> = Rc::new(RefCell::new(0));
             {
-                let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                assert!(((*count0.borrow()) == 0));
-                assert!(((*count1.borrow()) == 0));
+                let v: Value<std_variant_NonTDtor__int__NonTDtor1_> = Rc::new(RefCell::new({
+                    let __tmp_2: Value<Ptr<i32>> = Rc::new(RefCell::new((count0.as_pointer())));
+                    let __tmp_3: Value<Ptr<i32>> = Rc::new(RefCell::new((count1.as_pointer())));
+                    std_variant_NonTDtor__int__NonTDtor1_::new_3(
+                        { (*in_place_index_1.with(Value::clone).borrow()).clone() },
+                        { __tmp_2.as_pointer() },
+                        { __tmp_3.as_pointer() },
+                    )
+                }));
+                assert!(({ ((*count0.borrow()) == 0) }));
+                assert!(({ ((*count1.borrow()) == 0) }));
             }
-            assert!(((*count0.borrow()) == 0));
-            assert!(((*count1.borrow()) == 1));
+            assert!(({ ((*count0.borrow()) == 0) }));
+            assert!(({ ((*count1.borrow()) == 1) }));
         }
     }
     return true;
@@ -118,9 +155,9 @@ pub trait NonTDtorImpl {
 }
 impl NonTDtorImpl for Ptr<NonTDtor> {
     fn destructor(&self) {
-        (*self)
-            .with(|__s| __s.count.clone())
-            .with_mut(|__v| __v.prefix_inc());
+        (*self).with(|__s| __s.count.clone()).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait NonTDtor1Impl {
@@ -128,9 +165,9 @@ pub trait NonTDtor1Impl {
 }
 impl NonTDtor1Impl for Ptr<NonTDtor1> {
     fn destructor(&self) {
-        (*self)
-            .with(|__s| __s.count.clone())
-            .with_mut(|__v| __v.prefix_inc());
+        (*self).with(|__s| __s.count.clone()).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait TDtorImpl {

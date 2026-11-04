@@ -52,6 +52,11 @@ impl Clone for __gnu_test_object_counter {
         __gnu_test_object_counter::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_object_counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_object_counter {
     fn default() -> Self {
         { __gnu_test_object_counter::new() }
@@ -78,6 +83,11 @@ impl __gnu_test_copy_constructor {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_copy_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
@@ -99,6 +109,11 @@ impl __gnu_test_assignment_operator {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_assignment_operator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
@@ -111,6 +126,11 @@ impl __gnu_test_destructor {
     }
     pub fn reset() {
         _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
+    }
+}
+impl CppMove for __gnu_test_destructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -173,6 +193,11 @@ impl Clone for __gnu_test_copy_tracker {
         __gnu_test_copy_tracker::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_copy_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_copy_tracker {
     fn default() -> Self {
         { __gnu_test_copy_tracker::new(None, None) }
@@ -197,6 +222,11 @@ pub struct __gnu_test_semaphore {
     pid_: (),
 }
 impl __gnu_test_semaphore {}
+impl CppMove for __gnu_test_semaphore {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test01_9() {
     let data1: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(
         b"Drei Phantasien nach Friedrich Holderlin\0",
@@ -207,30 +237,31 @@ pub fn test01_9() {
         __bytes
     };
     let iss1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let beg1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let end1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut beg1: Ptr<::std::fs::File> = unimplemented!();
+    let mut end1: Ptr<::std::fs::File> = unimplemented!();
     let buffer1: Value<Box<[i8]>> =
         Rc::new(RefCell::new((0..205).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        ((buffer1.as_pointer() as Ptr<i8>) as Ptr<i8>)
-            .to_any()
-            .memset(
+    match ({ ((buffer1.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any() },) {
+        (mut __tmp_0,) => {
+            __tmp_0.memset(
                 (('*' as i8) as i32) as u8,
                 ::std::mem::size_of::<[i8; 205]>() as usize,
             );
-        ((buffer1.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any()
+            (__tmp_0).clone()
+        }
     };
     let mut out1: Ptr<i8> = (buffer1.as_pointer() as Ptr<i8>);
-    let __rhs = {
-        let mut __first = (*beg1.borrow()).try_clone().unwrap();
-        let __last = (*beg1.borrow()).try_clone().unwrap();
-        let mut __out = (out1).clone();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    let __rhs = match ({ (beg1).clone() },) {
+        (mut __tmp_1,) => {
+            let mut __first = (beg1).clone();
+            let mut __out = (out1).clone();
+            while __first != __tmp_1 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     out1 = __rhs;
     let mut __do_while = true;
@@ -241,16 +272,17 @@ pub fn test01_9() {
             std::process::abort();
         }
     }
-    let __rhs = {
-        let mut __first = (*end1.borrow()).try_clone().unwrap();
-        let __last = (*end1.borrow()).try_clone().unwrap();
-        let mut __out = (out1).clone();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    let __rhs = match ({ (end1).clone() },) {
+        (mut __tmp_2,) => {
+            let mut __first = (end1).clone();
+            let mut __out = (out1).clone();
+            while __first != __tmp_2 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     out1 = __rhs;
     let mut __do_while = true;
@@ -261,16 +293,17 @@ pub fn test01_9() {
             std::process::abort();
         }
     }
-    let __rhs = {
-        let mut __first = (*beg1.borrow()).try_clone().unwrap();
-        let __last = (*end1.borrow()).try_clone().unwrap();
-        let mut __out = (out1).clone();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    let __rhs = match ({ (end1).clone() },) {
+        (mut __tmp_3,) => {
+            let mut __first = (beg1).clone();
+            let mut __out = (out1).clone();
+            while __first != __tmp_3 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     out1 = __rhs;
     let mut __do_while = true;
@@ -290,36 +323,37 @@ pub fn test01_9() {
             std::process::abort();
         }
     }
-    {
-        ((buffer1.as_pointer() as Ptr<i8>) as Ptr<i8>)
-            .to_any()
-            .memset(
+    match ({ ((buffer1.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any() },) {
+        (mut __tmp_4,) => {
+            __tmp_4.memset(
                 (('*' as i8) as i32) as u8,
                 ::std::mem::size_of::<[i8; 205]>() as usize,
             );
-        ((buffer1.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any()
+            (__tmp_4).clone()
+        }
     };
     unimplemented!();
     out1 = (buffer1.as_pointer() as Ptr<i8>);
-    {
-        ((buffer1.as_pointer() as Ptr<i8>) as Ptr<i8>)
-            .to_any()
-            .memset(
+    match ({ ((buffer1.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any() },) {
+        (mut __tmp_5,) => {
+            __tmp_5.memset(
                 (('*' as i8) as i32) as u8,
                 ::std::mem::size_of::<[i8; 205]>() as usize,
             );
-        ((buffer1.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any()
-    };
-    let __rhs = {
-        let mut __first = (*beg1.borrow()).try_clone().unwrap();
-        let __last = (*end1.borrow()).try_clone().unwrap();
-        let mut __out = (out1).clone();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+            (__tmp_5).clone()
         }
-        __out
+    };
+    let __rhs = match ({ (end1).clone() },) {
+        (mut __tmp_6,) => {
+            let mut __first = (beg1).clone();
+            let mut __out = (out1).clone();
+            while __first != __tmp_6 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
+        }
     };
     out1 = __rhs;
     let mut __do_while = true;
@@ -340,48 +374,70 @@ pub fn test01_9() {
         }
     }
     out1 = (buffer1.as_pointer() as Ptr<i8>);
-    {
-        ((buffer1.as_pointer() as Ptr<i8>) as Ptr<i8>)
-            .to_any()
-            .memset(
+    match ({ ((buffer1.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any() },) {
+        (mut __tmp_7,) => {
+            __tmp_7.memset(
                 (('*' as i8) as i32) as u8,
                 ::std::mem::size_of::<[i8; 205]>() as usize,
             );
-        ((buffer1.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any()
-    };
-    let __rhs = {
-        let mut __first = (*beg1.borrow()).try_clone().unwrap();
-        let __last = (*end1.borrow()).try_clone().unwrap();
-        let mut __out = (out1).clone();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+            (__tmp_7).clone()
         }
-        __out
+    };
+    let __rhs = match ({ (end1).clone() },) {
+        (mut __tmp_8,) => {
+            let mut __first = (beg1).clone();
+            let mut __out = (out1).clone();
+            while __first != __tmp_8 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
+        }
     };
     out1 = __rhs;
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(Ptr::<i8>::from_string_literal(b"")
-            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s))
+        if !(match (Rc::new(RefCell::new(
+            match ({ (buffer1.as_pointer() as Ptr<i8>) },) {
+                (mut __tmp_10,) => {
+                    let mut __bytes: Vec<u8> = Vec::new();
+                    if !__tmp_10.is_null() {
+                        __tmp_10
+                            .with_mut(|__f: &mut std::fs::File| {
+                                std::io::Read::read_to_end(__f, &mut __bytes)
+                            })
+                            .expect("couldn't read the file");
+                    }
+                    __bytes.push(0);
+                    CChar::from_byte_vec(__bytes)
+                }
+            },
+        ))
+        .as_pointer(),)
         {
+            (__tmp_9,) => Ptr::<i8>::from_string_literal(b"").with_c_str(|__s| {
+                (*__tmp_9.upgrade().deref())[..(*__tmp_9.upgrade().deref()).len().saturating_sub(1)]
+                    == *__s
+            }),
+        }) {
             unimplemented!();
             std::process::abort();
         }
     }
     unimplemented!();
-    let __rhs = {
-        let mut __first = (*beg1.borrow()).try_clone().unwrap();
-        let __last = (*end1.borrow()).try_clone().unwrap();
-        let mut __out = (out1).clone();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    let __rhs = match ({ (end1).clone() },) {
+        (mut __tmp_11,) => {
+            let mut __first = (beg1).clone();
+            let mut __out = (out1).clone();
+            while __first != __tmp_11 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     out1 = __rhs;
     let mut __do_while = true;
@@ -534,22 +590,36 @@ pub fn run_tests_wrapped_env_14(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !(libc::setenv(env, name, 1) != 0) {
+    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+        true => {
+            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
+            0
+        }
+        false => 0,
+    } != 0)
+    {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: i32 = 0;
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        libc::setenv(
-            env,
+        match ({
             if !(oldENV).is_null() {
                 (oldENV).clone()
             } else {
                 Ptr::<i8>::from_string_literal(b"")
+            }
+        },)
+        {
+            (mut __tmp_0,) => match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+                true => {
+                    unsafe { ::std::env::set_var(env.to_rust_string(), __tmp_0.to_rust_string()) };
+                    0
+                }
+                false => 0,
             },
-            1,
-        );
+        };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = env.to_c_bytes();
@@ -598,6 +668,11 @@ impl __gnu_test_semun {
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<u16>> {
         this.reinterpret_cast()
+    }
+}
+impl CppMove for __gnu_test_semun {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for __gnu_test_semun {
@@ -675,7 +750,9 @@ impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
     }
     fn push_back(&self, mut test: FnPtr<fn()>) {
         array_elem!((*self), _M_tests, (*self).with(|__s| __s._M_size)).write((test).clone());
-        field!((*self), _M_size).with_mut(|__v| __v.prefix_inc());
+        field!((*self), _M_size).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait __gnu_test_object_counterImpl {

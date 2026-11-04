@@ -12,36 +12,42 @@ pub const anon_0_value: anon_0 = 1;
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_basic_string_char__std_char_traits_char___std_allocator_char____std_basic_string_char__std_char_traits_char___std_allocator_char___
 {}
+impl CppMove for test_macros_detail_is_same_std_basic_string_char__std_char_traits_char___std_allocator_char____std_basic_string_char__std_char_traits_char___std_allocator_char___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t____std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t___
 {}
+impl CppMove for test_macros_detail_is_same_std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t____std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_basic_string_char__std_char_traits_char___test_allocator_char____std_basic_string_char__std_char_traits_char___test_allocator_char___
 {}
+impl CppMove for test_macros_detail_is_same_std_basic_string_char__std_char_traits_char___test_allocator_char____std_basic_string_char__std_char_traits_char___test_allocator_char___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t____std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t___
 {}
+impl CppMove for test_macros_detail_is_same_std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t____std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_4 = u32;
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t____std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t___
 {}
+impl CppMove for test_macros_detail_is_same_std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t____std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_5 = u32;
 pub const anon_5_value: anon_5 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_basic_string_wchar_t__constexpr_char_traits_wchar_t___std_allocator_wchar_t____std_basic_string_wchar_t__constexpr_char_traits_wchar_t___std_allocator_wchar_t___
 {}
+impl CppMove for test_macros_detail_is_same_std_basic_string_wchar_t__constexpr_char_traits_wchar_t___std_allocator_wchar_t____std_basic_string_wchar_t__constexpr_char_traits_wchar_t___std_allocator_wchar_t___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(40)]
 pub struct test_allocator_statistics {
@@ -65,6 +71,11 @@ pub struct test_allocator_statistics {
     pub moved: i32,
     #[offset(36)]
     pub converted: i32,
+}
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for test_allocator_statistics {
     fn default() -> Self {
@@ -93,6 +104,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_8(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -173,6 +189,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -217,8 +238,12 @@ impl test_allocator_char_ {
                     .is_null())
         );
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -231,6 +256,11 @@ impl Clone for test_allocator_char_ {
             stats_: self.stats_.clone(),
         }));
         test_allocator_char_::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for test_allocator_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for test_allocator_char_ {
@@ -280,8 +310,12 @@ impl test_allocator_wchar_t_ {
                     .is_null())
         );
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -293,8 +327,12 @@ impl test_allocator_wchar_t_ {
         }));
         let this: Ptr<test_allocator_wchar_t_> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         assert!(
             (({ a.with(|__s| __s.data_) } != { destructed_value_6.with(|rc| *rc.borrow()) })
@@ -322,6 +360,11 @@ impl Clone for test_allocator_wchar_t_ {
         test_allocator_wchar_t_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_wchar_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for test_allocator_wchar_t_ {
     fn default() -> Self {
         {
@@ -336,6 +379,11 @@ impl Default for test_allocator_wchar_t_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -368,6 +416,11 @@ impl support_double_move_tracker {
         __this
     }
 }
+impl CppMove for support_double_move_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for support_double_move_tracker {
     fn default() -> Self {
         { support_double_move_tracker::new() }
@@ -377,18 +430,22 @@ impl Default for support_double_move_tracker {
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
@@ -405,6 +462,11 @@ impl cpp17_output_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -427,6 +489,11 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_input_iterator_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_ne_11(
@@ -459,9 +526,38 @@ impl cpp17_input_iterator_const_char_ptr__const_char_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for cpp17_input_iterator_const_char_ptr__const_char_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_11(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for cpp17_input_iterator_const_char_ptr__const_char_ptr_ {}
 impl CppAdvance for cpp17_input_iterator_const_char_ptr__const_char_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_5();
+    }
+}
+impl CppIterator<i8> for cpp17_input_iterator_const_char_ptr__const_char_ptr_ {
+    fn iter_deref(&self) -> Ptr<i8> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_Impl::operator_inc_5(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i8> for cpp17_input_iterator_const_char_ptr__const_char_ptr_ {}
+impl CppMove for cpp17_input_iterator_const_char_ptr__const_char_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_ne_12(
@@ -494,9 +590,38 @@ impl cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_12(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {}
 impl CppAdvance for cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_5();
+    }
+}
+impl CppIterator<i32> for cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_Impl::operator_inc_5(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {}
+impl CppMove for cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
@@ -516,6 +641,11 @@ impl cpp20_random_access_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp20_random_access_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -540,6 +670,11 @@ impl cpp20_input_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_input_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
@@ -559,6 +694,11 @@ impl cpp20_output_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp20_output_iterator<int*>, int>"
@@ -574,6 +714,11 @@ pub struct IteratorOpCounts {
     pub zero_moves: usize,
     #[offset(24)]
     pub equal_cmps: usize,
+}
+impl CppMove for IteratorOpCounts {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
@@ -606,6 +751,11 @@ impl CppEq for forward_sized_iterator_int_ptr_ {
         operator_eq_13(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for forward_sized_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -636,13 +786,17 @@ pub fn operator_add_15(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
 pub fn iter_swap_16(mut a: adl_Iterator, mut b: adl_Iterator) {
     cpp_swap!((a.ptr_).clone(), (b.ptr_).clone());
     if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+        a.iter_swaps_.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub fn iter_move_17(iter: adl_Iterator) -> Ptr<i32> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
-        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
+        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
@@ -692,22 +846,76 @@ impl adl_Iterator {
         });
     }
 }
-impl CppLess for adl_Iterator {
-    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_cmp_19(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
+impl std::cmp::Ord for adl_Iterator {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_cmp_19(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
-impl CppEq for adl_Iterator {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_18(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialOrd for adl_Iterator {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
     }
 }
+impl std::cmp::PartialEq for adl_Iterator {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_18(__lhs.clone(), __rhs.clone())
+            })
+        }
+    }
+}
+impl std::cmp::Eq for adl_Iterator {}
 impl CppAdvance for adl_Iterator {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_14();
     }
     fn cpp_dec(__it: &Ptr<Self>) {
         __it.operator_dec_16();
+    }
+}
+impl CppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            adl_IteratorImpl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_inc_14(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for adl_Iterator {}
+impl CppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_dec_16(__it);
+        });
+        self
+    }
+}
+impl CppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_add_assign(__it, n as _);
+        });
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        libcc2rs::with_record_ptrs(self, from, |__lhs, __rhs| {
+            (adl_IteratorImpl::operator_sub_11(__lhs, __rhs.read())) as isize
+        })
+    }
+}
+impl CppMove for adl_Iterator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for adl_Iterator {
@@ -740,6 +948,11 @@ impl CppEq for rvalue_iterator_int_ptr_ {
             == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for rvalue_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Ptr< i8  >  , new, value)]
@@ -748,6 +961,11 @@ pub struct util_iterator_error {}
 impl util_iterator_error {
     pub fn new(mut what: Ptr<i8>) -> Self {
         Self {}
+    }
+}
+impl CppMove for util_iterator_error {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -826,6 +1044,11 @@ impl constexpr_char_traits_wchar_t_ {
         return (*r.borrow()).clone();
     }
 }
+impl CppMove for constexpr_char_traits_wchar_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_20() -> bool {
     {}
     {}
@@ -839,8 +1062,11 @@ pub fn test_20() -> bool {
         ));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"aaaaaa")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"aaaaaa").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
         let w: Value<Vec<i32>> = Rc::new(RefCell::new(
             vec![(98 as i32); (2_usize) as usize]
@@ -851,8 +1077,11 @@ pub fn test_20() -> bool {
         ));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i32>::from_string_literal(&[98 as i32, 98 as i32, 0 as i32,])
-                .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i32>::from_string_literal(&[98 as i32, 98 as i32, 0 as i32]).with_c_str(
+                    |__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s,
+                )
+            })
         );
     }
     {
@@ -865,8 +1094,11 @@ pub fn test_20() -> bool {
         ));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"aaaaaa")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"aaaaaa").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
         let w: Value<Vec<i32>> = Rc::new(RefCell::new(
             vec![(98 as i32); (2_usize) as usize]
@@ -877,116 +1109,184 @@ pub fn test_20() -> bool {
         ));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i32>::from_string_literal(&[98 as i32, 98 as i32, 0 as i32,])
-                .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i32>::from_string_literal(&[98 as i32, 98 as i32, 0 as i32]).with_c_str(
+                    |__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s,
+                )
+            })
         );
     }
     {
-        let mut sin: Vec<i8> = {
+        let sin: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i8>::from_string_literal(b"abc").to_c_bytes();
             __bytes.push(0_i8);
             __bytes
-        };
-        let s: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+        }));
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new(
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                { (sin.as_pointer()).reinterpret_cast::<Vec<i8>>() },
+                { 1_usize },
+                None,
+            ),
+        ));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"bc")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"bc").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
-        let mut win: Vec<i32> = {
+        let win: Value<Vec<i32>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i32>::from_string_literal(&[
                 97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
             ])
             .to_c_bytes();
             __bytes.push(0_i32);
             __bytes
-        };
-        let w: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        }));
+        let w : Value<Vec<i32  > > = Rc::new(RefCell::new(std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_1 ( { win .as_pointer()  } , { ( 3_u32  as usize )   } , None , )  )) ;
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i32>::from_string_literal(&[100 as i32, 101 as i32, 102 as i32, 0 as i32,])
-                .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i32>::from_string_literal(&[100 as i32, 101 as i32, 102 as i32, 0 as i32])
+                    .with_c_str(|__s| {
+                        (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s
+                    })
+            })
         );
     }
     {
-        let mut sin: Vec<i8> = {
+        let sin: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i8>::from_string_literal(b"abc").to_c_bytes();
             __bytes.push(0_i8);
             __bytes
-        };
-        let s: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+        }));
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let __tmp_0: Value<std_allocator_char_> =
+                Rc::new(RefCell::new(<std_allocator_char_>::default()));
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                { (sin.as_pointer()).reinterpret_cast::<Vec<i8>>() },
+                { 1_usize },
+                { Some(__tmp_0.as_pointer()) },
+            )
+        }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"bc")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"bc").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
-        let mut win: Vec<i32> = {
+        let win: Value<Vec<i32>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i32>::from_string_literal(&[
                 97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
             ])
             .to_c_bytes();
             __bytes.push(0_i32);
             __bytes
-        };
-        let w: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        }));
+        let w: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let __tmp_1: Value<test_allocator_wchar_t_> =
+                Rc::new(RefCell::new(<test_allocator_wchar_t_>::default()));
+            std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_1 ( { win .as_pointer()  } , { ( 3_u32  as usize )   } , { Some ( __tmp_1.as_pointer() ) } , )
+        }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i32>::from_string_literal(&[100 as i32, 101 as i32, 102 as i32, 0 as i32,])
-                .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i32>::from_string_literal(&[100 as i32, 101 as i32, 102 as i32, 0 as i32])
+                    .with_c_str(|__s| {
+                        (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s
+                    })
+            })
         );
     }
     {
-        let mut sin: Vec<i8> = {
+        let sin: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i8>::from_string_literal(b"abc").to_c_bytes();
             __bytes.push(0_i8);
             __bytes
-        };
-        let s: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+        }));
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new(
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
+                { (sin.as_pointer()).reinterpret_cast::<Vec<i8>>() },
+                { 1_usize },
+                { 3_usize },
+            ),
+        ));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"bc")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"bc").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
-        let mut win: Vec<i32> = {
+        let win: Value<Vec<i32>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i32>::from_string_literal(&[
                 97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
             ])
             .to_c_bytes();
             __bytes.push(0_i32);
             __bytes
-        };
-        let w: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        }));
+        let w : Value<Vec<i32  > > = Rc::new(RefCell::new(std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_2 ( { win .as_pointer()  } , { ( 2_u32  as usize )   } , { ( 3_u32  as usize )   } , )  )) ;
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i32>::from_string_literal(&[99 as i32, 100 as i32, 101 as i32, 0 as i32,])
-                .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i32>::from_string_literal(&[99 as i32, 100 as i32, 101 as i32, 0 as i32])
+                    .with_c_str(|__s| {
+                        (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s
+                    })
+            })
         );
     }
     {
-        let mut sin: Vec<i8> = {
+        let sin: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i8>::from_string_literal(b"abc").to_c_bytes();
             __bytes.push(0_i8);
             __bytes
-        };
-        let s: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+        }));
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let __tmp_2: Value<std_allocator_char_> =
+                Rc::new(RefCell::new(<std_allocator_char_>::default()));
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_3(
+                { (sin.as_pointer()).reinterpret_cast::<Vec<i8>>() },
+                { 1_usize },
+                { 3_usize },
+                { __tmp_2.as_pointer() },
+            )
+        }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"bc")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"bc").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
-        let mut win: Vec<i32> = {
+        let win: Value<Vec<i32>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i32>::from_string_literal(&[
                 97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
             ])
             .to_c_bytes();
             __bytes.push(0_i32);
             __bytes
-        };
-        let w: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        }));
+        let w: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let __tmp_3: Value<test_allocator_wchar_t_> =
+                Rc::new(RefCell::new(<test_allocator_wchar_t_>::default()));
+            std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_3 ( { win .as_pointer()  } , { ( 2_u32  as usize )   } , { ( 3_u32  as usize )   } , { __tmp_3.as_pointer() } , )
+        }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i32>::from_string_literal(&[99 as i32, 100 as i32, 101 as i32, 0 as i32,])
-                .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i32>::from_string_literal(&[99 as i32, 100 as i32, 101 as i32, 0 as i32])
+                    .with_c_str(|__s| {
+                        (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s
+                    })
+            })
         );
     }
     {
@@ -999,8 +1299,11 @@ pub fn test_20() -> bool {
         }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"ab")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"ab").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
         let w: Value<Vec<i32>> = Rc::new(RefCell::new({
             let mut __v = Vec::with_capacity(3_usize as usize + 1);
@@ -1013,8 +1316,12 @@ pub fn test_20() -> bool {
         }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32,])
-                .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32])
+                    .with_c_str(|__s| {
+                        (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s
+                    })
+            })
         );
     }
     {
@@ -1027,8 +1334,11 @@ pub fn test_20() -> bool {
         }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"ab")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"ab").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
         let w: Value<Vec<i32>> = Rc::new(RefCell::new({
             let mut __v = Vec::with_capacity((3_u32 as usize) as usize + 1);
@@ -1041,8 +1351,44 @@ pub fn test_20() -> bool {
         }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32,])
+            ({
+                Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32])
+                    .with_c_str(|__s| {
+                        (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s
+                    })
+            })
+        );
+    }
+    {
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"abc").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
+        const _: () = assert!(true, "");;
+        assert!(
+            ({
+                Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
+        );
+        let w: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
+            ])
+            .to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
+        const _: () = assert!(true, "");;
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
+                ])
                 .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
@@ -1053,8 +1399,11 @@ pub fn test_20() -> bool {
         }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"abc")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
         let w: Value<Vec<i32>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i32>::from_string_literal(&[
@@ -1066,70 +1415,80 @@ pub fn test_20() -> bool {
         }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
-        );
-    }
-    {
-        let s: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __bytes = Ptr::<i8>::from_string_literal(b"abc").to_c_bytes();
-            __bytes.push(0_i8);
-            __bytes
-        }));
-        const _: () = assert!(true, "");;
-        assert!(
-            Ptr::<i8>::from_string_literal(b"abc")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
-        );
-        let w: Value<Vec<i32>> = Rc::new(RefCell::new({
-            let mut __bytes = Ptr::<i32>::from_string_literal(&[
-                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
-            ])
-            .to_c_bytes();
-            __bytes.push(0_i32);
-            __bytes
-        }));
-        const _: () = assert!(true, "");;
-        assert!(
-            Ptr::<i32>::from_string_literal(&[
-                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
+                ])
+                .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
         let mut input: Ptr<i8> = Ptr::<i8>::from_string_literal(b"abcdef");
-        let s: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new({
+            use std::io::Read;
+            let mut __bytes: Vec<u8> = Vec::new();
+            let mut __f =
+                &cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (input).clone() });
+            __f.read_to_end(&mut __bytes)
+                .expect("couldn't read the file");
+            __bytes.push(0);
+            CChar::from_byte_vec(__bytes)
+        }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"abc")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
     }
     {
         {
             let mut input: Ptr<i8> = Ptr::<i8>::from_string_literal(b"abcdef");
-            let s: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<Vec<i8>> = Rc::new(RefCell::new({
+                use std::io::Read;
+                let mut __bytes: Vec<u8> = Vec::new();
+                let mut __f =
+                    &cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (input).clone() });
+                __f.read_to_end(&mut __bytes)
+                    .expect("couldn't read the file");
+                __bytes.push(0);
+                CChar::from_byte_vec(__bytes)
+            }));
             const _: () = assert!(true, "");;
             assert!(
-                Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| (*s.borrow())
-                    [..(*s.borrow()).len().saturating_sub(1)]
-                    == *__s)
+                ({
+                    Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
+                        (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                    })
+                })
             );
         }
         {
             let mut input: Ptr<i32> = Ptr::<i32>::from_string_literal(&[
                 97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
             ]);
-            let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<Vec<i32>> = Rc::new(RefCell::new({
+                use std::io::Read;
+                let mut __bytes: Vec<u8> = Vec::new();
+                let mut __f = &cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_::new({
+                    (input).clone()
+                });
+                __f.read_to_end(&mut __bytes)
+                    .expect("couldn't read the file");
+                __bytes.push(0);
+                CChar::from_byte_vec(__bytes)
+            }));
             const _: () = assert!(true, "");;
             assert!(
-                Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32,])
-                    .with_c_str(
-                        |__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
-                    )
+                ({
+                    Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32])
+                        .with_c_str(|__s| {
+                            (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                        })
+                })
             );
         }
     }
@@ -1142,8 +1501,11 @@ pub fn test_20() -> bool {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new((sin).clone()));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"abc")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
         let mut win: Vec<i32> = {
             let mut __bytes = Ptr::<i32>::from_string_literal(&[
@@ -1156,39 +1518,57 @@ pub fn test_20() -> bool {
         let w: Value<Vec<i32>> = Rc::new(RefCell::new((win).clone()));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
+                ])
+                .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
-        let mut sin: Vec<i8> = {
+        let sin: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i8>::from_string_literal(b"abc").to_c_bytes();
             __bytes.push(0_i8);
             __bytes
-        };
-        let s: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+        }));
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let __tmp_4: Value<std_allocator_char_> =
+                Rc::new(RefCell::new(<std_allocator_char_>::default()));
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_4(
+                { (sin.as_pointer()).reinterpret_cast::<Vec<i8>>() },
+                { __tmp_4.as_pointer() },
+            )
+        }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"abc")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
-        let mut win: Vec<i32> = {
+        let win: Value<Vec<i32>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i32>::from_string_literal(&[
                 97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
             ])
             .to_c_bytes();
             __bytes.push(0_i32);
             __bytes
-        };
-        let w: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        }));
+        let w: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let __tmp_5: Value<test_allocator_wchar_t_> =
+                Rc::new(RefCell::new(<test_allocator_wchar_t_>::default()));
+            std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_4 ( { win .as_pointer()  } , { __tmp_5.as_pointer() } , )
+        }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
+                ])
+                .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
@@ -1200,8 +1580,11 @@ pub fn test_20() -> bool {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new(std::mem::take(&mut sin)));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"abc")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
         let mut win: Vec<i32> = {
             let mut __bytes = Ptr::<i32>::from_string_literal(&[
@@ -1214,157 +1597,305 @@ pub fn test_20() -> bool {
         let w: Value<Vec<i32>> = Rc::new(RefCell::new(std::mem::take(&mut win)));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
+                ])
+                .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
-        let mut sin: Vec<i8> = {
+        let sin: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i8>::from_string_literal(b"abc").to_c_bytes();
             __bytes.push(0_i8);
             __bytes
-        };
-        let s: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+        }));
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let __tmp_6: Value<std_allocator_char_> =
+                Rc::new(RefCell::new(<std_allocator_char_>::default()));
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_5(
+                { sin.as_pointer() },
+                { __tmp_6.as_pointer() },
+            )
+        }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"abc")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
-        let mut win: Vec<i32> = {
+        let win: Value<Vec<i32>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i32>::from_string_literal(&[
                 97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
             ])
             .to_c_bytes();
             __bytes.push(0_i32);
             __bytes
-        };
-        let w: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        }));
+        let w: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let __tmp_7: Value<test_allocator_wchar_t_> =
+                Rc::new(RefCell::new(<test_allocator_wchar_t_>::default()));
+            std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_5 ( { win .as_pointer()  } , { __tmp_7.as_pointer() } , )
+        }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
-        );
-    }
-    {
-        let s: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        assert!(
-            Ptr::<i8>::from_string_literal(b"abc")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
-        );
-        let w: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        assert!(
-            Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32,])
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
+                ])
                 .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
-        let s: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new(
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_6(
+                { Vec::from([('a' as i8), ('b' as i8), ('c' as i8)]) },
+                None,
+            ),
+        ));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"abc")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
-        let w: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        let w: Value<Vec<i32>> = Rc::new(RefCell::new(
+            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
+                { Vec::from([(97 as i32), (98 as i32), (99 as i32)]) },
+                None,
+            ),
+        ));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32,])
+            ({
+                Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32])
+                    .with_c_str(|__s| {
+                        (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s
+                    })
+            })
+        );
+    }
+    {
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let __tmp_8: Value<test_allocator_char_> =
+                Rc::new(RefCell::new(<test_allocator_char_>::default()));
+            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
+                { Vec::from([('a' as i8), ('b' as i8), ('c' as i8)]) },
+                { __tmp_8.as_pointer() },
+            )
+        }));
+        const _: () = assert!(true, "");;
+        assert!(
+            ({
+                Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
+        );
+        let w: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let __tmp_9: Value<test_allocator_wchar_t_> =
+                Rc::new(RefCell::new(<test_allocator_wchar_t_>::default()));
+            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_1(
+                { Vec::from([(97 as i32), (98 as i32), (99 as i32)]) },
+                { __tmp_9.as_pointer() },
+            )
+        }));
+        const _: () = assert!(true, "");;
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32])
+                    .with_c_str(|__s| {
+                        (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s
+                    })
+            })
+        );
+    }
+    {
+        let sv: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_basic_string_view_char__std_char_traits_char__::new_1({
+                Ptr::<i8>::from_string_literal(b"abc")
+            }),
+        ));
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new(
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_7(
+                { sv.as_pointer() },
+                None,
+            ),
+        ));
+        const _: () = assert!(true, "");;
+        assert!(
+            ({
+                Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
+        );
+        let BSV: Value<std_basic_string_view_wchar_t__constexpr_char_traits_wchar_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_wchar_t__constexpr_char_traits_wchar_t__::new_1({
+                    Ptr::<i32>::from_string_literal(&[
+                        97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
+                        0 as i32,
+                    ])
+                }),
+            ));
+        let w : Value<Vec<i32  > > = Rc::new(RefCell::new(std_basic_string_wchar_t__constexpr_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { BSV .as_pointer()  } , None , )  )) ;
+        const _: () = assert!(true, "");;
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
+                ])
                 .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+        let sv: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_basic_string_view_char__std_char_traits_char__::new_1({
+                Ptr::<i8>::from_string_literal(b"abc")
+            }),
+        ));
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let __tmp_10: Value<test_allocator_char_> =
+                Rc::new(RefCell::new(<test_allocator_char_>::default()));
+            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_2(
+                { sv.as_pointer() },
+                { __tmp_10.as_pointer() },
+            )
+        }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"abc")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
-        let BSV: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let w: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        let BSV: Value<std_basic_string_view_wchar_t__constexpr_char_traits_wchar_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_wchar_t__constexpr_char_traits_wchar_t__::new_1({
+                    Ptr::<i32>::from_string_literal(&[
+                        97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
+                        0 as i32,
+                    ])
+                }),
+            ));
+        let w: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let __tmp_11: Value<test_allocator_wchar_t_> =
+                Rc::new(RefCell::new(<test_allocator_wchar_t_>::default()));
+            std_basic_string_wchar_t__constexpr_char_traits_wchar_t___test_allocator_wchar_t__ :: new_6 ( { BSV .as_pointer()  } , { __tmp_11.as_pointer() } , )
+        }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
+                ])
+                .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        assert!(
-            Ptr::<i8>::from_string_literal(b"abc")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
-        );
-        let BSV: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let w: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        assert!(
-            Ptr::<i32>::from_string_literal(&[
-                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
-        );
-    }
-    {
-        let mut s0: Vec<i8> = {
+        let s0: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i8>::from_string_literal(b"abc").to_c_bytes();
             __bytes.push(0_i8);
             __bytes
-        };
-        let s: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+        }));
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new(
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_2(
+                { (s0.as_pointer()).reinterpret_cast::<Vec<i8>>() },
+                { 1_usize },
+                { 1_usize },
+            ),
+        ));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"b")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"b").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
-        let mut w0: Vec<i32> = {
+        let w0: Value<Vec<i32>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i32>::from_string_literal(&[
                 97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
             ])
             .to_c_bytes();
             __bytes.push(0_i32);
             __bytes
-        };
-        let w: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        }));
+        let w: Value<Vec<i32>> = Rc::new(RefCell::new(
+            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_2(
+                { (w0.as_pointer()).reinterpret_cast::<Vec<i32>>() },
+                { 2_usize },
+                { 2_usize },
+            ),
+        ));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i32>::from_string_literal(&[99 as i32, 100 as i32, 0 as i32,])
-                .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i32>::from_string_literal(&[99 as i32, 100 as i32, 0 as i32]).with_c_str(
+                    |__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s,
+                )
+            })
         );
     }
     {
-        let mut s0: Vec<i8> = {
+        let s0: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i8>::from_string_literal(b"abc").to_c_bytes();
             __bytes.push(0_i8);
             __bytes
-        };
-        let s: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+        }));
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let __tmp_12: Value<test_allocator_char_> =
+                Rc::new(RefCell::new(test_allocator_char_::new_1({ 4 })));
+            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_3(
+                { s0.as_pointer() },
+                { 1_usize },
+                { 1_usize },
+                { __tmp_12.as_pointer() },
+            )
+        }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"b")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"b").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
-        let mut w0: Vec<i32> = {
+        let w0: Value<Vec<i32>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i32>::from_string_literal(&[
                 97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 0 as i32,
             ])
             .to_c_bytes();
             __bytes.push(0_i32);
             __bytes
-        };
-        let w: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        }));
+        let w: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let __tmp_13: Value<test_allocator_wchar_t_> =
+                Rc::new(RefCell::new(test_allocator_wchar_t_::new_1({ 6 })));
+            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_2(
+                { w0.as_pointer() },
+                { 2_usize },
+                { 2_usize },
+                { __tmp_13.as_pointer() },
+            )
+        }));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i32>::from_string_literal(&[99 as i32, 100 as i32, 0 as i32,])
-                .with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i32>::from_string_literal(&[99 as i32, 100 as i32, 0 as i32]).with_c_str(
+                    |__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s,
+                )
+            })
         );
     }
     return true;
@@ -1459,21 +1990,29 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
         return (*self).clone();
     }
     fn operator_inc_14(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_15(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return prev;
     }
     fn operator_dec_16(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_17(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return prev;
     }
 }
@@ -1498,7 +2037,9 @@ impl cpp17_input_iterator_const_char_ptr__const_char_ptr_Impl
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_const_char_ptr__const_char_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -1534,7 +2075,9 @@ impl cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_Impl
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -1764,11 +2307,11 @@ impl rvalue_iterator_int_ptr_Impl for Ptr<rvalue_iterator_int_ptr_> {
                 &((*self).with(|__s| __s.it_.clone())),
                 &(_a0.with(|__s| __s.it_.clone())),
             )));
-            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow());
+            if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+                return ({ (*cmp.borrow()) });
             }
         }
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> bool {
         return ({ (*self).with(|__s| __s.it_.clone()) } == { _a0.with(|__s| __s.it_.clone()) });
@@ -1793,10 +2336,10 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
 }
 pub trait test_allocator_char_Impl {
     fn destructor(&self);
-    fn address_11(&self, x: ()) -> Ptr<i8> {
+    fn address_11(&self, x: Ptr<i8>) -> Ptr<i8> {
         unimplemented!()
     }
-    fn address_12(&self, x: ()) -> Ptr<i8> {
+    fn address_12(&self, x: Ptr<i8>) -> Ptr<i8> {
         unimplemented!()
     }
     fn allocate(&self, n: u32, _a1: Option<AnyPtr>) -> Ptr<i8>;
@@ -1817,7 +2360,9 @@ impl test_allocator_char_Impl for Ptr<test_allocator_char_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_6.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_6.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_6.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_6.with(|rc| *rc.borrow()));
@@ -1837,10 +2382,12 @@ impl test_allocator_char_Impl for Ptr<test_allocator_char_> {
             }) {
                 std::process::abort();
             }
-            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
-                .with_mut(|__v| __v.prefix_inc());
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -1848,13 +2395,14 @@ impl test_allocator_char_Impl for Ptr<test_allocator_char_> {
                     .wrapping_add(n)) as i32
             });
         }
-        return unimplemented!();
+        return ({ <std_allocator_char_>::default().allocate((n as usize)) });
     }
     fn deallocate(&self, mut p: Ptr<i8>, mut s: u32) {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_6.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -1862,7 +2410,7 @@ impl test_allocator_char_Impl for Ptr<test_allocator_char_> {
                     .wrapping_sub(s)) as i32
             });
         }
-        unimplemented!();
+        ({ <std_allocator_char_>::default().deallocate((p).clone(), (s as usize)) });
     }
     fn max_size(&self) -> u32 {
         return ((((((2147483647_u32).wrapping_mul((2_u32 as u32)) as u32)
@@ -1922,10 +2470,10 @@ impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
 }
 pub trait test_allocator_wchar_t_Impl {
     fn destructor(&self);
-    fn address_11(&self, x: ()) -> Ptr<i32> {
+    fn address_11(&self, x: Ptr<i32>) -> Ptr<i32> {
         unimplemented!()
     }
-    fn address_12(&self, x: ()) -> Ptr<i32> {
+    fn address_12(&self, x: Ptr<i32>) -> Ptr<i32> {
         unimplemented!()
     }
     fn allocate(&self, n: u32, _a1: Option<AnyPtr>) -> Ptr<i32>;
@@ -1946,7 +2494,9 @@ impl test_allocator_wchar_t_Impl for Ptr<test_allocator_wchar_t_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_6.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_6.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_6.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_6.with(|rc| *rc.borrow()));
@@ -1966,10 +2516,12 @@ impl test_allocator_wchar_t_Impl for Ptr<test_allocator_wchar_t_> {
             }) {
                 std::process::abort();
             }
-            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
-                .with_mut(|__v| __v.prefix_inc());
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -1977,13 +2529,14 @@ impl test_allocator_wchar_t_Impl for Ptr<test_allocator_wchar_t_> {
                     .wrapping_add(n)) as i32
             });
         }
-        return unimplemented!();
+        return ({ <std_allocator_wchar_t_>::default().allocate((n as usize)) });
     }
     fn deallocate(&self, mut p: Ptr<i32>, mut s: u32) {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_6.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -1991,7 +2544,7 @@ impl test_allocator_wchar_t_Impl for Ptr<test_allocator_wchar_t_> {
                     .wrapping_sub(s)) as i32
             });
         }
-        unimplemented!();
+        ({ <std_allocator_wchar_t_>::default().deallocate((p).clone(), (s as usize)) });
     }
     fn max_size(&self) -> u32 {
         return ((((((2147483647_u32).wrapping_mul((2_u32 as u32)) as u32)

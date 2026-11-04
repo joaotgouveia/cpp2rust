@@ -9,12 +9,22 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Empty {}
+impl CppMove for Empty {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(64)]
 pub struct BigType {
     #[offset(0)]
     #[byte_size(64)]
     pub buffer: Box<[i8]>,
+}
+impl CppMove for BigType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for BigType {
     fn default() -> Self {
@@ -33,28 +43,48 @@ impl Default for BigType {
 }
 pub fn test_0() -> bool {
     {
-        let mut bt: BigType = <BigType>::default();
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((array_elem!(unimplemented!(), buffer, 0).read()) as i32) == 10));
-        assert!((unimplemented!() == 1_usize));
+        let bt: Value<BigType> = Rc::new(RefCell::new(<BigType>::default()));
+        let sv: Value<std_ranges_single_view_BigType_> =
+            Rc::new(RefCell::new(std_ranges_single_view_BigType_::new_1({
+                bt.as_pointer()
+            })));
+        assert!(
+            ({ (((array_elem!(({ (*sv.borrow()).data_11() }), buffer, 0).read()) as i32) == 10) })
+        );
+        assert!((({ std_ranges_single_view_BigType_::size() }) == 1_usize));
     }
     {
-        let mut bt: BigType = <BigType>::default();
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((array_elem!(unimplemented!(), buffer, 0).read()) as i32) == 10));
-        assert!((unimplemented!() == 1_usize));
+        let bt: Value<BigType> = Rc::new(RefCell::new(<BigType>::default()));
+        let sv: Value<std_ranges_single_view_BigType_> =
+            Rc::new(RefCell::new(std_ranges_single_view_BigType_::new_1({
+                bt.as_pointer()
+            })));
+        assert!(
+            ({ (((array_elem!(({ (*sv.borrow()).data_12() }), buffer, 0).read()) as i32) == 10) })
+        );
+        assert!((({ std_ranges_single_view_BigType_::size() }) == 1_usize));
     }
     {
-        let mut bt: BigType = <BigType>::default();
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((array_elem!(unimplemented!(), buffer, 0).read()) as i32) == 10));
-        assert!((unimplemented!() == 1_usize));
+        let bt: Value<BigType> = Rc::new(RefCell::new(<BigType>::default()));
+        let sv: Value<std_ranges_single_view_BigType_> =
+            Rc::new(RefCell::new(std_ranges_single_view_BigType_::new_2({
+                bt.as_pointer()
+            })));
+        assert!(
+            ({ (((array_elem!(({ (*sv.borrow()).data_11() }), buffer, 0).read()) as i32) == 10) })
+        );
+        assert!((({ std_ranges_single_view_BigType_::size() }) == 1_usize));
     }
     {
-        let mut bt: BigType = <BigType>::default();
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((array_elem!(unimplemented!(), buffer, 0).read()) as i32) == 10));
-        assert!((unimplemented!() == 1_usize));
+        let bt: Value<BigType> = Rc::new(RefCell::new(<BigType>::default()));
+        let sv: Value<std_ranges_single_view_BigType_> =
+            Rc::new(RefCell::new(std_ranges_single_view_BigType_::new_1({
+                bt.as_pointer()
+            })));
+        assert!(
+            ({ (((array_elem!(({ (*sv.borrow()).data_12() }), buffer, 0).read()) as i32) == 10) })
+        );
+        assert!((({ std_ranges_single_view_BigType_::size() }) == 1_usize));
     }
     return true;
 }

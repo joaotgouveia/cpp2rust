@@ -28,6 +28,11 @@ impl Point {
         Self { x: x, y: y }
     }
 }
+impl CppMove for Point {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Point {
     fn default() -> Self {
         { Point::new_1() }
@@ -272,7 +277,9 @@ fn main_0() -> i32 {
     assert!(({ ((*(*(*it4.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 5_u32) }));
     assert!(((p.read()) == 5_u32));
     assert!((x5 == 5_u32));
-    p.with_mut(|__v| __v.prefix_inc());
+    p.with_mut(|__v| {
+        __v.prefix_inc();
+    });
     assert!(
         ((Map::subscript_move(
             m.as_pointer(),
@@ -482,7 +489,11 @@ fn main_0() -> i32 {
     let mut i: u32 = 0_u32;
     'loop_: while ((i as usize) < (*indexes.borrow()).len()) {
         let __rhs = ((i).wrapping_rem(2_u32) != 0);
-        Map::subscript(m2.as_pointer(), indexes.decay().offset((i as usize))).write(__rhs);
+        Map::subscript(
+            m2.as_pointer(),
+            indexes.decay().offset((i as usize) as isize),
+        )
+        .write(__rhs);
         i.prefix_inc();
     }
     assert!(({ ((*m2.borrow()).len() == (*indexes.borrow()).len()) }));

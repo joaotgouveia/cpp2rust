@@ -27,14 +27,18 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let l: Value<std_locale> = Rc::new(RefCell::new(
+        (*({ std_locale::classic() }).upgrade().deref()).clone(),
+    ));
     {
-        let np: Ptr<()> = unimplemented!();
-        assert!(((unimplemented!() as i32) == ((',' as i8) as i32)));
+        let np: Ptr<std_numpunct_char_> = ({ use_facet_0(l.as_pointer()) });
+        assert!(
+            ({ ((({ (*np.upgrade().deref()).thousands_sep() }) as i32) == ((',' as i8) as i32)) })
+        );
     }
     {
-        let np: Ptr<()> = unimplemented!();
-        assert!(((unimplemented!() as i32) == (44 as i32)));
+        let np: Ptr<std_numpunct_wchar_t_> = ({ use_facet_1(l.as_pointer()) });
+        assert!(({ (({ (*np.upgrade().deref()).thousands_sep() }) == (44 as i32)) }));
     }
     return 0;
 }

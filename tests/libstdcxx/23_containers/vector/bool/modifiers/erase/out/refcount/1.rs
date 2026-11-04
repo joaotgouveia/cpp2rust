@@ -52,6 +52,11 @@ impl Clone for __gnu_test_object_counter {
         __gnu_test_object_counter::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_object_counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_object_counter {
     fn default() -> Self {
         { __gnu_test_object_counter::new() }
@@ -78,6 +83,11 @@ impl __gnu_test_copy_constructor {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_copy_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
@@ -99,6 +109,11 @@ impl __gnu_test_assignment_operator {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_assignment_operator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
@@ -111,6 +126,11 @@ impl __gnu_test_destructor {
     }
     pub fn reset() {
         _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
+    }
+}
+impl CppMove for __gnu_test_destructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -173,6 +193,11 @@ impl Clone for __gnu_test_copy_tracker {
         __gnu_test_copy_tracker::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_copy_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_copy_tracker {
     fn default() -> Self {
         { __gnu_test_copy_tracker::new(None, None) }
@@ -197,6 +222,11 @@ pub struct __gnu_test_semaphore {
     pid_: (),
 }
 impl __gnu_test_semaphore {}
+impl CppMove for __gnu_test_semaphore {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static A_9: Value<Box<[bool]>> = Rc::new(RefCell::new(Box::new([
         (0 != 0),
@@ -316,7 +346,13 @@ pub fn test01_21() {
         }
         __v
     }));
-    let it1: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let it1: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
+        ({
+            let ___position: RandomAccessIterator<bool> =
+                <RandomAccessIterator<bool>>::from(v.decay().begin().iter_add(1_()));
+            (*v.borrow_mut()).erase_60(___position)
+        }),
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -341,7 +377,15 @@ pub fn test01_21() {
             std::process::abort();
         }
     }
-    let it2: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let it2: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
+        ({
+            let ___first: RandomAccessIterator<bool> =
+                <RandomAccessIterator<bool>>::from(v.decay().begin().iter_add(4_()));
+            let ___last: RandomAccessIterator<bool> =
+                <RandomAccessIterator<bool>>::from(v.decay().begin().iter_add(9_()));
+            (*v.borrow_mut()).erase_61(___first, ___last)
+        }),
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -366,7 +410,15 @@ pub fn test01_21() {
             std::process::abort();
         }
     }
-    let it3: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let it3: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
+        ({
+            let ___first: RandomAccessIterator<bool> =
+                <RandomAccessIterator<bool>>::from(v.decay().begin().iter_add(6_()));
+            let ___last: RandomAccessIterator<bool> =
+                <RandomAccessIterator<bool>>::from(v.decay().end());
+            (*v.borrow_mut()).erase_61(___first, ___last)
+        }),
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -391,7 +443,15 @@ pub fn test01_21() {
             std::process::abort();
         }
     }
-    let it4: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let it4: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
+        ({
+            let ___first: RandomAccessIterator<bool> =
+                <RandomAccessIterator<bool>>::from(v.decay().begin());
+            let ___last: RandomAccessIterator<bool> =
+                <RandomAccessIterator<bool>>::from(v.decay().begin().iter_add(3_()));
+            (*v.borrow_mut()).erase_61(___first, ___last)
+        }),
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -416,7 +476,13 @@ pub fn test01_21() {
             std::process::abort();
         }
     }
-    let it5: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let it5: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
+        ({
+            let ___position: RandomAccessIterator<bool> =
+                <RandomAccessIterator<bool>>::from(v.decay().begin().iter_add(2_()));
+            (*v.borrow_mut()).erase_60(___position)
+        }),
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -441,7 +507,15 @@ pub fn test01_21() {
             std::process::abort();
         }
     }
-    let it6: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let it6: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(
+        ({
+            let ___first: RandomAccessIterator<bool> =
+                <RandomAccessIterator<bool>>::from(v.decay().begin());
+            let ___last: RandomAccessIterator<bool> =
+                <RandomAccessIterator<bool>>::from(v.decay().end());
+            (*v.borrow_mut()).erase_61(___first, ___last)
+        }),
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -469,7 +543,14 @@ pub fn test02_22() {
     let mut i: u32 = 0_u32;
     'loop_: while (i < N_15.with(|rc| *rc.borrow())) {
         {
-            let __a1 = unimplemented!();
+            let __a1 = (0..(1_usize) as usize)
+                .map(|_| {
+                    ({
+                        let __idx0 = (i) as usize;
+                        A_9.with(|rc| rc.borrow()[__idx0])
+                    })
+                })
+                .collect::<Vec<bool>>();
             (*v.borrow_mut()).push(__a1)
         };
         i.prefix_inc();
@@ -477,7 +558,14 @@ pub fn test02_22() {
     let mut i: u32 = 0_u32;
     'loop_: while (i < N1_16.with(|rc| *rc.borrow())) {
         {
-            let __a1 = unimplemented!();
+            let __a1 = (0..(1_usize) as usize)
+                .map(|_| {
+                    ({
+                        let __idx0 = (i) as usize;
+                        A1_10.with(|rc| rc.borrow()[__idx0])
+                    })
+                })
+                .collect::<Vec<bool>>();
             (*v1.borrow_mut()).push(__a1)
         };
         i.prefix_inc();
@@ -485,7 +573,14 @@ pub fn test02_22() {
     let mut i: u32 = 0_u32;
     'loop_: while (i < N2_17.with(|rc| *rc.borrow())) {
         {
-            let __a1 = unimplemented!();
+            let __a1 = (0..(1_usize) as usize)
+                .map(|_| {
+                    ({
+                        let __idx0 = (i) as usize;
+                        A2_11.with(|rc| rc.borrow()[__idx0])
+                    })
+                })
+                .collect::<Vec<bool>>();
             (*v2.borrow_mut()).push(__a1)
         };
         i.prefix_inc();
@@ -493,7 +588,14 @@ pub fn test02_22() {
     let mut i: u32 = 0_u32;
     'loop_: while (i < N3_18.with(|rc| *rc.borrow())) {
         {
-            let __a1 = unimplemented!();
+            let __a1 = (0..(1_usize) as usize)
+                .map(|_| {
+                    ({
+                        let __idx0 = (i) as usize;
+                        A3_12.with(|rc| rc.borrow()[__idx0])
+                    })
+                })
+                .collect::<Vec<bool>>();
             (*v3.borrow_mut()).push(__a1)
         };
         i.prefix_inc();
@@ -501,7 +603,14 @@ pub fn test02_22() {
     let mut i: u32 = 0_u32;
     'loop_: while (i < N4_19.with(|rc| *rc.borrow())) {
         {
-            let __a1 = unimplemented!();
+            let __a1 = (0..(1_usize) as usize)
+                .map(|_| {
+                    ({
+                        let __idx0 = (i) as usize;
+                        A4_13.with(|rc| rc.borrow()[__idx0])
+                    })
+                })
+                .collect::<Vec<bool>>();
             (*v4.borrow_mut()).push(__a1)
         };
         i.prefix_inc();
@@ -509,18 +618,28 @@ pub fn test02_22() {
     let mut i: u32 = 0_u32;
     'loop_: while (i < N5_20.with(|rc| *rc.borrow())) {
         {
-            let __a1 = unimplemented!();
+            let __a1 = (0..(1_usize) as usize)
+                .map(|_| {
+                    ({
+                        let __idx0 = (i) as usize;
+                        A5_14.with(|rc| rc.borrow()[__idx0])
+                    })
+                })
+                .collect::<Vec<bool>>();
             (*v5.borrow_mut()).push(__a1)
         };
         i.prefix_inc();
     }
-    let it1: Value<RandomAccessIterator<Vec<bool>>> = Rc::new(RefCell::new({
-        let __it = <RandomAccessIterator<Vec<bool>>>::from(v.decay().begin().iter_add(1_isize));
-        let __off = __it.index();
-        v.as_pointer()
-            .with_mut(|__v: &mut Vec<Vec<bool>>| __v.remove(__off));
-        __it
-    }));
+    let it1: Value<RandomAccessIterator<Vec<bool>>> = Rc::new(RefCell::new(
+        match ({ <RandomAccessIterator<Vec<bool>>>::from(v.decay().begin().iter_add(1_isize)) },) {
+            (mut __tmp_0,) => {
+                let __off = __tmp_0.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<Vec<bool>>| __v.remove(__off));
+                (__tmp_0).clone()
+            }
+        },
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -620,13 +739,16 @@ pub fn test02_22() {
             std::process::abort();
         }
     }
-    let it5: Value<RandomAccessIterator<Vec<bool>>> = Rc::new(RefCell::new({
-        let __it = <RandomAccessIterator<Vec<bool>>>::from(v.decay().begin().iter_add(2_isize));
-        let __off = __it.index();
-        v.as_pointer()
-            .with_mut(|__v: &mut Vec<Vec<bool>>| __v.remove(__off));
-        __it
-    }));
+    let it5: Value<RandomAccessIterator<Vec<bool>>> = Rc::new(RefCell::new(
+        match ({ <RandomAccessIterator<Vec<bool>>>::from(v.decay().begin().iter_add(2_isize)) },) {
+            (mut __tmp_1,) => {
+                let __off = __tmp_1.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<Vec<bool>>| __v.remove(__off));
+                (__tmp_1).clone()
+            }
+        },
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -811,22 +933,36 @@ pub fn run_tests_wrapped_env_27(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !(libc::setenv(env, name, 1) != 0) {
+    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+        true => {
+            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
+            0
+        }
+        false => 0,
+    } != 0)
+    {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: i32 = 0;
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        libc::setenv(
-            env,
+        match ({
             if !(oldENV).is_null() {
                 (oldENV).clone()
             } else {
                 Ptr::<i8>::from_string_literal(b"")
+            }
+        },)
+        {
+            (mut __tmp_0,) => match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+                true => {
+                    unsafe { ::std::env::set_var(env.to_rust_string(), __tmp_0.to_rust_string()) };
+                    0
+                }
+                false => 0,
             },
-            1,
-        );
+        };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = env.to_c_bytes();
@@ -875,6 +1011,11 @@ impl __gnu_test_semun {
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<u16>> {
         this.reinterpret_cast()
+    }
+}
+impl CppMove for __gnu_test_semun {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for __gnu_test_semun {
@@ -952,7 +1093,9 @@ impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
     }
     fn push_back(&self, mut test: FnPtr<fn()>) {
         array_elem!((*self), _M_tests, (*self).with(|__s| __s._M_size)).write((test).clone());
-        field!((*self), _M_size).with_mut(|__v| __v.prefix_inc());
+        field!((*self), _M_size).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait __gnu_test_object_counterImpl {

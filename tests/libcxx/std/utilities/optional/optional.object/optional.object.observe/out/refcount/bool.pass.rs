@@ -28,17 +28,17 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_int_> = Rc::new(RefCell::new(<std_optional_int_>::default()));
         (&(*opt.borrow_mut()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "!std::is_convertible<optional<int>, bool>::value");;
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_int_> = Rc::new(RefCell::new(<std_optional_int_>::default()));
         const _: () = assert!(true, "!opt");;
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_int_> = Rc::new(RefCell::new(0));
         const _: () = assert!(true, "opt");;
     }
     return 0;

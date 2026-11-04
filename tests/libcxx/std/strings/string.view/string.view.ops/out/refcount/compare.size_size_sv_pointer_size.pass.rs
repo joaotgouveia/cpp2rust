@@ -55,6 +55,11 @@ impl constexpr_char_traits_char_ {
         return (*len.borrow());
     }
 }
+impl CppMove for constexpr_char_traits_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn sign_0(mut x: i32) -> i32 {
     return if (x > 0) {
         1
@@ -63,42 +68,95 @@ pub fn sign_0(mut x: i32) -> i32 {
     };
 }
 pub fn test1_1(
-    sv1: (),
+    sv1: std_basic_string_view_char__std_char_traits_char__,
     mut pos1: usize,
     mut n1: usize,
     mut s2: Ptr<i8>,
     mut n2: usize,
     mut expected: i32,
 ) {
-    let sv1: Value<()> = Rc::new(RefCell::new(sv1));
-    if (pos1 <= (unimplemented!() as usize)) {
-        assert!(({ ({ sign_0(unimplemented!(),) }) } == { ({ sign_0(expected,) }) }));
+    let sv1: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(sv1));
+    if (pos1 <= (({ (*sv1.borrow()).size() }) as usize)) {
+        assert!(
+            ({
+                ({
+                    ({
+                        sign_0(
+                            ({
+                                (*sv1.borrow()).compare_36(
+                                    (pos1 as u64),
+                                    (n1 as u64),
+                                    (s2).clone(),
+                                    (n2 as u64),
+                                )
+                            }),
+                        )
+                    })
+                } == { ({ sign_0(expected) }) })
+            })
+        );
     }
 }
 pub fn test1_2(
-    sv1: (),
+    sv1: std_basic_string_view_wchar_t__std_char_traits_wchar_t__,
     mut pos1: usize,
     mut n1: usize,
     mut s2: Ptr<i32>,
     mut n2: usize,
     mut expected: i32,
 ) {
-    let sv1: Value<()> = Rc::new(RefCell::new(sv1));
-    if (pos1 <= (unimplemented!() as usize)) {
-        assert!(({ ({ sign_0(unimplemented!(),) }) } == { ({ sign_0(expected,) }) }));
+    let sv1: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+        Rc::new(RefCell::new(sv1));
+    if (pos1 <= (({ (*sv1.borrow()).size() }) as usize)) {
+        assert!(
+            ({
+                ({
+                    ({
+                        sign_0(
+                            ({
+                                (*sv1.borrow()).compare_36(
+                                    (pos1 as u64),
+                                    (n1 as u64),
+                                    (s2).clone(),
+                                    (n2 as u64),
+                                )
+                            }),
+                        )
+                    })
+                } == { ({ sign_0(expected) }) })
+            })
+        );
     }
 }
 pub fn test1_3(
-    sv1: (),
+    sv1: std_basic_string_view_char32_t__std_char_traits_char32_t__,
     mut pos1: usize,
     mut n1: usize,
     mut s2: Ptr<u32>,
     mut n2: usize,
     mut expected: i32,
 ) {
-    let sv1: Value<()> = Rc::new(RefCell::new(sv1));
-    if (pos1 <= (unimplemented!() as usize)) {
-        assert!(({ ({ sign_0(unimplemented!(),) }) } == { ({ sign_0(expected,) }) }));
+    let sv1: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+        Rc::new(RefCell::new(sv1));
+    if (pos1 <= (({ (*sv1.borrow()).size() }) as usize)) {
+        assert!(
+            ({
+                ({
+                    ({
+                        sign_0(
+                            ({
+                                (*sv1.borrow()).compare_36(
+                                    (pos1 as u64),
+                                    (n1 as u64),
+                                    (s2).clone(),
+                                    (n2 as u64),
+                                )
+                            }),
+                        )
+                    })
+                } == { ({ sign_0(expected) }) })
+            })
+        );
     }
 }
 pub fn test_4(
@@ -109,8 +167,19 @@ pub fn test_4(
     mut n2: usize,
     mut expected: i32,
 ) {
-    let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ test1_1(unimplemented!(), pos1, n1, (s2).clone(), n2, expected) });
+    let sv1: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1({ (s1).clone() }),
+    ));
+    ({
+        test1_1(
+            (*sv1.borrow()).clone(),
+            pos1,
+            n1,
+            (s2).clone(),
+            n2,
+            expected,
+        )
+    });
 }
 pub fn test_5(
     mut s1: Ptr<i32>,
@@ -120,8 +189,20 @@ pub fn test_5(
     mut n2: usize,
     mut expected: i32,
 ) {
-    let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ test1_2(unimplemented!(), pos1, n1, (s2).clone(), n2, expected) });
+    let sv1: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_1({ (s1).clone() }),
+        ));
+    ({
+        test1_2(
+            (*sv1.borrow()).clone(),
+            pos1,
+            n1,
+            (s2).clone(),
+            n2,
+            expected,
+        )
+    });
 }
 pub fn test_6(
     mut s1: Ptr<u32>,
@@ -131,8 +212,20 @@ pub fn test_6(
     mut n2: usize,
     mut expected: i32,
 ) {
-    let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ test1_3(unimplemented!(), pos1, n1, (s2).clone(), n2, expected) });
+    let sv1: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char32_t__std_char_traits_char32_t__::new_1({ (s1).clone() }),
+        ));
+    ({
+        test1_3(
+            (*sv1.borrow()).clone(),
+            pos1,
+            n1,
+            (s2).clone(),
+            n2,
+            expected,
+        )
+    });
 }
 pub fn test0_7() {
     ({
@@ -12317,8 +12410,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         });
     }
     {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv1: Value<std_basic_string_view_char__constexpr_char_traits_char__> = Rc::new(
+            RefCell::new(<std_basic_string_view_char__constexpr_char_traits_char__>::default()),
+        );
+        let sv2: Value<std_basic_string_view_char__constexpr_char_traits_char__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char__constexpr_char_traits_char__::new_1(
+                    { Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst") },
+                    { 21_u64 },
+                ),
+            ));
         const _: () = assert!(true, "sv1.compare(0, 0, \"abcde\", 0) == 0");;
         const _: () = assert!(true, "sv1.compare(0, 0, \"abcde\", 1) < 0");;
         const _: () = assert!(true, "sv2.compare(0, 0, \"abcde\", 1, 0) == 0");;

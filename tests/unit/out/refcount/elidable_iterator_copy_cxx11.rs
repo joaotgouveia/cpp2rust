@@ -23,7 +23,9 @@ fn main_0() -> i32 {
     let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(
         ({
             let __tmp_2: Value<i32> = Rc::new(RefCell::new(7));
-            match ({ v.decay().begin() }, { v.decay().end() }) {
+            match ({ CppRange::begin(&v.decay()) }, {
+                CppRange::end(&v.decay())
+            }) {
                 (mut __tmp_0, mut __tmp_1) => {
                     let mut __it = (__tmp_0).clone();
                     while __it != __tmp_1
@@ -36,11 +38,11 @@ fn main_0() -> i32 {
             }
         }),
     ));
-    assert!((*it.borrow()) != v.decay().end());
+    assert!((*it.borrow()) != CppRange::end(&v.decay()));
     assert!(({ (((*it.borrow()).iter_deref().read()) == 7) }));
-    match ({ v.decay().begin() },) {
+    match ({ CppRange::begin(&v.decay()) },) {
         (mut __tmp_3,) => {
-            let __n = v.decay().end().iter_distance(&__tmp_3);
+            let __n = CppRange::end(&v.decay()).iter_distance(&__tmp_3);
             let __random = std::hash::RandomState::new();
             for __i in (1..__n).rev() {
                 let __j =
@@ -49,15 +51,18 @@ fn main_0() -> i32 {
             }
         }
     };
-    match ({ v.decay().begin() },) {
+    match ({ CppRange::begin(&v.decay()) },) {
         (mut __tmp_4,) => {
-            let __n = v.decay().end().iter_distance(&__tmp_4);
+            let __n = CppRange::end(&v.decay()).iter_distance(&__tmp_4);
             let mut __order: Vec<isize> = (0..__n).collect();
             __order.sort_by(|&__x, &__y| cpp_cmp(&__tmp_4.iter_at(__x), &__tmp_4.iter_at(__y)));
             reorder(__order, |__i| __tmp_4.iter_at(__i));
         }
     };
-    assert!(({ ({ (*v.borrow())[0_usize] } == 4) && ({ (*v.borrow())[1_usize] } == 7) }));
+    assert!(
+        ((v.decay().offset(0_usize as isize).read()) == 4)
+            && ((v.decay().offset(1_usize as isize).read()) == 7)
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

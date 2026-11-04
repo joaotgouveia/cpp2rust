@@ -67,6 +67,11 @@ impl MultiStringType {
         }
     }
 }
+impl CppMove for MultiStringType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(40)]
 pub struct test_allocator_statistics {
@@ -90,6 +95,11 @@ pub struct test_allocator_statistics {
     pub moved: i32,
     #[offset(36)]
     pub converted: i32,
+}
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for test_allocator_statistics {
     fn default() -> Self {
@@ -118,6 +128,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_2(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -198,6 +213,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -235,8 +255,12 @@ impl test_allocator_char_ {
                     .is_null())
         );
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -249,6 +273,11 @@ impl Clone for test_allocator_char_ {
             stats_: self.stats_.clone(),
         }));
         test_allocator_char_::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for test_allocator_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for test_allocator_char_ {
@@ -288,8 +317,12 @@ impl test_allocator_wchar_t_ {
                     .is_null())
         );
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -303,6 +336,11 @@ impl Clone for test_allocator_wchar_t_ {
                 stats_: self.stats_.clone(),
             }));
         test_allocator_wchar_t_::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for test_allocator_wchar_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for test_allocator_wchar_t_ {
@@ -319,6 +357,11 @@ impl Default for test_allocator_wchar_t_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -470,7 +513,9 @@ impl test_allocator_char_Impl for Ptr<test_allocator_char_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_0.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_0.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_0.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_0.with(|rc| *rc.borrow()));
@@ -490,10 +535,12 @@ impl test_allocator_char_Impl for Ptr<test_allocator_char_> {
             }) {
                 std::process::abort();
             }
-            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
-                .with_mut(|__v| __v.prefix_inc());
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -506,8 +553,9 @@ impl test_allocator_char_Impl for Ptr<test_allocator_char_> {
     fn deallocate(&self, mut p: Ptr<i8>, mut s: u32) {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_0.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -599,7 +647,9 @@ impl test_allocator_wchar_t_Impl for Ptr<test_allocator_wchar_t_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_0.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_0.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_0.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_0.with(|rc| *rc.borrow()));
@@ -619,10 +669,12 @@ impl test_allocator_wchar_t_Impl for Ptr<test_allocator_wchar_t_> {
             }) {
                 std::process::abort();
             }
-            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
-                .with_mut(|__v| __v.prefix_inc());
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -635,8 +687,9 @@ impl test_allocator_wchar_t_Impl for Ptr<test_allocator_wchar_t_> {
     fn deallocate(&self, mut p: Ptr<i32>, mut s: u32) {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_0.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())

@@ -166,6 +166,8 @@ public:
 
   void ConvertVarDeclInitializer(clang::VarDecl *decl);
 
+  bool ConvertConstexprScalarInit(clang::VarDecl *decl);
+
   virtual void ConvertGlobalVarDecl(clang::VarDecl *decl);
 
   virtual bool ConvertVarDeclSkipInit(clang::VarDecl *decl);
@@ -215,7 +217,13 @@ public:
 
   bool NeedsScopedDestructor(const clang::VarDecl *decl) const;
 
-  virtual void EmitScopedDestructor(const clang::VarDecl *decl);
+  void EmitScopedDestructor(const clang::VarDecl *decl);
+
+  // The statement that destroys decl at the end of its scope.
+  virtual std::string ScopedDestructorStmt(const clang::VarDecl *decl);
+
+  // Destroys the parameters taken by value when the function returns.
+  void EmitParamDestructors(clang::FunctionDecl *decl);
 
   void EmitDeallocation(clang::CXXDeleteExpr *expr,
                         const std::string &argument_as_string);
@@ -871,6 +879,9 @@ protected:
 
   virtual void AddCloneTrait(const clang::RecordDecl *decl);
 
+  // The C++ move of a record, for the rules that move values generically.
+  virtual void AddMoveTrait(const clang::RecordDecl *decl);
+
   virtual bool RecordImplementsClone(const clang::RecordDecl *decl);
 
   virtual void AddDefaultTrait(const clang::RecordDecl *decl);
@@ -911,6 +922,10 @@ protected:
 
   // Moves the value out of `arg`, leaving a default value behind.
   virtual std::string ConvertTake(clang::Expr *arg);
+
+  // Moves the value out of `arg`, an object of a library type, as its C++
+  // move constructor does.
+  virtual std::string ConvertLibraryMove(clang::Expr *arg);
 
   // The place of `arg`, which is borrowed mutably by a rule.
   virtual std::string ConvertBorrowMut(clang::Expr *arg);
@@ -955,6 +970,11 @@ protected:
   virtual bool IsReferenceType(const clang::Expr *expr) const;
 
   bool ExprMapsValueToPointer(const clang::CallExpr *expr) const;
+  // A C++ reference to a proxy record (vector<bool>'s reference &) is that
+  // proxy itself, not a pointer to it.
+  virtual bool IsProxyReference(clang::QualType /*type*/) const {
+    return false;
+  }
 
   virtual bool RecordDerivesDefault(const clang::RecordDecl *decl);
 

@@ -6,99 +6,35 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = u32;
-pub const anon_0_value: anon_0 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_optional_int___std_optional_int__ {}
-pub type anon_1 = u32;
-pub const anon_1_value: anon_1 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_optional_std_unique_ptr_int__std_default_delete_int_____std_optional_std_unique_ptr_int__std_default_delete_int____
-{}
-pub type anon_2 = u32;
-pub const anon_2_value: anon_2 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_optional_int_ptr___std_optional_int_ptr__ {}
-pub type anon_3 = u32;
-pub const anon_3_value: anon_3 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_optional_const_int_ptr___std_optional_const_int_ptr__ {}
-pub type anon_4 = u32;
-pub const anon_4_value: anon_4 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_const_std_optional_int___const_std_optional_int__ {}
-pub type anon_5 = u32;
-pub const anon_5_value: anon_5 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char____
-{}
 thread_local!(
-    pub static value_6: Value<bool> = Rc::new(RefCell::new(true));
-);
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct mandate_same_std_optional_int___std_optional_int__ {}
-thread_local!(
-    pub static value_7: Value<bool> = Rc::new(RefCell::new(true));
-);
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct mandate_same_std_optional_std_unique_ptr_int__std_default_delete_int_____std_optional_std_unique_ptr_int__std_default_delete_int____
-{}
-thread_local!(
-    pub static value_8: Value<bool> = Rc::new(RefCell::new(true));
-);
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct mandate_same_std_optional_int_ptr___std_optional_int_ptr__ {}
-thread_local!(
-    pub static value_9: Value<bool> = Rc::new(RefCell::new(true));
-);
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct mandate_same_std_optional_const_int_ptr___std_optional_const_int_ptr__ {}
-thread_local!(
-    pub static can_make_optional_implicit_10: Value<bool> =
-        Rc::new(RefCell::new(value_6.with(|rc| *rc.borrow())));
+    pub static can_make_optional_implicit_0: Value<bool> = Rc::new(RefCell::new(true));
 );
 thread_local!(
-    pub static can_make_optional_implicit_11: Value<bool> =
-        Rc::new(RefCell::new(value_6.with(|rc| *rc.borrow())));
+    pub static can_make_optional_implicit_1: Value<bool> = Rc::new(RefCell::new(true));
 );
 thread_local!(
-    pub static can_make_optional_implicit_12: Value<bool> =
-        Rc::new(RefCell::new(value_6.with(|rc| *rc.borrow())));
+    pub static can_make_optional_implicit_2: Value<bool> = Rc::new(RefCell::new(true));
 );
 thread_local!(
-    pub static can_make_optional_implicit_13: Value<bool> =
-        Rc::new(RefCell::new(value_6.with(|rc| *rc.borrow())));
+    pub static can_make_optional_implicit_3: Value<bool> = Rc::new(RefCell::new(true));
 );
 thread_local!(
-    pub static can_make_optional_implicit_14: Value<bool> =
-        Rc::new(RefCell::new(value_7.with(|rc| *rc.borrow())));
+    pub static can_make_optional_implicit_4: Value<bool> = Rc::new(RefCell::new(true));
 );
 thread_local!(
-    pub static can_make_optional_implicit_15: Value<bool> = Rc::new(RefCell::new(false));
+    pub static can_make_optional_implicit_5: Value<bool> = Rc::new(RefCell::new(false));
 );
 thread_local!(
-    pub static can_make_optional_implicit_16: Value<bool> = Rc::new(RefCell::new(false));
+    pub static can_make_optional_implicit_6: Value<bool> = Rc::new(RefCell::new(false));
 );
 thread_local!(
-    pub static can_make_optional_implicit_17: Value<bool> = Rc::new(RefCell::new(false));
+    pub static can_make_optional_implicit_7: Value<bool> = Rc::new(RefCell::new(false));
 );
 thread_local!(
-    pub static can_make_optional_implicit_18: Value<bool> =
-        Rc::new(RefCell::new(value_8.with(|rc| *rc.borrow())));
+    pub static can_make_optional_implicit_8: Value<bool> = Rc::new(RefCell::new(true));
 );
 thread_local!(
-    pub static can_make_optional_implicit_19: Value<bool> =
-        Rc::new(RefCell::new(value_9.with(|rc| *rc.borrow())));
+    pub static can_make_optional_implicit_9: Value<bool> = Rc::new(RefCell::new(true));
 );
 const _: () = assert!(true, "can_make_optional_implicit<int>");
 const _: () = assert!(true, "can_make_optional_implicit<const int>");
@@ -116,48 +52,70 @@ const _: () = assert!(
 );
 const _: () = assert!(true, "can_make_optional_implicit<int[42]>");
 const _: () = assert!(true, "can_make_optional_implicit<const int (&)[42]>");
-pub fn test_20() -> bool {
+pub fn test_10() -> bool {
     {
         let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
             0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
         ])));
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_int_ptr_> =
+            Rc::new(RefCell::new(({ make_optional_11(arr.as_pointer()) })));
         const _: () = assert!(true, "");;
-        assert!(((unimplemented!().read()) == (arr.as_pointer() as Ptr::<i32>)));
+        assert!(({ (((*opt.borrow()).read()) == (arr.as_pointer() as Ptr::<i32>)) }));
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_int_> = Rc::new(RefCell::new(
+            ({
+                let ___t: Value<i32> = Rc::new(RefCell::new(2));
+                make_optional_12(___t.as_pointer())
+            }),
+        ));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "opt.value() == 2");;
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_int_> = Rc::new(RefCell::new(
+            ({
+                let ___t: Value<i32> = Rc::new(RefCell::new(2));
+                make_optional_12(___t.as_pointer())
+            }),
+        ));
         const _: () = assert!(true, "");;
-        assert!(((unimplemented!().read()) == 2));
+        assert!(({ (((*opt.borrow()).read()) == 2) }));
     }
     let test_string: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(|| {
-        let mut s: Vec<i8> = {
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i8>::from_string_literal(b"123").to_c_bytes();
             __bytes.push(0_i8);
             __bytes
-        };
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        }));
+        let opt: Value<
+            std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char___,
+        > = Rc::new(RefCell::new(
+            ({ make_optional_13((s.as_pointer()).reinterpret_cast::<Vec<i8>>()) }),
+        ));
         const _: () = assert!(true, "");;
         assert!(
-            Ptr::<i8>::from_string_literal(b"123").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                match (opt.as_pointer(),) {
+                    (__tmp_0,) => Ptr::<i8>::from_string_literal(b"123").with_c_str(|__s| {
+                        (*__tmp_0.upgrade().deref())
+                            [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
         );
     })));
     {
         ({ (*test_string.borrow()).call() });
     }
     let test_unique_ptr: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(|| {
-        let mut s: Option<Value<i32>> = Some(Rc::new(RefCell::new(3)));
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Some(Rc::new(RefCell::new(3)))));
+        let opt: Value<std_optional_std_unique_ptr_int__std_default_delete_int___> =
+            Rc::new(RefCell::new(({ make_optional_14(s.as_pointer()) })));
         const _: () = assert!(true, "");;
-        assert!((((unimplemented!()).clone().as_pointer().read()) == 3));
-        assert!(s.is_none());
+        assert!(({ (((*(*opt.borrow()).upgrade().deref()).as_pointer().read()) == 3) }));
+        assert!(({ (*s.borrow()).is_none() }));
     })));
     {
         ({ (*test_unique_ptr.borrow()).call() });
@@ -184,23 +142,19 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_20() });
+    ({ test_10() });
     const _: () = assert!(true, "test()");;
     return 0;
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = value_6.with(|_| ());
-    let _ = value_7.with(|_| ());
-    let _ = value_8.with(|_| ());
-    let _ = value_9.with(|_| ());
-    let _ = can_make_optional_implicit_10.with(|_| ());
-    let _ = can_make_optional_implicit_11.with(|_| ());
-    let _ = can_make_optional_implicit_12.with(|_| ());
-    let _ = can_make_optional_implicit_13.with(|_| ());
-    let _ = can_make_optional_implicit_14.with(|_| ());
-    let _ = can_make_optional_implicit_15.with(|_| ());
-    let _ = can_make_optional_implicit_16.with(|_| ());
-    let _ = can_make_optional_implicit_17.with(|_| ());
-    let _ = can_make_optional_implicit_18.with(|_| ());
-    let _ = can_make_optional_implicit_19.with(|_| ());
+    let _ = can_make_optional_implicit_0.with(|_| ());
+    let _ = can_make_optional_implicit_1.with(|_| ());
+    let _ = can_make_optional_implicit_2.with(|_| ());
+    let _ = can_make_optional_implicit_3.with(|_| ());
+    let _ = can_make_optional_implicit_4.with(|_| ());
+    let _ = can_make_optional_implicit_5.with(|_| ());
+    let _ = can_make_optional_implicit_6.with(|_| ());
+    let _ = can_make_optional_implicit_7.with(|_| ());
+    let _ = can_make_optional_implicit_8.with(|_| ());
+    let _ = can_make_optional_implicit_9.with(|_| ());
 }

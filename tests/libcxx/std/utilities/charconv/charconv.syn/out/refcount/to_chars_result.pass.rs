@@ -13,9 +13,11 @@ pub fn test_0() -> bool {
     assert!(!(!(unimplemented!())));
     let __decomp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same_v<decltype(ptr), char*>");;
-    assert!(({ { (*__decomp_1.borrow()).ptr.clone() } } == { { (*lhs.borrow()).ptr.clone() } }));
+    assert!(
+        ({ ({ { (*__decomp_1.borrow()).ptr.clone() } } == { { (*lhs.borrow()).ptr.clone() } }) })
+    );
     const _: () = assert!(true, "std::is_same_v<decltype(ec), std::errc>");;
-    assert!(({ (*__decomp_1.borrow()).ec } == { (*lhs.borrow()).ec }));
+    assert!(({ ({ (*__decomp_1.borrow()).ec } == { (*lhs.borrow()).ec }) }));
     return true;
 }
 pub fn main() {

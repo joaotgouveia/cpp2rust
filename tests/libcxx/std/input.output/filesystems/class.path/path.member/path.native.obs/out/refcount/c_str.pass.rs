@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_char_ptr__const_char_ptr_ {}
+impl CppMove for test_macros_detail_is_same_const_char_ptr__const_char_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_eprintf_1(
     mut fmt: Ptr<i8>,
     args_1: Ptr<Ptr<i8>>,
@@ -75,12 +80,20 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let mut value: Ptr<i8> = Ptr::<i8>::from_string_literal(b"hello world");
-    let mut str_value: Vec<i8> = {
+    let str_value: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __bytes = value.to_c_bytes();
         __bytes.push(0_i8);
         __bytes
-    };
-    let pathstr_value: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+    }));
+    let pathstr_value: Value<Vec<i8>> = Rc::new(RefCell::new({
+        use std::io::Read;
+        let mut __bytes: Vec<u8> = Vec::new();
+        let mut __f = &({ ({ (*str_value.borrow()).begin_64() }) });
+        __f.read_to_end(&mut __bytes)
+            .expect("couldn't read the file");
+        __bytes.push(0);
+        CChar::from_byte_vec(__bytes)
+    }));
     {
         let p: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __v: Vec<i8> = value
@@ -104,8 +117,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             __v.push(0);
             __v
         }));
-        assert!(unimplemented!() == (*pathstr_value.borrow()));
-        assert!((unimplemented!().decay() == unimplemented!()));
+        assert!(
+            ({
+                ({ ({ (*p.borrow()).c_str() }) }).with_c_str(|__s| {
+                    (*pathstr_value.borrow())[..(*pathstr_value.borrow()).len().saturating_sub(1)]
+                        == *__s
+                })
+            })
+        );
+        assert!(({ (({ ({ (*p.borrow()).native() }).decay() }) == ({ (*p.borrow()).c_str() })) }));
     }
     return 0;
 }

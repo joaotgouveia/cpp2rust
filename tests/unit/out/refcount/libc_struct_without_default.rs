@@ -24,6 +24,11 @@ impl UserDefined {
         }
     }
 }
+impl CppMove for UserDefined {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for UserDefined {
     fn default() -> Self {
         {
@@ -40,6 +45,11 @@ pub struct FieldIsLibcType {
     #[offset(0)]
     #[byte_size(16)]
     pub addr: libcc2rs::Sockaddr,
+}
+impl CppMove for FieldIsLibcType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for FieldIsLibcType {
     fn default() -> Self {
@@ -76,7 +86,13 @@ fn main_0() -> i32 {
     (*st.borrow_mut()).st_size = (1024 as ::libc::off_t);
     assert!(({ ({ (*st.borrow()).st_size } == (1024 as ::libc::off_t)) }));
     let ud: Value<UserDefined> = Rc::new(RefCell::new(<UserDefined>::default()));
-    assert!(((vec_elem!(ud.as_pointer(), a, 0_usize).read()) == 0));
+    assert!(
+        ((field_ref!(ud.as_pointer(), a)
+            .decay()
+            .offset(0_usize as isize)
+            .read())
+            == 0)
+    );
     assert!(({ ((*ud.borrow()).v.len() == 0_usize) }));
     let mut filt: FieldIsLibcType = <FieldIsLibcType>::default();
     assert!(((filt.addr.sa_family as i32) == 0));

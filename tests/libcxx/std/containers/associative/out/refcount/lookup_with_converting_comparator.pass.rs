@@ -28,138 +28,121 @@ impl CppEq for S {
         !(SImpl::operator_lt(__lhs, __rhs.read())) && !(SImpl::operator_lt(__rhs, __lhs.read()))
     }
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0(container: Ptr<Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>>) {
     {
         let c: Ptr<Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>> = (container).clone();
         let v: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
         assert!(
+            match (Rc::new(RefCell::new(v.as_pointer())).as_pointer(),) {
+                (__tmp_0,) => {
+                    c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| {
+                        __m.find(&(__tmp_0).clone())
+                    })
+                }
+            } == c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.end())
+        );
+        assert!(
+            (({
+                let ___x: Value<Ptr<S>> = Rc::new(RefCell::new(v.as_pointer()));
+                (*c.upgrade().deref()).count(___x.as_pointer())
+            }) == 0_usize)
+        );
+        assert!(
             ({
-                let __tmp_0: Value<Ptr<S>> = Rc::new(RefCell::new(v.as_pointer()));
-                c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| {
-                    __m.find(&__tmp_0.as_pointer())
-                })
+                let ___x: Value<Ptr<S>> = Rc::new(RefCell::new(v.as_pointer()));
+                (*c.upgrade().deref()).lower_bound_82(___x.as_pointer())
             }) == c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.end())
         );
-        assert!((unimplemented!() == 0_usize));
         assert!(
-            unimplemented!()
+            ({
+                let ___x: Value<Ptr<S>> = Rc::new(RefCell::new(v.as_pointer()));
+                (*c.upgrade().deref()).upper_bound_86(___x.as_pointer())
+            }) == c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.end())
+        );
+        assert!(
+            (*({
+                let ___x: Value<Ptr<S>> = Rc::new(RefCell::new(v.as_pointer()));
+                (*c.upgrade().deref()).equal_range_90(___x.as_pointer())
+            })
+            .0
+            .borrow())
                 == c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.end())
         );
         assert!(
-            unimplemented!()
+            (*({
+                let ___x: Value<Ptr<S>> = Rc::new(RefCell::new(v.as_pointer()));
+                (*c.upgrade().deref()).equal_range_90(___x.as_pointer())
+            })
+            .1
+            .borrow())
                 == c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.end())
         );
         assert!(
-            (*unimplemented!().0.borrow())
-                == c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.end())
+            !({
+                let ___x: Value<Ptr<S>> = Rc::new(RefCell::new(v.as_pointer()));
+                (*c.upgrade().deref()).contains(___x.as_pointer())
+            })
         );
-        assert!(
-            (*unimplemented!().1.borrow())
-                == c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.end())
-        );
-        assert!(!(unimplemented!()));
     }
     {
         let c: Ptr<Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>> = (container).clone();
         let v: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
         assert!(
+            match (Rc::new(RefCell::new(v.as_pointer())).as_pointer(),) {
+                (__tmp_1,) => {
+                    c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| {
+                        __m.find(&(__tmp_1).clone())
+                    })
+                }
+            } == c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.end())
+        );
+        assert!(
+            (({
+                let ___x: Value<Ptr<S>> = Rc::new(RefCell::new(v.as_pointer()));
+                (*c.upgrade().deref()).count(___x.as_pointer())
+            }) == 0_usize)
+        );
+        assert!(
             ({
-                let __tmp_1: Value<Ptr<S>> = Rc::new(RefCell::new(v.as_pointer()));
-                c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| {
-                    __m.find(&__tmp_1.as_pointer())
-                })
+                let ___x: Value<Ptr<S>> = Rc::new(RefCell::new(v.as_pointer()));
+                (*c.upgrade().deref()).lower_bound_84(___x.as_pointer())
             }) == c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.end())
         );
-        assert!((unimplemented!() == 0_usize));
         assert!(
-            unimplemented!()
+            ({
+                let ___x: Value<Ptr<S>> = Rc::new(RefCell::new(v.as_pointer()));
+                (*c.upgrade().deref()).upper_bound_88(___x.as_pointer())
+            }) == c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.end())
+        );
+        assert!(
+            (*({
+                let ___x: Value<Ptr<S>> = Rc::new(RefCell::new(v.as_pointer()));
+                (*c.upgrade().deref()).equal_range_92(___x.as_pointer())
+            })
+            .0
+            .borrow())
                 == c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.end())
         );
         assert!(
-            unimplemented!()
+            (*({
+                let ___x: Value<Ptr<S>> = Rc::new(RefCell::new(v.as_pointer()));
+                (*c.upgrade().deref()).equal_range_92(___x.as_pointer())
+            })
+            .1
+            .borrow())
                 == c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.end())
         );
         assert!(
-            (*unimplemented!().0.borrow())
-                == c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.end())
+            !({
+                let ___x: Value<Ptr<S>> = Rc::new(RefCell::new(v.as_pointer()));
+                (*c.upgrade().deref()).contains(___x.as_pointer())
+            })
         );
-        assert!(
-            (*unimplemented!().1.borrow())
-                == c.with(|__m: &Map<Ptr<S>, (Value<Ptr<S>>, Value<AnyPtr>)>| __m.end())
-        );
-        assert!(!(unimplemented!()));
-    }
-}
-pub fn test_1(container: Ptr<()>) {
-    {
-        let c: Ptr<()> = (container).clone();
-        let v: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
-        assert!(unimplemented!() == unimplemented!());
-        assert!((unimplemented!() == 0_()));
-        assert!(unimplemented!() == unimplemented!());
-        assert!(unimplemented!() == unimplemented!());
-        assert!((*unimplemented!().0.borrow()) == unimplemented!());
-        assert!((*unimplemented!().1.borrow()) == unimplemented!());
-        assert!(!(unimplemented!()));
-    }
-    {
-        let c: Ptr<()> = (container).clone();
-        let v: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
-        assert!(unimplemented!() == unimplemented!());
-        assert!((unimplemented!() == 0_()));
-        assert!(unimplemented!() == unimplemented!());
-        assert!(unimplemented!() == unimplemented!());
-        assert!((*unimplemented!().0.borrow()) == unimplemented!());
-        assert!((*unimplemented!().1.borrow()) == unimplemented!());
-        assert!(!(unimplemented!()));
-    }
-}
-pub fn test_2(container: Ptr<()>) {
-    {
-        let c: Ptr<()> = (container).clone();
-        let v: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
-        assert!(unimplemented!() == unimplemented!());
-        assert!((unimplemented!() == 0_()));
-        assert!(unimplemented!() == unimplemented!());
-        assert!(unimplemented!() == unimplemented!());
-        assert!((*unimplemented!().0.borrow()) == unimplemented!());
-        assert!((*unimplemented!().1.borrow()) == unimplemented!());
-        assert!(!(unimplemented!()));
-    }
-    {
-        let c: Ptr<()> = (container).clone();
-        let v: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
-        assert!(unimplemented!() == unimplemented!());
-        assert!((unimplemented!() == 0_()));
-        assert!(unimplemented!() == unimplemented!());
-        assert!(unimplemented!() == unimplemented!());
-        assert!((*unimplemented!().0.borrow()) == unimplemented!());
-        assert!((*unimplemented!().1.borrow()) == unimplemented!());
-        assert!(!(unimplemented!()));
-    }
-}
-pub fn test_3(container: Ptr<()>) {
-    {
-        let c: Ptr<()> = (container).clone();
-        let v: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
-        assert!(unimplemented!() == unimplemented!());
-        assert!((unimplemented!() == 0_()));
-        assert!(unimplemented!() == unimplemented!());
-        assert!(unimplemented!() == unimplemented!());
-        assert!((*unimplemented!().0.borrow()) == unimplemented!());
-        assert!((*unimplemented!().1.borrow()) == unimplemented!());
-        assert!(!(unimplemented!()));
-    }
-    {
-        let c: Ptr<()> = (container).clone();
-        let v: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
-        assert!(unimplemented!() == unimplemented!());
-        assert!((unimplemented!() == 0_()));
-        assert!(unimplemented!() == unimplemented!());
-        assert!(unimplemented!() == unimplemented!());
-        assert!((*unimplemented!().0.borrow()) == unimplemented!());
-        assert!((*unimplemented!().1.borrow()) == unimplemented!());
-        assert!(!(unimplemented!()));
     }
 }
 pub fn main() {
@@ -188,15 +171,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ({ test_0(m.as_pointer()) });
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m : Value<std_multimap_std_reference_wrapper_S___void_ptr__std_less_S___std_allocator_std_pair_const_std_reference_wrapper_S___void_ptr___ > = Rc::new(RefCell::new(<std_multimap_std_reference_wrapper_S___void_ptr__std_less_S___std_allocator_std_pair_const_std_reference_wrapper_S___void_ptr___  >::default() )) ;
         ({ test_1(m.as_pointer()) });
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s : Value<std_set_std_reference_wrapper_S___std_less_S___std_allocator_std_reference_wrapper_S___ > = Rc::new(RefCell::new(<std_set_std_reference_wrapper_S___std_less_S___std_allocator_std_reference_wrapper_S___  >::default() )) ;
         ({ test_2(s.as_pointer()) });
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s : Value<std_multiset_std_reference_wrapper_S___std_less_S___std_allocator_std_reference_wrapper_S___ > = Rc::new(RefCell::new(<std_multiset_std_reference_wrapper_S___std_less_S___std_allocator_std_reference_wrapper_S___  >::default() )) ;
         ({ test_3(s.as_pointer()) });
     }
     return 0;

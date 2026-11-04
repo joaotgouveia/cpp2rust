@@ -6,23 +6,25 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = u32;
-pub const anon_0_value: anon_0 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_reverse_iterator_const_int_ptr___std_reverse_iterator_const_int_ptr__
-{}
-pub fn test_1() -> bool {
+pub fn test_0() -> bool {
     let il: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+    assert!((({ ({ rbegin_1((*il.borrow()).clone(),) }).base() }) == ({ (*il.borrow()).end() })));
+    assert!((({ ({ rend_2((*il.borrow()).clone(),) }).base() }) == ({ (*il.borrow()).begin() })));
     let cil: Ptr<Vec<i32>> = il.as_pointer();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    assert!(({ unimplemented!() } == { unimplemented!() }));
-    assert!(({ unimplemented!() } == { unimplemented!() }));
+    assert!(
+        ({ ({ ({ rbegin_1((*cil.upgrade().deref()).clone(),) }).base() }) } == {
+            ({ (*il.borrow()).end() })
+        })
+    );
+    assert!(
+        ({ ({ ({ rend_2((*cil.upgrade().deref()).clone(),) }).base() }) } == {
+            ({ (*il.borrow()).begin() })
+        })
+    );
     return true;
 }
 pub fn main() {
@@ -45,7 +47,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_1() });
+    ({ test_0() });
     const _: () = assert!(true, "test()");;
     return 0;
 }

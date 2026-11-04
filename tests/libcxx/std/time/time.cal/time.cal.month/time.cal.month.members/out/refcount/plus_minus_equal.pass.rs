@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_month_ref__std_chrono_month_ref_ {}
+impl CppMove for test_macros_detail_is_same_std_chrono_month_ref__std_chrono_month_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_1() -> bool {
     let mut i: u32 = 1_u32;
     'loop_: while (i <= 10_u32) {

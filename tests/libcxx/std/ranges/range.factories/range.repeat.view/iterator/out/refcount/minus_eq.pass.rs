@@ -7,10 +7,24 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(unimplemented!());
+    let v: Value<std_ranges_repeat_view_int__std_unreachable_sentinel_t_> =
+        Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(10));
+            std_ranges_repeat_view_int__std_unreachable_sentinel_t_::new_1(
+                { __tmp_0.as_pointer() },
+                None,
+            )
+        }));
+    let iter: Value<std_ranges_repeat_view_int___Iterator> = Rc::new(RefCell::new(
+        ({ ({ (*v.borrow()).begin() }) }).iter_add(10_isize),
+    ));
+    {
+        iter.as_pointer().with_mut(|__it| {
+            __it.iter_add_assign(-5_isize);
+        });
+        iter.as_pointer()
+    };
+    assert!((*iter.borrow()) == ({ ({ (*v.borrow()).begin() }) }).iter_add(5_isize));
     const _: () = assert!(true, "std::same_as<decltype(iter -= 5), Iter&>");;
     return true;
 }

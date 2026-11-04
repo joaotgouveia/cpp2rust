@@ -3,6 +3,10 @@
 
 use libcc2rs::*;
 
+fn t1() -> AnyPtr {
+    AnyPtr::default()
+}
+
 fn t20() -> i8 {
     0_i8
 }

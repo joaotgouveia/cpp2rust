@@ -27,7 +27,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!((unimplemented!() == (-1_i32)));
+    assert!((({ std_char_traits_char_::eof() }) == (-1_i32)));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

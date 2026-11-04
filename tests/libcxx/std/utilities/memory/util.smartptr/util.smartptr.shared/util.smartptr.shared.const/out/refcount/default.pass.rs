@@ -9,45 +9,128 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A {}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0() {
-    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_i64));
-    assert!((unimplemented!()).is_null());
+    let p: Value<std_shared_ptr_int_> = Rc::new(RefCell::new(<std_shared_ptr_int_>::default()));
+    assert!(
+        ({
+            (({ ((*p.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_).use_count() })
+                == 0_i64)
+        })
+    );
+    assert!(
+        ({ ({ ((*p.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_).get() }).is_null() })
+    );
 }
 pub fn test_1() {
-    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_i64));
-    assert!((unimplemented!()).is_null());
+    let p: Value<std_shared_ptr_const_int_> =
+        Rc::new(RefCell::new(<std_shared_ptr_const_int_>::default()));
+    assert!(
+        ({
+            (({ ((*p.borrow()) as std___shared_ptr_const_int____gnu_cxx__S_atomic_).use_count() })
+                == 0_i64)
+        })
+    );
+    assert!(
+        ({
+            ({ ((*p.borrow()) as std___shared_ptr_const_int____gnu_cxx__S_atomic_).get() })
+                .is_null()
+        })
+    );
 }
 pub fn test_2() {
-    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_i64));
-    assert!((unimplemented!()).is_null());
+    let p: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(<std_shared_ptr_A_>::default()));
+    assert!(
+        ({
+            (({ ((*p.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() }) == 0_i64)
+        })
+    );
+    assert!(
+        ({ ({ ((*p.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() }).is_null() })
+    );
 }
 pub fn test_3() {
-    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_i64));
-    assert!((unimplemented!()).is_null());
+    let p: Value<std_shared_ptr_const_A_> =
+        Rc::new(RefCell::new(<std_shared_ptr_const_A_>::default()));
+    assert!(
+        ({
+            (({ ((*p.borrow()) as std___shared_ptr_const_A____gnu_cxx__S_atomic_).use_count() })
+                == 0_i64)
+        })
+    );
+    assert!(
+        ({
+            ({ ((*p.borrow()) as std___shared_ptr_const_A____gnu_cxx__S_atomic_).get() }).is_null()
+        })
+    );
 }
 pub fn test_4() {
-    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_i64));
-    assert!((unimplemented!()).is_null());
+    let p: Value<std_shared_ptr_int_ptr_> =
+        Rc::new(RefCell::new(<std_shared_ptr_int_ptr_>::default()));
+    assert!(
+        ({
+            (({ ((*p.borrow()) as std___shared_ptr_int_ptr____gnu_cxx__S_atomic_).use_count() })
+                == 0_i64)
+        })
+    );
+    assert!(
+        ({
+            ({ ((*p.borrow()) as std___shared_ptr_int_ptr____gnu_cxx__S_atomic_).get() }).is_null()
+        })
+    );
 }
 pub fn test_5() {
-    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_i64));
-    assert!((unimplemented!()).is_null());
+    let p: Value<std_shared_ptr_const_int_ptr_> =
+        Rc::new(RefCell::new(<std_shared_ptr_const_int_ptr_>::default()));
+    assert!(
+        ({
+            (({
+                ((*p.borrow()) as std___shared_ptr_const_int_ptr____gnu_cxx__S_atomic_).use_count()
+            }) == 0_i64)
+        })
+    );
+    assert!(
+        ({
+            ({ ((*p.borrow()) as std___shared_ptr_const_int_ptr____gnu_cxx__S_atomic_).get() })
+                .is_null()
+        })
+    );
 }
 pub fn test_6() {
-    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_i64));
-    assert!((unimplemented!()).is_null());
+    let p: Value<std_shared_ptr_intarrarr_> =
+        Rc::new(RefCell::new(<std_shared_ptr_intarrarr_>::default()));
+    assert!(
+        ({
+            (({ ((*p.borrow()) as std___shared_ptr_intarrarr____gnu_cxx__S_atomic_).use_count() })
+                == 0_i64)
+        })
+    );
+    assert!(
+        ({
+            ({ ((*p.borrow()) as std___shared_ptr_intarrarr____gnu_cxx__S_atomic_).get() })
+                .is_null()
+        })
+    );
 }
 pub fn test_7() {
-    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_i64));
-    assert!((unimplemented!()).is_null());
+    let p: Value<std_shared_ptr_intarr8arr_> =
+        Rc::new(RefCell::new(<std_shared_ptr_intarr8arr_>::default()));
+    assert!(
+        ({
+            (({ ((*p.borrow()) as std___shared_ptr_intarr8arr____gnu_cxx__S_atomic_).use_count() })
+                == 0_i64)
+        })
+    );
+    assert!(
+        ({
+            ({ ((*p.borrow()) as std___shared_ptr_intarr8arr____gnu_cxx__S_atomic_).get() })
+                .is_null()
+        })
+    );
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

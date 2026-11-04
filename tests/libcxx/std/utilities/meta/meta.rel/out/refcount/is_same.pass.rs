@@ -74,9 +74,19 @@ pub fn test_is_not_same_9() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct OverloadTest_char_ {}
+impl CppMove for OverloadTest_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Class {}
+impl CppMove for Class {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -118,10 +128,10 @@ pub trait ClassImpl {
 }
 impl ClassImpl for Ptr<Class> {}
 pub trait OverloadTest_char_Impl {
-    fn fn_1(&self, _a0: ()) {
+    fn fn_1(&self, _a0: std_is_same_char__int_) {
         unimplemented!()
     }
-    fn fn_2(&self, _a0: ()) {
+    fn fn_2(&self, _a0: std_integral_constant_bool__false_) {
         unimplemented!()
     }
     fn x(&self) {

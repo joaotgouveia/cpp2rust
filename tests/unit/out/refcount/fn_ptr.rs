@@ -25,8 +25,9 @@ pub fn ret_size_4(mut v: i32) -> usize {
 pub fn call_fn_5(mut f: FnPtr<fn(i32) -> usize>, mut v: i32) -> usize {
     return ({ f.call(v) }).wrapping_mul(2_usize);
 }
-pub fn identity_hash_6(mut v: bool) -> usize {
-    return (v as usize);
+pub fn identity_hash_6(v: bool) -> usize {
+    let v: Value<bool> = Rc::new(RefCell::new(v));
+    return ((*v.borrow()) as usize);
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(FnPtr<fn(bool  ,) -> u64  >  , new, ptr)]
@@ -39,6 +40,11 @@ pub struct HashHolder_unsigned_long__ptr__bool__ {
 impl HashHolder_unsigned_long__ptr__bool__ {
     pub fn new(h: Ptr<FnPtr<fn(bool) -> u64>>) -> Self {
         Self { h: (h.read()) }
+    }
+}
+impl CppMove for HashHolder_unsigned_long__ptr__bool__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 thread_local!(
@@ -78,10 +84,6 @@ fn main_0() -> i32 {
         HashHolder_unsigned_long__ptr__bool__::new({ __tmp_0.as_pointer() })
     };
     assert!((({ hh.h.call(true,) }) == 1_u64));
-    let mut handler: FnPtr<fn(i32)> = FnPtr::<fn(i32)>::new(add_to_total_8);
-    ({ handler.call(2) });
-    ({ handler.call(3) });
-    assert!((total_7.with(|rc| *rc.borrow()) == 5));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {

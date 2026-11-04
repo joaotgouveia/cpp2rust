@@ -9,10 +9,33 @@ use std::rc::{Rc, Weak};
 pub fn test_constexpr_0() -> bool {
     let mut p: Ptr<u32> =
         Ptr::<u32>::from_string_literal(&[49 as u32, 50 as u32, 51 as u32, 0 as u32]);
-    return ((({ unimplemented!() } == { (p).clone() })
-        && ({ unimplemented!() } == { p.offset((1) as isize) }))
-        && ({ unimplemented!() } == { p.offset((2) as isize) }))
-        && ((unimplemented!()).is_null());
+    return ((({
+        ({
+            let ___s: Ptr<u32> = (p).clone();
+            let ___a: Value<u32> = Rc::new(RefCell::new((49 as u32)));
+            std_char_traits_char32_t_::find(___s, 3_usize, ___a.as_pointer())
+        })
+    } == { (p).clone() })
+        && ({
+            ({
+                let ___s: Ptr<u32> = (p).clone();
+                let ___a: Value<u32> = Rc::new(RefCell::new((50 as u32)));
+                std_char_traits_char32_t_::find(___s, 3_usize, ___a.as_pointer())
+            })
+        } == { p.offset((1) as isize) }))
+        && ({
+            ({
+                let ___s: Ptr<u32> = (p).clone();
+                let ___a: Value<u32> = Rc::new(RefCell::new((51 as u32)));
+                std_char_traits_char32_t_::find(___s, 3_usize, ___a.as_pointer())
+            })
+        } == { p.offset((2) as isize) }))
+        && (({
+            let ___s: Ptr<u32> = (p).clone();
+            let ___a: Value<u32> = Rc::new(RefCell::new((52 as u32)));
+            std_char_traits_char32_t_::find(___s, 3_usize, ___a.as_pointer())
+        })
+        .is_null());
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -35,12 +58,65 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let s1: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([1_u32, 2_u32, 3_u32])));
-    assert!((unimplemented!() == (s1.as_pointer() as Ptr::<u32>)));
-    assert!((unimplemented!() == (s1.as_pointer() as Ptr::<u32>).offset((1) as isize)));
-    assert!((unimplemented!() == (s1.as_pointer() as Ptr::<u32>).offset((2) as isize)));
-    assert!((unimplemented!()).is_null());
-    assert!((unimplemented!()).is_null());
-    assert!((unimplemented!()).is_null());
+    assert!(
+        (({
+            let ___a: Value<u32> = Rc::new(RefCell::new(1_u32));
+            std_char_traits_char32_t_::find(
+                (s1.as_pointer() as Ptr<u32>),
+                3_usize,
+                ___a.as_pointer(),
+            )
+        }) == (s1.as_pointer() as Ptr::<u32>))
+    );
+    assert!(
+        (({
+            let ___a: Value<u32> = Rc::new(RefCell::new(2_u32));
+            std_char_traits_char32_t_::find(
+                (s1.as_pointer() as Ptr<u32>),
+                3_usize,
+                ___a.as_pointer(),
+            )
+        }) == (s1.as_pointer() as Ptr::<u32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___a: Value<u32> = Rc::new(RefCell::new(3_u32));
+            std_char_traits_char32_t_::find(
+                (s1.as_pointer() as Ptr<u32>),
+                3_usize,
+                ___a.as_pointer(),
+            )
+        }) == (s1.as_pointer() as Ptr::<u32>).offset((2) as isize))
+    );
+    assert!(
+        ({
+            let ___a: Value<u32> = Rc::new(RefCell::new(4_u32));
+            std_char_traits_char32_t_::find(
+                (s1.as_pointer() as Ptr<u32>),
+                3_usize,
+                ___a.as_pointer(),
+            )
+        })
+        .is_null()
+    );
+    assert!(
+        ({
+            let ___a: Value<u32> = Rc::new(RefCell::new(0_u32));
+            std_char_traits_char32_t_::find(
+                (s1.as_pointer() as Ptr<u32>),
+                3_usize,
+                ___a.as_pointer(),
+            )
+        })
+        .is_null()
+    );
+    assert!(
+        ({
+            let ___a: Value<u32> = Rc::new(RefCell::new(0_u32));
+            std_char_traits_char32_t_::find(Ptr::<u32>::null(), 0_usize, ___a.as_pointer())
+        })
+        .is_null()
+    );
     const _: () = assert!(true, "test_constexpr()");;
     return 0;
 }

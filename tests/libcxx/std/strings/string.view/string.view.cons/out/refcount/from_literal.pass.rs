@@ -26,6 +26,11 @@ impl constexpr_char_traits_char_ {
         return (*len.borrow());
     }
 }
+impl CppMove for constexpr_char_traits_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn StrLen_0(mut s: Ptr<i8>) -> usize {
     let retVal: Value<usize> = Rc::new(RefCell::new(0_usize));
     'loop_: while (((s.read()) as i32) != 0) {
@@ -59,24 +64,43 @@ pub fn StrLen_3(mut s: Ptr<u32>) -> usize {
     return (*retVal.borrow());
 }
 pub fn test_4(mut s: Ptr<i8>) {
-    let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(({ (unimplemented!() as usize) } == { ({ StrLen_0((s).clone(),) }) }));
-    assert!(({ unimplemented!() } == { (s).clone() }));
+    let sv1: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1({ (s).clone() }),
+    ));
+    assert!(
+        ({ ({ (({ (*sv1.borrow()).size() }) as usize) } == { ({ StrLen_0((s).clone(),) }) }) })
+    );
+    assert!(({ ({ ({ (*sv1.borrow()).data() }) } == { (s).clone() }) }));
 }
 pub fn test_5(mut s: Ptr<i32>) {
-    let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(({ (unimplemented!() as usize) } == { ({ StrLen_1((s).clone(),) }) }));
-    assert!(({ unimplemented!() } == { (s).clone() }));
+    let sv1: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_1({ (s).clone() }),
+        ));
+    assert!(
+        ({ ({ (({ (*sv1.borrow()).size() }) as usize) } == { ({ StrLen_1((s).clone(),) }) }) })
+    );
+    assert!(({ ({ ({ (*sv1.borrow()).data() }) } == { (s).clone() }) }));
 }
 pub fn test_6(mut s: Ptr<u16>) {
-    let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(({ (unimplemented!() as usize) } == { ({ StrLen_2((s).clone(),) }) }));
-    assert!(({ unimplemented!() } == { (s).clone() }));
+    let sv1: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char16_t__std_char_traits_char16_t__::new_1({ (s).clone() }),
+        ));
+    assert!(
+        ({ ({ (({ (*sv1.borrow()).size() }) as usize) } == { ({ StrLen_2((s).clone(),) }) }) })
+    );
+    assert!(({ ({ ({ (*sv1.borrow()).data() }) } == { (s).clone() }) }));
 }
 pub fn test_7(mut s: Ptr<u32>) {
-    let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(({ (unimplemented!() as usize) } == { ({ StrLen_3((s).clone(),) }) }));
-    assert!(({ unimplemented!() } == { (s).clone() }));
+    let sv1: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char32_t__std_char_traits_char32_t__::new_1({ (s).clone() }),
+        ));
+    assert!(
+        ({ ({ (({ (*sv1.borrow()).size() }) as usize) } == { ({ StrLen_3((s).clone(),) }) }) })
+    );
+    assert!(({ ({ ({ (*sv1.borrow()).data() }) } == { (s).clone() }) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -123,7 +147,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_7(Ptr::<u32>::from_string_literal(&[65 as u32, 0 as u32])) });
     ({ test_7(Ptr::<u32>::from_string_literal(&[0 as u32])) });
     {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv1: Value<std_basic_string_view_char__constexpr_char_traits_char__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char__constexpr_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"ABCDE")
+                }),
+            ));
         const _: () = assert!(true, "sv1.size() == 5");;
     }
     return 0;

@@ -28,14 +28,20 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let cd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let cf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as f64) == unimplemented!()));
-        assert!(((unimplemented!() as f64) == unimplemented!()));
+        let cd: Value<std_complex_long_double_> =
+            Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+        let cf: Value<std_complex_double_> = Rc::new(RefCell::new(std_complex_double_::new_1({
+            cd.as_pointer()
+        })));
+        assert!(({ (({ (*cf.borrow()).real_5() }) == ({ (*cd.borrow()).real_5() })) }));
+        assert!(({ (({ (*cf.borrow()).imag_6() }) == ({ (*cd.borrow()).imag_6() })) }));
     }
     {
-        let cd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let cf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let cd: Value<std_complex_long_double_> =
+            Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+        let cf: Value<std_complex_double_> = Rc::new(RefCell::new(std_complex_double_::new_1({
+            cd.as_pointer()
+        })));
         const _: () = assert!(true, "cf.real() == cd.real()");;
         const _: () = assert!(true, "cf.imag() == cd.imag()");;
     }

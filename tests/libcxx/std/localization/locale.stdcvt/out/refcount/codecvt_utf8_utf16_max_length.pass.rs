@@ -28,33 +28,60 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: i32 = unimplemented!();
+        let c: Value<std_codecvt_utf8_utf16_wchar_t__1114111__0_> = Rc::new(RefCell::new(
+            <std_codecvt_utf8_utf16_wchar_t__1114111__0_>::default(),
+        ));
+        let mut r: i32 = ({
+            ((*c.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).max_length()
+        });
         assert!((r == 4));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: i32 = unimplemented!();
+        let c: Value<std_codecvt_utf8_utf16_wchar_t__4294967295__std_consume_header_> =
+            Rc::new(RefCell::new(
+                <std_codecvt_utf8_utf16_wchar_t__4294967295__std_consume_header_>::default(),
+            ));
+        let mut r: i32 = ({
+            ((*c.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).max_length()
+        });
         assert!((r == 7));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: i32 = unimplemented!();
+        let c: Value<std_codecvt_utf8_utf16_char16_t__1114111__0_> = Rc::new(RefCell::new(
+            <std_codecvt_utf8_utf16_char16_t__1114111__0_>::default(),
+        ));
+        let mut r: i32 = ({
+            ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_).max_length()
+        });
         assert!((r == 4));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: i32 = unimplemented!();
+        let c: Value<std_codecvt_utf8_utf16_char16_t__4294967295__std_consume_header_> =
+            Rc::new(RefCell::new(
+                <std_codecvt_utf8_utf16_char16_t__4294967295__std_consume_header_>::default(),
+            ));
+        let mut r: i32 = ({
+            ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_).max_length()
+        });
         assert!((r == 7));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: i32 = unimplemented!();
+        let c: Value<std_codecvt_utf8_utf16_char32_t__1114111__0_> = Rc::new(RefCell::new(
+            <std_codecvt_utf8_utf16_char32_t__1114111__0_>::default(),
+        ));
+        let mut r: i32 = ({
+            ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_).max_length()
+        });
         assert!((r == 4));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: i32 = unimplemented!();
+        let c: Value<std_codecvt_utf8_utf16_char32_t__4294967295__std_consume_header_> =
+            Rc::new(RefCell::new(
+                <std_codecvt_utf8_utf16_char32_t__4294967295__std_consume_header_>::default(),
+            ));
+        let mut r: i32 = ({
+            ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_).max_length()
+        });
         assert!((r == 7));
     }
     return 0;

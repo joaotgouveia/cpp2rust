@@ -7,15 +7,41 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
-    unimplemented!();
+    let v: Value<std_ranges_repeat_view_int__std_unreachable_sentinel_t_> =
+        Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(10));
+            std_ranges_repeat_view_int__std_unreachable_sentinel_t_::new_1(
+                { __tmp_0.as_pointer() },
+                None,
+            )
+        }));
+    let iter1: Value<std_ranges_repeat_view_int___Iterator> = Rc::new(RefCell::new(
+        ({ ({ (*v.borrow()).begin() }) }).iter_add(10_isize),
+    ));
+    let iter2: Value<std_ranges_repeat_view_int___Iterator> = Rc::new(RefCell::new(
+        ({ ({ (*v.borrow()).begin() }) }).iter_add(10_isize),
+    ));
+    assert!(({ (*iter1.borrow()) == (*iter2.borrow()) }));
+    {
+        iter1.as_pointer().with_mut(|__it| {
+            __it.iter_add_assign(5_isize);
+        });
+        iter1.as_pointer()
+    };
     assert!((*iter1.borrow()) != (*iter2.borrow()));
-    assert!(unimplemented!());
+    assert!((*iter1.borrow()) == ({ (*iter2.borrow()).clone() }).iter_add(5_isize));
     const _: () = assert!(true, "std::same_as<decltype(iter2 += 5), Iter&>");;
-    assert!((unimplemented!() == unimplemented!()));
+    assert!(
+        (({ addressof_1(iter2.as_pointer(),) })
+            == ({
+                addressof_1({
+                    iter2.as_pointer().with_mut(|__it| {
+                        __it.iter_add_assign(5_isize);
+                    });
+                    iter2.as_pointer()
+                })
+            }))
+    );
     return true;
 }
 pub fn main() {

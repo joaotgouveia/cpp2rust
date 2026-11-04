@@ -6,25 +6,25 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = u32;
-pub const anon_0_value: anon_0 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_shared_ptr_A___std_shared_ptr_A__ {}
-pub type anon_1 = u32;
-pub const anon_1_value: anon_1 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_shared_ptr_const_A___std_shared_ptr_const_A__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A {}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct D {}
 impl Callable1<Ptr<A>, ()> for D {
     fn call(&self, a1: Ptr<A>) -> () {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| DImpl::operator_call(__it, a1))
+    }
+}
+impl CppMove for D {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {
@@ -48,54 +48,133 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let s0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s0: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({
+            Ptr::alloc(<A>::default())
+        })));
+        let w: Value<std_weak_ptr_A_> =
+            Rc::new(RefCell::new(std_weak_ptr_A_::new_1({ s0.as_pointer() })));
+        let s: Value<std_shared_ptr_A_> =
+            Rc::new(RefCell::new(std_shared_ptr_A_::new_2({ w.as_pointer() })));
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 2_i64));
-        assert!((unimplemented!() == 2_i64));
-        assert!((unimplemented!() == unimplemented!()));
+        assert!(
+            ({
+                (({ ((*s0.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() })
+                    == 2_i64)
+            })
+        );
+        assert!(
+            ({
+                (({ ((*s.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() })
+                    == 2_i64)
+            })
+        );
+        assert!(
+            ({
+                (({ ((*s0.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() })
+                    == ({ ((*s.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() }))
+            })
+        );
     }
     {
-        let s0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s0: Value<std_shared_ptr_const_A_> =
+            Rc::new(RefCell::new(std_shared_ptr_const_A_::new_1({
+                Ptr::alloc(<A>::default())
+            })));
+        let w: Value<std_weak_ptr_const_A_> =
+            Rc::new(RefCell::new(std_weak_ptr_const_A_::new_1({
+                s0.as_pointer()
+            })));
+        let s: Value<std_shared_ptr_const_A_> =
+            Rc::new(RefCell::new(std_shared_ptr_const_A_::new_2({
+                w.as_pointer()
+            })));
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 2_i64));
-        assert!((unimplemented!() == 2_i64));
-        assert!((unimplemented!() == unimplemented!()));
+        assert!(
+            ({
+                (({
+                    ((*s0.borrow()) as std___shared_ptr_const_A____gnu_cxx__S_atomic_).use_count()
+                }) == 2_i64)
+            })
+        );
+        assert!(
+            ({
+                (({
+                    ((*s.borrow()) as std___shared_ptr_const_A____gnu_cxx__S_atomic_).use_count()
+                }) == 2_i64)
+            })
+        );
+        assert!(
+            ({
+                (({ ((*s0.borrow()) as std___shared_ptr_const_A____gnu_cxx__S_atomic_).get() })
+                    == ({
+                        ((*s.borrow()) as std___shared_ptr_const_A____gnu_cxx__S_atomic_).get()
+                    }))
+            })
+        );
     }
     {
-        let mut u: Option<Value<A>> = Ptr::alloc(<A>::default()).to_owned_opt();
-        let mut uPointee: Ptr<A> = u.as_pointer();
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let u: Value<Option<Value<A>>> =
+            Rc::new(RefCell::new(Ptr::alloc(<A>::default()).to_owned_opt()));
+        let mut uPointee: Ptr<A> = (*u.borrow()).as_pointer();
+        let s: Value<std_shared_ptr_A_> = Rc::new(RefCell::new((*u.borrow_mut()).clone()));
         const _: () = assert!(true, "");;
-        assert!(u.is_none());
-        assert!(({ unimplemented!() } == { (uPointee).clone() }));
+        assert!(({ (*u.borrow()).is_none() }));
+        assert!(
+            ({
+                ({ ({ ((*s.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() }) } == {
+                    (uPointee).clone()
+                })
+            })
+        );
     }
     {
-        let mut u: Option<Value<A>> = Ptr::alloc(<A>::default()).to_owned_opt();
-        let mut uPointee: Ptr<A> = u.as_pointer();
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let u: Value<Option<Value<A>>> =
+            Rc::new(RefCell::new(Ptr::alloc(<A>::default()).to_owned_opt()));
+        let mut uPointee: Ptr<A> = (*u.borrow()).as_pointer();
+        let s: Value<std_shared_ptr_const_A_> = Rc::new(RefCell::new((*u.borrow_mut()).clone()));
         const _: () = assert!(true, "");;
-        assert!(u.is_none());
-        assert!(({ unimplemented!() } == { (uPointee).clone() }));
+        assert!(({ (*u.borrow()).is_none() }));
+        assert!(
+            ({
+                ({ ({ ((*s.borrow()) as std___shared_ptr_const_A____gnu_cxx__S_atomic_).get() }) }
+                    == { (uPointee).clone() })
+            })
+        );
     }
     {
-        let mut u: Option<Value<A>> = unimplemented!();
-        let mut uPointee: Ptr<A> = u.as_pointer();
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let u: Value<Option<Value<A>>> = Rc::new(RefCell::new({
+            let __tmp_0: Value<D> = Rc::new(RefCell::new(<D>::default()));
+            std_unique_ptr_A__D_::new({ Ptr::alloc(<A>::default()) }, { __tmp_0.as_pointer() })
+        }));
+        let mut uPointee: Ptr<A> = (*u.borrow()).as_pointer();
+        let s: Value<std_shared_ptr_A_> = Rc::new(RefCell::new((*u.borrow_mut()).clone()));
         const _: () = assert!(true, "");;
-        assert!(u.is_none());
-        assert!(({ unimplemented!() } == { (uPointee).clone() }));
+        assert!(({ (*u.borrow()).is_none() }));
+        assert!(
+            ({
+                ({ ({ ((*s.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() }) } == {
+                    (uPointee).clone()
+                })
+            })
+        );
     }
     {
-        let mut u: Option<Value<A>> = unimplemented!();
-        let mut uPointee: Ptr<A> = u.as_pointer();
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let u: Value<Option<Value<A>>> = Rc::new(RefCell::new({
+            let __tmp_1: Value<D> = Rc::new(RefCell::new(<D>::default()));
+            std_unique_ptr_const_A__D_::new({ Ptr::alloc(<A>::default()) }, {
+                __tmp_1.as_pointer()
+            })
+        }));
+        let mut uPointee: Ptr<A> = (*u.borrow()).as_pointer();
+        let s: Value<std_shared_ptr_const_A_> = Rc::new(RefCell::new((*u.borrow_mut()).clone()));
         const _: () = assert!(true, "");;
-        assert!(u.is_none());
-        assert!(({ unimplemented!() } == { (uPointee).clone() }));
+        assert!(({ (*u.borrow()).is_none() }));
+        assert!(
+            ({
+                ({ ({ ((*s.borrow()) as std___shared_ptr_const_A____gnu_cxx__S_atomic_).get() }) }
+                    == { (uPointee).clone() })
+            })
+        );
     }
     return 0;
 }

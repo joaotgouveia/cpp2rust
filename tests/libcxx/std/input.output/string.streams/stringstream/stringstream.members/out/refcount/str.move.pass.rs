@@ -67,6 +67,11 @@ impl MultiStringType {
         }
     }
 }
+impl CppMove for MultiStringType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0() {
     {
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));

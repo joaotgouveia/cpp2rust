@@ -37,8 +37,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             "std::is_same<const T&&, decltype(std::get<0>(std::move(c)))>::value"
         );;
         const _: () = assert!(true, "noexcept(std::get<0>(std::move(c)))");;
-        let t: Ptr<Option<Value<f64>>> = unimplemented!();
-        assert!((((*t.upgrade().deref()).as_pointer().read()) == 3.5_f64));
+        let t: Ptr<Option<Value<f64>>> = c.decay().offset(0 as isize);
+        assert!(({ (((*t.upgrade().deref()).as_pointer().read()) == 3.5_f64) }));
     }
     {
         let c: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([1_f64, 2_f64, 3.5_f64])));

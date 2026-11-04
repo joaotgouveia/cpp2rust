@@ -6,78 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = u32;
-pub const anon_0_value: anon_0 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1____std_chrono_duration_long__std_ratio_1__1___
-{}
-pub type anon_1 = u32;
-pub const anon_1_value: anon_1 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1000____std_chrono_duration_long__std_ratio_1__1000___
-{}
-pub type anon_2 = u32;
-pub const anon_2_value: anon_2 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1000000____std_chrono_duration_long__std_ratio_1__1000000___
-{}
-pub type anon_3 = u32;
-pub const anon_3_value: anon_3 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1000000000____std_chrono_duration_long__std_ratio_1__1000000000___
-{}
-pub type anon_4 = u32;
-pub const anon_4_value: anon_4 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__10000____std_chrono_duration_long__std_ratio_1__10000___
-{}
-pub fn check_duration_5(d: ()) -> i64 {
-    let d: Value<()> = Rc::new(RefCell::new(d));
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
-}
-pub fn check_duration_6(d: ()) -> i64 {
-    let d: Value<()> = Rc::new(RefCell::new(d));
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
-}
-pub fn check_duration_7(d: ()) -> i64 {
-    let d: Value<()> = Rc::new(RefCell::new(d));
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
-}
-pub fn check_duration_8(d: ()) -> i64 {
-    let d: Value<()> = Rc::new(RefCell::new(d));
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
-}
-pub fn check_duration_9(d: ()) -> i64 {
-    let d: Value<()> = Rc::new(RefCell::new(d));
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
-}
-pub fn check_duration_10(d: ()) -> i64 {
-    let d: Value<()> = Rc::new(RefCell::new(d));
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
-}
-pub fn check_duration_11(d: ()) -> i64 {
-    let d: Value<()> = Rc::new(RefCell::new(d));
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    return (unimplemented!() as i64);
-}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -100,22 +29,138 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "check_duration(std::chrono::minutes( 1)) ==  60");;
     const _: () = assert!(true, "check_duration(std::chrono::minutes(-1)) == -60");;
-    assert!((({ check_duration_6(unimplemented!(),) }) == 5000_i64));
-    assert!((({ check_duration_6(unimplemented!(),) }) == -5000_i64));
-    assert!((({ check_duration_5(unimplemented!(),) }) == 300000_i64));
-    assert!((({ check_duration_5(unimplemented!(),) }) == -300000_i64));
-    assert!((({ check_duration_7(unimplemented!(),) }) == 39600_i64));
-    assert!((({ check_duration_7(unimplemented!(),) }) == -39600_i64));
-    assert!((({ check_duration_8(unimplemented!(),) }) == 123456789_i64));
-    assert!((({ check_duration_8(unimplemented!(),) }) == -123456789_i64));
-    assert!((({ check_duration_9(unimplemented!(),) }) == 123456789_i64));
-    assert!((({ check_duration_9(unimplemented!(),) }) == -123456789_i64));
-    assert!((({ check_duration_10(unimplemented!(),) }) == 123456789_i64));
-    assert!((({ check_duration_10(unimplemented!(),) }) == -123456789_i64));
-    assert!((({ check_duration_11(unimplemented!(),) }) == 12096000_i64));
-    assert!((({ check_duration_11(unimplemented!(),) }) == (-12096000_i32 as i64)));
-    assert!((({ check_duration_11(unimplemented!(),) }) == 120960000_i64));
-    assert!((({ check_duration_11(unimplemented!(),) }) == (-120960000_i32 as i64)));
+    assert!(
+        (({
+            check_duration_0({
+                let __tmp_0: Value<i32> = Rc::new(RefCell::new(5000));
+                std_chrono_duration_long__std_ratio_1__1__::new_1({ __tmp_0.as_pointer() })
+            })
+        }) == 5000_i64)
+    );
+    assert!(
+        (({
+            check_duration_0({
+                let __tmp_1: Value<i32> = Rc::new(RefCell::new(-5000_i32));
+                std_chrono_duration_long__std_ratio_1__1__::new_1({ __tmp_1.as_pointer() })
+            })
+        }) == -5000_i64)
+    );
+    assert!(
+        (({
+            check_duration_1({
+                let __tmp_2: Value<i32> = Rc::new(RefCell::new(5000));
+                std_chrono_duration_long__std_ratio_60__1__::new_1({ __tmp_2.as_pointer() })
+            })
+        }) == 300000_i64)
+    );
+    assert!(
+        (({
+            check_duration_1({
+                let __tmp_3: Value<i32> = Rc::new(RefCell::new(-5000_i32));
+                std_chrono_duration_long__std_ratio_60__1__::new_1({ __tmp_3.as_pointer() })
+            })
+        }) == -300000_i64)
+    );
+    assert!(
+        (({
+            check_duration_2({
+                let __tmp_4: Value<i32> = Rc::new(RefCell::new(11));
+                std_chrono_duration_long__std_ratio_3600__1__::new_1({ __tmp_4.as_pointer() })
+            })
+        }) == 39600_i64)
+    );
+    assert!(
+        (({
+            check_duration_2({
+                let __tmp_5: Value<i32> = Rc::new(RefCell::new(-11_i32));
+                std_chrono_duration_long__std_ratio_3600__1__::new_1({ __tmp_5.as_pointer() })
+            })
+        }) == -39600_i64)
+    );
+    assert!(
+        (({
+            check_duration_3({
+                let __tmp_6: Value<i64> = Rc::new(RefCell::new(123456789_i64));
+                std_chrono_duration_long__std_ratio_1__1000__::new_1({ __tmp_6.as_pointer() })
+            })
+        }) == 123456789_i64)
+    );
+    assert!(
+        (({
+            check_duration_3({
+                let __tmp_7: Value<i64> = Rc::new(RefCell::new(-123456789_i64));
+                std_chrono_duration_long__std_ratio_1__1000__::new_1({ __tmp_7.as_pointer() })
+            })
+        }) == -123456789_i64)
+    );
+    assert!(
+        (({
+            check_duration_4({
+                let __tmp_8: Value<i64> = Rc::new(RefCell::new(123456789_i64));
+                std_chrono_duration_long__std_ratio_1__1000000__::new_1({ __tmp_8.as_pointer() })
+            })
+        }) == 123456789_i64)
+    );
+    assert!(
+        (({
+            check_duration_4({
+                let __tmp_9: Value<i64> = Rc::new(RefCell::new(-123456789_i64));
+                std_chrono_duration_long__std_ratio_1__1000000__::new_1({ __tmp_9.as_pointer() })
+            })
+        }) == -123456789_i64)
+    );
+    assert!(
+        (({
+            check_duration_5({
+                let __tmp_10: Value<i64> = Rc::new(RefCell::new(123456789_i64));
+                std_chrono_duration_long__std_ratio_1__1000000000__::new_1({
+                    __tmp_10.as_pointer()
+                })
+            })
+        }) == 123456789_i64)
+    );
+    assert!(
+        (({
+            check_duration_5({
+                let __tmp_11: Value<i64> = Rc::new(RefCell::new(-123456789_i64));
+                std_chrono_duration_long__std_ratio_1__1000000000__::new_1({
+                    __tmp_11.as_pointer()
+                })
+            })
+        }) == -123456789_i64)
+    );
+    assert!(
+        (({
+            check_duration_6({
+                let __tmp_12: Value<i32> = Rc::new(RefCell::new(1000));
+                std_chrono_duration_int__std_ratio_756__625__::new_1({ __tmp_12.as_pointer() })
+            })
+        }) == 12096000_i64)
+    );
+    assert!(
+        (({
+            check_duration_6({
+                let __tmp_13: Value<i32> = Rc::new(RefCell::new(-1000_i32));
+                std_chrono_duration_int__std_ratio_756__625__::new_1({ __tmp_13.as_pointer() })
+            })
+        }) == (-12096000_i32 as i64))
+    );
+    assert!(
+        (({
+            check_duration_6({
+                let __tmp_14: Value<i32> = Rc::new(RefCell::new(10000));
+                std_chrono_duration_int__std_ratio_756__625__::new_1({ __tmp_14.as_pointer() })
+            })
+        }) == 120960000_i64)
+    );
+    assert!(
+        (({
+            check_duration_6({
+                let __tmp_15: Value<i32> = Rc::new(RefCell::new(-10000_i32));
+                std_chrono_duration_int__std_ratio_756__625__::new_1({ __tmp_15.as_pointer() })
+            })
+        }) == (-120960000_i32 as i64))
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

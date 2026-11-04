@@ -32,20 +32,110 @@ impl Callable2<Ptr<i32>, Ptr<i32>, bool> for test_less_int_ {
         })
     }
 }
+impl CppMove for test_less_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_1() -> bool {
-    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 6_()));
-    assert!((unimplemented!() == 6_isize));
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((((*i.borrow()).iter_deref().read()) == (1 as ())));
-    assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (2 as ())));
-    assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (3 as ())));
-    assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (4 as ())));
-    assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (5 as ())));
-    assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (6 as ())));
+    let m: Value<std_multiset_int__test_less_int___std_allocator_int__> = Rc::new(RefCell::new({
+        let __tmp_0: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 10 })));
+        std_multiset_int__test_less_int___std_allocator_int__::new_1(
+            { Vec::from([1, 2, 3, 4, 5, 6]) },
+            { __tmp_0.as_pointer() },
+            None,
+        )
+    }));
+    assert!(({ (({ (*m.borrow()).size() }) == 6_u64) }));
     assert!(
         ({
-            let _a: Value<test_less_int_> = Rc::new(RefCell::new(unimplemented!()));
+            (({
+                let ___first: BidirectionalIterator<i32> = ({ (*m.borrow()).begin() });
+                let ___last: BidirectionalIterator<i32> = ({ (*m.borrow()).end() });
+                distance_2(___first, ___last)
+            }) == 6_isize)
+        })
+    );
+    let i: Value<BidirectionalIterator<i32>> = Rc::new(RefCell::new(({ (*m.borrow()).cbegin() })));
+    assert!(({ (((*i.borrow()).iter_deref().read()) == 1) }));
+    assert!(
+        ({
+            (((*{
+                i.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                i.as_pointer()
+            }
+            .upgrade()
+            .deref())
+            .iter_deref()
+            .read())
+                == 2)
+        })
+    );
+    assert!(
+        ({
+            (((*{
+                i.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                i.as_pointer()
+            }
+            .upgrade()
+            .deref())
+            .iter_deref()
+            .read())
+                == 3)
+        })
+    );
+    assert!(
+        ({
+            (((*{
+                i.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                i.as_pointer()
+            }
+            .upgrade()
+            .deref())
+            .iter_deref()
+            .read())
+                == 4)
+        })
+    );
+    assert!(
+        ({
+            (((*{
+                i.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                i.as_pointer()
+            }
+            .upgrade()
+            .deref())
+            .iter_deref()
+            .read())
+                == 5)
+        })
+    );
+    assert!(
+        ({
+            (((*{
+                i.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                i.as_pointer()
+            }
+            .upgrade()
+            .deref())
+            .iter_deref()
+            .read())
+                == 6)
+        })
+    );
+    assert!(
+        ({
+            let _a: Value<test_less_int_> = Rc::new(RefCell::new(({ (*m.borrow()).key_comp() })));
             let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 10 })));
             operator_eq_0(_a.as_pointer(), _b.as_pointer())
         })

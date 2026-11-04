@@ -16,6 +16,11 @@ impl Callable2<Ptr<Option<Value<i32>>>, Ptr<Option<Value<i32>>>, bool> for indir
         })
     }
 }
+impl CppMove for indirect_less {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct first_only {}
@@ -24,6 +29,11 @@ impl Callable2<Ptr<(Value<i32>, Value<i32>)>, Ptr<(Value<i32>, Value<i32>)>, boo
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             first_onlyImpl::operator_call(__it, a1, a2)
         })
+    }
+}
+impl CppMove for first_only {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn generate_sawtooth_0(mut N: i32, mut M: i32) -> Vec<(Value<i32>, Value<i32>)> {
@@ -36,16 +46,24 @@ pub fn generate_sawtooth_0(mut N: i32, mut M: i32) -> Vec<(Value<i32>, Value<i32
     let mut ver: i32 = 0;
     let mut i: i32 = 0;
     'loop_: while (i < N) {
-        v.decay()
-            .offset((i as usize) as isize)
-            .write((Rc::new(RefCell::new(x)), Rc::new(RefCell::new(ver))));
-        if (x.prefix_inc() == M) {
+        match (Rc::new(RefCell::new((
+            Rc::new(RefCell::new(x)),
+            Rc::new(RefCell::new(ver)),
+        )))
+        .as_pointer(),)
+        {
+            (__tmp_0,) => v
+                .decay()
+                .offset((i as usize) as isize)
+                .write(__tmp_0.with_mut(std::mem::take)),
+        };
+        if ((*x.prefix_inc()) == M) {
             x = 0;
             ver.prefix_inc();
         }
         i.prefix_inc();
     }
-    return std::mem::take(&mut (*v.borrow_mut()));
+    return ({ std::mem::take(&mut (*v.borrow_mut())) });
 }
 pub fn test_1() -> bool {
     let mut N: i32 = 1000;
@@ -53,55 +71,79 @@ pub fn test_1() -> bool {
     {
         let v: Value<Vec<(Value<i32>, Value<i32>)>> =
             Rc::new(RefCell::new(({ generate_sawtooth_0(N, M) })));
-        {
-            let __first = v.decay().begin();
-            let __n = v.decay().end().iter_distance(&__first);
-            let __cmp = <first_only>::default();
-            let mut __order: Vec<isize> = (0..__n).collect();
-            __order.sort_by(|&__x, &__y| {
-                let __a = __first.iter_at(__x);
-                let __b = __first.iter_at(__y);
-                if __cmp.less(__a.clone(), __b.clone()) {
-                    std::cmp::Ordering::Less
-                } else if __cmp.less(__b, __a) {
-                    std::cmp::Ordering::Greater
-                } else {
-                    std::cmp::Ordering::Equal
-                }
-            });
-            reorder(__order, |__i| __first.iter_at(__i));
-        };
-        assert!(unimplemented!());
-    }
-    {
-        {
-            let v: Value<Vec<(Value<i32>, Value<i32>)>> =
-                Rc::new(RefCell::new(({ generate_sawtooth_0(N, M) })));
-            let randomness: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut i: i32 = 0;
-            'loop_: while (i < (N - M)) {
-                unimplemented!();
-                i += M;
-            }
-            {
-                let __first = v.decay().begin();
-                let __n = v.decay().end().iter_distance(&__first);
-                let __cmp = <first_only>::default();
+        match ({ CppRange::begin(&v.decay()) },) {
+            (mut __tmp_1,) => {
+                let __n = CppRange::end(&v.decay()).iter_distance(&__tmp_1);
                 let mut __order: Vec<isize> = (0..__n).collect();
                 __order.sort_by(|&__x, &__y| {
-                    let __a = __first.iter_at(__x);
-                    let __b = __first.iter_at(__y);
-                    if __cmp.less(__a.clone(), __b.clone()) {
+                    let __a = __tmp_1.iter_at(__x);
+                    let __b = __tmp_1.iter_at(__y);
+                    if <first_only>::default().less(__a.clone(), __b.clone()) {
                         std::cmp::Ordering::Less
-                    } else if __cmp.less(__b, __a) {
+                    } else if <first_only>::default().less(__b, __a) {
                         std::cmp::Ordering::Greater
                     } else {
                         std::cmp::Ordering::Equal
                     }
                 });
-                reorder(__order, |__i| __first.iter_at(__i));
+                reorder(__order, |__i| __tmp_1.iter_at(__i));
+            }
+        };
+        assert!(
+            ({
+                let ___first: RandomAccessIterator<(Value<i32>, Value<i32>)> =
+                    CppRange::begin(&v.decay());
+                let ___last: RandomAccessIterator<(Value<i32>, Value<i32>)> =
+                    CppRange::end(&v.decay());
+                is_sorted_2(___first, ___last)
+            })
+        );
+    }
+    {
+        {
+            let v: Value<Vec<(Value<i32>, Value<i32>)>> =
+                Rc::new(RefCell::new(({ generate_sawtooth_0(N, M) })));
+            let randomness : Value<std_mersenne_twister_engine_unsigned_long__32__624__397__31__2567483615__11__4294967295__7__2636928640__15__4022730752__18__1812433253_ > = Rc::new(RefCell::new(<std_mersenne_twister_engine_unsigned_long__32__624__397__31__2567483615__11__4294967295__7__2636928640__15__4022730752__18__1812433253_  >::default() )) ;
+            let mut i: i32 = 0;
+            'loop_: while (i < (N - M)) {
+                ({
+                    let ___first: RandomAccessIterator<(Value<i32>, Value<i32>)> =
+                        CppRange::begin(&v.decay()).iter_add((i as isize));
+                    let ___last: RandomAccessIterator<(Value<i32>, Value<i32>)> =
+                        CppRange::begin(&v.decay())
+                            .iter_add((i as isize))
+                            .iter_add((M as isize));
+                    shuffle_3(___first, ___last, randomness.as_pointer())
+                });
+                i += M;
+            }
+            match ({ CppRange::begin(&v.decay()) },) {
+                (mut __tmp_2,) => {
+                    let __n = CppRange::end(&v.decay()).iter_distance(&__tmp_2);
+                    let mut __order: Vec<isize> = (0..__n).collect();
+                    __order.sort_by(|&__x, &__y| {
+                        let __a = __tmp_2.iter_at(__x);
+                        let __b = __tmp_2.iter_at(__y);
+                        if <first_only>::default().less(__a.clone(), __b.clone()) {
+                            std::cmp::Ordering::Less
+                        } else if <first_only>::default().less(__b, __a) {
+                            std::cmp::Ordering::Greater
+                        } else {
+                            std::cmp::Ordering::Equal
+                        }
+                    });
+                    reorder(__order, |__i| __tmp_2.iter_at(__i));
+                }
             };
-            assert!(unimplemented!());
+            assert!(
+                ({
+                    let ___first: RandomAccessIterator<(Value<i32>, Value<i32>)> =
+                        CppRange::begin(&v.decay());
+                    let ___last: RandomAccessIterator<(Value<i32>, Value<i32>)> =
+                        CppRange::end(&v.decay());
+                    is_sorted_2(___first, ___last)
+                })
+            );
         }
     }
     {
@@ -110,50 +152,63 @@ pub fn test_1() -> bool {
         ));
         let mut i: i32 = 0;
         'loop_: while ((i as usize) < (*v.borrow()).len()) {
-            {
-                let _p: Ptr<_> = Ptr::alloc(i);
-                v.decay()
-                    .offset((i as usize) as isize)
-                    .write(_p.to_owned_opt())
+            match (v.decay().offset((i as usize) as isize),) {
+                (__tmp_3,) => {
+                    let _p: Ptr<_> = Ptr::alloc(i);
+                    __tmp_3.write(_p.to_owned_opt())
+                }
             };
             i.prefix_inc();
         }
-        {
-            let __first = v.decay().begin();
-            let __n = v.decay().end().iter_distance(&__first);
-            let __cmp = <indirect_less>::default();
-            let mut __order: Vec<isize> = (0..__n).collect();
-            __order.sort_by(|&__x, &__y| {
-                let __a = __first.iter_at(__x);
-                let __b = __first.iter_at(__y);
-                if __cmp.less(__a.clone(), __b.clone()) {
-                    std::cmp::Ordering::Less
-                } else if __cmp.less(__b, __a) {
-                    std::cmp::Ordering::Greater
-                } else {
-                    std::cmp::Ordering::Equal
-                }
-            });
-            reorder(__order, |__i| __first.iter_at(__i));
+        match ({ CppRange::begin(&v.decay()) },) {
+            (mut __tmp_4,) => {
+                let __n = CppRange::end(&v.decay()).iter_distance(&__tmp_4);
+                let mut __order: Vec<isize> = (0..__n).collect();
+                __order.sort_by(|&__x, &__y| {
+                    let __a = __tmp_4.iter_at(__x);
+                    let __b = __tmp_4.iter_at(__y);
+                    if <indirect_less>::default().less(__a.clone(), __b.clone()) {
+                        std::cmp::Ordering::Less
+                    } else if <indirect_less>::default().less(__b, __a) {
+                        std::cmp::Ordering::Greater
+                    } else {
+                        std::cmp::Ordering::Equal
+                    }
+                });
+                reorder(__order, |__i| __tmp_4.iter_at(__i));
+            }
         };
-        assert!(unimplemented!());
         assert!(
-            (((*v.decay().offset(0_usize as isize).upgrade().deref())
-                .as_pointer()
-                .read())
-                == 0)
+            ({
+                let ___first: RandomAccessIterator<Option<Value<i32>>> =
+                    CppRange::begin(&v.decay());
+                let ___last: RandomAccessIterator<Option<Value<i32>>> = CppRange::end(&v.decay());
+                is_sorted_4(___first, ___last, <indirect_less>::default())
+            })
         );
         assert!(
-            (((*v.decay().offset(1_usize as isize).upgrade().deref())
-                .as_pointer()
-                .read())
-                == 1)
+            ({
+                (((*v.decay().offset(0_usize as isize).upgrade().deref())
+                    .as_pointer()
+                    .read())
+                    == 0)
+            })
         );
         assert!(
-            (((*v.decay().offset(2_usize as isize).upgrade().deref())
-                .as_pointer()
-                .read())
-                == 2)
+            ({
+                (((*v.decay().offset(1_usize as isize).upgrade().deref())
+                    .as_pointer()
+                    .read())
+                    == 1)
+            })
+        );
+        assert!(
+            ({
+                (((*v.decay().offset(2_usize as isize).upgrade().deref())
+                    .as_pointer()
+                    .read())
+                    == 2)
+            })
         );
     }
     return true;

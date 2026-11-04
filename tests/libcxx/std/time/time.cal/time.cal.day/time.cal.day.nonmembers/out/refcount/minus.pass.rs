@@ -11,19 +11,25 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_day__std_chrono_day_ {}
+impl CppMove for test_macros_detail_is_same_std_chrono_day__std_chrono_day_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_86400__1____std_chrono_duration_long__std_ratio_86400__1___
 {}
+impl CppMove for test_macros_detail_is_same_std_chrono_duration_long__std_ratio_86400__1____std_chrono_duration_long__std_ratio_86400__1___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn test_2() -> bool {
     let dy: Value<u32> = Rc::new(RefCell::new(12_u32));
     let mut i: u32 = 0_u32;
     'loop_: while (i <= 10_u32) {
         let d1: Value<u32> = Rc::new(RefCell::new(unimplemented!()));
         let off: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*d1.borrow()) == (12_u32).wrapping_sub(i)));
+        assert!((({ (*d1.borrow()) }) == (12_u32).wrapping_sub(i)));
         assert!((unimplemented!() == ((((12_u32).wrapping_sub(i)) as i32) as ())));
         i.prefix_inc();
     }

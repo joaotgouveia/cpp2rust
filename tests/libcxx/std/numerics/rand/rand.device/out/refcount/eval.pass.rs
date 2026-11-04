@@ -28,8 +28,8 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut e: () = unimplemented!();
+        let r: Value<std_random_device> = Rc::new(RefCell::new(<std_random_device>::default()));
+        let mut e: u32 = ({ (*r.borrow_mut())() }).clone();
         (&(e));
     }
     return 0;

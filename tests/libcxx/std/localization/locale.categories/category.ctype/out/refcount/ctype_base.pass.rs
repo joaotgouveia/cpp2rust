@@ -27,40 +27,49 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!((unimplemented!() != 0));
-    assert!((unimplemented!() != 0));
-    assert!((unimplemented!() != 0));
-    assert!((unimplemented!() != 0));
-    assert!((unimplemented!() != 0));
-    assert!((unimplemented!() != 0));
-    assert!((unimplemented!() != 0));
-    assert!((unimplemented!() != 0));
-    assert!((unimplemented!() != 0));
+    assert!((space_1.with(|rc| *rc.borrow()) != 0));
+    assert!((print_2.with(|rc| *rc.borrow()) != 0));
+    assert!((cntrl_3.with(|rc| *rc.borrow()) != 0));
+    assert!((upper_4.with(|rc| *rc.borrow()) != 0));
+    assert!((lower_5.with(|rc| *rc.borrow()) != 0));
+    assert!((alpha_6.with(|rc| *rc.borrow()) != 0));
+    assert!((digit_7.with(|rc| *rc.borrow()) != 0));
+    assert!((punct_8.with(|rc| *rc.borrow()) != 0));
+    assert!((xdigit_9.with(|rc| *rc.borrow()) != 0));
     assert!(
-        ((((((((((unimplemented!() as i32) & (unimplemented!() as i32))
-            & (unimplemented!() as i32))
-            & (unimplemented!() as i32))
-            & (unimplemented!() as i32))
-            & (unimplemented!() as i32))
-            & (unimplemented!() as i32))
-            & (unimplemented!() as i32))
-            & (unimplemented!() as i32))
+        ((((((((((space_1.with(|rc| *rc.borrow()) as i32)
+            & (print_2.with(|rc| *rc.borrow()) as i32))
+            & (cntrl_3.with(|rc| *rc.borrow()) as i32))
+            & (upper_4.with(|rc| *rc.borrow()) as i32))
+            & (lower_5.with(|rc| *rc.borrow()) as i32))
+            & (alpha_6.with(|rc| *rc.borrow()) as i32))
+            & (digit_7.with(|rc| *rc.borrow()) as i32))
+            & (punct_8.with(|rc| *rc.borrow()) as i32))
+            & (xdigit_9.with(|rc| *rc.borrow()) as i32))
             == 0)
     );
-    assert!(((unimplemented!() as i32) == ((unimplemented!() as i32) | (unimplemented!() as i32))));
-    assert!(((unimplemented!() as i32) == ((unimplemented!() as i32) | (unimplemented!() as i32))));
-    ({ test_0((unimplemented!()).reinterpret_cast::<u16>()) });
-    ({ test_0((unimplemented!()).reinterpret_cast::<u16>()) });
-    ({ test_0((unimplemented!()).reinterpret_cast::<u16>()) });
-    ({ test_0((unimplemented!()).reinterpret_cast::<u16>()) });
-    ({ test_0((unimplemented!()).reinterpret_cast::<u16>()) });
-    ({ test_0((unimplemented!()).reinterpret_cast::<u16>()) });
-    ({ test_0((unimplemented!()).reinterpret_cast::<u16>()) });
-    ({ test_0((unimplemented!()).reinterpret_cast::<u16>()) });
-    ({ test_0((unimplemented!()).reinterpret_cast::<u16>()) });
-    ({ test_0((unimplemented!()).reinterpret_cast::<u16>()) });
-    ({ test_0((unimplemented!()).reinterpret_cast::<u16>()) });
-    ({ test_0((unimplemented!()).reinterpret_cast::<u16>()) });
+    assert!(
+        ((alnum_10.with(|rc| *rc.borrow()) as i32)
+            == ((alpha_6.with(|rc| *rc.borrow()) as i32)
+                | (digit_7.with(|rc| *rc.borrow()) as i32)))
+    );
+    assert!(
+        ((graph_11.with(|rc| *rc.borrow()) as i32)
+            == ((alnum_10.with(|rc| *rc.borrow()) as i32)
+                | (punct_8.with(|rc| *rc.borrow()) as i32)))
+    );
+    ({ test_0(space_1.with(|v| v.as_pointer())) });
+    ({ test_0(print_2.with(|v| v.as_pointer())) });
+    ({ test_0(cntrl_3.with(|v| v.as_pointer())) });
+    ({ test_0(upper_4.with(|v| v.as_pointer())) });
+    ({ test_0(lower_5.with(|v| v.as_pointer())) });
+    ({ test_0(alpha_6.with(|v| v.as_pointer())) });
+    ({ test_0(digit_7.with(|v| v.as_pointer())) });
+    ({ test_0(punct_8.with(|v| v.as_pointer())) });
+    ({ test_0(xdigit_9.with(|v| v.as_pointer())) });
+    ({ test_0(blank_12.with(|v| v.as_pointer())) });
+    ({ test_0(alnum_10.with(|v| v.as_pointer())) });
+    ({ test_0(graph_11.with(|v| v.as_pointer())) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

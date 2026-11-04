@@ -27,9 +27,21 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let ios: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as i32) == (('c' as i8) as i32)));
-    assert!(((unimplemented!() as i32) == (('*' as i8) as i32)));
+    let ios: Value<std_basic_ios_wchar_t__std_char_traits_wchar_t__> = Rc::new(RefCell::new(
+        std_basic_ios_wchar_t__std_char_traits_wchar_t__::new_1({ Ptr::<::std::fs::File>::null() }),
+    ));
+    assert!(
+        ({
+            ((({ (*ios.borrow()).narrow((99 as i32), ('*' as i8)) }) as i32)
+                == (('c' as i8) as i32))
+        })
+    );
+    assert!(
+        ({
+            ((({ (*ios.borrow()).narrow((8252 as i32), ('*' as i8)) }) as i32)
+                == (('*' as i8) as i32))
+        })
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

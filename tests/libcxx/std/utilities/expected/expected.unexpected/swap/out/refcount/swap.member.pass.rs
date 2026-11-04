@@ -9,9 +9,19 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoexceptSwap {}
+impl CppMove for NoexceptSwap {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct MayThrowSwap {}
+impl CppMove for MayThrowSwap {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "MemberSwapNoexcept<std::unexpected<NoexceptSwap>>");
 const _: () = assert!(
     !(false),
@@ -32,20 +42,37 @@ impl ADLSwap {
         Self { i: ii }
     }
 }
+impl CppMove for ADLSwap {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_1() -> bool {
     {
-        let unex1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let unex2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(((unimplemented!().read()) == 6));
-        assert!(((unimplemented!().read()) == 5));
+        let unex1: Value<std_unexpected_int_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(5));
+            std_unexpected_int_::new({ __tmp_0.as_pointer() })
+        }));
+        let unex2: Value<std_unexpected_int_> = Rc::new(RefCell::new({
+            let __tmp_1: Value<i32> = Rc::new(RefCell::new(6));
+            std_unexpected_int_::new({ __tmp_1.as_pointer() })
+        }));
+        ({ (*unex1.borrow()).swap(unex2.as_pointer()) });
+        assert!(({ ((({ (*unex1.borrow()).error_9() }).read()) == 6) }));
+        assert!(({ ((({ (*unex2.borrow()).error_9() }).read()) == 5) }));
     }
     {
-        let unex1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let unex2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(({ (unimplemented!()).clone().i } == 6));
-        assert!(({ (unimplemented!()).clone().i } == 5));
+        let unex1: Value<std_unexpected_ADLSwap_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<i32> = Rc::new(RefCell::new(5));
+            std_unexpected_ADLSwap_::new({ __tmp_2.as_pointer() })
+        }));
+        let unex2: Value<std_unexpected_ADLSwap_> = Rc::new(RefCell::new({
+            let __tmp_3: Value<i32> = Rc::new(RefCell::new(6));
+            std_unexpected_ADLSwap_::new({ __tmp_3.as_pointer() })
+        }));
+        ({ (*unex1.borrow()).swap(unex2.as_pointer()) });
+        assert!(({ (({ (*unex1.borrow()).error_9() }).with(|__s| __s.i) == 6) }));
+        assert!(({ (({ (*unex2.borrow()).error_9() }).with(|__s| __s.i) == 5) }));
     }
     return true;
 }

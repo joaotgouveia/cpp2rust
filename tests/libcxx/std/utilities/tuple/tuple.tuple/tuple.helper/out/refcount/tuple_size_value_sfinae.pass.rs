@@ -9,8 +9,8 @@ use std::rc::{Rc, Weak};
 pub fn has_value_0(mut _a0: i32) -> bool {
     return true;
 }
-pub fn has_value_1(mut _a0: i32) -> bool {
-    return true;
+pub fn has_value_1(mut _a0: i64) -> bool {
+    return false;
 }
 pub fn has_value_2(mut _a0: i64) -> bool {
     return false;
@@ -18,33 +18,26 @@ pub fn has_value_2(mut _a0: i64) -> bool {
 pub fn has_value_3(mut _a0: i64) -> bool {
     return false;
 }
-pub fn has_value_4(mut _a0: i64) -> bool {
-    return false;
-}
-pub fn has_value_5(mut _a0: i64) -> bool {
-    return false;
-}
-pub fn has_value_6() -> bool {
+pub fn has_value_4() -> bool {
     return ({ has_value_0(0) });
 }
-pub fn has_value_7() -> bool {
-    return ({ has_value_1(0) });
+pub fn has_value_5() -> bool {
+    return ({ has_value_1(0_i64) });
 }
-pub fn has_value_8() -> bool {
+pub fn has_value_6() -> bool {
     return ({ has_value_2(0_i64) });
 }
-pub fn has_value_9() -> bool {
+pub fn has_value_7() -> bool {
     return ({ has_value_3(0_i64) });
-}
-pub fn has_value_10() -> bool {
-    return ({ has_value_4(0_i64) });
-}
-pub fn has_value_11() -> bool {
-    return ({ has_value_5(0_i64) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Dummy {}
+impl CppMove for Dummy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

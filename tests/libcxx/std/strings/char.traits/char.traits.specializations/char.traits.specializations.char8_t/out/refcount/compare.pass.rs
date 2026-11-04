@@ -7,7 +7,27 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_constexpr_0() -> bool {
-    return ((unimplemented!() < 0) && (unimplemented!() > 0)) && (unimplemented!() == 0);
+    return ((({
+        std_char_traits_char8_t_::compare(
+            Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 51 as u8, 0 as u8]),
+            Ptr::<u8>::from_string_literal(&[50 as u8, 50 as u8, 51 as u8, 0 as u8]),
+            3_usize,
+        )
+    }) < 0)
+        && (({
+            std_char_traits_char8_t_::compare(
+                Ptr::<u8>::from_string_literal(&[50 as u8, 50 as u8, 51 as u8, 0 as u8]),
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 51 as u8, 0 as u8]),
+                3_usize,
+            )
+        }) > 0))
+        && (({
+            std_char_traits_char8_t_::compare(
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 51 as u8, 0 as u8]),
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 51 as u8, 0 as u8]),
+                3_usize,
+            )
+        }) == 0);
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -29,23 +49,154 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!((unimplemented!() == 0));
-    assert!((unimplemented!() == 0));
-    assert!((unimplemented!() == 0));
-    assert!((unimplemented!() < 0));
-    assert!((unimplemented!() > 0));
-    assert!((unimplemented!() == 0));
-    assert!((unimplemented!() < 0));
-    assert!((unimplemented!() < 0));
-    assert!((unimplemented!() > 0));
-    assert!((unimplemented!() > 0));
-    assert!((unimplemented!() == 0));
-    assert!((unimplemented!() < 0));
-    assert!((unimplemented!() < 0));
-    assert!((unimplemented!() < 0));
-    assert!((unimplemented!() > 0));
-    assert!((unimplemented!() > 0));
-    assert!((unimplemented!() > 0));
+    assert!(
+        (({
+            std_char_traits_char8_t_::compare(
+                Ptr::<u8>::from_string_literal(&[0 as u8]),
+                Ptr::<u8>::from_string_literal(&[0 as u8]),
+                0_usize,
+            )
+        }) == 0)
+    );
+    assert!(
+        (({ std_char_traits_char8_t_::compare(Ptr::<u8>::null(), Ptr::<u8>::null(), 0_usize,) })
+            == 0)
+    );
+    assert!(
+        (({
+            std_char_traits_char8_t_::compare(
+                Ptr::<u8>::from_string_literal(&[49 as u8, 0 as u8]),
+                Ptr::<u8>::from_string_literal(&[49 as u8, 0 as u8]),
+                1_usize,
+            )
+        }) == 0)
+    );
+    assert!(
+        (({
+            std_char_traits_char8_t_::compare(
+                Ptr::<u8>::from_string_literal(&[49 as u8, 0 as u8]),
+                Ptr::<u8>::from_string_literal(&[50 as u8, 0 as u8]),
+                1_usize,
+            )
+        }) < 0)
+    );
+    assert!(
+        (({
+            std_char_traits_char8_t_::compare(
+                Ptr::<u8>::from_string_literal(&[50 as u8, 0 as u8]),
+                Ptr::<u8>::from_string_literal(&[49 as u8, 0 as u8]),
+                1_usize,
+            )
+        }) > 0)
+    );
+    assert!(
+        (({
+            std_char_traits_char8_t_::compare(
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 0 as u8]),
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 0 as u8]),
+                2_usize,
+            )
+        }) == 0)
+    );
+    assert!(
+        (({
+            std_char_traits_char8_t_::compare(
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 0 as u8]),
+                Ptr::<u8>::from_string_literal(&[49 as u8, 51 as u8, 0 as u8]),
+                2_usize,
+            )
+        }) < 0)
+    );
+    assert!(
+        (({
+            std_char_traits_char8_t_::compare(
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 0 as u8]),
+                Ptr::<u8>::from_string_literal(&[50 as u8, 50 as u8, 0 as u8]),
+                2_usize,
+            )
+        }) < 0)
+    );
+    assert!(
+        (({
+            std_char_traits_char8_t_::compare(
+                Ptr::<u8>::from_string_literal(&[49 as u8, 51 as u8, 0 as u8]),
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 0 as u8]),
+                2_usize,
+            )
+        }) > 0)
+    );
+    assert!(
+        (({
+            std_char_traits_char8_t_::compare(
+                Ptr::<u8>::from_string_literal(&[50 as u8, 50 as u8, 0 as u8]),
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 0 as u8]),
+                2_usize,
+            )
+        }) > 0)
+    );
+    assert!(
+        (({
+            std_char_traits_char8_t_::compare(
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 51 as u8, 0 as u8]),
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 51 as u8, 0 as u8]),
+                3_usize,
+            )
+        }) == 0)
+    );
+    assert!(
+        (({
+            std_char_traits_char8_t_::compare(
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 51 as u8, 0 as u8]),
+                Ptr::<u8>::from_string_literal(&[50 as u8, 50 as u8, 51 as u8, 0 as u8]),
+                3_usize,
+            )
+        }) < 0)
+    );
+    assert!(
+        (({
+            std_char_traits_char8_t_::compare(
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 51 as u8, 0 as u8]),
+                Ptr::<u8>::from_string_literal(&[49 as u8, 51 as u8, 51 as u8, 0 as u8]),
+                3_usize,
+            )
+        }) < 0)
+    );
+    assert!(
+        (({
+            std_char_traits_char8_t_::compare(
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 51 as u8, 0 as u8]),
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 52 as u8, 0 as u8]),
+                3_usize,
+            )
+        }) < 0)
+    );
+    assert!(
+        (({
+            std_char_traits_char8_t_::compare(
+                Ptr::<u8>::from_string_literal(&[50 as u8, 50 as u8, 51 as u8, 0 as u8]),
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 51 as u8, 0 as u8]),
+                3_usize,
+            )
+        }) > 0)
+    );
+    assert!(
+        (({
+            std_char_traits_char8_t_::compare(
+                Ptr::<u8>::from_string_literal(&[49 as u8, 51 as u8, 51 as u8, 0 as u8]),
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 51 as u8, 0 as u8]),
+                3_usize,
+            )
+        }) > 0)
+    );
+    assert!(
+        (({
+            std_char_traits_char8_t_::compare(
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 52 as u8, 0 as u8]),
+                Ptr::<u8>::from_string_literal(&[49 as u8, 50 as u8, 51 as u8, 0 as u8]),
+                3_usize,
+            )
+        }) > 0)
+    );
     const _: () = assert!(true, "test_constexpr()");;
     return 0;
 }

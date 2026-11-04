@@ -18,6 +18,11 @@ impl DefaultConstructible {
         Self { i: j }
     }
 }
+impl CppMove for DefaultConstructible {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for DefaultConstructible {
     fn default() -> Self {
         { DefaultConstructible::new(None) }
@@ -34,6 +39,11 @@ impl NotDefaultConstructible {
         Self { i: j }
     }
 }
+impl CppMove for NotDefaultConstructible {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, Default)]
 #[byte_size(4)]
 pub struct MoveChecker {
@@ -46,14 +56,27 @@ impl MoveChecker {
     }
     pub fn move_from(v: Ptr<MoveChecker>) -> Self {
         Self {
-            i: unimplemented!(),
+            i: ({
+                let ___new_val: Value<i32> = Rc::new(RefCell::new(-1_i32));
+                exchange_0(field_ptr!(v, i), ___new_val.as_pointer())
+            }),
         }
+    }
+}
+impl CppMove for MoveChecker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoexceptChecker {}
-pub fn test_0() -> bool {
+impl CppMove for NoexceptChecker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn test_1() -> bool {
     {
         const _: () = assert!(true, "std::is_constructible_v<OwningView>");;
         const _: () = assert!(true, "std::default_initializable<OwningView>");;
@@ -77,12 +100,15 @@ pub fn test_0() -> bool {
             "std::is_convertible_v<DefaultConstructible&&, OwningView>"
         );;
         {
-            let ov: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(({ (unimplemented!()).clone().i } == 42));
+            let ov: Value<std_ranges_owning_view_DefaultConstructible_> = Rc::new(RefCell::new(
+                <std_ranges_owning_view_DefaultConstructible_>::default(),
+            ));
+            assert!(({ (({ (*ov.borrow()).base_5() }).with(|__s| __s.i) == 42) }));
         }
         {
-            let ov: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(({ (unimplemented!()).clone().i } == 1));
+            let ov: Value<std_ranges_owning_view_DefaultConstructible_> =
+                Rc::new(RefCell::new(DefaultConstructible::new({ Some(1) })));
+            assert!(({ (({ (*ov.borrow()).base_5() }).with(|__s| __s.i) == 1) }));
         }
     }
     {
@@ -108,8 +134,9 @@ pub fn test_0() -> bool {
             "std::is_convertible_v<NotDefaultConstructible&&, OwningView>"
         );;
         {
-            let ov: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(({ (unimplemented!()).clone().i } == 1));
+            let ov: Value<std_ranges_owning_view_NotDefaultConstructible_> =
+                Rc::new(RefCell::new(NotDefaultConstructible::new({ 1 })));
+            assert!(({ (({ (*ov.borrow()).base_5() }).with(|__s| __s.i) == 1) }));
         }
     }
     {
@@ -127,9 +154,10 @@ pub fn test_0() -> bool {
         const _: () = assert!(true, "std::is_convertible_v<MoveChecker&&, OwningView>");;
         {
             let m: Value<MoveChecker> = Rc::new(RefCell::new(MoveChecker::new({ 42 })));
-            let ov: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(({ (unimplemented!()).clone().i } == 42));
-            assert!(({ (*m.borrow()).i } == -1_i32));
+            let ov: Value<std_ranges_owning_view_MoveChecker_> =
+                Rc::new(RefCell::new((*m.borrow_mut()).clone()));
+            assert!(({ (({ (*ov.borrow()).base_5() }).with(|__s| __s.i) == 42) }));
+            assert!(({ ({ (*m.borrow()).i } == -1_i32) }));
         }
     }
     {
@@ -182,7 +210,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_0() });
+    ({ test_1() });
     const _: () = assert!(true, "test()");;
     return 0;
 }

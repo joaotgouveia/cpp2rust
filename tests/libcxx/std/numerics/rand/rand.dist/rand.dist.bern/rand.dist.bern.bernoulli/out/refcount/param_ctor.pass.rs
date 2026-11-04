@@ -28,12 +28,16 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0.5_f64));
+        let p: Value<std_bernoulli_distribution_param_type> = Rc::new(RefCell::new(
+            <std_bernoulli_distribution_param_type>::default(),
+        ));
+        assert!(({ (({ (*p.borrow()).p() }) == 0.5_f64) }));
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0.25_f64));
+        let p: Value<std_bernoulli_distribution_param_type> = Rc::new(RefCell::new(
+            std_bernoulli_distribution_param_type::new_1({ 0.25_f64 }),
+        ));
+        assert!(({ (({ (*p.borrow()).p() }) == 0.25_f64) }));
     }
     return 0;
 }

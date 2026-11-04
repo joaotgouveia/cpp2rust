@@ -28,18 +28,33 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: bool = unimplemented!();
+        let c: Value<std_codecvt_utf16_wchar_t__1114111__0_> = Rc::new(RefCell::new(
+            <std_codecvt_utf16_wchar_t__1114111__0_>::default(),
+        ));
+        let mut r: bool = ({
+            ((*c.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_)
+                .always_noconv()
+        });
         assert!(((r as i32) == (false as i32)));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: bool = unimplemented!();
+        let c: Value<std_codecvt_utf16_char16_t__1114111__0_> = Rc::new(RefCell::new(
+            <std_codecvt_utf16_char16_t__1114111__0_>::default(),
+        ));
+        let mut r: bool = ({
+            ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                .always_noconv()
+        });
         assert!(((r as i32) == (false as i32)));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: bool = unimplemented!();
+        let c: Value<std_codecvt_utf16_char32_t__1114111__0_> = Rc::new(RefCell::new(
+            <std_codecvt_utf16_char32_t__1114111__0_>::default(),
+        ));
+        let mut r: bool = ({
+            ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                .always_noconv()
+        });
         assert!(((r as i32) == (false as i32)));
     }
     return 0;

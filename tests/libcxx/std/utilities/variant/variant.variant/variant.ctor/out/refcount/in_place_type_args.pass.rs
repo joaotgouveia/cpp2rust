@@ -6,43 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_convertible_imp_0(mut _a0: i64) -> bool {
-    return false;
-}
-pub fn test_convertible_imp_1(mut _a0: i64) -> bool {
-    return false;
-}
-pub fn test_convertible_imp_2(mut _a0: i64) -> bool {
-    return false;
-}
-pub fn test_convertible_imp_3(mut _a0: i64) -> bool {
-    return false;
-}
-pub fn test_convertible_imp_4(mut _a0: i64) -> bool {
-    return false;
-}
-pub fn test_convertible_imp_5(mut _a0: i64) -> bool {
-    return false;
-}
-pub fn test_convertible_6() -> bool {
-    return ({ test_convertible_imp_0(0_i64) });
-}
-pub fn test_convertible_7() -> bool {
-    return ({ test_convertible_imp_1(0_i64) });
-}
-pub fn test_convertible_8() -> bool {
-    return ({ test_convertible_imp_2(0_i64) });
-}
-pub fn test_convertible_9() -> bool {
-    return ({ test_convertible_imp_3(0_i64) });
-}
-pub fn test_convertible_10() -> bool {
-    return ({ test_convertible_imp_4(0_i64) });
-}
-pub fn test_convertible_11() -> bool {
-    return ({ test_convertible_imp_5(0_i64) });
-}
-pub fn test_ctor_sfinae_12() {
+pub fn test_ctor_sfinae_0() {
     {
         const _: () = assert!(
             true,
@@ -104,39 +68,72 @@ pub fn test_ctor_sfinae_12() {
         );;
     }
 }
-pub fn test_ctor_basic_13() {
+pub fn test_ctor_basic_1() {
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(42));
+            std_variant_int_::new_1(
+                { (*in_place_type_2.with(Value::clone).borrow()).clone() },
+                { __tmp_0.as_pointer() },
+            )
+        }));
         const _: () = assert!(true, "v.index() == 0");;
         const _: () = assert!(true, "std::get<0>(v) == 42");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__long_> = Rc::new(RefCell::new({
+            let __tmp_1: Value<i32> = Rc::new(RefCell::new(42));
+            std_variant_int__long_::new_1(
+                { (*in_place_type_3.with(Value::clone).borrow()).clone() },
+                { __tmp_1.as_pointer() },
+            )
+        }));
         const _: () = assert!(true, "v.index() == 1");;
         const _: () = assert!(true, "std::get<1>(v) == 42");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__const_int__long_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<i32> = Rc::new(RefCell::new(42));
+            std_variant_int__const_int__long_::new_1(
+                { (*in_place_type_4.with(Value::clone).borrow()).clone() },
+                { __tmp_2.as_pointer() },
+            )
+        }));
         const _: () = assert!(true, "v.index() == 1");;
         const _: () = assert!(true, "std::get<1>(v) == 42");;
     }
     {
-        let mut x: i32 = 42;
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_usize));
-        assert!(((unimplemented!().read()) == x));
+        let x: Value<i32> = Rc::new(RefCell::new(42));
+        let v: Value<std_variant_const_int__volatile_int__int_> = Rc::new(RefCell::new(
+            std_variant_const_int__volatile_int__int_::new_1(
+                { (*in_place_type_4.with(Value::clone).borrow()).clone() },
+                { x.as_pointer() },
+            ),
+        ));
+        assert!(({ (({ (*v.borrow()).index() }) == 0_usize) }));
+        assert!(({ ((({ get_5(v.as_pointer(),) }).read()) == (*x.borrow())) }));
     }
     {
-        let mut x: i32 = 42;
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 1_usize));
-        assert!(((unimplemented!().read()) == x));
+        let x: Value<i32> = Rc::new(RefCell::new(42));
+        let v: Value<std_variant_const_int__volatile_int__int_> = Rc::new(RefCell::new(
+            std_variant_const_int__volatile_int__int_::new_2(
+                { (*in_place_type_6.with(Value::clone).borrow()).clone() },
+                { x.as_pointer() },
+            ),
+        ));
+        assert!(({ (({ (*v.borrow()).index() }) == 1_usize) }));
+        assert!(({ ((({ get_7(v.as_pointer(),) }).read()) == (*x.borrow())) }));
     }
     {
-        let mut x: i32 = 42;
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 2_usize));
-        assert!(((unimplemented!().read()) == x));
+        let x: Value<i32> = Rc::new(RefCell::new(42));
+        let v: Value<std_variant_const_int__volatile_int__int_> = Rc::new(RefCell::new(
+            std_variant_const_int__volatile_int__int_::new_3(
+                { (*in_place_type_2.with(Value::clone).borrow()).clone() },
+                { x.as_pointer() },
+            ),
+        ));
+        assert!(({ (({ (*v.borrow()).index() }) == 2_usize) }));
+        assert!(({ ((({ get_8(v.as_pointer(),) }).read()) == (*x.borrow())) }));
     }
 }
 pub fn main() {
@@ -159,8 +156,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_ctor_basic_13() });
-    ({ test_ctor_sfinae_12() });
+    ({ test_ctor_basic_1() });
+    ({ test_ctor_sfinae_0() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

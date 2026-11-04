@@ -57,6 +57,11 @@ impl Clone for Tracked {
         Tracked::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Tracked {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn chosen_overload_0(_a0: Ptr<Tracked>) -> Overload {
     return Overload_kLvalueOverload;
 }

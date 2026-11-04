@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -43,6 +48,11 @@ pub struct min_pointer_bool__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<bool>,
 }
 impl min_pointer_bool__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_bool__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -51,6 +61,11 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
@@ -63,9 +78,19 @@ impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
         Self { ptr_: (p).clone() }
     }
 }
+impl CppMove for min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_bool_ {}
+impl CppMove for min_allocator_bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl min_allocator_unsigned_long_ {
     pub fn new_1(mut _a0: min_allocator_bool_) -> Self {
         Self {}
@@ -75,16 +100,21 @@ impl min_allocator_unsigned_long_ {
 #[cpp_from(min_allocator_bool_, new_1, value)]
 #[byte_size(1)]
 pub struct min_allocator_unsigned_long_ {}
+impl CppMove for min_allocator_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl min_allocator_unsigned_long_ {}
 pub fn tests_4() -> bool {
     {
         let v: Value<Vec<bool>> = Rc::new(RefCell::new(vec![false; 100_usize]));
         unimplemented!();
-        assert!(((&(*v.borrow())).len() == 50_usize));
+        assert!(({ ((&(*v.borrow())).len() == 50_usize) }));
         assert!((unimplemented!() >= 100_usize));
         assert!(unimplemented!());
         unimplemented!();
-        assert!(((&(*v.borrow())).len() == 200_usize));
+        assert!(({ ((&(*v.borrow())).len() == 200_usize) }));
         assert!((unimplemented!() >= 200_usize));
         let mut i: u32 = 0_u32;
         'loop_: while (i < 50_u32) {
@@ -100,11 +130,11 @@ pub fn tests_4() -> bool {
     {
         let v: Value<Vec<bool>> = Rc::new(RefCell::new(vec![false; 100_usize]));
         unimplemented!();
-        assert!(((&(*v.borrow())).len() == 50_usize));
+        assert!(({ ((&(*v.borrow())).len() == 50_usize) }));
         assert!((unimplemented!() >= 100_usize));
         assert!((unimplemented!()));
         unimplemented!();
-        assert!(((&(*v.borrow())).len() == 200_usize));
+        assert!(({ ((&(*v.borrow())).len() == 200_usize) }));
         assert!((unimplemented!() >= 200_usize));
         let mut i: u32 = 0_u32;
         'loop_: while (i < 50_u32) {

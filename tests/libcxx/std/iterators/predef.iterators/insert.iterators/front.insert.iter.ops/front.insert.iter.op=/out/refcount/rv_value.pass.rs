@@ -15,6 +15,11 @@ pub struct ConstexprFixedCapacityDeque_int__10_ {
     #[offset(40)]
     size_: i32,
 }
+impl CppMove for ConstexprFixedCapacityDeque_int__10_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for ConstexprFixedCapacityDeque_int__10_ {
     fn default() -> Self {
         {
@@ -25,17 +30,15 @@ impl Default for ConstexprFixedCapacityDeque_int__10_ {
         }
     }
 }
-pub fn test_0(c: ()) -> bool {
-    let c: Value<()> = Rc::new(RefCell::new(c));
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(unimplemented!());
-    return true;
-}
 pub fn test_1(c: ConstexprFixedCapacityDeque_int__10_) -> bool {
     let c: Value<ConstexprFixedCapacityDeque_int__10_> = Rc::new(RefCell::new(c));
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let i: Value<std_front_insert_iterator_ConstexprFixedCapacityDeque_int__10__> =
+        Rc::new(RefCell::new(
+            std_front_insert_iterator_ConstexprFixedCapacityDeque_int__10__::new({
+                c.as_pointer()
+            }),
+        ));
+    (*i.borrow_mut()) = 0_i32;
     assert!(
         ((({ ConstexprFixedCapacityDeque_int__10_Impl::front(&c.as_pointer(),) }).read()) == 0_i32)
     );
@@ -61,7 +64,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_0(unimplemented!()) });
+    ({
+        test_2 ( <std_list_std_unique_ptr_int__std_default_delete_int____std_allocator_std_unique_ptr_int__std_default_delete_int____  >::default()  , )
+    });
     ({ test_1(<ConstexprFixedCapacityDeque_int__10_>::default()) });
     const _: () = assert!(true, "test(ConstexprFixedCapacityDeque<int, 10>())");;
     return 0;
@@ -102,7 +107,16 @@ impl ConstexprFixedCapacityDeque_int__10_Impl for Ptr<ConstexprFixedCapacityDequ
         let mut i: i32 =
             ((((pos).clone() - (array_field_ptr!((*self), data_) as Ptr<i32>)) as i64) as i32);
         if (i != (*self).with(|__s| __s.size_)) {
-            unimplemented!();
+            ({
+                let ___first: Ptr<i32> =
+                    (array_field_ptr!((*self), data_) as Ptr<i32>).offset((i) as isize);
+                let ___last: Ptr<i32> = (array_field_ptr!((*self), data_) as Ptr<i32>)
+                    .offset(((*self).with(|__s| __s.size_)) as isize);
+                let ___result: Ptr<i32> = (array_field_ptr!((*self), data_) as Ptr<i32>)
+                    .offset(((*self).with(|__s| __s.size_)) as isize)
+                    .offset((1) as isize);
+                move_backward_0(___first, ___last, ___result)
+            });
         }
         array_elem!((*self), data_, i).write(t);
         {

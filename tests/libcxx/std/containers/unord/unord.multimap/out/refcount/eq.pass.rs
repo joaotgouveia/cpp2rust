@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -44,6 +49,7 @@ pub struct min_pointer_std_pair_const_int__std_basic_string_char__std_char_trait
     ptr_: Ptr<(Value<i32>, Value<Vec<i8>>)>,
 }
 impl min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__ { }
+impl CppMove for min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -52,6 +58,11 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
@@ -60,6 +71,11 @@ pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<i32>,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__
@@ -69,10 +85,12 @@ pub struct min_pointer_std_basic_string_char__std_char_traits_char___std_allocat
     ptr_: Ptr<Vec<i8>>,
 }
 impl min_pointer_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__ { }
+impl CppMove for min_pointer_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____
 {}
+impl CppMove for min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn testEquality_4(t1: Ptr<()>, t2: Ptr<()>, mut isEqual: bool) -> bool {
     if isEqual {
         if !(unimplemented!()) {
@@ -191,15 +209,20 @@ impl CppEq for LessAndEqComp {
         operator_eq_8(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for LessAndEqComp {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_cmp_9(mut _a0: StrongOrder, mut _a1: StrongOrder) -> std::cmp::Ordering {
     {
         let cmp: Value<std::cmp::Ordering> =
             Rc::new(RefCell::new(std::cmp::Ord::cmp(&(_a0.value), &(_a1.value))));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(i32, new, value)]
@@ -221,6 +244,11 @@ impl CppLess for StrongOrder {
 impl CppEq for StrongOrder {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_cmp_9(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
+    }
+}
+impl CppMove for StrongOrder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_cmp_10(mut _a0: WeakOrder, mut _a1: WeakOrder) -> () {
@@ -252,6 +280,11 @@ impl CppLess for WeakOrder {
 impl CppEq for WeakOrder {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_cmp_10(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
+    }
+}
+impl CppMove for WeakOrder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_cmp_11(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
@@ -288,9 +321,19 @@ impl CppEq for PartialOrder {
         operator_eq_12(__lhs.read(), __rhs.read())
     }
 }
+impl CppMove for PartialOrder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NonComparable {}
+impl CppMove for NonComparable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(!(false), "!std::equality_comparable<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorEqual<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorGreaterThan<NonComparable>");
@@ -319,6 +362,11 @@ impl CppEq for EqualityComparable {
         operator_eq_13(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for EqualityComparable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::equality_comparable<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorEqual<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorNotEqual<EqualityComparable>");
@@ -334,11 +382,11 @@ pub fn operator_cmp_15(
             &(_a0.with(|__s| __s.value_)),
             &(_a1.with(|__s| __s.value_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(i32, new, value)]
@@ -362,6 +410,11 @@ impl CppEq for ThreeWayComparable {
         operator_eq_14(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for ThreeWayComparable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::equality_comparable<ThreeWayComparable>");
 const _: () = assert!(true, "std::three_way_comparable<ThreeWayComparable>");
 const _: () = assert!(true, "HasOperatorEqual<ThreeWayComparable>");
@@ -377,11 +430,21 @@ pub struct ImplicitBool_E1 {
     #[offset(0)]
     pub x: i32,
 }
+impl CppMove for ImplicitBool_E1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct ImplicitBool_E2 {
     #[offset(0)]
     pub y: i32,
+}
+impl CppMove for ImplicitBool_E2 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(bool, to_bool_1)]
@@ -389,6 +452,11 @@ pub struct ImplicitBool_E2 {
 pub struct ImplicitBool {
     #[offset(0)]
     pub val: bool,
+}
+impl CppMove for ImplicitBool {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn operator_eq_16(mut lhs: ImplicitBool_E1, mut rhs: ImplicitBool_E2) -> ImplicitBool {
     return ImplicitBool {

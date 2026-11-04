@@ -36,11 +36,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new(5)),
             Rc::new(RefCell::new(6_i16)),
         )));
-        unimplemented!();
-        assert!(((*(*p1.borrow()).0.borrow()) == 5));
-        assert!((((*(*p1.borrow()).1.borrow()) as i32) == 6));
-        assert!(((*(*p2.borrow()).0.borrow()) == 3));
-        assert!((((*(*p2.borrow()).1.borrow()) as i32) == 4));
+        cpp_swap!(p1.as_pointer(), p2.as_pointer());
+        assert!(({ ((*(*p1.borrow()).0.borrow()) == 5) }));
+        assert!(({ (((*(*p1.borrow()).1.borrow()) as i32) == 6) }));
+        assert!(({ ((*(*p2.borrow()).0.borrow()) == 3) }));
+        assert!(({ (((*(*p2.borrow()).1.borrow()) as i32) == 4) }));
     }
     return 0;
 }

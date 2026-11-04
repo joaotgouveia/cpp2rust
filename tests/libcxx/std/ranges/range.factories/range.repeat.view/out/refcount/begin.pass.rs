@@ -8,24 +8,48 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     {
-        let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!().read()) == 0));
+        let rv: Value<std_ranges_repeat_view_int__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<i32> = Rc::new(RefCell::new(0));
+                std_ranges_repeat_view_int__std_unreachable_sentinel_t_::new_1(
+                    { __tmp_0.as_pointer() },
+                    None,
+                )
+            }));
+        let iter: Value<std_ranges_repeat_view_int___Iterator> =
+            Rc::new(RefCell::new(({ (*rv.borrow()).begin() })));
+        assert!(({ (((*iter.borrow()).iter_deref().read()) == 0) }));
     }
     {
-        let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!().read()) == 0));
+        let rv: Value<std_ranges_repeat_view_int__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new({
+                let __tmp_1: Value<i32> = Rc::new(RefCell::new(0));
+                std_ranges_repeat_view_int__std_unreachable_sentinel_t_::new_1(
+                    { __tmp_1.as_pointer() },
+                    None,
+                )
+            }));
+        let iter: Value<std_ranges_repeat_view_int___Iterator> =
+            Rc::new(RefCell::new(({ (*rv.borrow()).begin() })));
+        assert!(({ (((*iter.borrow()).iter_deref().read()) == 0) }));
     }
     {
-        let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!().read()) == 1024));
+        let rv: Value<std_ranges_repeat_view_int__int_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<i32> = Rc::new(RefCell::new(1024));
+            std_ranges_repeat_view_int__int_::new_1({ __tmp_2.as_pointer() }, { 10 })
+        }));
+        let iter: Value<std_ranges_repeat_view_int__int___Iterator> =
+            Rc::new(RefCell::new(({ (*rv.borrow()).begin() })));
+        assert!(({ (((*iter.borrow()).iter_deref().read()) == 1024) }));
     }
     {
-        let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!().read()) == 1024));
+        let rv: Value<std_ranges_repeat_view_int__long_long_> = Rc::new(RefCell::new({
+            let __tmp_3: Value<i32> = Rc::new(RefCell::new(1024));
+            std_ranges_repeat_view_int__long_long_::new_1({ __tmp_3.as_pointer() }, { 10_i64 })
+        }));
+        let iter: Value<std_ranges_repeat_view_int__long_long___Iterator> =
+            Rc::new(RefCell::new(({ (*rv.borrow()).begin() })));
+        assert!(({ (((*iter.borrow()).iter_deref().read()) == 1024) }));
     }
     return true;
 }

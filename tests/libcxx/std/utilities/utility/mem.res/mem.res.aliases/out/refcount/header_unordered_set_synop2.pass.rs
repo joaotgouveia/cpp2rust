@@ -28,8 +28,8 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ms: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s : Value<std_unordered_set_int__std_hash_int___std_equal_to_int___std_pmr_polymorphic_allocator_int__ > = Rc::new(RefCell::new(<std_unordered_set_int__std_hash_int___std_equal_to_int___std_pmr_polymorphic_allocator_int__  >::default() )) ;
+        let ms : Value<std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_pmr_polymorphic_allocator_int__ > = Rc::new(RefCell::new(<std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_pmr_polymorphic_allocator_int__  >::default() )) ;
     }
     return 0;
 }

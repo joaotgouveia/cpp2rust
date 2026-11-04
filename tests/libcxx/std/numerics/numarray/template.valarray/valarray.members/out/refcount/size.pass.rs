@@ -32,19 +32,25 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let mut N1: u32 = (((::std::mem::size_of::<[i32; 5]>() as usize)
             .wrapping_div((::std::mem::size_of::<i32>() as usize)))
             as u32);
-        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == (N1 as usize)));
+        let v1: Value<std_valarray_int_> = Rc::new(RefCell::new(std_valarray_int_::new_1(
+            { (a1.as_pointer() as Ptr<i32>) },
+            { (N1 as usize) },
+        )));
+        assert!(({ (({ (*v1.borrow()).size() }) == (N1 as usize)) }));
     }
     {
         let a1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5])));
         let mut N1: u32 = 0_u32;
-        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == (N1 as usize)));
+        let v1: Value<std_valarray_int_> = Rc::new(RefCell::new(std_valarray_int_::new_1(
+            { (a1.as_pointer() as Ptr<i32>) },
+            { (N1 as usize) },
+        )));
+        assert!(({ (({ (*v1.borrow()).size() }) == (N1 as usize)) }));
     }
     {
         let mut N1: u32 = 0_u32;
-        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == (N1 as usize)));
+        let v1: Value<std_valarray_int_> = Rc::new(RefCell::new(<std_valarray_int_>::default()));
+        assert!(({ (({ (*v1.borrow()).size() }) == (N1 as usize)) }));
     }
     return 0;
 }

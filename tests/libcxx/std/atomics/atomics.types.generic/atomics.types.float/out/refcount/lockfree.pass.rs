@@ -10,18 +10,18 @@ pub fn test_0() {
     const _: () = assert!(true, "isLockFreeNoexcept<const std::atomic<T>&>");;
     const _: () = assert!(true, "isLockFreeNoexcept<const volatile std::atomic<T>&>");;
     {
-        let mut r: bool = unimplemented!();
+        let mut r: bool = true;
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: bool = unimplemented!();
+        let a: Value<std_atomic_float_> = Rc::new(RefCell::new(<std_atomic_float_>::default()));
+        let mut r: bool = ({ ((*a.borrow()) as std___atomic_float_float_).is_lock_free_8() });
         {
             assert!((r as bool));
         }
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: bool = unimplemented!();
+        let a: Value<std_atomic_float_> = Rc::new(RefCell::new(<std_atomic_float_>::default()));
+        let mut r: bool = ({ ((*a.borrow()) as std___atomic_float_float_).is_lock_free_9() });
         {
             assert!((r as bool));
         }
@@ -31,18 +31,18 @@ pub fn test_1() {
     const _: () = assert!(true, "isLockFreeNoexcept<const std::atomic<T>&>");;
     const _: () = assert!(true, "isLockFreeNoexcept<const volatile std::atomic<T>&>");;
     {
-        let mut r: bool = unimplemented!();
+        let mut r: bool = true;
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: bool = unimplemented!();
+        let a: Value<std_atomic_double_> = Rc::new(RefCell::new(<std_atomic_double_>::default()));
+        let mut r: bool = ({ ((*a.borrow()) as std___atomic_float_double_).is_lock_free_8() });
         {
             assert!((r as bool));
         }
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: bool = unimplemented!();
+        let a: Value<std_atomic_double_> = Rc::new(RefCell::new(<std_atomic_double_>::default()));
+        let mut r: bool = ({ ((*a.borrow()) as std___atomic_float_double_).is_lock_free_9() });
         {
             assert!((r as bool));
         }

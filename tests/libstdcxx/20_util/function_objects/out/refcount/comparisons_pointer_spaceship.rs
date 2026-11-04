@@ -52,6 +52,11 @@ impl Clone for __gnu_test_object_counter {
         __gnu_test_object_counter::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_object_counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_object_counter {
     fn default() -> Self {
         { __gnu_test_object_counter::new() }
@@ -78,6 +83,11 @@ impl __gnu_test_copy_constructor {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_copy_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
@@ -99,6 +109,11 @@ impl __gnu_test_assignment_operator {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_assignment_operator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
@@ -111,6 +126,11 @@ impl __gnu_test_destructor {
     }
     pub fn reset() {
         _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
+    }
+}
+impl CppMove for __gnu_test_destructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -173,6 +193,11 @@ impl Clone for __gnu_test_copy_tracker {
         __gnu_test_copy_tracker::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_copy_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_copy_tracker {
     fn default() -> Self {
         { __gnu_test_copy_tracker::new(None, None) }
@@ -197,6 +222,11 @@ pub struct __gnu_test_semaphore {
     pid_: (),
 }
 impl __gnu_test_semaphore {}
+impl CppMove for __gnu_test_semaphore {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static arr_9: Value<Box<[i8]>> =
         Rc::new(RefCell::new(i8::array_from_literal(b"efgh\0abcd\0ijkl\0")));
@@ -223,6 +253,11 @@ pub struct CStrNone {
     #[byte_size(8)]
     pub str: Ptr<i8>,
 }
+impl CppMove for CStrNone {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct CStrMem_ReturnOrd_std_strong_ordering__ {
@@ -240,6 +275,11 @@ impl CppEq for CStrMem_ReturnOrd_std_strong_ordering__ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         CStrMem_ReturnOrd_std_strong_ordering__Impl::operator_cmp_2(__lhs, __rhs.clone())
             == std::cmp::Ordering::Equal
+    }
+}
+impl CppMove for CStrMem_ReturnOrd_std_strong_ordering__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -261,6 +301,11 @@ impl CppEq for CStrMem_ReturnOrd_std_weak_ordering__ {
             == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for CStrMem_ReturnOrd_std_weak_ordering__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct CStrMem_ReturnOrd_std_partial_ordering__ {
@@ -280,12 +325,22 @@ impl CppEq for CStrMem_ReturnOrd_std_partial_ordering__ {
             == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for CStrMem_ReturnOrd_std_partial_ordering__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct CStrMem_ReturnInt_ {
     #[offset(0)]
     #[byte_size(8)]
     pub str: Ptr<i8>,
+}
+impl CppMove for CStrMem_ReturnInt_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -294,6 +349,11 @@ pub struct CStrMem_CustomOrd_ {
     #[byte_size(8)]
     pub str: Ptr<i8>,
 }
+impl CppMove for CStrMem_CustomOrd_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct CStrMem_ReturnVoid_ {
@@ -301,12 +361,22 @@ pub struct CStrMem_ReturnVoid_ {
     #[byte_size(8)]
     pub str: Ptr<i8>,
 }
+impl CppMove for CStrMem_ReturnVoid_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct CStrMem_NoOperators_ {
     #[offset(0)]
     #[byte_size(8)]
     pub str: Ptr<i8>,
+}
+impl CppMove for CStrMem_NoOperators_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn operator_cmp_13(
     mut lhs: CStrFriend_ReturnOrd_std_strong_ordering__,
@@ -367,6 +437,11 @@ impl CppEq for CStrFriend_ReturnOrd_std_strong_ordering__ {
         operator_cmp_13(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for CStrFriend_ReturnOrd_std_strong_ordering__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_cmp_15(
     mut lhs: CStrFriend_ReturnOrd_std_weak_ordering__,
     mut rhs: CStrFriend_ReturnOrd_std_weak_ordering__,
@@ -421,6 +496,11 @@ impl CppLess for CStrFriend_ReturnOrd_std_weak_ordering__ {
 impl CppEq for CStrFriend_ReturnOrd_std_weak_ordering__ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_cmp_15(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
+    }
+}
+impl CppMove for CStrFriend_ReturnOrd_std_weak_ordering__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_cmp_17(
@@ -482,6 +562,11 @@ impl CppEq for CStrFriend_ReturnOrd_std_partial_ordering__ {
         operator_cmp_17(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for CStrFriend_ReturnOrd_std_partial_ordering__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_cmp_19(mut lhs: CStrFriend_ReturnInt_, mut rhs: CStrFriend_ReturnInt_) -> i32 {
     return ({
         ReturnInt::create({
@@ -524,6 +609,11 @@ pub struct CStrFriend_ReturnInt_ {
     #[offset(0)]
     #[byte_size(8)]
     pub str: Ptr<i8>,
+}
+impl CppMove for CStrFriend_ReturnInt_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn operator_cmp_21(
     mut lhs: CStrFriend_CustomOrd_,
@@ -571,6 +661,11 @@ pub struct CStrFriend_CustomOrd_ {
     #[byte_size(8)]
     pub str: Ptr<i8>,
 }
+impl CppMove for CStrFriend_CustomOrd_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_cmp_23(mut lhs: CStrFriend_ReturnVoid_, mut rhs: CStrFriend_ReturnVoid_) {
     ({
         ReturnVoid::create({
@@ -615,6 +710,11 @@ pub struct CStrFriend_ReturnVoid_ {
     #[offset(0)]
     #[byte_size(8)]
     pub str: Ptr<i8>,
+}
+impl CppMove for CStrFriend_ReturnVoid_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn operator_cmp_25(
     mut lhs: CStrFriend_NoOperators_,
@@ -662,6 +762,11 @@ pub struct CStrFriend_NoOperators_ {
     #[byte_size(8)]
     pub str: Ptr<i8>,
 }
+impl CppMove for CStrFriend_NoOperators_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct CStrFree_ReturnOrd_std_strong_ordering__ {
@@ -677,6 +782,11 @@ impl CppLess for CStrFree_ReturnOrd_std_strong_ordering__ {
 impl CppEq for CStrFree_ReturnOrd_std_strong_ordering__ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_cmp_27(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
+    }
+}
+impl CppMove for CStrFree_ReturnOrd_std_strong_ordering__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -696,6 +806,11 @@ impl CppEq for CStrFree_ReturnOrd_std_weak_ordering__ {
         operator_cmp_28(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for CStrFree_ReturnOrd_std_weak_ordering__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct CStrFree_ReturnOrd_std_partial_ordering__ {
@@ -713,12 +828,22 @@ impl CppEq for CStrFree_ReturnOrd_std_partial_ordering__ {
         operator_cmp_29(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for CStrFree_ReturnOrd_std_partial_ordering__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct CStrFree_ReturnInt_ {
     #[offset(0)]
     #[byte_size(8)]
     pub str: Ptr<i8>,
+}
+impl CppMove for CStrFree_ReturnInt_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -727,6 +852,11 @@ pub struct CStrFree_CustomOrd_ {
     #[byte_size(8)]
     pub str: Ptr<i8>,
 }
+impl CppMove for CStrFree_CustomOrd_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct CStrFree_ReturnVoid_ {
@@ -734,12 +864,22 @@ pub struct CStrFree_ReturnVoid_ {
     #[byte_size(8)]
     pub str: Ptr<i8>,
 }
+impl CppMove for CStrFree_ReturnVoid_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct CStrFree_NoOperators_ {
     #[offset(0)]
     #[byte_size(8)]
     pub str: Ptr<i8>,
+}
+impl CppMove for CStrFree_NoOperators_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn operator_cmp_27(
     mut lhs: CStrFree_ReturnOrd_std_strong_ordering__,
@@ -1027,6 +1167,11 @@ impl CppEq for CStrMixed_ReturnOrd_std_strong_ordering__ {
         operator_cmp_41(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for CStrMixed_ReturnOrd_std_strong_ordering__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct CStrMixed_ReturnOrd_std_weak_ordering__ {
@@ -1042,6 +1187,11 @@ impl CppLess for CStrMixed_ReturnOrd_std_weak_ordering__ {
 impl CppEq for CStrMixed_ReturnOrd_std_weak_ordering__ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_cmp_42(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
+    }
+}
+impl CppMove for CStrMixed_ReturnOrd_std_weak_ordering__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -1061,12 +1211,22 @@ impl CppEq for CStrMixed_ReturnOrd_std_partial_ordering__ {
         operator_cmp_43(__lhs.read(), __rhs.read()) == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for CStrMixed_ReturnOrd_std_partial_ordering__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct CStrMixed_ReturnInt_ {
     #[offset(0)]
     #[byte_size(8)]
     pub str: Ptr<i8>,
+}
+impl CppMove for CStrMixed_ReturnInt_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -1075,6 +1235,11 @@ pub struct CStrMixed_CustomOrd_ {
     #[byte_size(8)]
     pub str: Ptr<i8>,
 }
+impl CppMove for CStrMixed_CustomOrd_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct CStrMixed_ReturnVoid_ {
@@ -1082,12 +1247,22 @@ pub struct CStrMixed_ReturnVoid_ {
     #[byte_size(8)]
     pub str: Ptr<i8>,
 }
+impl CppMove for CStrMixed_ReturnVoid_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct CStrMixed_NoOperators_ {
     #[offset(0)]
     #[byte_size(8)]
     pub str: Ptr<i8>,
+}
+impl CppMove for CStrMixed_NoOperators_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn operator_cmp_41(
     mut lhs: CStrMixed_ReturnOrd_std_strong_ordering__,
@@ -1333,12 +1508,22 @@ pub struct ReturnVoid {}
 impl ReturnVoid {
     pub fn create(mut _a0: i32) {}
 }
+impl CppMove for ReturnVoid {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoOperators {}
 impl NoOperators {
     pub fn create(mut _a0: i32) -> NoOperators {
         return <NoOperators>::default();
+    }
+}
+impl CppMove for NoOperators {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -1349,12 +1534,22 @@ impl ReturnOrd_std_strong_ordering_ {
         return std::cmp::Ord::cmp(&(cmp), &(0));
     }
 }
+impl CppMove for ReturnOrd_std_strong_ordering_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnOrd_std_weak_ordering_ {}
 impl ReturnOrd_std_weak_ordering_ {
     pub fn create(mut cmp: i32) -> () {
         return unimplemented!();
+    }
+}
+impl CppMove for ReturnOrd_std_weak_ordering_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -1365,6 +1560,11 @@ impl ReturnOrd_std_partial_ordering_ {
         return unimplemented!();
     }
 }
+impl CppMove for ReturnOrd_std_partial_ordering_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnInt {}
@@ -1372,6 +1572,11 @@ impl ReturnInt {
     pub fn create(cmp: i32) -> i32 {
         let cmp: Value<i32> = Rc::new(RefCell::new(cmp));
         return (*cmp.borrow());
+    }
+}
+impl CppMove for ReturnInt {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_lt_53(mut c: CustomOrd, mut _a1: AnyPtr) -> bool {
@@ -1416,6 +1621,11 @@ impl CustomOrd {
     }
     pub fn new_1(mut cmp: i32) -> Self {
         Self { v: cmp }
+    }
+}
+impl CppMove for CustomOrd {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for CustomOrd {
@@ -16356,22 +16566,36 @@ pub fn run_tests_wrapped_env_221(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !(libc::setenv(env, name, 1) != 0) {
+    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+        true => {
+            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
+            0
+        }
+        false => 0,
+    } != 0)
+    {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: i32 = 0;
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        libc::setenv(
-            env,
+        match ({
             if !(oldENV).is_null() {
                 (oldENV).clone()
             } else {
                 Ptr::<i8>::from_string_literal(b"")
+            }
+        },)
+        {
+            (mut __tmp_0,) => match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+                true => {
+                    unsafe { ::std::env::set_var(env.to_rust_string(), __tmp_0.to_rust_string()) };
+                    0
+                }
+                false => 0,
             },
-            1,
-        );
+        };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = env.to_c_bytes();
@@ -16420,6 +16644,11 @@ impl __gnu_test_semun {
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<u16>> {
         this.reinterpret_cast()
+    }
+}
+impl CppMove for __gnu_test_semun {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for __gnu_test_semun {
@@ -16977,7 +17206,9 @@ impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
     }
     fn push_back(&self, mut test: FnPtr<fn()>) {
         array_elem!((*self), _M_tests, (*self).with(|__s| __s._M_size)).write((test).clone());
-        field!((*self), _M_size).with_mut(|__v| __v.prefix_inc());
+        field!((*self), _M_size).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait __gnu_test_object_counterImpl {

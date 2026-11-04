@@ -67,6 +67,11 @@ impl MultiStringType {
         }
     }
 }
+impl CppMove for MultiStringType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_eprintf_0(
     mut fmt: Ptr<i8>,
     args_1: Ptr<Ptr<i8>>,
@@ -648,7 +653,7 @@ pub fn test_is_scalar_value_38(mut value: u32) -> bool {
     return ({ test_is_code_point_37(value) }) && (!({ test_is_surrogate_36(value) }));
 }
 thread_local!(
-    pub static test_replacement_character_39: Value<u32> = Rc::new(RefCell::new((65533 as u32)));
+    pub static test_replacement_character_39: Value<u32> = Rc::new(RefCell::new(65533_u32));
 );
 pub fn test_encode_40(out_it: Ptr<OstreamIterator<i8>>, mut value: u16) {
     if ((value as i32) < 128) {
@@ -2039,7 +2044,9 @@ thread_local!(
                         .collect(),
                 ));
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                assert!((({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)));
+                assert!(
+                    ({ (({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)) })
+                );
                 assert!((*result.borrow()).out == RandomAccessIterator::Vec(out.decay().to_last()));
                 assert!(unimplemented!());
             }
@@ -2053,7 +2060,9 @@ thread_local!(
                         .collect(),
                 ));
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                assert!((({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)));
+                assert!(
+                    ({ (({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)) })
+                );
                 assert!((*result.borrow()).out == RandomAccessIterator::Vec(out.decay().to_last()));
                 assert!(unimplemented!());
             }
@@ -2061,9 +2070,11 @@ thread_local!(
                 let mut n: isize = 0_isize;
                 let out: Value<Vec<i8>> = Rc::new(RefCell::new(vec![i8::default()]));
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                assert!((({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)));
+                assert!(
+                    ({ (({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)) })
+                );
                 assert!((*result.borrow()).out == RandomAccessIterator::Vec(out.decay().to_last()));
-                assert!((*out.borrow()).len() <= 1);
+                assert!(({ (*out.borrow()).len() <= 1 }));
             }
             {
                 let mut n: isize = (((unimplemented!()).wrapping_div(2_())) as isize);
@@ -2075,7 +2086,9 @@ thread_local!(
                         .collect(),
                 ));
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                assert!((({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)));
+                assert!(
+                    ({ (({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)) })
+                );
                 assert!((*result.borrow()).out == RandomAccessIterator::Vec(out.decay().to_last()));
                 assert!(unimplemented!());
             }
@@ -2093,7 +2106,9 @@ thread_local!(
                         .collect(),
                 ));
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                assert!((({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)));
+                assert!(
+                    ({ (({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)) })
+                );
                 assert!((*result.borrow()).out == RandomAccessIterator::Vec(out.decay().to_last()));
                 assert!(unimplemented!());
             }
@@ -2107,7 +2122,9 @@ thread_local!(
                         .collect(),
                 ));
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                assert!((({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)));
+                assert!(
+                    ({ (({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)) })
+                );
                 assert!((*result.borrow()).out == RandomAccessIterator::Vec(out.decay().to_last()));
                 assert!(unimplemented!());
             }
@@ -2115,9 +2132,11 @@ thread_local!(
                 let mut n: isize = 0_isize;
                 let out: Value<Vec<i32>> = Rc::new(RefCell::new(vec![i32::default()]));
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                assert!((({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)));
+                assert!(
+                    ({ (({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)) })
+                );
                 assert!((*result.borrow()).out == RandomAccessIterator::Vec(out.decay().to_last()));
-                assert!((*out.borrow()).len() <= 1);
+                assert!(({ (*out.borrow()).len() <= 1 }));
             }
             {
                 let mut n: isize = (((unimplemented!()).wrapping_div(2_())) as isize);
@@ -2129,7 +2148,9 @@ thread_local!(
                         .collect(),
                 ));
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                assert!((({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)));
+                assert!(
+                    ({ (({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)) })
+                );
                 assert!((*result.borrow()).out == RandomAccessIterator::Vec(out.decay().to_last()));
                 assert!(unimplemented!());
             }
@@ -2465,7 +2486,7 @@ pub fn test_char_60() {
             (::std::mem::size_of::<i32>() == 4_usize),
             "sizeof(CharT) == 4"
         );;
-        let mut x: i32 = 131071_i32;
+        let mut x: i32 = 131071;
         let mut y: u32 = 131071_u32;
         const _: () = assert!(true, "x == y");;
         ({
@@ -3120,7 +3141,7 @@ pub fn test_string_62() {
             (::std::mem::size_of::<i32>() == 4_usize),
             "sizeof(CharT) == 4"
         );;
-        let mut x: i32 = 131071_i32;
+        let mut x: i32 = 131071;
         let mut y: u32 = 131071_u32;
         const _: () = assert!(true, "x == y");;
         ({

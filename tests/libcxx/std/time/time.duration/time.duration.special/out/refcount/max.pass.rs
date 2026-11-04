@@ -25,6 +25,11 @@ impl CppEq for Rep {
         RepImpl::operator_eq_4(__lhs, __rhs.clone())
     }
 }
+impl CppMove for Rep {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Rep {
     fn default() -> Self {
         { Rep::new_1() }
@@ -33,39 +38,18 @@ impl Default for Rep {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NotARep {}
+impl CppMove for NotARep {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(i64, to_i64_2)]
 #[byte_size(1)]
 pub struct RepConstConvertibleLWG3050 {}
-pub fn test_0() {
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    {
-        let mut max_rep: () = (unimplemented!() as ());
-        assert!((unimplemented!() == max_rep));
-    }
-    {
-        let mut max_rep: () = (unimplemented!() as ());
-        const _: () = assert!(true, "D::max().count() == max_rep");;
-    }
-}
-pub fn test_1() {
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    {
-        let max_rep: Value<Rep> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(
-            ({
-                RepImpl::operator_eq_4(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
-                    max_rep.as_pointer(),
-                )
-            })
-        );
-    }
-    {
-        let max_rep: Value<Rep> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "D::max().count() == max_rep");;
+impl CppMove for RepConstConvertibleLWG3050 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

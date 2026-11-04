@@ -7,9 +7,6 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_typedef_0() {}
-pub fn test_typedef_1() {}
-pub fn test_typedef_2() {}
-pub fn test_typedef_3() {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -35,9 +32,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         (&(s));
     }
     {
-        ({ test_typedef_0() });
         ({ test_typedef_1() });
         ({ test_typedef_2() });
+        ({ test_typedef_0() });
         ({ test_typedef_3() });
     }
     return 0;

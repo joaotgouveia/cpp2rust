@@ -44,6 +44,11 @@ pub fn operator_bitor_2(mut LHS: CallType, mut RHS: CallType) -> CallType {
 #[cpp_into(i32, to_i32)]
 #[byte_size(1)]
 pub struct ForwardingCallObject {}
+impl CppMove for ForwardingCallObject {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static last_call_type_3: Value<CallType> = Rc::new(RefCell::new(CallType_CT_None));
 );
@@ -53,9 +58,19 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnFirst {}
+impl CppMove for ReturnFirst {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnArity {}
+impl CppMove for ReturnArity {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(i32, new, value)]
 #[byte_size(1)]
@@ -65,12 +80,22 @@ impl NonDefaultConstructible {
         Self {}
     }
 }
+impl CppMove for NonDefaultConstructible {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
 pub struct NotNoexcept {}
 impl NotNoexcept {
     pub fn new() -> Self {
         Self {}
+    }
+}
+impl CppMove for NotNoexcept {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for NotNoexcept {
@@ -97,44 +122,51 @@ pub fn test_default_ctor_noexcept_6() {
 pub fn test_default_ctor_throws_7() {}
 pub fn test_default_ctor_basic_8() {
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_usize));
-        assert!(((unimplemented!().read()) == 0));
+        let v: Value<std_variant_int_> = Rc::new(RefCell::new(<std_variant_int_>::default()));
+        assert!(({ (({ (*v.borrow()).index() }) == 0_usize) }));
+        assert!(((({ get_9(v.as_pointer(),) }).read()) == 0));
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_usize));
-        assert!(((unimplemented!().read()) == 0));
+        let v: Value<std_variant_int__long_> =
+            Rc::new(RefCell::new(<std_variant_int__long_>::default()));
+        assert!(({ (({ (*v.borrow()).index() }) == 0_usize) }));
+        assert!(((({ get_10(v.as_pointer(),) }).read()) == 0));
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_usize));
-        assert!(((unimplemented!().read()) == 0));
+        let v: Value<std_variant_int__NonDefaultConstructible_> = Rc::new(RefCell::new(
+            <std_variant_int__NonDefaultConstructible_>::default(),
+        ));
+        assert!(({ (({ (*v.borrow()).index() }) == 0_usize) }));
+        assert!(((({ get_11(v.as_pointer(),) }).read()) == 0));
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__long_> =
+            Rc::new(RefCell::new(<std_variant_int__long_>::default()));
         const _: () = assert!(true, "v.index() == 0");;
         const _: () = assert!(true, "std::get<0>(v) == 0");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__long_> =
+            Rc::new(RefCell::new(<std_variant_int__long_>::default()));
         const _: () = assert!(true, "v.index() == 0");;
         const _: () = assert!(true, "std::get<0>(v) == 0");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__NonDefaultConstructible_> = Rc::new(RefCell::new(
+            <std_variant_int__NonDefaultConstructible_>::default(),
+        ));
         const _: () = assert!(true, "v.index() == 0");;
         const _: () = assert!(true, "std::get<0>(v) == 0");;
     }
 }
-pub fn issue_86686_9() {
+pub fn issue_86686_12() {
     const _: () = assert!(true, "std::variant<std::string>{{}}.index() == 0");;
 }
-pub fn test_10() -> bool {
+pub fn test_13() -> bool {
     ({ test_default_ctor_basic_8() });
     ({ test_default_ctor_sfinae_5() });
     ({ test_default_ctor_noexcept_6() });
-    ({ issue_86686_9() });
+    ({ issue_86686_12() });
     return true;
 }
 pub fn main() {
@@ -157,7 +189,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_10() });
+    ({ test_13() });
     ({ test_default_ctor_throws_7() });
     const _: () = assert!(true, "test()");;
     return 0;

@@ -67,6 +67,11 @@ impl MultiStringType {
         }
     }
 }
+impl CppMove for MultiStringType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(40)]
 pub struct test_allocator_statistics {
@@ -90,6 +95,11 @@ pub struct test_allocator_statistics {
     pub moved: i32,
     #[offset(36)]
     pub converted: i32,
+}
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for test_allocator_statistics {
     fn default() -> Self {
@@ -118,6 +128,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_2(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -198,6 +213,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -212,6 +232,11 @@ impl Default for test_allocator_void_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -243,6 +268,11 @@ impl CppEq for SocccAllocator_char_ {
         SocccAllocator_char_Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for SocccAllocator_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for SocccAllocator_char_ {
     fn default() -> Self {
         { SocccAllocator_char_ { count_: 0_i32 } }
@@ -264,6 +294,11 @@ impl CppEq for SocccAllocator_wchar_t_ {
         SocccAllocator_wchar_t_Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for SocccAllocator_wchar_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for SocccAllocator_wchar_t_ {
     fn default() -> Self {
         { SocccAllocator_wchar_t_ { count_: 0_i32 } }
@@ -271,30 +306,56 @@ impl Default for SocccAllocator_wchar_t_ {
 }
 pub fn test_soccc_behavior_4() {
     {
-        let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut copied: Vec<i8> = unimplemented!();
-        assert!(({ unimplemented!().count_ } == 10));
-        assert!(({ unimplemented!().count_ } == 10));
-        assert!(copied.len() <= 1);
-        assert!(({ unimplemented!().count_ } == 11));
-        let mut moved: Vec<i8> = unimplemented!();
-        assert!(({ unimplemented!().count_ } == 10));
-        assert!(({ unimplemented!().count_ } == 10));
-        assert!(moved.len() <= 1);
+        let ss: Value<std_basic_ostringstream_char__std_char_traits_char___SocccAllocator_char__> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<SocccAllocator_char_> =
+                    Rc::new(RefCell::new(SocccAllocator_char_::new({ 10 })));
+                std_basic_ostringstream_char__std_char_traits_char___SocccAllocator_char__::new_1(
+                    { 16_i32 },
+                    { __tmp_0.as_pointer() },
+                )
+            }));
+        let copied: Value<Vec<i8>> = Rc::new(RefCell::new(({ (*ss.borrow()).str_16() })));
+        assert!(({ ({ (*copied.borrow()).get_allocator() }).count_ } == 10));
+        assert!(
+            ({ ({ (*({ (*ss.borrow()).rdbuf() }).upgrade().deref()).get_allocator() }).count_ }
+                == 10)
+        );
+        assert!(({ (*copied.borrow()).len() <= 1 }));
+        assert!(({ ({ (*copied.borrow()).get_allocator() }).count_ } == 11));
+        let moved: Value<Vec<i8>> = Rc::new(RefCell::new(({ (*ss.borrow()).str_18() })));
+        assert!(({ ({ (*moved.borrow()).get_allocator() }).count_ } == 10));
+        assert!(
+            ({ ({ (*({ (*ss.borrow()).rdbuf() }).upgrade().deref()).get_allocator() }).count_ }
+                == 10)
+        );
+        assert!(({ (*moved.borrow()).len() <= 1 }));
     }
 }
 pub fn test_soccc_behavior_5() {
     {
-        let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut copied: Vec<i32> = unimplemented!();
-        assert!(({ unimplemented!().count_ } == 10));
-        assert!(({ unimplemented!().count_ } == 10));
-        assert!(copied.len() <= 1);
-        assert!(({ unimplemented!().count_ } == 11));
-        let mut moved: Vec<i32> = unimplemented!();
-        assert!(({ unimplemented!().count_ } == 10));
-        assert!(({ unimplemented!().count_ } == 10));
-        assert!(moved.len() <= 1);
+        let ss: Value<
+            std_basic_ostringstream_wchar_t__std_char_traits_wchar_t___SocccAllocator_wchar_t__,
+        > = Rc::new(RefCell::new({
+            let __tmp_1: Value<SocccAllocator_wchar_t_> =
+                Rc::new(RefCell::new(SocccAllocator_wchar_t_::new({ 10 })));
+            std_basic_ostringstream_wchar_t__std_char_traits_wchar_t___SocccAllocator_wchar_t__ :: new_1 ( { 16_i32  } , { __tmp_1.as_pointer() } , )
+        }));
+        let copied: Value<Vec<i32>> = Rc::new(RefCell::new(({ (*ss.borrow()).str_16() })));
+        assert!(({ ({ (*copied.borrow()).get_allocator() }).count_ } == 10));
+        assert!(
+            ({ ({ (*({ (*ss.borrow()).rdbuf() }).upgrade().deref()).get_allocator() }).count_ }
+                == 10)
+        );
+        assert!(({ (*copied.borrow()).len() <= 1 }));
+        assert!(({ ({ (*copied.borrow()).get_allocator() }).count_ } == 11));
+        let moved: Value<Vec<i32>> = Rc::new(RefCell::new(({ (*ss.borrow()).str_18() })));
+        assert!(({ ({ (*moved.borrow()).get_allocator() }).count_ } == 10));
+        assert!(
+            ({ ({ (*({ (*ss.borrow()).rdbuf() }).upgrade().deref()).get_allocator() }).count_ }
+                == 10)
+        );
+        assert!(({ (*moved.borrow()).len() <= 1 }));
     }
 }
 pub fn test_allocation_is_pilfered_6() {
@@ -303,63 +364,135 @@ pub fn test_allocation_is_pilfered_6() {
         MultiStringTypeImpl :: as_ptr_2 ( &Rc::new(RefCell::new(MultiStringType :: new ( { Ptr::<i32 >::from_string_literal(&[97 as i32 , 32 as i32 , 118 as i32 , 101 as i32 , 114 as i32 , 121 as i32 , 32 as i32 , 108 as i32 , 111 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 115 as i32 , 116 as i32 , 114 as i32 , 105 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 116 as i32 , 104 as i32 , 97 as i32 , 116 as i32 , 32 as i32 , 101 as i32 , 120 as i32 , 99 as i32 , 101 as i32 , 101 as i32 , 100 as i32 , 115 as i32 , 32 as i32 , 116 as i32 , 104 as i32 , 101 as i32 , 32 as i32 , 115 as i32 , 109 as i32 , 97 as i32 , 108 as i32 , 108 as i32 , 32 as i32 , 115 as i32 , 116 as i32 , 114 as i32 , 105 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 111 as i32 , 112 as i32 , 116 as i32 , 105 as i32 , 109 as i32 , 105 as i32 , 122 as i32 , 97 as i32 , 116 as i32 , 105 as i32 , 111 as i32 , 110 as i32 , 32 as i32 , 98 as i32 , 117 as i32 , 102 as i32 , 102 as i32 , 101 as i32 , 114 as i32 , 32 as i32 , 108 as i32 , 101 as i32 , 110 as i32 , 103 as i32 , 116 as i32 , 104 as i32 , 0 as i32 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ i32 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<i32>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u8 >::from_string_literal(&[97 as u8 , 32 as u8 , 118 as u8 , 101 as u8 , 114 as u8 , 121 as u8 , 32 as u8 , 108 as u8 , 111 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 115 as u8 , 116 as u8 , 114 as u8 , 105 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 116 as u8 , 104 as u8 , 97 as u8 , 116 as u8 , 32 as u8 , 101 as u8 , 120 as u8 , 99 as u8 , 101 as u8 , 101 as u8 , 100 as u8 , 115 as u8 , 32 as u8 , 116 as u8 , 104 as u8 , 101 as u8 , 32 as u8 , 115 as u8 , 109 as u8 , 97 as u8 , 108 as u8 , 108 as u8 , 32 as u8 , 115 as u8 , 116 as u8 , 114 as u8 , 105 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 111 as u8 , 112 as u8 , 116 as u8 , 105 as u8 , 109 as u8 , 105 as u8 , 122 as u8 , 97 as u8 , 116 as u8 , 105 as u8 , 111 as u8 , 110 as u8 , 32 as u8 , 98 as u8 , 117 as u8 , 102 as u8 , 102 as u8 , 101 as u8 , 114 as u8 , 32 as u8 , 108 as u8 , 101 as u8 , 110 as u8 , 103 as u8 , 116 as u8 , 104 as u8 , 0 as u8 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u8 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u8>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u16 >::from_string_literal(&[97 as u16 , 32 as u16 , 118 as u16 , 101 as u16 , 114 as u16 , 121 as u16 , 32 as u16 , 108 as u16 , 111 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 115 as u16 , 116 as u16 , 114 as u16 , 105 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 116 as u16 , 104 as u16 , 97 as u16 , 116 as u16 , 32 as u16 , 101 as u16 , 120 as u16 , 99 as u16 , 101 as u16 , 101 as u16 , 100 as u16 , 115 as u16 , 32 as u16 , 116 as u16 , 104 as u16 , 101 as u16 , 32 as u16 , 115 as u16 , 109 as u16 , 97 as u16 , 108 as u16 , 108 as u16 , 32 as u16 , 115 as u16 , 116 as u16 , 114 as u16 , 105 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 111 as u16 , 112 as u16 , 116 as u16 , 105 as u16 , 109 as u16 , 105 as u16 , 122 as u16 , 97 as u16 , 116 as u16 , 105 as u16 , 111 as u16 , 110 as u16 , 32 as u16 , 98 as u16 , 117 as u16 , 102 as u16 , 102 as u16 , 101 as u16 , 114 as u16 , 32 as u16 , 108 as u16 , 101 as u16 , 110 as u16 , 103 as u16 , 116 as u16 , 104 as u16 , 0 as u16 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u16 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u16>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u32 >::from_string_literal(&[97 as u32 , 32 as u32 , 118 as u32 , 101 as u32 , 114 as u32 , 121 as u32 , 32 as u32 , 108 as u32 , 111 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 115 as u32 , 116 as u32 , 114 as u32 , 105 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 116 as u32 , 104 as u32 , 97 as u32 , 116 as u32 , 32 as u32 , 101 as u32 , 120 as u32 , 99 as u32 , 101 as u32 , 101 as u32 , 100 as u32 , 115 as u32 , 32 as u32 , 116 as u32 , 104 as u32 , 101 as u32 , 32 as u32 , 115 as u32 , 109 as u32 , 97 as u32 , 108 as u32 , 108 as u32 , 32 as u32 , 115 as u32 , 116 as u32 , 114 as u32 , 105 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 111 as u32 , 112 as u32 , 116 as u32 , 105 as u32 , 109 as u32 , 105 as u32 , 122 as u32 , 97 as u32 , 116 as u32 , 105 as u32 , 111 as u32 , 110 as u32 , 32 as u32 , 98 as u32 , 117 as u32 , 102 as u32 , 102 as u32 , 101 as u32 , 114 as u32 , 32 as u32 , 108 as u32 , 101 as u32 , 110 as u32 , 103 as u32 , 116 as u32 , 104 as u32 , 0 as u32 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u32 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u32>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<i8 >::from_string_literal(b"a very long string that exceeds the small string optimization buffer length" )  } , { ( ( ::std::mem::size_of::<[ i8 ; 76]>() as usize ) ) . wrapping_sub ( 1_usize )  } , )  )).as_pointer() , Ptr::<i8>::null()  , )
     });
     {
-        unimplemented!();
-        let mr1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () = unimplemented!();
+        ({ set_default_resource_7(({ null_memory_resource_8() })) });
+        let mr1: Value<std_pmr_monotonic_buffer_resource> =
+            Rc::new(RefCell::new(std_pmr_monotonic_buffer_resource::new_1(
+                { ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any() },
+                { ::std::mem::size_of::<[i8; 80]>() },
+                { ({ null_memory_resource_8() }) },
+            )));
+        let ss : Value<std_basic_ostringstream_char__std_char_traits_char___std_pmr_polymorphic_allocator_char__ > = Rc::new(RefCell::new({ let __tmp_2 : Value<Vec<i8  > > = Rc::new(RefCell::new({let mut __bytes = initial .to_c_bytes();
+    __bytes.push(0_i8);
+    __bytes} )); std_basic_ostringstream_char__std_char_traits_char___std_pmr_polymorphic_allocator_char__ :: new_1 ( { __tmp_2.as_pointer() } , None , )  } )) ;
+        let mut s: Vec<i8> = ({ (*ss.borrow()).str_18() });
         assert!(initial.with_c_str(|__s| s[..s.len().saturating_sub(1)] == *__s));
     }
 }
-pub fn test_allocation_is_pilfered_7() {
+pub fn test_allocation_is_pilfered_9() {
     let buf: Value<Box<[i8]>> =
         Rc::new(RefCell::new((0..320).map(|_| 0_i8).collect::<Box<[i8]>>()));
     let mut initial: Ptr<i32> = ({
         MultiStringTypeImpl :: as_ptr_3 ( &Rc::new(RefCell::new(MultiStringType :: new ( { Ptr::<i32 >::from_string_literal(&[97 as i32 , 32 as i32 , 118 as i32 , 101 as i32 , 114 as i32 , 121 as i32 , 32 as i32 , 108 as i32 , 111 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 115 as i32 , 116 as i32 , 114 as i32 , 105 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 116 as i32 , 104 as i32 , 97 as i32 , 116 as i32 , 32 as i32 , 101 as i32 , 120 as i32 , 99 as i32 , 101 as i32 , 101 as i32 , 100 as i32 , 115 as i32 , 32 as i32 , 116 as i32 , 104 as i32 , 101 as i32 , 32 as i32 , 115 as i32 , 109 as i32 , 97 as i32 , 108 as i32 , 108 as i32 , 32 as i32 , 115 as i32 , 116 as i32 , 114 as i32 , 105 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 111 as i32 , 112 as i32 , 116 as i32 , 105 as i32 , 109 as i32 , 105 as i32 , 122 as i32 , 97 as i32 , 116 as i32 , 105 as i32 , 111 as i32 , 110 as i32 , 32 as i32 , 98 as i32 , 117 as i32 , 102 as i32 , 102 as i32 , 101 as i32 , 114 as i32 , 32 as i32 , 108 as i32 , 101 as i32 , 110 as i32 , 103 as i32 , 116 as i32 , 104 as i32 , 0 as i32 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ i32 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<i32>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u8 >::from_string_literal(&[97 as u8 , 32 as u8 , 118 as u8 , 101 as u8 , 114 as u8 , 121 as u8 , 32 as u8 , 108 as u8 , 111 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 115 as u8 , 116 as u8 , 114 as u8 , 105 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 116 as u8 , 104 as u8 , 97 as u8 , 116 as u8 , 32 as u8 , 101 as u8 , 120 as u8 , 99 as u8 , 101 as u8 , 101 as u8 , 100 as u8 , 115 as u8 , 32 as u8 , 116 as u8 , 104 as u8 , 101 as u8 , 32 as u8 , 115 as u8 , 109 as u8 , 97 as u8 , 108 as u8 , 108 as u8 , 32 as u8 , 115 as u8 , 116 as u8 , 114 as u8 , 105 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 111 as u8 , 112 as u8 , 116 as u8 , 105 as u8 , 109 as u8 , 105 as u8 , 122 as u8 , 97 as u8 , 116 as u8 , 105 as u8 , 111 as u8 , 110 as u8 , 32 as u8 , 98 as u8 , 117 as u8 , 102 as u8 , 102 as u8 , 101 as u8 , 114 as u8 , 32 as u8 , 108 as u8 , 101 as u8 , 110 as u8 , 103 as u8 , 116 as u8 , 104 as u8 , 0 as u8 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u8 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u8>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u16 >::from_string_literal(&[97 as u16 , 32 as u16 , 118 as u16 , 101 as u16 , 114 as u16 , 121 as u16 , 32 as u16 , 108 as u16 , 111 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 115 as u16 , 116 as u16 , 114 as u16 , 105 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 116 as u16 , 104 as u16 , 97 as u16 , 116 as u16 , 32 as u16 , 101 as u16 , 120 as u16 , 99 as u16 , 101 as u16 , 101 as u16 , 100 as u16 , 115 as u16 , 32 as u16 , 116 as u16 , 104 as u16 , 101 as u16 , 32 as u16 , 115 as u16 , 109 as u16 , 97 as u16 , 108 as u16 , 108 as u16 , 32 as u16 , 115 as u16 , 116 as u16 , 114 as u16 , 105 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 111 as u16 , 112 as u16 , 116 as u16 , 105 as u16 , 109 as u16 , 105 as u16 , 122 as u16 , 97 as u16 , 116 as u16 , 105 as u16 , 111 as u16 , 110 as u16 , 32 as u16 , 98 as u16 , 117 as u16 , 102 as u16 , 102 as u16 , 101 as u16 , 114 as u16 , 32 as u16 , 108 as u16 , 101 as u16 , 110 as u16 , 103 as u16 , 116 as u16 , 104 as u16 , 0 as u16 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u16 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u16>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u32 >::from_string_literal(&[97 as u32 , 32 as u32 , 118 as u32 , 101 as u32 , 114 as u32 , 121 as u32 , 32 as u32 , 108 as u32 , 111 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 115 as u32 , 116 as u32 , 114 as u32 , 105 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 116 as u32 , 104 as u32 , 97 as u32 , 116 as u32 , 32 as u32 , 101 as u32 , 120 as u32 , 99 as u32 , 101 as u32 , 101 as u32 , 100 as u32 , 115 as u32 , 32 as u32 , 116 as u32 , 104 as u32 , 101 as u32 , 32 as u32 , 115 as u32 , 109 as u32 , 97 as u32 , 108 as u32 , 108 as u32 , 32 as u32 , 115 as u32 , 116 as u32 , 114 as u32 , 105 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 111 as u32 , 112 as u32 , 116 as u32 , 105 as u32 , 109 as u32 , 105 as u32 , 122 as u32 , 97 as u32 , 116 as u32 , 105 as u32 , 111 as u32 , 110 as u32 , 32 as u32 , 98 as u32 , 117 as u32 , 102 as u32 , 102 as u32 , 101 as u32 , 114 as u32 , 32 as u32 , 108 as u32 , 101 as u32 , 110 as u32 , 103 as u32 , 116 as u32 , 104 as u32 , 0 as u32 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u32 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u32>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<i8 >::from_string_literal(b"a very long string that exceeds the small string optimization buffer length" )  } , { ( ( ::std::mem::size_of::<[ i8 ; 76]>() as usize ) ) . wrapping_sub ( 1_usize )  } , )  )).as_pointer() , Ptr::<i32>::null()  , )
     });
     {
-        unimplemented!();
-        let mr1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () = unimplemented!();
+        ({ set_default_resource_7(({ null_memory_resource_8() })) });
+        let mr1: Value<std_pmr_monotonic_buffer_resource> =
+            Rc::new(RefCell::new(std_pmr_monotonic_buffer_resource::new_1(
+                { ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any() },
+                { ::std::mem::size_of::<[i8; 320]>() },
+                { ({ null_memory_resource_8() }) },
+            )));
+        let ss : Value<std_basic_ostringstream_wchar_t__std_char_traits_wchar_t___std_pmr_polymorphic_allocator_wchar_t__ > = Rc::new(RefCell::new({ let __tmp_3 : Value<Vec<i32  > > = Rc::new(RefCell::new({let mut __bytes = initial .to_c_bytes();
+    __bytes.push(0_i32);
+    __bytes} )); std_basic_ostringstream_wchar_t__std_char_traits_wchar_t___std_pmr_polymorphic_allocator_wchar_t__ :: new_1 ( { __tmp_3.as_pointer() } , None , )  } )) ;
+        let mut s: Vec<i32> = ({ (*ss.borrow()).str_18() });
         assert!(initial.with_c_str(|__s| s[..s.len().saturating_sub(1)] == *__s));
     }
 }
-pub fn test_no_foreign_allocations_8() {
+pub fn test_no_foreign_allocations_10() {
     let mut initial: Ptr<i8> = ({
         MultiStringTypeImpl :: as_ptr_2 ( &Rc::new(RefCell::new(MultiStringType :: new ( { Ptr::<i32 >::from_string_literal(&[97 as i32 , 32 as i32 , 118 as i32 , 101 as i32 , 114 as i32 , 121 as i32 , 32 as i32 , 108 as i32 , 111 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 115 as i32 , 116 as i32 , 114 as i32 , 105 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 116 as i32 , 104 as i32 , 97 as i32 , 116 as i32 , 32 as i32 , 101 as i32 , 120 as i32 , 99 as i32 , 101 as i32 , 101 as i32 , 100 as i32 , 115 as i32 , 32 as i32 , 116 as i32 , 104 as i32 , 101 as i32 , 32 as i32 , 115 as i32 , 109 as i32 , 97 as i32 , 108 as i32 , 108 as i32 , 32 as i32 , 115 as i32 , 116 as i32 , 114 as i32 , 105 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 111 as i32 , 112 as i32 , 116 as i32 , 105 as i32 , 109 as i32 , 105 as i32 , 122 as i32 , 97 as i32 , 116 as i32 , 105 as i32 , 111 as i32 , 110 as i32 , 32 as i32 , 98 as i32 , 117 as i32 , 102 as i32 , 102 as i32 , 101 as i32 , 114 as i32 , 32 as i32 , 108 as i32 , 101 as i32 , 110 as i32 , 103 as i32 , 116 as i32 , 104 as i32 , 0 as i32 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ i32 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<i32>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u8 >::from_string_literal(&[97 as u8 , 32 as u8 , 118 as u8 , 101 as u8 , 114 as u8 , 121 as u8 , 32 as u8 , 108 as u8 , 111 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 115 as u8 , 116 as u8 , 114 as u8 , 105 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 116 as u8 , 104 as u8 , 97 as u8 , 116 as u8 , 32 as u8 , 101 as u8 , 120 as u8 , 99 as u8 , 101 as u8 , 101 as u8 , 100 as u8 , 115 as u8 , 32 as u8 , 116 as u8 , 104 as u8 , 101 as u8 , 32 as u8 , 115 as u8 , 109 as u8 , 97 as u8 , 108 as u8 , 108 as u8 , 32 as u8 , 115 as u8 , 116 as u8 , 114 as u8 , 105 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 111 as u8 , 112 as u8 , 116 as u8 , 105 as u8 , 109 as u8 , 105 as u8 , 122 as u8 , 97 as u8 , 116 as u8 , 105 as u8 , 111 as u8 , 110 as u8 , 32 as u8 , 98 as u8 , 117 as u8 , 102 as u8 , 102 as u8 , 101 as u8 , 114 as u8 , 32 as u8 , 108 as u8 , 101 as u8 , 110 as u8 , 103 as u8 , 116 as u8 , 104 as u8 , 0 as u8 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u8 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u8>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u16 >::from_string_literal(&[97 as u16 , 32 as u16 , 118 as u16 , 101 as u16 , 114 as u16 , 121 as u16 , 32 as u16 , 108 as u16 , 111 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 115 as u16 , 116 as u16 , 114 as u16 , 105 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 116 as u16 , 104 as u16 , 97 as u16 , 116 as u16 , 32 as u16 , 101 as u16 , 120 as u16 , 99 as u16 , 101 as u16 , 101 as u16 , 100 as u16 , 115 as u16 , 32 as u16 , 116 as u16 , 104 as u16 , 101 as u16 , 32 as u16 , 115 as u16 , 109 as u16 , 97 as u16 , 108 as u16 , 108 as u16 , 32 as u16 , 115 as u16 , 116 as u16 , 114 as u16 , 105 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 111 as u16 , 112 as u16 , 116 as u16 , 105 as u16 , 109 as u16 , 105 as u16 , 122 as u16 , 97 as u16 , 116 as u16 , 105 as u16 , 111 as u16 , 110 as u16 , 32 as u16 , 98 as u16 , 117 as u16 , 102 as u16 , 102 as u16 , 101 as u16 , 114 as u16 , 32 as u16 , 108 as u16 , 101 as u16 , 110 as u16 , 103 as u16 , 116 as u16 , 104 as u16 , 0 as u16 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u16 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u16>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u32 >::from_string_literal(&[97 as u32 , 32 as u32 , 118 as u32 , 101 as u32 , 114 as u32 , 121 as u32 , 32 as u32 , 108 as u32 , 111 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 115 as u32 , 116 as u32 , 114 as u32 , 105 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 116 as u32 , 104 as u32 , 97 as u32 , 116 as u32 , 32 as u32 , 101 as u32 , 120 as u32 , 99 as u32 , 101 as u32 , 101 as u32 , 100 as u32 , 115 as u32 , 32 as u32 , 116 as u32 , 104 as u32 , 101 as u32 , 32 as u32 , 115 as u32 , 109 as u32 , 97 as u32 , 108 as u32 , 108 as u32 , 32 as u32 , 115 as u32 , 116 as u32 , 114 as u32 , 105 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 111 as u32 , 112 as u32 , 116 as u32 , 105 as u32 , 109 as u32 , 105 as u32 , 122 as u32 , 97 as u32 , 116 as u32 , 105 as u32 , 111 as u32 , 110 as u32 , 32 as u32 , 98 as u32 , 117 as u32 , 102 as u32 , 102 as u32 , 101 as u32 , 114 as u32 , 32 as u32 , 108 as u32 , 101 as u32 , 110 as u32 , 103 as u32 , 116 as u32 , 104 as u32 , 0 as u32 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u32 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u32>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<i8 >::from_string_literal(b"a very long string that exceeds the small string optimization buffer length" )  } , { ( ( ::std::mem::size_of::<[ i8 ; 76]>() as usize ) ) . wrapping_sub ( 1_usize )  } , )  )).as_pointer() , Ptr::<i8>::null()  , )
     });
     {
-        unimplemented!();
-        let mr1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == (mr1.as_pointer())));
-        let mut copied: () = unimplemented!();
-        assert!((unimplemented!() == (mr1.as_pointer())));
-        assert!((unimplemented!() == (mr1.as_pointer())));
-        assert!(initial.with_c_str(|__s| copied[..copied.len().saturating_sub(1)] == *__s));
-        let mut moved: () = unimplemented!();
-        assert!((unimplemented!() == (mr1.as_pointer())));
-        assert!((unimplemented!() == (mr1.as_pointer())));
-        assert!(initial.with_c_str(|__s| moved[..moved.len().saturating_sub(1)] == *__s));
+        ({ set_default_resource_7(({ null_memory_resource_8() })) });
+        let mr1: Value<std_pmr_monotonic_buffer_resource> =
+            Rc::new(RefCell::new(std_pmr_monotonic_buffer_resource::new_2({
+                ({ new_delete_resource_11() })
+            })));
+        let ss : Value<std_basic_ostringstream_char__std_char_traits_char___std_pmr_polymorphic_allocator_char__ > = Rc::new(RefCell::new({ let __tmp_4 : Value<Vec<i8  > > = Rc::new(RefCell::new({let mut __bytes = initial .to_c_bytes();
+    __bytes.push(0_i8);
+    __bytes} )); std_basic_ostringstream_char__std_char_traits_char___std_pmr_polymorphic_allocator_char__ :: new_1 ( { __tmp_4.as_pointer() } , None , )  } )) ;
+        assert!(
+            (({
+                ({ (*({ (*ss.borrow()).rdbuf() }).upgrade().deref()).get_allocator() }).resource()
+            }) == (mr1.as_pointer()))
+        );
+        let copied: Value<Vec<i8>> = Rc::new(RefCell::new(({ (*ss.borrow()).str_16() })));
+        assert!((({ ({ (*copied.borrow()).get_allocator() }).resource() }) == (mr1.as_pointer())));
+        assert!(
+            (({
+                ({ (*({ (*ss.borrow()).rdbuf() }).upgrade().deref()).get_allocator() }).resource()
+            }) == (mr1.as_pointer()))
+        );
+        assert!(
+            ({
+                initial.with_c_str(|__s| {
+                    (*copied.borrow())[..(*copied.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
+        );
+        let moved: Value<Vec<i8>> = Rc::new(RefCell::new(({ (*ss.borrow()).str_18() })));
+        assert!((({ ({ (*moved.borrow()).get_allocator() }).resource() }) == (mr1.as_pointer())));
+        assert!(
+            (({
+                ({ (*({ (*ss.borrow()).rdbuf() }).upgrade().deref()).get_allocator() }).resource()
+            }) == (mr1.as_pointer()))
+        );
+        assert!(
+            ({
+                initial.with_c_str(|__s| {
+                    (*moved.borrow())[..(*moved.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
+        );
     }
 }
-pub fn test_no_foreign_allocations_9() {
+pub fn test_no_foreign_allocations_12() {
     let mut initial: Ptr<i32> = ({
         MultiStringTypeImpl :: as_ptr_3 ( &Rc::new(RefCell::new(MultiStringType :: new ( { Ptr::<i32 >::from_string_literal(&[97 as i32 , 32 as i32 , 118 as i32 , 101 as i32 , 114 as i32 , 121 as i32 , 32 as i32 , 108 as i32 , 111 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 115 as i32 , 116 as i32 , 114 as i32 , 105 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 116 as i32 , 104 as i32 , 97 as i32 , 116 as i32 , 32 as i32 , 101 as i32 , 120 as i32 , 99 as i32 , 101 as i32 , 101 as i32 , 100 as i32 , 115 as i32 , 32 as i32 , 116 as i32 , 104 as i32 , 101 as i32 , 32 as i32 , 115 as i32 , 109 as i32 , 97 as i32 , 108 as i32 , 108 as i32 , 32 as i32 , 115 as i32 , 116 as i32 , 114 as i32 , 105 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 111 as i32 , 112 as i32 , 116 as i32 , 105 as i32 , 109 as i32 , 105 as i32 , 122 as i32 , 97 as i32 , 116 as i32 , 105 as i32 , 111 as i32 , 110 as i32 , 32 as i32 , 98 as i32 , 117 as i32 , 102 as i32 , 102 as i32 , 101 as i32 , 114 as i32 , 32 as i32 , 108 as i32 , 101 as i32 , 110 as i32 , 103 as i32 , 116 as i32 , 104 as i32 , 0 as i32 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ i32 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<i32>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u8 >::from_string_literal(&[97 as u8 , 32 as u8 , 118 as u8 , 101 as u8 , 114 as u8 , 121 as u8 , 32 as u8 , 108 as u8 , 111 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 115 as u8 , 116 as u8 , 114 as u8 , 105 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 116 as u8 , 104 as u8 , 97 as u8 , 116 as u8 , 32 as u8 , 101 as u8 , 120 as u8 , 99 as u8 , 101 as u8 , 101 as u8 , 100 as u8 , 115 as u8 , 32 as u8 , 116 as u8 , 104 as u8 , 101 as u8 , 32 as u8 , 115 as u8 , 109 as u8 , 97 as u8 , 108 as u8 , 108 as u8 , 32 as u8 , 115 as u8 , 116 as u8 , 114 as u8 , 105 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 111 as u8 , 112 as u8 , 116 as u8 , 105 as u8 , 109 as u8 , 105 as u8 , 122 as u8 , 97 as u8 , 116 as u8 , 105 as u8 , 111 as u8 , 110 as u8 , 32 as u8 , 98 as u8 , 117 as u8 , 102 as u8 , 102 as u8 , 101 as u8 , 114 as u8 , 32 as u8 , 108 as u8 , 101 as u8 , 110 as u8 , 103 as u8 , 116 as u8 , 104 as u8 , 0 as u8 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u8 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u8>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u16 >::from_string_literal(&[97 as u16 , 32 as u16 , 118 as u16 , 101 as u16 , 114 as u16 , 121 as u16 , 32 as u16 , 108 as u16 , 111 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 115 as u16 , 116 as u16 , 114 as u16 , 105 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 116 as u16 , 104 as u16 , 97 as u16 , 116 as u16 , 32 as u16 , 101 as u16 , 120 as u16 , 99 as u16 , 101 as u16 , 101 as u16 , 100 as u16 , 115 as u16 , 32 as u16 , 116 as u16 , 104 as u16 , 101 as u16 , 32 as u16 , 115 as u16 , 109 as u16 , 97 as u16 , 108 as u16 , 108 as u16 , 32 as u16 , 115 as u16 , 116 as u16 , 114 as u16 , 105 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 111 as u16 , 112 as u16 , 116 as u16 , 105 as u16 , 109 as u16 , 105 as u16 , 122 as u16 , 97 as u16 , 116 as u16 , 105 as u16 , 111 as u16 , 110 as u16 , 32 as u16 , 98 as u16 , 117 as u16 , 102 as u16 , 102 as u16 , 101 as u16 , 114 as u16 , 32 as u16 , 108 as u16 , 101 as u16 , 110 as u16 , 103 as u16 , 116 as u16 , 104 as u16 , 0 as u16 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u16 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u16>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u32 >::from_string_literal(&[97 as u32 , 32 as u32 , 118 as u32 , 101 as u32 , 114 as u32 , 121 as u32 , 32 as u32 , 108 as u32 , 111 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 115 as u32 , 116 as u32 , 114 as u32 , 105 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 116 as u32 , 104 as u32 , 97 as u32 , 116 as u32 , 32 as u32 , 101 as u32 , 120 as u32 , 99 as u32 , 101 as u32 , 101 as u32 , 100 as u32 , 115 as u32 , 32 as u32 , 116 as u32 , 104 as u32 , 101 as u32 , 32 as u32 , 115 as u32 , 109 as u32 , 97 as u32 , 108 as u32 , 108 as u32 , 32 as u32 , 115 as u32 , 116 as u32 , 114 as u32 , 105 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 111 as u32 , 112 as u32 , 116 as u32 , 105 as u32 , 109 as u32 , 105 as u32 , 122 as u32 , 97 as u32 , 116 as u32 , 105 as u32 , 111 as u32 , 110 as u32 , 32 as u32 , 98 as u32 , 117 as u32 , 102 as u32 , 102 as u32 , 101 as u32 , 114 as u32 , 32 as u32 , 108 as u32 , 101 as u32 , 110 as u32 , 103 as u32 , 116 as u32 , 104 as u32 , 0 as u32 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u32 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u32>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<i8 >::from_string_literal(b"a very long string that exceeds the small string optimization buffer length" )  } , { ( ( ::std::mem::size_of::<[ i8 ; 76]>() as usize ) ) . wrapping_sub ( 1_usize )  } , )  )).as_pointer() , Ptr::<i32>::null()  , )
     });
     {
-        unimplemented!();
-        let mr1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == (mr1.as_pointer())));
-        let mut copied: () = unimplemented!();
-        assert!((unimplemented!() == (mr1.as_pointer())));
-        assert!((unimplemented!() == (mr1.as_pointer())));
-        assert!(initial.with_c_str(|__s| copied[..copied.len().saturating_sub(1)] == *__s));
-        let mut moved: () = unimplemented!();
-        assert!((unimplemented!() == (mr1.as_pointer())));
-        assert!((unimplemented!() == (mr1.as_pointer())));
-        assert!(initial.with_c_str(|__s| moved[..moved.len().saturating_sub(1)] == *__s));
+        ({ set_default_resource_7(({ null_memory_resource_8() })) });
+        let mr1: Value<std_pmr_monotonic_buffer_resource> =
+            Rc::new(RefCell::new(std_pmr_monotonic_buffer_resource::new_2({
+                ({ new_delete_resource_11() })
+            })));
+        let ss : Value<std_basic_ostringstream_wchar_t__std_char_traits_wchar_t___std_pmr_polymorphic_allocator_wchar_t__ > = Rc::new(RefCell::new({ let __tmp_5 : Value<Vec<i32  > > = Rc::new(RefCell::new({let mut __bytes = initial .to_c_bytes();
+    __bytes.push(0_i32);
+    __bytes} )); std_basic_ostringstream_wchar_t__std_char_traits_wchar_t___std_pmr_polymorphic_allocator_wchar_t__ :: new_1 ( { __tmp_5.as_pointer() } , None , )  } )) ;
+        assert!(
+            (({
+                ({ (*({ (*ss.borrow()).rdbuf() }).upgrade().deref()).get_allocator() }).resource()
+            }) == (mr1.as_pointer()))
+        );
+        let copied: Value<Vec<i32>> = Rc::new(RefCell::new(({ (*ss.borrow()).str_16() })));
+        assert!((({ ({ (*copied.borrow()).get_allocator() }).resource() }) == (mr1.as_pointer())));
+        assert!(
+            (({
+                ({ (*({ (*ss.borrow()).rdbuf() }).upgrade().deref()).get_allocator() }).resource()
+            }) == (mr1.as_pointer()))
+        );
+        assert!(
+            ({
+                initial.with_c_str(|__s| {
+                    (*copied.borrow())[..(*copied.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
+        );
+        let moved: Value<Vec<i32>> = Rc::new(RefCell::new(({ (*ss.borrow()).str_18() })));
+        assert!((({ ({ (*moved.borrow()).get_allocator() }).resource() }) == (mr1.as_pointer())));
+        assert!(
+            (({
+                ({ (*({ (*ss.borrow()).rdbuf() }).upgrade().deref()).get_allocator() }).resource()
+            }) == (mr1.as_pointer()))
+        );
+        assert!(
+            ({
+                initial.with_c_str(|__s| {
+                    (*moved.borrow())[..(*moved.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
+        );
     }
 }
 pub fn main() {
@@ -384,10 +517,10 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_soccc_behavior_4() });
     ({ test_allocation_is_pilfered_6() });
-    ({ test_no_foreign_allocations_8() });
+    ({ test_no_foreign_allocations_10() });
     ({ test_soccc_behavior_5() });
-    ({ test_allocation_is_pilfered_7() });
-    ({ test_no_foreign_allocations_9() });
+    ({ test_allocation_is_pilfered_9() });
+    ({ test_no_foreign_allocations_12() });
     return 0;
 }
 pub trait MultiStringTypeImpl {
@@ -462,10 +595,10 @@ pub trait SocccAllocator_char_Impl {
 }
 impl SocccAllocator_char_Impl for Ptr<SocccAllocator_char_> {
     fn allocate(&self, mut n: usize) -> Ptr<i8> {
-        return unimplemented!();
+        return ({ <std_allocator_char_>::default().allocate(n) });
     }
     fn deallocate(&self, mut p: Ptr<i8>, mut n: usize) {
-        unimplemented!();
+        ({ <std_allocator_char_>::default().deallocate((p).clone(), n) });
     }
     fn select_on_container_copy_construction(&self) -> SocccAllocator_char_ {
         return SocccAllocator_char_::new({ ((*self).with(|__s| __s.count_) + 1) });
@@ -482,10 +615,10 @@ pub trait SocccAllocator_wchar_t_Impl {
 }
 impl SocccAllocator_wchar_t_Impl for Ptr<SocccAllocator_wchar_t_> {
     fn allocate(&self, mut n: usize) -> Ptr<i32> {
-        return unimplemented!();
+        return ({ <std_allocator_wchar_t_>::default().allocate(n) });
     }
     fn deallocate(&self, mut p: Ptr<i32>, mut n: usize) {
-        unimplemented!();
+        ({ <std_allocator_wchar_t_>::default().deallocate((p).clone(), n) });
     }
     fn select_on_container_copy_construction(&self) -> SocccAllocator_wchar_t_ {
         return SocccAllocator_wchar_t_::new({ ((*self).with(|__s| __s.count_) + 1) });

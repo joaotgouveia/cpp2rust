@@ -18,48 +18,99 @@ impl ConstructFromInt {
         Self { value: v }
     }
 }
+impl CppMove for ConstructFromInt {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_default_template_arg_0() -> bool {
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut x: ConstructFromInt = unimplemented!();
+        let e: Value<std_expected_int__ConstructFromInt_> = Rc::new(RefCell::new(5));
+        let mut x: ConstructFromInt = ({
+            let ___e: Value<i32> = Rc::new(RefCell::new(10));
+            (*e.borrow()).error_or(___e.as_pointer())
+        });
         assert!((x.value == 10));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut x: ConstructFromInt = unimplemented!();
+        let e: Value<std_expected_int__ConstructFromInt_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(5));
+            std_expected_int__ConstructFromInt_::new_1(
+                { (*unexpect_1.with(Value::clone).borrow()).clone() },
+                { __tmp_0.as_pointer() },
+            )
+        }));
+        let mut x: ConstructFromInt = ({
+            let ___e: Value<i32> = Rc::new(RefCell::new(10));
+            (*e.borrow()).error_or(___e.as_pointer())
+        });
         assert!((x.value == 5));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut x: ConstructFromInt = unimplemented!();
+        let e: Value<std_expected_int__ConstructFromInt_> = Rc::new(RefCell::new(5));
+        let mut x: ConstructFromInt = ({
+            let ___e: Value<i32> = Rc::new(RefCell::new(10));
+            (*e.borrow()).error_or(___e.as_pointer())
+        });
         assert!((x.value == 10));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut x: ConstructFromInt = unimplemented!();
+        let e: Value<std_expected_int__ConstructFromInt_> = Rc::new(RefCell::new({
+            let __tmp_1: Value<i32> = Rc::new(RefCell::new(5));
+            std_expected_int__ConstructFromInt_::new_1(
+                { (*unexpect_1.with(Value::clone).borrow()).clone() },
+                { __tmp_1.as_pointer() },
+            )
+        }));
+        let mut x: ConstructFromInt = ({
+            let ___e: Value<i32> = Rc::new(RefCell::new(10));
+            (*e.borrow()).error_or(___e.as_pointer())
+        });
         assert!((x.value == 5));
     }
     return true;
 }
-pub fn test_1() -> bool {
+pub fn test_2() -> bool {
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut x: i32 = unimplemented!();
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new(5));
+        let mut x: i32 = ({
+            let ___e: Value<i32> = Rc::new(RefCell::new(10));
+            (*e.borrow()).error_or(___e.as_pointer())
+        });
         assert!((x == 10));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut x: i32 = unimplemented!();
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<i32> = Rc::new(RefCell::new(5));
+            std_expected_int__int_::new_1({ (*unexpect_1.with(Value::clone).borrow()).clone() }, {
+                __tmp_2.as_pointer()
+            })
+        }));
+        let mut x: i32 = ({
+            let ___e: Value<i32> = Rc::new(RefCell::new(10));
+            (*e.borrow()).error_or(___e.as_pointer())
+        });
         assert!((x == 5));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut x: i32 = unimplemented!();
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new(5));
+        let mut x: i32 = ({
+            let ___e: Value<i32> = Rc::new(RefCell::new(10));
+            (*e.borrow()).error_or(___e.as_pointer())
+        });
         assert!((x == 10));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut x: i32 = unimplemented!();
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new({
+            let __tmp_3: Value<i32> = Rc::new(RefCell::new(5));
+            std_expected_int__int_::new_1({ (*unexpect_1.with(Value::clone).borrow()).clone() }, {
+                __tmp_3.as_pointer()
+            })
+        }));
+        let mut x: i32 = ({
+            let ___e: Value<i32> = Rc::new(RefCell::new(10));
+            (*e.borrow()).error_or(___e.as_pointer())
+        });
         assert!((x == 5));
     }
     return true;
@@ -84,7 +135,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_1() });
+    ({ test_2() });
     const _: () = assert!(true, "test()");;
     ({ test_default_template_arg_0() });
     const _: () = assert!(true, "test_default_template_arg()");;

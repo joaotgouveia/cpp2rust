@@ -60,6 +60,11 @@ impl malloc_allocator_base {
         dealloc_count_5.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_3: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -73,257 +78,392 @@ thread_local!(
     pub static disable_default_constructor_6: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<DefaultOnly>,
-}
-impl min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<i32>,
-}
-impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_DefaultOnly_ {}
+impl CppMove for min_allocator_DefaultOnly_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
+impl CppMove for min_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_7() -> bool {
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 0_isize));
-        unimplemented!();
-        assert!((unimplemented!() == 10_isize));
-        unimplemented!();
-        assert!((unimplemented!() == 20_isize));
-        unimplemented!();
-        assert!((unimplemented!() == 5_isize));
-        unimplemented!();
-        assert!((unimplemented!() == 0_isize));
+        let c: Value<std_forward_list_DefaultOnly__std_allocator_DefaultOnly__> = Rc::new(
+            RefCell::new(<std_forward_list_DefaultOnly__std_allocator_DefaultOnly__>::default()),
+        );
+        ({ (*c.borrow()).resize_51(0_u64) });
+        assert!(
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_DefaultOnly_ =
+                        ({ (*c.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_DefaultOnly_ = ({ (*c.borrow()).end_27() });
+                    distance_8(___first, ___last)
+                }) == 0_isize)
+            })
+        );
+        ({ (*c.borrow()).resize_51(10_u64) });
+        assert!(
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_DefaultOnly_ =
+                        ({ (*c.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_DefaultOnly_ = ({ (*c.borrow()).end_27() });
+                    distance_8(___first, ___last)
+                }) == 10_isize)
+            })
+        );
+        ({ (*c.borrow()).resize_51(20_u64) });
+        assert!(
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_DefaultOnly_ =
+                        ({ (*c.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_DefaultOnly_ = ({ (*c.borrow()).end_27() });
+                    distance_8(___first, ___last)
+                }) == 20_isize)
+            })
+        );
+        ({ (*c.borrow()).resize_51(5_u64) });
+        assert!(
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_DefaultOnly_ =
+                        ({ (*c.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_DefaultOnly_ = ({ (*c.borrow()).end_27() });
+                    distance_8(___first, ___last)
+                }) == 5_isize)
+            })
+        );
+        ({ (*c.borrow()).resize_51(0_u64) });
+        assert!(
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_DefaultOnly_ =
+                        ({ (*c.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_DefaultOnly_ = ({ (*c.borrow()).end_27() });
+                    distance_8(___first, ___last)
+                }) == 0_isize)
+            })
+        );
     }
     {
         let t: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4])));
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 3_isize));
+        let c: Value<std_forward_list_int__std_allocator_int__> = Rc::new(RefCell::new(
+            std_forward_list_int__std_allocator_int__::new_1(
+                { ({ begin_9(t.as_pointer()) }) },
+                { (t.as_pointer() as Ptr<i32>).to_end() },
+                None,
+            ),
+        ));
+        ({ (*c.borrow()).resize_51(3_u64) });
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c.borrow()).end_27() });
+                    distance_10(___first, ___last)
+                }) == 3_isize)
+            })
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
-        unimplemented!();
-        assert!((unimplemented!() == 6_isize));
+        ({ (*c.borrow()).resize_51(6_u64) });
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c.borrow()).end_27() });
+                    distance_10(___first, ___last)
+                }) == 6_isize)
+            })
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 3_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 4_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 5_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 5_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
-        unimplemented!();
-        assert!((unimplemented!() == 6_isize));
+        ({ (*c.borrow()).resize_51(6_u64) });
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c.borrow()).end_27() });
+                    distance_10(___first, ___last)
+                }) == 6_isize)
+            })
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 3_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 4_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 5_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 5_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 0_isize));
-        unimplemented!();
-        assert!((unimplemented!() == 10_isize));
-        unimplemented!();
-        assert!((unimplemented!() == 20_isize));
-        unimplemented!();
-        assert!((unimplemented!() == 5_isize));
-        unimplemented!();
-        assert!((unimplemented!() == 0_isize));
+        let c: Value<std_forward_list_DefaultOnly__min_allocator_DefaultOnly__> = Rc::new(
+            RefCell::new(<std_forward_list_DefaultOnly__min_allocator_DefaultOnly__>::default()),
+        );
+        ({ (*c.borrow()).resize_51(0_u64) });
+        assert!(
+            ({
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . end_27 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) == 0_isize)
+            })
+        );
+        ({ (*c.borrow()).resize_51(10_u64) });
+        assert!(
+            ({
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . end_27 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) == 10_isize)
+            })
+        );
+        ({ (*c.borrow()).resize_51(20_u64) });
+        assert!(
+            ({
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . end_27 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) == 20_isize)
+            })
+        );
+        ({ (*c.borrow()).resize_51(5_u64) });
+        assert!(
+            ({
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . end_27 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) == 5_isize)
+            })
+        );
+        ({ (*c.borrow()).resize_51(0_u64) });
+        assert!(
+            ({
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . end_27 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) == 0_isize)
+            })
+        );
     }
     {
         let t: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4])));
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 3_isize));
+        let c: Value<std_forward_list_int__min_allocator_int__> = Rc::new(RefCell::new(
+            std_forward_list_int__min_allocator_int__::new_1(
+                { ({ begin_9(t.as_pointer()) }) },
+                { (t.as_pointer() as Ptr<i32>).to_end() },
+                None,
+            ),
+        ));
+        ({ (*c.borrow()).resize_51(3_u64) });
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ({
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . end_27 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) == 3_isize)
+            })
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
-        unimplemented!();
-        assert!((unimplemented!() == 6_isize));
+        ({ (*c.borrow()).resize_51(6_u64) });
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ({
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . end_27 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) == 6_isize)
+            })
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 3_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 4_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 5_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 5_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
-        unimplemented!();
-        assert!((unimplemented!() == 6_isize));
+        ({ (*c.borrow()).resize_51(6_u64) });
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ({
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . end_27 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) == 6_isize)
+            })
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 3_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 4_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 5_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 5_isize)
                 .iter_deref()
                 .read())
                 == 0)
@@ -354,6 +494,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     assert!(({ test_7() }));
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__;
 pub trait DefaultOnlyImpl {
     fn copy_assign(&self, _a0: Ptr<DefaultOnly>) -> Ptr<DefaultOnly> {
         unimplemented!()
@@ -395,139 +541,6 @@ pub trait min_allocator_int_Impl {
     }
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {}
-pub trait min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<DefaultOnly> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<DefaultOnly> {
-        unimplemented!()
-    }
-    fn operator_inc_8(
-        &self,
-    ) -> Ptr<min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_9(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_10(
-        &self,
-    ) -> Ptr<min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_11(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<DefaultOnly> {
-        unimplemented!()
-    }
-}
-impl min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_9(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_10(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_11(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
-        unimplemented!()
-    }
-}
-impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
-{
-}
 pub fn __cpp2rust_init_globals() {
     let _ = count_0.with(|_| ());
     let _ = outstanding_bytes_3.with(|_| ());

@@ -30,6 +30,11 @@ pub struct test_allocator_statistics {
     #[offset(36)]
     pub converted: i32,
 }
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_statistics {
     fn default() -> Self {
         {
@@ -57,6 +62,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_2(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -137,6 +147,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -151,6 +166,11 @@ impl Default for test_allocator_void_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -182,12 +202,21 @@ impl MutableCopy {
             alloc_constructed: false,
         }
     }
-    pub fn new_2(_a0: (), _a1: Ptr<test_allocator_int_>, o: Ptr<MutableCopy>) -> Self {
-        let _a0: Value<()> = Rc::new(RefCell::new(_a0));
+    pub fn new_2(
+        _a0: std_allocator_arg_t,
+        _a1: Ptr<test_allocator_int_>,
+        o: Ptr<MutableCopy>,
+    ) -> Self {
+        let _a0: Value<std_allocator_arg_t> = Rc::new(RefCell::new(_a0));
         Self {
             val: o.with(|__s| __s.val),
             alloc_constructed: true,
         }
+    }
+}
+impl CppMove for MutableCopy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for MutableCopy {
@@ -216,12 +245,21 @@ impl ConstCopy {
             alloc_constructed: false,
         }
     }
-    pub fn new_2(_a0: (), _a1: Ptr<test_allocator_int_>, o: Ptr<ConstCopy>) -> Self {
-        let _a0: Value<()> = Rc::new(RefCell::new(_a0));
+    pub fn new_2(
+        _a0: std_allocator_arg_t,
+        _a1: Ptr<test_allocator_int_>,
+        o: Ptr<ConstCopy>,
+    ) -> Self {
+        let _a0: Value<std_allocator_arg_t> = Rc::new(RefCell::new(_a0));
         Self {
             val: o.with(|__s| __s.val),
             alloc_constructed: true,
         }
+    }
+}
+impl CppMove for ConstCopy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for ConstCopy {
@@ -256,12 +294,21 @@ impl MutableMove {
             alloc_constructed: { (*_a0.upgrade().deref()).alloc_constructed },
         }
     }
-    pub fn new_2(_a0: (), _a1: Ptr<test_allocator_int_>, o: Ptr<MutableMove>) -> Self {
-        let _a0: Value<()> = Rc::new(RefCell::new(_a0));
+    pub fn new_2(
+        _a0: std_allocator_arg_t,
+        _a1: Ptr<test_allocator_int_>,
+        o: Ptr<MutableMove>,
+    ) -> Self {
+        let _a0: Value<std_allocator_arg_t> = Rc::new(RefCell::new(_a0));
         Self {
             val: o.with(|__s| __s.val),
             alloc_constructed: true,
         }
+    }
+}
+impl CppMove for MutableMove {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for MutableMove {
@@ -296,12 +343,21 @@ impl ConstMove {
             alloc_constructed: false,
         }
     }
-    pub fn new_2(_a0: (), _a1: Ptr<test_allocator_int_>, o: Ptr<ConstMove>) -> Self {
-        let _a0: Value<()> = Rc::new(RefCell::new(_a0));
+    pub fn new_2(
+        _a0: std_allocator_arg_t,
+        _a1: Ptr<test_allocator_int_>,
+        o: Ptr<ConstMove>,
+    ) -> Self {
+        let _a0: Value<std_allocator_arg_t> = Rc::new(RefCell::new(_a0));
         Self {
             val: o.with(|__s| __s.val),
             alloc_constructed: true,
         }
+    }
+}
+impl CppMove for ConstMove {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for ConstMove {
@@ -360,6 +416,11 @@ pub struct ConvertibleFrom_TracedCopyMove_ {
     #[offset(20)]
     pub alloc_constructed: bool,
 }
+impl CppMove for ConvertibleFrom_TracedCopyMove_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for ConvertibleFrom_TracedCopyMove_ {
     fn default() -> Self {
         {
@@ -388,6 +449,11 @@ pub struct ConvertibleFrom_CvtFromTupleRef_ {
     #[offset(20)]
     pub alloc_constructed: bool,
 }
+impl CppMove for ConvertibleFrom_CvtFromTupleRef_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for ConvertibleFrom_CvtFromTupleRef_ {
     fn default() -> Self {
         {
@@ -415,6 +481,11 @@ pub struct ConvertibleFrom_ExplicitCtrFromTupleRef_ {
     pub v: ExplicitCtrFromTupleRef,
     #[offset(20)]
     pub alloc_constructed: bool,
+}
+impl CppMove for ConvertibleFrom_ExplicitCtrFromTupleRef_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for ConvertibleFrom_ExplicitCtrFromTupleRef_ {
     fn default() -> Self {
@@ -517,6 +588,11 @@ impl Clone for TracedCopyMove {
         TracedCopyMove::new_2(__src.as_pointer())
     }
 }
+impl CppMove for TracedCopyMove {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for TracedCopyMove {
     fn default() -> Self {
         {
@@ -543,38 +619,63 @@ pub fn constMoveCtrCalled_5(obj: Ptr<TracedCopyMove>) -> bool {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoConstructorFromInt {}
+impl CppMove for NoConstructorFromInt {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
-#[cpp_from(()  , new_1, mut_ptr)]
+#[cpp_from(std_tuple_CvtFromTupleRef_, new_1, mut_ptr)]
 #[byte_size(20)]
 pub struct CvtFromTupleRef {}
 impl CvtFromTupleRef {
-    pub fn new_1(other: Ptr<()>) -> Self {
+    pub fn new_1(other: Ptr<std_tuple_CvtFromTupleRef_>) -> Self {
         Self {}
+    }
+}
+impl CppMove for CvtFromTupleRef {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(20)]
 pub struct ExplicitCtrFromTupleRef {}
 impl ExplicitCtrFromTupleRef {
-    pub fn new_1(other: Ptr<()>) -> Self {
+    pub fn new_1(other: Ptr<std_tuple_ExplicitCtrFromTupleRef_>) -> Self {
         Self {}
     }
 }
+impl CppMove for ExplicitCtrFromTupleRef {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
-#[cpp_from_move(()  , new_1, ptr)]
+#[cpp_from_move(std_tuple_CvtFromConstTupleRefRef_, new_1, ptr)]
 #[byte_size(20)]
 pub struct CvtFromConstTupleRefRef {}
 impl CvtFromConstTupleRefRef {
-    pub fn new_1(other: Ptr<()>) -> Self {
+    pub fn new_1(other: Ptr<std_tuple_CvtFromConstTupleRefRef_>) -> Self {
         Self {}
+    }
+}
+impl CppMove for CvtFromConstTupleRefRef {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(20)]
 pub struct ExplicitCtrFromConstTupleRefRef {}
 impl ExplicitCtrFromConstTupleRefRef {
-    pub fn new_1(other: Ptr<()>) -> Self {
+    pub fn new_1(other: Ptr<std_tuple_const_ExplicitCtrFromConstTupleRefRef_>) -> Self {
         Self {}
+    }
+}
+impl CppMove for ExplicitCtrFromConstTupleRefRef {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, Default)]
@@ -667,26 +768,43 @@ const _: () = assert!(
 );
 pub fn test_6() -> bool {
     {
-        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (unimplemented!()).clone().v.val } == 1));
+        let t1: Value<std_tuple_MutableCopy_> = Rc::new(RefCell::new(1));
+        let t2: Value<std_tuple_ConvertibleFrom_MutableCopy__> = Rc::new(RefCell::new(
+            std_tuple_ConvertibleFrom_MutableCopy__::new_1({ t1.as_pointer() }),
+        ));
+        assert!((({ get_7(t2.as_pointer(),) }).with(|__s| __s.v.val) == 1));
     }
     {
-        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (unimplemented!()).clone().v.val } == 1));
-        assert!(((unimplemented!().read()) == 2));
+        let t1: Value<std_tuple_MutableCopy__int_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(1));
+            let __tmp_1: Value<i32> = Rc::new(RefCell::new(2));
+            std_tuple_MutableCopy__int_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+        }));
+        let t2: Value<std_tuple_ConvertibleFrom_MutableCopy___int_> = Rc::new(RefCell::new(
+            std_tuple_ConvertibleFrom_MutableCopy___int_::new_1({ t1.as_pointer() }),
+        ));
+        assert!((({ get_8(t2.as_pointer(),) }).with(|__s| __s.v.val) == 1));
+        assert!(((({ get_9(t2.as_pointer(),) }).read()) == 2));
     }
     {
-        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (unimplemented!()).clone().v.val } == 1));
+        let t1: Value<std_tuple_MutableCopy_> = Rc::new(RefCell::new(1));
+        let t2: Value<std_tuple_ExplicitConstructibleFrom_MutableCopy__> = Rc::new(RefCell::new(
+            std_tuple_ExplicitConstructibleFrom_MutableCopy__::new_1({ t1.as_pointer() }),
+        ));
+        assert!((({ get_10(t2.as_pointer(),) }).with(|__s| __s.v.val) == 1));
     }
     {
-        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ (unimplemented!()).clone().v.val } == 1));
-        assert!(((unimplemented!().read()) == 2));
+        let t1: Value<std_tuple_MutableCopy__int_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<i32> = Rc::new(RefCell::new(1));
+            let __tmp_3: Value<i32> = Rc::new(RefCell::new(2));
+            std_tuple_MutableCopy__int_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
+        }));
+        let t2: Value<std_tuple_ExplicitConstructibleFrom_MutableCopy___int_> =
+            Rc::new(RefCell::new(
+                std_tuple_ExplicitConstructibleFrom_MutableCopy___int_::new_1({ t1.as_pointer() }),
+            ));
+        assert!((({ get_11(t2.as_pointer(),) }).with(|__s| __s.v.val) == 1));
+        assert!(((({ get_12(t2.as_pointer(),) }).read()) == 2));
     }
     const _: () = assert!(
         true,
@@ -705,29 +823,43 @@ pub fn test_6() -> bool {
         "!std::is_constructible_v<std::tuple<int, NoConstructorFromInt>, std::tuple<int, int>&>"
     );;
     {
-        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ nonConstCopyCtrCalled_4(field_ptr!(unimplemented!(), v),) }));
+        let t1: Value<std_tuple_TracedCopyMove_> =
+            Rc::new(RefCell::new(<std_tuple_TracedCopyMove_>::default()));
+        let t2: Value<std_tuple_ConvertibleFrom_TracedCopyMove__> = Rc::new(RefCell::new(
+            std_tuple_ConvertibleFrom_TracedCopyMove__::new_1({ t1.as_pointer() }),
+        ));
+        assert!(({ nonConstCopyCtrCalled_4(field_ptr!(({ get_13(t2.as_pointer(),) }), v),) }));
     }
     {
-        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(!({ nonConstCopyCtrCalled_4(unimplemented!(),) }));
+        let t1: Value<std_tuple_TracedCopyMove_> =
+            Rc::new(RefCell::new(<std_tuple_TracedCopyMove_>::default()));
+        let t2: Value<std_tuple_TracedCopyMove_> = Rc::new(RefCell::new((*t1.borrow()).clone()));
+        assert!(!({ nonConstCopyCtrCalled_4(({ get_14(t2.as_pointer(),) }),) }));
     }
     {
-        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ nonConstCopyCtrCalled_4(unimplemented!(),) }));
+        let t1: Value<std_tuple_TracedCopyMove__TracedCopyMove_> = Rc::new(RefCell::new(
+            <std_tuple_TracedCopyMove__TracedCopyMove_>::default(),
+        ));
+        let t2: Value<std_tuple_TracedCopyMove__TracedCopyMove_> = Rc::new(RefCell::new(
+            std_tuple_TracedCopyMove__TracedCopyMove_::new_1({ t1.as_pointer() }),
+        ));
+        assert!(({ nonConstCopyCtrCalled_4(({ get_15(t2.as_pointer(),) }),) }));
     }
     {
-        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(!({ nonConstCopyCtrCalled_4(field_ptr!(unimplemented!(), v),) }));
+        let t1: Value<std_tuple_CvtFromTupleRef_> =
+            Rc::new(RefCell::new(<std_tuple_CvtFromTupleRef_>::default()));
+        let t2: Value<std_tuple_ConvertibleFrom_CvtFromTupleRef__> = Rc::new(RefCell::new(
+            std_tuple_ConvertibleFrom_CvtFromTupleRef__::new_1({ t1.as_pointer() }),
+        ));
+        assert!(!({ nonConstCopyCtrCalled_4(field_ptr!(({ get_16(t2.as_pointer(),) }), v),) }));
     }
     {
-        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(!({ nonConstCopyCtrCalled_4(field_ptr!(unimplemented!(), v),) }));
+        let t1: Value<std_tuple_ExplicitCtrFromTupleRef_> =
+            Rc::new(RefCell::new(<std_tuple_ExplicitCtrFromTupleRef_>::default()));
+        let t2: Value<std_tuple_ConvertibleFrom_ExplicitCtrFromTupleRef__> = Rc::new(RefCell::new(
+            std_tuple_ConvertibleFrom_ExplicitCtrFromTupleRef__::new_1({ t1.as_pointer() }),
+        ));
+        assert!(!({ nonConstCopyCtrCalled_4(field_ptr!(({ get_17(t2.as_pointer(),) }), v),) }));
     }
     return true;
 }

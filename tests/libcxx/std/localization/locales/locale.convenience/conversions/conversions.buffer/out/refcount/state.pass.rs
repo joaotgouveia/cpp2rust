@@ -28,8 +28,8 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unimplemented!()));
+        let b : Value<std_wbuffer_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_char_traits_wchar_t__ > = Rc::new(RefCell::new(<std_wbuffer_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_char_traits_wchar_t__  >::default() )) ;
+        let s: Value<::libc::mbstate_t> = Rc::new(RefCell::new(({ (*b.borrow()).state() })));
         (&(*s.borrow_mut()));
     }
     return 0;

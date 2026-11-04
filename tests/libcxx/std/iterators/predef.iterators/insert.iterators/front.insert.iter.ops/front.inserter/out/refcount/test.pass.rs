@@ -11,13 +11,18 @@ use std::rc::{Rc, Weak};
 pub struct nasty_list_int_ {
     #[offset(0)]
     #[byte_size(24)]
-    pub l_: (),
+    pub l_: std_list_int__std_allocator_int__,
 }
 impl nasty_list_int_ {
     pub fn new_1() -> Self {
         Self {
-            l_: unimplemented!(),
+            l_: <std_list_int__std_allocator_int__>::default(),
         }
+    }
+}
+impl CppMove for nasty_list_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for nasty_list_int_ {
@@ -44,6 +49,11 @@ impl Clone for nasty_mutex {
         nasty_mutex::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for nasty_mutex {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for nasty_mutex {
     fn default() -> Self {
         { nasty_mutex::new() }
@@ -58,6 +68,11 @@ pub struct ConstexprFixedCapacityDeque_int__10_ {
     #[offset(40)]
     size_: i32,
 }
+impl CppMove for ConstexprFixedCapacityDeque_int__10_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for ConstexprFixedCapacityDeque_int__10_ {
     fn default() -> Self {
         {
@@ -68,37 +83,29 @@ impl Default for ConstexprFixedCapacityDeque_int__10_ {
         }
     }
 }
-pub fn test_0(c: ()) -> bool {
-    let c: Value<()> = Rc::new(RefCell::new(c));
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 1_()));
-    assert!(((unimplemented!().read()) == 3));
-    unimplemented!();
-    assert!((unimplemented!() == 2_()));
-    assert!(((unimplemented!().read()) == 4));
-    return true;
-}
 pub fn test_1(c: nasty_list_int_) -> bool {
     let c: Value<nasty_list_int_> = Rc::new(RefCell::new(c));
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((({ nasty_list_int_Impl::size(&c.as_pointer(),) }) == 1_()));
+    let _dtor_c = ScopedDestructor::new(&c, |__p| __p.destructor());
+    let i: Value<std_front_insert_iterator_nasty_list_int__> =
+        Rc::new(RefCell::new(({ front_inserter_2(c.as_pointer()) })));
+    (*i.borrow_mut()) = 3;
+    assert!((({ nasty_list_int_Impl::size(&c.as_pointer(),) }) == 1_u64));
     assert!(((({ nasty_list_int_Impl::front_25(&c.as_pointer(),) }).read()) == 3));
-    unimplemented!();
-    assert!((({ nasty_list_int_Impl::size(&c.as_pointer(),) }) == 2_()));
+    (*i.borrow_mut()) = 4;
+    assert!((({ nasty_list_int_Impl::size(&c.as_pointer(),) }) == 2_u64));
     assert!(((({ nasty_list_int_Impl::front_25(&c.as_pointer(),) }).read()) == 4));
     return true;
 }
-pub fn test_2(c: ConstexprFixedCapacityDeque_int__10_) -> bool {
+pub fn test_3(c: ConstexprFixedCapacityDeque_int__10_) -> bool {
     let c: Value<ConstexprFixedCapacityDeque_int__10_> = Rc::new(RefCell::new(c));
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let i: Value<std_front_insert_iterator_ConstexprFixedCapacityDeque_int__10__> =
+        Rc::new(RefCell::new(({ front_inserter_4(c.as_pointer()) })));
+    (*i.borrow_mut()) = 3;
     assert!((({ ConstexprFixedCapacityDeque_int__10_Impl::size(&c.as_pointer(),) }) == 1_usize));
     assert!(
         ((({ ConstexprFixedCapacityDeque_int__10_Impl::front(&c.as_pointer(),) }).read()) == 3)
     );
-    unimplemented!();
+    (*i.borrow_mut()) = 4;
     assert!((({ ConstexprFixedCapacityDeque_int__10_Impl::size(&c.as_pointer(),) }) == 2_usize));
     assert!(
         ((({ ConstexprFixedCapacityDeque_int__10_Impl::front(&c.as_pointer(),) }).read()) == 4)
@@ -125,9 +132,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_0(unimplemented!()) });
+    ({ test_5(<std_list_int__std_allocator_int__>::default()) });
     ({ test_1(nasty_list_int_::new_1()) });
-    ({ test_2(<ConstexprFixedCapacityDeque_int__10_>::default()) });
+    ({ test_3(<ConstexprFixedCapacityDeque_int__10_>::default()) });
     const _: () = assert!(true, "test(ConstexprFixedCapacityDeque<int, 10>())");;
     return 0;
 }
@@ -168,7 +175,16 @@ impl ConstexprFixedCapacityDeque_int__10_Impl for Ptr<ConstexprFixedCapacityDequ
         let mut i: i32 =
             ((((pos).clone() - (array_field_ptr!((*self), data_) as Ptr<i32>)) as i64) as i32);
         if (i != (*self).with(|__s| __s.size_)) {
-            unimplemented!();
+            ({
+                let ___first: Ptr<i32> =
+                    (array_field_ptr!((*self), data_) as Ptr<i32>).offset((i) as isize);
+                let ___last: Ptr<i32> = (array_field_ptr!((*self), data_) as Ptr<i32>)
+                    .offset(((*self).with(|__s| __s.size_)) as isize);
+                let ___result: Ptr<i32> = (array_field_ptr!((*self), data_) as Ptr<i32>)
+                    .offset(((*self).with(|__s| __s.size_)) as isize)
+                    .offset((1) as isize);
+                move_backward_0(___first, ___last, ___result)
+            });
         }
         array_elem!((*self), data_, i).write(t);
         {
@@ -188,103 +204,124 @@ pub trait nasty_list_int_Impl {
     fn operator_assign_9(&self, il: Vec<i32>) -> Ptr<nasty_list_int_> {
         unimplemented!()
     }
-    fn assign_11(&self, mut n: (), t: Ptr<()>) {
+    fn assign_11(&self, mut n: u64, t: Ptr<i32>) {
         unimplemented!()
     }
     fn assign_12(&self, il: Vec<i32>) {
         unimplemented!()
     }
-    fn begin_13(&self) -> () {
+    fn begin_13(&self) -> BidirectionalIterator<i32> {
         unimplemented!()
     }
-    fn begin_14(&self) -> () {
+    fn begin_14(&self) -> BidirectionalIterator<i32> {
         unimplemented!()
     }
-    fn end_15(&self) -> () {
+    fn end_15(&self) -> BidirectionalIterator<i32> {
         unimplemented!()
     }
-    fn end_16(&self) -> () {
+    fn end_16(&self) -> BidirectionalIterator<i32> {
         unimplemented!()
     }
-    fn rbegin_17(&self) -> () {
+    fn rbegin_17(&self) -> BidirectionalIterator<i32> {
         unimplemented!()
     }
-    fn rbegin_18(&self) -> () {
+    fn rbegin_18(&self) -> BidirectionalIterator<i32> {
         unimplemented!()
     }
-    fn rend_19(&self) -> () {
+    fn rend_19(&self) -> BidirectionalIterator<i32> {
         unimplemented!()
     }
-    fn rend_20(&self) -> () {
+    fn rend_20(&self) -> BidirectionalIterator<i32> {
         unimplemented!()
     }
-    fn cbegin(&self) -> () {
+    fn cbegin(&self) -> BidirectionalIterator<i32> {
         unimplemented!()
     }
-    fn cend(&self) -> () {
+    fn cend(&self) -> BidirectionalIterator<i32> {
         unimplemented!()
     }
-    fn crbegin(&self) -> () {
+    fn crbegin(&self) -> BidirectionalIterator<i32> {
         unimplemented!()
     }
-    fn crend(&self) -> () {
+    fn crend(&self) -> BidirectionalIterator<i32> {
         unimplemented!()
     }
-    fn front_25(&self) -> ();
-    fn front_26(&self) -> () {
+    fn front_25(&self) -> Ptr<i32>;
+    fn front_26(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn back_27(&self) -> () {
+    fn back_27(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn back_28(&self) -> () {
+    fn back_28(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn size(&self) -> ();
-    fn max_size(&self) -> () {
+    fn size(&self) -> u64;
+    fn max_size(&self) -> u64 {
         unimplemented!()
     }
     fn empty(&self) -> bool {
         unimplemented!()
     }
-    fn push_front_32(&self, x: Ptr<()>) {
+    fn push_front_32(&self, x: Ptr<i32>) {
         unimplemented!()
     }
-    fn push_back_33(&self, x: Ptr<()>) {
+    fn push_back_33(&self, x: Ptr<i32>) {
         unimplemented!()
     }
-    fn push_back_34(&self, x: Ptr<()>) {
+    fn push_back_34(&self, x: Ptr<i32>) {
         unimplemented!()
     }
-    fn push_front_35(&self, x: Ptr<()>);
+    fn push_front_35(&self, x: Ptr<i32>);
     fn pop_front(&self) {
         unimplemented!()
     }
     fn pop_back(&self) {
         unimplemented!()
     }
-    fn insert_41(&self, pos: (), x: Ptr<()>) -> () {
+    fn insert_41(
+        &self,
+        pos: BidirectionalIterator<i32>,
+        x: Ptr<i32>,
+    ) -> BidirectionalIterator<i32> {
         unimplemented!()
     }
-    fn insert_42(&self, pos: (), x: Ptr<()>) -> () {
+    fn insert_42(
+        &self,
+        pos: BidirectionalIterator<i32>,
+        x: Ptr<i32>,
+    ) -> BidirectionalIterator<i32> {
         unimplemented!()
     }
-    fn insert_43(&self, pos: (), mut n: (), x: Ptr<()>) -> () {
+    fn insert_43(
+        &self,
+        pos: BidirectionalIterator<i32>,
+        mut n: u64,
+        x: Ptr<i32>,
+    ) -> BidirectionalIterator<i32> {
         unimplemented!()
     }
-    fn insert_45(&self, pos: (), il: Vec<i32>) -> () {
+    fn insert_45(
+        &self,
+        pos: BidirectionalIterator<i32>,
+        il: Vec<i32>,
+    ) -> BidirectionalIterator<i32> {
         unimplemented!()
     }
-    fn erase_46(&self, pos: ()) -> () {
+    fn erase_46(&self, pos: BidirectionalIterator<i32>) -> BidirectionalIterator<i32> {
         unimplemented!()
     }
-    fn erase_47(&self, first: (), last: ()) -> () {
+    fn erase_47(
+        &self,
+        first: BidirectionalIterator<i32>,
+        last: BidirectionalIterator<i32>,
+    ) -> BidirectionalIterator<i32> {
         unimplemented!()
     }
-    fn resize_48(&self, mut n: ()) {
+    fn resize_48(&self, mut n: u64) {
         unimplemented!()
     }
-    fn resize_49(&self, mut n: (), c: Ptr<()>) {
+    fn resize_49(&self, mut n: u64, c: Ptr<i32>) {
         unimplemented!()
     }
     fn swap(&self, nl: Ptr<nasty_list_int_>) {
@@ -302,14 +339,17 @@ pub trait nasty_list_int_Impl {
 }
 impl nasty_list_int_Impl for Ptr<nasty_list_int_> {
     fn destructor(&self) {}
-    fn front_25(&self) -> () {
-        return unimplemented!();
+    fn front_25(&self) -> Ptr<i32> {
+        return ({ (*(*self).upgrade().deref()).l_.front_41() });
     }
-    fn size(&self) -> () {
-        return unimplemented!();
+    fn size(&self) -> u64 {
+        return ({ (*(*self).upgrade().deref()).l_.size() });
     }
-    fn push_front_35(&self, x: Ptr<()>) {
-        unimplemented!();
+    fn push_front_35(&self, x: Ptr<i32>) {
+        ({
+            let ___x: Ptr<i32> = (x).clone();
+            (*(*self).upgrade().deref()).l_.push_front_46(___x)
+        });
     }
 }
 pub trait nasty_mutexImpl {

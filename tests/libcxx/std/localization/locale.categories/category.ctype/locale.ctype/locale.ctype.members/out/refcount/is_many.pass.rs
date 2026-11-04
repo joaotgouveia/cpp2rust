@@ -27,9 +27,11 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let l: Value<std_locale> = Rc::new(RefCell::new(
+        (*({ std_locale::classic() }).upgrade().deref()).clone(),
+    ));
     {
-        let f: Ptr<()> = unimplemented!();
+        let f: Ptr<std_ctype_wchar_t_> = ({ use_facet_0(l.as_pointer()) });
         let in_: Value<Vec<i32>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i32>::from_string_literal(&[
                 32 as i32, 65 as i32, 7 as i32, 46 as i32, 97 as i32, 49 as i32, 0 as i32,
@@ -39,298 +41,380 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             __bytes
         }));
         let m: Value<Vec<u16>> = Rc::new(RefCell::new(
-            (0..((*in_.borrow()).len() - 1) as usize)
+            (0..({ ((*in_.borrow()).len() - 1) }) as usize)
                 .map(|_| 0_u16)
                 .collect::<Vec<_>>(),
         ));
-        let mut h: Ptr<i32> = unimplemented!();
-        assert!(({ (h).clone() } == { in_.decay().offset(((*in_.borrow()).len() - 1) as isize) }));
+        let mut h: Ptr<i32> = ({
+            let ___lo: Ptr<i32> = in_.decay();
+            let ___hi: Ptr<i32> = in_.decay().offset(((*in_.borrow()).len() - 1) as isize);
+            ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_).is_2(
+                ___lo,
+                ___hi,
+                m.decay(),
+            )
+        });
         assert!(
-            ((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ({ ({ (h).clone() } == { in_.decay().offset(((*in_.borrow()).len() - 1) as isize) }) })
+        );
+        assert!(
+            ((((m.decay().offset(0_usize as isize).read()) as i32)
+                & (space_1.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(0_usize as isize).read()) as i32)
+                & (print_2.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(0_usize as isize).read()) as i32)
+                & (cntrl_3.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(0_usize as isize).read()) as i32)
+                & (upper_4.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(0_usize as isize).read()) as i32)
+                & (lower_5.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(0_usize as isize).read()) as i32)
+                & (alpha_6.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(0_usize as isize).read()) as i32)
+                & (digit_7.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(0_usize as isize).read()) as i32)
+                & (punct_8.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(0_usize as isize).read()) as i32)
+                & (xdigit_9.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(0_usize as isize).read()) as i32)
+                & (blank_10.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(0_usize as isize).read()) as i32)
+                & (alnum_11.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(0_usize as isize).read()) as i32)
+                & (graph_12.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(1_usize as isize).read()) as i32)
+                & (space_1.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(1_usize as isize).read()) as i32)
+                & (print_2.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(1_usize as isize).read()) as i32)
+                & (cntrl_3.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(1_usize as isize).read()) as i32)
+                & (upper_4.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(1_usize as isize).read()) as i32)
+                & (lower_5.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(1_usize as isize).read()) as i32)
+                & (alpha_6.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(1_usize as isize).read()) as i32)
+                & (digit_7.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(1_usize as isize).read()) as i32)
+                & (punct_8.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(1_usize as isize).read()) as i32)
+                & (xdigit_9.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(1_usize as isize).read()) as i32)
+                & (blank_10.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(1_usize as isize).read()) as i32)
+                & (alnum_11.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(1_usize as isize).read()) as i32)
+                & (graph_12.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(2_usize as isize).read()) as i32)
+                & (space_1.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(2_usize as isize).read()) as i32)
+                & (print_2.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(2_usize as isize).read()) as i32)
+                & (cntrl_3.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(2_usize as isize).read()) as i32)
+                & (upper_4.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(2_usize as isize).read()) as i32)
+                & (lower_5.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(2_usize as isize).read()) as i32)
+                & (alpha_6.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(2_usize as isize).read()) as i32)
+                & (digit_7.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(2_usize as isize).read()) as i32)
+                & (punct_8.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(2_usize as isize).read()) as i32)
+                & (xdigit_9.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(2_usize as isize).read()) as i32)
+                & (blank_10.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(2_usize as isize).read()) as i32)
+                & (alnum_11.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(2_usize as isize).read()) as i32)
+                & (graph_12.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(3_usize as isize).read()) as i32)
+                & (space_1.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(3_usize as isize).read()) as i32)
+                & (print_2.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(3_usize as isize).read()) as i32)
+                & (cntrl_3.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(3_usize as isize).read()) as i32)
+                & (upper_4.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(3_usize as isize).read()) as i32)
+                & (lower_5.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(3_usize as isize).read()) as i32)
+                & (alpha_6.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(3_usize as isize).read()) as i32)
+                & (digit_7.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(3_usize as isize).read()) as i32)
+                & (punct_8.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(3_usize as isize).read()) as i32)
+                & (xdigit_9.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(3_usize as isize).read()) as i32)
+                & (blank_10.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(3_usize as isize).read()) as i32)
+                & (alnum_11.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(3_usize as isize).read()) as i32)
+                & (graph_12.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(4_usize as isize).read()) as i32)
+                & (space_1.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(4_usize as isize).read()) as i32)
+                & (print_2.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(4_usize as isize).read()) as i32)
+                & (cntrl_3.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(4_usize as isize).read()) as i32)
+                & (upper_4.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(4_usize as isize).read()) as i32)
+                & (lower_5.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(4_usize as isize).read()) as i32)
+                & (alpha_6.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(4_usize as isize).read()) as i32)
+                & (digit_7.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(4_usize as isize).read()) as i32)
+                & (punct_8.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(4_usize as isize).read()) as i32)
+                & (xdigit_9.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(4_usize as isize).read()) as i32)
+                & (blank_10.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(4_usize as isize).read()) as i32)
+                & (alnum_11.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(4_usize as isize).read()) as i32)
+                & (graph_12.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(5_usize as isize).read()) as i32)
+                & (space_1.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(5_usize as isize).read()) as i32)
+                & (print_2.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(5_usize as isize).read()) as i32)
+                & (cntrl_3.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(5_usize as isize).read()) as i32)
+                & (upper_4.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(5_usize as isize).read()) as i32)
+                & (lower_5.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(5_usize as isize).read()) as i32)
+                & (alpha_6.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(5_usize as isize).read()) as i32)
+                & (digit_7.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(5_usize as isize).read()) as i32)
+                & (punct_8.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(5_usize as isize).read()) as i32)
+                & (xdigit_9.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            !((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            !((((m.decay().offset(5_usize as isize).read()) as i32)
+                & (blank_10.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(5_usize as isize).read()) as i32)
+                & (alnum_11.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
         assert!(
-            ((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+            ((((m.decay().offset(5_usize as isize).read()) as i32)
+                & (graph_12.with(|rc| *rc.borrow()) as i32))
                 != 0)
         );
     }

@@ -51,6 +51,11 @@ impl CppEq for X {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for X {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for X {
     fn default() -> Self {
         {
@@ -96,6 +101,11 @@ impl CppEq for Y {
         operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for Y {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Y {
     fn default() -> Self {
         { Y::new_3() }
@@ -137,6 +147,11 @@ impl CppEq for Z {
         operator_eq_3(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for Z {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Z {
     fn default() -> Self {
         { Z::new_3() }
@@ -150,10 +165,10 @@ pub fn check_X_4() -> bool {
     let x: Value<X> = Rc::new(RefCell::new(X::new_1({ dtor_called.as_pointer() })));
     let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
     let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((((*dtor_called.borrow()) as i32) == (false as i32)));
+    assert!(({ (((*dtor_called.borrow()) as i32) == (false as i32)) }));
     let v: Ptr<X> = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<X&, decltype(v)>");;
-    assert!((*dtor_called.borrow()));
+    assert!(({ (*dtor_called.borrow()) }));
     assert!(
         ({
             let _x: Ptr<X> = unimplemented!();

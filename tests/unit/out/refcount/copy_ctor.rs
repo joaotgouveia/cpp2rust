@@ -34,6 +34,11 @@ impl Clone for Counted {
         Counted::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Counted {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign)]
 #[byte_size(4)]
 pub struct NonConst {
@@ -61,6 +66,11 @@ impl Clone for NonConst {
             mark: self.mark.clone(),
         }));
         NonConst::new_1(__src.as_pointer())
+    }
+}
+impl CppMove for NonConst {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for NonConst {
@@ -91,6 +101,11 @@ impl Clone for Ignored {
         Ignored::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Ignored {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CopyAssign)]
 #[byte_size(12)]
 pub struct Holder {
@@ -100,6 +115,11 @@ pub struct Holder {
     #[offset(4)]
     #[byte_size(8)]
     pub arr: Box<[Counted]>,
+}
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for Holder {
     fn default() -> Self {
@@ -121,9 +141,8 @@ pub struct Box_int_ {
     pub val: i32,
 }
 impl Box_int_ {
-    pub fn new(v: i32) -> Self {
-        let v: Value<i32> = Rc::new(RefCell::new(v));
-        Self { val: (*v.borrow()) }
+    pub fn new(mut v: i32) -> Self {
+        Self { val: v }
     }
     pub fn copy_from(o: Ptr<Box_int_>) -> Self {
         Self {
@@ -144,6 +163,11 @@ impl Clone for Box_int_ {
         Box_int_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Box_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
 #[byte_size(4)]
 pub struct Owner {
@@ -156,6 +180,11 @@ impl Owner {
         Self {
             box_: Box_int_::move_from({ field_ptr!(_a0, box_) }),
         }
+    }
+}
+impl CppMove for Owner {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CppFrom, CopyAssign, Default)]
@@ -183,6 +212,11 @@ impl Clone for OutOfLine {
         OutOfLine::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for OutOfLine {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl OutOfLine {}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign)]
 #[byte_size(4)]
@@ -193,7 +227,9 @@ pub struct Tracked {
 impl Tracked {
     pub fn copy_from(o: Ptr<Tracked>) -> Self {
         let __this: Tracked = Self { copied_from: 0 };
-        field!(o, copied_from).with_mut(|__v| __v.prefix_inc());
+        field!(o, copied_from).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         __this
     }
 }
@@ -205,13 +241,20 @@ impl Clone for Tracked {
         Tracked::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Tracked {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Tracked {
     fn default() -> Self {
         { Tracked { copied_from: 0 } }
     }
 }
 pub fn touch_1(mut t: Ptr<Tracked>) {
-    field!(t, copied_from).with_mut(|__v| __v.prefix_inc());
+    field!(t, copied_from).with_mut(|__v| {
+        __v.prefix_inc();
+    });
 }
 pub fn by_value_2(mut c: Counted) -> i32 {
     return c.v;
@@ -252,12 +295,12 @@ fn main_0() -> i32 {
         ((hold2.c.v == 8) && (hold2.arr[(0) as usize].v == 9)) && (hold2.arr[(1) as usize].v == 10)
     );
     assert!((copies_0.with(|rc| *rc.borrow()) == 9));
-    let mut vec_: Vec<Counted> = Vec::new();
+    let vec_: Value<Vec<Counted>> = Rc::new(RefCell::new(Vec::new()));
     {
         let a0_clone = (*a.borrow()).clone();
-        vec_.push(a0_clone)
+        (*vec_.borrow_mut()).push(a0_clone)
     };
-    assert!((vec_[0_usize].v == 1));
+    assert!((vec_.decay().offset(0_usize as isize).with(|__s| __s.v) == 1));
     assert!((copies_0.with(|rc| *rc.borrow()) == 10));
     let i1: Value<Ignored> = Rc::new(RefCell::new(Ignored::new({ 1 })));
     let mut i2: Ignored = Ignored::copy_from({ i1.as_pointer() });
@@ -350,7 +393,9 @@ pub trait TrackedImpl {
 }
 impl TrackedImpl for Ptr<Tracked> {
     fn copy_assign(&self, o: Ptr<Tracked>) -> Ptr<Tracked> {
-        field!(o, copied_from).with_mut(|__v| __v.prefix_inc());
+        field!(o, copied_from).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
 }

@@ -8,16 +8,19 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0));
+        let m: Value<std_move_sentinel_int_> =
+            Rc::new(RefCell::new(<std_move_sentinel_int_>::default()));
+        assert!(({ (({ (*m.borrow()).base() }) == 0) }));
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!()).is_null());
+        let m: Value<std_move_sentinel_int_ptr_> =
+            Rc::new(RefCell::new(<std_move_sentinel_int_ptr_>::default()));
+        assert!(({ ({ (*m.borrow()).base() }).is_null() }));
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ unimplemented!().i } == 3));
+        let m: Value<std_move_sentinel_S_> =
+            Rc::new(RefCell::new(<std_move_sentinel_S_>::default()));
+        assert!(({ ({ (*m.borrow()).base() }).i } == 3));
     }
     return true;
 }
@@ -26,6 +29,11 @@ pub fn test_0() -> bool {
 pub struct S_1 {
     #[offset(0)]
     pub i: i32,
+}
+impl CppMove for S_1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for S_1 {
     fn default() -> Self {

@@ -23,6 +23,11 @@ impl support_double_move_tracker {
         __this
     }
 }
+impl CppMove for support_double_move_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for support_double_move_tracker {
     fn default() -> Self {
         { support_double_move_tracker::new() }
@@ -32,18 +37,22 @@ impl Default for support_double_move_tracker {
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
@@ -60,6 +69,11 @@ impl cpp17_output_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -84,6 +98,11 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
         }
     }
 }
+impl CppMove for cpp17_input_iterator_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
@@ -101,6 +120,11 @@ impl cpp20_random_access_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp20_random_access_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -125,6 +149,11 @@ impl cpp20_input_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_input_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
@@ -144,6 +173,11 @@ impl cpp20_output_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp20_output_iterator<int*>, int>"
@@ -159,6 +193,11 @@ pub struct IteratorOpCounts {
     pub zero_moves: usize,
     #[offset(24)]
     pub equal_cmps: usize,
+}
+impl CppMove for IteratorOpCounts {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
@@ -180,6 +219,11 @@ pub struct sentinel_wrapper_InputIteratorNotDerivedFromGeneric_int__ {
     base_: InputIteratorNotDerivedFromGeneric_int_,
 }
 impl sentinel_wrapper_InputIteratorNotDerivedFromGeneric_int__ {}
+impl CppMove for sentinel_wrapper_InputIteratorNotDerivedFromGeneric_int__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct sentinel_wrapper_InputIteratorNotIndirectlyReadable_ {
@@ -188,6 +232,11 @@ pub struct sentinel_wrapper_InputIteratorNotIndirectlyReadable_ {
     base_: InputIteratorNotIndirectlyReadable,
 }
 impl sentinel_wrapper_InputIteratorNotIndirectlyReadable_ {}
+impl CppMove for sentinel_wrapper_InputIteratorNotIndirectlyReadable_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct sentinel_wrapper_InputIteratorNotInputOrOutputIterator_ {
@@ -196,6 +245,11 @@ pub struct sentinel_wrapper_InputIteratorNotInputOrOutputIterator_ {
     base_: InputIteratorNotInputOrOutputIterator,
 }
 impl sentinel_wrapper_InputIteratorNotInputOrOutputIterator_ {}
+impl CppMove for sentinel_wrapper_InputIteratorNotInputOrOutputIterator_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct sentinel_wrapper_BidirectionalIteratorNotDerivedFrom_ {
@@ -204,6 +258,11 @@ pub struct sentinel_wrapper_BidirectionalIteratorNotDerivedFrom_ {
     base_: BidirectionalIteratorNotDerivedFrom,
 }
 impl sentinel_wrapper_BidirectionalIteratorNotDerivedFrom_ {}
+impl CppMove for sentinel_wrapper_BidirectionalIteratorNotDerivedFrom_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct sentinel_wrapper_BidirectionalIteratorNotDecrementable_ {
@@ -212,6 +271,11 @@ pub struct sentinel_wrapper_BidirectionalIteratorNotDecrementable_ {
     base_: BidirectionalIteratorNotDecrementable,
 }
 impl sentinel_wrapper_BidirectionalIteratorNotDecrementable_ {}
+impl CppMove for sentinel_wrapper_BidirectionalIteratorNotDecrementable_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_0(
     _a0: Ptr<forward_sized_iterator_int_ptr_>,
     _a1: Ptr<forward_sized_iterator_int_ptr_>,
@@ -229,6 +293,11 @@ impl forward_sized_iterator_int_ptr_ {}
 impl CppEq for forward_sized_iterator_int_ptr_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_0(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for forward_sized_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for forward_sized_iterator_int_ptr_ {
@@ -261,13 +330,17 @@ pub fn operator_add_2(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
 pub fn iter_swap_3(mut a: adl_Iterator, mut b: adl_Iterator) {
     cpp_swap!((a.ptr_).clone(), (b.ptr_).clone());
     if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+        a.iter_swaps_.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub fn iter_move_4(iter: adl_Iterator) -> Ptr<i32> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
-        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
+        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
@@ -384,6 +457,11 @@ impl CppRandomAccessIterator<i32> for adl_Iterator {
         })
     }
 }
+impl CppMove for adl_Iterator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
@@ -414,6 +492,11 @@ impl CppEq for rvalue_iterator_int_ptr_ {
             == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for rvalue_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Ptr< i8  >  , new, value)]
@@ -424,29 +507,44 @@ impl util_iterator_error {
         Self {}
     }
 }
+impl CppMove for util_iterator_error {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct UncheckedRange_int_ptr__int_ptr_ {}
+impl CppMove for UncheckedRange_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct UncheckedRange_InputIteratorNotDerivedFromGeneric_int___sentinel_wrapper_InputIteratorNotDerivedFromGeneric_int___
 {}
+impl CppMove for UncheckedRange_InputIteratorNotDerivedFromGeneric_int___sentinel_wrapper_InputIteratorNotDerivedFromGeneric_int___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct UncheckedRange_InputIteratorNotIndirectlyReadable__sentinel_wrapper_InputIteratorNotIndirectlyReadable__
 {}
+impl CppMove for UncheckedRange_InputIteratorNotIndirectlyReadable__sentinel_wrapper_InputIteratorNotIndirectlyReadable__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct UncheckedRange_InputIteratorNotInputOrOutputIterator__sentinel_wrapper_InputIteratorNotInputOrOutputIterator__
 {}
+impl CppMove for UncheckedRange_InputIteratorNotInputOrOutputIterator__sentinel_wrapper_InputIteratorNotInputOrOutputIterator__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct UncheckedRange_BidirectionalIteratorNotDerivedFrom__sentinel_wrapper_BidirectionalIteratorNotDerivedFrom__
 {}
+impl CppMove for UncheckedRange_BidirectionalIteratorNotDerivedFrom__sentinel_wrapper_BidirectionalIteratorNotDerivedFrom__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct UncheckedRange_BidirectionalIteratorNotDecrementable__sentinel_wrapper_BidirectionalIteratorNotDecrementable__
 {}
+impl CppMove for UncheckedRange_BidirectionalIteratorNotDecrementable__sentinel_wrapper_BidirectionalIteratorNotDecrementable__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 const _: () = assert!(
     true,
     "std::ranges::contiguous_range<UncheckedRange<int*, int*>>"
@@ -454,6 +552,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct InputIteratorNotDerivedFromGeneric_int_ {}
+impl CppMove for InputIteratorNotDerivedFromGeneric_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "std::input_or_output_iterator<InputIteratorNotDerivedFrom>"
@@ -473,6 +576,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct InputIteratorNotIndirectlyReadable {}
+impl CppMove for InputIteratorNotIndirectlyReadable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "std::input_or_output_iterator<InputIteratorNotIndirectlyReadable>"
@@ -492,6 +600,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct InputIteratorNotInputOrOutputIterator {}
+impl CppMove for InputIteratorNotInputOrOutputIterator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     !(false),
     "!std::input_or_output_iterator<InputIteratorNotInputOrOutputIterator>"
@@ -522,6 +635,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct IndirectUnaryPredicateNotPredicate {}
+impl CppMove for IndirectUnaryPredicateNotPredicate {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     !(false),
     "!std::predicate<IndirectUnaryPredicateNotPredicate, int&>"
@@ -533,6 +651,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct SentinelForNotSemiregular {}
+impl CppMove for SentinelForNotSemiregular {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "std::input_or_output_iterator<SentinelForNotSemiregular>"
@@ -545,6 +668,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct SentinelForNotWeaklyEqualityComparableWith {}
+impl CppMove for SentinelForNotWeaklyEqualityComparableWith {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "std::input_or_output_iterator<SentinelForNotWeaklyEqualityComparableWith>"
@@ -573,6 +701,11 @@ impl CppEq for ForwardIteratorNotDerivedFrom {
         ForwardIteratorNotDerivedFromImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for ForwardIteratorNotDerivedFrom {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::input_iterator<ForwardIteratorNotDerivedFrom>");
 const _: () = assert!(true, "std::incrementable<ForwardIteratorNotDerivedFrom>");
 const _: () = assert!(
@@ -589,6 +722,11 @@ pub struct ForwardIteratorNotIncrementable {}
 impl CppEq for ForwardIteratorNotIncrementable {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         ForwardIteratorNotIncrementableImpl::operator_eq(__lhs, __rhs.clone())
+    }
+}
+impl CppMove for ForwardIteratorNotIncrementable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 const _: () = assert!(true, "std::input_iterator<ForwardIteratorNotIncrementable>");
@@ -612,6 +750,11 @@ impl CppEq for BidirectionalIteratorNotDerivedFrom {
         BidirectionalIteratorNotDerivedFromImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for BidirectionalIteratorNotDerivedFrom {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "std::forward_iterator<BidirectionalIteratorNotDerivedFrom>"
@@ -632,6 +775,11 @@ impl CppEq for BidirectionalIteratorNotDecrementable {
         BidirectionalIteratorNotDecrementableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for BidirectionalIteratorNotDecrementable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "std::forward_iterator<BidirectionalIteratorNotDecrementable>"
@@ -647,6 +795,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct PermutableNotForwardIterator {}
+impl CppMove for PermutableNotForwardIterator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::input_iterator<PermutableNotForwardIterator>");
 const _: () = assert!(
     !(false),
@@ -664,6 +817,11 @@ impl CppEq for PermutableNotSwappable {
         PermutableNotSwappableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for PermutableNotSwappable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::input_iterator<PermutableNotSwappable>");
 const _: () = assert!(true, "std::forward_iterator<PermutableNotSwappable>");
 const _: () = assert!(!(false), "!std::permutable<PermutableNotSwappable>");
@@ -674,6 +832,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct OutputIteratorNotInputOrOutputIterator {}
+impl CppMove for OutputIteratorNotInputOrOutputIterator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     !(false),
     "!std::input_or_output_iterator<OutputIteratorNotInputOrOutputIterator>"
@@ -693,6 +856,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct OutputIteratorNotIndirectlyWritable {}
+impl CppMove for OutputIteratorNotIndirectlyWritable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "std::input_or_output_iterator<OutputIteratorNotIndirectlyWritable>"
@@ -712,6 +880,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct IndirectBinaryPredicateNotIndirectlyReadable {}
+impl CppMove for IndirectBinaryPredicateNotIndirectlyReadable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     !(false),
     "!std::indirect_binary_predicate<std::ranges::equal_to, IndirectBinaryPredicateNotIndirectlyReadable, int*>"
@@ -729,6 +902,11 @@ impl CppEq for RandomAccessIteratorNotDerivedFrom {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         RandomAccessIteratorNotDerivedFromImpl::operator_cmp(__lhs, __rhs.clone())
             == std::cmp::Ordering::Equal
+    }
+}
+impl CppMove for RandomAccessIteratorNotDerivedFrom {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 const _: () = assert!(
@@ -754,6 +932,11 @@ impl CppEq for RandomAccessIteratorBadIndex {
             == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for RandomAccessIteratorBadIndex {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "std::bidirectional_iterator<RandomAccessIteratorBadIndex>"
@@ -777,6 +960,11 @@ impl CppEq for RandomAccessIteratorBadDifferenceType {
             == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for RandomAccessIteratorBadDifferenceType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::regular<RandomAccessIteratorBadDifferenceType>");
 const _: () = assert!(
     !(false),
@@ -789,30 +977,40 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RangeT_int_ {}
+impl CppMove for RangeT_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::ranges::input_range<RangeT<int>>");
 const _: () = assert!(true, "std::ranges::range<BadRangeT<int>>");
 const _: () = assert!(!(false), "!std::ranges::input_range<BadRangeT<int>>");
 thread_local!(
-    pub static SFINAEs_away_7: Value<bool> = Rc::new(RefCell::new(unimplemented!()));
+    pub static SFINAEs_away_7: Value<bool> = Rc::new(RefCell::new(true));
 );
 thread_local!(
-    pub static SFINAEs_away_8: Value<bool> = Rc::new(RefCell::new(unimplemented!()));
+    pub static SFINAEs_away_8: Value<bool> = Rc::new(RefCell::new(true));
 );
 thread_local!(
-    pub static SFINAEs_away_9: Value<bool> = Rc::new(RefCell::new(unimplemented!()));
+    pub static SFINAEs_away_9: Value<bool> = Rc::new(RefCell::new(true));
 );
 thread_local!(
-    pub static SFINAEs_away_10: Value<bool> = Rc::new(RefCell::new(unimplemented!()));
+    pub static SFINAEs_away_10: Value<bool> = Rc::new(RefCell::new(true));
 );
 thread_local!(
-    pub static SFINAEs_away_11: Value<bool> = Rc::new(RefCell::new(unimplemented!()));
+    pub static SFINAEs_away_11: Value<bool> = Rc::new(RefCell::new(true));
 );
 thread_local!(
-    pub static SFINAEs_away_12: Value<bool> = Rc::new(RefCell::new(unimplemented!()));
+    pub static SFINAEs_away_12: Value<bool> = Rc::new(RefCell::new(true));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Empty {}
+impl CppMove for Empty {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Deleter {}
@@ -821,6 +1019,11 @@ impl Callable1<Ptr<i32>, ()> for Deleter {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             DeleterImpl::operator_call(__it, a1)
         })
+    }
+}
+impl CppMove for Deleter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {
@@ -1082,7 +1285,7 @@ pub trait RandomAccessIteratorBadDifferenceTypeImpl {
 }
 impl RandomAccessIteratorBadDifferenceTypeImpl for Ptr<RandomAccessIteratorBadDifferenceType> {
     fn operator_cmp(&self, _a0: Ptr<RandomAccessIteratorBadDifferenceType>) -> std::cmp::Ordering {
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<RandomAccessIteratorBadDifferenceType>) -> bool {
         return true;
@@ -1118,7 +1321,7 @@ pub trait RandomAccessIteratorBadIndexImpl {
 }
 impl RandomAccessIteratorBadIndexImpl for Ptr<RandomAccessIteratorBadIndex> {
     fn operator_cmp(&self, _a0: Ptr<RandomAccessIteratorBadIndex>) -> std::cmp::Ordering {
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<RandomAccessIteratorBadIndex>) -> bool {
         return true;
@@ -1154,7 +1357,7 @@ pub trait RandomAccessIteratorNotDerivedFromImpl {
 }
 impl RandomAccessIteratorNotDerivedFromImpl for Ptr<RandomAccessIteratorNotDerivedFrom> {
     fn operator_cmp(&self, _a0: Ptr<RandomAccessIteratorNotDerivedFrom>) -> std::cmp::Ordering {
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<RandomAccessIteratorNotDerivedFrom>) -> bool {
         return true;
@@ -1323,21 +1526,29 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
         return (*self).clone();
     }
     fn operator_inc_14(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_15(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return prev;
     }
     fn operator_dec_16(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_17(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return prev;
     }
 }
@@ -1556,11 +1767,11 @@ impl rvalue_iterator_int_ptr_Impl for Ptr<rvalue_iterator_int_ptr_> {
                 &((*self).with(|__s| __s.it_.clone())),
                 &(_a0.with(|__s| __s.it_.clone())),
             )));
-            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow());
+            if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+                return ({ (*cmp.borrow()) });
             }
         }
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> bool {
         return ({ (*self).with(|__s| __s.it_.clone()) } == { _a0.with(|__s| __s.it_.clone()) });

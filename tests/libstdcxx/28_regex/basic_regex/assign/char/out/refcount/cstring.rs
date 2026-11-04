@@ -7,13 +7,20 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test01_0() {
-    let re: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
+        <std_basic_regex_char__std_regex_traits_char__>::default(),
+    ));
     let mut cs: Ptr<i8> = Ptr::<i8>::from_string_literal(b"aab");
-    unimplemented!();
+    ({ (*re.borrow()).assign_17((cs).clone(), None) });
 }
 pub fn test02_1() {
-    let re: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
+        std_basic_regex_char__std_regex_traits_char__::new_1(
+            { Ptr::<i8>::from_string_literal(b"[[:alnum:]]") },
+            { basic_2.with(|rc| *rc.borrow()) },
+        ),
+    ));
+    (*re.borrow_mut()) = Ptr::<i8>::from_string_literal(b"\\w+");
 }
 pub fn main() {
     __cpp2rust_init_globals();

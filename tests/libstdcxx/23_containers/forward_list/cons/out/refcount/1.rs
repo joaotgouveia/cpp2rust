@@ -7,7 +7,9 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test01_0() {
-    let fld: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fld: Value<std_forward_list_double__std_allocator_double__> = Rc::new(RefCell::new(
+        <std_forward_list_double__std_allocator_double__>::default(),
+    ));
 }
 pub fn main() {
     __cpp2rust_init_globals();

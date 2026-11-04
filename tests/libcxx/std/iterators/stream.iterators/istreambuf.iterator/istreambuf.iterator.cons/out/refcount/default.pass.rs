@@ -28,17 +28,17 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
-        let it2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        &(*it2.borrow_mut());
+        let mut it: Ptr<::std::fs::File> = Ptr::null();
+        assert!(it == Ptr::null());
+        let mut it2: Ptr<::std::fs::File> = Ptr::null();
+        &(it2);
         const _: () = assert!(true, "");;
     }
     {
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
-        let it2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        &(*it2.borrow_mut());
+        let mut it: Ptr<::std::fs::File> = Ptr::null();
+        assert!(it == Ptr::null());
+        let mut it2: Ptr<::std::fs::File> = Ptr::null();
+        &(it2);
         const _: () = assert!(true, "");;
     }
     return 0;

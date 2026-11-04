@@ -27,26 +27,117 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    let f2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() as bool));
-    assert!((unimplemented!() as bool));
-    assert!((unimplemented!() as bool));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!((unimplemented!() as bool));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!((unimplemented!() as bool));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    let mut foo: bool = unimplemented!();
+    let f: Value<std_logical_and_int_> = Rc::new(RefCell::new(<std_logical_and_int_>::default()));
+    assert!(
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(36));
+            let ___y: Value<i32> = Rc::new(RefCell::new(36));
+            (*f.borrow_mut())(___x.as_pointer(), ___y.as_pointer())
+        })
+    );
+    assert!(
+        !({
+            let ___x: Value<i32> = Rc::new(RefCell::new(36));
+            let ___y: Value<i32> = Rc::new(RefCell::new(0));
+            (*f.borrow_mut())(___x.as_pointer(), ___y.as_pointer())
+        })
+    );
+    assert!(
+        !({
+            let ___x: Value<i32> = Rc::new(RefCell::new(0));
+            let ___y: Value<i32> = Rc::new(RefCell::new(36));
+            (*f.borrow_mut())(___x.as_pointer(), ___y.as_pointer())
+        })
+    );
+    assert!(
+        !({
+            let ___x: Value<i32> = Rc::new(RefCell::new(0));
+            let ___y: Value<i32> = Rc::new(RefCell::new(0));
+            (*f.borrow_mut())(___x.as_pointer(), ___y.as_pointer())
+        })
+    );
+    let f2: Value<std_logical_and_void_> =
+        Rc::new(RefCell::new(<std_logical_and_void_>::default()));
+    assert!(
+        (({
+            let ___t: Value<i32> = Rc::new(RefCell::new(36));
+            let ___u: Value<i32> = Rc::new(RefCell::new(36));
+            (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+        }) as bool)
+    );
+    assert!(
+        (({
+            let ___t: Value<i32> = Rc::new(RefCell::new(36));
+            let ___u: Value<i64> = Rc::new(RefCell::new(36_i64));
+            (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+        }) as bool)
+    );
+    assert!(
+        (({
+            let ___t: Value<i64> = Rc::new(RefCell::new(36_i64));
+            let ___u: Value<i32> = Rc::new(RefCell::new(36));
+            (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+        }) as bool)
+    );
+    assert!(
+        !({
+            let ___t: Value<i32> = Rc::new(RefCell::new(36));
+            let ___u: Value<i32> = Rc::new(RefCell::new(0));
+            (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+        })
+    );
+    assert!(
+        !({
+            let ___t: Value<i32> = Rc::new(RefCell::new(0));
+            let ___u: Value<i32> = Rc::new(RefCell::new(36));
+            (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+        })
+    );
+    assert!(
+        (({
+            let ___t: Value<i32> = Rc::new(RefCell::new(36));
+            let ___u: Value<i64> = Rc::new(RefCell::new(36_i64));
+            (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+        }) as bool)
+    );
+    assert!(
+        !({
+            let ___t: Value<i32> = Rc::new(RefCell::new(36));
+            let ___u: Value<i64> = Rc::new(RefCell::new(0_i64));
+            (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+        })
+    );
+    assert!(
+        !({
+            let ___t: Value<i32> = Rc::new(RefCell::new(0));
+            let ___u: Value<i64> = Rc::new(RefCell::new(36_i64));
+            (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+        })
+    );
+    assert!(
+        (({
+            let ___t: Value<i64> = Rc::new(RefCell::new(36_i64));
+            let ___u: Value<i32> = Rc::new(RefCell::new(36));
+            (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+        }) as bool)
+    );
+    assert!(
+        !({
+            let ___t: Value<i64> = Rc::new(RefCell::new(36_i64));
+            let ___u: Value<i32> = Rc::new(RefCell::new(0));
+            (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+        })
+    );
+    assert!(
+        !({
+            let ___t: Value<i64> = Rc::new(RefCell::new(0_i64));
+            let ___u: Value<i32> = Rc::new(RefCell::new(36));
+            (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+        })
+    );
+    let mut foo: bool = true;
     const _: () = assert!(true, "foo");;
-    let mut bar: bool = unimplemented!();
+    let mut bar: bool = true;
     const _: () = assert!(true, "bar");;
     return 0;
 }

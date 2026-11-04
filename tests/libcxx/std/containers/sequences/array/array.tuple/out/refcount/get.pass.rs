@@ -12,28 +12,28 @@ pub fn tempArray_0(mut args_0: i32, mut args_1: i32, mut args_2: i32) -> Vec<i32
 pub fn tests_1() -> bool {
     {
         let array: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([3.3_f64])));
-        assert!(((unimplemented!().read()) == 3.3_f64));
-        unimplemented!().write(99.1_f64);
-        assert!(((unimplemented!().read()) == 99.1_f64));
+        assert!(((array.decay().offset(0 as isize).read()) == 3.3_f64));
+        array.decay().offset(0 as isize).write(99.1_f64);
+        assert!(((array.decay().offset(0 as isize).read()) == 99.1_f64));
     }
     {
         let array: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([3.3_f64, 4.4_f64])));
-        assert!(((unimplemented!().read()) == 3.3_f64));
-        assert!(((unimplemented!().read()) == 4.4_f64));
-        unimplemented!().write(99.1_f64);
-        unimplemented!().write(99.2_f64);
-        assert!(((unimplemented!().read()) == 99.1_f64));
-        assert!(((unimplemented!().read()) == 99.2_f64));
+        assert!(((array.decay().offset(0 as isize).read()) == 3.3_f64));
+        assert!(((array.decay().offset(1 as isize).read()) == 4.4_f64));
+        array.decay().offset(0 as isize).write(99.1_f64);
+        array.decay().offset(1 as isize).write(99.2_f64);
+        assert!(((array.decay().offset(0 as isize).read()) == 99.1_f64));
+        assert!(((array.decay().offset(1 as isize).read()) == 99.2_f64));
     }
     {
         let array: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([3.3_f64, 4.4_f64, 5.5_f64])));
-        assert!(((unimplemented!().read()) == 3.3_f64));
-        assert!(((unimplemented!().read()) == 4.4_f64));
-        assert!(((unimplemented!().read()) == 5.5_f64));
-        unimplemented!().write(99.2_f64);
-        assert!(((unimplemented!().read()) == 3.3_f64));
-        assert!(((unimplemented!().read()) == 99.2_f64));
-        assert!(((unimplemented!().read()) == 5.5_f64));
+        assert!(((array.decay().offset(0 as isize).read()) == 3.3_f64));
+        assert!(((array.decay().offset(1 as isize).read()) == 4.4_f64));
+        assert!(((array.decay().offset(2 as isize).read()) == 5.5_f64));
+        array.decay().offset(1 as isize).write(99.2_f64);
+        assert!(((array.decay().offset(0 as isize).read()) == 3.3_f64));
+        assert!(((array.decay().offset(1 as isize).read()) == 99.2_f64));
+        assert!(((array.decay().offset(2 as isize).read()) == 5.5_f64));
     }
     {
         let array: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([3.3_f64])));
@@ -43,9 +43,33 @@ pub fn tests_1() -> bool {
         );;
     }
     {
-        assert!(((unimplemented!().read()) == 1));
-        assert!(((unimplemented!().read()) == 2));
-        assert!(((unimplemented!().read()) == 3));
+        assert!(
+            ((match (Rc::new(RefCell::new(({ tempArray_0(1, 2, 3,) }))).as_pointer(),) {
+                (__tmp_0,) => {
+                    __tmp_0.decay().offset(0 as isize)
+                }
+            }
+            .read())
+                == 1)
+        );
+        assert!(
+            ((match (Rc::new(RefCell::new(({ tempArray_0(1, 2, 3,) }))).as_pointer(),) {
+                (__tmp_1,) => {
+                    __tmp_1.decay().offset(1 as isize)
+                }
+            }
+            .read())
+                == 2)
+        );
+        assert!(
+            ((match (Rc::new(RefCell::new(({ tempArray_0(1, 2, 3,) }))).as_pointer(),) {
+                (__tmp_2,) => {
+                    __tmp_2.decay().offset(2 as isize)
+                }
+            }
+            .read())
+                == 3)
+        );
     }
     return true;
 }

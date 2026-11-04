@@ -9,18 +9,23 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct adl_A {}
+impl CppMove for adl_A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn cref_0(mut _a0: adl_A) {}
 pub fn test_1() -> bool {
     {
         let i: Value<i32> = Rc::new(RefCell::new(0));
-        let mut r1: Ptr<i32> = unimplemented!();
-        let mut r2: Ptr<i32> = unimplemented!();
+        let mut r1: Ptr<i32> = ({ cref_2(i.as_pointer()) });
+        let mut r2: Ptr<i32> = ({ cref_3((r1).clone()) });
         assert!(((r2) == (i.as_pointer())));
     }
     {
         let a: Value<adl_A> = Rc::new(RefCell::new(<adl_A>::default()));
-        let mut a1: Ptr<adl_A> = unimplemented!();
-        let mut a2: Ptr<adl_A> = unimplemented!();
+        let mut a1: Ptr<adl_A> = ({ cref_4(a.as_pointer()) });
+        let mut a2: Ptr<adl_A> = ({ cref_5((a1).clone()) });
         assert!(((a2) == (a.as_pointer())));
     }
     return true;

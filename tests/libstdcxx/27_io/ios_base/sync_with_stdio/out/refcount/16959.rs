@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test01_0() {
-    unimplemented!();
+    ({ std_ios_base::sync_with_stdio(Some(false)) });
 }
 pub fn main() {
     __cpp2rust_init_globals();

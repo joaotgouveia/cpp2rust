@@ -15,6 +15,11 @@ pub struct Inner {
     #[byte_size(8)]
     pub name: Ptr<i8>,
 }
+impl CppMove for Inner {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(88)]
 pub struct Outer {
@@ -41,6 +46,11 @@ pub struct Outer {
     #[offset(80)]
     #[byte_size(8)]
     pub fn_: FnPtr<fn(i32) -> i32>,
+}
+impl CppMove for Outer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for Outer {
     fn default() -> Self {
@@ -77,6 +87,11 @@ pub struct Foo {
     pub fn2: FnPtr<fn(i32) -> i32>,
     #[offset(32)]
     pub n: i32,
+}
+impl CppMove for Foo {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 thread_local!(
     pub static static_fn_0: Value<FnPtr<fn(i32) -> i32>> =

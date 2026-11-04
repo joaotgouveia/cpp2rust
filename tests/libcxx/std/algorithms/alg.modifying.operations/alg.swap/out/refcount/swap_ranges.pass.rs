@@ -23,6 +23,11 @@ impl support_double_move_tracker {
         __this
     }
 }
+impl CppMove for support_double_move_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for support_double_move_tracker {
     fn default() -> Self {
         { support_double_move_tracker::new() }
@@ -32,42 +37,52 @@ impl Default for support_double_move_tracker {
 #[byte_size(1)]
 pub struct types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr__
 {}
+impl CppMove for types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_type_list_std_unique_ptr_int__std_default_delete_int___ptr__contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr___random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr___bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr___forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr__
 {}
+impl CppMove for types_type_list_std_unique_ptr_int__std_default_delete_int___ptr__contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr___random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr___bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr___forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr____types_type_list_bidirectional_iterator_int_ptr___
 {}
+impl CppMove for types_concatenate_types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr____types_type_list_bidirectional_iterator_int_ptr___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr____types_type_list_forward_iterator_int_ptr___
 {}
+impl CppMove for types_concatenate_types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr____types_type_list_forward_iterator_int_ptr___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_std_unique_ptr_int__std_default_delete_int___ptr__contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr___random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr____types_type_list_bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr___
 {}
+impl CppMove for types_concatenate_types_type_list_std_unique_ptr_int__std_default_delete_int___ptr__contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr___random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr____types_type_list_bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_std_unique_ptr_int__std_default_delete_int___ptr__contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr___random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr___bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr____types_type_list_forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr___
 {}
+impl CppMove for types_concatenate_types_type_list_std_unique_ptr_int__std_default_delete_int___ptr__contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr___random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr___bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr____types_type_list_forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn for_each_0(
     mut _a0 : types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr__,
     f: TestPtr,
@@ -564,6 +579,11 @@ impl cpp17_output_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp17_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
@@ -584,6 +604,11 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_input_iterator_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
@@ -649,6 +674,11 @@ impl CppIterator<i32> for forward_iterator_int_ptr_ {
     }
 }
 impl CppInputIterator<i32> for forward_iterator_int_ptr_ {}
+impl CppMove for forward_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_ne_15(
     x: Ptr<forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
     y: Ptr<forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
@@ -724,6 +754,11 @@ impl CppInputIterator<Option<Value<i32>>>
     for forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_
 {
 }
+impl CppMove for forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_ne_17(
     x: Ptr<forward_iterator_std_array_int__2__ptr_>,
     y: Ptr<forward_iterator_std_array_int__2__ptr_>,
@@ -783,6 +818,11 @@ impl CppIterator<Vec<i32>> for forward_iterator_std_array_int__2__ptr_ {
     }
 }
 impl CppInputIterator<Vec<i32>> for forward_iterator_std_array_int__2__ptr_ {}
+impl CppMove for forward_iterator_std_array_int__2__ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_ne_18(
     x: Ptr<forward_iterator_std_array_int__3__ptr_>,
     y: Ptr<forward_iterator_std_array_int__3__ptr_>,
@@ -842,6 +882,11 @@ impl CppIterator<Vec<i32>> for forward_iterator_std_array_int__3__ptr_ {
     }
 }
 impl CppInputIterator<Vec<i32>> for forward_iterator_std_array_int__3__ptr_ {}
+impl CppMove for forward_iterator_std_array_int__3__ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_ne_19(
     x: Ptr<bidirectional_iterator_int_ptr_>,
     y: Ptr<bidirectional_iterator_int_ptr_>,
@@ -904,6 +949,11 @@ impl CppIterator<i32> for bidirectional_iterator_int_ptr_ {
     }
 }
 impl CppInputIterator<i32> for bidirectional_iterator_int_ptr_ {}
+impl CppMove for bidirectional_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_ne_21(
     x: Ptr<bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
     y: Ptr<bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
@@ -977,6 +1027,11 @@ impl CppInputIterator<Option<Value<i32>>>
     for bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_
 {
 }
+impl CppMove for bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_ne_23(
     x: Ptr<bidirectional_iterator_std_array_int__2__ptr_>,
     y: Ptr<bidirectional_iterator_std_array_int__2__ptr_>,
@@ -1036,6 +1091,11 @@ impl CppIterator<Vec<i32>> for bidirectional_iterator_std_array_int__2__ptr_ {
     }
 }
 impl CppInputIterator<Vec<i32>> for bidirectional_iterator_std_array_int__2__ptr_ {}
+impl CppMove for bidirectional_iterator_std_array_int__2__ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_ne_24(
     x: Ptr<bidirectional_iterator_std_array_int__3__ptr_>,
     y: Ptr<bidirectional_iterator_std_array_int__3__ptr_>,
@@ -1095,6 +1155,11 @@ impl CppIterator<Vec<i32>> for bidirectional_iterator_std_array_int__3__ptr_ {
     }
 }
 impl CppInputIterator<Vec<i32>> for bidirectional_iterator_std_array_int__3__ptr_ {}
+impl CppMove for bidirectional_iterator_std_array_int__3__ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_ne_25(
     x: Ptr<random_access_iterator_int_ptr_>,
     y: Ptr<random_access_iterator_int_ptr_>,
@@ -1157,6 +1222,11 @@ impl CppIterator<i32> for random_access_iterator_int_ptr_ {
     }
 }
 impl CppInputIterator<i32> for random_access_iterator_int_ptr_ {}
+impl CppMove for random_access_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_ne_27(
     x: Ptr<random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
     y: Ptr<random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
@@ -1230,6 +1300,11 @@ impl CppInputIterator<Option<Value<i32>>>
     for random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_
 {
 }
+impl CppMove for random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_ne_29(
     x: Ptr<random_access_iterator_std_array_int__2__ptr_>,
     y: Ptr<random_access_iterator_std_array_int__2__ptr_>,
@@ -1289,6 +1364,11 @@ impl CppIterator<Vec<i32>> for random_access_iterator_std_array_int__2__ptr_ {
     }
 }
 impl CppInputIterator<Vec<i32>> for random_access_iterator_std_array_int__2__ptr_ {}
+impl CppMove for random_access_iterator_std_array_int__2__ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_ne_30(
     x: Ptr<random_access_iterator_std_array_int__3__ptr_>,
     y: Ptr<random_access_iterator_std_array_int__3__ptr_>,
@@ -1348,6 +1428,11 @@ impl CppIterator<Vec<i32>> for random_access_iterator_std_array_int__3__ptr_ {
     }
 }
 impl CppInputIterator<Vec<i32>> for random_access_iterator_std_array_int__3__ptr_ {}
+impl CppMove for random_access_iterator_std_array_int__3__ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
@@ -1364,6 +1449,11 @@ impl cpp20_random_access_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp20_random_access_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -1432,6 +1522,11 @@ impl CppIterator<i32> for contiguous_iterator_int_ptr_ {
     }
 }
 impl CppInputIterator<i32> for contiguous_iterator_int_ptr_ {}
+impl CppMove for contiguous_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_ne_33(
     x: Ptr<contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
     y: Ptr<contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
@@ -1503,6 +1598,11 @@ impl CppInputIterator<Option<Value<i32>>>
     for contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr_
 {
 }
+impl CppMove for contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn base_35(i: Ptr<i32>) -> Ptr<i32> {
     let i: Value<Ptr<i32>> = Rc::new(RefCell::new(i));
     return (*i.borrow()).clone();
@@ -1529,6 +1629,11 @@ impl cpp20_input_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_input_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
@@ -1548,6 +1653,11 @@ impl cpp20_output_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp20_output_iterator<int*>, int>"
@@ -1563,6 +1673,11 @@ pub struct IteratorOpCounts {
     pub zero_moves: usize,
     #[offset(24)]
     pub equal_cmps: usize,
+}
+impl CppMove for IteratorOpCounts {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
@@ -1595,6 +1710,11 @@ impl CppEq for forward_sized_iterator_int_ptr_ {
         operator_eq_37(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for forward_sized_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -1625,13 +1745,17 @@ pub fn operator_add_39(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
 pub fn iter_swap_40(mut a: adl_Iterator, mut b: adl_Iterator) {
     cpp_swap!((a.ptr_).clone(), (b.ptr_).clone());
     if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+        a.iter_swaps_.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub fn iter_move_41(iter: adl_Iterator) -> Ptr<i32> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
-        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
+        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
@@ -1748,6 +1872,11 @@ impl CppRandomAccessIterator<i32> for adl_Iterator {
         })
     }
 }
+impl CppMove for adl_Iterator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
@@ -1778,6 +1907,11 @@ impl CppEq for rvalue_iterator_int_ptr_ {
             == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for rvalue_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Ptr< i8  >  , new, value)]
@@ -1786,6 +1920,11 @@ pub struct util_iterator_error {}
 impl util_iterator_error {
     pub fn new(mut what: Ptr<i8>) -> Self {
         Self {}
+    }
+}
+impl CppMove for util_iterator_error {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -1798,6 +1937,11 @@ impl Callable0<()> for TestPtr_TestImpl_int_ptr_ {
         })
     }
 }
+impl CppMove for TestPtr_TestImpl_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestPtr_TestImpl_contiguous_iterator_int_ptr__ {}
@@ -1806,6 +1950,11 @@ impl Callable0<()> for TestPtr_TestImpl_contiguous_iterator_int_ptr__ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestPtr_TestImpl_contiguous_iterator_int_ptr__Impl::operator_call_1_int_ptr(__it)
         })
+    }
+}
+impl CppMove for TestPtr_TestImpl_contiguous_iterator_int_ptr__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -1818,6 +1967,11 @@ impl Callable0<()> for TestPtr_TestImpl_random_access_iterator_int_ptr__ {
         })
     }
 }
+impl CppMove for TestPtr_TestImpl_random_access_iterator_int_ptr__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestPtr_TestImpl_bidirectional_iterator_int_ptr__ {}
@@ -1826,6 +1980,11 @@ impl Callable0<()> for TestPtr_TestImpl_bidirectional_iterator_int_ptr__ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestPtr_TestImpl_bidirectional_iterator_int_ptr__Impl::operator_call_1_int_ptr(__it)
         })
+    }
+}
+impl CppMove for TestPtr_TestImpl_bidirectional_iterator_int_ptr__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -1838,6 +1997,11 @@ impl Callable0<()> for TestPtr_TestImpl_forward_iterator_int_ptr__ {
         })
     }
 }
+impl CppMove for TestPtr_TestImpl_forward_iterator_int_ptr__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestPtr {}
@@ -1846,6 +2010,11 @@ impl Callable0<()> for TestPtr {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestPtrImpl::operator_call_1_int_ptr(__it)
         })
+    }
+}
+impl CppMove for TestPtr {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -1858,21 +2027,29 @@ impl Callable0<()> for TestUniquePtr_TestImpl_std_unique_ptr_int__std_default_de
         })
     }
 }
+impl CppMove for TestUniquePtr_TestImpl_std_unique_ptr_int__std_default_delete_int___ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestUniquePtr_TestImpl_contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr__
 {}
 impl Callable0<()  > for TestUniquePtr_TestImpl_contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr__ { fn call(&self) -> ()   { libcc2rs::with_record_ptr(&mut self.clone(), |__it| TestUniquePtr_TestImpl_contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr__Impl::operator_call_1_class_std_unique_ptr_int__ptr(__it)) } }
+impl CppMove for TestUniquePtr_TestImpl_contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestUniquePtr_TestImpl_random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr__
 {}
 impl Callable0<()  > for TestUniquePtr_TestImpl_random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr__ { fn call(&self) -> ()   { libcc2rs::with_record_ptr(&mut self.clone(), |__it| TestUniquePtr_TestImpl_random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr__Impl::operator_call_1_class_std_unique_ptr_int__ptr(__it)) } }
+impl CppMove for TestUniquePtr_TestImpl_random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestUniquePtr_TestImpl_bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr__
 {}
 impl Callable0<()  > for TestUniquePtr_TestImpl_bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr__ { fn call(&self) -> ()   { libcc2rs::with_record_ptr(&mut self.clone(), |__it| TestUniquePtr_TestImpl_bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr__Impl::operator_call_1_class_std_unique_ptr_int__ptr(__it)) } }
+impl CppMove for TestUniquePtr_TestImpl_bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestUniquePtr_TestImpl_forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr__
@@ -1886,6 +2063,13 @@ impl Callable0<()>
         })
     }
 }
+impl CppMove
+    for TestUniquePtr_TestImpl_forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr__
+{
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestUniquePtr {}
@@ -1896,13 +2080,18 @@ impl Callable0<()> for TestUniquePtr {
         })
     }
 }
+impl CppMove for TestUniquePtr {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_simple_cases_44() -> bool {
     {
         let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2])));
         let b: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5])));
         unimplemented!();
-        assert!(((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5));
-        assert!(((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2));
+        assert!(({ ((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5) }));
+        assert!(({ ((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2) }));
     }
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3])));
@@ -1952,8 +2141,8 @@ pub fn test_simple_cases_45() -> bool {
         let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2])));
         let b: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5])));
         unimplemented!();
-        assert!(((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5));
-        assert!(((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2));
+        assert!(({ ((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5) }));
+        assert!(({ ((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2) }));
     }
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3])));
@@ -2003,8 +2192,8 @@ pub fn test_simple_cases_46() -> bool {
         let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2])));
         let b: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5])));
         unimplemented!();
-        assert!(((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5));
-        assert!(((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2));
+        assert!(({ ((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5) }));
+        assert!(({ ((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2) }));
     }
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3])));
@@ -2054,8 +2243,8 @@ pub fn test_simple_cases_47() -> bool {
         let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2])));
         let b: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5])));
         unimplemented!();
-        assert!(((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5));
-        assert!(((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2));
+        assert!(({ ((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5) }));
+        assert!(({ ((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2) }));
     }
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3])));
@@ -2105,8 +2294,8 @@ pub fn test_simple_cases_48() -> bool {
         let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2])));
         let b: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5])));
         unimplemented!();
-        assert!(((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5));
-        assert!(((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2));
+        assert!(({ ((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5) }));
+        assert!(({ ((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2) }));
     }
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3])));
@@ -2156,8 +2345,8 @@ pub fn test_simple_cases_49() -> bool {
         let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2])));
         let b: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5])));
         unimplemented!();
-        assert!(((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5));
-        assert!(((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2));
+        assert!(({ ((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5) }));
+        assert!(({ ((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2) }));
     }
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3])));
@@ -2207,8 +2396,8 @@ pub fn test_simple_cases_50() -> bool {
         let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2])));
         let b: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5])));
         unimplemented!();
-        assert!(((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5));
-        assert!(((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2));
+        assert!(({ ((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5) }));
+        assert!(({ ((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2) }));
     }
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3])));
@@ -2258,8 +2447,8 @@ pub fn test_simple_cases_51() -> bool {
         let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2])));
         let b: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5])));
         unimplemented!();
-        assert!(((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5));
-        assert!(((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2));
+        assert!(({ ((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5) }));
+        assert!(({ ((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2) }));
     }
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3])));
@@ -2305,8 +2494,16 @@ pub fn test_simple_cases_51() -> bool {
     return true;
 }
 pub fn test_vector_bool_52() {
-    let f: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let t: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let f: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(8_u64 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let t: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(8_u64 as usize) as usize)
+            .map(|_| true)
+            .collect::<Vec<bool>>(),
+    ));
     {
         let f1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
         let t1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
@@ -2315,16 +2512,32 @@ pub fn test_vector_bool_52() {
         assert!(unimplemented!());
     }
     {
-        let f1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-        let t1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+        let f1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..(8_u64 as usize) as usize)
+                .map(|_| false)
+                .collect::<Vec<bool>>(),
+        ));
+        let t1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..((8_u64 as u64).wrapping_add(8_u64) as usize) as usize)
+                .map(|_| true)
+                .collect::<Vec<bool>>(),
+        ));
         unimplemented!();
         assert!(unimplemented!());
         assert!(unimplemented!());
     }
 }
 pub fn test_vector_bool_53() {
-    let f: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let t: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let f: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(19_u64 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let t: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(19_u64 as usize) as usize)
+            .map(|_| true)
+            .collect::<Vec<bool>>(),
+    ));
     {
         let f1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
         let t1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
@@ -2333,16 +2546,32 @@ pub fn test_vector_bool_53() {
         assert!(unimplemented!());
     }
     {
-        let f1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-        let t1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+        let f1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..(19_u64 as usize) as usize)
+                .map(|_| false)
+                .collect::<Vec<bool>>(),
+        ));
+        let t1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..((19_u64 as u64).wrapping_add(8_u64) as usize) as usize)
+                .map(|_| true)
+                .collect::<Vec<bool>>(),
+        ));
         unimplemented!();
         assert!(unimplemented!());
         assert!(unimplemented!());
     }
 }
 pub fn test_vector_bool_54() {
-    let f: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let t: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let f: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(32_u64 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let t: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(32_u64 as usize) as usize)
+            .map(|_| true)
+            .collect::<Vec<bool>>(),
+    ));
     {
         let f1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
         let t1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
@@ -2351,16 +2580,32 @@ pub fn test_vector_bool_54() {
         assert!(unimplemented!());
     }
     {
-        let f1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-        let t1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+        let f1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..(32_u64 as usize) as usize)
+                .map(|_| false)
+                .collect::<Vec<bool>>(),
+        ));
+        let t1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..((32_u64 as u64).wrapping_add(8_u64) as usize) as usize)
+                .map(|_| true)
+                .collect::<Vec<bool>>(),
+        ));
         unimplemented!();
         assert!(unimplemented!());
         assert!(unimplemented!());
     }
 }
 pub fn test_vector_bool_55() {
-    let f: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let t: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let f: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(49_u64 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let t: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(49_u64 as usize) as usize)
+            .map(|_| true)
+            .collect::<Vec<bool>>(),
+    ));
     {
         let f1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
         let t1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
@@ -2369,16 +2614,32 @@ pub fn test_vector_bool_55() {
         assert!(unimplemented!());
     }
     {
-        let f1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-        let t1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+        let f1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..(49_u64 as usize) as usize)
+                .map(|_| false)
+                .collect::<Vec<bool>>(),
+        ));
+        let t1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..((49_u64 as u64).wrapping_add(8_u64) as usize) as usize)
+                .map(|_| true)
+                .collect::<Vec<bool>>(),
+        ));
         unimplemented!();
         assert!(unimplemented!());
         assert!(unimplemented!());
     }
 }
 pub fn test_vector_bool_56() {
-    let f: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let t: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let f: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(64_u64 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let t: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(64_u64 as usize) as usize)
+            .map(|_| true)
+            .collect::<Vec<bool>>(),
+    ));
     {
         let f1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
         let t1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
@@ -2387,16 +2648,32 @@ pub fn test_vector_bool_56() {
         assert!(unimplemented!());
     }
     {
-        let f1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-        let t1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+        let f1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..(64_u64 as usize) as usize)
+                .map(|_| false)
+                .collect::<Vec<bool>>(),
+        ));
+        let t1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..((64_u64 as u64).wrapping_add(8_u64) as usize) as usize)
+                .map(|_| true)
+                .collect::<Vec<bool>>(),
+        ));
         unimplemented!();
         assert!(unimplemented!());
         assert!(unimplemented!());
     }
 }
 pub fn test_vector_bool_57() {
-    let f: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let t: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let f: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(199_u64 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let t: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(199_u64 as usize) as usize)
+            .map(|_| true)
+            .collect::<Vec<bool>>(),
+    ));
     {
         let f1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
         let t1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
@@ -2405,16 +2682,32 @@ pub fn test_vector_bool_57() {
         assert!(unimplemented!());
     }
     {
-        let f1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-        let t1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+        let f1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..(199_u64 as usize) as usize)
+                .map(|_| false)
+                .collect::<Vec<bool>>(),
+        ));
+        let t1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..((199_u64 as u64).wrapping_add(8_u64) as usize) as usize)
+                .map(|_| true)
+                .collect::<Vec<bool>>(),
+        ));
         unimplemented!();
         assert!(unimplemented!());
         assert!(unimplemented!());
     }
 }
 pub fn test_vector_bool_58() {
-    let f: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let t: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let f: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(256_u64 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let t: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(256_u64 as usize) as usize)
+            .map(|_| true)
+            .collect::<Vec<bool>>(),
+    ));
     {
         let f1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
         let t1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
@@ -2423,8 +2716,16 @@ pub fn test_vector_bool_58() {
         assert!(unimplemented!());
     }
     {
-        let f1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-        let t1: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+        let f1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..(256_u64 as usize) as usize)
+                .map(|_| false)
+                .collect::<Vec<bool>>(),
+        ));
+        let t1: Value<Vec<bool>> = Rc::new(RefCell::new(
+            (0..((256_u64 as u64).wrapping_add(8_u64) as usize) as usize)
+                .map(|_| true)
+                .collect::<Vec<bool>>(),
+        ));
         unimplemented!();
         assert!(unimplemented!());
         assert!(unimplemented!());
@@ -2537,12 +2838,16 @@ impl TestPtr_TestImpl_bidirectional_iterator_int_ptr__Impl
                 })
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -2585,12 +2890,16 @@ impl TestPtr_TestImpl_bidirectional_iterator_int_ptr__Impl
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -2632,12 +2941,16 @@ impl TestPtr_TestImpl_bidirectional_iterator_int_ptr__Impl
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -2679,12 +2992,16 @@ impl TestPtr_TestImpl_bidirectional_iterator_int_ptr__Impl
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -2726,12 +3043,16 @@ impl TestPtr_TestImpl_bidirectional_iterator_int_ptr__Impl
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -2785,12 +3106,16 @@ impl TestPtr_TestImpl_contiguous_iterator_int_ptr__Impl
                 })
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -2833,12 +3158,16 @@ impl TestPtr_TestImpl_contiguous_iterator_int_ptr__Impl
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -2880,12 +3209,16 @@ impl TestPtr_TestImpl_contiguous_iterator_int_ptr__Impl
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -2927,12 +3260,16 @@ impl TestPtr_TestImpl_contiguous_iterator_int_ptr__Impl
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -2974,12 +3311,16 @@ impl TestPtr_TestImpl_contiguous_iterator_int_ptr__Impl
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -3033,12 +3374,16 @@ impl TestPtr_TestImpl_forward_iterator_int_ptr__Impl
                 })
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -3081,12 +3426,16 @@ impl TestPtr_TestImpl_forward_iterator_int_ptr__Impl
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -3128,12 +3477,16 @@ impl TestPtr_TestImpl_forward_iterator_int_ptr__Impl
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -3175,12 +3528,16 @@ impl TestPtr_TestImpl_forward_iterator_int_ptr__Impl
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -3222,12 +3579,16 @@ impl TestPtr_TestImpl_forward_iterator_int_ptr__Impl
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -3279,12 +3640,16 @@ impl TestPtr_TestImpl_int_ptr_Impl for Ptr<TestPtr_TestImpl_int_ptr_> {
                 })
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -3327,12 +3692,16 @@ impl TestPtr_TestImpl_int_ptr_Impl for Ptr<TestPtr_TestImpl_int_ptr_> {
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -3374,12 +3743,16 @@ impl TestPtr_TestImpl_int_ptr_Impl for Ptr<TestPtr_TestImpl_int_ptr_> {
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -3421,12 +3794,16 @@ impl TestPtr_TestImpl_int_ptr_Impl for Ptr<TestPtr_TestImpl_int_ptr_> {
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -3468,12 +3845,16 @@ impl TestPtr_TestImpl_int_ptr_Impl for Ptr<TestPtr_TestImpl_int_ptr_> {
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -3527,12 +3908,16 @@ impl TestPtr_TestImpl_random_access_iterator_int_ptr__Impl
                 })
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -3575,12 +3960,16 @@ impl TestPtr_TestImpl_random_access_iterator_int_ptr__Impl
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -3622,12 +4011,16 @@ impl TestPtr_TestImpl_random_access_iterator_int_ptr__Impl
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -3669,12 +4062,16 @@ impl TestPtr_TestImpl_random_access_iterator_int_ptr__Impl
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -3716,12 +4113,16 @@ impl TestPtr_TestImpl_random_access_iterator_int_ptr__Impl
                     == (b.as_pointer() as Ptr::<i32>).offset((3) as isize))
             );
             assert!(
-                (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
-                    && ((*a.borrow())[(2) as usize] == 6)
+                ({
+                    (((*a.borrow())[(0) as usize] == 4) && ((*a.borrow())[(1) as usize] == 5))
+                        && ((*a.borrow())[(2) as usize] == 6)
+                })
             );
             assert!(
-                (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
-                    && ((*b.borrow())[(2) as usize] == 3)
+                ({
+                    (((*b.borrow())[(0) as usize] == 1) && ((*b.borrow())[(1) as usize] == 2))
+                        && ((*b.borrow())[(2) as usize] == 3)
+                })
             );
         }
         {
@@ -3819,8 +4220,8 @@ fn operator_call_1_class_std_unique_ptr_int__ptr ( &self , ) { let a : Value<Box
   ;
  ;
  assert!(({ ( { base_36 ( (r ).clone() , ) } )   } == { ( b .as_pointer()  as Ptr< Option<Value<i32  >>  >   ) . offset ( ( 3 ) as isize )  }) )  ;
- assert!(( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) ) )  ;
- assert!(( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) ) )  ;
+ assert!(({ ( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) )  }))  ;
+ assert!(({ ( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) )  }))  ;
  } fn operator_call_1_class_contiguous_iterator_class_std_unique_ptr_int__ptr_ ( &self , ) { let a : Value<Box<[ Option<Value<i32  >>  ]> > = Rc::new(RefCell::new((0..3).map(|_| None).collect::<Box<[Option<Value<i32  >>  ]>>() )) ;
   ;
  ;
@@ -3843,8 +4244,8 @@ fn operator_call_1_class_std_unique_ptr_int__ptr ( &self , ) { let a : Value<Box
   ;
  ;
  assert!(( ( { base_34 ( r .as_pointer()  , ) } )  == ( b .as_pointer()  as Ptr< Option<Value<i32  >>  >   ) . offset ( ( 3 ) as isize ) ) )  ;
- assert!(( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) ) )  ;
- assert!(( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) ) )  ;
+ assert!(({ ( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) )  }))  ;
+ assert!(({ ( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) )  }))  ;
  } fn operator_call_1_class_random_access_iterator_class_std_unique_ptr_int__ptr_ ( &self , ) { let a : Value<Box<[ Option<Value<i32  >>  ]> > = Rc::new(RefCell::new((0..3).map(|_| None).collect::<Box<[Option<Value<i32  >>  ]>>() )) ;
   ;
  ;
@@ -3867,8 +4268,8 @@ fn operator_call_1_class_std_unique_ptr_int__ptr ( &self , ) { let a : Value<Box
   ;
  ;
  assert!(( ( { base_28 ( r .as_pointer()  , ) } )  == ( b .as_pointer()  as Ptr< Option<Value<i32  >>  >   ) . offset ( ( 3 ) as isize ) ) )  ;
- assert!(( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) ) )  ;
- assert!(( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) ) )  ;
+ assert!(({ ( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) )  }))  ;
+ assert!(({ ( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) )  }))  ;
  } fn operator_call_1_class_bidirectional_iterator_class_std_unique_ptr_int__ptr_ ( &self , ) { let a : Value<Box<[ Option<Value<i32  >>  ]> > = Rc::new(RefCell::new((0..3).map(|_| None).collect::<Box<[Option<Value<i32  >>  ]>>() )) ;
   ;
  ;
@@ -3891,8 +4292,8 @@ fn operator_call_1_class_std_unique_ptr_int__ptr ( &self , ) { let a : Value<Box
   ;
  ;
  assert!(( ( { base_22 ( r .as_pointer()  , ) } )  == ( b .as_pointer()  as Ptr< Option<Value<i32  >>  >   ) . offset ( ( 3 ) as isize ) ) )  ;
- assert!(( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) ) )  ;
- assert!(( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) ) )  ;
+ assert!(({ ( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) )  }))  ;
+ assert!(({ ( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) )  }))  ;
  } fn operator_call_1_class_forward_iterator_class_std_unique_ptr_int__ptr_ ( &self , ) { let a : Value<Box<[ Option<Value<i32  >>  ]> > = Rc::new(RefCell::new((0..3).map(|_| None).collect::<Box<[Option<Value<i32  >>  ]>>() )) ;
   ;
  ;
@@ -3915,8 +4316,8 @@ fn operator_call_1_class_std_unique_ptr_int__ptr ( &self , ) { let a : Value<Box
   ;
  ;
  assert!(( ( { base_16 ( r .as_pointer()  , ) } )  == ( b .as_pointer()  as Ptr< Option<Value<i32  >>  >   ) . offset ( ( 3 ) as isize ) ) )  ;
- assert!(( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) ) )  ;
- assert!(( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) ) )  ;
+ assert!(({ ( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) )  }))  ;
+ assert!(({ ( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) )  }))  ;
  } }
 pub trait TestUniquePtr_TestImpl_contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr__Impl
 {
@@ -3949,8 +4350,8 @@ fn operator_call_1_class_std_unique_ptr_int__ptr ( &self , ) { let a : Value<Box
   ;
  ;
  assert!(({ ( { base_36 ( (r ).clone() , ) } )   } == { ( b .as_pointer()  as Ptr< Option<Value<i32  >>  >   ) . offset ( ( 3 ) as isize )  }) )  ;
- assert!(( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) ) )  ;
- assert!(( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) ) )  ;
+ assert!(({ ( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) )  }))  ;
+ assert!(({ ( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) )  }))  ;
  } fn operator_call_1_class_contiguous_iterator_class_std_unique_ptr_int__ptr_ ( &self , ) { let a : Value<Box<[ Option<Value<i32  >>  ]> > = Rc::new(RefCell::new((0..3).map(|_| None).collect::<Box<[Option<Value<i32  >>  ]>>() )) ;
   ;
  ;
@@ -3973,8 +4374,8 @@ fn operator_call_1_class_std_unique_ptr_int__ptr ( &self , ) { let a : Value<Box
   ;
  ;
  assert!(( ( { base_34 ( r .as_pointer()  , ) } )  == ( b .as_pointer()  as Ptr< Option<Value<i32  >>  >   ) . offset ( ( 3 ) as isize ) ) )  ;
- assert!(( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) ) )  ;
- assert!(( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) ) )  ;
+ assert!(({ ( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) )  }))  ;
+ assert!(({ ( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) )  }))  ;
  } fn operator_call_1_class_random_access_iterator_class_std_unique_ptr_int__ptr_ ( &self , ) { let a : Value<Box<[ Option<Value<i32  >>  ]> > = Rc::new(RefCell::new((0..3).map(|_| None).collect::<Box<[Option<Value<i32  >>  ]>>() )) ;
   ;
  ;
@@ -3997,8 +4398,8 @@ fn operator_call_1_class_std_unique_ptr_int__ptr ( &self , ) { let a : Value<Box
   ;
  ;
  assert!(( ( { base_28 ( r .as_pointer()  , ) } )  == ( b .as_pointer()  as Ptr< Option<Value<i32  >>  >   ) . offset ( ( 3 ) as isize ) ) )  ;
- assert!(( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) ) )  ;
- assert!(( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) ) )  ;
+ assert!(({ ( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) )  }))  ;
+ assert!(({ ( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) )  }))  ;
  } fn operator_call_1_class_bidirectional_iterator_class_std_unique_ptr_int__ptr_ ( &self , ) { let a : Value<Box<[ Option<Value<i32  >>  ]> > = Rc::new(RefCell::new((0..3).map(|_| None).collect::<Box<[Option<Value<i32  >>  ]>>() )) ;
   ;
  ;
@@ -4021,8 +4422,8 @@ fn operator_call_1_class_std_unique_ptr_int__ptr ( &self , ) { let a : Value<Box
   ;
  ;
  assert!(( ( { base_22 ( r .as_pointer()  , ) } )  == ( b .as_pointer()  as Ptr< Option<Value<i32  >>  >   ) . offset ( ( 3 ) as isize ) ) )  ;
- assert!(( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) ) )  ;
- assert!(( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) ) )  ;
+ assert!(({ ( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) )  }))  ;
+ assert!(({ ( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) )  }))  ;
  } fn operator_call_1_class_forward_iterator_class_std_unique_ptr_int__ptr_ ( &self , ) { let a : Value<Box<[ Option<Value<i32  >>  ]> > = Rc::new(RefCell::new((0..3).map(|_| None).collect::<Box<[Option<Value<i32  >>  ]>>() )) ;
   ;
  ;
@@ -4045,8 +4446,8 @@ fn operator_call_1_class_std_unique_ptr_int__ptr ( &self , ) { let a : Value<Box
   ;
  ;
  assert!(( ( { base_16 ( r .as_pointer()  , ) } )  == ( b .as_pointer()  as Ptr< Option<Value<i32  >>  >   ) . offset ( ( 3 ) as isize ) ) )  ;
- assert!(( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) ) )  ;
- assert!(( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) ) )  ;
+ assert!(({ ( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) )  }))  ;
+ assert!(({ ( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) )  }))  ;
  } }
 pub trait TestUniquePtr_TestImpl_forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr__Impl
 {
@@ -4095,14 +4496,18 @@ impl TestUniquePtr_TestImpl_forward_iterator_std_unique_ptr_int__std_default_del
             })
         );
         assert!(
-            ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
-                && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
-                && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            ({
+                ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
+                    && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
+                    && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            })
         );
         assert!(
-            ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
-                && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
-                && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            ({
+                ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
+                    && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
+                    && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            })
         );
     }
     fn operator_call_1_class_contiguous_iterator_class_std_unique_ptr_int__ptr_(&self) {
@@ -4139,14 +4544,18 @@ impl TestUniquePtr_TestImpl_forward_iterator_std_unique_ptr_int__std_default_del
                 == (b.as_pointer() as Ptr<Option<Value<i32>>>).offset((3) as isize))
         );
         assert!(
-            ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
-                && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
-                && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            ({
+                ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
+                    && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
+                    && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            })
         );
         assert!(
-            ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
-                && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
-                && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            ({
+                ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
+                    && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
+                    && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            })
         );
     }
     fn operator_call_1_class_random_access_iterator_class_std_unique_ptr_int__ptr_(&self) {
@@ -4183,14 +4592,18 @@ impl TestUniquePtr_TestImpl_forward_iterator_std_unique_ptr_int__std_default_del
                 == (b.as_pointer() as Ptr<Option<Value<i32>>>).offset((3) as isize))
         );
         assert!(
-            ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
-                && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
-                && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            ({
+                ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
+                    && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
+                    && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            })
         );
         assert!(
-            ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
-                && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
-                && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            ({
+                ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
+                    && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
+                    && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            })
         );
     }
     fn operator_call_1_class_bidirectional_iterator_class_std_unique_ptr_int__ptr_(&self) {
@@ -4227,14 +4640,18 @@ impl TestUniquePtr_TestImpl_forward_iterator_std_unique_ptr_int__std_default_del
                 == (b.as_pointer() as Ptr<Option<Value<i32>>>).offset((3) as isize))
         );
         assert!(
-            ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
-                && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
-                && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            ({
+                ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
+                    && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
+                    && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            })
         );
         assert!(
-            ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
-                && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
-                && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            ({
+                ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
+                    && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
+                    && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            })
         );
     }
     fn operator_call_1_class_forward_iterator_class_std_unique_ptr_int__ptr_(&self) {
@@ -4271,14 +4688,18 @@ impl TestUniquePtr_TestImpl_forward_iterator_std_unique_ptr_int__std_default_del
                 == (b.as_pointer() as Ptr<Option<Value<i32>>>).offset((3) as isize))
         );
         assert!(
-            ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
-                && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
-                && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            ({
+                ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
+                    && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
+                    && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            })
         );
         assert!(
-            ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
-                && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
-                && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            ({
+                ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
+                    && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
+                    && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            })
         );
     }
 }
@@ -4313,8 +4734,8 @@ fn operator_call_1_class_std_unique_ptr_int__ptr ( &self , ) { let a : Value<Box
   ;
  ;
  assert!(({ ( { base_36 ( (r ).clone() , ) } )   } == { ( b .as_pointer()  as Ptr< Option<Value<i32  >>  >   ) . offset ( ( 3 ) as isize )  }) )  ;
- assert!(( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) ) )  ;
- assert!(( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) ) )  ;
+ assert!(({ ( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) )  }))  ;
+ assert!(({ ( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) )  }))  ;
  } fn operator_call_1_class_contiguous_iterator_class_std_unique_ptr_int__ptr_ ( &self , ) { let a : Value<Box<[ Option<Value<i32  >>  ]> > = Rc::new(RefCell::new((0..3).map(|_| None).collect::<Box<[Option<Value<i32  >>  ]>>() )) ;
   ;
  ;
@@ -4337,8 +4758,8 @@ fn operator_call_1_class_std_unique_ptr_int__ptr ( &self , ) { let a : Value<Box
   ;
  ;
  assert!(( ( { base_34 ( r .as_pointer()  , ) } )  == ( b .as_pointer()  as Ptr< Option<Value<i32  >>  >   ) . offset ( ( 3 ) as isize ) ) )  ;
- assert!(( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) ) )  ;
- assert!(( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) ) )  ;
+ assert!(({ ( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) )  }))  ;
+ assert!(({ ( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) )  }))  ;
  } fn operator_call_1_class_random_access_iterator_class_std_unique_ptr_int__ptr_ ( &self , ) { let a : Value<Box<[ Option<Value<i32  >>  ]> > = Rc::new(RefCell::new((0..3).map(|_| None).collect::<Box<[Option<Value<i32  >>  ]>>() )) ;
   ;
  ;
@@ -4361,8 +4782,8 @@ fn operator_call_1_class_std_unique_ptr_int__ptr ( &self , ) { let a : Value<Box
   ;
  ;
  assert!(( ( { base_28 ( r .as_pointer()  , ) } )  == ( b .as_pointer()  as Ptr< Option<Value<i32  >>  >   ) . offset ( ( 3 ) as isize ) ) )  ;
- assert!(( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) ) )  ;
- assert!(( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) ) )  ;
+ assert!(({ ( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) )  }))  ;
+ assert!(({ ( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) )  }))  ;
  } fn operator_call_1_class_bidirectional_iterator_class_std_unique_ptr_int__ptr_ ( &self , ) { let a : Value<Box<[ Option<Value<i32  >>  ]> > = Rc::new(RefCell::new((0..3).map(|_| None).collect::<Box<[Option<Value<i32  >>  ]>>() )) ;
   ;
  ;
@@ -4385,8 +4806,8 @@ fn operator_call_1_class_std_unique_ptr_int__ptr ( &self , ) { let a : Value<Box
   ;
  ;
  assert!(( ( { base_22 ( r .as_pointer()  , ) } )  == ( b .as_pointer()  as Ptr< Option<Value<i32  >>  >   ) . offset ( ( 3 ) as isize ) ) )  ;
- assert!(( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) ) )  ;
- assert!(( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) ) )  ;
+ assert!(({ ( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) )  }))  ;
+ assert!(({ ( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) )  }))  ;
  } fn operator_call_1_class_forward_iterator_class_std_unique_ptr_int__ptr_ ( &self , ) { let a : Value<Box<[ Option<Value<i32  >>  ]> > = Rc::new(RefCell::new((0..3).map(|_| None).collect::<Box<[Option<Value<i32  >>  ]>>() )) ;
   ;
  ;
@@ -4409,8 +4830,8 @@ fn operator_call_1_class_std_unique_ptr_int__ptr ( &self , ) { let a : Value<Box
   ;
  ;
  assert!(( ( { base_16 ( r .as_pointer()  , ) } )  == ( b .as_pointer()  as Ptr< Option<Value<i32  >>  >   ) . offset ( ( 3 ) as isize ) ) )  ;
- assert!(( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) ) )  ;
- assert!(( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) ) )  ;
+ assert!(({ ( ( ( ((*a.borrow()) [(0 ) as usize] .as_pointer() .read()) == 4 ) ) && ( ( ((*a.borrow()) [(1 ) as usize] .as_pointer() .read()) == 5 ) ) ) && ( ( ((*a.borrow()) [(2 ) as usize] .as_pointer() .read()) == 6 ) )  }))  ;
+ assert!(({ ( ( ( ((*b.borrow()) [(0 ) as usize] .as_pointer() .read()) == 1 ) ) && ( ( ((*b.borrow()) [(1 ) as usize] .as_pointer() .read()) == 2 ) ) ) && ( ( ((*b.borrow()) [(2 ) as usize] .as_pointer() .read()) == 3 ) )  }))  ;
  } }
 pub trait TestUniquePtr_TestImpl_std_unique_ptr_int__std_default_delete_int___ptr_Impl {
     fn operator_call_1_class_std_unique_ptr_int__ptr(&self);
@@ -4456,14 +4877,18 @@ impl TestUniquePtr_TestImpl_std_unique_ptr_int__std_default_delete_int___ptr_Imp
             })
         );
         assert!(
-            ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
-                && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
-                && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            ({
+                ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
+                    && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
+                    && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            })
         );
         assert!(
-            ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
-                && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
-                && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            ({
+                ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
+                    && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
+                    && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            })
         );
     }
     fn operator_call_1_class_contiguous_iterator_class_std_unique_ptr_int__ptr_(&self) {
@@ -4500,14 +4925,18 @@ impl TestUniquePtr_TestImpl_std_unique_ptr_int__std_default_delete_int___ptr_Imp
                 == (b.as_pointer() as Ptr<Option<Value<i32>>>).offset((3) as isize))
         );
         assert!(
-            ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
-                && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
-                && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            ({
+                ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
+                    && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
+                    && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            })
         );
         assert!(
-            ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
-                && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
-                && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            ({
+                ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
+                    && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
+                    && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            })
         );
     }
     fn operator_call_1_class_random_access_iterator_class_std_unique_ptr_int__ptr_(&self) {
@@ -4544,14 +4973,18 @@ impl TestUniquePtr_TestImpl_std_unique_ptr_int__std_default_delete_int___ptr_Imp
                 == (b.as_pointer() as Ptr<Option<Value<i32>>>).offset((3) as isize))
         );
         assert!(
-            ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
-                && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
-                && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            ({
+                ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
+                    && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
+                    && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            })
         );
         assert!(
-            ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
-                && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
-                && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            ({
+                ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
+                    && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
+                    && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            })
         );
     }
     fn operator_call_1_class_bidirectional_iterator_class_std_unique_ptr_int__ptr_(&self) {
@@ -4588,14 +5021,18 @@ impl TestUniquePtr_TestImpl_std_unique_ptr_int__std_default_delete_int___ptr_Imp
                 == (b.as_pointer() as Ptr<Option<Value<i32>>>).offset((3) as isize))
         );
         assert!(
-            ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
-                && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
-                && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            ({
+                ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
+                    && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
+                    && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            })
         );
         assert!(
-            ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
-                && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
-                && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            ({
+                ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
+                    && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
+                    && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            })
         );
     }
     fn operator_call_1_class_forward_iterator_class_std_unique_ptr_int__ptr_(&self) {
@@ -4632,14 +5069,18 @@ impl TestUniquePtr_TestImpl_std_unique_ptr_int__std_default_delete_int___ptr_Imp
                 == (b.as_pointer() as Ptr<Option<Value<i32>>>).offset((3) as isize))
         );
         assert!(
-            ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
-                && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
-                && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            ({
+                ((((*a.borrow())[(0) as usize].as_pointer().read()) == 4)
+                    && (((*a.borrow())[(1) as usize].as_pointer().read()) == 5))
+                    && (((*a.borrow())[(2) as usize].as_pointer().read()) == 6)
+            })
         );
         assert!(
-            ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
-                && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
-                && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            ({
+                ((((*b.borrow())[(0) as usize].as_pointer().read()) == 1)
+                    && (((*b.borrow())[(1) as usize].as_pointer().read()) == 2))
+                    && (((*b.borrow())[(2) as usize].as_pointer().read()) == 3)
+            })
         );
     }
 }
@@ -4697,21 +5138,29 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
         return (*self).clone();
     }
     fn operator_inc_14(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_15(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return prev;
     }
     fn operator_dec_16(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_17(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return prev;
     }
 }
@@ -4737,7 +5186,9 @@ impl bidirectional_iterator_int_ptr_Impl for Ptr<bidirectional_iterator_int_ptr_
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -4776,7 +5227,9 @@ impl bidirectional_iterator_std_array_int__2__ptr_Impl
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_std_array_int__2__ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -4815,7 +5268,9 @@ impl bidirectional_iterator_std_array_int__3__ptr_Impl
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_std_array_int__3__ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -4866,7 +5321,9 @@ impl bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_Imp
     fn operator_inc_6(
         &self,
     ) -> Ptr<bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -4918,7 +5375,9 @@ impl contiguous_iterator_int_ptr_Impl for Ptr<contiguous_iterator_int_ptr_> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_9(&self) -> Ptr<contiguous_iterator_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -4990,7 +5449,9 @@ impl contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr_Impl
     fn operator_inc_9(
         &self,
     ) -> Ptr<contiguous_iterator_std_unique_ptr_int__std_default_delete_int___ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -5177,7 +5638,9 @@ impl forward_iterator_int_ptr_Impl for Ptr<forward_iterator_int_ptr_> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(&self, _a0: Ptr<forward_iterator_int_ptr_>) -> Ptr<forward_iterator_int_ptr_> {
@@ -5205,7 +5668,9 @@ impl forward_iterator_std_array_int__2__ptr_Impl for Ptr<forward_iterator_std_ar
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_std_array_int__2__ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -5236,7 +5701,9 @@ impl forward_iterator_std_array_int__3__ptr_Impl for Ptr<forward_iterator_std_ar
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_std_array_int__3__ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -5276,7 +5743,9 @@ impl forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_Impl
     fn operator_inc_6(
         &self,
     ) -> Ptr<forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -5334,7 +5803,9 @@ impl random_access_iterator_int_ptr_Impl for Ptr<random_access_iterator_int_ptr_
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -5388,7 +5859,9 @@ impl random_access_iterator_std_array_int__2__ptr_Impl
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_std_array_int__2__ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -5442,7 +5915,9 @@ impl random_access_iterator_std_array_int__3__ptr_Impl
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_std_array_int__3__ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -5508,7 +5983,9 @@ impl random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_Imp
     fn operator_inc_7(
         &self,
     ) -> Ptr<random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -5567,11 +6044,11 @@ impl rvalue_iterator_int_ptr_Impl for Ptr<rvalue_iterator_int_ptr_> {
                 &((*self).with(|__s| __s.it_.clone())),
                 &(_a0.with(|__s| __s.it_.clone())),
             )));
-            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow());
+            if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+                return ({ (*cmp.borrow()) });
             }
         }
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> bool {
         return ({ (*self).with(|__s| __s.it_.clone()) } == { _a0.with(|__s| __s.it_.clone()) });

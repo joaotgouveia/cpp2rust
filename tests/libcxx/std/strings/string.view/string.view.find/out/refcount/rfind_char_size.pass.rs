@@ -14,18 +14,9 @@ impl constexpr_char_traits_char_ {
         return ((c1 as i32) == (c2 as i32));
     }
 }
-pub fn test_0(s: Ptr<()>, mut c: (), mut pos: (), mut x: ()) {
-    const _: () = assert!(true, "");;
-    assert!(({ unimplemented!() } == { x }));
-    if (x != unimplemented!()) {
-        assert!((x <= pos) && ({ (x).wrapping_add(1_()) } <= { unimplemented!() }));
-    }
-}
-pub fn test_1(s: Ptr<()>, mut c: (), mut x: ()) {
-    const _: () = assert!(true, "");;
-    assert!(({ unimplemented!() } == { x }));
-    if (x != unimplemented!()) {
-        assert!(({ (x).wrapping_add(1_()) } <= { unimplemented!() }));
+impl CppMove for constexpr_char_traits_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {
@@ -50,105 +41,234 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 0_(), unimplemented!())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"")
+                })),
+            );
+            test_0(
+                _s.as_pointer(),
+                ('b' as i8),
+                0_u64,
+                npos_1.with(|rc| *rc.borrow()),
+            )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 1_(), unimplemented!())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"")
+                })),
+            );
+            test_0(
+                _s.as_pointer(),
+                ('b' as i8),
+                1_u64,
+                npos_1.with(|rc| *rc.borrow()),
+            )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 0_(), unimplemented!())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcde")
+                })),
+            );
+            test_0(
+                _s.as_pointer(),
+                ('b' as i8),
+                0_u64,
+                npos_1.with(|rc| *rc.borrow()),
+            )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 1_(), 1_())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcde")
+                })),
+            );
+            test_0(_s.as_pointer(), ('b' as i8), 1_u64, 1_u64)
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 2_(), 1_())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcde")
+                })),
+            );
+            test_0(_s.as_pointer(), ('b' as i8), 2_u64, 1_u64)
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 4_(), 1_())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcde")
+                })),
+            );
+            test_0(_s.as_pointer(), ('b' as i8), 4_u64, 1_u64)
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 5_(), 1_())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcde")
+                })),
+            );
+            test_0(_s.as_pointer(), ('b' as i8), 5_u64, 1_u64)
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 6_(), 1_())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcde")
+                })),
+            );
+            test_0(_s.as_pointer(), ('b' as i8), 6_u64, 1_u64)
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 0_(), unimplemented!())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcdeabcde")
+                })),
+            );
+            test_0(
+                _s.as_pointer(),
+                ('b' as i8),
+                0_u64,
+                npos_1.with(|rc| *rc.borrow()),
+            )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 1_(), 1_())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcdeabcde")
+                })),
+            );
+            test_0(_s.as_pointer(), ('b' as i8), 1_u64, 1_u64)
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 5_(), 1_())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcdeabcde")
+                })),
+            );
+            test_0(_s.as_pointer(), ('b' as i8), 5_u64, 1_u64)
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 9_(), 6_())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcdeabcde")
+                })),
+            );
+            test_0(_s.as_pointer(), ('b' as i8), 9_u64, 6_u64)
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 10_(), 6_())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcdeabcde")
+                })),
+            );
+            test_0(_s.as_pointer(), ('b' as i8), 10_u64, 6_u64)
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 11_(), 6_())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcdeabcde")
+                })),
+            );
+            test_0(_s.as_pointer(), ('b' as i8), 11_u64, 6_u64)
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 0_(), unimplemented!())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcdeabcdeabcdeabcde")
+                })),
+            );
+            test_0(
+                _s.as_pointer(),
+                ('b' as i8),
+                0_u64,
+                npos_1.with(|rc| *rc.borrow()),
+            )
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 1_(), 1_())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcdeabcdeabcdeabcde")
+                })),
+            );
+            test_0(_s.as_pointer(), ('b' as i8), 1_u64, 1_u64)
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 10_(), 6_())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcdeabcdeabcdeabcde")
+                })),
+            );
+            test_0(_s.as_pointer(), ('b' as i8), 10_u64, 6_u64)
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 19_(), 16_())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcdeabcdeabcdeabcde")
+                })),
+            );
+            test_0(_s.as_pointer(), ('b' as i8), 19_u64, 16_u64)
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 20_(), 16_())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcdeabcdeabcdeabcde")
+                })),
+            );
+            test_0(_s.as_pointer(), ('b' as i8), 20_u64, 16_u64)
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), (('b' as i8) as ()), 21_(), 16_())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcdeabcdeabcdeabcde")
+                })),
+            );
+            test_0(_s.as_pointer(), ('b' as i8), 21_u64, 16_u64)
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_1(_s.as_pointer(), (('b' as i8) as ()), unimplemented!())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"")
+                })),
+            );
+            test_2(_s.as_pointer(), ('b' as i8), npos_1.with(|rc| *rc.borrow()))
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_1(_s.as_pointer(), (('b' as i8) as ()), 1_())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcde")
+                })),
+            );
+            test_2(_s.as_pointer(), ('b' as i8), 1_u64)
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_1(_s.as_pointer(), (('b' as i8) as ()), 6_())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcdeabcde")
+                })),
+            );
+            test_2(_s.as_pointer(), ('b' as i8), 6_u64)
         });
         ({
-            let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_1(_s.as_pointer(), (('b' as i8) as ()), 16_())
+            let _s: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+                RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1({
+                    Ptr::<i8>::from_string_literal(b"abcdeabcdeabcdeabcde")
+                })),
+            );
+            test_2(_s.as_pointer(), ('b' as i8), 16_u64)
         });
     }
     {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv1: Value<std_basic_string_view_char__constexpr_char_traits_char__> = Rc::new(
+            RefCell::new(<std_basic_string_view_char__constexpr_char_traits_char__>::default()),
+        );
+        let sv2: Value<std_basic_string_view_char__constexpr_char_traits_char__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char__constexpr_char_traits_char__::new_1(
+                    { Ptr::<i8>::from_string_literal(b"abcde") },
+                    { 5_u64 },
+                ),
+            ));
         const _: () = assert!(true, "sv1.rfind(\'b\', 0) == SV::npos");;
         const _: () = assert!(true, "sv1.rfind(\'b\', 1) == SV::npos");;
         const _: () = assert!(true, "sv2.rfind(\'b\', 0) == SV::npos");;

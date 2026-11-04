@@ -40,10 +40,10 @@ fn main_0() -> i32 {
         let i: Value<(Value<i32>, Value<f64>)> = Rc::new(RefCell::new(match (i.iter_deref(),) {
             (__tmp_0,) => (
                 Rc::new(RefCell::new(
-                    (*__tmp_0.upgrade().deref()).0.borrow().clone(),
+                    ((*__tmp_0.upgrade().deref()).0.as_pointer().read()),
                 )),
                 Rc::new(RefCell::new(
-                    (*__tmp_0.upgrade().deref()).1.borrow().clone(),
+                    ((*__tmp_0.upgrade().deref()).1.as_pointer().read()),
                 )),
             ),
         }));
@@ -59,10 +59,10 @@ fn main_0() -> i32 {
         let i: Value<(Value<i32>, Value<f64>)> = Rc::new(RefCell::new(match (i.iter_deref(),) {
             (__tmp_1,) => (
                 Rc::new(RefCell::new(
-                    (*__tmp_1.upgrade().deref()).0.borrow().clone(),
+                    ((*__tmp_1.upgrade().deref()).0.as_pointer().read()),
                 )),
                 Rc::new(RefCell::new(
-                    (*__tmp_1.upgrade().deref()).1.borrow().clone(),
+                    ((*__tmp_1.upgrade().deref()).1.as_pointer().read()),
                 )),
             ),
         }));

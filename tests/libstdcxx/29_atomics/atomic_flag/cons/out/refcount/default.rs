@@ -11,7 +11,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let a: Value<std_atomic_flag> = Rc::new(RefCell::new(<std_atomic_flag>::default()));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -43,6 +48,11 @@ pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<i32>,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -51,9 +61,19 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
+impl CppMove for min_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static randomness_4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
@@ -85,6 +105,11 @@ impl CppEq for Payload {
             && !(PayloadImpl::operator_lt(__rhs, __lhs.clone()))
     }
 }
+impl CppMove for Payload {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn greater_5(lhs: Ptr<Payload>, rhs: Ptr<Payload>) -> bool {
     return ({ lhs.with(|__s| __s.val) } > { rhs.with(|__s| __s.val) });
 }
@@ -113,7 +138,7 @@ pub fn test_stable_6(mut N: i32) {
     )));
     let mut i: i32 = 0;
     'loop_: while (i < N) {
-        assert!(((*j.borrow()).iter_deref().with(|__s| __s.val) == (((N - 1) - i) / 2)));
+        assert!(({ ((*j.borrow()).iter_deref().with(|__s| __s.val) == (((N - 1) - i) / 2)) }));
         {
             i.prefix_inc();
             (*j.borrow_mut()).iter_inc()
@@ -124,7 +149,7 @@ pub fn test_stable_6(mut N: i32) {
     )));
     'loop_: while (*it.borrow()) != <BidirectionalIterator<Payload>>::from(unimplemented!()) {
         let next: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-            (*it.borrow()).clone(),
+            ({ (*it.borrow()).clone() }),
             1_isize,
         )));
         if ((*next.borrow()) != <BidirectionalIterator<Payload>>::from(unimplemented!()))
@@ -132,8 +157,10 @@ pub fn test_stable_6(mut N: i32) {
                 == (*next.borrow()).iter_deref().with(|__s| __s.val))
         {
             assert!(
-                ((*it.borrow()).iter_deref().with(|__s| __s.side)
-                    < (*next.borrow()).iter_deref().with(|__s| __s.side))
+                ({
+                    ((*it.borrow()).iter_deref().with(|__s| __s.side)
+                        < (*next.borrow()).iter_deref().with(|__s| __s.side))
+                })
             );
         }
         (*it.borrow_mut()).iter_inc();

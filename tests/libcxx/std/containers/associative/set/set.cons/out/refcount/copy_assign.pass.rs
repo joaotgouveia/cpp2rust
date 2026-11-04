@@ -35,6 +35,11 @@ impl Callable2<Ptr<i32>, Ptr<i32>, bool> for test_less_int_ {
         })
     }
 }
+impl CppMove for test_less_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_less_int_ {
     fn default() -> Self {
         { test_less_int_::new_1() }
@@ -64,6 +69,11 @@ pub struct test_allocator_statistics {
     #[offset(36)]
     pub converted: i32,
 }
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_statistics {
     fn default() -> Self {
         {
@@ -91,6 +101,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -171,6 +186,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -185,6 +205,11 @@ impl Default for test_allocator_void_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -217,6 +242,11 @@ impl malloc_allocator_base {
         dealloc_count_7.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_5: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -230,24 +260,13 @@ thread_local!(
     pub static disable_default_constructor_8: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<i32>,
-}
-impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
+impl CppMove for min_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Vec<AnyPtr  >  , new, mut_ptr)]
 #[byte_size(8)]
@@ -263,6 +282,11 @@ impl tracking_allocator_int_ {
         }
     }
 }
+impl CppMove for tracking_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoOp {}
@@ -271,293 +295,12 @@ impl Callable0<()> for NoOp {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| NoOpImpl::operator_call(__it))
     }
 }
-pub fn test_alloc_9(
-    lhs_alloc: Option<Ptr<()>>,
-    rhs_alloc: Option<Ptr<()>>,
-    check_alloc_invariant: Option<NoOp>,
-) {
-    let mut __lhs_alloc_default: Option<Value<()>> = None;
-    let lhs_alloc: Ptr<()> = lhs_alloc.unwrap_or_else(|| {
-        __lhs_alloc_default
-            .insert(Rc::new(RefCell::new(unimplemented!())))
-            .as_pointer()
-    });
-    let mut __rhs_alloc_default: Option<Value<()>> = None;
-    let rhs_alloc: Ptr<()> = rhs_alloc.unwrap_or_else(|| {
-        __rhs_alloc_default
-            .insert(Rc::new(RefCell::new(unimplemented!())))
-            .as_pointer()
-    });
-    let check_alloc_invariant: Value<NoOp> = Rc::new(RefCell::new(
-        check_alloc_invariant.unwrap_or_else(|| <NoOp>::default()),
-    ));
-    {
-        {
-            let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 3_()));
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
-                    .iter_deref()
-                    .read())
-                    == 1)
-            );
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
-                    .iter_deref()
-                    .read())
-                    == 2)
-            );
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
-                    .iter_deref()
-                    .read())
-                    == 3)
-            );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
-            assert!((unimplemented!() == 3_()));
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
-                    .iter_deref()
-                    .read())
-                    == 1)
-            );
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
-                    .iter_deref()
-                    .read())
-                    == 2)
-            );
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
-                    .iter_deref()
-                    .read())
-                    == 3)
-            );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
-        }
-        ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
-        {
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 0_()));
-            assert!(unimplemented!() == unimplemented!());
-            assert!((unimplemented!() == 0_()));
-            assert!(unimplemented!() == unimplemented!());
-        }
-        ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
-        {
-            let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 0_()));
-            assert!(unimplemented!() == unimplemented!());
-            assert!((unimplemented!() == 0_()));
-            assert!(unimplemented!() == unimplemented!());
-        }
-    }
-    {
-        {
-            let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 3_()));
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
-                    .iter_deref()
-                    .read())
-                    == 1)
-            );
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
-                    .iter_deref()
-                    .read())
-                    == 2)
-            );
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
-                    .iter_deref()
-                    .read())
-                    == 3)
-            );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
-        }
-        {
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 0_()));
-            assert!(unimplemented!() == unimplemented!());
-        }
-    }
-    {
-        ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
-        {
-            let lhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let rhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5])));
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 3_()));
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
-                    .iter_deref()
-                    .read())
-                    == 1)
-            );
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
-                    .iter_deref()
-                    .read())
-                    == 2)
-            );
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
-                    .iter_deref()
-                    .read())
-                    == 3)
-            );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
-            assert!((unimplemented!() == 3_()));
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
-                    .iter_deref()
-                    .read())
-                    == 1)
-            );
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
-                    .iter_deref()
-                    .read())
-                    == 2)
-            );
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
-                    .iter_deref()
-                    .read())
-                    == 3)
-            );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
-        }
-        ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
-        {
-            let lhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let rhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5, 6])));
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 3_()));
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
-                    .iter_deref()
-                    .read())
-                    == 1)
-            );
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
-                    .iter_deref()
-                    .read())
-                    == 2)
-            );
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
-                    .iter_deref()
-                    .read())
-                    == 3)
-            );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
-            assert!((unimplemented!() == 3_()));
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
-                    .iter_deref()
-                    .read())
-                    == 1)
-            );
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
-                    .iter_deref()
-                    .read())
-                    == 2)
-            );
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
-                    .iter_deref()
-                    .read())
-                    == 3)
-            );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
-        }
-        ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
-        {
-            let lhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let rhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5, 6])));
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 3_()));
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
-                    .iter_deref()
-                    .read())
-                    == 1)
-            );
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
-                    .iter_deref()
-                    .read())
-                    == 2)
-            );
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
-                    .iter_deref()
-                    .read())
-                    == 3)
-            );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
-            assert!((unimplemented!() == 3_()));
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
-                    .iter_deref()
-                    .read())
-                    == 1)
-            );
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
-                    .iter_deref()
-                    .read())
-                    == 2)
-            );
-            assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
-                    .iter_deref()
-                    .read())
-                    == 3)
-            );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
-        }
-        ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
-        {
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut i: i32 = 0;
-            'loop_: while (i != 50) {
-                unimplemented!();
-                i.prefix_inc();
-            }
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            let mut i: i32 = 0;
-            'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
-                let mut v: i32 = (v.iter_deref().read());
-                assert!((v == i.postfix_inc()));
-            }
-        }
-        ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
+impl CppMove for NoOp {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
-pub fn test_alloc_10(
+pub fn test_alloc_9(
     lhs_alloc: Option<Ptr<min_allocator_int_>>,
     rhs_alloc: Option<Ptr<min_allocator_int_>>,
     check_alloc_invariant: Option<NoOp>,
@@ -580,262 +323,402 @@ pub fn test_alloc_10(
     {
         {
             let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 3_()));
+            let orig: Value<std_set_int__std_less_int___min_allocator_int__> =
+                Rc::new(RefCell::new({
+                    let __tmp_0: Value<std_less_int_> =
+                        Rc::new(RefCell::new(<std_less_int_>::default()));
+                    std_set_int__std_less_int___min_allocator_int__::new_1(
+                        { ({ begin_10(arr.as_pointer()) }) },
+                        { (arr.as_pointer() as Ptr<i32>).to_end() },
+                        { __tmp_0.as_pointer() },
+                        { (rhs_alloc).clone() },
+                    )
+                }));
+            let copy: Value<std_set_int__std_less_int___min_allocator_int__> =
+                Rc::new(RefCell::new(
+                    std_set_int__std_less_int___min_allocator_int__::new_2({ (lhs_alloc).clone() }),
+                ));
+            (*copy.borrow_mut()) = (*orig.borrow()).clone();
+            assert!(({ (({ (*copy.borrow()).size() }) == 3_u64) }));
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 0_isize)
                     .iter_deref()
                     .read())
                     == 1)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 1_isize)
                     .iter_deref()
                     .read())
                     == 2)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 2_isize)
                     .iter_deref()
                     .read())
                     == 3)
             );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
-            assert!((unimplemented!() == 3_()));
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 3_isize)
+                    == ({ (*copy.borrow()).end() })
+            );
+            assert!(({ (({ (*orig.borrow()).size() }) == 3_u64) }));
+            assert!(
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 0_isize)
                     .iter_deref()
                     .read())
                     == 1)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 1_isize)
                     .iter_deref()
                     .read())
                     == 2)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 2_isize)
                     .iter_deref()
                     .read())
                     == 3)
             );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!(
+                libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 3_isize)
+                    == ({ (*orig.borrow()).end() })
+            );
         }
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 0_()));
-            assert!(unimplemented!() == unimplemented!());
-            assert!((unimplemented!() == 0_()));
-            assert!(unimplemented!() == unimplemented!());
+            let orig: Value<std_set_int__std_less_int___min_allocator_int__> =
+                Rc::new(RefCell::new(
+                    std_set_int__std_less_int___min_allocator_int__::new_2({ (rhs_alloc).clone() }),
+                ));
+            let copy: Value<std_set_int__std_less_int___min_allocator_int__> =
+                Rc::new(RefCell::new(
+                    std_set_int__std_less_int___min_allocator_int__::new_2({ (lhs_alloc).clone() }),
+                ));
+            (*copy.borrow_mut()) = (*orig.borrow()).clone();
+            assert!(({ (({ (*copy.borrow()).size() }) == 0_u64) }));
+            assert!(({ (*copy.borrow()).begin() }) == ({ (*copy.borrow()).end() }));
+            assert!(({ (({ (*orig.borrow()).size() }) == 0_u64) }));
+            assert!(({ (*orig.borrow()).begin() }) == ({ (*orig.borrow()).end() }));
         }
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
             let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 0_()));
-            assert!(unimplemented!() == unimplemented!());
-            assert!((unimplemented!() == 0_()));
-            assert!(unimplemented!() == unimplemented!());
+            let orig: Value<std_set_int__std_less_int___min_allocator_int__> =
+                Rc::new(RefCell::new(
+                    std_set_int__std_less_int___min_allocator_int__::new_2({ (rhs_alloc).clone() }),
+                ));
+            let copy: Value<std_set_int__std_less_int___min_allocator_int__> =
+                Rc::new(RefCell::new({
+                    let __tmp_1: Value<std_less_int_> =
+                        Rc::new(RefCell::new(<std_less_int_>::default()));
+                    std_set_int__std_less_int___min_allocator_int__::new_1(
+                        { ({ begin_10(arr.as_pointer()) }) },
+                        { (arr.as_pointer() as Ptr<i32>).to_end() },
+                        { __tmp_1.as_pointer() },
+                        { (rhs_alloc).clone() },
+                    )
+                }));
+            (*copy.borrow_mut()) = (*orig.borrow()).clone();
+            assert!(({ (({ (*copy.borrow()).size() }) == 0_u64) }));
+            assert!(({ (*copy.borrow()).begin() }) == ({ (*copy.borrow()).end() }));
+            assert!(({ (({ (*orig.borrow()).size() }) == 0_u64) }));
+            assert!(({ (*orig.borrow()).begin() }) == ({ (*orig.borrow()).end() }));
         }
     }
     {
         {
             let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 3_()));
+            let orig: Value<std_set_int__std_less_int___min_allocator_int__> =
+                Rc::new(RefCell::new({
+                    let __tmp_2: Value<std_less_int_> =
+                        Rc::new(RefCell::new(<std_less_int_>::default()));
+                    std_set_int__std_less_int___min_allocator_int__::new_1(
+                        { ({ begin_10(arr.as_pointer()) }) },
+                        { (arr.as_pointer() as Ptr<i32>).to_end() },
+                        { __tmp_2.as_pointer() },
+                        { (rhs_alloc).clone() },
+                    )
+                }));
+            (*orig.borrow_mut()) = { (*orig.borrow()).clone() };
+            assert!(({ (({ (*orig.borrow()).size() }) == 3_u64) }));
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 0_isize)
                     .iter_deref()
                     .read())
                     == 1)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 1_isize)
                     .iter_deref()
                     .read())
                     == 2)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 2_isize)
                     .iter_deref()
                     .read())
                     == 3)
             );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!(
+                libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 3_isize)
+                    == ({ (*orig.borrow()).end() })
+            );
         }
         {
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 0_()));
-            assert!(unimplemented!() == unimplemented!());
+            let orig: Value<std_set_int__std_less_int___min_allocator_int__> =
+                Rc::new(RefCell::new(
+                    std_set_int__std_less_int___min_allocator_int__::new_2({ (rhs_alloc).clone() }),
+                ));
+            (*orig.borrow_mut()) = { (*orig.borrow()).clone() };
+            assert!(({ (({ (*orig.borrow()).size() }) == 0_u64) }));
+            assert!(({ (*orig.borrow()).begin() }) == ({ (*orig.borrow()).end() }));
         }
     }
     {
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
             let lhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let orig: Value<std_set_int__std_less_int___min_allocator_int__> =
+                Rc::new(RefCell::new({
+                    let __tmp_3: Value<std_less_int_> =
+                        Rc::new(RefCell::new(<std_less_int_>::default()));
+                    std_set_int__std_less_int___min_allocator_int__::new_1(
+                        { ({ begin_10(lhs_arr.as_pointer()) }) },
+                        { (lhs_arr.as_pointer() as Ptr<i32>).to_end() },
+                        { __tmp_3.as_pointer() },
+                        { (rhs_alloc).clone() },
+                    )
+                }));
             let rhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5])));
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 3_()));
+            let copy: Value<std_set_int__std_less_int___min_allocator_int__> =
+                Rc::new(RefCell::new({
+                    let __tmp_4: Value<std_less_int_> =
+                        Rc::new(RefCell::new(<std_less_int_>::default()));
+                    std_set_int__std_less_int___min_allocator_int__::new_1(
+                        { ({ begin_11(rhs_arr.as_pointer()) }) },
+                        { (rhs_arr.as_pointer() as Ptr<i32>).to_end() },
+                        { __tmp_4.as_pointer() },
+                        { (lhs_alloc).clone() },
+                    )
+                }));
+            (*copy.borrow_mut()) = (*orig.borrow()).clone();
+            assert!(({ (({ (*copy.borrow()).size() }) == 3_u64) }));
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 0_isize)
                     .iter_deref()
                     .read())
                     == 1)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 1_isize)
                     .iter_deref()
                     .read())
                     == 2)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 2_isize)
                     .iter_deref()
                     .read())
                     == 3)
             );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
-            assert!((unimplemented!() == 3_()));
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 3_isize)
+                    == ({ (*copy.borrow()).end() })
+            );
+            assert!(({ (({ (*orig.borrow()).size() }) == 3_u64) }));
+            assert!(
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 0_isize)
                     .iter_deref()
                     .read())
                     == 1)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 1_isize)
                     .iter_deref()
                     .read())
                     == 2)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 2_isize)
                     .iter_deref()
                     .read())
                     == 3)
             );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!(
+                libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 3_isize)
+                    == ({ (*orig.borrow()).end() })
+            );
         }
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
             let lhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let orig: Value<std_set_int__std_less_int___min_allocator_int__> =
+                Rc::new(RefCell::new({
+                    let __tmp_5: Value<std_less_int_> =
+                        Rc::new(RefCell::new(<std_less_int_>::default()));
+                    std_set_int__std_less_int___min_allocator_int__::new_1(
+                        { ({ begin_10(lhs_arr.as_pointer()) }) },
+                        { (lhs_arr.as_pointer() as Ptr<i32>).to_end() },
+                        { __tmp_5.as_pointer() },
+                        { (rhs_alloc).clone() },
+                    )
+                }));
             let rhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5, 6])));
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 3_()));
+            let copy: Value<std_set_int__std_less_int___min_allocator_int__> =
+                Rc::new(RefCell::new({
+                    let __tmp_6: Value<std_less_int_> =
+                        Rc::new(RefCell::new(<std_less_int_>::default()));
+                    std_set_int__std_less_int___min_allocator_int__::new_1(
+                        { ({ begin_10(rhs_arr.as_pointer()) }) },
+                        { (rhs_arr.as_pointer() as Ptr<i32>).to_end() },
+                        { __tmp_6.as_pointer() },
+                        { (lhs_alloc).clone() },
+                    )
+                }));
+            (*copy.borrow_mut()) = (*orig.borrow()).clone();
+            assert!(({ (({ (*copy.borrow()).size() }) == 3_u64) }));
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 0_isize)
                     .iter_deref()
                     .read())
                     == 1)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 1_isize)
                     .iter_deref()
                     .read())
                     == 2)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 2_isize)
                     .iter_deref()
                     .read())
                     == 3)
             );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
-            assert!((unimplemented!() == 3_()));
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 3_isize)
+                    == ({ (*copy.borrow()).end() })
+            );
+            assert!(({ (({ (*orig.borrow()).size() }) == 3_u64) }));
+            assert!(
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 0_isize)
                     .iter_deref()
                     .read())
                     == 1)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 1_isize)
                     .iter_deref()
                     .read())
                     == 2)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 2_isize)
                     .iter_deref()
                     .read())
                     == 3)
             );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!(
+                libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 3_isize)
+                    == ({ (*orig.borrow()).end() })
+            );
         }
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
             let lhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let orig: Value<std_set_int__std_less_int___min_allocator_int__> =
+                Rc::new(RefCell::new({
+                    let __tmp_7: Value<std_less_int_> =
+                        Rc::new(RefCell::new(<std_less_int_>::default()));
+                    std_set_int__std_less_int___min_allocator_int__::new_1(
+                        { ({ begin_10(lhs_arr.as_pointer()) }) },
+                        { (lhs_arr.as_pointer() as Ptr<i32>).to_end() },
+                        { __tmp_7.as_pointer() },
+                        { (rhs_alloc).clone() },
+                    )
+                }));
             let rhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5, 6])));
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 3_()));
+            let copy: Value<std_set_int__std_less_int___min_allocator_int__> =
+                Rc::new(RefCell::new({
+                    let __tmp_8: Value<std_less_int_> =
+                        Rc::new(RefCell::new(<std_less_int_>::default()));
+                    std_set_int__std_less_int___min_allocator_int__::new_1(
+                        { ({ begin_10(rhs_arr.as_pointer()) }) },
+                        { (rhs_arr.as_pointer() as Ptr<i32>).to_end() },
+                        { __tmp_8.as_pointer() },
+                        { (lhs_alloc).clone() },
+                    )
+                }));
+            (*copy.borrow_mut()) = (*orig.borrow()).clone();
+            assert!(({ (({ (*copy.borrow()).size() }) == 3_u64) }));
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 0_isize)
                     .iter_deref()
                     .read())
                     == 1)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 1_isize)
                     .iter_deref()
                     .read())
                     == 2)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 2_isize)
                     .iter_deref()
                     .read())
                     == 3)
             );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
-            assert!((unimplemented!() == 3_()));
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 3_isize)
+                    == ({ (*copy.borrow()).end() })
+            );
+            assert!(({ (({ (*orig.borrow()).size() }) == 3_u64) }));
+            assert!(
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 0_isize)
                     .iter_deref()
                     .read())
                     == 1)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 1_isize)
                     .iter_deref()
                     .read())
                     == 2)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 2_isize)
                     .iter_deref()
                     .read())
                     == 3)
             );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!(
+                libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 3_isize)
+                    == ({ (*orig.borrow()).end() })
+            );
         }
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut i: i32 = 0;
-            'loop_: while (i != 50) {
-                unimplemented!();
-                i.prefix_inc();
+            let orig: Value<std_set_int__std_less_int___min_allocator_int__> =
+                Rc::new(RefCell::new(
+                    std_set_int__std_less_int___min_allocator_int__::new_2({ (rhs_alloc).clone() }),
+                ));
+            let i: Value<i32> = Rc::new(RefCell::new(0));
+            'loop_: while ((*i.borrow()) != 50) {
+                ({ (*orig.borrow()).insert_36(i.as_pointer()) });
+                (*i.borrow_mut()).prefix_inc();
             }
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
+            let copy: Value<std_set_int__std_less_int___min_allocator_int__> =
+                Rc::new(RefCell::new(
+                    std_set_int__std_less_int___min_allocator_int__::new_2({ (lhs_alloc).clone() }),
+                ));
+            (*copy.borrow_mut()) = (*orig.borrow()).clone();
             let mut i: i32 = 0;
-            'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
+            'loop_: for v in
+                IterRange::new(({ (*copy.borrow()).begin() }), ({ (*copy.borrow()).end() }))
+            {
                 let mut v: i32 = (v.iter_deref().read());
                 assert!((v == i.postfix_inc()));
             }
@@ -843,281 +726,428 @@ pub fn test_alloc_10(
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
     }
 }
-pub fn test_alloc_11(
+pub fn test_alloc_12(
     lhs_alloc: Ptr<tracking_allocator_int_>,
     rhs_alloc: Ptr<tracking_allocator_int_>,
-    check_alloc_invariant: AssertEmpty_12,
+    check_alloc_invariant: AssertEmpty_13,
 ) {
-    let check_alloc_invariant: Value<AssertEmpty_12> = Rc::new(RefCell::new(check_alloc_invariant));
+    let check_alloc_invariant: Value<AssertEmpty_13> = Rc::new(RefCell::new(check_alloc_invariant));
     {
         {
             let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 3_()));
+            let orig: Value<std_set_int__std_less_int___tracking_allocator_int__> =
+                Rc::new(RefCell::new({
+                    let __tmp_9: Value<std_less_int_> =
+                        Rc::new(RefCell::new(<std_less_int_>::default()));
+                    std_set_int__std_less_int___tracking_allocator_int__::new_1(
+                        { ({ begin_10(arr.as_pointer()) }) },
+                        { (arr.as_pointer() as Ptr<i32>).to_end() },
+                        { __tmp_9.as_pointer() },
+                        { (rhs_alloc).clone() },
+                    )
+                }));
+            let copy: Value<std_set_int__std_less_int___tracking_allocator_int__> = Rc::new(
+                RefCell::new(std_set_int__std_less_int___tracking_allocator_int__::new_2(
+                    { (lhs_alloc).clone() },
+                )),
+            );
+            (*copy.borrow_mut()) = (*orig.borrow()).clone();
+            assert!(({ (({ (*copy.borrow()).size() }) == 3_u64) }));
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 0_isize)
                     .iter_deref()
                     .read())
                     == 1)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 1_isize)
                     .iter_deref()
                     .read())
                     == 2)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 2_isize)
                     .iter_deref()
                     .read())
                     == 3)
             );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
-            assert!((unimplemented!() == 3_()));
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 3_isize)
+                    == ({ (*copy.borrow()).end() })
+            );
+            assert!(({ (({ (*orig.borrow()).size() }) == 3_u64) }));
+            assert!(
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 0_isize)
                     .iter_deref()
                     .read())
                     == 1)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 1_isize)
                     .iter_deref()
                     .read())
                     == 2)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 2_isize)
                     .iter_deref()
                     .read())
                     == 3)
             );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!(
+                libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 3_isize)
+                    == ({ (*orig.borrow()).end() })
+            );
         }
-        ({ AssertEmpty_12Impl::operator_call(&check_alloc_invariant.as_pointer()) });
+        ({ AssertEmpty_13Impl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 0_()));
-            assert!(unimplemented!() == unimplemented!());
-            assert!((unimplemented!() == 0_()));
-            assert!(unimplemented!() == unimplemented!());
+            let orig: Value<std_set_int__std_less_int___tracking_allocator_int__> = Rc::new(
+                RefCell::new(std_set_int__std_less_int___tracking_allocator_int__::new_2(
+                    { (rhs_alloc).clone() },
+                )),
+            );
+            let copy: Value<std_set_int__std_less_int___tracking_allocator_int__> = Rc::new(
+                RefCell::new(std_set_int__std_less_int___tracking_allocator_int__::new_2(
+                    { (lhs_alloc).clone() },
+                )),
+            );
+            (*copy.borrow_mut()) = (*orig.borrow()).clone();
+            assert!(({ (({ (*copy.borrow()).size() }) == 0_u64) }));
+            assert!(({ (*copy.borrow()).begin() }) == ({ (*copy.borrow()).end() }));
+            assert!(({ (({ (*orig.borrow()).size() }) == 0_u64) }));
+            assert!(({ (*orig.borrow()).begin() }) == ({ (*orig.borrow()).end() }));
         }
-        ({ AssertEmpty_12Impl::operator_call(&check_alloc_invariant.as_pointer()) });
+        ({ AssertEmpty_13Impl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
             let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 0_()));
-            assert!(unimplemented!() == unimplemented!());
-            assert!((unimplemented!() == 0_()));
-            assert!(unimplemented!() == unimplemented!());
+            let orig: Value<std_set_int__std_less_int___tracking_allocator_int__> = Rc::new(
+                RefCell::new(std_set_int__std_less_int___tracking_allocator_int__::new_2(
+                    { (rhs_alloc).clone() },
+                )),
+            );
+            let copy: Value<std_set_int__std_less_int___tracking_allocator_int__> =
+                Rc::new(RefCell::new({
+                    let __tmp_10: Value<std_less_int_> =
+                        Rc::new(RefCell::new(<std_less_int_>::default()));
+                    std_set_int__std_less_int___tracking_allocator_int__::new_1(
+                        { ({ begin_10(arr.as_pointer()) }) },
+                        { (arr.as_pointer() as Ptr<i32>).to_end() },
+                        { __tmp_10.as_pointer() },
+                        { (rhs_alloc).clone() },
+                    )
+                }));
+            (*copy.borrow_mut()) = (*orig.borrow()).clone();
+            assert!(({ (({ (*copy.borrow()).size() }) == 0_u64) }));
+            assert!(({ (*copy.borrow()).begin() }) == ({ (*copy.borrow()).end() }));
+            assert!(({ (({ (*orig.borrow()).size() }) == 0_u64) }));
+            assert!(({ (*orig.borrow()).begin() }) == ({ (*orig.borrow()).end() }));
         }
     }
     {
         {
             let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 3_()));
+            let orig: Value<std_set_int__std_less_int___tracking_allocator_int__> =
+                Rc::new(RefCell::new({
+                    let __tmp_11: Value<std_less_int_> =
+                        Rc::new(RefCell::new(<std_less_int_>::default()));
+                    std_set_int__std_less_int___tracking_allocator_int__::new_1(
+                        { ({ begin_10(arr.as_pointer()) }) },
+                        { (arr.as_pointer() as Ptr<i32>).to_end() },
+                        { __tmp_11.as_pointer() },
+                        { (rhs_alloc).clone() },
+                    )
+                }));
+            (*orig.borrow_mut()) = { (*orig.borrow()).clone() };
+            assert!(({ (({ (*orig.borrow()).size() }) == 3_u64) }));
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 0_isize)
                     .iter_deref()
                     .read())
                     == 1)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 1_isize)
                     .iter_deref()
                     .read())
                     == 2)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 2_isize)
                     .iter_deref()
                     .read())
                     == 3)
             );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!(
+                libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 3_isize)
+                    == ({ (*orig.borrow()).end() })
+            );
         }
         {
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 0_()));
-            assert!(unimplemented!() == unimplemented!());
+            let orig: Value<std_set_int__std_less_int___tracking_allocator_int__> = Rc::new(
+                RefCell::new(std_set_int__std_less_int___tracking_allocator_int__::new_2(
+                    { (rhs_alloc).clone() },
+                )),
+            );
+            (*orig.borrow_mut()) = { (*orig.borrow()).clone() };
+            assert!(({ (({ (*orig.borrow()).size() }) == 0_u64) }));
+            assert!(({ (*orig.borrow()).begin() }) == ({ (*orig.borrow()).end() }));
         }
     }
     {
-        ({ AssertEmpty_12Impl::operator_call(&check_alloc_invariant.as_pointer()) });
+        ({ AssertEmpty_13Impl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
             let lhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let orig: Value<std_set_int__std_less_int___tracking_allocator_int__> =
+                Rc::new(RefCell::new({
+                    let __tmp_12: Value<std_less_int_> =
+                        Rc::new(RefCell::new(<std_less_int_>::default()));
+                    std_set_int__std_less_int___tracking_allocator_int__::new_1(
+                        { ({ begin_10(lhs_arr.as_pointer()) }) },
+                        { (lhs_arr.as_pointer() as Ptr<i32>).to_end() },
+                        { __tmp_12.as_pointer() },
+                        { (rhs_alloc).clone() },
+                    )
+                }));
             let rhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5])));
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 3_()));
+            let copy: Value<std_set_int__std_less_int___tracking_allocator_int__> =
+                Rc::new(RefCell::new({
+                    let __tmp_13: Value<std_less_int_> =
+                        Rc::new(RefCell::new(<std_less_int_>::default()));
+                    std_set_int__std_less_int___tracking_allocator_int__::new_1(
+                        { ({ begin_11(rhs_arr.as_pointer()) }) },
+                        { (rhs_arr.as_pointer() as Ptr<i32>).to_end() },
+                        { __tmp_13.as_pointer() },
+                        { (lhs_alloc).clone() },
+                    )
+                }));
+            (*copy.borrow_mut()) = (*orig.borrow()).clone();
+            assert!(({ (({ (*copy.borrow()).size() }) == 3_u64) }));
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 0_isize)
                     .iter_deref()
                     .read())
                     == 1)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 1_isize)
                     .iter_deref()
                     .read())
                     == 2)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 2_isize)
                     .iter_deref()
                     .read())
                     == 3)
             );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
-            assert!((unimplemented!() == 3_()));
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 3_isize)
+                    == ({ (*copy.borrow()).end() })
+            );
+            assert!(({ (({ (*orig.borrow()).size() }) == 3_u64) }));
+            assert!(
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 0_isize)
                     .iter_deref()
                     .read())
                     == 1)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 1_isize)
                     .iter_deref()
                     .read())
                     == 2)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 2_isize)
                     .iter_deref()
                     .read())
                     == 3)
             );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!(
+                libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 3_isize)
+                    == ({ (*orig.borrow()).end() })
+            );
         }
-        ({ AssertEmpty_12Impl::operator_call(&check_alloc_invariant.as_pointer()) });
+        ({ AssertEmpty_13Impl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
             let lhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let orig: Value<std_set_int__std_less_int___tracking_allocator_int__> =
+                Rc::new(RefCell::new({
+                    let __tmp_14: Value<std_less_int_> =
+                        Rc::new(RefCell::new(<std_less_int_>::default()));
+                    std_set_int__std_less_int___tracking_allocator_int__::new_1(
+                        { ({ begin_10(lhs_arr.as_pointer()) }) },
+                        { (lhs_arr.as_pointer() as Ptr<i32>).to_end() },
+                        { __tmp_14.as_pointer() },
+                        { (rhs_alloc).clone() },
+                    )
+                }));
             let rhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5, 6])));
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 3_()));
+            let copy: Value<std_set_int__std_less_int___tracking_allocator_int__> =
+                Rc::new(RefCell::new({
+                    let __tmp_15: Value<std_less_int_> =
+                        Rc::new(RefCell::new(<std_less_int_>::default()));
+                    std_set_int__std_less_int___tracking_allocator_int__::new_1(
+                        { ({ begin_10(rhs_arr.as_pointer()) }) },
+                        { (rhs_arr.as_pointer() as Ptr<i32>).to_end() },
+                        { __tmp_15.as_pointer() },
+                        { (lhs_alloc).clone() },
+                    )
+                }));
+            (*copy.borrow_mut()) = (*orig.borrow()).clone();
+            assert!(({ (({ (*copy.borrow()).size() }) == 3_u64) }));
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 0_isize)
                     .iter_deref()
                     .read())
                     == 1)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 1_isize)
                     .iter_deref()
                     .read())
                     == 2)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 2_isize)
                     .iter_deref()
                     .read())
                     == 3)
             );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
-            assert!((unimplemented!() == 3_()));
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 3_isize)
+                    == ({ (*copy.borrow()).end() })
+            );
+            assert!(({ (({ (*orig.borrow()).size() }) == 3_u64) }));
+            assert!(
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 0_isize)
                     .iter_deref()
                     .read())
                     == 1)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 1_isize)
                     .iter_deref()
                     .read())
                     == 2)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 2_isize)
                     .iter_deref()
                     .read())
                     == 3)
             );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!(
+                libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 3_isize)
+                    == ({ (*orig.borrow()).end() })
+            );
         }
-        ({ AssertEmpty_12Impl::operator_call(&check_alloc_invariant.as_pointer()) });
+        ({ AssertEmpty_13Impl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
             let lhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let orig: Value<std_set_int__std_less_int___tracking_allocator_int__> =
+                Rc::new(RefCell::new({
+                    let __tmp_16: Value<std_less_int_> =
+                        Rc::new(RefCell::new(<std_less_int_>::default()));
+                    std_set_int__std_less_int___tracking_allocator_int__::new_1(
+                        { ({ begin_10(lhs_arr.as_pointer()) }) },
+                        { (lhs_arr.as_pointer() as Ptr<i32>).to_end() },
+                        { __tmp_16.as_pointer() },
+                        { (rhs_alloc).clone() },
+                    )
+                }));
             let rhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5, 6])));
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((unimplemented!() == 3_()));
+            let copy: Value<std_set_int__std_less_int___tracking_allocator_int__> =
+                Rc::new(RefCell::new({
+                    let __tmp_17: Value<std_less_int_> =
+                        Rc::new(RefCell::new(<std_less_int_>::default()));
+                    std_set_int__std_less_int___tracking_allocator_int__::new_1(
+                        { ({ begin_10(rhs_arr.as_pointer()) }) },
+                        { (rhs_arr.as_pointer() as Ptr<i32>).to_end() },
+                        { __tmp_17.as_pointer() },
+                        { (lhs_alloc).clone() },
+                    )
+                }));
+            (*copy.borrow_mut()) = (*orig.borrow()).clone();
+            assert!(({ (({ (*copy.borrow()).size() }) == 3_u64) }));
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 0_isize)
                     .iter_deref()
                     .read())
                     == 1)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 1_isize)
                     .iter_deref()
                     .read())
                     == 2)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                ((libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 2_isize)
                     .iter_deref()
                     .read())
                     == 3)
             );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
-            assert!((unimplemented!() == 3_()));
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                libcc2rs::next_refcount(({ ({ (*copy.borrow()).begin() }) }), 3_isize)
+                    == ({ (*copy.borrow()).end() })
+            );
+            assert!(({ (({ (*orig.borrow()).size() }) == 3_u64) }));
+            assert!(
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 0_isize)
                     .iter_deref()
                     .read())
                     == 1)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 1_isize)
                     .iter_deref()
                     .read())
                     == 2)
             );
             assert!(
-                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                ((libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 2_isize)
                     .iter_deref()
                     .read())
                     == 3)
             );
-            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!(
+                libcc2rs::next_refcount(({ ({ (*orig.borrow()).begin() }) }), 3_isize)
+                    == ({ (*orig.borrow()).end() })
+            );
         }
-        ({ AssertEmpty_12Impl::operator_call(&check_alloc_invariant.as_pointer()) });
+        ({ AssertEmpty_13Impl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
-            let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut i: i32 = 0;
-            'loop_: while (i != 50) {
-                unimplemented!();
-                i.prefix_inc();
+            let orig: Value<std_set_int__std_less_int___tracking_allocator_int__> = Rc::new(
+                RefCell::new(std_set_int__std_less_int___tracking_allocator_int__::new_2(
+                    { (rhs_alloc).clone() },
+                )),
+            );
+            let i: Value<i32> = Rc::new(RefCell::new(0));
+            'loop_: while ((*i.borrow()) != 50) {
+                ({ (*orig.borrow()).insert_36(i.as_pointer()) });
+                (*i.borrow_mut()).prefix_inc();
             }
-            let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
+            let copy: Value<std_set_int__std_less_int___tracking_allocator_int__> = Rc::new(
+                RefCell::new(std_set_int__std_less_int___tracking_allocator_int__::new_2(
+                    { (lhs_alloc).clone() },
+                )),
+            );
+            (*copy.borrow_mut()) = (*orig.borrow()).clone();
             let mut i: i32 = 0;
-            'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
+            'loop_: for v in
+                IterRange::new(({ (*copy.borrow()).begin() }), ({ (*copy.borrow()).end() }))
+            {
                 let mut v: i32 = (v.iter_deref().read());
                 assert!((v == i.postfix_inc()));
             }
         }
-        ({ AssertEmpty_12Impl::operator_call(&check_alloc_invariant.as_pointer()) });
+        ({ AssertEmpty_13Impl::operator_call(&check_alloc_invariant.as_pointer()) });
     }
 }
-pub fn test_13() -> bool {
+pub fn test_14() -> bool {
+    ({ test_alloc_15(None, None, None) });
     ({ test_alloc_9(None, None, None) });
-    ({ test_alloc_10(None, None, None) });
     {
         let lhs_allocs: Value<Vec<AnyPtr>> = Rc::new(RefCell::new(Vec::new()));
         let rhs_allocs: Value<Vec<AnyPtr>> = Rc::new(RefCell::new(Vec::new()));
@@ -1130,9 +1160,9 @@ pub fn test_13() -> bool {
                 Rc::new(RefCell::new(tracking_allocator_int_::new({
                     rhs_allocs.as_pointer()
                 })));
-            let _check_alloc_invariant: AssertEmpty_12 =
-                AssertEmpty_12::new({ lhs_allocs.as_pointer() }, { rhs_allocs.as_pointer() });
-            test_alloc_11(
+            let _check_alloc_invariant: AssertEmpty_13 =
+                AssertEmpty_13::new({ lhs_allocs.as_pointer() }, { rhs_allocs.as_pointer() });
+            test_alloc_12(
                 _lhs_alloc.as_pointer(),
                 _rhs_alloc.as_pointer(),
                 _check_alloc_invariant,
@@ -1141,21 +1171,35 @@ pub fn test_13() -> bool {
     }
     {
         let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-        let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 3_()));
+        let orig: Value<std_set_int__test_less_int___std_allocator_int__> =
+            Rc::new(RefCell::new({
+                let __tmp_18: Value<test_less_int_> =
+                    Rc::new(RefCell::new(test_less_int_::new_2({ 3 })));
+                std_set_int__test_less_int___std_allocator_int__::new_1(
+                    { ({ begin_10(arr.as_pointer()) }) },
+                    { (arr.as_pointer() as Ptr<i32>).to_end() },
+                    { __tmp_18.as_pointer() },
+                    None,
+                )
+            }));
+        let copy: Value<std_set_int__test_less_int___std_allocator_int__> = Rc::new(RefCell::new(
+            <std_set_int__test_less_int___std_allocator_int__>::default(),
+        ));
+        (*copy.borrow_mut()) = (*orig.borrow()).clone();
+        assert!(({ (({ (*copy.borrow()).size() }) == 3_u64) }));
         assert!(
             ({
-                let _a: Value<test_less_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_less_int_> =
+                    Rc::new(RefCell::new(({ (*copy.borrow()).key_comp() })));
                 let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_2({ 3 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
             })
         );
-        assert!((unimplemented!() == 3_()));
+        assert!(({ (({ (*orig.borrow()).size() }) == 3_u64) }));
         assert!(
             ({
-                let _a: Value<test_less_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_less_int_> =
+                    Rc::new(RefCell::new(({ (*orig.borrow()).key_comp() })));
                 let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_2({ 3 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
             })
@@ -1165,7 +1209,7 @@ pub fn test_13() -> bool {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
-pub struct AssertEmpty_12 {
+pub struct AssertEmpty_13 {
     #[offset(0)]
     #[byte_size(8)]
     lhs_allocs_: Ptr<Vec<AnyPtr>>,
@@ -1173,7 +1217,7 @@ pub struct AssertEmpty_12 {
     #[byte_size(8)]
     rhs_allocs_: Ptr<Vec<AnyPtr>>,
 }
-impl AssertEmpty_12 {
+impl AssertEmpty_13 {
     pub fn new(lhs_allocs: Ptr<Vec<AnyPtr>>, rhs_allocs: Ptr<Vec<AnyPtr>>) -> Self {
         Self {
             lhs_allocs_: (lhs_allocs).clone(),
@@ -1181,11 +1225,16 @@ impl AssertEmpty_12 {
         }
     }
 }
-impl Callable0<()> for AssertEmpty_12 {
+impl Callable0<()> for AssertEmpty_13 {
     fn call(&self) -> () {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
-            AssertEmpty_12Impl::operator_call(__it)
+            AssertEmpty_13Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for AssertEmpty_13 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {
@@ -1208,27 +1257,34 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_13() });
+    ({ test_14() });
     return 0;
 }
-pub trait AssertEmpty_12Impl {
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
+pub trait AssertEmpty_13Impl {
     fn operator_call(&self);
 }
-impl AssertEmpty_12Impl for Ptr<AssertEmpty_12> {
+impl AssertEmpty_13Impl for Ptr<AssertEmpty_13> {
     fn operator_call(&self) {
         assert!(
-            (*(*self)
-                .with(|__s| __s.lhs_allocs_.clone())
-                .upgrade()
-                .deref())
-            .is_empty()
+            ({
+                (*(*self)
+                    .with(|__s| __s.lhs_allocs_.clone())
+                    .upgrade()
+                    .deref())
+                .is_empty()
+            })
         );
         assert!(
-            (*(*self)
-                .with(|__s| __s.rhs_allocs_.clone())
-                .upgrade()
-                .deref())
-            .is_empty()
+            ({
+                (*(*self)
+                    .with(|__s| __s.rhs_allocs_.clone())
+                    .upgrade()
+                    .deref())
+                .is_empty()
+            })
         );
     }
 }
@@ -1263,75 +1319,6 @@ pub trait min_allocator_int_Impl {
     }
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {}
-pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_9(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_10(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_11(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
-        unimplemented!()
-    }
-}
-impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
-{
-}
 pub trait test_allocator_statisticsImpl {
     fn clear(&self);
     fn clear_ctor_counters(&self);

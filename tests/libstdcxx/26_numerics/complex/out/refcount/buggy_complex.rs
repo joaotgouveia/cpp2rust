@@ -11,10 +11,10 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let a: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+    let b: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+    let c: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+    (*c.borrow_mut()) = (*(*a.borrow()).upgrade().deref()).clone();
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

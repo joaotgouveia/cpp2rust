@@ -6,8 +6,9 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn identity_0(mut x: i32) -> i32 {
-    return x;
+pub fn identity_0(x: i32) -> i32 {
+    let x: Value<i32> = Rc::new(RefCell::new(x));
+    return (*x.borrow());
 }
 pub fn swap_by_ptr_1(mut a: Ptr<i32>, mut b: Ptr<i32>) {
     let mut tmp: i32 = (a.read());

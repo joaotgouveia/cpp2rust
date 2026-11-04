@@ -28,10 +28,15 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0.25_f64));
-        assert!((unimplemented!() == 10_f64));
+        let p: Value<std_cauchy_distribution___param_type> = Rc::new(RefCell::new(
+            std_cauchy_distribution___param_type::new_1({ 0.25_f64 }, { 10_f64 }),
+        ));
+        let d: Value<std_cauchy_distribution_double_> =
+            Rc::new(RefCell::new(std_cauchy_distribution_double_::new_1({
+                p.as_pointer()
+            })));
+        assert!(({ (({ (*d.borrow()).a() }) == 0.25_f64) }));
+        assert!(({ (({ (*d.borrow()).b() }) == 10_f64) }));
     }
     return 0;
 }

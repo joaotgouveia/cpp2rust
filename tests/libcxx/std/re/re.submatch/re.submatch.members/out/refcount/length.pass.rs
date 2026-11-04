@@ -28,40 +28,42 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let sm: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_()));
+        let sm: Value<std_sub_match_const_char_ptr_> =
+            Rc::new(RefCell::new(<std_sub_match_const_char_ptr_>::default()));
+        assert!(({ (({ (*sm.borrow()).length() }) == 0_i64) }));
         let s: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
             ('1' as i8),
             ('2' as i8),
             ('3' as i8),
             0_i8,
         ])));
-        (*((*sm.borrow()) as (Value<*const i8>, Value<*const i8>))
+        (*({ ((*sm.borrow()) as (Value<*const i8>, Value<*const i8>)) })
             .0
             .borrow_mut()) = (s.as_pointer() as Ptr<i8>);
-        (*((*sm.borrow()) as (Value<*const i8>, Value<*const i8>))
+        (*({ ((*sm.borrow()) as (Value<*const i8>, Value<*const i8>)) })
             .1
             .borrow_mut()) = (s.as_pointer() as Ptr<i8>).offset((3) as isize);
         (*sm.borrow_mut()).matched = true;
-        assert!((unimplemented!() == 3_()));
+        assert!(({ (({ (*sm.borrow()).length() }) == 3_i64) }));
     }
     {
-        let sm: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_()));
+        let sm: Value<std_sub_match_const_wchar_t_ptr_> =
+            Rc::new(RefCell::new(<std_sub_match_const_wchar_t_ptr_>::default()));
+        assert!(({ (({ (*sm.borrow()).length() }) == 0_i64) }));
         let s: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
             (('1' as i8) as i32),
             (('2' as i8) as i32),
             (('3' as i8) as i32),
             0_i32,
         ])));
-        (*((*sm.borrow()) as (Value<*const i32>, Value<*const i32>))
+        (*({ ((*sm.borrow()) as (Value<*const i32>, Value<*const i32>)) })
             .0
             .borrow_mut()) = (s.as_pointer() as Ptr<i32>);
-        (*((*sm.borrow()) as (Value<*const i32>, Value<*const i32>))
+        (*({ ((*sm.borrow()) as (Value<*const i32>, Value<*const i32>)) })
             .1
             .borrow_mut()) = (s.as_pointer() as Ptr<i32>).offset((3) as isize);
         (*sm.borrow_mut()).matched = true;
-        assert!((unimplemented!() == 3_()));
+        assert!(({ (({ (*sm.borrow()).length() }) == 3_i64) }));
     }
     return 0;
 }

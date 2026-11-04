@@ -26,6 +26,11 @@ pub struct Tracker {
     #[offset(4)]
     pub move_assignments: i32,
 }
+impl CppMove for Tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Tracker {
     fn default() -> Self {
         {
@@ -48,6 +53,11 @@ impl TrackedAssignment {
         Self {
             tracker_: (tracker).clone(),
         }
+    }
+}
+impl CppMove for TrackedAssignment {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_eq_4(a: Ptr<NonTriviallyRelocatable>, b: Ptr<NonTriviallyRelocatable>) -> bool {
@@ -91,6 +101,11 @@ impl Clone for NonTriviallyRelocatable {
         NonTriviallyRelocatable::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for NonTriviallyRelocatable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for NonTriviallyRelocatable {
     fn default() -> Self {
         { NonTriviallyRelocatable::new_1() }
@@ -112,6 +127,11 @@ impl malloc_allocator_base {
         outstanding_bytes_5.with(|rc| *rc.borrow_mut() = 0_usize);
         alloc_count_6.with(|rc| *rc.borrow_mut() = 0_usize);
         dealloc_count_7.with(|rc| *rc.borrow_mut() = 0_usize);
+    }
+}
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 thread_local!(
@@ -240,6 +260,11 @@ impl CppRandomAccessIterator<i32> for min_pointer_int__std_integral_constant_uns
         })
     }
 }
+impl CppMove for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -248,6 +273,11 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_sub_13(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
@@ -338,6 +368,11 @@ impl CppIterator<i32> for min_pointer_const_int__std_integral_constant_unsigned_
     }
 }
 impl CppInputIterator<i32> for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
@@ -346,6 +381,11 @@ pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_sub_16(
     mut x: min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__,
@@ -425,6 +465,11 @@ impl CppBidirectionalIterator<MoveOnly>
         self
     }
 }
+impl CppMove for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_sub_19(
     mut x: min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__,
@@ -459,6 +504,11 @@ impl min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__ {
 impl CppEq for min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_20(__lhs.read(), __rhs.read())
+    }
+}
+impl CppMove for min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_sub_21(
@@ -541,6 +591,11 @@ impl CppBidirectionalIterator<TrivialMoveOnly>
         self
     }
 }
+impl CppMove for min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_sub_24(
     mut x: min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__,
@@ -577,6 +632,11 @@ impl min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__
 impl CppEq for min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_25(__lhs.read(), __rhs.read())
+    }
+}
+impl CppMove for min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_sub_26(
@@ -709,6 +769,11 @@ impl CppRandomAccessIterator<NonTriviallyRelocatable>
         })
     }
 }
+impl CppMove for min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_sub_30(
     mut x: min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
@@ -813,6 +878,13 @@ impl CppInputIterator<NonTriviallyRelocatable>
     for min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__
 {
 }
+impl CppMove
+    for min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__
+{
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
@@ -821,21 +893,51 @@ pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<u64>,
 }
 impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
+impl CppMove for min_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_MoveOnly_ {}
+impl CppMove for min_allocator_MoveOnly_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_TrivialMoveOnly_ {}
+impl CppMove for min_allocator_TrivialMoveOnly_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_NonTriviallyRelocatable_ {}
+impl CppMove for min_allocator_NonTriviallyRelocatable_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_unsigned_long_ {}
+impl CppMove for min_allocator_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_33(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -860,11 +962,11 @@ pub fn operator_cmp_39(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> std::cmp::Orde
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -896,6 +998,11 @@ impl CppEq for MoveOnly {
         operator_eq_33(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for MoveOnly {
     fn default() -> Self {
         { MoveOnly::new(None) }
@@ -925,11 +1032,11 @@ pub fn operator_cmp_46(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> 
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -959,6 +1066,11 @@ impl CppEq for TrivialMoveOnly {
         operator_eq_40(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for TrivialMoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for TrivialMoveOnly {
     fn default() -> Self {
         { TrivialMoveOnly::new(None) }
@@ -968,66 +1080,86 @@ pub fn tests_47() {
     {
         let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5])));
         {
-            let v: Value<Vec<i32>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = (arr.as_pointer() as Ptr<i32>);
-                while __it != (arr.as_pointer() as Ptr<i32>).offset((5) as isize) {
-                    __v.push((__it.iter_deref().read()));
-                    __it.iter_inc();
-                }
-                __v
-            }));
-            let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new({
-                let __it = unimplemented!();
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
-                __it
-            }));
+            let v: Value<Vec<i32>> = Rc::new(RefCell::new(
+                match ({ (arr.as_pointer() as Ptr<i32>).offset((5) as isize) },) {
+                    (mut __tmp_0,) => {
+                        let mut __v = Vec::new();
+                        let mut __it = (arr.as_pointer() as Ptr<i32>);
+                        while __it != __tmp_0 {
+                            __v.push((__it.iter_deref().read()));
+                            __it.iter_inc();
+                        }
+                        __v
+                    }
+                },
+            ));
+            let it: Value<RandomAccessIterator<i32>> =
+                Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                    (mut __tmp_1,) => {
+                        let __off = __tmp_1.index();
+                        v.as_pointer()
+                            .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
+                        (__tmp_1).clone()
+                    }
+                }));
             assert!(unimplemented!());
             assert!((*it.borrow()) == v.decay().begin());
             assert!(({ is_contiguous_container_asan_correct_0(v.as_pointer(),) }));
         }
         {
             let expected: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 3, 4, 5])));
-            let v: Value<Vec<i32>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = (arr.as_pointer() as Ptr<i32>);
-                while __it != (arr.as_pointer() as Ptr<i32>).offset((5) as isize) {
-                    __v.push((__it.iter_deref().read()));
-                    __it.iter_inc();
-                }
-                __v
-            }));
-            let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new({
-                let __it = unimplemented!().iter_add(1_isize);
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
-                __it
-            }));
+            let v: Value<Vec<i32>> = Rc::new(RefCell::new(
+                match ({ (arr.as_pointer() as Ptr<i32>).offset((5) as isize) },) {
+                    (mut __tmp_2,) => {
+                        let mut __v = Vec::new();
+                        let mut __it = (arr.as_pointer() as Ptr<i32>);
+                        while __it != __tmp_2 {
+                            __v.push((__it.iter_deref().read()));
+                            __it.iter_inc();
+                        }
+                        __v
+                    }
+                },
+            ));
+            let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(
+                match ({ unimplemented!().iter_add(1_isize) },) {
+                    (mut __tmp_3,) => {
+                        let __off = __tmp_3.index();
+                        v.as_pointer()
+                            .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
+                        (__tmp_3).clone()
+                    }
+                },
+            ));
             assert!(unimplemented!());
             assert!((*it.borrow()) == v.decay().begin().iter_add(1_isize));
             assert!(({ is_contiguous_container_asan_correct_0(v.as_pointer(),) }));
         }
         {
             let expected: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
-            let v: Value<Vec<i32>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = (arr.as_pointer() as Ptr<i32>);
-                while __it != (arr.as_pointer() as Ptr<i32>).offset((5) as isize) {
-                    __v.push((__it.iter_deref().read()));
-                    __it.iter_inc();
-                }
-                __v
-            }));
-            let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new({
-                let __it = unimplemented!().iter_add(4_isize);
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
-                __it
-            }));
+            let v: Value<Vec<i32>> = Rc::new(RefCell::new(
+                match ({ (arr.as_pointer() as Ptr<i32>).offset((5) as isize) },) {
+                    (mut __tmp_4,) => {
+                        let mut __v = Vec::new();
+                        let mut __it = (arr.as_pointer() as Ptr<i32>);
+                        while __it != __tmp_4 {
+                            __v.push((__it.iter_deref().read()));
+                            __it.iter_inc();
+                        }
+                        __v
+                    }
+                },
+            ));
+            let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(
+                match ({ unimplemented!().iter_add(4_isize) },) {
+                    (mut __tmp_5,) => {
+                        let __off = __tmp_5.index();
+                        v.as_pointer()
+                            .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
+                        (__tmp_5).clone()
+                    }
+                },
+            ));
             assert!(unimplemented!());
             assert!((*it.borrow()) == v.decay().end());
             assert!(({ is_contiguous_container_asan_correct_0(v.as_pointer(),) }));
@@ -1048,14 +1180,15 @@ pub fn tests_47() {
                 let __init = MoveOnly::new({ Some(3) });
                 (*v.borrow_mut()).push(__init)
             };
-            {
-                let __it = <RandomAccessIterator<MoveOnly>>::from(v.decay().begin());
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<MoveOnly>| __v.remove(__off));
-                __it
+            match ({ <RandomAccessIterator<MoveOnly>>::from(v.decay().begin()) },) {
+                (mut __tmp_6,) => {
+                    let __off = __tmp_6.index();
+                    v.as_pointer()
+                        .with_mut(|__v: &mut Vec<MoveOnly>| __v.remove(__off));
+                    (__tmp_6).clone()
+                }
             };
-            assert!(((*v.borrow()).len() == 2_usize));
+            assert!(({ ((*v.borrow()).len() == 2_usize) }));
             assert!(
                 ({
                     let _x: Ptr<MoveOnly> = v.decay().offset(0_usize as isize);
@@ -1085,14 +1218,15 @@ pub fn tests_47() {
                 let __init = TrivialMoveOnly::new({ Some(3) });
                 (*v.borrow_mut()).push(__init)
             };
-            {
-                let __it = <RandomAccessIterator<TrivialMoveOnly>>::from(v.decay().begin());
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<TrivialMoveOnly>| __v.remove(__off));
-                __it
+            match ({ <RandomAccessIterator<TrivialMoveOnly>>::from(v.decay().begin()) },) {
+                (mut __tmp_7,) => {
+                    let __off = __tmp_7.index();
+                    v.as_pointer()
+                        .with_mut(|__v: &mut Vec<TrivialMoveOnly>| __v.remove(__off));
+                    (__tmp_7).clone()
+                }
             };
-            assert!(((*v.borrow()).len() == 2_usize));
+            assert!(({ ((*v.borrow()).len() == 2_usize) }));
             assert!(
                 ({
                     let _x: Ptr<TrivialMoveOnly> = v.decay().offset(0_usize as isize);
@@ -1122,26 +1256,31 @@ pub fn tests_48() {
             NonTriviallyRelocatable::new_2({ 5 }),
         ])));
         {
-            let v: Value<Vec<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = (arr.as_pointer() as Ptr<NonTriviallyRelocatable>);
-                while __it
-                    != (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5) as isize)
+            let v: Value<Vec<NonTriviallyRelocatable>> = Rc::new(RefCell::new(
+                match ({ (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5) as isize) },)
                 {
-                    __v.push(<NonTriviallyRelocatable as CppFrom<
-                        NonTriviallyRelocatable,
-                    >>::cpp_from(__it.iter_deref()));
-                    __it.iter_inc();
-                }
-                __v
-            }));
-            let it: Value<RandomAccessIterator<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
-                let __it = unimplemented!();
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<NonTriviallyRelocatable>| __v.remove(__off));
-                __it
-            }));
+                    (mut __tmp_8,) => {
+                        let mut __v = Vec::new();
+                        let mut __it = (arr.as_pointer() as Ptr<NonTriviallyRelocatable>);
+                        while __it != __tmp_8 {
+                            __v.push(<NonTriviallyRelocatable as CppFrom<
+                                NonTriviallyRelocatable,
+                            >>::cpp_from(__it.iter_deref()));
+                            __it.iter_inc();
+                        }
+                        __v
+                    }
+                },
+            ));
+            let it: Value<RandomAccessIterator<NonTriviallyRelocatable>> =
+                Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                    (mut __tmp_9,) => {
+                        let __off = __tmp_9.index();
+                        v.as_pointer()
+                            .with_mut(|__v: &mut Vec<NonTriviallyRelocatable>| __v.remove(__off));
+                        (__tmp_9).clone()
+                    }
+                }));
             assert!(unimplemented!());
             assert!((*it.borrow()) == v.decay().begin());
             assert!(({ is_contiguous_container_asan_correct_1(v.as_pointer(),) }));
@@ -1154,26 +1293,32 @@ pub fn tests_48() {
                     NonTriviallyRelocatable::new_2({ 4 }),
                     NonTriviallyRelocatable::new_2({ 5 }),
                 ])));
-            let v: Value<Vec<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = (arr.as_pointer() as Ptr<NonTriviallyRelocatable>);
-                while __it
-                    != (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5) as isize)
+            let v: Value<Vec<NonTriviallyRelocatable>> = Rc::new(RefCell::new(
+                match ({ (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5) as isize) },)
                 {
-                    __v.push(<NonTriviallyRelocatable as CppFrom<
-                        NonTriviallyRelocatable,
-                    >>::cpp_from(__it.iter_deref()));
-                    __it.iter_inc();
-                }
-                __v
-            }));
-            let it: Value<RandomAccessIterator<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
-                let __it = unimplemented!().iter_add(1_isize);
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<NonTriviallyRelocatable>| __v.remove(__off));
-                __it
-            }));
+                    (mut __tmp_10,) => {
+                        let mut __v = Vec::new();
+                        let mut __it = (arr.as_pointer() as Ptr<NonTriviallyRelocatable>);
+                        while __it != __tmp_10 {
+                            __v.push(<NonTriviallyRelocatable as CppFrom<
+                                NonTriviallyRelocatable,
+                            >>::cpp_from(__it.iter_deref()));
+                            __it.iter_inc();
+                        }
+                        __v
+                    }
+                },
+            ));
+            let it: Value<RandomAccessIterator<NonTriviallyRelocatable>> = Rc::new(RefCell::new(
+                match ({ unimplemented!().iter_add(1_isize) },) {
+                    (mut __tmp_11,) => {
+                        let __off = __tmp_11.index();
+                        v.as_pointer()
+                            .with_mut(|__v: &mut Vec<NonTriviallyRelocatable>| __v.remove(__off));
+                        (__tmp_11).clone()
+                    }
+                },
+            ));
             assert!(unimplemented!());
             assert!((*it.borrow()) == v.decay().begin().iter_add(1_isize));
             assert!(({ is_contiguous_container_asan_correct_1(v.as_pointer(),) }));
@@ -1186,26 +1331,32 @@ pub fn tests_48() {
                     NonTriviallyRelocatable::new_2({ 3 }),
                     NonTriviallyRelocatable::new_2({ 4 }),
                 ])));
-            let v: Value<Vec<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = (arr.as_pointer() as Ptr<NonTriviallyRelocatable>);
-                while __it
-                    != (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5) as isize)
+            let v: Value<Vec<NonTriviallyRelocatable>> = Rc::new(RefCell::new(
+                match ({ (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5) as isize) },)
                 {
-                    __v.push(<NonTriviallyRelocatable as CppFrom<
-                        NonTriviallyRelocatable,
-                    >>::cpp_from(__it.iter_deref()));
-                    __it.iter_inc();
-                }
-                __v
-            }));
-            let it: Value<RandomAccessIterator<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
-                let __it = unimplemented!().iter_add(4_isize);
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<NonTriviallyRelocatable>| __v.remove(__off));
-                __it
-            }));
+                    (mut __tmp_12,) => {
+                        let mut __v = Vec::new();
+                        let mut __it = (arr.as_pointer() as Ptr<NonTriviallyRelocatable>);
+                        while __it != __tmp_12 {
+                            __v.push(<NonTriviallyRelocatable as CppFrom<
+                                NonTriviallyRelocatable,
+                            >>::cpp_from(__it.iter_deref()));
+                            __it.iter_inc();
+                        }
+                        __v
+                    }
+                },
+            ));
+            let it: Value<RandomAccessIterator<NonTriviallyRelocatable>> = Rc::new(RefCell::new(
+                match ({ unimplemented!().iter_add(4_isize) },) {
+                    (mut __tmp_13,) => {
+                        let __off = __tmp_13.index();
+                        v.as_pointer()
+                            .with_mut(|__v: &mut Vec<NonTriviallyRelocatable>| __v.remove(__off));
+                        (__tmp_13).clone()
+                    }
+                },
+            ));
             assert!(unimplemented!());
             assert!((*it.borrow()) == v.decay().end());
             assert!(({ is_contiguous_container_asan_correct_1(v.as_pointer(),) }));
@@ -1226,14 +1377,15 @@ pub fn tests_48() {
                 let __init = MoveOnly::new({ Some(3) });
                 (*v.borrow_mut()).push(__init)
             };
-            {
-                let __it = <RandomAccessIterator<MoveOnly>>::from(v.decay().begin());
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<MoveOnly>| __v.remove(__off));
-                __it
+            match ({ <RandomAccessIterator<MoveOnly>>::from(v.decay().begin()) },) {
+                (mut __tmp_14,) => {
+                    let __off = __tmp_14.index();
+                    v.as_pointer()
+                        .with_mut(|__v: &mut Vec<MoveOnly>| __v.remove(__off));
+                    (__tmp_14).clone()
+                }
             };
-            assert!(((*v.borrow()).len() == 2_usize));
+            assert!(({ ((*v.borrow()).len() == 2_usize) }));
             assert!(
                 ({
                     let _x: Ptr<MoveOnly> = v.decay().offset(0_usize as isize);
@@ -1263,14 +1415,15 @@ pub fn tests_48() {
                 let __init = TrivialMoveOnly::new({ Some(3) });
                 (*v.borrow_mut()).push(__init)
             };
-            {
-                let __it = <RandomAccessIterator<TrivialMoveOnly>>::from(v.decay().begin());
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<TrivialMoveOnly>| __v.remove(__off));
-                __it
+            match ({ <RandomAccessIterator<TrivialMoveOnly>>::from(v.decay().begin()) },) {
+                (mut __tmp_15,) => {
+                    let __off = __tmp_15.index();
+                    v.as_pointer()
+                        .with_mut(|__v: &mut Vec<TrivialMoveOnly>| __v.remove(__off));
+                    (__tmp_15).clone()
+                }
             };
-            assert!(((*v.borrow()).len() == 2_usize));
+            assert!(({ ((*v.borrow()).len() == 2_usize) }));
             assert!(
                 ({
                     let _x: Ptr<TrivialMoveOnly> = v.decay().offset(0_usize as isize);
@@ -1294,66 +1447,86 @@ pub fn tests_49() {
     {
         let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5])));
         {
-            let v: Value<Vec<i32>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = (arr.as_pointer() as Ptr<i32>);
-                while __it != (arr.as_pointer() as Ptr<i32>).offset((5) as isize) {
-                    __v.push((__it.iter_deref().read()));
-                    __it.iter_inc();
-                }
-                __v
-            }));
-            let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new({
-                let __it = unimplemented!();
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
-                __it
-            }));
+            let v: Value<Vec<i32>> = Rc::new(RefCell::new(
+                match ({ (arr.as_pointer() as Ptr<i32>).offset((5) as isize) },) {
+                    (mut __tmp_16,) => {
+                        let mut __v = Vec::new();
+                        let mut __it = (arr.as_pointer() as Ptr<i32>);
+                        while __it != __tmp_16 {
+                            __v.push((__it.iter_deref().read()));
+                            __it.iter_inc();
+                        }
+                        __v
+                    }
+                },
+            ));
+            let it: Value<RandomAccessIterator<i32>> =
+                Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                    (mut __tmp_17,) => {
+                        let __off = __tmp_17.index();
+                        v.as_pointer()
+                            .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
+                        (__tmp_17).clone()
+                    }
+                }));
             assert!(unimplemented!());
             assert!((*it.borrow()) == v.decay().begin());
             assert!(({ is_contiguous_container_asan_correct_2(v.as_pointer(),) }));
         }
         {
             let expected: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 3, 4, 5])));
-            let v: Value<Vec<i32>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = (arr.as_pointer() as Ptr<i32>);
-                while __it != (arr.as_pointer() as Ptr<i32>).offset((5) as isize) {
-                    __v.push((__it.iter_deref().read()));
-                    __it.iter_inc();
-                }
-                __v
-            }));
-            let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new({
-                let __it = unimplemented!().iter_add(1_isize);
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
-                __it
-            }));
+            let v: Value<Vec<i32>> = Rc::new(RefCell::new(
+                match ({ (arr.as_pointer() as Ptr<i32>).offset((5) as isize) },) {
+                    (mut __tmp_18,) => {
+                        let mut __v = Vec::new();
+                        let mut __it = (arr.as_pointer() as Ptr<i32>);
+                        while __it != __tmp_18 {
+                            __v.push((__it.iter_deref().read()));
+                            __it.iter_inc();
+                        }
+                        __v
+                    }
+                },
+            ));
+            let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(
+                match ({ unimplemented!().iter_add(1_isize) },) {
+                    (mut __tmp_19,) => {
+                        let __off = __tmp_19.index();
+                        v.as_pointer()
+                            .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
+                        (__tmp_19).clone()
+                    }
+                },
+            ));
             assert!(unimplemented!());
             assert!((*it.borrow()) == v.decay().begin().iter_add(1_isize));
             assert!(({ is_contiguous_container_asan_correct_2(v.as_pointer(),) }));
         }
         {
             let expected: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
-            let v: Value<Vec<i32>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = (arr.as_pointer() as Ptr<i32>);
-                while __it != (arr.as_pointer() as Ptr<i32>).offset((5) as isize) {
-                    __v.push((__it.iter_deref().read()));
-                    __it.iter_inc();
-                }
-                __v
-            }));
-            let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new({
-                let __it = unimplemented!().iter_add(4_isize);
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
-                __it
-            }));
+            let v: Value<Vec<i32>> = Rc::new(RefCell::new(
+                match ({ (arr.as_pointer() as Ptr<i32>).offset((5) as isize) },) {
+                    (mut __tmp_20,) => {
+                        let mut __v = Vec::new();
+                        let mut __it = (arr.as_pointer() as Ptr<i32>);
+                        while __it != __tmp_20 {
+                            __v.push((__it.iter_deref().read()));
+                            __it.iter_inc();
+                        }
+                        __v
+                    }
+                },
+            ));
+            let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(
+                match ({ unimplemented!().iter_add(4_isize) },) {
+                    (mut __tmp_21,) => {
+                        let __off = __tmp_21.index();
+                        v.as_pointer()
+                            .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
+                        (__tmp_21).clone()
+                    }
+                },
+            ));
             assert!(unimplemented!());
             assert!((*it.borrow()) == v.decay().end());
             assert!(({ is_contiguous_container_asan_correct_2(v.as_pointer(),) }));
@@ -1374,14 +1547,15 @@ pub fn tests_49() {
                 let __init = MoveOnly::new({ Some(3) });
                 (*v.borrow_mut()).push(__init)
             };
-            {
-                let __it = <()>::from(v.decay().begin());
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<MoveOnly>| __v.remove(__off));
-                __it
+            match ({ <()>::from(v.decay().begin()) },) {
+                (mut __tmp_22,) => {
+                    let __off = __tmp_22.index();
+                    v.as_pointer()
+                        .with_mut(|__v: &mut Vec<MoveOnly>| __v.remove(__off));
+                    (__tmp_22).clone()
+                }
             };
-            assert!(((*v.borrow()).len() == 2_usize));
+            assert!(({ ((*v.borrow()).len() == 2_usize) }));
             assert!(
                 ({
                     let _x: Ptr<MoveOnly> = v.decay().offset(0_usize as isize);
@@ -1411,14 +1585,15 @@ pub fn tests_49() {
                 let __init = TrivialMoveOnly::new({ Some(3) });
                 (*v.borrow_mut()).push(__init)
             };
-            {
-                let __it = <()>::from(v.decay().begin());
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<TrivialMoveOnly>| __v.remove(__off));
-                __it
+            match ({ <()>::from(v.decay().begin()) },) {
+                (mut __tmp_23,) => {
+                    let __off = __tmp_23.index();
+                    v.as_pointer()
+                        .with_mut(|__v: &mut Vec<TrivialMoveOnly>| __v.remove(__off));
+                    (__tmp_23).clone()
+                }
             };
-            assert!(((*v.borrow()).len() == 2_usize));
+            assert!(({ ((*v.borrow()).len() == 2_usize) }));
             assert!(
                 ({
                     let _x: Ptr<TrivialMoveOnly> = v.decay().offset(0_usize as isize);
@@ -1448,26 +1623,31 @@ pub fn tests_50() {
             NonTriviallyRelocatable::new_2({ 5 }),
         ])));
         {
-            let v: Value<Vec<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = (arr.as_pointer() as Ptr<NonTriviallyRelocatable>);
-                while __it
-                    != (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5) as isize)
+            let v: Value<Vec<NonTriviallyRelocatable>> = Rc::new(RefCell::new(
+                match ({ (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5) as isize) },)
                 {
-                    __v.push(<NonTriviallyRelocatable as CppFrom<
-                        NonTriviallyRelocatable,
-                    >>::cpp_from(__it.iter_deref()));
-                    __it.iter_inc();
-                }
-                __v
-            }));
-            let it: Value<RandomAccessIterator<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
-                let __it = unimplemented!();
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<NonTriviallyRelocatable>| __v.remove(__off));
-                __it
-            }));
+                    (mut __tmp_24,) => {
+                        let mut __v = Vec::new();
+                        let mut __it = (arr.as_pointer() as Ptr<NonTriviallyRelocatable>);
+                        while __it != __tmp_24 {
+                            __v.push(<NonTriviallyRelocatable as CppFrom<
+                                NonTriviallyRelocatable,
+                            >>::cpp_from(__it.iter_deref()));
+                            __it.iter_inc();
+                        }
+                        __v
+                    }
+                },
+            ));
+            let it: Value<RandomAccessIterator<NonTriviallyRelocatable>> =
+                Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                    (mut __tmp_25,) => {
+                        let __off = __tmp_25.index();
+                        v.as_pointer()
+                            .with_mut(|__v: &mut Vec<NonTriviallyRelocatable>| __v.remove(__off));
+                        (__tmp_25).clone()
+                    }
+                }));
             assert!(unimplemented!());
             assert!((*it.borrow()) == v.decay().begin());
             assert!(({ is_contiguous_container_asan_correct_3(v.as_pointer(),) }));
@@ -1480,26 +1660,32 @@ pub fn tests_50() {
                     NonTriviallyRelocatable::new_2({ 4 }),
                     NonTriviallyRelocatable::new_2({ 5 }),
                 ])));
-            let v: Value<Vec<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = (arr.as_pointer() as Ptr<NonTriviallyRelocatable>);
-                while __it
-                    != (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5) as isize)
+            let v: Value<Vec<NonTriviallyRelocatable>> = Rc::new(RefCell::new(
+                match ({ (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5) as isize) },)
                 {
-                    __v.push(<NonTriviallyRelocatable as CppFrom<
-                        NonTriviallyRelocatable,
-                    >>::cpp_from(__it.iter_deref()));
-                    __it.iter_inc();
-                }
-                __v
-            }));
-            let it: Value<RandomAccessIterator<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
-                let __it = unimplemented!().iter_add(1_isize);
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<NonTriviallyRelocatable>| __v.remove(__off));
-                __it
-            }));
+                    (mut __tmp_26,) => {
+                        let mut __v = Vec::new();
+                        let mut __it = (arr.as_pointer() as Ptr<NonTriviallyRelocatable>);
+                        while __it != __tmp_26 {
+                            __v.push(<NonTriviallyRelocatable as CppFrom<
+                                NonTriviallyRelocatable,
+                            >>::cpp_from(__it.iter_deref()));
+                            __it.iter_inc();
+                        }
+                        __v
+                    }
+                },
+            ));
+            let it: Value<RandomAccessIterator<NonTriviallyRelocatable>> = Rc::new(RefCell::new(
+                match ({ unimplemented!().iter_add(1_isize) },) {
+                    (mut __tmp_27,) => {
+                        let __off = __tmp_27.index();
+                        v.as_pointer()
+                            .with_mut(|__v: &mut Vec<NonTriviallyRelocatable>| __v.remove(__off));
+                        (__tmp_27).clone()
+                    }
+                },
+            ));
             assert!(unimplemented!());
             assert!((*it.borrow()) == v.decay().begin().iter_add(1_isize));
             assert!(({ is_contiguous_container_asan_correct_3(v.as_pointer(),) }));
@@ -1512,26 +1698,32 @@ pub fn tests_50() {
                     NonTriviallyRelocatable::new_2({ 3 }),
                     NonTriviallyRelocatable::new_2({ 4 }),
                 ])));
-            let v: Value<Vec<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = (arr.as_pointer() as Ptr<NonTriviallyRelocatable>);
-                while __it
-                    != (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5) as isize)
+            let v: Value<Vec<NonTriviallyRelocatable>> = Rc::new(RefCell::new(
+                match ({ (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5) as isize) },)
                 {
-                    __v.push(<NonTriviallyRelocatable as CppFrom<
-                        NonTriviallyRelocatable,
-                    >>::cpp_from(__it.iter_deref()));
-                    __it.iter_inc();
-                }
-                __v
-            }));
-            let it: Value<RandomAccessIterator<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
-                let __it = unimplemented!().iter_add(4_isize);
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<NonTriviallyRelocatable>| __v.remove(__off));
-                __it
-            }));
+                    (mut __tmp_28,) => {
+                        let mut __v = Vec::new();
+                        let mut __it = (arr.as_pointer() as Ptr<NonTriviallyRelocatable>);
+                        while __it != __tmp_28 {
+                            __v.push(<NonTriviallyRelocatable as CppFrom<
+                                NonTriviallyRelocatable,
+                            >>::cpp_from(__it.iter_deref()));
+                            __it.iter_inc();
+                        }
+                        __v
+                    }
+                },
+            ));
+            let it: Value<RandomAccessIterator<NonTriviallyRelocatable>> = Rc::new(RefCell::new(
+                match ({ unimplemented!().iter_add(4_isize) },) {
+                    (mut __tmp_29,) => {
+                        let __off = __tmp_29.index();
+                        v.as_pointer()
+                            .with_mut(|__v: &mut Vec<NonTriviallyRelocatable>| __v.remove(__off));
+                        (__tmp_29).clone()
+                    }
+                },
+            ));
             assert!(unimplemented!());
             assert!((*it.borrow()) == v.decay().end());
             assert!(({ is_contiguous_container_asan_correct_3(v.as_pointer(),) }));
@@ -1552,14 +1744,15 @@ pub fn tests_50() {
                 let __init = MoveOnly::new({ Some(3) });
                 (*v.borrow_mut()).push(__init)
             };
-            {
-                let __it = <()>::from(v.decay().begin());
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<MoveOnly>| __v.remove(__off));
-                __it
+            match ({ <()>::from(v.decay().begin()) },) {
+                (mut __tmp_30,) => {
+                    let __off = __tmp_30.index();
+                    v.as_pointer()
+                        .with_mut(|__v: &mut Vec<MoveOnly>| __v.remove(__off));
+                    (__tmp_30).clone()
+                }
             };
-            assert!(((*v.borrow()).len() == 2_usize));
+            assert!(({ ((*v.borrow()).len() == 2_usize) }));
             assert!(
                 ({
                     let _x: Ptr<MoveOnly> = v.decay().offset(0_usize as isize);
@@ -1589,14 +1782,15 @@ pub fn tests_50() {
                 let __init = TrivialMoveOnly::new({ Some(3) });
                 (*v.borrow_mut()).push(__init)
             };
-            {
-                let __it = <()>::from(v.decay().begin());
-                let __off = __it.index();
-                v.as_pointer()
-                    .with_mut(|__v: &mut Vec<TrivialMoveOnly>| __v.remove(__off));
-                __it
+            match ({ <()>::from(v.decay().begin()) },) {
+                (mut __tmp_31,) => {
+                    let __off = __tmp_31.index();
+                    v.as_pointer()
+                        .with_mut(|__v: &mut Vec<TrivialMoveOnly>| __v.remove(__off));
+                    (__tmp_31).clone()
+                }
             };
-            assert!(((*v.borrow()).len() == 2_usize));
+            assert!(({ ((*v.borrow()).len() == 2_usize) }));
             assert!(
                 ({
                     let _x: Ptr<TrivialMoveOnly> = v.decay().offset(0_usize as isize);
@@ -1897,13 +2091,17 @@ impl min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__Impl
     fn operator_inc_8(
         &self,
     ) -> Ptr<min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_dec_10(
         &self,
     ) -> Ptr<min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_add_assign(
@@ -2016,13 +2214,17 @@ impl min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0
     fn operator_inc_8(
         &self,
     ) -> Ptr<min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_dec_10(
         &self,
     ) -> Ptr<min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_add_assign(
@@ -2105,13 +2307,17 @@ impl min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__Impl
     fn operator_inc_8(
         &self,
     ) -> Ptr<min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_dec_10(
         &self,
     ) -> Ptr<min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_add_assign(
@@ -2285,7 +2491,9 @@ impl min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_l
         &self,
     ) -> Ptr<min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__>
     {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_add_assign(
@@ -2437,7 +2645,9 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl
     fn operator_inc_9(
         &self,
     ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_add_assign(
@@ -2526,11 +2736,15 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
         return (*self).with(|__s| __s.ptr_.clone());
     }
     fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_dec_10(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_add_assign(

@@ -12,18 +12,21 @@ pub const anon_0_value: anon_0 = 1;
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_basic_string_view_char__std_char_traits_char____std_basic_string_view_char__std_char_traits_char___
 {}
+impl CppMove for test_macros_detail_is_same_std_basic_string_view_char__std_char_traits_char____std_basic_string_view_char__std_char_traits_char___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_basic_string_view_wchar_t__constexpr_char_traits_wchar_t____std_basic_string_view_wchar_t__constexpr_char_traits_wchar_t___
 {}
+impl CppMove for test_macros_detail_is_same_std_basic_string_view_wchar_t__constexpr_char_traits_wchar_t____std_basic_string_view_wchar_t__constexpr_char_traits_wchar_t___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_basic_string_view_wchar_t__std_char_traits_wchar_t____std_basic_string_view_wchar_t__std_char_traits_wchar_t___
 {}
+impl CppMove for test_macros_detail_is_same_std_basic_string_view_wchar_t__std_char_traits_wchar_t____std_basic_string_view_wchar_t__std_char_traits_wchar_t___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct constexpr_char_traits_wchar_t_ {}
@@ -71,6 +74,11 @@ impl constexpr_char_traits_wchar_t_ {
             s.prefix_inc();
         }
         return (*len.borrow());
+    }
+}
+impl CppMove for constexpr_char_traits_wchar_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

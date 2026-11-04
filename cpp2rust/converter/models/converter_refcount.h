@@ -72,6 +72,8 @@ public:
                              std::string_view src);
   void AddCloneTrait(const clang::RecordDecl *decl) override;
 
+  void AddMoveTrait(const clang::RecordDecl *decl) override;
+
   bool RecordImplementsClone(const clang::RecordDecl *decl) override;
 
   bool RecordDerivesClone(const clang::RecordDecl *decl);
@@ -174,6 +176,8 @@ public:
   bool VisitExplicitCastExpr(clang::ExplicitCastExpr *expr) override;
 
   void ConvertBinaryOperator(clang::BinaryOperator *expr) override;
+
+  bool ConvertAssignmentAsLValue(clang::BinaryOperator *expr);
 
   bool VisitStmtExpr(clang::StmtExpr *expr) override;
   bool VisitReturnStmt(clang::ReturnStmt *stmt) override;
@@ -324,7 +328,11 @@ public:
 
   bool IsReferenceType(const clang::Expr *expr) const override;
 
+  bool IsProxyReference(clang::QualType type) const override;
+
   std::string ConvertTake(clang::Expr *arg) override;
+
+  std::string ConvertLibraryMove(clang::Expr *arg) override;
 
   std::string ConvertBorrowMut(clang::Expr *arg) override;
 
@@ -358,7 +366,7 @@ private:
 
   std::string DestroyMembers(const clang::CXXRecordDecl *decl) override;
 
-  void EmitScopedDestructor(const clang::VarDecl *decl) override;
+  std::string ScopedDestructorStmt(const clang::VarDecl *decl) override;
 
   std::pair<std::string, std::string>
   MaterializeTemp(const std::string &binding_name, clang::QualType param_type,
@@ -453,6 +461,11 @@ private:
   // The method that makes a pointer to an object of the given type, which is
   // one to its elements if they are what ConvertObject wants.
   std::string AsPointerMethod(clang::QualType type);
+
+  // Whether the rule of the call returns the object that the C++ reference
+  // return type refers to, e.g. the iterator for the iterator & of ++it, so
+  // there is no pointer to dereference.
+  bool RuleReturnsReferencedObject(clang::CallExpr *expr);
 
   std::string ConvertTemporaryPointer(
       clang::Expr *expr,

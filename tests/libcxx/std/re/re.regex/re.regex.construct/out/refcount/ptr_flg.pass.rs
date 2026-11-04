@@ -6,10 +6,12 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(mut p: Ptr<i8>, mut f: (), mut mc: u32) {
-    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as u32) == (f as u32)));
-    assert!((unimplemented!() == mc));
+pub fn test_0(mut p: Ptr<i8>, mut f: std_regex_constants_syntax_option_type, mut mc: u32) {
+    let r: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
+        std_basic_regex_char__std_regex_traits_char__::new_1({ (p).clone() }, { f }),
+    ));
+    assert!(({ ((({ (*r.borrow()).flags() }) as u32) == (f as u32)) }));
+    assert!(({ (({ (*r.borrow()).mark_count() }) == mc) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -34,168 +36,168 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a\\)"),
-            unimplemented!(),
+            basic_1.with(|rc| *rc.borrow()),
             1_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a[bc]\\)"),
-            unimplemented!(),
+            basic_1.with(|rc| *rc.borrow()),
             1_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a\\([bc]\\)\\)"),
-            unimplemented!(),
+            basic_1.with(|rc| *rc.borrow()),
             2_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"(a([bc]))"),
-            unimplemented!(),
+            basic_1.with(|rc| *rc.borrow()),
             0_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a\\)"),
-            unimplemented!(),
+            extended_2.with(|rc| *rc.borrow()),
             0_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a[bc]\\)"),
-            unimplemented!(),
+            extended_2.with(|rc| *rc.borrow()),
             0_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a\\([bc]\\)\\)"),
-            unimplemented!(),
+            extended_2.with(|rc| *rc.borrow()),
             0_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"(a([bc]))"),
-            unimplemented!(),
+            extended_2.with(|rc| *rc.borrow()),
             2_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a\\)"),
-            unimplemented!(),
+            ECMAScript_3.with(|rc| *rc.borrow()),
             0_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a[bc]\\)"),
-            unimplemented!(),
+            ECMAScript_3.with(|rc| *rc.borrow()),
             0_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a\\([bc]\\)\\)"),
-            unimplemented!(),
+            ECMAScript_3.with(|rc| *rc.borrow()),
             0_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"(a([bc]))"),
-            unimplemented!(),
+            ECMAScript_3.with(|rc| *rc.borrow()),
             2_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a\\)"),
-            unimplemented!(),
+            awk_4.with(|rc| *rc.borrow()),
             0_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a[bc]\\)"),
-            unimplemented!(),
+            awk_4.with(|rc| *rc.borrow()),
             0_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a\\([bc]\\)\\)"),
-            unimplemented!(),
+            awk_4.with(|rc| *rc.borrow()),
             0_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"(a([bc]))"),
-            unimplemented!(),
+            awk_4.with(|rc| *rc.borrow()),
             2_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a\\)"),
-            unimplemented!(),
+            grep_5.with(|rc| *rc.borrow()),
             1_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a[bc]\\)"),
-            unimplemented!(),
+            grep_5.with(|rc| *rc.borrow()),
             1_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a\\([bc]\\)\\)"),
-            unimplemented!(),
+            grep_5.with(|rc| *rc.borrow()),
             2_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"(a([bc]))"),
-            unimplemented!(),
+            grep_5.with(|rc| *rc.borrow()),
             0_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a\\)"),
-            unimplemented!(),
+            egrep_6.with(|rc| *rc.borrow()),
             0_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a[bc]\\)"),
-            unimplemented!(),
+            egrep_6.with(|rc| *rc.borrow()),
             0_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a\\([bc]\\)\\)"),
-            unimplemented!(),
+            egrep_6.with(|rc| *rc.borrow()),
             0_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"(a([bc]))"),
-            unimplemented!(),
+            egrep_6.with(|rc| *rc.borrow()),
             2_u32,
         )
     });

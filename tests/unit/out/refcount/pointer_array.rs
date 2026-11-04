@@ -13,6 +13,11 @@ pub struct StackArray {
     #[byte_size(24)]
     pub arr: Box<[Ptr<i32>]>,
 }
+impl CppMove for StackArray {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for StackArray {
     fn default() -> Self {
         {

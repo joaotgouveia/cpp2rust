@@ -23,6 +23,11 @@ impl S {
         }
     }
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
@@ -34,8 +39,8 @@ fn main_0() -> i32 {
         (*s.borrow_mut()).v.push(__a1)
     };
     'loop_: for e in IterRange::new(
-        field_ref!(s.as_pointer(), v).decay().begin(),
-        field_ref!(s.as_pointer(), v).decay().end(),
+        CppRange::begin(&field_ref!(s.as_pointer(), v).decay()),
+        CppRange::end(&field_ref!(s.as_pointer(), v).decay()),
     ) {
         let mut e: i32 = (e.iter_deref().read());
         (*s.borrow_mut()).a.postfix_inc();

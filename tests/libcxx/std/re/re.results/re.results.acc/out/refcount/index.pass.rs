@@ -6,96 +6,131 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(mut syntax: ()) {
-    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_0(mut syntax: std_regex_constants_syntax_option_type) {
+    let m : Value<std_match_results_const_char_ptr__std_allocator_std_sub_match_const_char_ptr___ > = Rc::new(RefCell::new(<std_match_results_const_char_ptr__std_allocator_std_sub_match_const_char_ptr___  >::default() )) ;
     let s: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(b"abcdefghijk\0")));
-    assert!(unimplemented!());
-    assert!((unimplemented!() == 4_()));
     assert!(
         ({
-            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                .0
-                .borrow())
-            .clone()
-        } == { (s.as_pointer() as Ptr::<i8>).offset((2) as isize) })
+            let ___e: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
+                std_basic_regex_char__std_regex_traits_char__::new_1(
+                    { Ptr::<i8>::from_string_literal(b"cd((e)fg)hi|(z)") },
+                    { syntax },
+                ),
+            ));
+            regex_search_1(
+                (s.as_pointer() as Ptr<i8>),
+                m.as_pointer(),
+                ___e.as_pointer(),
+                None,
+            )
+        })
+    );
+    assert!(({ (({ (*m.borrow()).size() }) == 4_u64) }));
+    assert!(
+        ({
+            ({
+                (*({ ((*m.borrow())[0_u64] as (Value<*const i8>, Value<*const i8>)) })
+                    .0
+                    .borrow())
+                .clone()
+            } == { (s.as_pointer() as Ptr<i8>).offset((2) as isize) })
+        })
     );
     assert!(
         ({
-            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                .1
-                .borrow())
-            .clone()
-        } == { (s.as_pointer() as Ptr::<i8>).offset((9) as isize) })
+            ({
+                (*({ ((*m.borrow())[0_u64] as (Value<*const i8>, Value<*const i8>)) })
+                    .1
+                    .borrow())
+                .clone()
+            } == { (s.as_pointer() as Ptr<i8>).offset((9) as isize) })
+        })
     );
-    assert!((({ (unimplemented!()).clone().matched } as i32) == (true as i32)));
+    assert!(({ (({ (*m.borrow())[0_u64].matched } as i32) == (true as i32)) }));
     assert!(
         ({
-            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                .0
-                .borrow())
-            .clone()
-        } == { (s.as_pointer() as Ptr::<i8>).offset((4) as isize) })
-    );
-    assert!(
-        ({
-            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                .1
-                .borrow())
-            .clone()
-        } == { (s.as_pointer() as Ptr::<i8>).offset((7) as isize) })
-    );
-    assert!((({ (unimplemented!()).clone().matched } as i32) == (true as i32)));
-    assert!(
-        ({
-            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                .0
-                .borrow())
-            .clone()
-        } == { (s.as_pointer() as Ptr::<i8>).offset((4) as isize) })
+            ({
+                (*({ ((*m.borrow())[1_u64] as (Value<*const i8>, Value<*const i8>)) })
+                    .0
+                    .borrow())
+                .clone()
+            } == { (s.as_pointer() as Ptr<i8>).offset((4) as isize) })
+        })
     );
     assert!(
         ({
-            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                .1
-                .borrow())
-            .clone()
-        } == { (s.as_pointer() as Ptr::<i8>).offset((5) as isize) })
+            ({
+                (*({ ((*m.borrow())[1_u64] as (Value<*const i8>, Value<*const i8>)) })
+                    .1
+                    .borrow())
+                .clone()
+            } == { (s.as_pointer() as Ptr<i8>).offset((7) as isize) })
+        })
     );
-    assert!((({ (unimplemented!()).clone().matched } as i32) == (true as i32)));
+    assert!(({ (({ (*m.borrow())[1_u64].matched } as i32) == (true as i32)) }));
     assert!(
         ({
-            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                .0
-                .borrow())
-            .clone()
-        } == { (s.as_pointer() as Ptr::<i8>).offset((11) as isize) })
-    );
-    assert!(
-        ({
-            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                .1
-                .borrow())
-            .clone()
-        } == { (s.as_pointer() as Ptr::<i8>).offset((11) as isize) })
-    );
-    assert!((({ (unimplemented!()).clone().matched } as i32) == (false as i32)));
-    assert!(
-        ({
-            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                .0
-                .borrow())
-            .clone()
-        } == { (s.as_pointer() as Ptr::<i8>).offset((11) as isize) })
+            ({
+                (*({ ((*m.borrow())[2_u64] as (Value<*const i8>, Value<*const i8>)) })
+                    .0
+                    .borrow())
+                .clone()
+            } == { (s.as_pointer() as Ptr<i8>).offset((4) as isize) })
+        })
     );
     assert!(
         ({
-            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                .1
-                .borrow())
-            .clone()
-        } == { (s.as_pointer() as Ptr::<i8>).offset((11) as isize) })
+            ({
+                (*({ ((*m.borrow())[2_u64] as (Value<*const i8>, Value<*const i8>)) })
+                    .1
+                    .borrow())
+                .clone()
+            } == { (s.as_pointer() as Ptr<i8>).offset((5) as isize) })
+        })
     );
-    assert!((({ (unimplemented!()).clone().matched } as i32) == (false as i32)));
+    assert!(({ (({ (*m.borrow())[2_u64].matched } as i32) == (true as i32)) }));
+    assert!(
+        ({
+            ({
+                (*({ ((*m.borrow())[3_u64] as (Value<*const i8>, Value<*const i8>)) })
+                    .0
+                    .borrow())
+                .clone()
+            } == { (s.as_pointer() as Ptr<i8>).offset((11) as isize) })
+        })
+    );
+    assert!(
+        ({
+            ({
+                (*({ ((*m.borrow())[3_u64] as (Value<*const i8>, Value<*const i8>)) })
+                    .1
+                    .borrow())
+                .clone()
+            } == { (s.as_pointer() as Ptr<i8>).offset((11) as isize) })
+        })
+    );
+    assert!(({ (({ (*m.borrow())[3_u64].matched } as i32) == (false as i32)) }));
+    assert!(
+        ({
+            ({
+                (*({ ((*m.borrow())[4_u64] as (Value<*const i8>, Value<*const i8>)) })
+                    .0
+                    .borrow())
+                .clone()
+            } == { (s.as_pointer() as Ptr<i8>).offset((11) as isize) })
+        })
+    );
+    assert!(
+        ({
+            ({
+                (*({ ((*m.borrow())[4_u64] as (Value<*const i8>, Value<*const i8>)) })
+                    .1
+                    .borrow())
+                .clone()
+            } == { (s.as_pointer() as Ptr<i8>).offset((11) as isize) })
+        })
+    );
+    assert!(({ (({ (*m.borrow())[4_u64].matched } as i32) == (false as i32)) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -117,8 +152,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_0(unimplemented!()) });
-    ({ test_0(unimplemented!()) });
+    ({ test_0(ECMAScript_2.with(|rc| *rc.borrow())) });
+    ({ test_0(extended_3.with(|rc| *rc.borrow())) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -8,20 +8,27 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
     {
-        let format_arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let format_arg: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char__> =
+            Rc::new(RefCell::new(
+                <std_basic_format_arg_std_basic_format_context_char_ptr__char__>::default(),
+            ));
         const _: () = assert!(true, "");;
-        assert!(!(unimplemented!()));
+        assert!(({ !({ (*format_arg.borrow())() }) }));
         const _: () = assert!(true, "");;
-        assert!(!(unimplemented!()));
+        assert!(({ !({ (*format_arg.borrow())() }) }));
     }
 }
 pub fn test_1() {
     {
-        let format_arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let format_arg: Value<
+            std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t__,
+        > = Rc::new(RefCell::new(
+            <std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t__>::default(),
+        ));
         const _: () = assert!(true, "");;
-        assert!(!(unimplemented!()));
+        assert!(({ !({ (*format_arg.borrow())() }) }));
         const _: () = assert!(true, "");;
-        assert!(!(unimplemented!()));
+        assert!(({ !({ (*format_arg.borrow())() }) }));
     }
 }
 pub fn main() {

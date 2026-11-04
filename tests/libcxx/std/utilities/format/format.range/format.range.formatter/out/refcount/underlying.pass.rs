@@ -8,25 +8,31 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_underlying_0() {
     {
-        let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let underlying: Ptr<()> = unimplemented!();
+        let formatter: Value<std_range_formatter_int__char_> =
+            Rc::new(RefCell::new(<std_range_formatter_int__char_>::default()));
+        let underlying: Ptr<std_formatter_int__char_> = ({ (*formatter.borrow()).underlying_3() });
         const _: () = assert!(true, "noexcept(formatter.underlying())");;
     }
     {
-        let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let underlying: Ptr<()> = unimplemented!();
+        let formatter: Value<std_range_formatter_int__char_> =
+            Rc::new(RefCell::new(<std_range_formatter_int__char_>::default()));
+        let underlying: Ptr<std_formatter_int__char_> = ({ (*formatter.borrow()).underlying_4() });
         const _: () = assert!(true, "noexcept(formatter.underlying())");;
     }
 }
 pub fn test_underlying_1() {
     {
-        let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let underlying: Ptr<()> = unimplemented!();
+        let formatter: Value<std_range_formatter_int__wchar_t_> =
+            Rc::new(RefCell::new(<std_range_formatter_int__wchar_t_>::default()));
+        let underlying: Ptr<std_formatter_int__wchar_t_> =
+            ({ (*formatter.borrow()).underlying_3() });
         const _: () = assert!(true, "noexcept(formatter.underlying())");;
     }
     {
-        let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let underlying: Ptr<()> = unimplemented!();
+        let formatter: Value<std_range_formatter_int__wchar_t_> =
+            Rc::new(RefCell::new(<std_range_formatter_int__wchar_t_>::default()));
+        let underlying: Ptr<std_formatter_int__wchar_t_> =
+            ({ (*formatter.borrow()).underlying_4() });
         const _: () = assert!(true, "noexcept(formatter.underlying())");;
     }
 }

@@ -27,9 +27,18 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let f: Ptr<()> = unimplemented!();
-    assert!((unimplemented!() == 1));
+    let l: Value<std_locale> = Rc::new(RefCell::new(
+        (*({ std_locale::classic() }).upgrade().deref()).clone(),
+    ));
+    let f: Ptr<std_codecvt_wchar_t__char____mbstate_t_> = ({ use_facet_0(l.as_pointer()) });
+    assert!(
+        ({
+            (({
+                ((*f.upgrade().deref()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_)
+                    .max_length()
+            }) == 1)
+        })
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

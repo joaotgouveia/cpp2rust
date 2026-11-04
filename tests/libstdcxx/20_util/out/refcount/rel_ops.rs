@@ -14,11 +14,11 @@ pub fn test01_0() {
         let __a1 = 1;
         (*v.borrow_mut()).push(__a1)
     };
-    (*vi.borrow_mut()) = v.decay().end();
-    (*vi.borrow()) != v.decay().begin();
-    (*vi.borrow()) > v.decay().begin();
-    (*vi.borrow()) <= v.decay().begin();
-    (*vi.borrow()) >= v.decay().begin();
+    (*vi.borrow_mut()) = CppRange::end(&v.decay());
+    (*vi.borrow()) != CppRange::begin(&v.decay());
+    (*vi.borrow()) > CppRange::begin(&v.decay());
+    (*vi.borrow()) <= CppRange::begin(&v.decay());
+    (*vi.borrow()) >= CppRange::begin(&v.decay());
 }
 pub fn main() {
     __cpp2rust_init_globals();

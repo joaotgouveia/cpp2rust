@@ -27,18 +27,32 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let January: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let Tuesday: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let January: Value<std_chrono_month> = Rc::new(RefCell::new(
+        (*January_0.with(Value::clone).borrow()).clone(),
+    ));
+    let Tuesday: Value<std_chrono_weekday> = Rc::new(RefCell::new(
+        (*Tuesday_1.with(Value::clone).borrow()).clone(),
+    ));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let ym0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ym0: Value<std_chrono_year_month_weekday> =
+        Rc::new(RefCell::new(<std_chrono_year_month_weekday>::default()));
     const _: () = assert!(true, "ym0.year()            == year{{}}");;
     const _: () = assert!(true, "ym0.month()           == month{{}}");;
     const _: () = assert!(true, "ym0.weekday()         == weekday{{}}");;
     const _: () = assert!(true, "ym0.index()           == 0");;
     const _: () = assert!(true, "ym0.weekday_indexed() == weekday_indexed{{}}");;
     const _: () = assert!(true, "!ym0.ok()");;
-    let ym1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ym1: Value<std_chrono_year_month_weekday> = Rc::new(RefCell::new({
+        let __tmp_0: Value<std_chrono_year> =
+            Rc::new(RefCell::new(std_chrono_year::new_1({ 2019 })));
+        let __tmp_1: Value<std_chrono_weekday_indexed> = Rc::new(RefCell::new(
+            std_chrono_weekday_indexed::new_1({ Tuesday.as_pointer() }, { 1_u32 }),
+        ));
+        std_chrono_year_month_weekday::new_1({ __tmp_0.as_pointer() }, { January.as_pointer() }, {
+            __tmp_1.as_pointer()
+        })
+    }));
     const _: () = assert!(true, "ym1.year()            == year{{2019}}");;
     const _: () = assert!(true, "ym1.month()           == January");;
     const _: () = assert!(true, "ym1.weekday()         == Tuesday");;

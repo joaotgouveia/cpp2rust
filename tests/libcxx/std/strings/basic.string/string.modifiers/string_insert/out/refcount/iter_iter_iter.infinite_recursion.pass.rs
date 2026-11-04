@@ -20,6 +20,11 @@ impl char_ascii {
         __this
     }
 }
+impl CppMove for char_ascii {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -42,8 +47,14 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let str: Value<Vec<char_ascii>> = Rc::new(RefCell::new(vec![char_ascii::default()]));
     let ch: Value<char_ascii> = Rc::new(RefCell::new(char_ascii::new_1({ ('A' as i8) })));
-    unimplemented!();
-    assert!((((*str.borrow()).len() - 1) == 1_usize));
+    ({
+        let ___p: RandomAccessIterator<char_ascii> =
+            <RandomAccessIterator<char_ascii>>::from(RandomAccessIterator::Vec(str.decay()));
+        let ___beg: Ptr<char_ascii> = (ch.as_pointer());
+        let ___end: Ptr<char_ascii> = (ch.as_pointer()).offset((1) as isize);
+        (*str.borrow_mut()).insert_124_struct_char_ascii_ptr_void(___p, ___beg, ___end)
+    });
+    assert!(({ (((*str.borrow()).len() - 1) == 1_usize) }));
     assert!(
         ((str.decay().offset(0_usize as isize).with(|__s| __s.char_) as i32)
             == (('A' as i8) as i32))

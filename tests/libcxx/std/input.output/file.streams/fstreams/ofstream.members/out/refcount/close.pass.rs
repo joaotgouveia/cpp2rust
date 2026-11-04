@@ -12,15 +12,15 @@ pub fn get_temp_file_name_0() -> Vec<i8> {
         __bytes.push(0_i8);
         __bytes
     }));
-    let mut FD: i32 = unimplemented!();
+    let mut FD: i32 = ({ mkstemp_1((Name.decay().offset(0_usize as isize))) });
     if (FD == -1_i32) {
-        unimplemented!();
+        ({ perror_2(Ptr::<i8>::from_string_literal(b"mkstemp")) });
         std::process::abort();
     }
     FdRegistry::close(FD);
-    return std::mem::take(&mut (*Name.borrow_mut()));
+    return ({ std::mem::take(&mut (*Name.borrow_mut())) });
 }
-pub fn glibc_version_less_than_1(mut version: Ptr<i8>) -> bool {
+pub fn glibc_version_less_than_3(mut version: Ptr<i8>) -> bool {
     let test_version: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __tmp2 = {
             let mut __bytes = Ptr::<i8>::from_string_literal(b"glibc ").to_c_bytes();
@@ -32,11 +32,25 @@ pub fn glibc_version_less_than_1(mut version: Ptr<i8>) -> bool {
         __tmp2.push(0_i8);
         __tmp2
     }));
-    let mut n: usize = unimplemented!();
+    let mut n: usize = ({
+        confstr_4(
+            (anon_5__CS_GNU_LIBC_VERSION as i32),
+            Ptr::<i8>::null(),
+            0_usize,
+        )
+    });
     let mut current_version: Ptr<i8> =
         Ptr::alloc_array((0..n).map(|_| 0_i8).collect::<Box<[i8]>>());
-    unimplemented!();
-    let result: Value<bool> = Rc::new(RefCell::new((unimplemented!() < 0)));
+    ({
+        confstr_4(
+            (anon_5__CS_GNU_LIBC_VERSION as i32),
+            (current_version).clone(),
+            n,
+        )
+    });
+    let result: Value<bool> = Rc::new(RefCell::new(
+        (({ strverscmp_6((current_version).clone(), test_version.decay()) }) < 0),
+    ));
     current_version.delete();
     return (*result.borrow());
 }
@@ -62,23 +76,25 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let temp: Value<Vec<i8>> = Rc::new(RefCell::new(({ get_temp_file_name_0() })));
     {
-        let fs: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(!(unimplemented!()));
-        unimplemented!();
-        assert!(unimplemented!());
-        unimplemented!();
-        assert!(!(unimplemented!()));
+        let fs: Value<::std::fs::File> = Rc::new(RefCell::new(::std::fs::File::open("").unwrap()));
+        assert!(({ !({ (*fs.borrow()).is_open_12() }) }));
+        ({ (*fs.borrow()).open_14(temp.decay(), None) });
+        assert!(({ ({ (*fs.borrow()).is_open_12() }) }));
+        ({ (*fs.borrow()).close() });
+        assert!(({ !({ (*fs.borrow()).is_open_12() }) }));
     }
-    unimplemented!();
+    ({ remove_7(temp.decay()) });
     {
-        let fs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(!(unimplemented!()));
-        unimplemented!();
-        assert!(unimplemented!());
-        unimplemented!();
-        assert!(!(unimplemented!()));
+        let fs: Value<std_basic_ofstream_wchar_t__std_char_traits_wchar_t__> = Rc::new(
+            RefCell::new(<std_basic_ofstream_wchar_t__std_char_traits_wchar_t__>::default()),
+        );
+        assert!(({ !({ (*fs.borrow()).is_open_12() }) }));
+        ({ (*fs.borrow()).open_14(temp.decay(), None) });
+        assert!(({ ({ (*fs.borrow()).is_open_12() }) }));
+        ({ (*fs.borrow()).close() });
+        assert!(({ !({ (*fs.borrow()).is_open_12() }) }));
     }
-    unimplemented!();
+    ({ remove_7(temp.decay()) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

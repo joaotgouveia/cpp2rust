@@ -27,17 +27,65 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut exp: i32 = 0;
-    &(unimplemented!());
-    &(unimplemented!());
-    unimplemented!();
-    unimplemented!();
-    &(unimplemented!());
-    &(unimplemented!());
-    unimplemented!();
-    unimplemented!();
+    let i: Value<std_atomic_int_> = Rc::new(RefCell::new(<std_atomic_int_>::default()));
+    let v: Value<std_atomic_int_> = Rc::new(RefCell::new(<std_atomic_int_>::default()));
+    let exp: Value<i32> = Rc::new(RefCell::new(0));
+    &({
+        ((*i.borrow()) as std___atomic_base_int_).compare_exchange_weak_39(
+            exp.as_pointer(),
+            0,
+            memory_order_acq_rel_0.with(|rc| *rc.borrow()),
+        )
+    });
+    &({
+        ((*i.borrow()) as std___atomic_base_int_).compare_exchange_weak_39(
+            exp.as_pointer(),
+            0,
+            memory_order_release_1.with(|rc| *rc.borrow()),
+        )
+    });
+    ({
+        ((*i.borrow()) as std___atomic_base_int_).compare_exchange_strong_43(
+            exp.as_pointer(),
+            0,
+            memory_order_acq_rel_0.with(|rc| *rc.borrow()),
+        )
+    });
+    ({
+        ((*i.borrow()) as std___atomic_base_int_).compare_exchange_strong_43(
+            exp.as_pointer(),
+            0,
+            memory_order_release_1.with(|rc| *rc.borrow()),
+        )
+    });
+    &({
+        ((*v.borrow()) as std___atomic_base_int_).compare_exchange_weak_40(
+            exp.as_pointer(),
+            0,
+            memory_order_acq_rel_0.with(|rc| *rc.borrow()),
+        )
+    });
+    &({
+        ((*v.borrow()) as std___atomic_base_int_).compare_exchange_weak_40(
+            exp.as_pointer(),
+            0,
+            memory_order_release_1.with(|rc| *rc.borrow()),
+        )
+    });
+    ({
+        ((*v.borrow()) as std___atomic_base_int_).compare_exchange_strong_44(
+            exp.as_pointer(),
+            0,
+            memory_order_acq_rel_0.with(|rc| *rc.borrow()),
+        )
+    });
+    ({
+        ((*v.borrow()) as std___atomic_base_int_).compare_exchange_strong_44(
+            exp.as_pointer(),
+            0,
+            memory_order_release_1.with(|rc| *rc.borrow()),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

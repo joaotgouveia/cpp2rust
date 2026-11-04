@@ -27,6 +27,11 @@ impl Clone for A {
         A::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for A {
     fn default() -> Self {
         { A::new() }
@@ -57,28 +62,62 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let wp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_i64));
-        assert!((unimplemented!()).is_null());
+        let wp: Value<std_weak_ptr_A_> = Rc::new(RefCell::new(<std_weak_ptr_A_>::default()));
+        let sp: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(({ (*wp.borrow()).lock() })));
+        assert!(
+            ({
+                (({ ((*sp.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() })
+                    == 0_i64)
+            })
+        );
+        assert!(
+            ({
+                ({ ((*sp.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() }).is_null()
+            })
+        );
         assert!((count_0.with(|rc| *rc.borrow()) == 0));
     }
     {
-        let sp0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let wp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 2_i64));
-        assert!((unimplemented!() == unimplemented!()));
+        let sp0: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({
+            Ptr::alloc(A::new())
+        })));
+        let wp: Value<std_weak_ptr_A_> =
+            Rc::new(RefCell::new(std_weak_ptr_A_::new_1({ sp0.as_pointer() })));
+        let sp: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(({ (*wp.borrow()).lock() })));
+        assert!(
+            ({
+                (({ ((*sp.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() })
+                    == 2_i64)
+            })
+        );
+        assert!(
+            ({
+                (({ ((*sp.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() })
+                    == ({ ((*sp0.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() }))
+            })
+        );
         assert!((count_0.with(|rc| *rc.borrow()) == 1));
     }
     assert!((count_0.with(|rc| *rc.borrow()) == 0));
     {
-        let sp0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let wp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let sp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_i64));
-        assert!((unimplemented!()).is_null());
+        let sp0: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({
+            Ptr::alloc(A::new())
+        })));
+        let wp: Value<std_weak_ptr_A_> =
+            Rc::new(RefCell::new(std_weak_ptr_A_::new_1({ sp0.as_pointer() })));
+        ({ ((*sp0.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).reset() });
+        let sp: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(({ (*wp.borrow()).lock() })));
+        assert!(
+            ({
+                (({ ((*sp.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() })
+                    == 0_i64)
+            })
+        );
+        assert!(
+            ({
+                ({ ((*sp.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() }).is_null()
+            })
+        );
         assert!((count_0.with(|rc| *rc.borrow()) == 0));
     }
     assert!((count_0.with(|rc| *rc.borrow()) == 0));

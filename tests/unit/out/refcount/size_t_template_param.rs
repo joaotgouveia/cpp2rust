@@ -24,6 +24,11 @@ impl PtrCtor_unsigned_long_ {
         }
     }
 }
+impl CppMove for PtrCtor_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(u64, new, ptr)]
 #[byte_size(8)]
@@ -36,6 +41,11 @@ impl RefCtor_unsigned_long_ {
         Self {
             v: (x.read()).wrapping_add(1_u64),
         }
+    }
+}
+impl CppMove for RefCtor_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn neg_ll_1() -> i64 {

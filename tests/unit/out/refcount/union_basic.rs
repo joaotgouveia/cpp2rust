@@ -21,6 +21,11 @@ impl basic {
         this.reinterpret_cast()
     }
 }
+impl CppMove for basic {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for basic {
     fn default() -> Self {
         basic {
@@ -36,6 +41,11 @@ pub struct empty {
     __bytes: Box<[u8]>,
 }
 impl empty {}
+impl CppMove for empty {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for empty {
     fn default() -> Self {
         empty {
@@ -56,6 +66,11 @@ impl underscores {
     }
     pub fn ___(this: Ptr<Self>) -> Ptr<f64> {
         this.reinterpret_cast()
+    }
+}
+impl CppMove for underscores {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for underscores {
@@ -135,6 +150,11 @@ impl anon_0 {
     }
     pub fn af(this: Ptr<Self>) -> Ptr<f32> {
         this.reinterpret_cast()
+    }
+}
+impl CppMove for anon_0 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for anon_0 {

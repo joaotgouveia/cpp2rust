@@ -28,14 +28,32 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let fs: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
-        let mut fb: Ptr<()> = (*fs.borrow()).clone();
-        assert!((unimplemented!() == (('r' as i8) as i32)));
+        let fs: Value<::std::fs::File> = Rc::new(RefCell::new(
+            ::std::fs::File::open(Ptr::<i8>::from_string_literal(b"test.dat").to_string())
+                .expect("Failed to open file"),
+        ));
+        let mut fb: Ptr<std_basic_filebuf_char__std_char_traits_char__> = (*fs.borrow()).clone();
+        assert!(
+            ({
+                (({ (*(fb as *mut ::std::fs::File).upgrade().deref()).sgetc() })
+                    == (('r' as i8) as i32))
+            })
+        );
     }
     {
-        let fs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut fb: Ptr<()> = (*fs.borrow()).clone();
-        assert!((unimplemented!() == ((114 as i32) as ())));
+        let fs: Value<std_basic_ifstream_wchar_t__std_char_traits_wchar_t__> =
+            Rc::new(RefCell::new(
+                ::std::fs::File::open(Ptr::<i8>::from_string_literal(b"test.dat").to_string())
+                    .expect("Failed to open file"),
+            ));
+        let mut fb: Ptr<std_basic_filebuf_wchar_t__std_char_traits_wchar_t__> =
+            (*fs.borrow()).clone();
+        assert!(
+            ({
+                (({ (*(fb as *mut ::std::fs::File).upgrade().deref()).sgetc() })
+                    == ((114 as i32) as u32))
+            })
+        );
     }
     return 0;
 }

@@ -6,32 +6,32 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(rhs: Ptr<()>, is_going_to_throw: Option<bool>) {
+pub fn test_0(rhs: Ptr<std_optional_short_>, is_going_to_throw: Option<bool>) {
     let mut is_going_to_throw: bool = is_going_to_throw.unwrap_or_else(|| false);
-    let mut rhs_engaged: bool = unimplemented!();
+    let mut rhs_engaged: bool = ({ (*rhs.upgrade().deref())() });
     if is_going_to_throw {
         return;
     }
-    let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as i32) == (rhs_engaged as i32)));
+    let lhs: Value<std_optional_int_> = Rc::new(RefCell::new(rhs.with_mut(std::mem::take)));
+    assert!(({ ((({ (*lhs.borrow())() }) as i32) == (rhs_engaged as i32)) }));
 }
-pub fn test_1(rhs: Ptr<()>, is_going_to_throw: Option<bool>) {
+pub fn test_1(rhs: Ptr<std_optional_int_>, is_going_to_throw: Option<bool>) {
     let mut is_going_to_throw: bool = is_going_to_throw.unwrap_or_else(|| false);
-    let mut rhs_engaged: bool = unimplemented!();
+    let mut rhs_engaged: bool = ({ (*rhs.upgrade().deref())() });
     if is_going_to_throw {
         return;
     }
-    let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as i32) == (rhs_engaged as i32)));
+    let lhs: Value<std_optional_X_> = Rc::new(RefCell::new(rhs.with_mut(std::mem::take)));
+    assert!(({ ((({ (*lhs.borrow())() }) as i32) == (rhs_engaged as i32)) }));
 }
-pub fn test_2(rhs: Ptr<()>, is_going_to_throw: Option<bool>) {
+pub fn test_2(rhs: Ptr<std_optional_int_>, is_going_to_throw: Option<bool>) {
     let mut is_going_to_throw: bool = is_going_to_throw.unwrap_or_else(|| false);
-    let mut rhs_engaged: bool = unimplemented!();
+    let mut rhs_engaged: bool = ({ (*rhs.upgrade().deref())() });
     if is_going_to_throw {
         return;
     }
-    let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as i32) == (rhs_engaged as i32)));
+    let lhs: Value<std_optional_Z_> = Rc::new(RefCell::new(rhs.with_mut(std::mem::take)));
+    assert!(({ ((({ (*lhs.borrow())() }) as i32) == (rhs_engaged as i32)) }));
 }
 pub fn operator_eq_3(x: Ptr<X>, y: Ptr<X>) -> bool {
     return ({ x.with(|__s| __s.i_) } == { y.with(|__s| __s.i_) });
@@ -49,13 +49,21 @@ impl X {
     }
     pub fn move_from(x: Ptr<X>) -> Self {
         Self {
-            i_: unimplemented!(),
+            i_: ({
+                let ___new_val: Value<i32> = Rc::new(RefCell::new(0));
+                exchange_4(field_ptr!(x, i_), ___new_val.as_pointer())
+            }),
         }
     }
 }
 impl CppEq for X {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_3(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for X {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
@@ -69,24 +77,30 @@ impl Z {
         __this
     }
 }
-pub fn test_all_4() -> bool {
+impl CppMove for Z {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn test_all_5() -> bool {
     {
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let rhs: Value<std_optional_short_> =
+            Rc::new(RefCell::new(<std_optional_short_>::default()));
         ({ test_0(rhs.as_pointer(), None) });
     }
     {
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let rhs: Value<std_optional_short_> = Rc::new(RefCell::new(3_i16));
         ({ test_0(rhs.as_pointer(), None) });
     }
     return true;
 }
-pub fn test_all_5() -> bool {
+pub fn test_all_6() -> bool {
     {
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let rhs: Value<std_optional_int_> = Rc::new(RefCell::new(<std_optional_int_>::default()));
         ({ test_1(rhs.as_pointer(), None) });
     }
     {
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let rhs: Value<std_optional_int_> = Rc::new(RefCell::new(3_i16));
         ({ test_1(rhs.as_pointer(), None) });
     }
     return true;
@@ -111,16 +125,16 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_all_4() });
     ({ test_all_5() });
+    ({ test_all_6() });
     const _: () = assert!(true, "test_all<short, int>()");;
     const _: () = assert!(true, "test_all<int, X>()");;
     {
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let rhs: Value<std_optional_int_> = Rc::new(RefCell::new(<std_optional_int_>::default()));
         ({ test_2(rhs.as_pointer(), None) });
     }
     {
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let rhs: Value<std_optional_int_> = Rc::new(RefCell::new(3));
         ({ test_2(rhs.as_pointer(), Some(true)) });
     }
     const _: () = assert!(

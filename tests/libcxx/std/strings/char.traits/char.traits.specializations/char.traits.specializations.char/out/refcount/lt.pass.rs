@@ -27,15 +27,78 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(((unimplemented!() as i32) == (((('\0' as i8) as i32) < (('A' as i8) as i32)) as i32)));
-    assert!(((unimplemented!() as i32) == (((('A' as i8) as i32) < (('\0' as i8) as i32)) as i32)));
-    assert!(((unimplemented!() as i32) == (((('a' as i8) as i32) < (('a' as i8) as i32)) as i32)));
-    assert!(((unimplemented!() as i32) == (((('A' as i8) as i32) < (('a' as i8) as i32)) as i32)));
-    assert!(((unimplemented!() as i32) == (((('a' as i8) as i32) < (('A' as i8) as i32)) as i32)));
-    assert!(((unimplemented!() as i32) == (((('a' as i8) as i32) < (('z' as i8) as i32)) as i32)));
-    assert!(((unimplemented!() as i32) == (((('A' as i8) as i32) < (('Z' as i8) as i32)) as i32)));
-    assert!(((unimplemented!() as i32) == ((((' ' as i8) as i32) < (('A' as i8) as i32)) as i32)));
-    assert!(((unimplemented!() as i32) == (((('A' as i8) as i32) < (('~' as i8) as i32)) as i32)));
+    assert!(
+        ((({
+            let ___c1: Value<i8> = Rc::new(RefCell::new(('\0' as i8)));
+            let ___c2: Value<i8> = Rc::new(RefCell::new(('A' as i8)));
+            std_char_traits_char_::lt(___c1.as_pointer(), ___c2.as_pointer())
+        }) as i32)
+            == (((('\0' as i8) as i32) < (('A' as i8) as i32)) as i32))
+    );
+    assert!(
+        ((({
+            let ___c1: Value<i8> = Rc::new(RefCell::new(('A' as i8)));
+            let ___c2: Value<i8> = Rc::new(RefCell::new(('\0' as i8)));
+            std_char_traits_char_::lt(___c1.as_pointer(), ___c2.as_pointer())
+        }) as i32)
+            == (((('A' as i8) as i32) < (('\0' as i8) as i32)) as i32))
+    );
+    assert!(
+        ((({
+            let ___c1: Value<i8> = Rc::new(RefCell::new(('a' as i8)));
+            let ___c2: Value<i8> = Rc::new(RefCell::new(('a' as i8)));
+            std_char_traits_char_::lt(___c1.as_pointer(), ___c2.as_pointer())
+        }) as i32)
+            == (((('a' as i8) as i32) < (('a' as i8) as i32)) as i32))
+    );
+    assert!(
+        ((({
+            let ___c1: Value<i8> = Rc::new(RefCell::new(('A' as i8)));
+            let ___c2: Value<i8> = Rc::new(RefCell::new(('a' as i8)));
+            std_char_traits_char_::lt(___c1.as_pointer(), ___c2.as_pointer())
+        }) as i32)
+            == (((('A' as i8) as i32) < (('a' as i8) as i32)) as i32))
+    );
+    assert!(
+        ((({
+            let ___c1: Value<i8> = Rc::new(RefCell::new(('a' as i8)));
+            let ___c2: Value<i8> = Rc::new(RefCell::new(('A' as i8)));
+            std_char_traits_char_::lt(___c1.as_pointer(), ___c2.as_pointer())
+        }) as i32)
+            == (((('a' as i8) as i32) < (('A' as i8) as i32)) as i32))
+    );
+    assert!(
+        ((({
+            let ___c1: Value<i8> = Rc::new(RefCell::new(('a' as i8)));
+            let ___c2: Value<i8> = Rc::new(RefCell::new(('z' as i8)));
+            std_char_traits_char_::lt(___c1.as_pointer(), ___c2.as_pointer())
+        }) as i32)
+            == (((('a' as i8) as i32) < (('z' as i8) as i32)) as i32))
+    );
+    assert!(
+        ((({
+            let ___c1: Value<i8> = Rc::new(RefCell::new(('A' as i8)));
+            let ___c2: Value<i8> = Rc::new(RefCell::new(('Z' as i8)));
+            std_char_traits_char_::lt(___c1.as_pointer(), ___c2.as_pointer())
+        }) as i32)
+            == (((('A' as i8) as i32) < (('Z' as i8) as i32)) as i32))
+    );
+    assert!(
+        ((({
+            let ___c1: Value<i8> = Rc::new(RefCell::new((' ' as i8)));
+            let ___c2: Value<i8> = Rc::new(RefCell::new(('A' as i8)));
+            std_char_traits_char_::lt(___c1.as_pointer(), ___c2.as_pointer())
+        }) as i32)
+            == ((((' ' as i8) as i32) < (('A' as i8) as i32)) as i32))
+    );
+    assert!(
+        ((({
+            let ___c1: Value<i8> = Rc::new(RefCell::new(('A' as i8)));
+            let ___c2: Value<i8> = Rc::new(RefCell::new(('~' as i8)));
+            std_char_traits_char_::lt(___c1.as_pointer(), ___c2.as_pointer())
+        }) as i32)
+            == (((('A' as i8) as i32) < (('~' as i8) as i32)) as i32))
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

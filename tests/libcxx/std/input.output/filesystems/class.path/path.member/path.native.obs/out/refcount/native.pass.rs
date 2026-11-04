@@ -12,6 +12,7 @@ pub const anon_0_value: anon_0 = 1;
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ref__const_std_basic_string_char__std_char_traits_char___std_allocator_char___ref_
 {}
+impl CppMove for test_macros_detail_is_same_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ref__const_std_basic_string_char__std_char_traits_char___std_allocator_char___ref_ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn test_eprintf_1(
     mut fmt: Ptr<i8>,
     args_1: Ptr<Ptr<i8>>,
@@ -81,7 +82,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         __bytes.push(0_i8);
         __bytes
     }));
-    let mut pathstr_value: Vec<i8> = unimplemented!();
+    let mut pathstr_value: Vec<i8> =
+        match (Rc::new(RefCell::new(RandomAccessIterator::Vec(value_str.decay()))).as_pointer(),) {
+            (__tmp_0,) => {
+                let mut __bytes: Vec<u8> = Vec::new();
+                if !(__tmp_0).clone().is_null() {
+                    (__tmp_0)
+                        .clone()
+                        .with_mut(|__f: &mut std::fs::File| {
+                            std::io::Read::read_to_end(__f, &mut __bytes)
+                        })
+                        .expect("couldn't read the file");
+                }
+                __bytes.push(0);
+                CChar::from_byte_vec(__bytes)
+            }
+        };
     {
         let p: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __v: Vec<i8> = value

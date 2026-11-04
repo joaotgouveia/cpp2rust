@@ -28,10 +28,13 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p: Value<()> = Rc::new(RefCell::new((*p0.borrow()).clone()));
-        assert!((unimplemented!() == 5_()));
-        assert!((unimplemented!() == 10_()));
+        let p0: Value<std_uniform_int_distribution_long__param_type> = Rc::new(RefCell::new(
+            std_uniform_int_distribution_long__param_type::new_1({ 5_i64 }, { 10_i64 }),
+        ));
+        let p: Value<std_uniform_int_distribution_long__param_type> =
+            Rc::new(RefCell::new((*p0.borrow()).clone()));
+        assert!(({ (({ (*p.borrow()).a() }) == 5_i64) }));
+        assert!(({ (({ (*p.borrow()).b() }) == 10_i64) }));
     }
     return 0;
 }

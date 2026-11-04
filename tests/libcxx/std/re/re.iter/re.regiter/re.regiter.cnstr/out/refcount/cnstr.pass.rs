@@ -28,39 +28,109 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let phone_numbers: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let phone_numbers: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+            RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                { Ptr::<i8>::from_string_literal(b"\\d{3}-\\d{4}") },
+                None,
+            )),
+        );
         let phone_book: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(
             b"555-1234, 555-2345, 555-3456\0",
         )));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((*i.borrow()) != unimplemented!());
-        assert!((unimplemented!() == 1_()));
-        assert!((unimplemented!() == 0_()));
+        let i: Value<std_regex_iterator_const_char_ptr__char__std_regex_traits_char__> =
+            Rc::new(RefCell::new(
+                std_regex_iterator_const_char_ptr__char__std_regex_traits_char__::new_1(
+                    { ({ begin_0(phone_book.as_pointer()) }) },
+                    { (phone_book.as_pointer() as Ptr<i8>).to_end() },
+                    { phone_numbers.as_pointer() },
+                    None,
+                ),
+            ));
         assert!(
-            Ptr::<i8>::from_string_literal(b"555-1234").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            (*i.borrow())
+                != <std_regex_iterator_const_char_ptr__char__std_regex_traits_char__>::default()
         );
-        unimplemented!();
-        assert!((*i.borrow()) != unimplemented!());
-        assert!((unimplemented!() == 1_()));
-        assert!((unimplemented!() == 10_()));
+        assert!(({ (({ (*(*i.borrow()).iter_deref().upgrade().deref()).size() }) == 1_u64) }));
         assert!(
-            Ptr::<i8>::from_string_literal(b"555-2345").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            ({ (({ (*(*i.borrow()).iter_deref().upgrade().deref()).position(None,) }) == 0_i64) })
         );
-        unimplemented!();
-        assert!((*i.borrow()) != unimplemented!());
-        assert!((unimplemented!() == 1_()));
-        assert!((unimplemented!() == 20_()));
+        assert!(match (Rc::new(RefCell::new(
+            ({ (*(*i.borrow()).iter_deref().upgrade().deref()).str(None,) })
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_0,) => {
+                Ptr::<i8>::from_string_literal(b"555-1234").with_c_str(|__s| {
+                    (*__tmp_0.upgrade().deref())
+                        [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
         assert!(
-            Ptr::<i8>::from_string_literal(b"555-3456").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            (*i.borrow())
+                != <std_regex_iterator_const_char_ptr__char__std_regex_traits_char__>::default()
         );
-        unimplemented!();
-        assert!(unimplemented!());
+        assert!(({ (({ (*(*i.borrow()).iter_deref().upgrade().deref()).size() }) == 1_u64) }));
+        assert!(
+            ({ (({ (*(*i.borrow()).iter_deref().upgrade().deref()).position(None,) }) == 10_i64) })
+        );
+        assert!(match (Rc::new(RefCell::new(
+            ({ (*(*i.borrow()).iter_deref().upgrade().deref()).str(None,) })
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_1,) => {
+                Ptr::<i8>::from_string_literal(b"555-2345").with_c_str(|__s| {
+                    (*__tmp_1.upgrade().deref())
+                        [..(*__tmp_1.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
+        assert!(
+            (*i.borrow())
+                != <std_regex_iterator_const_char_ptr__char__std_regex_traits_char__>::default()
+        );
+        assert!(({ (({ (*(*i.borrow()).iter_deref().upgrade().deref()).size() }) == 1_u64) }));
+        assert!(
+            ({ (({ (*(*i.borrow()).iter_deref().upgrade().deref()).position(None,) }) == 20_i64) })
+        );
+        assert!(match (Rc::new(RefCell::new(
+            ({ (*(*i.borrow()).iter_deref().upgrade().deref()).str(None,) })
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_2,) => {
+                Ptr::<i8>::from_string_literal(b"555-3456").with_c_str(|__s| {
+                    (*__tmp_2.upgrade().deref())
+                        [..(*__tmp_2.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
+        assert!(
+            (*i.borrow())
+                == <std_regex_iterator_const_char_ptr__char__std_regex_traits_char__>::default()
+        );
     }
     return 0;
 }

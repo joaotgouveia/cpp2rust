@@ -8,17 +8,38 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     let s1: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
-    assert!((unimplemented!() == (s1.as_pointer() as Ptr::<i8>)));
-    assert!((((*s1.borrow())[(0) as usize] as i32) == (2_i8 as i32)));
-    assert!((((*s1.borrow())[(1) as usize] as i32) == (3_i8 as i32)));
-    assert!((((*s1.borrow())[(2) as usize] as i32) == (3_i8 as i32)));
+    assert!(
+        (({
+            let ___s1: Ptr<i8> = (s1.as_pointer() as Ptr<i8>);
+            let ___s2: Ptr<i8> = (s1.as_pointer() as Ptr<i8>).offset((1) as isize);
+            std_char_traits_char_::move_(___s1, ___s2, 2_usize)
+        }) == (s1.as_pointer() as Ptr::<i8>))
+    );
+    assert!(({ (((*s1.borrow())[(0) as usize] as i32) == (2_i8 as i32)) }));
+    assert!(({ (((*s1.borrow())[(1) as usize] as i32) == (3_i8 as i32)) }));
+    assert!(({ (((*s1.borrow())[(2) as usize] as i32) == (3_i8 as i32)) }));
     (*s1.borrow_mut())[(2) as usize] = 0_i8;
-    assert!((unimplemented!() == (s1.as_pointer() as Ptr::<i8>).offset((1) as isize)));
-    assert!((((*s1.borrow())[(0) as usize] as i32) == (2_i8 as i32)));
-    assert!((((*s1.borrow())[(1) as usize] as i32) == (2_i8 as i32)));
-    assert!((((*s1.borrow())[(2) as usize] as i32) == (3_i8 as i32)));
-    assert!((unimplemented!()).is_null());
-    assert!((unimplemented!() == (s1.as_pointer() as Ptr::<i8>)));
+    assert!(
+        (({
+            let ___s1: Ptr<i8> = (s1.as_pointer() as Ptr<i8>).offset((1) as isize);
+            let ___s2: Ptr<i8> = (s1.as_pointer() as Ptr<i8>);
+            std_char_traits_char_::move_(___s1, ___s2, 2_usize)
+        }) == (s1.as_pointer() as Ptr::<i8>).offset((1) as isize))
+    );
+    assert!(({ (((*s1.borrow())[(0) as usize] as i32) == (2_i8 as i32)) }));
+    assert!(({ (((*s1.borrow())[(1) as usize] as i32) == (2_i8 as i32)) }));
+    assert!(({ (((*s1.borrow())[(2) as usize] as i32) == (3_i8 as i32)) }));
+    assert!(
+        ({
+            std_char_traits_char_::move_(Ptr::<i8>::null(), (s1.as_pointer() as Ptr<i8>), 0_usize)
+        })
+        .is_null()
+    );
+    assert!(
+        (({
+            std_char_traits_char_::move_((s1.as_pointer() as Ptr<i8>), Ptr::<i8>::null(), 0_usize)
+        }) == (s1.as_pointer() as Ptr::<i8>))
+    );
     return true;
 }
 pub fn main() {

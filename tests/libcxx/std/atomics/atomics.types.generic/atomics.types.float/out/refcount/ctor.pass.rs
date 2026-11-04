@@ -7,55 +7,98 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static a1_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static a1_0: Value<std_atomic_float_> =
+        Rc::new(RefCell::new(std_atomic_float_::new_1({ 0_f32 })));
 );
 thread_local!(
-    pub static a1_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static a1_1: Value<std_atomic_double_> =
+        Rc::new(RefCell::new(std_atomic_double_::new_1({ 0_f64 })));
 );
 thread_local!(
-    pub static a2_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static a2_2: Value<std_atomic_float_> =
+        Rc::new(RefCell::new(std_atomic_float_::new_1({ (5.2_f64 as f32) })));
 );
 thread_local!(
-    pub static a2_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static a2_3: Value<std_atomic_double_> =
+        Rc::new(RefCell::new(std_atomic_double_::new_1({ 5.2_f64 })));
 );
 pub fn testOne_4() {
     const _: () = assert!(true, "std::is_nothrow_constructible_v<std::atomic<T>>");;
     const _: () = assert!(true, "std::is_nothrow_constructible_v<std::atomic<T>, T>");;
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_atomic_float_> = Rc::new(RefCell::new(<std_atomic_float_>::default()));
         {
-            assert!((unimplemented!() == 0_f32));
+            assert!(
+                ({ (({ ((*a.borrow()) as std___atomic_float_float_).load_13(None,) }) == 0_f32) })
+            );
         }
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_atomic_float_> =
+            Rc::new(RefCell::new(std_atomic_float_::new_1({ (5.2_f64 as f32) })));
         {
-            assert!((unimplemented!() == (5.2_f64 as f32)));
+            assert!(
+                ({
+                    (({ ((*a.borrow()) as std___atomic_float_float_).load_13(None) })
+                        == (5.2_f64 as f32))
+                })
+            );
         }
     }
     {
-        assert!((unimplemented!() == (0_f64 as f32)));
-        assert!((unimplemented!() == (5.2_f64 as f32)));
+        assert!(
+            ({
+                (({
+                    ((*a1_0.with(Value::clone).borrow()) as std___atomic_float_float_).to_f32_15()
+                }) == (0_f64 as f32))
+            })
+        );
+        assert!(
+            ({
+                (({
+                    ((*a2_2.with(Value::clone).borrow()) as std___atomic_float_float_).to_f32_15()
+                }) == (5.2_f64 as f32))
+            })
+        );
     }
 }
 pub fn testOne_5() {
     const _: () = assert!(true, "std::is_nothrow_constructible_v<std::atomic<T>>");;
     const _: () = assert!(true, "std::is_nothrow_constructible_v<std::atomic<T>, T>");;
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_atomic_double_> = Rc::new(RefCell::new(<std_atomic_double_>::default()));
         {
-            assert!((unimplemented!() == 0_f64));
+            assert!(
+                ({ (({ ((*a.borrow()) as std___atomic_float_double_).load_13(None,) }) == 0_f64) })
+            );
         }
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_atomic_double_> =
+            Rc::new(RefCell::new(std_atomic_double_::new_1({ 5.2_f64 })));
         {
-            assert!((unimplemented!() == 5.2_f64));
+            assert!(
+                ({
+                    (({ ((*a.borrow()) as std___atomic_float_double_).load_13(None) }) == 5.2_f64)
+                })
+            );
         }
     }
     {
-        assert!((unimplemented!() == 0_f64));
-        assert!((unimplemented!() == 5.2_f64));
+        assert!(
+            ({
+                (({
+                    ((*a1_1.with(Value::clone).borrow()) as std___atomic_float_double_).to_f64_15()
+                }) == 0_f64)
+            })
+        );
+        assert!(
+            ({
+                (({
+                    ((*a2_3.with(Value::clone).borrow()) as std___atomic_float_double_).to_f64_15()
+                }) == 5.2_f64)
+            })
+        );
     }
 }
 pub fn test_6() -> bool {

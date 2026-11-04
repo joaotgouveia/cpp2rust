@@ -52,6 +52,11 @@ impl Clone for __gnu_test_object_counter {
         __gnu_test_object_counter::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_object_counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_object_counter {
     fn default() -> Self {
         { __gnu_test_object_counter::new() }
@@ -78,6 +83,11 @@ impl __gnu_test_copy_constructor {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_copy_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
@@ -99,6 +109,11 @@ impl __gnu_test_assignment_operator {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_assignment_operator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
@@ -111,6 +126,11 @@ impl __gnu_test_destructor {
     }
     pub fn reset() {
         _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
+    }
+}
+impl CppMove for __gnu_test_destructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -173,6 +193,11 @@ impl Clone for __gnu_test_copy_tracker {
         __gnu_test_copy_tracker::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_copy_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_copy_tracker {
     fn default() -> Self {
         { __gnu_test_copy_tracker::new(None, None) }
@@ -197,6 +222,11 @@ pub struct __gnu_test_semaphore {
     pid_: (),
 }
 impl __gnu_test_semaphore {}
+impl CppMove for __gnu_test_semaphore {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test02_9() {
     let slit01: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(
         b"playa hermosa, liberia, guanacaste\0",
@@ -208,8 +238,8 @@ pub fn test02_9() {
     };
     let istrs00: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let istrs01: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let istrb_it01: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let istrb_eos: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let istrb_it01: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(unimplemented!()));
+    let istrb_eos: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -218,7 +248,20 @@ pub fn test02_9() {
             std::process::abort();
         }
     }
-    let mut tmp: Vec<i8> = unimplemented!();
+    let mut tmp: Vec<i8> = match ({ (*istrb_it01.borrow()).clone() },) {
+        (mut __tmp_0,) => {
+            let mut __bytes: Vec<u8> = Vec::new();
+            if !__tmp_0.is_null() {
+                __tmp_0
+                    .with_mut(|__f: &mut std::fs::File| {
+                        std::io::Read::read_to_end(__f, &mut __bytes)
+                    })
+                    .expect("couldn't read the file");
+            }
+            __bytes.push(0);
+            CChar::from_byte_vec(__bytes)
+        }
+    };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -235,8 +278,8 @@ pub fn test02_9() {
             std::process::abort();
         }
     }
-    let istrb_it03: Value<()> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    let istrb_it04: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut istrb_it03: Ptr<::std::fs::File> = Ptr::<()>::null();
+    let mut istrb_it04: Ptr<::std::fs::File> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -245,8 +288,8 @@ pub fn test02_9() {
             std::process::abort();
         }
     }
-    let istrb_it05: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let istrb_it06: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut istrb_it05: Ptr<::std::fs::File> = unimplemented!();
+    let mut istrb_it06: Ptr<::std::fs::File> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -255,8 +298,8 @@ pub fn test02_9() {
             std::process::abort();
         }
     }
-    let istrb_it07: Value<()> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    let istrb_it08: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut istrb_it07: Ptr<::std::fs::File> = Ptr::<()>::null();
+    let mut istrb_it08: Ptr<::std::fs::File> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -265,8 +308,8 @@ pub fn test02_9() {
             std::process::abort();
         }
     }
-    let istrb_it09: Value<()> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    let istrb_it10: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut istrb_it09: Ptr<::std::fs::File> = Ptr::<()>::null();
+    let mut istrb_it10: Ptr<::std::fs::File> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -275,8 +318,8 @@ pub fn test02_9() {
             std::process::abort();
         }
     }
-    let istrb_it11: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let istrb_it12: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut istrb_it11: Ptr<::std::fs::File> = unimplemented!();
+    let mut istrb_it12: Ptr<::std::fs::File> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -285,8 +328,8 @@ pub fn test02_9() {
             std::process::abort();
         }
     }
-    let istrb_it13: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let istrb_it14: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut istrb_it13: Ptr<::std::fs::File> = unimplemented!();
+    let mut istrb_it14: Ptr<::std::fs::File> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -295,8 +338,8 @@ pub fn test02_9() {
             std::process::abort();
         }
     }
-    let istrb_it15: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let istrb_it16: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut istrb_it15: Ptr<::std::fs::File> = unimplemented!();
+    let mut istrb_it16: Ptr<::std::fs::File> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -305,8 +348,8 @@ pub fn test02_9() {
             std::process::abort();
         }
     }
-    let istrb_it17: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let istrb_it18: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut istrb_it17: Ptr<::std::fs::File> = unimplemented!();
+    let mut istrb_it18: Ptr<::std::fs::File> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -315,8 +358,8 @@ pub fn test02_9() {
             std::process::abort();
         }
     }
-    let istrb_it19: Value<()> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    let istrb_it20: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut istrb_it19: Ptr<::std::fs::File> = Ptr::<()>::null();
+    let mut istrb_it20: Ptr<::std::fs::File> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -325,8 +368,8 @@ pub fn test02_9() {
             std::process::abort();
         }
     }
-    let istrb_it21: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let istrb_it22: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut istrb_it21: Ptr<::std::fs::File> = unimplemented!();
+    let mut istrb_it22: Ptr<::std::fs::File> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -335,8 +378,8 @@ pub fn test02_9() {
             std::process::abort();
         }
     }
-    let istrb_it23: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let istrb_it24: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let istrb_it23: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(unimplemented!()));
+    let istrb_it24: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -345,8 +388,8 @@ pub fn test02_9() {
             std::process::abort();
         }
     }
-    let istrb_it25: Value<()> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    let istrb_it26: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let istrb_it25: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let istrb_it26: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -355,7 +398,7 @@ pub fn test02_9() {
             std::process::abort();
         }
     }
-    let istrb_it27: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut istrb_it27: Ptr<::std::fs::File> = unimplemented!();
     let mut c: i8 = 0_i8;
     let mut i: usize = 0_usize;
     'loop_: while (i < (::std::mem::size_of::<[i8; 35]>() as usize).wrapping_sub(2_usize)) {
@@ -371,14 +414,14 @@ pub fn test02_9() {
         i.prefix_inc();
     }
     let istrs02: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let istrb_it28: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut istrb_it28: Ptr<::std::fs::File> = unimplemented!();
     let mut i: usize = 0_usize;
     'loop_: while (i < (::std::mem::size_of::<[i8; 35]>() as usize).wrapping_sub(2_usize)) {
         c = (unimplemented!() as i8);
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((c as i32) == ((*slit01.borrow())[(i.prefix_inc()) as usize] as i32)) {
+            if !((c as i32) == ((*slit01.borrow())[(*i.prefix_inc()) as usize] as i32)) {
                 unimplemented!();
                 std::process::abort();
             }
@@ -526,22 +569,36 @@ pub fn run_tests_wrapped_env_14(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !(libc::setenv(env, name, 1) != 0) {
+    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+        true => {
+            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
+            0
+        }
+        false => 0,
+    } != 0)
+    {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: i32 = 0;
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        libc::setenv(
-            env,
+        match ({
             if !(oldENV).is_null() {
                 (oldENV).clone()
             } else {
                 Ptr::<i8>::from_string_literal(b"")
+            }
+        },)
+        {
+            (mut __tmp_0,) => match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+                true => {
+                    unsafe { ::std::env::set_var(env.to_rust_string(), __tmp_0.to_rust_string()) };
+                    0
+                }
+                false => 0,
             },
-            1,
-        );
+        };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = env.to_c_bytes();
@@ -590,6 +647,11 @@ impl __gnu_test_semun {
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<u16>> {
         this.reinterpret_cast()
+    }
+}
+impl CppMove for __gnu_test_semun {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for __gnu_test_semun {
@@ -667,7 +729,9 @@ impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
     }
     fn push_back(&self, mut test: FnPtr<fn()>) {
         array_elem!((*self), _M_tests, (*self).with(|__s| __s._M_size)).write((test).clone());
-        field!((*self), _M_size).with_mut(|__v| __v.prefix_inc());
+        field!((*self), _M_size).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait __gnu_test_object_counterImpl {

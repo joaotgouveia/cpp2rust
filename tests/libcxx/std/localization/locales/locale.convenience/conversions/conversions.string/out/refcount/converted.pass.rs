@@ -13,15 +13,35 @@ impl TestHelper_wchar_t__4_ {
     pub fn test() {
         const _: () = assert!(true, "(std::is_same<CharT, wchar_t>::value)");;
         {
-            let myconv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 0_usize));
-            let bs: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 1_usize));
-            bs.as_pointer().write(unimplemented!());
-            assert!((unimplemented!() == 2_usize));
-            let mut ws: Vec<i32> = unimplemented!();
-            assert!((unimplemented!() == 4_usize));
+            let myconv : Value<std_wstring_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__ > = Rc::new(RefCell::new(<std_wstring_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__  >::default() )) ;
+            assert!(({ (({ (*myconv.borrow()).converted() }) == 0_usize) }));
+            let bs: Value<Vec<i8>> = Rc::new(RefCell::new(
+                ({
+                    (*myconv.borrow())
+                        .to_bytes_13(Ptr::<i32>::from_string_literal(&[262147 as i32, 0 as i32]))
+                }),
+            ));
+            assert!(({ (({ (*myconv.borrow()).converted() }) == 1_usize) }));
+            bs.as_pointer().write(
+                ({
+                    (*myconv.borrow()).to_bytes_13(Ptr::<i32>::from_string_literal(&[
+                        262147 as i32,
+                        101 as i32,
+                        0 as i32,
+                    ]))
+                }),
+            );
+            assert!(({ (({ (*myconv.borrow()).converted() }) == 2_usize) }));
+            let mut ws: Vec<i32> = ({
+                (*myconv.borrow()).from_bytes_9(Ptr::<i8>::from_string_literal(b"\xf1\x80\x80\x83"))
+            });
+            assert!(({ (({ (*myconv.borrow()).converted() }) == 4_usize) }));
         }
+    }
+}
+impl CppMove for TestHelper_wchar_t__4_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

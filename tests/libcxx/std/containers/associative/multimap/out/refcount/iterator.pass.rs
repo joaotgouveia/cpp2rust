@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -36,24 +41,13 @@ thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<(Value<i32>, Value<f64>)>,
-}
-impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_std_pair_const_int__double__ {}
+impl CppMove for min_allocator_std_pair_const_int__double__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_4() -> bool {
     {
         let ar: Value<Box<[(Value<i32>, Value<f64>)]>> = Rc::new(RefCell::new(Box::new([
@@ -82,53 +76,93 @@ pub fn test_4() -> bool {
             (Rc::new(RefCell::new(8)), Rc::new(RefCell::new(1.5_f64))),
             (Rc::new(RefCell::new(8)), Rc::new(RefCell::new((2 as f64)))),
         ])));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*i.borrow_mut()) = unimplemented!();
-        let k: Value<()> = Rc::new(RefCell::new(<BidirectionalIterator<(
-            Value<i32>,
-            Value<f64>,
-        )>>::from((*i.borrow()).clone())));
+        let m : Value<std_multimap_int__double__std_less_int___std_allocator_std_pair_const_int__double___ > = Rc::new(RefCell::new(std_multimap_int__double__std_less_int___std_allocator_std_pair_const_int__double___ :: new_1 ( { ( ar .as_pointer()  as Ptr< (Value<i32  >, Value<f64  >)  >   )  } , { ( ar .as_pointer()  as Ptr< (Value<i32  >, Value<f64  >)  >   ) . offset ( ( ( ( 384usize as usize ) ) . wrapping_div ( ( 16usize as usize ) ) ) as isize )  } , )  )) ;
         assert!(
-            <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from((*i.borrow()).clone())
+            ({
+                ((({
+                    let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).begin_20() });
+                    let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).end_22() });
+                    distance_5(___first, ___last)
+                }) as usize)
+                    == (({ (*m.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).rbegin_24() });
+                    let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).rend_26() });
+                    distance_6(___first, ___last)
+                }) as usize)
+                    == (({ (*m.borrow()).size() }) as usize))
+            })
+        );
+        let i: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
+            Rc::new(RefCell::new(BidirectionalIterator::default()));
+        (*i.borrow_mut()) = ({ (*m.borrow()).begin_20() });
+        let k: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
+            <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(({ (*i.borrow()).clone() })),
+        ));
+        assert!(
+            <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(({ (*i.borrow()).clone() }))
                 == (*k.borrow())
         );
         let mut j: i32 = 1;
         'loop_: while (j <= 8) {
             let mut d: f64 = 1_f64;
             'loop_: while (d <= 2_f64) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == j));
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == d));
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == j) }));
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == d) }));
                 (*(*(*i.borrow()).iter_deref().upgrade().deref())
                     .1
                     .borrow_mut()) = 2.5_f64;
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 2.5_f64));
+                assert!(
+                    ({
+                        ((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 2.5_f64)
+                    })
+                );
                 {
                     d += 0.5_f64;
-                    (*i.borrow_mut()).iter_inc()
+                    {
+                        i.as_pointer().with_mut(|__it| {
+                            __it.iter_inc();
+                        });
+                        i.as_pointer()
+                    }
                 };
             }
             j.prefix_inc();
         }
-        assert!((*i.borrow()) == unimplemented!());
+        assert!((*i.borrow()) == ({ (*m.borrow()).end_22() }));
         let mut j: i32 = 8;
         'loop_: while (j >= 1) {
             let mut d: f64 = 1_f64;
             'loop_: while (d <= 2_f64) {
-                (*i.borrow_mut()).iter_dec();
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == j));
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 2.5_f64));
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_dec();
+                    });
+                    i.as_pointer()
+                };
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == j) }));
+                assert!(
+                    ({
+                        ((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 2.5_f64)
+                    })
+                );
                 (*(*(*i.borrow()).iter_deref().upgrade().deref())
                     .1
                     .borrow_mut()) = d;
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == d));
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == d) }));
                 d += 0.5_f64;
             }
             j.prefix_dec();
         }
-        assert!((*i.borrow()) == unimplemented!());
+        assert!((*i.borrow()) == ({ (*m.borrow()).begin_20() }));
     }
     {
         let ar: Value<Box<[(Value<i32>, Value<f64>)]>> = Rc::new(RefCell::new(Box::new([
@@ -157,39 +191,94 @@ pub fn test_4() -> bool {
             (Rc::new(RefCell::new(8)), Rc::new(RefCell::new(1.5_f64))),
             (Rc::new(RefCell::new(8)), Rc::new(RefCell::new((2 as f64)))),
         ])));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*i.borrow_mut()) = unimplemented!();
+        let m : Value<std_multimap_int__double__std_less_int___std_allocator_std_pair_const_int__double___ > = Rc::new(RefCell::new(std_multimap_int__double__std_less_int___std_allocator_std_pair_const_int__double___ :: new_1 ( { ( ar .as_pointer()  as Ptr< (Value<i32  >, Value<f64  >)  >   )  } , { ( ar .as_pointer()  as Ptr< (Value<i32  >, Value<f64  >)  >   ) . offset ( ( ( ( 384usize as usize ) ) . wrapping_div ( ( 16usize as usize ) ) ) as isize )  } , )  )) ;
+        assert!(
+            ({
+                ((({
+                    let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).begin_21() });
+                    let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).end_23() });
+                    distance_7(___first, ___last)
+                }) as usize)
+                    == (({ (*m.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).cbegin() });
+                    let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).cend() });
+                    distance_7(___first, ___last)
+                }) as usize)
+                    == (({ (*m.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).rbegin_25() });
+                    let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).rend_27() });
+                    distance_8(___first, ___last)
+                }) as usize)
+                    == (({ (*m.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).crbegin() });
+                    let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).crend() });
+                    distance_8(___first, ___last)
+                }) as usize)
+                    == (({ (*m.borrow()).size() }) as usize))
+            })
+        );
+        let i: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
+            Rc::new(RefCell::new(BidirectionalIterator::default()));
+        (*i.borrow_mut()) = ({ (*m.borrow()).begin_21() });
         let mut j: i32 = 1;
         'loop_: while (j <= 8) {
             let mut d: f64 = 1_f64;
             'loop_: while (d <= 2_f64) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == j));
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == d));
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == j) }));
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == d) }));
                 {
                     d += 0.5_f64;
-                    (*i.borrow_mut()).iter_inc()
+                    {
+                        i.as_pointer().with_mut(|__it| {
+                            __it.iter_inc();
+                        });
+                        i.as_pointer()
+                    }
                 };
             }
             j.prefix_inc();
         }
-        assert!((*i.borrow()) == unimplemented!());
+        assert!((*i.borrow()) == ({ (*m.borrow()).end_23() }));
         let mut j: i32 = 8;
         'loop_: while (j >= 1) {
             let mut d: f64 = 2_f64;
             'loop_: while (d >= 1_f64) {
-                (*i.borrow_mut()).iter_dec();
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == j));
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == d));
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_dec();
+                    });
+                    i.as_pointer()
+                };
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == j) }));
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == d) }));
                 d -= 0.5_f64;
             }
             j.prefix_dec();
         }
-        assert!((*i.borrow()) == unimplemented!());
+        assert!((*i.borrow()) == ({ (*m.borrow()).begin_21() }));
     }
     {
         let ar: Value<Box<[(Value<i32>, Value<f64>)]>> = Rc::new(RefCell::new(Box::new([
@@ -218,53 +307,93 @@ pub fn test_4() -> bool {
             (Rc::new(RefCell::new(8)), Rc::new(RefCell::new(1.5_f64))),
             (Rc::new(RefCell::new(8)), Rc::new(RefCell::new((2 as f64)))),
         ])));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*i.borrow_mut()) = unimplemented!().clone();
-        let k: Value<()> = Rc::new(RefCell::new(<BidirectionalIterator<(
-            Value<i32>,
-            Value<f64>,
-        )>>::from((*i.borrow()).clone())));
+        let m : Value<std_multimap_int__double__std_less_int___min_allocator_std_pair_const_int__double___ > = Rc::new(RefCell::new(std_multimap_int__double__std_less_int___min_allocator_std_pair_const_int__double___ :: new_1 ( { ( ar .as_pointer()  as Ptr< (Value<i32  >, Value<f64  >)  >   )  } , { ( ar .as_pointer()  as Ptr< (Value<i32  >, Value<f64  >)  >   ) . offset ( ( ( ( 384usize as usize ) ) . wrapping_div ( ( 16usize as usize ) ) ) as isize )  } , )  )) ;
         assert!(
-            <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from((*i.borrow()).clone())
+            ({
+                ((({
+                    let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).begin_20() });
+                    let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).end_22() });
+                    distance_9(___first, ___last)
+                }) as usize)
+                    == (({ (*m.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).rbegin_24() });
+                    let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).rend_26() });
+                    distance_10(___first, ___last)
+                }) as usize)
+                    == (({ (*m.borrow()).size() }) as usize))
+            })
+        );
+        let i: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
+            Rc::new(RefCell::new(BidirectionalIterator::default()));
+        (*i.borrow_mut()) = ({ (*m.borrow()).begin_20() }).clone();
+        let k: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
+            <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(({ (*i.borrow()).clone() })),
+        ));
+        assert!(
+            <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(({ (*i.borrow()).clone() }))
                 == (*k.borrow())
         );
         let mut j: i32 = 1;
         'loop_: while (j <= 8) {
             let mut d: f64 = 1_f64;
             'loop_: while (d <= 2_f64) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == j));
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == d));
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == j) }));
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == d) }));
                 (*(*(*i.borrow()).iter_deref().upgrade().deref())
                     .1
                     .borrow_mut()) = 2.5_f64;
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 2.5_f64));
+                assert!(
+                    ({
+                        ((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 2.5_f64)
+                    })
+                );
                 {
                     d += 0.5_f64;
-                    (*i.borrow_mut()).iter_inc()
+                    {
+                        i.as_pointer().with_mut(|__it| {
+                            __it.iter_inc();
+                        });
+                        i.as_pointer()
+                    }
                 };
             }
             j.prefix_inc();
         }
-        assert!((*i.borrow()) == unimplemented!());
+        assert!((*i.borrow()) == ({ (*m.borrow()).end_22() }));
         let mut j: i32 = 8;
         'loop_: while (j >= 1) {
             let mut d: f64 = 1_f64;
             'loop_: while (d <= 2_f64) {
-                (*i.borrow_mut()).iter_dec();
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == j));
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 2.5_f64));
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_dec();
+                    });
+                    i.as_pointer()
+                };
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == j) }));
+                assert!(
+                    ({
+                        ((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 2.5_f64)
+                    })
+                );
                 (*(*(*i.borrow()).iter_deref().upgrade().deref())
                     .1
                     .borrow_mut()) = d;
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == d));
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == d) }));
                 d += 0.5_f64;
             }
             j.prefix_dec();
         }
-        assert!((*i.borrow()) == unimplemented!());
+        assert!((*i.borrow()) == ({ (*m.borrow()).begin_20() }));
     }
     {
         let ar: Value<Box<[(Value<i32>, Value<f64>)]>> = Rc::new(RefCell::new(Box::new([
@@ -293,66 +422,127 @@ pub fn test_4() -> bool {
             (Rc::new(RefCell::new(8)), Rc::new(RefCell::new(1.5_f64))),
             (Rc::new(RefCell::new(8)), Rc::new(RefCell::new((2 as f64)))),
         ])));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*i.borrow_mut()) = unimplemented!().clone();
+        let m : Value<std_multimap_int__double__std_less_int___min_allocator_std_pair_const_int__double___ > = Rc::new(RefCell::new(std_multimap_int__double__std_less_int___min_allocator_std_pair_const_int__double___ :: new_1 ( { ( ar .as_pointer()  as Ptr< (Value<i32  >, Value<f64  >)  >   )  } , { ( ar .as_pointer()  as Ptr< (Value<i32  >, Value<f64  >)  >   ) . offset ( ( ( ( 384usize as usize ) ) . wrapping_div ( ( 16usize as usize ) ) ) as isize )  } , )  )) ;
+        assert!(
+            ({
+                ((({
+                    let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).begin_21() });
+                    let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).end_23() });
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*m.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).cbegin() });
+                    let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).cend() });
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*m.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).rbegin_25() });
+                    let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).rend_27() });
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*m.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).crbegin() });
+                    let ___last: BidirectionalIterator<(Value<i32>, Value<f64>)> =
+                        ({ (*m.borrow()).crend() });
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*m.borrow()).size() }) as usize))
+            })
+        );
+        let i: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
+            Rc::new(RefCell::new(BidirectionalIterator::default()));
+        (*i.borrow_mut()) = ({ (*m.borrow()).begin_21() }).clone();
         let mut j: i32 = 1;
         'loop_: while (j <= 8) {
             let mut d: f64 = 1_f64;
             'loop_: while (d <= 2_f64) {
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == j));
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == d));
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == j) }));
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == d) }));
                 {
                     d += 0.5_f64;
-                    (*i.borrow_mut()).iter_inc()
+                    {
+                        i.as_pointer().with_mut(|__it| {
+                            __it.iter_inc();
+                        });
+                        i.as_pointer()
+                    }
                 };
             }
             j.prefix_inc();
         }
-        assert!((*i.borrow()) == unimplemented!());
+        assert!((*i.borrow()) == ({ (*m.borrow()).end_23() }));
         let mut j: i32 = 8;
         'loop_: while (j >= 1) {
             let mut d: f64 = 2_f64;
             'loop_: while (d >= 1_f64) {
-                (*i.borrow_mut()).iter_dec();
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == j));
-                assert!(((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == d));
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_dec();
+                    });
+                    i.as_pointer()
+                };
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).0.borrow()) == j) }));
+                assert!(({ ((*(*(*i.borrow()).iter_deref().upgrade().deref()).1.borrow()) == d) }));
                 d -= 0.5_f64;
             }
             j.prefix_dec();
         }
-        assert!((*i.borrow()) == unimplemented!());
+        assert!((*i.borrow()) == ({ (*m.borrow()).begin_21() }));
     }
     {
-        let ii1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ii2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ii4: Value<()> = Rc::new(RefCell::new((*ii1.borrow()).clone()));
-        let cii: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((*ii1.borrow()) == (*ii2.borrow()));
-        assert!((*ii1.borrow()) == (*ii4.borrow()));
-        assert!(!((*ii1.borrow()) != (*ii2.borrow())));
+        let ii1: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
+            Rc::new(RefCell::new(BidirectionalIterator::default()));
+        let ii2: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
+            Rc::new(RefCell::new(BidirectionalIterator::default()));
+        let ii4: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
+            Rc::new(RefCell::new((*ii1.borrow()).clone()));
+        let cii: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> =
+            Rc::new(RefCell::new(BidirectionalIterator::default()));
+        assert!(({ (*ii1.borrow()) == (*ii2.borrow()) }));
+        assert!(({ (*ii1.borrow()) == (*ii4.borrow()) }));
+        assert!(({ !((*ii1.borrow()) != (*ii2.borrow())) }));
         assert!(
-            (<BidirectionalIterator<(Value<i32>, Value<f64>)>>::from((*ii1.borrow()).clone())
-                == (*cii.borrow()))
+            (<BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
+                ({ (*ii1.borrow()).clone() })
+            ) == (*cii.borrow()))
         );
         assert!(
             ((*cii.borrow())
                 == <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
-                    (*ii1.borrow()).clone()
+                    ({ (*ii1.borrow()).clone() })
                 ))
         );
         assert!(
-            !(<BidirectionalIterator<(Value<i32>, Value<f64>)>>::from((*ii1.borrow()).clone())
-                != (*cii.borrow()))
+            !(<BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
+                ({ (*ii1.borrow()).clone() })
+            ) != (*cii.borrow()))
         );
         assert!(
             !((*cii.borrow())
                 != <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
-                    (*ii1.borrow()).clone()
+                    ({ (*ii1.borrow()).clone() })
                 ))
         );
     }
@@ -381,6 +571,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_4() });
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__;
 pub trait min_allocator_std_pair_const_int__double__Impl {
     fn allocate(
         &self,
@@ -398,83 +591,6 @@ pub trait min_allocator_std_pair_const_int__double__Impl {
 }
 impl min_allocator_std_pair_const_int__double__Impl
     for Ptr<min_allocator_std_pair_const_int__double__>
-{
-}
-pub trait min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<(Value<i32>, Value<f64>)> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<(Value<i32>, Value<f64>)> {
-        unimplemented!()
-    }
-    fn operator_inc_8(
-        &self,
-    ) -> Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
-    {
-        unimplemented!()
-    }
-    fn operator_post_inc_9(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_10(
-        &self,
-    ) -> Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
-    {
-        unimplemented!()
-    }
-    fn operator_post_dec_11(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
-    {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
-    {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<(Value<i32>, Value<f64>)> {
-        unimplemented!()
-    }
-}
-impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
 {
 }
 pub fn __cpp2rust_init_globals() {

@@ -1,5 +1,3 @@
-// ADDITIONAL_COMPILE_FLAGS: -std=c++23
-
 #include <cassert>
 #include <cstddef>
 

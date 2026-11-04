@@ -11,11 +11,21 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int__int_ {}
+impl CppMove for test_macros_detail_is_same_int__int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct convertible_to_int_ref {
     #[offset(0)]
     pub val: i32,
+}
+impl CppMove for convertible_to_int_ref {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for convertible_to_int_ref {
     fn default() -> Self {
@@ -28,6 +38,11 @@ pub struct nothrow_convertible_true_ {
     #[offset(0)]
     pub val: i32,
 }
+impl CppMove for nothrow_convertible_true_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for nothrow_convertible_true_ {
     fn default() -> Self {
         { nothrow_convertible_true_ { val: 0 } }
@@ -38,6 +53,11 @@ impl Default for nothrow_convertible_true_ {
 pub struct nothrow_convertible_false_ {
     #[offset(0)]
     pub val: i32,
+}
+impl CppMove for nothrow_convertible_false_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for nothrow_convertible_false_ {
     fn default() -> Self {
@@ -51,6 +71,11 @@ pub struct convertible_from_int {}
 impl convertible_from_int {
     pub fn new(mut _a0: i32) -> Self {
         Self {}
+    }
+}
+impl CppMove for convertible_from_int {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn meow_1(mut _a0: Ptr<i32>) {}

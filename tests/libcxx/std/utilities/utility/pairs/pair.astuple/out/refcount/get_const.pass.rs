@@ -32,14 +32,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new(3)),
             Rc::new(RefCell::new(4_i16)),
         )));
-        assert!(
-            ((<(Value<i32>, Value<i16>) as PairGetRef<0>>::pair_get(&(*p.borrow())).read()) == 3)
-        );
-        assert!(
-            (((<(Value<i32>, Value<i16>) as PairGetRef<1>>::pair_get(&(*p.borrow())).read())
-                as i32)
-                == 4)
-        );
+        assert!(({ (((*p.borrow()).get_value::<0>().as_pointer().read()) == 3) }));
+        assert!(({ ((((*p.borrow()).get_value::<1>().as_pointer().read()) as i32) == 4) }));
     }
     {
         let p1: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new((

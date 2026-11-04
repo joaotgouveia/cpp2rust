@@ -9,10 +9,10 @@ use std::rc::{Rc, Weak};
 pub fn test_0(a: Ptr<i32>, b: Ptr<i32>, x: Ptr<i32>) {
     assert!(
         ({
-            ({
-                let __a = (a).clone();
-                let __b = (b).clone();
-                if CppLess::less(&__b, &__a) { __b } else { __a }
+            (if CppLess::less(&(b).clone(), &(a).clone()) {
+                (b).clone()
+            } else {
+                (a).clone()
             })
         } == { (x).clone() })
     );

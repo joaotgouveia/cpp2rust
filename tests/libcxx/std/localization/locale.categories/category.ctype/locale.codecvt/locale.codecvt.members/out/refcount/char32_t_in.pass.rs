@@ -27,21 +27,46 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let from: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(b"some text\0")));
-    let to: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..9).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    let l: Value<std_locale> = Rc::new(RefCell::new(
+        (*({ std_locale::classic() }).upgrade().deref()).clone(),
     ));
-    let f: Ptr<()> = unimplemented!();
+    let from: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(b"some text\0")));
+    let to: Value<Box<[u32]>> =
+        Rc::new(RefCell::new((0..9).map(|_| 0_u32).collect::<Box<[u32]>>()));
+    let f: Ptr<std_codecvt_char32_t__char____mbstate_t_> = ({ use_facet_0(l.as_pointer()) });
     let mbs: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-    let mut from_next: Ptr<i8> = Ptr::<i8>::null();
-    let mut to_next: Ptr<()> = Ptr::<()>::null();
-    assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
-    assert!((((from_next).clone() - (from.as_pointer() as Ptr::<i8>)) as i64 == 9_i64));
-    assert!((((to_next).clone() - (to.as_pointer() as Ptr::<()>)) as i64 == 9_i64));
+    let from_next: Value<Ptr<i8>> = Rc::new(RefCell::new(Ptr::<i8>::null()));
+    let to_next: Value<Ptr<u32>> = Rc::new(RefCell::new(Ptr::<u32>::null()));
+    assert!(
+        ({
+            ((({
+                let ___from: Ptr<i8> = (from.as_pointer() as Ptr<i8>);
+                let ___from_end: Ptr<i8> = (from.as_pointer() as Ptr<i8>).offset((9) as isize);
+                let ___to: Ptr<u32> = (to.as_pointer() as Ptr<u32>);
+                let ___to_end: Ptr<u32> = (to.as_pointer() as Ptr<u32>).offset((9) as isize);
+                ((*f.upgrade().deref()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                    .in_(
+                        mbs.as_pointer(),
+                        ___from,
+                        ___from_end,
+                        from_next.as_pointer(),
+                        ___to,
+                        ___to_end,
+                        to_next.as_pointer(),
+                    )
+            }) as i32)
+                == (std_codecvt_base_result_ok as i32))
+        })
+    );
+    assert!(
+        ({ (((*from_next.borrow()).clone() - (from.as_pointer() as Ptr::<i8>)) as i64 == 9_i64) })
+    );
+    assert!(
+        ({ (((*to_next.borrow()).clone() - (to.as_pointer() as Ptr::<u32>)) as i64 == 9_i64) })
+    );
     let mut i: u32 = 0_u32;
     'loop_: while (i < 9_u32) {
-        assert!((((*to.borrow())[(i) as usize] as u32) == ((*from.borrow())[(i) as usize] as u32)));
+        assert!(({ ((*to.borrow())[(i) as usize] == ((*from.borrow())[(i) as usize] as u32)) }));
         i.prefix_inc();
     }
     return 0;

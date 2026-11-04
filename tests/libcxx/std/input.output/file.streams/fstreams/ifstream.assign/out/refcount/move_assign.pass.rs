@@ -28,7 +28,10 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let fso: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
+        let fso: Value<::std::fs::File> = Rc::new(RefCell::new(
+            ::std::fs::File::open(Ptr::<i8>::from_string_literal(b"test.dat").to_string())
+                .expect("Failed to open file"),
+        ));
         let fs: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut x: f64 = 0_f64;
@@ -36,7 +39,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!((x == 3.25_f64));
     }
     {
-        let fso: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let fso: Value<()> = Rc::new(RefCell::new(
+            ::std::fs::File::open(Ptr::<i8>::from_string_literal(b"test.dat").to_string())
+                .expect("Failed to open file"),
+        ));
         let fs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut x: f64 = 0_f64;

@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -36,24 +41,13 @@ thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<(Value<i32>, Value<f64>)>,
-}
-impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_std_pair_const_int__double__ {}
+impl CppMove for min_allocator_std_pair_const_int__double__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_4() -> bool {
     {
         let ar: Value<Box<[(Value<i32>, Value<f64>)]>> = Rc::new(RefCell::new(Box::new([
@@ -66,11 +60,19 @@ pub fn test_4() -> bool {
             (Rc::new(RefCell::new(7)), Rc::new(RefCell::new(7.5_f64))),
             (Rc::new(RefCell::new(8)), Rc::new(RefCell::new(8.5_f64))),
         ])));
-        let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*m.borrow()).len() == 8_usize));
+        let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
+            std_map_int__double__std_less_int___std_allocator_std_pair_const_int__double___::new_1(
+                { (ar.as_pointer() as Ptr<(Value<i32>, Value<f64>)>) },
+                {
+                    (ar.as_pointer() as Ptr<(Value<i32>, Value<f64>)>)
+                        .offset(((128usize as usize).wrapping_div((16usize as usize))) as isize)
+                },
+            ),
+        ));
+        assert!(({ ((*m.borrow()).len() == 8_usize) }));
         const _: () = assert!(true, "");;
-        unimplemented!();
-        assert!(((*m.borrow()).len() == 0_usize));
+        ({ (*m.borrow()).clear() });
+        assert!(({ ((*m.borrow()).len() == 0_usize) }));
     }
     {
         let ar: Value<Box<[(Value<i32>, Value<f64>)]>> = Rc::new(RefCell::new(Box::new([
@@ -83,11 +85,19 @@ pub fn test_4() -> bool {
             (Rc::new(RefCell::new(7)), Rc::new(RefCell::new(7.5_f64))),
             (Rc::new(RefCell::new(8)), Rc::new(RefCell::new(8.5_f64))),
         ])));
-        let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*m.borrow()).len() == 8_usize));
+        let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
+            std_map_int__double__std_less_int___min_allocator_std_pair_const_int__double___::new_1(
+                { (ar.as_pointer() as Ptr<(Value<i32>, Value<f64>)>) },
+                {
+                    (ar.as_pointer() as Ptr<(Value<i32>, Value<f64>)>)
+                        .offset(((128usize as usize).wrapping_div((16usize as usize))) as isize)
+                },
+            ),
+        ));
+        assert!(({ ((*m.borrow()).len() == 8_usize) }));
         const _: () = assert!(true, "");;
-        unimplemented!();
-        assert!(((*m.borrow()).len() == 0_usize));
+        ({ (*m.borrow()).clear() });
+        assert!(({ ((*m.borrow()).len() == 0_usize) }));
     }
     return true;
 }
@@ -114,6 +124,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_4() });
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__;
 pub trait min_allocator_std_pair_const_int__double__Impl {
     fn allocate(
         &self,
@@ -131,83 +144,6 @@ pub trait min_allocator_std_pair_const_int__double__Impl {
 }
 impl min_allocator_std_pair_const_int__double__Impl
     for Ptr<min_allocator_std_pair_const_int__double__>
-{
-}
-pub trait min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<(Value<i32>, Value<f64>)> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<(Value<i32>, Value<f64>)> {
-        unimplemented!()
-    }
-    fn operator_inc_8(
-        &self,
-    ) -> Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
-    {
-        unimplemented!()
-    }
-    fn operator_post_inc_9(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_10(
-        &self,
-    ) -> Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
-    {
-        unimplemented!()
-    }
-    fn operator_post_dec_11(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
-    {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
-    {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<(Value<i32>, Value<f64>)> {
-        unimplemented!()
-    }
-}
-impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
 {
 }
 pub fn __cpp2rust_init_globals() {

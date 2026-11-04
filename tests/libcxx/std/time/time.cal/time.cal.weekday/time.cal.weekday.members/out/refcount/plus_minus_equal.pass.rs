@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_weekday_ref__std_chrono_weekday_ref_ {}
+impl CppMove for test_macros_detail_is_same_std_chrono_weekday_ref__std_chrono_weekday_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn euclidian_addition_1(mut rhs: u32, mut lhs: u32) -> u32 {
     let mut modulus: u32 = ((6_u32 as u32).wrapping_sub((0_u32 as u32)) as u32).wrapping_add(1_u32);
     let ret: Value<u32> = Rc::new(RefCell::new((rhs).wrapping_add(lhs)));

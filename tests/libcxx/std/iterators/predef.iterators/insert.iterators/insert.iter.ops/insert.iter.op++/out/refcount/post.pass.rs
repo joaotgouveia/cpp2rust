@@ -18,6 +18,11 @@ impl nasty_vector_int_ {
         Self { v_: Vec::new() }
     }
 }
+impl CppMove for nasty_vector_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for nasty_vector_int_ {
     fn default() -> Self {
         { nasty_vector_int_::new_1() }
@@ -42,6 +47,11 @@ impl Clone for nasty_mutex {
         nasty_mutex::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for nasty_mutex {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for nasty_mutex {
     fn default() -> Self {
         { nasty_mutex::new() }
@@ -55,6 +65,11 @@ pub struct ConstexprFixedCapacityDeque_int__10_ {
     data_: Box<[i32]>,
     #[offset(40)]
     size_: i32,
+}
+impl CppMove for ConstexprFixedCapacityDeque_int__10_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for ConstexprFixedCapacityDeque_int__10_ {
     fn default() -> Self {
@@ -71,7 +86,7 @@ pub fn test_0(c: Vec<i32>) -> bool {
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r: Value<()> = Rc::new(RefCell::new((unimplemented!()).clone()));
     unimplemented!();
-    assert!(((*c.borrow()).len() == 1_usize));
+    assert!(({ ((*c.borrow()).len() == 1_usize) }));
     assert!(((c.decay().to_last().read()) == 0));
     return true;
 }
@@ -355,11 +370,12 @@ impl nasty_vector_int_Impl for Ptr<nasty_vector_int_> {
     }
     fn insert_46(&self, pos: RandomAccessIterator<i32>, x: Ptr<i32>) -> RandomAccessIterator<i32> {
         let pos: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(pos));
-        return {
-            let __it = (*pos.borrow()).clone();
-            let __off = __it.index();
-            field!((*self), v_).with_mut(|__v: &mut Vec<i32>| __v.insert(__off, (x.read())));
-            __it
+        return match ({ (*pos.borrow()).clone() },) {
+            (mut __tmp_0,) => {
+                let __off = __tmp_0.index();
+                field!((*self), v_).with_mut(|__v: &mut Vec<i32>| __v.insert(__off, (x.read())));
+                (__tmp_0).clone()
+            }
         };
     }
 }

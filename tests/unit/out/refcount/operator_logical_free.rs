@@ -12,6 +12,11 @@ pub struct S {
     #[offset(0)]
     pub v: i32,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_not_0(a: Ptr<S>) -> bool {
     return (a.with(|__s| __s.v) == 0);
 }

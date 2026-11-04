@@ -27,21 +27,36 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let l: Value<std_locale> = Rc::new(RefCell::new(
+        (*({ std_locale::classic() }).upgrade().deref()).clone(),
+    ));
     {
-        let f: Ptr<()> = unimplemented!();
+        let f: Ptr<std_ctype_wchar_t_> = ({ use_facet_0(l.as_pointer()) });
         let in_: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i8>::from_string_literal(b" A\x07.a1").to_c_bytes();
             __bytes.push(0_i8);
             __bytes
         }));
         let v: Value<Vec<i32>> = Rc::new(RefCell::new(
-            (0..((*in_.borrow()).len() - 1) as usize)
+            (0..({ ((*in_.borrow()).len() - 1) }) as usize)
                 .map(|_| 0_i32)
                 .collect::<Vec<_>>(),
         ));
         assert!(
-            ({ unimplemented!() } == { in_.decay().offset(((*in_.borrow()).len() - 1) as isize) })
+            ({
+                ({
+                    ({
+                        let ___lo: Ptr<i8> = (in_.decay().offset(0_usize as isize));
+                        let ___hi: Ptr<i8> =
+                            in_.decay().offset(((*in_.borrow()).len() - 1) as isize);
+                        ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_).widen_10(
+                            ___lo,
+                            ___hi,
+                            v.decay(),
+                        )
+                    })
+                } == { in_.decay().offset(((*in_.borrow()).len() - 1) as isize) })
+            })
         );
         assert!((((v.decay().offset(0_usize as isize).read()) as i32) == (32 as i32)));
         assert!((((v.decay().offset(1_usize as isize).read()) as i32) == (65 as i32)));

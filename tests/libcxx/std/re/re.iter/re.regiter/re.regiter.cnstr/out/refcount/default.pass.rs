@@ -7,12 +7,24 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
-    let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
+    let i1: Value<std_regex_iterator_const_char_ptr__char__std_regex_traits_char__> = Rc::new(
+        RefCell::new(<std_regex_iterator_const_char_ptr__char__std_regex_traits_char__>::default()),
+    );
+    assert!(
+        (*i1.borrow())
+            == <std_regex_iterator_const_char_ptr__char__std_regex_traits_char__>::default()
+    );
 }
 pub fn test_1() {
-    let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
+    let i1: Value<std_regex_iterator_const_wchar_t_ptr__wchar_t__std_regex_traits_wchar_t__> =
+        Rc::new(RefCell::new(
+            <std_regex_iterator_const_wchar_t_ptr__wchar_t__std_regex_traits_wchar_t__>::default(),
+        ));
+    assert!(
+        (*i1.borrow())
+            == <std_regex_iterator_const_wchar_t_ptr__wchar_t__std_regex_traits_wchar_t__>::default(
+            )
+    );
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

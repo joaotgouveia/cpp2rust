@@ -30,6 +30,11 @@ impl Clone for ExplicitT {
         ExplicitT::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for ExplicitT {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CppFrom, CopyAssign, Default)]
 #[cpp_from(i32, new, value)]
 #[byte_size(4)]
@@ -55,6 +60,11 @@ impl Clone for ImplicitT {
         ImplicitT::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for ImplicitT {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn can_construct_with_brace_init_0(mut _a0: i32) -> bool {
     return true;
 }
@@ -73,13 +83,28 @@ pub fn can_construct_with_ctad_brace_init_3(__args: Box<[VaArg]>) -> bool {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct BraceInit {}
+impl CppMove for BraceInit {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoBraceInit {}
 impl NoBraceInit {}
+impl CppMove for NoBraceInit {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ExplicitBraceInit {}
+impl CppMove for ExplicitBraceInit {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn explicit_vs_implicit_brace_init_4(
     _a0: (Value<ExplicitBraceInit>, Value<ExplicitBraceInit>),
 ) -> i32 {
@@ -97,24 +122,24 @@ pub fn test_6() -> bool {
             Rc::new(RefCell::new(ExplicitT::new({ 42 }))),
             Rc::new(RefCell::new(<BraceInit>::default())),
         )));
-        assert!(({ (*(*p1.borrow()).0.borrow()).value } == 42));
+        assert!(({ ({ (*(*p1.borrow()).0.borrow()).value } == 42) }));
         let p2: Value<(Value<ExplicitT>, Value<BraceInit>)> = Rc::new(RefCell::new((
             Rc::new(RefCell::new(ExplicitT::new({ 42 }))),
             Rc::new(RefCell::new(<BraceInit>::default())),
         )));
-        assert!(({ (*(*p2.borrow()).0.borrow()).value } == 42));
+        assert!(({ ({ (*(*p2.borrow()).0.borrow()).value } == 42) }));
     }
     {
         let p1: Value<(Value<BraceInit>, Value<ExplicitT>)> = Rc::new(RefCell::new((
             Rc::new(RefCell::new(<BraceInit>::default())),
             Rc::new(RefCell::new(ExplicitT::new({ 42 }))),
         )));
-        assert!(({ (*(*p1.borrow()).1.borrow()).value } == 42));
+        assert!(({ ({ (*(*p1.borrow()).1.borrow()).value } == 42) }));
         let p2: Value<(Value<BraceInit>, Value<ExplicitT>)> = Rc::new(RefCell::new((
             Rc::new(RefCell::new(<BraceInit>::default())),
             Rc::new(RefCell::new(ExplicitT::new({ 42 }))),
         )));
-        assert!(({ (*(*p2.borrow()).1.borrow()).value } == 42));
+        assert!(({ ({ (*(*p2.borrow()).1.borrow()).value } == 42) }));
     }
     {
         let p: Value<(Value<BraceInit>, Value<BraceInit>)> = Rc::new(RefCell::new((
@@ -128,14 +153,14 @@ pub fn test_6() -> bool {
             Rc::new(RefCell::new(ImplicitT::new({ 42 }))),
             Rc::new(RefCell::new(<BraceInit>::default())),
         )));
-        assert!(({ (*(*p.borrow()).0.borrow()).value } == 42));
+        assert!(({ ({ (*(*p.borrow()).0.borrow()).value } == 42) }));
     }
     {
         let p: Value<(Value<BraceInit>, Value<ImplicitT>)> = Rc::new(RefCell::new((
             Rc::new(RefCell::new(<BraceInit>::default())),
             Rc::new(RefCell::new(ImplicitT::new({ 42 }))),
         )));
-        assert!(({ (*(*p.borrow()).1.borrow()).value } == 42));
+        assert!(({ ({ (*(*p.borrow()).1.borrow()).value } == 42) }));
     }
     {
         let p: Value<(Value<BraceInit>, Value<BraceInit>)> = Rc::new(RefCell::new((

@@ -31,52 +31,79 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
         25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
     ])));
-    let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let v1: Value<std_valarray_int_> = Rc::new(RefCell::new(std_valarray_int_::new_1(
+        { (a1.as_pointer() as Ptr<i32>) },
+        {
+            (::std::mem::size_of::<[i32; 41]>() as usize)
+                .wrapping_div((::std::mem::size_of::<i32>() as usize))
+        },
+    )));
     let sz: Value<Box<[usize]>> = Rc::new(RefCell::new(Box::new([2_usize, 4_usize, 3_usize])));
     let st: Value<Box<[usize]>> = Rc::new(RefCell::new(Box::new([19_usize, 4_usize, 1_usize])));
-    unimplemented!();
-    assert!((unimplemented!() == 41_usize));
-    assert!(((unimplemented!().read()) == 0));
-    assert!(((unimplemented!().read()) == 1));
-    assert!(((unimplemented!().read()) == 2));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 6));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 10));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 14));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 18));
-    assert!(((unimplemented!().read()) == 19));
-    assert!(((unimplemented!().read()) == 20));
-    assert!(((unimplemented!().read()) == 21));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 25));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 29));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 33));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 51));
-    assert!(((unimplemented!().read()) == 37));
-    assert!(((unimplemented!().read()) == 38));
-    assert!(((unimplemented!().read()) == 39));
-    assert!(((unimplemented!().read()) == 40));
+    elem!(v1.as_pointer(), {
+        let __tmp_0: Value<std_valarray_unsigned_long_> =
+            Rc::new(RefCell::new(std_valarray_unsigned_long_::new_1(
+                { (sz.as_pointer() as Ptr<usize>).reinterpret_cast::<u64>() },
+                {
+                    (::std::mem::size_of::<[usize; 3]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<usize>() as usize))
+                },
+            )));
+        let __tmp_1: Value<std_valarray_unsigned_long_> =
+            Rc::new(RefCell::new(std_valarray_unsigned_long_::new_1(
+                { (st.as_pointer() as Ptr<usize>).reinterpret_cast::<u64>() },
+                {
+                    (::std::mem::size_of::<[usize; 3]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<usize>() as usize))
+                },
+            )));
+        std_gslice::new_1({ 3_usize }, { __tmp_0.as_pointer() }, {
+            __tmp_1.as_pointer()
+        })
+    })
+    .write(51);
+    assert!(({ (({ (*v1.borrow()).size() }) == 41_usize) }));
+    assert!(({ ({ (*v1.borrow())[0_usize] } == 0) }));
+    assert!(({ ({ (*v1.borrow())[1_usize] } == 1) }));
+    assert!(({ ({ (*v1.borrow())[2_usize] } == 2) }));
+    assert!(({ ({ (*v1.borrow())[3_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[4_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[5_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[6_usize] } == 6) }));
+    assert!(({ ({ (*v1.borrow())[7_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[8_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[9_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[10_usize] } == 10) }));
+    assert!(({ ({ (*v1.borrow())[11_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[12_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[13_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[14_usize] } == 14) }));
+    assert!(({ ({ (*v1.borrow())[15_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[16_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[17_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[18_usize] } == 18) }));
+    assert!(({ ({ (*v1.borrow())[19_usize] } == 19) }));
+    assert!(({ ({ (*v1.borrow())[20_usize] } == 20) }));
+    assert!(({ ({ (*v1.borrow())[21_usize] } == 21) }));
+    assert!(({ ({ (*v1.borrow())[22_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[23_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[24_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[25_usize] } == 25) }));
+    assert!(({ ({ (*v1.borrow())[26_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[27_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[28_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[29_usize] } == 29) }));
+    assert!(({ ({ (*v1.borrow())[30_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[31_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[32_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[33_usize] } == 33) }));
+    assert!(({ ({ (*v1.borrow())[34_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[35_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[36_usize] } == 51) }));
+    assert!(({ ({ (*v1.borrow())[37_usize] } == 37) }));
+    assert!(({ ({ (*v1.borrow())[38_usize] } == 38) }));
+    assert!(({ ({ (*v1.borrow())[39_usize] } == 39) }));
+    assert!(({ ({ (*v1.borrow())[40_usize] } == 40) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -52,6 +52,11 @@ impl Clone for __gnu_test_object_counter {
         __gnu_test_object_counter::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_object_counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_object_counter {
     fn default() -> Self {
         { __gnu_test_object_counter::new() }
@@ -78,6 +83,11 @@ impl __gnu_test_copy_constructor {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_copy_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
@@ -99,6 +109,11 @@ impl __gnu_test_assignment_operator {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_assignment_operator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
@@ -111,6 +126,11 @@ impl __gnu_test_destructor {
     }
     pub fn reset() {
         _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
+    }
+}
+impl CppMove for __gnu_test_destructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -173,6 +193,11 @@ impl Clone for __gnu_test_copy_tracker {
         __gnu_test_copy_tracker::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_copy_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_copy_tracker {
     fn default() -> Self {
         { __gnu_test_copy_tracker::new(None, None) }
@@ -197,10 +222,15 @@ pub struct __gnu_test_semaphore {
     pid_: (),
 }
 impl __gnu_test_semaphore {}
+impl CppMove for __gnu_test_semaphore {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test01_9() {
     let loc_c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut empty: Vec<i32> = vec![i32::default()];
-    let end: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut end: Ptr<::std::fs::File> = unimplemented!();
     let iss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let tim_get: Ptr<()> = unimplemented!();
@@ -209,7 +239,7 @@ pub fn test01_9() {
     let time_bday: Value<libcc2rs::Tm> =
         Rc::new(RefCell::new(({ test_tm_10(0, 0, 12, 4, 3, 71, 0, 93, 0) })));
     unimplemented!();
-    let is_it01: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut is_it01: Ptr<::std::fs::File> = unimplemented!();
     let time01: Value<libcc2rs::Tm> = Rc::new(RefCell::new(Default::default()));
     errorstate = good;
     unimplemented!();
@@ -230,7 +260,7 @@ pub fn test01_9() {
         }
     }
     unimplemented!();
-    let is_it02: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut is_it02: Ptr<::std::fs::File> = unimplemented!();
     let time02: Value<libcc2rs::Tm> = Rc::new(RefCell::new(Default::default()));
     errorstate = good;
     unimplemented!();
@@ -251,10 +281,10 @@ pub fn test01_9() {
         }
     }
     unimplemented!();
-    let is_it03: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut is_it03: Ptr<::std::fs::File> = unimplemented!();
     let time03: Value<libcc2rs::Tm> = Rc::new(RefCell::new(Default::default()));
     errorstate = good;
-    let ret03: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut ret03: Ptr<::std::fs::File> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -280,11 +310,11 @@ pub fn test01_9() {
         }
     }
     unimplemented!();
-    let is_it04: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut is_it04: Ptr<::std::fs::File> = unimplemented!();
     let time04: Value<libcc2rs::Tm> = Rc::new(RefCell::new(Default::default()));
     (*time04.borrow_mut()).tm_wday = 4;
     errorstate = good;
-    let ret04: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut ret04: Ptr<::std::fs::File> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -310,10 +340,10 @@ pub fn test01_9() {
         }
     }
     unimplemented!();
-    let is_it05: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut is_it05: Ptr<::std::fs::File> = unimplemented!();
     let time05: Value<libcc2rs::Tm> = Rc::new(RefCell::new(Default::default()));
     errorstate = good;
-    let ret05: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut ret05: Ptr<::std::fs::File> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -339,11 +369,11 @@ pub fn test01_9() {
         }
     }
     unimplemented!();
-    let is_it06: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut is_it06: Ptr<::std::fs::File> = unimplemented!();
     let time06: Value<libcc2rs::Tm> = Rc::new(RefCell::new(Default::default()));
     (*time06.borrow_mut()).tm_wday = 4;
     errorstate = good;
-    let ret06: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut ret06: Ptr<::std::fs::File> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -510,22 +540,36 @@ pub fn run_tests_wrapped_env_15(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !(libc::setenv(env, name, 1) != 0) {
+    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+        true => {
+            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
+            0
+        }
+        false => 0,
+    } != 0)
+    {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: i32 = 0;
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        libc::setenv(
-            env,
+        match ({
             if !(oldENV).is_null() {
                 (oldENV).clone()
             } else {
                 Ptr::<i8>::from_string_literal(b"")
+            }
+        },)
+        {
+            (mut __tmp_0,) => match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+                true => {
+                    unsafe { ::std::env::set_var(env.to_rust_string(), __tmp_0.to_rust_string()) };
+                    0
+                }
+                false => 0,
             },
-            1,
-        );
+        };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = env.to_c_bytes();
@@ -574,6 +618,11 @@ impl __gnu_test_semun {
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<u16>> {
         this.reinterpret_cast()
+    }
+}
+impl CppMove for __gnu_test_semun {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for __gnu_test_semun {
@@ -651,7 +700,9 @@ impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
     }
     fn push_back(&self, mut test: FnPtr<fn()>) {
         array_elem!((*self), _M_tests, (*self).with(|__s| __s._M_size)).write((test).clone());
-        field!((*self), _M_size).with_mut(|__v| __v.prefix_inc());
+        field!((*self), _M_size).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait __gnu_test_object_counterImpl {

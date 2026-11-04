@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -43,6 +48,11 @@ pub struct min_pointer_bool__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<bool>,
 }
 impl min_pointer_bool__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_bool__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -51,6 +61,11 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
@@ -61,6 +76,11 @@ pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
     fn new_1(mut p: Ptr<u64>) -> Self {
         Self { ptr_: (p).clone() }
+    }
+}
+impl CppMove for min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl min_allocator_bool_ {
@@ -80,6 +100,11 @@ impl CppEq for min_allocator_bool_ {
         operator_eq_4(__lhs.read(), __rhs.read())
     }
 }
+impl CppMove for min_allocator_bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl min_allocator_unsigned_long_ {
     pub fn new_1(mut _a0: min_allocator_bool_) -> Self {
         Self {}
@@ -89,35 +114,46 @@ impl min_allocator_unsigned_long_ {
 #[cpp_from(min_allocator_bool_, new_1, value)]
 #[byte_size(1)]
 pub struct min_allocator_unsigned_long_ {}
+impl CppMove for min_allocator_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl min_allocator_bool_ {}
 impl min_allocator_unsigned_long_ {}
 pub fn test_5(mut n: usize, x: Ptr<bool>, a: Ptr<()>) {
-    let c: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let c: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(n) as usize).map(|_| (x.read())).collect::<Vec<bool>>(),
+    ));
     const _: () = assert!(true, "");;
     assert!(unimplemented!());
-    assert!(((&(*c.borrow())).len() == n));
+    assert!(({ ((&(*c.borrow())).len() == n) }));
     let i: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(c.decay().begin()));
     let e: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(c.decay().end()));
     'loop_: while (*i.borrow()) != (*e.borrow()) {
-        assert!(({ ((*i.borrow()).iter_deref().read() as i32) } == { ((x.read()) as i32) }));
+        assert!(({ ({ ((*i.borrow()).iter_deref().read() as i32) } == { ((x.read()) as i32) }) }));
         (*i.borrow_mut()).iter_inc();
     }
 }
 pub fn test_6(mut n: usize, x: Ptr<bool>, a: Ptr<min_allocator_bool_>) {
-    let c: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let c: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(n) as usize).map(|_| (x.read())).collect::<Vec<bool>>(),
+    ));
     const _: () = assert!(true, "");;
     assert!(
         ({
-            let _arg0: min_allocator_bool_ = (*a.upgrade().deref()).clone();
-            let _arg1: min_allocator_bool_ = unimplemented!();
-            operator_eq_4(_arg0, _arg1)
+            ({
+                let _arg0: min_allocator_bool_ = (*a.upgrade().deref()).clone();
+                let _arg1: min_allocator_bool_ = unimplemented!();
+                operator_eq_4(_arg0, _arg1)
+            })
         })
     );
-    assert!(((&(*c.borrow())).len() == n));
+    assert!(({ ((&(*c.borrow())).len() == n) }));
     let i: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(c.decay().begin()));
     let e: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(c.decay().end()));
     'loop_: while (*i.borrow()) != (*e.borrow()) {
-        assert!(({ ((*i.borrow()).iter_deref().read() as i32) } == { ((x.read()) as i32) }));
+        assert!(({ ({ ((*i.borrow()).iter_deref().read() as i32) } == { ((x.read()) as i32) }) }));
         (*i.borrow_mut()).iter_inc();
     }
 }

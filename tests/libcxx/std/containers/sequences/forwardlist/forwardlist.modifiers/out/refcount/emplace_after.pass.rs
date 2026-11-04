@@ -47,6 +47,11 @@ impl CppEq for Emplaceable {
         EmplaceableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for Emplaceable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for Emplaceable {
     fn default() -> Self {
         { Emplaceable::new_1() }
@@ -69,6 +74,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -82,42 +92,55 @@ thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_Emplaceable__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<Emplaceable>,
-}
-impl min_pointer_Emplaceable__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_Emplaceable_ {}
+impl CppMove for min_allocator_Emplaceable_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_4() -> bool {
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((*i.borrow()) == unimplemented!());
+        let c: Value<std_forward_list_Emplaceable__std_allocator_Emplaceable__> = Rc::new(
+            RefCell::new(<std_forward_list_Emplaceable__std_allocator_Emplaceable__>::default()),
+        );
+        let i: Value<std__Fwd_list_iterator_Emplaceable_> = Rc::new(RefCell::new(
+            ({
+                let ___pos: std__Fwd_list_const_iterator_Emplaceable_ =
+                    ({ (*c.borrow()).cbefore_begin() });
+                (*c.borrow()).emplace_after(___pos)
+            }),
+        ));
+        assert!((*i.borrow()) == ({ (*c.borrow()).begin_25() }));
         assert!(
             ({
                 let _x: Value<Emplaceable> = Rc::new(RefCell::new(Emplaceable::new_1()));
-                EmplaceableImpl::operator_eq(&unimplemented!(), _x.as_pointer())
+                EmplaceableImpl::operator_eq(&({ (*c.borrow()).front_34() }), _x.as_pointer())
             })
         );
-        assert!((unimplemented!() == 1_isize));
-        (*i.borrow_mut()) = unimplemented!();
-        assert!((*i.borrow()) == libcc2rs::next_refcount(unimplemented!(), 1_isize));
+        assert!(
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_Emplaceable_ =
+                        ({ (*c.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_Emplaceable_ = ({ (*c.borrow()).end_27() });
+                    distance_5(___first, ___last)
+                }) == 1_isize)
+            })
+        );
+        (*i.borrow_mut()) = ({
+            let ___pos: std__Fwd_list_const_iterator_Emplaceable_ = ({ (*c.borrow()).cbegin() });
+            let ___args_1: Value<i32> = Rc::new(RefCell::new(1));
+            let ___args_2: Value<f64> = Rc::new(RefCell::new(2.5_f64));
+            (*c.borrow()).emplace_after(___pos, ___args_1.as_pointer(), ___args_2.as_pointer())
+        });
+        assert!(
+            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+        );
         assert!(
             ({
                 let _x: Value<Emplaceable> = Rc::new(RefCell::new(Emplaceable::new_1()));
-                EmplaceableImpl::operator_eq(&unimplemented!(), _x.as_pointer())
+                EmplaceableImpl::operator_eq(&({ (*c.borrow()).front_34() }), _x.as_pointer())
             })
         );
         assert!(
@@ -125,18 +148,36 @@ pub fn test_4() -> bool {
                 let _x: Value<Emplaceable> =
                     Rc::new(RefCell::new(Emplaceable::new_2({ 1 }, { 2.5_f64 })));
                 EmplaceableImpl::operator_eq(
-                    &libcc2rs::next_refcount(unimplemented!(), 1_isize).iter_deref(),
+                    &libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+                        .iter_deref(),
                     _x.as_pointer(),
                 )
             })
         );
-        assert!((unimplemented!() == 2_isize));
-        (*i.borrow_mut()) = unimplemented!();
-        assert!((*i.borrow()) == libcc2rs::next_refcount(unimplemented!(), 2_isize));
+        assert!(
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_Emplaceable_ =
+                        ({ (*c.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_Emplaceable_ = ({ (*c.borrow()).end_27() });
+                    distance_5(___first, ___last)
+                }) == 2_isize)
+            })
+        );
+        (*i.borrow_mut()) = ({
+            let ___pos: std__Fwd_list_const_iterator_Emplaceable_ =
+                libcc2rs::next_refcount(({ ({ (*c.borrow()).cbegin() }) }), 1_isize);
+            let ___args_1: Value<i32> = Rc::new(RefCell::new(2));
+            let ___args_2: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+            (*c.borrow()).emplace_after(___pos, ___args_1.as_pointer(), ___args_2.as_pointer())
+        });
+        assert!(
+            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
+        );
         assert!(
             ({
                 let _x: Value<Emplaceable> = Rc::new(RefCell::new(Emplaceable::new_1()));
-                EmplaceableImpl::operator_eq(&unimplemented!(), _x.as_pointer())
+                EmplaceableImpl::operator_eq(&({ (*c.borrow()).front_34() }), _x.as_pointer())
             })
         );
         assert!(
@@ -144,7 +185,8 @@ pub fn test_4() -> bool {
                 let _x: Value<Emplaceable> =
                     Rc::new(RefCell::new(Emplaceable::new_2({ 1 }, { 2.5_f64 })));
                 EmplaceableImpl::operator_eq(
-                    &libcc2rs::next_refcount(unimplemented!(), 1_isize).iter_deref(),
+                    &libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+                        .iter_deref(),
                     _x.as_pointer(),
                 )
             })
@@ -154,18 +196,35 @@ pub fn test_4() -> bool {
                 let _x: Value<Emplaceable> =
                     Rc::new(RefCell::new(Emplaceable::new_2({ 2 }, { 3.5_f64 })));
                 EmplaceableImpl::operator_eq(
-                    &libcc2rs::next_refcount(unimplemented!(), 2_isize).iter_deref(),
+                    &libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
+                        .iter_deref(),
                     _x.as_pointer(),
                 )
             })
         );
-        assert!((unimplemented!() == 3_isize));
-        (*i.borrow_mut()) = unimplemented!();
-        assert!((*i.borrow()) == libcc2rs::next_refcount(unimplemented!(), 1_isize));
+        assert!(
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_Emplaceable_ =
+                        ({ (*c.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_Emplaceable_ = ({ (*c.borrow()).end_27() });
+                    distance_5(___first, ___last)
+                }) == 3_isize)
+            })
+        );
+        (*i.borrow_mut()) = ({
+            let ___pos: std__Fwd_list_const_iterator_Emplaceable_ = ({ (*c.borrow()).cbegin() });
+            let ___args_1: Value<i32> = Rc::new(RefCell::new(3));
+            let ___args_2: Value<f64> = Rc::new(RefCell::new(4.5_f64));
+            (*c.borrow()).emplace_after(___pos, ___args_1.as_pointer(), ___args_2.as_pointer())
+        });
+        assert!(
+            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+        );
         assert!(
             ({
                 let _x: Value<Emplaceable> = Rc::new(RefCell::new(Emplaceable::new_1()));
-                EmplaceableImpl::operator_eq(&unimplemented!(), _x.as_pointer())
+                EmplaceableImpl::operator_eq(&({ (*c.borrow()).front_34() }), _x.as_pointer())
             })
         );
         assert!(
@@ -173,7 +232,8 @@ pub fn test_4() -> bool {
                 let _x: Value<Emplaceable> =
                     Rc::new(RefCell::new(Emplaceable::new_2({ 3 }, { 4.5_f64 })));
                 EmplaceableImpl::operator_eq(
-                    &libcc2rs::next_refcount(unimplemented!(), 1_isize).iter_deref(),
+                    &libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+                        .iter_deref(),
                     _x.as_pointer(),
                 )
             })
@@ -183,7 +243,8 @@ pub fn test_4() -> bool {
                 let _x: Value<Emplaceable> =
                     Rc::new(RefCell::new(Emplaceable::new_2({ 1 }, { 2.5_f64 })));
                 EmplaceableImpl::operator_eq(
-                    &libcc2rs::next_refcount(unimplemented!(), 2_isize).iter_deref(),
+                    &libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
+                        .iter_deref(),
                     _x.as_pointer(),
                 )
             })
@@ -193,30 +254,52 @@ pub fn test_4() -> bool {
                 let _x: Value<Emplaceable> =
                     Rc::new(RefCell::new(Emplaceable::new_2({ 2 }, { 3.5_f64 })));
                 EmplaceableImpl::operator_eq(
-                    &libcc2rs::next_refcount(unimplemented!(), 3_isize).iter_deref(),
+                    &libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 3_isize)
+                        .iter_deref(),
                     _x.as_pointer(),
                 )
             })
         );
-        assert!((unimplemented!() == 4_isize));
+        assert!(
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_Emplaceable_ =
+                        ({ (*c.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_Emplaceable_ = ({ (*c.borrow()).end_27() });
+                    distance_5(___first, ___last)
+                }) == 4_isize)
+            })
+        );
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((*i.borrow()) == unimplemented!());
+        let c: Value<std_forward_list_Emplaceable__min_allocator_Emplaceable__> = Rc::new(
+            RefCell::new(<std_forward_list_Emplaceable__min_allocator_Emplaceable__>::default()),
+        );
+        let i : Value<std___fwdlist__Iterator_false__min_pointer_Emplaceable__std_integral_constant_unsigned_long__0___ > = Rc::new(RefCell::new(( { let ___pos: std___fwdlist__Iterator_true__min_pointer_Emplaceable__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . cbefore_begin ( ) } )   ; (*c.borrow()) . emplace_after ( ___pos , ) } )  )) ;
+        assert!((*i.borrow()) == ({ (*c.borrow()).begin_25() }));
         assert!(
             ({
                 let _x: Value<Emplaceable> = Rc::new(RefCell::new(Emplaceable::new_1()));
-                EmplaceableImpl::operator_eq(&unimplemented!(), _x.as_pointer())
+                EmplaceableImpl::operator_eq(&({ (*c.borrow()).front_34() }), _x.as_pointer())
             })
         );
-        assert!((unimplemented!() == 1_isize));
-        (*i.borrow_mut()) = unimplemented!().clone();
-        assert!((*i.borrow()) == libcc2rs::next_refcount(unimplemented!(), 1_isize));
+        assert!(
+            ({
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_Emplaceable__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_Emplaceable__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . end_27 ( ) } )   ;
+                    distance_6(___first, ___last)
+                }) == 1_isize)
+            })
+        );
+        (*i.borrow_mut())  = ( { let ___pos: std___fwdlist__Iterator_true__min_pointer_Emplaceable__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . cbegin ( ) } )   ; let ___args_1 : Value<i32 > = Rc::new(RefCell::new(1 )); let ___args_2 : Value<f64 > = Rc::new(RefCell::new(2.5_f64 )); (*c.borrow()) . emplace_after ( ___pos , ___args_1.as_pointer() , ___args_2.as_pointer() , ) } )  .clone()  ;
+        assert!(
+            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+        );
         assert!(
             ({
                 let _x: Value<Emplaceable> = Rc::new(RefCell::new(Emplaceable::new_1()));
-                EmplaceableImpl::operator_eq(&unimplemented!(), _x.as_pointer())
+                EmplaceableImpl::operator_eq(&({ (*c.borrow()).front_34() }), _x.as_pointer())
             })
         );
         assert!(
@@ -224,18 +307,29 @@ pub fn test_4() -> bool {
                 let _x: Value<Emplaceable> =
                     Rc::new(RefCell::new(Emplaceable::new_2({ 1 }, { 2.5_f64 })));
                 EmplaceableImpl::operator_eq(
-                    &libcc2rs::next_refcount(unimplemented!(), 1_isize).iter_deref(),
+                    &libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+                        .iter_deref(),
                     _x.as_pointer(),
                 )
             })
         );
-        assert!((unimplemented!() == 2_isize));
-        (*i.borrow_mut()) = unimplemented!().clone();
-        assert!((*i.borrow()) == libcc2rs::next_refcount(unimplemented!(), 2_isize));
+        assert!(
+            ({
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_Emplaceable__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_Emplaceable__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . end_27 ( ) } )   ;
+                    distance_6(___first, ___last)
+                }) == 2_isize)
+            })
+        );
+        (*i.borrow_mut())  = ( { let ___pos: std___fwdlist__Iterator_true__min_pointer_Emplaceable__std_integral_constant_unsigned_long__0___   = libcc2rs::next_refcount(({ ( { (*c.borrow()) . cbegin ( ) } )   }), 1_isize )   ; let ___args_1 : Value<i32 > = Rc::new(RefCell::new(2 )); let ___args_2 : Value<f64 > = Rc::new(RefCell::new(3.5_f64 )); (*c.borrow()) . emplace_after ( ___pos , ___args_1.as_pointer() , ___args_2.as_pointer() , ) } )  .clone()  ;
+        assert!(
+            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
+        );
         assert!(
             ({
                 let _x: Value<Emplaceable> = Rc::new(RefCell::new(Emplaceable::new_1()));
-                EmplaceableImpl::operator_eq(&unimplemented!(), _x.as_pointer())
+                EmplaceableImpl::operator_eq(&({ (*c.borrow()).front_34() }), _x.as_pointer())
             })
         );
         assert!(
@@ -243,7 +337,8 @@ pub fn test_4() -> bool {
                 let _x: Value<Emplaceable> =
                     Rc::new(RefCell::new(Emplaceable::new_2({ 1 }, { 2.5_f64 })));
                 EmplaceableImpl::operator_eq(
-                    &libcc2rs::next_refcount(unimplemented!(), 1_isize).iter_deref(),
+                    &libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+                        .iter_deref(),
                     _x.as_pointer(),
                 )
             })
@@ -253,18 +348,29 @@ pub fn test_4() -> bool {
                 let _x: Value<Emplaceable> =
                     Rc::new(RefCell::new(Emplaceable::new_2({ 2 }, { 3.5_f64 })));
                 EmplaceableImpl::operator_eq(
-                    &libcc2rs::next_refcount(unimplemented!(), 2_isize).iter_deref(),
+                    &libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
+                        .iter_deref(),
                     _x.as_pointer(),
                 )
             })
         );
-        assert!((unimplemented!() == 3_isize));
-        (*i.borrow_mut()) = unimplemented!().clone();
-        assert!((*i.borrow()) == libcc2rs::next_refcount(unimplemented!(), 1_isize));
+        assert!(
+            ({
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_Emplaceable__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_Emplaceable__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . end_27 ( ) } )   ;
+                    distance_6(___first, ___last)
+                }) == 3_isize)
+            })
+        );
+        (*i.borrow_mut())  = ( { let ___pos: std___fwdlist__Iterator_true__min_pointer_Emplaceable__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . cbegin ( ) } )   ; let ___args_1 : Value<i32 > = Rc::new(RefCell::new(3 )); let ___args_2 : Value<f64 > = Rc::new(RefCell::new(4.5_f64 )); (*c.borrow()) . emplace_after ( ___pos , ___args_1.as_pointer() , ___args_2.as_pointer() , ) } )  .clone()  ;
+        assert!(
+            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+        );
         assert!(
             ({
                 let _x: Value<Emplaceable> = Rc::new(RefCell::new(Emplaceable::new_1()));
-                EmplaceableImpl::operator_eq(&unimplemented!(), _x.as_pointer())
+                EmplaceableImpl::operator_eq(&({ (*c.borrow()).front_34() }), _x.as_pointer())
             })
         );
         assert!(
@@ -272,7 +378,8 @@ pub fn test_4() -> bool {
                 let _x: Value<Emplaceable> =
                     Rc::new(RefCell::new(Emplaceable::new_2({ 3 }, { 4.5_f64 })));
                 EmplaceableImpl::operator_eq(
-                    &libcc2rs::next_refcount(unimplemented!(), 1_isize).iter_deref(),
+                    &libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 1_isize)
+                        .iter_deref(),
                     _x.as_pointer(),
                 )
             })
@@ -282,7 +389,8 @@ pub fn test_4() -> bool {
                 let _x: Value<Emplaceable> =
                     Rc::new(RefCell::new(Emplaceable::new_2({ 1 }, { 2.5_f64 })));
                 EmplaceableImpl::operator_eq(
-                    &libcc2rs::next_refcount(unimplemented!(), 2_isize).iter_deref(),
+                    &libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 2_isize)
+                        .iter_deref(),
                     _x.as_pointer(),
                 )
             })
@@ -292,12 +400,21 @@ pub fn test_4() -> bool {
                 let _x: Value<Emplaceable> =
                     Rc::new(RefCell::new(Emplaceable::new_2({ 2 }, { 3.5_f64 })));
                 EmplaceableImpl::operator_eq(
-                    &libcc2rs::next_refcount(unimplemented!(), 3_isize).iter_deref(),
+                    &libcc2rs::next_refcount(({ ({ (*c.borrow()).begin_25() }) }), 3_isize)
+                        .iter_deref(),
                     _x.as_pointer(),
                 )
             })
         );
-        assert!((unimplemented!() == 4_isize));
+        assert!(
+            ({
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_Emplaceable__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_Emplaceable__std_integral_constant_unsigned_long__0___   = ( { (*c.borrow()) . end_27 ( ) } )   ;
+                    distance_6(___first, ___last)
+                }) == 4_isize)
+            })
+        );
     }
     return true;
 }
@@ -324,6 +441,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     assert!(({ test_4() }));
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_Emplaceable__std_integral_constant_unsigned_long__0__;
 pub trait EmplaceableImpl {
     fn copy_assign(&self, _a0: Ptr<Emplaceable>) -> Ptr<Emplaceable> {
         unimplemented!()
@@ -370,79 +490,6 @@ pub trait min_allocator_Emplaceable_Impl {
     }
 }
 impl min_allocator_Emplaceable_Impl for Ptr<min_allocator_Emplaceable_> {}
-pub trait min_pointer_Emplaceable__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<Emplaceable> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<Emplaceable> {
-        unimplemented!()
-    }
-    fn operator_inc_8(
-        &self,
-    ) -> Ptr<min_pointer_Emplaceable__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_9(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_Emplaceable__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_10(
-        &self,
-    ) -> Ptr<min_pointer_Emplaceable__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_11(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_Emplaceable__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_Emplaceable__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_Emplaceable__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_Emplaceable__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_Emplaceable__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<Emplaceable> {
-        unimplemented!()
-    }
-}
-impl min_pointer_Emplaceable__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_Emplaceable__std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
-{
-}
 pub fn __cpp2rust_init_globals() {
     let _ = outstanding_bytes_0.with(|_| ());
     let _ = alloc_count_1.with(|_| ());

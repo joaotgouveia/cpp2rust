@@ -27,10 +27,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let mut o: () = 5_();
-    let mut sz: () = o;
-    assert!((sz == 5_()));
-    let mut o2: () = sz;
+    let mut o: i64 = 5_i64;
+    let mut sz: i64 = o;
+    assert!((sz == 5_i64));
+    let mut o2: i64 = sz;
     assert!((o == o2));
     return 0;
 }

@@ -34,8 +34,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new(Box::new([25_f64, 62.5_f64, 12.5_f64, 5_f64])));
         let mut Np: usize = (::std::mem::size_of::<[f64; 4]>() as usize)
             .wrapping_div((::std::mem::size_of::<f64>() as usize));
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 17_()));
+        let d: Value<std_piecewise_linear_distribution_double_> = Rc::new(RefCell::new(
+            std_piecewise_linear_distribution_double_::new_1(
+                { (b.as_pointer() as Ptr<f64>) },
+                { (b.as_pointer() as Ptr<f64>).offset((Np) as isize) },
+                { (p.as_pointer() as Ptr<f64>) },
+            ),
+        ));
+        assert!(({ (({ (*d.borrow()).max() }) == 17_f64) }));
     }
     return 0;
 }

@@ -11,95 +11,144 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int_ptr__int_ptr_ {}
+impl CppMove for test_macros_detail_is_same_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_int_ptr__const_int_ptr_ {}
+impl CppMove for test_macros_detail_is_same_const_int_ptr__const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_float_ptr__float_ptr_ {}
+impl CppMove for test_macros_detail_is_same_float_ptr__float_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_float_ptr__const_float_ptr_ {}
+impl CppMove for test_macros_detail_is_same_const_float_ptr__const_float_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_4 = u32;
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_double_ptr__double_ptr_ {}
+impl CppMove for test_macros_detail_is_same_double_ptr__double_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_5 = u32;
 pub const anon_5_value: anon_5 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_double_ptr__const_double_ptr_ {}
+impl CppMove for test_macros_detail_is_same_const_double_ptr__const_double_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_6 = u32;
 pub const anon_6_value: anon_6 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_X_ptr__X_ptr_ {}
+impl CppMove for test_macros_detail_is_same_X_ptr__X_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_7 = u32;
 pub const anon_7_value: anon_7 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_X_ptr__const_X_ptr_ {}
+impl CppMove for test_macros_detail_is_same_const_X_ptr__const_X_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct X {}
+impl CppMove for X {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_contract_8() {
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<std_optional_int_> = Rc::new(RefCell::new(<std_optional_int_>::default()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
 pub fn test_contract_9() {
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<std_optional_float_> = Rc::new(RefCell::new(<std_optional_float_>::default()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
 pub fn test_contract_10() {
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<std_optional_double_> = Rc::new(RefCell::new(<std_optional_double_>::default()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
 pub fn test_contract_11() {
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<std_optional_X_> = Rc::new(RefCell::new(<std_optional_X_>::default()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
 pub fn test_contract_12() {
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<std_optional_const_int_> =
+        Rc::new(RefCell::new(<std_optional_const_int_>::default()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
 pub fn test_contract_13() {
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<std_optional_const_float_> =
+        Rc::new(RefCell::new(<std_optional_const_float_>::default()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
 pub fn test_contract_14() {
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<std_optional_const_double_> =
+        Rc::new(RefCell::new(<std_optional_const_double_>::default()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
 pub fn test_contract_15() {
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<std_optional_const_X_> =
+        Rc::new(RefCell::new(<std_optional_const_X_>::default()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -114,12 +163,12 @@ pub fn test_16() -> bool {
     ({ test_contract_13() });
     ({ test_contract_14() });
     ({ test_contract_15() });
-    let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let opt: Value<std_optional_X_> = Rc::new(RefCell::new(<X>::default()));
     {
-        assert!((({ XImpl::test_1(&unimplemented!(),) }) == 3));
-        assert!((({ XImpl::test_2(&unimplemented!(),) }) == 4));
-        assert!((unimplemented!() == (unimplemented!())));
-        assert!((unimplemented!() == (unimplemented!())));
+        assert!((({ XImpl::test_1(&opt.as_pointer(),) }) == 3));
+        assert!((({ XImpl::test_2(&opt.as_pointer(),) }) == 4));
+        assert!(({ (({ (*opt.borrow()).operator_arrow_16() }) == (opt.as_pointer())) }));
+        assert!(({ (({ (*opt.borrow()).operator_arrow_15() }) == (opt.as_pointer())) }));
     }
     return true;
 }

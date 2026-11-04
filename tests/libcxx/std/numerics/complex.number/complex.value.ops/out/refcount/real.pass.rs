@@ -7,16 +7,17 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
-    let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as f64) == 1.5_f64));
-}
-pub fn test_1() {
-    let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 1.5_f64));
+    let z: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
+    assert!(((({ real_1(z.as_pointer(),) }) as f64) == 1.5_f64));
 }
 pub fn test_2() {
-    let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 1.5_f64));
+    let z: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+    assert!((({ real_3(z.as_pointer(),) }) == 1.5_f64));
+}
+pub fn test_4() {
+    let z: Value<std_complex_long_double_> =
+        Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+    assert!((({ real_5(z.as_pointer(),) }) == 1.5_f64));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -39,8 +40,8 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
-    ({ test_1() });
     ({ test_2() });
+    ({ test_4() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

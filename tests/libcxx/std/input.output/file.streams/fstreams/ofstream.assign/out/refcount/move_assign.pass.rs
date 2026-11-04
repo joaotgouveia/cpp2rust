@@ -18,7 +18,7 @@ pub fn get_temp_file_name_0() -> Vec<i8> {
         std::process::abort();
     }
     FdRegistry::close(FD);
-    return std::mem::take(&mut (*Name.borrow_mut()));
+    return ({ std::mem::take(&mut (*Name.borrow_mut())) });
 }
 pub fn glibc_version_less_than_1(mut version: Ptr<i8>) -> bool {
     let test_version: Value<Vec<i8>> = Rc::new(RefCell::new({
@@ -70,7 +70,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         unimplemented!();
     }
     {
-        let fs: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
+        let fs: Value<::std::fs::File> = Rc::new(RefCell::new(
+            ::std::fs::File::open(temp.decay().to_string()).expect("Failed to open file"),
+        ));
         let mut x: f64 = 0_f64;
         unimplemented!();
         assert!((x == 3.25_f64));
@@ -85,7 +87,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         unimplemented!();
     }
     {
-        let fs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let fs: Value<()> = Rc::new(RefCell::new(
+            ::std::fs::File::open(temp.decay().to_string()).expect("Failed to open file"),
+        ));
         let mut x: f64 = 0_f64;
         unimplemented!();
         assert!((x == 3.25_f64));

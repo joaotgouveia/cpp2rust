@@ -9,20 +9,11 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct not_an_iterator {}
-thread_local!(
-    pub static value_0: Value<bool> = Rc::new(RefCell::new((2usize == 1_usize)));
-);
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(2)]
-struct has_value_type_std_iterator_traits_not_an_iterator___two {
-    #[offset(0)]
-    pub lx: i8,
-    #[offset(1)]
-    pub lxx: i8,
+impl CppMove for not_an_iterator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct has_value_type_std_iterator_traits_not_an_iterator__ {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -46,6 +37,4 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "!(has_value_type<It>::value)");;
     return 0;
 }
-pub fn __cpp2rust_init_globals() {
-    let _ = value_0.with(|_| ());
-}
+pub fn __cpp2rust_init_globals() {}

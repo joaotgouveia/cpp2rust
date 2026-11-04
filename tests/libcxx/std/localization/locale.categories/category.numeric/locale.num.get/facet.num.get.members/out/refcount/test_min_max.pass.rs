@@ -65,12 +65,12 @@ pub fn check_limits_8() {
     assert!(((new_minv as i32) == (minv as i32)));
     assert!(((new_maxv as i32) == (maxv as i32)));
     maxs.decay()
-        .offset(((*maxs.borrow()).len() - 1).wrapping_sub(1_usize) as isize)
+        .offset(({ ((*maxs.borrow()).len() - 1).wrapping_sub(1_usize) }) as isize)
         .with_mut(|__v| __v.postfix_inc());
     assert!(({ check_stream_failed_0(maxs.as_pointer(),) }));
     {
         mins.decay()
-            .offset(((*mins.borrow()).len() - 1).wrapping_sub(1_usize) as isize)
+            .offset(({ ((*mins.borrow()).len() - 1).wrapping_sub(1_usize) }) as isize)
             .with_mut(|__v| __v.postfix_inc());
         assert!(({ check_stream_failed_0(mins.as_pointer(),) }));
     }
@@ -94,7 +94,7 @@ pub fn check_limits_9() {
     assert!(((new_minv as i32) == (minv as i32)));
     assert!(((new_maxv as i32) == (maxv as i32)));
     maxs.decay()
-        .offset(((*maxs.borrow()).len() - 1).wrapping_sub(1_usize) as isize)
+        .offset(({ ((*maxs.borrow()).len() - 1).wrapping_sub(1_usize) }) as isize)
         .with_mut(|__v| __v.postfix_inc());
     assert!(({ check_stream_failed_1(maxs.as_pointer(),) }));
     {}
@@ -118,12 +118,12 @@ pub fn check_limits_10() {
     assert!((new_minv == minv));
     assert!((new_maxv == maxv));
     maxs.decay()
-        .offset(((*maxs.borrow()).len() - 1).wrapping_sub(1_usize) as isize)
+        .offset(({ ((*maxs.borrow()).len() - 1).wrapping_sub(1_usize) }) as isize)
         .with_mut(|__v| __v.postfix_inc());
     assert!(({ check_stream_failed_2(maxs.as_pointer(),) }));
     {
         mins.decay()
-            .offset(((*mins.borrow()).len() - 1).wrapping_sub(1_usize) as isize)
+            .offset(({ ((*mins.borrow()).len() - 1).wrapping_sub(1_usize) }) as isize)
             .with_mut(|__v| __v.postfix_inc());
         assert!(({ check_stream_failed_2(mins.as_pointer(),) }));
     }
@@ -147,7 +147,7 @@ pub fn check_limits_11() {
     assert!((new_minv == minv));
     assert!((new_maxv == maxv));
     maxs.decay()
-        .offset(((*maxs.borrow()).len() - 1).wrapping_sub(1_usize) as isize)
+        .offset(({ ((*maxs.borrow()).len() - 1).wrapping_sub(1_usize) }) as isize)
         .with_mut(|__v| __v.postfix_inc());
     assert!(({ check_stream_failed_3(maxs.as_pointer(),) }));
     {}
@@ -171,12 +171,12 @@ pub fn check_limits_12() {
     assert!((new_minv == minv));
     assert!((new_maxv == maxv));
     maxs.decay()
-        .offset(((*maxs.borrow()).len() - 1).wrapping_sub(1_usize) as isize)
+        .offset(({ ((*maxs.borrow()).len() - 1).wrapping_sub(1_usize) }) as isize)
         .with_mut(|__v| __v.postfix_inc());
     assert!(({ check_stream_failed_4(maxs.as_pointer(),) }));
     {
         mins.decay()
-            .offset(((*mins.borrow()).len() - 1).wrapping_sub(1_usize) as isize)
+            .offset(({ ((*mins.borrow()).len() - 1).wrapping_sub(1_usize) }) as isize)
             .with_mut(|__v| __v.postfix_inc());
         assert!(({ check_stream_failed_4(mins.as_pointer(),) }));
     }
@@ -200,7 +200,7 @@ pub fn check_limits_13() {
     assert!((new_minv == minv));
     assert!((new_maxv == maxv));
     maxs.decay()
-        .offset(((*maxs.borrow()).len() - 1).wrapping_sub(1_usize) as isize)
+        .offset(({ ((*maxs.borrow()).len() - 1).wrapping_sub(1_usize) }) as isize)
         .with_mut(|__v| __v.postfix_inc());
     assert!(({ check_stream_failed_5(maxs.as_pointer(),) }));
     {}
@@ -224,12 +224,12 @@ pub fn check_limits_14() {
     assert!((new_minv == minv));
     assert!((new_maxv == maxv));
     maxs.decay()
-        .offset(((*maxs.borrow()).len() - 1).wrapping_sub(1_usize) as isize)
+        .offset(({ ((*maxs.borrow()).len() - 1).wrapping_sub(1_usize) }) as isize)
         .with_mut(|__v| __v.postfix_inc());
     assert!(({ check_stream_failed_6(maxs.as_pointer(),) }));
     {
         mins.decay()
-            .offset(((*mins.borrow()).len() - 1).wrapping_sub(1_usize) as isize)
+            .offset(({ ((*mins.borrow()).len() - 1).wrapping_sub(1_usize) }) as isize)
             .with_mut(|__v| __v.postfix_inc());
         assert!(({ check_stream_failed_6(mins.as_pointer(),) }));
     }
@@ -253,7 +253,7 @@ pub fn check_limits_15() {
     assert!((new_minv == minv));
     assert!((new_maxv == maxv));
     maxs.decay()
-        .offset(((*maxs.borrow()).len() - 1).wrapping_sub(1_usize) as isize)
+        .offset(({ ((*maxs.borrow()).len() - 1).wrapping_sub(1_usize) }) as isize)
         .with_mut(|__v| __v.postfix_inc());
     assert!(({ check_stream_failed_7(maxs.as_pointer(),) }));
     {}

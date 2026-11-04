@@ -63,6 +63,11 @@ impl Union {
         this.reinterpret_cast()
     }
 }
+impl CppMove for Union {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Union {
     fn default() -> Self {
         Union {

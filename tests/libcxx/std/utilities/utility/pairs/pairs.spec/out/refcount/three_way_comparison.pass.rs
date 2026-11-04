@@ -11,22 +11,39 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_strong_ordering__std_strong_ordering_ {}
+impl CppMove for test_macros_detail_is_same_std_strong_ordering__std_strong_ordering_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_partial_ordering__std_partial_ordering_ {}
+impl CppMove for test_macros_detail_is_same_std_partial_ordering__std_partial_ordering_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_weak_ordering__std_weak_ordering_ {}
+impl CppMove for test_macros_detail_is_same_std_weak_ordering__std_weak_ordering_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_3() -> bool {
     {
         const _: () = assert!(true, "");;
-        assert!((unimplemented!()) == std::cmp::Ordering::Less);
-        assert!((unimplemented!()) == std::cmp::Ordering::Greater);
-        assert!((unimplemented!()) == std::cmp::Ordering::Equal);
+        assert!((unimplemented!()) == ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }));
+        assert!(
+            (unimplemented!()) == ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) })
+        );
+        assert!((unimplemented!()) == ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }));
     }
     {
         const _: () = assert!(true, "");;
@@ -42,9 +59,11 @@ pub fn test_3() -> bool {
     }
     {
         const _: () = assert!(true, "");;
-        assert!((unimplemented!()) == std::cmp::Ordering::Less);
-        assert!((unimplemented!()) == std::cmp::Ordering::Greater);
-        assert!((unimplemented!()) == std::cmp::Ordering::Equal);
+        assert!((unimplemented!()) == ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }));
+        assert!(
+            (unimplemented!()) == ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) })
+        );
+        assert!((unimplemented!()) == ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }));
     }
     {
         const _: () = assert!(true, "");;
@@ -53,7 +72,7 @@ pub fn test_3() -> bool {
         assert!(unimplemented!());
     }
     {
-        let mut nan: f64 = unimplemented!();
+        let mut nan: f64 = nan_f64;
         const _: () = assert!(true, "");;
         assert!(unimplemented!());
         assert!(unimplemented!());
@@ -64,7 +83,7 @@ pub fn test_3() -> bool {
         assert!(unimplemented!());
     }
     {
-        let mut nan: f64 = unimplemented!();
+        let mut nan: f64 = nan_f64;
         const _: () = assert!(true, "");;
         assert!(unimplemented!());
         assert!(unimplemented!());
@@ -82,11 +101,11 @@ pub fn test_3() -> bool {
     }
     {
         {
-            let mut nan: f64 = unimplemented!();
+            let mut nan: f64 = nan_f64;
             assert!(unimplemented!());
         }
         {
-            let mut nan: f64 = unimplemented!();
+            let mut nan: f64 = nan_f64;
             assert!(unimplemented!());
         }
     }
@@ -108,12 +127,27 @@ impl CppEq for NoSpaceship_4 {
         NoSpaceship_4Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for NoSpaceship_4 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoRelative_5 {}
+impl CppMove for NoRelative_5 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoLessThan_6 {}
+impl CppMove for NoLessThan_6 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

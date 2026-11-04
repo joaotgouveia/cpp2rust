@@ -6,71 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() {
-    {
-        const _: () = assert!(true, "");;
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "sv1.size() == 0");;
-        const _: () = assert!(true, "sv1.empty()");;
-    }
-    {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_()));
-        assert!(unimplemented!());
-    }
-}
-pub fn test_1() {
-    {
-        const _: () = assert!(true, "");;
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "sv1.size() == 0");;
-        const _: () = assert!(true, "sv1.empty()");;
-    }
-    {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_()));
-        assert!(unimplemented!());
-    }
-}
-pub fn test_2() {
-    {
-        const _: () = assert!(true, "");;
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "sv1.size() == 0");;
-        const _: () = assert!(true, "sv1.empty()");;
-    }
-    {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_()));
-        assert!(unimplemented!());
-    }
-}
-pub fn test_3() {
-    {
-        const _: () = assert!(true, "");;
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "sv1.size() == 0");;
-        const _: () = assert!(true, "sv1.empty()");;
-    }
-    {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_()));
-        assert!(unimplemented!());
-    }
-}
-pub fn test_4() {
-    {
-        const _: () = assert!(true, "");;
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "sv1.size() == 0");;
-        const _: () = assert!(true, "sv1.empty()");;
-    }
-    {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_()));
-        assert!(unimplemented!());
-    }
-}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

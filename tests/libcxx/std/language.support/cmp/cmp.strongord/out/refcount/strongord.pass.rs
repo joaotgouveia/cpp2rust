@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_strong_ordering__std_strong_ordering_ {}
+impl CppMove for test_macros_detail_is_same_std_strong_ordering__std_strong_ordering_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn DoNotOptimize_1(value: Ptr<Ptr<std::cmp::Ordering>>) -> Ptr<Ptr<std::cmp::Ordering>> {
     b"";
     return (value).clone();
@@ -21,27 +26,27 @@ thread_local!(
 pub fn test_static_members_3() {
     ({
         let _value: Value<Ptr<std::cmp::Ordering>> =
-            Rc::new(RefCell::new((std::cmp::Ordering::Less)));
+            Rc::new(RefCell::new((libcc2rs::strong_ordering_less())));
         DoNotOptimize_1(_value.as_pointer())
     });
     ({
         let _value: Value<Ptr<std::cmp::Ordering>> =
-            Rc::new(RefCell::new((std::cmp::Ordering::Equal)));
+            Rc::new(RefCell::new((libcc2rs::strong_ordering_equal())));
         DoNotOptimize_1(_value.as_pointer())
     });
     ({
         let _value: Value<Ptr<std::cmp::Ordering>> =
-            Rc::new(RefCell::new((std::cmp::Ordering::Equal)));
+            Rc::new(RefCell::new((libcc2rs::strong_ordering_equivalent())));
         DoNotOptimize_1(_value.as_pointer())
     });
     ({
         let _value: Value<Ptr<std::cmp::Ordering>> =
-            Rc::new(RefCell::new((std::cmp::Ordering::Greater)));
+            Rc::new(RefCell::new((libcc2rs::strong_ordering_greater())));
         DoNotOptimize_1(_value.as_pointer())
     });
 }
 pub fn test_signatures_4() {
-    let Eq: Ptr<std::cmp::Ordering> = std::cmp::Ordering::Equal;
+    let Eq: Ptr<std::cmp::Ordering> = libcc2rs::strong_ordering_equivalent();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -60,7 +65,7 @@ pub fn test_signatures_4() {
     const _: () = assert!(true, "");;
 }
 pub fn test_equality_5() {
-    let StrongEq: Ptr<std::cmp::Ordering> = std::cmp::Ordering::Equal;
+    let StrongEq: Ptr<std::cmp::Ordering> = libcc2rs::strong_ordering_equal();
     let PartialEq: Ptr<()> = unimplemented!();
     assert!(unimplemented!());
     let WeakEq: Ptr<()> = unimplemented!();
@@ -72,17 +77,23 @@ pub fn test_conversion_6() -> bool {
         "std::is_convertible<const std::strong_ordering&,\n      std::partial_ordering>::value"
     );;
     {
-        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ordering::Equal));
+        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+            ({ (*libcc2rs::strong_ordering_equivalent().upgrade().deref()) }),
+        ));
         let WV: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(unimplemented!());
     }
     {
-        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ordering::Less));
+        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        ));
         let WV: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(unimplemented!());
     }
     {
-        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ordering::Greater));
+        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        ));
         let WV: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(unimplemented!());
     }
@@ -91,51 +102,57 @@ pub fn test_conversion_6() -> bool {
         "std::is_convertible<const std::strong_ordering&,\n      std::weak_ordering>::value"
     );;
     {
-        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ordering::Equal));
+        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+            ({ (*libcc2rs::strong_ordering_equivalent().upgrade().deref()) }),
+        ));
         let WV: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(unimplemented!());
     }
     {
-        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ordering::Less));
+        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        ));
         let WV: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(unimplemented!());
     }
     {
-        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ordering::Greater));
+        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        ));
         let WV: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(unimplemented!());
     }
     return true;
 }
 pub fn test_constexpr_7() -> bool {
-    let Eq: Ptr<std::cmp::Ordering> = std::cmp::Ordering::Equal;
-    let Equiv: Ptr<std::cmp::Ordering> = std::cmp::Ordering::Equal;
-    let Less: Ptr<std::cmp::Ordering> = std::cmp::Ordering::Less;
-    let Greater: Ptr<std::cmp::Ordering> = std::cmp::Ordering::Greater;
+    let Eq: Ptr<std::cmp::Ordering> = libcc2rs::strong_ordering_equal();
+    let Equiv: Ptr<std::cmp::Ordering> = libcc2rs::strong_ordering_equivalent();
+    let Less: Ptr<std::cmp::Ordering> = libcc2rs::strong_ordering_less();
+    let Greater: Ptr<std::cmp::Ordering> = libcc2rs::strong_ordering_greater();
     let TestCases: Value<Box<[anon_8]>> = Rc::new(RefCell::new(Box::new([
         anon_8 {
-            Value: (*Eq.upgrade().deref()),
+            Value: ({ (*Eq.upgrade().deref()) }),
             ExpectEq: true,
             ExpectNeq: false,
             ExpectLess: false,
             ExpectGreater: false,
         },
         anon_8 {
-            Value: (*Equiv.upgrade().deref()),
+            Value: ({ (*Equiv.upgrade().deref()) }),
             ExpectEq: true,
             ExpectNeq: false,
             ExpectLess: false,
             ExpectGreater: false,
         },
         anon_8 {
-            Value: (*Less.upgrade().deref()),
+            Value: ({ (*Less.upgrade().deref()) }),
             ExpectEq: false,
             ExpectNeq: true,
             ExpectLess: true,
             ExpectGreater: false,
         },
         anon_8 {
-            Value: (*Greater.upgrade().deref()),
+            Value: ({ (*Greater.upgrade().deref()) }),
             ExpectEq: false,
             ExpectNeq: true,
             ExpectLess: false,
@@ -148,24 +165,33 @@ pub fn test_constexpr_7() -> bool {
     ) {
         let mut TC: anon_8 = (*TC.upgrade().deref()).clone();
         let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(TC.Value));
-        assert!(((((*V.borrow()) == std::cmp::Ordering::Equal) as i32) == (TC.ExpectEq as i32)));
-        assert!(((((*V.borrow()) == std::cmp::Ordering::Equal) as i32) == (TC.ExpectEq as i32)));
         assert!(
-            (((!((*V.borrow()) == std::cmp::Ordering::Equal)) as i32) == (TC.ExpectNeq as i32))
+            (((({ (*V.borrow()) }) == std::cmp::Ordering::Equal) as i32) == (TC.ExpectEq as i32))
         );
         assert!(
-            (((!((*V.borrow()) == std::cmp::Ordering::Equal)) as i32) == (TC.ExpectNeq as i32))
-        );
-        assert!(((((*V.borrow()) == std::cmp::Ordering::Less) as i32) == (TC.ExpectLess as i32)));
-        assert!(
-            ((((*V.borrow()) == std::cmp::Ordering::Greater) as i32) == (TC.ExpectGreater as i32))
+            (((({ (*V.borrow()) }) == std::cmp::Ordering::Equal) as i32) == (TC.ExpectEq as i32))
         );
         assert!(
-            ((((*V.borrow()) != std::cmp::Ordering::Greater) as i32)
+            (((!(({ (*V.borrow()) }) == std::cmp::Ordering::Equal)) as i32)
+                == (TC.ExpectNeq as i32))
+        );
+        assert!(
+            (((!(({ (*V.borrow()) }) == std::cmp::Ordering::Equal)) as i32)
+                == (TC.ExpectNeq as i32))
+        );
+        assert!(
+            (((({ (*V.borrow()) }) == std::cmp::Ordering::Less) as i32) == (TC.ExpectLess as i32))
+        );
+        assert!(
+            (((({ (*V.borrow()) }) == std::cmp::Ordering::Greater) as i32)
+                == (TC.ExpectGreater as i32))
+        );
+        assert!(
+            (((({ (*V.borrow()) }) != std::cmp::Ordering::Greater) as i32)
                 == (((TC.ExpectLess) || (TC.ExpectEq)) as i32))
         );
         assert!(
-            ((((*V.borrow()) != std::cmp::Ordering::Less) as i32)
+            (((({ (*V.borrow()) }) != std::cmp::Ordering::Less) as i32)
                 == (((TC.ExpectGreater) || (TC.ExpectEq)) as i32))
         );
         assert!((((unimplemented!()) as i32) == (TC.ExpectGreater as i32)));
@@ -181,15 +207,15 @@ pub fn test_constexpr_7() -> bool {
     };
     let SpaceshipTestCases: Value<Box<[anon_10]>> = Rc::new(RefCell::new(Box::new([
         anon_10 {
-            Value: std::cmp::Ordering::Equal,
+            Value: ({ (*libcc2rs::strong_ordering_equivalent().upgrade().deref()) }),
             Expect: ExpectRes_9_ER_Equiv,
         },
         anon_10 {
-            Value: std::cmp::Ordering::Less,
+            Value: ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
             Expect: ExpectRes_9_ER_Less,
         },
         anon_10 {
-            Value: std::cmp::Ordering::Greater,
+            Value: ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
             Expect: ExpectRes_9_ER_Greater,
         },
     ])));
@@ -202,16 +228,16 @@ pub fn test_constexpr_7() -> bool {
         'switch: {
             match { (TC.Expect as i32) } {
                 __v if __v == (ExpectRes_9_ER_Equiv as i32) => {
-                    assert!((*Res.borrow()) == std::cmp::Ordering::Equal);
-                    assert!((*Res.borrow()) == std::cmp::Ordering::Equal);
+                    assert!(({ (*Res.borrow()) }) == std::cmp::Ordering::Equal);
+                    assert!(({ (*Res.borrow()) }) == std::cmp::Ordering::Equal);
                     break 'switch;
                 }
                 __v if __v == (ExpectRes_9_ER_Less as i32) => {
-                    assert!((*Res.borrow()) == std::cmp::Ordering::Less);
+                    assert!(({ (*Res.borrow()) }) == std::cmp::Ordering::Less);
                     break 'switch;
                 }
                 __v if __v == (ExpectRes_9_ER_Greater as i32) => {
-                    assert!((*Res.borrow()) == std::cmp::Ordering::Greater);
+                    assert!(({ (*Res.borrow()) }) == std::cmp::Ordering::Greater);
                     break 'switch;
                 }
                 _ => {}
@@ -274,6 +300,11 @@ pub struct anon_8 {
     #[offset(4)]
     pub ExpectGreater: bool,
 }
+impl CppMove for anon_8 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type ExpectRes_9 = u32;
 pub const ExpectRes_9_ER_Greater: ExpectRes_9 = 0;
 pub const ExpectRes_9_ER_Less: ExpectRes_9 = 1;
@@ -286,6 +317,11 @@ pub struct anon_10 {
     pub Value: std::cmp::Ordering,
     #[offset(4)]
     pub Expect: ExpectRes_9,
+}
+impl CppMove for anon_10 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

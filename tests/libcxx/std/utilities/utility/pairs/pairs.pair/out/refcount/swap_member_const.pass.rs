@@ -9,9 +9,19 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct SwapMayThrow_false_ {}
+impl CppMove for SwapMayThrow_false_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct SwapMayThrow_true_ {}
+impl CppMove for SwapMayThrow_true_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "ConstMemberSwapNoexcept<std::pair<SwapMayThrow<false>, SwapMayThrow<false>>>"
@@ -37,6 +47,11 @@ pub struct ConstSwappable {
     #[offset(0)]
     pub i: i32,
 }
+impl CppMove for ConstSwappable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_1() -> bool {
     {
         let p1: Value<(Value<ConstSwappable>, Value<ConstSwappable>)> = Rc::new(RefCell::new((
@@ -47,24 +62,28 @@ pub fn test_1() -> bool {
             Rc::new(RefCell::new(ConstSwappable { i: 2 })),
             Rc::new(RefCell::new(ConstSwappable { i: 3 })),
         )));
-        unimplemented!();
-        assert!(({ (*(*p1.borrow()).0.borrow()).i } == 2));
-        assert!(({ (*(*p1.borrow()).1.borrow()).i } == 3));
-        assert!(({ (*(*p2.borrow()).0.borrow()).i } == 0));
-        assert!(({ (*(*p2.borrow()).1.borrow()).i } == 1));
+        ({ (*p1.borrow()).swap_5(p2.as_pointer()) });
+        assert!(({ ({ (*(*p1.borrow()).0.borrow()).i } == 2) }));
+        assert!(({ ({ (*(*p1.borrow()).1.borrow()).i } == 3) }));
+        assert!(({ ({ (*(*p2.borrow()).0.borrow()).i } == 0) }));
+        assert!(({ ({ (*(*p2.borrow()).1.borrow()).i } == 1) }));
     }
     {
-        let mut i1: i32 = 0;
-        let mut i2: i32 = 1;
-        let mut i3: i32 = 2;
-        let mut i4: i32 = 3;
-        let p1: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(unimplemented!()));
-        let p2: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((((*p1.borrow()).0.borrow().clone().read()) == 2));
-        assert!((((*p1.borrow()).1.borrow().clone().read()) == 3));
-        assert!((((*p2.borrow()).0.borrow().clone().read()) == 0));
-        assert!((((*p2.borrow()).1.borrow().clone().read()) == 1));
+        let i1: Value<i32> = Rc::new(RefCell::new(0));
+        let i2: Value<i32> = Rc::new(RefCell::new(1));
+        let i3: Value<i32> = Rc::new(RefCell::new(2));
+        let i4: Value<i32> = Rc::new(RefCell::new(3));
+        let p1: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(
+            std_pair_int_ref__int_ref_::new_1({ i1.as_pointer() }, { i2.as_pointer() }),
+        ));
+        let p2: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(
+            std_pair_int_ref__int_ref_::new_1({ i3.as_pointer() }, { i4.as_pointer() }),
+        ));
+        ({ (*p1.borrow()).swap_5(p2.as_pointer()) });
+        assert!(({ (((*p1.borrow()).0.borrow().clone().read()) == 2) }));
+        assert!(({ (((*p1.borrow()).1.borrow().clone().read()) == 3) }));
+        assert!(({ (((*p2.borrow()).0.borrow().clone().read()) == 0) }));
+        assert!(({ (((*p2.borrow()).1.borrow().clone().read()) == 1) }));
     }
     return true;
 }

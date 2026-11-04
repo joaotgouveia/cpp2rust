@@ -6,9 +6,6 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn alloc_max_size_0(a: Ptr<()>) -> () {
-    return unimplemented!();
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(40)]
 pub struct test_allocator_statistics {
@@ -33,6 +30,11 @@ pub struct test_allocator_statistics {
     #[offset(36)]
     pub converted: i32,
 }
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_statistics {
     fn default() -> Self {
         {
@@ -52,22 +54,27 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_1: Value<i32> = Rc::new(RefCell::new(-1_i32));
+    pub static destructed_value_0: Value<i32> = Rc::new(RefCell::new(-1_i32));
 );
 thread_local!(
-    pub static moved_value_2: Value<i32> = Rc::new(RefCell::new(2147483647));
+    pub static moved_value_1: Value<i32> = Rc::new(RefCell::new(2147483647));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
-pub fn operator_eq_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn operator_eq_2(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_4(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+pub fn operator_ne_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_3(_x, _y)
+        operator_eq_2(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -127,7 +134,7 @@ impl test_allocator_void_ {
 }
 impl CppEq for test_allocator_void_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_3(__lhs.clone(), __rhs.clone())
+        operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
 impl Clone for test_allocator_void_ {
@@ -138,6 +145,11 @@ impl Clone for test_allocator_void_ {
             stats_: self.stats_.clone(),
         }));
         test_allocator_void_::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for test_allocator_void_ {
@@ -154,6 +166,11 @@ impl Default for test_allocator_void_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -178,6 +195,11 @@ pub struct limited_alloc_handle_10_ {
     #[byte_size(8)]
     pub last_alloc_: AnyPtr,
 }
+impl CppMove for limited_alloc_handle_10_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for limited_alloc_handle_10_ {
     fn default() -> Self {
         {
@@ -197,6 +219,11 @@ pub struct limited_alloc_handle_18446744073709551615_ {
     #[byte_size(8)]
     pub last_alloc_: AnyPtr,
 }
+impl CppMove for limited_alloc_handle_18446744073709551615_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for limited_alloc_handle_18446744073709551615_ {
     fn default() -> Self {
         {
@@ -207,19 +234,23 @@ impl Default for limited_alloc_handle_18446744073709551615_ {
         }
     }
 }
-pub fn make_thread_unsafe_shared_5() -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
+pub fn make_thread_unsafe_shared_4() -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
     let ptr: Value<detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__> = Rc::new(
         RefCell::new(<detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__>::default()),
     );
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
-    let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*ptr.borrow_mut()).block = unimplemented!();
-    unimplemented!();
+    let alloc : Value<std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block_ > = Rc::new(RefCell::new(<std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block_  >::default() )) ;
+    (*ptr.borrow_mut()).block = ({
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::allocate_1 ( alloc .as_pointer()  , 1_usize  , )
+    });
+    ({
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
+    });
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::copy_from({
         ptr.as_pointer()
     });
 }
-pub fn make_thread_unsafe_shared_6()
+pub fn make_thread_unsafe_shared_5()
 -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__ {
     let ptr: Value<detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__> =
         Rc::new(RefCell::new(
@@ -227,9 +258,13 @@ pub fn make_thread_unsafe_shared_6()
             ),
         ));
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
-    let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*ptr.borrow_mut()).block = unimplemented!();
-    unimplemented!();
+    let alloc : Value<std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block_ > = Rc::new(RefCell::new(<std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block_  >::default() )) ;
+    (*ptr.borrow_mut()).block = ({
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::allocate_1 ( alloc .as_pointer()  , 1_usize  , )
+    });
+    ({
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
+    });
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__::copy_from(
         { ptr.as_pointer() },
     );
@@ -250,6 +285,11 @@ struct detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block {
     #[offset(8)]
     #[byte_size(16)]
     pub content: limited_alloc_handle_10_,
+}
+impl CppMove for detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block {
     fn default() -> Self {
@@ -278,7 +318,9 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
             }));
         let this: Ptr<detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__> =
             __this.as_pointer();
-        field!(this.with(|__s| __s.block.clone()), ref_count).with_mut(|__v| __v.prefix_inc());
+        field!(this.with(|__s| __s.block.clone()), ref_count).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
@@ -290,6 +332,11 @@ impl Clone for detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
             }),
         );
         detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
@@ -315,6 +362,13 @@ struct detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615
     #[offset(8)]
     #[byte_size(16)]
     pub content: limited_alloc_handle_18446744073709551615_,
+}
+impl CppMove
+    for detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block
+{
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default
     for detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block
@@ -345,7 +399,9 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__
         }));
         let this: Ptr<detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__> =
             __this.as_pointer();
-        field!(this.with(|__s| __s.block.clone()), ref_count).with_mut(|__v| __v.prefix_inc());
+        field!(this.with(|__s| __s.block.clone()), ref_count).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
@@ -363,6 +419,11 @@ impl Clone for detail_thread_unsafe_shared_ptr_limited_alloc_handle_184467440737
         )
     }
 }
+impl CppMove for detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__ {
     fn default() -> Self {
         {
@@ -373,6 +434,11 @@ impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_1844674407
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct limited_allocator_int__10__rebind_int_ {}
+impl CppMove for limited_allocator_int__10__rebind_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(8)]
 pub struct limited_allocator_int__10_ {
@@ -381,9 +447,19 @@ pub struct limited_allocator_int__10_ {
     handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
 }
 impl limited_allocator_int__10_ {}
+impl CppMove for limited_allocator_int__10_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct limited_allocator_int__18446744073709551615__rebind_int_ {}
+impl CppMove for limited_allocator_int__18446744073709551615__rebind_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(8)]
 pub struct limited_allocator_int__18446744073709551615_ {
@@ -392,27 +468,37 @@ pub struct limited_allocator_int__18446744073709551615_ {
     handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__,
 }
 impl limited_allocator_int__18446744073709551615_ {}
-pub fn test_7() -> bool {
+impl CppMove for limited_allocator_int__18446744073709551615_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn test_6() -> bool {
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() <= 10_()));
+        let c: Value<std_multiset_int__std_less_int___limited_allocator_int__10__> = Rc::new(
+            RefCell::new(<std_multiset_int__std_less_int___limited_allocator_int__10__>::default()),
+        );
+        assert!(({ (({ (*c.borrow()).max_size() }) <= 10_u64) }));
         const _: () = assert!(true, "");;
     }
     {
-        let mut max_dist: () = (i64::MAX as ());
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() <= max_dist));
+        let mut max_dist: u64 = (i64::MAX as u64);
+        let c : Value<std_multiset_int__std_less_int___limited_allocator_int__18446744073709551615__ > = Rc::new(RefCell::new(<std_multiset_int__std_less_int___limited_allocator_int__18446744073709551615__  >::default() )) ;
+        assert!(({ (({ (*c.borrow()).max_size() }) <= max_dist) }));
         const _: () = assert!(true, "");;
     }
     {
-        let mut max_dist: () = (i64::MAX as ());
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() <= max_dist));
+        let mut max_dist: u64 = (i64::MAX as u64);
+        let c: Value<std_multiset_char__std_less_char___std_allocator_char__> = Rc::new(
+            RefCell::new(<std_multiset_char__std_less_char___std_allocator_char__>::default()),
+        );
+        assert!(({ (({ (*c.borrow()).max_size() }) <= max_dist) }));
         assert!(
-            (unimplemented!()
+            ((({ (*c.borrow()).max_size() }) as usize)
                 <= ({
-                    let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    alloc_max_size_0(_a.as_pointer())
+                    let _a: Value<std_allocator_char_> =
+                        Rc::new(RefCell::new(({ (*c.borrow()).get_allocator() })));
+                    alloc_max_size_7(_a.as_pointer())
                 }))
         );
     }
@@ -438,7 +524,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_7() });
+    ({ test_6() });
     return 0;
 }
 pub trait Tag_XImpl {
@@ -480,7 +566,9 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__Impl
     for Ptr<detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__>
 {
     fn destructor(&self) {
-        field!((*self).with(|__s| __s.block.clone()), ref_count).with_mut(|__v| __v.prefix_dec());
+        field!((*self).with(|__s| __s.block.clone()), ref_count).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         if ((*self)
             .with(|__s| __s.block.clone())
             .with(|__s| __s.ref_count)
@@ -488,9 +576,13 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__Impl
         {
             return;
         };
-        let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let alloc : Value<std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block_ > = Rc::new(RefCell::new(<std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block_  >::default() )) ;
+        ({
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
+        });
+        ({
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::deallocate ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , 1_usize  , )
+        });
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_10_> {
         return (field_ptr!((*self).with(|__s| __s.block.clone()), content));
@@ -530,7 +622,9 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__
     for Ptr<detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__>
 {
     fn destructor(&self) {
-        field!((*self).with(|__s| __s.block.clone()), ref_count).with_mut(|__v| __v.prefix_dec());
+        field!((*self).with(|__s| __s.block.clone()), ref_count).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         if ((*self)
             .with(|__s| __s.block.clone())
             .with(|__s| __s.ref_count)
@@ -538,9 +632,13 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__
         {
             return;
         };
-        let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let alloc : Value<std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block_ > = Rc::new(RefCell::new(<std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block_  >::default() )) ;
+        ({
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
+        });
+        ({
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::deallocate ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , 1_usize  , )
+        });
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_18446744073709551615_> {
         return (field_ptr!((*self).with(|__s| __s.block.clone()), content));
@@ -629,8 +727,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_1.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_1.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_0.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_0.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
@@ -646,6 +744,6 @@ impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = destructed_value_1.with(|_| ());
-    let _ = moved_value_2.with(|_| ());
+    let _ = destructed_value_0.with(|_| ());
+    let _ = moved_value_1.with(|_| ());
 }

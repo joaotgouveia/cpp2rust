@@ -32,13 +32,36 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let ia2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 8, 3, 4, 6, 9, 5, 7, 2, 10])));
     let mut sa: u32 = (((::std::mem::size_of::<[i32; 10]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    let g: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let g: Value<std_linear_congruential_engine_unsigned_long__48271__0__2147483647_> =
+        Rc::new(RefCell::new(
+            <std_linear_congruential_engine_unsigned_long__48271__0__2147483647_>::default(),
+        ));
+    ({
+        let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+        shuffle_0(___first, ___last, g.as_pointer())
+    });
     const _: () = assert!(true, "");;
-    assert!(unimplemented!());
-    unimplemented!();
+    assert!(
+        ({
+            let ___first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+            let ___last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+            is_permutation_1(___first1, ___last1, (ia1.as_pointer() as Ptr<i32>))
+        })
+    );
+    ({
+        let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+        shuffle_2(___first, ___last, g.as_pointer())
+    });
     const _: () = assert!(true, "");;
-    assert!(unimplemented!());
+    assert!(
+        ({
+            let ___first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+            let ___last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+            is_permutation_1(___first1, ___last1, (ia2.as_pointer() as Ptr<i32>))
+        })
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

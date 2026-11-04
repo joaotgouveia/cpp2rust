@@ -40,8 +40,8 @@ fn main_0() -> i32 {
         q.with_mut(|__v| *__v = *__v + 10)
     };
     assert!((last == 6));
-    assert!(({ ({ (*std_arr.borrow())[0_usize] } == 8) }));
-    assert!(({ ({ (*std_arr.borrow())[1_usize] } == 15) }));
+    assert!(((std_arr.decay().offset(0_usize as isize).read()) == 8));
+    assert!(((std_arr.decay().offset(1_usize as isize).read()) == 15));
     assert!(((r.read()) == 6));
     return 0;
 }

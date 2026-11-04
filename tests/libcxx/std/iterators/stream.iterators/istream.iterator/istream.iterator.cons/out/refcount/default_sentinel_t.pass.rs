@@ -28,15 +28,36 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let it: Value<std_istream_iterator_int__char__std_char_traits_char___long_> =
+            Rc::new(RefCell::new(
+                std_istream_iterator_int__char__std_char_traits_char___long_::new_1({
+                    (*default_sentinel_0.with(Value::clone).borrow()).clone()
+                }),
+            ));
+        assert!(
+            (*it.borrow())
+                == <std_istream_iterator_int__char__std_char_traits_char___long_>::default()
+        );
     }
     {
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let it: Value<std_istream_iterator_int__char__std_char_traits_char___long_> =
+            Rc::new(RefCell::new(
+                std_istream_iterator_int__char__std_char_traits_char___long_::new_1({
+                    (*default_sentinel_0.with(Value::clone).borrow()).clone()
+                }),
+            ));
+        assert!(
+            (*it.borrow())
+                == <std_istream_iterator_int__char__std_char_traits_char___long_>::default()
+        );
     }
     {
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let it: Value<std_istream_iterator_int__char__std_char_traits_char___long_> =
+            Rc::new(RefCell::new(
+                std_istream_iterator_int__char__std_char_traits_char___long_::new_1({
+                    (*default_sentinel_0.with(Value::clone).borrow()).clone()
+                }),
+            ));
         &(*it.borrow_mut());
     }
     return 0;

@@ -27,8 +27,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let myconv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unimplemented!()));
+    let myconv : Value<std_wstring_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__ > = Rc::new(RefCell::new(<std_wstring_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__  >::default() )) ;
+    let s: Value<::libc::mbstate_t> = Rc::new(RefCell::new(({ (*myconv.borrow()).state() })));
     (&(*s.borrow_mut()));
     return 0;
 }

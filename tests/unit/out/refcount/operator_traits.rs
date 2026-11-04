@@ -22,6 +22,11 @@ impl CppEq for Lt {
         !(LtImpl::operator_lt(__lhs, __rhs.clone())) && !(LtImpl::operator_lt(__rhs, __lhs.clone()))
     }
 }
+impl CppMove for Lt {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Eq {
@@ -31,6 +36,11 @@ pub struct Eq {
 impl CppEq for Eq {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         EqImpl::operator_eq(__lhs, __rhs.clone())
+    }
+}
+impl CppMove for Eq {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -49,6 +59,11 @@ impl CppEq for Cmp {
         CmpImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for Cmp {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Free {
@@ -65,6 +80,11 @@ impl CppEq for Free {
         operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for Free {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_lt_0(a: Ptr<Free>, b: Ptr<Free>) -> bool {
     return ({ a.with(|__s| __s.v) } < { b.with(|__s| __s.v) });
 }
@@ -76,6 +96,11 @@ pub fn operator_eq_1(a: Ptr<Free>, b: Ptr<Free>) -> bool {
 pub struct Wrapped_int_ {
     #[offset(0)]
     pub v: i32,
+}
+impl CppMove for Wrapped_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -89,19 +114,18 @@ fn main_0() -> i32 {
         Lt { v: 1 },
         Lt { v: 2 },
     ])));
-    match ({ lts.decay().begin() },) {
+    match ({ CppRange::begin(&lts.decay()) },) {
         (mut __tmp_0,) => {
-            let __n = lts.decay().end().iter_distance(&__tmp_0);
+            let __n = CppRange::end(&lts.decay()).iter_distance(&__tmp_0);
             let mut __order: Vec<isize> = (0..__n).collect();
             __order.sort_by(|&__x, &__y| cpp_cmp(&__tmp_0.iter_at(__x), &__tmp_0.iter_at(__y)));
             reorder(__order, |__i| __tmp_0.iter_at(__i));
         }
     };
     assert!(
-        ({
-            (({ (*lts.borrow())[0_usize].v } == 1) && ({ (*lts.borrow())[1_usize].v } == 2))
-                && ({ (*lts.borrow())[2_usize].v } == 3)
-        })
+        ((lts.decay().offset(0_usize as isize).with(|__s| __s.v) == 1)
+            && (lts.decay().offset(1_usize as isize).with(|__s| __s.v) == 2))
+            && (lts.decay().offset(2_usize as isize).with(|__s| __s.v) == 3)
     );
     let eqs: Value<Vec<Eq>> = Rc::new(RefCell::new(Vec::from([
         Eq { v: 1 },
@@ -111,7 +135,10 @@ fn main_0() -> i32 {
     let two: Value<Eq> = Rc::new(RefCell::new(Eq { v: 2 }));
     let nine: Value<Eq> = Rc::new(RefCell::new(Eq { v: 9 }));
     assert!(
-        (match ({ eqs.decay().begin() }, { eqs.decay().end() },) {
+        (match ({ CppRange::begin(&eqs.decay()) }, {
+            CppRange::end(&eqs.decay())
+        },)
+        {
             (mut __tmp_1, mut __tmp_2) => {
                 {
                     let mut __it = (__tmp_1).clone();
@@ -127,7 +154,10 @@ fn main_0() -> i32 {
             == 2)
     );
     assert!(
-        match ({ eqs.decay().begin() }, { eqs.decay().end() },) {
+        match ({ CppRange::begin(&eqs.decay()) }, {
+            CppRange::end(&eqs.decay())
+        },)
+        {
             (mut __tmp_3, mut __tmp_4) => {
                 {
                     let mut __it = (__tmp_3).clone();
@@ -137,25 +167,31 @@ fn main_0() -> i32 {
                     __it
                 }
             }
-        } == eqs.decay().end()
+        } == CppRange::end(&eqs.decay())
     );
     let cmps: Value<Vec<Cmp>> = Rc::new(RefCell::new(Vec::from([
         Cmp { v: 3 },
         Cmp { v: 1 },
         Cmp { v: 2 },
     ])));
-    match ({ cmps.decay().begin() },) {
+    match ({ CppRange::begin(&cmps.decay()) },) {
         (mut __tmp_5,) => {
-            let __n = cmps.decay().end().iter_distance(&__tmp_5);
+            let __n = CppRange::end(&cmps.decay()).iter_distance(&__tmp_5);
             let mut __order: Vec<isize> = (0..__n).collect();
             __order.sort_by(|&__x, &__y| cpp_cmp(&__tmp_5.iter_at(__x), &__tmp_5.iter_at(__y)));
             reorder(__order, |__i| __tmp_5.iter_at(__i));
         }
     };
-    assert!(({ ({ (*cmps.borrow())[0_usize].v } == 1) && ({ (*cmps.borrow())[2_usize].v } == 3) }));
+    assert!(
+        (cmps.decay().offset(0_usize as isize).with(|__s| __s.v) == 1)
+            && (cmps.decay().offset(2_usize as isize).with(|__s| __s.v) == 3)
+    );
     let three: Value<Cmp> = Rc::new(RefCell::new(Cmp { v: 3 }));
     assert!(
-        (match ({ cmps.decay().begin() }, { cmps.decay().end() },) {
+        (match ({ CppRange::begin(&cmps.decay()) }, {
+            CppRange::end(&cmps.decay())
+        },)
+        {
             (mut __tmp_6, mut __tmp_7) => {
                 {
                     let mut __it = (__tmp_6).clone();
@@ -172,18 +208,21 @@ fn main_0() -> i32 {
             == 3)
     );
     let frees: Value<Vec<Free>> = Rc::new(RefCell::new(Vec::from([Free { v: 2 }, Free { v: 1 }])));
-    match ({ frees.decay().begin() },) {
+    match ({ CppRange::begin(&frees.decay()) },) {
         (mut __tmp_8,) => {
-            let __n = frees.decay().end().iter_distance(&__tmp_8);
+            let __n = CppRange::end(&frees.decay()).iter_distance(&__tmp_8);
             let mut __order: Vec<isize> = (0..__n).collect();
             __order.sort_by(|&__x, &__y| cpp_cmp(&__tmp_8.iter_at(__x), &__tmp_8.iter_at(__y)));
             reorder(__order, |__i| __tmp_8.iter_at(__i));
         }
     };
-    assert!(({ ({ (*frees.borrow())[0_usize].v } == 1) }));
+    assert!((frees.decay().offset(0_usize as isize).with(|__s| __s.v) == 1));
     let ftwo: Value<Free> = Rc::new(RefCell::new(Free { v: 2 }));
     assert!(
-        (match ({ frees.decay().begin() }, { frees.decay().end() },) {
+        (match ({ CppRange::begin(&frees.decay()) }, {
+            CppRange::end(&frees.decay())
+        },)
+        {
             (mut __tmp_9, mut __tmp_10) => {
                 {
                     let mut __it = (__tmp_9).clone();

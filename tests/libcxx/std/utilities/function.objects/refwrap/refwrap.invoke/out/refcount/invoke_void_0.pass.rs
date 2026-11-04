@@ -20,25 +20,30 @@ impl Callable0<()> for A_void_0 {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| A_void_0Impl::operator_call(__it))
     }
 }
+impl CppMove for A_void_0 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_void_0_2() {
     let mut save_count: i32 = count_0.with(|rc| *rc.borrow());
     {
-        let mut r1: FnPtr<fn()> = FnPtr::<fn()>::new(f_void_0_1);
-        unimplemented!();
+        let r1: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(f_void_0_1)));
+        ({ (*r1.borrow_mut())() });
         assert!((count_0.with(|rc| *rc.borrow()) == (save_count + 1)));
         save_count = count_0.with(|rc| *rc.borrow());
     }
     {
         let fp: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(f_void_0_1)));
-        let mut r1: Ptr<FnPtr<fn()>> = fp.as_pointer();
-        unimplemented!();
+        let r1: Value<Ptr<FnPtr<fn()>>> = Rc::new(RefCell::new(fp.as_pointer()));
+        ({ (*r1.borrow_mut())() });
         assert!((count_0.with(|rc| *rc.borrow()) == (save_count + 1)));
         save_count = count_0.with(|rc| *rc.borrow());
     }
     {
         let a0: Value<A_void_0> = Rc::new(RefCell::new(<A_void_0>::default()));
-        let mut r1: Ptr<A_void_0> = a0.as_pointer();
-        unimplemented!();
+        let r1: Value<Ptr<A_void_0>> = Rc::new(RefCell::new(a0.as_pointer()));
+        ({ (*r1.borrow_mut())() });
         assert!((count_0.with(|rc| *rc.borrow()) == (save_count + 1)));
         save_count = count_0.with(|rc| *rc.borrow());
     }

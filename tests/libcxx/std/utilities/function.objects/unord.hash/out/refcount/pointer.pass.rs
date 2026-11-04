@@ -8,10 +8,14 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
     const _: () = assert!(true, "");;
-    let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() != unimplemented!()));
+    let h: Value<std_hash_int_ptr_> = Rc::new(RefCell::new(<std_hash_int_ptr_>::default()));
+    let i: Value<i32> = Rc::new(RefCell::new(0_i32));
+    let j: Value<i32> = Rc::new(RefCell::new(0_i32));
+    assert!(
+        ({
+            (({ (*h.borrow_mut())((i.as_pointer())) }) != ({ (*h.borrow_mut())((j.as_pointer())) }))
+        })
+    );
 }
 pub fn test_nullptr_1() {
     const _: () = assert!(true, "");;

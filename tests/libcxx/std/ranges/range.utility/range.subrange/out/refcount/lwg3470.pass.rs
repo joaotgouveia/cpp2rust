@@ -13,15 +13,41 @@ pub fn test_0() -> bool {
         ((a.as_pointer() as Ptr<i32>).offset(0)),
         ((a.as_pointer() as Ptr<i32>).offset(1)),
     ])));
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == (b.as_pointer() as Ptr<Ptr<i32>>).offset((0) as isize)));
-    assert!((unimplemented!() == (b.as_pointer() as Ptr<Ptr<i32>>).offset((3) as isize)));
-    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == (b.as_pointer() as Ptr<Ptr<i32>>).offset((0) as isize)));
-    assert!((unimplemented!() == (b.as_pointer() as Ptr<Ptr<i32>>).offset((3) as isize)));
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == (b.as_pointer() as Ptr<Ptr<i32>>).offset((0) as isize)));
-    assert!((unimplemented!() == (b.as_pointer() as Ptr<Ptr<i32>>).offset((3) as isize)));
+    let c : Value<std_ranges_subrange_const_int_ptrconst_ptr__const_int_ptrconst_ptr__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(std_ranges_subrange_const_int_ptrconst_ptr__const_int_ptrconst_ptr__std_ranges_subrange_kind_sized_ :: new_1 ( { b .as_pointer()  } , )  )) ;
+    assert!(
+        ({
+            (({ (*c.borrow()).begin_8() })
+                == (b.as_pointer() as Ptr<Ptr<i32>>).offset((0) as isize))
+        })
+    );
+    assert!(
+        ({ (({ (*c.borrow()).end() }) == (b.as_pointer() as Ptr<Ptr<i32>>).offset((3) as isize)) })
+    );
+    let d: Value<std_ranges_subrange_int_ptrptr__int_ptrptr__std_ranges_subrange_kind_sized_> =
+        Rc::new(RefCell::new(
+            std_ranges_subrange_int_ptrptr__int_ptrptr__std_ranges_subrange_kind_sized_::new_1({
+                b.as_pointer()
+            }),
+        ));
+    assert!(
+        ({
+            (({ (*d.borrow()).begin_8() })
+                == (b.as_pointer() as Ptr<Ptr<i32>>).offset((0) as isize))
+        })
+    );
+    assert!(
+        ({ (({ (*d.borrow()).end() }) == (b.as_pointer() as Ptr<Ptr<i32>>).offset((3) as isize)) })
+    );
+    let e : Value<std_ranges_subrange_const_int_ptrconst_ptr__const_int_ptrconst_ptr__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(std_ranges_subrange_const_int_ptrconst_ptr__const_int_ptrconst_ptr__std_ranges_subrange_kind_sized_ :: new_2 ( { d .as_pointer()  } , )  )) ;
+    assert!(
+        ({
+            (({ (*e.borrow()).begin_8() })
+                == (b.as_pointer() as Ptr<Ptr<i32>>).offset((0) as isize))
+        })
+    );
+    assert!(
+        ({ (({ (*e.borrow()).end() }) == (b.as_pointer() as Ptr<Ptr<i32>>).offset((3) as isize)) })
+    );
     return true;
 }
 pub fn main() {

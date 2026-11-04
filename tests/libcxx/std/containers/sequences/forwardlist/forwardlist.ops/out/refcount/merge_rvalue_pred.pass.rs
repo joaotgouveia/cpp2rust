@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -43,6 +48,11 @@ pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<i32>,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -51,9 +61,19 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
+impl CppMove for min_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_gt_4(lhs: Ptr<value>, rhs: Ptr<value>) -> bool {
     return ({ lhs.with(|__s| __s.a) } > { rhs.with(|__s| __s.a) });
 }
@@ -72,6 +92,11 @@ pub struct value {
 impl CppEq for value {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_5(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for value {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn test_6() -> bool {
@@ -112,9 +137,9 @@ pub fn test_6() -> bool {
         assert!(unimplemented!());
         let mut i: usize = 0_usize;
         'loop_: while (i < 3_usize) {
-            assert!(((*to.borrow())[(i) as usize] == (io[(i) as usize].iter_deref().read())));
-            assert!(((*to.borrow())[(i) as usize] == (ro[(i) as usize].read())));
-            assert!(((*to.borrow())[(i) as usize] == (po[(i) as usize].read())));
+            assert!(({ ((*to.borrow())[(i) as usize] == (io[(i) as usize].iter_deref().read())) }));
+            assert!(({ ((*to.borrow())[(i) as usize] == (ro[(i) as usize].read())) }));
+            assert!(({ ((*to.borrow())[(i) as usize] == (po[(i) as usize].read())) }));
             i.prefix_inc();
         }
     }

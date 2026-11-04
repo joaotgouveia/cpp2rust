@@ -9,6 +9,11 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct SizedSentinel {}
+impl CppMove for SizedSentinel {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::sized_sentinel_for<SizedSentinel, Iterator>");
 const _: () = assert!(
     !(false),
@@ -18,50 +23,6 @@ const _: () = assert!(true, "std::ranges::sized_range<ThreeElementRange>");
 const _: () = assert!(true, "std::tuple_size<SizedRange>::value == 2");
 const _: () = assert!(true, "std::tuple_size<UnsizedRange>::value == 2");
 const _: () = assert!(true, "std::tuple_size<ThreeElementRange>::value == 2");
-pub fn test_tuple_element_0() -> bool {
-    const _: () = assert!(
-        true,
-        "std::same_as<typename std::tuple_element<I, Range>::type, Expected>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::same_as<typename std::tuple_element<I, const Range>::type, Expected>"
-    );;
-    return true;
-}
-pub fn test_tuple_element_1() -> bool {
-    const _: () = assert!(
-        true,
-        "std::same_as<typename std::tuple_element<I, Range>::type, Expected>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::same_as<typename std::tuple_element<I, const Range>::type, Expected>"
-    );;
-    return true;
-}
-pub fn test_tuple_element_2() -> bool {
-    const _: () = assert!(
-        true,
-        "std::same_as<typename std::tuple_element<I, Range>::type, Expected>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::same_as<typename std::tuple_element<I, const Range>::type, Expected>"
-    );;
-    return true;
-}
-pub fn test_tuple_element_3() -> bool {
-    const _: () = assert!(
-        true,
-        "std::same_as<typename std::tuple_element<I, Range>::type, Expected>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::same_as<typename std::tuple_element<I, const Range>::type, Expected>"
-    );;
-    return true;
-}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

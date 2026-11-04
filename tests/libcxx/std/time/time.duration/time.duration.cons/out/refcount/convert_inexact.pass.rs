@@ -28,13 +28,25 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let us: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ms: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == (1_f64 / 1000_f64)));
+        let us: Value<std_chrono_duration_double__std_ratio_1__1000000__> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<i32> = Rc::new(RefCell::new(1));
+                std_chrono_duration_double__std_ratio_1__1000000__::new_1({ __tmp_0.as_pointer() })
+            }));
+        let ms: Value<std_chrono_duration_double__std_ratio_1__1000__> = Rc::new(RefCell::new(
+            std_chrono_duration_double__std_ratio_1__1000__::new_1({ us.as_pointer() }),
+        ));
+        assert!(({ (({ (*ms.borrow()).count() }) == (1_f64 / 1000_f64)) }));
     }
     {
-        let us: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ms: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let us: Value<std_chrono_duration_double__std_ratio_1__1000000__> =
+            Rc::new(RefCell::new({
+                let __tmp_1: Value<i32> = Rc::new(RefCell::new(1));
+                std_chrono_duration_double__std_ratio_1__1000000__::new_1({ __tmp_1.as_pointer() })
+            }));
+        let ms: Value<std_chrono_duration_double__std_ratio_1__1000__> = Rc::new(RefCell::new(
+            std_chrono_duration_double__std_ratio_1__1000__::new_1({ us.as_pointer() }),
+        ));
         const _: () = assert!(true, "ms.count() == 1./1000");;
     }
     return 0;

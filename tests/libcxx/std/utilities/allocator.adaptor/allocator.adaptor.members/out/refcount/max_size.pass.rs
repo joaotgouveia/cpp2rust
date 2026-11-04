@@ -27,6 +27,11 @@ impl A1_int_ {
         __this
     }
 }
+impl CppMove for A1_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 thread_local!(
     pub static copy_called_4: Value<bool> = Rc::new(RefCell::new(false));
 );
@@ -55,6 +60,11 @@ impl Clone for A2_int_ {
             id_: self.id_.clone(),
         }));
         A2_int_::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for A2_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for A2_int_ {
@@ -92,6 +102,11 @@ impl Clone for A3_int_ {
         A3_int_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for A3_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for A3_int_ {
     fn default() -> Self {
         { A3_int_::new(None) }
@@ -118,16 +133,33 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 100_()));
+        let a: Value<std_scoped_allocator_adaptor_A1_int__> =
+            Rc::new(RefCell::new(A1_int_::new({ 100 })));
+        assert!(({ (({ (*a.borrow()).max_size() }) == 100_u64) }));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 20_()));
+        let a: Value<std_scoped_allocator_adaptor_A1_int___A2_int__> = Rc::new(RefCell::new({
+            let __tmp_0: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ 20 })));
+            let __tmp_1: Value<A2_int_> = Rc::new(RefCell::new(A2_int_::new(None)));
+            std_scoped_allocator_adaptor_A1_int___A2_int__::new_1({ __tmp_0.as_pointer() }, {
+                __tmp_1.as_pointer()
+            })
+        }));
+        assert!(({ (({ (*a.borrow()).max_size() }) == 20_u64) }));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 200_()));
+        let a: Value<std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__> =
+            Rc::new(RefCell::new({
+                let __tmp_2: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ 200 })));
+                let __tmp_3: Value<A2_int_> = Rc::new(RefCell::new(A2_int_::new(None)));
+                let __tmp_4: Value<A3_int_> = Rc::new(RefCell::new(A3_int_::new(None)));
+                std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__::new_1(
+                    { __tmp_2.as_pointer() },
+                    { __tmp_3.as_pointer() },
+                    { __tmp_4.as_pointer() },
+                )
+            }));
+        assert!(({ (({ (*a.borrow()).max_size() }) == 200_u64) }));
     }
     return 0;
 }

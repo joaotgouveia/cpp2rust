@@ -56,6 +56,11 @@ impl Clone for Bag {
         Bag::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Bag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_lt_4(a: Ptr<Bag>, b: Ptr<Bag>) -> bool {
     return ({ a.with(|__s| __s.n) } < { b.with(|__s| __s.n) });
 }

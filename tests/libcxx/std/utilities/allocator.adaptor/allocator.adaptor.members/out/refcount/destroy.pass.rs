@@ -56,6 +56,11 @@ impl B {
         __this
     }
 }
+impl CppMove for B {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for B {
     fn default() -> Self {
         { B::new() }
@@ -86,29 +91,33 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_scoped_allocator_adaptor_A1_B__> = Rc::new(RefCell::new(
+            <std_scoped_allocator_adaptor_A1_B__>::default(),
+        ));
         let buf: Value<Box<[i8]>> =
             Rc::new(RefCell::new((0..100).map(|_| 0_i8).collect::<Box<[i8]>>()));
         let mut s: Ptr<B> = (buf.as_pointer() as Ptr<i8>).reinterpret_cast::<B>();
         assert!(!(constructed_8.with(|rc| *rc.borrow())));
-        unimplemented!();
+        ({ (*a.borrow()).construct((s).clone()) });
         assert!(constructed_8.with(|rc| *rc.borrow()));
-        unimplemented!();
+        ({ (*a.borrow()).destroy((s).clone()) });
         assert!(!(constructed_8.with(|rc| *rc.borrow())));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_scoped_allocator_adaptor_A3_B___A1_B__> = Rc::new(RefCell::new(
+            <std_scoped_allocator_adaptor_A3_B___A1_B__>::default(),
+        ));
         let buf: Value<Box<[i8]>> =
             Rc::new(RefCell::new((0..100).map(|_| 0_i8).collect::<Box<[i8]>>()));
         let mut s: Ptr<B> = (buf.as_pointer() as Ptr<i8>).reinterpret_cast::<B>();
         assert!(!(constructed_8.with(|rc| *rc.borrow())));
         assert!(!(constructed_6.with(|rc| *rc.borrow())));
         assert!(!(destroy_called_7.with(|rc| *rc.borrow())));
-        unimplemented!();
+        ({ (*a.borrow()).construct((s).clone()) });
         assert!(constructed_8.with(|rc| *rc.borrow()));
         assert!(constructed_6.with(|rc| *rc.borrow()));
         assert!(!(destroy_called_7.with(|rc| *rc.borrow())));
-        unimplemented!();
+        ({ (*a.borrow()).destroy((s).clone()) });
         assert!(!(constructed_8.with(|rc| *rc.borrow())));
         assert!(constructed_6.with(|rc| *rc.borrow()));
         assert!(destroy_called_7.with(|rc| *rc.borrow()));

@@ -67,6 +67,11 @@ pub fn toString_5(mut UA: UsesAllocatorType) -> Ptr<i8> {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct AllocLastTag {}
+impl CppMove for AllocLastTag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static constructed_6: Value<i32> = Rc::new(RefCell::new(0));
 );
@@ -81,6 +86,11 @@ impl default_constructible_0_ {
         let __this: default_constructible_0_ = Self { x: 42 };
         (*constructed_6.with(Value::clone).borrow_mut()).prefix_inc();
         __this
+    }
+}
+impl CppMove for default_constructible_0_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for default_constructible_0_ {
@@ -99,6 +109,11 @@ impl default_constructible_1_ {
         let __this: default_constructible_1_ = Self { x: 42 };
         (*constructed_6.with(Value::clone).borrow_mut()).prefix_inc();
         __this
+    }
+}
+impl CppMove for default_constructible_1_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for default_constructible_1_ {
@@ -136,12 +151,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Value<default_constructible_0_>,
             Value<default_constructible_0_>,
         )>();
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_pmr_polymorphic_allocator_void_> = Rc::new(RefCell::new(
+            <std_pmr_polymorphic_allocator_void_>::default(),
+        ));
         constructed_6.with(|rc| *rc.borrow_mut() = 0);
-        unimplemented!();
+        ({ (*a.borrow()).construct((ptr).clone()) });
         assert!((constructed_6.with(|rc| *rc.borrow()) == 2));
-        assert!((ptr.with(|__s| (*__s.0.borrow()).x) == 42));
-        assert!((ptr.with(|__s| (*__s.1.borrow()).x) == 42));
+        assert!(({ (ptr.with(|__s| (*__s.0.borrow()).x) == 42) }));
+        assert!(({ (ptr.with(|__s| (*__s.1.borrow()).x) == 42) }));
     }
     {
         let buffer: Value<Box<[i8]>> =
@@ -153,12 +170,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Value<default_constructible_0_>,
             Value<default_constructible_1_>,
         )>();
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_pmr_polymorphic_allocator_void_> = Rc::new(RefCell::new(
+            <std_pmr_polymorphic_allocator_void_>::default(),
+        ));
         constructed_6.with(|rc| *rc.borrow_mut() = 0);
-        unimplemented!();
+        ({ (*a.borrow()).construct((ptr).clone()) });
         assert!((constructed_6.with(|rc| *rc.borrow()) == 2));
-        assert!((ptr.with(|__s| (*__s.0.borrow()).x) == 42));
-        assert!((ptr.with(|__s| (*__s.1.borrow()).x) == 42));
+        assert!(({ (ptr.with(|__s| (*__s.0.borrow()).x) == 42) }));
+        assert!(({ (ptr.with(|__s| (*__s.1.borrow()).x) == 42) }));
     }
     return 0;
 }

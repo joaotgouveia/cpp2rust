@@ -25,6 +25,11 @@ impl CppEq for Rep {
         RepImpl::operator_eq_4(__lhs, __rhs.clone())
     }
 }
+impl CppMove for Rep {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Rep {
     fn default() -> Self {
         { Rep::new_1() }
@@ -33,10 +38,20 @@ impl Default for Rep {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NotARep {}
+impl CppMove for NotARep {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(i64, to_i64_2)]
 #[byte_size(1)]
 pub struct RepConstConvertibleLWG3050 {}
+impl CppMove for RepConstConvertibleLWG3050 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_rem_assign_0(d: Ptr<()>, mut _a1: NotARep) -> Ptr<()> {
     return (d).clone();
 }

@@ -25,11 +25,19 @@ impl Error {
         __this
     }
 }
+impl CppMove for Error {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn test_0() -> bool {
-    let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let unex2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(({ (unimplemented!()).clone().i } == 5));
-    assert!(({ (unimplemented!()).clone().i } == 0));
+    let unex: Value<std_unexpected_Error_> = Rc::new(RefCell::new({
+        let __tmp_0: Value<i32> = Rc::new(RefCell::new(5));
+        std_unexpected_Error_::new({ __tmp_0.as_pointer() })
+    }));
+    let unex2: Value<std_unexpected_Error_> = Rc::new(RefCell::new((*unex.borrow_mut()).clone()));
+    assert!(({ (({ (*unex2.borrow()).error_9() }).with(|__s| __s.i) == 5) }));
+    assert!(({ (({ (*unex.borrow()).error_9() }).with(|__s| __s.i) == 0) }));
     return true;
 }
 pub fn main() {

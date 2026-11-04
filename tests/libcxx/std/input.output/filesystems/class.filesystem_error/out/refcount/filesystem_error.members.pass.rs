@@ -12,11 +12,23 @@ pub const anon_0_value: anon_0 = 1;
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_std_filesystem_path_ref__const_std_filesystem_path_ref_
 {}
+impl CppMove
+    for test_macros_detail_is_same_const_std_filesystem_path_ref__const_std_filesystem_path_ref_
+{
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_char_ptr__const_char_ptr_ {}
+impl CppMove for test_macros_detail_is_same_const_char_ptr__const_char_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_constructors_2() {
     {
         let mut what_arg: Vec<i8> = {

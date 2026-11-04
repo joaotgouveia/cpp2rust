@@ -28,7 +28,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c : Value<std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new(<std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____  >::default() )) ;
         const _: () = assert!(true, "");;
     }
     {
@@ -98,8 +98,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() >= 8_()));
+        let c : Value<std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new(std_unordered_multimap_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { ( { begin_0 ( a .as_pointer()  , ) } )   } , { (a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  > ).to_end()   } , None , None , None , None , )  )) ;
+        assert!(({ (({ (*c.borrow()).bucket_count() }) >= 8_u64) }));
     }
     return 0;
 }

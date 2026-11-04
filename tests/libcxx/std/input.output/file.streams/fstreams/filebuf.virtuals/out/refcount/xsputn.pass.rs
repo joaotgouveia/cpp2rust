@@ -33,57 +33,72 @@ pub fn sputn_seekoff_0(
         assert!(!((unimplemented!()).is_null()));
         assert!(unimplemented!());
         assert!((unimplemented!() != 0));
-        let chunk: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v = Vec::new();
-            let mut __it = RandomAccessIterator::Vec(data.decay()).iter_add(5_isize);
-            while __it
-                != RandomAccessIterator::Vec(data.decay())
-                    .iter_add(5_isize)
-                    .iter_add((chunk_size1 as isize))
-            {
-                __v.push((__it.iter_deref().read()));
-                __it.iter_inc();
+        let chunk: Value<Vec<i8>> = Rc::new(RefCell::new(
+            match (
+                { RandomAccessIterator::Vec(data.decay()).iter_add(5_isize) },
+                {
+                    RandomAccessIterator::Vec(data.decay())
+                        .iter_add(5_isize)
+                        .iter_add((chunk_size1 as isize))
+                },
+            ) {
+                (mut __tmp_0, mut __tmp_1) => {
+                    let mut __v = Vec::new();
+                    let mut __it = (__tmp_0).clone();
+                    while __it != __tmp_1 {
+                        __v.push((__it.iter_deref().read()));
+                        __it.iter_inc();
+                    }
+                    __v
+                }
+            },
+        ));
+        match ({ chunk.decay().begin() }, { chunk.decay().end() }) {
+            (mut __tmp_2, mut __tmp_3) => {
+                let mut __first = (__tmp_2).clone();
+                let mut __out = result.decay().begin().iter_add(5_isize);
+                while __first != __tmp_3 {
+                    __out.iter_deref().write((__first.iter_deref().read()));
+                    __first.iter_inc();
+                    __out.iter_inc();
+                }
+                __out
             }
-            __v
-        }));
-        {
-            let mut __first = chunk.decay().begin();
-            let __last = chunk.decay().end();
-            let mut __out = result.decay().begin().iter_add(5_isize);
-            while __first != __last {
-                __out.iter_deref().write((__first.iter_deref().read()));
-                __first.iter_inc();
-                __out.iter_inc();
-            }
-            __out
         };
         let mut len1: () = unimplemented!();
         assert!((len1 == chunk_size1));
         assert!(
-            ({
-                let __n = (len1 as usize);
-                let mut __it1 = chunk.decay().to_c_string_iterator().take(__n);
-                let mut __it2 = Rc::new(RefCell::new({
-                    let mut __tmp1 = (*data.borrow())[(5_usize) as usize
-                        ..::std::cmp::min(
-                            (5_usize + (len1 as usize)) as usize,
-                            (*data.borrow()).len().saturating_sub(1),
-                        )]
-                        .to_vec();
-                    __tmp1.push(0_i8);
-                    __tmp1
-                }))
-                .decay()
-                .to_c_string_iterator()
-                .take(__n);
-                loop {
-                    let __c1 = __it1.next();
-                    let __c2 = __it2.next();
-                    if __c1 != __c2 {
-                        break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
-                    }
-                    if __c1.is_none() {
-                        break 0;
+            (match (
+                { chunk.decay() },
+                {
+                    Rc::new(RefCell::new(match ({ (len1 as usize) },) {
+                        (mut __tmp_6,) => data.as_pointer().with(|__s: &Vec<i8>| {
+                            let mut __tmp1 = __s[5_usize
+                                ..::std::cmp::min(5_usize + __tmp_6, __s.len().saturating_sub(1))]
+                                .to_vec();
+                            __tmp1.push(0_i8);
+                            __tmp1
+                        }),
+                    }))
+                    .decay()
+                },
+                { (len1 as usize) },
+            ) {
+                (mut __tmp_4, mut __tmp_5, mut __tmp_7) => {
+                    {
+                        let mut __it1 = __tmp_4.to_c_string_iterator().take(__tmp_7);
+                        let mut __it2 = __tmp_5.to_c_string_iterator().take(__tmp_7);
+                        loop {
+                            let __c1 = __it1.next();
+                            let __c2 = __it2.next();
+                            if __c1 != __c2 {
+                                break (__c1.unwrap_or(0) as u8 as i32)
+                                    - (__c2.unwrap_or(0) as u8 as i32);
+                            }
+                            if __c1.is_none() {
+                                break 0;
+                            }
+                        }
                     }
                 }
             } == 0)
@@ -124,72 +139,105 @@ pub fn sputn_seekoff_0(
             .decay()
             .offset((unimplemented!() as usize) as isize)
             .write(
-                (if (0..=255).contains(&(c as i32)) {
-                    ((c as i32) as u8).to_ascii_uppercase() as i32
-                } else {
-                    (c as i32)
+                (match ({ (c as i32) },) {
+                    (mut __tmp_8,) => {
+                        if (0..=255).contains(&__tmp_8) {
+                            (__tmp_8 as u8).to_ascii_uppercase() as i32
+                        } else {
+                            __tmp_8
+                        }
+                    }
                 } as i8),
             );
         assert!(
             (unimplemented!()
-                == if (0..=255).contains(&(c as i32)) {
-                    ((c as i32) as u8).to_ascii_uppercase() as i32
-                } else {
-                    (c as i32)
+                == match ({ (c as i32) },) {
+                    (mut __tmp_9,) => {
+                        if (0..=255).contains(&__tmp_9) {
+                            (__tmp_9 as u8).to_ascii_uppercase() as i32
+                        } else {
+                            __tmp_9
+                        }
+                    }
                 })
         );
         let new_pos: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(unimplemented!());
-        chunk.as_pointer().write({
-            let mut __v = Vec::new();
-            let mut __it =
-                RandomAccessIterator::Vec(data.decay().to_last()).iter_add(-(chunk_size2 as isize));
-            while __it != RandomAccessIterator::Vec(data.decay().to_last()) {
-                __v.push((__it.iter_deref().read()));
-                __it.iter_inc();
+        chunk.as_pointer().write(
+            match (
+                {
+                    RandomAccessIterator::Vec(data.decay().to_last())
+                        .iter_add(-(chunk_size2 as isize))
+                },
+                { RandomAccessIterator::Vec(data.decay().to_last()) },
+            ) {
+                (mut __tmp_10, mut __tmp_11) => {
+                    let mut __v = Vec::new();
+                    let mut __it = (__tmp_10).clone();
+                    while __it != __tmp_11 {
+                        __v.push((__it.iter_deref().read()));
+                        __it.iter_inc();
+                    }
+                    __v
+                }
+            },
+        );
+        match ({ chunk.decay().begin() }, { chunk.decay().end() }) {
+            (mut __tmp_12, mut __tmp_13) => {
+                let mut __first = (__tmp_12).clone();
+                let mut __out = result.decay().begin().iter_add((unimplemented!() as isize));
+                while __first != __tmp_13 {
+                    __out.iter_deref().write((__first.iter_deref().read()));
+                    __first.iter_inc();
+                    __out.iter_inc();
+                }
+                __out
             }
-            __v
-        });
-        {
-            let mut __first = chunk.decay().begin();
-            let __last = chunk.decay().end();
-            let mut __out = result.decay().begin().iter_add((unimplemented!() as isize));
-            while __first != __last {
-                __out.iter_deref().write((__first.iter_deref().read()));
-                __first.iter_inc();
-                __out.iter_inc();
-            }
-            __out
         };
         let mut len2: () = unimplemented!();
         assert!((len2 == chunk_size2));
         assert!(
-            ({
-                let __n = (len2 as usize);
-                let mut __it1 = chunk.decay().to_c_string_iterator().take(__n);
-                let mut __it2 = Rc::new(RefCell::new({
-                    let mut __tmp1 = (*data.borrow())[((data_size - chunk_size2) as usize) as usize
-                        ..::std::cmp::min(
-                            (((data_size - chunk_size2) as usize) + (chunk_size2 as usize))
-                                as usize,
-                            (*data.borrow()).len().saturating_sub(1),
-                        )]
-                        .to_vec();
-                    __tmp1.push(0_i8);
-                    __tmp1
-                }))
-                .decay()
-                .to_c_string_iterator()
-                .take(__n);
-                loop {
-                    let __c1 = __it1.next();
-                    let __c2 = __it2.next();
-                    if __c1 != __c2 {
-                        break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
-                    }
-                    if __c1.is_none() {
-                        break 0;
+            (match (
+                { chunk.decay() },
+                {
+                    Rc::new(RefCell::new(
+                        match ({ ((data_size - chunk_size2) as usize) }, {
+                            (chunk_size2 as usize)
+                        }) {
+                            (mut __tmp_16, mut __tmp_17) => {
+                                data.as_pointer().with(|__s: &Vec<i8>| {
+                                    let mut __tmp1 = __s[__tmp_16
+                                        ..::std::cmp::min(
+                                            __tmp_16 + __tmp_17,
+                                            __s.len().saturating_sub(1),
+                                        )]
+                                        .to_vec();
+                                    __tmp1.push(0_i8);
+                                    __tmp1
+                                })
+                            }
+                        },
+                    ))
+                    .decay()
+                },
+                { (len2 as usize) },
+            ) {
+                (mut __tmp_14, mut __tmp_15, mut __tmp_18) => {
+                    {
+                        let mut __it1 = __tmp_14.to_c_string_iterator().take(__tmp_18);
+                        let mut __it2 = __tmp_15.to_c_string_iterator().take(__tmp_18);
+                        loop {
+                            let __c1 = __it1.next();
+                            let __c2 = __it2.next();
+                            if __c1 != __c2 {
+                                break (__c1.unwrap_or(0) as u8 as i32)
+                                    - (__c2.unwrap_or(0) as u8 as i32);
+                            }
+                            if __c1.is_none() {
+                                break 0;
+                            }
+                        }
                     }
                 }
             } == 0)
@@ -201,10 +249,10 @@ pub fn sputn_seekoff_0(
     assert!(unimplemented!());
     let check: Value<Vec<i8>> = Rc::new(RefCell::new(vec![
         (-1_i32 as i8);
-        (*result.borrow()).len() as usize
+        ({ (*result.borrow()).len() }) as usize
     ]));
     let mut len: usize = (unimplemented!() as usize);
-    assert!((len == (*result.borrow()).len()));
+    assert!(({ (len == (*result.borrow()).len()) }));
     let mut i: usize = 0_usize;
     'loop_: while (i < len) {
         assert!(
@@ -221,11 +269,10 @@ pub fn sputn_not_open_1() {
     assert!((len == 0_()));
     assert!(
         ({
-            let __n = 10_usize;
-            let mut __it1 = data.decay().to_c_string_iterator().take(__n);
+            let mut __it1 = data.decay().to_c_string_iterator().take(10_usize);
             let mut __it2 = Ptr::<i8>::from_string_literal(b"aaaaaaaaaa")
                 .to_c_string_iterator()
-                .take(__n);
+                .take(10_usize);
             loop {
                 let __c1 = __it1.next();
                 let __c2 = __it2.next();

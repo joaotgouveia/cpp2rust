@@ -27,15 +27,59 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let l: Value<std_locale> = Rc::new(RefCell::new(
+        (*({ std_locale::classic() }).upgrade().deref()).clone(),
+    ));
     {
-        let f: Ptr<()> = unimplemented!();
-        assert!(((unimplemented!() as i32) == (32 as i32)));
-        assert!(((unimplemented!() as i32) == (97 as i32)));
-        assert!(((unimplemented!() as i32) == (7 as i32)));
-        assert!(((unimplemented!() as i32) == (46 as i32)));
-        assert!(((unimplemented!() as i32) == (97 as i32)));
-        assert!(((unimplemented!() as i32) == (49 as i32)));
+        let f: Ptr<std_ctype_wchar_t_> = ({ use_facet_0(l.as_pointer()) });
+        assert!(
+            ({
+                (({
+                    ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_)
+                        .tolower_7((32 as i32))
+                }) == (32 as i32))
+            })
+        );
+        assert!(
+            ({
+                (({
+                    ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_)
+                        .tolower_7((65 as i32))
+                }) == (97 as i32))
+            })
+        );
+        assert!(
+            ({
+                (({
+                    ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_)
+                        .tolower_7((7 as i32))
+                }) == (7 as i32))
+            })
+        );
+        assert!(
+            ({
+                (({
+                    ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_)
+                        .tolower_7((46 as i32))
+                }) == (46 as i32))
+            })
+        );
+        assert!(
+            ({
+                (({
+                    ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_)
+                        .tolower_7((97 as i32))
+                }) == (97 as i32))
+            })
+        );
+        assert!(
+            ({
+                (({
+                    ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_)
+                        .tolower_7((49 as i32))
+                }) == (49 as i32))
+            })
+        );
     }
     return 0;
 }

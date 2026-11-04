@@ -28,7 +28,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let d: Value<()> = Rc::new(RefCell::new(Vec::new()));
+        let d: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
     }
     return 0;
 }

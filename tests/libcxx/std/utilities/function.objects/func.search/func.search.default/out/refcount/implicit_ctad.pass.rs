@@ -6,18 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = u32;
-pub const anon_0_value: anon_0 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_default_searcher_const_char_ptr__std_equal_to_void____std_default_searcher_const_char_ptr__std_equal_to_void___
-{}
-pub type anon_1 = u32;
-pub const anon_1_value: anon_1 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_default_searcher_const_char_ptr__std_not_equal_to_void____std_default_searcher_const_char_ptr__std_not_equal_to_void___
-{}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -40,12 +29,26 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let mut str: Ptr<i8> = Ptr::<i8>::from_string_literal(b"hello");
-        let searcher: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let searcher: Value<std_default_searcher_const_char_ptr__std_equal_to_void__> =
+            Rc::new(RefCell::new(
+                std_default_searcher_const_char_ptr__std_equal_to_void__::new(
+                    { (str).clone() },
+                    { str.offset((3) as isize) },
+                    None,
+                ),
+            ));
         const _: () = assert!(true, "");;
     }
     {
         let mut str: Ptr<i8> = Ptr::<i8>::from_string_literal(b"hello");
-        let searcher: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let searcher: Value<std_default_searcher_const_char_ptr__std_not_equal_to_void__> =
+            Rc::new(RefCell::new(
+                std_default_searcher_const_char_ptr__std_not_equal_to_void__::new(
+                    { (str).clone() },
+                    { str.offset((3) as isize) },
+                    { <std_not_equal_to_void_>::default() },
+                ),
+            ));
         const _: () = assert!(true, "");;
     }
     return 0;

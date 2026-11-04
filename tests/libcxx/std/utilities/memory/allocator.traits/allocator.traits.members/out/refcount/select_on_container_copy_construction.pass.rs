@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -47,6 +52,11 @@ impl A_int_ {
         Self { id: i }
     }
 }
+impl CppMove for A_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for A_int_ {
     fn default() -> Self {
         { A_int_::new(None) }
@@ -62,6 +72,11 @@ impl A_Holder_NS_Incomplete__ptr_ {
     pub fn new(i: Option<i32>) -> Self {
         let mut i: i32 = i.unwrap_or_else(|| 0);
         Self { id: i }
+    }
+}
+impl CppMove for A_Holder_NS_Incomplete__ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for A_Holder_NS_Incomplete__ptr_ {
@@ -81,6 +96,11 @@ impl B_int_ {
         Self { id: i }
     }
 }
+impl CppMove for B_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for B_int_ {
     fn default() -> Self {
         { B_int_::new(None) }
@@ -88,24 +108,65 @@ impl Default for B_int_ {
 }
 pub fn test_4() -> bool {
     {
-        let mut a: A_int_ = A_int_::new(None);
-        assert!(({ unimplemented!().id } == 0));
+        let a: Value<A_int_> = Rc::new(RefCell::new(A_int_::new(None)));
+        assert!(
+            ({
+                ({
+                    std_allocator_traits_A_int__::select_on_container_copy_construction(
+                        a.as_pointer(),
+                    )
+                })
+                .id
+            } == 0)
+        );
     }
     {
-        let mut a: A_int_ = A_int_::new({ Some(0) });
-        assert!(({ unimplemented!().id } == 0));
+        let a: Value<A_int_> = Rc::new(RefCell::new(A_int_::new({ Some(0) })));
+        assert!(
+            ({
+                ({
+                    std_allocator_traits_A_int__::select_on_container_copy_construction(
+                        a.as_pointer(),
+                    )
+                })
+                .id
+            } == 0)
+        );
     }
     {
-        let mut a: A_Holder_NS_Incomplete__ptr_ = A_Holder_NS_Incomplete__ptr_::new(None);
-        assert!(({ unimplemented!().id } == 0));
+        let a: Value<A_Holder_NS_Incomplete__ptr_> =
+            Rc::new(RefCell::new(A_Holder_NS_Incomplete__ptr_::new(None)));
+        assert!(
+            ({
+                ( { std_allocator_traits_A_Holder_NS_Incomplete__ptr__::select_on_container_copy_construction ( a .as_pointer()  , ) } )  . id
+            } == 0)
+        );
     }
     {
-        let mut b: B_int_ = B_int_::new(None);
-        assert!(({ unimplemented!().id } == 100));
+        let b: Value<B_int_> = Rc::new(RefCell::new(B_int_::new(None)));
+        assert!(
+            ({
+                ({
+                    std_allocator_traits_B_int__::select_on_container_copy_construction(
+                        b.as_pointer(),
+                    )
+                })
+                .id
+            } == 100)
+        );
     }
     {
-        let mut b: B_int_ = B_int_::new({ Some(0) });
-        assert!(({ unimplemented!().id } == 100));
+        let b: Value<B_int_> = Rc::new(RefCell::new(B_int_::new({ Some(0) })));
+        assert!(
+            ({
+                ({
+                    std_allocator_traits_B_int__::select_on_container_copy_construction(
+                        b.as_pointer(),
+                    )
+                })
+                .id
+            } == 100)
+        );
     }
     return true;
 }

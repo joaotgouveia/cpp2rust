@@ -27,24 +27,110 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let l: Value<std_locale> = Rc::new(RefCell::new(std_locale::new_1({
+        Ptr::<i8>::from_string_literal(b"C")
+    })));
     {
-        let cf: Ptr<()> = unimplemented!();
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(unimplemented!());
+        let cf: Ptr<std_ctype_char_> = ({ use_facet_0(l.as_pointer()) });
+        assert!(
+            ({
+                ({
+                    let ___m: u16 = upper_1.with(|rc| *rc.borrow());
+                    (*cf.upgrade().deref()).is_3(___m, ('A' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                !({
+                    let ___m: u16 = lower_2.with(|rc| *rc.borrow());
+                    (*cf.upgrade().deref()).is_3(___m, ('A' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({
+                    let ___m: u16 = alpha_3.with(|rc| *rc.borrow());
+                    (*cf.upgrade().deref()).is_3(___m, ('A' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                !({
+                    let ___m: u16 = upper_1.with(|rc| *rc.borrow());
+                    (*cf.upgrade().deref()).is_3(___m, ('a' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({
+                    let ___m: u16 = lower_2.with(|rc| *rc.borrow());
+                    (*cf.upgrade().deref()).is_3(___m, ('a' as i8))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({
+                    let ___m: u16 = alpha_3.with(|rc| *rc.borrow());
+                    (*cf.upgrade().deref()).is_3(___m, ('a' as i8))
+                })
+            })
+        );
     }
     {
-        let wf: Ptr<()> = unimplemented!();
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(unimplemented!());
+        let wf: Ptr<std_ctype_wchar_t_> = ({ use_facet_4(l.as_pointer()) });
+        assert!(
+            ({
+                ({
+                    ((*wf.upgrade().deref()) as std___ctype_abstract_base_wchar_t_)
+                        .is_1(upper_1.with(|rc| *rc.borrow()), (65 as i32))
+                })
+            })
+        );
+        assert!(
+            ({
+                !({
+                    ((*wf.upgrade().deref()) as std___ctype_abstract_base_wchar_t_)
+                        .is_1(lower_2.with(|rc| *rc.borrow()), (65 as i32))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({
+                    ((*wf.upgrade().deref()) as std___ctype_abstract_base_wchar_t_)
+                        .is_1(alpha_3.with(|rc| *rc.borrow()), (65 as i32))
+                })
+            })
+        );
+        assert!(
+            ({
+                !({
+                    ((*wf.upgrade().deref()) as std___ctype_abstract_base_wchar_t_)
+                        .is_1(upper_1.with(|rc| *rc.borrow()), (97 as i32))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({
+                    ((*wf.upgrade().deref()) as std___ctype_abstract_base_wchar_t_)
+                        .is_1(lower_2.with(|rc| *rc.borrow()), (97 as i32))
+                })
+            })
+        );
+        assert!(
+            ({
+                ({
+                    ((*wf.upgrade().deref()) as std___ctype_abstract_base_wchar_t_)
+                        .is_1(alpha_3.with(|rc| *rc.borrow()), (97 as i32))
+                })
+            })
+        );
     }
     return 0;
 }

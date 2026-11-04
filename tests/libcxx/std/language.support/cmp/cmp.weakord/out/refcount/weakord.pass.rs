@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_weak_ordering__std_weak_ordering_ {}
+impl CppMove for test_macros_detail_is_same_std_weak_ordering__std_weak_ordering_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn DoNotOptimize_1(value: Ptr<Ptr<()>>) -> Ptr<Ptr<()>> {
     b"";
     return (value).clone();
@@ -77,7 +82,7 @@ pub fn test_equality_6() {
     let WeakEq: Ptr<()> = unimplemented!();
     let PartialEq: Ptr<()> = unimplemented!();
     assert!(unimplemented!());
-    let StrongEq: Ptr<std::cmp::Ordering> = std::cmp::Ordering::Equal;
+    let StrongEq: Ptr<std::cmp::Ordering> = libcc2rs::strong_ordering_equal();
     assert!(unimplemented!());
 }
 pub fn test_constexpr_7() -> bool {
@@ -224,6 +229,11 @@ pub struct anon_8 {
     #[offset(4)]
     pub ExpectGreater: bool,
 }
+impl CppMove for anon_8 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type ExpectRes_9 = u32;
 pub const ExpectRes_9_ER_Greater: ExpectRes_9 = 0;
 pub const ExpectRes_9_ER_Less: ExpectRes_9 = 1;
@@ -236,6 +246,11 @@ pub struct anon_10 {
     pub Value: (),
     #[offset(4)]
     pub Expect: ExpectRes_9,
+}
+impl CppMove for anon_10 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

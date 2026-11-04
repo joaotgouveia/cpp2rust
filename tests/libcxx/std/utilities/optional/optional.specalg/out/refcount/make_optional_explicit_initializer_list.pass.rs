@@ -6,57 +6,29 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = u32;
-pub const anon_0_value: anon_0 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char____
-{}
-pub type anon_1 = u32;
-pub const anon_1_value: anon_1 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_optional_TestT___std_optional_TestT__ {}
 thread_local!(
-    pub static value_2: Value<bool> = Rc::new(RefCell::new(true));
+    pub static can_make_optional_explicit_impl_0: Value<bool> = Rc::new(RefCell::new(false));
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct mandate_same_std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char____
-{}
+thread_local!(
+    pub static can_make_optional_explicit_impl_1: Value<bool> = Rc::new(RefCell::new(true));
+);
+thread_local!(
+    pub static can_make_optional_explicit_impl_2: Value<bool> = Rc::new(RefCell::new(true));
+);
 thread_local!(
     pub static can_make_optional_explicit_impl_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 thread_local!(
-    pub static can_make_optional_explicit_impl_4: Value<bool> =
-        Rc::new(RefCell::new(value_2.with(|rc| *rc.borrow())));
+    pub static can_make_optional_explicit_4: Value<bool> = Rc::new(RefCell::new(false));
 );
 thread_local!(
-    pub static can_make_optional_explicit_impl_5: Value<bool> =
-        Rc::new(RefCell::new(value_2.with(|rc| *rc.borrow())));
+    pub static can_make_optional_explicit_5: Value<bool> = Rc::new(RefCell::new(true));
 );
 thread_local!(
-    pub static can_make_optional_explicit_impl_6: Value<bool> = Rc::new(RefCell::new(false));
+    pub static can_make_optional_explicit_6: Value<bool> = Rc::new(RefCell::new(true));
 );
 thread_local!(
-    pub static can_make_optional_explicit_7: Value<bool> = Rc::new(RefCell::new(
-        can_make_optional_explicit_impl_3.with(|rc| *rc.borrow()),
-    ));
-);
-thread_local!(
-    pub static can_make_optional_explicit_8: Value<bool> = Rc::new(RefCell::new(
-        can_make_optional_explicit_impl_4.with(|rc| *rc.borrow()),
-    ));
-);
-thread_local!(
-    pub static can_make_optional_explicit_9: Value<bool> = Rc::new(RefCell::new(
-        can_make_optional_explicit_impl_5.with(|rc| *rc.borrow()),
-    ));
-);
-thread_local!(
-    pub static can_make_optional_explicit_10: Value<bool> = Rc::new(RefCell::new(
-        can_make_optional_explicit_impl_6.with(|rc| *rc.borrow()),
-    ));
+    pub static can_make_optional_explicit_7: Value<bool> = Rc::new(RefCell::new(false));
 );
 const _: () = assert!(
     true,
@@ -90,7 +62,7 @@ impl TestT {
     pub fn new_1(il: Vec<i32>) -> Self {
         let il: Value<Vec<i32>> = Rc::new(RefCell::new(il));
         Self {
-            x: (unimplemented!().read()),
+            x: (({ (*il.borrow()).begin() }).read()),
             size: ((*il.borrow()).len() as i32),
             ptr: Ptr::<i32>::null(),
         }
@@ -98,43 +70,81 @@ impl TestT {
     pub fn new_2(il: Vec<i32>, mut p: Ptr<i32>) -> Self {
         let il: Value<Vec<i32>> = Rc::new(RefCell::new(il));
         Self {
-            x: (unimplemented!().read()),
+            x: (({ (*il.borrow()).begin() }).read()),
             size: ((*il.borrow()).len() as i32),
             ptr: (p).clone(),
         }
     }
 }
-pub fn test_11() -> bool {
+impl CppMove for TestT {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn test_8() -> bool {
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_TestT_> =
+            Rc::new(RefCell::new(({ make_optional_9(Vec::from([42, 2, 3])) })));
         const _: () = assert!(true, "");;
-        assert!(({ unimplemented!().x } == 42));
-        assert!(({ unimplemented!().size } == 3));
-        assert!(({ unimplemented!().ptr.clone() }).is_null());
+        assert!(({ ({ ((*opt.borrow()).read()).x } == 42) }));
+        assert!(({ ({ ((*opt.borrow()).read()).size } == 3) }));
+        assert!(({ ({ ((*opt.borrow()).read()).ptr.clone() }).is_null() }));
     }
     {
         let i: Value<i32> = Rc::new(RefCell::new(42));
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_TestT_> = Rc::new(RefCell::new(
+            ({
+                let ___args: Value<Ptr<i32>> = Rc::new(RefCell::new((i.as_pointer())));
+                make_optional_10(Vec::from([42, 2, 3]), ___args.as_pointer())
+            }),
+        ));
         const _: () = assert!(true, "");;
-        assert!(({ unimplemented!().x } == 42));
-        assert!(({ unimplemented!().size } == 3));
-        assert!(({ { unimplemented!().ptr.clone() } } == { (i.as_pointer()) }));
+        assert!(({ ({ ((*opt.borrow()).read()).x } == 42) }));
+        assert!(({ ({ ((*opt.borrow()).read()).size } == 3) }));
+        assert!(({ ({ { ((*opt.borrow()).read()).ptr.clone() } } == { (i.as_pointer()) }) }));
     }
     let test_string: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(|| {
         {
-            let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let opt: Value<
+                std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char___,
+            > = Rc::new(RefCell::new(
+                ({ make_optional_11(Vec::from([('1' as i8), ('2' as i8), ('3' as i8)])) }),
+            ));
             assert!(
-                Ptr::<i8>::from_string_literal(b"123").with_c_str(|__s| (unimplemented!()).clone()
-                    [..(unimplemented!()).clone().len().saturating_sub(1)]
-                    == *__s)
+                ({
+                    match (opt.as_pointer(),) {
+                        (__tmp_0,) => Ptr::<i8>::from_string_literal(b"123").with_c_str(|__s| {
+                            (*__tmp_0.upgrade().deref())
+                                [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                                == *__s
+                        }),
+                    }
+                })
             );
         }
         {
-            let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let opt: Value<
+                std_optional_std_basic_string_char__std_char_traits_char___std_allocator_char___,
+            > = Rc::new(RefCell::new(
+                ({
+                    let ___args: Value<std_allocator_char_> =
+                        Rc::new(RefCell::new(<std_allocator_char_>::default()));
+                    make_optional_12(
+                        Vec::from([('a' as i8), ('b' as i8), ('c' as i8)]),
+                        ___args.as_pointer(),
+                    )
+                }),
+            ));
             assert!(
-                Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| (unimplemented!()).clone()
-                    [..(unimplemented!()).clone().len().saturating_sub(1)]
-                    == *__s)
+                ({
+                    match (opt.as_pointer(),) {
+                        (__tmp_1,) => Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
+                            (*__tmp_1.upgrade().deref())
+                                [..(*__tmp_1.upgrade().deref()).len().saturating_sub(1)]
+                                == *__s
+                        }),
+                    }
+                })
             );
         }
     })));
@@ -163,18 +173,17 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_11() });
+    ({ test_8() });
     const _: () = assert!(true, "test()");;
     return 0;
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = value_2.with(|_| ());
+    let _ = can_make_optional_explicit_impl_0.with(|_| ());
+    let _ = can_make_optional_explicit_impl_1.with(|_| ());
+    let _ = can_make_optional_explicit_impl_2.with(|_| ());
     let _ = can_make_optional_explicit_impl_3.with(|_| ());
-    let _ = can_make_optional_explicit_impl_4.with(|_| ());
-    let _ = can_make_optional_explicit_impl_5.with(|_| ());
-    let _ = can_make_optional_explicit_impl_6.with(|_| ());
+    let _ = can_make_optional_explicit_4.with(|_| ());
+    let _ = can_make_optional_explicit_5.with(|_| ());
+    let _ = can_make_optional_explicit_6.with(|_| ());
     let _ = can_make_optional_explicit_7.with(|_| ());
-    let _ = can_make_optional_explicit_8.with(|_| ());
-    let _ = can_make_optional_explicit_9.with(|_| ());
-    let _ = can_make_optional_explicit_10.with(|_| ());
 }

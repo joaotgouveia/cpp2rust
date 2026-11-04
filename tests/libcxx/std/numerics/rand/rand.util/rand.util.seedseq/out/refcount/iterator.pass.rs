@@ -10,16 +10,19 @@ pub fn test_0() {
     {
         let a: Value<Box<[u32]>> =
             Rc::new(RefCell::new(Box::new([5_u32, 4_u32, 3_u32, 2_u32, 1_u32])));
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 5_usize));
+        let s: Value<std_seed_seq> = Rc::new(RefCell::new(std_seed_seq::new_1(
+            { (a.as_pointer() as Ptr<u32>) },
+            { (a.as_pointer() as Ptr<u32>).offset((5) as isize) },
+        )));
+        assert!(({ (({ (*s.borrow()).size() }) == 5_usize) }));
         let b: Value<Box<[u32]>> =
             Rc::new(RefCell::new(Box::new([0_u32, 0_u32, 0_u32, 0_u32, 0_u32])));
-        unimplemented!();
-        assert!(((*b.borrow())[(0) as usize] == 5_u32));
-        assert!(((*b.borrow())[(1) as usize] == 4_u32));
-        assert!(((*b.borrow())[(2) as usize] == 3_u32));
-        assert!(((*b.borrow())[(3) as usize] == 2_u32));
-        assert!(((*b.borrow())[(4) as usize] == 1_u32));
+        ({ (*s.borrow()).param((b.as_pointer() as Ptr<u32>)) });
+        assert!(({ ((*b.borrow())[(0) as usize] == 5_u32) }));
+        assert!(({ ((*b.borrow())[(1) as usize] == 4_u32) }));
+        assert!(({ ((*b.borrow())[(2) as usize] == 3_u32) }));
+        assert!(({ ((*b.borrow())[(3) as usize] == 2_u32) }));
+        assert!(({ ((*b.borrow())[(4) as usize] == 1_u32) }));
     }
     {
         let a: Value<Box<[u64]>> = Rc::new(RefCell::new(Box::new([
@@ -28,24 +31,30 @@ pub fn test_0() {
             18446744073709551615_u64,
             6442450944_u64,
         ])));
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 4_usize));
+        let s: Value<std_seed_seq> = Rc::new(RefCell::new(std_seed_seq::new_2(
+            { (a.as_pointer() as Ptr<u64>) },
+            { (a.as_pointer() as Ptr<u64>).offset((4) as isize) },
+        )));
+        assert!(({ (({ (*s.borrow()).size() }) == 4_usize) }));
         let b: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([0_u32, 0_u32, 0_u32, 0_u32])));
-        unimplemented!();
-        assert!(((*b.borrow())[(0) as usize] == 1450704896_u32));
-        assert!(((*b.borrow())[(1) as usize] == 878082048_u32));
-        assert!(((*b.borrow())[(2) as usize] == 4294967295_u32));
-        assert!(((*b.borrow())[(3) as usize] == 2147483648_u32));
+        ({ (*s.borrow()).param((b.as_pointer() as Ptr<u32>)) });
+        assert!(({ ((*b.borrow())[(0) as usize] == 1450704896_u32) }));
+        assert!(({ ((*b.borrow())[(1) as usize] == 878082048_u32) }));
+        assert!(({ ((*b.borrow())[(2) as usize] == 4294967295_u32) }));
+        assert!(({ ((*b.borrow())[(3) as usize] == 2147483648_u32) }));
     }
     {
         let a: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([1_u32, 2_u32, 3_u32])));
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 3_usize));
+        let s: Value<std_seed_seq> = Rc::new(RefCell::new(std_seed_seq::new_1(
+            { (a.as_pointer() as Ptr<u32>) },
+            { (a.as_pointer() as Ptr<u32>).offset((3) as isize) },
+        )));
+        assert!(({ (({ (*s.borrow()).size() }) == 3_usize) }));
         let b: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([0_u32, 0_u32, 0_u32])));
-        unimplemented!();
-        assert!(((*b.borrow())[(0) as usize] == 1_u32));
-        assert!(((*b.borrow())[(1) as usize] == 2_u32));
-        assert!(((*b.borrow())[(2) as usize] == 3_u32));
+        ({ (*s.borrow()).param((b.as_pointer() as Ptr<u32>)) });
+        assert!(({ ((*b.borrow())[(0) as usize] == 1_u32) }));
+        assert!(({ ((*b.borrow())[(1) as usize] == 2_u32) }));
+        assert!(({ ((*b.borrow())[(2) as usize] == 3_u32) }));
     }
 }
 pub fn main() {

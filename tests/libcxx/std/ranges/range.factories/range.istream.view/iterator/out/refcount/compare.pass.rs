@@ -7,95 +7,278 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn make_string_0(in_: Ptr<i8>) -> Vec<i8> {
-    return unimplemented!();
+    return {
+        use std::io::Read;
+        let mut __bytes: Vec<u8> = Vec::new();
+        let mut __f = &(in_).offset((0) as isize);
+        __f.read_to_end(&mut __bytes)
+            .expect("couldn't read the file");
+        __bytes.push(0);
+        CChar::from_byte_vec(__bytes)
+    };
 }
 pub fn make_string_1(in_: Ptr<i8>) -> Vec<i8> {
-    return unimplemented!();
+    return {
+        use std::io::Read;
+        let mut __bytes: Vec<u8> = Vec::new();
+        let mut __f = &(in_).offset((0) as isize);
+        __f.read_to_end(&mut __bytes)
+            .expect("couldn't read the file");
+        __bytes.push(0);
+        CChar::from_byte_vec(__bytes)
+    };
 }
 pub fn make_string_2(in_: Ptr<i8>) -> Vec<i8> {
-    return unimplemented!();
+    return {
+        use std::io::Read;
+        let mut __bytes: Vec<u8> = Vec::new();
+        let mut __f = &(in_).offset((0) as isize);
+        __f.read_to_end(&mut __bytes)
+            .expect("couldn't read the file");
+        __bytes.push(0);
+        CChar::from_byte_vec(__bytes)
+    };
 }
 pub fn make_string_3(in_: Ptr<i8>) -> Vec<i32> {
-    return unimplemented!();
+    return {
+        use std::io::Read;
+        let mut __bytes: Vec<u8> = Vec::new();
+        let mut __f = &(in_).offset((0) as isize);
+        __f.read_to_end(&mut __bytes)
+            .expect("couldn't read the file");
+        __bytes.push(0);
+        CChar::from_byte_vec(__bytes)
+    };
 }
 pub fn make_string_4(in_: Ptr<i8>) -> Vec<i32> {
-    return unimplemented!();
+    return {
+        use std::io::Read;
+        let mut __bytes: Vec<u8> = Vec::new();
+        let mut __f = &(in_).offset((0) as isize);
+        __f.read_to_end(&mut __bytes)
+            .expect("couldn't read the file");
+        __bytes.push(0);
+        CChar::from_byte_vec(__bytes)
+    };
 }
 pub fn make_string_5(in_: Ptr<i8>) -> Vec<i32> {
-    return unimplemented!();
+    return {
+        use std::io::Read;
+        let mut __bytes: Vec<u8> = Vec::new();
+        let mut __f = &(in_).offset((0) as isize);
+        __f.read_to_end(&mut __bytes)
+            .expect("couldn't read the file");
+        __bytes.push(0);
+        CChar::from_byte_vec(__bytes)
+    };
 }
-pub fn make_string_stream_6(in_: Ptr<i8>) -> () {
-    return unimplemented!();
+pub fn make_string_stream_6(
+    in_: Ptr<i8>,
+) -> std_basic_istringstream_char__std_char_traits_char___std_allocator_char__ {
+    return {
+        let __tmp_0: Value<Vec<i8>> = Rc::new(RefCell::new(({ make_string_0((in_).clone()) })));
+        std_basic_istringstream_char__std_char_traits_char___std_allocator_char__::new_1(
+            { __tmp_0.as_pointer() },
+            None,
+        )
+    };
 }
-pub fn make_string_stream_7(in_: Ptr<i8>) -> () {
-    return unimplemented!();
+pub fn make_string_stream_7(
+    in_: Ptr<i8>,
+) -> std_basic_istringstream_char__std_char_traits_char___std_allocator_char__ {
+    return {
+        let __tmp_1: Value<Vec<i8>> = Rc::new(RefCell::new(({ make_string_1((in_).clone()) })));
+        std_basic_istringstream_char__std_char_traits_char___std_allocator_char__::new_1(
+            { __tmp_1.as_pointer() },
+            None,
+        )
+    };
 }
-pub fn make_string_stream_8(in_: Ptr<i8>) -> () {
-    return unimplemented!();
+pub fn make_string_stream_8(
+    in_: Ptr<i8>,
+) -> std_basic_istringstream_char__std_char_traits_char___std_allocator_char__ {
+    return {
+        let __tmp_2: Value<Vec<i8>> = Rc::new(RefCell::new(({ make_string_2((in_).clone()) })));
+        std_basic_istringstream_char__std_char_traits_char___std_allocator_char__::new_1(
+            { __tmp_2.as_pointer() },
+            None,
+        )
+    };
 }
-pub fn make_string_stream_9(in_: Ptr<i8>) -> () {
-    return unimplemented!();
+pub fn make_string_stream_9(
+    in_: Ptr<i8>,
+) -> std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ {
+    return {
+        let __tmp_3: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_string_3((in_).clone()) })));
+        std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
+            { __tmp_3.as_pointer() },
+            None,
+        )
+    };
 }
-pub fn make_string_stream_10(in_: Ptr<i8>) -> () {
-    return unimplemented!();
+pub fn make_string_stream_10(
+    in_: Ptr<i8>,
+) -> std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ {
+    return {
+        let __tmp_4: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_string_4((in_).clone()) })));
+        std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
+            { __tmp_4.as_pointer() },
+            None,
+        )
+    };
 }
-pub fn make_string_stream_11(in_: Ptr<i8>) -> () {
-    return unimplemented!();
+pub fn make_string_stream_11(
+    in_: Ptr<i8>,
+) -> std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ {
+    return {
+        let __tmp_5: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_string_5((in_).clone()) })));
+        std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
+            { __tmp_5.as_pointer() },
+            None,
+        )
+    };
 }
 pub fn test_12() {
     {
-        let iss: Value<()> = Rc::new(RefCell::new(
-            ({ make_string_stream_6(Ptr::<i8>::from_string_literal(b"a123 4")) }),
-        ));
-        let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let iss: Value<std_basic_istringstream_char__std_char_traits_char___std_allocator_char__> =
+            Rc::new(RefCell::new(
+                ({ make_string_stream_6(Ptr::<i8>::from_string_literal(b"a123 4")) }),
+            ));
+        let isv: Value<std_ranges_basic_istream_view_int__char__std_char_traits_char__> =
+            Rc::new(RefCell::new(
+                std_ranges_basic_istream_view_int__char__std_char_traits_char__::new({
+                    iss.as_pointer()
+                }),
+            ));
+        let it: Value<std_ranges_basic_istream_view_int__char___Iterator> =
+            Rc::new(RefCell::new(({ (*isv.borrow()).begin() })));
+        assert!(
+            ({
+                (*it.borrow()) == ({ (*default_sentinel_13.with(Value::clone).borrow()).clone() })
+            })
+        );
     }
     {
-        let iss: Value<()> = Rc::new(RefCell::new(
-            ({ make_string_stream_7(Ptr::<i8>::from_string_literal(b"123 ")) }),
-        ));
-        let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((*it.borrow()) != unimplemented!());
-        unimplemented!();
-        assert!(unimplemented!());
+        let iss: Value<std_basic_istringstream_char__std_char_traits_char___std_allocator_char__> =
+            Rc::new(RefCell::new(
+                ({ make_string_stream_7(Ptr::<i8>::from_string_literal(b"123 ")) }),
+            ));
+        let isv: Value<std_ranges_basic_istream_view_int__char__std_char_traits_char__> =
+            Rc::new(RefCell::new(
+                std_ranges_basic_istream_view_int__char__std_char_traits_char__::new({
+                    iss.as_pointer()
+                }),
+            ));
+        let it: Value<std_ranges_basic_istream_view_int__char___Iterator> =
+            Rc::new(RefCell::new(({ (*isv.borrow()).begin() })));
+        assert!(
+            ({
+                (*it.borrow()) != ({ (*default_sentinel_13.with(Value::clone).borrow()).clone() })
+            })
+        );
+        {
+            it.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            it.as_pointer()
+        };
+        assert!(
+            ({
+                (*it.borrow()) == ({ (*default_sentinel_13.with(Value::clone).borrow()).clone() })
+            })
+        );
     }
     {
-        let iss: Value<()> = Rc::new(RefCell::new(
-            ({ make_string_stream_8(Ptr::<i8>::from_string_literal(b"")) }),
-        ));
-        let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let iss: Value<std_basic_istringstream_char__std_char_traits_char___std_allocator_char__> =
+            Rc::new(RefCell::new(
+                ({ make_string_stream_8(Ptr::<i8>::from_string_literal(b"")) }),
+            ));
+        let isv: Value<std_ranges_basic_istream_view_int__char__std_char_traits_char__> =
+            Rc::new(RefCell::new(
+                std_ranges_basic_istream_view_int__char__std_char_traits_char__::new({
+                    iss.as_pointer()
+                }),
+            ));
+        let it: Value<std_ranges_basic_istream_view_int__char___Iterator> =
+            Rc::new(RefCell::new(({ (*isv.borrow()).begin() })));
+        assert!(
+            ({
+                (*it.borrow()) == ({ (*default_sentinel_13.with(Value::clone).borrow()).clone() })
+            })
+        );
     }
 }
-pub fn test_13() {
+pub fn test_14() {
     {
-        let iss: Value<()> = Rc::new(RefCell::new(
+        let iss: Value<
+            std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__,
+        > = Rc::new(RefCell::new(
             ({ make_string_stream_9(Ptr::<i8>::from_string_literal(b"a123 4")) }),
         ));
-        let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let isv: Value<std_ranges_basic_istream_view_int__wchar_t__std_char_traits_wchar_t__> =
+            Rc::new(RefCell::new(
+                std_ranges_basic_istream_view_int__wchar_t__std_char_traits_wchar_t__::new({
+                    iss.as_pointer()
+                }),
+            ));
+        let it: Value<std_ranges_basic_istream_view_int__wchar_t___Iterator> =
+            Rc::new(RefCell::new(({ (*isv.borrow()).begin() })));
+        assert!(
+            ({
+                (*it.borrow()) == ({ (*default_sentinel_13.with(Value::clone).borrow()).clone() })
+            })
+        );
     }
     {
-        let iss: Value<()> = Rc::new(RefCell::new(
+        let iss: Value<
+            std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__,
+        > = Rc::new(RefCell::new(
             ({ make_string_stream_10(Ptr::<i8>::from_string_literal(b"123 ")) }),
         ));
-        let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((*it.borrow()) != unimplemented!());
-        unimplemented!();
-        assert!(unimplemented!());
+        let isv: Value<std_ranges_basic_istream_view_int__wchar_t__std_char_traits_wchar_t__> =
+            Rc::new(RefCell::new(
+                std_ranges_basic_istream_view_int__wchar_t__std_char_traits_wchar_t__::new({
+                    iss.as_pointer()
+                }),
+            ));
+        let it: Value<std_ranges_basic_istream_view_int__wchar_t___Iterator> =
+            Rc::new(RefCell::new(({ (*isv.borrow()).begin() })));
+        assert!(
+            ({
+                (*it.borrow()) != ({ (*default_sentinel_13.with(Value::clone).borrow()).clone() })
+            })
+        );
+        {
+            it.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            it.as_pointer()
+        };
+        assert!(
+            ({
+                (*it.borrow()) == ({ (*default_sentinel_13.with(Value::clone).borrow()).clone() })
+            })
+        );
     }
     {
-        let iss: Value<()> = Rc::new(RefCell::new(
+        let iss: Value<
+            std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__,
+        > = Rc::new(RefCell::new(
             ({ make_string_stream_11(Ptr::<i8>::from_string_literal(b"")) }),
         ));
-        let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let isv: Value<std_ranges_basic_istream_view_int__wchar_t__std_char_traits_wchar_t__> =
+            Rc::new(RefCell::new(
+                std_ranges_basic_istream_view_int__wchar_t__std_char_traits_wchar_t__::new({
+                    iss.as_pointer()
+                }),
+            ));
+        let it: Value<std_ranges_basic_istream_view_int__wchar_t___Iterator> =
+            Rc::new(RefCell::new(({ (*isv.borrow()).begin() })));
+        assert!(
+            ({
+                (*it.borrow()) == ({ (*default_sentinel_13.with(Value::clone).borrow()).clone() })
+            })
+        );
     }
 }
 pub fn main() {
@@ -119,7 +302,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_12() });
-    ({ test_13() });
+    ({ test_14() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

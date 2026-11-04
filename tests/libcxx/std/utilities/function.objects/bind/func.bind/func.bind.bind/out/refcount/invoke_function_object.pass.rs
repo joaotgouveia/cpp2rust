@@ -16,9 +16,19 @@ impl Callable1<Ptr<BadUnaryFunction>, i32> for DummyUnaryFunction {
         })
     }
 }
+impl CppMove for DummyUnaryFunction {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct BadUnaryFunction {}
+impl CppMove for BadUnaryFunction {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -39,12 +49,29 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let b: Value<std__Bind_DummyUnaryFunction__BadUnaryFunction__> = Rc::new(RefCell::new(
+        ({
+            let ___f: Value<DummyUnaryFunction> =
+                Rc::new(RefCell::new(<DummyUnaryFunction>::default()));
+            let ___args: Value<BadUnaryFunction> =
+                Rc::new(RefCell::new(<BadUnaryFunction>::default()));
+            bind_0(___f.as_pointer(), ___args.as_pointer())
+        }),
+    ));
     ({
         let ___args: Value<i32> = Rc::new(RefCell::new(0));
         (*b.borrow_mut())(___args.as_pointer())
     });
-    let b2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let b2: Value<std__Bind_result_long__DummyUnaryFunction__BadUnaryFunction__> =
+        Rc::new(RefCell::new(
+            ({
+                let ___f: Value<DummyUnaryFunction> =
+                    Rc::new(RefCell::new(<DummyUnaryFunction>::default()));
+                let ___args: Value<BadUnaryFunction> =
+                    Rc::new(RefCell::new(<BadUnaryFunction>::default()));
+                bind_1(___f.as_pointer(), ___args.as_pointer())
+            }),
+        ));
     ({
         let ___args: Value<i32> = Rc::new(RefCell::new(0));
         (*b2.borrow_mut())(___args.as_pointer())

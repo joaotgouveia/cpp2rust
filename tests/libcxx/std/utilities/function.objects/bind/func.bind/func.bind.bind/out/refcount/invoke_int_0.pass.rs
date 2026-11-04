@@ -6,29 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(f: (), mut expected: i32) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    assert!((({ (*f.borrow_mut())() }) == expected));
-}
-pub fn test_1(f: (), mut expected: i32) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    assert!((({ (*f.borrow_mut())() }) == expected));
-}
-pub fn test_2(f: (), mut expected: i32) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    assert!((({ (*f.borrow_mut())() }) == expected));
-}
-pub fn test_3(f: (), mut expected: i32) {
-    let f: Value<()> = Rc::new(RefCell::new(f));
-    assert!((({ (*f.borrow_mut())() }) == expected));
-}
-pub fn test_const_4(f: Ptr<()>, mut expected: i32) {
-    assert!(({ ({ (*f.upgrade().deref())() }).clone() } == { expected }));
-}
-pub fn test_const_5(f: Ptr<()>, mut expected: i32) {
-    assert!(({ ({ (*f.upgrade().deref())() }).clone() } == { expected }));
-}
-pub fn f_6() -> i32 {
+pub fn f_0() -> i32 {
     return 1;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -39,20 +17,69 @@ impl Callable0<i32> for A_int_0 {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| A_int_0Impl::operator_call_1(__it))
     }
 }
-pub fn test_all_7() -> bool {
-    ({ test_0(unimplemented!(), 1) });
-    ({ test_0(unimplemented!(), 1) });
-    ({ test_1(unimplemented!(), 4) });
+impl CppMove for A_int_0 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn test_all_1() -> bool {
+    ({ test_2(({ bind_3(FnPtr::<fn() -> i32>::new(f_0)) }), 1) });
     ({
-        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_const_4(_f.as_pointer(), 5)
+        test_2(
+            ({
+                let ___f: Value<FnPtr<fn() -> i32>> =
+                    Rc::new(RefCell::new((FnPtr::<fn() -> i32>::new(f_0))));
+                bind_4(___f.as_pointer())
+            }),
+            1,
+        )
     });
-    ({ test_2(unimplemented!(), 1) });
-    ({ test_2(unimplemented!(), 1) });
-    ({ test_3(unimplemented!(), 4) });
     ({
-        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_const_5(_f.as_pointer(), 5)
+        test_5(
+            ({
+                let ___f: Value<A_int_0> = Rc::new(RefCell::new(<A_int_0>::default()));
+                bind_6(___f.as_pointer())
+            }),
+            4,
+        )
+    });
+    ({
+        let _f: Value<std__Bind_A_int_0____> = Rc::new(RefCell::new(
+            ({
+                let ___f: Value<A_int_0> = Rc::new(RefCell::new(<A_int_0>::default()));
+                bind_6(___f.as_pointer())
+            }),
+        ));
+        test_const_7(_f.as_pointer(), 5)
+    });
+    ({ test_8(({ bind_9(FnPtr::<fn() -> i32>::new(f_0)) }), 1) });
+    ({
+        test_8(
+            ({
+                let ___f: Value<FnPtr<fn() -> i32>> =
+                    Rc::new(RefCell::new((FnPtr::<fn() -> i32>::new(f_0))));
+                bind_10(___f.as_pointer())
+            }),
+            1,
+        )
+    });
+    ({
+        test_11(
+            ({
+                let ___f: Value<A_int_0> = Rc::new(RefCell::new(<A_int_0>::default()));
+                bind_12(___f.as_pointer())
+            }),
+            4,
+        )
+    });
+    ({
+        let _f: Value<std__Bind_result_int__A_int_0____> = Rc::new(RefCell::new(
+            ({
+                let ___f: Value<A_int_0> = Rc::new(RefCell::new(<A_int_0>::default()));
+                bind_12(___f.as_pointer())
+            }),
+        ));
+        test_const_13(_f.as_pointer(), 5)
     });
     return true;
 }
@@ -76,7 +103,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_all_7() });
+    ({ test_all_1() });
     const _: () = assert!(true, "test_all()");;
     return 0;
 }

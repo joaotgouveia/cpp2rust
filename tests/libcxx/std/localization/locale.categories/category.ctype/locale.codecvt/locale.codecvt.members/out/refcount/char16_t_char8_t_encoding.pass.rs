@@ -27,8 +27,17 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let f: Ptr<()> = unimplemented!();
-    assert!((unimplemented!() == 0));
+    let f: Ptr<std_codecvt_char16_t__char8_t____mbstate_t_> =
+        ({ use_facet_0(({ std_locale::classic() })) });
+    assert!(
+        ({
+            (({
+                ((*f.upgrade().deref())
+                    as std___codecvt_abstract_base_char16_t__char8_t____mbstate_t_)
+                    .encoding()
+            }) == 0)
+        })
+    );
     const _: () = assert!(true, "noexcept(f.encoding())");;
     return 0;
 }

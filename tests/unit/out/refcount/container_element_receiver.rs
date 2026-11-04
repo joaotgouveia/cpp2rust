@@ -24,15 +24,25 @@ impl Holder {
         }
     }
 }
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn pick_0(a: Ptr<Vec<i32>>, b: Ptr<Vec<i32>>, mut first: bool) -> Ptr<Vec<i32>> {
     return if first { (a).clone() } else { (b).clone() };
 }
 pub fn sum_1(v: Ptr<Vec<i32>>) -> i32 {
     let mut total: i32 = 0;
-    let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(v.decay().begin()));
-    'loop_: while (*it.borrow()) != v.decay().end() {
+    let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(CppRange::begin(&v.decay())));
+    'loop_: while (*it.borrow()) != CppRange::end(&v.decay()) {
         total += ((*it.borrow()).iter_deref().read());
-        (*it.borrow_mut()).iter_inc();
+        {
+            it.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            it.as_pointer()
+        };
     }
     return ({ total } + {
         (if 0_usize as usize >= (*v.upgrade().deref()).len() {
@@ -55,7 +65,7 @@ fn main_0() -> i32 {
     }));
     assert!(((({ { (*h.borrow()).ref_.clone() }.decay() }).read()) == 1));
     ({ { (*h.borrow()).ref_.clone() }.decay() }).write(9);
-    assert!(({ ({ (*v.borrow())[0_usize] } == 9) }));
+    assert!(((v.decay().offset(0_usize as isize).read()) == 9));
     ({ { (*h.borrow()).ref_.clone() }.decay() }).write(1);
     assert!(((field_ref!(h.as_pointer(), vec_).decay().to_last().read()) == 5));
     let mut p: Ptr<Vec<i32>> = (field_ref!(h.as_pointer(), vec_).as_pointer());
@@ -69,7 +79,13 @@ fn main_0() -> i32 {
     })
     .decay()
     .write(7);
-    assert!(((vec_elem!(h.as_pointer(), vec_, 0_usize).read()) == 7));
+    assert!(
+        ((field_ref!(h.as_pointer(), vec_)
+            .decay()
+            .offset(0_usize as isize)
+            .read())
+            == 7)
+    );
     let m: Value<Map<i32, (Value<i32>, Value<Vec<i32>>)>> = Rc::new(RefCell::new(Map::new()));
     {
         let __a1 = 8;
@@ -81,13 +97,14 @@ fn main_0() -> i32 {
         .with_mut(|__v: &mut Vec<i32>| __v.push(__a1))
     };
     assert!(
-        ((Map::subscript_move(
-            m.as_pointer(),
-            Rc::new(RefCell::new(1)).as_pointer(),
-            |__k| cpp_move!(__k)
+        ((CppRange::begin(
+            &Map::subscript_move(
+                m.as_pointer(),
+                Rc::new(RefCell::new(1)).as_pointer(),
+                |__k| cpp_move!(__k)
+            )
+            .decay()
         )
-        .decay()
-        .begin()
         .iter_deref()
         .read())
             == 8)

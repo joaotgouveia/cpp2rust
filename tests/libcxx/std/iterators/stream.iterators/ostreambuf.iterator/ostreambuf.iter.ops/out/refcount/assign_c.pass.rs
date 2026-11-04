@@ -28,35 +28,68 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let outf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let outf : Value<std_basic_ostringstream_char__std_char_traits_char___std_allocator_char__ > = Rc::new(RefCell::new(<std_basic_ostringstream_char__std_char_traits_char___std_allocator_char__  >::default() )) ;
+        let i: Value<std_ostreambuf_iterator_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_ostreambuf_iterator_char__std_char_traits_char__::new_1({ outf.as_pointer() }),
+        ));
+        (*i.borrow_mut()) = ('a' as i8);
         assert!(
-            Ptr::<i8>::from_string_literal(b"a").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(({ (*outf.borrow()).str_16() }))).as_pointer(),) {
+                (__tmp_0,) => {
+                    Ptr::<i8>::from_string_literal(b"a").with_c_str(|__s| {
+                        (*__tmp_0.upgrade().deref())
+                            [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
-        unimplemented!();
+        (*i.borrow_mut()) = ('b' as i8);
         assert!(
-            Ptr::<i8>::from_string_literal(b"ab").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(({ (*outf.borrow()).str_16() }))).as_pointer(),) {
+                (__tmp_1,) => {
+                    Ptr::<i8>::from_string_literal(b"ab").with_c_str(|__s| {
+                        (*__tmp_1.upgrade().deref())
+                            [..(*__tmp_1.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
-        let outf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let outf : Value<std_basic_ostringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ > = Rc::new(RefCell::new(<std_basic_ostringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__  >::default() )) ;
+        let i: Value<std_ostreambuf_iterator_wchar_t__std_char_traits_wchar_t__> =
+            Rc::new(RefCell::new(
+                std_ostreambuf_iterator_wchar_t__std_char_traits_wchar_t__::new_1({
+                    outf.as_pointer()
+                }),
+            ));
+        (*i.borrow_mut()) = (97 as i32);
         assert!(
-            Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32,]).with_c_str(
-                |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-            )
+            match (Rc::new(RefCell::new(({ (*outf.borrow()).str_16() }))).as_pointer(),) {
+                (__tmp_2,) => {
+                    Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32]).with_c_str(|__s| {
+                        (*__tmp_2.upgrade().deref())
+                            [..(*__tmp_2.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
-        unimplemented!();
+        (*i.borrow_mut()) = (98 as i32);
         assert!(
-            Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 0 as i32,]).with_c_str(
-                |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-            )
+            match (Rc::new(RefCell::new(({ (*outf.borrow()).str_16() }))).as_pointer(),) {
+                (__tmp_3,) => {
+                    Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 0 as i32]).with_c_str(
+                        |__s| {
+                            (*__tmp_3.upgrade().deref())
+                                [..(*__tmp_3.upgrade().deref()).len().saturating_sub(1)]
+                                == *__s
+                        },
+                    )
+                }
+            }
         );
     }
     return 0;

@@ -32,12 +32,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let mut N: u32 = (((::std::mem::size_of::<[i32; 5]>() as usize)
             .wrapping_div((::std::mem::size_of::<i32>() as usize)))
             as u32);
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == (N as usize)));
+        let v: Value<std_valarray_int_> = Rc::new(RefCell::new(std_valarray_int_::new_1(
+            { (a.as_pointer() as Ptr<i32>) },
+            { (N as usize) },
+        )));
+        (*v.borrow_mut()) = 7;
+        assert!(({ (({ (*v.borrow()).size() }) == (N as usize)) }));
         let mut i: usize = 0_usize;
-        'loop_: while (i < unimplemented!()) {
-            assert!(((unimplemented!().read()) == 7));
+        'loop_: while (i < ({ (*v.borrow()).size() })) {
+            assert!(({ ({ (*v.borrow())[i] } == 7) }));
             i.prefix_inc();
         }
     }

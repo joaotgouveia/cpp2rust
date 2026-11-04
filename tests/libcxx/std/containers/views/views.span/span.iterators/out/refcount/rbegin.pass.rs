@@ -6,268 +6,28 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn testConstexprSpan_0(s: ()) -> bool {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let ret: Value<bool> = Rc::new(RefCell::new(true));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    if unimplemented!() {
-        let __rhs = (*ret.borrow()) && (unimplemented!());
-        (*ret.borrow_mut()) = __rhs;
-    } else {
-        let mut last: () = (unimplemented!()).wrapping_sub(1_());
-        let __rhs = (*ret.borrow()) && ((unimplemented!().read()) == (unimplemented!().read()));
-        (*ret.borrow_mut()) = __rhs;
-        let __rhs = (*ret.borrow()) && ((unimplemented!()) == (unimplemented!()));
-        (*ret.borrow_mut()) = __rhs;
-    }
-    return (*ret.borrow());
-}
-pub fn testConstexprSpan_1(s: ()) -> bool {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let ret: Value<bool> = Rc::new(RefCell::new(true));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    if unimplemented!() {
-        let __rhs = (*ret.borrow()) && (unimplemented!());
-        (*ret.borrow_mut()) = __rhs;
-    } else {
-        let mut last: () = (unimplemented!()).wrapping_sub(1_());
-        let __rhs = (*ret.borrow()) && ((unimplemented!().read()) == (unimplemented!().read()));
-        (*ret.borrow_mut()) = __rhs;
-        let __rhs = (*ret.borrow()) && ((unimplemented!()) == (unimplemented!()));
-        (*ret.borrow_mut()) = __rhs;
-    }
-    return (*ret.borrow());
-}
-pub fn testConstexprSpan_2(s: ()) -> bool {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let ret: Value<bool> = Rc::new(RefCell::new(true));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    if unimplemented!() {
-        let __rhs = (*ret.borrow()) && (unimplemented!());
-        (*ret.borrow_mut()) = __rhs;
-    } else {
-        let mut last: () = (unimplemented!()).wrapping_sub(1_());
-        let __rhs = (*ret.borrow()) && ((unimplemented!().read()) == (unimplemented!().read()));
-        (*ret.borrow_mut()) = __rhs;
-        let __rhs = (*ret.borrow()) && ((unimplemented!()) == (unimplemented!()));
-        (*ret.borrow_mut()) = __rhs;
-    }
-    return (*ret.borrow());
-}
-pub fn testConstexprSpan_3(s: ()) -> bool {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let ret: Value<bool> = Rc::new(RefCell::new(true));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    if unimplemented!() {
-        let __rhs = (*ret.borrow()) && (unimplemented!());
-        (*ret.borrow_mut()) = __rhs;
-    } else {
-        let mut last: () = (unimplemented!()).wrapping_sub(1_());
-        let __rhs = (*ret.borrow())
-            && ({
-                let _arg0: A = (unimplemented!()).clone();
-                operator_eq_4(_arg0, (unimplemented!()).clone())
-            });
-        (*ret.borrow_mut()) = __rhs;
-        let __rhs = (*ret.borrow()) && ((unimplemented!()) == (unimplemented!()));
-        (*ret.borrow_mut()) = __rhs;
-    }
-    return (*ret.borrow());
-}
-pub fn testConstexprSpan_5(s: ()) -> bool {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let ret: Value<bool> = Rc::new(RefCell::new(true));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    if unimplemented!() {
-        let __rhs = (*ret.borrow()) && (unimplemented!());
-        (*ret.borrow_mut()) = __rhs;
-    } else {
-        let mut last: () = (unimplemented!()).wrapping_sub(1_());
-        let __rhs = (*ret.borrow()) && (unimplemented!());
-        (*ret.borrow_mut()) = __rhs;
-        let __rhs = (*ret.borrow()) && ((unimplemented!()) == (unimplemented!()));
-        (*ret.borrow_mut()) = __rhs;
-    }
-    return (*ret.borrow());
-}
-pub fn testConstexprSpan_6(s: ()) -> bool {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let ret: Value<bool> = Rc::new(RefCell::new(true));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    {
-        let __rhs = (*ret.borrow()) && (unimplemented!());
-        (*ret.borrow_mut()) = __rhs;
-    }
-    return (*ret.borrow());
-}
-pub fn testConstexprSpan_7(s: ()) -> bool {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let ret: Value<bool> = Rc::new(RefCell::new(true));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    {
-        let __rhs = (*ret.borrow()) && (unimplemented!());
-        (*ret.borrow_mut()) = __rhs;
-    }
-    return (*ret.borrow());
-}
-pub fn testConstexprSpan_8(s: ()) -> bool {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let ret: Value<bool> = Rc::new(RefCell::new(true));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    {
-        let __rhs = (*ret.borrow()) && (unimplemented!());
-        (*ret.borrow_mut()) = __rhs;
-    }
-    return (*ret.borrow());
-}
-pub fn testConstexprSpan_9(s: ()) -> bool {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let ret: Value<bool> = Rc::new(RefCell::new(true));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    {
-        let __rhs = (*ret.borrow()) && (unimplemented!());
-        (*ret.borrow_mut()) = __rhs;
-    }
-    return (*ret.borrow());
-}
-pub fn testConstexprSpan_10(s: ()) -> bool {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let ret: Value<bool> = Rc::new(RefCell::new(true));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    {
-        let __rhs = (*ret.borrow()) && (unimplemented!());
-        (*ret.borrow_mut()) = __rhs;
-    }
-    return (*ret.borrow());
-}
-pub fn testConstexprSpan_11(s: ()) -> bool {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let ret: Value<bool> = Rc::new(RefCell::new(true));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    if unimplemented!() {
-        let __rhs = (*ret.borrow()) && (unimplemented!());
-        (*ret.borrow_mut()) = __rhs;
-    } else {
-        let mut last: () = (unimplemented!()).wrapping_sub(1_());
-        let __rhs = (*ret.borrow()) && ((unimplemented!().read()) == (unimplemented!().read()));
-        (*ret.borrow_mut()) = __rhs;
-        let __rhs = (*ret.borrow()) && ((unimplemented!()) == (unimplemented!()));
-        (*ret.borrow_mut()) = __rhs;
-    }
-    return (*ret.borrow());
-}
-pub fn testRuntimeSpan_12(s: ()) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    if unimplemented!() {
-        assert!(unimplemented!());
-    } else {
-        let mut last: () = (unimplemented!()).wrapping_sub(1_());
-        assert!(((unimplemented!().read()) == (unimplemented!().read())));
-        assert!(((unimplemented!()) == (unimplemented!())));
-    }
-}
-pub fn testRuntimeSpan_13(s: ()) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    if unimplemented!() {
-        assert!(unimplemented!());
-    } else {
-        let mut last: () = (unimplemented!()).wrapping_sub(1_());
-        assert!(((unimplemented!().read()) == (unimplemented!().read())));
-        assert!(((unimplemented!()) == (unimplemented!())));
-    }
-}
-pub fn testRuntimeSpan_14(s: ()) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    if unimplemented!() {
-        assert!(unimplemented!());
-    } else {
-        let mut last: () = (unimplemented!()).wrapping_sub(1_());
-        assert!(((unimplemented!().read()) == (unimplemented!().read())));
-        assert!(((unimplemented!()) == (unimplemented!())));
-    }
-}
-pub fn testRuntimeSpan_15(s: ()) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    if unimplemented!() {
-        assert!(unimplemented!());
-    } else {
-        let mut last: () = (unimplemented!()).wrapping_sub(1_());
-        assert!(
-            ({
-                let _arg0: A = (unimplemented!()).clone();
-                operator_eq_4(_arg0, (unimplemented!()).clone())
-            })
-        );
-        assert!(((unimplemented!()) == (unimplemented!())));
-    }
-}
-pub fn testRuntimeSpan_16(s: ()) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    if unimplemented!() {
-        assert!(unimplemented!());
-    } else {
-        let mut last: () = (unimplemented!()).wrapping_sub(1_());
-        assert!(unimplemented!());
-        assert!(((unimplemented!()) == (unimplemented!())));
-    }
-}
-pub fn testRuntimeSpan_17(s: ()) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    {
-        assert!(unimplemented!());
-    }
-}
-pub fn testRuntimeSpan_18(s: ()) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    {
-        assert!(unimplemented!());
-    }
-}
-pub fn testRuntimeSpan_19(s: ()) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    {
-        assert!(unimplemented!());
-    }
-}
-pub fn testRuntimeSpan_20(s: ()) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    {
-        assert!(unimplemented!());
-    }
-}
-pub fn testRuntimeSpan_21(s: ()) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    {
-        assert!(unimplemented!());
-    }
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A {}
 impl CppEq for A {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_4(__lhs.read(), __rhs.read())
+        operator_eq_0(__lhs.read(), __rhs.read())
     }
 }
-pub fn operator_eq_4(mut _a0: A, mut _a1: A) -> bool {
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn operator_eq_0(mut _a0: A, mut _a1: A) -> bool {
     return true;
 }
 thread_local!(
-    pub static iArr1_22: Value<Box<[i32]>> =
+    pub static iArr1_1: Value<Box<[i32]>> =
         Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])));
 );
 thread_local!(
-    pub static iArr2_23: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
+    pub static iArr2_2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
         10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
     ])));
 );
@@ -307,27 +67,60 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "testConstexprSpan(std::span<const int>(iArr1, 3))");;
     const _: () = assert!(true, "testConstexprSpan(std::span<const int>(iArr1, 4))");;
     const _: () = assert!(true, "testConstexprSpan(std::span<const int>(iArr1, 5))");;
-    ({ testRuntimeSpan_12(unimplemented!()) });
-    ({ testRuntimeSpan_13(unimplemented!()) });
-    ({ testRuntimeSpan_14(unimplemented!()) });
-    ({ testRuntimeSpan_15(unimplemented!()) });
-    ({ testRuntimeSpan_16(unimplemented!()) });
-    ({ testRuntimeSpan_17(unimplemented!()) });
-    ({ testRuntimeSpan_18(unimplemented!()) });
-    ({ testRuntimeSpan_19(unimplemented!()) });
-    ({ testRuntimeSpan_20(unimplemented!()) });
-    ({ testRuntimeSpan_21(unimplemented!()) });
-    ({ testRuntimeSpan_12(unimplemented!()) });
-    ({ testRuntimeSpan_12(unimplemented!()) });
-    ({ testRuntimeSpan_12(unimplemented!()) });
-    ({ testRuntimeSpan_12(unimplemented!()) });
-    ({ testRuntimeSpan_12(unimplemented!()) });
+    ({ testRuntimeSpan_3(<std_span_int__18446744073709551615_>::default()) });
+    ({ testRuntimeSpan_4(<std_span_long__18446744073709551615_>::default()) });
+    ({ testRuntimeSpan_5(<std_span_double__18446744073709551615_>::default()) });
+    ({ testRuntimeSpan_6(<std_span_A__18446744073709551615_>::default()) });
+    ({
+        testRuntimeSpan_7 ( <std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_  >::default()  , )
+    });
+    ({ testRuntimeSpan_8(<std_span_int__0_>::default()) });
+    ({ testRuntimeSpan_9(<std_span_long__0_>::default()) });
+    ({ testRuntimeSpan_10(<std_span_double__0_>::default()) });
+    ({ testRuntimeSpan_11(<std_span_A__0_>::default()) });
+    ({
+        testRuntimeSpan_12 ( <std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____0_  >::default()  , )
+    });
+    ({
+        testRuntimeSpan_3(std_span_int__18446744073709551615_::new_1(
+            { (iArr2_2.with(|v| v.as_pointer()) as Ptr<i32>) },
+            { 1_u64 },
+        ))
+    });
+    ({
+        testRuntimeSpan_3(std_span_int__18446744073709551615_::new_1(
+            { (iArr2_2.with(|v| v.as_pointer()) as Ptr<i32>) },
+            { 2_u64 },
+        ))
+    });
+    ({
+        testRuntimeSpan_3(std_span_int__18446744073709551615_::new_1(
+            { (iArr2_2.with(|v| v.as_pointer()) as Ptr<i32>) },
+            { 3_u64 },
+        ))
+    });
+    ({
+        testRuntimeSpan_3(std_span_int__18446744073709551615_::new_1(
+            { (iArr2_2.with(|v| v.as_pointer()) as Ptr<i32>) },
+            { 4_u64 },
+        ))
+    });
+    ({
+        testRuntimeSpan_3(std_span_int__18446744073709551615_::new_1(
+            { (iArr2_2.with(|v| v.as_pointer()) as Ptr<i32>) },
+            { 5_u64 },
+        ))
+    });
     let s: Value<Vec<i8>> = Rc::new(RefCell::new(vec![i8::default()]));
-    ({ testRuntimeSpan_16(unimplemented!()) });
-    ({ testRuntimeSpan_16(unimplemented!()) });
+    ({
+        testRuntimeSpan_7 ( std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_ :: new_1 ( { (( s .as_pointer()  ) ).reinterpret_cast::<Vec<i8  >  >()  } , { ( 0_usize  as u64 )   } , )   , )
+    });
+    ({
+        testRuntimeSpan_7 ( std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_ :: new_1 ( { (( s .as_pointer()  ) ).reinterpret_cast::<Vec<i8  >  >()  } , { 1_u64  } , )   , )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = iArr1_22.with(|_| ());
-    let _ = iArr2_23.with(|_| ());
+    let _ = iArr1_1.with(|_| ());
+    let _ = iArr2_2.with(|_| ());
 }

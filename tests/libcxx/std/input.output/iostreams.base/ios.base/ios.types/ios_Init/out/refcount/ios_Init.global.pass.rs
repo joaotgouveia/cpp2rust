@@ -27,6 +27,11 @@ impl Global {
         __this
     }
 }
+impl CppMove for Global {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Global {
     fn default() -> Self {
         { Global::new() }

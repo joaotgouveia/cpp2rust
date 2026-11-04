@@ -869,11 +869,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let mut size: i32 = (((::std::mem::size_of::<[u32; 3]>() as usize)
             .wrapping_div((::std::mem::size_of::<u32>() as usize)))
             as i32);
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let s: Value<std_seed_seq> = Rc::new(RefCell::new(std_seed_seq::new_1(
+            { (v.as_pointer() as Ptr<u32>) },
+            { (v.as_pointer() as Ptr<u32>).offset((size) as isize) },
+        )));
+        ({
+            let ___begin: Ptr<u32> = (b.as_pointer() as Ptr<u32>);
+            let ___end: Ptr<u32> = (b.as_pointer() as Ptr<u32>).offset((*n.borrow()) as isize);
+            (*s.borrow()).generate(___begin, ___end)
+        });
         let mut i: i32 = 0;
         'loop_: while (i < (*n.borrow())) {
-            assert!((a[(i) as usize] == (*b.borrow())[(i) as usize]));
+            assert!(({ (a[(i) as usize] == (*b.borrow())[(i) as usize]) }));
             i.prefix_inc();
         }
     }

@@ -53,23 +53,161 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         Rc::new(RefCell::new(Ptr::<Holder_Incomplete_>::null()));
     let cx: Value<Ptr<Holder_Incomplete_>> =
         Rc::new(RefCell::new(Ptr::<Holder_Incomplete_>::null()));
-    &(unimplemented!());
-    &(unimplemented!());
-    &(unimplemented!());
-    &(unimplemented!());
-    &(unimplemented!());
-    &(unimplemented!());
-    &(unimplemented!());
-    &(unimplemented!());
-    &(unimplemented!());
-    &(unimplemented!());
-    &(unimplemented!());
-    &(unimplemented!());
-    &(unimplemented!());
-    &(unimplemented!());
-    &(unimplemented!());
-    &(unimplemented!());
-    &(unimplemented!());
+    &({ ({ ref_5(FnPtr::<fn() -> Ptr<Holder_Incomplete_>>::new(no_args_0)) })() });
+    &({
+        ({
+            ref_6(FnPtr::<
+                fn(Ptr<Holder_Incomplete_>) -> Ptr<Holder_Incomplete_>,
+            >::new(one_arg_1))
+        })(x.as_pointer())
+    });
+    &({
+        ({
+            ref_6(FnPtr::<
+                fn(Ptr<Holder_Incomplete_>) -> Ptr<Holder_Incomplete_>,
+            >::new(one_arg_1))
+        })(cx.as_pointer())
+    });
+    &({
+        let ___args_0: Ptr<Ptr<Holder_Incomplete_>> = x.as_pointer();
+        let ___args_1: Ptr<Ptr<Holder_Incomplete_>> = x.as_pointer();
+        ({
+            ref_7(FnPtr::<
+                fn(Ptr<Holder_Incomplete_>, Ptr<Holder_Incomplete_>) -> Ptr<Holder_Incomplete_>,
+            >::new(two_args_2))
+        })(___args_0, ___args_1)
+    });
+    &({
+        ({
+            ref_7(FnPtr::<
+                fn(Ptr<Holder_Incomplete_>, Ptr<Holder_Incomplete_>) -> Ptr<Holder_Incomplete_>,
+            >::new(two_args_2))
+        })(x.as_pointer(), cx.as_pointer())
+    });
+    &({
+        ({
+            ref_7(FnPtr::<
+                fn(Ptr<Holder_Incomplete_>, Ptr<Holder_Incomplete_>) -> Ptr<Holder_Incomplete_>,
+            >::new(two_args_2))
+        })(cx.as_pointer(), x.as_pointer())
+    });
+    &({
+        let ___args_0: Ptr<Ptr<Holder_Incomplete_>> = cx.as_pointer();
+        let ___args_1: Ptr<Ptr<Holder_Incomplete_>> = cx.as_pointer();
+        ({
+            ref_7(FnPtr::<
+                fn(Ptr<Holder_Incomplete_>, Ptr<Holder_Incomplete_>) -> Ptr<Holder_Incomplete_>,
+            >::new(two_args_2))
+        })(___args_0, ___args_1)
+    });
+    &({
+        let ___args_0: Ptr<Ptr<Holder_Incomplete_>> = x.as_pointer();
+        let ___args_1: Ptr<Ptr<Holder_Incomplete_>> = x.as_pointer();
+        let ___args_2: Ptr<Ptr<Holder_Incomplete_>> = x.as_pointer();
+        ({
+            ref_8(FnPtr::<
+                fn(
+                    Ptr<Holder_Incomplete_>,
+                    Ptr<Holder_Incomplete_>,
+                    Ptr<Holder_Incomplete_>,
+                ) -> Ptr<Holder_Incomplete_>,
+            >::new(three_args_3))
+        })(___args_0, ___args_1, ___args_2)
+    });
+    &({
+        let ___args_0: Ptr<Ptr<Holder_Incomplete_>> = x.as_pointer();
+        let ___args_1: Ptr<Ptr<Holder_Incomplete_>> = x.as_pointer();
+        ({
+            ref_8(FnPtr::<
+                fn(
+                    Ptr<Holder_Incomplete_>,
+                    Ptr<Holder_Incomplete_>,
+                    Ptr<Holder_Incomplete_>,
+                ) -> Ptr<Holder_Incomplete_>,
+            >::new(three_args_3))
+        })(___args_0, ___args_1, cx.as_pointer())
+    });
+    &({
+        let ___args_0: Ptr<Ptr<Holder_Incomplete_>> = x.as_pointer();
+        let ___args_2: Ptr<Ptr<Holder_Incomplete_>> = x.as_pointer();
+        ({
+            ref_8(FnPtr::<
+                fn(
+                    Ptr<Holder_Incomplete_>,
+                    Ptr<Holder_Incomplete_>,
+                    Ptr<Holder_Incomplete_>,
+                ) -> Ptr<Holder_Incomplete_>,
+            >::new(three_args_3))
+        })(___args_0, cx.as_pointer(), ___args_2)
+    });
+    &({
+        let ___args_1: Ptr<Ptr<Holder_Incomplete_>> = x.as_pointer();
+        let ___args_2: Ptr<Ptr<Holder_Incomplete_>> = x.as_pointer();
+        ({
+            ref_8(FnPtr::<
+                fn(
+                    Ptr<Holder_Incomplete_>,
+                    Ptr<Holder_Incomplete_>,
+                    Ptr<Holder_Incomplete_>,
+                ) -> Ptr<Holder_Incomplete_>,
+            >::new(three_args_3))
+        })(cx.as_pointer(), ___args_1, ___args_2)
+    });
+    &({
+        let ___args_1: Ptr<Ptr<Holder_Incomplete_>> = cx.as_pointer();
+        let ___args_2: Ptr<Ptr<Holder_Incomplete_>> = cx.as_pointer();
+        ({
+            ref_8(FnPtr::<
+                fn(
+                    Ptr<Holder_Incomplete_>,
+                    Ptr<Holder_Incomplete_>,
+                    Ptr<Holder_Incomplete_>,
+                ) -> Ptr<Holder_Incomplete_>,
+            >::new(three_args_3))
+        })(x.as_pointer(), ___args_1, ___args_2)
+    });
+    &({
+        let ___args_0: Ptr<Ptr<Holder_Incomplete_>> = cx.as_pointer();
+        let ___args_2: Ptr<Ptr<Holder_Incomplete_>> = cx.as_pointer();
+        ({
+            ref_8(FnPtr::<
+                fn(
+                    Ptr<Holder_Incomplete_>,
+                    Ptr<Holder_Incomplete_>,
+                    Ptr<Holder_Incomplete_>,
+                ) -> Ptr<Holder_Incomplete_>,
+            >::new(three_args_3))
+        })(___args_0, x.as_pointer(), ___args_2)
+    });
+    &({
+        let ___args_0: Ptr<Ptr<Holder_Incomplete_>> = cx.as_pointer();
+        let ___args_1: Ptr<Ptr<Holder_Incomplete_>> = cx.as_pointer();
+        ({
+            ref_8(FnPtr::<
+                fn(
+                    Ptr<Holder_Incomplete_>,
+                    Ptr<Holder_Incomplete_>,
+                    Ptr<Holder_Incomplete_>,
+                ) -> Ptr<Holder_Incomplete_>,
+            >::new(three_args_3))
+        })(___args_0, ___args_1, x.as_pointer())
+    });
+    &({
+        let ___args_0: Ptr<Ptr<Holder_Incomplete_>> = cx.as_pointer();
+        let ___args_1: Ptr<Ptr<Holder_Incomplete_>> = cx.as_pointer();
+        let ___args_2: Ptr<Ptr<Holder_Incomplete_>> = cx.as_pointer();
+        ({
+            ref_8(FnPtr::<
+                fn(
+                    Ptr<Holder_Incomplete_>,
+                    Ptr<Holder_Incomplete_>,
+                    Ptr<Holder_Incomplete_>,
+                ) -> Ptr<Holder_Incomplete_>,
+            >::new(three_args_3))
+        })(___args_0, ___args_1, ___args_2)
+    });
+    &({ ({ ref_9(FnPtr::<fn(Ptr<Holder_Incomplete_>)>::new(one_arg_void_4)) })(x.as_pointer()) });
+    &({ ({ ref_9(FnPtr::<fn(Ptr<Holder_Incomplete_>)>::new(one_arg_void_4)) })(cx.as_pointer()) });
     return 0;
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]

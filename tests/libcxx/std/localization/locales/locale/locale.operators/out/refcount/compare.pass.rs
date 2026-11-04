@@ -28,22 +28,31 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let l: Value<std_locale> = Rc::new(RefCell::new(<std_locale>::default()));
         {
-            let mut s2: Vec<i8> = {
+            let s2: Value<Vec<i8>> = Rc::new(RefCell::new({
                 let mut __bytes = Ptr::<i8>::from_string_literal(b"aaaaaaA").to_c_bytes();
                 __bytes.push(0_i8);
                 __bytes
-            };
-            let mut s3: Vec<i8> = {
+            }));
+            let s3: Value<Vec<i8>> = Rc::new(RefCell::new({
                 let mut __bytes = Ptr::<i8>::from_string_literal(b"BaaaaaA").to_c_bytes();
                 __bytes.push(0_i8);
                 __bytes
-            };
-            assert!(unimplemented!());
+            }));
+            assert!(
+                ({
+                    ({
+                        (*l.borrow_mut())(
+                            (s3.as_pointer()).reinterpret_cast::<Vec<i8>>(),
+                            (s2.as_pointer()).reinterpret_cast::<Vec<i8>>(),
+                        )
+                    })
+                })
+            );
         }
         {
-            let mut s2: Vec<i32> = {
+            let s2: Value<Vec<i32>> = Rc::new(RefCell::new({
                 let mut __bytes = Ptr::<i32>::from_string_literal(&[
                     97 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32, 65 as i32,
                     0 as i32,
@@ -51,8 +60,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 .to_c_bytes();
                 __bytes.push(0_i32);
                 __bytes
-            };
-            let mut s3: Vec<i32> = {
+            }));
+            let s3: Value<Vec<i32>> = Rc::new(RefCell::new({
                 let mut __bytes = Ptr::<i32>::from_string_literal(&[
                     66 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32, 65 as i32,
                     0 as i32,
@@ -60,8 +69,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 .to_c_bytes();
                 __bytes.push(0_i32);
                 __bytes
-            };
-            assert!(unimplemented!());
+            }));
+            assert!(
+                ({
+                    ({
+                        (*l.borrow_mut())(
+                            (s3.as_pointer()).reinterpret_cast::<Vec<i32>>(),
+                            (s2.as_pointer()).reinterpret_cast::<Vec<i32>>(),
+                        )
+                    })
+                })
+            );
         }
     }
     return 0;

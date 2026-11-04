@@ -12,15 +12,31 @@ pub struct TestHelper_wchar_t__4_ {}
 impl TestHelper_wchar_t__4_ {
     pub fn test() {
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut r: i32 = unimplemented!();
+            let c: Value<std_codecvt_utf8_wchar_t__1114111__0_> = Rc::new(RefCell::new(
+                <std_codecvt_utf8_wchar_t__1114111__0_>::default(),
+            ));
+            let mut r: i32 = ({
+                ((*c.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_)
+                    .max_length()
+            });
             assert!((r == 4));
         }
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut r: i32 = unimplemented!();
+            let c: Value<std_codecvt_utf8_wchar_t__4294967295__std_consume_header_> =
+                Rc::new(RefCell::new(
+                    <std_codecvt_utf8_wchar_t__4294967295__std_consume_header_>::default(),
+                ));
+            let mut r: i32 = ({
+                ((*c.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_)
+                    .max_length()
+            });
             assert!((r == 7));
         }
+    }
+}
+impl CppMove for TestHelper_wchar_t__4_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -29,15 +45,31 @@ pub struct TestHelper_char16_t__2_ {}
 impl TestHelper_char16_t__2_ {
     pub fn test() {
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut r: i32 = unimplemented!();
+            let c: Value<std_codecvt_utf8_char16_t__1114111__0_> = Rc::new(RefCell::new(
+                <std_codecvt_utf8_char16_t__1114111__0_>::default(),
+            ));
+            let mut r: i32 = ({
+                ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                    .max_length()
+            });
             assert!((r == 3));
         }
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut r: i32 = unimplemented!();
+            let c: Value<std_codecvt_utf8_char16_t__4294967295__std_consume_header_> =
+                Rc::new(RefCell::new(
+                    <std_codecvt_utf8_char16_t__4294967295__std_consume_header_>::default(),
+                ));
+            let mut r: i32 = ({
+                ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                    .max_length()
+            });
             assert!((r == 6));
         }
+    }
+}
+impl CppMove for TestHelper_char16_t__2_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -46,15 +78,31 @@ pub struct TestHelper_char32_t__4_ {}
 impl TestHelper_char32_t__4_ {
     pub fn test() {
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut r: i32 = unimplemented!();
+            let c: Value<std_codecvt_utf8_char32_t__1114111__0_> = Rc::new(RefCell::new(
+                <std_codecvt_utf8_char32_t__1114111__0_>::default(),
+            ));
+            let mut r: i32 = ({
+                ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                    .max_length()
+            });
             assert!((r == 4));
         }
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut r: i32 = unimplemented!();
+            let c: Value<std_codecvt_utf8_char32_t__4294967295__std_consume_header_> =
+                Rc::new(RefCell::new(
+                    <std_codecvt_utf8_char32_t__4294967295__std_consume_header_>::default(),
+                ));
+            let mut r: i32 = ({
+                ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                    .max_length()
+            });
             assert!((r == 7));
         }
+    }
+}
+impl CppMove for TestHelper_char32_t__4_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

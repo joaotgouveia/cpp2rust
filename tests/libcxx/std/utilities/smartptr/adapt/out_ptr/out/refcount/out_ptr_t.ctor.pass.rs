@@ -6,18 +6,6 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_convertible_imp_0(mut _a0: i64) -> bool {
-    return false;
-}
-pub fn test_convertible_imp_1(mut _a0: i64) -> bool {
-    return false;
-}
-pub fn test_convertible_2() -> bool {
-    return ({ test_convertible_imp_0(0_i64) });
-}
-pub fn test_convertible_3() -> bool {
-    return ({ test_convertible_imp_1(0_i64) });
-}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(1)]
 pub struct MoveOnlyDeleter_int_ {
@@ -29,6 +17,11 @@ impl MoveOnlyDeleter_int_ {
         Self {
             wasMoveInitialized: true,
         }
+    }
+}
+impl CppMove for MoveOnlyDeleter_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for MoveOnlyDeleter_int_ {
@@ -54,6 +47,11 @@ impl ConstructiblePtr_int_ {
         }
     }
 }
+impl CppMove for ConstructiblePtr_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "");
 const _: () = assert!(
     true,
@@ -62,6 +60,11 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ResetArg {}
+impl CppMove for ResetArg {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(8)]
 pub struct ResettablePtr_int_ {
@@ -74,6 +77,11 @@ impl ResettablePtr_int_ {
         Self {
             ptr: field!(_a0, ptr).with_mut(|__v: &mut Option<Value<i32>>| __v.take()),
         }
+    }
+}
+impl CppMove for ResettablePtr_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(true, "");
@@ -108,27 +116,29 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut uPtr: Option<Value<i32>> = None;
-        unimplemented!();
+        let uPtr: Value<Option<Value<i32>>> = Rc::new(RefCell::new(None));
+        std_out_ptr_t_std_unique_ptr_int__std_default_delete_int____int_ptr_::new({
+            uPtr.as_pointer()
+        });
         const _: () = assert!(
             true,
             "!test_convertible<std::out_ptr_t<std::unique_ptr<int>, int*>>()"
         );;
-        assert!(uPtr.is_none());
+        assert!(({ (*uPtr.borrow()).is_none() }));
     }
     {
         let uPtr: Value<Option<Value<i32>>> = Rc::new(RefCell::new(None));
-        unimplemented!();
+        std_out_ptr_t_std_unique_ptr_int__std_default_delete_int____int_ptr__std_default_delete_int__ :: new ( { uPtr .as_pointer()  } , { <std_default_delete_int_  >::default()  } , )  ;
         const _: () = assert!(
             true,
             "!test_convertible<std::out_ptr_t<decltype(uPtr), int*, std::default_delete<int>>>()"
         );;
-        assert!((*uPtr.borrow()).is_none());
+        assert!(({ (*uPtr.borrow()).is_none() }));
     }
     {
         let uPtr: Value<Option<Value<i32>>> = Rc::new(RefCell::new(None));
-        unimplemented!();
-        assert!((*uPtr.borrow()).is_none());
+        std_out_ptr_t_std_unique_ptr_int__MoveOnlyDeleter_int____int_ptr__MoveOnlyDeleter_int__ :: new ( { uPtr .as_pointer()  } , { <MoveOnlyDeleter_int_  >::default()  } , )  ;
+        assert!(({ (*uPtr.borrow()).is_none() }));
     }
     return 0;
 }

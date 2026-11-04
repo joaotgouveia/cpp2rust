@@ -9,155 +9,231 @@ use std::rc::{Rc, Weak};
 pub fn checkCV_0() {
     let arr: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3])));
     {
-        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s1: Value<std_span_int__18446744073709551615_> =
+            Rc::new(RefCell::new(std_span_int__18446744073709551615_::new_1({
+                arr.as_pointer()
+            })));
     }
     {
-        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s1: Value<std_span_int__3_> =
+            Rc::new(RefCell::new(std_span_int__3_::new_1({ arr.as_pointer() })));
     }
     {
-        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s1: Value<std_span_const_int__18446744073709551615_> = Rc::new(RefCell::new(
+            std_span_const_int__18446744073709551615_::new_1({ arr.as_pointer() }),
+        ));
+        let s2: Value<std_span_volatile_int__18446744073709551615_> = Rc::new(RefCell::new(
+            std_span_volatile_int__18446744073709551615_::new_1({ arr.as_pointer() }),
+        ));
+        let s3: Value<std_span_volatile_int__18446744073709551615_> = Rc::new(RefCell::new(
+            std_span_volatile_int__18446744073709551615_::new_1({ arr.as_pointer() }),
+        ));
+        let s4: Value<std_span_const_volatile_int__18446744073709551615_> = Rc::new(RefCell::new(
+            std_span_const_volatile_int__18446744073709551615_::new_1({ arr.as_pointer() }),
+        ));
     }
     {
-        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s1: Value<std_span_const_int__3_> =
+            Rc::new(RefCell::new(std_span_const_int__3_::new_1({
+                arr.as_pointer()
+            })));
+        let s2: Value<std_span_volatile_int__3_> =
+            Rc::new(RefCell::new(std_span_volatile_int__3_::new_1({
+                arr.as_pointer()
+            })));
+        let s3: Value<std_span_volatile_int__3_> =
+            Rc::new(RefCell::new(std_span_volatile_int__3_::new_1({
+                arr.as_pointer()
+            })));
+        let s4: Value<std_span_const_volatile_int__3_> =
+            Rc::new(RefCell::new(std_span_const_volatile_int__3_::new_1({
+                arr.as_pointer()
+            })));
     }
 }
 pub fn testConstructorArray_1() -> bool {
     let val: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([0_i32, 0_i32])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (val.decay().offset(0_usize as isize)))
-        && (unimplemented!() == 2_()))
-        && (unimplemented!() == (val.decay().offset(0_usize as isize))))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_int__18446744073709551615_> =
+        Rc::new(RefCell::new(std_span_int__18446744073709551615_::new_2({
+            val.as_pointer()
+        })));
+    let s2: Value<std_span_int__2_> =
+        Rc::new(RefCell::new(std_span_int__2_::new_1({ val.as_pointer() })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize as isize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize as isize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorArray_2() -> bool {
     let val: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([0_i32, 0_i32])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (val.decay().offset(0_usize as isize)))
-        && (unimplemented!() == 2_()))
-        && (unimplemented!() == (val.decay().offset(0_usize as isize))))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_int__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_int__18446744073709551615_::new_2({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_int__2_> = Rc::new(RefCell::new(std_span_const_int__2_::new_1({
+        val.as_pointer()
+    })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize as isize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize as isize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorArray_3() -> bool {
     let val: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([0_i32, 0_i32])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (val.decay().offset(0_usize as isize)))
-        && (unimplemented!() == 2_()))
-        && (unimplemented!() == (val.decay().offset(0_usize as isize))))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_int__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_int__18446744073709551615_::new_3({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_int__2_> = Rc::new(RefCell::new(std_span_const_int__2_::new_2({
+        val.as_pointer()
+    })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize as isize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize as isize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorArray_4() -> bool {
     let val: Value<Vec<i64>> = Rc::new(RefCell::new(Vec::from([0_i64, 0_i64])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (val.decay().offset(0_usize as isize)))
-        && (unimplemented!() == 2_()))
-        && (unimplemented!() == (val.decay().offset(0_usize as isize))))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_long__18446744073709551615_> =
+        Rc::new(RefCell::new(std_span_long__18446744073709551615_::new_1({
+            val.as_pointer()
+        })));
+    let s2: Value<std_span_long__2_> =
+        Rc::new(RefCell::new(std_span_long__2_::new_1({ val.as_pointer() })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize as isize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize as isize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorArray_5() -> bool {
     let val: Value<Vec<i64>> = Rc::new(RefCell::new(Vec::from([0_i64, 0_i64])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (val.decay().offset(0_usize as isize)))
-        && (unimplemented!() == 2_()))
-        && (unimplemented!() == (val.decay().offset(0_usize as isize))))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_long__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_long__18446744073709551615_::new_1({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_long__2_> =
+        Rc::new(RefCell::new(std_span_const_long__2_::new_1({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize as isize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize as isize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorArray_6() -> bool {
     let val: Value<Vec<i64>> = Rc::new(RefCell::new(Vec::from([0_i64, 0_i64])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (val.decay().offset(0_usize as isize)))
-        && (unimplemented!() == 2_()))
-        && (unimplemented!() == (val.decay().offset(0_usize as isize))))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_long__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_long__18446744073709551615_::new_2({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_long__2_> =
+        Rc::new(RefCell::new(std_span_const_long__2_::new_2({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize as isize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize as isize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorArray_7() -> bool {
     let val: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([0_f64, 0_f64])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (val.decay().offset(0_usize as isize)))
-        && (unimplemented!() == 2_()))
-        && (unimplemented!() == (val.decay().offset(0_usize as isize))))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_double__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_double__18446744073709551615_::new_1({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_double__2_> = Rc::new(RefCell::new(std_span_double__2_::new_1({
+        val.as_pointer()
+    })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize as isize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize as isize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorArray_8() -> bool {
     let val: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([0_f64, 0_f64])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (val.decay().offset(0_usize as isize)))
-        && (unimplemented!() == 2_()))
-        && (unimplemented!() == (val.decay().offset(0_usize as isize))))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_double__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_double__18446744073709551615_::new_1({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_double__2_> =
+        Rc::new(RefCell::new(std_span_const_double__2_::new_1({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize as isize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize as isize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorArray_9() -> bool {
     let val: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([0_f64, 0_f64])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (val.decay().offset(0_usize as isize)))
-        && (unimplemented!() == 2_()))
-        && (unimplemented!() == (val.decay().offset(0_usize as isize))))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_double__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_double__18446744073709551615_::new_2({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_double__2_> =
+        Rc::new(RefCell::new(std_span_const_double__2_::new_2({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize as isize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize as isize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorArray_10() -> bool {
     let val: Value<Vec<A>> = Rc::new(RefCell::new(Vec::from([<A>::default(), <A>::default()])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (val.decay().offset(0_usize as isize)))
-        && (unimplemented!() == 2_()))
-        && (unimplemented!() == (val.decay().offset(0_usize as isize))))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_A__18446744073709551615_> =
+        Rc::new(RefCell::new(std_span_A__18446744073709551615_::new_1({
+            val.as_pointer()
+        })));
+    let s2: Value<std_span_A__2_> =
+        Rc::new(RefCell::new(std_span_A__2_::new_1({ val.as_pointer() })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize as isize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize as isize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorArray_11() -> bool {
     let val: Value<Vec<A>> = Rc::new(RefCell::new(Vec::from([<A>::default(), <A>::default()])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (val.decay().offset(0_usize as isize)))
-        && (unimplemented!() == 2_()))
-        && (unimplemented!() == (val.decay().offset(0_usize as isize))))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_A__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_A__18446744073709551615_::new_1({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_A__2_> = Rc::new(RefCell::new(std_span_const_A__2_::new_1({
+        val.as_pointer()
+    })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize as isize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize as isize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorArray_12() -> bool {
     let val: Value<Vec<A>> = Rc::new(RefCell::new(Vec::from([<A>::default(), <A>::default()])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (val.decay().offset(0_usize as isize)))
-        && (unimplemented!() == 2_()))
-        && (unimplemented!() == (val.decay().offset(0_usize as isize))))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_A__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_A__18446744073709551615_::new_2({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_A__2_> = Rc::new(RefCell::new(std_span_const_A__2_::new_2({
+        val.as_pointer()
+    })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize as isize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize as isize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorArray_13() -> bool {
     let val: Value<Vec<Ptr<i32>>> = Rc::new(RefCell::new(Vec::from([
@@ -166,12 +242,16 @@ pub fn testConstructorArray_13() -> bool {
     ])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (val.decay().offset(0_usize as isize)))
-        && (unimplemented!() == 2_()))
-        && (unimplemented!() == (val.decay().offset(0_usize as isize))))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_int_ptr__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_int_ptr__18446744073709551615_::new_1({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_int_ptr__2_> = Rc::new(RefCell::new(std_span_int_ptr__2_::new_1({
+        val.as_pointer()
+    })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize as isize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize as isize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorArray_14() -> bool {
     let val: Value<Vec<Ptr<i32>>> = Rc::new(RefCell::new(Vec::from([
@@ -180,12 +260,17 @@ pub fn testConstructorArray_14() -> bool {
     ])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (val.decay().offset(0_usize as isize)))
-        && (unimplemented!() == 2_()))
-        && (unimplemented!() == (val.decay().offset(0_usize as isize))))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_int_ptrconst__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_int_ptrconst__18446744073709551615_::new_1({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_int_ptrconst__2_> =
+        Rc::new(RefCell::new(std_span_int_ptrconst__2_::new_1({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize as isize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize as isize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorArray_15() -> bool {
     let val: Value<Vec<Ptr<i32>>> = Rc::new(RefCell::new(Vec::from([
@@ -194,12 +279,17 @@ pub fn testConstructorArray_15() -> bool {
     ])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (val.decay().offset(0_usize as isize)))
-        && (unimplemented!() == 2_()))
-        && (unimplemented!() == (val.decay().offset(0_usize as isize))))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_int_ptrconst__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_int_ptrconst__18446744073709551615_::new_2({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_int_ptrconst__2_> =
+        Rc::new(RefCell::new(std_span_int_ptrconst__2_::new_2({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize as isize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize as isize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorArray_16() -> bool {
     let val: Value<Vec<Ptr<i32>>> = Rc::new(RefCell::new(Vec::from([
@@ -208,12 +298,17 @@ pub fn testConstructorArray_16() -> bool {
     ])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (val.decay().offset(0_usize as isize)))
-        && (unimplemented!() == 2_()))
-        && (unimplemented!() == (val.decay().offset(0_usize as isize))))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_int_ptr__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_int_ptr__18446744073709551615_::new_1({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_int_ptr__2_> =
+        Rc::new(RefCell::new(std_span_const_int_ptr__2_::new_1({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize as isize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize as isize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorArray_17() -> bool {
     let val: Value<Vec<Ptr<i32>>> = Rc::new(RefCell::new(Vec::from([
@@ -222,12 +317,17 @@ pub fn testConstructorArray_17() -> bool {
     ])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (val.decay().offset(0_usize as isize)))
-        && (unimplemented!() == 2_()))
-        && (unimplemented!() == (val.decay().offset(0_usize as isize))))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_int_ptrconst__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_int_ptrconst__18446744073709551615_::new_1({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_int_ptrconst__2_> =
+        Rc::new(RefCell::new(std_span_const_int_ptrconst__2_::new_1({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize as isize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize as isize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorArray_18() -> bool {
     let val: Value<Vec<Ptr<i32>>> = Rc::new(RefCell::new(Vec::from([
@@ -236,132 +336,203 @@ pub fn testConstructorArray_18() -> bool {
     ])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (val.decay().offset(0_usize as isize)))
-        && (unimplemented!() == 2_()))
-        && (unimplemented!() == (val.decay().offset(0_usize as isize))))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_int_ptrconst__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_int_ptrconst__18446744073709551615_::new_2({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_int_ptrconst__2_> =
+        Rc::new(RefCell::new(std_span_const_int_ptrconst__2_::new_2({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize as isize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize as isize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorConstArray_19() -> bool {
     let val: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([0_i32, 0_i32])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (unimplemented!())) && (unimplemented!() == 2_()))
-        && (unimplemented!() == (unimplemented!())))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_int__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_int__18446744073709551615_::new_4({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_int__2_> = Rc::new(RefCell::new(std_span_const_int__2_::new_3({
+        val.as_pointer()
+    })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorConstArray_20() -> bool {
     let val: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([0_i32, 0_i32])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (unimplemented!())) && (unimplemented!() == 2_()))
-        && (unimplemented!() == (unimplemented!())))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_int__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_int__18446744073709551615_::new_5({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_int__2_> = Rc::new(RefCell::new(std_span_const_int__2_::new_4({
+        val.as_pointer()
+    })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorConstArray_21() -> bool {
     let val: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([0_i32, 0_i32])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (unimplemented!())) && (unimplemented!() == 2_()))
-        && (unimplemented!() == (unimplemented!())))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_int__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_int__18446744073709551615_::new_4({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_int__2_> = Rc::new(RefCell::new(std_span_const_int__2_::new_3({
+        val.as_pointer()
+    })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorConstArray_22() -> bool {
     let val: Value<Vec<i64>> = Rc::new(RefCell::new(Vec::from([0_i64, 0_i64])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (unimplemented!())) && (unimplemented!() == 2_()))
-        && (unimplemented!() == (unimplemented!())))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_long__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_long__18446744073709551615_::new_3({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_long__2_> =
+        Rc::new(RefCell::new(std_span_const_long__2_::new_3({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorConstArray_23() -> bool {
     let val: Value<Vec<i64>> = Rc::new(RefCell::new(Vec::from([0_i64, 0_i64])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (unimplemented!())) && (unimplemented!() == 2_()))
-        && (unimplemented!() == (unimplemented!())))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_long__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_long__18446744073709551615_::new_4({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_long__2_> =
+        Rc::new(RefCell::new(std_span_const_long__2_::new_4({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorConstArray_24() -> bool {
     let val: Value<Vec<i64>> = Rc::new(RefCell::new(Vec::from([0_i64, 0_i64])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (unimplemented!())) && (unimplemented!() == 2_()))
-        && (unimplemented!() == (unimplemented!())))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_long__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_long__18446744073709551615_::new_3({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_long__2_> =
+        Rc::new(RefCell::new(std_span_const_long__2_::new_3({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorConstArray_25() -> bool {
     let val: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([0_f64, 0_f64])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (unimplemented!())) && (unimplemented!() == 2_()))
-        && (unimplemented!() == (unimplemented!())))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_double__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_double__18446744073709551615_::new_3({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_double__2_> =
+        Rc::new(RefCell::new(std_span_const_double__2_::new_3({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorConstArray_26() -> bool {
     let val: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([0_f64, 0_f64])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (unimplemented!())) && (unimplemented!() == 2_()))
-        && (unimplemented!() == (unimplemented!())))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_double__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_double__18446744073709551615_::new_4({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_double__2_> =
+        Rc::new(RefCell::new(std_span_const_double__2_::new_4({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorConstArray_27() -> bool {
     let val: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([0_f64, 0_f64])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (unimplemented!())) && (unimplemented!() == 2_()))
-        && (unimplemented!() == (unimplemented!())))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_double__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_double__18446744073709551615_::new_3({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_double__2_> =
+        Rc::new(RefCell::new(std_span_const_double__2_::new_3({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorConstArray_28() -> bool {
     let val: Value<Vec<A>> = Rc::new(RefCell::new(Vec::from([<A>::default(), <A>::default()])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (unimplemented!())) && (unimplemented!() == 2_()))
-        && (unimplemented!() == (unimplemented!())))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_A__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_A__18446744073709551615_::new_3({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_A__2_> = Rc::new(RefCell::new(std_span_const_A__2_::new_3({
+        val.as_pointer()
+    })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorConstArray_29() -> bool {
     let val: Value<Vec<A>> = Rc::new(RefCell::new(Vec::from([<A>::default(), <A>::default()])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (unimplemented!())) && (unimplemented!() == 2_()))
-        && (unimplemented!() == (unimplemented!())))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_A__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_A__18446744073709551615_::new_4({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_A__2_> = Rc::new(RefCell::new(std_span_const_A__2_::new_4({
+        val.as_pointer()
+    })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorConstArray_30() -> bool {
     let val: Value<Vec<A>> = Rc::new(RefCell::new(Vec::from([<A>::default(), <A>::default()])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (unimplemented!())) && (unimplemented!() == 2_()))
-        && (unimplemented!() == (unimplemented!())))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_A__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_A__18446744073709551615_::new_3({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_A__2_> = Rc::new(RefCell::new(std_span_const_A__2_::new_3({
+        val.as_pointer()
+    })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorConstArray_31() -> bool {
     let val: Value<Vec<Ptr<i32>>> = Rc::new(RefCell::new(Vec::from([
@@ -370,11 +541,17 @@ pub fn testConstructorConstArray_31() -> bool {
     ])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (unimplemented!())) && (unimplemented!() == 2_()))
-        && (unimplemented!() == (unimplemented!())))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_int_ptrconst__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_int_ptrconst__18446744073709551615_::new_3({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_int_ptrconst__2_> =
+        Rc::new(RefCell::new(std_span_int_ptrconst__2_::new_3({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorConstArray_32() -> bool {
     let val: Value<Vec<Ptr<i32>>> = Rc::new(RefCell::new(Vec::from([
@@ -383,11 +560,17 @@ pub fn testConstructorConstArray_32() -> bool {
     ])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (unimplemented!())) && (unimplemented!() == 2_()))
-        && (unimplemented!() == (unimplemented!())))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_int_ptrconst__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_int_ptrconst__18446744073709551615_::new_4({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_int_ptrconst__2_> =
+        Rc::new(RefCell::new(std_span_int_ptrconst__2_::new_4({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorConstArray_33() -> bool {
     let val: Value<Vec<Ptr<i32>>> = Rc::new(RefCell::new(Vec::from([
@@ -396,11 +579,17 @@ pub fn testConstructorConstArray_33() -> bool {
     ])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (unimplemented!())) && (unimplemented!() == 2_()))
-        && (unimplemented!() == (unimplemented!())))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_int_ptrconst__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_int_ptrconst__18446744073709551615_::new_3({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_int_ptrconst__2_> =
+        Rc::new(RefCell::new(std_span_int_ptrconst__2_::new_3({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorConstArray_34() -> bool {
     let val: Value<Vec<Ptr<i32>>> = Rc::new(RefCell::new(Vec::from([
@@ -409,11 +598,17 @@ pub fn testConstructorConstArray_34() -> bool {
     ])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (unimplemented!())) && (unimplemented!() == 2_()))
-        && (unimplemented!() == (unimplemented!())))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_int_ptrconst__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_int_ptrconst__18446744073709551615_::new_3({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_int_ptrconst__2_> =
+        Rc::new(RefCell::new(std_span_const_int_ptrconst__2_::new_3({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorConstArray_35() -> bool {
     let val: Value<Vec<Ptr<i32>>> = Rc::new(RefCell::new(Vec::from([
@@ -422,11 +617,17 @@ pub fn testConstructorConstArray_35() -> bool {
     ])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (unimplemented!())) && (unimplemented!() == 2_()))
-        && (unimplemented!() == (unimplemented!())))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_int_ptrconst__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_int_ptrconst__18446744073709551615_::new_4({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_int_ptrconst__2_> =
+        Rc::new(RefCell::new(std_span_const_int_ptrconst__2_::new_4({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructorConstArray_36() -> bool {
     let val: Value<Vec<Ptr<i32>>> = Rc::new(RefCell::new(Vec::from([
@@ -435,11 +636,17 @@ pub fn testConstructorConstArray_36() -> bool {
     ])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!() == (unimplemented!())) && (unimplemented!() == 2_()))
-        && (unimplemented!() == (unimplemented!())))
-        && (unimplemented!() == 2_());
+    let s1: Value<std_span_const_int_ptrconst__18446744073709551615_> = Rc::new(RefCell::new(
+        std_span_const_int_ptrconst__18446744073709551615_::new_3({ val.as_pointer() }),
+    ));
+    let s2: Value<std_span_const_int_ptrconst__2_> =
+        Rc::new(RefCell::new(std_span_const_int_ptrconst__2_::new_3({
+            val.as_pointer()
+        })));
+    return (((({ (*s1.borrow()).data() }) == (val.decay().offset(0_usize)))
+        && (({ (*s1.borrow()).size() }) == 2_u64))
+        && (({ (*s2.borrow()).data() }) == (val.decay().offset(0_usize))))
+        && (({ (*s2.borrow()).size() }) == 2_u64);
 }
 pub fn testConstructors_37() -> bool {
     const _: () = assert!(true, "testConstructorArray<T, T>()");;
@@ -522,6 +729,11 @@ pub fn testConstructors_42() -> bool {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A {}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

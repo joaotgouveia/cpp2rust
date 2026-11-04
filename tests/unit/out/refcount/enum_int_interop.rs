@@ -30,6 +30,11 @@ pub struct Entry {
     #[offset(12)]
     pub opt: Option,
 }
+impl CppMove for Entry {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static global_color_0: Value<Color> = Rc::new(RefCell::new(Color_GREEN));
 );
@@ -58,8 +63,9 @@ thread_local!(
         },
     ])));
 );
-pub fn as_int_4(mut c: Color) -> i32 {
-    return (c as i32);
+pub fn as_int_4(c: Color) -> i32 {
+    let c: Value<Color> = Rc::new(RefCell::new(c));
+    return ((*c.borrow()) as i32);
 }
 pub fn classify_option_5(mut option: i32) -> i32 {
     'switch: {

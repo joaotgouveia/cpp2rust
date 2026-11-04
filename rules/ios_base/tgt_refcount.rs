@@ -98,3 +98,31 @@ fn f109(a0: Ptr<::std::fs::File>) -> Ptr<::std::fs::File> {
 fn f110(a0: Ptr<::std::fs::File>) -> Ptr<::std::fs::File> {
     uppercase_refcount(a0)
 }
+
+fn f47() -> i32 {
+    1_i32
+}
+
+fn f48() -> i32 {
+    2_i32
+}
+
+fn f49() -> i32 {
+    4_i32
+}
+
+fn f50() -> i32 {
+    8_i32
+}
+
+fn f51() -> i32 {
+    16_i32
+}
+
+fn f52() -> i32 {
+    32_i32
+}
+
+fn f53() -> i32 {
+    64_i32
+}

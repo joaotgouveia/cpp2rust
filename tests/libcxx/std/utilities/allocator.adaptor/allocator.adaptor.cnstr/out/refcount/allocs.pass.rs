@@ -60,6 +60,11 @@ impl Clone for A1_int_ {
         A1_int_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for A1_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct A1_char_ {
@@ -118,6 +123,11 @@ impl Clone for A2_int_ {
         A2_int_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for A2_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_eq_12(x: Ptr<A2_int_>, y: Ptr<A2_int_>) -> bool {
     return ({ ({ A2_int_Impl::id(&x) }) } == { ({ A2_int_Impl::id(&y) }) });
 }
@@ -156,6 +166,11 @@ impl Clone for A3_int_ {
             id_: self.id_.clone(),
         }));
         A3_int_::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for A3_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_eq_17(x: Ptr<A3_int_>, y: Ptr<A3_int_>) -> bool {

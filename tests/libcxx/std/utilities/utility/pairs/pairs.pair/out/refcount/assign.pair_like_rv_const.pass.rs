@@ -9,15 +9,17 @@ use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     {
         {
-            let mut x: i32 = 91;
-            let mut y: i32 = 92;
+            let x: Value<i32> = Rc::new(RefCell::new(91));
+            let y: Value<i32> = Rc::new(RefCell::new(92));
             let a: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2])));
-            let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> =
-                Rc::new(RefCell::new(unimplemented!()));
-            let result: Ptr<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = (unimplemented!());
+            let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(
+                std_pair_int_ref__int_ref_::new_1({ x.as_pointer() }, { y.as_pointer() }),
+            ));
+            let result: Ptr<(Value<Ptr<i32>>, Value<Ptr<i32>>)> =
+                ((*p.borrow_mut()) = (*a.borrow()).clone());
             assert!(({ (result).clone() } == { (p.as_pointer()) }));
-            assert!((x == 1));
-            assert!((y == 2));
+            assert!(({ ((*x.borrow()) == 1) }));
+            assert!(({ ((*y.borrow()) == 2) }));
             const _: () = assert!(
                 true,
                 "!std::is_assignable_v<std::pair<int&, int&> const&, std::array<int, 1>>"
@@ -32,15 +34,21 @@ pub fn test_0() -> bool {
             );;
         }
         {
-            let mut x: i32 = 91;
-            let mut y: i32 = 92;
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> =
-                Rc::new(RefCell::new(unimplemented!()));
-            let result: Ptr<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = (unimplemented!());
+            let x: Value<i32> = Rc::new(RefCell::new(91));
+            let y: Value<i32> = Rc::new(RefCell::new(92));
+            let a: Value<std_tuple_int__int_> = Rc::new(RefCell::new({
+                let __tmp_0: Value<i32> = Rc::new(RefCell::new(1));
+                let __tmp_1: Value<i32> = Rc::new(RefCell::new(2));
+                std_tuple_int__int_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+            }));
+            let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(
+                std_pair_int_ref__int_ref_::new_1({ x.as_pointer() }, { y.as_pointer() }),
+            ));
+            let result: Ptr<(Value<Ptr<i32>>, Value<Ptr<i32>>)> =
+                ((*p.borrow_mut()) = (*a.borrow()).clone());
             assert!(({ (result).clone() } == { (p.as_pointer()) }));
-            assert!((x == 1));
-            assert!((y == 2));
+            assert!(({ ((*x.borrow()) == 1) }));
+            assert!(({ ((*y.borrow()) == 2) }));
             const _: () = assert!(
                 true,
                 "!std::is_assignable_v<std::pair<int&, int&> const&, std::tuple<int>>"
@@ -56,32 +64,52 @@ pub fn test_0() -> bool {
         }
         {
             let data: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5])));
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let a: Value<std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_> =
+                Rc::new(RefCell::new(
+                    std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1({
+                        data.as_pointer()
+                    }),
+                ));
             let p: Value<(Value<ConstAssignable_1>, Value<ConstAssignable_1>)> =
-                Rc::new(RefCell::new(unimplemented!()));
+                Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(<ConstAssignable_1>::default())),
+                    Rc::new(RefCell::new(<ConstAssignable_1>::default())),
+                )));
             let result: Ptr<(Value<ConstAssignable_1>, Value<ConstAssignable_1>)> =
-                (unimplemented!());
+                ((*p.borrow_mut()) = ({ (*a.borrow())() }));
             assert!(({ (result).clone() } == { (p.as_pointer()) }));
             assert!(
-                ({ { (*(*p.borrow()).0.borrow()).ptr.clone() } } == {
-                    (data.as_pointer() as Ptr<i32>)
+                ({
+                    ({ { (*(*p.borrow()).0.borrow()).ptr.clone() } } == {
+                        (data.as_pointer() as Ptr<i32>)
+                    })
                 })
             );
             assert!(
-                ({ { (*(*p.borrow()).1.borrow()).ptr.clone() } } == {
-                    (data.as_pointer() as Ptr<i32>).offset((5) as isize)
+                ({
+                    ({ { (*(*p.borrow()).1.borrow()).ptr.clone() } } == {
+                        (data.as_pointer() as Ptr<i32>).offset((5) as isize)
+                    })
                 })
             );
         }
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_tuple_int__int_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<i32> = Rc::new(RefCell::new(1));
+            let __tmp_3: Value<i32> = Rc::new(RefCell::new(2));
+            std_tuple_int__int_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
+        }));
         let p: Value<(Value<ConstAssignable_2>, Value<ConstAssignable_2>)> =
-            Rc::new(RefCell::new(unimplemented!()));
-        let result: Ptr<(Value<ConstAssignable_2>, Value<ConstAssignable_2>)> = (unimplemented!());
+            Rc::new(RefCell::new((
+                Rc::new(RefCell::new(<ConstAssignable_2>::default())),
+                Rc::new(RefCell::new(<ConstAssignable_2>::default())),
+            )));
+        let result: Ptr<(Value<ConstAssignable_2>, Value<ConstAssignable_2>)> =
+            ((*p.borrow_mut()) = (*a.borrow()).clone());
         assert!(({ (result).clone() } == { (p.as_pointer()) }));
-        assert!(({ (*(*p.borrow()).0.borrow()).val } == 1));
-        assert!(({ (*(*p.borrow()).1.borrow()).val } == 2));
+        assert!(({ ({ (*(*p.borrow()).0.borrow()).val } == 1) }));
+        assert!(({ ({ (*(*p.borrow()).1.borrow()).val } == 2) }));
         const _: () = assert!(
             true,
             "!std::is_assignable_v<std::pair<ConstAssignable, ConstAssignable> const&, std::tuple<void*, int>>"
@@ -96,9 +124,13 @@ pub fn test_0() -> bool {
         );;
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p: Value<(Value<NoCopy_3>, Value<NoCopy_3>)> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let a: Value<std_tuple_NoCopy__NoCopy_> =
+            Rc::new(RefCell::new(<std_tuple_NoCopy__NoCopy_>::default()));
+        let p: Value<(Value<NoCopy_3>, Value<NoCopy_3>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(<NoCopy_3>::default())),
+            Rc::new(RefCell::new(<NoCopy_3>::default())),
+        )));
+        (*p.borrow_mut()) = (*a.borrow()).clone();
     }
     return true;
 }
@@ -113,6 +145,11 @@ pub struct ConstAssignable_1 {
 impl ConstAssignable_1 {
     pub fn new_1(mut p: Ptr<i32>) -> Self {
         Self { ptr: (p).clone() }
+    }
+}
+impl CppMove for ConstAssignable_1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for ConstAssignable_1 {
@@ -130,6 +167,11 @@ pub struct ConstAssignable_2 {
     #[offset(0)]
     pub val: i32,
 }
+impl CppMove for ConstAssignable_2 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for ConstAssignable_2 {
     fn default() -> Self {
         { ConstAssignable_2 { val: 0 } }
@@ -141,6 +183,11 @@ pub struct NoCopy_3 {}
 impl NoCopy_3 {
     pub fn move_from(_a0: Ptr<NoCopy_3>) -> Self {
         Self {}
+    }
+}
+impl CppMove for NoCopy_3 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn main() {

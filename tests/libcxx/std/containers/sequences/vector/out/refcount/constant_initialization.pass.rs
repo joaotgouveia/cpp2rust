@@ -35,8 +35,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         (*ca_allocs_0.with(Value::clone).borrow_mut()).push(__a1)
     };
     'loop_: for a in IterRange::new(
-        ca_allocs_0.with(|v| v.decay()).begin(),
-        ca_allocs_0.with(|v| v.decay()).end(),
+        CppRange::begin(&ca_allocs_0.with(|v| v.decay())),
+        CppRange::end(&ca_allocs_0.with(|v| v.decay())),
     ) {
         let a: Ptr<i32> = a.iter_deref();
     }

@@ -27,8 +27,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as i32) == 0));
+    let f: Value<std_atomic_flag> = Rc::new(RefCell::new(std_atomic_flag::new_1({ (0 != 0) })));
+    assert!(({ ((({ (*f.borrow()).test_and_set_7(None,) }) as i32) == 0) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -30,11 +30,11 @@ pub fn operator_cmp_6(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> std::cmp::Order
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -66,6 +66,11 @@ impl CppEq for MoveOnly {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for MoveOnly {
     fn default() -> Self {
         { MoveOnly::new(None) }
@@ -95,11 +100,11 @@ pub fn operator_cmp_13(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> 
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -129,6 +134,11 @@ impl CppEq for TrivialMoveOnly {
         operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for TrivialMoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for TrivialMoveOnly {
     fn default() -> Self {
         { TrivialMoveOnly::new(None) }
@@ -137,6 +147,11 @@ impl Default for TrivialMoveOnly {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Empty {}
+impl CppMove for Empty {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct A {
@@ -148,9 +163,19 @@ impl A {
         Self { id_: i }
     }
 }
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoDefault {}
+impl CppMove for NoDefault {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_sfinae_missing_elements_14() {
     {
         const _: () = assert!(
@@ -204,62 +229,79 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t: Value<std_tuple_MoveOnly_> = Rc::new(RefCell::new(MoveOnly::new({ Some(0) })));
         assert!(
             ({
-                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _x: Ptr<MoveOnly> = ({ get_15(t.as_pointer()) });
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(0) })));
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t: Value<std_tuple_MoveOnly__MoveOnly_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(0) })));
+            let __tmp_1: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
+            std_tuple_MoveOnly__MoveOnly_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+        }));
         assert!(
             ({
-                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _x: Ptr<MoveOnly> = ({ get_16(t.as_pointer()) });
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(0) })));
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
         assert!(
             ({
-                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _x: Ptr<MoveOnly> = ({ get_17(t.as_pointer()) });
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t: Value<std_tuple_MoveOnly__MoveOnly__MoveOnly_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(0) })));
+            let __tmp_3: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
+            let __tmp_4: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
+            std_tuple_MoveOnly__MoveOnly__MoveOnly_::new_1(
+                { __tmp_2.as_pointer() },
+                { __tmp_3.as_pointer() },
+                { __tmp_4.as_pointer() },
+            )
+        }));
         assert!(
             ({
-                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _x: Ptr<MoveOnly> = ({ get_18(t.as_pointer()) });
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(0) })));
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
         assert!(
             ({
-                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _x: Ptr<MoveOnly> = ({ get_19(t.as_pointer()) });
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
         assert!(
             ({
-                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _x: Ptr<MoveOnly> = ({ get_20(t.as_pointer()) });
                 let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
     }
     {
-        let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t0: Value<std_tuple_Empty_> = Rc::new(RefCell::new(<Empty>::default()));
         &(*t0.borrow_mut());
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t: Value<std_tuple_A__A_> = Rc::new(RefCell::new({
+            let __tmp_5: Value<i32> = Rc::new(RefCell::new(3));
+            let __tmp_6: Value<i32> = Rc::new(RefCell::new(2));
+            std_tuple_A__A_::new_1({ __tmp_5.as_pointer() }, { __tmp_6.as_pointer() })
+        }));
         const _: () = assert!(true, "std::get<0>(t).id_ == 3");;
     }
     ({ test_sfinae_missing_elements_14() });

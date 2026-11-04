@@ -44,6 +44,11 @@ pub fn operator_bitor_2(mut LHS: CallType, mut RHS: CallType) -> CallType {
 #[cpp_into(i32, to_i32)]
 #[byte_size(1)]
 pub struct ForwardingCallObject {}
+impl CppMove for ForwardingCallObject {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static last_call_type_3: Value<CallType> = Rc::new(RefCell::new(CallType_CT_None));
 );
@@ -53,132 +58,18 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnFirst {}
+impl CppMove for ReturnFirst {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnArity {}
-pub fn test_5() {
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::variant_alternative<I, V>::type, E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::variant_alternative<I, const V>::type,\n                     const E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::variant_alternative<I, volatile V>::type,\n                     volatile E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<\n          typename std::variant_alternative<I, const volatile V>::type,\n          const volatile E>"
-    );;
-    const _: () = assert!(true, "std::is_same_v<std::variant_alternative_t<I, V>, E>");;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<std::variant_alternative_t<I, const V>, const E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<std::variant_alternative_t<I, volatile V>, volatile E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<std::variant_alternative_t<I, const volatile V>,\n                               const volatile E>"
-    );;
-}
-pub fn test_6() {
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::variant_alternative<I, V>::type, E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::variant_alternative<I, const V>::type,\n                     const E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::variant_alternative<I, volatile V>::type,\n                     volatile E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<\n          typename std::variant_alternative<I, const volatile V>::type,\n          const volatile E>"
-    );;
-    const _: () = assert!(true, "std::is_same_v<std::variant_alternative_t<I, V>, E>");;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<std::variant_alternative_t<I, const V>, const E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<std::variant_alternative_t<I, volatile V>, volatile E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<std::variant_alternative_t<I, const volatile V>,\n                               const volatile E>"
-    );;
-}
-pub fn test_7() {
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::variant_alternative<I, V>::type, E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::variant_alternative<I, const V>::type,\n                     const E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::variant_alternative<I, volatile V>::type,\n                     volatile E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<\n          typename std::variant_alternative<I, const volatile V>::type,\n          const volatile E>"
-    );;
-    const _: () = assert!(true, "std::is_same_v<std::variant_alternative_t<I, V>, E>");;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<std::variant_alternative_t<I, const V>, const E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<std::variant_alternative_t<I, volatile V>, volatile E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<std::variant_alternative_t<I, const volatile V>,\n                               const volatile E>"
-    );;
-}
-pub fn test_8() {
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::variant_alternative<I, V>::type, E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::variant_alternative<I, const V>::type,\n                     const E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::variant_alternative<I, volatile V>::type,\n                     volatile E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<\n          typename std::variant_alternative<I, const volatile V>::type,\n          const volatile E>"
-    );;
-    const _: () = assert!(true, "std::is_same_v<std::variant_alternative_t<I, V>, E>");;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<std::variant_alternative_t<I, const V>, const E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<std::variant_alternative_t<I, volatile V>, volatile E>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<std::variant_alternative_t<I, const volatile V>,\n                               const volatile E>"
-    );;
+impl CppMove for ReturnArity {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

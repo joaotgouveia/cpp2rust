@@ -9,12 +9,17 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Empty {}
+impl CppMove for Empty {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(12)]
 pub struct S {
     #[offset(0)]
     #[byte_size(4)]
-    pub a: (),
+    pub a: std_tuple_int__Empty_,
     #[offset(4)]
     pub k: i32,
     #[offset(8)]
@@ -23,18 +28,29 @@ pub struct S {
 }
 impl S {
     pub fn new() -> Self {
-        Self {
-            a: unimplemented!(),
-            k: ((unimplemented!().read()) as i32),
-            e: (unimplemented!()).clone(),
-        }
+        let __this: Value<S> = Rc::new(RefCell::new(Self {
+            a: {
+                let __tmp_0: Value<i32> = Rc::new(RefCell::new(1));
+                let __tmp_1: Value<Empty> = Rc::new(RefCell::new(<Empty>::default()));
+                std_tuple_int__Empty_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+            },
+            k: (({ get_0(field_ptr!(this, a)) }).read()),
+            e: (*({ get_1(field_ptr!(this, a)) }).upgrade().deref()).clone(),
+        }));
+        let this: Ptr<S> = __this.as_pointer();
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
     pub fn move_from(_a0: Ptr<S>) -> Self {
         Self {
-            a: unimplemented!(),
+            a: field!(_a0, a).with_mut(std::mem::take),
             k: { (*_a0.upgrade().deref()).k },
             e: { (*_a0.upgrade().deref()).e.clone() },
         }
+    }
+}
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for S {
@@ -42,8 +58,12 @@ impl Default for S {
         { S::new() }
     }
 }
-pub fn getP_0() -> () {
-    return unimplemented!();
+pub fn getP_2() -> std_tuple_int__int_ {
+    return {
+        let __tmp_2: Value<i32> = Rc::new(RefCell::new(3));
+        let __tmp_3: Value<i32> = Rc::new(RefCell::new(4));
+        std_tuple_int__int_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
+    };
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -66,49 +86,92 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!().read()) == 3));
-        unimplemented!().write((2 as ()));
-        assert!(((unimplemented!().read()) == 2));
+        let t: Value<std_tuple_int_> = Rc::new(RefCell::new(3));
+        assert!(((({ get_3(t.as_pointer(),) }).read()) == 3));
+        ({ get_3(t.as_pointer()) }).write(2);
+        assert!(((({ get_3(t.as_pointer(),) }).read()) == 2));
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t: Value<
+            std_tuple_std_basic_string_char__std_char_traits_char___std_allocator_char____int_,
+        > = Rc::new(RefCell::new({
+            let __tmp_4: Value<i32> = Rc::new(RefCell::new(5));
+            std_tuple_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_1 ( { Ptr::<i8 >::from_string_literal(b"high" ) } , { __tmp_4.as_pointer() } , )
+        }));
         assert!(
-            Ptr::<i8>::from_string_literal(b"high").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                match (({ get_4(t.as_pointer()) }),) {
+                    (__tmp_5,) => Ptr::<i8>::from_string_literal(b"high").with_c_str(|__s| {
+                        (*__tmp_5.upgrade().deref())
+                            [..(*__tmp_5.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
         );
-        assert!(((unimplemented!().read()) == 5));
-        unimplemented!();
-        unimplemented!().write((4 as ()));
+        assert!(((({ get_5(t.as_pointer(),) }).read()) == 5));
+        match (({ get_4(t.as_pointer()) }),) {
+            (__tmp_6,) => {
+                let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                __bytes.push(0_i8);
+                __tmp_6.write(__bytes);
+                (__tmp_6).clone()
+            }
+        };
+        ({ get_5(t.as_pointer()) }).write(4);
         assert!(
-            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                match (({ get_4(t.as_pointer()) }),) {
+                    (__tmp_7,) => Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                        (*__tmp_7.upgrade().deref())
+                            [..(*__tmp_7.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
         );
-        assert!(((unimplemented!().read()) == 4));
+        assert!(((({ get_5(t.as_pointer(),) }).read()) == 4));
     }
     {
-        let mut d: f64 = 1.5_f64;
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!().read()) == 1.5_f64));
+        let d: Value<f64> = Rc::new(RefCell::new(1.5_f64));
+        let t : Value<std_tuple_double_ref__std_basic_string_char__std_char_traits_char___std_allocator_char____int_ > = Rc::new(RefCell::new({ let __tmp_8 : Value<i32 > = Rc::new(RefCell::new(5 )); std_tuple_double_ref__std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_1 ( { d .as_pointer()  } , { Ptr::<i8 >::from_string_literal(b"high" ) } , { __tmp_8.as_pointer() } , )  } )) ;
+        assert!(((({ get_6(t.as_pointer(),) }).read()) == 1.5_f64));
         assert!(
-            Ptr::<i8>::from_string_literal(b"high").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                match (({ get_7(t.as_pointer()) }),) {
+                    (__tmp_9,) => Ptr::<i8>::from_string_literal(b"high").with_c_str(|__s| {
+                        (*__tmp_9.upgrade().deref())
+                            [..(*__tmp_9.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
         );
-        assert!(((unimplemented!().read()) == 5));
-        unimplemented!().write(2.5_f64);
-        unimplemented!();
-        unimplemented!().write((4 as ()));
-        assert!(((unimplemented!().read()) == 2.5_f64));
+        assert!(((({ get_8(t.as_pointer(),) }).read()) == 5));
+        ({ get_6(t.as_pointer()) }).write(2.5_f64);
+        match (({ get_7(t.as_pointer()) }),) {
+            (__tmp_10,) => {
+                let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                __bytes.push(0_i8);
+                __tmp_10.write(__bytes);
+                (__tmp_10).clone()
+            }
+        };
+        ({ get_8(t.as_pointer()) }).write(4);
+        assert!(((({ get_6(t.as_pointer(),) }).read()) == 2.5_f64));
         assert!(
-            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                match (({ get_7(t.as_pointer()) }),) {
+                    (__tmp_11,) => Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                        (*__tmp_11.upgrade().deref())
+                            [..(*__tmp_11.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
         );
-        assert!(((unimplemented!().read()) == 4));
-        assert!((d == 2.5_f64));
+        assert!(((({ get_8(t.as_pointer(),) }).read()) == 4));
+        assert!(({ ((*d.borrow()) == 2.5_f64) }));
     }
     {
         const _: () = assert!(
@@ -137,7 +200,7 @@ pub trait SImpl {
 }
 impl SImpl for Ptr<S> {
     fn move_assign(&self, _a0: Ptr<S>) -> Ptr<S> {
-        unimplemented!();
+        field!((*self), a).write({ { (*_a0.upgrade().deref()).a.clone() } });
         field!((*self), k).write({ { (*_a0.upgrade().deref()).k } });
         field!((*self), e).write({ { (*_a0.upgrade().deref()).e.clone() } });
         return (*self).clone();

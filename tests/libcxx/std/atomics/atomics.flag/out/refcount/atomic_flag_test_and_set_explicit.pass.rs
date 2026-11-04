@@ -28,76 +28,172 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == 0));
-        assert!(((unimplemented!() as i32) == 1));
+        let f: Value<std_atomic_flag> = Rc::new(RefCell::new(<std_atomic_flag>::default()));
+        ({ (*f.borrow()).clear_14(None) });
+        assert!(
+            ((({
+                atomic_flag_test_and_set_explicit_0(
+                    (f.as_pointer()),
+                    memory_order_relaxed_1.with(|rc| *rc.borrow()),
+                )
+            }) as i32)
+                == 0)
+        );
+        assert!(({ ((({ (*f.borrow()).test_and_set_7(None,) }) as i32) == 1) }));
     }
     {
-        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == 0));
-        assert!(((unimplemented!() as i32) == 1));
+        let f: Value<std_atomic_flag> = Rc::new(RefCell::new(<std_atomic_flag>::default()));
+        ({ (*f.borrow()).clear_14(None) });
+        assert!(
+            ((({
+                atomic_flag_test_and_set_explicit_0(
+                    (f.as_pointer()),
+                    memory_order_consume_2.with(|rc| *rc.borrow()),
+                )
+            }) as i32)
+                == 0)
+        );
+        assert!(({ ((({ (*f.borrow()).test_and_set_7(None,) }) as i32) == 1) }));
     }
     {
-        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == 0));
-        assert!(((unimplemented!() as i32) == 1));
+        let f: Value<std_atomic_flag> = Rc::new(RefCell::new(<std_atomic_flag>::default()));
+        ({ (*f.borrow()).clear_14(None) });
+        assert!(
+            ((({
+                atomic_flag_test_and_set_explicit_0(
+                    (f.as_pointer()),
+                    memory_order_acquire_3.with(|rc| *rc.borrow()),
+                )
+            }) as i32)
+                == 0)
+        );
+        assert!(({ ((({ (*f.borrow()).test_and_set_7(None,) }) as i32) == 1) }));
     }
     {
-        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == 0));
-        assert!(((unimplemented!() as i32) == 1));
+        let f: Value<std_atomic_flag> = Rc::new(RefCell::new(<std_atomic_flag>::default()));
+        ({ (*f.borrow()).clear_14(None) });
+        assert!(
+            ((({
+                atomic_flag_test_and_set_explicit_0(
+                    (f.as_pointer()),
+                    memory_order_release_4.with(|rc| *rc.borrow()),
+                )
+            }) as i32)
+                == 0)
+        );
+        assert!(({ ((({ (*f.borrow()).test_and_set_7(None,) }) as i32) == 1) }));
     }
     {
-        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == 0));
-        assert!(((unimplemented!() as i32) == 1));
+        let f: Value<std_atomic_flag> = Rc::new(RefCell::new(<std_atomic_flag>::default()));
+        ({ (*f.borrow()).clear_14(None) });
+        assert!(
+            ((({
+                atomic_flag_test_and_set_explicit_0(
+                    (f.as_pointer()),
+                    memory_order_acq_rel_5.with(|rc| *rc.borrow()),
+                )
+            }) as i32)
+                == 0)
+        );
+        assert!(({ ((({ (*f.borrow()).test_and_set_7(None,) }) as i32) == 1) }));
     }
     {
-        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == 0));
-        assert!(((unimplemented!() as i32) == 1));
+        let f: Value<std_atomic_flag> = Rc::new(RefCell::new(<std_atomic_flag>::default()));
+        ({ (*f.borrow()).clear_14(None) });
+        assert!(
+            ((({
+                atomic_flag_test_and_set_explicit_0(
+                    (f.as_pointer()),
+                    memory_order_seq_cst_6.with(|rc| *rc.borrow()),
+                )
+            }) as i32)
+                == 0)
+        );
+        assert!(({ ((({ (*f.borrow()).test_and_set_7(None,) }) as i32) == 1) }));
     }
     {
-        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == 0));
-        assert!(((unimplemented!() as i32) == 1));
+        let f: Value<std_atomic_flag> = Rc::new(RefCell::new(<std_atomic_flag>::default()));
+        ({ (*f.borrow()).clear_15(None) });
+        assert!(
+            ((({
+                atomic_flag_test_and_set_explicit_7(
+                    (f.as_pointer()),
+                    memory_order_relaxed_1.with(|rc| *rc.borrow()),
+                )
+            }) as i32)
+                == 0)
+        );
+        assert!(({ ((({ (*f.borrow()).test_and_set_8(None,) }) as i32) == 1) }));
     }
     {
-        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == 0));
-        assert!(((unimplemented!() as i32) == 1));
+        let f: Value<std_atomic_flag> = Rc::new(RefCell::new(<std_atomic_flag>::default()));
+        ({ (*f.borrow()).clear_15(None) });
+        assert!(
+            ((({
+                atomic_flag_test_and_set_explicit_7(
+                    (f.as_pointer()),
+                    memory_order_consume_2.with(|rc| *rc.borrow()),
+                )
+            }) as i32)
+                == 0)
+        );
+        assert!(({ ((({ (*f.borrow()).test_and_set_8(None,) }) as i32) == 1) }));
     }
     {
-        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == 0));
-        assert!(((unimplemented!() as i32) == 1));
+        let f: Value<std_atomic_flag> = Rc::new(RefCell::new(<std_atomic_flag>::default()));
+        ({ (*f.borrow()).clear_15(None) });
+        assert!(
+            ((({
+                atomic_flag_test_and_set_explicit_7(
+                    (f.as_pointer()),
+                    memory_order_acquire_3.with(|rc| *rc.borrow()),
+                )
+            }) as i32)
+                == 0)
+        );
+        assert!(({ ((({ (*f.borrow()).test_and_set_8(None,) }) as i32) == 1) }));
     }
     {
-        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == 0));
-        assert!(((unimplemented!() as i32) == 1));
+        let f: Value<std_atomic_flag> = Rc::new(RefCell::new(<std_atomic_flag>::default()));
+        ({ (*f.borrow()).clear_15(None) });
+        assert!(
+            ((({
+                atomic_flag_test_and_set_explicit_7(
+                    (f.as_pointer()),
+                    memory_order_release_4.with(|rc| *rc.borrow()),
+                )
+            }) as i32)
+                == 0)
+        );
+        assert!(({ ((({ (*f.borrow()).test_and_set_8(None,) }) as i32) == 1) }));
     }
     {
-        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == 0));
-        assert!(((unimplemented!() as i32) == 1));
+        let f: Value<std_atomic_flag> = Rc::new(RefCell::new(<std_atomic_flag>::default()));
+        ({ (*f.borrow()).clear_15(None) });
+        assert!(
+            ((({
+                atomic_flag_test_and_set_explicit_7(
+                    (f.as_pointer()),
+                    memory_order_acq_rel_5.with(|rc| *rc.borrow()),
+                )
+            }) as i32)
+                == 0)
+        );
+        assert!(({ ((({ (*f.borrow()).test_and_set_8(None,) }) as i32) == 1) }));
     }
     {
-        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == 0));
-        assert!(((unimplemented!() as i32) == 1));
+        let f: Value<std_atomic_flag> = Rc::new(RefCell::new(<std_atomic_flag>::default()));
+        ({ (*f.borrow()).clear_15(None) });
+        assert!(
+            ((({
+                atomic_flag_test_and_set_explicit_7(
+                    (f.as_pointer()),
+                    memory_order_seq_cst_6.with(|rc| *rc.borrow()),
+                )
+            }) as i32)
+                == 0)
+        );
+        assert!(({ ((({ (*f.borrow()).test_and_set_8(None,) }) as i32) == 1) }));
     }
     return 0;
 }

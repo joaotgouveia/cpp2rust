@@ -10,3 +10,7 @@ fn t29<T1>() -> T1 {
 fn t42<T1: CppAllocator<T2>, T2>() -> T2 {
     unimplemented!()
 }
+
+fn t48<T1>() -> usize {
+    0_usize
+}

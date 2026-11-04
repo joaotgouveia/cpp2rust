@@ -30,47 +30,65 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iv: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*iv.borrow()).len() == 2_usize));
+        let pa: Value<std_piecewise_linear_distribution___param_type> = Rc::new(RefCell::new(
+            std_piecewise_linear_distribution___param_type::new_1({ Default::default() }, {
+                FnPtr::<fn(f64) -> f64>::new(f_0)
+            }),
+        ));
+        let iv: Value<Vec<f64>> = Rc::new(RefCell::new(({ (*pa.borrow()).intervals() })));
+        assert!(({ ((*iv.borrow()).len() == 2_usize) }));
         assert!(((iv.decay().offset(0_usize as isize).read()) == 0_f64));
         assert!(((iv.decay().offset(1_usize as isize).read()) == 1_f64));
-        let dn: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*dn.borrow()).len() == 2_usize));
+        let dn: Value<Vec<f64>> = Rc::new(RefCell::new(({ (*pa.borrow()).densities() })));
+        assert!(({ ((*dn.borrow()).len() == 2_usize) }));
         assert!(((dn.decay().offset(0_usize as isize).read()) == 1_f64));
         assert!(((dn.decay().offset(1_usize as isize).read()) == 1_f64));
     }
     {
-        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iv: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*iv.borrow()).len() == 2_usize));
+        let pa: Value<std_piecewise_linear_distribution___param_type> = Rc::new(RefCell::new(
+            std_piecewise_linear_distribution___param_type::new_1({ Vec::from([12_f64]) }, {
+                FnPtr::<fn(f64) -> f64>::new(f_0)
+            }),
+        ));
+        let iv: Value<Vec<f64>> = Rc::new(RefCell::new(({ (*pa.borrow()).intervals() })));
+        assert!(({ ((*iv.borrow()).len() == 2_usize) }));
         assert!(((iv.decay().offset(0_usize as isize).read()) == 0_f64));
         assert!(((iv.decay().offset(1_usize as isize).read()) == 1_f64));
-        let dn: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*dn.borrow()).len() == 2_usize));
+        let dn: Value<Vec<f64>> = Rc::new(RefCell::new(({ (*pa.borrow()).densities() })));
+        assert!(({ ((*dn.borrow()).len() == 2_usize) }));
         assert!(((dn.decay().offset(0_usize as isize).read()) == 1_f64));
         assert!(((dn.decay().offset(1_usize as isize).read()) == 1_f64));
     }
     {
-        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iv: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*iv.borrow()).len() == 2_usize));
+        let pa: Value<std_piecewise_linear_distribution___param_type> = Rc::new(RefCell::new(
+            std_piecewise_linear_distribution___param_type::new_1(
+                { Vec::from([10_f64, 12_f64]) },
+                { FnPtr::<fn(f64) -> f64>::new(f_0) },
+            ),
+        ));
+        let iv: Value<Vec<f64>> = Rc::new(RefCell::new(({ (*pa.borrow()).intervals() })));
+        assert!(({ ((*iv.borrow()).len() == 2_usize) }));
         assert!(((iv.decay().offset(0_usize as isize).read()) == 10_f64));
         assert!(((iv.decay().offset(1_usize as isize).read()) == 12_f64));
-        let dn: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*dn.borrow()).len() == 2_usize));
+        let dn: Value<Vec<f64>> = Rc::new(RefCell::new(({ (*pa.borrow()).densities() })));
+        assert!(({ ((*dn.borrow()).len() == 2_usize) }));
         assert!(((dn.decay().offset(0_usize as isize).read()) == (20_f64 / 44_f64)));
         assert!(((dn.decay().offset(1_usize as isize).read()) == (24_f64 / 44_f64)));
     }
     {
-        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iv: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*iv.borrow()).len() == 3_usize));
+        let pa: Value<std_piecewise_linear_distribution___param_type> = Rc::new(RefCell::new(
+            std_piecewise_linear_distribution___param_type::new_1(
+                { Vec::from([6_f64, 10_f64, 14_f64]) },
+                { FnPtr::<fn(f64) -> f64>::new(f_0) },
+            ),
+        ));
+        let iv: Value<Vec<f64>> = Rc::new(RefCell::new(({ (*pa.borrow()).intervals() })));
+        assert!(({ ((*iv.borrow()).len() == 3_usize) }));
         assert!(((iv.decay().offset(0_usize as isize).read()) == 6_f64));
         assert!(((iv.decay().offset(1_usize as isize).read()) == 10_f64));
         assert!(((iv.decay().offset(2_usize as isize).read()) == 14_f64));
-        let dn: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*dn.borrow()).len() == 3_usize));
+        let dn: Value<Vec<f64>> = Rc::new(RefCell::new(({ (*pa.borrow()).densities() })));
+        assert!(({ ((*dn.borrow()).len() == 3_usize) }));
         assert!(((dn.decay().offset(0_usize as isize).read()) == 0.075_f64));
         assert!(((dn.decay().offset(1_usize as isize).read()) == 0.125_f64));
         assert!(((dn.decay().offset(2_usize as isize).read()) == 0.175_f64));

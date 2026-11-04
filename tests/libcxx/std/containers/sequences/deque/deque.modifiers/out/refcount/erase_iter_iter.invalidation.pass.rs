@@ -8,36 +8,69 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn del_at_start_0(c: Vec<i32>, mut num: usize) {
     let c: Value<Vec<i32>> = Rc::new(RefCell::new(c));
-    let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let last: Value<()> = Rc::new(RefCell::new((*first.borrow()).iter_add((num as isize))));
-    let it1: Value<()> = Rc::new(RefCell::new((*last.borrow()).clone()));
-    let it2: Value<()> = Rc::new(RefCell::new(unimplemented!().iter_add(-1_isize)));
-    unimplemented!();
-    let it3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let it4: Value<()> = Rc::new(RefCell::new(unimplemented!().iter_add(-1_isize)));
-    assert!((*it1.borrow()) == (*it3.borrow()));
-    assert!((((*it1.borrow()).iter_deref().read()) == ((*it3.borrow()).iter_deref().read())));
-    assert!((((*it1.borrow()).iter_deref()) == ((*it3.borrow()).iter_deref())));
-    assert!((*it2.borrow()) == (*it4.borrow()));
-    assert!((((*it2.borrow()).iter_deref().read()) == ((*it4.borrow()).iter_deref().read())));
-    assert!((((*it2.borrow()).iter_deref()) == ((*it4.borrow()).iter_deref())));
+    let first: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
+        Rc::new(RefCell::new(({ (*c.borrow_mut()).begin_24() })));
+    let last: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
+        Rc::new(RefCell::new((*first.borrow()).iter_add((num as isize))));
+    let it1: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
+        Rc::new(RefCell::new((*last.borrow()).clone()));
+    let it2: Value<std__Deque_iterator_int__int_ref__int_ptr_> = Rc::new(RefCell::new(
+        ({ (*c.borrow_mut()).end_26() }).iter_add(-1_isize),
+    ));
+    ({
+        (*c.borrow_mut()).erase_69(
+            <std__Deque_iterator_int__const_int_ref__const_int_ptr_>::from(
+                ({ (*first.borrow()).clone() }),
+            ),
+            <std__Deque_iterator_int__const_int_ref__const_int_ptr_>::from(
+                ({ (*last.borrow()).clone() }),
+            ),
+        )
+    });
+    let it3: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
+        Rc::new(RefCell::new(({ (*c.borrow_mut()).begin_24() })));
+    let it4: Value<std__Deque_iterator_int__int_ref__int_ptr_> = Rc::new(RefCell::new(
+        ({ (*c.borrow_mut()).end_26() }).iter_add(-1_isize),
+    ));
+    assert!(({ (*it1.borrow()) == (*it3.borrow()) }));
+    assert!(({ (((*it1.borrow()).iter_deref().read()) == ((*it3.borrow()).iter_deref().read())) }));
+    assert!(({ (((*it1.borrow()).iter_deref()) == ((*it3.borrow()).iter_deref())) }));
+    assert!(({ (*it2.borrow()) == (*it4.borrow()) }));
+    assert!(({ (((*it2.borrow()).iter_deref().read()) == ((*it4.borrow()).iter_deref().read())) }));
+    assert!(({ (((*it2.borrow()).iter_deref()) == ((*it4.borrow()).iter_deref())) }));
     const _: () = assert!(true, "");;
 }
 pub fn del_at_end_1(c: Vec<i32>, mut num: usize) {
     let c: Value<Vec<i32>> = Rc::new(RefCell::new(c));
-    let last: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let first: Value<()> = Rc::new(RefCell::new((*last.borrow()).iter_add(-(num as isize))));
-    let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let it2: Value<()> = Rc::new(RefCell::new((*first.borrow()).iter_add(-1_isize)));
-    unimplemented!();
-    let it3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let it4: Value<()> = Rc::new(RefCell::new(unimplemented!().iter_add(-1_isize)));
-    assert!((*it1.borrow()) == (*it3.borrow()));
-    assert!((((*it1.borrow()).iter_deref().read()) == ((*it3.borrow()).iter_deref().read())));
-    assert!((((*it1.borrow()).iter_deref()) == ((*it3.borrow()).iter_deref())));
-    assert!((*it2.borrow()) == (*it4.borrow()));
-    assert!((((*it2.borrow()).iter_deref().read()) == ((*it4.borrow()).iter_deref().read())));
-    assert!((((*it2.borrow()).iter_deref()) == ((*it4.borrow()).iter_deref())));
+    let last: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
+        Rc::new(RefCell::new(({ (*c.borrow_mut()).end_26() })));
+    let first: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
+        Rc::new(RefCell::new((*last.borrow()).iter_add(-(num as isize))));
+    let it1: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
+        Rc::new(RefCell::new(({ (*c.borrow_mut()).begin_24() })));
+    let it2: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
+        Rc::new(RefCell::new((*first.borrow()).iter_add(-1_isize)));
+    ({
+        (*c.borrow_mut()).erase_69(
+            <std__Deque_iterator_int__const_int_ref__const_int_ptr_>::from(
+                ({ (*first.borrow()).clone() }),
+            ),
+            <std__Deque_iterator_int__const_int_ref__const_int_ptr_>::from(
+                ({ (*last.borrow()).clone() }),
+            ),
+        )
+    });
+    let it3: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
+        Rc::new(RefCell::new(({ (*c.borrow_mut()).begin_24() })));
+    let it4: Value<std__Deque_iterator_int__int_ref__int_ptr_> = Rc::new(RefCell::new(
+        ({ (*c.borrow_mut()).end_26() }).iter_add(-1_isize),
+    ));
+    assert!(({ (*it1.borrow()) == (*it3.borrow()) }));
+    assert!(({ (((*it1.borrow()).iter_deref().read()) == ((*it3.borrow()).iter_deref().read())) }));
+    assert!(({ (((*it1.borrow()).iter_deref()) == ((*it3.borrow()).iter_deref())) }));
+    assert!(({ (*it2.borrow()) == (*it4.borrow()) }));
+    assert!(({ (((*it2.borrow()).iter_deref().read()) == ((*it4.borrow()).iter_deref().read())) }));
+    assert!(({ (((*it2.borrow()).iter_deref()) == ((*it4.borrow()).iter_deref())) }));
     const _: () = assert!(true, "");;
 }
 pub fn main() {
@@ -66,14 +99,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         (*queue.borrow_mut()).push(i);
         i.prefix_inc();
     }
-    'loop_: while (unimplemented!() > 1_usize) {
+    'loop_: while (({ (*queue.borrow()).size() }) > 1_usize) {
         let mut i: usize = 1_usize;
-        'loop_: while (i < unimplemented!()) {
+        'loop_: while (i < ({ (*queue.borrow()).size() })) {
             ({ del_at_start_0((*queue.borrow()).clone(), i) });
             ({ del_at_end_1((*queue.borrow()).clone(), i) });
             i.prefix_inc();
         }
-        unimplemented!();
+        ({ (*queue.borrow_mut()).pop_back() });
     }
     return 0;
 }

@@ -19,8 +19,11 @@ const _: () = assert!(
     "std::is_nothrow_constructible_v<std::expected<void, int>, std::in_place_t>"
 );
 pub fn test_0() -> bool {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
+    let e: Value<std_expected_void__int_> =
+        Rc::new(RefCell::new(std_expected_void__int_::new_1({
+            (*in_place_1.with(Value::clone).borrow()).clone()
+        })));
+    assert!(({ ({ (*e.borrow()).has_value() }) }));
     return true;
 }
 pub fn main() {

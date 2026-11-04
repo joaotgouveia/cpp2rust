@@ -71,7 +71,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let mb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mb: Value<std_messages_base> = Rc::new(RefCell::new(<std_messages_base>::default()));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

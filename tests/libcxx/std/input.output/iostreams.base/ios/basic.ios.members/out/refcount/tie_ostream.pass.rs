@@ -27,11 +27,13 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let ios: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ios: Value<std_basic_ios_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_ios_char__std_char_traits_char__::new_1({ Ptr::<::std::fs::File>::null() }),
+    ));
     let mut os: Ptr<::std::fs::File> = <Ptr<::std::fs::File>>::from_int(1);
-    let mut r: Ptr<::std::fs::File> = unimplemented!();
+    let mut r: Ptr<::std::fs::File> = ({ (*ios.borrow()).tie_16((os).clone()) });
     assert!((r).is_null());
-    assert!(({ unimplemented!() } == { (os).clone() }));
+    assert!(({ ({ ({ (*ios.borrow()).tie_15() }) } == { (os).clone() }) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

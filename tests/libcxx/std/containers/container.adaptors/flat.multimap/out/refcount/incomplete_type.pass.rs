@@ -8,19 +8,7 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(88)]
-pub struct A {
-    #[offset(0)]
-    pub data: i32,
-    #[offset(8)]
-    #[byte_size(48)]
-    pub m: (),
-    #[offset(56)]
-    #[byte_size(16)]
-    pub it: (),
-    #[offset(72)]
-    #[byte_size(16)]
-    pub cit: (),
-}
+pub struct A { #[offset(0)] pub data : i32  , #[offset(8)] #[byte_size(48)] pub m : std_flat_multimap_A__A__std_less_A___std_vector_A__std_allocator_A____std_vector_A__std_allocator_A___  , #[offset(56)] #[byte_size(16)] pub it : std__Flat_map_impl_A__A__std_less_A___std_vector_A___std_vector_A___true___Iterator_false_  , #[offset(72)] #[byte_size(16)] pub cit : std__Flat_map_impl_A__A__std_less_A___std_vector_A___std_vector_A___true___Iterator_true_  , }
 impl A {
     pub fn move_from(_a0: Ptr<A>) -> Self {
         Self {
@@ -40,6 +28,11 @@ impl CppEq for A {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         !(operator_lt_0(__lhs.clone(), __rhs.clone()))
             && !(operator_lt_0(__rhs.clone(), __lhs.clone()))
+    }
+}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_lt_0(L: Ptr<A>, R: Ptr<A>) -> bool {
@@ -75,8 +68,10 @@ impl AImpl for Ptr<A> {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
         field!((*self), data).write({ { (*_a0.upgrade().deref()).data } });
         field!((*self), m).write({ { (*_a0.upgrade().deref()).m.clone() } });
-        field!((*self), it).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).it.clone() });
-        field!((*self), cit).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).cit.clone() });
+        field!((*self), it)
+            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).it.clone() } }));
+        field!((*self), cit)
+            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).cit.clone() } }));
         return (*self).clone();
     }
 }

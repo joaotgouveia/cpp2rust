@@ -82,6 +82,11 @@ impl CppAdvance for SomeInt {
         __it.operator_dec_5();
     }
 }
+impl CppMove for SomeInt {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for SomeInt {
     fn default() -> Self {
         { SomeInt::new(None) }
@@ -138,6 +143,11 @@ impl CppAdvance for NotIncrementable {
         __it.operator_dec();
     }
 }
+impl CppMove for NotIncrementable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for NotIncrementable {
     fn default() -> Self {
         { NotIncrementable::new(None) }
@@ -192,6 +202,11 @@ impl CppAdvance for NotDecrementable {
         __it.operator_inc_3();
     }
 }
+impl CppMove for NotDecrementable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for NotDecrementable {
     fn default() -> Self {
         { NotDecrementable::new(None) }
@@ -202,15 +217,21 @@ pub const CtorKind_DefaultTo42: CtorKind = 0;
 pub const CtorKind_ValueCtor: CtorKind = 1;
 pub fn testType_18() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_::new_1({
+                    SomeInt::new({ Some(0) })
+                }),
+            ));
+        let iter: Value<std_ranges_iota_view_SomeInt___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
             assert!(
                 ({
                     let _arg0: Value<SomeInt> = Rc::new(RefCell::new(SomeInt::new({ Some(i) })));
                     SomeIntImpl::operator_eq(
-                        &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                        &Rc::new(RefCell::new((*iter.borrow()).iter_at(i))).as_pointer(),
                         _arg0.as_pointer(),
                     )
                 })
@@ -219,8 +240,14 @@ pub fn testType_18() {
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_::new_1({
+                    SomeInt::new({ Some(10) })
+                }),
+            ));
+        let iter: Value<std_ranges_iota_view_SomeInt___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
             assert!(
@@ -228,7 +255,7 @@ pub fn testType_18() {
                     let _arg0: Value<SomeInt> =
                         Rc::new(RefCell::new(SomeInt::new({ Some((i + 10)) })));
                     SomeIntImpl::operator_eq(
-                        &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                        &Rc::new(RefCell::new((*iter.borrow()).iter_at(i))).as_pointer(),
                         _arg0.as_pointer(),
                     )
                 })
@@ -237,15 +264,21 @@ pub fn testType_18() {
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_::new_1({
+                    SomeInt::new({ Some(0) })
+                }),
+            ));
+        let iter: Value<std_ranges_iota_view_SomeInt___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
             assert!(
                 ({
                     let _arg0: Value<SomeInt> = Rc::new(RefCell::new(SomeInt::new({ Some(i) })));
                     SomeIntImpl::operator_eq(
-                        &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                        &Rc::new(RefCell::new((*iter.borrow()).iter_at(i))).as_pointer(),
                         _arg0.as_pointer(),
                     )
                 })
@@ -254,8 +287,14 @@ pub fn testType_18() {
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_::new_1({
+                    SomeInt::new({ Some(10) })
+                }),
+            ));
+        let iter: Value<std_ranges_iota_view_SomeInt___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
             assert!(
@@ -263,7 +302,7 @@ pub fn testType_18() {
                     let _arg0: Value<SomeInt> =
                         Rc::new(RefCell::new(SomeInt::new({ Some((i + 10)) })));
                     SomeIntImpl::operator_eq(
-                        &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                        &Rc::new(RefCell::new((*iter.borrow()).iter_at(i))).as_pointer(),
                         _arg0.as_pointer(),
                     )
                 })
@@ -274,380 +313,546 @@ pub fn testType_18() {
 }
 pub fn testType_19() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view___int128__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view___int128__std_unreachable_sentinel_t_::new_1({ 0_i128 }),
+            ));
+        let iter: Value<std_ranges_iota_view___int128___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == (i as i128)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == (i as i128)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view___int128__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view___int128__std_unreachable_sentinel_t_::new_1({ 10_i128 }),
+            ));
+        let iter: Value<std_ranges_iota_view___int128___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == ((i + 10) as i128)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == ((i + 10) as i128)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view___int128__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view___int128__std_unreachable_sentinel_t_::new_1({ 0_i128 }),
+            ));
+        let iter: Value<std_ranges_iota_view___int128___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == (i as i128)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == (i as i128)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view___int128__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view___int128__std_unreachable_sentinel_t_::new_1({ 10_i128 }),
+            ));
+        let iter: Value<std_ranges_iota_view___int128___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == ((i + 10) as i128)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == ((i + 10) as i128)) }));
             i.prefix_inc();
         }
     }
 }
 pub fn testType_20() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned___int128__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned___int128__std_unreachable_sentinel_t_::new_1({
+                    0_u128
+                }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned___int128___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == (i as u128)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == (i as u128)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned___int128__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned___int128__std_unreachable_sentinel_t_::new_1({
+                    10_u128
+                }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned___int128___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == ((i + 10) as u128)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == ((i + 10) as u128)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned___int128__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned___int128__std_unreachable_sentinel_t_::new_1({
+                    0_u128
+                }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned___int128___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == (i as u128)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == (i as u128)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned___int128__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned___int128__std_unreachable_sentinel_t_::new_1({
+                    10_u128
+                }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned___int128___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == ((i + 10) as u128)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == ((i + 10) as u128)) }));
             i.prefix_inc();
         }
     }
 }
 pub fn testType_21() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_long_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_long_long__std_unreachable_sentinel_t_::new_1({ 0_i64 }),
+            ));
+        let iter: Value<std_ranges_iota_view_long_long___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == (i as i64)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == (i as i64)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_long_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_long_long__std_unreachable_sentinel_t_::new_1({ 10_i64 }),
+            ));
+        let iter: Value<std_ranges_iota_view_long_long___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == ((i + 10) as i64)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == ((i + 10) as i64)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_long_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_long_long__std_unreachable_sentinel_t_::new_1({ 0_i64 }),
+            ));
+        let iter: Value<std_ranges_iota_view_long_long___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == (i as i64)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == (i as i64)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_long_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_long_long__std_unreachable_sentinel_t_::new_1({ 10_i64 }),
+            ));
+        let iter: Value<std_ranges_iota_view_long_long___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == ((i + 10) as i64)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == ((i + 10) as i64)) }));
             i.prefix_inc();
         }
     }
 }
 pub fn testType_22() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned_long_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_long_long__std_unreachable_sentinel_t_::new_1({
+                    0_u64
+                }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned_long_long___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == (i as u64)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == (i as u64)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned_long_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_long_long__std_unreachable_sentinel_t_::new_1({
+                    10_u64
+                }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned_long_long___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == ((i + 10) as u64)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == ((i + 10) as u64)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned_long_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_long_long__std_unreachable_sentinel_t_::new_1({
+                    0_u64
+                }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned_long_long___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == (i as u64)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == (i as u64)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned_long_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_long_long__std_unreachable_sentinel_t_::new_1({
+                    10_u64
+                }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned_long_long___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == ((i + 10) as u64)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == ((i + 10) as u64)) }));
             i.prefix_inc();
         }
     }
 }
 pub fn testType_23() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_long__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_long__std_unreachable_sentinel_t_::new_1({ 0_i64 })),
+        );
+        let iter: Value<std_ranges_iota_view_long___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == (i as i64)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == (i as i64)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_long__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_long__std_unreachable_sentinel_t_::new_1({ 10_i64 })),
+        );
+        let iter: Value<std_ranges_iota_view_long___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == ((i + 10) as i64)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == ((i + 10) as i64)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_long__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_long__std_unreachable_sentinel_t_::new_1({ 0_i64 })),
+        );
+        let iter: Value<std_ranges_iota_view_long___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == (i as i64)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == (i as i64)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_long__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_long__std_unreachable_sentinel_t_::new_1({ 10_i64 })),
+        );
+        let iter: Value<std_ranges_iota_view_long___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == ((i + 10) as i64)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == ((i + 10) as i64)) }));
             i.prefix_inc();
         }
     }
 }
 pub fn testType_24() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_long__std_unreachable_sentinel_t_::new_1({ 0_u64 }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned_long___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == (i as u64)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == (i as u64)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_long__std_unreachable_sentinel_t_::new_1({ 10_u64 }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned_long___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == ((i + 10) as u64)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == ((i + 10) as u64)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_long__std_unreachable_sentinel_t_::new_1({ 0_u64 }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned_long___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == (i as u64)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == (i as u64)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_long__std_unreachable_sentinel_t_::new_1({ 10_u64 }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned_long___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == ((i + 10) as u64)));
+            assert!(({ ((*iter.borrow()).iter_at((i as i128)) == ((i + 10) as u64)) }));
             i.prefix_inc();
         }
     }
 }
 pub fn testType_25() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_int__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_int__std_unreachable_sentinel_t_::new_1({ 0 })),
+        );
+        let iter: Value<std_ranges_iota_view_int___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == i));
+            assert!(({ ((*iter.borrow()).iter_at((i as isize)) == i) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_int__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_int__std_unreachable_sentinel_t_::new_1({ 10 })),
+        );
+        let iter: Value<std_ranges_iota_view_int___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == (i + 10)));
+            assert!(({ ((*iter.borrow()).iter_at((i as isize)) == (i + 10)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_int__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_int__std_unreachable_sentinel_t_::new_1({ 0 })),
+        );
+        let iter: Value<std_ranges_iota_view_int___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == i));
+            assert!(({ ((*iter.borrow()).iter_at((i as isize)) == i) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_int__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_int__std_unreachable_sentinel_t_::new_1({ 10 })),
+        );
+        let iter: Value<std_ranges_iota_view_int___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == (i + 10)));
+            assert!(({ ((*iter.borrow()).iter_at((i as isize)) == (i + 10)) }));
             i.prefix_inc();
         }
     }
 }
 pub fn testType_26() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned_int__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_int__std_unreachable_sentinel_t_::new_1({ 0_u32 }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned_int___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == (i as u32)));
+            assert!(({ ((*iter.borrow()).iter_at((i as isize)) == (i as u32)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned_int__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_int__std_unreachable_sentinel_t_::new_1({ 10_u32 }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned_int___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == ((i + 10) as u32)));
+            assert!(({ ((*iter.borrow()).iter_at((i as isize)) == ((i + 10) as u32)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned_int__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_int__std_unreachable_sentinel_t_::new_1({ 0_u32 }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned_int___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == (i as u32)));
+            assert!(({ ((*iter.borrow()).iter_at((i as isize)) == (i as u32)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned_int__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_int__std_unreachable_sentinel_t_::new_1({ 10_u32 }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned_int___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == ((i + 10) as u32)));
+            assert!(({ ((*iter.borrow()).iter_at((i as isize)) == ((i + 10) as u32)) }));
             i.prefix_inc();
         }
     }
 }
 pub fn testType_27() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_short__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_short__std_unreachable_sentinel_t_::new_1({ 0_i16 })),
+        );
+        let iter: Value<std_ranges_iota_view_short___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!(((unimplemented!() as i32) == ((i as i16) as i32)));
+            assert!(({ (((*iter.borrow()).iter_at(i) as i32) == ((i as i16) as i32)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_short__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_short__std_unreachable_sentinel_t_::new_1({ 10_i16 }),
+            ));
+        let iter: Value<std_ranges_iota_view_short___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!(((unimplemented!() as i32) == (((i + 10) as i16) as i32)));
+            assert!(({ (((*iter.borrow()).iter_at(i) as i32) == (((i + 10) as i16) as i32)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_short__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_short__std_unreachable_sentinel_t_::new_1({ 0_i16 })),
+        );
+        let iter: Value<std_ranges_iota_view_short___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!(((unimplemented!() as i32) == ((i as i16) as i32)));
+            assert!(({ (((*iter.borrow()).iter_at(i) as i32) == ((i as i16) as i32)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_short__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_short__std_unreachable_sentinel_t_::new_1({ 10_i16 }),
+            ));
+        let iter: Value<std_ranges_iota_view_short___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!(((unimplemented!() as i32) == (((i + 10) as i16) as i32)));
+            assert!(({ (((*iter.borrow()).iter_at(i) as i32) == (((i + 10) as i16) as i32)) }));
             i.prefix_inc();
         }
     }
 }
 pub fn testType_28() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned_short__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_short__std_unreachable_sentinel_t_::new_1({ 0_u16 }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned_short___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!(((unimplemented!() as i32) == ((i as u16) as i32)));
+            assert!(({ (((*iter.borrow()).iter_at(i) as i32) == ((i as u16) as i32)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned_short__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_short__std_unreachable_sentinel_t_::new_1({ 10_u16 }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned_short___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!(((unimplemented!() as i32) == (((i + 10) as u16) as i32)));
+            assert!(({ (((*iter.borrow()).iter_at(i) as i32) == (((i + 10) as u16) as i32)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned_short__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_short__std_unreachable_sentinel_t_::new_1({ 0_u16 }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned_short___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!(((unimplemented!() as i32) == ((i as u16) as i32)));
+            assert!(({ (((*iter.borrow()).iter_at(i) as i32) == ((i as u16) as i32)) }));
             i.prefix_inc();
         }
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_unsigned_short__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_short__std_unreachable_sentinel_t_::new_1({ 10_u16 }),
+            ));
+        let iter: Value<std_ranges_iota_view_unsigned_short___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!(((unimplemented!() as i32) == (((i + 10) as u16) as i32)));
+            assert!(({ (((*iter.borrow()).iter_at(i) as i32) == (((i + 10) as u16) as i32)) }));
             i.prefix_inc();
         }
     }
@@ -700,11 +905,15 @@ impl NotDecrementableImpl for Ptr<NotDecrementable> {
         return ({ (*self).with(|__s| __s.value_) } == { _a0.with(|__s| __s.value_) });
     }
     fn operator_inc_3(&self) -> Ptr<NotDecrementable> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_4(&self, mut _a0: i32) {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait NotIncrementableImpl {
@@ -718,14 +927,20 @@ impl NotIncrementableImpl for Ptr<NotIncrementable> {
         return ({ (*self).with(|__s| __s.value_) } == { _a0.with(|__s| __s.value_) });
     }
     fn operator_inc_3(&self) -> Ptr<NotIncrementable> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_4(&self, mut _a0: i32) {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     fn operator_dec(&self) -> Ptr<NotIncrementable> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
 }
@@ -744,28 +959,36 @@ impl SomeIntImpl for Ptr<SomeInt> {
                 &((*self).with(|__s| __s.value_)),
                 &(_a0.with(|__s| __s.value_)),
             )));
-            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow());
+            if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+                return ({ (*cmp.borrow()) });
             }
         }
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_inc_3(&self) -> Ptr<SomeInt> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_4(&self, mut _a0: i32) -> SomeInt {
         let mut tmp: SomeInt = (*(*self).upgrade().deref()).clone();
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return tmp;
     }
     fn operator_dec_5(&self) -> Ptr<SomeInt> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_6(&self, mut _a0: i32) -> SomeInt {
         let mut tmp: SomeInt = (*(*self).upgrade().deref()).clone();
-        field!((*self), value_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return tmp;
     }
     fn operator_eq(&self, _a0: Ptr<SomeInt>) -> bool {

@@ -9,12 +9,22 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A {}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct D {}
 impl Callable1<Ptr<A>, ()> for D {
     fn call(&self, a1: Ptr<A>) -> () {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| DImpl::operator_call(__it, a1))
+    }
+}
+impl CppMove for D {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

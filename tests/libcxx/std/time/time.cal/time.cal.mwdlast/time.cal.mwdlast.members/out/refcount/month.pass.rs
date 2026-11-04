@@ -6,11 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = u32;
-pub const anon_0_value: anon_0 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_month__std_chrono_month_ {}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -31,7 +27,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let Tuesday: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let Tuesday: Value<std_chrono_weekday> = Rc::new(RefCell::new(
+        (*Tuesday_0.with(Value::clone).borrow()).clone(),
+    ));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(
@@ -40,8 +38,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     );;
     let mut i: u32 = 1_u32;
     'loop_: while (i <= 50_u32) {
-        let mdl: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == i));
+        let mdl: Value<std_chrono_month_weekday_last> = Rc::new(RefCell::new({
+            let __tmp_0: Value<std_chrono_month> =
+                Rc::new(RefCell::new(std_chrono_month::new_1({ i })));
+            let __tmp_1: Value<std_chrono_weekday_last> =
+                Rc::new(RefCell::new(std_chrono_weekday_last::new({
+                    Tuesday.as_pointer()
+                })));
+            std_chrono_month_weekday_last::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+        }));
+        assert!((({ ({ (*mdl.borrow()).month() })() }) == i));
         i.prefix_inc();
     }
     return 0;

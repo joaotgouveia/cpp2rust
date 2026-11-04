@@ -30,11 +30,11 @@ pub fn operator_cmp_6(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> std::cmp::Order
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -66,6 +66,11 @@ impl CppEq for MoveOnly {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for MoveOnly {
     fn default() -> Self {
         { MoveOnly::new(None) }
@@ -95,11 +100,11 @@ pub fn operator_cmp_13(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> 
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -129,6 +134,11 @@ impl CppEq for TrivialMoveOnly {
         operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for TrivialMoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for TrivialMoveOnly {
     fn default() -> Self {
         { TrivialMoveOnly::new(None) }
@@ -136,18 +146,40 @@ impl Default for TrivialMoveOnly {
 }
 pub fn test_14() -> bool {
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut x: i32 = unimplemented!();
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new(5));
+        let mut x: i32 = ({
+            let ___v: Value<i32> = Rc::new(RefCell::new(10));
+            (*e.borrow()).value_or(___v.as_pointer())
+        });
         assert!((x == 5));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut x: i32 = unimplemented!();
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(5));
+            std_expected_int__int_::new_1({ (*unexpect_15.with(Value::clone).borrow()).clone() }, {
+                __tmp_0.as_pointer()
+            })
+        }));
+        let mut x: i32 = ({
+            let ___v: Value<i32> = Rc::new(RefCell::new(10));
+            (*e.borrow()).value_or(___v.as_pointer())
+        });
         assert!((x == 10));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Value<MoveOnly> = Rc::new(RefCell::new(unimplemented!()));
+        let e: Value<std_expected_MoveOnly__int_> = Rc::new(RefCell::new({
+            let __tmp_1: Value<i32> = Rc::new(RefCell::new(5));
+            std_expected_MoveOnly__int_::new_1(
+                { (*in_place_16.with(Value::clone).borrow()).clone() },
+                { __tmp_1.as_pointer() },
+            )
+        }));
+        let x: Value<MoveOnly> = Rc::new(RefCell::new(
+            ({
+                let ___v: Value<i32> = Rc::new(RefCell::new(10));
+                (*e.borrow()).value_or(___v.as_pointer())
+            }),
+        ));
         assert!(
             ({
                 let _x: Ptr<MoveOnly> = x.as_pointer();
@@ -157,8 +189,19 @@ pub fn test_14() -> bool {
         );
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Value<MoveOnly> = Rc::new(RefCell::new(unimplemented!()));
+        let e: Value<std_expected_MoveOnly__int_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<i32> = Rc::new(RefCell::new(5));
+            std_expected_MoveOnly__int_::new_2(
+                { (*unexpect_15.with(Value::clone).borrow()).clone() },
+                { __tmp_2.as_pointer() },
+            )
+        }));
+        let x: Value<MoveOnly> = Rc::new(RefCell::new(
+            ({
+                let ___v: Value<i32> = Rc::new(RefCell::new(10));
+                (*e.borrow()).value_or(___v.as_pointer())
+            }),
+        ));
         assert!(
             ({
                 let _x: Ptr<MoveOnly> = x.as_pointer();

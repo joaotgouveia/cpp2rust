@@ -14,14 +14,21 @@ impl A {
     pub fn new(il: Vec<i32>) -> Self {
         let il: Value<Vec<i32>> = Rc::new(RefCell::new(il));
         let __this: A = Self {};
-        let mut b: Ptr<i32> = unimplemented!();
-        let mut e: Ptr<i32> = unimplemented!();
-        assert!(((*il.borrow()).len() == 3_usize));
-        assert!(({ ((((e).clone() - (b).clone()) as i64) as usize) } == { (*il.borrow()).len() }));
+        let mut b: Ptr<i32> = ({ (*il.borrow()).begin() });
+        let mut e: Ptr<i32> = ({ (*il.borrow()).end() });
+        assert!(({ ((*il.borrow()).len() == 3_usize) }));
+        assert!(
+            ({ ({ ((((e).clone() - (b).clone()) as i64) as usize) } == { (*il.borrow()).len() }) })
+        );
         assert!(((b.postfix_inc().read()) == 3));
         assert!(((b.postfix_inc().read()) == 2));
         assert!(((b.postfix_inc().read()) == 1));
         __this
+    }
+}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
@@ -32,14 +39,21 @@ impl B {
     pub fn new(il: Vec<i32>) -> Self {
         let il: Value<Vec<i32>> = Rc::new(RefCell::new(il));
         let __this: B = Self {};
-        let mut b: Ptr<i32> = unimplemented!();
-        let mut e: Ptr<i32> = unimplemented!();
-        assert!(((*il.borrow()).len() == 3_usize));
-        assert!(({ ((((e).clone() - (b).clone()) as i64) as usize) } == { (*il.borrow()).len() }));
+        let mut b: Ptr<i32> = ({ (*il.borrow()).begin() });
+        let mut e: Ptr<i32> = ({ (*il.borrow()).end() });
+        assert!(({ ((*il.borrow()).len() == 3_usize) }));
+        assert!(
+            ({ ({ ((((e).clone() - (b).clone()) as i64) as usize) } == { (*il.borrow()).len() }) })
+        );
         assert!(((b.postfix_inc().read()) == 3));
         assert!(((b.postfix_inc().read()) == 2));
         assert!(((b.postfix_inc().read()) == 1));
         __this
+    }
+}
+impl CppMove for B {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

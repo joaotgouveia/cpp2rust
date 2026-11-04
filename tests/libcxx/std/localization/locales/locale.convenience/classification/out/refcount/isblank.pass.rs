@@ -27,18 +27,18 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
+    let l: Value<std_locale> = Rc::new(RefCell::new(<std_locale>::default()));
+    assert!(({ isblank_0((' ' as i8), l.as_pointer(),) }));
+    assert!(!({ isblank_0(('<' as i8), l.as_pointer(),) }));
+    assert!(!({ isblank_0(('\x08' as i8), l.as_pointer(),) }));
+    assert!(!({ isblank_0(('A' as i8), l.as_pointer(),) }));
+    assert!(!({ isblank_0(('a' as i8), l.as_pointer(),) }));
+    assert!(!({ isblank_0(('z' as i8), l.as_pointer(),) }));
+    assert!(!({ isblank_0(('3' as i8), l.as_pointer(),) }));
+    assert!(!({ isblank_0(('.' as i8), l.as_pointer(),) }));
+    assert!(!({ isblank_0(('f' as i8), l.as_pointer(),) }));
+    assert!(!({ isblank_0(('9' as i8), l.as_pointer(),) }));
+    assert!(!({ isblank_0(('+' as i8), l.as_pointer(),) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -6,145 +6,20 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn testConstexprSpan_0(sp: (), mut sz: usize) -> bool {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    return ((unimplemented!() as usize) == sz);
-}
-pub fn testConstexprSpan_1(sp: (), mut sz: usize) -> bool {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    return ((unimplemented!() as usize) == sz);
-}
-pub fn testConstexprSpan_2(sp: (), mut sz: usize) -> bool {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    return ((unimplemented!() as usize) == sz);
-}
-pub fn testConstexprSpan_3(sp: (), mut sz: usize) -> bool {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    return ((unimplemented!() as usize) == sz);
-}
-pub fn testConstexprSpan_4(sp: (), mut sz: usize) -> bool {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    return ((unimplemented!() as usize) == sz);
-}
-pub fn testConstexprSpan_5(sp: (), mut sz: usize) -> bool {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    return ((unimplemented!() as usize) == sz);
-}
-pub fn testConstexprSpan_6(sp: (), mut sz: usize) -> bool {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    return ((unimplemented!() as usize) == sz);
-}
-pub fn testConstexprSpan_7(sp: (), mut sz: usize) -> bool {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    return ((unimplemented!() as usize) == sz);
-}
-pub fn testConstexprSpan_8(sp: (), mut sz: usize) -> bool {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    return ((unimplemented!() as usize) == sz);
-}
-pub fn testConstexprSpan_9(sp: (), mut sz: usize) -> bool {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    return ((unimplemented!() as usize) == sz);
-}
-pub fn testConstexprSpan_10(sp: (), mut sz: usize) -> bool {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    return ((unimplemented!() as usize) == sz);
-}
-pub fn testRuntimeSpan_11(sp: (), mut sz: usize) {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == sz));
-}
-pub fn testRuntimeSpan_12(sp: (), mut sz: usize) {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == sz));
-}
-pub fn testRuntimeSpan_13(sp: (), mut sz: usize) {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == sz));
-}
-pub fn testRuntimeSpan_14(sp: (), mut sz: usize) {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == sz));
-}
-pub fn testRuntimeSpan_15(sp: (), mut sz: usize) {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == sz));
-}
-pub fn testRuntimeSpan_16(sp: (), mut sz: usize) {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == sz));
-}
-pub fn testRuntimeSpan_17(sp: (), mut sz: usize) {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == sz));
-}
-pub fn testRuntimeSpan_18(sp: (), mut sz: usize) {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == sz));
-}
-pub fn testRuntimeSpan_19(sp: (), mut sz: usize) {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == sz));
-}
-pub fn testRuntimeSpan_20(sp: (), mut sz: usize) {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == sz));
-}
-pub fn testRuntimeSpan_21(sp: (), mut sz: usize) {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == sz));
-}
-pub fn testRuntimeSpan_22(sp: (), mut sz: usize) {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == sz));
-}
-pub fn testRuntimeSpan_23(sp: (), mut sz: usize) {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == sz));
-}
-pub fn testRuntimeSpan_24(sp: (), mut sz: usize) {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == sz));
-}
-pub fn testRuntimeSpan_25(sp: (), mut sz: usize) {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == sz));
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A {}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
-    pub static iArr1_26: Value<Box<[i32]>> =
+    pub static iArr1_0: Value<Box<[i32]>> =
         Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])));
 );
 thread_local!(
-    pub static iArr2_27: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
+    pub static iArr2_1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
         10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
     ])));
 );
@@ -184,32 +59,120 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "testConstexprSpan(std::span<const int>(iArr1, 3), 3)");;
     const _: () = assert!(true, "testConstexprSpan(std::span<const int>(iArr1, 4), 4)");;
     const _: () = assert!(true, "testConstexprSpan(std::span<const int>(iArr1, 5), 5)");;
-    ({ testRuntimeSpan_11(unimplemented!(), 0_usize) });
-    ({ testRuntimeSpan_12(unimplemented!(), 0_usize) });
-    ({ testRuntimeSpan_13(unimplemented!(), 0_usize) });
-    ({ testRuntimeSpan_14(unimplemented!(), 0_usize) });
-    ({ testRuntimeSpan_15(unimplemented!(), 0_usize) });
-    ({ testRuntimeSpan_16(unimplemented!(), 0_usize) });
-    ({ testRuntimeSpan_17(unimplemented!(), 0_usize) });
-    ({ testRuntimeSpan_18(unimplemented!(), 0_usize) });
-    ({ testRuntimeSpan_19(unimplemented!(), 0_usize) });
-    ({ testRuntimeSpan_20(unimplemented!(), 0_usize) });
-    ({ testRuntimeSpan_11(unimplemented!(), 1_usize) });
-    ({ testRuntimeSpan_11(unimplemented!(), 2_usize) });
-    ({ testRuntimeSpan_11(unimplemented!(), 3_usize) });
-    ({ testRuntimeSpan_11(unimplemented!(), 4_usize) });
-    ({ testRuntimeSpan_11(unimplemented!(), 5_usize) });
-    ({ testRuntimeSpan_21(unimplemented!(), 1_usize) });
-    ({ testRuntimeSpan_22(unimplemented!(), 2_usize) });
-    ({ testRuntimeSpan_23(unimplemented!(), 3_usize) });
-    ({ testRuntimeSpan_24(unimplemented!(), 4_usize) });
-    ({ testRuntimeSpan_25(unimplemented!(), 5_usize) });
+    ({ testRuntimeSpan_2(<std_span_int__18446744073709551615_>::default(), 0_usize) });
+    ({ testRuntimeSpan_3(<std_span_long__18446744073709551615_>::default(), 0_usize) });
+    ({ testRuntimeSpan_4(<std_span_double__18446744073709551615_>::default(), 0_usize) });
+    ({ testRuntimeSpan_5(<std_span_A__18446744073709551615_>::default(), 0_usize) });
+    ({
+        testRuntimeSpan_6 ( <std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_  >::default()  , 0_usize  , )
+    });
+    ({ testRuntimeSpan_7(<std_span_int__0_>::default(), 0_usize) });
+    ({ testRuntimeSpan_8(<std_span_long__0_>::default(), 0_usize) });
+    ({ testRuntimeSpan_9(<std_span_double__0_>::default(), 0_usize) });
+    ({ testRuntimeSpan_10(<std_span_A__0_>::default(), 0_usize) });
+    ({
+        testRuntimeSpan_11 ( <std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____0_  >::default()  , 0_usize  , )
+    });
+    ({
+        testRuntimeSpan_2(
+            std_span_int__18446744073709551615_::new_1(
+                { (iArr2_1.with(|v| v.as_pointer()) as Ptr<i32>) },
+                { 1_u64 },
+            ),
+            1_usize,
+        )
+    });
+    ({
+        testRuntimeSpan_2(
+            std_span_int__18446744073709551615_::new_1(
+                { (iArr2_1.with(|v| v.as_pointer()) as Ptr<i32>) },
+                { 2_u64 },
+            ),
+            2_usize,
+        )
+    });
+    ({
+        testRuntimeSpan_2(
+            std_span_int__18446744073709551615_::new_1(
+                { (iArr2_1.with(|v| v.as_pointer()) as Ptr<i32>) },
+                { 3_u64 },
+            ),
+            3_usize,
+        )
+    });
+    ({
+        testRuntimeSpan_2(
+            std_span_int__18446744073709551615_::new_1(
+                { (iArr2_1.with(|v| v.as_pointer()) as Ptr<i32>) },
+                { 4_u64 },
+            ),
+            4_usize,
+        )
+    });
+    ({
+        testRuntimeSpan_2(
+            std_span_int__18446744073709551615_::new_1(
+                { (iArr2_1.with(|v| v.as_pointer()) as Ptr<i32>) },
+                { 5_u64 },
+            ),
+            5_usize,
+        )
+    });
+    ({
+        testRuntimeSpan_12(
+            std_span_int__1_::new_1(
+                { (iArr2_1.with(|v| v.as_pointer()) as Ptr<i32>).offset((5) as isize) },
+                { 1_u64 },
+            ),
+            1_usize,
+        )
+    });
+    ({
+        testRuntimeSpan_13(
+            std_span_int__2_::new_1(
+                { (iArr2_1.with(|v| v.as_pointer()) as Ptr<i32>).offset((4) as isize) },
+                { 2_u64 },
+            ),
+            2_usize,
+        )
+    });
+    ({
+        testRuntimeSpan_14(
+            std_span_int__3_::new_1(
+                { (iArr2_1.with(|v| v.as_pointer()) as Ptr<i32>).offset((3) as isize) },
+                { 3_u64 },
+            ),
+            3_usize,
+        )
+    });
+    ({
+        testRuntimeSpan_15(
+            std_span_int__4_::new_1(
+                { (iArr2_1.with(|v| v.as_pointer()) as Ptr<i32>).offset((2) as isize) },
+                { 4_u64 },
+            ),
+            4_usize,
+        )
+    });
+    ({
+        testRuntimeSpan_16(
+            std_span_int__5_::new_1(
+                { (iArr2_1.with(|v| v.as_pointer()) as Ptr<i32>).offset((1) as isize) },
+                { 5_u64 },
+            ),
+            5_usize,
+        )
+    });
     let s: Value<Vec<i8>> = Rc::new(RefCell::new(vec![i8::default()]));
-    ({ testRuntimeSpan_15(unimplemented!(), 0_usize) });
-    ({ testRuntimeSpan_15(unimplemented!(), 1_usize) });
+    ({
+        testRuntimeSpan_6 ( std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_ :: new_1 ( { (( s .as_pointer()  ) ).reinterpret_cast::<Vec<i8  >  >()  } , { ( 0_usize  as u64 )   } , )   , 0_usize  , )
+    });
+    ({
+        testRuntimeSpan_6 ( std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_ :: new_1 ( { (( s .as_pointer()  ) ).reinterpret_cast::<Vec<i8  >  >()  } , { 1_u64  } , )   , 1_usize  , )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = iArr1_26.with(|_| ());
-    let _ = iArr2_27.with(|_| ());
+    let _ = iArr1_0.with(|_| ());
+    let _ = iArr2_1.with(|_| ());
 }

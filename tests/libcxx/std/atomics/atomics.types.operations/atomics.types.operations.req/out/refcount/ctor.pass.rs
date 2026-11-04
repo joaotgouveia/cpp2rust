@@ -60,6 +60,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_char_ {}
+impl CppMove for LockFreeStatusInfo_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_2: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i16>() == ::std::mem::size_of::<i8>())
@@ -109,6 +114,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_short_ {}
+impl CppMove for LockFreeStatusInfo_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_4: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i32>() == ::std::mem::size_of::<i8>())
@@ -158,6 +168,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_int_ {}
+impl CppMove for LockFreeStatusInfo_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_6: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i8>())
@@ -207,6 +222,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_long_ {}
+impl CppMove for LockFreeStatusInfo_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_8: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((8usize == ::std::mem::size_of::<i8>()) && (8usize >= 8usize)) {
@@ -244,6 +264,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_void_ptr_ {}
+impl CppMove for LockFreeStatusInfo_void_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_10: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i8>())
@@ -293,6 +318,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_long_long_ {}
+impl CppMove for LockFreeStatusInfo_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "LockFreeStatusInfo<char>::status_known");
 const _: () = assert!(true, "LockFreeStatusInfo<short>::status_known");
 const _: () = assert!(true, "LockFreeStatusInfo<int>::status_known");
@@ -332,6 +362,11 @@ impl UserAtomicType {
 impl CppEq for UserAtomicType {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_12(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for UserAtomicType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for UserAtomicType {
@@ -380,6 +415,11 @@ impl CppEq for LargeUserAtomicType {
         operator_eq_13(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for LargeUserAtomicType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for LargeUserAtomicType {
     fn default() -> Self {
         { LargeUserAtomicType::new(None) }
@@ -393,6 +433,11 @@ impl Callable0<()> for TestEachIntegralType_TestFunc_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestEachIntegralType_TestFunc_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestEachIntegralType_TestFunc_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_eq_14(x: Ptr<UserType>, y: Ptr<UserType>) -> bool {
@@ -417,6 +462,11 @@ impl CppEq for UserType {
         operator_eq_14(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for UserType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for UserType {
     fn default() -> Self {
         { UserType::new_1() }
@@ -432,6 +482,11 @@ impl Callable0<()> for TestFunc_UserType_ {
         })
     }
 }
+impl CppMove for TestFunc_UserType_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFunc_char_ {}
@@ -440,6 +495,11 @@ impl Callable0<()> for TestFunc_char_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFunc_char_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFunc_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -452,6 +512,11 @@ impl Callable0<()> for TestFunc_signed_char_ {
         })
     }
 }
+impl CppMove for TestFunc_signed_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFunc_unsigned_char_ {}
@@ -460,6 +525,11 @@ impl Callable0<()> for TestFunc_unsigned_char_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFunc_unsigned_char_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFunc_unsigned_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -472,6 +542,11 @@ impl Callable0<()> for TestFunc_short_ {
         })
     }
 }
+impl CppMove for TestFunc_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFunc_unsigned_short_ {}
@@ -480,6 +555,11 @@ impl Callable0<()> for TestFunc_unsigned_short_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFunc_unsigned_short_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFunc_unsigned_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -492,6 +572,11 @@ impl Callable0<()> for TestFunc_int_ {
         })
     }
 }
+impl CppMove for TestFunc_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFunc_unsigned_int_ {}
@@ -500,6 +585,11 @@ impl Callable0<()> for TestFunc_unsigned_int_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFunc_unsigned_int_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFunc_unsigned_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -512,6 +602,11 @@ impl Callable0<()> for TestFunc_long_ {
         })
     }
 }
+impl CppMove for TestFunc_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFunc_unsigned_long_ {}
@@ -520,6 +615,11 @@ impl Callable0<()> for TestFunc_unsigned_long_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFunc_unsigned_long_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFunc_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -532,6 +632,11 @@ impl Callable0<()> for TestFunc_long_long_ {
         })
     }
 }
+impl CppMove for TestFunc_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFunc_unsigned_long_long_ {}
@@ -540,6 +645,11 @@ impl Callable0<()> for TestFunc_unsigned_long_long_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFunc_unsigned_long_long_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFunc_unsigned_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -552,6 +662,11 @@ impl Callable0<()> for TestFunc_wchar_t_ {
         })
     }
 }
+impl CppMove for TestFunc_wchar_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFunc_char8_t_ {}
@@ -560,6 +675,11 @@ impl Callable0<()> for TestFunc_char8_t_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFunc_char8_t_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFunc_char8_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -572,6 +692,11 @@ impl Callable0<()> for TestFunc_char16_t_ {
         })
     }
 }
+impl CppMove for TestFunc_char16_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFunc_char32_t_ {}
@@ -580,6 +705,11 @@ impl Callable0<()> for TestFunc_char32_t_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFunc_char32_t_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFunc_char32_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {
@@ -743,19 +873,27 @@ impl TestFunc_UserType_Impl for Ptr<TestFunc_UserType_> {
     fn operator_call(&self) {
         let t: Value<UserType> = Rc::new(RefCell::new(UserType::new_2({ 42 })));
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let a: Value<std_atomic_UserType_> =
+                Rc::new(RefCell::new(std_atomic_UserType_::new_1({
+                    (*t.borrow()).clone()
+                })));
             assert!(
                 ({
-                    let _x: Value<UserType> = Rc::new(RefCell::new(unimplemented!()));
+                    let _x: Value<UserType> =
+                        Rc::new(RefCell::new(({ (*a.borrow()).to_UserType_7() })));
                     operator_eq_14(_x.as_pointer(), t.as_pointer())
                 })
             );
         }
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let a: Value<std_atomic_UserType_> =
+                Rc::new(RefCell::new(std_atomic_UserType_::new_1({
+                    (*t.borrow()).clone()
+                })));
             assert!(
                 ({
-                    let _x: Value<UserType> = Rc::new(RefCell::new(unimplemented!()));
+                    let _x: Value<UserType> =
+                        Rc::new(RefCell::new(({ (*a.borrow()).to_UserType_7() })));
                     operator_eq_14(_x.as_pointer(), t.as_pointer())
                 })
             );
@@ -769,12 +907,24 @@ impl TestFunc_char16_t_Impl for Ptr<TestFunc_char16_t_> {
     fn operator_call(&self) {
         let mut t: u16 = 42_u16;
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (t as i32)));
+            let a: Value<std_atomic_char16_t_> =
+                Rc::new(RefCell::new(std_atomic_char16_t_::new_1({ t })));
+            assert!(
+                ({
+                    ((({ ((*a.borrow()) as std___atomic_base_char16_t_).to_u16_7() }) as i32)
+                        == (t as i32))
+                })
+            );
         }
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (t as i32)));
+            let a: Value<std_atomic_char16_t_> =
+                Rc::new(RefCell::new(std_atomic_char16_t_::new_1({ t })));
+            assert!(
+                ({
+                    ((({ ((*a.borrow()) as std___atomic_base_char16_t_).to_u16_7() }) as i32)
+                        == (t as i32))
+                })
+            );
         }
     }
 }
@@ -785,12 +935,14 @@ impl TestFunc_char32_t_Impl for Ptr<TestFunc_char32_t_> {
     fn operator_call(&self) {
         let mut t: u32 = 42_u32;
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as u32) == t));
+            let a: Value<std_atomic_char32_t_> =
+                Rc::new(RefCell::new(std_atomic_char32_t_::new_1({ t })));
+            assert!(({ (({ ((*a.borrow()) as std___atomic_base_char32_t_).to_u32_7() }) == t) }));
         }
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as u32) == t));
+            let a: Value<std_atomic_char32_t_> =
+                Rc::new(RefCell::new(std_atomic_char32_t_::new_1({ t })));
+            assert!(({ (({ ((*a.borrow()) as std___atomic_base_char32_t_).to_u32_7() }) == t) }));
         }
     }
 }
@@ -801,12 +953,24 @@ impl TestFunc_char8_t_Impl for Ptr<TestFunc_char8_t_> {
     fn operator_call(&self) {
         let mut t: u8 = 42_u8;
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (t as i32)));
+            let a: Value<std_atomic_char8_t_> =
+                Rc::new(RefCell::new(std_atomic_char8_t_::new_1({ t })));
+            assert!(
+                ({
+                    ((({ ((*a.borrow()) as std___atomic_base_char8_t_).to_u8_7() }) as i32)
+                        == (t as i32))
+                })
+            );
         }
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (t as i32)));
+            let a: Value<std_atomic_char8_t_> =
+                Rc::new(RefCell::new(std_atomic_char8_t_::new_1({ t })));
+            assert!(
+                ({
+                    ((({ ((*a.borrow()) as std___atomic_base_char8_t_).to_u8_7() }) as i32)
+                        == (t as i32))
+                })
+            );
         }
     }
 }
@@ -817,12 +981,22 @@ impl TestFunc_char_Impl for Ptr<TestFunc_char_> {
     fn operator_call(&self) {
         let mut t: i8 = 42_i8;
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (t as i32)));
+            let a: Value<std_atomic_char_> = Rc::new(RefCell::new(std_atomic_char_::new_1({ t })));
+            assert!(
+                ({
+                    ((({ ((*a.borrow()) as std___atomic_base_char_).to_i8_7() }) as i32)
+                        == (t as i32))
+                })
+            );
         }
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (t as i32)));
+            let a: Value<std_atomic_char_> = Rc::new(RefCell::new(std_atomic_char_::new_1({ t })));
+            assert!(
+                ({
+                    ((({ ((*a.borrow()) as std___atomic_base_char_).to_i8_7() }) as i32)
+                        == (t as i32))
+                })
+            );
         }
     }
 }
@@ -833,12 +1007,12 @@ impl TestFunc_int_Impl for Ptr<TestFunc_int_> {
     fn operator_call(&self) {
         let mut t: i32 = 42;
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == t));
+            let a: Value<std_atomic_int_> = Rc::new(RefCell::new(std_atomic_int_::new_1({ t })));
+            assert!(({ (({ ((*a.borrow()) as std___atomic_base_int_).to_i32_7() }) == t) }));
         }
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == t));
+            let a: Value<std_atomic_int_> = Rc::new(RefCell::new(std_atomic_int_::new_1({ t })));
+            assert!(({ (({ ((*a.borrow()) as std___atomic_base_int_).to_i32_7() }) == t) }));
         }
     }
 }
@@ -849,12 +1023,12 @@ impl TestFunc_long_Impl for Ptr<TestFunc_long_> {
     fn operator_call(&self) {
         let mut t: i64 = 42_i64;
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == t));
+            let a: Value<std_atomic_long_> = Rc::new(RefCell::new(std_atomic_long_::new_1({ t })));
+            assert!(({ (({ ((*a.borrow()) as std___atomic_base_long_).to_i64_7() }) == t) }));
         }
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == t));
+            let a: Value<std_atomic_long_> = Rc::new(RefCell::new(std_atomic_long_::new_1({ t })));
+            assert!(({ (({ ((*a.borrow()) as std___atomic_base_long_).to_i64_7() }) == t) }));
         }
     }
 }
@@ -865,12 +1039,14 @@ impl TestFunc_long_long_Impl for Ptr<TestFunc_long_long_> {
     fn operator_call(&self) {
         let mut t: i64 = 42_i64;
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == t));
+            let a: Value<std_atomic_long_long_> =
+                Rc::new(RefCell::new(std_atomic_long_long_::new_1({ t })));
+            assert!(({ (({ ((*a.borrow()) as std___atomic_base_long_long_).to_i64_7() }) == t) }));
         }
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == t));
+            let a: Value<std_atomic_long_long_> =
+                Rc::new(RefCell::new(std_atomic_long_long_::new_1({ t })));
+            assert!(({ (({ ((*a.borrow()) as std___atomic_base_long_long_).to_i64_7() }) == t) }));
         }
     }
 }
@@ -881,12 +1057,24 @@ impl TestFunc_short_Impl for Ptr<TestFunc_short_> {
     fn operator_call(&self) {
         let mut t: i16 = 42_i16;
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (t as i32)));
+            let a: Value<std_atomic_short_> =
+                Rc::new(RefCell::new(std_atomic_short_::new_1({ t })));
+            assert!(
+                ({
+                    ((({ ((*a.borrow()) as std___atomic_base_short_).to_i16_7() }) as i32)
+                        == (t as i32))
+                })
+            );
         }
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (t as i32)));
+            let a: Value<std_atomic_short_> =
+                Rc::new(RefCell::new(std_atomic_short_::new_1({ t })));
+            assert!(
+                ({
+                    ((({ ((*a.borrow()) as std___atomic_base_short_).to_i16_7() }) as i32)
+                        == (t as i32))
+                })
+            );
         }
     }
 }
@@ -897,12 +1085,24 @@ impl TestFunc_signed_char_Impl for Ptr<TestFunc_signed_char_> {
     fn operator_call(&self) {
         let mut t: i8 = 42_i8;
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (t as i32)));
+            let a: Value<std_atomic_signed_char_> =
+                Rc::new(RefCell::new(std_atomic_signed_char_::new_1({ t })));
+            assert!(
+                ({
+                    ((({ ((*a.borrow()) as std___atomic_base_signed_char_).to_i8_7() }) as i32)
+                        == (t as i32))
+                })
+            );
         }
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (t as i32)));
+            let a: Value<std_atomic_signed_char_> =
+                Rc::new(RefCell::new(std_atomic_signed_char_::new_1({ t })));
+            assert!(
+                ({
+                    ((({ ((*a.borrow()) as std___atomic_base_signed_char_).to_i8_7() }) as i32)
+                        == (t as i32))
+                })
+            );
         }
     }
 }
@@ -913,12 +1113,24 @@ impl TestFunc_unsigned_char_Impl for Ptr<TestFunc_unsigned_char_> {
     fn operator_call(&self) {
         let mut t: u8 = 42_u8;
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (t as i32)));
+            let a: Value<std_atomic_unsigned_char_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_char_::new_1({ t })));
+            assert!(
+                ({
+                    ((({ ((*a.borrow()) as std___atomic_base_unsigned_char_).to_u8_7() }) as i32)
+                        == (t as i32))
+                })
+            );
         }
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (t as i32)));
+            let a: Value<std_atomic_unsigned_char_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_char_::new_1({ t })));
+            assert!(
+                ({
+                    ((({ ((*a.borrow()) as std___atomic_base_unsigned_char_).to_u8_7() }) as i32)
+                        == (t as i32))
+                })
+            );
         }
     }
 }
@@ -929,12 +1141,18 @@ impl TestFunc_unsigned_int_Impl for Ptr<TestFunc_unsigned_int_> {
     fn operator_call(&self) {
         let mut t: u32 = 42_u32;
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == t));
+            let a: Value<std_atomic_unsigned_int_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_int_::new_1({ t })));
+            assert!(
+                ({ (({ ((*a.borrow()) as std___atomic_base_unsigned_int_).to_u32_7() }) == t) })
+            );
         }
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == t));
+            let a: Value<std_atomic_unsigned_int_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_int_::new_1({ t })));
+            assert!(
+                ({ (({ ((*a.borrow()) as std___atomic_base_unsigned_int_).to_u32_7() }) == t) })
+            );
         }
     }
 }
@@ -945,12 +1163,18 @@ impl TestFunc_unsigned_long_Impl for Ptr<TestFunc_unsigned_long_> {
     fn operator_call(&self) {
         let mut t: u64 = 42_u64;
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == t));
+            let a: Value<std_atomic_unsigned_long_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_long_::new_1({ t })));
+            assert!(
+                ({ (({ ((*a.borrow()) as std___atomic_base_unsigned_long_).to_u64_7() }) == t) })
+            );
         }
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == t));
+            let a: Value<std_atomic_unsigned_long_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_long_::new_1({ t })));
+            assert!(
+                ({ (({ ((*a.borrow()) as std___atomic_base_unsigned_long_).to_u64_7() }) == t) })
+            );
         }
     }
 }
@@ -961,12 +1185,22 @@ impl TestFunc_unsigned_long_long_Impl for Ptr<TestFunc_unsigned_long_long_> {
     fn operator_call(&self) {
         let mut t: u64 = 42_u64;
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == t));
+            let a: Value<std_atomic_unsigned_long_long_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_long_long_::new_1({ t })));
+            assert!(
+                ({
+                    (({ ((*a.borrow()) as std___atomic_base_unsigned_long_long_).to_u64_7() }) == t)
+                })
+            );
         }
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == t));
+            let a: Value<std_atomic_unsigned_long_long_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_long_long_::new_1({ t })));
+            assert!(
+                ({
+                    (({ ((*a.borrow()) as std___atomic_base_unsigned_long_long_).to_u64_7() }) == t)
+                })
+            );
         }
     }
 }
@@ -977,12 +1211,24 @@ impl TestFunc_unsigned_short_Impl for Ptr<TestFunc_unsigned_short_> {
     fn operator_call(&self) {
         let mut t: u16 = 42_u16;
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (t as i32)));
+            let a: Value<std_atomic_unsigned_short_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_short_::new_1({ t })));
+            assert!(
+                ({
+                    ((({ ((*a.borrow()) as std___atomic_base_unsigned_short_).to_u16_7() }) as i32)
+                        == (t as i32))
+                })
+            );
         }
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (t as i32)));
+            let a: Value<std_atomic_unsigned_short_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_short_::new_1({ t })));
+            assert!(
+                ({
+                    ((({ ((*a.borrow()) as std___atomic_base_unsigned_short_).to_u16_7() }) as i32)
+                        == (t as i32))
+                })
+            );
         }
     }
 }
@@ -991,14 +1237,16 @@ pub trait TestFunc_wchar_t_Impl {
 }
 impl TestFunc_wchar_t_Impl for Ptr<TestFunc_wchar_t_> {
     fn operator_call(&self) {
-        let mut t: i32 = 42_i32;
+        let mut t: i32 = 42;
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == t));
+            let a: Value<std_atomic_wchar_t_> =
+                Rc::new(RefCell::new(std_atomic_wchar_t_::new_1({ t })));
+            assert!(({ (({ ((*a.borrow()) as std___atomic_base_wchar_t_).to_i32_7() }) == t) }));
         }
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == t));
+            let a: Value<std_atomic_wchar_t_> =
+                Rc::new(RefCell::new(std_atomic_wchar_t_::new_1({ t })));
+            assert!(({ (({ ((*a.borrow()) as std___atomic_base_wchar_t_).to_i32_7() }) == t) }));
         }
     }
 }

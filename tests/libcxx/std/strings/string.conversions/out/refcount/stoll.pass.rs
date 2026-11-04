@@ -27,23 +27,122 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!((unimplemented!() == 0_i64));
-    assert!((unimplemented!() == 0_i64));
-    assert!((unimplemented!() == (-10_i32 as i64)));
-    assert!((unimplemented!() == 10_i64));
+    assert!(
+        (({
+            let ___str: Value<Vec<i8>> = Rc::new(RefCell::new({
+                let mut __bytes = Ptr::<i8>::from_string_literal(b"0").to_c_bytes();
+                __bytes.push(0_i8);
+                __bytes
+            }));
+            stoll_0(___str.as_pointer(), None, None)
+        }) == 0_i64)
+    );
+    assert!(
+        (({
+            let ___str: Value<Vec<i8>> = Rc::new(RefCell::new({
+                let mut __bytes = Ptr::<i8>::from_string_literal(b"-0").to_c_bytes();
+                __bytes.push(0_i8);
+                __bytes
+            }));
+            stoll_0(___str.as_pointer(), None, None)
+        }) == 0_i64)
+    );
+    assert!(
+        (({
+            let ___str: Value<Vec<i8>> = Rc::new(RefCell::new({
+                let mut __bytes = Ptr::<i8>::from_string_literal(b"-10").to_c_bytes();
+                __bytes.push(0_i8);
+                __bytes
+            }));
+            stoll_0(___str.as_pointer(), None, None)
+        }) == (-10_i32 as i64))
+    );
+    assert!(
+        (({
+            let ___str: Value<Vec<i8>> = Rc::new(RefCell::new({
+                let mut __bytes = Ptr::<i8>::from_string_literal(b" 10").to_c_bytes();
+                __bytes.push(0_i8);
+                __bytes
+            }));
+            stoll_0(___str.as_pointer(), None, None)
+        }) == 10_i64)
+    );
     {
         let idx: Value<usize> = Rc::new(RefCell::new(0_usize));
-        assert!((unimplemented!() == 16_i64));
-        assert!(((*idx.borrow()) == 2_usize));
+        assert!(
+            (({
+                let ___str: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"10g").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                stoll_0(___str.as_pointer(), Some((idx.as_pointer())), Some(16))
+            }) == 16_i64)
+        );
+        assert!(({ ((*idx.borrow()) == 2_usize) }));
     }
-    assert!((unimplemented!() == 0_i64));
-    assert!((unimplemented!() == 0_i64));
-    assert!((unimplemented!() == (-10_i32 as i64)));
-    assert!((unimplemented!() == 10_i64));
+    assert!(
+        (({
+            let ___str: Value<Vec<i32>> = Rc::new(RefCell::new({
+                let mut __bytes =
+                    Ptr::<i32>::from_string_literal(&[48 as i32, 0 as i32]).to_c_bytes();
+                __bytes.push(0_i32);
+                __bytes
+            }));
+            stoll_1(___str.as_pointer(), None, None)
+        }) == 0_i64)
+    );
+    assert!(
+        (({
+            let ___str: Value<Vec<i32>> = Rc::new(RefCell::new({
+                let mut __bytes =
+                    Ptr::<i32>::from_string_literal(&[45 as i32, 48 as i32, 0 as i32]).to_c_bytes();
+                __bytes.push(0_i32);
+                __bytes
+            }));
+            stoll_1(___str.as_pointer(), None, None)
+        }) == 0_i64)
+    );
+    assert!(
+        (({
+            let ___str: Value<Vec<i32>> = Rc::new(RefCell::new({
+                let mut __bytes =
+                    Ptr::<i32>::from_string_literal(&[45 as i32, 49 as i32, 48 as i32, 0 as i32])
+                        .to_c_bytes();
+                __bytes.push(0_i32);
+                __bytes
+            }));
+            stoll_1(___str.as_pointer(), None, None)
+        }) == (-10_i32 as i64))
+    );
+    assert!(
+        (({
+            let ___str: Value<Vec<i32>> = Rc::new(RefCell::new({
+                let mut __bytes =
+                    Ptr::<i32>::from_string_literal(&[32 as i32, 49 as i32, 48 as i32, 0 as i32])
+                        .to_c_bytes();
+                __bytes.push(0_i32);
+                __bytes
+            }));
+            stoll_1(___str.as_pointer(), None, None)
+        }) == 10_i64)
+    );
     {
         let idx: Value<usize> = Rc::new(RefCell::new(0_usize));
-        assert!((unimplemented!() == 16_i64));
-        assert!(((*idx.borrow()) == 2_usize));
+        assert!(
+            (({
+                let ___str: Value<Vec<i32>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i32>::from_string_literal(&[
+                        49 as i32, 48 as i32, 103 as i32, 0 as i32,
+                    ])
+                    .to_c_bytes();
+                    __bytes.push(0_i32);
+                    __bytes
+                }));
+                stoll_1(___str.as_pointer(), Some((idx.as_pointer())), Some(16))
+            }) == 16_i64)
+        );
+        assert!(({ ((*idx.borrow()) == 2_usize) }));
     }
     return 0;
 }

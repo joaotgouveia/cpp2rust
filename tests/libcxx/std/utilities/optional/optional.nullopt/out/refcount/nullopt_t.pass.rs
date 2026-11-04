@@ -7,7 +7,9 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let foo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let foo: Value<std_nullopt_t> = Rc::new(RefCell::new(
+        (*nullopt_1.with(Value::clone).borrow()).clone(),
+    ));
     &(*foo.borrow_mut());
     return true;
 }

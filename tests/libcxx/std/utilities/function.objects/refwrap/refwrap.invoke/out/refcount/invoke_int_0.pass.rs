@@ -20,21 +20,27 @@ impl Callable0<i32> for A_int_0 {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| A_int_0Impl::operator_call(__it))
     }
 }
+impl CppMove for A_int_0 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_int_0_2() {
     {
-        let mut r1: FnPtr<fn() -> i32> = FnPtr::<fn() -> i32>::new(f_int_0_1);
-        assert!((unimplemented!() == 3));
+        let r1: Value<FnPtr<fn() -> i32>> =
+            Rc::new(RefCell::new(FnPtr::<fn() -> i32>::new(f_int_0_1)));
+        assert!(({ (({ (*r1.borrow_mut())() }) == 3) }));
     }
     {
         let fp: Value<FnPtr<fn() -> i32>> =
             Rc::new(RefCell::new(FnPtr::<fn() -> i32>::new(f_int_0_1)));
-        let mut r1: Ptr<FnPtr<fn() -> i32>> = fp.as_pointer();
-        assert!((unimplemented!() == 3));
+        let r1: Value<Ptr<FnPtr<fn() -> i32>>> = Rc::new(RefCell::new(fp.as_pointer()));
+        assert!(({ (({ (*r1.borrow_mut())() }) == 3) }));
     }
     {
         let a0: Value<A_int_0> = Rc::new(RefCell::new(<A_int_0>::default()));
-        let mut r1: Ptr<A_int_0> = a0.as_pointer();
-        assert!((unimplemented!() == 4));
+        let r1: Value<Ptr<A_int_0>> = Rc::new(RefCell::new(a0.as_pointer()));
+        assert!(({ (({ (*r1.borrow_mut())() }) == 4) }));
     }
 }
 pub fn f_void_1_3(mut i: i32) {
@@ -48,6 +54,11 @@ impl Callable1<i32, ()> for A_void_1 {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             A_void_1Impl::operator_call(__it, a1)
         })
+    }
+}
+impl CppMove for A_void_1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

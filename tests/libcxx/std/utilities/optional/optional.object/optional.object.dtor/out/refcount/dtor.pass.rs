@@ -14,9 +14,19 @@ pub struct PODType {
     #[offset(4)]
     pub value2: i32,
 }
+impl CppMove for PODType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(1)]
 pub struct X {}
+impl CppMove for X {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static dtor_called_0: Value<bool> = Rc::new(RefCell::new(false));
 );
@@ -59,7 +69,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         {
             let x: Value<X> = Rc::new(RefCell::new(<X>::default()));
             let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-            let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let opt: Value<std_optional_X_> =
+                Rc::new(RefCell::new(std_optional_X_::new_1({ x.as_pointer() })));
             assert!(((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (false as i32)));
         }
         assert!(((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (true as i32)));

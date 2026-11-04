@@ -32,15 +32,25 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "std::is_move_constructible<A1>::value");;
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
+        let a: Value<std_pmr_polymorphic_allocator_void_> =
+            Rc::new(RefCell::new(std_pmr_polymorphic_allocator_void_::new_1({
+                <Ptr<std_pmr_memory_resource>>::from_int(42)
+            })));
+        let a2: Value<std_pmr_polymorphic_allocator_void_> =
+            Rc::new(RefCell::new((*a.borrow()).clone()));
+        assert!(({ (({ (*a.borrow()).resource() }) == ({ (*a2.borrow()).resource() })) }));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
-        assert!((unimplemented!() == <Ptr<()>>::from_int(42)));
+        let a: Value<std_pmr_polymorphic_allocator_void_> =
+            Rc::new(RefCell::new(std_pmr_polymorphic_allocator_void_::new_1({
+                <Ptr<std_pmr_memory_resource>>::from_int(42)
+            })));
+        let a2: Value<std_pmr_polymorphic_allocator_void_> =
+            Rc::new(RefCell::new((*a.borrow()).clone()));
+        assert!(({ (({ (*a.borrow()).resource() }) == ({ (*a2.borrow()).resource() })) }));
+        assert!(
+            ({ (({ (*a2.borrow()).resource() }) == <Ptr<std_pmr_memory_resource>>::from_int(42)) })
+        );
     }
     return 0;
 }

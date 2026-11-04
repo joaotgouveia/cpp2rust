@@ -28,16 +28,24 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as i32) == (('a' as i8) as i32)));
-        assert!(((unimplemented!() as i32) == (('B' as i8) as i32)));
-        assert!(((unimplemented!() as i32) == (('c' as i8) as i32)));
+        let t: Value<std_regex_traits_char_> =
+            Rc::new(RefCell::new(<std_regex_traits_char_>::default()));
+        assert!(
+            ({ ((({ (*t.borrow()).translate(('a' as i8),) }) as i32) == (('a' as i8) as i32)) })
+        );
+        assert!(
+            ({ ((({ (*t.borrow()).translate(('B' as i8),) }) as i32) == (('B' as i8) as i32)) })
+        );
+        assert!(
+            ({ ((({ (*t.borrow()).translate(('c' as i8),) }) as i32) == (('c' as i8) as i32)) })
+        );
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as i32) == (97 as i32)));
-        assert!(((unimplemented!() as i32) == (66 as i32)));
-        assert!(((unimplemented!() as i32) == (99 as i32)));
+        let t: Value<std_regex_traits_wchar_t_> =
+            Rc::new(RefCell::new(<std_regex_traits_wchar_t_>::default()));
+        assert!(({ (({ (*t.borrow()).translate((97 as i32),) }) == (97 as i32)) }));
+        assert!(({ (({ (*t.borrow()).translate((66 as i32),) }) == (66 as i32)) }));
+        assert!(({ (({ (*t.borrow()).translate((99 as i32),) }) == (99 as i32)) }));
     }
     return 0;
 }

@@ -12,6 +12,11 @@ pub struct Chunk {
     #[offset(0)]
     pub data: i32,
 }
+impl CppMove for Chunk {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct Writer {
@@ -21,6 +26,11 @@ pub struct Writer {
     #[offset(8)]
     #[byte_size(4)]
     pub chunk: Chunk,
+}
+impl CppMove for Writer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(48)]
@@ -38,6 +48,11 @@ impl JPEGData {
             com_data: field!(_a0, com_data).with_mut(std::mem::take),
             app_data: field!(_a0, app_data).with_mut(std::mem::take),
         }
+    }
+}
+impl CppMove for JPEGData {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn push_param_0(mut dest: Ptr<Vec<Vec<u8>>>) {
@@ -144,6 +159,11 @@ impl Pair {
         }
     }
 }
+impl CppMove for Pair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Pair {
     fn default() -> Self {
         { Pair::new_2() }
@@ -166,11 +186,13 @@ pub fn emplace_ctor_args_7(mut pairs: Ptr<Vec<Pair>>) {
 pub fn emplace_deque_8(mut queue: Ptr<Vec<Pair>>) {
     {
         let __init = Pair::new_3({ 6 }, { 7 });
-        queue.with_mut(|__v: &mut Vec<Pair>| __v.push(__init))
+        queue.with_mut(|__v: &mut Vec<Pair>| __v.push(__init));
+        queue.decay().to_last()
     };
     {
         let __init = Pair::new_2();
-        queue.with_mut(|__v: &mut Vec<Pair>| __v.push(__init))
+        queue.with_mut(|__v: &mut Vec<Pair>| __v.push(__init));
+        queue.decay().to_last()
     };
 }
 pub fn emplace_scalar_9(mut values: Ptr<Vec<i64>>, x: i32) {
@@ -192,7 +214,7 @@ fn main_0() -> i32 {
     let vecs: Value<Vec<Vec<u8>>> = Rc::new(RefCell::new(Vec::new()));
     ({ push_param_0((vecs.as_pointer())) });
     assert!(({ ((*vecs.borrow()).len() == 1_usize) }));
-    assert!(({ (*vecs.decay().offset(0_usize).upgrade().deref()).is_empty() }));
+    assert!(({ (*vecs.decay().offset(0_usize as isize).upgrade().deref()).is_empty() }));
     let jpg: Value<JPEGData> = Rc::new(RefCell::new(<JPEGData>::default()));
     ({ push_local_from_field_1((jpg.as_pointer()), true) });
     assert!(({ ((*jpg.borrow()).com_data.len() == 1_usize) }));
@@ -200,7 +222,7 @@ fn main_0() -> i32 {
         ({
             ((*field_ref!(jpg.as_pointer(), com_data)
                 .decay()
-                .offset(0_usize)
+                .offset(0_usize as isize)
                 .upgrade()
                 .deref())
             .len()
@@ -208,13 +230,31 @@ fn main_0() -> i32 {
         })
     );
     assert!(
-        (((index!(vec_elem!(jpg.as_pointer(), com_data, 0_usize), 0_usize).read()) as i32) == 1)
+        (((field_ref!(jpg.as_pointer(), com_data)
+            .decay()
+            .offset(0_usize as isize)
+            .decay()
+            .offset(0_usize as isize)
+            .read()) as i32)
+            == 1)
     );
     assert!(
-        (((index!(vec_elem!(jpg.as_pointer(), com_data, 0_usize), 1_usize).read()) as i32) == 2)
+        (((field_ref!(jpg.as_pointer(), com_data)
+            .decay()
+            .offset(0_usize as isize)
+            .decay()
+            .offset(1_usize as isize)
+            .read()) as i32)
+            == 2)
     );
     assert!(
-        (((index!(vec_elem!(jpg.as_pointer(), com_data, 0_usize), 2_usize).read()) as i32) == 3)
+        (((field_ref!(jpg.as_pointer(), com_data)
+            .decay()
+            .offset(0_usize as isize)
+            .decay()
+            .offset(2_usize as isize)
+            .read()) as i32)
+            == 3)
     );
     assert!(({ (*jpg.borrow()).app_data.is_empty() }));
     let chunks: Value<Vec<Chunk>> = Rc::new(RefCell::new(Vec::new()));
@@ -225,14 +265,14 @@ fn main_0() -> i32 {
     (*w.borrow_mut()).output = (chunks.as_pointer());
     ({ nested_push_move_3((w.as_pointer())) });
     assert!(({ ((*chunks.borrow()).len() == 1_usize) }));
-    assert!(({ ({ (*chunks.borrow())[0_usize].data } == 42) }));
+    assert!((chunks.decay().offset(0_usize as isize).with(|__s| __s.data) == 42));
     ({ emplace_local_from_field_4((jpg.as_pointer()), false) });
     assert!(({ ((*jpg.borrow()).app_data.len() == 1_usize) }));
     assert!(
         ({
             ((*field_ref!(jpg.as_pointer(), app_data)
                 .decay()
-                .offset(0_usize)
+                .offset(0_usize as isize)
                 .upgrade()
                 .deref())
             .len()
@@ -240,40 +280,58 @@ fn main_0() -> i32 {
         })
     );
     assert!(
-        (((index!(vec_elem!(jpg.as_pointer(), app_data, 0_usize), 0_usize).read()) as i32) == 1)
+        (((field_ref!(jpg.as_pointer(), app_data)
+            .decay()
+            .offset(0_usize as isize)
+            .decay()
+            .offset(0_usize as isize)
+            .read()) as i32)
+            == 1)
     );
     assert!(
-        (((index!(vec_elem!(jpg.as_pointer(), app_data, 0_usize), 2_usize).read()) as i32) == 3)
+        (((field_ref!(jpg.as_pointer(), app_data)
+            .decay()
+            .offset(0_usize as isize)
+            .decay()
+            .offset(2_usize as isize)
+            .read()) as i32)
+            == 3)
     );
     assert!(({ ((*jpg.borrow()).com_data.len() == 1_usize) }));
     (*w.borrow_mut()).chunk.data = 99;
     (*w.borrow_mut()).output = (chunks.as_pointer());
     ({ nested_emplace_move_5((w.as_pointer())) });
     assert!(({ ((*chunks.borrow()).len() == 2_usize) }));
-    assert!(({ ({ (*chunks.borrow())[1_usize].data } == 99) }));
+    assert!((chunks.decay().offset(1_usize as isize).with(|__s| __s.data) == 99));
     ({ self_ref_push_6((chunks.as_pointer())) });
     assert!(({ ((*chunks.borrow()).len() == 3_usize) }));
-    assert!(({ ({ (*chunks.borrow())[2_usize].data } == 42) }));
+    assert!((chunks.decay().offset(2_usize as isize).with(|__s| __s.data) == 42));
     let pairs: Value<Vec<Pair>> = Rc::new(RefCell::new(Vec::new()));
     ({ emplace_ctor_args_7((pairs.as_pointer())) });
     assert!(({ ((*pairs.borrow()).len() == 3_usize) }));
     assert!(
-        ({
-            ({ (*pairs.borrow())[0_usize].first } == -1_i32)
-                && ({ (*pairs.borrow())[0_usize].second } == -1_i32)
-        })
+        (pairs.decay().offset(0_usize as isize).with(|__s| __s.first) == -1_i32)
+            && (pairs
+                .decay()
+                .offset(0_usize as isize)
+                .with(|__s| __s.second)
+                == -1_i32)
     );
     assert!(
-        ({
-            ({ (*pairs.borrow())[1_usize].first } == 3)
-                && ({ (*pairs.borrow())[1_usize].second } == 0)
-        })
+        (pairs.decay().offset(1_usize as isize).with(|__s| __s.first) == 3)
+            && (pairs
+                .decay()
+                .offset(1_usize as isize)
+                .with(|__s| __s.second)
+                == 0)
     );
     assert!(
-        ({
-            ({ (*pairs.borrow())[2_usize].first } == 4)
-                && ({ (*pairs.borrow())[2_usize].second } == 10)
-        })
+        (pairs.decay().offset(2_usize as isize).with(|__s| __s.first) == 4)
+            && (pairs
+                .decay()
+                .offset(2_usize as isize)
+                .with(|__s| __s.second)
+                == 10)
     );
     let queue: Value<Vec<Pair>> = Rc::new(RefCell::new(Vec::new()));
     ({ emplace_deque_8((queue.as_pointer())) });
@@ -287,8 +345,8 @@ fn main_0() -> i32 {
     let values: Value<Vec<i64>> = Rc::new(RefCell::new(Vec::new()));
     ({ emplace_scalar_9((values.as_pointer()), 7) });
     assert!(({ ((*values.borrow()).len() == 2_usize) }));
-    assert!(({ ({ (*values.borrow())[0_usize] } == 0_i64) }));
-    assert!(({ ({ (*values.borrow())[1_usize] } == 7_i64) }));
+    assert!(((values.decay().offset(0_usize as isize).read()) == 0_i64));
+    assert!(((values.decay().offset(1_usize as isize).read()) == 7_i64));
     return 0;
 }
 pub trait JPEGDataImpl {

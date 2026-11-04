@@ -259,9 +259,19 @@ pub fn test_is_not_floating_point_24() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Empty {}
+impl CppMove for Empty {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct NotEmpty {}
+impl CppMove for NotEmpty {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
 #[byte_size(1)]
 pub struct Union {
@@ -270,6 +280,11 @@ pub struct Union {
     __bytes: Box<[u8]>,
 }
 impl Union {}
+impl CppMove for Union {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Union {
     fn default() -> Self {
         Union {
@@ -282,6 +297,11 @@ impl Default for Union {
 pub struct bit_zero {
     #[offset(0)]
     pub anon_25: i32,
+}
+impl CppMove for bit_zero {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub type Enum = u32;
 pub const Enum_zero: Enum = 0;

@@ -11,41 +11,81 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_array_int__3___std_array_int__3__ {}
+impl CppMove for test_macros_detail_is_same_std_array_int__3___std_array_int__3__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_long__long_ {}
+impl CppMove for test_macros_detail_is_same_long__long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_array_char__5___std_array_char__5__ {}
+impl CppMove for test_macros_detail_is_same_std_array_char__5___std_array_char__5__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_array_double__3___std_array_double__3__ {}
+impl CppMove for test_macros_detail_is_same_std_array_double__3___std_array_double__3__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_4 = u32;
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_array_MoveOnly__3___std_array_MoveOnly__3__ {}
+impl CppMove for test_macros_detail_is_same_std_array_MoveOnly__3___std_array_MoveOnly__3__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_5 = u32;
 pub const anon_5_value: anon_5 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_array_int__2___std_array_int__2__ {}
+impl CppMove for test_macros_detail_is_same_std_array_int__2___std_array_int__2__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_6 = u32;
 pub const anon_6_value: anon_6 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_array_long__3___std_array_long__3__ {}
+impl CppMove for test_macros_detail_is_same_std_array_long__3___std_array_long__3__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_7 = u32;
 pub const anon_7_value: anon_7 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_array_A__1___std_array_A__1__ {}
+impl CppMove for test_macros_detail_is_same_std_array_A__1___std_array_A__1__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_8(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -70,11 +110,11 @@ pub fn operator_cmp_14(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> std::cmp::Orde
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -106,6 +146,11 @@ impl CppEq for MoveOnly {
         operator_eq_8(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for MoveOnly {
     fn default() -> Self {
         { MoveOnly::new(None) }
@@ -135,11 +180,11 @@ pub fn operator_cmp_21(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> 
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -169,6 +214,11 @@ impl CppEq for TrivialMoveOnly {
         operator_eq_15(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for TrivialMoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for TrivialMoveOnly {
     fn default() -> Self {
         { TrivialMoveOnly::new(None) }
@@ -176,7 +226,12 @@ impl Default for TrivialMoveOnly {
 }
 pub fn tests_22() -> bool {
     {
-        let arr: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        let arr: Value<Vec<i32>> = Rc::new(RefCell::new(
+            ({
+                let ___a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+                to_array_23(___a.as_pointer())
+            }),
+        ));
         const _: () = assert!(true, "");;
         assert!(((arr.decay().offset(0_usize as isize).read()) == 1));
         assert!(((arr.decay().offset(1_usize as isize).read()) == 2));
@@ -184,7 +239,13 @@ pub fn tests_22() -> bool {
     }
     {
         let mut l1: i64 = 42_i64;
-        let arr: Value<Vec<i64>> = Rc::new(RefCell::new(unimplemented!()));
+        let arr: Value<Vec<i64>> = Rc::new(RefCell::new(
+            ({
+                let ___a: Value<Box<[i64]>> =
+                    Rc::new(RefCell::new(Box::new([1_i64, 4_i64, 9_i64, l1])));
+                to_array_24(___a.as_pointer())
+            }),
+        ));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "arr.size() == 4");;
         assert!(((arr.decay().offset(0_usize as isize).read()) == 1_i64));
@@ -193,7 +254,9 @@ pub fn tests_22() -> bool {
         assert!(((arr.decay().offset(3_usize as isize).read()) == l1));
     }
     {
-        let arr: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+        let arr: Value<Vec<i8>> = Rc::new(RefCell::new(
+            ({ to_array_25(Ptr::<i8>::from_string_literal(b"meow")) }),
+        ));
         const _: () = assert!(true, "");;
         assert!((((arr.decay().offset(0_usize as isize).read()) as i32) == (('m' as i8) as i32)));
         assert!((((arr.decay().offset(1_usize as isize).read()) as i32) == (('e' as i8) as i32)));
@@ -202,16 +265,16 @@ pub fn tests_22() -> bool {
         assert!((((arr.decay().offset(4_usize as isize).read()) as i32) == (('\0' as i8) as i32)));
     }
     {
-        let mut source: [f64; 3] = [4_f64, 5_f64, 6_f64];
-        let arr: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
+        let source: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([4_f64, 5_f64, 6_f64])));
+        let arr: Value<Vec<f64>> = Rc::new(RefCell::new(({ to_array_26(source.as_pointer()) })));
         const _: () = assert!(true, "");;
         assert!(((arr.decay().offset(0_usize as isize).read()) == 4_f64));
         assert!(((arr.decay().offset(1_usize as isize).read()) == 5_f64));
         assert!(((arr.decay().offset(2_usize as isize).read()) == 6_f64));
     }
     {
-        let mut source: [f64; 3] = [4_f64, 5_f64, 6_f64];
-        let arr: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
+        let source: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([4_f64, 5_f64, 6_f64])));
+        let arr: Value<Vec<f64>> = Rc::new(RefCell::new(({ to_array_27(source.as_pointer()) })));
         const _: () = assert!(true, "");;
         assert!(((arr.decay().offset(0_usize as isize).read()) == 4_f64));
         assert!(((arr.decay().offset(1_usize as isize).read()) == 5_f64));
@@ -223,7 +286,8 @@ pub fn tests_22() -> bool {
             MoveOnly::new({ Some(1) }),
             MoveOnly::new({ Some(2) }),
         ])));
-        let arr: Value<Vec<MoveOnly>> = Rc::new(RefCell::new(unimplemented!()));
+        let arr: Value<Vec<MoveOnly>> =
+            Rc::new(RefCell::new(({ to_array_28(source.as_pointer()) })));
         const _: () = assert!(true, "");;
         let mut i: i32 = 0;
         'loop_: while (i < 3) {
@@ -237,20 +301,37 @@ pub fn tests_22() -> bool {
         }
     }
     {
-        let arr: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        let arr: Value<Vec<i32>> = Rc::new(RefCell::new(
+            ({
+                let ___a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([3, 4])));
+                to_array_29(___a.as_pointer())
+            }),
+        ));
         const _: () = assert!(true, "");;
         assert!(((arr.decay().offset(0_usize as isize).read()) == 3));
         assert!(((arr.decay().offset(1_usize as isize).read()) == 4));
     }
     {
-        let arr: Value<Vec<i64>> = Rc::new(RefCell::new(unimplemented!()));
+        let arr: Value<Vec<i64>> = Rc::new(RefCell::new(
+            ({
+                let ___a: Value<Box<[i64]>> =
+                    Rc::new(RefCell::new(Box::new([1_i64, 2_i64, 3_i64])));
+                to_array_30(___a.as_pointer())
+            }),
+        ));
         const _: () = assert!(true, "");;
         assert!(((arr.decay().offset(0_usize as isize).read()) == 1_i64));
         assert!(((arr.decay().offset(1_usize as isize).read()) == 2_i64));
         assert!(((arr.decay().offset(2_usize as isize).read()) == 3_i64));
     }
     {
-        let arr: Value<Vec<A_23>> = Rc::new(RefCell::new(unimplemented!()));
+        let arr: Value<Vec<A_31>> = Rc::new(RefCell::new(
+            ({
+                let ___a: Value<Box<[A_31]>> =
+                    Rc::new(RefCell::new(Box::new([A_31 { a: 3, b: 0.1_f64 }])));
+                to_array_32(___a.as_pointer())
+            }),
+        ));
         const _: () = assert!(true, "");;
         assert!((arr.decay().offset(0_usize as isize).with(|__s| __s.a) == 3));
         assert!((arr.decay().offset(0_usize as isize).with(|__s| __s.b) == 0.1_f64));
@@ -259,11 +340,16 @@ pub fn tests_22() -> bool {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
-pub struct A_23 {
+pub struct A_31 {
     #[offset(0)]
     pub a: i32,
     #[offset(8)]
     pub b: f64,
+}
+impl CppMove for A_31 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

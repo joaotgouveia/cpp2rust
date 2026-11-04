@@ -19,6 +19,11 @@ impl all_zero_seed_seq {
         Self {}
     }
 }
+impl CppMove for all_zero_seed_seq {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for all_zero_seed_seq {
     fn default() -> Self {
         { all_zero_seed_seq::new_2() }
@@ -28,23 +33,29 @@ pub fn test_0() {
     let mut state_size: usize = 1_usize;
     let mut shift_size: usize = 1_usize;
     let mut tempering_l: usize = (3_u64 as usize);
-    let mut q: all_zero_seed_seq = all_zero_seed_seq::new_2();
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let q: Value<all_zero_seed_seq> = Rc::new(RefCell::new(all_zero_seed_seq::new_2()));
+    let e: Value<
+        std_mersenne_twister_engine_unsigned_short__3__1__1__0__0__0__0__0__0__0__0__3__0_,
+    > = Rc::new(RefCell::new(
+        std_mersenne_twister_engine_unsigned_short__3__1__1__0__0__0__0__0__0__0__0__3__0_::new_1(
+            { q.as_pointer() },
+        ),
+    ));
     let mut Xneg1: u16 = (((1_u16 as i32) << ((3_u64 as u64).wrapping_sub(1_u64))) as u16);
     let mut Y: u16 = Xneg1;
     let mut X0: u16 = (((Xneg1 as i32) ^ ((Y as i32) >> 1)) as u16);
-    assert!(((unimplemented!() as i32) == (X0 as i32)));
+    assert!(({ ((({ (*e.borrow_mut())() }) as i32) == (X0 as i32)) }));
 }
 pub fn test_1() {
     let mut state_size: usize = 1_usize;
     let mut shift_size: usize = 1_usize;
     let mut tempering_l: usize = (33_u64 as usize);
-    let mut q: all_zero_seed_seq = all_zero_seed_seq::new_2();
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let q: Value<all_zero_seed_seq> = Rc::new(RefCell::new(all_zero_seed_seq::new_2()));
+    let e : Value<std_mersenne_twister_engine_unsigned_long_long__33__1__1__0__0__0__0__0__0__0__0__33__0_ > = Rc::new(RefCell::new(std_mersenne_twister_engine_unsigned_long_long__33__1__1__0__0__0__0__0__0__0__0__33__0_ :: new_1 ( { q .as_pointer()  } , )  )) ;
     let mut Xneg1: u64 = (1_u64 << ((33_u64 as u64).wrapping_sub(1_u64)));
     let mut Y: u64 = Xneg1;
     let mut X0: u64 = (Xneg1 ^ (Y >> 1));
-    assert!((unimplemented!() == X0));
+    assert!(({ (({ (*e.borrow_mut())() }) == X0) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -79,7 +90,13 @@ impl all_zero_seed_seqImpl for Ptr<all_zero_seed_seq> {
         return 0_usize;
     }
     fn generate_4_unsigned_int_ptr(&self, mut rb: Ptr<u32>, mut re: Ptr<u32>) {
-        unimplemented!();
+        {
+            let mut __it = (rb).clone();
+            while __it != re {
+                __it.iter_deref().write(Clone::clone(&0_u32));
+                __it.iter_inc();
+            }
+        };
     }
 }
 pub fn __cpp2rust_init_globals() {}

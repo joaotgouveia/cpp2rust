@@ -8,11 +8,17 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     let s2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32, 0_i32])));
-    assert!((unimplemented!() == (s2.as_pointer() as Ptr::<i32>)));
-    assert!(((*s2.borrow())[(0) as usize] == 5_i32));
-    assert!(((*s2.borrow())[(1) as usize] == 5_i32));
-    assert!(((*s2.borrow())[(2) as usize] == 5_i32));
-    assert!((unimplemented!()).is_null());
+    assert!(
+        (({
+            std_char_traits_wchar_t_::assign_9((s2.as_pointer() as Ptr<i32>), 3_usize, 5_i32)
+        }) == (s2.as_pointer() as Ptr::<i32>))
+    );
+    assert!(({ ((*s2.borrow())[(0) as usize] == 5_i32) }));
+    assert!(({ ((*s2.borrow())[(1) as usize] == 5_i32) }));
+    assert!(({ ((*s2.borrow())[(2) as usize] == 5_i32) }));
+    assert!(
+        ({ std_char_traits_wchar_t_::assign_9(Ptr::<i32>::null(), 0_usize, 5_i32,) }).is_null()
+    );
     return true;
 }
 pub fn main() {

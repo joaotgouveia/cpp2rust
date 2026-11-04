@@ -17,7 +17,7 @@ pub fn test01_0() {
     let i3: Value<RandomAccessIterator<i32>> =
         Rc::new(RefCell::new(RandomAccessIterator::default()));
     let ci1: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(
-        <RandomAccessIterator<i32>>::from((*i2.borrow()).clone()),
+        <RandomAccessIterator<i32>>::from(({ (*i2.borrow()).clone() })),
     ));
     (*i2.borrow_mut()) = (*i3.borrow()).clone();
 }

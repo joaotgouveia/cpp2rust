@@ -6,52 +6,51 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = u32;
-pub const anon_0_value: anon_0 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_function_R______std_function_R_____ {}
-pub type anon_1 = u32;
-pub const anon_1_value: anon_1 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_function_R__A1____std_function_R__A1___ {}
-pub type anon_2 = u32;
-pub const anon_2_value: anon_2 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_function_R__A1__A2____std_function_R__A1__A2___ {}
-pub type anon_3 = u32;
-pub const anon_3_value: anon_3 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_function_R__A1__A2__A3____std_function_R__A1__A2__A3___ {
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct R {}
+impl CppMove for R {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A1 {}
+impl CppMove for A1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A2 {}
+impl CppMove for A2 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A3 {}
-pub fn f0_4() -> R {
+impl CppMove for A3 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn f0_0() -> R {
     return <R>::default();
 }
-pub fn f1_5(mut _a0: A1) -> R {
+pub fn f1_1(mut _a0: A1) -> R {
     return <R>::default();
 }
-pub fn f2_6(mut _a0: A1, mut _a1: A2) -> R {
+pub fn f2_2(mut _a0: A1, mut _a1: A2) -> R {
     return <R>::default();
 }
-pub fn f3_7(mut _a0: A1, mut _a1: A2, mut _a2: A3) -> R {
+pub fn f3_3(mut _a0: A1, mut _a1: A2, mut _a2: A3) -> R {
     return <R>::default();
 }
-pub fn f4_8(_a0: Option<A1>) -> R {
+pub fn f4_4(_a0: Option<A1>) -> R {
     let mut _a0: A1 = _a0.unwrap_or_else(|| <A1>::default());
     return <R>::default();
 }
@@ -76,53 +75,85 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_function_R____> = Rc::new(RefCell::new(std_function_R____::new_1({
+            FnPtr::<fn() -> R>::new(f0_0)
+        })));
         const _: () = assert!(true, "");;
-        let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let b: Value<std_function_R____> = Rc::new(RefCell::new((FnPtr::<fn() -> R>::new(f0_0))));
         const _: () = assert!(true, "");;
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<std_function_R____> = Rc::new(RefCell::new(std_function_R____::new_1({
+            FnPtr::<fn() -> R>::new(f0_0)
+        })));
         const _: () = assert!(true, "");;
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-    }
-    {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let d: Value<std_function_R____> = Rc::new(RefCell::new((FnPtr::<fn() -> R>::new(f0_0))));
         const _: () = assert!(true, "");;
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_function_R__A1__> = Rc::new(RefCell::new(std_function_R__A1__::new_1({
+            FnPtr::<fn(A1) -> R>::new(f1_1)
+        })));
         const _: () = assert!(true, "");;
-        let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let b: Value<std_function_R__A1__> =
+            Rc::new(RefCell::new((FnPtr::<fn(A1) -> R>::new(f1_1))));
         const _: () = assert!(true, "");;
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<std_function_R__A1__> = Rc::new(RefCell::new(std_function_R__A1__::new_1({
+            FnPtr::<fn(A1) -> R>::new(f1_1)
+        })));
         const _: () = assert!(true, "");;
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-    }
-    {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let d: Value<std_function_R__A1__> =
+            Rc::new(RefCell::new((FnPtr::<fn(A1) -> R>::new(f1_1))));
         const _: () = assert!(true, "");;
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_function_R__A1__A2__> =
+            Rc::new(RefCell::new(std_function_R__A1__A2__::new_1({
+                FnPtr::<fn(A1, A2) -> R>::new(f2_2)
+            })));
         const _: () = assert!(true, "");;
-        let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let b: Value<std_function_R__A1__A2__> =
+            Rc::new(RefCell::new((FnPtr::<fn(A1, A2) -> R>::new(f2_2))));
         const _: () = assert!(true, "");;
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<std_function_R__A1__A2__> =
+            Rc::new(RefCell::new(std_function_R__A1__A2__::new_1({
+                FnPtr::<fn(A1, A2) -> R>::new(f2_2)
+            })));
         const _: () = assert!(true, "");;
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let d: Value<std_function_R__A1__A2__> =
+            Rc::new(RefCell::new((FnPtr::<fn(A1, A2) -> R>::new(f2_2))));
+        const _: () = assert!(true, "");;
+    }
+    {
+        let a: Value<std_function_R__A1__A2__A3__> =
+            Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_1({
+                FnPtr::<fn(A1, A2, A3) -> R>::new(f3_3)
+            })));
+        const _: () = assert!(true, "");;
+        let b: Value<std_function_R__A1__A2__A3__> =
+            Rc::new(RefCell::new((FnPtr::<fn(A1, A2, A3) -> R>::new(f3_3))));
+        const _: () = assert!(true, "");;
+        let c: Value<std_function_R__A1__A2__A3__> =
+            Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_1({
+                FnPtr::<fn(A1, A2, A3) -> R>::new(f3_3)
+            })));
+        const _: () = assert!(true, "");;
+        let d: Value<std_function_R__A1__A2__A3__> =
+            Rc::new(RefCell::new((FnPtr::<fn(A1, A2, A3) -> R>::new(f3_3))));
+        const _: () = assert!(true, "");;
+    }
+    {
+        let a: Value<std_function_R__A1__> = Rc::new(RefCell::new(std_function_R__A1__::new_1({
+            FnPtr::<fn(A1) -> R>::new(f4_4)
+        })));
+        const _: () = assert!(true, "");;
+        let b: Value<std_function_R__A1__> =
+            Rc::new(RefCell::new((FnPtr::<fn(A1) -> R>::new(f4_4))));
+        const _: () = assert!(true, "");;
+        let c: Value<std_function_R__A1__> = Rc::new(RefCell::new(std_function_R__A1__::new_1({
+            FnPtr::<fn(A1) -> R>::new(f4_4)
+        })));
+        const _: () = assert!(true, "");;
+        let d: Value<std_function_R__A1__> =
+            Rc::new(RefCell::new((FnPtr::<fn(A1) -> R>::new(f4_4))));
         const _: () = assert!(true, "");;
     }
     return 0;

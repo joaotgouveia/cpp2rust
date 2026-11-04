@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_bool__const_bool_ {}
+impl CppMove for test_macros_detail_is_same_const_bool__const_bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_1() {
     const _: () = assert!(true, "(std::is_error_code_enum<T>::value == Expected)");;
     const _: () = assert!(true, "(std::is_error_code_enum_v<T>      == Expected)");;
@@ -37,10 +42,15 @@ pub fn test_5() {
     const _: () = assert!(true, "");;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
-#[cpp_into(()  , to_)]
+#[cpp_into(std_error_code, to_std_error_code)]
 #[byte_size(1)]
 pub struct A {}
 impl A {}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -69,11 +79,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     return 0;
 }
 pub trait AImpl {
-    fn to_(&self) -> ();
+    fn to_std_error_code(&self) -> std_error_code;
 }
 impl AImpl for Ptr<A> {
-    fn to_(&self) -> () {
-        return unimplemented!();
+    fn to_std_error_code(&self) -> std_error_code {
+        return <std_error_code>::default();
     }
 }
 pub fn __cpp2rust_init_globals() {}

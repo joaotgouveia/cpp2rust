@@ -34,63 +34,73 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             ('3' as i8),
             0_i8,
         ])));
-        let sm1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*((*sm1.borrow()) as (Value<*const i8>, Value<*const i8>))
+        let sm1: Value<std_sub_match_const_char_ptr_> =
+            Rc::new(RefCell::new(<std_sub_match_const_char_ptr_>::default()));
+        (*({ ((*sm1.borrow()) as (Value<*const i8>, Value<*const i8>)) })
             .0
             .borrow_mut()) = (s1.as_pointer() as Ptr<i8>);
-        (*((*sm1.borrow()) as (Value<*const i8>, Value<*const i8>))
+        (*({ ((*sm1.borrow()) as (Value<*const i8>, Value<*const i8>)) })
             .1
             .borrow_mut()) = (s1.as_pointer() as Ptr<i8>).offset((3) as isize);
         (*sm1.borrow_mut()).matched = true;
-        let sm2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sm2: Value<std_sub_match_const_char_ptr_> =
+            Rc::new(RefCell::new(<std_sub_match_const_char_ptr_>::default()));
         let s2: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
             ('c' as i8),
             ('a' as i8),
             ('t' as i8),
             0_i8,
         ])));
-        (*((*sm2.borrow()) as (Value<*const i8>, Value<*const i8>))
+        (*({ ((*sm2.borrow()) as (Value<*const i8>, Value<*const i8>)) })
             .0
             .borrow_mut()) = (s2.as_pointer() as Ptr<i8>);
-        (*((*sm2.borrow()) as (Value<*const i8>, Value<*const i8>))
+        (*({ ((*sm2.borrow()) as (Value<*const i8>, Value<*const i8>)) })
             .1
             .borrow_mut()) = (s2.as_pointer() as Ptr<i8>).offset((3) as isize);
         (*sm2.borrow_mut()).matched = false;
-        unimplemented!();
+        ({ (*sm1.borrow()).swap(sm2.as_pointer()) });
         assert!(
             ({
-                (*((*sm1.borrow()) as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s2.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*({ ((*sm1.borrow()) as (Value<*const i8>, Value<*const i8>)) })
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s2.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((*sm1.borrow()) as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s2.as_pointer() as Ptr::<i8>).offset((3) as isize) })
+                ({
+                    (*({ ((*sm1.borrow()) as (Value<*const i8>, Value<*const i8>)) })
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s2.as_pointer() as Ptr<i8>).offset((3) as isize) })
+            })
         );
-        assert!(!({ (*sm1.borrow()).matched }));
+        assert!(({ !({ (*sm1.borrow()).matched }) }));
         assert!(
             ({
-                (*((*sm2.borrow()) as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s1.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*({ ((*sm2.borrow()) as (Value<*const i8>, Value<*const i8>)) })
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s1.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((*sm2.borrow()) as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s1.as_pointer() as Ptr::<i8>).offset((3) as isize) })
+                ({
+                    (*({ ((*sm2.borrow()) as (Value<*const i8>, Value<*const i8>)) })
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s1.as_pointer() as Ptr<i8>).offset((3) as isize) })
+            })
         );
-        assert!({ (*sm2.borrow()).matched });
+        assert!(({ { (*sm2.borrow()).matched } }));
         const _: () = assert!(true, "");;
     }
     {
@@ -100,63 +110,73 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             (51 as i32),
             0_i32,
         ])));
-        let sm1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*((*sm1.borrow()) as (Value<*const i32>, Value<*const i32>))
+        let sm1: Value<std_sub_match_const_wchar_t_ptr_> =
+            Rc::new(RefCell::new(<std_sub_match_const_wchar_t_ptr_>::default()));
+        (*({ ((*sm1.borrow()) as (Value<*const i32>, Value<*const i32>)) })
             .0
             .borrow_mut()) = (s1.as_pointer() as Ptr<i32>);
-        (*((*sm1.borrow()) as (Value<*const i32>, Value<*const i32>))
+        (*({ ((*sm1.borrow()) as (Value<*const i32>, Value<*const i32>)) })
             .1
             .borrow_mut()) = (s1.as_pointer() as Ptr<i32>).offset((3) as isize);
         (*sm1.borrow_mut()).matched = true;
-        let sm2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sm2: Value<std_sub_match_const_wchar_t_ptr_> =
+            Rc::new(RefCell::new(<std_sub_match_const_wchar_t_ptr_>::default()));
         let s2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
             (99 as i32),
             (97 as i32),
             (116 as i32),
             0_i32,
         ])));
-        (*((*sm2.borrow()) as (Value<*const i32>, Value<*const i32>))
+        (*({ ((*sm2.borrow()) as (Value<*const i32>, Value<*const i32>)) })
             .0
             .borrow_mut()) = (s2.as_pointer() as Ptr<i32>);
-        (*((*sm2.borrow()) as (Value<*const i32>, Value<*const i32>))
+        (*({ ((*sm2.borrow()) as (Value<*const i32>, Value<*const i32>)) })
             .1
             .borrow_mut()) = (s2.as_pointer() as Ptr<i32>).offset((3) as isize);
         (*sm2.borrow_mut()).matched = false;
-        unimplemented!();
+        ({ (*sm1.borrow()).swap(sm2.as_pointer()) });
         assert!(
             ({
-                (*((*sm1.borrow()) as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s2.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*({ ((*sm1.borrow()) as (Value<*const i32>, Value<*const i32>)) })
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s2.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((*sm1.borrow()) as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s2.as_pointer() as Ptr::<i32>).offset((3) as isize) })
+                ({
+                    (*({ ((*sm1.borrow()) as (Value<*const i32>, Value<*const i32>)) })
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s2.as_pointer() as Ptr<i32>).offset((3) as isize) })
+            })
         );
-        assert!(!({ (*sm1.borrow()).matched }));
+        assert!(({ !({ (*sm1.borrow()).matched }) }));
         assert!(
             ({
-                (*((*sm2.borrow()) as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s1.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*({ ((*sm2.borrow()) as (Value<*const i32>, Value<*const i32>)) })
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s1.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((*sm2.borrow()) as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s1.as_pointer() as Ptr::<i32>).offset((3) as isize) })
+                ({
+                    (*({ ((*sm2.borrow()) as (Value<*const i32>, Value<*const i32>)) })
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s1.as_pointer() as Ptr<i32>).offset((3) as isize) })
+            })
         );
-        assert!({ (*sm2.borrow()).matched });
+        assert!(({ { (*sm2.borrow()).matched } }));
         const _: () = assert!(true, "");;
     }
     0

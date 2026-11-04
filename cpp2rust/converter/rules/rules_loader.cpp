@@ -11,6 +11,7 @@
 #include <clang/Lex/Preprocessor.h>
 #include <clang/Sema/Lookup.h>
 #include <clang/Sema/Sema.h>
+#include <llvm/ADT/ArrayRef.h>
 #include <llvm/ADT/DenseSet.h>
 #include <llvm/ADT/STLExtras.h>
 #include <llvm/Support/Error.h>
@@ -35,6 +36,8 @@
 namespace cpp2rust::RulesLoader {
 
 namespace {
+
+llvm::ArrayRef<std::string> rules_index_dirs_;
 
 class RuleUsageCollector
     : public clang::RecursiveASTVisitor<RuleUsageCollector> {
@@ -219,6 +222,10 @@ private:
     if (type->isPointerType() || type->isReferenceType()) {
       return AddType(type->getPointeeType());
     }
+    if (type->isMemberPointerType()) {
+      // pointers-to-members are unsupported, skip
+      return;
+    }
     if (const auto *array = ctx_.getAsArrayType(type)) {
       return AddType(array->getElementType());
     }
@@ -359,15 +366,29 @@ private:
   llvm::DenseSet<const void *> seen_;
 };
 
+llvm::json::Object ReadAndMerge(const char *filename) {
+  assert(!rules_index_dirs_.empty());
+  llvm::json::Object out =
+      ReadIndex(std::filesystem::path(rules_index_dirs_.front()) / filename);
+  auto *rules = out.getObject("rules");
+  assert(rules && "Malformed index");
+
+  for (const auto &dir : llvm::drop_begin(rules_index_dirs_)) {
+    auto index = ReadIndex(std::filesystem::path(dir) / filename);
+    auto *read = index.getObject("rules");
+    assert(read && "Malformed index");
+    MergeRules(*rules, std::move(*read));
+  }
+  return out;
+}
+
 const llvm::json::Object &CIndex() {
-  static const llvm::json::Object index =
-      ReadIndex(std::filesystem::path(RULES_INDEX_DIR) / "c.json");
+  static const llvm::json::Object index = ReadAndMerge("c.json");
   return index;
 }
 
 const llvm::json::Object &CxxIndex() {
-  static const llvm::json::Object index =
-      ReadIndex(std::filesystem::path(RULES_INDEX_DIR) / "cpp.json");
+  static const llvm::json::Object index = ReadAndMerge("cpp.json");
   return index;
 }
 
@@ -423,10 +444,10 @@ bool IsDeclared(clang::Sema &sema, llvm::StringRef name) {
   name.split(parts, "::");
   for (auto [i, part] : llvm::enumerate(parts)) {
     bool last = i + 1 == parts.size();
-    clang::LookupResult result(
-        sema, &sema.Context.Idents.get(part), clang::SourceLocation(),
-        last ? clang::Sema::LookupOrdinaryName
-             : clang::Sema::LookupNamespaceName);
+    clang::LookupResult result(sema, &sema.Context.Idents.get(part),
+                               clang::SourceLocation(),
+                               last ? clang::Sema::LookupOrdinaryName
+                                    : clang::Sema::LookupNamespaceName);
     if (!sema.LookupQualifiedName(result, scope) || result.empty()) {
       // a C struct is in the tag namespace only (struct addrinfo)
       if (!last || sema.getLangOpts().CPlusPlus) {
@@ -442,9 +463,11 @@ bool IsDeclared(clang::Sema &sema, llvm::StringRef name) {
         auto decl = found->getUnderlyingDecl();
         if (auto tmpl = llvm::dyn_cast<clang::ClassTemplateDecl>(decl)) {
           return tmpl->getTemplatedDecl()->hasDefinition() ||
-                 llvm::any_of(tmpl->specializations(),
-                              [](const clang::ClassTemplateSpecializationDecl
-                                     *spec) { return spec->hasDefinition(); });
+                 llvm::any_of(
+                     tmpl->specializations(),
+                     [](const clang::ClassTemplateSpecializationDecl *spec) {
+                       return spec->hasDefinition();
+                     });
         }
         auto record = llvm::dyn_cast<clang::CXXRecordDecl>(decl);
         return !record || record->hasDefinition();
@@ -529,6 +552,27 @@ std::string BuildRulesEpilogue(const std::unordered_set<std::string> &keys,
 }
 
 } // namespace
+
+void SetIndexDirs(llvm::ArrayRef<std::string> rules_index_dirs) {
+  rules_index_dirs_ = rules_index_dirs;
+}
+
+void AddRule(llvm::json::Object &rules, std::string key,
+             llvm::json::Value rule) {
+  auto &slot = rules[llvm::json::ObjectKey(std::move(key))];
+  if (!slot.getAsArray()) {
+    slot = llvm::json::Array();
+  }
+  slot.getAsArray()->push_back(std::move(rule));
+}
+
+void MergeRules(llvm::json::Object &into, llvm::json::Object &&from) {
+  for (auto &[key, entries] : from) {
+    for (auto &entry : *entries.getAsArray()) {
+      AddRule(into, key.str(), std::move(entry));
+    }
+  }
+}
 
 static std::string NameKey(const clang::NamedDecl *decl) {
   std::vector<std::string> scopes;

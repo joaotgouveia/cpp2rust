@@ -7,15 +7,32 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let q1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let q2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    assert!(unimplemented!());
-    assert!((unimplemented!() == 3_()));
-    assert!(((unimplemented!().read()) == 3));
+    let q1: Value<std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__> =
+        Rc::new(RefCell::new(
+            <std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__>::default(
+            ),
+        ));
+    let q2: Value<std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__> =
+        Rc::new(RefCell::new(
+            <std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__>::default(
+            ),
+        ));
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(1));
+        (*q1.borrow()).push_28(___x.as_pointer())
+    });
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(3));
+        (*q1.borrow()).push_28(___x.as_pointer())
+    });
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(2));
+        (*q1.borrow()).push_28(___x.as_pointer())
+    });
+    ({ (*q1.borrow()).swap(q2.as_pointer()) });
+    assert!(({ ({ (*q1.borrow()).empty() }) }));
+    assert!(({ (({ (*q2.borrow()).size() }) == 3_u64) }));
+    assert!(({ ((({ (*q2.borrow()).top() }).read()) == 3) }));
     return true;
 }
 pub fn main() {

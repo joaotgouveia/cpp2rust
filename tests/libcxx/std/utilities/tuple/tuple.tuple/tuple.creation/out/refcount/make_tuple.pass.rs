@@ -7,21 +7,32 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let mut i: i32 = 0;
-    let mut j: f32 = 0_f32;
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!().read()) == 1));
-    assert!(((unimplemented!().read()) == 0));
-    assert!(((unimplemented!().read()) == 0_f32));
-    i = 2;
-    j = (3.5_f64 as f32);
-    assert!(((unimplemented!().read()) == 1));
-    assert!(((unimplemented!().read()) == 2));
-    assert!((((unimplemented!().read()) as f64) == 3.5_f64));
-    unimplemented!().write(0);
-    unimplemented!().write(0_f32);
-    assert!((i == 0));
-    assert!((j == 0_f32));
+    let i: Value<i32> = Rc::new(RefCell::new(0));
+    let j: Value<f32> = Rc::new(RefCell::new(0_f32));
+    let t: Value<std_tuple_int__int_ref__float_ref_> = Rc::new(RefCell::new(
+        ({
+            let ___args_0: Value<i32> = Rc::new(RefCell::new(1));
+            let ___args_1: Value<Ptr<i32>> = Rc::new(RefCell::new(({ ref_1(i.as_pointer()) })));
+            let ___args_2: Value<Ptr<f32>> = Rc::new(RefCell::new(({ ref_2(j.as_pointer()) })));
+            make_tuple_3(
+                ___args_0.as_pointer(),
+                ___args_1.as_pointer(),
+                ___args_2.as_pointer(),
+            )
+        }),
+    ));
+    assert!(((({ get_4(t.as_pointer(),) }).read()) == 1));
+    assert!(((({ get_5(t.as_pointer(),) }).read()) == 0));
+    assert!(((({ get_6(t.as_pointer(),) }).read()) == 0_f32));
+    (*i.borrow_mut()) = 2;
+    (*j.borrow_mut()) = (3.5_f64 as f32);
+    assert!(((({ get_4(t.as_pointer(),) }).read()) == 1));
+    assert!(((({ get_5(t.as_pointer(),) }).read()) == 2));
+    assert!((((({ get_6(t.as_pointer(),) }).read()) as f64) == 3.5_f64));
+    ({ get_5(t.as_pointer()) }).write(0);
+    ({ get_6(t.as_pointer()) }).write(0_f32);
+    assert!(({ ((*i.borrow()) == 0) }));
+    assert!(({ ((*j.borrow()) == 0_f32) }));
     return true;
 }
 pub fn main() {
@@ -47,9 +58,20 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
     {
-        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut i1: i32 = ((unimplemented!().read()) as i32);
-        let mut d1: f64 = (unimplemented!().read());
+        let t1: Value<std_tuple_int__int__double_> = Rc::new(RefCell::new(
+            ({
+                let ___args_0: Value<i32> = Rc::new(RefCell::new(0));
+                let ___args_1: Value<i32> = Rc::new(RefCell::new(1));
+                let ___args_2: Value<f64> = Rc::new(RefCell::new(3.14_f64));
+                make_tuple_7(
+                    ___args_0.as_pointer(),
+                    ___args_1.as_pointer(),
+                    ___args_2.as_pointer(),
+                )
+            }),
+        ));
+        let mut i1: i32 = 1;
+        let mut d1: f64 = 3.14_f64;
         const _: () = assert!(true, "i1 == 1");;
         const _: () = assert!(true, "d1 == 3.14");;
     }

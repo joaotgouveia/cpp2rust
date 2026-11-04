@@ -14,6 +14,11 @@ pub fn test_0() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Foo {}
+impl CppMove for Foo {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn get_foo_1() -> Ptr<Foo> {
     return foo_2.with(|v| v.as_pointer());
 }

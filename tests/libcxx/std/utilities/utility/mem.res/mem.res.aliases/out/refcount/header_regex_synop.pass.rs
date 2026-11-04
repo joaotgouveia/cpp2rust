@@ -6,22 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_match_result_typedef_0() {
-    const _: () = assert!(true, "std::is_same<StdMR, PmrMR>::value");;
-    const _: () = assert!(true, "std::is_same<PmrMR, PmrTypedef>::value");;
-}
-pub fn test_match_result_typedef_1() {
-    const _: () = assert!(true, "std::is_same<StdMR, PmrMR>::value");;
-    const _: () = assert!(true, "std::is_same<PmrMR, PmrTypedef>::value");;
-}
-pub fn test_match_result_typedef_2() {
-    const _: () = assert!(true, "std::is_same<StdMR, PmrMR>::value");;
-    const _: () = assert!(true, "std::is_same<PmrMR, PmrTypedef>::value");;
-}
-pub fn test_match_result_typedef_3() {
-    const _: () = assert!(true, "std::is_same<StdMR, PmrMR>::value");;
-    const _: () = assert!(true, "std::is_same<PmrMR, PmrTypedef>::value");;
-}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -49,8 +34,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ({ test_match_result_typedef_3() });
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
+        let s : Value<std_match_results___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_pmr_polymorphic_allocator_char_____std_pmr_polymorphic_allocator_std_sub_match___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_pmr_polymorphic_allocator_char______ > = Rc::new(RefCell::new(<std_match_results___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_pmr_polymorphic_allocator_char_____std_pmr_polymorphic_allocator_std_sub_match___gnu_cxx___normal_iterator_const_char_ptr__std_basic_string_char__std_char_traits_char___std_pmr_polymorphic_allocator_char______  >::default() )) ;
+        assert!(
+            (({ ({ (*s.borrow()).get_allocator() }).resource() })
+                == ({ get_default_resource_4() }))
+        );
     }
     return 0;
 }

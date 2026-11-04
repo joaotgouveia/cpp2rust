@@ -9,6 +9,11 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Foo {}
+impl CppMove for Foo {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -30,14 +35,18 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let exc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut what: Ptr<i8> = unimplemented!();
+        let exc: Value<std_bad_expected_access_int_> =
+            Rc::new(RefCell::new(std_bad_expected_access_int_::new({ 99 })));
+        let mut what: Ptr<i8> = ({ ((*exc.borrow()) as std_bad_expected_access_void_).what() });
         assert!(!((what).is_null()));
         const _: () = assert!(true, "");;
     }
     {
-        let exc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut what: Ptr<i8> = unimplemented!();
+        let exc: Value<std_bad_expected_access_Foo_> =
+            Rc::new(RefCell::new(std_bad_expected_access_Foo_::new({
+                <Foo>::default()
+            })));
+        let mut what: Ptr<i8> = ({ ((*exc.borrow()) as std_bad_expected_access_void_).what() });
         assert!(!((what).is_null()));
         const _: () = assert!(true, "");;
     }

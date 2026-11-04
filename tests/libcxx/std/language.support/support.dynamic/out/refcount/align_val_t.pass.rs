@@ -21,12 +21,12 @@ pub fn test_0() -> bool {
         "!std::is_constructible<std::size_t, std::align_val_t>::value"
     );;
     {
-        let mut a: () = ((0) as ());
-        let mut b: () = ((32) as ());
-        let mut c: () = ((-1_i32) as ());
+        let mut a: std_align_val_t = ((0) as std_align_val_t);
+        let mut b: std_align_val_t = ((32) as std_align_val_t);
+        let mut c: std_align_val_t = ((-1_i32) as std_align_val_t);
         assert!((a != b));
-        assert!((a == ((0) as ())));
-        assert!((b == ((32) as ())));
+        assert!((a == ((0) as std_align_val_t)));
+        assert!((b == ((32) as std_align_val_t)));
         assert!(((c as usize) == (-1_i32 as usize)));
     }
     return true;

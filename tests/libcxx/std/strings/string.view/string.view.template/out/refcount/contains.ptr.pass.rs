@@ -8,42 +8,57 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"abcde");
-    let sv0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let sv3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let svNot: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
+    let sv0: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        <std_basic_string_view_char__std_char_traits_char__>::default(),
+    ));
+    let sv1: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1({ s.offset((4) as isize) }, {
+            1_u64
+        }),
+    ));
+    let sv3: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1({ s.offset((2) as isize) }, {
+            3_u64
+        }),
+    ));
+    let svNot: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1(
+            { Ptr::<i8>::from_string_literal(b"xyz") },
+            { 3_u64 },
+        ),
+    ));
+    assert!(({ ({ (*sv0.borrow()).contains_45(Ptr::<i8>::from_string_literal(b""),) }) }));
+    assert!(({ !({ (*sv0.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"e"),) }) }));
+    assert!(({ ({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b""),) }) }));
+    assert!(({ !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"d"),) }) }));
+    assert!(({ ({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"e"),) }) }));
+    assert!(({ !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"de"),) }) }));
+    assert!(({ !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"cd"),) }) }));
+    assert!(({ !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"cde"),) }) }));
+    assert!(({ !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"bcde"),) }) }));
+    assert!(({ !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"abcde"),) }) }));
+    assert!(({ !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"xyz"),) }) }));
+    assert!(({ ({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b""),) }) }));
+    assert!(({ ({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"d"),) }) }));
+    assert!(({ ({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"e"),) }) }));
+    assert!(({ ({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"de"),) }) }));
+    assert!(({ ({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"cd"),) }) }));
+    assert!(({ !({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"ce"),) }) }));
+    assert!(({ ({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"cde"),) }) }));
+    assert!(({ !({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"edc"),) }) }));
+    assert!(({ !({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"bcde"),) }) }));
+    assert!(({ !({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"abcde"),) }) }));
+    assert!(({ !({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"xyz"),) }) }));
+    assert!(({ ({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b""),) }) }));
+    assert!(({ !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"d"),) }) }));
+    assert!(({ !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"e"),) }) }));
+    assert!(({ !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"de"),) }) }));
+    assert!(({ !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"cd"),) }) }));
+    assert!(({ !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"cde"),) }) }));
+    assert!(({ !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"bcde"),) }) }));
+    assert!(({ !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"abcde"),) }) }));
+    assert!(({ ({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"xyz"),) }) }));
+    assert!(({ !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"zyx"),) }) }));
     return true;
 }
 pub fn main() {

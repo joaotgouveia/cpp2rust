@@ -19,11 +19,20 @@ pub fn make_0(mut n: i32) -> Vec<i32> {
     return std::mem::take(&mut c);
 }
 pub fn test_1() -> bool {
-    let mut v: Vec<i32> = ({ make_0(5) });
-    let qo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 5_()));
-    assert!(((unimplemented!().read()) == 0));
+    let v: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_0(5) })));
+    let qo: Value<std_priority_queue_int__std_vector_int__std_allocator_int____std_greater_int__> =
+        Rc::new(RefCell::new({
+            let __tmp_0: Value<std_greater_int_> =
+                Rc::new(RefCell::new(<std_greater_int_>::default()));
+            std_priority_queue_int__std_vector_int__std_allocator_int____std_greater_int__::new_1(
+                { __tmp_0.as_pointer() },
+                { v.as_pointer() },
+            )
+        }));
+    let q: Value<std_priority_queue_int__std_vector_int__std_allocator_int____std_greater_int__> =
+        Rc::new(RefCell::new((*qo.borrow()).clone()));
+    assert!(({ (({ (*q.borrow()).size() }) == 5_u64) }));
+    assert!(({ ((({ (*q.borrow()).top() }).read()) == 0) }));
     return true;
 }
 pub fn main() {

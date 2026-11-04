@@ -15,30 +15,48 @@ impl Sink {
         Self {}
     }
 }
-pub fn count_0(sp: ()) -> usize {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    return (unimplemented!() as usize);
+impl CppMove for Sink {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
-pub fn count_n_1(sp: ()) -> usize {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    return (unimplemented!() as usize);
+pub fn count_0(sp: std_span_const_Sink__18446744073709551615_) -> usize {
+    let sp: Value<std_span_const_Sink__18446744073709551615_> = Rc::new(RefCell::new(sp));
+    return (({ (*sp.borrow()).size() }) as usize);
+}
+pub fn count_n_1(sp: std_span_const_Sink__10_) -> usize {
+    let sp: Value<std_span_const_Sink__10_> = Rc::new(RefCell::new(sp));
+    return (({ (*sp.borrow()).size() }) as usize);
 }
 pub fn test_2() -> bool {
     let a: Value<Box<[Sink]>> = Rc::new(RefCell::new(
         (0..10).map(|_| <Sink>::default()).collect::<Box<[Sink]>>(),
     ));
-    assert!((({ count_0(unimplemented!(),) }) == 10_usize));
-    assert!((({ count_0(unimplemented!(),) }) == 10_usize));
-    assert!((({ count_n_1(unimplemented!(),) }) == 10_usize));
+    assert!(
+        (({
+            count_0(std_span_const_Sink__18446744073709551615_::new_1({
+                a.as_pointer()
+            }))
+        }) == 10_usize)
+    );
+    assert!(
+        (({
+            count_0(std_span_const_Sink__18446744073709551615_::new_2(
+                { (a.as_pointer() as Ptr<Sink>) },
+                { (a.as_pointer() as Ptr<Sink>).offset((10) as isize) },
+            ))
+        }) == 10_usize)
+    );
+    assert!((({ count_n_1(std_span_const_Sink__10_::new_1({ a.as_pointer() },),) }) == 10_usize));
     return true;
 }
-pub fn three_3(sp: ()) -> i32 {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    return (unimplemented!() as i32);
+pub fn three_3(sp: std_span_void_ptrconst__18446744073709551615_) -> i32 {
+    let sp: Value<std_span_void_ptrconst__18446744073709551615_> = Rc::new(RefCell::new(sp));
+    return (({ (*sp.borrow()).size() }) as i32);
 }
-pub fn four_4(sp: ()) -> i32 {
-    let sp: Value<()> = Rc::new(RefCell::new(sp));
-    return (unimplemented!() as i32);
+pub fn four_4(sp: std_span_const_std_any__18446744073709551615_) -> i32 {
+    let sp: Value<std_span_const_std_any__18446744073709551615_> = Rc::new(RefCell::new(sp));
+    return (({ (*sp.borrow()).size() }) as i32);
 }
 pub fn test_P2447R4_annex_c_examples_5() -> bool {
     {
@@ -47,11 +65,27 @@ pub fn test_P2447R4_annex_c_examples_5() -> bool {
                 .map(|_| AnyPtr::default())
                 .collect::<Box<[AnyPtr]>>(),
         ));
-        assert!((({ three_3(unimplemented!(),) }) == 0));
+        assert!(
+            (({
+                three_3(std_span_void_ptrconst__18446744073709551615_::new_1(
+                    { (a.as_pointer() as Ptr<AnyPtr>) },
+                    { 0_u64 },
+                ))
+            }) == 0)
+        );
     }
     {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((({ four_4(unimplemented!(),) }) == 10));
+        let a: Value<Box<[Option<Rc<dyn std::any::Any>>]>> = Rc::new(RefCell::new(None));
+        assert!(
+            (({
+                four_4(std_span_const_std_any__18446744073709551615_::new_1(
+                    { (a.as_pointer() as Ptr<Option<Rc<dyn std::any::Any>>>) },
+                    {
+                        (a.as_pointer() as Ptr<Option<Rc<dyn std::any::Any>>>).offset((10) as isize)
+                    },
+                ))
+            }) == 10)
+        );
     }
     return true;
 }

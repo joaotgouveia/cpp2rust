@@ -34,8 +34,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "std::is_same<StdMap, PmrMap>::value");;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(Map::new()));
-        assert!((unimplemented!() == unimplemented!()));
+        let m: Value<Map<i32, (Value<i32>, Value<i32>)>> = Rc::new(RefCell::new(Map::new()));
+        assert!(
+            (({ ({ (*m.borrow()).get_allocator() }).resource() })
+                == ({ get_default_resource_0() }))
+        );
     }
     {
         const _: () = assert!(true, "std::is_same<StdMap, PmrMap>::value");;
@@ -44,8 +47,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "std::is_same<StdMap, PmrMap>::value");;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
+        let m : Value<std_multimap_int__int__std_less_int___std_pmr_polymorphic_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(<std_multimap_int__int__std_less_int___std_pmr_polymorphic_allocator_std_pair_const_int__int___  >::default() )) ;
+        assert!(
+            (({ ({ (*m.borrow()).get_allocator() }).resource() })
+                == ({ get_default_resource_0() }))
+        );
     }
     return 0;
 }

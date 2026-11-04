@@ -28,10 +28,16 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
-    let md0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let md0: Value<std_chrono_month_day_last> = Rc::new(RefCell::new({
+        let __tmp_0: Value<std_chrono_month> = Rc::new(RefCell::new(<std_chrono_month>::default()));
+        std_chrono_month_day_last::new({ __tmp_0.as_pointer() })
+    }));
     const _: () = assert!(true, "md0.month() == month{{}}");;
     const _: () = assert!(true, "!md0.ok()");;
-    let md1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let md1: Value<std_chrono_month_day_last> =
+        Rc::new(RefCell::new(std_chrono_month_day_last::new({
+            January_0.with(|v| v.as_pointer())
+        })));
     const _: () = assert!(true, "md1.month() == std::chrono::January");;
     const _: () = assert!(true, "md1.ok()");;
     return 0;

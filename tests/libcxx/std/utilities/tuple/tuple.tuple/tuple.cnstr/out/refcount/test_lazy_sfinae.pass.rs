@@ -17,10 +17,20 @@ impl NonConstCopyable {
         Self { value: v }
     }
 }
+impl CppMove for NonConstCopyable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct BlowsUpOnConstCopy_int_ {}
 impl BlowsUpOnConstCopy_int_ {}
+impl CppMove for BlowsUpOnConstCopy_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -41,11 +51,15 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let mut v: NonConstCopyable = NonConstCopyable::new_1({ 42 });
+    let v: Value<NonConstCopyable> = Rc::new(RefCell::new(NonConstCopyable::new_1({ 42 })));
     let b: Value<BlowsUpOnConstCopy_int_> =
         Rc::new(RefCell::new(<BlowsUpOnConstCopy_int_>::default()));
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(({ (unimplemented!()).clone().value } == 42));
+    let t: Value<std_tuple_NonConstCopyable__BlowsUpOnConstCopy_int__> = Rc::new(RefCell::new(
+        std_tuple_NonConstCopyable__BlowsUpOnConstCopy_int__::new_1({ v.as_pointer() }, {
+            b.as_pointer()
+        }),
+    ));
+    assert!((({ get_0(t.as_pointer(),) }).with(|__s| __s.value) == 42));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

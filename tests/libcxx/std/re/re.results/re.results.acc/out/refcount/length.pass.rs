@@ -7,15 +7,40 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
-    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let m : Value<std_match_results_const_char_ptr__std_allocator_std_sub_match_const_char_ptr___ > = Rc::new(RefCell::new(<std_match_results_const_char_ptr__std_allocator_std_sub_match_const_char_ptr___  >::default() )) ;
     let s: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(b"abcdefghijk\0")));
-    assert!(unimplemented!());
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+    assert!(
+        ({
+            let ___e: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
+                std_basic_regex_char__std_regex_traits_char__::new_1(
+                    { Ptr::<i8>::from_string_literal(b"cd((e)fg)hi") },
+                    None,
+                ),
+            ));
+            regex_search_1(
+                (s.as_pointer() as Ptr<i8>),
+                m.as_pointer(),
+                ___e.as_pointer(),
+                None,
+            )
+        })
+    );
+    assert!(({ (({ (*m.borrow()).length(None,) }) == ({ (*m.borrow())[0_u64].length() })) }));
+    assert!(
+        ({ (({ (*m.borrow()).length(Some(0_u64),) }) == ({ (*m.borrow())[0_u64].length() })) })
+    );
+    assert!(
+        ({ (({ (*m.borrow()).length(Some(1_u64),) }) == ({ (*m.borrow())[1_u64].length() })) })
+    );
+    assert!(
+        ({ (({ (*m.borrow()).length(Some(2_u64),) }) == ({ (*m.borrow())[2_u64].length() })) })
+    );
+    assert!(
+        ({ (({ (*m.borrow()).length(Some(3_u64),) }) == ({ (*m.borrow())[3_u64].length() })) })
+    );
+    assert!(
+        ({ (({ (*m.borrow()).length(Some(4_u64),) }) == ({ (*m.borrow())[4_u64].length() })) })
+    );
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

@@ -7,117 +7,117 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_any_0() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == (false as i32)));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == ((0_u64 != 0_u64) as i32)));
+    let v: Value<std_bitset_0_> = Rc::new(RefCell::new(<std_bitset_0_>::default()));
+    ({ (*v.borrow()).reset_22() });
+    assert!(({ ((({ (*v.borrow()).any() }) as i32) == (false as i32)) }));
+    ({ (*v.borrow()).set_20() });
+    assert!(({ ((({ (*v.borrow()).any() }) as i32) == ((0_u64 != 0_u64) as i32)) }));
     {}
 }
 pub fn test_any_1() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == (false as i32)));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == ((1_u64 != 0_u64) as i32)));
+    let v: Value<std_bitset_1_> = Rc::new(RefCell::new(<std_bitset_1_>::default()));
+    ({ (*v.borrow()).reset_22() });
+    assert!(({ ((({ (*v.borrow()).any() }) as i32) == (false as i32)) }));
+    ({ (*v.borrow()).set_20() });
+    assert!(({ ((({ (*v.borrow()).any() }) as i32) == ((1_u64 != 0_u64) as i32)) }));
     {}
 }
 pub fn test_any_2() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == (false as i32)));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == ((31_u64 != 0_u64) as i32)));
+    let v: Value<std_bitset_31_> = Rc::new(RefCell::new(<std_bitset_31_>::default()));
+    ({ (*v.borrow()).reset_22() });
+    assert!(({ ((({ (*v.borrow()).any() }) as i32) == (false as i32)) }));
+    ({ (*v.borrow()).set_20() });
+    assert!(({ ((({ (*v.borrow()).any() }) as i32) == ((31_u64 != 0_u64) as i32)) }));
     {
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (true as i32)));
-        unimplemented!();
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (true as i32)));
+        (*v.borrow_mut())[(31_u64 as u64).wrapping_div(2_u64)] = false;
+        assert!(({ ((({ (*v.borrow()).any() }) as i32) == (true as i32)) }));
+        ({ (*v.borrow()).reset_22() });
+        (*v.borrow_mut())[(31_u64 as u64).wrapping_div(2_u64)] = true;
+        assert!(({ ((({ (*v.borrow()).any() }) as i32) == (true as i32)) }));
     }
 }
 pub fn test_any_3() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == (false as i32)));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == ((32_u64 != 0_u64) as i32)));
+    let v: Value<std_bitset_32_> = Rc::new(RefCell::new(<std_bitset_32_>::default()));
+    ({ (*v.borrow()).reset_22() });
+    assert!(({ ((({ (*v.borrow()).any() }) as i32) == (false as i32)) }));
+    ({ (*v.borrow()).set_20() });
+    assert!(({ ((({ (*v.borrow()).any() }) as i32) == ((32_u64 != 0_u64) as i32)) }));
     {
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (true as i32)));
-        unimplemented!();
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (true as i32)));
+        (*v.borrow_mut())[(32_u64 as u64).wrapping_div(2_u64)] = false;
+        assert!(({ ((({ (*v.borrow()).any() }) as i32) == (true as i32)) }));
+        ({ (*v.borrow()).reset_22() });
+        (*v.borrow_mut())[(32_u64 as u64).wrapping_div(2_u64)] = true;
+        assert!(({ ((({ (*v.borrow()).any() }) as i32) == (true as i32)) }));
     }
 }
 pub fn test_any_4() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == (false as i32)));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == ((33_u64 != 0_u64) as i32)));
+    let v: Value<std_bitset_33_> = Rc::new(RefCell::new(<std_bitset_33_>::default()));
+    ({ (*v.borrow()).reset_22() });
+    assert!(({ ((({ (*v.borrow()).any() }) as i32) == (false as i32)) }));
+    ({ (*v.borrow()).set_20() });
+    assert!(({ ((({ (*v.borrow()).any() }) as i32) == ((33_u64 != 0_u64) as i32)) }));
     {
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (true as i32)));
-        unimplemented!();
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (true as i32)));
+        (*v.borrow_mut())[(33_u64 as u64).wrapping_div(2_u64)] = false;
+        assert!(({ ((({ (*v.borrow()).any() }) as i32) == (true as i32)) }));
+        ({ (*v.borrow()).reset_22() });
+        (*v.borrow_mut())[(33_u64 as u64).wrapping_div(2_u64)] = true;
+        assert!(({ ((({ (*v.borrow()).any() }) as i32) == (true as i32)) }));
     }
 }
 pub fn test_any_5() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == (false as i32)));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == ((63_u64 != 0_u64) as i32)));
+    let v: Value<std_bitset_63_> = Rc::new(RefCell::new(<std_bitset_63_>::default()));
+    ({ (*v.borrow()).reset_22() });
+    assert!(({ ((({ (*v.borrow()).any() }) as i32) == (false as i32)) }));
+    ({ (*v.borrow()).set_20() });
+    assert!(({ ((({ (*v.borrow()).any() }) as i32) == ((63_u64 != 0_u64) as i32)) }));
     {
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (true as i32)));
-        unimplemented!();
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (true as i32)));
+        (*v.borrow_mut())[(63_u64 as u64).wrapping_div(2_u64)] = false;
+        assert!(({ ((({ (*v.borrow()).any() }) as i32) == (true as i32)) }));
+        ({ (*v.borrow()).reset_22() });
+        (*v.borrow_mut())[(63_u64 as u64).wrapping_div(2_u64)] = true;
+        assert!(({ ((({ (*v.borrow()).any() }) as i32) == (true as i32)) }));
     }
 }
 pub fn test_any_6() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == (false as i32)));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == ((64_u64 != 0_u64) as i32)));
+    let v: Value<std_bitset_64_> = Rc::new(RefCell::new(<std_bitset_64_>::default()));
+    ({ (*v.borrow()).reset_22() });
+    assert!(({ ((({ (*v.borrow()).any() }) as i32) == (false as i32)) }));
+    ({ (*v.borrow()).set_20() });
+    assert!(({ ((({ (*v.borrow()).any() }) as i32) == ((64_u64 != 0_u64) as i32)) }));
     {
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (true as i32)));
-        unimplemented!();
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (true as i32)));
+        (*v.borrow_mut())[(64_u64 as u64).wrapping_div(2_u64)] = false;
+        assert!(({ ((({ (*v.borrow()).any() }) as i32) == (true as i32)) }));
+        ({ (*v.borrow()).reset_22() });
+        (*v.borrow_mut())[(64_u64 as u64).wrapping_div(2_u64)] = true;
+        assert!(({ ((({ (*v.borrow()).any() }) as i32) == (true as i32)) }));
     }
 }
 pub fn test_any_7() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == (false as i32)));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == ((65_u64 != 0_u64) as i32)));
+    let v: Value<std_bitset_65_> = Rc::new(RefCell::new(<std_bitset_65_>::default()));
+    ({ (*v.borrow()).reset_22() });
+    assert!(({ ((({ (*v.borrow()).any() }) as i32) == (false as i32)) }));
+    ({ (*v.borrow()).set_20() });
+    assert!(({ ((({ (*v.borrow()).any() }) as i32) == ((65_u64 != 0_u64) as i32)) }));
     {
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (true as i32)));
-        unimplemented!();
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (true as i32)));
+        (*v.borrow_mut())[(65_u64 as u64).wrapping_div(2_u64)] = false;
+        assert!(({ ((({ (*v.borrow()).any() }) as i32) == (true as i32)) }));
+        ({ (*v.borrow()).reset_22() });
+        (*v.borrow_mut())[(65_u64 as u64).wrapping_div(2_u64)] = true;
+        assert!(({ ((({ (*v.borrow()).any() }) as i32) == (true as i32)) }));
     }
 }
 pub fn test_any_8() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == (false as i32)));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == ((1000_u64 != 0_u64) as i32)));
+    let v: Value<std_bitset_1000_> = Rc::new(RefCell::new(<std_bitset_1000_>::default()));
+    ({ (*v.borrow()).reset_22() });
+    assert!(({ ((({ (*v.borrow()).any() }) as i32) == (false as i32)) }));
+    ({ (*v.borrow()).set_20() });
+    assert!(({ ((({ (*v.borrow()).any() }) as i32) == ((1000_u64 != 0_u64) as i32)) }));
     {
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (true as i32)));
-        unimplemented!();
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (true as i32)));
+        (*v.borrow_mut())[(1000_u64 as u64).wrapping_div(2_u64)] = false;
+        assert!(({ ((({ (*v.borrow()).any() }) as i32) == (true as i32)) }));
+        ({ (*v.borrow()).reset_22() });
+        (*v.borrow_mut())[(1000_u64 as u64).wrapping_div(2_u64)] = true;
+        assert!(({ ((({ (*v.borrow()).any() }) as i32) == (true as i32)) }));
     }
 }
 pub fn test_9() -> bool {

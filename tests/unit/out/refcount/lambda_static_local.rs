@@ -17,7 +17,7 @@ fn main_0() -> i32 {
     let next: Value<FnPtr<fn() -> i32>> =
         Rc::new(RefCell::new(FnPtr::<fn() -> i32>::new(|| -> i32 {
             {
-                return (*n_1.with(Value::clone).borrow_mut()).prefix_inc();
+                return (*(*n_1.with(Value::clone).borrow_mut()).prefix_inc());
             }
         })));
     assert!(({ (({ (*next.borrow()).call() }) == 1) }));
@@ -28,7 +28,7 @@ fn main_0() -> i32 {
     let fresh: Value<FnPtr<fn() -> i32>> =
         Rc::new(RefCell::new(FnPtr::<fn() -> i32>::new(|| -> i32 {
             {
-                return (*n_1.with(Value::clone).borrow_mut()).prefix_inc();
+                return (*(*n_1.with(Value::clone).borrow_mut()).prefix_inc());
             }
         })));
     assert!(({ (({ (*fresh.borrow()).call() }) == 5) }));
@@ -85,6 +85,11 @@ pub struct P_4 {
     pub x: i32,
     #[offset(4)]
     pub y: i32,
+}
+impl CppMove for P_4 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn __cpp2rust_init_globals() {
     let _ = a_0.with(|_| ());

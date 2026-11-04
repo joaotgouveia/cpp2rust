@@ -30,14 +30,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let y0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let y0: Value<std_chrono_year> = Rc::new(RefCell::new(<std_chrono_year>::default()));
     const _: () = assert!(true, "static_cast<int>(y0) == 0");;
-    let y1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let y1: Value<std_chrono_year> = Rc::new(RefCell::new(std_chrono_year::new_1({ 1 })));
     const _: () = assert!(true, "static_cast<int>(y1) == 1");;
     let mut i: i32 = 0;
     'loop_: while (i <= 2550) {
-        let yr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == i));
+        let yr: Value<std_chrono_year> = Rc::new(RefCell::new(std_chrono_year::new_1({ i })));
+        assert!(({ (({ (*yr.borrow())() }) == i) }));
         i += 7;
     }
     return 0;

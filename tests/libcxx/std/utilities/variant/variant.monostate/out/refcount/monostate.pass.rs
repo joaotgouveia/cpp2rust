@@ -31,7 +31,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::is_trivially_copy_constructible<M>::value");;
     const _: () = assert!(true, "std::is_trivially_copy_assignable<M>::value");;
     const _: () = assert!(true, "std::is_trivially_destructible<M>::value");;
-    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let m: Value<std_monostate> = Rc::new(RefCell::new(<std_monostate>::default()));
     (&(*m.borrow_mut()));
     return 0;
 }

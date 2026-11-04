@@ -16,6 +16,11 @@ pub struct Triple {
     #[offset(8)]
     pub c: i32,
 }
+impl CppMove for Triple {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn sum_0(t: Ptr<Triple>) -> i32 {
     let __decomp_1: Ptr<Triple> = (t).clone();
     return ((__decomp_1.with(|__s| __s.a) + (if __decomp_1.with(|__s| __s.b) { 1 } else { 0 }))

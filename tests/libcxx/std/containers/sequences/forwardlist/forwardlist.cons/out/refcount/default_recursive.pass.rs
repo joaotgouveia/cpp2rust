@@ -11,13 +11,18 @@ use std::rc::{Rc, Weak};
 pub struct X {
     #[offset(0)]
     #[byte_size(8)]
-    pub q: (),
+    pub q: std_forward_list_X__std_allocator_X__,
 }
 impl X {
     pub fn move_from(_a0: Ptr<X>) -> Self {
         Self {
-            q: unimplemented!(),
+            q: field!(_a0, q).with_mut(std::mem::take),
         }
+    }
+}
+impl CppMove for X {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn main() {
@@ -47,7 +52,7 @@ pub trait XImpl {
 }
 impl XImpl for Ptr<X> {
     fn move_assign(&self, _a0: Ptr<X>) -> Ptr<X> {
-        unimplemented!();
+        field!((*self), q).write({ { (*_a0.upgrade().deref()).q.clone() } });
         return (*self).clone();
     }
 }

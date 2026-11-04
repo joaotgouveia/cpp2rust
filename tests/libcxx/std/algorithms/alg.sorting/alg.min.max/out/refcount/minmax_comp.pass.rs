@@ -6,12 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(a: Ptr<i32>, b: Ptr<i32>, c: (), x: Ptr<i32>, y: Ptr<i32>) {
-    let c: Value<()> = Rc::new(RefCell::new(c));
-    let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(({ ((*p.borrow()).0).clone() } == { (x).clone() }));
-    assert!(({ ((*p.borrow()).1).clone() } == { (y).clone() }));
-}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -40,14 +35,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let _b: Ptr<i32> = y.as_pointer();
             let _x: Ptr<i32> = x.as_pointer();
             let _y: Ptr<i32> = y.as_pointer();
-            test_0(_a, _b, unimplemented!(), _x, _y)
+            test_0(_a, _b, <std_greater_int_>::default(), _x, _y)
         });
         ({
             let _a: Ptr<i32> = y.as_pointer();
             let _b: Ptr<i32> = x.as_pointer();
             let _x: Ptr<i32> = y.as_pointer();
             let _y: Ptr<i32> = x.as_pointer();
-            test_0(_a, _b, unimplemented!(), _x, _y)
+            test_0(_a, _b, <std_greater_int_>::default(), _x, _y)
         });
     }
     {
@@ -58,14 +53,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let _b: Ptr<i32> = y.as_pointer();
             let _x: Ptr<i32> = y.as_pointer();
             let _y: Ptr<i32> = x.as_pointer();
-            test_0(_a, _b, unimplemented!(), _x, _y)
+            test_0(_a, _b, <std_greater_int_>::default(), _x, _y)
         });
         ({
             let _a: Ptr<i32> = y.as_pointer();
             let _b: Ptr<i32> = x.as_pointer();
             let _x: Ptr<i32> = y.as_pointer();
             let _y: Ptr<i32> = x.as_pointer();
-            test_0(_a, _b, unimplemented!(), _x, _y)
+            test_0(_a, _b, <std_greater_int_>::default(), _x, _y)
         });
     }
     {
@@ -76,21 +71,37 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let _b: Ptr<i32> = y.as_pointer();
             let _x: Ptr<i32> = x.as_pointer();
             let _y: Ptr<i32> = y.as_pointer();
-            test_0(_a, _b, unimplemented!(), _x, _y)
+            test_0(_a, _b, <std_greater_int_>::default(), _x, _y)
         });
         ({
             let _a: Ptr<i32> = y.as_pointer();
             let _b: Ptr<i32> = x.as_pointer();
             let _x: Ptr<i32> = x.as_pointer();
             let _y: Ptr<i32> = y.as_pointer();
-            test_0(_a, _b, unimplemented!(), _x, _y)
+            test_0(_a, _b, <std_greater_int_>::default(), _x, _y)
         });
     }
     {
-        let p1: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(unimplemented!()));
+        let p1: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(
+            ({
+                minmax_3(
+                    x_1.with(|v| v.as_pointer()),
+                    y_2.with(|v| v.as_pointer()),
+                    <std_greater_void_>::default(),
+                )
+            }),
+        ));
         const _: () = assert!(true, "p1.first  == x");;
         const _: () = assert!(true, "p1.second == y");;
-        let p2: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(unimplemented!()));
+        let p2: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(
+            ({
+                minmax_3(
+                    y_2.with(|v| v.as_pointer()),
+                    x_1.with(|v| v.as_pointer()),
+                    <std_greater_void_>::default(),
+                )
+            }),
+        ));
         const _: () = assert!(true, "p2.first  == x");;
         const _: () = assert!(true, "p2.second == y");;
     }

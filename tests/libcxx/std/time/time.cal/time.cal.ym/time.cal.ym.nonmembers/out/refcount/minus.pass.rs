@@ -11,12 +11,18 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_year_month__std_chrono_year_month_ {}
+impl CppMove for test_macros_detail_is_same_std_chrono_year_month__std_chrono_year_month_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_2629746__1____std_chrono_duration_long__std_ratio_2629746__1___
 {}
+impl CppMove for test_macros_detail_is_same_std_chrono_duration_long__std_ratio_2629746__1____std_chrono_duration_long__std_ratio_2629746__1___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn test_2() -> bool {
     {
         let ym: Value<()> = Rc::new(RefCell::new(unimplemented!()));

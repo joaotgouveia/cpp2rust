@@ -32,15 +32,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new(3)),
             Rc::new(RefCell::new(4_i16)),
         )));
-        let p2: Value<(Value<f64>, Value<i64>)> = Rc::new(RefCell::new({
-            let __a0 = (*p1.borrow()).clone();
-            (
-                Rc::new(RefCell::new(((__a0.0.as_pointer().read()) as f64))),
-                Rc::new(RefCell::new(((__a0.1.as_pointer().read()) as i64))),
-            )
-        }));
-        assert!(((*(*p2.borrow()).0.borrow()) == 3_f64));
-        assert!(((*(*p2.borrow()).1.borrow()) == 4_i64));
+        let p2: Value<(Value<f64>, Value<i64>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(
+                (((*p1.borrow()).0.as_pointer().read()) as f64),
+            )),
+            Rc::new(RefCell::new(
+                (((*p1.borrow()).1.as_pointer().read()) as i64),
+            )),
+        )));
+        assert!(({ ((*(*p2.borrow()).0.borrow()) == 3_f64) }));
+        assert!(({ ((*(*p2.borrow()).1.borrow()) == 4_i64) }));
     }
     return 0;
 }

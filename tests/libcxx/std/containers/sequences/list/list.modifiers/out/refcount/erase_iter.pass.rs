@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -36,80 +41,161 @@ thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<i32>,
-}
-impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
+impl CppMove for min_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_4() -> bool {
     {
         let a1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-        let l1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(<BidirectionalIterator<i32>>::from(
-            unimplemented!(),
-        )));
-        (*i.borrow_mut()).iter_inc();
-        let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 2_()));
-        assert!((unimplemented!() == 2_isize));
-        assert!((((*j.borrow()).iter_deref().read()) == 3));
-        assert!(((unimplemented!().iter_deref().read()) == 1));
+        let l1: Value<std_list_int__std_allocator_int__> =
+            Rc::new(RefCell::new(std_list_int__std_allocator_int__::new_1(
+                { (a1.as_pointer() as Ptr<i32>) },
+                { (a1.as_pointer() as Ptr<i32>).offset((3) as isize) },
+                None,
+            )));
+        let i: Value<BidirectionalIterator<i32>> =
+            Rc::new(RefCell::new(<BidirectionalIterator<i32>>::from(
+                ({ (*l1.borrow()).begin_24() }),
+            )));
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
+        let j: Value<BidirectionalIterator<i32>> = Rc::new(RefCell::new(
+            ({ (*l1.borrow()).erase_62((*i.borrow()).clone()) }),
+        ));
+        assert!(({ (({ (*l1.borrow()).size() }) == 2_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ({
+                (({
+                    let ___first: BidirectionalIterator<i32> = ({ (*l1.borrow()).begin_24() });
+                    let ___last: BidirectionalIterator<i32> = ({ (*l1.borrow()).end_26() });
+                    distance_5(___first, ___last)
+                }) == 2_isize)
+            })
+        );
+        assert!(({ (((*j.borrow()).iter_deref().read()) == 3) }));
+        assert!(((({ (*l1.borrow()).begin_24() }).iter_deref().read()) == 1));
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((*j.borrow()) == unimplemented!());
-        assert!((unimplemented!() == 1_()));
-        assert!((unimplemented!() == 1_isize));
-        assert!(((unimplemented!().iter_deref().read()) == 1));
-        (*j.borrow_mut()) = unimplemented!();
-        assert!((*j.borrow()) == unimplemented!());
-        assert!((unimplemented!() == 0_()));
-        assert!((unimplemented!() == 0_isize));
+        (*j.borrow_mut()) = ({
+            (*l1.borrow()).erase_62(<BidirectionalIterator<i32>>::from(
+                ({ (*j.borrow()).clone() }),
+            ))
+        });
+        assert!((*j.borrow()) == ({ (*l1.borrow()).end_26() }));
+        assert!(({ (({ (*l1.borrow()).size() }) == 1_u64) }));
+        assert!(
+            ({
+                (({
+                    let ___first: BidirectionalIterator<i32> = ({ (*l1.borrow()).begin_24() });
+                    let ___last: BidirectionalIterator<i32> = ({ (*l1.borrow()).end_26() });
+                    distance_5(___first, ___last)
+                }) == 1_isize)
+            })
+        );
+        assert!(((({ (*l1.borrow()).begin_24() }).iter_deref().read()) == 1));
+        (*j.borrow_mut()) = ({
+            let ___position: BidirectionalIterator<i32> =
+                <BidirectionalIterator<i32>>::from(({ (*l1.borrow()).begin_24() }));
+            (*l1.borrow()).erase_62(___position)
+        });
+        assert!((*j.borrow()) == ({ (*l1.borrow()).end_26() }));
+        assert!(({ (({ (*l1.borrow()).size() }) == 0_u64) }));
+        assert!(
+            ({
+                (({
+                    let ___first: BidirectionalIterator<i32> = ({ (*l1.borrow()).begin_24() });
+                    let ___last: BidirectionalIterator<i32> = ({ (*l1.borrow()).end_26() });
+                    distance_5(___first, ___last)
+                }) == 0_isize)
+            })
+        );
     }
     {
         let a1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-        let l1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(<BidirectionalIterator<i32>>::from(
-            unimplemented!(),
-        )));
-        (*i.borrow_mut()).iter_inc();
-        let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 2_()));
-        assert!((unimplemented!() == 2_isize));
-        assert!((((*j.borrow()).iter_deref().read()) == 3));
-        assert!(((unimplemented!().iter_deref().read()) == 1));
+        let l1: Value<std_list_int__min_allocator_int__> =
+            Rc::new(RefCell::new(std_list_int__min_allocator_int__::new_1(
+                { (a1.as_pointer() as Ptr<i32>) },
+                { (a1.as_pointer() as Ptr<i32>).offset((3) as isize) },
+                None,
+            )));
+        let i: Value<BidirectionalIterator<i32>> =
+            Rc::new(RefCell::new(<BidirectionalIterator<i32>>::from(
+                ({ (*l1.borrow()).begin_24() }),
+            )));
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
+        let j: Value<BidirectionalIterator<i32>> = Rc::new(RefCell::new(
+            ({ (*l1.borrow()).erase_62((*i.borrow()).clone()) }),
+        ));
+        assert!(({ (({ (*l1.borrow()).size() }) == 2_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ({
+                (({
+                    let ___first: BidirectionalIterator<i32> = ({ (*l1.borrow()).begin_24() });
+                    let ___last: BidirectionalIterator<i32> = ({ (*l1.borrow()).end_26() });
+                    distance_6(___first, ___last)
+                }) == 2_isize)
+            })
+        );
+        assert!(({ (((*j.borrow()).iter_deref().read()) == 3) }));
+        assert!(((({ (*l1.borrow()).begin_24() }).iter_deref().read()) == 1));
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*l1.borrow()).begin_24() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
-        (*j.borrow_mut()) = unimplemented!().clone();
-        assert!((*j.borrow()) == unimplemented!());
-        assert!((unimplemented!() == 1_()));
-        assert!((unimplemented!() == 1_isize));
-        assert!(((unimplemented!().iter_deref().read()) == 1));
-        (*j.borrow_mut()) = unimplemented!().clone();
-        assert!((*j.borrow()) == unimplemented!());
-        assert!((unimplemented!() == 0_()));
-        assert!((unimplemented!() == 0_isize));
+        (*j.borrow_mut()) = ({
+            (*l1.borrow()).erase_62(<BidirectionalIterator<i32>>::from(
+                ({ (*j.borrow()).clone() }),
+            ))
+        })
+        .clone();
+        assert!((*j.borrow()) == ({ (*l1.borrow()).end_26() }));
+        assert!(({ (({ (*l1.borrow()).size() }) == 1_u64) }));
+        assert!(
+            ({
+                (({
+                    let ___first: BidirectionalIterator<i32> = ({ (*l1.borrow()).begin_24() });
+                    let ___last: BidirectionalIterator<i32> = ({ (*l1.borrow()).end_26() });
+                    distance_6(___first, ___last)
+                }) == 1_isize)
+            })
+        );
+        assert!(((({ (*l1.borrow()).begin_24() }).iter_deref().read()) == 1));
+        (*j.borrow_mut()) = ({
+            let ___position: BidirectionalIterator<i32> =
+                <BidirectionalIterator<i32>>::from(({ (*l1.borrow()).begin_24() }));
+            (*l1.borrow()).erase_62(___position)
+        })
+        .clone();
+        assert!((*j.borrow()) == ({ (*l1.borrow()).end_26() }));
+        assert!(({ (({ (*l1.borrow()).size() }) == 0_u64) }));
+        assert!(
+            ({
+                (({
+                    let ___first: BidirectionalIterator<i32> = ({ (*l1.borrow()).begin_24() });
+                    let ___last: BidirectionalIterator<i32> = ({ (*l1.borrow()).end_26() });
+                    distance_6(___first, ___last)
+                }) == 0_isize)
+            })
+        );
     }
     return true;
 }
@@ -136,6 +222,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     assert!(({ test_4() }));
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
 pub trait min_allocator_int_Impl {
     fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
@@ -149,75 +238,6 @@ pub trait min_allocator_int_Impl {
     }
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {}
-pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_9(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_10(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_11(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
-        unimplemented!()
-    }
-}
-impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
-{
-}
 pub fn __cpp2rust_init_globals() {
     let _ = outstanding_bytes_0.with(|_| ());
     let _ = alloc_count_1.with(|_| ());

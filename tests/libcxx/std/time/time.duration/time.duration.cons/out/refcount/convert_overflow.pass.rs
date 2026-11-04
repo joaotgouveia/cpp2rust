@@ -9,8 +9,8 @@ use std::rc::{Rc, Weak};
 thread_local!(
     pub static called_0: Value<bool> = Rc::new(RefCell::new(false));
 );
-pub fn f_1(_a0: ()) {
-    let _a0: Value<()> = Rc::new(RefCell::new(_a0));
+pub fn f_1(_a0: std_chrono_duration_long__std_ratio_1__1__) {
+    let _a0: Value<std_chrono_duration_long__std_ratio_1__1__> = Rc::new(RefCell::new(_a0));
     called_0.with(|rc| *rc.borrow_mut() = true);
 }
 pub fn main() {
@@ -34,8 +34,18 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ f_1(unimplemented!()) });
+        let r: Value<std_chrono_duration_int__std_ratio_1000000000000000000__1__> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<i32> = Rc::new(RefCell::new(1));
+                std_chrono_duration_int__std_ratio_1000000000000000000__1__::new_1({
+                    __tmp_0.as_pointer()
+                })
+            }));
+        ({
+            f_1(std_chrono_duration_long__std_ratio_1__1__::new_1({
+                r.as_pointer()
+            }))
+        });
         assert!(called_0.with(|rc| *rc.borrow()));
     }
     return 0;

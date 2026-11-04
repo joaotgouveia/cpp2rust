@@ -18,10 +18,18 @@ impl Error {
         Self { i: ii }
     }
 }
+impl CppMove for Error {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0() -> bool {
-    let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let unex2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(({ (unimplemented!()).clone().i } == 5));
+    let unex: Value<std_unexpected_Error_> = Rc::new(RefCell::new({
+        let __tmp_0: Value<i32> = Rc::new(RefCell::new(5));
+        std_unexpected_Error_::new({ __tmp_0.as_pointer() })
+    }));
+    let unex2: Value<std_unexpected_Error_> = Rc::new(RefCell::new((*unex.borrow()).clone()));
+    assert!(({ (({ (*unex2.borrow()).error_9() }).with(|__s| __s.i) == 5) }));
     return true;
 }
 pub fn main() {

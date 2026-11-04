@@ -33,18 +33,27 @@ const _: () = assert!(
 pub fn test_0() -> bool {
     {
         let data: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5])));
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_> =
+            Rc::new(RefCell::new(
+                std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1({
+                    data.as_pointer()
+                }),
+            ));
         {
             let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> =
                 Rc::new(RefCell::new(({ (*a.borrow())() })));
             assert!(
-                ({ (*(*p.borrow()).0.borrow()).clone() } == {
-                    (data.as_pointer() as Ptr<i32>).offset((0) as isize)
+                ({
+                    ({ (*(*p.borrow()).0.borrow()).clone() } == {
+                        (data.as_pointer() as Ptr<i32>).offset((0) as isize)
+                    })
                 })
             );
             assert!(
-                ({ (*(*p.borrow()).1.borrow()).clone() } == {
-                    (data.as_pointer() as Ptr<i32>).offset((5) as isize)
+                ({
+                    ({ (*(*p.borrow()).1.borrow()).clone() } == {
+                        (data.as_pointer() as Ptr<i32>).offset((5) as isize)
+                    })
                 })
             );
         }
@@ -52,13 +61,17 @@ pub fn test_0() -> bool {
             let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> =
                 Rc::new(RefCell::new(({ (*a.borrow())() })));
             assert!(
-                ({ (*(*p.borrow()).0.borrow()).clone() } == {
-                    (data.as_pointer() as Ptr<i32>).offset((0) as isize)
+                ({
+                    ({ (*(*p.borrow()).0.borrow()).clone() } == {
+                        (data.as_pointer() as Ptr<i32>).offset((0) as isize)
+                    })
                 })
             );
             assert!(
-                ({ (*(*p.borrow()).1.borrow()).clone() } == {
-                    (data.as_pointer() as Ptr<i32>).offset((5) as isize)
+                ({
+                    ({ (*(*p.borrow()).1.borrow()).clone() } == {
+                        (data.as_pointer() as Ptr<i32>).offset((5) as isize)
+                    })
                 })
             );
         }
@@ -66,50 +79,62 @@ pub fn test_0() -> bool {
             let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> =
                 Rc::new(RefCell::new(({ (*a.borrow())() })));
             assert!(
-                ({ (*(*p.borrow()).0.borrow()).clone() } == {
-                    (data.as_pointer() as Ptr<i32>).offset((0) as isize)
+                ({
+                    ({ (*(*p.borrow()).0.borrow()).clone() } == {
+                        (data.as_pointer() as Ptr<i32>).offset((0) as isize)
+                    })
                 })
             );
             assert!(
-                ({ (*(*p.borrow()).1.borrow()).clone() } == {
-                    (data.as_pointer() as Ptr<i32>).offset((5) as isize)
+                ({
+                    ({ (*(*p.borrow()).1.borrow()).clone() } == {
+                        (data.as_pointer() as Ptr<i32>).offset((5) as isize)
+                    })
                 })
             );
         }
     }
     {
         let data: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5])));
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_> =
+            Rc::new(RefCell::new(
+                std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1({
+                    data.as_pointer()
+                }),
+            ));
         {
-            let p: Value<()> = Rc::new(RefCell::new(({ (*a.borrow())() })));
+            let p: Value<std_tuple_int_ptr__int_ptr_> =
+                Rc::new(RefCell::new(({ (*a.borrow())() })));
             assert!(
-                ((unimplemented!().read())
+                ((({ libcc2rs::get_refcount(p.as_pointer(),) }).read())
                     == (data.as_pointer() as Ptr::<i32>).offset((0) as isize))
             );
             assert!(
-                ((unimplemented!().read())
+                ((({ libcc2rs::get_refcount(p.as_pointer(),) }).read())
                     == (data.as_pointer() as Ptr::<i32>).offset((5) as isize))
             );
         }
         {
-            let p: Value<()> = Rc::new(RefCell::new(({ (*a.borrow())() })));
+            let p: Value<std_tuple_int_ptr__int_ptr_> =
+                Rc::new(RefCell::new(({ (*a.borrow())() })));
             assert!(
-                ((unimplemented!().read())
+                ((({ libcc2rs::get_refcount(p.as_pointer(),) }).read())
                     == (data.as_pointer() as Ptr::<i32>).offset((0) as isize))
             );
             assert!(
-                ((unimplemented!().read())
+                ((({ libcc2rs::get_refcount(p.as_pointer(),) }).read())
                     == (data.as_pointer() as Ptr::<i32>).offset((5) as isize))
             );
         }
         {
-            let p: Value<()> = Rc::new(RefCell::new(({ (*a.borrow())() })));
+            let p: Value<std_tuple_int_ptr__int_ptr_> =
+                Rc::new(RefCell::new(({ (*a.borrow())() })));
             assert!(
-                ((unimplemented!().read())
+                ((({ libcc2rs::get_refcount(p.as_pointer(),) }).read())
                     == (data.as_pointer() as Ptr::<i32>).offset((0) as isize))
             );
             assert!(
-                ((unimplemented!().read())
+                ((({ libcc2rs::get_refcount(p.as_pointer(),) }).read())
                     == (data.as_pointer() as Ptr::<i32>).offset((5) as isize))
             );
         }

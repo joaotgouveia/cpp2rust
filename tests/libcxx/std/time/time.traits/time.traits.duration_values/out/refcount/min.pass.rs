@@ -25,6 +25,11 @@ impl CppEq for Rep {
         RepImpl::operator_eq_4(__lhs, __rhs.clone())
     }
 }
+impl CppMove for Rep {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Rep {
     fn default() -> Self {
         { Rep::new_1() }
@@ -33,10 +38,20 @@ impl Default for Rep {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NotARep {}
+impl CppMove for NotARep {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(i64, to_i64_2)]
 #[byte_size(1)]
 pub struct RepConstConvertibleLWG3050 {}
+impl CppMove for RepConstConvertibleLWG3050 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -57,13 +72,13 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!((unimplemented!() == i32::MIN));
-    assert!((unimplemented!() == f64::MIN));
+    assert!((({ std_chrono_duration_values_int_::min() }) == i32::MIN));
+    assert!((({ std_chrono_duration_values_double_::min() }) == f64::MIN));
     assert!(
         ({
-            let _r: Value<Rep> = Rc::new(RefCell::new(unimplemented!()));
+            let _r: Value<Rep> = Rc::new(RefCell::new(({ std_numeric_limits_Rep_::lowest() })));
             RepImpl::operator_eq_4(
-                &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                &Rc::new(RefCell::new(({ std_chrono_duration_values_Rep_::min() }))).as_pointer(),
                 _r.as_pointer(),
             )
         })

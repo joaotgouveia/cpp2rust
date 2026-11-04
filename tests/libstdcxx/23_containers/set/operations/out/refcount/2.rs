@@ -52,6 +52,11 @@ impl Clone for __gnu_test_object_counter {
         __gnu_test_object_counter::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_object_counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_object_counter {
     fn default() -> Self {
         { __gnu_test_object_counter::new() }
@@ -78,6 +83,11 @@ impl __gnu_test_copy_constructor {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_copy_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
@@ -99,6 +109,11 @@ impl __gnu_test_assignment_operator {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_assignment_operator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
@@ -111,6 +126,11 @@ impl __gnu_test_destructor {
     }
     pub fn reset() {
         _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
+    }
+}
+impl CppMove for __gnu_test_destructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -173,6 +193,11 @@ impl Clone for __gnu_test_copy_tracker {
         __gnu_test_copy_tracker::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_copy_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_copy_tracker {
     fn default() -> Self {
         { __gnu_test_copy_tracker::new(None, None) }
@@ -197,9 +222,41 @@ pub struct __gnu_test_semaphore {
     pid_: (),
 }
 impl __gnu_test_semaphore {}
+impl CppMove for __gnu_test_semaphore {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Cmp {}
+impl Callable2<i32, i64, bool> for Cmp {
+    fn call(&self, a1: i32, a2: i64) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            CmpImpl::operator_call_1(__it, a1, a2)
+        })
+    }
+}
+impl Callable2<i64, i32, bool> for Cmp {
+    fn call(&self, a1: i64, a2: i32) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            CmpImpl::operator_call_2(__it, a1, a2)
+        })
+    }
+}
+impl Callable2<i32, i32, bool> for Cmp {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            CmpImpl::operator_call_3(__it, a1, a2)
+        })
+    }
+}
+value_comparator!(Cmp, i32);
+impl CppMove for Cmp {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static count_9: Value<i32> = Rc::new(RefCell::new(0));
 );
@@ -500,6 +557,11 @@ pub struct I_18 {
     #[offset(0)]
     pub i: i32,
 }
+impl CppMove for I_18 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test07_19() {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut n: usize = unimplemented!();
@@ -515,9 +577,41 @@ pub fn test07_19() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test07___C_Partition {}
+impl CppMove for test07___C_Partition {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct C_20 {}
+impl Callable2<i32, i32, bool> for C_20 {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            C_20Impl::operator_call_1(__it, a1, a2)
+        })
+    }
+}
+value_comparator!(C_20, i32);
+impl Callable2<i32, test07___C_Partition, bool> for C_20 {
+    fn call(&self, a1: i32, a2: test07___C_Partition) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            C_20Impl::operator_call_2(__it, a1, a2)
+        })
+    }
+}
+impl Callable2<test07___C_Partition, i32, bool> for C_20 {
+    fn call(&self, a1: test07___C_Partition, a2: i32) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            C_20Impl::operator_call_3(__it, a1, a2)
+        })
+    }
+}
+impl CppMove for C_20 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
@@ -665,12 +759,12 @@ pub fn run_tests_wrapped_env_25(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !({
-        let __name = env.to_rust_string();
-        if 1 != 0 || ::std::env::var_os(&__name).is_none() {
-            unsafe { ::std::env::set_var(__name, name.to_rust_string()) };
+    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+        true => {
+            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
+            0
         }
-        0
+        false => 0,
     } != 0)
     {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
@@ -679,22 +773,21 @@ pub fn run_tests_wrapped_env_25(
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        {
-            let __name = env.to_rust_string();
-            if 1 != 0 || ::std::env::var_os(&__name).is_none() {
-                unsafe {
-                    ::std::env::set_var(
-                        __name,
-                        if !(oldENV).is_null() {
-                            (oldENV).clone()
-                        } else {
-                            Ptr::<i8>::from_string_literal(b"")
-                        }
-                        .to_rust_string(),
-                    )
-                };
+        match ({
+            if !(oldENV).is_null() {
+                (oldENV).clone()
+            } else {
+                Ptr::<i8>::from_string_literal(b"")
             }
-            0
+        },)
+        {
+            (mut __tmp_0,) => match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+                true => {
+                    unsafe { ::std::env::set_var(env.to_rust_string(), __tmp_0.to_rust_string()) };
+                    0
+                }
+                false => 0,
+            },
         };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
@@ -744,6 +837,11 @@ impl __gnu_test_semun {
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<u16>> {
         this.reinterpret_cast()
+    }
+}
+impl CppMove for __gnu_test_semun {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for __gnu_test_semun {
@@ -862,7 +960,9 @@ impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
     }
     fn push_back(&self, mut test: FnPtr<fn()>) {
         array_elem!((*self), _M_tests, (*self).with(|__s| __s._M_size)).write((test).clone());
-        field!((*self), _M_size).with_mut(|__v| __v.prefix_inc());
+        field!((*self), _M_size).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait __gnu_test_object_counterImpl {

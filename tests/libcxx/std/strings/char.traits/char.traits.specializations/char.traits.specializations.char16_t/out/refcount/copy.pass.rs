@@ -9,12 +9,37 @@ use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     let s1: Value<Box<[u16]>> = Rc::new(RefCell::new(Box::new([1_u16, 2_u16, 3_u16])));
     let s2: Value<Box<[u16]>> = Rc::new(RefCell::new(Box::new([0_u16, 0_u16, 0_u16])));
-    assert!((unimplemented!() == (s2.as_pointer() as Ptr::<u16>)));
-    assert!((((*s2.borrow())[(0) as usize] as i32) == (1_u16 as i32)));
-    assert!((((*s2.borrow())[(1) as usize] as i32) == (2_u16 as i32)));
-    assert!((((*s2.borrow())[(2) as usize] as i32) == (3_u16 as i32)));
-    assert!((unimplemented!()).is_null());
-    assert!((unimplemented!() == (s1.as_pointer() as Ptr::<u16>)));
+    assert!(
+        (({
+            std_char_traits_char16_t_::copy(
+                (s2.as_pointer() as Ptr<u16>),
+                (s1.as_pointer() as Ptr<u16>),
+                3_usize,
+            )
+        }) == (s2.as_pointer() as Ptr::<u16>))
+    );
+    assert!(({ (((*s2.borrow())[(0) as usize] as i32) == (1_u16 as i32)) }));
+    assert!(({ (((*s2.borrow())[(1) as usize] as i32) == (2_u16 as i32)) }));
+    assert!(({ (((*s2.borrow())[(2) as usize] as i32) == (3_u16 as i32)) }));
+    assert!(
+        ({
+            std_char_traits_char16_t_::copy(
+                Ptr::<u16>::null(),
+                (s1.as_pointer() as Ptr<u16>),
+                0_usize,
+            )
+        })
+        .is_null()
+    );
+    assert!(
+        (({
+            std_char_traits_char16_t_::copy(
+                (s1.as_pointer() as Ptr<u16>),
+                Ptr::<u16>::null(),
+                0_usize,
+            )
+        }) == (s1.as_pointer() as Ptr::<u16>))
+    );
     return true;
 }
 pub fn main() {

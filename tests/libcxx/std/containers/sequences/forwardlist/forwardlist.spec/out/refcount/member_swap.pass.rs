@@ -30,6 +30,11 @@ pub struct test_allocator_statistics {
     #[offset(36)]
     pub converted: i32,
 }
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_statistics {
     fn default() -> Self {
         {
@@ -57,6 +62,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_2(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -137,6 +147,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -151,6 +166,11 @@ impl Default for test_allocator_void_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_int__rebind_int_ {}
+impl CppMove for test_allocator_int__rebind_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_int_ {
@@ -201,6 +221,11 @@ impl CppEq for other_allocator_int_ {
         operator_eq_4(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for other_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for other_allocator_int_ {
     fn default() -> Self {
         { other_allocator_int_ { data_: 0_i32 } }
@@ -209,6 +234,11 @@ impl Default for other_allocator_int_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -241,6 +271,11 @@ impl malloc_allocator_base {
         dealloc_count_7.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_5: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -253,22 +288,6 @@ thread_local!(
 thread_local!(
     pub static disable_default_constructor_8: Value<bool> = Rc::new(RefCell::new(false));
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<i32>,
-}
-impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 pub fn operator_eq_9(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> bool {
     return true;
 }
@@ -280,28 +299,57 @@ impl CppEq for min_allocator_int_ {
         operator_eq_9(__lhs.read(), __rhs.read())
     }
 }
+impl CppMove for min_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_10() -> bool {
     {
         let t1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4, 5])));
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c1: Value<std_forward_list_int__test_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_0: Value<test_allocator_int_> =
+                Rc::new(RefCell::new(test_allocator_int_::new_1({ 1 }, { 1 })));
+            std_forward_list_int__test_allocator_int__::new_1(
+                { ({ begin_11(t1.as_pointer()) }) },
+                { (t1.as_pointer() as Ptr<i32>).to_end() },
+                { __tmp_0.as_pointer() },
+            )
+        }));
         let t2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([10, 11, 12])));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 3_isize));
+        let c2: Value<std_forward_list_int__test_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_1: Value<test_allocator_int_> =
+                Rc::new(RefCell::new(test_allocator_int_::new_1({ 1 }, { 2 })));
+            std_forward_list_int__test_allocator_int__::new_1(
+                { ({ begin_12(t2.as_pointer()) }) },
+                { (t2.as_pointer() as Ptr<i32>).to_end() },
+                { __tmp_1.as_pointer() },
+            )
+        }));
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c1.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c1.borrow()).end_27() });
+                    distance_13(___first, ___last)
+                }) == 3_isize)
+            })
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*c1.borrow()).begin_25() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 10)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c1.borrow()).begin_25() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 11)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c1.borrow()).begin_25() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 12)
@@ -309,43 +357,51 @@ pub fn test_10() -> bool {
         assert!(
             (({
                 test_allocator_int_Impl::get_id(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c1.borrow()).get_allocator() }))).as_pointer(),
                 )
             }) == 1)
         );
-        assert!((unimplemented!() == 6_isize));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c2.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c2.borrow()).end_27() });
+                    distance_13(___first, ___last)
+                }) == 6_isize)
+            })
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 3_isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 4_isize)
                 .iter_deref()
                 .read())
                 == 4)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 5_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 5_isize)
                 .iter_deref()
                 .read())
                 == 5)
@@ -353,57 +409,85 @@ pub fn test_10() -> bool {
         assert!(
             (({
                 test_allocator_int_Impl::get_id(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c2.borrow()).get_allocator() }))).as_pointer(),
                 )
             }) == 2)
         );
     }
     {
         let t1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4, 5])));
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 0_isize));
+        let c1: Value<std_forward_list_int__test_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_2: Value<test_allocator_int_> =
+                Rc::new(RefCell::new(test_allocator_int_::new_1({ 1 }, { 1 })));
+            std_forward_list_int__test_allocator_int__::new_1(
+                { ({ begin_11(t1.as_pointer()) }) },
+                { (t1.as_pointer() as Ptr<i32>).to_end() },
+                { __tmp_2.as_pointer() },
+            )
+        }));
+        let c2: Value<std_forward_list_int__test_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_3: Value<test_allocator_int_> =
+                Rc::new(RefCell::new(test_allocator_int_::new_1({ 1 }, { 2 })));
+            std_forward_list_int__test_allocator_int__::new_2({ __tmp_3.as_pointer() })
+        }));
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
+        assert!(
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c1.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c1.borrow()).end_27() });
+                    distance_13(___first, ___last)
+                }) == 0_isize)
+            })
+        );
         assert!(
             (({
                 test_allocator_int_Impl::get_id(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c1.borrow()).get_allocator() }))).as_pointer(),
                 )
             }) == 1)
         );
-        assert!((unimplemented!() == 6_isize));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c2.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c2.borrow()).end_27() });
+                    distance_13(___first, ___last)
+                }) == 6_isize)
+            })
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 3_isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 4_isize)
                 .iter_deref()
                 .read())
                 == 4)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 5_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 5_isize)
                 .iter_deref()
                 .read())
                 == 5)
@@ -411,31 +495,51 @@ pub fn test_10() -> bool {
         assert!(
             (({
                 test_allocator_int_Impl::get_id(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c2.borrow()).get_allocator() }))).as_pointer(),
                 )
             }) == 2)
         );
     }
     {
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c1: Value<std_forward_list_int__test_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_4: Value<test_allocator_int_> =
+                Rc::new(RefCell::new(test_allocator_int_::new_1({ 1 }, { 1 })));
+            std_forward_list_int__test_allocator_int__::new_2({ __tmp_4.as_pointer() })
+        }));
         let t2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([10, 11, 12])));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 3_isize));
+        let c2: Value<std_forward_list_int__test_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_5: Value<test_allocator_int_> =
+                Rc::new(RefCell::new(test_allocator_int_::new_1({ 1 }, { 2 })));
+            std_forward_list_int__test_allocator_int__::new_1(
+                { ({ begin_12(t2.as_pointer()) }) },
+                { (t2.as_pointer() as Ptr<i32>).to_end() },
+                { __tmp_5.as_pointer() },
+            )
+        }));
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c1.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c1.borrow()).end_27() });
+                    distance_13(___first, ___last)
+                }) == 3_isize)
+            })
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*c1.borrow()).begin_25() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 10)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c1.borrow()).begin_25() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 11)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c1.borrow()).begin_25() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 12)
@@ -443,113 +547,179 @@ pub fn test_10() -> bool {
         assert!(
             (({
                 test_allocator_int_Impl::get_id(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c1.borrow()).get_allocator() }))).as_pointer(),
                 )
             }) == 1)
         );
-        assert!((unimplemented!() == 0_isize));
+        assert!(
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c2.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c2.borrow()).end_27() });
+                    distance_13(___first, ___last)
+                }) == 0_isize)
+            })
+        );
         assert!(
             (({
                 test_allocator_int_Impl::get_id(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c2.borrow()).get_allocator() }))).as_pointer(),
                 )
             }) == 2)
         );
     }
     {
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 0_isize));
+        let c1: Value<std_forward_list_int__test_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_6: Value<test_allocator_int_> =
+                Rc::new(RefCell::new(test_allocator_int_::new_1({ 1 }, { 1 })));
+            std_forward_list_int__test_allocator_int__::new_2({ __tmp_6.as_pointer() })
+        }));
+        let c2: Value<std_forward_list_int__test_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_7: Value<test_allocator_int_> =
+                Rc::new(RefCell::new(test_allocator_int_::new_1({ 1 }, { 2 })));
+            std_forward_list_int__test_allocator_int__::new_2({ __tmp_7.as_pointer() })
+        }));
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
+        assert!(
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c1.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c1.borrow()).end_27() });
+                    distance_13(___first, ___last)
+                }) == 0_isize)
+            })
+        );
         assert!(
             (({
                 test_allocator_int_Impl::get_id(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c1.borrow()).get_allocator() }))).as_pointer(),
                 )
             }) == 1)
         );
-        assert!((unimplemented!() == 0_isize));
+        assert!(
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c2.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c2.borrow()).end_27() });
+                    distance_13(___first, ___last)
+                }) == 0_isize)
+            })
+        );
         assert!(
             (({
                 test_allocator_int_Impl::get_id(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c2.borrow()).get_allocator() }))).as_pointer(),
                 )
             }) == 2)
         );
     }
     {
         let t1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4, 5])));
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c1: Value<std_forward_list_int__other_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_8: Value<other_allocator_int_> =
+                Rc::new(RefCell::new(other_allocator_int_::new_1({ 1 })));
+            std_forward_list_int__other_allocator_int__::new_1(
+                { ({ begin_11(t1.as_pointer()) }) },
+                { (t1.as_pointer() as Ptr<i32>).to_end() },
+                { __tmp_8.as_pointer() },
+            )
+        }));
         let t2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([10, 11, 12])));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 3_isize));
+        let c2: Value<std_forward_list_int__other_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_9: Value<other_allocator_int_> =
+                Rc::new(RefCell::new(other_allocator_int_::new_1({ 2 })));
+            std_forward_list_int__other_allocator_int__::new_1(
+                { ({ begin_12(t2.as_pointer()) }) },
+                { (t2.as_pointer() as Ptr<i32>).to_end() },
+                { __tmp_9.as_pointer() },
+            )
+        }));
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c1.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c1.borrow()).end_27() });
+                    distance_13(___first, ___last)
+                }) == 3_isize)
+            })
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*c1.borrow()).begin_25() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 10)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c1.borrow()).begin_25() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 11)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c1.borrow()).begin_25() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 12)
         );
         assert!(
             ({
-                let _x: Value<other_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _x: Value<other_allocator_int_> =
+                    Rc::new(RefCell::new(({ (*c1.borrow()).get_allocator() })));
                 let _y: Value<other_allocator_int_> =
                     Rc::new(RefCell::new(other_allocator_int_::new_1({ 2 })));
                 operator_eq_4(_x.as_pointer(), _y.as_pointer())
             })
         );
-        assert!((unimplemented!() == 6_isize));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c2.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c2.borrow()).end_27() });
+                    distance_13(___first, ___last)
+                }) == 6_isize)
+            })
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 3_isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 4_isize)
                 .iter_deref()
                 .read())
                 == 4)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 5_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 5_isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
         assert!(
             ({
-                let _x: Value<other_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _x: Value<other_allocator_int_> =
+                    Rc::new(RefCell::new(({ (*c2.borrow()).get_allocator() })));
                 let _y: Value<other_allocator_int_> =
                     Rc::new(RefCell::new(other_allocator_int_::new_1({ 1 })));
                 operator_eq_4(_x.as_pointer(), _y.as_pointer())
@@ -558,58 +728,88 @@ pub fn test_10() -> bool {
     }
     {
         let t1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4, 5])));
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 0_isize));
+        let c1: Value<std_forward_list_int__other_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_10: Value<other_allocator_int_> =
+                Rc::new(RefCell::new(other_allocator_int_::new_1({ 1 })));
+            std_forward_list_int__other_allocator_int__::new_1(
+                { ({ begin_11(t1.as_pointer()) }) },
+                { (t1.as_pointer() as Ptr<i32>).to_end() },
+                { __tmp_10.as_pointer() },
+            )
+        }));
+        let c2: Value<std_forward_list_int__other_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_11: Value<other_allocator_int_> =
+                Rc::new(RefCell::new(other_allocator_int_::new_1({ 2 })));
+            std_forward_list_int__other_allocator_int__::new_2({ __tmp_11.as_pointer() })
+        }));
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
         assert!(
             ({
-                let _x: Value<other_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c1.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c1.borrow()).end_27() });
+                    distance_13(___first, ___last)
+                }) == 0_isize)
+            })
+        );
+        assert!(
+            ({
+                let _x: Value<other_allocator_int_> =
+                    Rc::new(RefCell::new(({ (*c1.borrow()).get_allocator() })));
                 let _y: Value<other_allocator_int_> =
                     Rc::new(RefCell::new(other_allocator_int_::new_1({ 2 })));
                 operator_eq_4(_x.as_pointer(), _y.as_pointer())
             })
         );
-        assert!((unimplemented!() == 6_isize));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c2.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c2.borrow()).end_27() });
+                    distance_13(___first, ___last)
+                }) == 6_isize)
+            })
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 3_isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 4_isize)
                 .iter_deref()
                 .read())
                 == 4)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 5_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 5_isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
         assert!(
             ({
-                let _x: Value<other_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _x: Value<other_allocator_int_> =
+                    Rc::new(RefCell::new(({ (*c2.borrow()).get_allocator() })));
                 let _y: Value<other_allocator_int_> =
                     Rc::new(RefCell::new(other_allocator_int_::new_1({ 1 })));
                 operator_eq_4(_x.as_pointer(), _y.as_pointer())
@@ -617,41 +817,71 @@ pub fn test_10() -> bool {
         );
     }
     {
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c1: Value<std_forward_list_int__other_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_12: Value<other_allocator_int_> =
+                Rc::new(RefCell::new(other_allocator_int_::new_1({ 1 })));
+            std_forward_list_int__other_allocator_int__::new_2({ __tmp_12.as_pointer() })
+        }));
         let t2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([10, 11, 12])));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 3_isize));
+        let c2: Value<std_forward_list_int__other_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_13: Value<other_allocator_int_> =
+                Rc::new(RefCell::new(other_allocator_int_::new_1({ 2 })));
+            std_forward_list_int__other_allocator_int__::new_1(
+                { ({ begin_12(t2.as_pointer()) }) },
+                { (t2.as_pointer() as Ptr<i32>).to_end() },
+                { __tmp_13.as_pointer() },
+            )
+        }));
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ({
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c1.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c1.borrow()).end_27() });
+                    distance_13(___first, ___last)
+                }) == 3_isize)
+            })
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*c1.borrow()).begin_25() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 10)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c1.borrow()).begin_25() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 11)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c1.borrow()).begin_25() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 12)
         );
         assert!(
             ({
-                let _x: Value<other_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _x: Value<other_allocator_int_> =
+                    Rc::new(RefCell::new(({ (*c1.borrow()).get_allocator() })));
                 let _y: Value<other_allocator_int_> =
                     Rc::new(RefCell::new(other_allocator_int_::new_1({ 2 })));
                 operator_eq_4(_x.as_pointer(), _y.as_pointer())
             })
         );
-        assert!((unimplemented!() == 0_isize));
         assert!(
             ({
-                let _x: Value<other_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c2.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c2.borrow()).end_27() });
+                    distance_13(___first, ___last)
+                }) == 0_isize)
+            })
+        );
+        assert!(
+            ({
+                let _x: Value<other_allocator_int_> =
+                    Rc::new(RefCell::new(({ (*c2.borrow()).get_allocator() })));
                 let _y: Value<other_allocator_int_> =
                     Rc::new(RefCell::new(other_allocator_int_::new_1({ 1 })));
                 operator_eq_4(_x.as_pointer(), _y.as_pointer())
@@ -659,22 +889,48 @@ pub fn test_10() -> bool {
         );
     }
     {
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 0_isize));
+        let c1: Value<std_forward_list_int__other_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_14: Value<other_allocator_int_> =
+                Rc::new(RefCell::new(other_allocator_int_::new_1({ 1 })));
+            std_forward_list_int__other_allocator_int__::new_2({ __tmp_14.as_pointer() })
+        }));
+        let c2: Value<std_forward_list_int__other_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_15: Value<other_allocator_int_> =
+                Rc::new(RefCell::new(other_allocator_int_::new_1({ 2 })));
+            std_forward_list_int__other_allocator_int__::new_2({ __tmp_15.as_pointer() })
+        }));
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
         assert!(
             ({
-                let _x: Value<other_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c1.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c1.borrow()).end_27() });
+                    distance_13(___first, ___last)
+                }) == 0_isize)
+            })
+        );
+        assert!(
+            ({
+                let _x: Value<other_allocator_int_> =
+                    Rc::new(RefCell::new(({ (*c1.borrow()).get_allocator() })));
                 let _y: Value<other_allocator_int_> =
                     Rc::new(RefCell::new(other_allocator_int_::new_1({ 2 })));
                 operator_eq_4(_x.as_pointer(), _y.as_pointer())
             })
         );
-        assert!((unimplemented!() == 0_isize));
         assert!(
             ({
-                let _x: Value<other_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
+                (({
+                    let ___first: std__Fwd_list_iterator_int_ = ({ (*c2.borrow()).begin_25() });
+                    let ___last: std__Fwd_list_iterator_int_ = ({ (*c2.borrow()).end_27() });
+                    distance_13(___first, ___last)
+                }) == 0_isize)
+            })
+        );
+        assert!(
+            ({
+                let _x: Value<other_allocator_int_> =
+                    Rc::new(RefCell::new(({ (*c2.borrow()).get_allocator() })));
                 let _y: Value<other_allocator_int_> =
                     Rc::new(RefCell::new(other_allocator_int_::new_1({ 1 })));
                 operator_eq_4(_x.as_pointer(), _y.as_pointer())
@@ -683,189 +939,317 @@ pub fn test_10() -> bool {
     }
     {
         let t1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4, 5])));
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c1: Value<std_forward_list_int__min_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_16: Value<min_allocator_int_> =
+                Rc::new(RefCell::new(<min_allocator_int_>::default()));
+            std_forward_list_int__min_allocator_int__::new_1(
+                { ({ begin_11(t1.as_pointer()) }) },
+                { (t1.as_pointer() as Ptr<i32>).to_end() },
+                { __tmp_16.as_pointer() },
+            )
+        }));
         let t2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([10, 11, 12])));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 3_isize));
+        let c2: Value<std_forward_list_int__min_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_17: Value<min_allocator_int_> =
+                Rc::new(RefCell::new(<min_allocator_int_>::default()));
+            std_forward_list_int__min_allocator_int__::new_1(
+                { ({ begin_12(t2.as_pointer()) }) },
+                { (t2.as_pointer() as Ptr<i32>).to_end() },
+                { __tmp_17.as_pointer() },
+            )
+        }));
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ({
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c1.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c1.borrow()) . end_27 ( ) } )   ;
+                    distance_14(___first, ___last)
+                }) == 3_isize)
+            })
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*c1.borrow()).begin_25() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 10)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c1.borrow()).begin_25() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 11)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c1.borrow()).begin_25() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 12)
         );
         assert!(
             ({
-                let _arg0: min_allocator_int_ = unimplemented!();
-                operator_eq_9(_arg0, <min_allocator_int_>::default())
+                ({
+                    let _arg0: min_allocator_int_ = ({ (*c1.borrow()).get_allocator() });
+                    operator_eq_9(_arg0, <min_allocator_int_>::default())
+                })
             })
         );
-        assert!((unimplemented!() == 6_isize));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ({
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c2.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c2.borrow()) . end_27 ( ) } )   ;
+                    distance_14(___first, ___last)
+                }) == 6_isize)
+            })
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 3_isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 4_isize)
                 .iter_deref()
                 .read())
                 == 4)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 5_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 5_isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
         assert!(
             ({
-                let _arg0: min_allocator_int_ = unimplemented!();
-                operator_eq_9(_arg0, <min_allocator_int_>::default())
+                ({
+                    let _arg0: min_allocator_int_ = ({ (*c2.borrow()).get_allocator() });
+                    operator_eq_9(_arg0, <min_allocator_int_>::default())
+                })
             })
         );
     }
     {
         let t1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4, 5])));
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 0_isize));
+        let c1: Value<std_forward_list_int__min_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_18: Value<min_allocator_int_> =
+                Rc::new(RefCell::new(<min_allocator_int_>::default()));
+            std_forward_list_int__min_allocator_int__::new_1(
+                { ({ begin_11(t1.as_pointer()) }) },
+                { (t1.as_pointer() as Ptr<i32>).to_end() },
+                { __tmp_18.as_pointer() },
+            )
+        }));
+        let c2: Value<std_forward_list_int__min_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_19: Value<min_allocator_int_> =
+                Rc::new(RefCell::new(<min_allocator_int_>::default()));
+            std_forward_list_int__min_allocator_int__::new_2({ __tmp_19.as_pointer() })
+        }));
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
         assert!(
             ({
-                let _arg0: min_allocator_int_ = unimplemented!();
-                operator_eq_9(_arg0, <min_allocator_int_>::default())
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c1.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c1.borrow()) . end_27 ( ) } )   ;
+                    distance_14(___first, ___last)
+                }) == 0_isize)
             })
         );
-        assert!((unimplemented!() == 6_isize));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ({
+                ({
+                    let _arg0: min_allocator_int_ = ({ (*c1.borrow()).get_allocator() });
+                    operator_eq_9(_arg0, <min_allocator_int_>::default())
+                })
+            })
+        );
+        assert!(
+            ({
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c2.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c2.borrow()) . end_27 ( ) } )   ;
+                    distance_14(___first, ___last)
+                }) == 6_isize)
+            })
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 0)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 3_isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 4_isize)
                 .iter_deref()
                 .read())
                 == 4)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 5_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c2.borrow()).begin_25() }) }), 5_isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
         assert!(
             ({
-                let _arg0: min_allocator_int_ = unimplemented!();
-                operator_eq_9(_arg0, <min_allocator_int_>::default())
+                ({
+                    let _arg0: min_allocator_int_ = ({ (*c2.borrow()).get_allocator() });
+                    operator_eq_9(_arg0, <min_allocator_int_>::default())
+                })
             })
         );
     }
     {
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c1: Value<std_forward_list_int__min_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_20: Value<min_allocator_int_> =
+                Rc::new(RefCell::new(<min_allocator_int_>::default()));
+            std_forward_list_int__min_allocator_int__::new_2({ __tmp_20.as_pointer() })
+        }));
         let t2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([10, 11, 12])));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 3_isize));
+        let c2: Value<std_forward_list_int__min_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_21: Value<min_allocator_int_> =
+                Rc::new(RefCell::new(<min_allocator_int_>::default()));
+            std_forward_list_int__min_allocator_int__::new_1(
+                { ({ begin_12(t2.as_pointer()) }) },
+                { (t2.as_pointer() as Ptr<i32>).to_end() },
+                { __tmp_21.as_pointer() },
+            )
+        }));
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ({
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c1.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c1.borrow()) . end_27 ( ) } )   ;
+                    distance_14(___first, ___last)
+                }) == 3_isize)
+            })
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*c1.borrow()).begin_25() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 10)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c1.borrow()).begin_25() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 11)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*c1.borrow()).begin_25() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 12)
         );
         assert!(
             ({
-                let _arg0: min_allocator_int_ = unimplemented!();
-                operator_eq_9(_arg0, <min_allocator_int_>::default())
+                ({
+                    let _arg0: min_allocator_int_ = ({ (*c1.borrow()).get_allocator() });
+                    operator_eq_9(_arg0, <min_allocator_int_>::default())
+                })
             })
         );
-        assert!((unimplemented!() == 0_isize));
         assert!(
             ({
-                let _arg0: min_allocator_int_ = unimplemented!();
-                operator_eq_9(_arg0, <min_allocator_int_>::default())
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c2.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c2.borrow()) . end_27 ( ) } )   ;
+                    distance_14(___first, ___last)
+                }) == 0_isize)
+            })
+        );
+        assert!(
+            ({
+                ({
+                    let _arg0: min_allocator_int_ = ({ (*c2.borrow()).get_allocator() });
+                    operator_eq_9(_arg0, <min_allocator_int_>::default())
+                })
             })
         );
     }
     {
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 0_isize));
+        let c1: Value<std_forward_list_int__min_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_22: Value<min_allocator_int_> =
+                Rc::new(RefCell::new(<min_allocator_int_>::default()));
+            std_forward_list_int__min_allocator_int__::new_2({ __tmp_22.as_pointer() })
+        }));
+        let c2: Value<std_forward_list_int__min_allocator_int__> = Rc::new(RefCell::new({
+            let __tmp_23: Value<min_allocator_int_> =
+                Rc::new(RefCell::new(<min_allocator_int_>::default()));
+            std_forward_list_int__min_allocator_int__::new_2({ __tmp_23.as_pointer() })
+        }));
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
         assert!(
             ({
-                let _arg0: min_allocator_int_ = unimplemented!();
-                operator_eq_9(_arg0, <min_allocator_int_>::default())
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c1.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c1.borrow()) . end_27 ( ) } )   ;
+                    distance_14(___first, ___last)
+                }) == 0_isize)
             })
         );
-        assert!((unimplemented!() == 0_isize));
         assert!(
             ({
-                let _arg0: min_allocator_int_ = unimplemented!();
-                operator_eq_9(_arg0, <min_allocator_int_>::default())
+                ({
+                    let _arg0: min_allocator_int_ = ({ (*c1.borrow()).get_allocator() });
+                    operator_eq_9(_arg0, <min_allocator_int_>::default())
+                })
+            })
+        );
+        assert!(
+            ({
+                (({
+                    let ___first: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c2.borrow()) . begin_25 ( ) } )   ;
+                    let ___last: std___fwdlist__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*c2.borrow()) . end_27 ( ) } )   ;
+                    distance_14(___first, ___last)
+                }) == 0_isize)
+            })
+        );
+        assert!(
+            ({
+                ({
+                    let _arg0: min_allocator_int_ = ({ (*c2.borrow()).get_allocator() });
+                    operator_eq_9(_arg0, <min_allocator_int_>::default())
+                })
             })
         );
     }
@@ -894,6 +1278,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     assert!(({ test_10() }));
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
 pub trait Tag_XImpl {
     fn copy_assign(&self, _a0: Ptr<Tag_X>) -> Ptr<Tag_X>;
     fn move_assign(&self, _a0: Ptr<Tag_X>) -> Ptr<Tag_X>;
@@ -919,75 +1306,6 @@ pub trait min_allocator_int_Impl {
     }
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {}
-pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_9(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_10(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_11(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
-        unimplemented!()
-    }
-}
-impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
-{
-}
 pub trait other_allocator_int_Impl {
     fn allocate(&self, mut n: usize) -> Ptr<i32> {
         unimplemented!()
@@ -1005,10 +1323,10 @@ pub trait other_allocator_int_Impl {
 impl other_allocator_int_Impl for Ptr<other_allocator_int_> {}
 pub trait test_allocator_int_Impl {
     fn destructor(&self);
-    fn address_11(&self, x: ()) -> Ptr<i32> {
+    fn address_11(&self, x: Ptr<i32>) -> Ptr<i32> {
         unimplemented!()
     }
-    fn address_12(&self, x: ()) -> Ptr<i32> {
+    fn address_12(&self, x: Ptr<i32>) -> Ptr<i32> {
         unimplemented!()
     }
     fn allocate(&self, mut n: u32, mut _a1: AnyPtr) -> Ptr<i32> {
@@ -1033,7 +1351,9 @@ impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_0.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_0.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_0.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_0.with(|rc| *rc.borrow()));

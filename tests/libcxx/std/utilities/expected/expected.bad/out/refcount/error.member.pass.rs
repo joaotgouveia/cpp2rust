@@ -13,26 +13,30 @@ const _: () = assert!(true, "ErrorNoexcept<std::bad_expected_access<int>&&>");
 const _: () = assert!(true, "ErrorNoexcept<std::bad_expected_access<int> const&&>");
 pub fn test_0() {
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Ptr<i32> = unimplemented!();
+        let e: Value<std_bad_expected_access_int_> =
+            Rc::new(RefCell::new(std_bad_expected_access_int_::new({ 5 })));
+        let i: Ptr<i32> = ({ (*e.borrow()).error_2() });
         const _: () = assert!(true, "std::same_as<decltype(i), int&>");;
         assert!(((i.read()) == 5));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Ptr<i32> = unimplemented!();
+        let e: Value<std_bad_expected_access_int_> =
+            Rc::new(RefCell::new(std_bad_expected_access_int_::new({ 5 })));
+        let i: Ptr<i32> = ({ (*e.borrow()).error_3() });
         const _: () = assert!(true, "std::same_as<decltype(i), const int&>");;
         assert!(((i.read()) == 5));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Ptr<i32> = unimplemented!();
+        let e: Value<std_bad_expected_access_int_> =
+            Rc::new(RefCell::new(std_bad_expected_access_int_::new({ 5 })));
+        let i: Ptr<i32> = ({ (*e.borrow()).error_4() });
         const _: () = assert!(true, "std::same_as<decltype(i), int&&>");;
         assert!(((i.read()) == 5));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Ptr<i32> = unimplemented!();
+        let e: Value<std_bad_expected_access_int_> =
+            Rc::new(RefCell::new(std_bad_expected_access_int_::new({ 5 })));
+        let i: Ptr<i32> = ({ (*e.borrow()).error_5() });
         const _: () = assert!(true, "std::same_as<decltype(i), const int&&>");;
         assert!(((i.read()) == 5));
     }

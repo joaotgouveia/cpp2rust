@@ -27,8 +27,11 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let e: Value<std_linear_congruential_engine_unsigned_long__16807__0__2147483647_> =
+        Rc::new(RefCell::new(
+            <std_linear_congruential_engine_unsigned_long__16807__0__2147483647_>::default(),
+        ));
+    ({ (*e.borrow()).discard(9999_u64) });
     const _: () = assert!(true, "");;
     return 0;
 }

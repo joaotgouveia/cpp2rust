@@ -17,13 +17,15 @@ const _: () = assert!(
 const _: () = assert!(!(false), "!HasImplicitDefaultCtor<std::sorted_unique_t>");
 pub fn test_0() -> bool {
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<std_sorted_unique_t> = Rc::new(RefCell::new(<std_sorted_unique_t>::default()));
     }
     {
-        let s: Ptr<()> = (unimplemented!());
+        let s: Ptr<std_sorted_unique_t> = (sorted_unique_1.with(|v| v.as_pointer()));
     }
     {
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let copy: Value<std_sorted_unique_t> = Rc::new(RefCell::new(
+            (*sorted_unique_1.with(Value::clone).borrow()).clone(),
+        ));
     }
     return true;
 }

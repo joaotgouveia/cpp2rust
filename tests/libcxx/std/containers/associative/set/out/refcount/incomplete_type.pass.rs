@@ -13,19 +13,19 @@ pub struct A {
     pub data: i32,
     #[offset(8)]
     #[byte_size(48)]
-    pub m: (),
+    pub m: std_set_A__std_less_A___std_allocator_A__,
     #[offset(56)]
     #[byte_size(8)]
-    pub it: (),
+    pub it: BidirectionalIterator<A>,
     #[offset(64)]
     #[byte_size(8)]
-    pub cit: (),
+    pub cit: BidirectionalIterator<A>,
 }
 impl A {
     pub fn move_from(_a0: Ptr<A>) -> Self {
         Self {
             data: { (*_a0.upgrade().deref()).data },
-            m: unimplemented!(),
+            m: field!(_a0, m).with_mut(std::mem::take),
             it: field!(_a0, it).with_mut(std::mem::take),
             cit: field!(_a0, cit).with_mut(std::mem::take),
         }
@@ -39,6 +39,11 @@ impl CppLess for A {
 impl CppEq for A {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_1(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_eq_1(L: Ptr<A>, R: Ptr<A>) -> bool {
@@ -80,9 +85,11 @@ pub trait AImpl {
 impl AImpl for Ptr<A> {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
         field!((*self), data).write({ { (*_a0.upgrade().deref()).data } });
-        unimplemented!();
-        field!((*self), it).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).it.clone() });
-        field!((*self), cit).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).cit.clone() });
+        field!((*self), m).write({ { (*_a0.upgrade().deref()).m.clone() } });
+        field!((*self), it)
+            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).it.clone() } }));
+        field!((*self), cit)
+            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).cit.clone() } }));
         return (*self).clone();
     }
 }

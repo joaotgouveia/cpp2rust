@@ -27,10 +27,34 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(unimplemented!());
+    assert!(
+        ({
+            let ___c1: Value<u32> = Rc::new(RefCell::new(((97 as u8) as u32)));
+            let ___c2: Value<u32> = Rc::new(RefCell::new(((97 as u8) as u32)));
+            std_char_traits_char8_t_::eq_int_type(___c1.as_pointer(), ___c2.as_pointer())
+        })
+    );
+    assert!(
+        !({
+            let ___c1: Value<u32> = Rc::new(RefCell::new(((97 as u8) as u32)));
+            let ___c2: Value<u32> = Rc::new(RefCell::new(((65 as u8) as u32)));
+            std_char_traits_char8_t_::eq_int_type(___c1.as_pointer(), ___c2.as_pointer())
+        })
+    );
+    assert!(
+        !({
+            let ___c1: Value<u32> = Rc::new(RefCell::new(({ std_char_traits_char8_t_::eof() })));
+            let ___c2: Value<u32> = Rc::new(RefCell::new(((65 as u8) as u32)));
+            std_char_traits_char8_t_::eq_int_type(___c1.as_pointer(), ___c2.as_pointer())
+        })
+    );
+    assert!(
+        ({
+            let ___c1: Value<u32> = Rc::new(RefCell::new(({ std_char_traits_char8_t_::eof() })));
+            let ___c2: Value<u32> = Rc::new(RefCell::new(({ std_char_traits_char8_t_::eof() })));
+            std_char_traits_char8_t_::eq_int_type(___c1.as_pointer(), ___c2.as_pointer())
+        })
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

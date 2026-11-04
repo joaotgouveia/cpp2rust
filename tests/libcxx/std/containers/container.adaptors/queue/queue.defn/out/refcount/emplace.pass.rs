@@ -47,22 +47,15 @@ impl CppEq for Emplaceable {
         EmplaceableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for Emplaceable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for Emplaceable {
     fn default() -> Self {
         { Emplaceable::new_1() }
     }
-}
-pub fn test_return_type_0() {
-    const _: () = assert!(
-        true,
-        "std::is_same<queue_return_type, container_return_type>::value"
-    );;
-}
-pub fn test_return_type_1() {
-    const _: () = assert!(
-        true,
-        "std::is_same<queue_return_type, container_return_type>::value"
-    );;
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -86,27 +79,42 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_return_type_0() });
     ({ test_return_type_1() });
-    let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r1: Ptr<Emplaceable> = unimplemented!();
-    assert!(({ (r1).clone() } == { (unimplemented!()) }));
-    let r2: Ptr<Emplaceable> = unimplemented!();
-    assert!(({ (r2).clone() } == { (unimplemented!()) }));
-    let r3: Ptr<Emplaceable> = unimplemented!();
-    assert!(({ (r3).clone() } == { (unimplemented!()) }));
-    assert!(({ (r1).clone() } == { (unimplemented!()) }));
-    assert!((unimplemented!() == 3_()));
+    let q: Value<std_queue_Emplaceable__std_deque_Emplaceable__std_allocator_Emplaceable___> =
+        Rc::new(RefCell::new(
+            <std_queue_Emplaceable__std_deque_Emplaceable__std_allocator_Emplaceable___>::default(),
+        ));
+    let r1: Ptr<Emplaceable> = ({
+        let ___args_0: Value<i32> = Rc::new(RefCell::new(1));
+        let ___args_1: Value<f64> = Rc::new(RefCell::new(2.5_f64));
+        (*q.borrow()).emplace(___args_0.as_pointer(), ___args_1.as_pointer())
+    });
+    assert!(({ ({ (r1).clone() } == { ({ (*q.borrow()).back_17() }) }) }));
+    let r2: Ptr<Emplaceable> = ({
+        let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
+        let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+        (*q.borrow()).emplace(___args_0.as_pointer(), ___args_1.as_pointer())
+    });
+    assert!(({ ({ (r2).clone() } == { ({ (*q.borrow()).back_17() }) }) }));
+    let r3: Ptr<Emplaceable> = ({
+        let ___args_0: Value<i32> = Rc::new(RefCell::new(3));
+        let ___args_1: Value<f64> = Rc::new(RefCell::new(4.5_f64));
+        (*q.borrow()).emplace(___args_0.as_pointer(), ___args_1.as_pointer())
+    });
+    assert!(({ ({ (r3).clone() } == { ({ (*q.borrow()).back_17() }) }) }));
+    assert!(({ ({ (r1).clone() } == { ({ (*q.borrow()).front_15() }) }) }));
+    assert!(({ (({ (*q.borrow()).size() }) == 3_u64) }));
     assert!(
         ({
             let _x: Value<Emplaceable> =
                 Rc::new(RefCell::new(Emplaceable::new_2({ 1 }, { 2.5_f64 })));
-            EmplaceableImpl::operator_eq(&unimplemented!(), _x.as_pointer())
+            EmplaceableImpl::operator_eq(&({ (*q.borrow()).front_15() }), _x.as_pointer())
         })
     );
     assert!(
         ({
             let _x: Value<Emplaceable> =
                 Rc::new(RefCell::new(Emplaceable::new_2({ 3 }, { 4.5_f64 })));
-            EmplaceableImpl::operator_eq(&unimplemented!(), _x.as_pointer())
+            EmplaceableImpl::operator_eq(&({ (*q.borrow()).back_17() }), _x.as_pointer())
         })
     );
     return 0;

@@ -32,9 +32,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new(Ptr::alloc(3).to_owned_opt())),
             Rc::new(RefCell::new(4_i16)),
         )));
-        let mut ptr: Option<Value<i32>> =
-            <(Value<Option<Value<i32>>>, Value<i16>) as PairGetRef<0>>::pair_get(&(*p.borrow()))
-                .with_mut(|__v: &mut Option<Value<i32>>| __v.take());
+        let mut ptr: Option<Value<i32>> = (*p.borrow())
+            .get_value::<0>()
+            .as_pointer()
+            .with_mut(|__v: &mut Option<Value<i32>>| __v.take());
         assert!(((ptr.as_pointer().read()) == 3));
     }
     return 0;

@@ -35,6 +35,11 @@ impl Callable2<Ptr<i32>, Ptr<i32>, bool>
         })
     }
 }
+impl CppMove for binary_counting_predicate_bool__ptr__int__int___int__int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
 #[cpp_from(()  , new, value)]
 #[byte_size(16)]
@@ -61,6 +66,11 @@ impl Callable2<Ptr<i32>, Ptr<i32>, bool> for binary_counting_predicate_std_great
         })
     }
 }
+impl CppMove for binary_counting_predicate_std_greater_int___int__int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for binary_counting_predicate_std_greater_int___int__int_ {
     fn default() -> Self {
         {
@@ -84,12 +94,16 @@ pub fn test_all_equal_1(il: Vec<i32>) {
         ));
     let p: Value<(Value<i32>, Value<i32>)> = Rc::new(RefCell::new(unimplemented!()));
     let mut ptr: Ptr<i32> = unimplemented!();
-    assert!(((*(*p.borrow()).0.borrow()) == (unimplemented!().read())));
-    assert!(({ (*(*p.borrow()).1.borrow()) } == { (ptr.prefix_dec().read()) }));
+    assert!(({ ((*(*p.borrow()).0.borrow()) == (unimplemented!().read())) }));
+    assert!(({ ({ (*(*p.borrow()).1.borrow()) } == { ((*ptr.prefix_dec()).read()) }) }));
     assert!(
-        (({
-            binary_counting_predicate_bool__ptr__int__int___int__int_Impl::count(&pred.as_pointer())
-        }) <= (((3_usize).wrapping_mul((*il.borrow()).len())).wrapping_div(2_usize)))
+        ({
+            (({
+                binary_counting_predicate_bool__ptr__int__int___int__int_Impl::count(
+                    &pred.as_pointer(),
+                )
+            }) <= (((3_usize).wrapping_mul((*il.borrow()).len())).wrapping_div(2_usize)))
+        })
     );
 }
 pub fn main() {
@@ -179,7 +193,9 @@ impl binary_counting_predicate_bool__ptr__int__int___int__int_Impl
     for Ptr<binary_counting_predicate_bool__ptr__int__int___int__int_>
 {
     fn operator_call(&self, a1: Ptr<i32>, a2: Ptr<i32>) -> bool {
-        field!((*self), count_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), count_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return ({
             let _arg0: i32 = (a1.read());
             let _arg1: i32 = (a2.read());
@@ -201,7 +217,9 @@ impl binary_counting_predicate_std_greater_int___int__int_Impl
     for Ptr<binary_counting_predicate_std_greater_int___int__int_>
 {
     fn operator_call(&self, a1: Ptr<i32>, a2: Ptr<i32>) -> bool {
-        field!((*self), count_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), count_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return unimplemented!();
     }
     fn count(&self) -> usize {

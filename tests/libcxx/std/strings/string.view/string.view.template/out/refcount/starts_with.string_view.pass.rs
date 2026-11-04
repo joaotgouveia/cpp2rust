@@ -40,6 +40,11 @@ impl constexpr_char_traits_char_ {
         return 0;
     }
 }
+impl CppMove for constexpr_char_traits_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -62,47 +67,129 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"abcde");
-        let sv0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let svNot: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv0: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            <std_basic_string_view_char__std_char_traits_char__>::default(),
+        ));
+        let sv1: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_basic_string_view_char__std_char_traits_char__::new_1({ (s).clone() }, { 1_u64 }),
+        ));
+        let sv2: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_basic_string_view_char__std_char_traits_char__::new_1({ (s).clone() }, { 2_u64 }),
+        ));
+        let sv3: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_basic_string_view_char__std_char_traits_char__::new_1({ (s).clone() }, { 3_u64 }),
+        ));
+        let sv4: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_basic_string_view_char__std_char_traits_char__::new_1({ (s).clone() }, { 4_u64 }),
+        ));
+        let sv5: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_basic_string_view_char__std_char_traits_char__::new_1({ (s).clone() }, { 5_u64 }),
+        ));
+        let svNot: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+            RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1(
+                { Ptr::<i8>::from_string_literal(b"def") },
+                { 3_u64 },
+            )),
+        );
         const _: () = assert!(true, "");;
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(unimplemented!());
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
+        assert!(
+            ({
+                ({
+                    let ___x: std_basic_string_view_char__std_char_traits_char__ =
+                        (*sv0.borrow()).clone();
+                    (*sv0.borrow()).starts_with_37(___x)
+                })
+            })
+        );
+        assert!(({ !({ (*sv0.borrow()).starts_with_37((*sv1.borrow()).clone(),) }) }));
+        assert!(({ ({ (*sv1.borrow()).starts_with_37((*sv0.borrow()).clone(),) }) }));
+        assert!(
+            ({
+                ({
+                    let ___x: std_basic_string_view_char__std_char_traits_char__ =
+                        (*sv1.borrow()).clone();
+                    (*sv1.borrow()).starts_with_37(___x)
+                })
+            })
+        );
+        assert!(({ !({ (*sv1.borrow()).starts_with_37((*sv2.borrow()).clone(),) }) }));
+        assert!(({ !({ (*sv1.borrow()).starts_with_37((*sv3.borrow()).clone(),) }) }));
+        assert!(({ !({ (*sv1.borrow()).starts_with_37((*sv4.borrow()).clone(),) }) }));
+        assert!(({ !({ (*sv1.borrow()).starts_with_37((*sv5.borrow()).clone(),) }) }));
+        assert!(({ !({ (*sv1.borrow()).starts_with_37((*svNot.borrow()).clone(),) }) }));
+        assert!(({ ({ (*sv2.borrow()).starts_with_37((*sv0.borrow()).clone(),) }) }));
+        assert!(({ ({ (*sv2.borrow()).starts_with_37((*sv1.borrow()).clone(),) }) }));
+        assert!(
+            ({
+                ({
+                    let ___x: std_basic_string_view_char__std_char_traits_char__ =
+                        (*sv2.borrow()).clone();
+                    (*sv2.borrow()).starts_with_37(___x)
+                })
+            })
+        );
+        assert!(({ !({ (*sv2.borrow()).starts_with_37((*sv3.borrow()).clone(),) }) }));
+        assert!(({ !({ (*sv2.borrow()).starts_with_37((*sv4.borrow()).clone(),) }) }));
+        assert!(({ !({ (*sv2.borrow()).starts_with_37((*sv5.borrow()).clone(),) }) }));
+        assert!(({ !({ (*sv2.borrow()).starts_with_37((*svNot.borrow()).clone(),) }) }));
+        assert!(({ ({ (*svNot.borrow()).starts_with_37((*sv0.borrow()).clone(),) }) }));
+        assert!(({ !({ (*svNot.borrow()).starts_with_37((*sv1.borrow()).clone(),) }) }));
+        assert!(({ !({ (*svNot.borrow()).starts_with_37((*sv2.borrow()).clone(),) }) }));
+        assert!(({ !({ (*svNot.borrow()).starts_with_37((*sv3.borrow()).clone(),) }) }));
+        assert!(({ !({ (*svNot.borrow()).starts_with_37((*sv4.borrow()).clone(),) }) }));
+        assert!(({ !({ (*svNot.borrow()).starts_with_37((*sv5.borrow()).clone(),) }) }));
+        assert!(
+            ({
+                ({
+                    let ___x: std_basic_string_view_char__std_char_traits_char__ =
+                        (*svNot.borrow()).clone();
+                    (*svNot.borrow()).starts_with_37(___x)
+                })
+            })
+        );
     }
     {
         let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"abcde");
-        let sv0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let svNot: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv0: Value<std_basic_string_view_char__constexpr_char_traits_char__> = Rc::new(
+            RefCell::new(<std_basic_string_view_char__constexpr_char_traits_char__>::default()),
+        );
+        let sv1: Value<std_basic_string_view_char__constexpr_char_traits_char__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char__constexpr_char_traits_char__::new_1({ (s).clone() }, {
+                    1_u64
+                }),
+            ));
+        let sv2: Value<std_basic_string_view_char__constexpr_char_traits_char__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char__constexpr_char_traits_char__::new_1({ (s).clone() }, {
+                    2_u64
+                }),
+            ));
+        let sv3: Value<std_basic_string_view_char__constexpr_char_traits_char__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char__constexpr_char_traits_char__::new_1({ (s).clone() }, {
+                    3_u64
+                }),
+            ));
+        let sv4: Value<std_basic_string_view_char__constexpr_char_traits_char__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char__constexpr_char_traits_char__::new_1({ (s).clone() }, {
+                    4_u64
+                }),
+            ));
+        let sv5: Value<std_basic_string_view_char__constexpr_char_traits_char__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char__constexpr_char_traits_char__::new_1({ (s).clone() }, {
+                    5_u64
+                }),
+            ));
+        let svNot: Value<std_basic_string_view_char__constexpr_char_traits_char__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char__constexpr_char_traits_char__::new_1(
+                    { Ptr::<i8>::from_string_literal(b"def") },
+                    { 3_u64 },
+                ),
+            ));
         const _: () = assert!(true, "sv0.starts_with(sv0)");;
         const _: () = assert!(true, "!sv0.starts_with(sv1)");;
         const _: () = assert!(true, "sv1.starts_with(sv0)");;

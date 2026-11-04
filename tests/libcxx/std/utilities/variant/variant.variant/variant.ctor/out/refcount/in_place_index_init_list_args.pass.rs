@@ -6,42 +6,6 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_convertible_imp_0(mut _a0: i64) -> bool {
-    return false;
-}
-pub fn test_convertible_imp_1(mut _a0: i64) -> bool {
-    return false;
-}
-pub fn test_convertible_imp_2(mut _a0: i64) -> bool {
-    return false;
-}
-pub fn test_convertible_imp_3(mut _a0: i64) -> bool {
-    return false;
-}
-pub fn test_convertible_imp_4(mut _a0: i64) -> bool {
-    return false;
-}
-pub fn test_convertible_imp_5(mut _a0: i64) -> bool {
-    return false;
-}
-pub fn test_convertible_6() -> bool {
-    return ({ test_convertible_imp_0(0_i64) });
-}
-pub fn test_convertible_7() -> bool {
-    return ({ test_convertible_imp_1(0_i64) });
-}
-pub fn test_convertible_8() -> bool {
-    return ({ test_convertible_imp_2(0_i64) });
-}
-pub fn test_convertible_9() -> bool {
-    return ({ test_convertible_imp_3(0_i64) });
-}
-pub fn test_convertible_10() -> bool {
-    return ({ test_convertible_imp_4(0_i64) });
-}
-pub fn test_convertible_11() -> bool {
-    return ({ test_convertible_imp_5(0_i64) });
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Vec<i32  >  , new, value)]
 #[byte_size(8)]
@@ -55,6 +19,11 @@ impl InitList {
         Self {
             size: (*il.borrow()).len(),
         }
+    }
+}
+impl CppMove for InitList {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -74,7 +43,12 @@ impl InitListArg {
         }
     }
 }
-pub fn test_ctor_sfinae_12() {
+impl CppMove for InitListArg {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn test_ctor_sfinae_0() {
     {
         const _: () = assert!(
             true,
@@ -124,19 +98,36 @@ pub fn test_ctor_sfinae_12() {
         const _: () = assert!(true, "!test_convertible<V, std::in_place_index_t<3>, IL>()");;
     }
 }
-pub fn test_ctor_basic_13() {
+pub fn test_ctor_basic_1() {
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_InitList__InitListArg__InitList_> = Rc::new(RefCell::new(
+            std_variant_InitList__InitListArg__InitList_::new_1(
+                { (*in_place_index_2.with(Value::clone).borrow()).clone() },
+                { Vec::from([1, 2, 3]) },
+            ),
+        ));
         const _: () = assert!(true, "v.index() == 0");;
         const _: () = assert!(true, "std::get<0>(v).size == 3");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_InitList__InitListArg__InitList_> = Rc::new(RefCell::new(
+            std_variant_InitList__InitListArg__InitList_::new_2(
+                { (*in_place_index_3.with(Value::clone).borrow()).clone() },
+                { Vec::from([1, 2, 3]) },
+            ),
+        ));
         const _: () = assert!(true, "v.index() == 2");;
         const _: () = assert!(true, "std::get<2>(v).size == 3");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_InitList__InitListArg__InitListArg_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(42));
+            std_variant_InitList__InitListArg__InitListArg_::new_1(
+                { (*in_place_index_4.with(Value::clone).borrow()).clone() },
+                { Vec::from([1, 2, 3, 4]) },
+                { __tmp_0.as_pointer() },
+            )
+        }));
         const _: () = assert!(true, "v.index() == 1");;
         const _: () = assert!(true, "std::get<1>(v).size == 4");;
         const _: () = assert!(true, "std::get<1>(v).value == 42");;
@@ -162,8 +153,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_ctor_basic_13() });
-    ({ test_ctor_sfinae_12() });
+    ({ test_ctor_basic_1() });
+    ({ test_ctor_sfinae_0() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

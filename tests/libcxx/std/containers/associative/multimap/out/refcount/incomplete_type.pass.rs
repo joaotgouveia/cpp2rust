@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -39,6 +44,11 @@ thread_local!(
 #[byte_size(1)]
 pub struct complete_type_allocator_std_pair_const_int__int__ {}
 impl complete_type_allocator_std_pair_const_int__int__ {}
+impl CppMove for complete_type_allocator_std_pair_const_int__int__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(72)]
 pub struct A {
@@ -46,19 +56,19 @@ pub struct A {
     pub data: i32,
     #[offset(8)]
     #[byte_size(48)]
-    pub m: (),
+    pub m: std_multimap_A__A__std_less_A___std_allocator_std_pair_const_A__A___,
     #[offset(56)]
     #[byte_size(8)]
-    pub it: (),
+    pub it: BidirectionalIterator<(Value<A>, Value<A>)>,
     #[offset(64)]
     #[byte_size(8)]
-    pub cit: (),
+    pub cit: BidirectionalIterator<(Value<A>, Value<A>)>,
 }
 impl A {
     pub fn move_from(_a0: Ptr<A>) -> Self {
         Self {
             data: { (*_a0.upgrade().deref()).data },
-            m: unimplemented!(),
+            m: field!(_a0, m).with_mut(std::mem::take),
             it: field!(_a0, it).with_mut(std::mem::take),
             cit: field!(_a0, cit).with_mut(std::mem::take),
         }
@@ -74,6 +84,11 @@ impl CppEq for A {
         operator_eq_5(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_eq_5(L: Ptr<A>, R: Ptr<A>) -> bool {
     return ({ (L).clone() } == { (R).clone() });
 }
@@ -82,7 +97,7 @@ pub fn operator_lt_4(L: Ptr<A>, R: Ptr<A>) -> bool {
 }
 pub fn test_6() -> bool {
     let mut a: A = <A>::default();
-    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let m : Value<std_multimap_int__int__std_less_int___complete_type_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(<std_multimap_int__int__std_less_int___complete_type_allocator_std_pair_const_int__int___  >::default() )) ;
     return true;
 }
 pub fn main() {
@@ -114,9 +129,11 @@ pub trait AImpl {
 impl AImpl for Ptr<A> {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
         field!((*self), data).write({ { (*_a0.upgrade().deref()).data } });
-        unimplemented!();
-        field!((*self), it).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).it.clone() });
-        field!((*self), cit).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).cit.clone() });
+        field!((*self), m).write({ { (*_a0.upgrade().deref()).m.clone() } });
+        field!((*self), it)
+            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).it.clone() } }));
+        field!((*self), cit)
+            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).cit.clone() } }));
         return (*self).clone();
     }
 }

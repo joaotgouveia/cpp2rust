@@ -23,6 +23,11 @@ impl support_double_move_tracker {
         __this
     }
 }
+impl CppMove for support_double_move_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for support_double_move_tracker {
     fn default() -> Self {
         { support_double_move_tracker::new() }
@@ -32,18 +37,22 @@ impl Default for support_double_move_tracker {
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
@@ -60,6 +69,11 @@ impl cpp17_output_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -82,6 +96,11 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_input_iterator_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
@@ -134,6 +153,11 @@ impl CppEq for random_access_iterator_int_ptr_ {
         operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for random_access_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
@@ -150,6 +174,11 @@ impl cpp20_random_access_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp20_random_access_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -174,6 +203,11 @@ impl cpp20_input_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_input_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
@@ -193,6 +227,11 @@ impl cpp20_output_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp20_output_iterator<int*>, int>"
@@ -208,6 +247,11 @@ pub struct IteratorOpCounts {
     pub zero_moves: usize,
     #[offset(24)]
     pub equal_cmps: usize,
+}
+impl CppMove for IteratorOpCounts {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
@@ -240,6 +284,11 @@ impl CppEq for forward_sized_iterator_int_ptr_ {
         operator_eq_3(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for forward_sized_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -270,13 +319,17 @@ pub fn operator_add_5(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
 pub fn iter_swap_6(mut a: adl_Iterator, mut b: adl_Iterator) {
     cpp_swap!((a.ptr_).clone(), (b.ptr_).clone());
     if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+        a.iter_swaps_.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub fn iter_move_7(iter: adl_Iterator) -> Ptr<i32> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
-        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
+        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
@@ -326,22 +379,76 @@ impl adl_Iterator {
         });
     }
 }
-impl CppLess for adl_Iterator {
-    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_cmp_9(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
+impl std::cmp::Ord for adl_Iterator {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_cmp_9(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
-impl CppEq for adl_Iterator {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_8(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialOrd for adl_Iterator {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
     }
 }
+impl std::cmp::PartialEq for adl_Iterator {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_8(__lhs.clone(), __rhs.clone())
+            })
+        }
+    }
+}
+impl std::cmp::Eq for adl_Iterator {}
 impl CppAdvance for adl_Iterator {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_14();
     }
     fn cpp_dec(__it: &Ptr<Self>) {
         __it.operator_dec_16();
+    }
+}
+impl CppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            adl_IteratorImpl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_inc_14(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for adl_Iterator {}
+impl CppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_dec_16(__it);
+        });
+        self
+    }
+}
+impl CppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_add_assign(__it, n as _);
+        });
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        libcc2rs::with_record_ptrs(self, from, |__lhs, __rhs| {
+            (adl_IteratorImpl::operator_sub_11(__lhs, __rhs.read())) as isize
+        })
+    }
+}
+impl CppMove for adl_Iterator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for adl_Iterator {
@@ -374,6 +481,11 @@ impl CppEq for rvalue_iterator_int_ptr_ {
             == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for rvalue_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Ptr< i8  >  , new, value)]
@@ -384,20 +496,52 @@ impl util_iterator_error {
         Self {}
     }
 }
+impl CppMove for util_iterator_error {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_constexpr_10() -> bool {
     let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0, 0, 1, 0])));
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0, 1, 1, 1])));
-    return (unimplemented!() == (ia.as_pointer() as Ptr<i32>).offset((4) as isize))
-        && (unimplemented!() == (ib.as_pointer() as Ptr<i32>).offset((3) as isize));
+    return (({
+        let ___first: Ptr<i32> = ({ begin_11(ia.as_pointer()) });
+        let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).to_end();
+        is_heap_until_12(___first, ___last)
+    }) == (ia.as_pointer() as Ptr<i32>).offset((4) as isize))
+        && (({
+            let ___first: Ptr<i32> = ({ begin_11(ib.as_pointer()) });
+            let ___last: Ptr<i32> = (ib.as_pointer() as Ptr<i32>).to_end();
+            is_heap_until_12(___first, ___last)
+        }) == (ib.as_pointer() as Ptr<i32>).offset((3) as isize));
 }
-pub fn test_11() {
+pub fn test_13() {
     let i1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0])));
-    assert!((unimplemented!() == (i1.as_pointer() as Ptr::<i32>)));
-    assert!((unimplemented!() == (i1.as_pointer() as Ptr::<i32>).offset((1) as isize)));
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i1.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i1.as_pointer() as Ptr<i32>);
+            is_heap_until_12(___first, ___last)
+        }) == (i1.as_pointer() as Ptr::<i32>))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i1.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i1.as_pointer() as Ptr<i32>).offset((1) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i1.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
     assert!(
         ({
-            let _x: Value<random_access_iterator_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_int_ptr_ =
+                        random_access_iterator_int_ptr_::new_1({ (i1.as_pointer() as Ptr<i32>) });
+                    let ___last: random_access_iterator_int_ptr_ =
+                        random_access_iterator_int_ptr_::new_1({ (i1.as_pointer() as Ptr<i32>) });
+                    is_heap_until_14(___first, ___last)
+                }),
+            ));
             let _y: Value<random_access_iterator_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
                     (i1.as_pointer() as Ptr<i32>)
@@ -407,8 +551,17 @@ pub fn test_11() {
     );
     assert!(
         ({
-            let _x: Value<random_access_iterator_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_int_ptr_ =
+                        random_access_iterator_int_ptr_::new_1({ (i1.as_pointer() as Ptr<i32>) });
+                    let ___last: random_access_iterator_int_ptr_ =
+                        random_access_iterator_int_ptr_::new_1({
+                            (i1.as_pointer() as Ptr<i32>).offset((1) as isize)
+                        });
+                    is_heap_until_14(___first, ___last)
+                }),
+            ));
             let _y: Value<random_access_iterator_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
                     (i1.as_pointer() as Ptr<i32>).offset((1) as isize)
@@ -418,9 +571,27 @@ pub fn test_11() {
     );
     let i2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1])));
     let i3: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 0])));
-    assert!((unimplemented!() == (i1.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i2.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i3.as_pointer() as Ptr::<i32>).offset((2) as isize)));
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i1.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i1.as_pointer() as Ptr<i32>).offset((2) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i1.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i2.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i2.as_pointer() as Ptr<i32>).offset((2) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i2.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i3.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i3.as_pointer() as Ptr<i32>).offset((2) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i3.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
     let i4: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0])));
     let i5: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 1])));
     let i6: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 0])));
@@ -428,13 +599,55 @@ pub fn test_11() {
     let i8: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 0, 0])));
     let i9: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 0, 1])));
     let i10: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1, 0])));
-    assert!((unimplemented!() == (i4.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i5.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i6.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i7.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i8.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i9.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i10.as_pointer() as Ptr::<i32>).offset((3) as isize)));
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i4.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i4.as_pointer() as Ptr<i32>).offset((3) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i4.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i5.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i5.as_pointer() as Ptr<i32>).offset((3) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i5.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i6.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i6.as_pointer() as Ptr<i32>).offset((3) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i6.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i7.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i7.as_pointer() as Ptr<i32>).offset((3) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i7.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i8.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i8.as_pointer() as Ptr<i32>).offset((3) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i8.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i9.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i9.as_pointer() as Ptr<i32>).offset((3) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i9.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i10.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i10.as_pointer() as Ptr<i32>).offset((3) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i10.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
     let i11: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0, 0])));
     let i12: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0, 1])));
     let i13: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 1, 0])));
@@ -450,21 +663,111 @@ pub fn test_11() {
     let i23: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1, 0, 0])));
     let i24: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1, 0, 1])));
     let i25: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1, 1, 0])));
-    assert!((unimplemented!() == (i11.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i12.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i13.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i14.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i15.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i16.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i17.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i18.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i19.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i20.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i21.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i22.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i23.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i24.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i25.as_pointer() as Ptr::<i32>).offset((4) as isize)));
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i11.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i11.as_pointer() as Ptr<i32>).offset((4) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i11.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i12.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i12.as_pointer() as Ptr<i32>).offset((4) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i12.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i13.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i13.as_pointer() as Ptr<i32>).offset((4) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i13.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i14.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i14.as_pointer() as Ptr<i32>).offset((4) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i14.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i15.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i15.as_pointer() as Ptr<i32>).offset((4) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i15.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i16.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i16.as_pointer() as Ptr<i32>).offset((4) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i16.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i17.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i17.as_pointer() as Ptr<i32>).offset((4) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i17.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i18.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i18.as_pointer() as Ptr<i32>).offset((4) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i18.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i19.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i19.as_pointer() as Ptr<i32>).offset((4) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i19.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i20.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i20.as_pointer() as Ptr<i32>).offset((4) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i20.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i21.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i21.as_pointer() as Ptr<i32>).offset((4) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i21.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i22.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i22.as_pointer() as Ptr<i32>).offset((4) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i22.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i23.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i23.as_pointer() as Ptr<i32>).offset((4) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i23.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i24.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i24.as_pointer() as Ptr<i32>).offset((4) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i24.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i25.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i25.as_pointer() as Ptr<i32>).offset((4) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i25.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
     let i26: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0, 0, 0])));
     let i27: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0, 0, 1])));
     let i28: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0, 1, 0])));
@@ -496,37 +799,223 @@ pub fn test_11() {
     let i54: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1, 1, 0, 0])));
     let i55: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1, 1, 0, 1])));
     let i56: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1, 1, 1, 0])));
-    assert!((unimplemented!() == (i26.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i27.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i28.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i29.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i30.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i31.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i32.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i33.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i34.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i35.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i36.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i37.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i38.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i39.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i40.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i41.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i42.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i43.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i44.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i45.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i46.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i47.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i48.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i49.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i50.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i51.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i52.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i53.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i54.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i55.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i56.as_pointer() as Ptr::<i32>).offset((5) as isize)));
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i26.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i26.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i26.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i27.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i27.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i27.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i28.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i28.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i28.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i29.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i29.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i29.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i30.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i30.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i30.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i31.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i31.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i31.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i32.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i32.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i32.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i33.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i33.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i33.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i34.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i34.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i34.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i35.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i35.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i35.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i36.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i36.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i36.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i37.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i37.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i37.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i38.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i38.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i38.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i39.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i39.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i39.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i40.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i40.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i40.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i41.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i41.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i41.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i42.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i42.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i42.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i43.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i43.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i43.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i44.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i44.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i44.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i45.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i45.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i45.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i46.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i46.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i46.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i47.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i47.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i47.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i48.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i48.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i48.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i49.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i49.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i49.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i50.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i50.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i50.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i51.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i51.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i51.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i52.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i52.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i52.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i53.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i53.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i53.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i54.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i54.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i54.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i55.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i55.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i55.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i56.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i56.as_pointer() as Ptr<i32>).offset((5) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i56.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
     let i57: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0, 0, 0, 0])));
     let i58: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0, 0, 0, 1])));
     let i59: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0, 0, 1, 0])));
@@ -590,69 +1079,447 @@ pub fn test_11() {
     let i117: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1, 1, 1, 0, 0])));
     let i118: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1, 1, 1, 0, 1])));
     let i119: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1, 1, 1, 1, 0])));
-    assert!((unimplemented!() == (i57.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i58.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i59.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i60.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i61.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i62.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i63.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i64.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i65.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i66.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i67.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i68.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i69.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i70.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i71.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i72.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i73.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i74.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i75.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i76.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i77.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i78.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i79.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i80.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i81.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i82.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i83.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i84.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i85.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i86.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i87.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i88.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i89.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i90.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i91.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i92.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i93.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i94.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i95.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i96.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i97.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i98.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i99.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i100.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i101.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i102.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i103.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i104.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i105.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i106.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i107.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i108.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i109.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i110.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i111.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i112.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i113.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i114.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i115.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i116.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i117.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i118.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i119.as_pointer() as Ptr::<i32>).offset((6) as isize)));
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i57.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i57.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i57.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i58.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i58.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i58.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i59.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i59.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i59.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i60.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i60.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i60.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i61.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i61.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i61.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i62.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i62.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i62.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i63.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i63.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i63.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i64.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i64.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i64.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i65.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i65.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i65.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i66.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i66.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i66.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i67.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i67.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i67.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i68.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i68.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i68.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i69.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i69.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i69.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i70.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i70.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i70.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i71.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i71.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i71.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i72.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i72.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i72.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i73.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i73.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i73.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i74.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i74.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i74.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i75.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i75.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i75.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i76.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i76.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i76.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i77.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i77.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i77.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i78.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i78.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i78.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i79.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i79.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i79.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i80.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i80.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i80.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i81.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i81.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i81.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i82.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i82.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i82.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i83.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i83.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i83.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i84.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i84.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i84.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i85.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i85.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i85.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i86.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i86.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i86.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i87.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i87.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i87.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i88.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i88.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i88.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i89.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i89.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i89.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i90.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i90.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i90.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i91.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i91.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i91.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i92.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i92.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i92.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i93.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i93.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i93.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i94.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i94.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i94.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i95.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i95.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i95.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i96.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i96.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i96.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i97.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i97.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i97.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i98.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i98.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i98.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i99.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i99.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i99.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i100.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i100.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i100.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i101.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i101.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i101.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i102.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i102.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i102.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i103.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i103.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i103.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i104.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i104.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i104.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i105.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i105.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i105.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i106.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i106.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i106.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i107.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i107.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i107.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i108.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i108.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i108.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i109.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i109.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i109.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i110.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i110.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i110.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i111.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i111.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i111.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i112.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i112.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i112.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i113.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i113.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i113.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i114.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i114.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i114.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i115.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i115.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i115.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i116.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i116.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i116.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i117.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i117.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i117.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i118.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i118.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i118.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i119.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i119.as_pointer() as Ptr<i32>).offset((6) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i119.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
     let i120: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0, 0, 0, 0, 0])));
     let i121: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0, 0, 0, 0, 1])));
     let i122: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0, 0, 0, 1, 0])));
@@ -780,133 +1647,895 @@ pub fn test_11() {
     let i244: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1, 1, 1, 1, 0, 0])));
     let i245: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1, 1, 1, 1, 0, 1])));
     let i246: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1, 1, 1, 1, 1, 0])));
-    assert!((unimplemented!() == (i120.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i121.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i122.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i123.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i124.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i125.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i126.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i127.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i128.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i129.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i130.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i131.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i132.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i133.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i134.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i135.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i136.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i137.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i138.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i139.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i140.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i141.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i142.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i143.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i144.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i145.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i146.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i147.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i148.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i149.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i150.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i151.as_pointer() as Ptr::<i32>).offset((2) as isize)));
-    assert!((unimplemented!() == (i152.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i153.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i154.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i155.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i156.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i157.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i158.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i159.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i160.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i161.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i162.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i163.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i164.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i165.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i166.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i167.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i168.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i169.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i170.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i171.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i172.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i173.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i174.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i175.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i176.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i177.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i178.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i179.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i180.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i181.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i182.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i183.as_pointer() as Ptr::<i32>).offset((1) as isize)));
-    assert!((unimplemented!() == (i184.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i185.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i186.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i187.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i188.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i189.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i190.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i191.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i192.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i193.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i194.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i195.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i196.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i197.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i198.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i199.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i200.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i201.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i202.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i203.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i204.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i205.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i206.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i207.as_pointer() as Ptr::<i32>).offset((4) as isize)));
-    assert!((unimplemented!() == (i208.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i209.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i210.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i211.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i212.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i213.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i214.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i215.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-    assert!((unimplemented!() == (i216.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i217.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i218.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i219.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i220.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i221.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i222.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i223.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i224.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i225.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i226.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i227.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i228.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i229.as_pointer() as Ptr::<i32>).offset((6) as isize)));
-    assert!((unimplemented!() == (i230.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i231.as_pointer() as Ptr::<i32>).offset((5) as isize)));
-    assert!((unimplemented!() == (i232.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i233.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i234.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i235.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i236.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i237.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i238.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i239.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i240.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i241.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i242.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i243.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i244.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i245.as_pointer() as Ptr::<i32>).offset((7) as isize)));
-    assert!((unimplemented!() == (i246.as_pointer() as Ptr::<i32>).offset((7) as isize)));
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i120.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i120.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i120.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i121.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i121.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i121.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i122.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i122.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i122.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i123.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i123.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i123.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i124.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i124.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i124.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i125.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i125.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i125.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i126.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i126.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i126.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i127.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i127.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i127.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i128.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i128.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i128.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i129.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i129.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i129.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i130.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i130.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i130.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i131.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i131.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i131.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i132.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i132.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i132.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i133.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i133.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i133.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i134.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i134.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i134.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i135.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i135.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i135.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i136.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i136.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i136.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i137.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i137.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i137.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i138.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i138.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i138.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i139.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i139.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i139.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i140.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i140.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i140.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i141.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i141.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i141.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i142.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i142.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i142.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i143.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i143.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i143.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i144.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i144.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i144.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i145.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i145.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i145.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i146.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i146.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i146.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i147.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i147.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i147.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i148.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i148.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i148.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i149.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i149.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i149.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i150.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i150.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i150.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i151.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i151.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i151.as_pointer() as Ptr::<i32>).offset((2) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i152.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i152.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i152.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i153.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i153.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i153.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i154.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i154.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i154.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i155.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i155.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i155.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i156.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i156.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i156.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i157.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i157.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i157.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i158.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i158.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i158.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i159.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i159.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i159.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i160.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i160.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i160.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i161.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i161.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i161.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i162.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i162.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i162.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i163.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i163.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i163.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i164.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i164.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i164.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i165.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i165.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i165.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i166.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i166.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i166.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i167.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i167.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i167.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i168.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i168.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i168.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i169.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i169.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i169.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i170.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i170.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i170.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i171.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i171.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i171.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i172.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i172.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i172.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i173.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i173.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i173.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i174.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i174.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i174.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i175.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i175.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i175.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i176.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i176.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i176.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i177.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i177.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i177.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i178.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i178.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i178.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i179.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i179.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i179.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i180.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i180.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i180.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i181.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i181.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i181.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i182.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i182.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i182.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i183.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i183.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i183.as_pointer() as Ptr::<i32>).offset((1) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i184.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i184.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i184.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i185.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i185.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i185.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i186.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i186.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i186.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i187.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i187.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i187.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i188.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i188.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i188.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i189.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i189.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i189.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i190.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i190.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i190.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i191.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i191.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i191.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i192.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i192.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i192.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i193.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i193.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i193.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i194.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i194.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i194.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i195.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i195.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i195.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i196.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i196.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i196.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i197.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i197.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i197.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i198.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i198.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i198.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i199.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i199.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i199.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i200.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i200.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i200.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i201.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i201.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i201.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i202.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i202.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i202.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i203.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i203.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i203.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i204.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i204.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i204.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i205.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i205.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i205.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i206.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i206.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i206.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i207.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i207.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i207.as_pointer() as Ptr::<i32>).offset((4) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i208.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i208.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i208.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i209.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i209.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i209.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i210.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i210.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i210.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i211.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i211.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i211.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i212.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i212.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i212.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i213.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i213.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i213.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i214.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i214.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i214.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i215.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i215.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i215.as_pointer() as Ptr::<i32>).offset((3) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i216.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i216.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i216.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i217.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i217.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i217.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i218.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i218.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i218.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i219.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i219.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i219.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i220.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i220.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i220.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i221.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i221.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i221.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i222.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i222.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i222.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i223.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i223.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i223.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i224.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i224.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i224.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i225.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i225.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i225.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i226.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i226.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i226.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i227.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i227.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i227.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i228.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i228.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i228.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i229.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i229.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i229.as_pointer() as Ptr::<i32>).offset((6) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i230.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i230.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i230.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i231.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i231.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i231.as_pointer() as Ptr::<i32>).offset((5) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i232.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i232.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i232.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i233.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i233.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i233.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i234.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i234.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i234.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i235.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i235.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i235.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i236.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i236.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i236.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i237.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i237.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i237.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i238.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i238.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i238.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i239.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i239.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i239.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i240.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i240.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i240.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i241.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i241.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i241.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i242.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i242.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i242.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i243.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i243.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i243.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i244.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i244.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i244.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i245.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i245.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i245.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
+    assert!(
+        (({
+            let ___first: Ptr<i32> = (i246.as_pointer() as Ptr<i32>);
+            let ___last: Ptr<i32> = (i246.as_pointer() as Ptr<i32>).offset((7) as isize);
+            is_heap_until_12(___first, ___last)
+        }) == (i246.as_pointer() as Ptr::<i32>).offset((7) as isize))
+    );
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -928,7 +2557,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_11() });
+    ({ test_13() });
     const _: () = assert!(true, "test_constexpr()");;
     return 0;
 }
@@ -986,21 +2615,29 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
         return (*self).clone();
     }
     fn operator_inc_14(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_15(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return prev;
     }
     fn operator_dec_16(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_17(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return prev;
     }
 }
@@ -1268,11 +2905,11 @@ impl rvalue_iterator_int_ptr_Impl for Ptr<rvalue_iterator_int_ptr_> {
                 &((*self).with(|__s| __s.it_.clone())),
                 &(_a0.with(|__s| __s.it_.clone())),
             )));
-            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow());
+            if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+                return ({ (*cmp.borrow()) });
             }
         }
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> bool {
         return ({ (*self).with(|__s| __s.it_.clone()) } == { _a0.with(|__s| __s.it_.clone()) });

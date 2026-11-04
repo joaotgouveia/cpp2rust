@@ -14,13 +14,19 @@ const _: () = assert!(
 );
 pub fn test_0() -> bool {
     {
-        let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 20_()));
+        let rv: Value<std_ranges_repeat_view_int__int_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(10));
+            std_ranges_repeat_view_int__int_::new_1({ __tmp_0.as_pointer() }, { 20 })
+        }));
+        assert!(({ (({ (*rv.borrow()).size() }) == 20_u32) }));
     }
     {
-        let mut int_max: i32 = i32::MAX;
-        let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == (int_max as ())));
+        let mut int_max: i32 = 2147483647;
+        let rv: Value<std_ranges_repeat_view_int__int_> = Rc::new(RefCell::new({
+            let __tmp_1: Value<i32> = Rc::new(RefCell::new(10));
+            std_ranges_repeat_view_int__int_::new_1({ __tmp_1.as_pointer() }, { int_max })
+        }));
+        assert!(({ (({ (*rv.borrow()).size() }) == (int_max as u32)) }));
     }
     return true;
 }

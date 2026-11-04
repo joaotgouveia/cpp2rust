@@ -27,7 +27,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let mut i: () = unimplemented!();
+    let mut i: u32 = ({ std_char_traits_char8_t_::eof() });
     (&(i));
     return 0;
 }

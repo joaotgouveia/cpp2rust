@@ -17,6 +17,11 @@ impl CppEq for S {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_1(x: Ptr<S>, y: Ptr<S>) -> bool {
     return ({ x.with(|__s| __s.i) } == { y.with(|__s| __s.i) });
 }

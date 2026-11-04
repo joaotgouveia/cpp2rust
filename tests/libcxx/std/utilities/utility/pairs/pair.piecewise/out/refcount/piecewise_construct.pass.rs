@@ -19,6 +19,11 @@ impl A {
         Self { i_: i, c_: c }
     }
 }
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct B {
@@ -38,13 +43,41 @@ impl B {
         }
     }
 }
+impl CppMove for B {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0() -> bool {
-    let p: Value<(Value<A>, Value<B>)> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((({ AImpl::get_i(&(*p.borrow()).0.as_pointer(),) }) == 4));
-    assert!(((({ AImpl::get_c(&(*p.borrow()).0.as_pointer(),) }) as i32) == (('a' as i8) as i32)));
-    assert!((({ BImpl::get_d(&(*p.borrow()).1.as_pointer(),) }) == 3.5_f64));
-    assert!((({ BImpl::get_u1(&(*p.borrow()).1.as_pointer(),) }) == 6_u32));
-    assert!((({ BImpl::get_u2(&(*p.borrow()).1.as_pointer(),) }) == 2_u32));
+    let p: Value<(Value<A>, Value<B>)> = Rc::new(RefCell::new(std_pair_A__B_::new_1(
+        { (*piecewise_construct_1.with(Value::clone).borrow()).clone() },
+        {
+            ({
+                let ___args_0: Value<i32> = Rc::new(RefCell::new(4));
+                let ___args_1: Value<i8> = Rc::new(RefCell::new(('a' as i8)));
+                make_tuple_2(___args_0.as_pointer(), ___args_1.as_pointer())
+            })
+        },
+        {
+            ({
+                let ___args_0: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+                let ___args_1: Value<u32> = Rc::new(RefCell::new(6_u32));
+                let ___args_2: Value<u32> = Rc::new(RefCell::new(2_u32));
+                make_tuple_3(
+                    ___args_0.as_pointer(),
+                    ___args_1.as_pointer(),
+                    ___args_2.as_pointer(),
+                )
+            })
+        },
+    )));
+    assert!(({ (({ AImpl::get_i(&(*p.borrow()).0.as_pointer(),) }) == 4) }));
+    assert!(
+        ({ ((({ AImpl::get_c(&(*p.borrow()).0.as_pointer(),) }) as i32) == (('a' as i8) as i32)) })
+    );
+    assert!(({ (({ BImpl::get_d(&(*p.borrow()).1.as_pointer(),) }) == 3.5_f64) }));
+    assert!(({ (({ BImpl::get_u1(&(*p.borrow()).1.as_pointer(),) }) == 6_u32) }));
+    assert!(({ (({ BImpl::get_u2(&(*p.borrow()).1.as_pointer(),) }) == 2_u32) }));
     return true;
 }
 pub fn main() {

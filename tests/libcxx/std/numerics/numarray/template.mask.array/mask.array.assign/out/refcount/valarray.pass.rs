@@ -41,28 +41,44 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         true, false, false, true, true, false, false, true, false, false, false, true, false,
         false, false, false,
     ])));
-    let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((N2 == (unimplemented!() as usize)));
-    let vb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 16_usize));
-    assert!(((unimplemented!().read()) == 1));
-    assert!(((unimplemented!().read()) == 1));
-    assert!(((unimplemented!().read()) == 2));
-    assert!(((unimplemented!().read()) == 2));
-    assert!(((unimplemented!().read()) == 3));
-    assert!(((unimplemented!().read()) == 5));
-    assert!(((unimplemented!().read()) == 6));
-    assert!(((unimplemented!().read()) == 4));
-    assert!(((unimplemented!().read()) == 8));
-    assert!(((unimplemented!().read()) == 9));
-    assert!(((unimplemented!().read()) == 10));
-    assert!(((unimplemented!().read()) == 5));
-    assert!(((unimplemented!().read()) == 12));
-    assert!(((unimplemented!().read()) == 13));
-    assert!(((unimplemented!().read()) == 14));
-    assert!(((unimplemented!().read()) == 15));
+    let v1: Value<std_valarray_int_> = Rc::new(RefCell::new(std_valarray_int_::new_1(
+        { (a1.as_pointer() as Ptr<i32>) },
+        { (*N1.borrow()) },
+    )));
+    let v2: Value<std_valarray_int_> = Rc::new(RefCell::new(std_valarray_int_::new_1(
+        { (a2.as_pointer() as Ptr<i32>) },
+        { N2 },
+    )));
+    assert!(
+        (N2 == (({
+            let ___first: Ptr<bool> = (b.as_pointer() as Ptr<bool>);
+            let ___last: Ptr<bool> = (b.as_pointer() as Ptr<bool>).offset((*N1.borrow()) as isize);
+            let ___value: Value<bool> = Rc::new(RefCell::new(true));
+            count_0(___first, ___last, ___value.as_pointer())
+        }) as usize))
+    );
+    let vb: Value<std_valarray_bool_> = Rc::new(RefCell::new(std_valarray_bool_::new_1(
+        { (b.as_pointer() as Ptr<bool>) },
+        { (*N1.borrow()) },
+    )));
+    (*v1.borrow_mut())[(*vb.borrow())] = (*v2.borrow()).clone();
+    assert!(({ (({ (*v1.borrow()).size() }) == 16_usize) }));
+    assert!(({ ({ (*v1.borrow())[0_usize] } == 1) }));
+    assert!(({ ({ (*v1.borrow())[1_usize] } == 1) }));
+    assert!(({ ({ (*v1.borrow())[2_usize] } == 2) }));
+    assert!(({ ({ (*v1.borrow())[3_usize] } == 2) }));
+    assert!(({ ({ (*v1.borrow())[4_usize] } == 3) }));
+    assert!(({ ({ (*v1.borrow())[5_usize] } == 5) }));
+    assert!(({ ({ (*v1.borrow())[6_usize] } == 6) }));
+    assert!(({ ({ (*v1.borrow())[7_usize] } == 4) }));
+    assert!(({ ({ (*v1.borrow())[8_usize] } == 8) }));
+    assert!(({ ({ (*v1.borrow())[9_usize] } == 9) }));
+    assert!(({ ({ (*v1.borrow())[10_usize] } == 10) }));
+    assert!(({ ({ (*v1.borrow())[11_usize] } == 5) }));
+    assert!(({ ({ (*v1.borrow())[12_usize] } == 12) }));
+    assert!(({ ({ (*v1.borrow())[13_usize] } == 13) }));
+    assert!(({ ({ (*v1.borrow())[14_usize] } == 14) }));
+    assert!(({ ({ (*v1.borrow())[15_usize] } == 15) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

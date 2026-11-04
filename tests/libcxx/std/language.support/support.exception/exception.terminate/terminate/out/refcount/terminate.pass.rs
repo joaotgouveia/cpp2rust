@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn f1_0() {
-    unimplemented!();
+    ({ exit_1(0) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -29,8 +29,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    unimplemented!();
-    unimplemented!();
+    ({ set_terminate_2(FnPtr::<fn()>::new(f1_0)) });
+    ({ terminate_3() });
     assert!(false);
     return 0;
 }

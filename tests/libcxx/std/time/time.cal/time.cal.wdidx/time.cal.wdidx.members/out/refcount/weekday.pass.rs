@@ -6,11 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = u32;
-pub const anon_0_value: anon_0 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_weekday__std_chrono_weekday_ {}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -40,8 +36,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     );;
     let mut i: u32 = 0_u32;
     'loop_: while (i <= 6_u32) {
-        let wdi: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == i));
+        let wdi: Value<std_chrono_weekday_indexed> = Rc::new(RefCell::new({
+            let __tmp_0: Value<std_chrono_weekday> =
+                Rc::new(RefCell::new(std_chrono_weekday::new_1({ i })));
+            std_chrono_weekday_indexed::new_1({ __tmp_0.as_pointer() }, { 2_u32 })
+        }));
+        assert!((({ ({ (*wdi.borrow()).weekday() }).c_encoding() }) == i));
         i.prefix_inc();
     }
     return 0;

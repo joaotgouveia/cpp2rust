@@ -13,15 +13,24 @@ pub struct Text {
     #[byte_size(8)]
     pub value: Ptr<Vec<i8>>,
 }
+impl CppMove for Text {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn receiver_0(s: Ptr<Vec<i8>>, calls: Ptr<i32>) -> Ptr<Vec<i8>> {
-    calls.with_mut(|__v| __v.prefix_inc());
+    calls.with_mut(|__v| {
+        __v.prefix_inc();
+    });
     return (s).clone();
 }
 pub fn temporary_1(calls: Ptr<i32>) -> Vec<i8> {
-    calls.with_mut(|__v| __v.prefix_inc());
+    calls.with_mut(|__v| {
+        __v.prefix_inc();
+    });
     return {
         let mut __bytes = Ptr::<i8>::from_string_literal(b"hello").to_c_bytes();
-        __bytes.push(0);
+        __bytes.push(0_i8);
         __bytes
     };
 }
@@ -32,7 +41,7 @@ pub fn main() {
 fn main_0() -> i32 {
     let s: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __bytes = Ptr::<i8>::from_string_literal(b"hello").to_c_bytes();
-        __bytes.push(0);
+        __bytes.push(0_i8);
         __bytes
     }));
     let calls: Value<i32> = Rc::new(RefCell::new(0));
@@ -44,7 +53,7 @@ fn main_0() -> i32 {
                 let mut __tmp1 = __s
                     [__tmp_1..::std::cmp::min(__tmp_1 + 2_usize, __s.len().saturating_sub(1))]
                     .to_vec();
-                __tmp1.push(0);
+                __tmp1.push(0_i8);
                 __tmp1
             }),
         },
@@ -58,7 +67,7 @@ fn main_0() -> i32 {
                 let mut __tmp1 = __s
                     [1_usize..::std::cmp::min(1_usize + 2_usize, __s.len().saturating_sub(1))]
                     .to_vec();
-                __tmp1.push(0);
+                __tmp1.push(0_i8);
                 __tmp1
             }),
     );
@@ -66,7 +75,7 @@ fn main_0() -> i32 {
     out.as_pointer().write(
         match ({
             ({
-                (*s.borrow_mut())[0_usize] = ('j' as i8);
+                s.decay().offset(0_usize as isize).write(('j' as i8));
                 0
             } as usize)
         },)
@@ -75,7 +84,7 @@ fn main_0() -> i32 {
                 let mut __tmp1 = __s
                     [__tmp_2..::std::cmp::min(__tmp_2 + 2_usize, __s.len().saturating_sub(1))]
                     .to_vec();
-                __tmp1.push(0);
+                __tmp1.push(0_i8);
                 __tmp1
             }),
         },
@@ -84,7 +93,7 @@ fn main_0() -> i32 {
     out.as_pointer().write(
         match ({
             ({
-                (*s.borrow_mut())[1_usize] = ('a' as i8);
+                s.decay().offset(1_usize as isize).write(('a' as i8));
                 2
             } as usize)
         },)
@@ -93,20 +102,20 @@ fn main_0() -> i32 {
                 let mut __tmp1 = __s
                     [0_usize..::std::cmp::min(0_usize + __tmp_3, __s.len().saturating_sub(1))]
                     .to_vec();
-                __tmp1.push(0);
+                __tmp1.push(0_i8);
                 __tmp1
             }),
         },
     );
     println!("count mutation: {} {}", out.decay(), s.decay());
-    (*out.borrow_mut())[0_usize] = ('X' as i8);
-    (*s.borrow_mut())[1_usize] = ('b' as i8);
+    out.decay().offset(0_usize as isize).write(('X' as i8));
+    s.decay().offset(1_usize as isize).write(('b' as i8));
     println!("independent: {} {}", out.decay(), s.decay());
     let mut p: Ptr<Vec<i8>> = (s.as_pointer());
     out.as_pointer().write(p.with(|__s: &Vec<i8>| {
         let mut __tmp1 =
             __s[1_usize..::std::cmp::min(1_usize + 2_usize, __s.len().saturating_sub(1))].to_vec();
-        __tmp1.push(0);
+        __tmp1.push(0_i8);
         __tmp1
     }));
     println!("pointer: {}", out.decay());
@@ -114,7 +123,7 @@ fn main_0() -> i32 {
         Rc::new(RefCell::new(
             Rc::new(RefCell::new({
                 let mut __bytes = Ptr::<i8>::from_string_literal(b"hello").to_c_bytes();
-                __bytes.push(0);
+                __bytes.push(0_i8);
                 __bytes
             }))
             .as_pointer()
@@ -122,7 +131,7 @@ fn main_0() -> i32 {
                 let mut __tmp1 = __s
                     [1_usize..::std::cmp::min(1_usize + 3_usize, __s.len().saturating_sub(1))]
                     .to_vec();
-                __tmp1.push(0);
+                __tmp1.push(0_i8);
                 __tmp1
             }),
         ))
@@ -131,7 +140,7 @@ fn main_0() -> i32 {
             let mut __tmp1 = __s
                 [1_usize..::std::cmp::min(1_usize + 1_usize, __s.len().saturating_sub(1))]
                 .to_vec();
-            __tmp1.push(0);
+            __tmp1.push(0_i8);
             __tmp1
         }),
     );
@@ -142,14 +151,14 @@ fn main_0() -> i32 {
                 let mut __tmp1 = __s
                     [__tmp_4..::std::cmp::min(__tmp_4 + 0_usize, __s.len().saturating_sub(1))]
                     .to_vec();
-                __tmp1.push(0);
+                __tmp1.push(0_i8);
                 __tmp1
             }),
         });
     println!("empty: {}", ((*out.borrow()).len() - 1));
     let field: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __bytes = Ptr::<i8>::from_string_literal(b"hello").to_c_bytes();
-        __bytes.push(0);
+        __bytes.push(0_i8);
         __bytes
     }));
     let text: Value<Text> = Rc::new(RefCell::new(Text {
@@ -160,7 +169,7 @@ fn main_0() -> i32 {
             let mut __tmp1 = __s
                 [1_usize..::std::cmp::min(1_usize + 2_usize, __s.len().saturating_sub(1))]
                 .to_vec();
-            __tmp1.push(0);
+            __tmp1.push(0_i8);
             __tmp1
         }));
     println!(
@@ -171,28 +180,29 @@ fn main_0() -> i32 {
     let strings: Value<Vec<Vec<i8>>> = Rc::new(RefCell::new(Vec::from([
         {
             let mut __bytes = Ptr::<i8>::from_string_literal(b"hello").to_c_bytes();
-            __bytes.push(0);
+            __bytes.push(0_i8);
             __bytes
         },
         {
             let mut __bytes = Ptr::<i8>::from_string_literal(b"world").to_c_bytes();
-            __bytes.push(0);
+            __bytes.push(0_i8);
             __bytes
         },
     ])));
     let mut index: usize = 0_usize;
-    out.as_pointer().write(
-        strings
-            .decay()
-            .offset(index.postfix_inc())
-            .with(|__s: &Vec<i8>| {
-                let mut __tmp1 = __s
-                    [1_usize..::std::cmp::min(1_usize + 2_usize, __s.len().saturating_sub(1))]
-                    .to_vec();
-                __tmp1.push(0);
-                __tmp1
-            }),
-    );
+    out.as_pointer()
+        .write(
+            strings
+                .decay()
+                .offset(index.postfix_inc() as isize)
+                .with(|__s: &Vec<i8>| {
+                    let mut __tmp1 = __s
+                        [1_usize..::std::cmp::min(1_usize + 2_usize, __s.len().saturating_sub(1))]
+                        .to_vec();
+                    __tmp1.push(0_i8);
+                    __tmp1
+                }),
+        );
     println!("element: {} {}", out.decay(), index);
     return 0;
 }

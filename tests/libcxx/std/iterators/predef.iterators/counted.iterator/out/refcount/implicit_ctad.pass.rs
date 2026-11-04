@@ -12,6 +12,13 @@ pub const anon_0_value: anon_0 = 1;
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_counted_iterator_int_ptr___std_counted_iterator_int_ptr__
 {}
+impl CppMove
+    for test_macros_detail_is_same_std_counted_iterator_int_ptr___std_counted_iterator_int_ptr__
+{
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -34,7 +41,9 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
     let mut p: Ptr<i32> = (array.as_pointer() as Ptr<i32>);
-    let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let iter: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(
+        std_counted_iterator_int_ptr_::new_1({ (p).clone() }, { 3_isize }),
+    ));
     const _: () = assert!(true, "");;
     return 0;
 }

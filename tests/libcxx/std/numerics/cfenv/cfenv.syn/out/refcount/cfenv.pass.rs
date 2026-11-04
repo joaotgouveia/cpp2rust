@@ -27,8 +27,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let fenv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let fex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fenv: Value<fenv_t> = Rc::new(RefCell::new(<fenv_t>::default()));
+    let fex: Value<u16> = Rc::new(RefCell::new(0_u16));
     (&(*fenv.borrow_mut()));
     (&(*fex.borrow_mut()));
     const _: () = assert!(

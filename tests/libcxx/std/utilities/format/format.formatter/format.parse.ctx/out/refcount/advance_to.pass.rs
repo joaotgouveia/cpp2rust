@@ -8,107 +8,366 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0(mut fmt: Ptr<i8>) {
     {
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
-        unimplemented!();
-        assert!((unimplemented!() == unimplemented!()));
+        let context: Value<std_basic_format_parse_context_char_> =
+            Rc::new(RefCell::new(std_basic_format_parse_context_char_::new_1({
+                std_basic_string_view_char__std_char_traits_char__::new_1({ (fmt).clone() })
+            })));
+        ({
+            let ___it: Ptr<i8> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((1) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<i8> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((2) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<i8> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(({ (({ (*context.borrow()).begin() }) == ({ (*context.borrow()).end() })) }));
     }
     {
-        let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
-        unimplemented!();
-        assert!((unimplemented!() == unimplemented!()));
+        let view: Value<std_basic_string_view_char__std_char_traits_char__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char__std_char_traits_char__::new_1({ (fmt).clone() }),
+            ));
+        let context: Value<std_basic_format_parse_context_char_> =
+            Rc::new(RefCell::new(std_basic_format_parse_context_char_::new_1({
+                (*view.borrow()).clone()
+            })));
+        ({
+            let ___it: Ptr<i8> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((1) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<i8> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((2) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<i8> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(({ (({ (*context.borrow()).begin() }) == ({ (*context.borrow()).end() })) }));
     }
 }
 pub fn test_1(mut fmt: Ptr<i32>) {
     {
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
-        unimplemented!();
-        assert!((unimplemented!() == unimplemented!()));
+        let context: Value<std_basic_format_parse_context_wchar_t_> = Rc::new(RefCell::new(
+            std_basic_format_parse_context_wchar_t_::new_1({
+                std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_1({ (fmt).clone() })
+            }),
+        ));
+        ({
+            let ___it: Ptr<i32> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((1) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<i32> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((2) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<i32> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(({ (({ (*context.borrow()).begin() }) == ({ (*context.borrow()).end() })) }));
     }
     {
-        let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
-        unimplemented!();
-        assert!((unimplemented!() == unimplemented!()));
+        let view: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_1({ (fmt).clone() }),
+            ));
+        let context: Value<std_basic_format_parse_context_wchar_t_> = Rc::new(RefCell::new(
+            std_basic_format_parse_context_wchar_t_::new_1({ (*view.borrow()).clone() }),
+        ));
+        ({
+            let ___it: Ptr<i32> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((1) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<i32> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((2) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<i32> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(({ (({ (*context.borrow()).begin() }) == ({ (*context.borrow()).end() })) }));
     }
 }
 pub fn test_2(mut fmt: Ptr<u8>) {
     {
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
-        unimplemented!();
-        assert!((unimplemented!() == unimplemented!()));
+        let context: Value<std_basic_format_parse_context_char8_t_> = Rc::new(RefCell::new(
+            std_basic_format_parse_context_char8_t_::new_1({
+                std_basic_string_view_char8_t__std_char_traits_char8_t__::new_1({ (fmt).clone() })
+            }),
+        ));
+        ({
+            let ___it: Ptr<u8> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((1) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<u8> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((2) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<u8> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(({ (({ (*context.borrow()).begin() }) == ({ (*context.borrow()).end() })) }));
     }
     {
-        let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
-        unimplemented!();
-        assert!((unimplemented!() == unimplemented!()));
+        let view: Value<std_basic_string_view_char8_t__std_char_traits_char8_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char8_t__std_char_traits_char8_t__::new_1({ (fmt).clone() }),
+            ));
+        let context: Value<std_basic_format_parse_context_char8_t_> = Rc::new(RefCell::new(
+            std_basic_format_parse_context_char8_t_::new_1({ (*view.borrow()).clone() }),
+        ));
+        ({
+            let ___it: Ptr<u8> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((1) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<u8> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((2) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<u8> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(({ (({ (*context.borrow()).begin() }) == ({ (*context.borrow()).end() })) }));
     }
 }
 pub fn test_3(mut fmt: Ptr<u16>) {
     {
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
-        unimplemented!();
-        assert!((unimplemented!() == unimplemented!()));
+        let context: Value<std_basic_format_parse_context_char16_t_> = Rc::new(RefCell::new(
+            std_basic_format_parse_context_char16_t_::new_1({
+                std_basic_string_view_char16_t__std_char_traits_char16_t__::new_1({ (fmt).clone() })
+            }),
+        ));
+        ({
+            let ___it: Ptr<u16> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((1) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<u16> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((2) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<u16> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(({ (({ (*context.borrow()).begin() }) == ({ (*context.borrow()).end() })) }));
     }
     {
-        let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
-        unimplemented!();
-        assert!((unimplemented!() == unimplemented!()));
+        let view: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char16_t__std_char_traits_char16_t__::new_1({
+                    (fmt).clone()
+                }),
+            ));
+        let context: Value<std_basic_format_parse_context_char16_t_> = Rc::new(RefCell::new(
+            std_basic_format_parse_context_char16_t_::new_1({ (*view.borrow()).clone() }),
+        ));
+        ({
+            let ___it: Ptr<u16> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((1) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<u16> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((2) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<u16> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(({ (({ (*context.borrow()).begin() }) == ({ (*context.borrow()).end() })) }));
     }
 }
 pub fn test_4(mut fmt: Ptr<u32>) {
     {
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
-        unimplemented!();
-        assert!((unimplemented!() == unimplemented!()));
+        let context: Value<std_basic_format_parse_context_char32_t_> = Rc::new(RefCell::new(
+            std_basic_format_parse_context_char32_t_::new_1({
+                std_basic_string_view_char32_t__std_char_traits_char32_t__::new_1({ (fmt).clone() })
+            }),
+        ));
+        ({
+            let ___it: Ptr<u32> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((1) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<u32> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((2) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<u32> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(({ (({ (*context.borrow()).begin() }) == ({ (*context.borrow()).end() })) }));
     }
     {
-        let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
-        unimplemented!();
-        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
-        unimplemented!();
-        assert!((unimplemented!() == unimplemented!()));
+        let view: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char32_t__std_char_traits_char32_t__::new_1({
+                    (fmt).clone()
+                }),
+            ));
+        let context: Value<std_basic_format_parse_context_char32_t_> = Rc::new(RefCell::new(
+            std_basic_format_parse_context_char32_t_::new_1({ (*view.borrow()).clone() }),
+        ));
+        ({
+            let ___it: Ptr<u32> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((1) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<u32> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(
+            ({
+                ({ ({ libcc2rs::to_address_refcount(({ (*context.borrow()).begin() })) }) } == {
+                    fmt.offset((2) as isize)
+                })
+            })
+        );
+        ({
+            let ___it: Ptr<u32> = ({ (*context.borrow()).begin() }).offset((1) as isize);
+            (*context.borrow()).advance_to(___it)
+        });
+        assert!(({ (({ (*context.borrow()).begin() }) == ({ (*context.borrow()).end() })) }));
     }
 }
 pub fn test_5() -> bool {

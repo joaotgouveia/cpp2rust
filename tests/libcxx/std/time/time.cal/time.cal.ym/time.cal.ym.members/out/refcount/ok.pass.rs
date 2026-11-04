@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_bool__bool_ {}
+impl CppMove for test_macros_detail_is_same_bool__bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -31,7 +36,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let January: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let January: Value<std_chrono_month> = Rc::new(RefCell::new(
+        (*January_1.with(Value::clone).borrow()).clone(),
+    ));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "!year_month{{year{{-32768}}, January}}.ok()");;
@@ -39,15 +46,31 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "year_month{{year{{2019}},   January}}.ok()");;
     let mut i: u32 = 0_u32;
     'loop_: while (i <= 50_u32) {
-        let ym: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
+        let ym: Value<std_chrono_year_month> = Rc::new(RefCell::new({
+            let __tmp_0: Value<std_chrono_year> =
+                Rc::new(RefCell::new(std_chrono_year::new_1({ 2019 })));
+            let __tmp_1: Value<std_chrono_month> =
+                Rc::new(RefCell::new(std_chrono_month::new_1({ i })));
+            std_chrono_year_month::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+        }));
+        assert!(
+            ((({ (*ym.borrow()).ok() }) as i32)
+                == (({ std_chrono_month::new_1({ i },).ok() }) as i32))
+        );
         i.prefix_inc();
     }
-    let mut ymax: i32 = unimplemented!();
+    let mut ymax: i32 = ({ ({ std_chrono_year::max() })() });
     let mut i: i32 = (ymax - 100);
     'loop_: while (i <= (ymax + 100)) {
-        let ym: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
+        let ym: Value<std_chrono_year_month> = Rc::new(RefCell::new({
+            let __tmp_2: Value<std_chrono_year> =
+                Rc::new(RefCell::new(std_chrono_year::new_1({ i })));
+            std_chrono_year_month::new_1({ __tmp_2.as_pointer() }, { January.as_pointer() })
+        }));
+        assert!(
+            ((({ (*ym.borrow()).ok() }) as i32)
+                == (({ std_chrono_year::new_1({ i },).ok() }) as i32))
+        );
         i.prefix_inc();
     }
     return 0;

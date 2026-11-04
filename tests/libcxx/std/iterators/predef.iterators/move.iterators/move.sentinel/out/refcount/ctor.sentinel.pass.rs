@@ -9,8 +9,9 @@ use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     {
         const _: () = assert!(true, "!std::is_convertible_v<int, std::move_sentinel<int>>");;
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 42));
+        let m: Value<std_move_sentinel_int_> =
+            Rc::new(RefCell::new(std_move_sentinel_int_::new_1({ 42 })));
+        assert!(({ (({ (*m.borrow()).base() }) == 42) }));
     }
     {
         const _: () = assert!(
@@ -18,13 +19,18 @@ pub fn test_0() -> bool {
             "!std::is_convertible_v<int*, std::move_sentinel<int*>>"
         );;
         let i: Value<i32> = Rc::new(RefCell::new(42));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == (i.as_pointer())));
+        let m: Value<std_move_sentinel_int_ptr_> =
+            Rc::new(RefCell::new(std_move_sentinel_int_ptr_::new_1({
+                (i.as_pointer())
+            })));
+        assert!(({ (({ (*m.borrow()).base() }) == (i.as_pointer())) }));
     }
     {
         const _: () = assert!(true, "!std::is_convertible_v<S, std::move_sentinel<S>>");;
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ unimplemented!().i } == 42));
+        let m: Value<std_move_sentinel_S_> = Rc::new(RefCell::new(std_move_sentinel_S_::new_1({
+            S_1::new_1({ 42 })
+        })));
+        assert!(({ ({ (*m.borrow()).base() }).i } == 42));
     }
     return true;
 }
@@ -37,6 +43,11 @@ pub struct S_1 {
 impl S_1 {
     pub fn new_1(mut j: i32) -> Self {
         Self { i: j }
+    }
+}
+impl CppMove for S_1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for S_1 {

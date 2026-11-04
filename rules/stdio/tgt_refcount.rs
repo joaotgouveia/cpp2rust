@@ -188,3 +188,7 @@ fn f29(a0: Ptr<i8>, va: Box<[VaArg]>) -> i32 {
 fn t1() -> Ptr<CFile> {
     Ptr::null()
 }
+
+fn t2() -> CFile {
+    unimplemented!()
+}

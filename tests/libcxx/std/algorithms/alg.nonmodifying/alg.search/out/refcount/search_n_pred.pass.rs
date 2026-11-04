@@ -23,6 +23,11 @@ impl support_double_move_tracker {
         __this
     }
 }
+impl CppMove for support_double_move_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for support_double_move_tracker {
     fn default() -> Self {
         { support_double_move_tracker::new() }
@@ -32,18 +37,22 @@ impl Default for support_double_move_tracker {
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
@@ -60,6 +69,11 @@ impl cpp17_output_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -82,6 +96,11 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_input_iterator_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
@@ -150,6 +169,11 @@ impl CppIterator<i32> for forward_iterator_const_int_ptr_ {
     }
 }
 impl CppInputIterator<i32> for forward_iterator_const_int_ptr_ {}
+impl CppMove for forward_iterator_const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_eq_2(
     x: Ptr<bidirectional_iterator_const_int_ptr_>,
     y: Ptr<bidirectional_iterator_const_int_ptr_>,
@@ -215,6 +239,11 @@ impl CppIterator<i32> for bidirectional_iterator_const_int_ptr_ {
     }
 }
 impl CppInputIterator<i32> for bidirectional_iterator_const_int_ptr_ {}
+impl CppMove for bidirectional_iterator_const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_sub_4(
     x: random_access_iterator_const_int_ptr_,
     mut n: isize,
@@ -305,6 +334,11 @@ impl CppBidirectionalIterator<i32> for random_access_iterator_const_int_ptr_ {
         self
     }
 }
+impl CppMove for random_access_iterator_const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
@@ -321,6 +355,11 @@ impl cpp20_random_access_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp20_random_access_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -345,6 +384,11 @@ impl cpp20_input_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_input_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
@@ -364,6 +408,11 @@ impl cpp20_output_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp20_output_iterator<int*>, int>"
@@ -379,6 +428,11 @@ pub struct IteratorOpCounts {
     pub zero_moves: usize,
     #[offset(24)]
     pub equal_cmps: usize,
+}
+impl CppMove for IteratorOpCounts {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
@@ -411,6 +465,11 @@ impl CppEq for forward_sized_iterator_int_ptr_ {
         operator_eq_8(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for forward_sized_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -441,13 +500,17 @@ pub fn operator_add_10(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
 pub fn iter_swap_11(mut a: adl_Iterator, mut b: adl_Iterator) {
     cpp_swap!((a.ptr_).clone(), (b.ptr_).clone());
     if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+        a.iter_swaps_.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub fn iter_move_12(iter: adl_Iterator) -> Ptr<i32> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
-        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
+        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
@@ -564,6 +627,11 @@ impl CppRandomAccessIterator<i32> for adl_Iterator {
         })
     }
 }
+impl CppMove for adl_Iterator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
@@ -594,6 +662,11 @@ impl CppEq for rvalue_iterator_int_ptr_ {
             == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for rvalue_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Ptr< i8  >  , new, value)]
@@ -602,6 +675,11 @@ pub struct util_iterator_error {}
 impl util_iterator_error {
     pub fn new(mut what: Ptr<i8>) -> Self {
         Self {}
+    }
+}
+impl CppMove for util_iterator_error {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
@@ -617,14 +695,52 @@ impl UserDefinedIntegral_unsigned_int_ {
         Self { value: v }
     }
 }
+impl CppMove for UserDefinedIntegral_unsigned_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn eq_15(mut a: i32, mut b: i32) -> bool {
     return (a == b);
 }
 pub fn test_constexpr_16() -> bool {
     let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 1, 1, 2, 2])));
-    return ((unimplemented!() == (ia.as_pointer() as Ptr<i32>))
-        && (unimplemented!() == (ia.as_pointer() as Ptr<i32>).offset((2) as isize)))
-        && (unimplemented!() == (ia.as_pointer() as Ptr<i32>).to_end());
+    return ((({
+        let ___first: Ptr<i32> = ({ begin_17(ia.as_pointer()) });
+        let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).to_end();
+        let ___val: Value<i32> = Rc::new(RefCell::new(0));
+        search_n_18(
+            ___first,
+            ___last,
+            1,
+            ___val.as_pointer(),
+            FnPtr::<fn(i32, i32) -> bool>::new(eq_15),
+        )
+    }) == (ia.as_pointer() as Ptr<i32>))
+        && (({
+            let ___first: Ptr<i32> = ({ begin_17(ia.as_pointer()) });
+            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).to_end();
+            let ___val: Value<i32> = Rc::new(RefCell::new(1));
+            search_n_18(
+                ___first,
+                ___last,
+                2,
+                ___val.as_pointer(),
+                FnPtr::<fn(i32, i32) -> bool>::new(eq_15),
+            )
+        }) == (ia.as_pointer() as Ptr<i32>).offset((2) as isize)))
+        && (({
+            let ___first: Ptr<i32> = ({ begin_17(ia.as_pointer()) });
+            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).to_end();
+            let ___val: Value<i32> = Rc::new(RefCell::new(3));
+            search_n_18(
+                ___first,
+                ___last,
+                1,
+                ___val.as_pointer(),
+                FnPtr::<fn(i32, i32) -> bool>::new(eq_15),
+            )
+        }) == (ia.as_pointer() as Ptr<i32>).to_end());
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -636,18 +752,39 @@ impl Callable2<Ptr<i32>, Ptr<i32>, bool> for count_equal {
         })
     }
 }
+impl CppMove for count_equal {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
-    pub static count_17: Value<u32> = Rc::new(RefCell::new(0_u32));
+    pub static count_19: Value<u32> = Rc::new(RefCell::new(0_u32));
 );
-pub fn test_18() {
+pub fn test_20() {
     let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4, 5])));
     let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ia.as_pointer() as Ptr<i32>)
@@ -655,12 +792,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ia.as_pointer() as Ptr<i32>).offset((0) as isize)
@@ -668,12 +821,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
@@ -681,12 +850,29 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___count: u32 = sa;
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_22(
+                        ___first,
+                        ___last,
+                        ___count,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
@@ -694,12 +880,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(3));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ia.as_pointer() as Ptr<i32>)
@@ -707,12 +909,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(3));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ia.as_pointer() as Ptr<i32>).offset((3) as isize)
@@ -720,12 +938,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(3));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
@@ -733,12 +967,29 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___count: u32 = sa;
+                    let ___val: Value<i32> = Rc::new(RefCell::new(3));
+                    search_n_22(
+                        ___first,
+                        ___last,
+                        ___count,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
@@ -746,12 +997,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(5));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ia.as_pointer() as Ptr<i32>)
@@ -759,12 +1026,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(5));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ia.as_pointer() as Ptr<i32>).offset((5) as isize)
@@ -772,12 +1055,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(5));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
@@ -785,12 +1084,29 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___count: u32 = sa;
+                    let ___val: Value<i32> = Rc::new(RefCell::new(5));
+                    search_n_22(
+                        ___first,
+                        ___last,
+                        ___count,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
@@ -798,15 +1114,31 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 1, 1, 2, 2])));
     let mut sb: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ib.as_pointer() as Ptr<i32>)
@@ -814,12 +1146,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ib.as_pointer() as Ptr<i32>).offset((0) as isize)
@@ -827,12 +1175,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ib.as_pointer() as Ptr<i32>).offset((0) as isize)
@@ -840,12 +1204,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        3,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
@@ -853,12 +1233,29 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___count: u32 = sb;
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_22(
+                        ___first,
+                        ___last,
+                        ___count,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
@@ -866,12 +1263,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(1));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ib.as_pointer() as Ptr<i32>)
@@ -879,12 +1292,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(1));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ib.as_pointer() as Ptr<i32>).offset((2) as isize)
@@ -892,12 +1321,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(1));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ib.as_pointer() as Ptr<i32>).offset((2) as isize)
@@ -905,12 +1350,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(1));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        3,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
@@ -918,12 +1379,29 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___count: u32 = sb;
+                    let ___val: Value<i32> = Rc::new(RefCell::new(1));
+                    search_n_22(
+                        ___first,
+                        ___last,
+                        ___count,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
@@ -931,12 +1409,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(2));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ib.as_pointer() as Ptr<i32>)
@@ -944,12 +1438,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(2));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ib.as_pointer() as Ptr<i32>).offset((4) as isize)
@@ -957,12 +1467,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(2));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ib.as_pointer() as Ptr<i32>).offset((4) as isize)
@@ -970,12 +1496,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(2));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        3,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
@@ -983,12 +1525,29 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___count: u32 = sb;
+                    let ___val: Value<i32> = Rc::new(RefCell::new(2));
+                    search_n_22(
+                        ___first,
+                        ___last,
+                        ___count,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
@@ -996,15 +1555,31 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     let ic: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0])));
     let mut sc: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ic.as_pointer() as Ptr<i32>)
@@ -1012,12 +1587,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sc));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sc));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ic.as_pointer() as Ptr<i32>)
@@ -1025,12 +1616,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sc));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sc));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ic.as_pointer() as Ptr<i32>)
@@ -1038,12 +1645,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sc));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sc));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        3,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ic.as_pointer() as Ptr<i32>)
@@ -1051,12 +1674,28 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sc));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sc));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<forward_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<forward_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
+                    let ___last: forward_iterator_const_int_ptr_ =
+                        forward_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_21(
+                        ___first,
+                        ___last,
+                        4,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<forward_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(forward_iterator_const_int_ptr_::new_1({
                     (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
@@ -1064,32 +1703,82 @@ pub fn test_18() {
             operator_eq_0(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sc));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
-    &(unimplemented!());
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sc));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
+    &({
+        let ___first: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
+        let ___last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+        });
+        let ___val: Value<i32> = Rc::new(RefCell::new(0));
+        search_n_23(
+            ___first,
+            ___last,
+            UserDefinedIntegral_unsigned_int_::new_1({ 4_u32 }),
+            ___val.as_pointer(),
+            <count_equal>::default(),
+        )
+    });
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
 }
-pub fn test_19() {
+pub fn test_24() {
     let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4, 5])));
     let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ia.as_pointer() as Ptr<i32>).offset((0) as isize) },
@@ -1097,12 +1786,30 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ia.as_pointer() as Ptr<i32>).offset((sa) as isize) },
@@ -1110,12 +1817,31 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___count: u32 = sa;
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_26(
+                        ___first,
+                        ___last,
+                        ___count,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ia.as_pointer() as Ptr<i32>).offset((sa) as isize) },
@@ -1123,24 +1849,60 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(3));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(3));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ia.as_pointer() as Ptr<i32>).offset((3) as isize) },
@@ -1148,12 +1910,30 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(3));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ia.as_pointer() as Ptr<i32>).offset((sa) as isize) },
@@ -1161,12 +1941,31 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___count: u32 = sa;
+                    let ___val: Value<i32> = Rc::new(RefCell::new(3));
+                    search_n_26(
+                        ___first,
+                        ___last,
+                        ___count,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ia.as_pointer() as Ptr<i32>).offset((sa) as isize) },
@@ -1174,24 +1973,60 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(5));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(5));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ia.as_pointer() as Ptr<i32>).offset((5) as isize) },
@@ -1199,12 +2034,30 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(5));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ia.as_pointer() as Ptr<i32>).offset((sa) as isize) },
@@ -1212,12 +2065,31 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___count: u32 = sa;
+                    let ___val: Value<i32> = Rc::new(RefCell::new(5));
+                    search_n_26(
+                        ___first,
+                        ___last,
+                        ___count,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ia.as_pointer() as Ptr<i32>).offset((sa) as isize) },
@@ -1225,27 +2097,63 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 1, 1, 2, 2])));
     let mut sb: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((0) as isize) },
@@ -1253,12 +2161,30 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((0) as isize) },
@@ -1266,12 +2192,30 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        3,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((sb) as isize) },
@@ -1279,12 +2223,31 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___count: u32 = sb;
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_26(
+                        ___first,
+                        ___last,
+                        ___count,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((sb) as isize) },
@@ -1292,24 +2255,60 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(1));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(1));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((2) as isize) },
@@ -1317,12 +2316,30 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(1));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((2) as isize) },
@@ -1330,12 +2347,30 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(1));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        3,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((sb) as isize) },
@@ -1343,12 +2378,31 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___count: u32 = sb;
+                    let ___val: Value<i32> = Rc::new(RefCell::new(1));
+                    search_n_26(
+                        ___first,
+                        ___last,
+                        ___count,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((sb) as isize) },
@@ -1356,24 +2410,60 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(2));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 bidirectional_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(2));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((4) as isize) },
@@ -1381,12 +2471,30 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(2));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((4) as isize) },
@@ -1394,12 +2502,30 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(2));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        3,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((sb) as isize) },
@@ -1407,12 +2533,31 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___count: u32 = sb;
+                    let ___val: Value<i32> = Rc::new(RefCell::new(2));
+                    search_n_26(
+                        ___first,
+                        ___last,
+                        ___count,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((sb) as isize) },
@@ -1420,63 +2565,153 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     let ic: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0])));
     let mut sc: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 bidirectional_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sc));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sc));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 bidirectional_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sc));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sc));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 bidirectional_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sc));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sc));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        3,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 bidirectional_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sc));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sc));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<bidirectional_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: bidirectional_iterator_const_int_ptr_ =
+                        bidirectional_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_25(
+                        ___first,
+                        ___last,
+                        4,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<bidirectional_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_::new_1(
                     { (ic.as_pointer() as Ptr<i32>).offset((sc) as isize) },
@@ -1484,32 +2719,83 @@ pub fn test_19() {
             operator_eq_2(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sc));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
-    &(unimplemented!());
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sc));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
+    &({
+        let ___first: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
+        let ___last: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+            });
+        let ___val: Value<i32> = Rc::new(RefCell::new(0));
+        search_n_27(
+            ___first,
+            ___last,
+            UserDefinedIntegral_unsigned_int_::new_1({ 4_u32 }),
+            ___val.as_pointer(),
+            <count_equal>::default(),
+        )
+    });
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
 }
-pub fn test_20() {
+pub fn test_28() {
     let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4, 5])));
     let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ia.as_pointer() as Ptr<i32>).offset((0) as isize) },
@@ -1517,12 +2803,30 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ia.as_pointer() as Ptr<i32>).offset((sa) as isize) },
@@ -1530,12 +2834,31 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___count: u32 = sa;
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_30(
+                        ___first,
+                        ___last,
+                        ___count,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ia.as_pointer() as Ptr<i32>).offset((sa) as isize) },
@@ -1543,24 +2866,60 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(3));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(3));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ia.as_pointer() as Ptr<i32>).offset((3) as isize) },
@@ -1568,12 +2927,30 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(3));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ia.as_pointer() as Ptr<i32>).offset((sa) as isize) },
@@ -1581,12 +2958,31 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___count: u32 = sa;
+                    let ___val: Value<i32> = Rc::new(RefCell::new(3));
+                    search_n_30(
+                        ___first,
+                        ___last,
+                        ___count,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ia.as_pointer() as Ptr<i32>).offset((sa) as isize) },
@@ -1594,24 +2990,60 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(5));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(5));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ia.as_pointer() as Ptr<i32>).offset((5) as isize) },
@@ -1619,12 +3051,30 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(5));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ia.as_pointer() as Ptr<i32>).offset((sa) as isize) },
@@ -1632,12 +3082,31 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+                        });
+                    let ___count: u32 = sa;
+                    let ___val: Value<i32> = Rc::new(RefCell::new(5));
+                    search_n_30(
+                        ___first,
+                        ___last,
+                        ___count,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ia.as_pointer() as Ptr<i32>).offset((sa) as isize) },
@@ -1645,27 +3114,63 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sa));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sa));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 1, 1, 2, 2])));
     let mut sb: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 random_access_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((0) as isize) },
@@ -1673,12 +3178,30 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((0) as isize) },
@@ -1686,12 +3209,30 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        3,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((sb) as isize) },
@@ -1699,12 +3240,31 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___count: u32 = sb;
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_30(
+                        ___first,
+                        ___last,
+                        ___count,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((sb) as isize) },
@@ -1712,24 +3272,60 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(1));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 random_access_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(1));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((2) as isize) },
@@ -1737,12 +3333,30 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(1));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((2) as isize) },
@@ -1750,12 +3364,30 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(1));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        3,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((sb) as isize) },
@@ -1763,12 +3395,31 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___count: u32 = sb;
+                    let ___val: Value<i32> = Rc::new(RefCell::new(1));
+                    search_n_30(
+                        ___first,
+                        ___last,
+                        ___count,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((sb) as isize) },
@@ -1776,24 +3427,60 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(2));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 random_access_iterator_const_int_ptr_::new_1({ (ib.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(2));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((4) as isize) },
@@ -1801,12 +3488,30 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(2));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((4) as isize) },
@@ -1814,12 +3519,30 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(2));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        3,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((sb) as isize) },
@@ -1827,12 +3550,31 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ib.as_pointer() as Ptr<i32>).offset((sb) as isize)
+                        });
+                    let ___count: u32 = sb;
+                    let ___val: Value<i32> = Rc::new(RefCell::new(2));
+                    search_n_30(
+                        ___first,
+                        ___last,
+                        ___count,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ib.as_pointer() as Ptr<i32>).offset((sb) as isize) },
@@ -1840,63 +3582,153 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sb));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sb));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     let ic: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0])));
     let mut sc: u32 = (((::std::mem::size_of::<[i32; 3]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        0,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 random_access_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sc));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sc));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        1,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 random_access_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sc));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sc));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        2,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 random_access_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sc));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sc));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        3,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
                 random_access_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) }),
             ));
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sc));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sc));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
     assert!(
         ({
-            let _x: Value<random_access_iterator_const_int_ptr_> =
-                Rc::new(RefCell::new(unimplemented!()));
+            let _x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>)
+                        });
+                    let ___last: random_access_iterator_const_int_ptr_ =
+                        random_access_iterator_const_int_ptr_::new_1({
+                            (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+                        });
+                    let ___val: Value<i32> = Rc::new(RefCell::new(0));
+                    search_n_29(
+                        ___first,
+                        ___last,
+                        4,
+                        ___val.as_pointer(),
+                        <count_equal>::default(),
+                    )
+                }),
+            ));
             let _y: Value<random_access_iterator_const_int_ptr_> =
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_::new_1(
                     { (ic.as_pointer() as Ptr<i32>).offset((sc) as isize) },
@@ -1904,10 +3736,25 @@ pub fn test_20() {
             operator_eq_6(_x.as_pointer(), _y.as_pointer())
         })
     );
-    assert!((count_17.with(|rc| *rc.borrow()) <= sc));
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
-    &(unimplemented!());
-    count_17.with(|rc| *rc.borrow_mut() = 0_u32);
+    assert!((count_19.with(|rc| *rc.borrow()) <= sc));
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
+    &({
+        let ___first: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ic.as_pointer() as Ptr<i32>) });
+        let ___last: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ic.as_pointer() as Ptr<i32>).offset((sc) as isize)
+            });
+        let ___val: Value<i32> = Rc::new(RefCell::new(0));
+        search_n_31(
+            ___first,
+            ___last,
+            UserDefinedIntegral_unsigned_int_::new_1({ 4_u32 }),
+            ___val.as_pointer(),
+            <count_equal>::default(),
+        )
+    });
+    count_19.with(|rc| *rc.borrow_mut() = 0_u32);
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -1922,6 +3769,11 @@ impl A {
         Self { x_: x, y_: y }
     }
 }
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Pred {}
@@ -1930,6 +3782,11 @@ impl Callable2<Ptr<A>, i32, bool> for Pred {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             PredImpl::operator_call(__it, a1, a2)
         })
+    }
+}
+impl CppMove for Pred {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {
@@ -1952,17 +3809,21 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_18() });
-    ({ test_19() });
     ({ test_20() });
+    ({ test_24() });
+    ({ test_28() });
     {
         let a: Value<Box<[A]>> = Rc::new(RefCell::new(Box::new([
             A::new({ 1 }, { 2 }),
             A::new({ 2 }, { 3 }),
             A::new({ 2 }, { 4 }),
         ])));
-        let mut value: i32 = 2;
-        let mut result: Ptr<A> = unimplemented!();
+        let value: Value<i32> = Rc::new(RefCell::new(2));
+        let mut result: Ptr<A> = ({
+            let ___first: Ptr<A> = (a.as_pointer() as Ptr<A>);
+            let ___last: Ptr<A> = (a.as_pointer() as Ptr<A>).offset((3) as isize);
+            search_n_32(___first, ___last, 1, value.as_pointer(), <Pred>::default())
+        });
         assert!(({ (result).clone() } == { (a.as_pointer() as Ptr<A>).offset((1) as isize) }));
     }
     const _: () = assert!(true, "test_constexpr()");;
@@ -2050,21 +3911,29 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
         return (*self).clone();
     }
     fn operator_inc_14(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_15(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return prev;
     }
     fn operator_dec_16(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_17(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return prev;
     }
 }
@@ -2090,7 +3959,9 @@ impl bidirectional_iterator_const_int_ptr_Impl for Ptr<bidirectional_iterator_co
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_const_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -2110,7 +3981,7 @@ pub trait count_equalImpl {
 }
 impl count_equalImpl for Ptr<count_equal> {
     fn operator_call_1_int(&self, x: Ptr<i32>, y: Ptr<i32>) -> bool {
-        (*count_17.with(Value::clone).borrow_mut()).prefix_inc();
+        (*count_19.with(Value::clone).borrow_mut()).prefix_inc();
         return ({ (x.read()) } == { (y.read()) });
     }
 }
@@ -2289,7 +4160,9 @@ impl forward_iterator_const_int_ptr_Impl for Ptr<forward_iterator_const_int_ptr_
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_const_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -2341,11 +4214,15 @@ impl random_access_iterator_const_int_ptr_Impl for Ptr<random_access_iterator_co
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_const_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_dec_8(&self) -> Ptr<random_access_iterator_const_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_add_assign(&self, mut n: isize) -> Ptr<random_access_iterator_const_int_ptr_> {
@@ -2418,11 +4295,11 @@ impl rvalue_iterator_int_ptr_Impl for Ptr<rvalue_iterator_int_ptr_> {
                 &((*self).with(|__s| __s.it_.clone())),
                 &(_a0.with(|__s| __s.it_.clone())),
             )));
-            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow());
+            if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+                return ({ (*cmp.borrow()) });
             }
         }
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> bool {
         return ({ (*self).with(|__s| __s.it_.clone()) } == { _a0.with(|__s| __s.it_.clone()) });
@@ -2446,5 +4323,5 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = count_17.with(|_| ());
+    let _ = count_19.with(|_| ());
 }

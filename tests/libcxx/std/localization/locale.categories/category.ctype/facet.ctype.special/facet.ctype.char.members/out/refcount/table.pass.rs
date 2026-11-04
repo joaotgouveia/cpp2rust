@@ -28,17 +28,33 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let f: Ptr<()> = unimplemented!();
-        assert!(({ unimplemented!() } == { unimplemented!() }));
+        let l: Value<std_locale> = Rc::new(RefCell::new(std_locale::new_1(
+            { ({ std_locale::classic() }) },
+            { Ptr::alloc(<std_ctype_char_>::default()) },
+        )));
+        let f: Ptr<std_ctype_char_> = ({ use_facet_0(l.as_pointer()) });
+        assert!(
+            ({
+                ({ ({ (*f.upgrade().deref()).table() }) } == {
+                    ({ std_ctype_char_::classic_table() })
+                })
+            })
+        );
     }
     {
-        let table: Value<Box<[()]>> = Rc::new(RefCell::new(
-            (0..256).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+        let table: Value<Box<[u16]>> = Rc::new(RefCell::new(
+            (0..256).map(|_| 0_u16).collect::<Box<[u16]>>(),
         ));
-        let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let f: Ptr<()> = unimplemented!();
-        assert!(({ unimplemented!() } == { (table.as_pointer() as Ptr::<()>) }));
+        let l: Value<std_locale> = Rc::new(RefCell::new(std_locale::new_1(
+            { ({ std_locale::classic() }) },
+            { Ptr::alloc(<std_ctype_char_>::default()) },
+        )));
+        let f: Ptr<std_ctype_char_> = ({ use_facet_0(l.as_pointer()) });
+        assert!(
+            ({
+                ({ ({ (*f.upgrade().deref()).table() }) } == { (table.as_pointer() as Ptr<u16>) })
+            })
+        );
     }
     return 0;
 }

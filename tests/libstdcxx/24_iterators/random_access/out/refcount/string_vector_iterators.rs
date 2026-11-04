@@ -52,6 +52,11 @@ impl Clone for __gnu_test_object_counter {
         __gnu_test_object_counter::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_object_counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_object_counter {
     fn default() -> Self {
         { __gnu_test_object_counter::new() }
@@ -78,6 +83,11 @@ impl __gnu_test_copy_constructor {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_copy_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
@@ -99,6 +109,11 @@ impl __gnu_test_assignment_operator {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_assignment_operator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
@@ -111,6 +126,11 @@ impl __gnu_test_destructor {
     }
     pub fn reset() {
         _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
+    }
+}
+impl CppMove for __gnu_test_destructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -173,6 +193,11 @@ impl Clone for __gnu_test_copy_tracker {
         __gnu_test_copy_tracker::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_copy_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_copy_tracker {
     fn default() -> Self {
         { __gnu_test_copy_tracker::new(None, None) }
@@ -197,6 +222,11 @@ pub struct __gnu_test_semaphore {
     pid_: (),
 }
 impl __gnu_test_semaphore {}
+impl CppMove for __gnu_test_semaphore {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn string_stuff_9() -> i32 {
     let failures: Value<i32> = Rc::new(RefCell::new(0));
     let s: Value<Vec<i8>> = Rc::new(RefCell::new({
@@ -241,7 +271,7 @@ pub fn string_stuff_9() -> i32 {
         Rc::new(RefCell::new(RandomAccessIterator::default()));
     (*i2.borrow_mut()) = RandomAccessIterator::Vec(s.decay().to_last());
     let mut d1: isize = 0_isize;
-    d1 = ((*i2.borrow()).iter_distance(&(*i1.borrow()).clone().into()) as i64 as isize);
+    d1 = ((*i2.borrow()).iter_distance(&({ (*i1.borrow()).clone() }).into()) as i64 as isize);
     if (d1 != 5_isize) {
         (*failures.borrow_mut()).prefix_inc();
     }
@@ -354,7 +384,7 @@ pub fn string_stuff_9() -> i32 {
     (*ci2.borrow_mut()) =
         <RandomAccessIterator<i8>>::from(RandomAccessIterator::Vec(s.decay().to_last()));
     let mut d2: isize = 0_isize;
-    d2 = ((*ci2.borrow()).iter_distance(&(*ci1.borrow()).clone().into()) as i64 as isize);
+    d2 = ((*ci2.borrow()).iter_distance(&({ (*ci1.borrow()).clone() }).into()) as i64 as isize);
     if (d2 != 5_isize) {
         (*failures.borrow_mut()).prefix_inc();
     }
@@ -415,7 +445,7 @@ pub fn string_stuff_9() -> i32 {
         (*failures.borrow_mut()).prefix_inc();
     }
     let ci4: Value<RandomAccessIterator<i8>> = Rc::new(RefCell::new(
-        <RandomAccessIterator<i8>>::from((*i1.borrow()).clone()),
+        <RandomAccessIterator<i8>>::from(({ (*i1.borrow()).clone() })),
     ));
     if ((((*ci4.borrow()) == (*i1.borrow())) as i32) != (true as i32)) {
         (*failures.borrow_mut()).prefix_inc();
@@ -423,32 +453,32 @@ pub fn string_stuff_9() -> i32 {
     if ((((*ci4.borrow()) != (*i1.borrow())) as i32) != (false as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    if ((((*ci4.borrow()) < (*i1.borrow()).clone().into()) as i32) != (false as i32)) {
+    if ((((*ci4.borrow()) < ({ (*i1.borrow()).clone() }).into()) as i32) != (false as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    if ((((*ci4.borrow()) > (*i1.borrow()).clone().into()) as i32) != (false as i32)) {
+    if ((((*ci4.borrow()) > ({ (*i1.borrow()).clone() }).into()) as i32) != (false as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    if ((((*ci4.borrow()) <= (*i1.borrow()).clone().into()) as i32) != (true as i32)) {
+    if ((((*ci4.borrow()) <= ({ (*i1.borrow()).clone() }).into()) as i32) != (true as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    if ((((*ci4.borrow()) >= (*i1.borrow()).clone().into()) as i32) != (true as i32)) {
+    if ((((*ci4.borrow()) >= ({ (*i1.borrow()).clone() }).into()) as i32) != (true as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    (*ci4.borrow_mut()) = <RandomAccessIterator<i8>>::from((*i2.borrow()).clone());
+    (*ci4.borrow_mut()) = <RandomAccessIterator<i8>>::from(({ (*i2.borrow()).clone() }));
     if ((((*i2.borrow()) == (*ci4.borrow())) as i32) != (true as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    if ((((*i2.borrow()) < (*ci4.borrow()).clone().into()) as i32) != (false as i32)) {
+    if ((((*i2.borrow()) < ({ (*ci4.borrow()).clone() }).into()) as i32) != (false as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    if ((((*i2.borrow()) > (*ci4.borrow()).clone().into()) as i32) != (false as i32)) {
+    if ((((*i2.borrow()) > ({ (*ci4.borrow()).clone() }).into()) as i32) != (false as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    if ((((*i2.borrow()) <= (*ci4.borrow()).clone().into()) as i32) != (true as i32)) {
+    if ((((*i2.borrow()) <= ({ (*ci4.borrow()).clone() }).into()) as i32) != (true as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    if ((((*i2.borrow()) >= (*ci4.borrow()).clone().into()) as i32) != (true as i32)) {
+    if ((((*i2.borrow()) >= ({ (*ci4.borrow()).clone() }).into()) as i32) != (true as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
     let mut cs: Vec<i8> = {
@@ -521,7 +551,7 @@ pub fn vector_stuff_10() -> i32 {
         Rc::new(RefCell::new(RandomAccessIterator::default()));
     (*i2.borrow_mut()) = v.decay().end();
     let mut d1: isize = 0_isize;
-    d1 = ((*i2.borrow()).iter_distance(&(*i1.borrow()).clone().into()) as i64 as isize);
+    d1 = ((*i2.borrow()).iter_distance(&({ (*i1.borrow()).clone() }).into()) as i64 as isize);
     if (d1 != 5_isize) {
         (*failures.borrow_mut()).prefix_inc();
     }
@@ -631,7 +661,7 @@ pub fn vector_stuff_10() -> i32 {
         Rc::new(RefCell::new(RandomAccessIterator::default()));
     (*ci2.borrow_mut()) = <RandomAccessIterator<i32>>::from(v.decay().end());
     let mut d2: isize = 0_isize;
-    d2 = ((*ci2.borrow()).iter_distance(&(*ci1.borrow()).clone().into()) as i64 as isize);
+    d2 = ((*ci2.borrow()).iter_distance(&({ (*ci1.borrow()).clone() }).into()) as i64 as isize);
     if (d2 != 5_isize) {
         (*failures.borrow_mut()).prefix_inc();
     }
@@ -692,7 +722,7 @@ pub fn vector_stuff_10() -> i32 {
         (*failures.borrow_mut()).prefix_inc();
     }
     let ci4: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(
-        <RandomAccessIterator<i32>>::from((*i1.borrow()).clone()),
+        <RandomAccessIterator<i32>>::from(({ (*i1.borrow()).clone() })),
     ));
     if ((((*ci4.borrow()) == (*i1.borrow())) as i32) != (true as i32)) {
         (*failures.borrow_mut()).prefix_inc();
@@ -700,32 +730,32 @@ pub fn vector_stuff_10() -> i32 {
     if ((((*ci4.borrow()) != (*i1.borrow())) as i32) != (false as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    if ((((*ci4.borrow()) < (*i1.borrow()).clone().into()) as i32) != (false as i32)) {
+    if ((((*ci4.borrow()) < ({ (*i1.borrow()).clone() }).into()) as i32) != (false as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    if ((((*ci4.borrow()) > (*i1.borrow()).clone().into()) as i32) != (false as i32)) {
+    if ((((*ci4.borrow()) > ({ (*i1.borrow()).clone() }).into()) as i32) != (false as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    if ((((*ci4.borrow()) <= (*i1.borrow()).clone().into()) as i32) != (true as i32)) {
+    if ((((*ci4.borrow()) <= ({ (*i1.borrow()).clone() }).into()) as i32) != (true as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    if ((((*ci4.borrow()) >= (*i1.borrow()).clone().into()) as i32) != (true as i32)) {
+    if ((((*ci4.borrow()) >= ({ (*i1.borrow()).clone() }).into()) as i32) != (true as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    (*ci4.borrow_mut()) = <RandomAccessIterator<i32>>::from((*i2.borrow()).clone());
+    (*ci4.borrow_mut()) = <RandomAccessIterator<i32>>::from(({ (*i2.borrow()).clone() }));
     if ((((*i2.borrow()) == (*ci4.borrow())) as i32) != (true as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    if ((((*i2.borrow()) < (*ci4.borrow()).clone().into()) as i32) != (false as i32)) {
+    if ((((*i2.borrow()) < ({ (*ci4.borrow()).clone() }).into()) as i32) != (false as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    if ((((*i2.borrow()) > (*ci4.borrow()).clone().into()) as i32) != (false as i32)) {
+    if ((((*i2.borrow()) > ({ (*ci4.borrow()).clone() }).into()) as i32) != (false as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    if ((((*i2.borrow()) <= (*ci4.borrow()).clone().into()) as i32) != (true as i32)) {
+    if ((((*i2.borrow()) <= ({ (*ci4.borrow()).clone() }).into()) as i32) != (true as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    if ((((*i2.borrow()) >= (*ci4.borrow()).clone().into()) as i32) != (true as i32)) {
+    if ((((*i2.borrow()) >= ({ (*ci4.borrow()).clone() }).into()) as i32) != (true as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
     let cv: Value<Vec<i32>> = Rc::new(RefCell::new((*v.borrow()).clone()));
@@ -743,7 +773,9 @@ pub fn vector_stuff_10() -> i32 {
         (*vs.borrow_mut()).push(__a1)
     };
     let ivs: Value<RandomAccessIterator<Vec<i8>>> = Rc::new(RefCell::new(vs.decay().begin()));
-    if (((elem!((*ivs.borrow()).iter_deref().decay(), 1).read()) as i32) != (('b' as i8) as i32)) {
+    if (((elem!(({ (*ivs.borrow()).iter_deref().decay() }), 1).read()) as i32)
+        != (('b' as i8) as i32))
+    {
         (*failures.borrow_mut()).prefix_inc();
     }
     return (*failures.borrow());
@@ -786,7 +818,7 @@ pub fn test6642_13() -> i32 {
     let cit: Value<RandomAccessIterator<i8>> = Rc::new(RefCell::new(
         <RandomAccessIterator<i8>>::from(RandomAccessIterator::Vec(s.decay())),
     ));
-    return ((*it.borrow()).iter_distance(&(*cit.borrow()).clone().into()) as i64 as i32);
+    return ((*it.borrow()).iter_distance(&({ (*cit.borrow()).clone() }).into()) as i64 as i32);
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -942,22 +974,36 @@ pub fn run_tests_wrapped_env_18(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !(libc::setenv(env, name, 1) != 0) {
+    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+        true => {
+            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
+            0
+        }
+        false => 0,
+    } != 0)
+    {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: i32 = 0;
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        libc::setenv(
-            env,
+        match ({
             if !(oldENV).is_null() {
                 (oldENV).clone()
             } else {
                 Ptr::<i8>::from_string_literal(b"")
+            }
+        },)
+        {
+            (mut __tmp_0,) => match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+                true => {
+                    unsafe { ::std::env::set_var(env.to_rust_string(), __tmp_0.to_rust_string()) };
+                    0
+                }
+                false => 0,
             },
-            1,
-        );
+        };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = env.to_c_bytes();
@@ -1006,6 +1052,11 @@ impl __gnu_test_semun {
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<u16>> {
         this.reinterpret_cast()
+    }
+}
+impl CppMove for __gnu_test_semun {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for __gnu_test_semun {
@@ -1083,7 +1134,9 @@ impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
     }
     fn push_back(&self, mut test: FnPtr<fn()>) {
         array_elem!((*self), _M_tests, (*self).with(|__s| __s._M_size)).write((test).clone());
-        field!((*self), _M_size).with_mut(|__v| __v.prefix_inc());
+        field!((*self), _M_size).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait __gnu_test_object_counterImpl {

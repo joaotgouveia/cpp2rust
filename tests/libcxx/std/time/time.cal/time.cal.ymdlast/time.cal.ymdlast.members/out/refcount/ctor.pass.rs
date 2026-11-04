@@ -28,8 +28,18 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
-    let January: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let ymdl0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let January: Value<std_chrono_month> = Rc::new(RefCell::new(
+        (*January_0.with(Value::clone).borrow()).clone(),
+    ));
+    let ymdl0: Value<std_chrono_year_month_day_last> = Rc::new(RefCell::new({
+        let __tmp_0: Value<std_chrono_year> = Rc::new(RefCell::new(<std_chrono_year>::default()));
+        let __tmp_1: Value<std_chrono_month_day_last> = Rc::new(RefCell::new({
+            let __tmp_2: Value<std_chrono_month> =
+                Rc::new(RefCell::new(<std_chrono_month>::default()));
+            std_chrono_month_day_last::new({ __tmp_2.as_pointer() })
+        }));
+        std_chrono_year_month_day_last::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+    }));
     const _: () = assert!(true, "ymdl0.year()           == year{{}}");;
     const _: () = assert!(true, "ymdl0.month()          == month{{}}");;
     const _: () = assert!(
@@ -37,7 +47,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         "ymdl0.month_day_last() == month_day_last{{month{{}}}}"
     );;
     const _: () = assert!(true, "!ymdl0.ok()");;
-    let ymdl1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ymdl1: Value<std_chrono_year_month_day_last> = Rc::new(RefCell::new({
+        let __tmp_3: Value<std_chrono_year> =
+            Rc::new(RefCell::new(std_chrono_year::new_1({ 2019 })));
+        let __tmp_4: Value<std_chrono_month_day_last> =
+            Rc::new(RefCell::new(std_chrono_month_day_last::new({
+                January.as_pointer()
+            })));
+        std_chrono_year_month_day_last::new({ __tmp_3.as_pointer() }, { __tmp_4.as_pointer() })
+    }));
     const _: () = assert!(true, "ymdl1.year()           == year{{2019}}");;
     const _: () = assert!(true, "ymdl1.month()          == January");;
     const _: () = assert!(true, "ymdl1.month_day_last() == month_day_last{{January}}");;

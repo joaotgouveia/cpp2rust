@@ -7,8 +7,8 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn is_about_0(mut x: f64, mut y: f64, mut significant_digits: i32) -> bool {
-    let mut epsilon: f64 = unimplemented!();
-    return (unimplemented!() < epsilon);
+    let mut epsilon: f64 = ({ pow_1((1_f64 / 10_f64), significant_digits) });
+    return (({ libcc2rs::abs_refcount((x - y)) }) < epsilon);
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -44,16 +44,26 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let mut N: u32 = (((::std::mem::size_of::<[f64; 5]>() as usize)
             .wrapping_div((::std::mem::size_of::<f64>() as usize)))
             as u32);
-        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
+        let v1: Value<std_valarray_double_> = Rc::new(RefCell::new(std_valarray_double_::new_1(
+            { (a1.as_pointer() as Ptr<f64>) },
+            { (N as usize) },
+        )));
+        let v3: Value<std_valarray_double_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<
+                std__Expr_std___detail__UnClos_std__Sin__std__ValArray__double___double_,
+            > = Rc::new(RefCell::new(({ sin_2(v1.as_pointer()) })));
+            std_valarray_double_::new_2({ __tmp_0.as_pointer() })
+        }));
+        assert!(({ (({ (*v3.borrow()).size() }) == ({ (*v1.borrow()).size() })) }));
         let mut i: usize = 0_usize;
-        'loop_: while (i < unimplemented!()) {
+        'loop_: while (i < ({ (*v3.borrow()).size() })) {
             assert!(
                 ({
-                    let _x: f64 = (unimplemented!().read());
-                    let _y: f64 = a3[(i) as usize];
-                    is_about_0(_x, _y, 10)
+                    ({
+                        let _x: f64 = { (*v3.borrow())[i] };
+                        let _y: f64 = a3[(i) as usize];
+                        is_about_0(_x, _y, 10)
+                    })
                 })
             );
             i.prefix_inc();

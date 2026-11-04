@@ -23,6 +23,11 @@ impl support_double_move_tracker {
         __this
     }
 }
+impl CppMove for support_double_move_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for support_double_move_tracker {
     fn default() -> Self {
         { support_double_move_tracker::new() }
@@ -32,18 +37,22 @@ impl Default for support_double_move_tracker {
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
@@ -60,6 +69,11 @@ impl cpp17_output_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -82,6 +96,11 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_input_iterator_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
@@ -115,9 +134,38 @@ impl forward_iterator_const_char_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for forward_iterator_const_char_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_0(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for forward_iterator_const_char_ptr_ {}
 impl CppAdvance for forward_iterator_const_char_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
+    }
+}
+impl CppIterator<i8> for forward_iterator_const_char_ptr_ {
+    fn iter_deref(&self) -> Ptr<i8> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            forward_iterator_const_char_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            forward_iterator_const_char_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i8> for forward_iterator_const_char_ptr_ {}
+impl CppMove for forward_iterator_const_char_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_ne_1(
@@ -150,9 +198,38 @@ impl forward_iterator_const_wchar_t_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for forward_iterator_const_wchar_t_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_1(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for forward_iterator_const_wchar_t_ptr_ {}
 impl CppAdvance for forward_iterator_const_wchar_t_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
+    }
+}
+impl CppIterator<i32> for forward_iterator_const_wchar_t_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            forward_iterator_const_wchar_t_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            forward_iterator_const_wchar_t_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for forward_iterator_const_wchar_t_ptr_ {}
+impl CppMove for forward_iterator_const_wchar_t_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_eq_2(
@@ -197,17 +274,49 @@ impl bidirectional_iterator_const_char_ptr_ {
         }
     }
 }
-impl CppEq for bidirectional_iterator_const_char_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_2(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for bidirectional_iterator_const_char_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_2(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for bidirectional_iterator_const_char_ptr_ {}
 impl CppAdvance for bidirectional_iterator_const_char_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
     fn cpp_dec(__it: &Ptr<Self>) {
         __it.operator_dec_7();
+    }
+}
+impl CppIterator<i8> for bidirectional_iterator_const_char_ptr_ {
+    fn iter_deref(&self) -> Ptr<i8> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            bidirectional_iterator_const_char_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_const_char_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i8> for bidirectional_iterator_const_char_ptr_ {}
+impl CppBidirectionalIterator<i8> for bidirectional_iterator_const_char_ptr_ {
+    fn iter_dec(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_const_char_ptr_Impl::operator_dec_7(__it);
+        });
+        self
+    }
+}
+impl CppMove for bidirectional_iterator_const_char_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for bidirectional_iterator_const_char_ptr_ {
@@ -257,17 +366,49 @@ impl bidirectional_iterator_const_wchar_t_ptr_ {
         }
     }
 }
-impl CppEq for bidirectional_iterator_const_wchar_t_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_4(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for bidirectional_iterator_const_wchar_t_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_4(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for bidirectional_iterator_const_wchar_t_ptr_ {}
 impl CppAdvance for bidirectional_iterator_const_wchar_t_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
     }
     fn cpp_dec(__it: &Ptr<Self>) {
         __it.operator_dec_7();
+    }
+}
+impl CppIterator<i32> for bidirectional_iterator_const_wchar_t_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            bidirectional_iterator_const_wchar_t_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_const_wchar_t_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for bidirectional_iterator_const_wchar_t_ptr_ {}
+impl CppBidirectionalIterator<i32> for bidirectional_iterator_const_wchar_t_ptr_ {
+    fn iter_dec(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_const_wchar_t_ptr_Impl::operator_dec_7(__it);
+        });
+        self
+    }
+}
+impl CppMove for bidirectional_iterator_const_wchar_t_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for bidirectional_iterator_const_wchar_t_ptr_ {
@@ -293,6 +434,11 @@ impl cpp20_random_access_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_random_access_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(
     true,
     "std::random_access_iterator<cpp20_random_access_iterator<int*>>"
@@ -315,6 +461,11 @@ impl cpp20_input_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_input_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
@@ -334,6 +485,11 @@ impl cpp20_output_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp20_output_iterator<int*>, int>"
@@ -349,6 +505,11 @@ pub struct IteratorOpCounts {
     pub zero_moves: usize,
     #[offset(24)]
     pub equal_cmps: usize,
+}
+impl CppMove for IteratorOpCounts {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
@@ -381,6 +542,11 @@ impl CppEq for forward_sized_iterator_int_ptr_ {
         operator_eq_6(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for forward_sized_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -411,13 +577,17 @@ pub fn operator_add_8(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
 pub fn iter_swap_9(mut a: adl_Iterator, mut b: adl_Iterator) {
     cpp_swap!((a.ptr_).clone(), (b.ptr_).clone());
     if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+        a.iter_swaps_.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub fn iter_move_10(iter: adl_Iterator) -> Ptr<i32> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
-        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
+        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
@@ -467,22 +637,76 @@ impl adl_Iterator {
         });
     }
 }
-impl CppLess for adl_Iterator {
-    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_cmp_12(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
+impl std::cmp::Ord for adl_Iterator {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_cmp_12(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
-impl CppEq for adl_Iterator {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_11(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialOrd for adl_Iterator {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
     }
 }
+impl std::cmp::PartialEq for adl_Iterator {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_11(__lhs.clone(), __rhs.clone())
+            })
+        }
+    }
+}
+impl std::cmp::Eq for adl_Iterator {}
 impl CppAdvance for adl_Iterator {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_14();
     }
     fn cpp_dec(__it: &Ptr<Self>) {
         __it.operator_dec_16();
+    }
+}
+impl CppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            adl_IteratorImpl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_inc_14(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for adl_Iterator {}
+impl CppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_dec_16(__it);
+        });
+        self
+    }
+}
+impl CppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_add_assign(__it, n as _);
+        });
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        libcc2rs::with_record_ptrs(self, from, |__lhs, __rhs| {
+            (adl_IteratorImpl::operator_sub_11(__lhs, __rhs.read())) as isize
+        })
+    }
+}
+impl CppMove for adl_Iterator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for adl_Iterator {
@@ -515,6 +739,11 @@ impl CppEq for rvalue_iterator_int_ptr_ {
             == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for rvalue_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Ptr< i8  >  , new, value)]
@@ -523,6 +752,11 @@ pub struct util_iterator_error {}
 impl util_iterator_error {
     pub fn new(mut what: Ptr<i8>) -> Self {
         Self {}
+    }
+}
+impl CppMove for util_iterator_error {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {
@@ -560,53 +794,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>).offset((1) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>).offset((1) as isize) })
+            })
         );
         assert!((unimplemented!() == 1_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"a").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_0,) => {
+                    Ptr::<i8>::from_string_literal(b"a").with_c_str(|__s| {
+                        (*__tmp_0.upgrade().deref())
+                            [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -617,53 +865,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>).offset((2) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>).offset((2) as isize) })
+            })
         );
         assert!((unimplemented!() == 2_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"ab").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_1,) => {
+                    Ptr::<i8>::from_string_literal(b"ab").with_c_str(|__s| {
+                        (*__tmp_1.upgrade().deref())
+                            [..(*__tmp_1.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -681,53 +943,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>).offset((3) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>).offset((3) as isize) })
+            })
         );
         assert!((unimplemented!() == 2_()));
         assert!((unimplemented!() == 1_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"ab").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_2,) => {
+                    Ptr::<i8>::from_string_literal(b"ab").with_c_str(|__s| {
+                        (*__tmp_2.upgrade().deref())
+                            [..(*__tmp_2.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -744,53 +1020,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>).offset((4) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>).offset((4) as isize) })
+            })
         );
         assert!((unimplemented!() == 2_()));
         assert!((unimplemented!() == 1_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"bc").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_3,) => {
+                    Ptr::<i8>::from_string_literal(b"bc").with_c_str(|__s| {
+                        (*__tmp_3.upgrade().deref())
+                            [..(*__tmp_3.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -801,53 +1091,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>).offset((4) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>).offset((4) as isize) })
+            })
         );
         assert!((unimplemented!() == 4_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_4,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_4.upgrade().deref())
+                            [..(*__tmp_4.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -858,60 +1162,80 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>).offset((5) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>).offset((5) as isize) })
+            })
         );
         assert!((unimplemented!() == 5_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_5,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_5.upgrade().deref())
+                            [..(*__tmp_5.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         assert!((unimplemented!() == 2_()));
         assert!((unimplemented!() == 2_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"ab").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_6,) => {
+                    Ptr::<i8>::from_string_literal(b"ab").with_c_str(|__s| {
+                        (*__tmp_6.upgrade().deref())
+                            [..(*__tmp_6.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -922,67 +1246,93 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>).offset((unimplemented!()) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>).offset((unimplemented!()) as isize) })
+            })
         );
         assert!((unimplemented!() == 7_()));
         assert!((unimplemented!() == 2_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"cdefghi").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_7,) => {
+                    Ptr::<i8>::from_string_literal(b"cdefghi").with_c_str(|__s| {
+                        (*__tmp_7.upgrade().deref())
+                            [..(*__tmp_7.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 4_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"efg").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_8,) => {
+                    Ptr::<i8>::from_string_literal(b"efg").with_c_str(|__s| {
+                        (*__tmp_8.upgrade().deref())
+                            [..(*__tmp_8.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         assert!((unimplemented!() == 1_()));
         assert!((unimplemented!() == 4_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"e").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_9,) => {
+                    Ptr::<i8>::from_string_literal(b"e").with_c_str(|__s| {
+                        (*__tmp_9.upgrade().deref())
+                            [..(*__tmp_9.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -993,53 +1343,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>).offset((3) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>).offset((3) as isize) })
+            })
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_10,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_10.upgrade().deref())
+                            [..(*__tmp_10.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -1050,53 +1414,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>).offset((4) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>).offset((4) as isize) })
+            })
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_11,) => {
+                    Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
+                        (*__tmp_11.upgrade().deref())
+                            [..(*__tmp_11.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -1113,53 +1491,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>).offset((3) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>).offset((3) as isize) })
+            })
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_12,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_12.upgrade().deref())
+                            [..(*__tmp_12.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -1170,55 +1562,69 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>).offset((5) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>).offset((5) as isize) })
+            })
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 2_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>)
-                .offset((2) as isize)
-                .with_c_str(
-                    |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-                )
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_13,) => {
+                    (s.as_pointer() as Ptr<i8>)
+                        .offset((2) as isize)
+                        .with_c_str(|__s| {
+                            (*__tmp_13.upgrade().deref())
+                                [..(*__tmp_13.upgrade().deref()).len().saturating_sub(1)]
+                                == *__s
+                        })
+                }
+            }
         );
     }
     {
@@ -1235,53 +1641,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>).offset((3) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>).offset((3) as isize) })
+            })
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_14,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_14.upgrade().deref())
+                            [..(*__tmp_14.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -1292,53 +1712,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>).offset((3) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>).offset((3) as isize) })
+            })
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_15,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_15.upgrade().deref())
+                            [..(*__tmp_15.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -1349,53 +1783,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>).offset((3) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>).offset((3) as isize) })
+            })
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_16,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_16.upgrade().deref())
+                            [..(*__tmp_16.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -1406,60 +1854,80 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>).offset((6) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>).offset((6) as isize) })
+            })
         );
         assert!((unimplemented!() == 6_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_17,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_17.upgrade().deref())
+                            [..(*__tmp_17.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         assert!((unimplemented!() == 6_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_18,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_18.upgrade().deref())
+                            [..(*__tmp_18.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -1470,60 +1938,80 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>).offset((2) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>).offset((2) as isize) })
+            })
         );
         assert!((unimplemented!() == 0_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_19,) => {
+                    Ptr::<i8>::from_string_literal(b"").with_c_str(|__s| {
+                        (*__tmp_19.upgrade().deref())
+                            [..(*__tmp_19.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         assert!((unimplemented!() == 0_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_20,) => {
+                    Ptr::<i8>::from_string_literal(b"").with_c_str(|__s| {
+                        (*__tmp_20.upgrade().deref())
+                            [..(*__tmp_20.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -1540,50 +2028,58 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
@@ -1592,9 +2088,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_21,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_21.upgrade().deref())
+                            [..(*__tmp_21.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -1605,50 +2107,58 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
@@ -1657,9 +2167,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_22,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_22.upgrade().deref())
+                            [..(*__tmp_22.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -1670,50 +2186,58 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
@@ -1722,9 +2246,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_23,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_23.upgrade().deref())
+                            [..(*__tmp_23.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -1753,50 +2283,58 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
@@ -1805,9 +2343,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_24,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_24.upgrade().deref())
+                            [..(*__tmp_24.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -1818,50 +2362,58 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
@@ -1870,9 +2422,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_25,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_25.upgrade().deref())
+                            [..(*__tmp_25.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -1883,50 +2441,58 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
@@ -1935,9 +2501,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_26,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_26.upgrade().deref())
+                            [..(*__tmp_26.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -1954,65 +2526,85 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_27,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_27.upgrade().deref())
+                            [..(*__tmp_27.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         assert!((unimplemented!() == 2_()));
         assert!((unimplemented!() == 1_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"ab").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_28,) => {
+                    Ptr::<i8>::from_string_literal(b"ab").with_c_str(|__s| {
+                        (*__tmp_28.upgrade().deref())
+                            [..(*__tmp_28.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -2023,65 +2615,85 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_29,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_29.upgrade().deref())
+                            [..(*__tmp_29.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 2_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"abb").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_30,) => {
+                    Ptr::<i8>::from_string_literal(b"abb").with_c_str(|__s| {
+                        (*__tmp_30.upgrade().deref())
+                            [..(*__tmp_30.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -2098,65 +2710,85 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_31,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_31.upgrade().deref())
+                            [..(*__tmp_31.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 2_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"Abb").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_32,) => {
+                    Ptr::<i8>::from_string_literal(b"Abb").with_c_str(|__s| {
+                        (*__tmp_32.upgrade().deref())
+                            [..(*__tmp_32.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -2173,58 +2805,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() == 1_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"a").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_33,) => {
+                    Ptr::<i8>::from_string_literal(b"a").with_c_str(|__s| {
+                        (*__tmp_33.upgrade().deref())
+                            [..(*__tmp_33.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -2235,58 +2881,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() == 1_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"a").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_34,) => {
+                    Ptr::<i8>::from_string_literal(b"a").with_c_str(|__s| {
+                        (*__tmp_34.upgrade().deref())
+                            [..(*__tmp_34.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -2297,58 +2957,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() == 1_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_35,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_35.upgrade().deref())
+                            [..(*__tmp_35.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -2365,58 +3039,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() == 2_()));
         assert!((unimplemented!() == 3_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"qi").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_36,) => {
+                    Ptr::<i8>::from_string_literal(b"qi").with_c_str(|__s| {
+                        (*__tmp_36.upgrade().deref())
+                            [..(*__tmp_36.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -2433,58 +3121,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_37,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_37.upgrade().deref())
+                            [..(*__tmp_37.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -2501,58 +3203,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_38,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_38.upgrade().deref())
+                            [..(*__tmp_38.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -2575,58 +3291,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_39,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_39.upgrade().deref())
+                            [..(*__tmp_39.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -2637,58 +3367,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_40,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_40.upgrade().deref())
+                            [..(*__tmp_40.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -2705,58 +3449,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_41,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_41.upgrade().deref())
+                            [..(*__tmp_41.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -2767,58 +3525,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_42,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_42.upgrade().deref())
+                            [..(*__tmp_42.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -2835,53 +3607,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>).offset((unimplemented!()) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>).offset((unimplemented!()) as isize) })
+            })
         );
         assert!((unimplemented!() == 0_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_43,) => {
+                    Ptr::<i8>::from_string_literal(b"").with_c_str(|__s| {
+                        (*__tmp_43.upgrade().deref())
+                            [..(*__tmp_43.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -2892,53 +3678,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i8>).offset((unimplemented!()) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i8>).offset((unimplemented!()) as isize) })
+            })
         );
         assert!((unimplemented!() == 6_()));
         assert!((unimplemented!() == 1_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"1a45ce").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_44,) => {
+                    Ptr::<i8>::from_string_literal(b"1a45ce").with_c_str(|__s| {
+                        (*__tmp_44.upgrade().deref())
+                            [..(*__tmp_44.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -3029,9 +3829,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!((unimplemented!() == 4_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i8>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_45,) => {
+                    (s.as_pointer() as Ptr<i8>).with_c_str(|__s| {
+                        (*__tmp_45.upgrade().deref())
+                            [..(*__tmp_45.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -3049,53 +3855,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>).offset((1) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>).offset((1) as isize) })
+            })
         );
         assert!((unimplemented!() == 1_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32,]).with_c_str(
-                |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-            )
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_46,) => {
+                    Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32]).with_c_str(|__s| {
+                        (*__tmp_46.upgrade().deref())
+                            [..(*__tmp_46.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -3107,53 +3927,69 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>).offset((2) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>).offset((2) as isize) })
+            })
         );
         assert!((unimplemented!() == 2_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 0 as i32,]).with_c_str(
-                |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-            )
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_47,) => {
+                    Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 0 as i32]).with_c_str(
+                        |__s| {
+                            (*__tmp_47.upgrade().deref())
+                                [..(*__tmp_47.upgrade().deref()).len().saturating_sub(1)]
+                                == *__s
+                        },
+                    )
+                }
+            }
         );
     }
     {
@@ -3174,53 +4010,69 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>).offset((3) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>).offset((3) as isize) })
+            })
         );
         assert!((unimplemented!() == 2_()));
         assert!((unimplemented!() == 1_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 0 as i32,]).with_c_str(
-                |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-            )
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_48,) => {
+                    Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 0 as i32]).with_c_str(
+                        |__s| {
+                            (*__tmp_48.upgrade().deref())
+                                [..(*__tmp_48.upgrade().deref()).len().saturating_sub(1)]
+                                == *__s
+                        },
+                    )
+                }
+            }
         );
     }
     {
@@ -3241,53 +4093,69 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>).offset((4) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>).offset((4) as isize) })
+            })
         );
         assert!((unimplemented!() == 2_()));
         assert!((unimplemented!() == 1_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[98 as i32, 99 as i32, 0 as i32,]).with_c_str(
-                |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-            )
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_49,) => {
+                    Ptr::<i32>::from_string_literal(&[98 as i32, 99 as i32, 0 as i32]).with_c_str(
+                        |__s| {
+                            (*__tmp_49.upgrade().deref())
+                                [..(*__tmp_49.upgrade().deref()).len().saturating_sub(1)]
+                                == *__s
+                        },
+                    )
+                }
+            }
         );
     }
     {
@@ -3300,53 +4168,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>).offset((4) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>).offset((4) as isize) })
+            })
         );
         assert!((unimplemented!() == 4_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_50,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_50.upgrade().deref())
+                            [..(*__tmp_50.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -3359,60 +4241,82 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>).offset((5) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>).offset((5) as isize) })
+            })
         );
         assert!((unimplemented!() == 5_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_51,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_51.upgrade().deref())
+                            [..(*__tmp_51.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         assert!((unimplemented!() == 2_()));
         assert!((unimplemented!() == 2_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 0 as i32,]).with_c_str(
-                |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-            )
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_52,) => {
+                    Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 0 as i32]).with_c_str(
+                        |__s| {
+                            (*__tmp_52.upgrade().deref())
+                                [..(*__tmp_52.upgrade().deref()).len().saturating_sub(1)]
+                                == *__s
+                        },
+                    )
+                }
+            }
         );
     }
     {
@@ -3426,70 +4330,98 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>).offset((unimplemented!()) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>).offset((unimplemented!()) as isize) })
+            })
         );
         assert!((unimplemented!() == 7_()));
         assert!((unimplemented!() == 2_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                99 as i32, 100 as i32, 101 as i32, 102 as i32, 103 as i32, 104 as i32, 105 as i32,
-                0 as i32,
-            ])
-            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_53,) => {
+                    Ptr::<i32>::from_string_literal(&[
+                        99 as i32, 100 as i32, 101 as i32, 102 as i32, 103 as i32, 104 as i32,
+                        105 as i32, 0 as i32,
+                    ])
+                    .with_c_str(|__s| {
+                        (*__tmp_53.upgrade().deref())
+                            [..(*__tmp_53.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 4_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[101 as i32, 102 as i32, 103 as i32, 0 as i32,])
-                .with_c_str(
-                    |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-                )
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_54,) => {
+                    Ptr::<i32>::from_string_literal(&[101 as i32, 102 as i32, 103 as i32, 0 as i32])
+                        .with_c_str(|__s| {
+                            (*__tmp_54.upgrade().deref())
+                                [..(*__tmp_54.upgrade().deref()).len().saturating_sub(1)]
+                                == *__s
+                        })
+                }
+            }
         );
         assert!((unimplemented!() == 1_()));
         assert!((unimplemented!() == 4_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[101 as i32, 0 as i32,]).with_c_str(
-                |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-            )
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_55,) => {
+                    Ptr::<i32>::from_string_literal(&[101 as i32, 0 as i32]).with_c_str(|__s| {
+                        (*__tmp_55.upgrade().deref())
+                            [..(*__tmp_55.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -3502,53 +4434,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>).offset((3) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>).offset((3) as isize) })
+            })
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_56,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_56.upgrade().deref())
+                            [..(*__tmp_56.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -3561,54 +4507,68 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>).offset((4) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>).offset((4) as isize) })
+            })
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32,])
-                .with_c_str(
-                    |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-                )
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_57,) => {
+                    Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32])
+                        .with_c_str(|__s| {
+                            (*__tmp_57.upgrade().deref())
+                                [..(*__tmp_57.upgrade().deref()).len().saturating_sub(1)]
+                                == *__s
+                        })
+                }
+            }
         );
     }
     {
@@ -3629,53 +4589,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>).offset((3) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>).offset((3) as isize) })
+            })
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_58,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_58.upgrade().deref())
+                            [..(*__tmp_58.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -3688,55 +4662,69 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>).offset((5) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>).offset((5) as isize) })
+            })
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 2_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>)
-                .offset((2) as isize)
-                .with_c_str(
-                    |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-                )
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_59,) => {
+                    (s.as_pointer() as Ptr<i32>)
+                        .offset((2) as isize)
+                        .with_c_str(|__s| {
+                            (*__tmp_59.upgrade().deref())
+                                [..(*__tmp_59.upgrade().deref()).len().saturating_sub(1)]
+                                == *__s
+                        })
+                }
+            }
         );
     }
     {
@@ -3757,53 +4745,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>).offset((3) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>).offset((3) as isize) })
+            })
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_60,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_60.upgrade().deref())
+                            [..(*__tmp_60.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -3816,53 +4818,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>).offset((3) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>).offset((3) as isize) })
+            })
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_61,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_61.upgrade().deref())
+                            [..(*__tmp_61.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -3875,53 +4891,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>).offset((3) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>).offset((3) as isize) })
+            })
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_62,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_62.upgrade().deref())
+                            [..(*__tmp_62.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -3934,60 +4964,80 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>).offset((6) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>).offset((6) as isize) })
+            })
         );
         assert!((unimplemented!() == 6_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_63,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_63.upgrade().deref())
+                            [..(*__tmp_63.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         assert!((unimplemented!() == 6_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_64,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_64.upgrade().deref())
+                            [..(*__tmp_64.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -3999,60 +5049,80 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>).offset((2) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>).offset((2) as isize) })
+            })
         );
         assert!((unimplemented!() == 0_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[0 as i32,]).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_65,) => {
+                    Ptr::<i32>::from_string_literal(&[0 as i32]).with_c_str(|__s| {
+                        (*__tmp_65.upgrade().deref())
+                            [..(*__tmp_65.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         assert!((unimplemented!() == 0_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[0 as i32,]).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_66,) => {
+                    Ptr::<i32>::from_string_literal(&[0 as i32]).with_c_str(|__s| {
+                        (*__tmp_66.upgrade().deref())
+                            [..(*__tmp_66.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -4073,58 +5143,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_67,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_67.upgrade().deref())
+                            [..(*__tmp_67.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -4137,58 +5221,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_68,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_68.upgrade().deref())
+                            [..(*__tmp_68.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -4201,58 +5299,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_69,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_69.upgrade().deref())
+                            [..(*__tmp_69.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -4290,58 +5402,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_70,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_70.upgrade().deref())
+                            [..(*__tmp_70.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -4354,58 +5480,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_71,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_71.upgrade().deref())
+                            [..(*__tmp_71.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -4419,58 +5559,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_72,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_72.upgrade().deref())
+                            [..(*__tmp_72.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -4492,65 +5646,87 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_73,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_73.upgrade().deref())
+                            [..(*__tmp_73.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         assert!((unimplemented!() == 2_()));
         assert!((unimplemented!() == 1_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 0 as i32,]).with_c_str(
-                |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-            )
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_74,) => {
+                    Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 0 as i32]).with_c_str(
+                        |__s| {
+                            (*__tmp_74.upgrade().deref())
+                                [..(*__tmp_74.upgrade().deref()).len().saturating_sub(1)]
+                                == *__s
+                        },
+                    )
+                }
+            }
         );
     }
     {
@@ -4564,66 +5740,86 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_75,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_75.upgrade().deref())
+                            [..(*__tmp_75.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 2_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 98 as i32, 0 as i32,])
-                .with_c_str(
-                    |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-                )
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_76,) => {
+                    Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 98 as i32, 0 as i32])
+                        .with_c_str(|__s| {
+                            (*__tmp_76.upgrade().deref())
+                                [..(*__tmp_76.upgrade().deref()).len().saturating_sub(1)]
+                                == *__s
+                        })
+                }
+            }
         );
     }
     {
@@ -4645,66 +5841,86 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_77,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_77.upgrade().deref())
+                            [..(*__tmp_77.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         assert!((unimplemented!() == 3_()));
         assert!((unimplemented!() == 2_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[65 as i32, 98 as i32, 98 as i32, 0 as i32,])
-                .with_c_str(
-                    |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-                )
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_78,) => {
+                    Ptr::<i32>::from_string_literal(&[65 as i32, 98 as i32, 98 as i32, 0 as i32])
+                        .with_c_str(|__s| {
+                            (*__tmp_78.upgrade().deref())
+                                [..(*__tmp_78.upgrade().deref()).len().saturating_sub(1)]
+                                == *__s
+                        })
+                }
+            }
         );
     }
     {
@@ -4724,58 +5940,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() == 1_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32,]).with_c_str(
-                |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-            )
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_79,) => {
+                    Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32]).with_c_str(|__s| {
+                        (*__tmp_79.upgrade().deref())
+                            [..(*__tmp_79.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -4786,58 +6016,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() == 1_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32,]).with_c_str(
-                |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-            )
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_80,) => {
+                    Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32]).with_c_str(|__s| {
+                        (*__tmp_80.upgrade().deref())
+                            [..(*__tmp_80.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -4848,58 +6092,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() == 1_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_81,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_81.upgrade().deref())
+                            [..(*__tmp_81.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -4918,58 +6176,74 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() == 2_()));
         assert!((unimplemented!() == 3_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[113 as i32, 105 as i32, 0 as i32,]).with_c_str(
-                |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-            )
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_82,) => {
+                    Ptr::<i32>::from_string_literal(&[113 as i32, 105 as i32, 0 as i32]).with_c_str(
+                        |__s| {
+                            (*__tmp_82.upgrade().deref())
+                                [..(*__tmp_82.upgrade().deref()).len().saturating_sub(1)]
+                                == *__s
+                        },
+                    )
+                }
+            }
         );
     }
     {
@@ -4990,58 +6264,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_83,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_83.upgrade().deref())
+                            [..(*__tmp_83.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -5062,58 +6350,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_84,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_84.upgrade().deref())
+                            [..(*__tmp_84.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -5142,58 +6444,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_85,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_85.upgrade().deref())
+                            [..(*__tmp_85.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -5204,58 +6520,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_86,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_86.upgrade().deref())
+                            [..(*__tmp_86.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -5272,58 +6602,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_87,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_87.upgrade().deref())
+                            [..(*__tmp_87.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -5334,58 +6678,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!((unimplemented!() >= 0_()) && ((unimplemented!() as usize) == unimplemented!()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_88,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_88.upgrade().deref())
+                            [..(*__tmp_88.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -5405,53 +6763,67 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>).offset((unimplemented!()) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>).offset((unimplemented!()) as isize) })
+            })
         );
         assert!((unimplemented!() == 0_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[0 as i32,]).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_89,) => {
+                    Ptr::<i32>::from_string_literal(&[0 as i32]).with_c_str(|__s| {
+                        (*__tmp_89.upgrade().deref())
+                            [..(*__tmp_89.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -5465,54 +6837,70 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>) })
+            })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!({ (unimplemented!()).clone().matched });
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .0
-                    .borrow())
-                .clone()
-            } == {
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .0
+                        .borrow())
+                    .clone()
+                } == {
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                })
             })
         );
         assert!(
             ({
-                (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
-                    .1
-                    .borrow())
-                .clone()
-            } == { (s.as_pointer() as Ptr::<i32>).offset((unimplemented!()) as isize) })
+                ({
+                    (*((unimplemented!()).clone() as (Value<*const i32>, Value<*const i32>))
+                        .1
+                        .borrow())
+                    .clone()
+                } == { (s.as_pointer() as Ptr<i32>).offset((unimplemented!()) as isize) })
+            })
         );
         assert!((unimplemented!() == 6_()));
         assert!((unimplemented!() == 1_()));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                49 as i32, 97 as i32, 52 as i32, 53 as i32, 99 as i32, 101 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_90,) => {
+                    Ptr::<i32>::from_string_literal(&[
+                        49 as i32, 97 as i32, 52 as i32, 53 as i32, 99 as i32, 101 as i32, 0 as i32,
+                    ])
+                    .with_c_str(|__s| {
+                        (*__tmp_90.upgrade().deref())
+                            [..(*__tmp_90.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -5617,9 +7005,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!((unimplemented!() == 4_()));
         assert!((unimplemented!() == 0_()));
         assert!(
-            (s.as_pointer() as Ptr::<i32>).with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_91,) => {
+                    (s.as_pointer() as Ptr<i32>).with_c_str(|__s| {
+                        (*__tmp_91.upgrade().deref())
+                            [..(*__tmp_91.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
@@ -5702,21 +7096,29 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
         return (*self).clone();
     }
     fn operator_inc_14(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_15(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return prev;
     }
     fn operator_dec_16(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_17(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return prev;
     }
 }
@@ -5740,11 +7142,15 @@ impl bidirectional_iterator_const_char_ptr_Impl for Ptr<bidirectional_iterator_c
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_const_char_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_const_char_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -5781,11 +7187,15 @@ impl bidirectional_iterator_const_wchar_t_ptr_Impl
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_const_wchar_t_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_const_wchar_t_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -5975,7 +7385,9 @@ impl forward_iterator_const_char_ptr_Impl for Ptr<forward_iterator_const_char_pt
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_const_char_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -6006,7 +7418,9 @@ impl forward_iterator_const_wchar_t_ptr_Impl for Ptr<forward_iterator_const_wcha
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_const_wchar_t_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -6077,11 +7491,11 @@ impl rvalue_iterator_int_ptr_Impl for Ptr<rvalue_iterator_int_ptr_> {
                 &((*self).with(|__s| __s.it_.clone())),
                 &(_a0.with(|__s| __s.it_.clone())),
             )));
-            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow());
+            if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+                return ({ (*cmp.borrow()) });
             }
         }
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> bool {
         return ({ (*self).with(|__s| __s.it_.clone()) } == { _a0.with(|__s| __s.it_.clone()) });

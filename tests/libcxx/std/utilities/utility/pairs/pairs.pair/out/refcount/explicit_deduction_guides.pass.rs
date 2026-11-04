@@ -12,12 +12,14 @@ pub const anon_0_value: anon_0 = 1;
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_pair_char_ptr__void__ptr______std_pair_char_ptr__void__ptr_____
 {}
+impl CppMove for test_macros_detail_is_same_std_pair_char_ptr__void__ptr______std_pair_char_ptr__void__ptr_____ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_pair_std_reference_wrapper_int___void__ptr______std_pair_std_reference_wrapper_int___void__ptr_____
 {}
+impl CppMove for test_macros_detail_is_same_std_pair_std_reference_wrapper_int___void__ptr______std_pair_std_reference_wrapper_int___void__ptr_____ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn dummy_2() {}
 pub fn test_decay_3() {
     let arr: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([0_i8])));
@@ -36,8 +38,8 @@ pub fn test_unwrap_4() {
         true,
         "!std::is_same_v<decltype(pr), decltype(std::make_pair(std::ref(n), dummy))>"
     );;
-    assert!(((*(*pr.borrow()).0.borrow()) == (n.as_pointer())));
-    assert!(({ (*(*pr.borrow()).1.borrow()).clone() } == { FnPtr::<fn()>::new(dummy_2) }));
+    assert!(({ ((*(*pr.borrow()).0.borrow()) == (n.as_pointer())) }));
+    assert!(({ ({ (*(*pr.borrow()).1.borrow()).clone() } == { FnPtr::<fn()>::new(dummy_2) }) }));
 }
 pub fn test_5() -> bool {
     ({ test_decay_3() });

@@ -7,15 +7,22 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let sv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let sv1: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        <std_basic_string_view_char__std_char_traits_char__>::default(),
+    ));
+    let sv2: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1(
+            { Ptr::<i8>::from_string_literal(b"abcde") },
+            { 5_u64 },
+        ),
+    ));
     const _: () = assert!(true, "");;
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
+    assert!(({ !({ (*sv1.borrow()).contains_44(('c' as i8),) }) }));
+    assert!(({ !({ (*sv1.borrow()).contains_44(('e' as i8),) }) }));
+    assert!(({ !({ (*sv1.borrow()).contains_44(('x' as i8),) }) }));
+    assert!(({ ({ (*sv2.borrow()).contains_44(('c' as i8),) }) }));
+    assert!(({ ({ (*sv2.borrow()).contains_44(('e' as i8),) }) }));
+    assert!(({ !({ (*sv2.borrow()).contains_44(('x' as i8),) }) }));
     return true;
 }
 pub fn main() {

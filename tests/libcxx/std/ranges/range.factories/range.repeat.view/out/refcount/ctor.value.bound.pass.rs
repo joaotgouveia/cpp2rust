@@ -30,11 +30,11 @@ pub fn operator_cmp_6(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> std::cmp::Order
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -66,6 +66,11 @@ impl CppEq for MoveOnly {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for MoveOnly {
     fn default() -> Self {
         { MoveOnly::new(None) }
@@ -95,11 +100,11 @@ pub fn operator_cmp_13(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> 
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -129,6 +134,11 @@ impl CppEq for TrivialMoveOnly {
         operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for TrivialMoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for TrivialMoveOnly {
     fn default() -> Self {
         { TrivialMoveOnly::new(None) }
@@ -137,6 +147,11 @@ impl Default for TrivialMoveOnly {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Empty {}
+impl CppMove for Empty {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "std::is_constructible_v<std::ranges::repeat_view<Empty>, const Empty&>"
@@ -179,40 +194,88 @@ const _: () = assert!(
 );
 pub fn test_14() -> bool {
     {
-        let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!() != unimplemented!());
+        let rv: Value<std_ranges_repeat_view_Empty__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<Empty> = Rc::new(RefCell::new(<Empty>::default()));
+                std_ranges_repeat_view_Empty__std_unreachable_sentinel_t_::new_1(
+                    { __tmp_0.as_pointer() },
+                    None,
+                )
+            }));
+        assert!(
+            ({ ({ (*rv.borrow()).begin() }) }).iter_add(10_isize)
+                != ({ ({ (*rv.borrow()).end_7() }) })
+        );
     }
     {
-        let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!() != unimplemented!());
+        let rv: Value<std_ranges_repeat_view_Empty__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new({
+                let __tmp_1: Value<Empty> = Rc::new(RefCell::new(<Empty>::default()));
+                std_ranges_repeat_view_Empty__std_unreachable_sentinel_t_::new_1(
+                    { __tmp_1.as_pointer() },
+                    { Some((*unreachable_sentinel_15.with(Value::clone).borrow()).clone()) },
+                )
+            }));
+        assert!(
+            ({ ({ (*rv.borrow()).begin() }) }).iter_add(10_isize)
+                != ({ ({ (*rv.borrow()).end_7() }) })
+        );
     }
     {
-        let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let rv: Value<std_ranges_repeat_view_Empty__int_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<Empty> = Rc::new(RefCell::new(<Empty>::default()));
+            std_ranges_repeat_view_Empty__int_::new_1({ __tmp_2.as_pointer() }, None)
+        }));
+        assert!(({ (*rv.borrow()).begin() }) == ({ (*rv.borrow()).end_6() }));
     }
     {
-        let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let rv: Value<std_ranges_repeat_view_Empty__int_> = Rc::new(RefCell::new({
+            let __tmp_3: Value<Empty> = Rc::new(RefCell::new(<Empty>::default()));
+            std_ranges_repeat_view_Empty__int_::new_1({ __tmp_3.as_pointer() }, { Some(10) })
+        }));
+        assert!(({ ({ (*rv.borrow()).begin() }) }).iter_add(10) == ({ (*rv.borrow()).end_6() }));
     }
     {
-        let mut e: Empty = <Empty>::default();
-        let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!() != unimplemented!());
+        let e: Value<Empty> = Rc::new(RefCell::new(<Empty>::default()));
+        let rv: Value<std_ranges_repeat_view_Empty__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_repeat_view_Empty__std_unreachable_sentinel_t_::new_2(
+                    { e.as_pointer() },
+                    None,
+                ),
+            ));
+        assert!(
+            ({ ({ (*rv.borrow()).begin() }) }).iter_add(10_isize)
+                != ({ ({ (*rv.borrow()).end_7() }) })
+        );
     }
     {
-        let mut e: Empty = <Empty>::default();
-        let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!() != unimplemented!());
+        let e: Value<Empty> = Rc::new(RefCell::new(<Empty>::default()));
+        let rv: Value<std_ranges_repeat_view_Empty__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_repeat_view_Empty__std_unreachable_sentinel_t_::new_2(
+                    { e.as_pointer() },
+                    { Some((*unreachable_sentinel_15.with(Value::clone).borrow()).clone()) },
+                ),
+            ));
+        assert!(
+            ({ ({ (*rv.borrow()).begin() }) }).iter_add(10_isize)
+                != ({ ({ (*rv.borrow()).end_7() }) })
+        );
     }
     {
-        let mut e: Empty = <Empty>::default();
-        let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let e: Value<Empty> = Rc::new(RefCell::new(<Empty>::default()));
+        let rv: Value<std_ranges_repeat_view_Empty__int_> = Rc::new(RefCell::new(
+            std_ranges_repeat_view_Empty__int_::new_2({ e.as_pointer() }, None),
+        ));
+        assert!(({ (*rv.borrow()).begin() }) == ({ (*rv.borrow()).end_6() }));
     }
     {
-        let mut e: Empty = <Empty>::default();
-        let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let e: Value<Empty> = Rc::new(RefCell::new(<Empty>::default()));
+        let rv: Value<std_ranges_repeat_view_Empty__int_> = Rc::new(RefCell::new(
+            std_ranges_repeat_view_Empty__int_::new_2({ e.as_pointer() }, { Some(10) }),
+        ));
+        assert!(({ ({ (*rv.borrow()).begin() }) }).iter_add(10) == ({ (*rv.borrow()).end_6() }));
     }
     return true;
 }

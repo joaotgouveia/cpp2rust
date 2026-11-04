@@ -38,15 +38,25 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         true, false, false, true, true, false, false, true, false, false, false, true, false,
         false, false, false,
     ])));
-    let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let vb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 5_usize));
-    assert!(((unimplemented!().read()) == 0));
-    assert!(((unimplemented!().read()) == 3));
-    assert!(((unimplemented!().read()) == 4));
-    assert!(((unimplemented!().read()) == 7));
-    assert!(((unimplemented!().read()) == 11));
+    let v1: Value<std_valarray_int_> = Rc::new(RefCell::new(std_valarray_int_::new_1(
+        { (a1.as_pointer() as Ptr<i32>) },
+        { (*N1.borrow()) },
+    )));
+    let vb: Value<std_valarray_bool_> = Rc::new(RefCell::new(std_valarray_bool_::new_1(
+        { (b.as_pointer() as Ptr<bool>) },
+        { (*N1.borrow()) },
+    )));
+    let v2: Value<std_valarray_int_> = Rc::new(RefCell::new({
+        let __tmp_0: Value<std_mask_array_int_> =
+            Rc::new(RefCell::new(((*v1.borrow())[(*vb.borrow())]).clone()));
+        std_valarray_int_::new_2({ __tmp_0.as_pointer() })
+    }));
+    assert!(({ (({ (*v2.borrow()).size() }) == 5_usize) }));
+    assert!(({ ({ (*v2.borrow())[0_usize] } == 0) }));
+    assert!(({ ({ (*v2.borrow())[1_usize] } == 3) }));
+    assert!(({ ({ (*v2.borrow())[2_usize] } == 4) }));
+    assert!(({ ({ (*v2.borrow())[3_usize] } == 7) }));
+    assert!(({ ({ (*v2.borrow())[4_usize] } == 11) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

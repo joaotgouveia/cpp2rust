@@ -29,20 +29,38 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let a1: Value<Box<[usize]>> = Rc::new(RefCell::new(Box::new([1_usize, 2_usize, 3_usize])));
     let a2: Value<Box<[usize]>> = Rc::new(RefCell::new(Box::new([4_usize, 5_usize, 6_usize])));
-    let size: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let stride: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let gs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 7_usize));
-    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 3_usize));
-    assert!(((unimplemented!().read()) == 1_u64));
-    assert!(((unimplemented!().read()) == 2_u64));
-    assert!(((unimplemented!().read()) == 3_u64));
-    unimplemented!();
-    assert!((unimplemented!() == 3_usize));
-    assert!(((unimplemented!().read()) == 4_u64));
-    assert!(((unimplemented!().read()) == 5_u64));
-    assert!(((unimplemented!().read()) == 6_u64));
+    let size: Value<std_valarray_unsigned_long_> =
+        Rc::new(RefCell::new(std_valarray_unsigned_long_::new_1(
+            { (a1.as_pointer() as Ptr<usize>).reinterpret_cast::<u64>() },
+            {
+                (::std::mem::size_of::<[usize; 3]>() as usize)
+                    .wrapping_div((::std::mem::size_of::<usize>() as usize))
+            },
+        )));
+    let stride: Value<std_valarray_unsigned_long_> =
+        Rc::new(RefCell::new(std_valarray_unsigned_long_::new_1(
+            { (a2.as_pointer() as Ptr<usize>).reinterpret_cast::<u64>() },
+            {
+                (::std::mem::size_of::<[usize; 3]>() as usize)
+                    .wrapping_div((::std::mem::size_of::<usize>() as usize))
+            },
+        )));
+    let gs: Value<std_gslice> = Rc::new(RefCell::new(std_gslice::new_1(
+        { 7_usize },
+        { size.as_pointer() },
+        { stride.as_pointer() },
+    )));
+    assert!(({ (({ (*gs.borrow()).start() }) == 7_usize) }));
+    let r: Value<std_valarray_unsigned_long_> = Rc::new(RefCell::new(({ (*gs.borrow()).size() })));
+    assert!(({ (({ (*r.borrow()).size() }) == 3_usize) }));
+    assert!(({ ({ (*r.borrow())[0_usize] } == 1_u64) }));
+    assert!(({ ({ (*r.borrow())[1_usize] } == 2_u64) }));
+    assert!(({ ({ (*r.borrow())[2_usize] } == 3_u64) }));
+    (*r.borrow_mut()) = ({ (*gs.borrow()).stride() });
+    assert!(({ (({ (*r.borrow()).size() }) == 3_usize) }));
+    assert!(({ ({ (*r.borrow())[0_usize] } == 4_u64) }));
+    assert!(({ ({ (*r.borrow())[1_usize] } == 5_u64) }));
+    assert!(({ ({ (*r.borrow())[2_usize] } == 6_u64) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

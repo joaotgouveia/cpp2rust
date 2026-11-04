@@ -16,6 +16,11 @@ pub struct POD {
     #[offset(8)]
     pub x3: i32,
 }
+impl CppMove for POD {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn PODIncrement_0(pod: Ptr<POD>) {
     {
         field!(pod, x1).with_mut(|__v| *__v = *__v + 1)

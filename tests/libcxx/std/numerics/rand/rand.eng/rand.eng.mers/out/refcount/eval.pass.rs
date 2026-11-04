@@ -7,16 +7,16 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test1_0() {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 3499211612_()));
-    assert!((unimplemented!() == 581869302_()));
-    assert!((unimplemented!() == 3890346734_()));
+    let e : Value<std_mersenne_twister_engine_unsigned_long__32__624__397__31__2567483615__11__4294967295__7__2636928640__15__4022730752__18__1812433253_ > = Rc::new(RefCell::new(<std_mersenne_twister_engine_unsigned_long__32__624__397__31__2567483615__11__4294967295__7__2636928640__15__4022730752__18__1812433253_  >::default() )) ;
+    assert!(({ (({ (*e.borrow_mut())() }) == 3499211612_u64) }));
+    assert!(({ (({ (*e.borrow_mut())() }) == 581869302_u64) }));
+    assert!(({ (({ (*e.borrow_mut())() }) == 3890346734_u64) }));
 }
 pub fn test2_1() {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as u64) == 14514284786278117030_u64));
-    assert!(((unimplemented!() as u64) == 4620546740167642908_u64));
-    assert!(((unimplemented!() as u64) == 13109570281517897720_u64));
+    let e : Value<std_mersenne_twister_engine_unsigned_long__64__312__156__31__13043109905998158313__29__6148914691236517205__17__8202884508482404352__37__18444473444759240704__43__6364136223846793005_ > = Rc::new(RefCell::new(<std_mersenne_twister_engine_unsigned_long__64__312__156__31__13043109905998158313__29__6148914691236517205__17__8202884508482404352__37__18444473444759240704__43__6364136223846793005_  >::default() )) ;
+    assert!(({ (({ (*e.borrow_mut())() }) == 14514284786278117030_u64) }));
+    assert!(({ (({ (*e.borrow_mut())() }) == 4620546740167642908_u64) }));
+    assert!(({ (({ (*e.borrow_mut())() }) == 13109570281517897720_u64) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

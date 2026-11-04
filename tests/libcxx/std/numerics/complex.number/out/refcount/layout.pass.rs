@@ -7,40 +7,41 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
-    let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let z: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
     let mut a: Ptr<f32> = (z.as_pointer()).reinterpret_cast::<f32>();
-    assert!((0_f32 == unimplemented!()));
-    assert!((0_f32 == unimplemented!()));
-    assert!(({ (elem!(a, 0).read()) } == { unimplemented!() }));
-    assert!(({ (elem!(a, 1).read()) } == { unimplemented!() }));
+    assert!(({ (0_f32 == ({ (*z.borrow()).real_5() })) }));
+    assert!(({ (0_f32 == ({ (*z.borrow()).imag_6() })) }));
+    assert!(({ ({ (elem!(a, 0).read()) } == { ({ (*z.borrow()).real_5() }) }) }));
+    assert!(({ ({ (elem!(a, 1).read()) } == { ({ (*z.borrow()).imag_6() }) }) }));
     elem!(a, 0).write(5_f32);
     elem!(a, 1).write(6_f32);
-    assert!(({ (elem!(a, 0).read()) } == { unimplemented!() }));
-    assert!(({ (elem!(a, 1).read()) } == { unimplemented!() }));
+    assert!(({ ({ (elem!(a, 0).read()) } == { ({ (*z.borrow()).real_5() }) }) }));
+    assert!(({ ({ (elem!(a, 1).read()) } == { ({ (*z.borrow()).imag_6() }) }) }));
 }
 pub fn test_1() {
-    let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let z: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
     let mut a: Ptr<f64> = (z.as_pointer()).reinterpret_cast::<f64>();
-    assert!((0_f64 == unimplemented!()));
-    assert!((0_f64 == unimplemented!()));
-    assert!(({ (elem!(a, 0).read()) } == { unimplemented!() }));
-    assert!(({ (elem!(a, 1).read()) } == { unimplemented!() }));
+    assert!(({ (0_f64 == ({ (*z.borrow()).real_5() })) }));
+    assert!(({ (0_f64 == ({ (*z.borrow()).imag_6() })) }));
+    assert!(({ ({ (elem!(a, 0).read()) } == { ({ (*z.borrow()).real_5() }) }) }));
+    assert!(({ ({ (elem!(a, 1).read()) } == { ({ (*z.borrow()).imag_6() }) }) }));
     elem!(a, 0).write(5_f64);
     elem!(a, 1).write(6_f64);
-    assert!(({ (elem!(a, 0).read()) } == { unimplemented!() }));
-    assert!(({ (elem!(a, 1).read()) } == { unimplemented!() }));
+    assert!(({ ({ (elem!(a, 0).read()) } == { ({ (*z.borrow()).real_5() }) }) }));
+    assert!(({ ({ (elem!(a, 1).read()) } == { ({ (*z.borrow()).imag_6() }) }) }));
 }
 pub fn test_2() {
-    let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let z: Value<std_complex_long_double_> =
+        Rc::new(RefCell::new(<std_complex_long_double_>::default()));
     let mut a: Ptr<f64> = (z.as_pointer()).reinterpret_cast::<f64>();
-    assert!((0_f64 == unimplemented!()));
-    assert!((0_f64 == unimplemented!()));
-    assert!(({ (elem!(a, 0).read()) } == { unimplemented!() }));
-    assert!(({ (elem!(a, 1).read()) } == { unimplemented!() }));
+    assert!(({ (0_f64 == ({ (*z.borrow()).real_5() })) }));
+    assert!(({ (0_f64 == ({ (*z.borrow()).imag_6() })) }));
+    assert!(({ ({ (elem!(a, 0).read()) } == { ({ (*z.borrow()).real_5() }) }) }));
+    assert!(({ ({ (elem!(a, 1).read()) } == { ({ (*z.borrow()).imag_6() }) }) }));
     elem!(a, 0).write(5_f64);
     elem!(a, 1).write(6_f64);
-    assert!(({ (elem!(a, 0).read()) } == { unimplemented!() }));
-    assert!(({ (elem!(a, 1).read()) } == { unimplemented!() }));
+    assert!(({ ({ (elem!(a, 0).read()) } == { ({ (*z.borrow()).real_5() }) }) }));
+    assert!(({ ({ (elem!(a, 1).read()) } == { ({ (*z.borrow()).imag_6() }) }) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

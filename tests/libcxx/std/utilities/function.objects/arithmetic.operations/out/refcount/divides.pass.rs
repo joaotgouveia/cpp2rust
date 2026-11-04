@@ -27,15 +27,39 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 9));
-    let f2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 9));
-    assert!((unimplemented!() == 9_f64));
-    assert!((unimplemented!() == 4.5_f64));
-    let mut foo: i32 = unimplemented!();
+    let f: Value<std_divides_int_> = Rc::new(RefCell::new(<std_divides_int_>::default()));
+    assert!(
+        (({
+            let ___x: Value<i32> = Rc::new(RefCell::new(36));
+            let ___y: Value<i32> = Rc::new(RefCell::new(4));
+            (*f.borrow_mut())(___x.as_pointer(), ___y.as_pointer())
+        }) == 9)
+    );
+    let f2: Value<std_divides_void_> = Rc::new(RefCell::new(<std_divides_void_>::default()));
+    assert!(
+        (({
+            let ___t: Value<i32> = Rc::new(RefCell::new(36));
+            let ___u: Value<i32> = Rc::new(RefCell::new(4));
+            (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+        }) == 9)
+    );
+    assert!(
+        (({
+            let ___t: Value<f64> = Rc::new(RefCell::new(36_f64));
+            let ___u: Value<i32> = Rc::new(RefCell::new(4));
+            (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+        }) == 9_f64)
+    );
+    assert!(
+        (({
+            let ___t: Value<i32> = Rc::new(RefCell::new(18));
+            let ___u: Value<f64> = Rc::new(RefCell::new(4_f64));
+            (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+        }) == 4.5_f64)
+    );
+    let mut foo: i32 = 1;
     const _: () = assert!(true, "foo == 1");;
-    let mut bar: f64 = unimplemented!();
+    let mut bar: f64 = 1.5_f64;
     const _: () = assert!(true, "bar == 1.5");;
     return 0;
 }

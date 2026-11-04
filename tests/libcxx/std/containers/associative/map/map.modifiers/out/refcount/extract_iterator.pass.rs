@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -43,6 +48,11 @@ pub struct min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_
     ptr_: Ptr<(Value<i32>, Value<i32>)>,
 }
 impl min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -51,6 +61,11 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(AnyPtr, new_1, value)]
 #[byte_size(8)]
@@ -74,6 +89,11 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
         });
     }
 }
+impl CppMove for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_4(
     mut _a0: min_allocator_std_pair_const_int__int__,
     mut _a1: min_allocator_std_pair_const_int__int__,
@@ -88,9 +108,19 @@ impl CppEq for min_allocator_std_pair_const_int__int__ {
         operator_eq_4(__lhs.read(), __rhs.read())
     }
 }
+impl CppMove for min_allocator_std_pair_const_int__int__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Counter_base {}
+impl CppMove for Counter_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CppFrom, CopyAssign, Destructor, Default)]
 #[cpp_from(i32, new_1, ptr)]
 #[byte_size(4)]
@@ -132,6 +162,11 @@ impl Clone for Counter_int_ {
         Counter_int_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Counter_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static gConstructed_5: Value<i32> = Rc::new(RefCell::new(0));
 );
@@ -154,9 +189,9 @@ pub fn test_6(c: Ptr<Map<i32, (Value<i32>, Value<i32>)>>) -> bool {
             assert!(((unimplemented!().read()) == some_key));
         }
         assert!(unimplemented!());
-        assert!(({ sz } == { (*c.upgrade().deref()).len() }));
+        assert!(({ ({ sz } == { (*c.upgrade().deref()).len() }) }));
     }
-    assert!(((*c.upgrade().deref()).len() == 0_usize));
+    assert!(({ ((*c.upgrade().deref()).len() == 0_usize) }));
     return true;
 }
 pub fn test_7(c: Ptr<Map<i32, (Value<i32>, Value<i32>)>>) -> bool {
@@ -183,9 +218,9 @@ pub fn test_7(c: Ptr<Map<i32, (Value<i32>, Value<i32>)>>) -> bool {
                 operator_eq_4(_arg0, unimplemented!())
             })
         );
-        assert!(({ sz } == { (*c.upgrade().deref()).len() }));
+        assert!(({ ({ sz } == { (*c.upgrade().deref()).len() }) }));
     }
-    assert!(((*c.upgrade().deref()).len() == 0_usize));
+    assert!(({ ((*c.upgrade().deref()).len() == 0_usize) }));
     return true;
 }
 pub fn test_8(c: Ptr<Map<Counter_int_, (Value<Counter_int_>, Value<Counter_int_>)>>) -> bool {
@@ -215,9 +250,9 @@ pub fn test_8(c: Ptr<Map<Counter_int_, (Value<Counter_int_>, Value<Counter_int_>
             assert!(({ Counter_int_Impl::operator_eq(&unimplemented!(), some_key.as_pointer(),) }));
         }
         assert!(unimplemented!());
-        assert!(({ sz } == { (*c.upgrade().deref()).len() }));
+        assert!(({ ({ sz } == { (*c.upgrade().deref()).len() }) }));
     }
-    assert!(((*c.upgrade().deref()).len() == 0_usize));
+    assert!(({ ((*c.upgrade().deref()).len() == 0_usize) }));
     return true;
 }
 pub fn test_9() -> bool {

@@ -6,87 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = u32;
-pub const anon_0_value: anon_0 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_filesystem_directory_options__std_filesystem_directory_options_
-{}
-pub type anon_1 = u32;
-pub const anon_1_value: anon_1 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_filesystem_directory_options_ref__std_filesystem_directory_options_ref_
-{}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct check_bitmask_type_std_filesystem_directory_options__std_filesystem_directory_options_follow_directory_symlink__std_filesystem_directory_options_skip_permission_denied__unsigned_char____x01_____x02_____x00___std_filesystem_directory_options_none_
-{}
-impl check_bitmask_type_std_filesystem_directory_options__std_filesystem_directory_options_follow_directory_symlink__std_filesystem_directory_options_skip_permission_denied__unsigned_char____x01_____x02_____x00___std_filesystem_directory_options_none_ { pub fn dcast ( mut e : ()  , ) -> u8  { return ( e as u8 )   ;
- } pub fn unpromote ( mut promoted : i32  , ) -> u8  { return ( promoted as u8 )   ;
- } pub fn check ( ) -> bool  { { let mut ValRef : ()  = ( ( ( '\x01' as u8  ) ) as () )  ;
-  ;
- ;
- const _: () = assert!(true, ""); ;
- ;
- const _: () = assert!(true, ""); ;
- ;
- const _: () = assert!(true, ""); ;
- ;
- const _: () = assert!(true, ""); ;
- ;
- const _: () = assert!(true, ""); ;
- ;
- const _: () = assert!(true, ""); ;
- ;
- const _: () = assert!(true, ""); ;
- ;
- } const _: () = assert!(true, "(Val1 & Zero) == Zero"); ;
- ;
- const _: () = assert!(true, "(Val1 & Val1) == Val1"); ;
- ;
- const _: () = assert!(true, "dcast(Val1 & Val2) == (UVal1 & UVal2)"); ;
- ;
- const _: () = assert!(true, "(Val1 | Zero) == Val1"); ;
- ;
- const _: () = assert!(true, "dcast(Val1 | Val2) == (UVal1 | UVal2)"); ;
- ;
- const _: () = assert!(true, "(Val1 ^ Zero) == Val1"); ;
- ;
- const _: () = assert!(true, "dcast(Val1 ^ Val2) == (UVal1 ^ UVal2)"); ;
- ;
- const _: () = assert!(true, "dcast(~Zero) == unpromote(~UZero)"); ;
- ;
- const _: () = assert!(true, "dcast(~Val1) == unpromote(~UVal1)"); ;
- ;
- { let e : Value<() > = Rc::new(RefCell::new(( ( ( '\x01' as u8  ) ) as () ) )) ;
-  ;
- ;
- let eref : Ptr< ()  > = ( unimplemented!()  )  ;
-  ;
- ;
- assert!(({ (( eref  ) ).clone() } == { ( e .as_pointer()  )  }) )  ;
- assert!(( ( ( { check_bitmask_type_std_filesystem_directory_options__std_filesystem_directory_options_follow_directory_symlink__std_filesystem_directory_options_skip_permission_denied__unsigned_char____x01_____x02_____x00___std_filesystem_directory_options_none_::dcast ( (eref.read())  , ) } )  as i32 ) == ( ( ( ( '\x01' as u8  ) as i32 ) & ( ( '\x02' as u8  ) as i32 ) ) ) ) )  ;
- } { let e : Value<() > = Rc::new(RefCell::new(( ( ( '\x01' as u8  ) ) as () ) )) ;
-  ;
- ;
- let eref : Ptr< ()  > = ( unimplemented!()  )  ;
-  ;
- ;
- assert!(({ (( eref  ) ).clone() } == { ( e .as_pointer()  )  }) )  ;
- assert!(( ( ( { check_bitmask_type_std_filesystem_directory_options__std_filesystem_directory_options_follow_directory_symlink__std_filesystem_directory_options_skip_permission_denied__unsigned_char____x01_____x02_____x00___std_filesystem_directory_options_none_::dcast ( (eref.read())  , ) } )  as i32 ) == ( ( ( ( '\x01' as u8  ) as i32 ) | ( ( '\x02' as u8  ) as i32 ) ) ) ) )  ;
- } { let e : Value<() > = Rc::new(RefCell::new(( ( ( '\x01' as u8  ) ) as () ) )) ;
-  ;
- ;
- let eref : Ptr< ()  > = ( unimplemented!()  )  ;
-  ;
- ;
- assert!(({ (( eref  ) ).clone() } == { ( e .as_pointer()  )  }) )  ;
- assert!(( ( ( { check_bitmask_type_std_filesystem_directory_options__std_filesystem_directory_options_follow_directory_symlink__std_filesystem_directory_options_skip_permission_denied__unsigned_char____x01_____x02_____x00___std_filesystem_directory_options_none_::dcast ( (eref.read())  , ) } )  as i32 ) == ( ( ( ( '\x01' as u8  ) as i32 ) ^ ( ( '\x02' as u8  ) as i32 ) ) ) ) )  ;
- } return true   ;
- } }
-pub fn ME_2(mut val: i32) -> () {
-    return ((val) as ());
+pub fn ME_0(mut val: i32) -> std_filesystem_directory_options {
+    return ((val) as std_filesystem_directory_options);
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

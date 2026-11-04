@@ -8,7 +8,7 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0(
     c1: Vec<Option<Value<i32>>>,
-    mut j: (),
+    mut j: isize,
     mut x1: Option<Value<i32>>,
     mut x2: Option<Value<i32>>,
     mut x3: Option<Value<i32>>,
@@ -24,32 +24,53 @@ pub fn test_0(
 pub fn insert3at_1(
     c: Ptr<Vec<Option<Value<i32>>>>,
     i: RandomAccessIterator<Option<Value<i32>>>,
-    mut x1: Option<Value<i32>>,
-    mut x2: Option<Value<i32>>,
-    mut x3: Option<Value<i32>>,
+    x1: Option<Value<i32>>,
+    x2: Option<Value<i32>>,
+    x3: Option<Value<i32>>,
 ) {
     let i: Value<RandomAccessIterator<Option<Value<i32>>>> = Rc::new(RefCell::new(i));
-    (*i.borrow_mut()) = {
-        let __it = <RandomAccessIterator<Option<Value<i32>>>>::from((*i.borrow()).clone());
-        let __off = __it.index();
-        c.with_mut(|__v: &mut Vec<Option<Value<i32>>>| __v.insert(__off, (x1).clone()));
-        __it
-    };
-    (*i.borrow_mut()) = {
-        let __it = <RandomAccessIterator<Option<Value<i32>>>>::from(
-            ((*i.borrow_mut()).iter_inc()).clone(),
-        );
-        let __off = __it.index();
-        c.with_mut(|__v: &mut Vec<Option<Value<i32>>>| __v.insert(__off, (x2).clone()));
-        __it
-    };
+    let x1: Value<Option<Value<i32>>> = Rc::new(RefCell::new(x1));
+    let x2: Value<Option<Value<i32>>> = Rc::new(RefCell::new(x2));
+    let x3: Value<Option<Value<i32>>> = Rc::new(RefCell::new(x3));
+    (*i.borrow_mut()) = match ({
+        <RandomAccessIterator<Option<Value<i32>>>>::from(({ (*i.borrow()).clone() }))
+    },)
     {
-        let __it = <RandomAccessIterator<Option<Value<i32>>>>::from(
-            ((*i.borrow_mut()).iter_inc()).clone(),
-        );
-        let __off = __it.index();
-        c.with_mut(|__v: &mut Vec<Option<Value<i32>>>| __v.insert(__off, (x3).clone()));
-        __it
+        (mut __tmp_0,) => {
+            let __off = __tmp_0.index();
+            c.with_mut(|__v: &mut Vec<Option<Value<i32>>>| {
+                __v.insert(__off, CppMove::cpp_move(x1.as_pointer()))
+            });
+            (__tmp_0).clone()
+        }
+    };
+    (*i.borrow_mut()) = match ({
+        <RandomAccessIterator<Option<Value<i32>>>>::from(
+            ({ ((*i.borrow_mut()).iter_inc()).clone() }),
+        )
+    },)
+    {
+        (mut __tmp_1,) => {
+            let __off = __tmp_1.index();
+            c.with_mut(|__v: &mut Vec<Option<Value<i32>>>| {
+                __v.insert(__off, CppMove::cpp_move(x2.as_pointer()))
+            });
+            (__tmp_1).clone()
+        }
+    };
+    match ({
+        <RandomAccessIterator<Option<Value<i32>>>>::from(
+            ({ ((*i.borrow_mut()).iter_inc()).clone() }),
+        )
+    },)
+    {
+        (mut __tmp_2,) => {
+            let __off = __tmp_2.index();
+            c.with_mut(|__v: &mut Vec<Option<Value<i32>>>| {
+                __v.insert(__off, CppMove::cpp_move(x3.as_pointer()))
+            });
+            (__tmp_2).clone()
+        }
     };
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -60,6 +81,11 @@ impl Callable1<AnyPtr, ()> for do_nothing {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             do_nothingImpl::operator_call(__it, a1)
         })
+    }
+}
+impl CppMove for do_nothing {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {
@@ -133,8 +159,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 .offset((5) as isize)
                 .to_owned_opt();
             test_0(
-                std::mem::take(&mut (*c1.borrow_mut())),
-                0_(),
+                ({ std::mem::take(&mut (*c1.borrow_mut())) }),
+                0_isize,
                 _x1,
                 _x2,
                 _x3,
@@ -188,8 +214,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 .offset((5) as isize)
                 .to_owned_opt();
             test_0(
-                std::mem::take(&mut (*c1.borrow_mut())),
-                1_(),
+                ({ std::mem::take(&mut (*c1.borrow_mut())) }),
+                1_isize,
                 _x1,
                 _x2,
                 _x3,
@@ -243,8 +269,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 .offset((5) as isize)
                 .to_owned_opt();
             test_0(
-                std::mem::take(&mut (*c1.borrow_mut())),
-                2_(),
+                ({ std::mem::take(&mut (*c1.borrow_mut())) }),
+                2_isize,
                 _x1,
                 _x2,
                 _x3,
@@ -298,8 +324,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 .offset((5) as isize)
                 .to_owned_opt();
             test_0(
-                std::mem::take(&mut (*c1.borrow_mut())),
-                3_(),
+                ({ std::mem::take(&mut (*c1.borrow_mut())) }),
+                3_isize,
                 _x1,
                 _x2,
                 _x3,

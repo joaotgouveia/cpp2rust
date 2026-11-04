@@ -7,34 +7,40 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_const_container_0(c: Ptr<Vec<i32>>) {
-    assert!(({ unimplemented!() } == { c.decay() }));
+    assert!(({ ({ data_1((c).clone(),) }) } == { c.decay() }));
 }
-pub fn test_const_container_1(c: Ptr<Vec<i32>>) {
-    assert!(({ unimplemented!() } == { c.decay() }));
+pub fn test_const_container_2(c: Ptr<Vec<i32>>) {
+    assert!(({ ({ data_3((c).clone(),) }) } == { c.decay() }));
 }
-pub fn test_const_container_2(c: Ptr<()>) {
-    assert!(({ unimplemented!() } == { unimplemented!() }));
-}
-pub fn test_const_container_3(c: Ptr<Vec<i32>>) {
+pub fn test_const_container_4(c: Ptr<Vec<i32>>) {
     const _: () = assert!(true, "");;
-    assert!(({ unimplemented!() } == { unimplemented!() }));
+    assert!(
+        ({
+            ({ ({ data_5((*c.upgrade().deref()).clone()) }) } == {
+                ({ (*c.upgrade().deref()).begin() })
+            })
+        })
+    );
 }
-pub fn test_container_4(c: Ptr<Vec<i32>>) {
-    assert!(({ unimplemented!() } == { c.decay() }));
+pub fn test_container_6(c: Ptr<Vec<i32>>) {
+    assert!(({ ({ data_7((c).clone(),) }) } == { c.decay() }));
 }
-pub fn test_container_5(c: Ptr<Vec<i32>>) {
-    assert!(({ unimplemented!() } == { c.decay() }));
+pub fn test_container_8(c: Ptr<Vec<i32>>) {
+    assert!(({ ({ data_9((c).clone(),) }) } == { c.decay() }));
 }
-pub fn test_container_6(c: Ptr<()>) {
-    assert!(({ unimplemented!() } == { unimplemented!() }));
-}
-pub fn test_container_7(c: Ptr<Vec<i32>>) {
+pub fn test_container_10(c: Ptr<Vec<i32>>) {
     const _: () = assert!(true, "");;
-    assert!(({ unimplemented!() } == { unimplemented!() }));
+    assert!(
+        ({
+            ({ ({ data_5((*c.upgrade().deref()).clone()) }) } == {
+                ({ (*c.upgrade().deref()).begin() })
+            })
+        })
+    );
 }
-pub fn test_const_array_8(array: Ptr<i32>) {
+pub fn test_const_array_11(array: Ptr<i32>) {
     const _: () = assert!(true, "");;
-    assert!(({ unimplemented!() } == { ((array).offset((0) as isize)) }));
+    assert!(({ ({ data_12((array).clone(),) }) } == { ((array).offset((0) as isize)) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -66,19 +72,23 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ));
     a.decay().offset(0_usize as isize).write(3);
     let il: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([4])));
-    ({ test_container_4(v.as_pointer()) });
-    ({ test_container_5(a.as_pointer()) });
-    ({ test_container_7(il.as_pointer()) });
+    ({ test_container_6(v.as_pointer()) });
+    ({ test_container_8(a.as_pointer()) });
+    ({ test_container_10(il.as_pointer()) });
     ({ test_const_container_0(v.as_pointer()) });
-    ({ test_const_container_1(a.as_pointer()) });
-    ({ test_const_container_3(il.as_pointer()) });
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ test_container_6(sv.as_pointer()) });
-    ({ test_const_container_2(sv.as_pointer()) });
-    ({ test_const_array_8(arrA_9.with(|v| v.as_pointer())) });
+    ({ test_const_container_2(a.as_pointer()) });
+    ({ test_const_container_4(il.as_pointer()) });
+    let sv: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1({
+            Ptr::<i8>::from_string_literal(b"ABC")
+        }),
+    ));
+    ({ test_container_13(sv.as_pointer()) });
+    ({ test_const_container_14(sv.as_pointer()) });
+    ({ test_const_array_11(arrA_15.with(|v| v.as_pointer())) });
     return 0;
 }
 thread_local!(
-    static arrA_9: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+    static arrA_15: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
 );
 pub fn __cpp2rust_init_globals() {}

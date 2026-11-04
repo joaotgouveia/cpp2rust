@@ -11,7 +11,7 @@ pub use rc::*;
 
 mod field;
 pub use field::{
-    ArrayElem, ElemPlace, FieldPlace, FieldPtr, IndexPlace, Place, Record, Seq, VecElem,
+    ArrayElem, ElemPlace, FieldPlace, FieldPtr, IndexPlace, Place, Record, Root, Seq, VecElem,
 };
 // Used by #[derive(Record)] and size_of_field!.
 #[doc(hidden)]
@@ -31,7 +31,8 @@ pub use void::*;
 mod ptr_dyn;
 pub use ptr_dyn::*;
 
-include!(concat!(env!("OUT_DIR"), "/rule_shims.rs"));
+mod cfile;
+pub use cfile::*;
 
 mod fn_ptr_arg;
 pub use fn_ptr_arg::{ArgRepr, FnPtrArg, record_from_repr};
@@ -49,7 +50,7 @@ mod cmp;
 pub use cmp::*;
 
 mod conversion;
-pub use conversion::{CppFrom, CppFromUnsafe};
+pub use conversion::{CppFrom, CppFromUnsafe, CppMove};
 
 mod swap;
 // Used by cpp_swap! and cpp_swap_unsafe!.
@@ -109,6 +110,58 @@ pub use fd::*;
 
 mod format;
 pub use format::*;
+
+mod dirent;
+pub use dirent::*;
+
+mod ip;
+pub use ip::*;
+
+mod ifaddrs;
+pub use ifaddrs::*;
+
+mod netdb;
+pub use netdb::*;
+
+mod poll;
+pub use poll::*;
+
+mod pwd;
+pub use pwd::*;
+
+mod select;
+pub use select::*;
+
+mod socket;
+pub use socket::*;
+
+mod stat;
+pub use stat::*;
+
+mod termios;
+pub use termios::*;
+
+mod time;
+pub use time::*;
+
+mod map;
+pub use map::*;
+
+mod pair;
+pub use pair::*;
+
+mod cpp_array;
+pub use cpp_array::*;
+
+mod allocator_traits;
+pub use allocator_traits::*;
+
+mod cstddef;
+pub use cstddef::*;
+
+mod locale;
+
+mod wchar;
 
 pub use libcc2rs_macros::{
     ByteRepr, CopyAssign, CopyAssignUnsafe, CppFrom, CppFromUnsafe, Destructor, DestructorUnsafe,

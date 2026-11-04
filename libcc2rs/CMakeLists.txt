@@ -4,7 +4,6 @@ set(LIBCC2RS_RLIB ${CMAKE_BINARY_DIR}/libcc2rs-target/release/liblibcc2rs.rlib)
 set(LIBCC2RS_MACROS_RLIB ${CMAKE_BINARY_DIR}/libcc2rs-macros-target/release/liblibcc2rs-macros.rlib)
 file(GLOB_RECURSE LIBCC2RS_SOURCES "${LIBCC2RC_LIB_DIR}/src/*.rs")
 file(GLOB_RECURSE LIBCC2RS_MACROS_SOURCES "${LIBCC2RC_MACROS_LIB_DIR}/src/*.rs")
-file(GLOB LIBCC2RS_RULE_SHIMS CONFIGURE_DEPENDS "${CMAKE_SOURCE_DIR}/rules/*/shim.rs")
 
 add_custom_command(
     OUTPUT ${LIBCC2RS_RLIB}
@@ -14,8 +13,6 @@ add_custom_command(
         "${RUST_STAMP_FILE}"
         ${LIBCC2RS_SOURCES}
         ${LIBCC2RS_MACROS_SOURCES}
-        ${LIBCC2RS_RULE_SHIMS}
-        ${LIBCC2RC_LIB_DIR}/build.rs
         ${LIBCC2RC_LIB_DIR}/Cargo.toml
         ${LIBCC2RC_MACROS_LIB_DIR}/Cargo.toml
 )

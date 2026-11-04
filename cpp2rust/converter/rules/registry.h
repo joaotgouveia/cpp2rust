@@ -28,12 +28,20 @@ struct TypeRuleDecl {
   TranslationRule::TypeRule rule;
 };
 
+void SetCheckUsedRules();
+
+void SetIRDirs(llvm::ArrayRef<std::string> rules_ir_dirs);
+
 void Load(clang::Sema &sema, Model model);
 
 Matcher::Match<TranslationRule::ExprRule> Search(clang::ASTContext &ctx,
                                                  const clang::Expr *expr);
 Matcher::Match<TranslationRule::TypeRule> Search(clang::ASTContext &ctx,
                                                  clang::QualType qual_type);
+
+std::string SearchUID(clang::ASTContext &ctx, const clang::Expr *expr);
+std::string SearchUID(clang::ASTContext &ctx, clang::QualType qual_type);
+std::vector<const clang::TypedefNameDecl *> TakeUnruledTypedefs();
 
 const TranslationRule::ExprRule *GetExprRule(clang::ASTContext &ctx,
                                              const clang::Expr *expr);
@@ -69,6 +77,13 @@ bool ParamIsReference(clang::ASTContext &ctx, const clang::Expr *expr,
 // The rule's parameter is a pointer to a generic bound to `type` itself.
 bool ParamPointsTo(clang::ASTContext &ctx, const clang::Expr *expr,
                    unsigned index, clang::QualType type);
+
+// The rule returns a pointer to a generic bound to `type` itself.
+bool ReturnPointsTo(clang::ASTContext &ctx, const clang::Expr *expr,
+                    clang::QualType type);
+
+// A class whose type rule maps it to a pointer (vector<bool>'s reference).
+bool IsProxyRecord(clang::ASTContext &ctx, clang::QualType type);
 
 // The rule returns a reference to a class that maps to a pointer as that
 // pointer itself (vector<bool>'s reference &), not as a pointer to it.

@@ -11,40 +11,65 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_less_int___std_less_int__ {}
+impl CppMove for test_macros_detail_is_same_std_less_int___std_less_int__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std__Flat_map_impl_int__char__std_less_int___std_vector_int__std_allocator_int____std_vector_char__std_allocator_char____true__value_compare__std__Flat_map_impl_int__char__std_less_int___std_vector_int__std_allocator_int____std_vector_char__std_allocator_char____true__value_compare_
 {}
+impl CppMove for test_macros_detail_is_same_std__Flat_map_impl_int__char__std_less_int___std_vector_int__std_allocator_int____std_vector_char__std_allocator_char____true__value_compare__std__Flat_map_impl_int__char__std_less_int___std_vector_int__std_allocator_int____std_vector_char__std_allocator_char____true__value_compare_ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_bool__bool_ {}
+impl CppMove for test_macros_detail_is_same_bool__bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_function_bool__int__int____std_function_bool__int__int___
 {}
+impl CppMove
+    for test_macros_detail_is_same_std_function_bool__int__int____std_function_bool__int__int___
+{
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_4 = u32;
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std__Flat_map_impl_int__int__std_function_bool__int__int____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____true__value_compare__std__Flat_map_impl_int__int__std_function_bool__int__int____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____true__value_compare_
 {}
+impl CppMove for test_macros_detail_is_same_std__Flat_map_impl_int__int__std_function_bool__int__int____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____true__value_compare__std__Flat_map_impl_int__int__std_function_bool__int__int____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____true__value_compare_ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_5 = u32;
 pub const anon_5_value: anon_5 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_less_void___std_less_void__ {}
+impl CppMove for test_macros_detail_is_same_std_less_void___std_less_void__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_6 = u32;
 pub const anon_6_value: anon_6 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std__Flat_map_impl_int__int__std_less_void___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____true__value_compare__std__Flat_map_impl_int__int__std_less_void___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____true__value_compare_
 {}
+impl CppMove for test_macros_detail_is_same_std__Flat_map_impl_int__int__std_less_void___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____true__value_compare__std__Flat_map_impl_int__int__std_less_void___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____true__value_compare_ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn test_7() -> bool {
     {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -190,22 +215,24 @@ pub fn test_7() -> bool {
             },
             |x: Ptr<Vec<i32>>, y: Ptr<Vec<i32>>| -> bool {
                 return ({
-                    ({
-                        let __idx = ((*i.borrow()) as usize);
-                        if __idx as usize >= (*x.upgrade().deref()).len() {
-                            panic!("out of bounds access")
-                        } else {
-                            x.decay().offset(__idx as isize)
+                    (match ({ ((*i.borrow()) as usize) },) {
+                        (mut __tmp_0,) => {
+                            if __tmp_0 as usize >= (*x.upgrade().deref()).len() {
+                                panic!("out of bounds access")
+                            } else {
+                                x.decay().offset(__tmp_0 as isize)
+                            }
                         }
                     }
                     .read())
                 } < {
-                    ({
-                        let __idx = ((*i.borrow()) as usize);
-                        if __idx as usize >= (*y.upgrade().deref()).len() {
-                            panic!("out of bounds access")
-                        } else {
-                            y.decay().offset(__idx as isize)
+                    (match ({ ((*i.borrow()) as usize) },) {
+                        (mut __tmp_1,) => {
+                            if __tmp_1 as usize >= (*y.upgrade().deref()).len() {
+                                panic!("out of bounds access")
+                            } else {
+                                y.decay().offset(__tmp_1 as isize)
+                            }
                         }
                     }
                     .read())
@@ -232,114 +259,114 @@ pub fn test_7() -> bool {
         )));
         assert!(
             ({
-                (*vc.borrow_mut())(
-                    {
-                        let __a0 = (*a.borrow()).clone();
+                ({
+                    (*vc.borrow_mut())(
                         (
                             Rc::new(RefCell::new(
-                                <Ptr<Vec<i32>> as CppFrom<Vec<i32>>>::cpp_from(__a0.0.as_pointer()),
+                                <Ptr<Vec<i32>> as CppFrom<Vec<i32>>>::cpp_from(
+                                    (*a.borrow()).0.as_pointer(),
+                                ),
                             )),
                             Rc::new(RefCell::new(<Ptr<i32> as CppFrom<i32>>::cpp_from(
-                                __a0.1.as_pointer(),
+                                (*a.borrow()).1.as_pointer(),
                             ))),
-                        )
-                    },
-                    {
-                        let __a0 = (*b.borrow()).clone();
+                        ),
                         (
                             Rc::new(RefCell::new(
-                                <Ptr<Vec<i32>> as CppFrom<Vec<i32>>>::cpp_from(__a0.0.as_pointer()),
+                                <Ptr<Vec<i32>> as CppFrom<Vec<i32>>>::cpp_from(
+                                    (*b.borrow()).0.as_pointer(),
+                                ),
                             )),
                             Rc::new(RefCell::new(<Ptr<i32> as CppFrom<i32>>::cpp_from(
-                                __a0.1.as_pointer(),
+                                (*b.borrow()).1.as_pointer(),
                             ))),
-                        )
-                    },
-                )
+                        ),
+                    )
+                })
             })
         );
         assert!(
             ({
-                (*vc.borrow_mut())(
-                    {
-                        let __a0 = (*b.borrow()).clone();
+                ({
+                    (*vc.borrow_mut())(
                         (
                             Rc::new(RefCell::new(
-                                <Ptr<Vec<i32>> as CppFrom<Vec<i32>>>::cpp_from(__a0.0.as_pointer()),
+                                <Ptr<Vec<i32>> as CppFrom<Vec<i32>>>::cpp_from(
+                                    (*b.borrow()).0.as_pointer(),
+                                ),
                             )),
                             Rc::new(RefCell::new(<Ptr<i32> as CppFrom<i32>>::cpp_from(
-                                __a0.1.as_pointer(),
+                                (*b.borrow()).1.as_pointer(),
                             ))),
-                        )
-                    },
-                    {
-                        let __a0 = (*c.borrow()).clone();
+                        ),
                         (
                             Rc::new(RefCell::new(
-                                <Ptr<Vec<i32>> as CppFrom<Vec<i32>>>::cpp_from(__a0.0.as_pointer()),
+                                <Ptr<Vec<i32>> as CppFrom<Vec<i32>>>::cpp_from(
+                                    (*c.borrow()).0.as_pointer(),
+                                ),
                             )),
                             Rc::new(RefCell::new(<Ptr<i32> as CppFrom<i32>>::cpp_from(
-                                __a0.1.as_pointer(),
+                                (*c.borrow()).1.as_pointer(),
                             ))),
-                        )
-                    },
-                )
+                        ),
+                    )
+                })
             })
         );
         assert!(
-            !({
-                (*vc.borrow_mut())(
-                    {
-                        let __a0 = (*b.borrow()).clone();
+            ({
+                !({
+                    (*vc.borrow_mut())(
                         (
                             Rc::new(RefCell::new(
-                                <Ptr<Vec<i32>> as CppFrom<Vec<i32>>>::cpp_from(__a0.0.as_pointer()),
+                                <Ptr<Vec<i32>> as CppFrom<Vec<i32>>>::cpp_from(
+                                    (*b.borrow()).0.as_pointer(),
+                                ),
                             )),
                             Rc::new(RefCell::new(<Ptr<i32> as CppFrom<i32>>::cpp_from(
-                                __a0.1.as_pointer(),
+                                (*b.borrow()).1.as_pointer(),
                             ))),
-                        )
-                    },
-                    {
-                        let __a0 = (*a.borrow()).clone();
+                        ),
                         (
                             Rc::new(RefCell::new(
-                                <Ptr<Vec<i32>> as CppFrom<Vec<i32>>>::cpp_from(__a0.0.as_pointer()),
+                                <Ptr<Vec<i32>> as CppFrom<Vec<i32>>>::cpp_from(
+                                    (*a.borrow()).0.as_pointer(),
+                                ),
                             )),
                             Rc::new(RefCell::new(<Ptr<i32> as CppFrom<i32>>::cpp_from(
-                                __a0.1.as_pointer(),
+                                (*a.borrow()).1.as_pointer(),
                             ))),
-                        )
-                    },
-                )
+                        ),
+                    )
+                })
             })
         );
         assert!(
-            !({
-                (*vc.borrow_mut())(
-                    {
-                        let __a0 = (*c.borrow()).clone();
+            ({
+                !({
+                    (*vc.borrow_mut())(
                         (
                             Rc::new(RefCell::new(
-                                <Ptr<Vec<i32>> as CppFrom<Vec<i32>>>::cpp_from(__a0.0.as_pointer()),
+                                <Ptr<Vec<i32>> as CppFrom<Vec<i32>>>::cpp_from(
+                                    (*c.borrow()).0.as_pointer(),
+                                ),
                             )),
                             Rc::new(RefCell::new(<Ptr<i32> as CppFrom<i32>>::cpp_from(
-                                __a0.1.as_pointer(),
+                                (*c.borrow()).1.as_pointer(),
                             ))),
-                        )
-                    },
-                    {
-                        let __a0 = (*b.borrow()).clone();
+                        ),
                         (
                             Rc::new(RefCell::new(
-                                <Ptr<Vec<i32>> as CppFrom<Vec<i32>>>::cpp_from(__a0.0.as_pointer()),
+                                <Ptr<Vec<i32>> as CppFrom<Vec<i32>>>::cpp_from(
+                                    (*b.borrow()).0.as_pointer(),
+                                ),
                             )),
                             Rc::new(RefCell::new(<Ptr<i32> as CppFrom<i32>>::cpp_from(
-                                __a0.1.as_pointer(),
+                                (*b.borrow()).1.as_pointer(),
                             ))),
-                        )
-                    },
-                )
+                        ),
+                    )
+                })
             })
         );
     }

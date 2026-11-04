@@ -23,6 +23,11 @@ impl CppEq for Error {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for Error {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_2() -> bool {
     let unex1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let unex2: Value<()> = Rc::new(RefCell::new(unimplemented!()));

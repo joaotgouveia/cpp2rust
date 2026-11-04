@@ -27,12 +27,17 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
-    unimplemented!();
-    assert!(!(unimplemented!()));
-    unimplemented!();
-    assert!(unimplemented!());
+    let q: Value<std_queue_int__std_deque_int__std_allocator_int___> = Rc::new(RefCell::new(
+        <std_queue_int__std_deque_int__std_allocator_int___>::default(),
+    ));
+    assert!(({ ({ (*q.borrow()).empty() }) }));
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(1));
+        (*q.borrow()).push_20(___x.as_pointer())
+    });
+    assert!(({ !({ (*q.borrow()).empty() }) }));
+    ({ (*q.borrow()).pop() });
+    assert!(({ ({ (*q.borrow()).empty() }) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

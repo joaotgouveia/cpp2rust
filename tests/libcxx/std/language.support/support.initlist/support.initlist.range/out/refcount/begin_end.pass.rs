@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_int_ptr__const_int_ptr_ {}
+impl CppMove for test_macros_detail_is_same_const_int_ptr__const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_1() -> bool {
     {
         let il: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([3, 2, 1])));
@@ -18,10 +23,12 @@ pub fn test_1() -> bool {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        let mut b: Ptr<i32> = unimplemented!();
-        let mut e: Ptr<i32> = unimplemented!();
-        assert!(((*il.borrow()).len() == 3_usize));
-        assert!(({ ((((e).clone() - (b).clone()) as i64) as usize) } == { (*il.borrow()).len() }));
+        let mut b: Ptr<i32> = ({ begin_2((*il.borrow()).clone()) });
+        let mut e: Ptr<i32> = ({ libcc2rs::end_refcount((*il.borrow()).clone()) });
+        assert!(({ ((*il.borrow()).len() == 3_usize) }));
+        assert!(
+            ({ ({ ((((e).clone() - (b).clone()) as i64) as usize) } == { (*il.borrow()).len() }) })
+        );
         assert!(((b.postfix_inc().read()) == 3));
         assert!(((b.postfix_inc().read()) == 2));
         assert!(((b.postfix_inc().read()) == 1));
@@ -32,15 +39,31 @@ pub fn test_1() -> bool {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
+        assert!(({ (({ begin_2((*il.borrow()).clone(),) }) == ({ (*il.borrow()).begin() })) }));
+        assert!(
+            ({
+                (({ libcc2rs::end_refcount((*il.borrow()).clone()) }) == ({ (*il.borrow()).end() }))
+            })
+        );
         let cil: Ptr<Vec<i32>> = il.as_pointer();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(({ unimplemented!() } == { unimplemented!() }));
-        assert!(({ unimplemented!() } == { unimplemented!() }));
+        assert!(
+            ({
+                ({ ({ begin_2((*cil.upgrade().deref()).clone()) }) } == {
+                    ({ (*il.borrow()).begin() })
+                })
+            })
+        );
+        assert!(
+            ({
+                ({ ({ libcc2rs::end_refcount((*cil.upgrade().deref()).clone()) }) } == {
+                    ({ (*il.borrow()).end() })
+                })
+            })
+        );
     }
     return true;
 }

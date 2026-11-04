@@ -11,16 +11,31 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int__int_ {}
+impl CppMove for test_macros_detail_is_same_int__int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_unsigned_short__unsigned_short_ {}
+impl CppMove for test_macros_detail_is_same_unsigned_short__unsigned_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_long_long__long_long_ {}
+impl CppMove for test_macros_detail_is_same_long_long__long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type e_default = i32;
 pub const e_default_a: e_default = 0;
 pub const e_default_b: e_default = 1;
@@ -55,6 +70,11 @@ pub struct WithBitfieldEnums {
     #[byte_size(1)]
     pub e3: e_bool,
 }
+impl CppMove for WithBitfieldEnums {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_3() -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -62,26 +82,26 @@ pub fn test_3() -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    assert!((0 == unimplemented!()));
-    assert!((1 == unimplemented!()));
-    assert!((2 == unimplemented!()));
-    assert!((10 == (unimplemented!() as i32)));
-    assert!((25 == (unimplemented!() as i32)));
-    assert!((50 == (unimplemented!() as i32)));
-    assert!((i64::MIN == unimplemented!()));
-    assert!((i64::MAX == unimplemented!()));
-    assert!((10_u32 == unimplemented!()));
-    assert!((11_u32 == unimplemented!()));
-    assert!((12_u32 == unimplemented!()));
-    assert!((i32::MIN == unimplemented!()));
-    assert!((i32::MAX == unimplemented!()));
+    assert!((0 == ({ to_underlying_4(e_default_a,) })));
+    assert!((1 == ({ to_underlying_4(e_default_b,) })));
+    assert!((2 == ({ to_underlying_4(e_default_c,) })));
+    assert!((10 == (({ to_underlying_5(e_ushort_d,) }) as i32)));
+    assert!((25 == (({ to_underlying_5(e_ushort_e,) }) as i32)));
+    assert!((50 == (({ to_underlying_5(e_ushort_f,) }) as i32)));
+    assert!((i64::MIN == ({ to_underlying_6(e_longlong_low,) })));
+    assert!((i64::MAX == ({ to_underlying_6(e_longlong_high,) })));
+    assert!((10_u32 == ({ to_underlying_7(e_non_class_enum_a,) })));
+    assert!((11_u32 == ({ to_underlying_7(e_non_class_enum_b,) })));
+    assert!((12_u32 == ({ to_underlying_7(e_non_class_enum_c,) })));
+    assert!((i32::MIN == ({ to_underlying_8(e_int_enum_min,) })));
+    assert!((i32::MAX == ({ to_underlying_8(e_int_enum_max,) })));
     let mut bf: WithBitfieldEnums = <WithBitfieldEnums>::default();
     bf.e1 = ((3) as e_default);
     bf.e2 = e_ushort_e;
     bf.e3 = e_bool_t;
-    assert!((3 == unimplemented!()));
-    assert!((25 == (unimplemented!() as i32)));
-    assert!((1 == (unimplemented!() as i32)));
+    assert!((3 == ({ to_underlying_4(bf.e1,) })));
+    assert!((25 == (({ to_underlying_5(bf.e2,) }) as i32)));
+    assert!((1 == (({ to_underlying_9(bf.e3,) }) as i32)));
     return true;
 }
 pub fn main() {

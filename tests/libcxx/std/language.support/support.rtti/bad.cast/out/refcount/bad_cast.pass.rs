@@ -32,10 +32,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         "(std::is_base_of<std::exception, std::bad_cast>::value)"
     );;
     const _: () = assert!(true, "std::is_polymorphic<std::bad_cast>::value");;
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let b2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut w: Ptr<i8> = unimplemented!();
+    let b: Value<std_bad_cast> = Rc::new(RefCell::new(<std_bad_cast>::default()));
+    let b2: Value<std_bad_cast> = Rc::new(RefCell::new((*b.borrow()).clone()));
+    (*b2.borrow_mut()) = (*b.borrow()).clone();
+    let mut w: Ptr<i8> = ({ (*b2.borrow()).what() });
     assert!(!(w).is_null());
     return 0;
 }

@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -44,6 +49,7 @@ pub struct min_pointer_std_pair_const_int__std_basic_string_char__std_char_trait
     ptr_: Ptr<(Value<i32>, Value<Vec<i8>>)>,
 }
 impl min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__ { }
+impl CppMove for min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -52,10 +58,16 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____
 {}
+impl CppMove for min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -130,50 +142,78 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let i: Value<()> = Rc::new(RefCell::new(<()>::from(unimplemented!())));
         let j: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-            (*i.borrow()).clone(),
+            ({ (*i.borrow()).clone() }),
             1_isize,
         )));
         let k: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!((*k.borrow()) == (*i.borrow()));
         assert!((unimplemented!() == 4_()));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
+        assert!(match (unimplemented!(),) {
+            (__tmp_0,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_0.upgrade().deref())
+                        [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (unimplemented!(),) {
+            (__tmp_1,) => {
+                Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| {
+                    (*__tmp_1.upgrade().deref())
+                        [..(*__tmp_1.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (unimplemented!(),) {
+            (__tmp_2,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_2.upgrade().deref())
+                        [..(*__tmp_2.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (unimplemented!(),) {
+            (__tmp_3,) => {
+                Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                    (*__tmp_3.upgrade().deref())
+                        [..(*__tmp_3.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         (*k.borrow_mut()) = unimplemented!();
         assert!((unimplemented!() == 3_()));
         assert!((*k.borrow()) == (*j.borrow()));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
+        assert!(match (unimplemented!(),) {
+            (__tmp_4,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_4.upgrade().deref())
+                        [..(*__tmp_4.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (unimplemented!(),) {
+            (__tmp_5,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_5.upgrade().deref())
+                        [..(*__tmp_5.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (unimplemented!(),) {
+            (__tmp_6,) => {
+                Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                    (*__tmp_6.upgrade().deref())
+                        [..(*__tmp_6.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         (*k.borrow_mut()) = unimplemented!();
         assert!((*k.borrow()) == unimplemented!());
         assert!((unimplemented!() == 0_()));
@@ -252,50 +292,78 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let i: Value<()> = Rc::new(RefCell::new(<()>::from(unimplemented!())));
         let j: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-            (*i.borrow()).clone(),
+            ({ (*i.borrow()).clone() }),
             1_isize,
         )));
         let k: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!((*k.borrow()) == (*i.borrow()));
         assert!((unimplemented!() == 4_()));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
+        assert!(match (unimplemented!(),) {
+            (__tmp_7,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_7.upgrade().deref())
+                        [..(*__tmp_7.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (unimplemented!(),) {
+            (__tmp_8,) => {
+                Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| {
+                    (*__tmp_8.upgrade().deref())
+                        [..(*__tmp_8.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (unimplemented!(),) {
+            (__tmp_9,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_9.upgrade().deref())
+                        [..(*__tmp_9.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (unimplemented!(),) {
+            (__tmp_10,) => {
+                Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                    (*__tmp_10.upgrade().deref())
+                        [..(*__tmp_10.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         (*k.borrow_mut()) = unimplemented!();
         assert!((unimplemented!() == 3_()));
         assert!((*k.borrow()) == (*j.borrow()));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
+        assert!(match (unimplemented!(),) {
+            (__tmp_11,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_11.upgrade().deref())
+                        [..(*__tmp_11.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (unimplemented!(),) {
+            (__tmp_12,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_12.upgrade().deref())
+                        [..(*__tmp_12.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (unimplemented!(),) {
+            (__tmp_13,) => {
+                Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                    (*__tmp_13.upgrade().deref())
+                        [..(*__tmp_13.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         (*k.borrow_mut()) = unimplemented!();
         assert!((*k.borrow()) == unimplemented!());
         assert!((unimplemented!() == 0_()));

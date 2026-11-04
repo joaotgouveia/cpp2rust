@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_bool__bool_ {}
+impl CppMove for test_macros_detail_is_same_bool__bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -35,20 +40,38 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "!weekday_indexed{{}}.ok()");;
     const _: () = assert!(true, "weekday_indexed{{std::chrono::Sunday, 2}}.ok()");;
-    assert!(!(unimplemented!()));
+    assert!(
+        !({
+            std_chrono_weekday_indexed::new_1({ Tuesday_1.with(|v| v.as_pointer()) }, { 0_u32 })
+                .ok()
+        })
+    );
     let mut i: u32 = 1_u32;
     'loop_: while (i <= 5_u32) {
-        let wdi: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let wdi: Value<std_chrono_weekday_indexed> = Rc::new(RefCell::new(
+            std_chrono_weekday_indexed::new_1({ Tuesday_1.with(|v| v.as_pointer()) }, { i }),
+        ));
+        assert!(({ ({ (*wdi.borrow()).ok() }) }));
         i.prefix_inc();
     }
     let mut i: u32 = 6_u32;
     'loop_: while (i <= 20_u32) {
-        let wdi: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(!(unimplemented!()));
+        let wdi: Value<std_chrono_weekday_indexed> = Rc::new(RefCell::new(
+            std_chrono_weekday_indexed::new_1({ Tuesday_1.with(|v| v.as_pointer()) }, { i }),
+        ));
+        assert!(({ !({ (*wdi.borrow()).ok() }) }));
         i.prefix_inc();
     }
-    assert!(!(unimplemented!()));
+    assert!(
+        !({
+            {
+                let __tmp_0: Value<std_chrono_weekday> =
+                    Rc::new(RefCell::new(std_chrono_weekday::new_1({ 9_u32 })));
+                std_chrono_weekday_indexed::new_1({ __tmp_0.as_pointer() }, { 1_u32 })
+            }
+            .ok()
+        })
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

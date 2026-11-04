@@ -12,6 +12,7 @@ pub const anon_0_value: anon_0 = 1;
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_time_point_std_chrono_local_t__std_chrono_duration_long__std_ratio_86400__1_____std_chrono_time_point_std_chrono_local_t__std_chrono_duration_long__std_ratio_86400__1____
 {}
+impl CppMove for test_macros_detail_is_same_std_chrono_time_point_std_chrono_local_t__std_chrono_duration_long__std_ratio_86400__1_____std_chrono_time_point_std_chrono_local_t__std_chrono_duration_long__std_ratio_86400__1____ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

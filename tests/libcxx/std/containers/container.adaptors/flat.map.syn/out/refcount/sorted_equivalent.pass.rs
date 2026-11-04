@@ -20,13 +20,16 @@ const _: () = assert!(
 );
 pub fn test_0() -> bool {
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<std_sorted_equivalent_t> =
+            Rc::new(RefCell::new(<std_sorted_equivalent_t>::default()));
     }
     {
-        let s: Ptr<()> = (unimplemented!());
+        let s: Ptr<std_sorted_equivalent_t> = (sorted_equivalent_1.with(|v| v.as_pointer()));
     }
     {
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let copy: Value<std_sorted_equivalent_t> = Rc::new(RefCell::new(
+            (*sorted_equivalent_1.with(Value::clone).borrow()).clone(),
+        ));
     }
     return true;
 }

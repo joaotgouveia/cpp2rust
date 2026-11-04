@@ -67,6 +67,11 @@ impl MultiStringType {
         }
     }
 }
+impl CppMove for MultiStringType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn check_0(expected: (), fmt: (), args: Ptr<()>) {
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));

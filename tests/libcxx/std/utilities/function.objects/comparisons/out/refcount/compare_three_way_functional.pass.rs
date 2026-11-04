@@ -27,9 +27,27 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(unimplemented!() == std::cmp::Ordering::Less);
-    assert!(unimplemented!() == std::cmp::Ordering::Equal);
-    assert!(unimplemented!() == std::cmp::Ordering::Greater);
+    assert!(
+        ({
+            let ___t: Value<i32> = Rc::new(RefCell::new(1));
+            let ___u: Value<i32> = Rc::new(RefCell::new(2));
+            <std_compare_three_way>::default()(___t.as_pointer(), ___u.as_pointer())
+        }) == std::cmp::Ordering::Less
+    );
+    assert!(
+        ({
+            let ___t: Value<i32> = Rc::new(RefCell::new(1));
+            let ___u: Value<i32> = Rc::new(RefCell::new(1));
+            <std_compare_three_way>::default()(___t.as_pointer(), ___u.as_pointer())
+        }) == std::cmp::Ordering::Equal
+    );
+    assert!(
+        ({
+            let ___t: Value<i32> = Rc::new(RefCell::new(2));
+            let ___u: Value<i32> = Rc::new(RefCell::new(1));
+            <std_compare_three_way>::default()(___t.as_pointer(), ___u.as_pointer())
+        }) == std::cmp::Ordering::Greater
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -215,7 +215,7 @@ pub fn nonexistent_path_3(file: Option<Vec<i8>>) -> Vec<i8> {
         {
             (*file.borrow_mut()).pop();
             (*file.borrow_mut()).resize(
-                (((*file.borrow()).len() - 1).wrapping_sub(3_usize)) as usize,
+                ({ ((*file.borrow()).len() - 1).wrapping_sub(3_usize) }) as usize,
                 0_i8,
             );
             (*file.borrow_mut()).push(0_i8)
@@ -294,6 +294,11 @@ impl __gnu_test_scoped_file {
         Self {
             path: unimplemented!(),
         }
+    }
+}
+impl CppMove for __gnu_test_scoped_file {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for __gnu_test_scoped_file {

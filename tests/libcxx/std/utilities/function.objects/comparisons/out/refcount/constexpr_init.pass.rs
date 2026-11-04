@@ -7,32 +7,36 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_constexpr_context_0() -> bool {
-    let eq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let eq: Value<std_equal_to_int_> = Rc::new(RefCell::new(<std_equal_to_int_>::default()));
     (&(*eq.borrow_mut()));
-    let neq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let neq: Value<std_not_equal_to_int_> =
+        Rc::new(RefCell::new(<std_not_equal_to_int_>::default()));
     (&(*neq.borrow_mut()));
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let l: Value<std_less_int_> = Rc::new(RefCell::new(<std_less_int_>::default()));
     (&(*l.borrow_mut()));
-    let le: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let le: Value<std_less_equal_int_> = Rc::new(RefCell::new(<std_less_equal_int_>::default()));
     (&(*le.borrow_mut()));
-    let g: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let g: Value<std_greater_int_> = Rc::new(RefCell::new(<std_greater_int_>::default()));
     (&(*g.borrow_mut()));
-    let ge: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ge: Value<std_greater_equal_int_> =
+        Rc::new(RefCell::new(<std_greater_equal_int_>::default()));
     (&(*ge.borrow_mut()));
     return true;
 }
 pub fn test_constexpr_context_1() -> bool {
-    let eq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let eq: Value<std_equal_to_void_> = Rc::new(RefCell::new(<std_equal_to_void_>::default()));
     (&(*eq.borrow_mut()));
-    let neq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let neq: Value<std_not_equal_to_void_> =
+        Rc::new(RefCell::new(<std_not_equal_to_void_>::default()));
     (&(*neq.borrow_mut()));
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let l: Value<std_less_void_> = Rc::new(RefCell::new(<std_less_void_>::default()));
     (&(*l.borrow_mut()));
-    let le: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let le: Value<std_less_equal_void_> = Rc::new(RefCell::new(<std_less_equal_void_>::default()));
     (&(*le.borrow_mut()));
-    let g: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let g: Value<std_greater_void_> = Rc::new(RefCell::new(<std_greater_void_>::default()));
     (&(*g.borrow_mut()));
-    let ge: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ge: Value<std_greater_equal_void_> =
+        Rc::new(RefCell::new(<std_greater_equal_void_>::default()));
     (&(*ge.borrow_mut()));
     return true;
 }

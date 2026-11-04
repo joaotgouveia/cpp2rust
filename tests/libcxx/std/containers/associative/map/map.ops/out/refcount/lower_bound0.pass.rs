@@ -16,6 +16,11 @@ impl Callable2<Ptr<i32>, Ptr<C2Int>, bool> for transparent_less {
         })
     }
 }
+impl CppMove for transparent_less {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less_not_referenceable {}
@@ -26,9 +31,19 @@ impl Callable2<Ptr<i32>, Ptr<C2Int>, bool> for transparent_less_not_referenceabl
         })
     }
 }
+impl CppMove for transparent_less_not_referenceable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less_nonempty_is_transparent {}
+impl CppMove for transparent_less_nonempty_is_transparent {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less_nonempty {
@@ -45,17 +60,37 @@ impl Callable2<Ptr<i32>, Ptr<C2Int>, bool> for transparent_less_nonempty {
         })
     }
 }
+impl CppMove for transparent_less_nonempty {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less_no_type {}
+impl CppMove for transparent_less_no_type {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less_private {}
+impl CppMove for transparent_less_private {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct transparent_less_not_a_type {
     #[offset(0)]
     pub is_transparent: i32,
+}
+impl CppMove for transparent_less_not_a_type {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
 #[cpp_from(i32, new_1, value)]
@@ -83,6 +118,11 @@ impl CppEq for C2Int {
             && !(operator_lt_1(__rhs.clone(), __lhs.clone()))
     }
 }
+impl CppMove for C2Int {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for C2Int {
     fn default() -> Self {
         { C2Int::new_2() }
@@ -101,28 +141,34 @@ pub fn test_3() -> bool {
     {
         let example: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(Map::new()));
         assert!(
-            unimplemented!()
-                == example
-                    .as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end())
+            ({
+                let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 5 })));
+                (*example.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+            }) == example
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end())
         );
     }
     {
         let example: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(Map::new()));
         assert!(
-            unimplemented!()
-                == example
-                    .as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end())
+            ({
+                let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 5 })));
+                (*example.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+            }) == example
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end())
         );
     }
     {
         let example: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(Map::new()));
         assert!(
-            unimplemented!()
-                == example
-                    .as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end())
+            ({
+                let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 5 })));
+                (*example.borrow()).lower_bound_83_struct_C2Int(___x.as_pointer())
+            }) == example
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end())
         );
     }
     return true;

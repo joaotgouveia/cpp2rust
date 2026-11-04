@@ -18,7 +18,8 @@ const _: () = assert!(true, "std::is_nothrow_swappable_v<std::source_location>")
 const _: () = assert!(true, "");
 const _: () = assert!(true, "");
 thread_local!(
-    pub static empty_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static empty_0: Value<std_source_location> =
+        Rc::new(RefCell::new(<std_source_location>::default()));
 );
 const _: () = assert!(true, "empty.line() == 0");
 const _: () = assert!(true, "empty.column() == 0");
@@ -29,19 +30,28 @@ const _: () = assert!(true, "");
 const _: () = assert!(true, "");
 const _: () = assert!(true, "");
 thread_local!(
-    pub static line_1: Value<u32> = Rc::new(RefCell::new(unimplemented!()));
+    pub static line_1: Value<u32> = Rc::new(RefCell::new(
+        ({ (*empty_0.with(Value::clone).borrow()).line() }),
+    ));
 );
 thread_local!(
-    pub static column_2: Value<u32> = Rc::new(RefCell::new(unimplemented!()));
+    pub static column_2: Value<u32> = Rc::new(RefCell::new(
+        ({ (*empty_0.with(Value::clone).borrow()).column() }),
+    ));
 );
 thread_local!(
-    pub static file_3: Value<Ptr<i8>> = Rc::new(RefCell::new(unimplemented!()));
+    pub static file_3: Value<Ptr<i8>> = Rc::new(RefCell::new(
+        ({ (*empty_0.with(Value::clone).borrow()).file_name() }),
+    ));
 );
 thread_local!(
-    pub static function_4: Value<Ptr<i8>> = Rc::new(RefCell::new(unimplemented!()));
+    pub static function_4: Value<Ptr<i8>> = Rc::new(RefCell::new(
+        ({ (*empty_0.with(Value::clone).borrow()).function_name() }),
+    ));
 );
 thread_local!(
-    pub static cur_5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static cur_5: Value<std_source_location> =
+        Rc::new(RefCell::new(({ std_source_location::current(None) })));
 );
 const _: () = assert!(true, "cur.line() == 1000");
 const _: () = assert!(true, "cur.column() > 0");
@@ -70,10 +80,11 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let local: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let local: Value<std_source_location> =
+        Rc::new(RefCell::new(({ std_source_location::current(None) })));
     assert!(
         ({
-            let mut __it1 = unimplemented!().to_c_string_iterator();
+            let mut __it1 = ({ ({ (*local.borrow()).file_name() }) }).to_c_string_iterator();
             let mut __it2 = Ptr::<i8>::from_string_literal(b"ss").to_c_string_iterator();
             loop {
                 let __c1 = __it1.next();
@@ -89,11 +100,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     );
     assert!(
         !(({
-            let __needle = Ptr::<i8>::from_string_literal(b"main");
-            let mut __p = unimplemented!();
+            let mut __p = ({ ({ (*local.borrow()).function_name() }) });
             loop {
                 let mut __h = __p.to_c_string_iterator();
-                if __needle
+                if Ptr::<i8>::from_string_literal(b"main")
                     .to_c_string_iterator()
                     .all(|__c| __h.next() == Some(__c))
                 {
@@ -107,13 +117,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         })
         .is_null())
     );
-    assert!((unimplemented!() == 2000_u32));
-    assert!((unimplemented!() > 0_u32));
-    let local2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    assert!(({ (({ (*local.borrow()).line() }) == 2000_u32) }));
+    assert!(({ (({ (*local.borrow()).column() }) > 0_u32) }));
+    let local2: Value<std_source_location> =
+        Rc::new(RefCell::new((*cur_5.with(Value::clone).borrow()).clone()));
     assert!(
         ({
-            let mut __it1 = unimplemented!().to_c_string_iterator();
-            let mut __it2 = unimplemented!().to_c_string_iterator();
+            let mut __it1 = ({ ({ (*local2.borrow()).file_name() }) }).to_c_string_iterator();
+            let mut __it2 =
+                ({ ({ (*cur_5.with(Value::clone).borrow()).file_name() }) }).to_c_string_iterator();
             loop {
                 let __c1 = __it1.next();
                 let __c2 = __it2.next();
@@ -128,27 +140,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     );
     assert!(
         ({
-            let mut __it1 = unimplemented!().to_c_string_iterator();
-            let mut __it2 = unimplemented!().to_c_string_iterator();
-            loop {
-                let __c1 = __it1.next();
-                let __c2 = __it2.next();
-                if __c1 != __c2 {
-                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
-                }
-                if __c1.is_none() {
-                    break 0;
-                }
-            }
-        } == 0)
-    );
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    unimplemented!();
-    assert!(
-        ({
-            let mut __it1 = unimplemented!().to_c_string_iterator();
-            let mut __it2 = unimplemented!().to_c_string_iterator();
+            let mut __it1 = ({ ({ (*local2.borrow()).function_name() }) }).to_c_string_iterator();
+            let mut __it2 = ({ ({ (*cur_5.with(Value::clone).borrow()).function_name() }) })
+                .to_c_string_iterator();
             loop {
                 let __c1 = __it1.next();
                 let __c2 = __it2.next();
@@ -163,8 +157,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     );
     assert!(
         ({
-            let mut __it1 = unimplemented!().to_c_string_iterator();
-            let mut __it2 = unimplemented!().to_c_string_iterator();
+            (({ (*local2.borrow()).line() }) == ({ (*cur_5.with(Value::clone).borrow()).line() }))
+        })
+    );
+    assert!(
+        ({
+            (({ (*local2.borrow()).column() })
+                == ({ (*cur_5.with(Value::clone).borrow()).column() }))
+        })
+    );
+    (*local.borrow_mut()) = (*cur_5.with(Value::clone).borrow()).clone();
+    assert!(
+        ({
+            let mut __it1 = ({ ({ (*local.borrow()).file_name() }) }).to_c_string_iterator();
+            let mut __it2 =
+                ({ ({ (*cur_5.with(Value::clone).borrow()).file_name() }) }).to_c_string_iterator();
             loop {
                 let __c1 = __it1.next();
                 let __c2 = __it2.next();
@@ -177,8 +184,32 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }
         } == 0)
     );
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+    assert!(
+        ({
+            let mut __it1 = ({ ({ (*local.borrow()).function_name() }) }).to_c_string_iterator();
+            let mut __it2 = ({ ({ (*cur_5.with(Value::clone).borrow()).function_name() }) })
+                .to_c_string_iterator();
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
+            }
+        } == 0)
+    );
+    assert!(
+        ({ (({ (*local.borrow()).line() }) == ({ (*cur_5.with(Value::clone).borrow()).line() })) })
+    );
+    assert!(
+        ({
+            (({ (*local.borrow()).column() })
+                == ({ (*cur_5.with(Value::clone).borrow()).column() }))
+        })
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {

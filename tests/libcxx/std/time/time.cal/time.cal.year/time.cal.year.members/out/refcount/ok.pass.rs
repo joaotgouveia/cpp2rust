@@ -11,11 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_bool__bool_ {}
-pub type anon_1 = u32;
-pub const anon_1_value: anon_1 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_year__std_chrono_year_ {}
+impl CppMove for test_macros_detail_is_same_bool__bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -44,13 +44,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "static_cast<int>(year::min()) == -32767");;
     const _: () = assert!(true, "static_cast<int>(year::max()) ==  32767");;
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
+    assert!(({ std_chrono_year::new_1({ -20001_i32 },).ok() }));
+    assert!(({ std_chrono_year::new_1({ -2000_i32 },).ok() }));
+    assert!(({ std_chrono_year::new_1({ -1_i32 },).ok() }));
+    assert!(({ std_chrono_year::new_1({ 0 },).ok() }));
+    assert!(({ std_chrono_year::new_1({ 1 },).ok() }));
+    assert!(({ std_chrono_year::new_1({ 2000 },).ok() }));
+    assert!(({ std_chrono_year::new_1({ 20001 },).ok() }));
     const _: () = assert!(true, "!year{{-32768}}.ok()");;
     return 0;
 }

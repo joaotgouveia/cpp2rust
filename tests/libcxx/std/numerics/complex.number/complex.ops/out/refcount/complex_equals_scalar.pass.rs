@@ -9,22 +9,22 @@ use std::rc::{Rc, Weak};
 pub fn test_constexpr_0() {
     {
         let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut rhs: f32 = (-2.5_f64 as f32);
+        let mut rhs: f32 = -2.5_f32;
         const _: () = assert!(true, "!(lhs == rhs)");;
     }
     {
         let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut rhs: f32 = (-2.5_f64 as f32);
+        let mut rhs: f32 = -2.5_f32;
         const _: () = assert!(true, "!(lhs == rhs)");;
     }
     {
         let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut rhs: f32 = (1.5_f64 as f32);
+        let mut rhs: f32 = 1.5_f32;
         const _: () = assert!(true, "!(lhs == rhs)");;
     }
     {
         let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut rhs: f32 = (1.5_f64 as f32);
+        let mut rhs: f32 = 1.5_f32;
         const _: () = assert!(true, "(lhs == rhs)");;
     }
 }

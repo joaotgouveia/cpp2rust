@@ -28,14 +28,39 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_i64));
-        assert!((unimplemented!()).is_null());
+        let p: Value<std_shared_ptr_int_> = Rc::new(RefCell::new(std_shared_ptr_int_::new_1({
+            Default::default()
+        })));
+        assert!(
+            ({
+                (({ ((*p.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_).use_count() })
+                    == 0_i64)
+            })
+        );
+        assert!(
+            ({
+                ({ ((*p.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_).get() }).is_null()
+            })
+        );
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_i64));
-        assert!((unimplemented!()).is_null());
+        let p: Value<std_shared_ptr_const_int_> =
+            Rc::new(RefCell::new(std_shared_ptr_const_int_::new_1({
+                Default::default()
+            })));
+        assert!(
+            ({
+                (({
+                    ((*p.borrow()) as std___shared_ptr_const_int____gnu_cxx__S_atomic_).use_count()
+                }) == 0_i64)
+            })
+        );
+        assert!(
+            ({
+                ({ ((*p.borrow()) as std___shared_ptr_const_int____gnu_cxx__S_atomic_).get() })
+                    .is_null()
+            })
+        );
     }
     return 0;
 }

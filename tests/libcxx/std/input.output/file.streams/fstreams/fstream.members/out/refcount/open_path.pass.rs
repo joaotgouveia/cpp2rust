@@ -18,7 +18,7 @@ pub fn get_temp_file_name_0() -> Vec<i8> {
         std::process::abort();
     }
     FdRegistry::close(FD);
-    return std::mem::take(&mut (*Name.borrow_mut()));
+    return ({ std::mem::take(&mut (*Name.borrow_mut())) });
 }
 pub fn glibc_version_less_than_1(mut version: Ptr<i8>) -> bool {
     let test_version: Value<Vec<i8>> = Rc::new(RefCell::new({

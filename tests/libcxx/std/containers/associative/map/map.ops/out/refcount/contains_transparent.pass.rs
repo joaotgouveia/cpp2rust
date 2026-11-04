@@ -30,6 +30,11 @@ impl Callable2<i32, Ptr<(Value<i32>, Value<i32>)>, bool> for Comp {
         })
     }
 }
+impl CppMove for Comp {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0() -> bool {
     let s: Value<Map<(Value<i32>, Value<i32>), (Value<(Value<i32>, Value<i32>)>, Value<i32>)>> =
         Rc::new(RefCell::new(unimplemented!()));

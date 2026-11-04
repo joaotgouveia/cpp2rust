@@ -47,6 +47,11 @@ impl CppEq for Emplaceable {
         EmplaceableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for Emplaceable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for Emplaceable {
     fn default() -> Self {
         { Emplaceable::new_1() }
@@ -113,11 +118,11 @@ pub fn operator_cmp_9(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> std::cmp::Order
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -149,6 +154,11 @@ impl CppEq for MoveOnly {
         operator_eq_3(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for MoveOnly {
     fn default() -> Self {
         { MoveOnly::new(None) }
@@ -178,11 +188,11 @@ pub fn operator_cmp_16(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> 
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -212,6 +222,11 @@ impl CppEq for TrivialMoveOnly {
         operator_eq_10(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for TrivialMoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for TrivialMoveOnly {
     fn default() -> Self {
         { TrivialMoveOnly::new(None) }
@@ -236,6 +251,11 @@ impl malloc_allocator_base {
         dealloc_count_19.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_17: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -249,48 +269,41 @@ thread_local!(
     pub static disable_default_constructor_20: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<i32>,
-}
-impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
+impl CppMove for min_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_21() -> bool {
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m: Value<std_set_DefaultOnly__std_less_DefaultOnly___std_allocator_DefaultOnly__> =
+            Rc::new(RefCell::new(
+                <std_set_DefaultOnly__std_less_DefaultOnly___std_allocator_DefaultOnly__>::default(
+                ),
+            ));
         assert!((count_0.with(|rc| *rc.borrow()) == 0));
         let r: Value<(Value<BidirectionalIterator<DefaultOnly>>, Value<bool>)> =
-            Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*(*r.borrow()).1.borrow()) as bool));
-        assert!((*(*r.borrow()).0.borrow()) == unimplemented!());
-        assert!((unimplemented!() == 1_()));
+            Rc::new(RefCell::new(({ (*m.borrow()).emplace() })));
+        assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
+        assert!((*(*r.borrow()).0.borrow()) == ({ (*m.borrow()).begin() }));
+        assert!(({ (({ (*m.borrow()).size() }) == 1_u64) }));
         assert!(
             ({
-                let _x: Ptr<DefaultOnly> = unimplemented!().iter_deref();
+                let _x: Ptr<DefaultOnly> = ({ (*m.borrow()).begin() }).iter_deref();
                 let _y: Value<DefaultOnly> = Rc::new(RefCell::new(DefaultOnly::new()));
                 operator_eq_1(_x, _y.as_pointer())
             })
         );
         assert!((count_0.with(|rc| *rc.borrow()) == 1));
-        r.as_pointer().write(unimplemented!());
-        assert!(!(*(*r.borrow()).1.borrow()));
-        assert!((*(*r.borrow()).0.borrow()) == unimplemented!());
-        assert!((unimplemented!() == 1_()));
+        r.as_pointer().write(({ (*m.borrow()).emplace() }));
+        assert!(({ !(*(*r.borrow()).1.borrow()) }));
+        assert!((*(*r.borrow()).0.borrow()) == ({ (*m.borrow()).begin() }));
+        assert!(({ (({ (*m.borrow()).size() }) == 1_u64) }));
         assert!(
             ({
-                let _x: Ptr<DefaultOnly> = unimplemented!().iter_deref();
+                let _x: Ptr<DefaultOnly> = ({ (*m.borrow()).begin() }).iter_deref();
                 let _y: Value<DefaultOnly> = Rc::new(RefCell::new(DefaultOnly::new()));
                 operator_eq_1(_x, _y.as_pointer())
             })
@@ -301,22 +314,38 @@ pub fn test_21() -> bool {
         assert!((count_0.with(|rc| *rc.borrow()) == 0));
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m: Value<std_set_Emplaceable__std_less_Emplaceable___std_allocator_Emplaceable__> =
+            Rc::new(RefCell::new(
+                <std_set_Emplaceable__std_less_Emplaceable___std_allocator_Emplaceable__>::default(
+                ),
+            ));
         let r: Value<(Value<BidirectionalIterator<Emplaceable>>, Value<bool>)> =
-            Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*(*r.borrow()).1.borrow()) as bool));
-        assert!((*(*r.borrow()).0.borrow()) == unimplemented!());
-        assert!((unimplemented!() == 1_()));
+            Rc::new(RefCell::new(({ (*m.borrow()).emplace() })));
+        assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
+        assert!((*(*r.borrow()).0.borrow()) == ({ (*m.borrow()).begin() }));
+        assert!(({ (({ (*m.borrow()).size() }) == 1_u64) }));
         assert!(
             ({
                 let _x: Value<Emplaceable> = Rc::new(RefCell::new(Emplaceable::new_1()));
-                EmplaceableImpl::operator_eq(&unimplemented!().iter_deref(), _x.as_pointer())
+                EmplaceableImpl::operator_eq(
+                    &({ (*m.borrow()).begin() }).iter_deref(),
+                    _x.as_pointer(),
+                )
             })
         );
-        r.as_pointer().write(unimplemented!());
-        assert!(((*(*r.borrow()).1.borrow()) as bool));
-        assert!((*(*r.borrow()).0.borrow()) == libcc2rs::next_refcount(unimplemented!(), 1_isize));
-        assert!((unimplemented!() == 2_()));
+        r.as_pointer().write(
+            ({
+                let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
+                let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+                (*m.borrow()).emplace(___args_0.as_pointer(), ___args_1.as_pointer())
+            }),
+        );
+        assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
+        assert!(
+            (*(*r.borrow()).0.borrow())
+                == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
+        );
+        assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
         assert!(
             ({
                 let _x: Value<Emplaceable> =
@@ -327,10 +356,19 @@ pub fn test_21() -> bool {
                 )
             })
         );
-        r.as_pointer().write(unimplemented!());
-        assert!(!(*(*r.borrow()).1.borrow()));
-        assert!((*(*r.borrow()).0.borrow()) == libcc2rs::next_refcount(unimplemented!(), 1_isize));
-        assert!((unimplemented!() == 2_()));
+        r.as_pointer().write(
+            ({
+                let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
+                let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+                (*m.borrow()).emplace(___args_0.as_pointer(), ___args_1.as_pointer())
+            }),
+        );
+        assert!(({ !(*(*r.borrow()).1.borrow()) }));
+        assert!(
+            (*(*r.borrow()).0.borrow())
+                == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
+        );
+        assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
         assert!(
             ({
                 let _x: Value<Emplaceable> =
@@ -343,44 +381,57 @@ pub fn test_21() -> bool {
         );
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let r: Value<(Value<BidirectionalIterator<i32>>, Value<bool>)> =
-            Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*(*r.borrow()).1.borrow()) as bool));
-        assert!((*(*r.borrow()).0.borrow()) == unimplemented!());
-        assert!((unimplemented!() == 1_()));
-        assert!((((*(*r.borrow()).0.borrow()).iter_deref().read()) == 2));
+        let m: Value<std_set_int__std_less_int___std_allocator_int__> = Rc::new(RefCell::new(
+            <std_set_int__std_less_int___std_allocator_int__>::default(),
+        ));
+        let r: Value<(Value<BidirectionalIterator<i32>>, Value<bool>)> = Rc::new(RefCell::new(
+            ({
+                let ___args: Value<i32> = Rc::new(RefCell::new(2));
+                (*m.borrow()).emplace(___args.as_pointer())
+            }),
+        ));
+        assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
+        assert!((*(*r.borrow()).0.borrow()) == ({ (*m.borrow()).begin() }));
+        assert!(({ (({ (*m.borrow()).size() }) == 1_u64) }));
+        assert!(({ (((*(*r.borrow()).0.borrow()).iter_deref().read()) == 2) }));
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let r: Value<(Value<BidirectionalIterator<i32>>, Value<bool>)> =
-            Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*(*r.borrow()).1.borrow()) as bool));
-        assert!((*(*r.borrow()).0.borrow()) == unimplemented!());
-        assert!((unimplemented!() == 1_()));
-        assert!((((*(*r.borrow()).0.borrow()).iter_deref().read()) == 2));
+        let m: Value<std_set_int__std_less_int___min_allocator_int__> = Rc::new(RefCell::new(
+            <std_set_int__std_less_int___min_allocator_int__>::default(),
+        ));
+        let r: Value<(Value<BidirectionalIterator<i32>>, Value<bool>)> = Rc::new(RefCell::new(
+            ({
+                let ___args: Value<i32> = Rc::new(RefCell::new(2));
+                (*m.borrow()).emplace(___args.as_pointer())
+            }),
+        ));
+        assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
+        assert!((*(*r.borrow()).0.borrow()) == ({ (*m.borrow()).begin() }));
+        assert!(({ (({ (*m.borrow()).size() }) == 1_u64) }));
+        assert!(({ (((*(*r.borrow()).0.borrow()).iter_deref().read()) == 2) }));
     }
     {
-        let set: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let set : Value<std_set_std_pair_MoveOnly__MoveOnly___std_less_std_pair_MoveOnly__MoveOnly____std_allocator_std_pair_MoveOnly__MoveOnly___ > = Rc::new(RefCell::new(<std_set_std_pair_MoveOnly__MoveOnly___std_less_std_pair_MoveOnly__MoveOnly____std_allocator_std_pair_MoveOnly__MoveOnly___  >::default() )) ;
         let res: Value<(
             Value<BidirectionalIterator<(Value<MoveOnly>, Value<MoveOnly>)>>,
             Value<bool>,
-        )> = Rc::new(RefCell::new(unimplemented!()));
+        )> = Rc::new(RefCell::new(
+            ({
+                let ___args: Value<(Value<MoveOnly>, Value<MoveOnly>)> = Rc::new(RefCell::new((
+                    Rc::new(RefCell::new(MoveOnly::new({ Some(2) }))),
+                    Rc::new(RefCell::new(MoveOnly::new({ Some(4) }))),
+                )));
+                (*set.borrow()).emplace(___args.as_pointer())
+            }),
+        ));
+        assert!(({ (((*res.borrow()).get_value::<1>().as_pointer().read()) as bool) }));
         assert!(
-            ((<(
-                Value<BidirectionalIterator<(Value<MoveOnly>, Value<MoveOnly>)>>,
-                Value<bool>
-            ) as PairGetRef<1>>::pair_get(&(*res.borrow()))
-            .read()) as bool)
-        );
-        assert!(
-            unimplemented!()
-                == (*<(
-                    Value<BidirectionalIterator<(Value<MoveOnly>, Value<MoveOnly>)>>,
-                    Value<bool>
-                ) as PairGetRef<0>>::pair_get(&(*res.borrow()))
-                .upgrade()
-                .deref())
+            ({ (*set.borrow()).begin() })
+                == (*(*res.borrow())
+                    .get_value::<0>()
+                    .as_pointer()
+                    .upgrade()
+                    .deref())
         );
     }
     return true;
@@ -408,6 +459,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_21() });
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
 pub trait DefaultOnlyImpl {
     fn copy_assign(&self, _a0: Ptr<DefaultOnly>) -> Ptr<DefaultOnly> {
         unimplemented!()
@@ -514,75 +568,6 @@ pub trait min_allocator_int_Impl {
     }
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {}
-pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_9(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_10(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_11(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
-        unimplemented!()
-    }
-}
-impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
-{
-}
 pub fn __cpp2rust_init_globals() {
     let _ = count_0.with(|_| ());
     let _ = outstanding_bytes_17.with(|_| ());

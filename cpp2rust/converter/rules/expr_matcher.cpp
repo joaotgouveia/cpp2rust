@@ -112,26 +112,43 @@ ResolvedDecl getResolvedDecl(clang::ASTContext &ctx, const clang::Expr *expr,
   return std::monostate();
 }
 
+// Whether the receiver of the rule is a forwarding reference (T3 &&a0), which
+// tells the value category of the object apart, unlike a reference (T1 &a0),
+// which models the implicit object parameter.
+bool forwardsReceiver(const clang::FunctionDecl *rule) {
+  if (!rule || rule->getNumParams() == 0) {
+    return false;
+  }
+  auto ref =
+      rule->getParamDecl(0)->getType()->getAs<clang::RValueReferenceType>();
+  return ref && !ref->getPointeeType().isConstQualified() &&
+         ref->getPointeeType()->isTemplateTypeParmType();
+}
+
 // Receivers are references in the rules, dereference the pointer to get a
 // reference: the xvalue a &&-qualified member takes
-// (std::move(set).extract() of flat_set<T1, T2, T3> &&), an lvalue otherwise.
+// (std::move(set).extract() of flat_set<T1, T2, T3> &&), an lvalue otherwise,
+// as the implicit object parameter binds a prvalue too (v[0] = false of
+// vector<bool>). A forwarding receiver keeps the object's own value category,
+// so a prvalue (++m.begin()) deduces T3 && as a non-reference.
 clang::Expr *getObject(clang::ASTContext &ctx, clang::Expr *object,
-                       const clang::CXXMethodDecl *method) {
+                       const clang::CXXMethodDecl *method, bool forwarding) {
   auto type = object->getType();
   bool xvalue = method && method->getRefQualifier() == clang::RQ_RValue;
   if (type->isPointerType()) {
     type = type->getPointeeType();
-  } else if (object->isLValue() && !xvalue) {
+  } else if (!xvalue && (object->isLValue() || forwarding)) {
     return object;
   }
-  return new (ctx) clang::OpaqueValueExpr(
-      object->getBeginLoc(), type,
-      xvalue ? clang::VK_XValue : clang::VK_LValue);
+  return new (ctx)
+      clang::OpaqueValueExpr(object->getBeginLoc(), type,
+                             xvalue ? clang::VK_XValue : clang::VK_LValue);
 }
 
-std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
-                                       const clang::Expr *use,
-                                       unsigned arity = 0) {
+std::vector<clang::Expr *>
+getOperands(clang::ASTContext &ctx, const clang::Expr *use, unsigned arity = 0,
+            const clang::FunctionDecl *rule = nullptr) {
+  bool forwarding = forwardsReceiver(rule);
   auto expr = const_cast<clang::Expr *>(RuleDecls::SkipImplicit(use));
   while (auto cast = llvm::dyn_cast<clang::ExplicitCastExpr>(expr)) {
     expr =
@@ -151,7 +168,7 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
           ctx,
           clang::IgnoreExprNodes(operands[0], clang::IgnoreParensSingleStep,
                                  clang::IgnoreImplicitCastsSingleStep),
-          llvm::cast<clang::CXXMethodDecl>(op->getDirectCallee()));
+          llvm::cast<clang::CXXMethodDecl>(op->getDirectCallee()), forwarding);
     }
     // A rule written as a0++ has no parameter for the dummy int of a postfix
     // operator.
@@ -162,9 +179,9 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
       operands.pop_back();
     }
   } else if (auto call = llvm::dyn_cast<clang::CXXMemberCallExpr>(expr)) {
-    operands.push_back(getObject(
-        ctx, call->getImplicitObjectArgument()->IgnoreParenImpCasts(),
-        call->getMethodDecl()));
+    operands.push_back(
+        getObject(ctx, call->getImplicitObjectArgument()->IgnoreParenImpCasts(),
+                  call->getMethodDecl(), forwarding));
     operands.insert(operands.end(), call->arg_begin(), call->arg_end());
   } else if (auto call = llvm::dyn_cast<clang::CallExpr>(expr)) {
     operands.insert(operands.end(), call->arg_begin(), call->arg_end());
@@ -183,7 +200,7 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
     auto base =
         const_cast<clang::Expr *>(macro_base ? macro_base : member->getBase())
             ->IgnoreParenImpCasts();
-    operands.push_back(getObject(ctx, base, nullptr));
+    operands.push_back(getObject(ctx, base, nullptr, forwarding));
   }
   while (operands.size() > arity &&
          llvm::isa<clang::CXXDefaultArgExpr>(operands.back())) {
@@ -214,8 +231,9 @@ clang::Expr *skipDerivedToBase(clang::Expr *operand) {
 // other callee takes them converted to its parameters, short of the base.
 std::vector<clang::Expr *> deducedOperands(clang::ASTContext &ctx,
                                            const clang::Expr *use,
-                                           unsigned arity) {
-  auto operands = getOperands(ctx, use, arity);
+                                           unsigned arity,
+                                           const clang::FunctionDecl *rule) {
+  auto operands = getOperands(ctx, use, arity, rule);
   auto expr = RuleDecls::SkipImplicit(use);
   const clang::FunctionDecl *callee = nullptr;
   if (auto call = llvm::dyn_cast<clang::CallExpr>(expr)) {
@@ -405,15 +423,14 @@ deduceFromQualifier(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
   } else if (auto ref = llvm::dyn_cast<clang::DeclRefExpr>(use)) {
     used = ref->getDecl();
   }
-  auto record = used ? llvm::dyn_cast<clang::CXXRecordDecl>(
-                           used->getDeclContext())
-                     : nullptr;
+  auto record =
+      used ? llvm::dyn_cast<clang::CXXRecordDecl>(used->getDeclContext())
+           : nullptr;
   // a member of an implementation base, or named through an object, binds
   // the class the use names (std::atomic<float>::is_always_lock_free of
   // __atomic_float<float>, file.npos of basic_string<char>)
-  if (!record ||
-      RuleKeys::GetTypeKey(sema.Context.getCanonicalTagType(record)) !=
-          RuleKeys::GetTypeKey(qualifier)) {
+  if (!record || RuleKeys::GetTypeKey(sema.Context.getCanonicalTagType(
+                     record)) != RuleKeys::GetTypeKey(qualifier)) {
     auto named = namingClass(use);
     if (named.isNull()) {
       return std::nullopt;
@@ -454,6 +471,109 @@ deduceFromParameters(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
 // (std::use_facet<T1>(a0)) against those of the specialization the use calls
 // (use_facet<collate<char>>), or, where the body writes none, from the
 // parameters it passes.
+void deduceMemberTypesFromOperands(
+    clang::Sema &sema, clang::FunctionTemplateDecl *rule,
+    const clang::Expr *use, std::vector<clang::TemplateArgument> &deduced) {
+  auto pattern = rule->getTemplatedDecl();
+  auto operands =
+      getOperands(sema.Context, use, pattern->getNumParams(), pattern);
+  for (unsigned i = 0; i < operands.size() && i < pattern->getNumParams();
+       ++i) {
+    auto param = pattern->getParamDecl(i)->getType().getNonReferenceType();
+    auto operand = operands[i]->getType().getNonReferenceType();
+    auto args = param->getAs<clang::DependentNameType>()
+                    ? RuleDecls::DeduceMemberType(sema, rule, param, operand)
+                    : std::nullopt;
+    for (unsigned j = 0; args && j < deduced.size(); ++j) {
+      if (deduced[j].isNull()) {
+        deduced[j] = (*args)[j];
+      }
+    }
+  }
+}
+
+llvm::ArrayRef<clang::TemplateArgumentLoc>
+getExplicitTemplateArgs(const clang::Expr *expr) {
+  auto call = llvm::dyn_cast<clang::CallExpr>(RuleDecls::SkipImplicit(expr));
+  if (!call) {
+    return {};
+  }
+  auto callee = call->getCallee()->IgnoreParenImpCasts();
+  if (auto ref = llvm::dyn_cast<clang::DeclRefExpr>(callee)) {
+    return ref->template_arguments();
+  }
+  if (auto member = llvm::dyn_cast<clang::MemberExpr>(callee)) {
+    return member->template_arguments();
+  }
+  if (auto overload = llvm::dyn_cast<clang::OverloadExpr>(callee)) {
+    return overload->template_arguments();
+  }
+  if (auto member =
+          llvm::dyn_cast<clang::CXXDependentScopeMemberExpr>(callee)) {
+    return member->template_arguments();
+  }
+  return {};
+}
+
+void deduceNonTypeFromExplicitArg(
+    clang::ASTContext &ctx, const clang::TemplateArgument &rule_arg,
+    const clang::Expr *use, unsigned i,
+    std::vector<clang::TemplateArgument> &deduced) {
+  auto ref = llvm::dyn_cast<clang::DeclRefExpr>(
+      rule_arg.getAsExpr()->IgnoreParenImpCasts());
+  auto nttp =
+      ref ? llvm::dyn_cast<clang::NonTypeTemplateParmDecl>(ref->getDecl())
+          : nullptr;
+  if (!nttp) {
+    return;
+  }
+  auto call = llvm::cast<clang::CallExpr>(RuleDecls::SkipImplicit(use));
+  auto callee = call->getDirectCallee();
+  auto spec = callee ? callee->getTemplateSpecializationArgs() : nullptr;
+  assert(spec && i < spec->size() &&
+         "explicit template argument of a non-specialized callee");
+  const auto &value = spec->get(i);
+  if (value.getKind() != clang::TemplateArgument::Integral) {
+    return;
+  }
+  auto &slot = deduced[nttp->getIndex()];
+  if (slot.isNull()) {
+    slot = clang::TemplateArgument(ctx, value.getAsIntegral(), nttp->getType());
+  }
+}
+
+void deduceFromExplicitArgs(clang::Sema &sema,
+                            clang::FunctionTemplateDecl *rule,
+                            const clang::Expr *use,
+                            std::vector<clang::TemplateArgument> &deduced) {
+  auto rule_args =
+      getExplicitTemplateArgs(RuleDecls::GetReturned(rule->getTemplatedDecl()));
+  auto use_args = getExplicitTemplateArgs(use);
+  for (unsigned i = 0; i < rule_args.size() && i < use_args.size(); ++i) {
+    const auto &rule_arg = rule_args[i].getArgument();
+    const auto &use_arg = use_args[i].getArgument();
+    if (rule_arg.getKind() == clang::TemplateArgument::Expression) {
+      deduceNonTypeFromExplicitArg(sema.Context, rule_arg, use, i, deduced);
+      continue;
+    }
+    if (rule_arg.getKind() != clang::TemplateArgument::Type ||
+        use_arg.getKind() != clang::TemplateArgument::Type) {
+      continue;
+    }
+    if (rule_arg.getAsType()->getAs<clang::PackExpansionType>()) {
+      break;
+    }
+    auto args = RuleDecls::DeduceFromType(
+        sema, rule->getTemplateParameters(), rule_arg.getAsType(),
+        use_arg.getAsType().getCanonicalType());
+    for (unsigned j = 0; args && j < deduced.size(); ++j) {
+      if (deduced[j].isNull()) {
+        deduced[j] = (*args)[j];
+      }
+    }
+  }
+}
+
 std::optional<std::vector<clang::TemplateArgument>>
 deduceFromCallee(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
                  const clang::Expr *use) {
@@ -466,15 +586,13 @@ deduceFromCallee(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
     returned = call->getCallee()->IgnoreParenImpCasts();
   }
   llvm::ArrayRef<clang::TemplateArgumentLoc> written;
-  if (auto overload = llvm::dyn_cast<clang::OverloadExpr>(returned)) {
-    if (overload->hasExplicitTemplateArgs()) {
-      written = overload->template_arguments();
-    }
+  if (auto overload = llvm::dyn_cast<clang::OverloadExpr>(returned);
+      overload && overload->hasExplicitTemplateArgs()) {
+    written = overload->template_arguments();
   } else if (auto ref =
-                 llvm::dyn_cast<clang::DependentScopeDeclRefExpr>(returned)) {
-    if (ref->hasExplicitTemplateArgs()) {
-      written = ref->template_arguments();
-    }
+                 llvm::dyn_cast<clang::DependentScopeDeclRefExpr>(returned);
+             ref && ref->hasExplicitTemplateArgs()) {
+    written = ref->template_arguments();
   } else {
     return std::nullopt;
   }
@@ -574,6 +692,12 @@ getClassArgs(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
             .getUnqualifiedType());
   }
   if (!deduced || !bound(*deduced)) {
+    if (auto from_callee = deduceFromCallee(sema, rule, use);
+        from_callee && bound(*from_callee)) {
+      deduced = std::move(from_callee);
+    }
+  }
+  if (!deduced || !bound(*deduced)) {
     if (auto qualified = deduceFromQualifier(sema, rule, use);
         qualified && bound(*qualified)) {
       deduced = std::move(qualified);
@@ -611,6 +735,11 @@ clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
       args = *std::move(from_callee);
     }
   }
+  if (args.empty()) {
+    args.resize(params->size());
+  }
+  deduceMemberTypesFromOperands(sema, rule, use, args);
+  deduceFromExplicitArgs(sema, rule, use, args);
   for (unsigned i = 0; i < args.size(); ++i) {
     auto param = params->getParam(i);
     if (args[i].isNull()) {
@@ -635,12 +764,12 @@ clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
   return explicit_args;
 }
 
-void checkCallable(clang::Sema &sema, const clang::Expr *use,
-                   clang::FunctionDecl *rule,
-                   llvm::ArrayRef<clang::Expr *> operands) {
+bool isCallable(clang::Sema &sema, const clang::Expr *use,
+                clang::FunctionDecl *rule,
+                llvm::ArrayRef<clang::Expr *> operands) {
   auto ref = llvm::dyn_cast<clang::DeclRefExpr>(RuleDecls::SkipImplicit(use));
   if (ref && llvm::isa<clang::FunctionDecl>(ref->getDecl())) {
-    return;
+    return true;
   }
   RuleDecls::Trial trial(sema);
   auto loc = use->getBeginLoc();
@@ -655,7 +784,13 @@ void checkCallable(clang::Sema &sema, const clang::Expr *use,
     sema.AddOverloadCandidate(rule, found, operands, set);
   }
   clang::OverloadCandidateSet::iterator best;
-  if (set.BestViableFunction(sema, loc, best) != clang::OR_Success) {
+  return set.BestViableFunction(sema, loc, best) == clang::OR_Success;
+}
+
+void checkCallable(clang::Sema &sema, const clang::Expr *use,
+                   clang::FunctionDecl *rule,
+                   llvm::ArrayRef<clang::Expr *> operands) {
+  if (!isCallable(sema, use, rule, operands)) {
     use->dump(llvm::errs(), sema.Context);
     rule->dump(llvm::errs());
     llvm::report_fatal_error("matched rule is not callable with the use");
@@ -684,8 +819,9 @@ clang::QualType namingClass(const clang::Expr *expr) {
       expr = call->getCallee()->IgnoreParenImpCasts();
     }
     if (auto member = llvm::dyn_cast<clang::MemberExpr>(expr);
-        member && llvm::isa<clang::VarDecl, clang::CXXMethodDecl>(
-                      member->getMemberDecl()) &&
+        member &&
+        llvm::isa<clang::VarDecl, clang::CXXMethodDecl>(
+            member->getMemberDecl()) &&
         (llvm::isa<clang::VarDecl>(member->getMemberDecl()) ||
          llvm::cast<clang::CXXMethodDecl>(member->getMemberDecl())
              ->isStatic())) {
@@ -703,8 +839,8 @@ clang::QualType namingClass(const clang::Expr *expr) {
       return clang::QualType(dependent->getQualifier().getAsType(), 0);
     }
     auto ref = llvm::dyn_cast<clang::DeclRefExpr>(expr);
-    if (!ref ||
-        ref->getQualifier().getKind() != clang::NestedNameSpecifier::Kind::Type) {
+    if (!ref || ref->getQualifier().getKind() !=
+                    clang::NestedNameSpecifier::Kind::Type) {
       return {};
     }
     auto qualifier = clang::QualType(ref->getQualifier().getAsType(), 0);
@@ -748,8 +884,10 @@ MatchResult matchFunction(clang::Sema &sema, const clang::Expr *use,
       !sameNamingClass(ctx, use, returned)) {
     return std::nullopt;
   }
-  checkCallable(sema, use, rule,
-                getOperands(ctx, use, rule->getNumParams()));
+  if (!isCallable(sema, use, rule,
+                  getOperands(ctx, use, rule->getNumParams(), rule))) {
+    return std::nullopt;
+  }
   return llvm::ArrayRef<clang::TemplateArgument>();
 }
 
@@ -780,14 +918,15 @@ MatchResult matchTemplate(clang::Sema &sema, const clang::Expr *use,
                           clang::FunctionTemplateDecl *rule) {
   auto &ctx = sema.Context;
   auto explicit_args = getResultArgs(sema, rule, use);
-  auto arity = rule->getTemplatedDecl()->getNumParams();
+  auto pattern = rule->getTemplatedDecl();
+  auto arity = pattern->getNumParams();
   // as the callee deduced, or, where the use converts an argument the callee
   // did not deduce from (std::string to the string_view of operator==), as
   // converted
-  auto operands = deducedOperands(ctx, use, arity);
+  auto operands = deducedOperands(ctx, use, arity, pattern);
   auto specialization = deduce(sema, rule, explicit_args, operands);
   if (!specialization) {
-    operands = getOperands(ctx, use, arity);
+    operands = getOperands(ctx, use, arity, pattern);
     specialization = deduce(sema, rule, explicit_args, operands);
   }
   if (!specialization) {
@@ -816,8 +955,8 @@ MatchResult matchTemplate(clang::Sema &sema, const clang::Expr *use,
   // a list constructing the return type matches its constructions only, not
   // the conversion function sharing their key (atomic<T1>{std::move(a0)} and
   // atomic<bool>::operator bool)
-  if (auto list =
-          llvm::dyn_cast<clang::InitListExpr>(RuleDecls::SkipImplicit(returned));
+  if (auto list = llvm::dyn_cast<clang::InitListExpr>(
+          RuleDecls::SkipImplicit(returned));
       list && !list->getType()->isRecordType()) {
     return std::nullopt;
   }
@@ -965,13 +1104,13 @@ bool deducesFromOperands(clang::Sema &sema, const clang::Expr *use,
                          clang::FunctionTemplateDecl *rule) {
   llvm::SmallBitVector deducible;
   sema.MarkDeducedTemplateParameters(rule, deducible);
-  auto fixed = RuleDecls::DeduceFromType(
-      sema, rule->getTemplateParameters(),
-      rule->getTemplatedDecl()->getReturnType(),
-      RuleDecls::SkipImplicit(use)
-          ->getType()
-          .getCanonicalType()
-          .getUnqualifiedType());
+  auto fixed =
+      RuleDecls::DeduceFromType(sema, rule->getTemplateParameters(),
+                                rule->getTemplatedDecl()->getReturnType(),
+                                RuleDecls::SkipImplicit(use)
+                                    ->getType()
+                                    .getCanonicalType()
+                                    .getUnqualifiedType());
   for (unsigned i = 0; i < deducible.size(); ++i) {
     if (deducible[i] && (!fixed || (*fixed)[i].isNull())) {
       return true;
@@ -1060,8 +1199,8 @@ const clang::NamedDecl *MoreSpecialized(clang::Sema &sema,
     auto names = [&](const clang::FunctionDecl *function) {
       auto ruled = namingClass(RuleDecls::GetReturned(function));
       return !used.isNull() && !ruled.isNull() &&
-             sema.Context.hasSameUnqualifiedType(
-                 used.getCanonicalType(), ruled.getCanonicalType());
+             sema.Context.hasSameUnqualifiedType(used.getCanonicalType(),
+                                                 ruled.getCanonicalType());
     };
     auto a_names = names(a_function);
     auto b_names = names(b_function);

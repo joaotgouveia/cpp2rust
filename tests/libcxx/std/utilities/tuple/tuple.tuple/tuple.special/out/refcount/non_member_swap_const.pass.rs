@@ -23,6 +23,11 @@ pub struct S {
     #[byte_size(8)]
     pub calls: Ptr<i32>,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn swap_1(a: Ptr<CS>, b: Ptr<CS>) {
     {
         a.with(|__s| __s.calls.clone())
@@ -39,6 +44,11 @@ pub struct CS {
     #[offset(0)]
     #[byte_size(8)]
     pub calls: Ptr<i32>,
+}
+impl CppMove for CS {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 const _: () = assert!(true, "std::is_swappable_v<std::tuple<>>");
 const _: () = assert!(true, "std::is_swappable_v<std::tuple<S>>");
@@ -61,11 +71,21 @@ pub fn test_2() -> bool {
     let s2: Value<S> = Rc::new(RefCell::new(S {
         calls: (s_calls.as_pointer()),
     }));
-    let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((*cs_calls.borrow()) == 2));
-    assert!(((*s_calls.borrow()) == 2));
+    let t1: Value<std_tuple_CS__S_ref_> = Rc::new(RefCell::new({
+        let __tmp_0: Value<CS> = Rc::new(RefCell::new(CS {
+            calls: (cs_calls.as_pointer()),
+        }));
+        std_tuple_CS__S_ref_::new_1({ __tmp_0.as_pointer() }, { s1.as_pointer() })
+    }));
+    let t2: Value<std_tuple_CS__S_ref_> = Rc::new(RefCell::new({
+        let __tmp_1: Value<CS> = Rc::new(RefCell::new(CS {
+            calls: (cs_calls.as_pointer()),
+        }));
+        std_tuple_CS__S_ref_::new_1({ __tmp_1.as_pointer() }, { s2.as_pointer() })
+    }));
+    cpp_swap!(t1.as_pointer(), t2.as_pointer());
+    assert!(({ ((*cs_calls.borrow()) == 2) }));
+    assert!(({ ((*s_calls.borrow()) == 2) }));
     return true;
 }
 pub fn main() {

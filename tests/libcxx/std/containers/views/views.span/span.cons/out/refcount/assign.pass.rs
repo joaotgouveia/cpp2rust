@@ -6,62 +6,20 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn doAssign_0(lhs: (), rhs: ()) -> bool {
-    let lhs: Value<()> = Rc::new(RefCell::new(lhs));
-    let rhs: Value<()> = Rc::new(RefCell::new(rhs));
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
-}
-pub fn doAssign_1(lhs: (), rhs: ()) -> bool {
-    let lhs: Value<()> = Rc::new(RefCell::new(lhs));
-    let rhs: Value<()> = Rc::new(RefCell::new(rhs));
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
-}
-pub fn doAssign_2(lhs: (), rhs: ()) -> bool {
-    let lhs: Value<()> = Rc::new(RefCell::new(lhs));
-    let rhs: Value<()> = Rc::new(RefCell::new(rhs));
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
-}
-pub fn doAssign_3(lhs: (), rhs: ()) -> bool {
-    let lhs: Value<()> = Rc::new(RefCell::new(lhs));
-    let rhs: Value<()> = Rc::new(RefCell::new(rhs));
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
-}
-pub fn doAssign_4(lhs: (), rhs: ()) -> bool {
-    let lhs: Value<()> = Rc::new(RefCell::new(lhs));
-    let rhs: Value<()> = Rc::new(RefCell::new(rhs));
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
-}
-pub fn doAssign_5(lhs: (), rhs: ()) -> bool {
-    let lhs: Value<()> = Rc::new(RefCell::new(lhs));
-    let rhs: Value<()> = Rc::new(RefCell::new(rhs));
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
-}
 thread_local!(
-    pub static carr1_6: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+    pub static carr1_0: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
 );
 thread_local!(
-    pub static carr2_7: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([3, 4, 5])));
+    pub static carr2_1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([3, 4, 5])));
 );
 thread_local!(
-    pub static carr3_8: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([7, 8])));
+    pub static carr3_2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([7, 8])));
 );
 thread_local!(
-    pub static arr_9: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([5, 6, 7, 9])));
+    pub static arr_3: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([5, 6, 7, 9])));
 );
 thread_local!(
-    pub static strs_10: Value<Box<[Vec<i8>]>> = Rc::new(RefCell::new(Box::new([
+    pub static strs_4: Value<Box<[Vec<i8>]>> = Rc::new(RefCell::new(Box::new([
         {
             let mut __bytes = Ptr::<i8>::from_string_literal(b"ABC").to_c_bytes();
             __bytes.push(0_i8);
@@ -101,21 +59,58 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut spans: [(); 13] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
+        let spans: Value<Box<[std_span_const_int__18446744073709551615_]>> =
+            Rc::new(RefCell::new(Box::new([
+                <std_span_const_int__18446744073709551615_>::default(),
+                std_span_const_int__18446744073709551615_::new_1(
+                    { (carr1_0.with(|v| v.as_pointer()) as Ptr<i32>) },
+                    { (0_usize as u64) },
+                ),
+                std_span_const_int__18446744073709551615_::new_1(
+                    { (carr1_0.with(|v| v.as_pointer()) as Ptr<i32>) },
+                    { 1_u64 },
+                ),
+                std_span_const_int__18446744073709551615_::new_1(
+                    { (carr1_0.with(|v| v.as_pointer()) as Ptr<i32>) },
+                    { 2_u64 },
+                ),
+                std_span_const_int__18446744073709551615_::new_1(
+                    { (carr1_0.with(|v| v.as_pointer()) as Ptr<i32>) },
+                    { 3_u64 },
+                ),
+                std_span_const_int__18446744073709551615_::new_1(
+                    { (carr1_0.with(|v| v.as_pointer()) as Ptr<i32>) },
+                    { 4_u64 },
+                ),
+                std_span_const_int__18446744073709551615_::new_1(
+                    { (carr2_1.with(|v| v.as_pointer()) as Ptr<i32>) },
+                    { (0_usize as u64) },
+                ),
+                std_span_const_int__18446744073709551615_::new_1(
+                    { (carr2_1.with(|v| v.as_pointer()) as Ptr<i32>) },
+                    { 1_u64 },
+                ),
+                std_span_const_int__18446744073709551615_::new_1(
+                    { (carr2_1.with(|v| v.as_pointer()) as Ptr<i32>) },
+                    { 2_u64 },
+                ),
+                std_span_const_int__18446744073709551615_::new_1(
+                    { (carr2_1.with(|v| v.as_pointer()) as Ptr<i32>) },
+                    { 3_u64 },
+                ),
+                std_span_const_int__18446744073709551615_::new_1(
+                    { (carr3_2.with(|v| v.as_pointer()) as Ptr<i32>) },
+                    { (0_usize as u64) },
+                ),
+                std_span_const_int__18446744073709551615_::new_1(
+                    { (carr3_2.with(|v| v.as_pointer()) as Ptr<i32>) },
+                    { 1_u64 },
+                ),
+                std_span_const_int__18446744073709551615_::new_1(
+                    { (carr3_2.with(|v| v.as_pointer()) as Ptr<i32>) },
+                    { 2_u64 },
+                ),
+            ])));
         const _: () = assert!(true, "std::size(spans) == 13");;
         const _: () = assert!(true, "doAssign(spans[0], spans[0])");;
         const _: () = assert!(true, "doAssign(spans[0], spans[1])");;
@@ -212,14 +207,29 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "doAssign(spans[12], spans[12])");;
     }
     {
-        let mut spans: [(); 6] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
+        let spans: Value<Box<[std_span_const_int__2_]>> = Rc::new(RefCell::new(Box::new([
+            std_span_const_int__2_::new_1({ (carr1_0.with(|v| v.as_pointer()) as Ptr<i32>) }, {
+                2_u64
+            }),
+            std_span_const_int__2_::new_1(
+                { (carr1_0.with(|v| v.as_pointer()) as Ptr<i32>).offset((1) as isize) },
+                { 2_u64 },
+            ),
+            std_span_const_int__2_::new_1(
+                { (carr1_0.with(|v| v.as_pointer()) as Ptr<i32>).offset((2) as isize) },
+                { 2_u64 },
+            ),
+            std_span_const_int__2_::new_1({ (carr2_1.with(|v| v.as_pointer()) as Ptr<i32>) }, {
+                2_u64
+            }),
+            std_span_const_int__2_::new_1(
+                { (carr2_1.with(|v| v.as_pointer()) as Ptr<i32>).offset((1) as isize) },
+                { 2_u64 },
+            ),
+            std_span_const_int__2_::new_1({ (carr3_2.with(|v| v.as_pointer()) as Ptr<i32>) }, {
+                2_u64
+            }),
+        ])));
         const _: () = assert!(true, "std::size(spans) == 6");;
         const _: () = assert!(true, "doAssign(spans[0], spans[0])");;
         const _: () = assert!(true, "doAssign(spans[0], spans[1])");;
@@ -244,22 +254,39 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "doAssign(spans[5], spans[5])");;
     }
     {
-        let mut spans: [(); 5] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
+        let spans: Value<Box<[std_span_int__18446744073709551615_]>> =
+            Rc::new(RefCell::new(Box::new([
+                <std_span_int__18446744073709551615_>::default(),
+                std_span_int__18446744073709551615_::new_1(
+                    { (arr_3.with(|v| v.as_pointer()) as Ptr<i32>) },
+                    { (arr_3.with(|v| v.as_pointer()) as Ptr<i32>).offset((1) as isize) },
+                ),
+                std_span_int__18446744073709551615_::new_1(
+                    { (arr_3.with(|v| v.as_pointer()) as Ptr<i32>) },
+                    { (arr_3.with(|v| v.as_pointer()) as Ptr<i32>).offset((2) as isize) },
+                ),
+                std_span_int__18446744073709551615_::new_1(
+                    { (arr_3.with(|v| v.as_pointer()) as Ptr<i32>) },
+                    { (arr_3.with(|v| v.as_pointer()) as Ptr<i32>).offset((3) as isize) },
+                ),
+                std_span_int__18446744073709551615_::new_1(
+                    { (arr_3.with(|v| v.as_pointer()) as Ptr<i32>).offset((1) as isize) },
+                    { (arr_3.with(|v| v.as_pointer()) as Ptr<i32>).offset((3) as isize) },
+                ),
+            ])));
         let mut i: usize = 0_usize;
-        'loop_: while (i < unimplemented!()) {
+        'loop_: while (i < ({ size_5(spans.as_pointer()) })) {
             let mut j: usize = i;
-            'loop_: while (j < unimplemented!()) {
+            'loop_: while (j < ({ size_5(spans.as_pointer()) })) {
                 assert!(
                     ({
-                        let _lhs: () = unimplemented!();
-                        let _rhs: () = unimplemented!();
-                        doAssign_2(_lhs, _rhs)
+                        ({
+                            let _lhs: std_span_int__18446744073709551615_ =
+                                ((*spans.borrow())[(i) as usize]).clone();
+                            let _rhs: std_span_int__18446744073709551615_ =
+                                ((*spans.borrow())[(j) as usize]).clone();
+                            doAssign_6(_lhs, _rhs)
+                        })
                     })
                 );
                 j.prefix_inc();
@@ -268,16 +295,30 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         }
     }
     {
-        let mut spans: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let spans: Value<Box<[std_span_int__2_]>> = Rc::new(RefCell::new(Box::new([
+            std_span_int__2_::new_1({ (arr_3.with(|v| v.as_pointer()) as Ptr<i32>) }, {
+                (arr_3.with(|v| v.as_pointer()) as Ptr<i32>).offset((2) as isize)
+            }),
+            std_span_int__2_::new_1(
+                { (arr_3.with(|v| v.as_pointer()) as Ptr<i32>).offset((1) as isize) },
+                { (arr_3.with(|v| v.as_pointer()) as Ptr<i32>).offset((3) as isize) },
+            ),
+            std_span_int__2_::new_1(
+                { (arr_3.with(|v| v.as_pointer()) as Ptr<i32>).offset((2) as isize) },
+                { (arr_3.with(|v| v.as_pointer()) as Ptr<i32>).offset((4) as isize) },
+            ),
+        ])));
         let mut i: usize = 0_usize;
-        'loop_: while (i < unimplemented!()) {
+        'loop_: while (i < ({ size_7(spans.as_pointer()) })) {
             let mut j: usize = i;
-            'loop_: while (j < unimplemented!()) {
+            'loop_: while (j < ({ size_7(spans.as_pointer()) })) {
                 assert!(
                     ({
-                        let _lhs: () = unimplemented!();
-                        let _rhs: () = unimplemented!();
-                        doAssign_3(_lhs, _rhs)
+                        ({
+                            let _lhs: std_span_int__2_ = ((*spans.borrow())[(i) as usize]).clone();
+                            let _rhs: std_span_int__2_ = ((*spans.borrow())[(j) as usize]).clone();
+                            doAssign_8(_lhs, _rhs)
+                        })
                     })
                 );
                 j.prefix_inc();
@@ -286,27 +327,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         }
     }
     {
-        let mut spans: [(); 10] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
+        let spans : Value<Box<[ std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_  ]> > = Rc::new(RefCell::new(Box::new( [ std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_ :: new_1 ( { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) ).reinterpret_cast::<Vec<i8  >  >()  } , { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) ).reinterpret_cast::<Vec<i8  >  >()  } , )   , std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_ :: new_1 ( { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) ).reinterpret_cast::<Vec<i8  >  >()  } , { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) . offset ( ( 1 ) as isize ) ).reinterpret_cast::<Vec<i8  >  >()  } , )   , std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_ :: new_1 ( { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) ).reinterpret_cast::<Vec<i8  >  >()  } , { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) . offset ( ( 2 ) as isize ) ).reinterpret_cast::<Vec<i8  >  >()  } , )   , std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_ :: new_1 ( { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) ).reinterpret_cast::<Vec<i8  >  >()  } , { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) . offset ( ( 3 ) as isize ) ).reinterpret_cast::<Vec<i8  >  >()  } , )   , std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_ :: new_1 ( { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) . offset ( ( 1 ) as isize ) ).reinterpret_cast::<Vec<i8  >  >()  } , { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) . offset ( ( 1 ) as isize ) ).reinterpret_cast::<Vec<i8  >  >()  } , )   , std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_ :: new_1 ( { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) . offset ( ( 1 ) as isize ) ).reinterpret_cast::<Vec<i8  >  >()  } , { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) . offset ( ( 2 ) as isize ) ).reinterpret_cast::<Vec<i8  >  >()  } , )   , std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_ :: new_1 ( { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) . offset ( ( 1 ) as isize ) ).reinterpret_cast::<Vec<i8  >  >()  } , { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) . offset ( ( 3 ) as isize ) ).reinterpret_cast::<Vec<i8  >  >()  } , )   , std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_ :: new_1 ( { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) . offset ( ( 2 ) as isize ) ).reinterpret_cast::<Vec<i8  >  >()  } , { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) . offset ( ( 2 ) as isize ) ).reinterpret_cast::<Vec<i8  >  >()  } , )   , std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_ :: new_1 ( { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) . offset ( ( 2 ) as isize ) ).reinterpret_cast::<Vec<i8  >  >()  } , { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) . offset ( ( 3 ) as isize ) ).reinterpret_cast::<Vec<i8  >  >()  } , )   , std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_ :: new_1 ( { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) . offset ( ( 3 ) as isize ) ).reinterpret_cast::<Vec<i8  >  >()  } , { (( strs_4.with(|v| v.as_pointer())  as Ptr< Vec<i8>  >   ) . offset ( ( 3 ) as isize ) ).reinterpret_cast::<Vec<i8  >  >()  } , )   , ] ) )) ;
         let mut i: usize = 0_usize;
-        'loop_: while (i < unimplemented!()) {
+        'loop_: while (i < ({ size_9(spans.as_pointer()) })) {
             let mut j: usize = i;
-            'loop_: while (j < unimplemented!()) {
+            'loop_: while (j < ({ size_9(spans.as_pointer()) })) {
                 assert!(
                     ({
-                        let _lhs: () = unimplemented!();
-                        let _rhs: () = unimplemented!();
-                        doAssign_4(_lhs, _rhs)
+                        ({
+                            let _lhs: std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_   = ((*spans.borrow()) [(i ) as usize] ).clone()  ;
+                            let _rhs: std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_   = ((*spans.borrow()) [(j ) as usize] ).clone()  ;
+                            doAssign_10(_lhs, _rhs)
+                        })
                     })
                 );
                 j.prefix_inc();
@@ -315,16 +347,48 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         }
     }
     {
-        let mut spans: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let spans: Value<
+            Box<[std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____1_]>,
+        > = Rc::new(RefCell::new(Box::new([
+            std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____1_::new_1(
+                { (strs_4.with(|v| v.as_pointer()) as Ptr<Vec<i8>>).reinterpret_cast::<Vec<i8>>() },
+                {
+                    ((strs_4.with(|v| v.as_pointer()) as Ptr<Vec<i8>>).offset((1) as isize))
+                        .reinterpret_cast::<Vec<i8>>()
+                },
+            ),
+            std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____1_::new_1(
+                {
+                    ((strs_4.with(|v| v.as_pointer()) as Ptr<Vec<i8>>).offset((1) as isize))
+                        .reinterpret_cast::<Vec<i8>>()
+                },
+                {
+                    ((strs_4.with(|v| v.as_pointer()) as Ptr<Vec<i8>>).offset((2) as isize))
+                        .reinterpret_cast::<Vec<i8>>()
+                },
+            ),
+            std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____1_::new_1(
+                {
+                    ((strs_4.with(|v| v.as_pointer()) as Ptr<Vec<i8>>).offset((2) as isize))
+                        .reinterpret_cast::<Vec<i8>>()
+                },
+                {
+                    ((strs_4.with(|v| v.as_pointer()) as Ptr<Vec<i8>>).offset((3) as isize))
+                        .reinterpret_cast::<Vec<i8>>()
+                },
+            ),
+        ])));
         let mut i: usize = 0_usize;
-        'loop_: while (i < unimplemented!()) {
+        'loop_: while (i < ({ size_11(spans.as_pointer()) })) {
             let mut j: usize = i;
-            'loop_: while (j < unimplemented!()) {
+            'loop_: while (j < ({ size_11(spans.as_pointer()) })) {
                 assert!(
                     ({
-                        let _lhs: () = unimplemented!();
-                        let _rhs: () = unimplemented!();
-                        doAssign_5(_lhs, _rhs)
+                        ({
+                            let _lhs: std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____1_   = ((*spans.borrow()) [(i ) as usize] ).clone()  ;
+                            let _rhs: std_span_std_basic_string_char__std_char_traits_char___std_allocator_char____1_   = ((*spans.borrow()) [(j ) as usize] ).clone()  ;
+                            doAssign_12(_lhs, _rhs)
+                        })
                     })
                 );
                 j.prefix_inc();
@@ -335,9 +399,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     return 0;
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = carr1_6.with(|_| ());
-    let _ = carr2_7.with(|_| ());
-    let _ = carr3_8.with(|_| ());
-    let _ = arr_9.with(|_| ());
-    let _ = strs_10.with(|_| ());
+    let _ = carr1_0.with(|_| ());
+    let _ = carr2_1.with(|_| ());
+    let _ = carr3_2.with(|_| ());
+    let _ = arr_3.with(|_| ());
+    let _ = strs_4.with(|_| ());
 }

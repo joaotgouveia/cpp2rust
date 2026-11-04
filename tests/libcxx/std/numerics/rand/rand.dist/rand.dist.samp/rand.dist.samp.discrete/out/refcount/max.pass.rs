@@ -29,14 +29,22 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let p0: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0.3_f64, 0.1_f64, 0.6_f64])));
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 2));
+        let d: Value<std_discrete_distribution_int_> = Rc::new(RefCell::new(
+            std_discrete_distribution_int_::new_1({ (p0.as_pointer() as Ptr<f64>) }, {
+                (p0.as_pointer() as Ptr<f64>).offset((3) as isize)
+            }),
+        ));
+        assert!(({ (({ (*d.borrow()).max() }) == 2) }));
     }
     {
         let p0: Value<Box<[f64]>> =
             Rc::new(RefCell::new(Box::new([0.3_f64, 0.1_f64, 0.6_f64, 0.2_f64])));
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 3));
+        let d: Value<std_discrete_distribution_int_> = Rc::new(RefCell::new(
+            std_discrete_distribution_int_::new_1({ (p0.as_pointer() as Ptr<f64>) }, {
+                (p0.as_pointer() as Ptr<f64>).offset((4) as isize)
+            }),
+        ));
+        assert!(({ (({ (*d.borrow()).max() }) == 3) }));
     }
     return 0;
 }

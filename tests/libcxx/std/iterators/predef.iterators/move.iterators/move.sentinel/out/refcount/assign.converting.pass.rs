@@ -9,20 +9,28 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NonAssignable {}
+impl CppMove for NonAssignable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::semiregular<NonAssignable>");
 const _: () = assert!(true, "std::is_assignable_v<NonAssignable, int>");
 const _: () = assert!(!(false), "!std::assignable_from<NonAssignable, int>");
 pub fn test_0() -> bool {
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 42_i64));
+        let m: Value<std_move_sentinel_int_> =
+            Rc::new(RefCell::new(std_move_sentinel_int_::new_1({ 42 })));
+        let m2: Value<std_move_sentinel_long_> =
+            Rc::new(RefCell::new(<std_move_sentinel_long_>::default()));
+        (*m2.borrow_mut()) = (*m.borrow()).clone();
+        assert!(({ (({ (*m2.borrow()).base() }) == 42_i64) }));
     }
     {
-        let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 43_i64));
+        let m2: Value<std_move_sentinel_long_> =
+            Rc::new(RefCell::new(<std_move_sentinel_long_>::default()));
+        (*m2.borrow_mut()) = std_move_sentinel_int_::new_1({ 43 });
+        assert!(({ (({ (*m2.borrow()).base() }) == 43_i64) }));
     }
     {
         const _: () = assert!(

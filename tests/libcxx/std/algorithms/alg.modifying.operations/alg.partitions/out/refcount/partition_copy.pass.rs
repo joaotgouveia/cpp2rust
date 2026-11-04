@@ -23,6 +23,11 @@ impl support_double_move_tracker {
         __this
     }
 }
+impl CppMove for support_double_move_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for support_double_move_tracker {
     fn default() -> Self {
         { support_double_move_tracker::new() }
@@ -32,18 +37,22 @@ impl Default for support_double_move_tracker {
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn base_0(i: Ptr<cpp17_output_iterator_int_ptr_>) -> Ptr<i32> {
     return i.with(|__s| __s.it_.clone());
 }
@@ -89,6 +98,11 @@ impl CppIterator<i32> for cpp17_output_iterator_int_ptr_ {
         self
     }
 }
+impl CppMove for cpp17_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
@@ -109,6 +123,11 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_input_iterator_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_ne_1(
@@ -170,6 +189,11 @@ impl CppIterator<i32> for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
     }
 }
 impl CppInputIterator<i32> for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {}
+impl CppMove for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
@@ -187,6 +211,11 @@ impl cpp20_random_access_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp20_random_access_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -211,6 +240,11 @@ impl cpp20_input_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_input_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
@@ -230,6 +264,11 @@ impl cpp20_output_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp20_output_iterator<int*>, int>"
@@ -245,6 +284,11 @@ pub struct IteratorOpCounts {
     pub zero_moves: usize,
     #[offset(24)]
     pub equal_cmps: usize,
+}
+impl CppMove for IteratorOpCounts {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
@@ -277,6 +321,11 @@ impl CppEq for forward_sized_iterator_int_ptr_ {
         operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for forward_sized_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -307,13 +356,17 @@ pub fn operator_add_4(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
 pub fn iter_swap_5(mut a: adl_Iterator, mut b: adl_Iterator) {
     cpp_swap!((a.ptr_).clone(), (b.ptr_).clone());
     if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+        a.iter_swaps_.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub fn iter_move_6(iter: adl_Iterator) -> Ptr<i32> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
-        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
+        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
@@ -430,6 +483,11 @@ impl CppRandomAccessIterator<i32> for adl_Iterator {
         })
     }
 }
+impl CppMove for adl_Iterator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
@@ -460,6 +518,11 @@ impl CppEq for rvalue_iterator_int_ptr_ {
             == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for rvalue_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Ptr< i8  >  , new, value)]
@@ -468,6 +531,11 @@ pub struct util_iterator_error {}
 impl util_iterator_error {
     pub fn new(mut what: Ptr<i8>) -> Self {
         Self {}
+    }
+}
+impl CppMove for util_iterator_error {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -480,6 +548,11 @@ impl Callable1<Ptr<i32>, bool> for is_odd {
         })
     }
 }
+impl CppMove for is_odd {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_constexpr_9() -> bool {
     let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 3, 5, 2, 4, 6])));
     let r1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
@@ -488,9 +561,54 @@ pub fn test_constexpr_9() -> bool {
     let r2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
         0, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
     ])));
-    let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(unimplemented!()));
-    return (((unimplemented!()) && (unimplemented!())) && (unimplemented!()))
-        && (unimplemented!());
+    let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(
+        ({
+            let ___first: Ptr<i32> = ({ begin_10(ia.as_pointer()) });
+            let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).to_end();
+            let ___out_true: Ptr<i32> = ({ begin_11(r1.as_pointer()) });
+            let ___out_false: Ptr<i32> = ({ begin_11(r2.as_pointer()) });
+            partition_copy_12(
+                ___first,
+                ___last,
+                ___out_true,
+                ___out_false,
+                <is_odd>::default(),
+            )
+        }),
+    ));
+    return ((({
+        all_of_13(
+            ({ begin_11(r1.as_pointer()) }),
+            (*(*p.borrow()).0.borrow()).clone(),
+            <is_odd>::default(),
+        )
+    }) && ({
+        all_of_14(
+            (*(*p.borrow()).0.borrow()).clone(),
+            (r1.as_pointer() as Ptr<i32>).to_end(),
+            FnPtr::<fn(i32) -> bool>::new(|mut a: i32| -> bool {
+                {
+                    return (a == 0);
+                }
+            }),
+        )
+    })) && ({
+        none_of_15(
+            ({ begin_11(r2.as_pointer()) }),
+            (*(*p.borrow()).1.borrow()).clone(),
+            <is_odd>::default(),
+        )
+    })) && ({
+        all_of_16(
+            (*(*p.borrow()).1.borrow()).clone(),
+            (r2.as_pointer() as Ptr<i32>).to_end(),
+            FnPtr::<fn(i32) -> bool>::new(|mut a: i32| -> bool {
+                {
+                    return (a == 0);
+                }
+            }),
+        )
+    });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -521,24 +639,46 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             0, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
         ])));
         let p: Value<(Value<cpp17_output_iterator_int_ptr_>, Value<Ptr<i32>>)> =
-            Rc::new(RefCell::new(unimplemented!()));
+            Rc::new(RefCell::new(
+                ({
+                    let ___first: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                        cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                            ({ begin_17(ia.as_pointer()) })
+                        });
+                    let ___last: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                        cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                            (ia.as_pointer() as Ptr<i32>).to_end()
+                        });
+                    partition_copy_18(
+                        ___first,
+                        ___last,
+                        cpp17_output_iterator_int_ptr_::new({ (r1.as_pointer() as Ptr<i32>) }),
+                        (r2.as_pointer() as Ptr<i32>),
+                        <is_odd>::default(),
+                    )
+                }),
+            ));
         assert!(
-            (({ base_0((*p.borrow()).0.as_pointer(),) })
-                == (r1.as_pointer() as Ptr::<i32>).offset((4) as isize))
-        );
-        assert!(((*r1.borrow())[(0) as usize] == 1));
-        assert!(((*r1.borrow())[(1) as usize] == 3));
-        assert!(((*r1.borrow())[(2) as usize] == 5));
-        assert!(((*r1.borrow())[(3) as usize] == 7));
-        assert!(
-            ({ (*(*p.borrow()).1.borrow()).clone() } == {
-                (r2.as_pointer() as Ptr<i32>).offset((4) as isize)
+            ({
+                (({ base_0((*p.borrow()).0.as_pointer()) })
+                    == (r1.as_pointer() as Ptr<i32>).offset((4) as isize))
             })
         );
-        assert!(((*r2.borrow())[(0) as usize] == 2));
-        assert!(((*r2.borrow())[(1) as usize] == 4));
-        assert!(((*r2.borrow())[(2) as usize] == 6));
-        assert!(((*r2.borrow())[(3) as usize] == 8));
+        assert!(({ ((*r1.borrow())[(0) as usize] == 1) }));
+        assert!(({ ((*r1.borrow())[(1) as usize] == 3) }));
+        assert!(({ ((*r1.borrow())[(2) as usize] == 5) }));
+        assert!(({ ((*r1.borrow())[(3) as usize] == 7) }));
+        assert!(
+            ({
+                ({ (*(*p.borrow()).1.borrow()).clone() } == {
+                    (r2.as_pointer() as Ptr<i32>).offset((4) as isize)
+                })
+            })
+        );
+        assert!(({ ((*r2.borrow())[(0) as usize] == 2) }));
+        assert!(({ ((*r2.borrow())[(1) as usize] == 4) }));
+        assert!(({ ((*r2.borrow())[(2) as usize] == 6) }));
+        assert!(({ ((*r2.borrow())[(3) as usize] == 8) }));
     }
     const _: () = assert!(true, "test_constexpr()");;
     return 0;
@@ -597,21 +737,29 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
         return (*self).clone();
     }
     fn operator_inc_14(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_15(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return prev;
     }
     fn operator_dec_16(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_17(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return prev;
     }
 }
@@ -636,7 +784,9 @@ impl cpp17_input_iterator_const_int_ptr__const_int_ptr_Impl
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -695,7 +845,9 @@ impl cpp17_output_iterator_int_ptr_Impl for Ptr<cpp17_output_iterator_int_ptr_> 
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_output_iterator_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -877,11 +1029,11 @@ impl rvalue_iterator_int_ptr_Impl for Ptr<rvalue_iterator_int_ptr_> {
                 &((*self).with(|__s| __s.it_.clone())),
                 &(_a0.with(|__s| __s.it_.clone())),
             )));
-            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow());
+            if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+                return ({ (*cmp.borrow()) });
             }
         }
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> bool {
         return ({ (*self).with(|__s| __s.it_.clone()) } == { _a0.with(|__s| __s.it_.clone()) });

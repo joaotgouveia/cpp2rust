@@ -28,85 +28,178 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let inf1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let inf2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i5: Value<()> = Rc::new(RefCell::new(Ptr::<()>::null()));
-        assert!(!((*i1.borrow()) != (*i1.borrow())));
-        assert!(!((*i1.borrow()) != (*i2.borrow())));
+        let inf1: Value<std_basic_istringstream_char__std_char_traits_char___std_allocator_char__> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"abc").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                std_basic_istringstream_char__std_char_traits_char___std_allocator_char__::new_1(
+                    { __tmp_0.as_pointer() },
+                    None,
+                )
+            }));
+        let inf2: Value<std_basic_istringstream_char__std_char_traits_char___std_allocator_char__> =
+            Rc::new(RefCell::new({
+                let __tmp_1: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"def").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                std_basic_istringstream_char__std_char_traits_char___std_allocator_char__::new_1(
+                    { __tmp_1.as_pointer() },
+                    None,
+                )
+            }));
+        let i1: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(
+            std_istreambuf_iterator_char__std_char_traits_char__::new_1({ inf1.as_pointer() }),
+        ));
+        let i2: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(
+            std_istreambuf_iterator_char__std_char_traits_char__::new_1({ inf2.as_pointer() }),
+        ));
+        let i3: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(Ptr::null()));
+        let i4: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(Ptr::null()));
+        let i5: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(Ptr::<::std::fs::File>::null()));
+        assert!(({ !((*i1.borrow()) != (*i1.borrow())) }));
+        assert!(({ !((*i1.borrow()) != (*i2.borrow())) }));
         assert!(((*i1.borrow()) != (*i3.borrow())));
         assert!(((*i1.borrow()) != (*i4.borrow())));
         assert!(((*i1.borrow()) != (*i5.borrow())));
-        assert!(!((*i2.borrow()) != (*i1.borrow())));
-        assert!(!((*i2.borrow()) != (*i2.borrow())));
+        assert!(({ !((*i2.borrow()) != (*i1.borrow())) }));
+        assert!(({ !((*i2.borrow()) != (*i2.borrow())) }));
         assert!(((*i2.borrow()) != (*i3.borrow())));
         assert!(((*i2.borrow()) != (*i4.borrow())));
         assert!(((*i2.borrow()) != (*i5.borrow())));
         assert!(((*i3.borrow()) != (*i1.borrow())));
         assert!(((*i3.borrow()) != (*i2.borrow())));
-        assert!(!((*i3.borrow()) != (*i3.borrow())));
-        assert!(!((*i3.borrow()) != (*i4.borrow())));
-        assert!(!((*i3.borrow()) != (*i5.borrow())));
+        assert!(({ !((*i3.borrow()) != (*i3.borrow())) }));
+        assert!(({ !((*i3.borrow()) != (*i4.borrow())) }));
+        assert!(({ !((*i3.borrow()) != (*i5.borrow())) }));
         assert!(((*i4.borrow()) != (*i1.borrow())));
         assert!(((*i4.borrow()) != (*i2.borrow())));
-        assert!(!((*i4.borrow()) != (*i3.borrow())));
-        assert!(!((*i4.borrow()) != (*i4.borrow())));
-        assert!(!((*i4.borrow()) != (*i5.borrow())));
+        assert!(({ !((*i4.borrow()) != (*i3.borrow())) }));
+        assert!(({ !((*i4.borrow()) != (*i4.borrow())) }));
+        assert!(({ !((*i4.borrow()) != (*i5.borrow())) }));
         assert!(((*i5.borrow()) != (*i1.borrow())));
         assert!(((*i5.borrow()) != (*i2.borrow())));
-        assert!(!((*i5.borrow()) != (*i3.borrow())));
-        assert!(!((*i5.borrow()) != (*i4.borrow())));
-        assert!(!((*i5.borrow()) != (*i5.borrow())));
+        assert!(({ !((*i5.borrow()) != (*i3.borrow())) }));
+        assert!(({ !((*i5.borrow()) != (*i4.borrow())) }));
+        assert!(({ !((*i5.borrow()) != (*i5.borrow())) }));
     }
     {
-        let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!((*i1.borrow()) != unimplemented!()));
-        assert!(!((*i2.borrow()) != unimplemented!()));
-        assert!(!(unimplemented!() != (*i1.borrow())));
-        assert!(!(unimplemented!() != (*i2.borrow())));
-        let stream: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((*i3.borrow()) != unimplemented!());
-        assert!(unimplemented!() != (*i3.borrow()));
+        let i1: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(Ptr::null()));
+        let i2: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(
+            std_istreambuf_iterator_char__std_char_traits_char__::new_2({
+                (*default_sentinel_0.with(Value::clone).borrow()).clone()
+            }),
+        ));
+        assert!(({ (*i1.borrow()) == (*i2.borrow()) }));
+        assert!(
+            ({
+                !((*i1.borrow()) != ({ (*default_sentinel_0.with(Value::clone).borrow()).clone() }))
+            })
+        );
+        assert!(
+            ({
+                !((*i2.borrow()) != ({ (*default_sentinel_0.with(Value::clone).borrow()).clone() }))
+            })
+        );
+        assert!(
+            ({
+                !(({ (*default_sentinel_0.with(Value::clone).borrow()).clone() }) != (*i1.borrow()))
+            })
+        );
+        assert!(
+            ({
+                !(({ (*default_sentinel_0.with(Value::clone).borrow()).clone() }) != (*i2.borrow()))
+            })
+        );
+        let stream: Value<
+            std_basic_istringstream_char__std_char_traits_char___std_allocator_char__,
+        > = Rc::new(RefCell::new({
+            let __tmp_2: Value<Vec<i8>> = Rc::new(RefCell::new({
+                let mut __bytes = Ptr::<i8>::from_string_literal(b" 1 23").to_c_bytes();
+                __bytes.push(0_i8);
+                __bytes
+            }));
+            std_basic_istringstream_char__std_char_traits_char___std_allocator_char__::new_1(
+                { __tmp_2.as_pointer() },
+                None,
+            )
+        }));
+        let i3: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(
+            std_istreambuf_iterator_char__std_char_traits_char__::new_1({ stream.as_pointer() }),
+        ));
+        assert!(
+            ({ (*i3.borrow()) != ({ (*default_sentinel_0.with(Value::clone).borrow()).clone() }) })
+        );
+        assert!(({ (*default_sentinel_0.with(Value::clone).borrow()).clone() }) != (*i3.borrow()));
     }
     {
-        let inf1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let inf2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i5: Value<()> = Rc::new(RefCell::new(Ptr::<()>::null()));
-        assert!(!((*i1.borrow()) != (*i1.borrow())));
-        assert!(!((*i1.borrow()) != (*i2.borrow())));
+        let inf1: Value<
+            std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__,
+        > = Rc::new(RefCell::new({
+            let __tmp_3: Value<Vec<i32>> = Rc::new(RefCell::new({
+                let mut __bytes =
+                    Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32])
+                        .to_c_bytes();
+                __bytes.push(0_i32);
+                __bytes
+            }));
+            std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { __tmp_3.as_pointer() } , None , )
+        }));
+        let inf2: Value<
+            std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__,
+        > = Rc::new(RefCell::new({
+            let __tmp_4: Value<Vec<i32>> = Rc::new(RefCell::new({
+                let mut __bytes = Ptr::<i32>::from_string_literal(&[
+                    100 as i32, 101 as i32, 102 as i32, 0 as i32,
+                ])
+                .to_c_bytes();
+                __bytes.push(0_i32);
+                __bytes
+            }));
+            std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { __tmp_4.as_pointer() } , None , )
+        }));
+        let i1: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(
+            std_istreambuf_iterator_wchar_t__std_char_traits_wchar_t__::new_1({
+                inf1.as_pointer()
+            }),
+        ));
+        let i2: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(
+            std_istreambuf_iterator_wchar_t__std_char_traits_wchar_t__::new_1({
+                inf2.as_pointer()
+            }),
+        ));
+        let i3: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(Ptr::null()));
+        let i4: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(Ptr::null()));
+        let i5: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(Ptr::<::std::fs::File>::null()));
+        assert!(({ !((*i1.borrow()) != (*i1.borrow())) }));
+        assert!(({ !((*i1.borrow()) != (*i2.borrow())) }));
         assert!(((*i1.borrow()) != (*i3.borrow())));
         assert!(((*i1.borrow()) != (*i4.borrow())));
         assert!(((*i1.borrow()) != (*i5.borrow())));
-        assert!(!((*i2.borrow()) != (*i1.borrow())));
-        assert!(!((*i2.borrow()) != (*i2.borrow())));
+        assert!(({ !((*i2.borrow()) != (*i1.borrow())) }));
+        assert!(({ !((*i2.borrow()) != (*i2.borrow())) }));
         assert!(((*i2.borrow()) != (*i3.borrow())));
         assert!(((*i2.borrow()) != (*i4.borrow())));
         assert!(((*i2.borrow()) != (*i5.borrow())));
         assert!(((*i3.borrow()) != (*i1.borrow())));
         assert!(((*i3.borrow()) != (*i2.borrow())));
-        assert!(!((*i3.borrow()) != (*i3.borrow())));
-        assert!(!((*i3.borrow()) != (*i4.borrow())));
-        assert!(!((*i3.borrow()) != (*i5.borrow())));
+        assert!(({ !((*i3.borrow()) != (*i3.borrow())) }));
+        assert!(({ !((*i3.borrow()) != (*i4.borrow())) }));
+        assert!(({ !((*i3.borrow()) != (*i5.borrow())) }));
         assert!(((*i4.borrow()) != (*i1.borrow())));
         assert!(((*i4.borrow()) != (*i2.borrow())));
-        assert!(!((*i4.borrow()) != (*i3.borrow())));
-        assert!(!((*i4.borrow()) != (*i4.borrow())));
-        assert!(!((*i4.borrow()) != (*i5.borrow())));
+        assert!(({ !((*i4.borrow()) != (*i3.borrow())) }));
+        assert!(({ !((*i4.borrow()) != (*i4.borrow())) }));
+        assert!(({ !((*i4.borrow()) != (*i5.borrow())) }));
         assert!(((*i5.borrow()) != (*i1.borrow())));
         assert!(((*i5.borrow()) != (*i2.borrow())));
-        assert!(!((*i5.borrow()) != (*i3.borrow())));
-        assert!(!((*i5.borrow()) != (*i4.borrow())));
-        assert!(!((*i5.borrow()) != (*i5.borrow())));
+        assert!(({ !((*i5.borrow()) != (*i3.borrow())) }));
+        assert!(({ !((*i5.borrow()) != (*i4.borrow())) }));
+        assert!(({ !((*i5.borrow()) != (*i5.borrow())) }));
     }
     return 0;
 }

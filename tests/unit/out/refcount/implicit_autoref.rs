@@ -20,6 +20,11 @@ impl Holder {
         }
     }
 }
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn write_through_0(mut p: Ptr<i32>) {
     p.write(42);
 }

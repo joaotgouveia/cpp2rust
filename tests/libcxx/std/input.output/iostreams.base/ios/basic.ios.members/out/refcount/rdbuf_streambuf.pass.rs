@@ -27,18 +27,20 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let ios: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!()).is_null());
-    assert!(!(unimplemented!()));
-    let mut sb: Ptr<()> = <Ptr<()>>::from_int(1);
-    let mut sb2: Ptr<()> = unimplemented!();
+    let ios: Value<std_basic_ios_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_ios_char__std_char_traits_char__::new_1({ Ptr::<::std::fs::File>::null() }),
+    ));
+    assert!(({ ({ (*ios.borrow()).rdbuf_17() }).is_null() }));
+    assert!(({ !({ (*ios.borrow()).good() }) }));
+    let mut sb: Ptr<::std::fs::File> = <Ptr<::std::fs::File>>::from_int(1);
+    let mut sb2: Ptr<::std::fs::File> = ({ (*ios.borrow()).rdbuf_18((sb).clone()) });
     assert!((sb2).is_null());
-    assert!(({ unimplemented!() } == { (sb).clone() }));
-    assert!(unimplemented!());
-    sb2 = unimplemented!();
-    assert!((sb2 == <Ptr<()>>::from_int(1)));
-    assert!((unimplemented!()).is_null());
-    assert!(unimplemented!());
+    assert!(({ ({ ({ (*ios.borrow()).rdbuf_17() }) } == { (sb).clone() }) }));
+    assert!(({ ({ (*ios.borrow()).good() }) }));
+    sb2 = ({ (*ios.borrow()).rdbuf_18(Ptr::<::std::fs::File>::null()) });
+    assert!((sb2 == <Ptr<::std::fs::File>>::from_int(1)));
+    assert!(({ ({ (*ios.borrow()).rdbuf_17() }).is_null() }));
+    assert!(({ ({ (*ios.borrow()).bad() }) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

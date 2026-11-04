@@ -9,33 +9,54 @@ use std::rc::{Rc, Weak};
 pub fn test_0(mut s: Ptr<i8>, mut sz: usize) {
     {
         const _: () = assert!(true, "");;
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as usize) == sz));
-        assert!(({ unimplemented!() } == { (s).clone() }));
+        let sv1: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_basic_string_view_char__std_char_traits_char__::new_1({ (s).clone() }, {
+                (sz as u64)
+            }),
+        ));
+        assert!(({ ((({ (*sv1.borrow()).size() }) as usize) == sz) }));
+        assert!(({ ({ ({ (*sv1.borrow()).data() }) } == { (s).clone() }) }));
     }
 }
 pub fn test_1(mut s: Ptr<i32>, mut sz: usize) {
     {
         const _: () = assert!(true, "");;
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as usize) == sz));
-        assert!(({ unimplemented!() } == { (s).clone() }));
+        let sv1: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_1({ (s).clone() }, {
+                    (sz as u64)
+                }),
+            ));
+        assert!(({ ((({ (*sv1.borrow()).size() }) as usize) == sz) }));
+        assert!(({ ({ ({ (*sv1.borrow()).data() }) } == { (s).clone() }) }));
     }
 }
 pub fn test_2(mut s: Ptr<u16>, mut sz: usize) {
     {
         const _: () = assert!(true, "");;
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as usize) == sz));
-        assert!(({ unimplemented!() } == { (s).clone() }));
+        let sv1: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char16_t__std_char_traits_char16_t__::new_1(
+                    { (s).clone() },
+                    { (sz as u64) },
+                ),
+            ));
+        assert!(({ ((({ (*sv1.borrow()).size() }) as usize) == sz) }));
+        assert!(({ ({ ({ (*sv1.borrow()).data() }) } == { (s).clone() }) }));
     }
 }
 pub fn test_3(mut s: Ptr<u32>, mut sz: usize) {
     {
         const _: () = assert!(true, "");;
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as usize) == sz));
-        assert!(({ unimplemented!() } == { (s).clone() }));
+        let sv1: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char32_t__std_char_traits_char32_t__::new_1(
+                    { (s).clone() },
+                    { (sz as u64) },
+                ),
+            ));
+        assert!(({ ((({ (*sv1.borrow()).size() }) as usize) == sz) }));
+        assert!(({ ({ ({ (*sv1.borrow()).data() }) } == { (s).clone() }) }));
     }
 }
 pub fn main() {
@@ -63,7 +84,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0(Ptr::<i8>::from_string_literal(b""), 0_usize) });
     {
         let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"QBCDE");
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv1: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_basic_string_view_char__std_char_traits_char__::new_1({ (s).clone() }, { 2_u64 }),
+        ));
         const _: () = assert!(true, "sv1.size() == 2");;
         const _: () = assert!(true, "sv1.data() == s");;
     }
@@ -88,7 +111,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let mut s: Ptr<i32> = Ptr::<i32>::from_string_literal(&[
             81 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 0 as i32,
         ]);
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv1: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_1({ (s).clone() }, {
+                    2_u64
+                }),
+            ));
         const _: () = assert!(true, "sv1.size() == 2");;
         const _: () = assert!(true, "sv1.data() == s");;
     }
@@ -113,7 +141,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let mut s: Ptr<u16> = Ptr::<u16>::from_string_literal(&[
             81 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 0 as u16,
         ]);
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv1: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char16_t__std_char_traits_char16_t__::new_1(
+                    { (s).clone() },
+                    { 2_u64 },
+                ),
+            ));
         const _: () = assert!(true, "sv1.size() == 2");;
         const _: () = assert!(true, "sv1.data() == s");;
     }
@@ -138,7 +172,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let mut s: Ptr<u32> = Ptr::<u32>::from_string_literal(&[
             81 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 0 as u32,
         ]);
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv1: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char32_t__std_char_traits_char32_t__::new_1(
+                    { (s).clone() },
+                    { 2_u64 },
+                ),
+            ));
         const _: () = assert!(true, "sv1.size() == 2");;
         const _: () = assert!(true, "sv1.data() == s");;
     }

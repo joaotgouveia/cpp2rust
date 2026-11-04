@@ -14,9 +14,15 @@ pub fn search_0(mut pat: Ptr<i8>, mut f: (), mut target: Ptr<i8>, mut expected: 
         assert!((unimplemented!() == 1_()));
         assert!((unimplemented!() == 3_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"foo").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_0,) => {
+                    Ptr::<i8>::from_string_literal(b"foo").with_c_str(|__s| {
+                        (*__tmp_0.upgrade().deref())
+                            [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     } else {
         assert!((unimplemented!() == 0_()));

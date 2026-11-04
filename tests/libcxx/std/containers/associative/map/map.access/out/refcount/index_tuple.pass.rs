@@ -7,10 +7,18 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let m: Value<Map<(), (Value<()>, Value<u64>)>> = Rc::new(RefCell::new(Map::new()));
+    let m: Value<Map<std_tuple_int__int_, (Value<std_tuple_int__int_>, Value<u64>)>> =
+        Rc::new(RefCell::new(Map::new()));
     Map::subscript_move(
         m.as_pointer(),
-        Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+        Rc::new(RefCell::new(
+            ({
+                let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
+                let ___args_1: Value<i32> = Rc::new(RefCell::new(3));
+                make_tuple_1(___args_0.as_pointer(), ___args_1.as_pointer())
+            }),
+        ))
+        .as_pointer(),
         |__k| cpp_move!(__k),
     )
     .write(7_u64);

@@ -6,15 +6,14 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = u32;
-pub const anon_0_value: anon_0 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_ranges_owning_view_Range___std_ranges_owning_view_Range__
-{}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Range {}
+impl CppMove for Range {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -35,8 +34,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let mut r: Range = <Range>::default();
-    let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let r: Value<Range> = Rc::new(RefCell::new(<Range>::default()));
+    let view: Value<std_ranges_owning_view_Range_> =
+        Rc::new(RefCell::new((*r.borrow_mut()).clone()));
     const _: () = assert!(true, "");;
     return 0;
 }

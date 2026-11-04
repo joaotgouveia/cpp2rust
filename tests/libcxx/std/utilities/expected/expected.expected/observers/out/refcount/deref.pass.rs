@@ -13,31 +13,31 @@ const _: () = assert!(true, "DerefNoexcept<std::expected<int, int>&&>");
 const _: () = assert!(true, "DerefNoexcept<const std::expected<int, int>&&>");
 pub fn test_0() -> bool {
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Ptr<i32> = unimplemented!();
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new(5));
+        let x: Ptr<i32> = e.as_pointer();
         const _: () = assert!(true, "std::same_as<decltype(x), int&>");;
-        assert!(({ (x).clone() } == { (unimplemented!()) }));
+        assert!(({ ({ (x).clone() } == { ({ (*e.borrow()).value_35() }) }) }));
         assert!(((x.read()) == 5));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Ptr<i32> = unimplemented!();
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new(5));
+        let x: Ptr<i32> = e.as_pointer();
         const _: () = assert!(true, "std::same_as<decltype(x), const int&>");;
-        assert!(({ (x).clone() } == { (unimplemented!()) }));
+        assert!(({ ({ (x).clone() } == { ({ (*e.borrow()).value_34() }) }) }));
         assert!(((x.read()) == 5));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Ptr<i32> = unimplemented!();
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new(5));
+        let x: Ptr<i32> = e.as_pointer();
         const _: () = assert!(true, "std::same_as<decltype(x), int&&>");;
-        assert!(({ (x).clone() } == { (unimplemented!()) }));
+        assert!(({ ({ (x).clone() } == { ({ (*e.borrow()).value_35() }) }) }));
         assert!(((x.read()) == 5));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Ptr<i32> = unimplemented!();
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new(5));
+        let x: Ptr<i32> = e.as_pointer();
         const _: () = assert!(true, "std::same_as<decltype(x), const int&&>");;
-        assert!(({ (x).clone() } == { (unimplemented!()) }));
+        assert!(({ ({ (x).clone() } == { ({ (*e.borrow()).value_34() }) }) }));
         assert!(((x.read()) == 5));
     }
     return true;

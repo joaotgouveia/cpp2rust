@@ -7,12 +7,19 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_()));
-    unimplemented!();
-    assert!((unimplemented!() == 1_()));
-    unimplemented!();
-    assert!((unimplemented!() == 0_()));
+    let q: Value<std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__> =
+        Rc::new(RefCell::new(
+            <std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__>::default(
+            ),
+        ));
+    assert!(({ (({ (*q.borrow()).size() }) == 0_u64) }));
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(1));
+        (*q.borrow()).push_28(___x.as_pointer())
+    });
+    assert!(({ (({ (*q.borrow()).size() }) == 1_u64) }));
+    ({ (*q.borrow()).pop() });
+    assert!(({ (({ (*q.borrow()).size() }) == 0_u64) }));
     return true;
 }
 pub fn main() {

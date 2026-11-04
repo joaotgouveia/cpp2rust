@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -43,6 +48,11 @@ pub struct min_pointer_bool__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<bool>,
 }
 impl min_pointer_bool__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_bool__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -51,6 +61,11 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
@@ -61,6 +76,11 @@ pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
     fn new_1(mut p: Ptr<u64>) -> Self {
         Self { ptr_: (p).clone() }
+    }
+}
+impl CppMove for min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl min_allocator_bool_ {
@@ -80,6 +100,11 @@ impl CppEq for min_allocator_bool_ {
         operator_eq_4(__lhs.read(), __rhs.read())
     }
 }
+impl CppMove for min_allocator_bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl min_allocator_unsigned_long_ {
     pub fn new_1(mut _a0: min_allocator_bool_) -> Self {
         Self {}
@@ -89,6 +114,11 @@ impl min_allocator_unsigned_long_ {
 #[cpp_from(min_allocator_bool_, new_1, value)]
 #[byte_size(1)]
 pub struct min_allocator_unsigned_long_ {}
+impl CppMove for min_allocator_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl min_allocator_bool_ {}
 impl min_allocator_unsigned_long_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -114,6 +144,11 @@ pub struct test_allocator_statistics {
     pub moved: i32,
     #[offset(36)]
     pub converted: i32,
+}
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for test_allocator_statistics {
     fn default() -> Self {
@@ -142,6 +177,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_7(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -222,6 +262,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -242,8 +287,12 @@ impl test_allocator_bool_ {
         }));
         let this: Ptr<test_allocator_bool_> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -254,9 +303,19 @@ pub fn operator_eq_9(x: Ptr<test_allocator_bool_>, y: Ptr<test_allocator_bool_>)
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_bool__rebind_unsigned_long_ {}
+impl CppMove for test_allocator_bool__rebind_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_bool__rebind_bool_ {}
+impl CppMove for test_allocator_bool__rebind_bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, Destructor)]
 #[cpp_from(test_allocator_unsigned_long_, new_1, ptr)]
 #[byte_size(16)]
@@ -303,8 +362,12 @@ impl test_allocator_unsigned_long_ {
         }));
         let this: Ptr<test_allocator_unsigned_long_> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -336,8 +399,12 @@ impl test_allocator_unsigned_long_ {
                     .is_null())
         );
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -351,6 +418,11 @@ impl Clone for test_allocator_unsigned_long_ {
                 stats_: self.stats_.clone(),
             }));
         test_allocator_unsigned_long_::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for test_allocator_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for test_allocator_unsigned_long_ {
@@ -391,6 +463,11 @@ impl CppEq for other_allocator_bool_ {
         operator_eq_10(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for other_allocator_bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for other_allocator_bool_ {
     fn default() -> Self {
         { other_allocator_bool_ { data_: 0_i32 } }
@@ -411,6 +488,11 @@ pub struct other_allocator_unsigned_long_ {
     data_: i32,
 }
 impl other_allocator_unsigned_long_ {}
+impl CppMove for other_allocator_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for other_allocator_unsigned_long_ {
     fn default() -> Self {
         { other_allocator_unsigned_long_ { data_: 0_i32 } }
@@ -419,6 +501,11 @@ impl Default for other_allocator_unsigned_long_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -435,17 +522,30 @@ impl Tag_X {
     }
 }
 pub fn test_11(a: Ptr<()>, a0: Ptr<()>) {
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let original: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(5_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let original: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(5_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
     let mut i: u32 = 1_u32;
     'loop_: while (i < 5_u32) {
-        {
-            v.decay().offset((i as usize) as isize).write(true);
-            v.decay().offset((i as usize) as isize)
+        match (Rc::new(RefCell::new(v.decay().offset((i as usize) as isize))).as_pointer(),) {
+            (__tmp_0,) => {
+                __tmp_0.write(true);
+                (__tmp_0).clone()
+            }
         };
+        match (Rc::new(RefCell::new(original.decay().offset((i as usize) as isize))).as_pointer(),)
         {
-            original.decay().offset((i as usize) as isize).write(true);
-            original.decay().offset((i as usize) as isize)
+            (__tmp_1,) => {
+                __tmp_1.write(true);
+                (__tmp_1).clone()
+            }
         };
         i = { (i).wrapping_add(2_u32) };
     }
@@ -457,17 +557,30 @@ pub fn test_11(a: Ptr<()>, a0: Ptr<()>) {
     }
 }
 pub fn test_12(a: Ptr<()>, a0: Ptr<()>) {
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let original: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(17_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let original: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(17_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
     let mut i: u32 = 1_u32;
     'loop_: while (i < 17_u32) {
-        {
-            v.decay().offset((i as usize) as isize).write(true);
-            v.decay().offset((i as usize) as isize)
+        match (Rc::new(RefCell::new(v.decay().offset((i as usize) as isize))).as_pointer(),) {
+            (__tmp_2,) => {
+                __tmp_2.write(true);
+                (__tmp_2).clone()
+            }
         };
+        match (Rc::new(RefCell::new(original.decay().offset((i as usize) as isize))).as_pointer(),)
         {
-            original.decay().offset((i as usize) as isize).write(true);
-            original.decay().offset((i as usize) as isize)
+            (__tmp_3,) => {
+                __tmp_3.write(true);
+                (__tmp_3).clone()
+            }
         };
         i = { (i).wrapping_add(2_u32) };
     }
@@ -479,17 +592,30 @@ pub fn test_12(a: Ptr<()>, a0: Ptr<()>) {
     }
 }
 pub fn test_13(a: Ptr<()>, a0: Ptr<()>) {
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let original: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(65_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let original: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(65_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
     let mut i: u32 = 1_u32;
     'loop_: while (i < 65_u32) {
-        {
-            v.decay().offset((i as usize) as isize).write(true);
-            v.decay().offset((i as usize) as isize)
+        match (Rc::new(RefCell::new(v.decay().offset((i as usize) as isize))).as_pointer(),) {
+            (__tmp_4,) => {
+                __tmp_4.write(true);
+                (__tmp_4).clone()
+            }
         };
+        match (Rc::new(RefCell::new(original.decay().offset((i as usize) as isize))).as_pointer(),)
         {
-            original.decay().offset((i as usize) as isize).write(true);
-            original.decay().offset((i as usize) as isize)
+            (__tmp_5,) => {
+                __tmp_5.write(true);
+                (__tmp_5).clone()
+            }
         };
         i = { (i).wrapping_add(2_u32) };
     }
@@ -501,17 +627,30 @@ pub fn test_13(a: Ptr<()>, a0: Ptr<()>) {
     }
 }
 pub fn test_14(a: Ptr<()>, a0: Ptr<()>) {
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let original: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(299_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let original: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(299_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
     let mut i: u32 = 1_u32;
     'loop_: while (i < 299_u32) {
-        {
-            v.decay().offset((i as usize) as isize).write(true);
-            v.decay().offset((i as usize) as isize)
+        match (Rc::new(RefCell::new(v.decay().offset((i as usize) as isize))).as_pointer(),) {
+            (__tmp_6,) => {
+                __tmp_6.write(true);
+                (__tmp_6).clone()
+            }
         };
+        match (Rc::new(RefCell::new(original.decay().offset((i as usize) as isize))).as_pointer(),)
         {
-            original.decay().offset((i as usize) as isize).write(true);
-            original.decay().offset((i as usize) as isize)
+            (__tmp_7,) => {
+                __tmp_7.write(true);
+                (__tmp_7).clone()
+            }
         };
         i = { (i).wrapping_add(2_u32) };
     }
@@ -523,17 +662,30 @@ pub fn test_14(a: Ptr<()>, a0: Ptr<()>) {
     }
 }
 pub fn test_15(a: Ptr<test_allocator_bool_>, a0: Ptr<test_allocator_bool_>) {
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let original: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(5_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let original: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(5_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
     let mut i: u32 = 1_u32;
     'loop_: while (i < 5_u32) {
-        {
-            v.decay().offset((i as usize) as isize).write(true);
-            v.decay().offset((i as usize) as isize)
+        match (Rc::new(RefCell::new(v.decay().offset((i as usize) as isize))).as_pointer(),) {
+            (__tmp_8,) => {
+                __tmp_8.write(true);
+                (__tmp_8).clone()
+            }
         };
+        match (Rc::new(RefCell::new(original.decay().offset((i as usize) as isize))).as_pointer(),)
         {
-            original.decay().offset((i as usize) as isize).write(true);
-            original.decay().offset((i as usize) as isize)
+            (__tmp_9,) => {
+                __tmp_9.write(true);
+                (__tmp_9).clone()
+            }
         };
         i = { (i).wrapping_add(2_u32) };
     }
@@ -557,17 +709,30 @@ pub fn test_15(a: Ptr<test_allocator_bool_>, a0: Ptr<test_allocator_bool_>) {
     }
 }
 pub fn test_16(a: Ptr<test_allocator_bool_>, a0: Ptr<test_allocator_bool_>) {
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let original: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(17_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let original: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(17_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
     let mut i: u32 = 1_u32;
     'loop_: while (i < 17_u32) {
-        {
-            v.decay().offset((i as usize) as isize).write(true);
-            v.decay().offset((i as usize) as isize)
+        match (Rc::new(RefCell::new(v.decay().offset((i as usize) as isize))).as_pointer(),) {
+            (__tmp_10,) => {
+                __tmp_10.write(true);
+                (__tmp_10).clone()
+            }
         };
+        match (Rc::new(RefCell::new(original.decay().offset((i as usize) as isize))).as_pointer(),)
         {
-            original.decay().offset((i as usize) as isize).write(true);
-            original.decay().offset((i as usize) as isize)
+            (__tmp_11,) => {
+                __tmp_11.write(true);
+                (__tmp_11).clone()
+            }
         };
         i = { (i).wrapping_add(2_u32) };
     }
@@ -591,17 +756,30 @@ pub fn test_16(a: Ptr<test_allocator_bool_>, a0: Ptr<test_allocator_bool_>) {
     }
 }
 pub fn test_17(a: Ptr<test_allocator_bool_>, a0: Ptr<test_allocator_bool_>) {
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let original: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(65_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let original: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(65_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
     let mut i: u32 = 1_u32;
     'loop_: while (i < 65_u32) {
-        {
-            v.decay().offset((i as usize) as isize).write(true);
-            v.decay().offset((i as usize) as isize)
+        match (Rc::new(RefCell::new(v.decay().offset((i as usize) as isize))).as_pointer(),) {
+            (__tmp_12,) => {
+                __tmp_12.write(true);
+                (__tmp_12).clone()
+            }
         };
+        match (Rc::new(RefCell::new(original.decay().offset((i as usize) as isize))).as_pointer(),)
         {
-            original.decay().offset((i as usize) as isize).write(true);
-            original.decay().offset((i as usize) as isize)
+            (__tmp_13,) => {
+                __tmp_13.write(true);
+                (__tmp_13).clone()
+            }
         };
         i = { (i).wrapping_add(2_u32) };
     }
@@ -625,17 +803,30 @@ pub fn test_17(a: Ptr<test_allocator_bool_>, a0: Ptr<test_allocator_bool_>) {
     }
 }
 pub fn test_18(a: Ptr<test_allocator_bool_>, a0: Ptr<test_allocator_bool_>) {
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let original: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(299_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let original: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(299_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
     let mut i: u32 = 1_u32;
     'loop_: while (i < 299_u32) {
-        {
-            v.decay().offset((i as usize) as isize).write(true);
-            v.decay().offset((i as usize) as isize)
+        match (Rc::new(RefCell::new(v.decay().offset((i as usize) as isize))).as_pointer(),) {
+            (__tmp_14,) => {
+                __tmp_14.write(true);
+                (__tmp_14).clone()
+            }
         };
+        match (Rc::new(RefCell::new(original.decay().offset((i as usize) as isize))).as_pointer(),)
         {
-            original.decay().offset((i as usize) as isize).write(true);
-            original.decay().offset((i as usize) as isize)
+            (__tmp_15,) => {
+                __tmp_15.write(true);
+                (__tmp_15).clone()
+            }
         };
         i = { (i).wrapping_add(2_u32) };
     }
@@ -659,17 +850,30 @@ pub fn test_18(a: Ptr<test_allocator_bool_>, a0: Ptr<test_allocator_bool_>) {
     }
 }
 pub fn test_19(a: Ptr<other_allocator_bool_>, a0: Ptr<other_allocator_bool_>) {
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let original: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(5_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let original: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(5_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
     let mut i: u32 = 1_u32;
     'loop_: while (i < 5_u32) {
-        {
-            v.decay().offset((i as usize) as isize).write(true);
-            v.decay().offset((i as usize) as isize)
+        match (Rc::new(RefCell::new(v.decay().offset((i as usize) as isize))).as_pointer(),) {
+            (__tmp_16,) => {
+                __tmp_16.write(true);
+                (__tmp_16).clone()
+            }
         };
+        match (Rc::new(RefCell::new(original.decay().offset((i as usize) as isize))).as_pointer(),)
         {
-            original.decay().offset((i as usize) as isize).write(true);
-            original.decay().offset((i as usize) as isize)
+            (__tmp_17,) => {
+                __tmp_17.write(true);
+                (__tmp_17).clone()
+            }
         };
         i = { (i).wrapping_add(2_u32) };
     }
@@ -693,17 +897,30 @@ pub fn test_19(a: Ptr<other_allocator_bool_>, a0: Ptr<other_allocator_bool_>) {
     }
 }
 pub fn test_20(a: Ptr<other_allocator_bool_>, a0: Ptr<other_allocator_bool_>) {
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let original: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(17_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let original: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(17_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
     let mut i: u32 = 1_u32;
     'loop_: while (i < 17_u32) {
-        {
-            v.decay().offset((i as usize) as isize).write(true);
-            v.decay().offset((i as usize) as isize)
+        match (Rc::new(RefCell::new(v.decay().offset((i as usize) as isize))).as_pointer(),) {
+            (__tmp_18,) => {
+                __tmp_18.write(true);
+                (__tmp_18).clone()
+            }
         };
+        match (Rc::new(RefCell::new(original.decay().offset((i as usize) as isize))).as_pointer(),)
         {
-            original.decay().offset((i as usize) as isize).write(true);
-            original.decay().offset((i as usize) as isize)
+            (__tmp_19,) => {
+                __tmp_19.write(true);
+                (__tmp_19).clone()
+            }
         };
         i = { (i).wrapping_add(2_u32) };
     }
@@ -727,17 +944,30 @@ pub fn test_20(a: Ptr<other_allocator_bool_>, a0: Ptr<other_allocator_bool_>) {
     }
 }
 pub fn test_21(a: Ptr<other_allocator_bool_>, a0: Ptr<other_allocator_bool_>) {
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let original: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(65_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let original: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(65_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
     let mut i: u32 = 1_u32;
     'loop_: while (i < 65_u32) {
-        {
-            v.decay().offset((i as usize) as isize).write(true);
-            v.decay().offset((i as usize) as isize)
+        match (Rc::new(RefCell::new(v.decay().offset((i as usize) as isize))).as_pointer(),) {
+            (__tmp_20,) => {
+                __tmp_20.write(true);
+                (__tmp_20).clone()
+            }
         };
+        match (Rc::new(RefCell::new(original.decay().offset((i as usize) as isize))).as_pointer(),)
         {
-            original.decay().offset((i as usize) as isize).write(true);
-            original.decay().offset((i as usize) as isize)
+            (__tmp_21,) => {
+                __tmp_21.write(true);
+                (__tmp_21).clone()
+            }
         };
         i = { (i).wrapping_add(2_u32) };
     }
@@ -761,17 +991,30 @@ pub fn test_21(a: Ptr<other_allocator_bool_>, a0: Ptr<other_allocator_bool_>) {
     }
 }
 pub fn test_22(a: Ptr<other_allocator_bool_>, a0: Ptr<other_allocator_bool_>) {
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let original: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(299_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let original: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(299_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
     let mut i: u32 = 1_u32;
     'loop_: while (i < 299_u32) {
-        {
-            v.decay().offset((i as usize) as isize).write(true);
-            v.decay().offset((i as usize) as isize)
+        match (Rc::new(RefCell::new(v.decay().offset((i as usize) as isize))).as_pointer(),) {
+            (__tmp_22,) => {
+                __tmp_22.write(true);
+                (__tmp_22).clone()
+            }
         };
+        match (Rc::new(RefCell::new(original.decay().offset((i as usize) as isize))).as_pointer(),)
         {
-            original.decay().offset((i as usize) as isize).write(true);
-            original.decay().offset((i as usize) as isize)
+            (__tmp_23,) => {
+                __tmp_23.write(true);
+                (__tmp_23).clone()
+            }
         };
         i = { (i).wrapping_add(2_u32) };
     }
@@ -795,17 +1038,30 @@ pub fn test_22(a: Ptr<other_allocator_bool_>, a0: Ptr<other_allocator_bool_>) {
     }
 }
 pub fn test_23(a: Ptr<min_allocator_bool_>, a0: Ptr<min_allocator_bool_>) {
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let original: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(5_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let original: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(5_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
     let mut i: u32 = 1_u32;
     'loop_: while (i < 5_u32) {
-        {
-            v.decay().offset((i as usize) as isize).write(true);
-            v.decay().offset((i as usize) as isize)
+        match (Rc::new(RefCell::new(v.decay().offset((i as usize) as isize))).as_pointer(),) {
+            (__tmp_24,) => {
+                __tmp_24.write(true);
+                (__tmp_24).clone()
+            }
         };
+        match (Rc::new(RefCell::new(original.decay().offset((i as usize) as isize))).as_pointer(),)
         {
-            original.decay().offset((i as usize) as isize).write(true);
-            original.decay().offset((i as usize) as isize)
+            (__tmp_25,) => {
+                __tmp_25.write(true);
+                (__tmp_25).clone()
+            }
         };
         i = { (i).wrapping_add(2_u32) };
     }
@@ -813,9 +1069,11 @@ pub fn test_23(a: Ptr<min_allocator_bool_>, a0: Ptr<min_allocator_bool_>) {
     assert!(unimplemented!());
     assert!(
         ({
-            let _arg0: min_allocator_bool_ = unimplemented!();
-            let _arg1: min_allocator_bool_ = (*a0.upgrade().deref()).clone();
-            operator_eq_4(_arg0, _arg1)
+            ({
+                let _arg0: min_allocator_bool_ = unimplemented!();
+                let _arg1: min_allocator_bool_ = (*a0.upgrade().deref()).clone();
+                operator_eq_4(_arg0, _arg1)
+            })
         })
     );
     {
@@ -823,17 +1081,30 @@ pub fn test_23(a: Ptr<min_allocator_bool_>, a0: Ptr<min_allocator_bool_>) {
     }
 }
 pub fn test_24(a: Ptr<min_allocator_bool_>, a0: Ptr<min_allocator_bool_>) {
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let original: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(17_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let original: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(17_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
     let mut i: u32 = 1_u32;
     'loop_: while (i < 17_u32) {
-        {
-            v.decay().offset((i as usize) as isize).write(true);
-            v.decay().offset((i as usize) as isize)
+        match (Rc::new(RefCell::new(v.decay().offset((i as usize) as isize))).as_pointer(),) {
+            (__tmp_26,) => {
+                __tmp_26.write(true);
+                (__tmp_26).clone()
+            }
         };
+        match (Rc::new(RefCell::new(original.decay().offset((i as usize) as isize))).as_pointer(),)
         {
-            original.decay().offset((i as usize) as isize).write(true);
-            original.decay().offset((i as usize) as isize)
+            (__tmp_27,) => {
+                __tmp_27.write(true);
+                (__tmp_27).clone()
+            }
         };
         i = { (i).wrapping_add(2_u32) };
     }
@@ -841,9 +1112,11 @@ pub fn test_24(a: Ptr<min_allocator_bool_>, a0: Ptr<min_allocator_bool_>) {
     assert!(unimplemented!());
     assert!(
         ({
-            let _arg0: min_allocator_bool_ = unimplemented!();
-            let _arg1: min_allocator_bool_ = (*a0.upgrade().deref()).clone();
-            operator_eq_4(_arg0, _arg1)
+            ({
+                let _arg0: min_allocator_bool_ = unimplemented!();
+                let _arg1: min_allocator_bool_ = (*a0.upgrade().deref()).clone();
+                operator_eq_4(_arg0, _arg1)
+            })
         })
     );
     {
@@ -851,17 +1124,30 @@ pub fn test_24(a: Ptr<min_allocator_bool_>, a0: Ptr<min_allocator_bool_>) {
     }
 }
 pub fn test_25(a: Ptr<min_allocator_bool_>, a0: Ptr<min_allocator_bool_>) {
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let original: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(65_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let original: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(65_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
     let mut i: u32 = 1_u32;
     'loop_: while (i < 65_u32) {
-        {
-            v.decay().offset((i as usize) as isize).write(true);
-            v.decay().offset((i as usize) as isize)
+        match (Rc::new(RefCell::new(v.decay().offset((i as usize) as isize))).as_pointer(),) {
+            (__tmp_28,) => {
+                __tmp_28.write(true);
+                (__tmp_28).clone()
+            }
         };
+        match (Rc::new(RefCell::new(original.decay().offset((i as usize) as isize))).as_pointer(),)
         {
-            original.decay().offset((i as usize) as isize).write(true);
-            original.decay().offset((i as usize) as isize)
+            (__tmp_29,) => {
+                __tmp_29.write(true);
+                (__tmp_29).clone()
+            }
         };
         i = { (i).wrapping_add(2_u32) };
     }
@@ -869,9 +1155,11 @@ pub fn test_25(a: Ptr<min_allocator_bool_>, a0: Ptr<min_allocator_bool_>) {
     assert!(unimplemented!());
     assert!(
         ({
-            let _arg0: min_allocator_bool_ = unimplemented!();
-            let _arg1: min_allocator_bool_ = (*a0.upgrade().deref()).clone();
-            operator_eq_4(_arg0, _arg1)
+            ({
+                let _arg0: min_allocator_bool_ = unimplemented!();
+                let _arg1: min_allocator_bool_ = (*a0.upgrade().deref()).clone();
+                operator_eq_4(_arg0, _arg1)
+            })
         })
     );
     {
@@ -879,17 +1167,30 @@ pub fn test_25(a: Ptr<min_allocator_bool_>, a0: Ptr<min_allocator_bool_>) {
     }
 }
 pub fn test_26(a: Ptr<min_allocator_bool_>, a0: Ptr<min_allocator_bool_>) {
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let original: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(299_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
+    let original: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(299_u32 as usize) as usize)
+            .map(|_| false)
+            .collect::<Vec<bool>>(),
+    ));
     let mut i: u32 = 1_u32;
     'loop_: while (i < 299_u32) {
-        {
-            v.decay().offset((i as usize) as isize).write(true);
-            v.decay().offset((i as usize) as isize)
+        match (Rc::new(RefCell::new(v.decay().offset((i as usize) as isize))).as_pointer(),) {
+            (__tmp_30,) => {
+                __tmp_30.write(true);
+                (__tmp_30).clone()
+            }
         };
+        match (Rc::new(RefCell::new(original.decay().offset((i as usize) as isize))).as_pointer(),)
         {
-            original.decay().offset((i as usize) as isize).write(true);
-            original.decay().offset((i as usize) as isize)
+            (__tmp_31,) => {
+                __tmp_31.write(true);
+                (__tmp_31).clone()
+            }
         };
         i = { (i).wrapping_add(2_u32) };
     }
@@ -897,9 +1198,11 @@ pub fn test_26(a: Ptr<min_allocator_bool_>, a0: Ptr<min_allocator_bool_>) {
     assert!(unimplemented!());
     assert!(
         ({
-            let _arg0: min_allocator_bool_ = unimplemented!();
-            let _arg1: min_allocator_bool_ = (*a0.upgrade().deref()).clone();
-            operator_eq_4(_arg0, _arg1)
+            ({
+                let _arg0: min_allocator_bool_ = unimplemented!();
+                let _arg1: min_allocator_bool_ = (*a0.upgrade().deref()).clone();
+                operator_eq_4(_arg0, _arg1)
+            })
         })
     );
     {
@@ -1390,7 +1693,9 @@ impl test_allocator_bool_Impl for Ptr<test_allocator_bool_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_5.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_5.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_5.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_5.with(|rc| *rc.borrow()));
@@ -1450,7 +1755,9 @@ impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_5.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_5.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_5.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_5.with(|rc| *rc.borrow()));
@@ -1470,10 +1777,12 @@ impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
             }) {
                 std::process::abort();
             }
-            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
-                .with_mut(|__v| __v.prefix_inc());
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -1486,8 +1795,9 @@ impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
     fn deallocate(&self, mut p: Ptr<u64>, mut s: u32) {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_5.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())

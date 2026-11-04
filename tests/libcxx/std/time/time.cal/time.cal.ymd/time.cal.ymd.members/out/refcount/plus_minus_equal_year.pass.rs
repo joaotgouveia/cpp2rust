@@ -12,6 +12,13 @@ pub const anon_0_value: anon_0 = 1;
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_year_month_day_ref__std_chrono_year_month_day_ref_
 {}
+impl CppMove
+    for test_macros_detail_is_same_std_chrono_year_month_day_ref__std_chrono_year_month_day_ref_
+{
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_1() -> bool {
     let mut i: i32 = 1000;
     'loop_: while (i <= 1010) {

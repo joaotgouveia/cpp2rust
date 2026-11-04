@@ -52,6 +52,11 @@ impl Clone for __gnu_test_object_counter {
         __gnu_test_object_counter::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_object_counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_object_counter {
     fn default() -> Self {
         { __gnu_test_object_counter::new() }
@@ -78,6 +83,11 @@ impl __gnu_test_copy_constructor {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_copy_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
@@ -99,6 +109,11 @@ impl __gnu_test_assignment_operator {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_assignment_operator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
@@ -111,6 +126,11 @@ impl __gnu_test_destructor {
     }
     pub fn reset() {
         _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
+    }
+}
+impl CppMove for __gnu_test_destructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -173,6 +193,11 @@ impl Clone for __gnu_test_copy_tracker {
         __gnu_test_copy_tracker::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_copy_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_copy_tracker {
     fn default() -> Self {
         { __gnu_test_copy_tracker::new(None, None) }
@@ -197,6 +222,11 @@ pub struct __gnu_test_semaphore {
     pid_: (),
 }
 impl __gnu_test_semaphore {}
+impl CppMove for __gnu_test_semaphore {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn functionAcceptingStringView_9(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
 }
@@ -211,31 +241,33 @@ pub fn test01_10() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
 #[cpp_from(FnPtr<fn(Ptr< Option<Value<Thingy_11  >>  > ,i32  ,)>  , new, value)]
 #[byte_size(1)]
-pub struct PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__
+pub struct PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__
 {
     #[offset(0)]
     #[byte_size(1)]
     pub f: FnPtr<fn(Ptr<Option<Value<Thingy_11>>>, i32)>,
 }
-impl PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { pub fn new ( f : FnPtr<fn(Ptr< Option<Value<Thingy_11  >>  > ,i32  ,)>  , ) -> Self { let f : Value<FnPtr<fn(Ptr< Option<Value<Thingy_11  >>  > ,i32  ,)> >  = Rc::new(RefCell::new(f)) ;
+impl PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { pub fn new ( f : FnPtr<fn(Ptr< Option<Value<Thingy_11  >>  > ,i32  ,)>  , ) -> Self { let f : Value<FnPtr<fn(Ptr< Option<Value<Thingy_11  >>  > ,i32  ,)> >  = Rc::new(RefCell::new(f)) ;
  Self { f : (*f.borrow())  .copy_from()  , }  } }
-impl Callable1<Ptr< Ptr<Option<Value<Thingy_11  >>  >  > , ()  > for PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { fn call(&self, a1: Ptr< Ptr<Option<Value<Thingy_11  >>  >  > ) -> ()   { libcc2rs::with_record_ptr(&mut self.clone(), |__it| PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__Impl::operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___(__it, a1)) } }
-impl Callable2<Ptr< Ptr<Option<Value<Thingy_11  >>  >  > , Ptr< i32  > , ()  > for PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { fn call(&self, a1: Ptr< Ptr<Option<Value<Thingy_11  >>  >  > , a2: Ptr< i32  > ) -> ()   { libcc2rs::with_record_ptr(&mut self.clone(), |__it| PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__Impl::operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy____int(__it, a1, a2)) } }
-impl Default for PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { fn default() -> Self { { PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { f : FnPtr::<fn(Ptr< Option<Value<Thingy_11  >>  > ,i32  ,)>::new ( | _a0 : Ptr< Option<Value<Thingy_11  >>  > , mut _a1 : i32  , | { { } } )  , } } } }
+impl Callable1<Ptr<Option<Value<Thingy_11  >>  >  , ()  > for PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { fn call(&self, a1: Ptr<Option<Value<Thingy_11  >>  >  ) -> ()   { libcc2rs::with_record_ptr(&mut self.clone(), |__it| PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__Impl::operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___(__it, a1)) } }
+impl Callable2<Ptr<Option<Value<Thingy_11  >>  >  , Ptr< i32  > , ()  > for PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { fn call(&self, a1: Ptr<Option<Value<Thingy_11  >>  >  , a2: Ptr< i32  > ) -> ()   { libcc2rs::with_record_ptr(&mut self.clone(), |__it| PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__Impl::operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy____int(__it, a1, a2)) } }
+impl CppMove for PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
+impl Default for PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { fn default() -> Self { { PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { f : FnPtr::<fn(Ptr< Option<Value<Thingy_11  >>  > ,i32  ,)>::new ( | _a0 : Ptr< Option<Value<Thingy_11  >>  > , mut _a1 : i32  , | { { } } )  , } } } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
 #[cpp_from(FnPtr<fn(Ptr< Vec<i8>  > ,i32  ,) -> Ptr< Vec<i8>  > >  , new, value)]
 #[byte_size(1)]
-pub struct PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__
+pub struct PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__
 {
     #[offset(0)]
     #[byte_size(1)]
     pub f: FnPtr<fn(Ptr<Vec<i8>>, i32) -> Ptr<Vec<i8>>>,
 }
-impl PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { pub fn new ( f : FnPtr<fn(Ptr< Vec<i8>  > ,i32  ,) -> Ptr< Vec<i8>  > >  , ) -> Self { let f : Value<FnPtr<fn(Ptr< Vec<i8>  > ,i32  ,) -> Ptr< Vec<i8>  > > >  = Rc::new(RefCell::new(f)) ;
+impl PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { pub fn new ( f : FnPtr<fn(Ptr< Vec<i8>  > ,i32  ,) -> Ptr< Vec<i8>  > >  , ) -> Self { let f : Value<FnPtr<fn(Ptr< Vec<i8>  > ,i32  ,) -> Ptr< Vec<i8>  > > >  = Rc::new(RefCell::new(f)) ;
  Self { f : (*f.borrow())  .copy_from()  , }  } }
-impl Callable1<Ptr< Ptr<Vec<i8  >  >  > , ()  > for PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { fn call(&self, a1: Ptr< Ptr<Vec<i8  >  >  > ) -> ()   { libcc2rs::with_record_ptr(&mut self.clone(), |__it| PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__Impl::operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___(__it, a1)) } }
-impl Callable2<Ptr< Ptr<Vec<i8  >  >  > , Ptr< i32  > , Ptr< Vec<i8>  > > for PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { fn call(&self, a1: Ptr< Ptr<Vec<i8  >  >  > , a2: Ptr< i32  > ) -> Ptr< Vec<i8>  >  { libcc2rs::with_record_ptr(&mut self.clone(), |__it| PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__Impl::operator_call_2_class_std_reference_wrapper_class_std_basic_string_char____int(__it, a1, a2)) } }
-impl Default for PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { fn default() -> Self { { PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { f : FnPtr::<fn(Ptr< Vec<i8>  > ,i32  ,) -> Ptr< Vec<i8>  > >::new ( | s : Ptr< Vec<i8>  > , mut _a1 : i32  , | -> Ptr< Vec<i8>  > { { return (s ).clone()  ;
+impl Callable1<Ptr<Vec<i8  >  >  , ()  > for PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { fn call(&self, a1: Ptr<Vec<i8  >  >  ) -> ()   { libcc2rs::with_record_ptr(&mut self.clone(), |__it| PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__Impl::operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___(__it, a1)) } }
+impl Callable2<Ptr<Vec<i8  >  >  , Ptr< i32  > , Ptr< Vec<i8>  > > for PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { fn call(&self, a1: Ptr<Vec<i8  >  >  , a2: Ptr< i32  > ) -> Ptr< Vec<i8>  >  { libcc2rs::with_record_ptr(&mut self.clone(), |__it| PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__Impl::operator_call_2_class_std_reference_wrapper_class_std_basic_string_char____int(__it, a1, a2)) } }
+impl CppMove for PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
+impl Default for PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { fn default() -> Self { { PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { f : FnPtr::<fn(Ptr< Vec<i8>  > ,i32  ,) -> Ptr< Vec<i8>  > >::new ( | s : Ptr< Vec<i8>  > , mut _a1 : i32  , | -> Ptr< Vec<i8>  > { { return (s ).clone()  ;
  } } )  , } } } }
 pub fn test02_12() {
     let mut thingy: Option<Value<Thingy_11>> = None;
@@ -249,19 +281,24 @@ pub fn test02_12() {
             ({
                 let _a: Value<Ptr<Option<Value<Thingy_11>>>> =
                     Rc::new(RefCell::new(unimplemented!()));
-                PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__Impl :: operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___ ( &Rc::new(RefCell::new(PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ :: new ( { (*func.borrow())  .copy_from()  } , )  )).as_pointer() , _a.as_pointer() , )
+                PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__Impl :: operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___ ( &Rc::new(RefCell::new(PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ :: new ( { (*func.borrow())  .copy_from()  } , )  )).as_pointer() , _a.as_pointer() , )
             }),
         ));
         let ___call_args: Value<i32> = Rc::new(RefCell::new(10));
         ({
             let _a: Value<Ptr<Option<Value<Thingy_11>>>> = Rc::new(RefCell::new(unimplemented!()));
-            PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__Impl :: operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___ ( &Rc::new(RefCell::new(PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ :: new ( { (*func.borrow())  .copy_from()  } , )  )).as_pointer() , _a.as_pointer() , )
+            PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__Impl :: operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___ ( &Rc::new(RefCell::new(PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ :: new ( { (*func.borrow())  .copy_from()  } , )  )).as_pointer() , _a.as_pointer() , )
         })(___self.as_pointer(), ___call_args.as_pointer())
     });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Thingy_11 {}
+impl CppMove for Thingy_11 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test03_13() {
     let str: Value<Vec<i8>> = Rc::new(RefCell::new(vec![i8::default()]));
     let func: Value<FnPtr<fn(Ptr<Vec<i8>>, i32) -> Ptr<Vec<i8>>>> = Rc::new(RefCell::new(FnPtr::<
@@ -273,7 +310,7 @@ pub fn test03_13() {
             }
         },
     )));
-    let sref : Ptr< Vec<i8>  > = (( { let ___self : Value<() > = Rc::new(RefCell::new(( { let _a : Value<Ptr<Vec<i8  >  > > = Rc::new(RefCell::new(unimplemented!()  )); PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__Impl :: operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___ ( &Rc::new(RefCell::new(PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ :: new ( { (*func.borrow())  .copy_from()  } , )  )).as_pointer() , _a.as_pointer() , ) } )  )); let ___call_args : Value<i32 > = Rc::new(RefCell::new(10 )); ( { let _a : Value<Ptr<Vec<i8  >  > > = Rc::new(RefCell::new(unimplemented!()  )); PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__Impl :: operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___ ( &Rc::new(RefCell::new(PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ :: new ( { (*func.borrow())  .copy_from()  } , )  )).as_pointer() , _a.as_pointer() , ) } )  ( ___self.as_pointer() , ___call_args.as_pointer() , ) } ) ).reinterpret_cast::<Vec<i8>  >()  ;
+    let sref : Ptr< Vec<i8>  > = (( { let ___self : Value<() > = Rc::new(RefCell::new(( { let _a : Value<Ptr<Vec<i8  >  > > = Rc::new(RefCell::new(unimplemented!()  )); PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__Impl :: operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___ ( &Rc::new(RefCell::new(PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ :: new ( { (*func.borrow())  .copy_from()  } , )  )).as_pointer() , _a.as_pointer() , ) } )  )); let ___call_args : Value<i32 > = Rc::new(RefCell::new(10 )); ( { let _a : Value<Ptr<Vec<i8  >  > > = Rc::new(RefCell::new(unimplemented!()  )); PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__Impl :: operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___ ( &Rc::new(RefCell::new(PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ :: new ( { (*func.borrow())  .copy_from()  } , )  )).as_pointer() , _a.as_pointer() , ) } )  ( ___self.as_pointer() , ___call_args.as_pointer() , ) } ) ).reinterpret_cast::<Vec<i8>  >()  ;
     let c: Ptr<i8> = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -435,22 +472,36 @@ pub fn run_tests_wrapped_env_18(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !(libc::setenv(env, name, 1) != 0) {
+    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+        true => {
+            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
+            0
+        }
+        false => 0,
+    } != 0)
+    {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: i32 = 0;
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        libc::setenv(
-            env,
+        match ({
             if !(oldENV).is_null() {
                 (oldENV).clone()
             } else {
                 Ptr::<i8>::from_string_literal(b"")
+            }
+        },)
+        {
+            (mut __tmp_0,) => match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+                true => {
+                    unsafe { ::std::env::set_var(env.to_rust_string(), __tmp_0.to_rust_string()) };
+                    0
+                }
+                false => 0,
             },
-            1,
-        );
+        };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = env.to_c_bytes();
@@ -501,6 +552,11 @@ impl __gnu_test_semun {
         this.reinterpret_cast()
     }
 }
+impl CppMove for __gnu_test_semun {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_semun {
     fn default() -> Self {
         __gnu_test_semun {
@@ -534,39 +590,39 @@ pub fn test_tm_19(
 thread_local!(
     static tmp_20: Value<libcc2rs::Tm> = Rc::new(RefCell::new(Default::default()));
 );
-pub trait PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__Impl
+pub trait PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__Impl
 {
     fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___(
         &self,
-        a: Ptr<Ptr<Option<Value<Thingy_11>>>>,
+        a: Ptr<Option<Value<Thingy_11>>>,
     ) -> ();
     fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy____int(
         &self,
-        a_0: Ptr<Ptr<Option<Value<Thingy_11>>>>,
+        a_0: Ptr<Option<Value<Thingy_11>>>,
         a_1: Ptr<i32>,
     );
 }
-impl PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__Impl for Ptr<PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__> {
-fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___ ( &self , a : Ptr< Ptr<Option<Value<Thingy_11  >>  >  > , ) -> ()  { { return unimplemented!()    ;
- } panic!("ub: non-void function does not return a value") } fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy____int ( &self , a_0 : Ptr< Ptr<Option<Value<Thingy_11  >>  >  > , a_1 : Ptr< i32  > , ) { { ( { let _arg0: Ptr< Option<Value<Thingy_11  >>  >  = ((*a_0.upgrade().deref())   ).clone() ; let _arg1: i32   = (a_1.read())  ; (*(* self ) .upgrade().deref()) . f   .call ( _arg0 , _arg1 , ) } ) ;
+impl PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__Impl for Ptr<PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__> {
+fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___ ( &self , a : Ptr<Option<Value<Thingy_11  >>  >  , ) -> ()  { { return unimplemented!()    ;
+ } panic!("ub: non-void function does not return a value") } fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy____int ( &self , a_0 : Ptr<Option<Value<Thingy_11  >>  >  , a_1 : Ptr< i32  > , ) { { ( { let _arg0: Ptr< Option<Value<Thingy_11  >>  >  = (a_0   ).clone() ; let _arg1: i32   = (a_1.read())  ; (*(* self ) .upgrade().deref()) . f   .call ( _arg0 , _arg1 , ) } ) ;
  return ;
  ;
  } } }
-pub trait PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__Impl
+pub trait PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__Impl
 {
     fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___(
         &self,
-        a: Ptr<Ptr<Vec<i8>>>,
+        a: Ptr<Vec<i8>>,
     ) -> ();
     fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char____int(
         &self,
-        a_0: Ptr<Ptr<Vec<i8>>>,
+        a_0: Ptr<Vec<i8>>,
         a_1: Ptr<i32>,
     ) -> Ptr<Vec<i8>>;
 }
-impl PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__Impl for Ptr<PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__> {
-fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___ ( &self , a : Ptr< Ptr<Vec<i8  >  >  > , ) -> ()  { { return unimplemented!()    ;
- } panic!("ub: non-void function does not return a value") } fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char____int ( &self , a_0 : Ptr< Ptr<Vec<i8  >  >  > , a_1 : Ptr< i32  > , ) -> Ptr< Vec<i8>  > { { return (( { let _s: Ptr< Vec<i8>  >  = ((*a_0.upgrade().deref())   ).reinterpret_cast::<Vec<i8>  >()  ; let _arg1: i32   = (a_1.read())  ; (*(* self ) .upgrade().deref()) . f   .call ( _s , _arg1 , ) } ) ).clone()  ;
+impl PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__Impl for Ptr<PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__> {
+fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___ ( &self , a : Ptr<Vec<i8  >  >  , ) -> ()  { { return unimplemented!()    ;
+ } panic!("ub: non-void function does not return a value") } fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char____int ( &self , a_0 : Ptr<Vec<i8  >  >  , a_1 : Ptr< i32  > , ) -> Ptr< Vec<i8>  > { { return (( { let _s: Ptr< Vec<i8>  >  = (a_0   ).reinterpret_cast::<Vec<i8>  >()  ; let _arg1: i32   = (a_1.read())  ; (*(* self ) .upgrade().deref()) . f   .call ( _s , _arg1 , ) } ) ).clone()  ;
  } panic!("ub: non-void function does not return a value") } }
 pub trait __gnu_test_copy_trackerImpl {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker>;
@@ -610,7 +666,9 @@ impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
     }
     fn push_back(&self, mut test: FnPtr<fn()>) {
         array_elem!((*self), _M_tests, (*self).with(|__s| __s._M_size)).write((test).clone());
-        field!((*self), _M_size).with_mut(|__v| __v.prefix_inc());
+        field!((*self), _M_size).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait __gnu_test_object_counterImpl {

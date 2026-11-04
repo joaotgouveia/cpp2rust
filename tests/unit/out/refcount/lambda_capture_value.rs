@@ -14,6 +14,11 @@ pub struct S {
     #[offset(4)]
     pub y: i32,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn read_0(v: Ptr<i32>) -> i32 {
     return (v.read());
 }

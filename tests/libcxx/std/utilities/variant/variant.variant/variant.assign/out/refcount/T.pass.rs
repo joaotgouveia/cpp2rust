@@ -44,6 +44,11 @@ pub fn operator_bitor_2(mut LHS: CallType, mut RHS: CallType) -> CallType {
 #[cpp_into(i32, to_i32)]
 #[byte_size(1)]
 pub struct ForwardingCallObject {}
+impl CppMove for ForwardingCallObject {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static last_call_type_3: Value<CallType> = Rc::new(RefCell::new(CallType_CT_None));
 );
@@ -53,12 +58,27 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnFirst {}
+impl CppMove for ReturnFirst {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnArity {}
+impl CppMove for ReturnArity {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct MetaHelpers_Dummy {}
+impl CppMove for MetaHelpers_Dummy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(i32, new, value)]
 #[byte_size(1)]
@@ -66,6 +86,11 @@ pub struct MetaHelpers_ThrowsCtorT {}
 impl MetaHelpers_ThrowsCtorT {
     pub fn new(mut _a0: i32) -> Self {
         Self {}
+    }
+}
+impl CppMove for MetaHelpers_ThrowsCtorT {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
@@ -77,6 +102,11 @@ impl MetaHelpers_ThrowsAssignT {
         Self {}
     }
 }
+impl CppMove for MetaHelpers_ThrowsAssignT {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(i32, new, value)]
 #[byte_size(1)]
@@ -84,6 +114,11 @@ pub struct MetaHelpers_NoThrowT {}
 impl MetaHelpers_NoThrowT {
     pub fn new(mut _a0: i32) -> Self {
         Self {}
+    }
+}
+impl CppMove for MetaHelpers_NoThrowT {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn test_T_assignment_noexcept_5() {
@@ -122,53 +157,79 @@ pub fn test_T_assignment_sfinae_6() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct X_7 {}
+impl CppMove for X_7 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct X_8 {}
+impl CppMove for X_8 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Y_9 {}
+impl CppMove for Y_9 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_T_assignment_basic_10() {
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 0_usize));
-        assert!(((unimplemented!().read()) == 42));
+        let v: Value<std_variant_int_> = Rc::new(RefCell::new(43));
+        (*v.borrow_mut()) = 42;
+        assert!(({ (({ (*v.borrow()).index() }) == 0_usize) }));
+        assert!(((({ get_11(v.as_pointer(),) }).read()) == 42));
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 0_usize));
-        assert!(((unimplemented!().read()) == 42));
-        unimplemented!();
-        assert!((unimplemented!() == 1_usize));
-        assert!(((unimplemented!().read()) == 43_()));
+        let v: Value<std_variant_int__long_> = Rc::new(RefCell::new(43_i64));
+        (*v.borrow_mut()) = 42;
+        assert!(({ (({ (*v.borrow()).index() }) == 0_usize) }));
+        assert!(((({ get_12(v.as_pointer(),) }).read()) == 42));
+        (*v.borrow_mut()) = 43_i64;
+        assert!(({ (({ (*v.borrow()).index() }) == 1_usize) }));
+        assert!(((({ get_13(v.as_pointer(),) }).read()) == 43_i64));
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 1_usize));
-        assert!(((unimplemented!().read()) == 42_()));
-        unimplemented!();
-        assert!((unimplemented!() == 0_usize));
-        assert!(((unimplemented!().read()) == 43_()));
+        let v: Value<std_variant_unsigned_int__long_> =
+            Rc::new(RefCell::new(<std_variant_unsigned_int__long_>::default()));
+        (*v.borrow_mut()) = 42;
+        assert!(({ (({ (*v.borrow()).index() }) == 1_usize) }));
+        assert!(((({ get_14(v.as_pointer(),) }).read()) == 42_i64));
+        (*v.borrow_mut()) = 43_u32;
+        assert!(({ (({ (*v.borrow()).index() }) == 0_usize) }));
+        assert!(((({ get_15(v.as_pointer(),) }).read()) == 43_u32));
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 0_usize));
+        let v: Value<
+            std_variant_std_basic_string_char__std_char_traits_char___std_allocator_char____bool_,
+        > = Rc::new(RefCell::new(true));
+        (*v.borrow_mut()) = b"bar";
+        assert!(({ (({ (*v.borrow()).index() }) == 0_usize) }));
         assert!(
-            Ptr::<i8>::from_string_literal(b"bar").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                match (({ get_16(v.as_pointer()) }),) {
+                    (__tmp_0,) => Ptr::<i8>::from_string_literal(b"bar").with_c_str(|__s| {
+                        (*__tmp_0.upgrade().deref())
+                            [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    }),
+                }
+            })
         );
     }
 }
-pub fn test_T_assignment_basic_no_constexpr_11() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 1_usize));
-    assert!((unimplemented!()).clone().is_none());
+pub fn test_T_assignment_basic_no_constexpr_17() {
+    let v: Value<std_variant_bool__std_unique_ptr_int__std_default_delete_int___> = Rc::new(
+        RefCell::new(<std_variant_bool__std_unique_ptr_int__std_default_delete_int___>::default()),
+    );
+    (*v.borrow_mut()) = Default::default();
+    assert!(({ (({ (*v.borrow()).index() }) == 1_usize) }));
+    assert!(({ (*({ get_18(v.as_pointer(),) }).upgrade().deref()).is_none() }));
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(32)]
@@ -190,6 +251,11 @@ pub struct TraceStat {
     #[offset(28)]
     pub destroy: i32,
 }
+impl CppMove for TraceStat {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for TraceStat {
     fn default() -> Self {
         {
@@ -209,6 +275,11 @@ impl Default for TraceStat {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Trace_false__false__T {}
+impl CppMove for Trace_false__false__T {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, MoveAssign, Destructor, Default)]
 #[cpp_from(Ptr< TraceStat  >  , new_1, value)]
 #[cpp_from(Trace_false__false__T, new_2, value)]
@@ -221,7 +292,9 @@ pub struct Trace_false__false_ {
 impl Trace_false__false_ {
     pub fn new_1(mut s: Ptr<TraceStat>) -> Self {
         let __this: Trace_false__false_ = Self { stat: (s).clone() };
-        field!(s, construct).with_mut(|__v| __v.prefix_inc());
+        field!(s, construct).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         __this
     }
     pub fn new_2(mut _a0: Trace_false__false__T) -> Self {
@@ -233,6 +306,11 @@ impl Trace_false__false_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Trace_false__true__T {}
+impl CppMove for Trace_false__true__T {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign, Destructor, Default)]
 #[cpp_from(Ptr< TraceStat  >  , new_1, value)]
 #[byte_size(8)]
@@ -244,7 +322,9 @@ pub struct Trace_false__true_ {
 impl Trace_false__true_ {
     pub fn new_1(mut s: Ptr<TraceStat>) -> Self {
         let __this: Trace_false__true_ = Self { stat: (s).clone() };
-        field!(s, construct).with_mut(|__v| __v.prefix_inc());
+        field!(s, construct).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         __this
     }
     pub fn move_from(o: Ptr<Trace_false__true_>) -> Self {
@@ -252,13 +332,25 @@ impl Trace_false__true_ {
             stat: o.with(|__s| __s.stat.clone()),
         }));
         let this: Ptr<Trace_false__true_> = __this.as_pointer();
-        field!(this.with(|__s| __s.stat.clone()), move_construct).with_mut(|__v| __v.prefix_inc());
+        field!(this.with(|__s| __s.stat.clone()), move_construct).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+}
+impl CppMove for Trace_false__true_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Trace_true__false__T {}
+impl CppMove for Trace_true__false__T {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, MoveAssign, Destructor, Default)]
 #[cpp_from(Ptr< TraceStat  >  , new_1, value)]
 #[byte_size(8)]
@@ -270,13 +362,20 @@ pub struct Trace_true__false_ {
 impl Trace_true__false_ {
     pub fn new_1(mut s: Ptr<TraceStat>) -> Self {
         let __this: Trace_true__false_ = Self { stat: (s).clone() };
-        field!(s, construct).with_mut(|__v| __v.prefix_inc());
+        field!(s, construct).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         __this
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Trace_true__true__T {}
+impl CppMove for Trace_true__true__T {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, MoveAssign, Destructor, Default)]
 #[cpp_from(Ptr< TraceStat  >  , new_1, value)]
 #[byte_size(8)]
@@ -288,106 +387,112 @@ pub struct Trace_true__true_ {
 impl Trace_true__true_ {
     pub fn new_1(mut s: Ptr<TraceStat>) -> Self {
         let __this: Trace_true__true_ = Self { stat: (s).clone() };
-        field!(s, construct).with_mut(|__v| __v.prefix_inc());
+        field!(s, construct).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         __this
     }
 }
-pub fn test_T_assignment_performs_construction_12() {
+pub fn test_T_assignment_performs_construction_19() {
     {
         let stat: Value<TraceStat> = Rc::new(RefCell::new(<TraceStat>::default()));
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(({ (*stat.borrow()).construct } == 1));
-        assert!(({ (*stat.borrow()).copy_construct } == 0));
-        assert!(({ (*stat.borrow()).move_construct } == 0));
-        assert!(({ (*stat.borrow()).copy_assign } == 0));
-        assert!(({ (*stat.borrow()).move_assign } == 0));
-        assert!(({ (*stat.borrow()).destroy } == 0));
+        let v: Value<std_variant_int__Trace_false__false__> = Rc::new(RefCell::new(1));
+        (*v.borrow_mut()) = (stat.as_pointer());
+        assert!(({ ({ (*stat.borrow()).construct } == 1) }));
+        assert!(({ ({ (*stat.borrow()).copy_construct } == 0) }));
+        assert!(({ ({ (*stat.borrow()).move_construct } == 0) }));
+        assert!(({ ({ (*stat.borrow()).copy_assign } == 0) }));
+        assert!(({ ({ (*stat.borrow()).move_assign } == 0) }));
+        assert!(({ ({ (*stat.borrow()).destroy } == 0) }));
     }
     {
         let stat: Value<TraceStat> = Rc::new(RefCell::new(<TraceStat>::default()));
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(({ (*stat.borrow()).construct } == 1));
-        assert!(({ (*stat.borrow()).copy_construct } == 0));
-        assert!(({ (*stat.borrow()).move_construct } == 1));
-        assert!(({ (*stat.borrow()).copy_assign } == 0));
-        assert!(({ (*stat.borrow()).move_assign } == 0));
-        assert!(({ (*stat.borrow()).destroy } == 1));
+        let v: Value<std_variant_int__Trace_false__true__> = Rc::new(RefCell::new(1));
+        (*v.borrow_mut()) = (stat.as_pointer());
+        assert!(({ ({ (*stat.borrow()).construct } == 1) }));
+        assert!(({ ({ (*stat.borrow()).copy_construct } == 0) }));
+        assert!(({ ({ (*stat.borrow()).move_construct } == 1) }));
+        assert!(({ ({ (*stat.borrow()).copy_assign } == 0) }));
+        assert!(({ ({ (*stat.borrow()).move_assign } == 0) }));
+        assert!(({ ({ (*stat.borrow()).destroy } == 1) }));
     }
     {
         let stat: Value<TraceStat> = Rc::new(RefCell::new(<TraceStat>::default()));
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(({ (*stat.borrow()).construct } == 1));
-        assert!(({ (*stat.borrow()).copy_construct } == 0));
-        assert!(({ (*stat.borrow()).move_construct } == 0));
-        assert!(({ (*stat.borrow()).copy_assign } == 0));
-        assert!(({ (*stat.borrow()).move_assign } == 0));
-        assert!(({ (*stat.borrow()).destroy } == 0));
+        let v: Value<std_variant_int__Trace_true__false__> = Rc::new(RefCell::new(1));
+        (*v.borrow_mut()) = (stat.as_pointer());
+        assert!(({ ({ (*stat.borrow()).construct } == 1) }));
+        assert!(({ ({ (*stat.borrow()).copy_construct } == 0) }));
+        assert!(({ ({ (*stat.borrow()).move_construct } == 0) }));
+        assert!(({ ({ (*stat.borrow()).copy_assign } == 0) }));
+        assert!(({ ({ (*stat.borrow()).move_assign } == 0) }));
+        assert!(({ ({ (*stat.borrow()).destroy } == 0) }));
     }
     {
         let stat: Value<TraceStat> = Rc::new(RefCell::new(<TraceStat>::default()));
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(({ (*stat.borrow()).construct } == 1));
-        assert!(({ (*stat.borrow()).copy_construct } == 0));
-        assert!(({ (*stat.borrow()).move_construct } == 0));
-        assert!(({ (*stat.borrow()).copy_assign } == 0));
-        assert!(({ (*stat.borrow()).move_assign } == 0));
-        assert!(({ (*stat.borrow()).destroy } == 0));
-    }
-}
-pub fn test_T_assignment_performs_assignment_13() {
-    {
-        let stat: Value<TraceStat> = Rc::new(RefCell::new(<TraceStat>::default()));
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(({ (*stat.borrow()).construct } == 1));
-        assert!(({ (*stat.borrow()).copy_construct } == 0));
-        assert!(({ (*stat.borrow()).move_construct } == 0));
-        assert!(({ (*stat.borrow()).copy_assign } == 0));
-        assert!(({ (*stat.borrow()).move_assign } == 0));
-        assert!(({ (*stat.borrow()).T_copy_assign } == 0));
-        assert!(({ (*stat.borrow()).T_move_assign } == 1));
-        assert!(({ (*stat.borrow()).destroy } == 0));
-    }
-    {
-        let stat: Value<TraceStat> = Rc::new(RefCell::new(<TraceStat>::default()));
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut t: Trace_false__false__T = <Trace_false__false__T>::default();
-        unimplemented!();
-        assert!(({ (*stat.borrow()).construct } == 1));
-        assert!(({ (*stat.borrow()).copy_construct } == 0));
-        assert!(({ (*stat.borrow()).move_construct } == 0));
-        assert!(({ (*stat.borrow()).copy_assign } == 0));
-        assert!(({ (*stat.borrow()).move_assign } == 0));
-        assert!(({ (*stat.borrow()).T_copy_assign } == 1));
-        assert!(({ (*stat.borrow()).T_move_assign } == 0));
-        assert!(({ (*stat.borrow()).destroy } == 0));
+        let v: Value<std_variant_int__Trace_true__true__> = Rc::new(RefCell::new(1));
+        (*v.borrow_mut()) = (stat.as_pointer());
+        assert!(({ ({ (*stat.borrow()).construct } == 1) }));
+        assert!(({ ({ (*stat.borrow()).copy_construct } == 0) }));
+        assert!(({ ({ (*stat.borrow()).move_construct } == 0) }));
+        assert!(({ ({ (*stat.borrow()).copy_assign } == 0) }));
+        assert!(({ ({ (*stat.borrow()).move_assign } == 0) }));
+        assert!(({ ({ (*stat.borrow()).destroy } == 0) }));
     }
 }
-pub fn test_T_assignment_performs_construction_throw_14() {}
-pub fn test_T_assignment_performs_assignment_throw_15() {}
-pub fn test_T_assignment_vector_bool_16() {
+pub fn test_T_assignment_performs_assignment_20() {
+    {
+        let stat: Value<TraceStat> = Rc::new(RefCell::new(<TraceStat>::default()));
+        let v: Value<std_variant_int__Trace_false__false__> =
+            Rc::new(RefCell::new((stat.as_pointer())));
+        (*v.borrow_mut()) = <Trace_false__false__T>::default();
+        assert!(({ ({ (*stat.borrow()).construct } == 1) }));
+        assert!(({ ({ (*stat.borrow()).copy_construct } == 0) }));
+        assert!(({ ({ (*stat.borrow()).move_construct } == 0) }));
+        assert!(({ ({ (*stat.borrow()).copy_assign } == 0) }));
+        assert!(({ ({ (*stat.borrow()).move_assign } == 0) }));
+        assert!(({ ({ (*stat.borrow()).T_copy_assign } == 0) }));
+        assert!(({ ({ (*stat.borrow()).T_move_assign } == 1) }));
+        assert!(({ ({ (*stat.borrow()).destroy } == 0) }));
+    }
+    {
+        let stat: Value<TraceStat> = Rc::new(RefCell::new(<TraceStat>::default()));
+        let v: Value<std_variant_int__Trace_false__false__> =
+            Rc::new(RefCell::new((stat.as_pointer())));
+        let t: Value<Trace_false__false__T> =
+            Rc::new(RefCell::new(<Trace_false__false__T>::default()));
+        (*v.borrow_mut()) = (*t.borrow()).clone();
+        assert!(({ ({ (*stat.borrow()).construct } == 1) }));
+        assert!(({ ({ (*stat.borrow()).copy_construct } == 0) }));
+        assert!(({ ({ (*stat.borrow()).move_construct } == 0) }));
+        assert!(({ ({ (*stat.borrow()).copy_assign } == 0) }));
+        assert!(({ ({ (*stat.borrow()).move_assign } == 0) }));
+        assert!(({ ({ (*stat.borrow()).T_copy_assign } == 1) }));
+        assert!(({ ({ (*stat.borrow()).T_move_assign } == 0) }));
+        assert!(({ ({ (*stat.borrow()).destroy } == 0) }));
+    }
+}
+pub fn test_T_assignment_performs_construction_throw_21() {}
+pub fn test_T_assignment_performs_assignment_throw_22() {}
+pub fn test_T_assignment_vector_bool_23() {
     let vec_: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::from([true])));
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 0_usize));
-    assert!((((unimplemented!().read()) as i32) == (true as i32)));
+    let v: Value<std_variant_bool__int_> =
+        Rc::new(RefCell::new(<std_variant_bool__int_>::default()));
+    (*v.borrow_mut()) = vec_.decay().offset(0_usize as isize);
+    assert!(({ (({ (*v.borrow()).index() }) == 0_usize) }));
+    assert!((((({ get_24(v.as_pointer(),) }).read()) as i32) == (true as i32)));
 }
-pub fn non_constexpr_test_17() {
-    ({ test_T_assignment_basic_no_constexpr_11() });
-    ({ test_T_assignment_performs_construction_throw_14() });
-    ({ test_T_assignment_performs_assignment_throw_15() });
+pub fn non_constexpr_test_25() {
+    ({ test_T_assignment_basic_no_constexpr_17() });
+    ({ test_T_assignment_performs_construction_throw_21() });
+    ({ test_T_assignment_performs_assignment_throw_22() });
 }
-pub fn test_18() -> bool {
+pub fn test_26() -> bool {
     ({ test_T_assignment_basic_10() });
-    ({ test_T_assignment_performs_construction_12() });
-    ({ test_T_assignment_performs_assignment_13() });
+    ({ test_T_assignment_performs_construction_19() });
+    ({ test_T_assignment_performs_assignment_20() });
     ({ test_T_assignment_noexcept_5() });
     ({ test_T_assignment_sfinae_6() });
-    ({ test_T_assignment_vector_bool_16() });
+    ({ test_T_assignment_vector_bool_23() });
     return true;
 }
 pub fn main() {
@@ -410,8 +515,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_18() });
-    ({ non_constexpr_test_17() });
+    ({ test_26() });
+    ({ non_constexpr_test_25() });
     const _: () = assert!(true, "test()");;
     return 0;
 }
@@ -458,21 +563,27 @@ pub trait Trace_false__false_Impl {
 }
 impl Trace_false__false_Impl for Ptr<Trace_false__false_> {
     fn move_assign(&self, _a0: Ptr<Trace_false__false_>) -> Ptr<Trace_false__false_> {
-        field!((*self).with(|__s| __s.stat.clone()), move_assign).with_mut(|__v| __v.prefix_inc());
+        field!((*self).with(|__s| __s.stat.clone()), move_assign).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_assign_7(&self, _a0: Ptr<Trace_false__false__T>) -> Ptr<Trace_false__false_> {
-        field!((*self).with(|__s| __s.stat.clone()), T_copy_assign)
-            .with_mut(|__v| __v.prefix_inc());
+        field!((*self).with(|__s| __s.stat.clone()), T_copy_assign).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_assign_8(&self, _a0: Ptr<Trace_false__false__T>) -> Ptr<Trace_false__false_> {
-        field!((*self).with(|__s| __s.stat.clone()), T_move_assign)
-            .with_mut(|__v| __v.prefix_inc());
+        field!((*self).with(|__s| __s.stat.clone()), T_move_assign).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn destructor(&self) {
-        field!((*self).with(|__s| __s.stat.clone()), destroy).with_mut(|__v| __v.prefix_inc());
+        field!((*self).with(|__s| __s.stat.clone()), destroy).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait Trace_false__true_Impl {
@@ -490,11 +601,15 @@ pub trait Trace_false__true_Impl {
 }
 impl Trace_false__true_Impl for Ptr<Trace_false__true_> {
     fn move_assign(&self, _a0: Ptr<Trace_false__true_>) -> Ptr<Trace_false__true_> {
-        field!((*self).with(|__s| __s.stat.clone()), move_assign).with_mut(|__v| __v.prefix_inc());
+        field!((*self).with(|__s| __s.stat.clone()), move_assign).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn destructor(&self) {
-        field!((*self).with(|__s| __s.stat.clone()), destroy).with_mut(|__v| __v.prefix_inc());
+        field!((*self).with(|__s| __s.stat.clone()), destroy).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait Trace_true__false_Impl {
@@ -512,11 +627,15 @@ pub trait Trace_true__false_Impl {
 }
 impl Trace_true__false_Impl for Ptr<Trace_true__false_> {
     fn move_assign(&self, _a0: Ptr<Trace_true__false_>) -> Ptr<Trace_true__false_> {
-        field!((*self).with(|__s| __s.stat.clone()), move_assign).with_mut(|__v| __v.prefix_inc());
+        field!((*self).with(|__s| __s.stat.clone()), move_assign).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn destructor(&self) {
-        field!((*self).with(|__s| __s.stat.clone()), destroy).with_mut(|__v| __v.prefix_inc());
+        field!((*self).with(|__s| __s.stat.clone()), destroy).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait Trace_true__true_Impl {
@@ -534,11 +653,15 @@ pub trait Trace_true__true_Impl {
 }
 impl Trace_true__true_Impl for Ptr<Trace_true__true_> {
     fn move_assign(&self, _a0: Ptr<Trace_true__true_>) -> Ptr<Trace_true__true_> {
-        field!((*self).with(|__s| __s.stat.clone()), move_assign).with_mut(|__v| __v.prefix_inc());
+        field!((*self).with(|__s| __s.stat.clone()), move_assign).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn destructor(&self) {
-        field!((*self).with(|__s| __s.stat.clone()), destroy).with_mut(|__v| __v.prefix_inc());
+        field!((*self).with(|__s| __s.stat.clone()), destroy).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait TypeIDImpl {

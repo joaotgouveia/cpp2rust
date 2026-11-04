@@ -82,6 +82,11 @@ impl CppAdvance for SomeInt {
         __it.operator_dec_5();
     }
 }
+impl CppMove for SomeInt {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for SomeInt {
     fn default() -> Self {
         { SomeInt::new(None) }
@@ -138,6 +143,11 @@ impl CppAdvance for NotIncrementable {
         __it.operator_dec();
     }
 }
+impl CppMove for NotIncrementable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for NotIncrementable {
     fn default() -> Self {
         { NotIncrementable::new(None) }
@@ -192,6 +202,11 @@ impl CppAdvance for NotDecrementable {
         __it.operator_inc_3();
     }
 }
+impl CppMove for NotDecrementable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for NotDecrementable {
     fn default() -> Self {
         { NotDecrementable::new(None) }
@@ -202,24 +217,34 @@ pub const CtorKind_DefaultTo42: CtorKind = 0;
 pub const CtorKind_ValueCtor: CtorKind = 1;
 pub fn testType_18() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_::new_1({
+                    SomeInt::new({ Some(0) })
+                }),
+            ));
         assert!(
             ({
                 let _arg0: Value<SomeInt> = Rc::new(RefCell::new(SomeInt::new({ Some(0) })));
                 SomeIntImpl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*io.borrow()).begin() }).iter_deref())).as_pointer(),
                     _arg0.as_pointer(),
                 )
             })
         );
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_::new_1({
+                    SomeInt::new({ Some(10) })
+                }),
+            ));
         assert!(
             ({
                 let _arg0: Value<SomeInt> = Rc::new(RefCell::new(SomeInt::new({ Some(10) })));
                 SomeIntImpl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*io.borrow()).begin() }).iter_deref())).as_pointer(),
                     _arg0.as_pointer(),
                 )
             })
@@ -228,31 +253,41 @@ pub fn testType_18() {
             ({
                 let _arg0: Value<SomeInt> = Rc::new(RefCell::new(SomeInt::new({ Some(10) })));
                 SomeIntImpl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*io.borrow()).begin() }).iter_deref())).as_pointer(),
                     _arg0.as_pointer(),
                 )
             })
         );
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_::new_1({
+                    SomeInt::new({ Some(0) })
+                }),
+            ));
         assert!(
             ({
                 let _arg0: Value<SomeInt> = Rc::new(RefCell::new(SomeInt::new({ Some(0) })));
                 SomeIntImpl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*io.borrow()).begin() }).iter_deref())).as_pointer(),
                     _arg0.as_pointer(),
                 )
             })
         );
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let io: Value<std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_::new_1({
+                    SomeInt::new({ Some(10) })
+                }),
+            ));
         assert!(
             ({
                 let _arg0: Value<SomeInt> = Rc::new(RefCell::new(SomeInt::new({ Some(10) })));
                 SomeIntImpl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*io.borrow()).begin() }).iter_deref())).as_pointer(),
                     _arg0.as_pointer(),
                 )
             })
@@ -261,192 +296,318 @@ pub fn testType_18() {
 }
 pub fn testType_19() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_i128));
+        let io: Value<std_ranges_iota_view___int128__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view___int128__std_unreachable_sentinel_t_::new_1({ 0_i128 }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 0_i128));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10_i128));
-        assert!((unimplemented!() == 10_i128));
+        let io: Value<std_ranges_iota_view___int128__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view___int128__std_unreachable_sentinel_t_::new_1({ 10_i128 }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_i128));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_i128));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_i128));
+        let io: Value<std_ranges_iota_view___int128__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view___int128__std_unreachable_sentinel_t_::new_1({ 0_i128 }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 0_i128));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10_i128));
+        let io: Value<std_ranges_iota_view___int128__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view___int128__std_unreachable_sentinel_t_::new_1({ 10_i128 }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_i128));
     }
 }
 pub fn testType_20() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_u128));
+        let io: Value<std_ranges_iota_view_unsigned___int128__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned___int128__std_unreachable_sentinel_t_::new_1({
+                    0_u128
+                }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 0_u128));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10_u128));
-        assert!((unimplemented!() == 10_u128));
+        let io: Value<std_ranges_iota_view_unsigned___int128__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned___int128__std_unreachable_sentinel_t_::new_1({
+                    10_u128
+                }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_u128));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_u128));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_u128));
+        let io: Value<std_ranges_iota_view_unsigned___int128__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned___int128__std_unreachable_sentinel_t_::new_1({
+                    0_u128
+                }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 0_u128));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10_u128));
+        let io: Value<std_ranges_iota_view_unsigned___int128__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned___int128__std_unreachable_sentinel_t_::new_1({
+                    10_u128
+                }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_u128));
     }
 }
 pub fn testType_21() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_i64));
+        let io: Value<std_ranges_iota_view_long_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_long_long__std_unreachable_sentinel_t_::new_1({ 0_i64 }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 0_i64));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10_i64));
-        assert!((unimplemented!() == 10_i64));
+        let io: Value<std_ranges_iota_view_long_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_long_long__std_unreachable_sentinel_t_::new_1({ 10_i64 }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_i64));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_i64));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_i64));
+        let io: Value<std_ranges_iota_view_long_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_long_long__std_unreachable_sentinel_t_::new_1({ 0_i64 }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 0_i64));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10_i64));
+        let io: Value<std_ranges_iota_view_long_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_long_long__std_unreachable_sentinel_t_::new_1({ 10_i64 }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_i64));
     }
 }
 pub fn testType_22() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_u64));
+        let io: Value<std_ranges_iota_view_unsigned_long_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_long_long__std_unreachable_sentinel_t_::new_1({
+                    0_u64
+                }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 0_u64));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10_u64));
-        assert!((unimplemented!() == 10_u64));
+        let io: Value<std_ranges_iota_view_unsigned_long_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_long_long__std_unreachable_sentinel_t_::new_1({
+                    10_u64
+                }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_u64));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_u64));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_u64));
+        let io: Value<std_ranges_iota_view_unsigned_long_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_long_long__std_unreachable_sentinel_t_::new_1({
+                    0_u64
+                }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 0_u64));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10_u64));
+        let io: Value<std_ranges_iota_view_unsigned_long_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_long_long__std_unreachable_sentinel_t_::new_1({
+                    10_u64
+                }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_u64));
     }
 }
 pub fn testType_23() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_i64));
+        let io: Value<std_ranges_iota_view_long__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_long__std_unreachable_sentinel_t_::new_1({ 0_i64 })),
+        );
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 0_i64));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10_i64));
-        assert!((unimplemented!() == 10_i64));
+        let io: Value<std_ranges_iota_view_long__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_long__std_unreachable_sentinel_t_::new_1({ 10_i64 })),
+        );
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_i64));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_i64));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_i64));
+        let io: Value<std_ranges_iota_view_long__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_long__std_unreachable_sentinel_t_::new_1({ 0_i64 })),
+        );
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 0_i64));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10_i64));
+        let io: Value<std_ranges_iota_view_long__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_long__std_unreachable_sentinel_t_::new_1({ 10_i64 })),
+        );
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_i64));
     }
 }
 pub fn testType_24() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_u64));
+        let io: Value<std_ranges_iota_view_unsigned_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_long__std_unreachable_sentinel_t_::new_1({ 0_u64 }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 0_u64));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10_u64));
-        assert!((unimplemented!() == 10_u64));
+        let io: Value<std_ranges_iota_view_unsigned_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_long__std_unreachable_sentinel_t_::new_1({ 10_u64 }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_u64));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_u64));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_u64));
+        let io: Value<std_ranges_iota_view_unsigned_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_long__std_unreachable_sentinel_t_::new_1({ 0_u64 }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 0_u64));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10_u64));
+        let io: Value<std_ranges_iota_view_unsigned_long__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_long__std_unreachable_sentinel_t_::new_1({ 10_u64 }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_u64));
     }
 }
 pub fn testType_25() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0));
+        let io: Value<std_ranges_iota_view_int__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_int__std_unreachable_sentinel_t_::new_1({ 0 })),
+        );
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 0));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10));
-        assert!((unimplemented!() == 10));
+        let io: Value<std_ranges_iota_view_int__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_int__std_unreachable_sentinel_t_::new_1({ 10 })),
+        );
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0));
+        let io: Value<std_ranges_iota_view_int__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_int__std_unreachable_sentinel_t_::new_1({ 0 })),
+        );
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 0));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10));
+        let io: Value<std_ranges_iota_view_int__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_int__std_unreachable_sentinel_t_::new_1({ 10 })),
+        );
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10));
     }
 }
 pub fn testType_26() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_u32));
+        let io: Value<std_ranges_iota_view_unsigned_int__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_int__std_unreachable_sentinel_t_::new_1({ 0_u32 }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 0_u32));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10_u32));
-        assert!((unimplemented!() == 10_u32));
+        let io: Value<std_ranges_iota_view_unsigned_int__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_int__std_unreachable_sentinel_t_::new_1({ 10_u32 }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_u32));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_u32));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_u32));
+        let io: Value<std_ranges_iota_view_unsigned_int__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_int__std_unreachable_sentinel_t_::new_1({ 0_u32 }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 0_u32));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10_u32));
+        let io: Value<std_ranges_iota_view_unsigned_int__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_int__std_unreachable_sentinel_t_::new_1({ 10_u32 }),
+            ));
+        assert!((({ (*io.borrow()).begin() }).iter_deref() == 10_u32));
     }
 }
 pub fn testType_27() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as i32) == (0_i16 as i32)));
+        let io: Value<std_ranges_iota_view_short__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_short__std_unreachable_sentinel_t_::new_1({ 0_i16 })),
+        );
+        assert!(((({ (*io.borrow()).begin() }).iter_deref() as i32) == (0_i16 as i32)));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as i32) == (10_i16 as i32)));
-        assert!(((unimplemented!() as i32) == (10_i16 as i32)));
+        let io: Value<std_ranges_iota_view_short__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_short__std_unreachable_sentinel_t_::new_1({ 10_i16 }),
+            ));
+        assert!(((({ (*io.borrow()).begin() }).iter_deref() as i32) == (10_i16 as i32)));
+        assert!(((({ (*io.borrow()).begin() }).iter_deref() as i32) == (10_i16 as i32)));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as i32) == (0_i16 as i32)));
+        let io: Value<std_ranges_iota_view_short__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_short__std_unreachable_sentinel_t_::new_1({ 0_i16 })),
+        );
+        assert!(((({ (*io.borrow()).begin() }).iter_deref() as i32) == (0_i16 as i32)));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as i32) == (10_i16 as i32)));
+        let io: Value<std_ranges_iota_view_short__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_short__std_unreachable_sentinel_t_::new_1({ 10_i16 }),
+            ));
+        assert!(((({ (*io.borrow()).begin() }).iter_deref() as i32) == (10_i16 as i32)));
     }
 }
 pub fn testType_28() {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as i32) == (0_u16 as i32)));
+        let io: Value<std_ranges_iota_view_unsigned_short__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_short__std_unreachable_sentinel_t_::new_1({ 0_u16 }),
+            ));
+        assert!(((({ (*io.borrow()).begin() }).iter_deref() as i32) == (0_u16 as i32)));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as i32) == (10_u16 as i32)));
-        assert!(((unimplemented!() as i32) == (10_u16 as i32)));
+        let io: Value<std_ranges_iota_view_unsigned_short__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_short__std_unreachable_sentinel_t_::new_1({ 10_u16 }),
+            ));
+        assert!(((({ (*io.borrow()).begin() }).iter_deref() as i32) == (10_u16 as i32)));
+        assert!(((({ (*io.borrow()).begin() }).iter_deref() as i32) == (10_u16 as i32)));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as i32) == (0_u16 as i32)));
+        let io: Value<std_ranges_iota_view_unsigned_short__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_short__std_unreachable_sentinel_t_::new_1({ 0_u16 }),
+            ));
+        assert!(((({ (*io.borrow()).begin() }).iter_deref() as i32) == (0_u16 as i32)));
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as i32) == (10_u16 as i32)));
+        let io: Value<std_ranges_iota_view_unsigned_short__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_unsigned_short__std_unreachable_sentinel_t_::new_1({ 10_u16 }),
+            ));
+        assert!(((({ (*io.borrow()).begin() }).iter_deref() as i32) == (10_u16 as i32)));
     }
 }
 pub fn test_29() -> bool {
@@ -497,11 +658,15 @@ impl NotDecrementableImpl for Ptr<NotDecrementable> {
         return ({ (*self).with(|__s| __s.value_) } == { _a0.with(|__s| __s.value_) });
     }
     fn operator_inc_3(&self) -> Ptr<NotDecrementable> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_4(&self, mut _a0: i32) {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait NotIncrementableImpl {
@@ -515,14 +680,20 @@ impl NotIncrementableImpl for Ptr<NotIncrementable> {
         return ({ (*self).with(|__s| __s.value_) } == { _a0.with(|__s| __s.value_) });
     }
     fn operator_inc_3(&self) -> Ptr<NotIncrementable> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_4(&self, mut _a0: i32) {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     fn operator_dec(&self) -> Ptr<NotIncrementable> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
 }
@@ -541,28 +712,36 @@ impl SomeIntImpl for Ptr<SomeInt> {
                 &((*self).with(|__s| __s.value_)),
                 &(_a0.with(|__s| __s.value_)),
             )));
-            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow());
+            if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+                return ({ (*cmp.borrow()) });
             }
         }
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_inc_3(&self) -> Ptr<SomeInt> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_4(&self, mut _a0: i32) -> SomeInt {
         let mut tmp: SomeInt = (*(*self).upgrade().deref()).clone();
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return tmp;
     }
     fn operator_dec_5(&self) -> Ptr<SomeInt> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_6(&self, mut _a0: i32) -> SomeInt {
         let mut tmp: SomeInt = (*(*self).upgrade().deref()).clone();
-        field!((*self), value_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return tmp;
     }
     fn operator_eq(&self, _a0: Ptr<SomeInt>) -> bool {

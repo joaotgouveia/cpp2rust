@@ -28,16 +28,17 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int_> = Rc::new(RefCell::new(<std_variant_int_>::default()));
         const _: () = assert!(true, "std::holds_alternative<int>(v)");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__long_> =
+            Rc::new(RefCell::new(<std_variant_int__long_>::default()));
         const _: () = assert!(true, "std::holds_alternative<int>(v)");;
         const _: () = assert!(true, "!std::holds_alternative<long>(v)");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int_> = Rc::new(RefCell::new(<std_variant_int_>::default()));
         const _: () = assert!(true, "");;
     }
     return 0;

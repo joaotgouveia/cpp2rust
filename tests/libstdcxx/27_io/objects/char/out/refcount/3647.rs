@@ -10,7 +10,21 @@ pub fn test07_0() {
     {
         let __s = {
             let __s = libcc2rs::cout();
-            write_int_refcount(&__s, (unimplemented!() as i64));
+            write_int_refcount(
+                &__s,
+                ({
+                    ({
+                        (*({
+                            ((*cin_1.with(Value::clone).borrow())
+                                as std_basic_ios_char__std_char_traits_char__)
+                                .rdbuf_17()
+                        })
+                        .upgrade()
+                        .deref())
+                        .in_avail()
+                    })
+                }),
+            );
             __s
         };
         libcc2rs::endl_refcount.call(__s)

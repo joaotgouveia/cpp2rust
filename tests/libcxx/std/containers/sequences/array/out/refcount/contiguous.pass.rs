@@ -10,19 +10,12 @@ pub fn assert_contiguous_0(c: Ptr<Vec<f64>>) {
     let mut i: usize = 0_usize;
     'loop_: while ({ i } < { (*c.upgrade().deref()).len() }) {
         assert!(
-            ({ ((unimplemented!().offset((i) as isize)).read()) } == {
-                ((unimplemented!().offset((i) as isize)).read())
-            })
-        );
-        i.prefix_inc();
-    }
-}
-pub fn assert_contiguous_1(c: Ptr<Vec<f64>>) {
-    let mut i: usize = 0_usize;
-    'loop_: while ({ i } < { (*c.upgrade().deref()).len() }) {
-        assert!(
-            ({ ((unimplemented!().offset((i) as isize)).read()) } == {
-                ((unimplemented!().offset((i) as isize)).read())
+            ({
+                ({ ((({ (*c.upgrade().deref()).begin_4() }).offset((i) as isize)).read()) } == {
+                    ((({ addressof_1(({ (*c.upgrade().deref()).begin_4() })) })
+                        .offset((i) as isize))
+                    .read())
+                })
             })
         );
         i.prefix_inc();
@@ -32,8 +25,12 @@ pub fn assert_contiguous_2(c: Ptr<Vec<f64>>) {
     let mut i: usize = 0_usize;
     'loop_: while ({ i } < { (*c.upgrade().deref()).len() }) {
         assert!(
-            ({ ((unimplemented!().offset((i) as isize)).read()) } == {
-                ((unimplemented!().offset((i) as isize)).read())
+            ({
+                ({ ((({ (*c.upgrade().deref()).begin_4() }).offset((i) as isize)).read()) } == {
+                    ((({ addressof_1(({ (*c.upgrade().deref()).begin_4() })) })
+                        .offset((i) as isize))
+                    .read())
+                })
             })
         );
         i.prefix_inc();
@@ -43,19 +40,27 @@ pub fn assert_contiguous_3(c: Ptr<Vec<f64>>) {
     let mut i: usize = 0_usize;
     'loop_: while ({ i } < { (*c.upgrade().deref()).len() }) {
         assert!(
-            ({ ((unimplemented!().offset((i) as isize)).read()) } == {
-                ((unimplemented!().offset((i) as isize)).read())
+            ({
+                ({ ((({ (*c.upgrade().deref()).begin_4() }).offset((i) as isize)).read()) } == {
+                    ((({ addressof_1(({ (*c.upgrade().deref()).begin_4() })) })
+                        .offset((i) as isize))
+                    .read())
+                })
             })
         );
         i.prefix_inc();
     }
 }
-pub fn assert_contiguous_4(c: Ptr<Vec<i8>>) {
+pub fn assert_contiguous_4(c: Ptr<Vec<f64>>) {
     let mut i: usize = 0_usize;
     'loop_: while ({ i } < { (*c.upgrade().deref()).len() }) {
         assert!(
-            ({ (((unimplemented!().offset((i) as isize)).read()) as i32) } == {
-                (((unimplemented!().offset((i) as isize)).read()) as i32)
+            ({
+                ({ ((({ (*c.upgrade().deref()).begin_4() }).offset((i) as isize)).read()) } == {
+                    ((({ addressof_1(({ (*c.upgrade().deref()).begin_4() })) })
+                        .offset((i) as isize))
+                    .read())
+                })
             })
         );
         i.prefix_inc();
@@ -65,19 +70,14 @@ pub fn assert_contiguous_5(c: Ptr<Vec<i8>>) {
     let mut i: usize = 0_usize;
     'loop_: while ({ i } < { (*c.upgrade().deref()).len() }) {
         assert!(
-            ({ (((unimplemented!().offset((i) as isize)).read()) as i32) } == {
-                (((unimplemented!().offset((i) as isize)).read()) as i32)
-            })
-        );
-        i.prefix_inc();
-    }
-}
-pub fn assert_contiguous_6(c: Ptr<Vec<i8>>) {
-    let mut i: usize = 0_usize;
-    'loop_: while ({ i } < { (*c.upgrade().deref()).len() }) {
-        assert!(
-            ({ (((unimplemented!().offset((i) as isize)).read()) as i32) } == {
-                (((unimplemented!().offset((i) as isize)).read()) as i32)
+            ({
+                ({
+                    (((({ (*c.upgrade().deref()).begin_4() }).offset((i) as isize)).read()) as i32)
+                } == {
+                    (((({ addressof_6(({ (*c.upgrade().deref()).begin_4() })) })
+                        .offset((i) as isize))
+                    .read()) as i32)
+                })
             })
         );
         i.prefix_inc();
@@ -87,14 +87,54 @@ pub fn assert_contiguous_7(c: Ptr<Vec<i8>>) {
     let mut i: usize = 0_usize;
     'loop_: while ({ i } < { (*c.upgrade().deref()).len() }) {
         assert!(
-            ({ (((unimplemented!().offset((i) as isize)).read()) as i32) } == {
-                (((unimplemented!().offset((i) as isize)).read()) as i32)
+            ({
+                ({
+                    (((({ (*c.upgrade().deref()).begin_4() }).offset((i) as isize)).read()) as i32)
+                } == {
+                    (((({ addressof_6(({ (*c.upgrade().deref()).begin_4() })) })
+                        .offset((i) as isize))
+                    .read()) as i32)
+                })
             })
         );
         i.prefix_inc();
     }
 }
-pub fn tests_8() -> bool {
+pub fn assert_contiguous_8(c: Ptr<Vec<i8>>) {
+    let mut i: usize = 0_usize;
+    'loop_: while ({ i } < { (*c.upgrade().deref()).len() }) {
+        assert!(
+            ({
+                ({
+                    (((({ (*c.upgrade().deref()).begin_4() }).offset((i) as isize)).read()) as i32)
+                } == {
+                    (((({ addressof_6(({ (*c.upgrade().deref()).begin_4() })) })
+                        .offset((i) as isize))
+                    .read()) as i32)
+                })
+            })
+        );
+        i.prefix_inc();
+    }
+}
+pub fn assert_contiguous_9(c: Ptr<Vec<i8>>) {
+    let mut i: usize = 0_usize;
+    'loop_: while ({ i } < { (*c.upgrade().deref()).len() }) {
+        assert!(
+            ({
+                ({
+                    (((({ (*c.upgrade().deref()).begin_4() }).offset((i) as isize)).read()) as i32)
+                } == {
+                    (((({ addressof_6(({ (*c.upgrade().deref()).begin_4() })) })
+                        .offset((i) as isize))
+                    .read()) as i32)
+                })
+            })
+        );
+        i.prefix_inc();
+    }
+}
+pub fn tests_10() -> bool {
     ({
         let _c: Value<Vec<f64>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 0, _>(|_| 0_f64).to_vec(),
@@ -105,43 +145,43 @@ pub fn tests_8() -> bool {
         let _c: Value<Vec<f64>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 1, _>(|_| 0_f64).to_vec(),
         ));
-        assert_contiguous_1(_c.as_pointer())
+        assert_contiguous_2(_c.as_pointer())
     });
     ({
         let _c: Value<Vec<f64>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 2, _>(|_| 0_f64).to_vec(),
         ));
-        assert_contiguous_2(_c.as_pointer())
+        assert_contiguous_3(_c.as_pointer())
     });
     ({
         let _c: Value<Vec<f64>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 3, _>(|_| 0_f64).to_vec(),
         ));
-        assert_contiguous_3(_c.as_pointer())
+        assert_contiguous_4(_c.as_pointer())
     });
     ({
         let _c: Value<Vec<i8>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 0, _>(|_| 0_i8).to_vec(),
         ));
-        assert_contiguous_4(_c.as_pointer())
+        assert_contiguous_5(_c.as_pointer())
     });
     ({
         let _c: Value<Vec<i8>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 1, _>(|_| 0_i8).to_vec(),
         ));
-        assert_contiguous_5(_c.as_pointer())
+        assert_contiguous_7(_c.as_pointer())
     });
     ({
         let _c: Value<Vec<i8>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 2, _>(|_| 0_i8).to_vec(),
         ));
-        assert_contiguous_6(_c.as_pointer())
+        assert_contiguous_8(_c.as_pointer())
     });
     ({
         let _c: Value<Vec<i8>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 3, _>(|_| 0_i8).to_vec(),
         ));
-        assert_contiguous_7(_c.as_pointer())
+        assert_contiguous_9(_c.as_pointer())
     });
     return true;
 }
@@ -165,7 +205,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ tests_8() });
+    ({ tests_10() });
     const _: () = assert!(true, "tests()");;
     return 0;
 }

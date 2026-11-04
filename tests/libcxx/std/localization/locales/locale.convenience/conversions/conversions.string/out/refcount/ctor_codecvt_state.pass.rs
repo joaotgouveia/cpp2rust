@@ -28,8 +28,8 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let myconv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_usize));
+        let myconv : Value<std_wstring_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__ > = Rc::new(RefCell::new(std_wstring_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__ :: new_1 ( { Ptr::alloc( <std_codecvt_utf8_wchar_t__1114111__0_  >::default() )  } , { unsafe { std::mem::zeroed() }  } , )  )) ;
+        assert!(({ (({ (*myconv.borrow()).converted() }) == 0_usize) }));
     }
     return 0;
 }

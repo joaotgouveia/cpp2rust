@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -43,6 +48,11 @@ pub struct min_pointer_bool__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<bool>,
 }
 impl min_pointer_bool__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_bool__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -51,6 +61,11 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
@@ -61,6 +76,11 @@ pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
     fn new_1(mut p: Ptr<u64>) -> Self {
         Self { ptr_: (p).clone() }
+    }
+}
+impl CppMove for min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl min_allocator_bool_ {
@@ -80,6 +100,11 @@ impl CppEq for min_allocator_bool_ {
         operator_eq_4(__lhs.read(), __rhs.read())
     }
 }
+impl CppMove for min_allocator_bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl min_allocator_unsigned_long_ {
     pub fn new_1(mut _a0: min_allocator_bool_) -> Self {
         Self {}
@@ -89,6 +114,11 @@ impl min_allocator_unsigned_long_ {
 #[cpp_from(min_allocator_bool_, new_1, value)]
 #[byte_size(1)]
 pub struct min_allocator_unsigned_long_ {}
+impl CppMove for min_allocator_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl min_allocator_bool_ {}
 impl min_allocator_unsigned_long_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -114,6 +144,11 @@ pub struct test_allocator_statistics {
     pub moved: i32,
     #[offset(36)]
     pub converted: i32,
+}
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for test_allocator_statistics {
     fn default() -> Self {
@@ -142,6 +177,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_7(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -222,6 +262,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -242,8 +287,12 @@ impl test_allocator_bool_ {
         }));
         let this: Ptr<test_allocator_bool_> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -254,9 +303,19 @@ pub fn operator_eq_9(x: Ptr<test_allocator_bool_>, y: Ptr<test_allocator_bool_>)
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_bool__rebind_unsigned_long_ {}
+impl CppMove for test_allocator_bool__rebind_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_bool__rebind_bool_ {}
+impl CppMove for test_allocator_bool__rebind_bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Destructor)]
 #[cpp_from(test_allocator_unsigned_long_, new_1, ptr)]
 #[byte_size(16)]
@@ -284,8 +343,12 @@ impl test_allocator_bool_ {
                     .is_null())
         );
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -303,6 +366,11 @@ impl Clone for test_allocator_bool_ {
             stats_: self.stats_.clone(),
         }));
         test_allocator_bool_::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for test_allocator_bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for test_allocator_bool_ {
@@ -325,8 +393,12 @@ impl test_allocator_unsigned_long_ {
         }));
         let this: Ptr<test_allocator_unsigned_long_> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -358,8 +430,12 @@ impl test_allocator_unsigned_long_ {
                     .is_null())
         );
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -373,6 +449,11 @@ impl Clone for test_allocator_unsigned_long_ {
                 stats_: self.stats_.clone(),
             }));
         test_allocator_unsigned_long_::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for test_allocator_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for test_allocator_unsigned_long_ {
@@ -416,6 +497,11 @@ impl CppEq for other_allocator_bool_ {
         operator_eq_10(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for other_allocator_bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for other_allocator_bool_ {
     fn default() -> Self {
         { other_allocator_bool_::new_2() }
@@ -440,6 +526,11 @@ impl other_allocator_unsigned_long_ {
         Self { data_: i }
     }
 }
+impl CppMove for other_allocator_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for other_allocator_unsigned_long_ {
     fn default() -> Self {
         { other_allocator_unsigned_long_ { data_: 0_i32 } }
@@ -448,6 +539,11 @@ impl Default for other_allocator_unsigned_long_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -539,248 +635,288 @@ pub fn tests_15() -> bool {
     }
     {
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_0,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_0 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_11(_x.as_pointer())
         });
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_1,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_1 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_11(_x.as_pointer())
         });
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_2,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_2 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_11(_x.as_pointer())
         });
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_3,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_3 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_11(_x.as_pointer())
         });
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_4,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_4 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_11(_x.as_pointer())
         });
     }
     {
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_5,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_5 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_12(_x.as_pointer())
         });
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_6,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_6 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_12(_x.as_pointer())
         });
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_7,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_7 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_12(_x.as_pointer())
         });
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_8,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_8 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_12(_x.as_pointer())
         });
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_9,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_9 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_12(_x.as_pointer())
         });
     }
     {
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_10,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_10 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_13(_x.as_pointer())
         });
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_11,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_11 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_13(_x.as_pointer())
         });
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_12,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_12 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_13(_x.as_pointer())
         });
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_13,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_13 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_13(_x.as_pointer())
         });
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_14,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_14 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_13(_x.as_pointer())
         });
     }
     {
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_15,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_15 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_14(_x.as_pointer())
         });
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_16,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_16 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_14(_x.as_pointer())
         });
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_17,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_17 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_14(_x.as_pointer())
         });
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_18,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_18 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_14(_x.as_pointer())
         });
         ({
-            let _x: Value<Vec<bool>> = Rc::new(RefCell::new({
-                let mut __v = Vec::new();
-                let mut __it = unimplemented!();
-                while __it != unimplemented!() {
-                    __v.push(__it.iter_deref().read() != 0_i32);
-                    __it.iter_inc();
+            let _x: Value<Vec<bool>> = Rc::new(RefCell::new(match ({ unimplemented!() },) {
+                (mut __tmp_19,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = unimplemented!();
+                    while __it != __tmp_19 {
+                        __v.push(__it.iter_deref().read() != 0_i32);
+                        __it.iter_inc();
+                    }
+                    __v
                 }
-                __v
             }));
             test_14(_x.as_pointer())
         });
@@ -1103,7 +1239,9 @@ impl test_allocator_bool_Impl for Ptr<test_allocator_bool_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_5.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_5.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_5.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_5.with(|rc| *rc.borrow()));
@@ -1163,7 +1301,9 @@ impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_5.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_5.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_5.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_5.with(|rc| *rc.borrow()));
@@ -1183,10 +1323,12 @@ impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
             }) {
                 std::process::abort();
             }
-            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
-                .with_mut(|__v| __v.prefix_inc());
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -1199,8 +1341,9 @@ impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
     fn deallocate(&self, mut p: Ptr<u64>, mut s: u32) {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_5.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())

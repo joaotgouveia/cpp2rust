@@ -28,8 +28,11 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut m: () = unimplemented!();
+        let d: Value<std_poisson_distribution_int_> =
+            Rc::new(RefCell::new(std_poisson_distribution_int_::new_1({
+                0.25_f64
+            })));
+        let mut m: i32 = ({ (*d.borrow()).max() });
         assert!((m == i32::MAX));
     }
     return 0;

@@ -6,18 +6,6 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = u32;
-pub const anon_0_value: anon_0 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1000000000____std_chrono_duration_long__std_ratio_1__1000000000___
-{}
-pub type anon_1 = u32;
-pub const anon_1_value: anon_1 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1____std_chrono_duration_long__std_ratio_1__1___
-{}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct Rep {
@@ -37,6 +25,11 @@ impl CppEq for Rep {
         RepImpl::operator_eq_4(__lhs, __rhs.clone())
     }
 }
+impl CppMove for Rep {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Rep {
     fn default() -> Self {
         { Rep::new_1() }
@@ -45,17 +38,19 @@ impl Default for Rep {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NotARep {}
+impl CppMove for NotARep {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(i64, to_i64_2)]
 #[byte_size(1)]
 pub struct RepConstConvertibleLWG3050 {}
-pub fn operator_mul_2(d: (), mut _a1: NotARep) -> () {
-    let d: Value<()> = Rc::new(RefCell::new(d));
-    return unimplemented!();
-}
-pub fn operator_mul_3(mut _a0: NotARep, d: ()) -> () {
-    let d: Value<()> = Rc::new(RefCell::new(d));
-    return unimplemented!();
+impl CppMove for RepConstConvertibleLWG3050 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -78,40 +73,70 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let ns: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == 15_()));
-        unimplemented!();
-        assert!((unimplemented!() == 90_()));
+        let ns: Value<std_chrono_duration_long__std_ratio_1__1000000000__> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<i32> = Rc::new(RefCell::new(3));
+                std_chrono_duration_long__std_ratio_1__1000000000__::new_1({ __tmp_0.as_pointer() })
+            }));
+        let __rhs = (*(*ns.borrow()).upgrade().deref()).clone();
+        (*ns.borrow_mut()) = __rhs;
+        assert!(({ (({ (*ns.borrow()).count() }) == 15_i64) }));
+        let __rhs = (*6.upgrade().deref()).clone();
+        (*ns.borrow_mut()) = __rhs;
+        assert!(({ (({ (*ns.borrow()).count() }) == 90_i64) }));
     }
     {
-        let ns: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ns2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ns: Value<std_chrono_duration_long__std_ratio_1__1000000000__> =
+            Rc::new(RefCell::new({
+                let __tmp_1: Value<i32> = Rc::new(RefCell::new(3));
+                std_chrono_duration_long__std_ratio_1__1000000000__::new_1({ __tmp_1.as_pointer() })
+            }));
+        let ns2: Value<std_chrono_duration_long__std_ratio_1__1000000000__> =
+            Rc::new(RefCell::new((*(*ns.borrow()).upgrade().deref()).clone()));
         const _: () = assert!(true, "ns2.count() == 15");;
-        let ns3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ns3: Value<std_chrono_duration_long__std_ratio_1__1000000000__> =
+            Rc::new(RefCell::new((*6.upgrade().deref()).clone()));
         const _: () = assert!(true, "ns3.count() == 18");;
     }
     {
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let d: Value<std_chrono_duration_long__std_ratio_1__1000000000__> =
+            Rc::new(RefCell::new({
+                let __tmp_2: Value<i32> = Rc::new(RefCell::new(5));
+                std_chrono_duration_long__std_ratio_1__1000000000__::new_1({ __tmp_2.as_pointer() })
+            }));
         let mut n: NotARep = <NotARep>::default();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
-        assert!((unimplemented!() == 5_()));
-        unimplemented!();
-        assert!((unimplemented!() == 5_()));
+        let __rhs = ({
+            let _d: std_chrono_duration_long__std_ratio_1__1000000000__ = (*d.borrow()).clone();
+            operator_mul_0(_d, (n).clone())
+        });
+        (*d.borrow_mut()) = __rhs;
+        assert!(({ (({ (*d.borrow()).count() }) == 5_i64) }));
+        let __rhs = ({
+            let _arg0: NotARep = (n).clone();
+            operator_mul_1(_arg0, (*d.borrow()).clone())
+        });
+        (*d.borrow_mut()) = __rhs;
+        assert!(({ (({ (*d.borrow()).count() }) == 5_i64) }));
     }
     {
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut x: RepConstConvertibleLWG3050 = <RepConstConvertibleLWG3050>::default();
+        let d: Value<std_chrono_duration_int__std_ratio_1__1__> = Rc::new(RefCell::new({
+            let __tmp_3: Value<i32> = Rc::new(RefCell::new(8));
+            std_chrono_duration_int__std_ratio_1__1__::new_1({ __tmp_3.as_pointer() })
+        }));
+        let x: Value<RepConstConvertibleLWG3050> =
+            Rc::new(RefCell::new(<RepConstConvertibleLWG3050>::default()));
         {
-            let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 16_()));
+            let r: Value<std_chrono_duration_long__std_ratio_1__1__> =
+                Rc::new(RefCell::new((*(*d.borrow()).upgrade().deref()).clone()));
+            assert!(({ (({ (*r.borrow()).count() }) == 16_i64) }));
             const _: () = assert!(true, "");;
         }
         {
-            let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 16_()));
+            let r: Value<std_chrono_duration_long__std_ratio_1__1__> =
+                Rc::new(RefCell::new((*(*x.borrow()).upgrade().deref()).clone()));
+            assert!(({ (({ (*r.borrow()).count() }) == 16_i64) }));
             const _: () = assert!(true, "");;
         }
     }

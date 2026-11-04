@@ -18,7 +18,7 @@ pub fn get_temp_file_name_0() -> Vec<i8> {
         std::process::abort();
     }
     FdRegistry::close(FD);
-    return std::mem::take(&mut (*Name.borrow_mut()));
+    return ({ std::mem::take(&mut (*Name.borrow_mut())) });
 }
 pub fn glibc_version_less_than_1(mut version: Ptr<i8>) -> bool {
     let test_version: Value<Vec<i8>> = Rc::new(RefCell::new({
@@ -42,21 +42,15 @@ pub fn glibc_version_less_than_1(mut version: Ptr<i8>) -> bool {
 }
 pub fn get_temp_file_names_2() -> (Value<Vec<i8>>, Value<Vec<i8>>) {
     let names: Value<(Value<Vec<i8>>, Value<Vec<i8>>)> = Rc::new(RefCell::new(unimplemented!()));
-    (*names.borrow())
-        .0
-        .as_pointer()
-        .write(({ get_temp_file_name_0() }));
+    ({ (*names.borrow()).0.as_pointer() }).write(({ get_temp_file_name_0() }));
     let mut fd1: Ptr<CFile> = match CFile::open(
-        &(*names.borrow()).0.decay().to_rust_string(),
+        &({ (*names.borrow()).0.decay() }).to_rust_string(),
         &Ptr::<i8>::from_string_literal(b"w").to_rust_string(),
     ) {
         Some(__f) => Ptr::alloc(__f),
         None => Ptr::null(),
     };
-    (*names.borrow())
-        .1
-        .as_pointer()
-        .write(({ get_temp_file_name_0() }));
+    ({ (*names.borrow()).1.as_pointer() }).write(({ get_temp_file_name_0() }));
     assert!(!(unimplemented!()));
     {
         let __r = fd1.with(|__f| __f.close());
@@ -64,7 +58,7 @@ pub fn get_temp_file_names_2() -> (Value<Vec<i8>>, Value<Vec<i8>>) {
         __r
     };
     unimplemented!();
-    return std::mem::take(&mut (*names.borrow_mut()));
+    return ({ std::mem::take(&mut (*names.borrow_mut())) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

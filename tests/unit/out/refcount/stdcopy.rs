@@ -18,6 +18,11 @@ impl Degrees {
         Self { value: v }
     }
 }
+impl CppMove for Degrees {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
@@ -42,7 +47,7 @@ fn main_0() -> i32 {
     match ({ (input.as_pointer() as Ptr<i32>).offset((3) as isize) },) {
         (mut __tmp_1,) => {
             let mut __first = (input.as_pointer() as Ptr<i32>);
-            let mut __out = widened.decay().begin();
+            let mut __out = CppRange::begin(&widened.decay());
             while __first != __tmp_1 {
                 __out
                     .iter_deref()
@@ -54,17 +59,15 @@ fn main_0() -> i32 {
         }
     };
     assert!(
-        ({
-            ({ (*widened.borrow())[0_usize] } == 1_i64)
-                && ({ (*widened.borrow())[2_usize] } == 3_i64)
-        })
+        ((widened.decay().offset(0_usize as isize).read()) == 1_i64)
+            && ((widened.decay().offset(2_usize as isize).read()) == 3_i64)
     );
     let constructed: Value<Vec<Degrees>> =
         Rc::new(RefCell::new(vec![Degrees::new({ 0 },); 3_usize as usize]));
     match ({ (input.as_pointer() as Ptr<i32>).offset((3) as isize) },) {
         (mut __tmp_2,) => {
             let mut __first = (input.as_pointer() as Ptr<i32>);
-            let mut __out = constructed.decay().begin();
+            let mut __out = CppRange::begin(&constructed.decay());
             while __first != __tmp_2 {
                 __out
                     .iter_deref()
@@ -76,17 +79,23 @@ fn main_0() -> i32 {
         }
     };
     assert!(
-        ({
-            ({ (*constructed.borrow())[0_usize].value } == 1)
-                && ({ (*constructed.borrow())[2_usize].value } == 3)
-        })
+        (constructed
+            .decay()
+            .offset(0_usize as isize)
+            .with(|__s| __s.value)
+            == 1)
+            && (constructed
+                .decay()
+                .offset(2_usize as isize)
+                .with(|__s| __s.value)
+                == 3)
     );
     let wide: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([7_i64, 8_i64])));
     let floating: Value<Vec<f64>> = Rc::new(RefCell::new(vec![0_f64; 2_usize as usize]));
     match ({ (wide.as_pointer() as Ptr<i64>).offset((2) as isize) },) {
         (mut __tmp_3,) => {
             let mut __first = (wide.as_pointer() as Ptr<i64>);
-            let mut __out = floating.decay().begin();
+            let mut __out = CppRange::begin(&floating.decay());
             while __first != __tmp_3 {
                 __out
                     .iter_deref()
@@ -97,7 +106,7 @@ fn main_0() -> i32 {
             __out
         }
     };
-    assert!(({ ({ (*floating.borrow())[1_usize] } == 8_f64) }));
+    assert!(((floating.decay().offset(1_usize as isize).read()) == 8_f64));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

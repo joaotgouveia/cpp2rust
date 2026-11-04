@@ -26,7 +26,7 @@ pub fn tests_0() -> bool {
     const _: () = assert!(true, "(noexcept(v.swap(r1, r2)))");;
     assert!(!(r1.read()));
     assert!(r2.read());
-    unimplemented!();
+    ({ std_vector_bool__std_allocator_bool__::swap_51((r1).clone(), (r2).clone()) });
     assert!(r1.read());
     assert!(!(r2.read()));
     return true;

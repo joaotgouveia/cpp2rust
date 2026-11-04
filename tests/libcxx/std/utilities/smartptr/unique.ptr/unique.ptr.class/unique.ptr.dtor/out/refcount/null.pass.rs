@@ -26,9 +26,11 @@ pub fn test_basic_0() {
     let d: Value<Deleter> = Rc::new(RefCell::new(Deleter::new()));
     assert!((({ DeleterImpl::state(&d.as_pointer(),) }) == 0));
     {
-        let mut p: Option<Value<i32>> = unimplemented!();
-        assert!((p.as_pointer()).is_null());
-        assert!(((unimplemented!()) == (d.as_pointer())));
+        let p: Value<Option<Value<i32>>> = Rc::new(RefCell::new(
+            std_unique_ptr_int__Deleter_ref_::new_1({ Ptr::null() }, { d.as_pointer() }),
+        ));
+        assert!(({ ((*p.borrow()).as_pointer()).is_null() }));
+        assert!(({ (({ (*p.borrow()).get_deleter_17() }) == (d.as_pointer())) }));
     }
     assert!((({ DeleterImpl::state(&d.as_pointer(),) }) == 0));
 }
@@ -36,9 +38,13 @@ pub fn test_basic_1() {
     let d: Value<Deleter> = Rc::new(RefCell::new(Deleter::new()));
     assert!((({ DeleterImpl::state(&d.as_pointer(),) }) == 0));
     {
-        let mut p: Option<Value<Box<[i32]>>> = unimplemented!();
-        assert!((p.as_pointer()).is_null());
-        assert!(((unimplemented!()) == (d.as_pointer())));
+        let p: Value<Option<Value<Box<[i32]>>>> = Rc::new(RefCell::new(
+            std_unique_ptr_intarrarr__Deleter_ref_::new_1({ Default::default() }, {
+                d.as_pointer()
+            }),
+        ));
+        assert!(({ ((*p.borrow()).as_pointer()).is_null() }));
+        assert!(({ (({ (*p.borrow()).get_deleter_15() }) == (d.as_pointer())) }));
     }
     assert!((({ DeleterImpl::state(&d.as_pointer(),) }) == 0));
 }
@@ -83,7 +89,9 @@ impl DeleterImpl for Ptr<Deleter> {
         return (*self).with(|__s| __s.state_);
     }
     fn operator_call(&self, mut _a0: AnyPtr) {
-        field!((*self), state_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), state_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub fn __cpp2rust_init_globals() {}

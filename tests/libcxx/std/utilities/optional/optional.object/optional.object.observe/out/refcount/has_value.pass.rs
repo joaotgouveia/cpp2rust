@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_bool__bool_ {}
+impl CppMove for test_macros_detail_is_same_bool__bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -32,17 +37,17 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_int_> = Rc::new(RefCell::new(<std_optional_int_>::default()));
         (&(*opt.borrow_mut()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_int_> = Rc::new(RefCell::new(<std_optional_int_>::default()));
         const _: () = assert!(true, "!opt.has_value()");;
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_int_> = Rc::new(RefCell::new(0));
         const _: () = assert!(true, "opt.has_value()");;
     }
     return 0;

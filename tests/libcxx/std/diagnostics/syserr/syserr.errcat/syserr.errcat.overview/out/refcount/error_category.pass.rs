@@ -27,7 +27,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let mut p: Ptr<()> = Ptr::<()>::null();
+    let mut p: Ptr<std_error_category> = Ptr::<std_error_category>::null();
     (&(p));
     return 0;
 }

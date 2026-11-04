@@ -34,8 +34,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "std::is_same<StdSet, PmrSet>::value");;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
+        let m: Value<std_set_int__std_less_int___std_pmr_polymorphic_allocator_int__> =
+            Rc::new(RefCell::new(
+                <std_set_int__std_less_int___std_pmr_polymorphic_allocator_int__>::default(),
+            ));
+        assert!(
+            (({ ({ (*m.borrow()).get_allocator() }).resource() })
+                == ({ get_default_resource_0() }))
+        );
     }
     {
         const _: () = assert!(true, "std::is_same<StdSet, PmrSet>::value");;
@@ -44,8 +50,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "std::is_same<StdSet, PmrSet>::value");;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
+        let m: Value<std_multiset_int__std_less_int___std_pmr_polymorphic_allocator_int__> =
+            Rc::new(RefCell::new(
+                <std_multiset_int__std_less_int___std_pmr_polymorphic_allocator_int__>::default(),
+            ));
+        assert!(
+            (({ ({ (*m.borrow()).get_allocator() }).resource() })
+                == ({ get_default_resource_0() }))
+        );
     }
     return 0;
 }

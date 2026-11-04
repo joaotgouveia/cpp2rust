@@ -6,14 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_convertible_imp_0(mut _a0: i64) -> bool {
-    return false;
-}
-pub fn test_convertible_1() -> bool {
-    return ({ test_convertible_imp_0(0_i64) });
-}
-pub fn test_constexpr_2(_a0: ()) -> bool {
-    let _a0: Value<()> = Rc::new(RefCell::new(_a0));
+pub fn test_constexpr_0(_a0: std_destroying_delete_t) -> bool {
+    let _a0: Value<std_destroying_delete_t> = Rc::new(RefCell::new(_a0));
     return true;
 }
 pub fn main() {
@@ -41,7 +35,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         "std::is_default_constructible<std::destroying_delete_t>::value"
     );;
     const _: () = assert!(true, "!test_convertible<std::destroying_delete_t>()");;
-    let dd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let dd: Value<std_destroying_delete_t> =
+        Rc::new(RefCell::new(<std_destroying_delete_t>::default()));
     const _: () = assert!(true, "&dd != &std::destroying_delete");;
     const _: () = assert!(true, "test_constexpr(std::destroying_delete)");;
     return 0;

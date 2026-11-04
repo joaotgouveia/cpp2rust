@@ -27,16 +27,17 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let st: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let st: Value<std_filesystem_file_status> =
+        Rc::new(RefCell::new(<std_filesystem_file_status>::default()));
     {
         const _: () = assert!(true, "noexcept(st.type(file_type::regular))");;
         const _: () = assert!(
             true,
             "std::is_same<decltype(st.type(file_type::regular)), void>::value"
         );;
-        assert!((unimplemented!() != unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == unimplemented!()));
+        assert!(({ (({ (*st.borrow()).type_8() }) != std_filesystem_file_type_regular) }));
+        ({ (*st.borrow()).type_10(std_filesystem_file_type_regular) });
+        assert!(({ (({ (*st.borrow()).type_8() }) == std_filesystem_file_type_regular) }));
     }
     {
         const _: () = assert!(true, "noexcept(st.permissions(perms::owner_read))");;
@@ -44,9 +45,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             true,
             "std::is_same<decltype(st.permissions(perms::owner_read)), void>::value"
         );;
-        assert!((unimplemented!() != unimplemented!()));
-        unimplemented!();
-        assert!((unimplemented!() == unimplemented!()));
+        assert!(({ (({ (*st.borrow()).permissions_9() }) != std_filesystem_perms_owner_read) }));
+        ({ (*st.borrow()).permissions_11(std_filesystem_perms_owner_read) });
+        assert!(({ (({ (*st.borrow()).permissions_9() }) == std_filesystem_perms_owner_read) }));
     }
     return 0;
 }

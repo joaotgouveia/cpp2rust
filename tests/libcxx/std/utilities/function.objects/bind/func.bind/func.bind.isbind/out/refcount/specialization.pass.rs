@@ -16,6 +16,11 @@ impl Callable2<i32, i32, i32> for MyBind {
         })
     }
 }
+impl CppMove for MyBind {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -41,8 +46,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: i32| -> i32 {
                 return ((10 * x) + 9);
             })));
-        let mut bindexpr: MyBind = <MyBind>::default();
-        let bound: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let bindexpr: Value<MyBind> = Rc::new(RefCell::new(<MyBind>::default()));
+        let bound: Value<std__Bind__lambda_at_specialization_pass_cpp_32_14___MyBind__> = Rc::new(
+            RefCell::new(({ bind_0(f.as_pointer(), bindexpr.as_pointer()) })),
+        );
         assert!(
             (({
                 let ___args_0: Value<i32> = Rc::new(RefCell::new(7));
@@ -56,8 +63,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: i32| -> i32 {
                 return ((10 * x) + 9);
             })));
-        let mut bindexpr: MyBind = <MyBind>::default();
-        let bound: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let bindexpr: Value<MyBind> = Rc::new(RefCell::new(<MyBind>::default()));
+        let bound: Value<std__Bind__lambda_at_specialization_pass_cpp_38_14___MyBind__> = Rc::new(
+            RefCell::new(({ bind_1(f.as_pointer(), bindexpr.as_pointer()) })),
+        );
         assert!(
             (({
                 let ___args_0: Value<i32> = Rc::new(RefCell::new(7));
@@ -71,8 +80,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: i32| -> i32 {
                 return ((10 * x) + 9);
             })));
-        let mut bindexpr: MyBind = <MyBind>::default();
-        let bound: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let bindexpr: Value<MyBind> = Rc::new(RefCell::new(<MyBind>::default()));
+        let bound: Value<std__Bind__lambda_at_specialization_pass_cpp_44_14___MyBind__> = Rc::new(
+            RefCell::new(({ bind_2(f.as_pointer(), bindexpr.as_pointer()) })),
+        );
         assert!(
             (({
                 let ___args_0: Value<i32> = Rc::new(RefCell::new(7));
@@ -86,8 +97,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: i32| -> i32 {
                 return ((10 * x) + 9);
             })));
-        let mut bindexpr: MyBind = <MyBind>::default();
-        let bound: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let bindexpr: Value<MyBind> = Rc::new(RefCell::new(<MyBind>::default()));
+        let bound: Value<std__Bind__lambda_at_specialization_pass_cpp_50_14___MyBind__> = Rc::new(
+            RefCell::new(({ bind_3(f.as_pointer(), bindexpr.as_pointer()) })),
+        );
         assert!(
             (({
                 let ___args_0: Value<i32> = Rc::new(RefCell::new(7));

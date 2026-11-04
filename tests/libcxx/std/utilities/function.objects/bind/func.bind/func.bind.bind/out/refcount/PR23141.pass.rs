@@ -16,8 +16,23 @@ impl Callable2<Ptr<i8>, Ptr<i32>, ()> for Fun {
         })
     }
 }
+impl CppMove for Fun {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0() -> bool {
-    ({ unimplemented!()(Ptr::<i8>::from_string_literal(b"hello")) });
+    ({
+        ({
+            let ___f: Value<Fun> = Rc::new(RefCell::new(<Fun>::default()));
+            let ___args_2: Value<i32> = Rc::new(RefCell::new(42));
+            bind_1(
+                ___f.as_pointer(),
+                _1_2.with(|v| v.as_pointer()),
+                ___args_2.as_pointer(),
+            )
+        })(Ptr::<i8>::from_string_literal(b"hello"))
+    });
     return true;
 }
 pub fn main() {

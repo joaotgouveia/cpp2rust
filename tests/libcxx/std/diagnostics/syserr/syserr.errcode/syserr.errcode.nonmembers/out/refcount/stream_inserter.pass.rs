@@ -27,11 +27,25 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let out: Value<std_basic_ostringstream_char__std_char_traits_char___std_allocator_char__> =
+        Rc::new(RefCell::new(
+            <std_basic_ostringstream_char__std_char_traits_char___std_allocator_char__>::default(),
+        ));
+    write!(
+        out.as_pointer(),
+        "{:}",
+        std_error_code::new_1({ std_io_errc_stream },),
+    );
     assert!(
-        Ptr::<i8>::from_string_literal(b"iostream:1")
-            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+        match (Rc::new(RefCell::new(({ (*out.borrow()).str_16() }))).as_pointer(),) {
+            (__tmp_0,) => {
+                Ptr::<i8>::from_string_literal(b"iostream:1").with_c_str(|__s| {
+                    (*__tmp_0.upgrade().deref())
+                        [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        }
     );
     return 0;
 }

@@ -27,14 +27,22 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let os: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let os: Value<std_basic_ostringstream_char__std_char_traits_char___std_allocator_char__> =
+        Rc::new(RefCell::new(
+            <std_basic_ostringstream_char__std_char_traits_char___std_allocator_char__>::default(),
+        ));
     let i: Value<OstreamIterator<i32>> = Rc::new(RefCell::new(OstreamIterator::new(
         os.as_pointer(),
         Ptr::null(),
     )));
-    let iref1: Ptr<OstreamIterator<i32>> = unimplemented!();
+    let iref1: Ptr<OstreamIterator<i32>> = {
+        i.as_pointer().with_mut(|__it| {
+            __it.iter_inc();
+        });
+        i.as_pointer()
+    };
     assert!(({ (iref1).clone() } == { (i.as_pointer()) }));
-    let iref2: Ptr<OstreamIterator<i32>> = unimplemented!();
+    let iref2: Ptr<OstreamIterator<i32>> = (*i.borrow_mut()).iter_post_inc();
     assert!(({ (iref2).clone() } == { (i.as_pointer()) }));
     return 0;
 }

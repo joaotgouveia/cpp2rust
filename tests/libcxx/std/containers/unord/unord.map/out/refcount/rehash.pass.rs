@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -36,86 +41,10 @@ thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__
-{
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<(Value<i32>, Value<Vec<i8>>)>,
-}
-impl min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__ { }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____
 {}
-pub fn rehash_postcondition_4(c: Ptr<()>, mut n: usize) {
-    assert!(
-        ({ (unimplemented!() as f32) } >= {
-            ({ (unimplemented!() as f32) } / { unimplemented!() })
-        }) && ({ (unimplemented!() as usize) } >= { n })
-    );
-}
-pub fn rehash_postcondition_5(c: Ptr<()>, mut n: usize) {
-    assert!(
-        ({ (unimplemented!() as f32) } >= {
-            ({ (unimplemented!() as f32) } / { unimplemented!() })
-        }) && ({ (unimplemented!() as usize) } >= { n })
-    );
-}
-pub fn test_6(c: Ptr<()>) {
-    assert!((unimplemented!() == 4_()));
-    assert!(
-        Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-            [..(unimplemented!()).clone().len().saturating_sub(1)]
-            == *__s)
-    );
-    assert!(
-        Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
-            [..(unimplemented!()).clone().len().saturating_sub(1)]
-            == *__s)
-    );
-    assert!(
-        Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-            [..(unimplemented!()).clone().len().saturating_sub(1)]
-            == *__s)
-    );
-    assert!(
-        Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-            [..(unimplemented!()).clone().len().saturating_sub(1)]
-            == *__s)
-    );
-}
-pub fn test_7(c: Ptr<()>) {
-    assert!((unimplemented!() == 4_()));
-    assert!(
-        Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-            [..(unimplemented!()).clone().len().saturating_sub(1)]
-            == *__s)
-    );
-    assert!(
-        Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
-            [..(unimplemented!()).clone().len().saturating_sub(1)]
-            == *__s)
-    );
-    assert!(
-        Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-            [..(unimplemented!()).clone().len().saturating_sub(1)]
-            == *__s)
-    );
-    assert!(
-        Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-            [..(unimplemented!()).clone().len().saturating_sub(1)]
-            == *__s)
-    );
-}
+impl CppMove for min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -187,22 +116,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_6(c.as_pointer()) });
-        assert!((unimplemented!() >= 5_()));
-        unimplemented!();
-        ({ rehash_postcondition_4(c.as_pointer(), 3_usize) });
+        let c : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new(std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   )  } , { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   ) . offset ( ( ( ( 240usize as usize ) ) . wrapping_div ( ( 40usize as usize ) ) ) as isize )  } , None , None , None , None , )  )) ;
+        ({ test_4(c.as_pointer()) });
+        assert!(({ (({ (*c.borrow()).bucket_count() }) >= 5_u64) }));
+        ({ (*c.borrow()).rehash(3_u64) });
+        ({ rehash_postcondition_5(c.as_pointer(), 3_usize) });
         const _: () = assert!(true, "");;
-        ({ test_6(c.as_pointer()) });
-        unimplemented!();
-        unimplemented!();
-        ({ rehash_postcondition_4(c.as_pointer(), 3_usize) });
+        ({ test_4(c.as_pointer()) });
+        ({ (*c.borrow()).max_load_factor_96(2_f32) });
+        ({ (*c.borrow()).rehash(3_u64) });
+        ({ rehash_postcondition_5(c.as_pointer(), 3_usize) });
         const _: () = assert!(true, "");;
-        ({ test_6(c.as_pointer()) });
-        unimplemented!();
-        ({ rehash_postcondition_4(c.as_pointer(), 31_usize) });
+        ({ test_4(c.as_pointer()) });
+        ({ (*c.borrow()).rehash(31_u64) });
+        ({ rehash_postcondition_5(c.as_pointer(), 31_usize) });
         const _: () = assert!(true, "");;
-        ({ test_6(c.as_pointer()) });
+        ({ test_4(c.as_pointer()) });
     }
     {
         let a: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -255,25 +184,28 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_7(c.as_pointer()) });
-        assert!((unimplemented!() >= 5_()));
-        unimplemented!();
-        ({ rehash_postcondition_5(c.as_pointer(), 3_usize) });
+        let c : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new(std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   )  } , { ( a .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  >   ) . offset ( ( ( ( 240usize as usize ) ) . wrapping_div ( ( 40usize as usize ) ) ) as isize )  } , None , None , None , None , )  )) ;
+        ({ test_6(c.as_pointer()) });
+        assert!(({ (({ (*c.borrow()).bucket_count() }) >= 5_u64) }));
+        ({ (*c.borrow()).rehash(3_u64) });
+        ({ rehash_postcondition_7(c.as_pointer(), 3_usize) });
         const _: () = assert!(true, "");;
-        ({ test_7(c.as_pointer()) });
-        unimplemented!();
-        unimplemented!();
-        ({ rehash_postcondition_5(c.as_pointer(), 3_usize) });
+        ({ test_6(c.as_pointer()) });
+        ({ (*c.borrow()).max_load_factor_96(2_f32) });
+        ({ (*c.borrow()).rehash(3_u64) });
+        ({ rehash_postcondition_7(c.as_pointer(), 3_usize) });
         const _: () = assert!(true, "");;
-        ({ test_7(c.as_pointer()) });
-        unimplemented!();
-        ({ rehash_postcondition_5(c.as_pointer(), 31_usize) });
+        ({ test_6(c.as_pointer()) });
+        ({ (*c.borrow()).rehash(31_u64) });
+        ({ rehash_postcondition_7(c.as_pointer(), 31_usize) });
         const _: () = assert!(true, "");;
-        ({ test_7(c.as_pointer()) });
+        ({ test_6(c.as_pointer()) });
     }
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__;
 pub trait min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl
 {
     fn allocate ( &self , mut n : usize  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
@@ -288,48 +220,6 @@ pub trait min_allocator_std_pair_const_int__std_basic_string_char__std_char_trai
     }
 }
 impl min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl for Ptr<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____> {
-}
-pub trait min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__Impl
-{
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
-        unimplemented!()
-    }    fn operator_inc_8 ( &self , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_inc_9 ( &self , mut _a0 : i32  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_dec_10 ( &self , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_dec_11 ( &self , mut _a0 : i32  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_add_assign ( &self , mut n : isize  , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_sub_assign ( &self , mut n : isize  , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_add ( &self , mut n : isize  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_sub ( &self , mut n : isize  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
-        unimplemented!()
-    }
-}
-impl min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__Impl for Ptr<min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__> {
-}
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
-{
 }
 pub fn __cpp2rust_init_globals() {
     let _ = outstanding_bytes_0.with(|_| ());

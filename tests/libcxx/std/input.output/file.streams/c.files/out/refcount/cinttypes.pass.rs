@@ -87,7 +87,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_3() });
     ({ test_7() });
     {
-        let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let i1: Value<imaxdiv_t> = Rc::new(RefCell::new(<imaxdiv_t>::default()));
         (&(*i1.borrow_mut()));
     }
     let mut i: i64 = 0_i64;

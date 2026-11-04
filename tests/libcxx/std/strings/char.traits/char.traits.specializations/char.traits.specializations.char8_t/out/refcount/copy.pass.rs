@@ -9,12 +9,29 @@ use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     let s1: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
     let s2: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([0_u8, 0_u8, 0_u8])));
-    assert!((unimplemented!() == (s2.as_pointer() as Ptr::<u8>)));
-    assert!((((*s2.borrow())[(0) as usize] as i32) == (1_u8 as i32)));
-    assert!((((*s2.borrow())[(1) as usize] as i32) == (2_u8 as i32)));
-    assert!((((*s2.borrow())[(2) as usize] as i32) == (3_u8 as i32)));
-    assert!((unimplemented!()).is_null());
-    assert!((unimplemented!() == (s1.as_pointer() as Ptr::<u8>)));
+    assert!(
+        (({
+            std_char_traits_char8_t_::copy(
+                (s2.as_pointer() as Ptr<u8>),
+                (s1.as_pointer() as Ptr<u8>),
+                3_usize,
+            )
+        }) == (s2.as_pointer() as Ptr::<u8>))
+    );
+    assert!(({ (((*s2.borrow())[(0) as usize] as i32) == (1_u8 as i32)) }));
+    assert!(({ (((*s2.borrow())[(1) as usize] as i32) == (2_u8 as i32)) }));
+    assert!(({ (((*s2.borrow())[(2) as usize] as i32) == (3_u8 as i32)) }));
+    assert!(
+        ({
+            std_char_traits_char8_t_::copy(Ptr::<u8>::null(), (s1.as_pointer() as Ptr<u8>), 0_usize)
+        })
+        .is_null()
+    );
+    assert!(
+        (({
+            std_char_traits_char8_t_::copy((s1.as_pointer() as Ptr<u8>), Ptr::<u8>::null(), 0_usize)
+        }) == (s1.as_pointer() as Ptr::<u8>))
+    );
     return true;
 }
 pub fn main() {

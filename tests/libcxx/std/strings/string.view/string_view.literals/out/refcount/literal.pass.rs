@@ -12,30 +12,35 @@ pub const anon_0_value: anon_0 = 1;
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_basic_string_view_char__std_char_traits_char____std_basic_string_view_char__std_char_traits_char___
 {}
+impl CppMove for test_macros_detail_is_same_std_basic_string_view_char__std_char_traits_char____std_basic_string_view_char__std_char_traits_char___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_basic_string_view_char8_t__std_char_traits_char8_t____std_basic_string_view_char8_t__std_char_traits_char8_t___
 {}
+impl CppMove for test_macros_detail_is_same_std_basic_string_view_char8_t__std_char_traits_char8_t____std_basic_string_view_char8_t__std_char_traits_char8_t___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_basic_string_view_wchar_t__std_char_traits_wchar_t____std_basic_string_view_wchar_t__std_char_traits_wchar_t___
 {}
+impl CppMove for test_macros_detail_is_same_std_basic_string_view_wchar_t__std_char_traits_wchar_t____std_basic_string_view_wchar_t__std_char_traits_wchar_t___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_basic_string_view_char16_t__std_char_traits_char16_t____std_basic_string_view_char16_t__std_char_traits_char16_t___
 {}
+impl CppMove for test_macros_detail_is_same_std_basic_string_view_char16_t__std_char_traits_char16_t____std_basic_string_view_char16_t__std_char_traits_char16_t___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_4 = u32;
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_basic_string_view_char32_t__std_char_traits_char32_t____std_basic_string_view_char32_t__std_char_traits_char32_t___
 {}
+impl CppMove for test_macros_detail_is_same_std_basic_string_view_char32_t__std_char_traits_char32_t____std_basic_string_view_char32_t__std_char_traits_char32_t___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

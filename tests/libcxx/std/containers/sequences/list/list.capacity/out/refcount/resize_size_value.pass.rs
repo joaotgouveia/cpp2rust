@@ -60,6 +60,11 @@ impl malloc_allocator_base {
         dealloc_count_5.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_3: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -80,6 +85,11 @@ pub struct min_pointer_double__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<f64>,
 }
 impl min_pointer_double__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_double__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -88,9 +98,19 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_double_ {}
+impl CppMove for min_allocator_double_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_7() -> bool {
     {
         let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));

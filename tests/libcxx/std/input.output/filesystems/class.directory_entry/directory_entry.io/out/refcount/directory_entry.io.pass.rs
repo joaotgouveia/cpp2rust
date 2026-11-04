@@ -67,6 +67,11 @@ impl MultiStringType {
         }
     }
 }
+impl CppMove for MultiStringType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static InStr_0: Value<MultiStringType> = Rc::new(RefCell::new(MultiStringType::new(
         {
@@ -209,12 +214,33 @@ pub fn TestOutput_2() {
     let mut expected_output: Ptr<i8> =
         ({ MultiStringTypeImpl::to_pconsti8(&OutStr_1.with(|v| v.as_pointer())) })
             .reinterpret_cast::<i8>();
-    let dir: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let stream: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let result: Ptr<::std::fs::File> = unimplemented!();
+    let dir: Value<std_filesystem_directory_entry> = Rc::new(RefCell::new({
+        let __tmp_0: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __v: Vec<i8> = input
+                .path_bytes()
+                .into_iter()
+                .map(|__b| __b as i8)
+                .collect();
+            __v.push(0);
+            __v
+        }));
+        std_filesystem_directory_entry::new_1({ __tmp_0.as_pointer() })
+    }));
+    let stream: Value<std_basic_stringstream_char__std_char_traits_char___std_allocator_char__> =
+        Rc::new(RefCell::new(
+            <std_basic_stringstream_char__std_char_traits_char___std_allocator_char__>::default(),
+        ));
+    let result: Ptr<::std::fs::File> = write!(stream.as_pointer(), "{:}", dir.as_pointer(),);
     assert!(
-        expected_output
-            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+        match (Rc::new(RefCell::new(({ (*stream.borrow()).str_16() }))).as_pointer(),) {
+            (__tmp_1,) => {
+                expected_output.with_c_str(|__s| {
+                    (*__tmp_1.upgrade().deref())
+                        [..(*__tmp_1.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        }
     );
     assert!(({ (result).clone() } == { (stream.as_pointer()) }));
 }
@@ -225,12 +251,30 @@ pub fn TestOutput_3() {
     let mut expected_output: Ptr<i32> =
         ({ MultiStringTypeImpl::to_pconsti32(&OutStr_1.with(|v| v.as_pointer())) })
             .reinterpret_cast::<i32>();
-    let dir: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let stream: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let result: Ptr<::std::fs::File> = unimplemented!();
+    let dir: Value<std_filesystem_directory_entry> = Rc::new(RefCell::new({
+        let __tmp_2: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __v: Vec<i8> = input
+                .path_bytes()
+                .into_iter()
+                .map(|__b| __b as i8)
+                .collect();
+            __v.push(0);
+            __v
+        }));
+        std_filesystem_directory_entry::new_1({ __tmp_2.as_pointer() })
+    }));
+    let stream : Value<std_basic_stringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ > = Rc::new(RefCell::new(<std_basic_stringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__  >::default() )) ;
+    let result: Ptr<::std::fs::File> = write!(stream.as_pointer(), "{:}", dir.as_pointer(),);
     assert!(
-        expected_output
-            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+        match (Rc::new(RefCell::new(({ (*stream.borrow()).str_16() }))).as_pointer(),) {
+            (__tmp_3,) => {
+                expected_output.with_c_str(|__s| {
+                    (*__tmp_3.upgrade().deref())
+                        [..(*__tmp_3.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        }
     );
     assert!(({ (result).clone() } == { (stream.as_pointer()) }));
 }

@@ -52,6 +52,11 @@ impl Clone for __gnu_test_object_counter {
         __gnu_test_object_counter::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_object_counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_object_counter {
     fn default() -> Self {
         { __gnu_test_object_counter::new() }
@@ -78,6 +83,11 @@ impl __gnu_test_copy_constructor {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_copy_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
@@ -99,6 +109,11 @@ impl __gnu_test_assignment_operator {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_assignment_operator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
@@ -111,6 +126,11 @@ impl __gnu_test_destructor {
     }
     pub fn reset() {
         _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
+    }
+}
+impl CppMove for __gnu_test_destructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -173,6 +193,11 @@ impl Clone for __gnu_test_copy_tracker {
         __gnu_test_copy_tracker::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_copy_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_copy_tracker {
     fn default() -> Self {
         { __gnu_test_copy_tracker::new(None, None) }
@@ -197,13 +222,23 @@ pub struct __gnu_test_semaphore {
     pid_: (),
 }
 impl __gnu_test_semaphore {}
+impl CppMove for __gnu_test_semaphore {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test01_9() {
     let s: Value<Vec<i8>> = Rc::new(RefCell::new(vec![i8::default()]));
     let mut d: f64 = 0_f64;
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (fmt.read());
-        unimplemented!();
+        {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"Info").to_c_bytes();
+            __bytes.push(0_i8);
+            s.as_pointer().write(__bytes);
+            s.as_pointer()
+        };
         unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
@@ -229,7 +264,12 @@ pub fn test01_9() {
                 std::process::abort();
             }
         }
-        unimplemented!();
+        {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"-INFIN").to_c_bytes();
+            __bytes.push(0_i8);
+            s.as_pointer().write(__bytes);
+            s.as_pointer()
+        };
         unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
@@ -263,7 +303,12 @@ pub fn test01_9() {
                 std::process::abort();
             }
         }
-        unimplemented!();
+        {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"InFiNiTy aNd BeYoNd").to_c_bytes();
+            __bytes.push(0_i8);
+            s.as_pointer().write(__bytes);
+            s.as_pointer()
+        };
         unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
@@ -289,7 +334,12 @@ pub fn test01_9() {
                 std::process::abort();
             }
         }
-        unimplemented!();
+        {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"nAn").to_c_bytes();
+            __bytes.push(0_i8);
+            s.as_pointer().write(__bytes);
+            s.as_pointer()
+        };
         unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
@@ -315,7 +365,12 @@ pub fn test01_9() {
                 std::process::abort();
             }
         }
-        unimplemented!();
+        {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"-NAN()").to_c_bytes();
+            __bytes.push(0_i8);
+            s.as_pointer().write(__bytes);
+            s.as_pointer()
+        };
         unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
@@ -349,7 +404,12 @@ pub fn test02_10() {
     let s: Value<Vec<i8>> = Rc::new(RefCell::new(vec![i8::default()]));
     let mut d: f64 = 1_f64;
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    {
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"0x123").to_c_bytes();
+        __bytes.push(0_i8);
+        s.as_pointer().write(__bytes);
+        s.as_pointer()
+    };
     unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -484,7 +544,12 @@ pub fn test03_11() {
     let s: Value<Vec<i8>> = Rc::new(RefCell::new(vec![i8::default()]));
     let mut d: f64 = 1_f64;
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    {
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"0.5e+2azzz").to_c_bytes();
+        __bytes.push(0_i8);
+        s.as_pointer().write(__bytes);
+        s.as_pointer()
+    };
     unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -628,7 +693,12 @@ pub fn test03_11() {
             std::process::abort();
         }
     }
-    unimplemented!();
+    {
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"1.Ap-2zzz").to_c_bytes();
+        __bytes.push(0_i8);
+        s.as_pointer().write(__bytes);
+        s.as_pointer()
+    };
     unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -764,13 +834,12 @@ pub fn to_string_13(mut val: u128) -> Vec<i8> {
     let iter: Value<RandomAccessIterator<i8>> =
         Rc::new(RefCell::new(RandomAccessIterator::Vec(s.decay().to_last())));
     'loop_: while (val != 0_u128) {
-        ((*iter.borrow_mut()).iter_dec())
-            .clone()
+        ({ ((*iter.borrow_mut()).iter_dec()).clone() })
             .iter_deref()
             .write((((('0' as i8) as u128).wrapping_add(((val).wrapping_rem(10_u128)))) as i8));
         val = { (val).wrapping_div(10_u128) };
     }
-    return std::mem::take(&mut (*s.borrow_mut()));
+    return ({ std::mem::take(&mut (*s.borrow_mut())) });
 }
 pub fn test05_14() {
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1131,16 +1200,16 @@ pub fn test_max_mantissa_15() {
                         std::process::abort();
                     }
                 }
-                let s2: Value<Vec<i8>> = Rc::new(RefCell::new({
-                    let mut __tmp1 = (*s.borrow())[(0_usize) as usize
-                        ..::std::cmp::min(
-                            (0_usize + (len).wrapping_sub(5_usize)) as usize,
-                            (*s.borrow()).len().saturating_sub(1),
-                        )]
-                        .to_vec();
-                    __tmp1.push(0_i8);
-                    __tmp1
-                }));
+                let s2: Value<Vec<i8>> =
+                    Rc::new(RefCell::new(match ({ (len).wrapping_sub(5_usize) },) {
+                        (mut __tmp_0,) => s.as_pointer().with(|__s: &Vec<i8>| {
+                            let mut __tmp1 = __s[0_usize
+                                ..::std::cmp::min(0_usize + __tmp_0, __s.len().saturating_sub(1))]
+                                .to_vec();
+                            __tmp1.push(0_i8);
+                            __tmp1
+                        }),
+                    }));
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1259,16 +1328,16 @@ pub fn test_max_mantissa_16() {
                         std::process::abort();
                     }
                 }
-                let s2: Value<Vec<i8>> = Rc::new(RefCell::new({
-                    let mut __tmp1 = (*s.borrow())[(0_usize) as usize
-                        ..::std::cmp::min(
-                            (0_usize + (len).wrapping_sub(5_usize)) as usize,
-                            (*s.borrow()).len().saturating_sub(1),
-                        )]
-                        .to_vec();
-                    __tmp1.push(0_i8);
-                    __tmp1
-                }));
+                let s2: Value<Vec<i8>> =
+                    Rc::new(RefCell::new(match ({ (len).wrapping_sub(5_usize) },) {
+                        (mut __tmp_1,) => s.as_pointer().with(|__s: &Vec<i8>| {
+                            let mut __tmp1 = __s[0_usize
+                                ..::std::cmp::min(0_usize + __tmp_1, __s.len().saturating_sub(1))]
+                                .to_vec();
+                            __tmp1.push(0_i8);
+                            __tmp1
+                        }),
+                    }));
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1388,16 +1457,16 @@ pub fn test_max_mantissa_17() {
                         std::process::abort();
                     }
                 }
-                let s2: Value<Vec<i8>> = Rc::new(RefCell::new({
-                    let mut __tmp1 = (*s.borrow())[(0_usize) as usize
-                        ..::std::cmp::min(
-                            (0_usize + (len).wrapping_sub(5_usize)) as usize,
-                            (*s.borrow()).len().saturating_sub(1),
-                        )]
-                        .to_vec();
-                    __tmp1.push(0_i8);
-                    __tmp1
-                }));
+                let s2: Value<Vec<i8>> =
+                    Rc::new(RefCell::new(match ({ (len).wrapping_sub(5_usize) },) {
+                        (mut __tmp_2,) => s.as_pointer().with(|__s: &Vec<i8>| {
+                            let mut __tmp1 = __s[0_usize
+                                ..::std::cmp::min(0_usize + __tmp_2, __s.len().saturating_sub(1))]
+                                .to_vec();
+                            __tmp1.push(0_i8);
+                            __tmp1
+                        }),
+                    }));
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
@@ -1583,22 +1652,36 @@ pub fn run_tests_wrapped_env_23(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !(libc::setenv(env, name, 1) != 0) {
+    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+        true => {
+            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
+            0
+        }
+        false => 0,
+    } != 0)
+    {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: i32 = 0;
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        libc::setenv(
-            env,
+        match ({
             if !(oldENV).is_null() {
                 (oldENV).clone()
             } else {
                 Ptr::<i8>::from_string_literal(b"")
+            }
+        },)
+        {
+            (mut __tmp_0,) => match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+                true => {
+                    unsafe { ::std::env::set_var(env.to_rust_string(), __tmp_0.to_rust_string()) };
+                    0
+                }
+                false => 0,
             },
-            1,
-        );
+        };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = env.to_c_bytes();
@@ -1647,6 +1730,11 @@ impl __gnu_test_semun {
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<u16>> {
         this.reinterpret_cast()
+    }
+}
+impl CppMove for __gnu_test_semun {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for __gnu_test_semun {
@@ -1724,7 +1812,9 @@ impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
     }
     fn push_back(&self, mut test: FnPtr<fn()>) {
         array_elem!((*self), _M_tests, (*self).with(|__s| __s._M_size)).write((test).clone());
-        field!((*self), _M_size).with_mut(|__v| __v.prefix_inc());
+        field!((*self), _M_size).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait __gnu_test_object_counterImpl {

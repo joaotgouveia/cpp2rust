@@ -172,42 +172,42 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ round_trip_ws_3(Ptr::<i8>::from_string_literal(b"Hi")) });
     ({ round_trip_d_4(Ptr::<i8>::from_string_literal(b"Hi"), ('!' as i8)) });
     ({ round_trip_e_5(Ptr::<i8>::from_string_literal(b"Hi"), ('!' as i8)) });
-    assert!(Ptr::<i8>::from_string_literal(b"!Hi!").with_c_str(|__s| {
+    assert!(match (Rc::new(RefCell::new(
         ({
             quote_6(
                 Ptr::<i8>::from_string_literal(b"Hi"),
                 Some(('!' as i8)),
                 None,
             )
-        })[..({
-            quote_6(
-                Ptr::<i8>::from_string_literal(b"Hi"),
-                Some(('!' as i8)),
-                None,
-            )
         })
-        .len()
-        .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(
-        Ptr::<i8>::from_string_literal(b"!Hi\\!!").with_c_str(|__s| ({
-            quote_6(
-                Ptr::<i8>::from_string_literal(b"Hi!"),
-                Some(('!' as i8)),
-                None,
-            )
-        })[..({
+    ))
+    .as_pointer(),)
+    {
+        (__tmp_0,) => {
+            Ptr::<i8>::from_string_literal(b"!Hi!").with_c_str(|__s| {
+                (*__tmp_0.upgrade().deref())[..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                    == *__s
+            })
+        }
+    });
+    assert!(match (Rc::new(RefCell::new(
+        ({
             quote_6(
                 Ptr::<i8>::from_string_literal(b"Hi!"),
                 Some(('!' as i8)),
                 None,
             )
         })
-        .len()
-        .saturating_sub(1)]
-            == *__s)
-    );
+    ))
+    .as_pointer(),)
+    {
+        (__tmp_1,) => {
+            Ptr::<i8>::from_string_literal(b"!Hi\\!!").with_c_str(|__s| {
+                (*__tmp_1.upgrade().deref())[..(*__tmp_1.upgrade().deref()).len().saturating_sub(1)]
+                    == *__s
+            })
+        }
+    });
     ({
         round_trip_8(Ptr::<i32>::from_string_literal(&[
             72 as i32, 105 as i32, 0 as i32,
@@ -230,46 +230,48 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             (('!' as i8) as i32),
         )
     });
-    assert!(
-        Ptr::<i32>::from_string_literal(&[33 as i32, 72 as i32, 105 as i32, 33 as i32, 0 as i32,])
-            .with_c_str(|__s| ({
-                quote_12(
-                    Ptr::<i32>::from_string_literal(&[72 as i32, 105 as i32, 0 as i32]),
-                    Some((('!' as i8) as i32)),
-                    None,
-                )
-            })[..({
-                quote_12(
-                    Ptr::<i32>::from_string_literal(&[72 as i32, 105 as i32, 0 as i32]),
-                    Some((('!' as i8) as i32)),
-                    None,
-                )
-            })
-            .len()
-            .saturating_sub(1)]
-                == *__s)
-    );
-    assert!(
-        Ptr::<i32>::from_string_literal(&[
-            33 as i32, 72 as i32, 105 as i32, 92 as i32, 33 as i32, 33 as i32, 0 as i32,
-        ])
-        .with_c_str(|__s| ({
+    assert!(match (Rc::new(RefCell::new(
+        ({
             quote_12(
-                Ptr::<i32>::from_string_literal(&[72 as i32, 105 as i32, 33 as i32, 0 as i32]),
+                Ptr::<i32>::from_string_literal(&[72 as i32, 105 as i32, 0 as i32]),
                 Some((('!' as i8) as i32)),
                 None,
             )
-        })[..({
+        })
+    ))
+    .as_pointer(),)
+    {
+        (__tmp_2,) => {
+            Ptr::<i32>::from_string_literal(&[
+                33 as i32, 72 as i32, 105 as i32, 33 as i32, 0 as i32,
+            ])
+            .with_c_str(|__s| {
+                (*__tmp_2.upgrade().deref())[..(*__tmp_2.upgrade().deref()).len().saturating_sub(1)]
+                    == *__s
+            })
+        }
+    });
+    assert!(match (Rc::new(RefCell::new(
+        ({
             quote_12(
                 Ptr::<i32>::from_string_literal(&[72 as i32, 105 as i32, 33 as i32, 0 as i32]),
                 Some((('!' as i8) as i32)),
                 None,
             )
         })
-        .len()
-        .saturating_sub(1)]
-            == *__s)
-    );
+    ))
+    .as_pointer(),)
+    {
+        (__tmp_3,) => {
+            Ptr::<i32>::from_string_literal(&[
+                33 as i32, 72 as i32, 105 as i32, 92 as i32, 33 as i32, 33 as i32, 0 as i32,
+            ])
+            .with_c_str(|__s| {
+                (*__tmp_3.upgrade().deref())[..(*__tmp_3.upgrade().deref()).len().saturating_sub(1)]
+                    == *__s
+            })
+        }
+    });
     ({ round_trip_2(Ptr::<i8>::from_string_literal(b"Hi Mom")) });
     ({ round_trip_ws_3(Ptr::<i8>::from_string_literal(b"Hi Mom")) });
     ({
@@ -282,160 +284,190 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             72 as i32, 105 as i32, 32 as i32, 77 as i32, 111 as i32, 109 as i32, 0 as i32,
         ]))
     });
-    assert!(Ptr::<i8>::from_string_literal(b"\"\"").with_c_str(|__s| {
-        ({ quote_6(Ptr::<i8>::from_string_literal(b""), None, None) })[..({
-            quote_6(Ptr::<i8>::from_string_literal(b""), None, None)
-        })
-        .len()
-        .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"\"a\"").with_c_str(|__s| {
-        ({ quote_6(Ptr::<i8>::from_string_literal(b"a"), None, None) })[..({
-            quote_6(Ptr::<i8>::from_string_literal(b"a"), None, None)
-        })
-        .len()
-        .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(
-        Ptr::<i32>::from_string_literal(&[34 as i32, 34 as i32, 0 as i32,]).with_c_str(|__s| ({
-            quote_12(Ptr::<i32>::from_string_literal(&[0 as i32]), None, None)
-        })[..({ quote_12(Ptr::<i32>::from_string_literal(&[0 as i32,]), None, None,) })
-            .len()
-            .saturating_sub(1)]
-            == *__s)
-    );
-    assert!(
-        Ptr::<i32>::from_string_literal(&[34 as i32, 97 as i32, 34 as i32, 0 as i32,]).with_c_str(
-            |__s| ({
-                quote_12(
-                    Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32]),
-                    None,
-                    None,
-                )
-            })[..({
-                quote_12(
-                    Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32]),
-                    None,
-                    None,
-                )
+    assert!(match (Rc::new(RefCell::new(
+        ({ quote_6(Ptr::<i8>::from_string_literal(b""), None, None,) })
+    ))
+    .as_pointer(),)
+    {
+        (__tmp_4,) => {
+            Ptr::<i8>::from_string_literal(b"\"\"").with_c_str(|__s| {
+                (*__tmp_4.upgrade().deref())[..(*__tmp_4.upgrade().deref()).len().saturating_sub(1)]
+                    == *__s
             })
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        )
-    );
-    assert!(Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
-        ({ unquote_7(Ptr::<i8>::from_string_literal(b"\"abc"), None, None) })[..({
-            unquote_7(Ptr::<i8>::from_string_literal(b"\"abc"), None, None)
-        })
-        .len()
-        .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
-        ({ unquote_7(Ptr::<i8>::from_string_literal(b"abc"), None, None) })[..({
-            unquote_7(Ptr::<i8>::from_string_literal(b"abc"), None, None)
-        })
-        .len()
-        .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
-        ({ unquote_7(Ptr::<i8>::from_string_literal(b"abc def"), None, None) })[..({
-            unquote_7(Ptr::<i8>::from_string_literal(b"abc def"), None, None)
-        })
-        .len()
-        .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"").with_c_str(|__s| {
-        ({ unquote_7(Ptr::<i8>::from_string_literal(b""), None, None) })[..({
-            unquote_7(Ptr::<i8>::from_string_literal(b""), None, None)
-        })
-        .len()
-        .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(
-        Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32,]).with_c_str(
-            |__s| ({
-                unquote_13(
-                    Ptr::<i32>::from_string_literal(&[
-                        34 as i32, 97 as i32, 98 as i32, 99 as i32, 0 as i32,
-                    ]),
-                    None,
-                    None,
-                )
-            })[..({
-                unquote_13(
-                    Ptr::<i32>::from_string_literal(&[
-                        34 as i32, 97 as i32, 98 as i32, 99 as i32, 0 as i32,
-                    ]),
-                    None,
-                    None,
-                )
+        }
+    });
+    assert!(match (Rc::new(RefCell::new(
+        ({ quote_6(Ptr::<i8>::from_string_literal(b"a"), None, None,) })
+    ))
+    .as_pointer(),)
+    {
+        (__tmp_5,) => {
+            Ptr::<i8>::from_string_literal(b"\"a\"").with_c_str(|__s| {
+                (*__tmp_5.upgrade().deref())[..(*__tmp_5.upgrade().deref()).len().saturating_sub(1)]
+                    == *__s
             })
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        )
-    );
-    assert!(
-        Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32,]).with_c_str(
-            |__s| ({
-                unquote_13(
-                    Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32]),
-                    None,
-                    None,
-                )
-            })[..({
-                unquote_13(
-                    Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32]),
-                    None,
-                    None,
-                )
+        }
+    });
+    assert!(match (Rc::new(RefCell::new(
+        ({ quote_12(Ptr::<i32>::from_string_literal(&[0 as i32,]), None, None,) })
+    ))
+    .as_pointer(),)
+    {
+        (__tmp_6,) => {
+            Ptr::<i32>::from_string_literal(&[34 as i32, 34 as i32, 0 as i32]).with_c_str(|__s| {
+                (*__tmp_6.upgrade().deref())[..(*__tmp_6.upgrade().deref()).len().saturating_sub(1)]
+                    == *__s
             })
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        )
-    );
-    assert!(
-        Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32,]).with_c_str(
-            |__s| ({
-                unquote_13(
-                    Ptr::<i32>::from_string_literal(&[
-                        97 as i32, 98 as i32, 99 as i32, 32 as i32, 100 as i32, 101 as i32,
-                        102 as i32, 0 as i32,
-                    ]),
-                    None,
-                    None,
-                )
-            })[..({
-                unquote_13(
-                    Ptr::<i32>::from_string_literal(&[
-                        97 as i32, 98 as i32, 99 as i32, 32 as i32, 100 as i32, 101 as i32,
-                        102 as i32, 0 as i32,
-                    ]),
-                    None,
-                    None,
-                )
+        }
+    });
+    assert!(match (Rc::new(RefCell::new(
+        ({
+            quote_12(
+                Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32]),
+                None,
+                None,
+            )
+        })
+    ))
+    .as_pointer(),)
+    {
+        (__tmp_7,) => {
+            Ptr::<i32>::from_string_literal(&[34 as i32, 97 as i32, 34 as i32, 0 as i32])
+                .with_c_str(|__s| {
+                    (*__tmp_7.upgrade().deref())
+                        [..(*__tmp_7.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+        }
+    });
+    assert!(match (Rc::new(RefCell::new(
+        ({ unquote_7(Ptr::<i8>::from_string_literal(b"\"abc"), None, None,) })
+    ))
+    .as_pointer(),)
+    {
+        (__tmp_8,) => {
+            Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
+                (*__tmp_8.upgrade().deref())[..(*__tmp_8.upgrade().deref()).len().saturating_sub(1)]
+                    == *__s
             })
-            .len()
-            .saturating_sub(1)]
-                == *__s
-        )
-    );
-    assert!(
-        Ptr::<i32>::from_string_literal(&[0 as i32,]).with_c_str(|__s| ({
-            unquote_13(Ptr::<i32>::from_string_literal(&[0 as i32]), None, None)
-        })[..({ unquote_13(Ptr::<i32>::from_string_literal(&[0 as i32,]), None, None,) })
-            .len()
-            .saturating_sub(1)]
-            == *__s)
-    );
+        }
+    });
+    assert!(match (Rc::new(RefCell::new(
+        ({ unquote_7(Ptr::<i8>::from_string_literal(b"abc"), None, None,) })
+    ))
+    .as_pointer(),)
+    {
+        (__tmp_9,) => {
+            Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
+                (*__tmp_9.upgrade().deref())[..(*__tmp_9.upgrade().deref()).len().saturating_sub(1)]
+                    == *__s
+            })
+        }
+    });
+    assert!(match (Rc::new(RefCell::new(
+        ({ unquote_7(Ptr::<i8>::from_string_literal(b"abc def"), None, None,) })
+    ))
+    .as_pointer(),)
+    {
+        (__tmp_10,) => {
+            Ptr::<i8>::from_string_literal(b"abc").with_c_str(|__s| {
+                (*__tmp_10.upgrade().deref())
+                    [..(*__tmp_10.upgrade().deref()).len().saturating_sub(1)]
+                    == *__s
+            })
+        }
+    });
+    assert!(match (Rc::new(RefCell::new(
+        ({ unquote_7(Ptr::<i8>::from_string_literal(b""), None, None,) })
+    ))
+    .as_pointer(),)
+    {
+        (__tmp_11,) => {
+            Ptr::<i8>::from_string_literal(b"").with_c_str(|__s| {
+                (*__tmp_11.upgrade().deref())
+                    [..(*__tmp_11.upgrade().deref()).len().saturating_sub(1)]
+                    == *__s
+            })
+        }
+    });
+    assert!(match (Rc::new(RefCell::new(
+        ({
+            unquote_13(
+                Ptr::<i32>::from_string_literal(&[
+                    34 as i32, 97 as i32, 98 as i32, 99 as i32, 0 as i32,
+                ]),
+                None,
+                None,
+            )
+        })
+    ))
+    .as_pointer(),)
+    {
+        (__tmp_12,) => {
+            Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32])
+                .with_c_str(|__s| {
+                    (*__tmp_12.upgrade().deref())
+                        [..(*__tmp_12.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+        }
+    });
+    assert!(match (Rc::new(RefCell::new(
+        ({
+            unquote_13(
+                Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32]),
+                None,
+                None,
+            )
+        })
+    ))
+    .as_pointer(),)
+    {
+        (__tmp_13,) => {
+            Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32])
+                .with_c_str(|__s| {
+                    (*__tmp_13.upgrade().deref())
+                        [..(*__tmp_13.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+        }
+    });
+    assert!(match (Rc::new(RefCell::new(
+        ({
+            unquote_13(
+                Ptr::<i32>::from_string_literal(&[
+                    97 as i32, 98 as i32, 99 as i32, 32 as i32, 100 as i32, 101 as i32, 102 as i32,
+                    0 as i32,
+                ]),
+                None,
+                None,
+            )
+        })
+    ))
+    .as_pointer(),)
+    {
+        (__tmp_14,) => {
+            Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32])
+                .with_c_str(|__s| {
+                    (*__tmp_14.upgrade().deref())
+                        [..(*__tmp_14.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+        }
+    });
+    assert!(match (Rc::new(RefCell::new(
+        ({ unquote_13(Ptr::<i32>::from_string_literal(&[0 as i32,]), None, None,) })
+    ))
+    .as_pointer(),)
+    {
+        (__tmp_15,) => {
+            Ptr::<i32>::from_string_literal(&[0 as i32]).with_c_str(|__s| {
+                (*__tmp_15.upgrade().deref())
+                    [..(*__tmp_15.upgrade().deref()).len().saturating_sub(1)]
+                    == *__s
+            })
+        }
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

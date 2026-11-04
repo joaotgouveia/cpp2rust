@@ -11,30 +11,28 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int_ptr__int_ptr_ {}
+impl CppMove for test_macros_detail_is_same_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_int_ptr__const_int_ptr_ {}
-pub type anon_2 = u32;
-pub const anon_2_value: anon_2 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_reverse_iterator_int_ptr___std_reverse_iterator_int_ptr__
-{}
-pub type anon_3 = u32;
-pub const anon_3_value: anon_3 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_reverse_iterator_const_int_ptr___std_reverse_iterator_const_int_ptr__
-{}
-pub fn test_4() -> bool {
+impl CppMove for test_macros_detail_is_same_const_int_ptr__const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn test_2() -> bool {
     let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
     let ca: Ptr<i32> = a.as_pointer();
     {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>)));
+        assert!((({ begin_3(a.as_pointer(),) }) == (a.as_pointer() as Ptr::<i32>)));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         assert!(
@@ -43,7 +41,7 @@ pub fn test_4() -> bool {
         );
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(({ unimplemented!() } == { (ca).clone() }));
+        assert!(({ ({ begin_4((ca).clone(),) }) } == { (ca).clone() }));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         assert!(({ ((ca).clone() as Ptr<i32>).to_end() } == { (ca).offset((3) as isize) }));
@@ -55,13 +53,16 @@ pub fn test_r_5() -> bool {
     let ca: Ptr<i32> = a.as_pointer();
     {
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>).offset((3) as isize)));
+        assert!(
+            (({ ({ rbegin_6(a.as_pointer(),) }).base() })
+                == (a.as_pointer() as Ptr::<i32>).offset((3) as isize))
+        );
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>)));
+        assert!((({ ({ rend_7(a.as_pointer(),) }).base() }) == (a.as_pointer() as Ptr::<i32>)));
         const _: () = assert!(true, "");;
-        assert!(({ unimplemented!() } == { (ca).offset((3) as isize) }));
+        assert!(({ ({ ({ rbegin_8((ca).clone(),) }).base() }) } == { (ca).offset((3) as isize) }));
         const _: () = assert!(true, "");;
-        assert!(({ unimplemented!() } == { (ca).clone() }));
+        assert!(({ ({ ({ rend_9((ca).clone(),) }).base() }) } == { (ca).clone() }));
     }
     return true;
 }
@@ -85,23 +86,23 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_4() });
+    ({ test_2() });
     ({ test_r_5() });
     const _: () = assert!(true, "test()");;
     const _: () = assert!(true, "test_r()");;
     {
-        let mut b: Ptr<i32> = unimplemented!();
-        assert!(({ (b).clone() } == { (a_6.with(|v| v.as_pointer()) as Ptr::<i32>) }));
-        let mut e: Ptr<i32> = (a_6.with(|v| v.as_pointer()) as Ptr<i32>).to_end();
+        let mut b: Ptr<i32> = ({ begin_4(a_10.with(|v| v.as_pointer())) });
+        assert!(({ (b).clone() } == { (a_10.with(|v| v.as_pointer()) as Ptr::<i32>) }));
+        let mut e: Ptr<i32> = (a_10.with(|v| v.as_pointer()) as Ptr<i32>).to_end();
         assert!(
             ({ (e).clone() } == {
-                (a_6.with(|v| v.as_pointer()) as Ptr<i32>).offset((3) as isize)
+                (a_10.with(|v| v.as_pointer()) as Ptr<i32>).offset((3) as isize)
             })
         );
     }
     return 0;
 }
 thread_local!(
-    static a_6: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+    static a_10: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
 );
 pub fn __cpp2rust_init_globals() {}

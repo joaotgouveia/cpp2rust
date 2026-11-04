@@ -9,6 +9,11 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Counter_base {}
+impl CppMove for Counter_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Destructor, Default)]
 #[cpp_from(i32, new_1, ptr)]
 #[byte_size(4)]
@@ -50,87 +55,227 @@ impl Clone for Counter_int_ {
         Counter_int_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Counter_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static gConstructed_0: Value<i32> = Rc::new(RefCell::new(0));
 );
-pub fn set_equal_1(set: Ptr<()>, other: ()) -> bool {
-    let other: Value<()> = Rc::new(RefCell::new(other));
-    return unimplemented!();
-}
-pub fn set_equal_2(set: Ptr<()>, other: ()) -> bool {
-    let other: Value<()> = Rc::new(RefCell::new(other));
-    return unimplemented!();
-}
-pub fn set_equal_3(set: Ptr<()>, other: ()) -> bool {
-    let other: Value<()> = Rc::new(RefCell::new(other));
-    return unimplemented!();
-}
-pub fn set_equal_4(set: Ptr<()>, other: ()) -> bool {
-    let other: Value<()> = Rc::new(RefCell::new(other));
-    return unimplemented!();
-}
-pub fn test_5() -> bool {
+pub fn test_1() -> bool {
     {
-        let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let dst: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(({ set_equal_1(src.as_pointer(), unimplemented!(),) }));
-        assert!(({ set_equal_1(dst.as_pointer(), unimplemented!(),) }));
+        let src: Value<std_multiset_int__std_less_int___std_allocator_int__> = Rc::new(
+            RefCell::new(std_multiset_int__std_less_int___std_allocator_int__::new_1(
+                { Vec::from([1, 3, 5]) },
+                None,
+                None,
+            )),
+        );
+        let dst: Value<std_multiset_int__std_less_int___std_allocator_int__> = Rc::new(
+            RefCell::new(std_multiset_int__std_less_int___std_allocator_int__::new_1(
+                { Vec::from([2, 4, 5]) },
+                None,
+                None,
+            )),
+        );
+        ({ (*dst.borrow()).merge(src.as_pointer()) });
+        assert!(
+            ({
+                set_equal_2(
+                    src.as_pointer(),
+                    <std_multiset_int__std_less_int___std_allocator_int__>::default(),
+                )
+            })
+        );
+        assert!(
+            ({
+                set_equal_2(
+                    dst.as_pointer(),
+                    std_multiset_int__std_less_int___std_allocator_int__::new_1(
+                        { Vec::from([1, 2, 3, 4, 5, 5]) },
+                        None,
+                        None,
+                    ),
+                )
+            })
+        );
     }
     {
         assert!((gConstructed_0.with(|rc| *rc.borrow()) == 0));
     };
     {
         {
-            let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let second: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let third: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let first : Value<std_multiset_Counter_int___std_less_Counter_int____std_allocator_Counter_int___ > = Rc::new(RefCell::new(std_multiset_Counter_int___std_less_Counter_int____std_allocator_Counter_int___ :: new_1 ( { Vec::from([ { let __tmp_0 : Value<i32 > = Rc::new(RefCell::new(1 )); Counter_int_ :: new_1 ( { __tmp_0.as_pointer() } , )  }  , { let __tmp_1 : Value<i32 > = Rc::new(RefCell::new(2 )); Counter_int_ :: new_1 ( { __tmp_1.as_pointer() } , )  }  , { let __tmp_2 : Value<i32 > = Rc::new(RefCell::new(3 )); Counter_int_ :: new_1 ( { __tmp_2.as_pointer() } , )  }  , ] )  } , None , None , )  )) ;
+            let second: Value<std_multiset_Counter_int___comparator__std_allocator_Counter_int___> =
+                Rc::new(RefCell::new(
+                    std_multiset_Counter_int___comparator__std_allocator_Counter_int___::new_1(
+                        {
+                            Vec::from([
+                                {
+                                    let __tmp_3: Value<i32> = Rc::new(RefCell::new(2));
+                                    Counter_int_::new_1({ __tmp_3.as_pointer() })
+                                },
+                                {
+                                    let __tmp_4: Value<i32> = Rc::new(RefCell::new(3));
+                                    Counter_int_::new_1({ __tmp_4.as_pointer() })
+                                },
+                                {
+                                    let __tmp_5: Value<i32> = Rc::new(RefCell::new(4));
+                                    Counter_int_::new_1({ __tmp_5.as_pointer() })
+                                },
+                            ])
+                        },
+                        None,
+                        None,
+                    ),
+                ));
+            let third: Value<std_set_Counter_int___comparator__std_allocator_Counter_int___> =
+                Rc::new(RefCell::new(
+                    std_set_Counter_int___comparator__std_allocator_Counter_int___::new_1(
+                        {
+                            Vec::from([
+                                {
+                                    let __tmp_6: Value<i32> = Rc::new(RefCell::new(1));
+                                    Counter_int_::new_1({ __tmp_6.as_pointer() })
+                                },
+                                {
+                                    let __tmp_7: Value<i32> = Rc::new(RefCell::new(3));
+                                    Counter_int_::new_1({ __tmp_7.as_pointer() })
+                                },
+                            ])
+                        },
+                        None,
+                        None,
+                    ),
+                ));
             assert!((gConstructed_0.with(|rc| *rc.borrow()) == 8));
-            unimplemented!();
-            unimplemented!();
-            assert!(({ set_equal_2(first.as_pointer(), unimplemented!(),) }));
-            assert!(({ set_equal_3(second.as_pointer(), unimplemented!(),) }));
-            assert!(({ set_equal_4(third.as_pointer(), unimplemented!(),) }));
+            ({ (*first.borrow()).merge(second.as_pointer()) });
+            ({ (*first.borrow()).merge(third.as_pointer()) });
+            assert!(
+                ({
+                    set_equal_4 ( first .as_pointer()  , std_multiset_Counter_int___std_less_Counter_int____std_allocator_Counter_int___ :: new_1 ( { Vec::from([ { let __tmp_8 : Value<i32 > = Rc::new(RefCell::new(1 )); Counter_int_ :: new_1 ( { __tmp_8.as_pointer() } , )  }  , { let __tmp_9 : Value<i32 > = Rc::new(RefCell::new(1 )); Counter_int_ :: new_1 ( { __tmp_9.as_pointer() } , )  }  , { let __tmp_10 : Value<i32 > = Rc::new(RefCell::new(2 )); Counter_int_ :: new_1 ( { __tmp_10.as_pointer() } , )  }  , { let __tmp_11 : Value<i32 > = Rc::new(RefCell::new(2 )); Counter_int_ :: new_1 ( { __tmp_11.as_pointer() } , )  }  , { let __tmp_12 : Value<i32 > = Rc::new(RefCell::new(3 )); Counter_int_ :: new_1 ( { __tmp_12.as_pointer() } , )  }  , { let __tmp_13 : Value<i32 > = Rc::new(RefCell::new(3 )); Counter_int_ :: new_1 ( { __tmp_13.as_pointer() } , )  }  , { let __tmp_14 : Value<i32 > = Rc::new(RefCell::new(3 )); Counter_int_ :: new_1 ( { __tmp_14.as_pointer() } , )  }  , { let __tmp_15 : Value<i32 > = Rc::new(RefCell::new(4 )); Counter_int_ :: new_1 ( { __tmp_15.as_pointer() } , )  }  , ] )  } , None , None , )   , )
+                })
+            );
+            assert!(
+                ({
+                    set_equal_5 ( second .as_pointer()  , <std_multiset_Counter_int___comparator__std_allocator_Counter_int___  >::default()  , )
+                })
+            );
+            assert!(
+                ({
+                    set_equal_6(
+                        third.as_pointer(),
+                        <std_set_Counter_int___comparator__std_allocator_Counter_int___>::default(),
+                    )
+                })
+            );
             assert!((gConstructed_0.with(|rc| *rc.borrow()) == 8));
         }
         assert!((gConstructed_0.with(|rc| *rc.borrow()) == 0));
         {
-            let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let second: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let third: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let first : Value<std_multiset_Counter_int___std_less_Counter_int____std_allocator_Counter_int___ > = Rc::new(RefCell::new(std_multiset_Counter_int___std_less_Counter_int____std_allocator_Counter_int___ :: new_1 ( { Vec::from([ { let __tmp_16 : Value<i32 > = Rc::new(RefCell::new(1 )); Counter_int_ :: new_1 ( { __tmp_16.as_pointer() } , )  }  , { let __tmp_17 : Value<i32 > = Rc::new(RefCell::new(2 )); Counter_int_ :: new_1 ( { __tmp_17.as_pointer() } , )  }  , { let __tmp_18 : Value<i32 > = Rc::new(RefCell::new(3 )); Counter_int_ :: new_1 ( { __tmp_18.as_pointer() } , )  }  , ] )  } , None , None , )  )) ;
+            let second: Value<std_multiset_Counter_int___comparator__std_allocator_Counter_int___> =
+                Rc::new(RefCell::new(
+                    std_multiset_Counter_int___comparator__std_allocator_Counter_int___::new_1(
+                        {
+                            Vec::from([
+                                {
+                                    let __tmp_19: Value<i32> = Rc::new(RefCell::new(2));
+                                    Counter_int_::new_1({ __tmp_19.as_pointer() })
+                                },
+                                {
+                                    let __tmp_20: Value<i32> = Rc::new(RefCell::new(3));
+                                    Counter_int_::new_1({ __tmp_20.as_pointer() })
+                                },
+                                {
+                                    let __tmp_21: Value<i32> = Rc::new(RefCell::new(4));
+                                    Counter_int_::new_1({ __tmp_21.as_pointer() })
+                                },
+                            ])
+                        },
+                        None,
+                        None,
+                    ),
+                ));
+            let third: Value<std_set_Counter_int___comparator__std_allocator_Counter_int___> =
+                Rc::new(RefCell::new(
+                    std_set_Counter_int___comparator__std_allocator_Counter_int___::new_1(
+                        {
+                            Vec::from([
+                                {
+                                    let __tmp_22: Value<i32> = Rc::new(RefCell::new(1));
+                                    Counter_int_::new_1({ __tmp_22.as_pointer() })
+                                },
+                                {
+                                    let __tmp_23: Value<i32> = Rc::new(RefCell::new(3));
+                                    Counter_int_::new_1({ __tmp_23.as_pointer() })
+                                },
+                            ])
+                        },
+                        None,
+                        None,
+                    ),
+                ));
             assert!((gConstructed_0.with(|rc| *rc.borrow()) == 8));
-            unimplemented!();
-            unimplemented!();
-            assert!(({ set_equal_2(first.as_pointer(), unimplemented!(),) }));
-            assert!(({ set_equal_3(second.as_pointer(), unimplemented!(),) }));
-            assert!(({ set_equal_4(third.as_pointer(), unimplemented!(),) }));
+            ({ (*first.borrow()).merge(second.as_pointer()) });
+            ({ (*first.borrow()).merge(third.as_pointer()) });
+            assert!(
+                ({
+                    set_equal_4 ( first .as_pointer()  , std_multiset_Counter_int___std_less_Counter_int____std_allocator_Counter_int___ :: new_1 ( { Vec::from([ { let __tmp_24 : Value<i32 > = Rc::new(RefCell::new(1 )); Counter_int_ :: new_1 ( { __tmp_24.as_pointer() } , )  }  , { let __tmp_25 : Value<i32 > = Rc::new(RefCell::new(1 )); Counter_int_ :: new_1 ( { __tmp_25.as_pointer() } , )  }  , { let __tmp_26 : Value<i32 > = Rc::new(RefCell::new(2 )); Counter_int_ :: new_1 ( { __tmp_26.as_pointer() } , )  }  , { let __tmp_27 : Value<i32 > = Rc::new(RefCell::new(2 )); Counter_int_ :: new_1 ( { __tmp_27.as_pointer() } , )  }  , { let __tmp_28 : Value<i32 > = Rc::new(RefCell::new(3 )); Counter_int_ :: new_1 ( { __tmp_28.as_pointer() } , )  }  , { let __tmp_29 : Value<i32 > = Rc::new(RefCell::new(3 )); Counter_int_ :: new_1 ( { __tmp_29.as_pointer() } , )  }  , { let __tmp_30 : Value<i32 > = Rc::new(RefCell::new(3 )); Counter_int_ :: new_1 ( { __tmp_30.as_pointer() } , )  }  , { let __tmp_31 : Value<i32 > = Rc::new(RefCell::new(4 )); Counter_int_ :: new_1 ( { __tmp_31.as_pointer() } , )  }  , ] )  } , None , None , )   , )
+                })
+            );
+            assert!(
+                ({
+                    set_equal_5 ( second .as_pointer()  , <std_multiset_Counter_int___comparator__std_allocator_Counter_int___  >::default()  , )
+                })
+            );
+            assert!(
+                ({
+                    set_equal_6(
+                        third.as_pointer(),
+                        <std_set_Counter_int___comparator__std_allocator_Counter_int___>::default(),
+                    )
+                })
+            );
             assert!((gConstructed_0.with(|rc| *rc.borrow()) == 8));
         }
         assert!((gConstructed_0.with(|rc| *rc.borrow()) == 0));
     }
     {
-        let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let first: Value<std_multiset_int__std_less_int___std_allocator_int__> = Rc::new(
+            RefCell::new(<std_multiset_int__std_less_int___std_allocator_int__>::default()),
+        );
         {
-            let second: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let second: Value<std_multiset_int__std_less_int___std_allocator_int__> = Rc::new(
+                RefCell::new(<std_multiset_int__std_less_int___std_allocator_int__>::default()),
+            );
+            ({ (*first.borrow()).merge(second.as_pointer()) });
+            ({ (*first.borrow()).merge(second.as_pointer()) });
         }
         {
-            let second: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let second: Value<std_set_int__std_less_int___std_allocator_int__> = Rc::new(
+                RefCell::new(<std_set_int__std_less_int___std_allocator_int__>::default()),
+            );
+            ({ (*first.borrow()).merge(second.as_pointer()) });
+            ({ (*first.borrow()).merge(second.as_pointer()) });
         }
     }
     return true;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct comparator_6 {}
-impl Callable2<Ptr<Counter_int_>, Ptr<Counter_int_>, bool> for comparator_6 {
+pub struct comparator_3 {}
+impl Callable2<Ptr<Counter_int_>, Ptr<Counter_int_>, bool> for comparator_3 {
     fn call(&self, a1: Ptr<Counter_int_>, a2: Ptr<Counter_int_>) -> bool {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
-            comparator_6Impl::operator_call(__it, a1, a2)
+            comparator_3Impl::operator_call(__it, a1, a2)
         })
+    }
+}
+impl CppMove for comparator_3 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {
@@ -153,7 +298,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_5() });
+    ({ test_1() });
     return 0;
 }
 pub trait Counter_int_Impl {
@@ -181,10 +326,10 @@ impl Counter_int_Impl for Ptr<Counter_int_> {
         return ({ (*self).with(|__s| __s.data_) } < { x.with(|__s| __s.data_) });
     }
 }
-pub trait comparator_6Impl {
+pub trait comparator_3Impl {
     fn operator_call(&self, lhs: Ptr<Counter_int_>, rhs: Ptr<Counter_int_>) -> bool;
 }
-impl comparator_6Impl for Ptr<comparator_6> {
+impl comparator_3Impl for Ptr<comparator_3> {
     fn operator_call(&self, lhs: Ptr<Counter_int_>, rhs: Ptr<Counter_int_>) -> bool {
         return ({
             let _x: Ptr<Counter_int_> = (rhs).clone();

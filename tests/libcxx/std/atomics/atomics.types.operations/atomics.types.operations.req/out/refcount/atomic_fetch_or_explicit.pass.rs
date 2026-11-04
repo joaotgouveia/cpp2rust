@@ -60,6 +60,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_char_ {}
+impl CppMove for LockFreeStatusInfo_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_2: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i16>() == ::std::mem::size_of::<i8>())
@@ -109,6 +114,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_short_ {}
+impl CppMove for LockFreeStatusInfo_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_4: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i32>() == ::std::mem::size_of::<i8>())
@@ -158,6 +168,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_int_ {}
+impl CppMove for LockFreeStatusInfo_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_6: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i8>())
@@ -207,6 +222,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_long_ {}
+impl CppMove for LockFreeStatusInfo_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_8: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((8usize == ::std::mem::size_of::<i8>()) && (8usize >= 8usize)) {
@@ -244,6 +264,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_void_ptr_ {}
+impl CppMove for LockFreeStatusInfo_void_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_10: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i8>())
@@ -293,6 +318,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_long_long_ {}
+impl CppMove for LockFreeStatusInfo_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "LockFreeStatusInfo<char>::status_known");
 const _: () = assert!(true, "LockFreeStatusInfo<short>::status_known");
 const _: () = assert!(true, "LockFreeStatusInfo<int>::status_known");
@@ -332,6 +362,11 @@ impl UserAtomicType {
 impl CppEq for UserAtomicType {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_12(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for UserAtomicType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for UserAtomicType {
@@ -380,6 +415,11 @@ impl CppEq for LargeUserAtomicType {
         operator_eq_13(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for LargeUserAtomicType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for LargeUserAtomicType {
     fn default() -> Self {
         { LargeUserAtomicType::new(None) }
@@ -395,6 +435,11 @@ impl Callable0<()> for TestEachIntegralType_TestFn_ {
         })
     }
 }
+impl CppMove for TestEachIntegralType_TestFn_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFn_char_ {}
@@ -403,6 +448,11 @@ impl Callable0<()> for TestFn_char_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFn_char_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFn_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -415,6 +465,11 @@ impl Callable0<()> for TestFn_signed_char_ {
         })
     }
 }
+impl CppMove for TestFn_signed_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFn_unsigned_char_ {}
@@ -423,6 +478,11 @@ impl Callable0<()> for TestFn_unsigned_char_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFn_unsigned_char_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFn_unsigned_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -435,6 +495,11 @@ impl Callable0<()> for TestFn_short_ {
         })
     }
 }
+impl CppMove for TestFn_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFn_unsigned_short_ {}
@@ -443,6 +508,11 @@ impl Callable0<()> for TestFn_unsigned_short_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFn_unsigned_short_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFn_unsigned_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -455,6 +525,11 @@ impl Callable0<()> for TestFn_int_ {
         })
     }
 }
+impl CppMove for TestFn_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFn_unsigned_int_ {}
@@ -463,6 +538,11 @@ impl Callable0<()> for TestFn_unsigned_int_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFn_unsigned_int_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFn_unsigned_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -475,6 +555,11 @@ impl Callable0<()> for TestFn_long_ {
         })
     }
 }
+impl CppMove for TestFn_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFn_unsigned_long_ {}
@@ -483,6 +568,11 @@ impl Callable0<()> for TestFn_unsigned_long_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFn_unsigned_long_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFn_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -495,6 +585,11 @@ impl Callable0<()> for TestFn_long_long_ {
         })
     }
 }
+impl CppMove for TestFn_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFn_unsigned_long_long_ {}
@@ -503,6 +598,11 @@ impl Callable0<()> for TestFn_unsigned_long_long_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFn_unsigned_long_long_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFn_unsigned_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -515,6 +615,11 @@ impl Callable0<()> for TestFn_wchar_t_ {
         })
     }
 }
+impl CppMove for TestFn_wchar_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFn_char8_t_ {}
@@ -523,6 +628,11 @@ impl Callable0<()> for TestFn_char8_t_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFn_char8_t_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFn_char8_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -535,6 +645,11 @@ impl Callable0<()> for TestFn_char16_t_ {
         })
     }
 }
+impl CppMove for TestFn_char16_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFn_char32_t_ {}
@@ -543,6 +658,11 @@ impl Callable0<()> for TestFn_char32_t_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestFn_char32_t_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestFn_char32_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {
@@ -700,15 +820,45 @@ pub trait TestFn_char16_t_Impl {
 impl TestFn_char16_t_Impl for Ptr<TestFn_char16_t_> {
     fn operator_call(&self) {
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (1_u16 as i32)));
-            assert!(((unimplemented!() as i32) == (3_u16 as i32)));
+            let t: Value<std_atomic_char16_t_> =
+                Rc::new(RefCell::new(std_atomic_char16_t_::new_1({ 1_u16 })));
+            assert!(
+                ((({
+                    atomic_fetch_or_explicit_41(
+                        (t.as_pointer()),
+                        2_u16,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) as i32)
+                    == (1_u16 as i32))
+            );
+            assert!(
+                ({
+                    ((({ ((*t.borrow()) as std___atomic_base_char16_t_).to_u16_7() }) as i32)
+                        == (3_u16 as i32))
+                })
+            );
             const _: () = assert!(true, "");;
         }
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (3_u16 as i32)));
-            assert!(((unimplemented!() as i32) == (3_u16 as i32)));
+            let t: Value<std_atomic_char16_t_> =
+                Rc::new(RefCell::new(std_atomic_char16_t_::new_1({ 3_u16 })));
+            assert!(
+                ((({
+                    atomic_fetch_or_explicit_42(
+                        (t.as_pointer()),
+                        2_u16,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) as i32)
+                    == (3_u16 as i32))
+            );
+            assert!(
+                ({
+                    ((({ ((*t.borrow()) as std___atomic_base_char16_t_).to_u16_8() }) as i32)
+                        == (3_u16 as i32))
+                })
+            );
             const _: () = assert!(true, "");;
         }
     }
@@ -719,15 +869,37 @@ pub trait TestFn_char32_t_Impl {
 impl TestFn_char32_t_Impl for Ptr<TestFn_char32_t_> {
     fn operator_call(&self) {
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as u32) == 1_u32));
-            assert!(((unimplemented!() as u32) == 3_u32));
+            let t: Value<std_atomic_char32_t_> =
+                Rc::new(RefCell::new(std_atomic_char32_t_::new_1({ 1_u32 })));
+            assert!(
+                (({
+                    atomic_fetch_or_explicit_43(
+                        (t.as_pointer()),
+                        2_u32,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) == 1_u32)
+            );
+            assert!(
+                ({ (({ ((*t.borrow()) as std___atomic_base_char32_t_).to_u32_7() }) == 3_u32) })
+            );
             const _: () = assert!(true, "");;
         }
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as u32) == 3_u32));
-            assert!(((unimplemented!() as u32) == 3_u32));
+            let t: Value<std_atomic_char32_t_> =
+                Rc::new(RefCell::new(std_atomic_char32_t_::new_1({ 3_u32 })));
+            assert!(
+                (({
+                    atomic_fetch_or_explicit_44(
+                        (t.as_pointer()),
+                        2_u32,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) == 3_u32)
+            );
+            assert!(
+                ({ (({ ((*t.borrow()) as std___atomic_base_char32_t_).to_u32_8() }) == 3_u32) })
+            );
             const _: () = assert!(true, "");;
         }
     }
@@ -738,15 +910,45 @@ pub trait TestFn_char8_t_Impl {
 impl TestFn_char8_t_Impl for Ptr<TestFn_char8_t_> {
     fn operator_call(&self) {
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (1_u8 as i32)));
-            assert!(((unimplemented!() as i32) == (3_u8 as i32)));
+            let t: Value<std_atomic_char8_t_> =
+                Rc::new(RefCell::new(std_atomic_char8_t_::new_1({ 1_u8 })));
+            assert!(
+                ((({
+                    atomic_fetch_or_explicit_39(
+                        (t.as_pointer()),
+                        2_u8,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) as i32)
+                    == (1_u8 as i32))
+            );
+            assert!(
+                ({
+                    ((({ ((*t.borrow()) as std___atomic_base_char8_t_).to_u8_7() }) as i32)
+                        == (3_u8 as i32))
+                })
+            );
             const _: () = assert!(true, "");;
         }
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (3_u8 as i32)));
-            assert!(((unimplemented!() as i32) == (3_u8 as i32)));
+            let t: Value<std_atomic_char8_t_> =
+                Rc::new(RefCell::new(std_atomic_char8_t_::new_1({ 3_u8 })));
+            assert!(
+                ((({
+                    atomic_fetch_or_explicit_40(
+                        (t.as_pointer()),
+                        2_u8,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) as i32)
+                    == (3_u8 as i32))
+            );
+            assert!(
+                ({
+                    ((({ ((*t.borrow()) as std___atomic_base_char8_t_).to_u8_8() }) as i32)
+                        == (3_u8 as i32))
+                })
+            );
             const _: () = assert!(true, "");;
         }
     }
@@ -757,15 +959,45 @@ pub trait TestFn_char_Impl {
 impl TestFn_char_Impl for Ptr<TestFn_char_> {
     fn operator_call(&self) {
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (1_i8 as i32)));
-            assert!(((unimplemented!() as i32) == (3_i8 as i32)));
+            let t: Value<std_atomic_char_> =
+                Rc::new(RefCell::new(std_atomic_char_::new_1({ 1_i8 })));
+            assert!(
+                ((({
+                    atomic_fetch_or_explicit_14(
+                        (t.as_pointer()),
+                        2_i8,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) as i32)
+                    == (1_i8 as i32))
+            );
+            assert!(
+                ({
+                    ((({ ((*t.borrow()) as std___atomic_base_char_).to_i8_7() }) as i32)
+                        == (3_i8 as i32))
+                })
+            );
             const _: () = assert!(true, "");;
         }
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (3_i8 as i32)));
-            assert!(((unimplemented!() as i32) == (3_i8 as i32)));
+            let t: Value<std_atomic_char_> =
+                Rc::new(RefCell::new(std_atomic_char_::new_1({ 3_i8 })));
+            assert!(
+                ((({
+                    atomic_fetch_or_explicit_16(
+                        (t.as_pointer()),
+                        2_i8,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) as i32)
+                    == (3_i8 as i32))
+            );
+            assert!(
+                ({
+                    ((({ ((*t.borrow()) as std___atomic_base_char_).to_i8_8() }) as i32)
+                        == (3_i8 as i32))
+                })
+            );
             const _: () = assert!(true, "");;
         }
     }
@@ -776,15 +1008,31 @@ pub trait TestFn_int_Impl {
 impl TestFn_int_Impl for Ptr<TestFn_int_> {
     fn operator_call(&self) {
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 1));
-            assert!((unimplemented!() == 3));
+            let t: Value<std_atomic_int_> = Rc::new(RefCell::new(std_atomic_int_::new_1({ 1 })));
+            assert!(
+                (({
+                    atomic_fetch_or_explicit_25(
+                        (t.as_pointer()),
+                        2,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) == 1)
+            );
+            assert!(({ (({ ((*t.borrow()) as std___atomic_base_int_).to_i32_7() }) == 3) }));
             const _: () = assert!(true, "");;
         }
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 3));
-            assert!((unimplemented!() == 3));
+            let t: Value<std_atomic_int_> = Rc::new(RefCell::new(std_atomic_int_::new_1({ 3 })));
+            assert!(
+                (({
+                    atomic_fetch_or_explicit_26(
+                        (t.as_pointer()),
+                        2,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) == 3)
+            );
+            assert!(({ (({ ((*t.borrow()) as std___atomic_base_int_).to_i32_8() }) == 3) }));
             const _: () = assert!(true, "");;
         }
     }
@@ -795,15 +1043,33 @@ pub trait TestFn_long_Impl {
 impl TestFn_long_Impl for Ptr<TestFn_long_> {
     fn operator_call(&self) {
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 1_i64));
-            assert!((unimplemented!() == 3_i64));
+            let t: Value<std_atomic_long_> =
+                Rc::new(RefCell::new(std_atomic_long_::new_1({ 1_i64 })));
+            assert!(
+                (({
+                    atomic_fetch_or_explicit_29(
+                        (t.as_pointer()),
+                        2_i64,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) == 1_i64)
+            );
+            assert!(({ (({ ((*t.borrow()) as std___atomic_base_long_).to_i64_7() }) == 3_i64) }));
             const _: () = assert!(true, "");;
         }
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 3_i64));
-            assert!((unimplemented!() == 3_i64));
+            let t: Value<std_atomic_long_> =
+                Rc::new(RefCell::new(std_atomic_long_::new_1({ 3_i64 })));
+            assert!(
+                (({
+                    atomic_fetch_or_explicit_30(
+                        (t.as_pointer()),
+                        2_i64,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) == 3_i64)
+            );
+            assert!(({ (({ ((*t.borrow()) as std___atomic_base_long_).to_i64_8() }) == 3_i64) }));
             const _: () = assert!(true, "");;
         }
     }
@@ -814,15 +1080,37 @@ pub trait TestFn_long_long_Impl {
 impl TestFn_long_long_Impl for Ptr<TestFn_long_long_> {
     fn operator_call(&self) {
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 1_i64));
-            assert!((unimplemented!() == 3_i64));
+            let t: Value<std_atomic_long_long_> =
+                Rc::new(RefCell::new(std_atomic_long_long_::new_1({ 1_i64 })));
+            assert!(
+                (({
+                    atomic_fetch_or_explicit_33(
+                        (t.as_pointer()),
+                        2_i64,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) == 1_i64)
+            );
+            assert!(
+                ({ (({ ((*t.borrow()) as std___atomic_base_long_long_).to_i64_7() }) == 3_i64) })
+            );
             const _: () = assert!(true, "");;
         }
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 3_i64));
-            assert!((unimplemented!() == 3_i64));
+            let t: Value<std_atomic_long_long_> =
+                Rc::new(RefCell::new(std_atomic_long_long_::new_1({ 3_i64 })));
+            assert!(
+                (({
+                    atomic_fetch_or_explicit_34(
+                        (t.as_pointer()),
+                        2_i64,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) == 3_i64)
+            );
+            assert!(
+                ({ (({ ((*t.borrow()) as std___atomic_base_long_long_).to_i64_8() }) == 3_i64) })
+            );
             const _: () = assert!(true, "");;
         }
     }
@@ -833,15 +1121,45 @@ pub trait TestFn_short_Impl {
 impl TestFn_short_Impl for Ptr<TestFn_short_> {
     fn operator_call(&self) {
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (1_i16 as i32)));
-            assert!(((unimplemented!() as i32) == (3_i16 as i32)));
+            let t: Value<std_atomic_short_> =
+                Rc::new(RefCell::new(std_atomic_short_::new_1({ 1_i16 })));
+            assert!(
+                ((({
+                    atomic_fetch_or_explicit_21(
+                        (t.as_pointer()),
+                        2_i16,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) as i32)
+                    == (1_i16 as i32))
+            );
+            assert!(
+                ({
+                    ((({ ((*t.borrow()) as std___atomic_base_short_).to_i16_7() }) as i32)
+                        == (3_i16 as i32))
+                })
+            );
             const _: () = assert!(true, "");;
         }
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (3_i16 as i32)));
-            assert!(((unimplemented!() as i32) == (3_i16 as i32)));
+            let t: Value<std_atomic_short_> =
+                Rc::new(RefCell::new(std_atomic_short_::new_1({ 3_i16 })));
+            assert!(
+                ((({
+                    atomic_fetch_or_explicit_22(
+                        (t.as_pointer()),
+                        2_i16,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) as i32)
+                    == (3_i16 as i32))
+            );
+            assert!(
+                ({
+                    ((({ ((*t.borrow()) as std___atomic_base_short_).to_i16_8() }) as i32)
+                        == (3_i16 as i32))
+                })
+            );
             const _: () = assert!(true, "");;
         }
     }
@@ -852,15 +1170,45 @@ pub trait TestFn_signed_char_Impl {
 impl TestFn_signed_char_Impl for Ptr<TestFn_signed_char_> {
     fn operator_call(&self) {
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (1_i8 as i32)));
-            assert!(((unimplemented!() as i32) == (3_i8 as i32)));
+            let t: Value<std_atomic_signed_char_> =
+                Rc::new(RefCell::new(std_atomic_signed_char_::new_1({ 1_i8 })));
+            assert!(
+                ((({
+                    atomic_fetch_or_explicit_17(
+                        (t.as_pointer()),
+                        2_i8,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) as i32)
+                    == (1_i8 as i32))
+            );
+            assert!(
+                ({
+                    ((({ ((*t.borrow()) as std___atomic_base_signed_char_).to_i8_7() }) as i32)
+                        == (3_i8 as i32))
+                })
+            );
             const _: () = assert!(true, "");;
         }
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (3_i8 as i32)));
-            assert!(((unimplemented!() as i32) == (3_i8 as i32)));
+            let t: Value<std_atomic_signed_char_> =
+                Rc::new(RefCell::new(std_atomic_signed_char_::new_1({ 3_i8 })));
+            assert!(
+                ((({
+                    atomic_fetch_or_explicit_18(
+                        (t.as_pointer()),
+                        2_i8,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) as i32)
+                    == (3_i8 as i32))
+            );
+            assert!(
+                ({
+                    ((({ ((*t.borrow()) as std___atomic_base_signed_char_).to_i8_8() }) as i32)
+                        == (3_i8 as i32))
+                })
+            );
             const _: () = assert!(true, "");;
         }
     }
@@ -871,15 +1219,45 @@ pub trait TestFn_unsigned_char_Impl {
 impl TestFn_unsigned_char_Impl for Ptr<TestFn_unsigned_char_> {
     fn operator_call(&self) {
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (1_u8 as i32)));
-            assert!(((unimplemented!() as i32) == (3_u8 as i32)));
+            let t: Value<std_atomic_unsigned_char_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_char_::new_1({ 1_u8 })));
+            assert!(
+                ((({
+                    atomic_fetch_or_explicit_19(
+                        (t.as_pointer()),
+                        2_u8,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) as i32)
+                    == (1_u8 as i32))
+            );
+            assert!(
+                ({
+                    ((({ ((*t.borrow()) as std___atomic_base_unsigned_char_).to_u8_7() }) as i32)
+                        == (3_u8 as i32))
+                })
+            );
             const _: () = assert!(true, "");;
         }
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (3_u8 as i32)));
-            assert!(((unimplemented!() as i32) == (3_u8 as i32)));
+            let t: Value<std_atomic_unsigned_char_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_char_::new_1({ 3_u8 })));
+            assert!(
+                ((({
+                    atomic_fetch_or_explicit_20(
+                        (t.as_pointer()),
+                        2_u8,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) as i32)
+                    == (3_u8 as i32))
+            );
+            assert!(
+                ({
+                    ((({ ((*t.borrow()) as std___atomic_base_unsigned_char_).to_u8_8() }) as i32)
+                        == (3_u8 as i32))
+                })
+            );
             const _: () = assert!(true, "");;
         }
     }
@@ -890,15 +1268,41 @@ pub trait TestFn_unsigned_int_Impl {
 impl TestFn_unsigned_int_Impl for Ptr<TestFn_unsigned_int_> {
     fn operator_call(&self) {
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 1_u32));
-            assert!((unimplemented!() == 3_u32));
+            let t: Value<std_atomic_unsigned_int_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_int_::new_1({ 1_u32 })));
+            assert!(
+                (({
+                    atomic_fetch_or_explicit_27(
+                        (t.as_pointer()),
+                        2_u32,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) == 1_u32)
+            );
+            assert!(
+                ({
+                    (({ ((*t.borrow()) as std___atomic_base_unsigned_int_).to_u32_7() }) == 3_u32)
+                })
+            );
             const _: () = assert!(true, "");;
         }
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 3_u32));
-            assert!((unimplemented!() == 3_u32));
+            let t: Value<std_atomic_unsigned_int_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_int_::new_1({ 3_u32 })));
+            assert!(
+                (({
+                    atomic_fetch_or_explicit_28(
+                        (t.as_pointer()),
+                        2_u32,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) == 3_u32)
+            );
+            assert!(
+                ({
+                    (({ ((*t.borrow()) as std___atomic_base_unsigned_int_).to_u32_8() }) == 3_u32)
+                })
+            );
             const _: () = assert!(true, "");;
         }
     }
@@ -909,15 +1313,41 @@ pub trait TestFn_unsigned_long_Impl {
 impl TestFn_unsigned_long_Impl for Ptr<TestFn_unsigned_long_> {
     fn operator_call(&self) {
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 1_u64));
-            assert!((unimplemented!() == 3_u64));
+            let t: Value<std_atomic_unsigned_long_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_long_::new_1({ 1_u64 })));
+            assert!(
+                (({
+                    atomic_fetch_or_explicit_31(
+                        (t.as_pointer()),
+                        2_u64,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) == 1_u64)
+            );
+            assert!(
+                ({
+                    (({ ((*t.borrow()) as std___atomic_base_unsigned_long_).to_u64_7() }) == 3_u64)
+                })
+            );
             const _: () = assert!(true, "");;
         }
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 3_u64));
-            assert!((unimplemented!() == 3_u64));
+            let t: Value<std_atomic_unsigned_long_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_long_::new_1({ 3_u64 })));
+            assert!(
+                (({
+                    atomic_fetch_or_explicit_32(
+                        (t.as_pointer()),
+                        2_u64,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) == 3_u64)
+            );
+            assert!(
+                ({
+                    (({ ((*t.borrow()) as std___atomic_base_unsigned_long_).to_u64_8() }) == 3_u64)
+                })
+            );
             const _: () = assert!(true, "");;
         }
     }
@@ -928,15 +1358,47 @@ pub trait TestFn_unsigned_long_long_Impl {
 impl TestFn_unsigned_long_long_Impl for Ptr<TestFn_unsigned_long_long_> {
     fn operator_call(&self) {
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 1_u64));
-            assert!((unimplemented!() == 3_u64));
+            let t: Value<std_atomic_unsigned_long_long_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_long_long_::new_1({
+                    1_u64
+                })));
+            assert!(
+                (({
+                    atomic_fetch_or_explicit_35(
+                        (t.as_pointer()),
+                        2_u64,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) == 1_u64)
+            );
+            assert!(
+                ({
+                    (({ ((*t.borrow()) as std___atomic_base_unsigned_long_long_).to_u64_7() })
+                        == 3_u64)
+                })
+            );
             const _: () = assert!(true, "");;
         }
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!() == 3_u64));
-            assert!((unimplemented!() == 3_u64));
+            let t: Value<std_atomic_unsigned_long_long_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_long_long_::new_1({
+                    3_u64
+                })));
+            assert!(
+                (({
+                    atomic_fetch_or_explicit_36(
+                        (t.as_pointer()),
+                        2_u64,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) == 3_u64)
+            );
+            assert!(
+                ({
+                    (({ ((*t.borrow()) as std___atomic_base_unsigned_long_long_).to_u64_8() })
+                        == 3_u64)
+                })
+            );
             const _: () = assert!(true, "");;
         }
     }
@@ -947,15 +1409,45 @@ pub trait TestFn_unsigned_short_Impl {
 impl TestFn_unsigned_short_Impl for Ptr<TestFn_unsigned_short_> {
     fn operator_call(&self) {
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (1_u16 as i32)));
-            assert!(((unimplemented!() as i32) == (3_u16 as i32)));
+            let t: Value<std_atomic_unsigned_short_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_short_::new_1({ 1_u16 })));
+            assert!(
+                ((({
+                    atomic_fetch_or_explicit_23(
+                        (t.as_pointer()),
+                        2_u16,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) as i32)
+                    == (1_u16 as i32))
+            );
+            assert!(
+                ({
+                    ((({ ((*t.borrow()) as std___atomic_base_unsigned_short_).to_u16_7() }) as i32)
+                        == (3_u16 as i32))
+                })
+            );
             const _: () = assert!(true, "");;
         }
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (3_u16 as i32)));
-            assert!(((unimplemented!() as i32) == (3_u16 as i32)));
+            let t: Value<std_atomic_unsigned_short_> =
+                Rc::new(RefCell::new(std_atomic_unsigned_short_::new_1({ 3_u16 })));
+            assert!(
+                ((({
+                    atomic_fetch_or_explicit_24(
+                        (t.as_pointer()),
+                        2_u16,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) as i32)
+                    == (3_u16 as i32))
+            );
+            assert!(
+                ({
+                    ((({ ((*t.borrow()) as std___atomic_base_unsigned_short_).to_u16_8() }) as i32)
+                        == (3_u16 as i32))
+                })
+            );
             const _: () = assert!(true, "");;
         }
     }
@@ -966,15 +1458,37 @@ pub trait TestFn_wchar_t_Impl {
 impl TestFn_wchar_t_Impl for Ptr<TestFn_wchar_t_> {
     fn operator_call(&self) {
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == 1_i32));
-            assert!(((unimplemented!() as i32) == 3_i32));
+            let t: Value<std_atomic_wchar_t_> =
+                Rc::new(RefCell::new(std_atomic_wchar_t_::new_1({ 1_i32 })));
+            assert!(
+                (({
+                    atomic_fetch_or_explicit_37(
+                        (t.as_pointer()),
+                        2_i32,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) == 1_i32)
+            );
+            assert!(
+                ({ (({ ((*t.borrow()) as std___atomic_base_wchar_t_).to_i32_7() }) == 3_i32) })
+            );
             const _: () = assert!(true, "");;
         }
         {
-            let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(((unimplemented!() as i32) == 3_i32));
-            assert!(((unimplemented!() as i32) == 3_i32));
+            let t: Value<std_atomic_wchar_t_> =
+                Rc::new(RefCell::new(std_atomic_wchar_t_::new_1({ 3_i32 })));
+            assert!(
+                (({
+                    atomic_fetch_or_explicit_38(
+                        (t.as_pointer()),
+                        2_i32,
+                        memory_order_seq_cst_15.with(|rc| *rc.borrow()),
+                    )
+                }) == 3_i32)
+            );
+            assert!(
+                ({ (({ ((*t.borrow()) as std___atomic_base_wchar_t_).to_i32_8() }) == 3_i32) })
+            );
             const _: () = assert!(true, "");;
         }
     }

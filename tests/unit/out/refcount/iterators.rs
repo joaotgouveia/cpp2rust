@@ -21,7 +21,9 @@ fn main_0() -> i32 {
         RandomAccessIterator::Vec(x.decay().to_last()),
     ) {
         let c: Ptr<i8> = c.iter_deref();
-        c.with_mut(|__v| __v.prefix_inc());
+        c.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     'loop_: for c in IterRange::new(
         RandomAccessIterator::Vec(x.decay()),
@@ -46,7 +48,7 @@ fn main_0() -> i32 {
         let __a1 = Ptr::alloc(3);
         (*v.borrow_mut()).push(__a1)
     };
-    'loop_: for p in IterRange::new(v.decay().begin(), v.decay().end()) {
+    'loop_: for p in IterRange::new(CppRange::begin(&v.decay()), CppRange::end(&v.decay())) {
         let mut p: Ptr<i32> = (p.iter_deref().read());
         println!("{}", (p.read()));
     }

@@ -28,18 +28,30 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: i32 = unimplemented!();
+        let c: Value<std_codecvt_utf8_wchar_t__1114111__0_> = Rc::new(RefCell::new(
+            <std_codecvt_utf8_wchar_t__1114111__0_>::default(),
+        ));
+        let mut r: i32 = ({
+            ((*c.borrow()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).encoding()
+        });
         assert!((r == 0));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: i32 = unimplemented!();
+        let c: Value<std_codecvt_utf8_char16_t__1114111__0_> = Rc::new(RefCell::new(
+            <std_codecvt_utf8_char16_t__1114111__0_>::default(),
+        ));
+        let mut r: i32 = ({
+            ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_).encoding()
+        });
         assert!((r == 0));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: i32 = unimplemented!();
+        let c: Value<std_codecvt_utf8_char32_t__1114111__0_> = Rc::new(RefCell::new(
+            <std_codecvt_utf8_char32_t__1114111__0_>::default(),
+        ));
+        let mut r: i32 = ({
+            ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_).encoding()
+        });
         assert!((r == 0));
     }
     return 0;

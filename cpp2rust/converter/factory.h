@@ -17,6 +17,5 @@ enum class Model {
 class Converter;
 
 std::unique_ptr<Converter> CreateConverter(std::string &rs_code,
-                                           clang::ASTContext &ctx, Model model,
-                                           const std::string &rules_dir);
+                                           clang::ASTContext &ctx, Model model);
 } // namespace cpp2rust

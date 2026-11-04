@@ -7,83 +7,83 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_set_all_0() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let v: Value<std_bitset_0_> = Rc::new(RefCell::new(<std_bitset_0_>::default()));
+    ({ (*v.borrow()).set_20() });
     let mut i: usize = 0_usize;
-    'loop_: while (i < unimplemented!()) {
-        assert!(unimplemented!());
+    'loop_: while (i < ({ (*v.borrow()).size() })) {
+        assert!(({ (*v.borrow())[i]() }));
         i.prefix_inc();
     }
 }
 pub fn test_set_all_1() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let v: Value<std_bitset_1_> = Rc::new(RefCell::new(<std_bitset_1_>::default()));
+    ({ (*v.borrow()).set_20() });
     let mut i: usize = 0_usize;
-    'loop_: while (i < unimplemented!()) {
-        assert!(unimplemented!());
+    'loop_: while (i < ({ (*v.borrow()).size() })) {
+        assert!(({ (*v.borrow())[i]() }));
         i.prefix_inc();
     }
 }
 pub fn test_set_all_2() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let v: Value<std_bitset_31_> = Rc::new(RefCell::new(<std_bitset_31_>::default()));
+    ({ (*v.borrow()).set_20() });
     let mut i: usize = 0_usize;
-    'loop_: while (i < unimplemented!()) {
-        assert!(unimplemented!());
+    'loop_: while (i < ({ (*v.borrow()).size() })) {
+        assert!(({ (*v.borrow())[i]() }));
         i.prefix_inc();
     }
 }
 pub fn test_set_all_3() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let v: Value<std_bitset_32_> = Rc::new(RefCell::new(<std_bitset_32_>::default()));
+    ({ (*v.borrow()).set_20() });
     let mut i: usize = 0_usize;
-    'loop_: while (i < unimplemented!()) {
-        assert!(unimplemented!());
+    'loop_: while (i < ({ (*v.borrow()).size() })) {
+        assert!(({ (*v.borrow())[i]() }));
         i.prefix_inc();
     }
 }
 pub fn test_set_all_4() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let v: Value<std_bitset_33_> = Rc::new(RefCell::new(<std_bitset_33_>::default()));
+    ({ (*v.borrow()).set_20() });
     let mut i: usize = 0_usize;
-    'loop_: while (i < unimplemented!()) {
-        assert!(unimplemented!());
+    'loop_: while (i < ({ (*v.borrow()).size() })) {
+        assert!(({ (*v.borrow())[i]() }));
         i.prefix_inc();
     }
 }
 pub fn test_set_all_5() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let v: Value<std_bitset_63_> = Rc::new(RefCell::new(<std_bitset_63_>::default()));
+    ({ (*v.borrow()).set_20() });
     let mut i: usize = 0_usize;
-    'loop_: while (i < unimplemented!()) {
-        assert!(unimplemented!());
+    'loop_: while (i < ({ (*v.borrow()).size() })) {
+        assert!(({ (*v.borrow())[i]() }));
         i.prefix_inc();
     }
 }
 pub fn test_set_all_6() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let v: Value<std_bitset_64_> = Rc::new(RefCell::new(<std_bitset_64_>::default()));
+    ({ (*v.borrow()).set_20() });
     let mut i: usize = 0_usize;
-    'loop_: while (i < unimplemented!()) {
-        assert!(unimplemented!());
+    'loop_: while (i < ({ (*v.borrow()).size() })) {
+        assert!(({ (*v.borrow())[i]() }));
         i.prefix_inc();
     }
 }
 pub fn test_set_all_7() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let v: Value<std_bitset_65_> = Rc::new(RefCell::new(<std_bitset_65_>::default()));
+    ({ (*v.borrow()).set_20() });
     let mut i: usize = 0_usize;
-    'loop_: while (i < unimplemented!()) {
-        assert!(unimplemented!());
+    'loop_: while (i < ({ (*v.borrow()).size() })) {
+        assert!(({ (*v.borrow())[i]() }));
         i.prefix_inc();
     }
 }
 pub fn test_set_all_8() {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let v: Value<std_bitset_1000_> = Rc::new(RefCell::new(<std_bitset_1000_>::default()));
+    ({ (*v.borrow()).set_20() });
     let mut i: usize = 0_usize;
-    'loop_: while (i < unimplemented!()) {
-        assert!(unimplemented!());
+    'loop_: while (i < ({ (*v.borrow()).size() })) {
+        assert!(({ (*v.borrow())[i]() }));
         i.prefix_inc();
     }
 }

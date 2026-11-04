@@ -27,10 +27,20 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as u32) == (unimplemented!() as u32)));
-    assert!((unimplemented!() == 2_u32));
+    let r1: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
+        std_basic_regex_char__std_regex_traits_char__::new_1(
+            { Ptr::<i8>::from_string_literal(b"(a([bc]))") },
+            None,
+        ),
+    ));
+    let r2: Value<std_basic_regex_char__std_regex_traits_char__> =
+        Rc::new(RefCell::new((*r1.borrow()).clone()));
+    assert!(
+        ({
+            ((({ (*r2.borrow()).flags() }) as u32) == (ECMAScript_0.with(|rc| *rc.borrow()) as u32))
+        })
+    );
+    assert!(({ (({ (*r2.borrow()).mark_count() }) == 2_u32) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

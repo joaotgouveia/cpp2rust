@@ -20,6 +20,7 @@
 #include <unordered_set>
 #include <vector>
 
+#include "converter/translation_rule.h"
 #include "logging.h"
 
 namespace clang {
@@ -109,6 +110,21 @@ bool IsDefaultedMoveConstructor(const clang::CXXConstructorDecl *ctor);
 
 bool IsConvertibleMoveConstructor(const clang::CXXConstructorDecl *ctor);
 
+bool MovesRuleArg(clang::Expr *expr, unsigned arg_idx, clang::Expr *arg,
+                  TranslationRule::Access access);
+
+// Whether a rule takes the value of arg, an object of a library type whose
+// move isn't a copy, from an rvalue reference parameter.
+bool MovesLibraryArg(clang::ASTContext &ctx, clang::Expr *expr,
+                     unsigned arg_idx, clang::Expr *arg,
+                     TranslationRule::Access access);
+
+clang::CXXConstructExpr *BuildMoveConstruction(clang::ASTContext &ctx,
+                                               clang::Expr *expr,
+                                               unsigned arg_idx,
+                                               clang::Expr *arg,
+                                               TranslationRule::Access access);
+
 // Whether decl has a move constructor converted to a move_from method.
 bool HasMoveFromConstructor(const clang::RecordDecl *decl);
 
@@ -169,7 +185,7 @@ bool IsStdDecl(const clang::NamedDecl *decl, llvm::StringRef name);
 
 bool IsUniquePtr(clang::QualType type);
 
-bool IsCallToOstream(clang::CallExpr *expr);
+bool IsCallToOstream(const clang::CallExpr *expr);
 
 bool IsCDecl(const clang::NamedDecl *decl, llvm::StringRef name);
 
@@ -235,6 +251,8 @@ std::string GetNumAsString(llvm::APFloat value);
 clang::QualType GetReturnTypeOfFunction(const clang::CallExpr *expr);
 
 const char *GetOverloadedOperator(const clang::FunctionDecl *decl);
+
+bool IsSupportedOperator(const clang::CXXOperatorCallExpr *expr);
 
 std::string GetFunctionBaseName(const clang::FunctionDecl *decl);
 

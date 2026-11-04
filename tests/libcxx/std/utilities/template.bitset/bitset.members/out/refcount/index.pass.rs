@@ -11,53 +11,100 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_bitset_0__reference__std_bitset_0__reference_ {}
+impl CppMove for test_macros_detail_is_same_std_bitset_0__reference__std_bitset_0__reference_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_bitset_1__reference__std_bitset_1__reference_ {}
+impl CppMove for test_macros_detail_is_same_std_bitset_1__reference__std_bitset_1__reference_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_bitset_31__reference__std_bitset_31__reference_ {}
+impl CppMove for test_macros_detail_is_same_std_bitset_31__reference__std_bitset_31__reference_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_bitset_32__reference__std_bitset_32__reference_ {}
+impl CppMove for test_macros_detail_is_same_std_bitset_32__reference__std_bitset_32__reference_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_4 = u32;
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_bitset_33__reference__std_bitset_33__reference_ {}
+impl CppMove for test_macros_detail_is_same_std_bitset_33__reference__std_bitset_33__reference_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_5 = u32;
 pub const anon_5_value: anon_5 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_bitset_63__reference__std_bitset_63__reference_ {}
+impl CppMove for test_macros_detail_is_same_std_bitset_63__reference__std_bitset_63__reference_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_6 = u32;
 pub const anon_6_value: anon_6 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_bitset_64__reference__std_bitset_64__reference_ {}
+impl CppMove for test_macros_detail_is_same_std_bitset_64__reference__std_bitset_64__reference_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_7 = u32;
 pub const anon_7_value: anon_7 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_bitset_65__reference__std_bitset_65__reference_ {}
+impl CppMove for test_macros_detail_is_same_std_bitset_65__reference__std_bitset_65__reference_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_8 = u32;
 pub const anon_8_value: anon_8 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_bitset_1000__reference__std_bitset_1000__reference_ {}
+impl CppMove
+    for test_macros_detail_is_same_std_bitset_1000__reference__std_bitset_1000__reference_
+{
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn get_test_cases_9() -> Vec<()> {
     let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
     {
         let __a1 = unimplemented!();
         (*cases.borrow_mut()).push(__a1)
     };
-    return std::mem::take(&mut (*cases.borrow_mut()));
+    return ({ std::mem::take(&mut (*cases.borrow_mut())) });
 }
 pub fn get_test_cases_10() -> Vec<()> {
     let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
@@ -69,7 +116,7 @@ pub fn get_test_cases_10() -> Vec<()> {
         let __a1 = unimplemented!();
         (*cases.borrow_mut()).push(__a1)
     };
-    return std::mem::take(&mut (*cases.borrow_mut()));
+    return ({ std::mem::take(&mut (*cases.borrow_mut())) });
 }
 pub fn get_test_cases_11() -> Vec<()> {
     let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
@@ -89,7 +136,7 @@ pub fn get_test_cases_11() -> Vec<()> {
         let __a1 = unimplemented!();
         (*cases.borrow_mut()).push(__a1)
     };
-    return std::mem::take(&mut (*cases.borrow_mut()));
+    return ({ std::mem::take(&mut (*cases.borrow_mut())) });
 }
 pub fn get_test_cases_12() -> Vec<()> {
     let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
@@ -157,7 +204,7 @@ pub fn get_test_cases_12() -> Vec<()> {
         let __a1 = unimplemented!();
         (*cases.borrow_mut()).push(__a1)
     };
-    return std::mem::take(&mut (*cases.borrow_mut()));
+    return ({ std::mem::take(&mut (*cases.borrow_mut())) });
 }
 pub fn get_test_cases_13() -> Vec<()> {
     let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
@@ -209,7 +256,7 @@ pub fn get_test_cases_13() -> Vec<()> {
         let __a1 = unimplemented!();
         (*cases.borrow_mut()).push(__a1)
     };
-    return std::mem::take(&mut (*cases.borrow_mut()));
+    return ({ std::mem::take(&mut (*cases.borrow_mut())) });
 }
 pub fn get_test_cases_14() -> Vec<()> {
     let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
@@ -261,7 +308,7 @@ pub fn get_test_cases_14() -> Vec<()> {
         let __a1 = unimplemented!();
         (*cases.borrow_mut()).push(__a1)
     };
-    return std::mem::take(&mut (*cases.borrow_mut()));
+    return ({ std::mem::take(&mut (*cases.borrow_mut())) });
 }
 pub fn get_test_cases_15() -> Vec<()> {
     let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
@@ -313,7 +360,7 @@ pub fn get_test_cases_15() -> Vec<()> {
         let __a1 = unimplemented!();
         (*cases.borrow_mut()).push(__a1)
     };
-    return std::mem::take(&mut (*cases.borrow_mut()));
+    return ({ std::mem::take(&mut (*cases.borrow_mut())) });
 }
 pub fn get_test_cases_16() -> Vec<()> {
     let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
@@ -365,7 +412,7 @@ pub fn get_test_cases_16() -> Vec<()> {
         let __a1 = unimplemented!();
         (*cases.borrow_mut()).push(__a1)
     };
-    return std::mem::take(&mut (*cases.borrow_mut()));
+    return ({ std::mem::take(&mut (*cases.borrow_mut())) });
 }
 pub fn get_test_cases_17() -> Vec<()> {
     let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
@@ -417,7 +464,7 @@ pub fn get_test_cases_17() -> Vec<()> {
         let __a1 = unimplemented!();
         (*cases.borrow_mut()).push(__a1)
     };
-    return std::mem::take(&mut (*cases.borrow_mut()));
+    return ({ std::mem::take(&mut (*cases.borrow_mut())) });
 }
 pub fn get_test_cases_18() -> Vec<()> {
     let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
@@ -469,7 +516,7 @@ pub fn get_test_cases_18() -> Vec<()> {
         let __a1 = unimplemented!();
         (*cases.borrow_mut()).push(__a1)
     };
-    return std::mem::take(&mut (*cases.borrow_mut()));
+    return ({ std::mem::take(&mut (*cases.borrow_mut())) });
 }
 pub fn str_repeat_19(mut s: Vec<i8>, mut n: u32) -> Vec<i8> {
     let mut res: Vec<i8> = (s).clone();
@@ -529,20 +576,17 @@ pub fn get_test_cases_20() -> Vec<()> {
         let __a1 = unimplemented!();
         (*cases.borrow_mut()).push(__a1)
     };
-    return std::mem::take(&mut (*cases.borrow_mut()));
+    return ({ std::mem::take(&mut (*cases.borrow_mut())) });
 }
 pub fn test_index_21() {
     let cases: Value<Vec<()>> = Rc::new(RefCell::new(({ get_test_cases_9() })));
     let mut c: usize = 0_usize;
     'loop_: while (c != (*cases.borrow()).len()) {
         let v1: Value<()> = Rc::new(RefCell::new(
-            (*{
-                let __idx = c;
-                if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
-                    panic!("out of bounds access")
-                } else {
-                    cases.as_pointer().decay().offset(__idx as isize)
-                }
+            (*if c as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                panic!("out of bounds access")
+            } else {
+                cases.as_pointer().decay().offset(c as isize)
             }
             .upgrade()
             .deref())
@@ -558,13 +602,10 @@ pub fn test_index_22() {
     let mut c: usize = 0_usize;
     'loop_: while (c != (*cases.borrow()).len()) {
         let v1: Value<()> = Rc::new(RefCell::new(
-            (*{
-                let __idx = c;
-                if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
-                    panic!("out of bounds access")
-                } else {
-                    cases.as_pointer().decay().offset(__idx as isize)
-                }
+            (*if c as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                panic!("out of bounds access")
+            } else {
+                cases.as_pointer().decay().offset(c as isize)
             }
             .upgrade()
             .deref())
@@ -600,13 +641,10 @@ pub fn test_index_23() {
     let mut c: usize = 0_usize;
     'loop_: while (c != (*cases.borrow()).len()) {
         let v1: Value<()> = Rc::new(RefCell::new(
-            (*{
-                let __idx = c;
-                if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
-                    panic!("out of bounds access")
-                } else {
-                    cases.as_pointer().decay().offset(__idx as isize)
-                }
+            (*if c as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                panic!("out of bounds access")
+            } else {
+                cases.as_pointer().decay().offset(c as isize)
             }
             .upgrade()
             .deref())
@@ -642,13 +680,10 @@ pub fn test_index_24() {
     let mut c: usize = 0_usize;
     'loop_: while (c != (*cases.borrow()).len()) {
         let v1: Value<()> = Rc::new(RefCell::new(
-            (*{
-                let __idx = c;
-                if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
-                    panic!("out of bounds access")
-                } else {
-                    cases.as_pointer().decay().offset(__idx as isize)
-                }
+            (*if c as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                panic!("out of bounds access")
+            } else {
+                cases.as_pointer().decay().offset(c as isize)
             }
             .upgrade()
             .deref())
@@ -684,13 +719,10 @@ pub fn test_index_25() {
     let mut c: usize = 0_usize;
     'loop_: while (c != (*cases.borrow()).len()) {
         let v1: Value<()> = Rc::new(RefCell::new(
-            (*{
-                let __idx = c;
-                if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
-                    panic!("out of bounds access")
-                } else {
-                    cases.as_pointer().decay().offset(__idx as isize)
-                }
+            (*if c as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                panic!("out of bounds access")
+            } else {
+                cases.as_pointer().decay().offset(c as isize)
             }
             .upgrade()
             .deref())
@@ -726,13 +758,10 @@ pub fn test_index_26() {
     let mut c: usize = 0_usize;
     'loop_: while (c != (*cases.borrow()).len()) {
         let v1: Value<()> = Rc::new(RefCell::new(
-            (*{
-                let __idx = c;
-                if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
-                    panic!("out of bounds access")
-                } else {
-                    cases.as_pointer().decay().offset(__idx as isize)
-                }
+            (*if c as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                panic!("out of bounds access")
+            } else {
+                cases.as_pointer().decay().offset(c as isize)
             }
             .upgrade()
             .deref())
@@ -768,13 +797,10 @@ pub fn test_index_27() {
     let mut c: usize = 0_usize;
     'loop_: while (c != (*cases.borrow()).len()) {
         let v1: Value<()> = Rc::new(RefCell::new(
-            (*{
-                let __idx = c;
-                if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
-                    panic!("out of bounds access")
-                } else {
-                    cases.as_pointer().decay().offset(__idx as isize)
-                }
+            (*if c as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                panic!("out of bounds access")
+            } else {
+                cases.as_pointer().decay().offset(c as isize)
             }
             .upgrade()
             .deref())
@@ -810,13 +836,10 @@ pub fn test_index_28() {
     let mut c: usize = 0_usize;
     'loop_: while (c != (*cases.borrow()).len()) {
         let v1: Value<()> = Rc::new(RefCell::new(
-            (*{
-                let __idx = c;
-                if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
-                    panic!("out of bounds access")
-                } else {
-                    cases.as_pointer().decay().offset(__idx as isize)
-                }
+            (*if c as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                panic!("out of bounds access")
+            } else {
+                cases.as_pointer().decay().offset(c as isize)
             }
             .upgrade()
             .deref())
@@ -852,13 +875,10 @@ pub fn test_index_29() {
     let mut c: usize = 0_usize;
     'loop_: while (c != (*cases.borrow()).len()) {
         let v1: Value<()> = Rc::new(RefCell::new(
-            (*{
-                let __idx = c;
-                if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
-                    panic!("out of bounds access")
-                } else {
-                    cases.as_pointer().decay().offset(__idx as isize)
-                }
+            (*if c as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                panic!("out of bounds access")
+            } else {
+                cases.as_pointer().decay().offset(c as isize)
             }
             .upgrade()
             .deref())

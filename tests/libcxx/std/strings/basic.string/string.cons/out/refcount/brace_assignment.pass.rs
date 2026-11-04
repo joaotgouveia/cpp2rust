@@ -8,13 +8,13 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     {
-        let mut s: Vec<i8> = {
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i8>::from_string_literal(b"hello world").to_c_bytes();
             __bytes.push(0_i8);
             __bytes
-        };
-        unimplemented!();
-        assert!(s.len() <= 1);
+        }));
+        (*s.borrow_mut()) = Default::default();
+        assert!(({ (*s.borrow()).len() <= 1 }));
         const _: () = assert!(true, "");;
     }
     {
@@ -31,8 +31,11 @@ pub fn test_0() -> bool {
             __v
         });
         assert!(
-            Ptr::<i8>::from_string_literal(b"ab")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"ab").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
         const _: () = assert!(true, "");;
     }
@@ -50,8 +53,11 @@ pub fn test_0() -> bool {
             __v
         });
         assert!(
-            Ptr::<i8>::from_string_literal(b"It\'sALongString!NoSSO!qwertyui")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"It\'sALongString!NoSSO!qwertyui").with_c_str(
+                    |__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s,
+                )
+            })
         );
         const _: () = assert!(true, "");;
     }
@@ -72,8 +78,11 @@ pub fn test_0() -> bool {
             __v
         });
         assert!(
-            Ptr::<i8>::from_string_literal(b"It\'sALongString!NoSSO!qwertyui")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"It\'sALongString!NoSSO!qwertyui").with_c_str(
+                    |__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s,
+                )
+            })
         );
         const _: () = assert!(true, "");;
     }
@@ -94,8 +103,11 @@ pub fn test_0() -> bool {
             __v
         });
         assert!(
-            Ptr::<i8>::from_string_literal(b"ab")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"ab").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
         const _: () = assert!(true, "");;
     }
@@ -116,8 +128,11 @@ pub fn test_0() -> bool {
             __v
         });
         assert!(
-            Ptr::<i8>::from_string_literal(b"")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i8>::from_string_literal(b"").with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
         const _: () = assert!(true, "");;
     }

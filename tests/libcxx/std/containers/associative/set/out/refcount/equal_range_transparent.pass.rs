@@ -30,6 +30,11 @@ impl Callable2<i32, Ptr<(Value<i32>, Value<i32>)>, bool> for Comp {
         })
     }
 }
+impl CppMove for Comp {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0() -> bool {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let er: Value<(
@@ -40,7 +45,7 @@ pub fn test_0() -> bool {
     let it: Value<BidirectionalIterator<(Value<i32>, Value<i32>)>> =
         Rc::new(RefCell::new((*(*er.borrow()).0.borrow()).clone()));
     'loop_: while (*it.borrow()) != (*(*er.borrow()).1.borrow()) {
-        assert!(((*(*(*it.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1));
+        assert!(({ ((*(*(*it.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1) }));
         nels.postfix_inc();
         (*it.borrow_mut()).iter_post_inc();
     }

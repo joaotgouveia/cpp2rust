@@ -16,6 +16,11 @@ impl Callable2<i32, i32, i32> for multiply {
         })
     }
 }
+impl CppMove for multiply {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct plus_one {}
@@ -26,8 +31,23 @@ impl Callable1<i32, i32> for plus_one {
         })
     }
 }
+impl CppMove for plus_one {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0() -> bool {
-    let g: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let g: Value<std__Bind_multiply__int__std__Placeholder_1___> = Rc::new(RefCell::new(
+        ({
+            let ___f: Value<multiply> = Rc::new(RefCell::new(<multiply>::default()));
+            let ___args_1: Value<i32> = Rc::new(RefCell::new(2));
+            bind_1(
+                ___f.as_pointer(),
+                ___args_1.as_pointer(),
+                _1_2.with(|v| v.as_pointer()),
+            )
+        }),
+    ));
     assert!(
         (({
             let ___args: Value<i32> = Rc::new(RefCell::new(5));
@@ -37,7 +57,10 @@ pub fn test_0() -> bool {
     assert!(
         (({
             let ___args: Value<i32> = Rc::new(RefCell::new(5));
-            unimplemented!()(___args.as_pointer())
+            ({
+                let ___f: Value<plus_one> = Rc::new(RefCell::new(<plus_one>::default()));
+                bind_3(___f.as_pointer(), g.as_pointer())
+            })(___args.as_pointer())
         }) == 11)
     );
     return true;

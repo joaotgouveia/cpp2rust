@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -46,6 +51,11 @@ impl A_int_ {
         Self { storage: 0_i32 }
     }
 }
+impl CppMove for A_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for A_int_ {
     fn default() -> Self {
         { A_int_::new() }
@@ -65,6 +75,11 @@ impl A_Holder_NS_Incomplete__ptr_ {
         }
     }
 }
+impl CppMove for A_Holder_NS_Incomplete__ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for A_Holder_NS_Incomplete__ptr_ {
     fn default() -> Self {
         { A_Holder_NS_Incomplete__ptr_::new() }
@@ -73,12 +88,24 @@ impl Default for A_Holder_NS_Incomplete__ptr_ {
 pub fn test_4() -> bool {
     {
         let a: Value<A_int_> = Rc::new(RefCell::new(A_int_::new()));
-        assert!((unimplemented!() == (field_ptr!(a.as_pointer(), storage))));
+        assert!(
+            (({ std_allocator_traits_A_int__::allocate_1(a.as_pointer(), 10_usize,) })
+                == (field_ptr!(a.as_pointer(), storage)))
+        );
     }
     {
         let a: Value<A_Holder_NS_Incomplete__ptr_> =
             Rc::new(RefCell::new(A_Holder_NS_Incomplete__ptr_::new()));
-        assert!(({ unimplemented!() } == { (field_ptr!(a.as_pointer(), storage)) }));
+        assert!(
+            ({
+                ({
+                    std_allocator_traits_A_Holder_NS_Incomplete__ptr__::allocate_1(
+                        a.as_pointer(),
+                        10_usize,
+                    )
+                })
+            } == { (field_ptr!(a.as_pointer(), storage)) })
+        );
     }
     return true;
 }

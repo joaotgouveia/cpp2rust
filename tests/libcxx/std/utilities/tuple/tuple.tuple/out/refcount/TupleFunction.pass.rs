@@ -19,6 +19,11 @@ impl Callable0<()> for X {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| XImpl::operator_call(__it))
     }
 }
+impl CppMove for X {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for X {
     fn default() -> Self {
         { X::new() }
@@ -44,8 +49,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let mut x: X = X::new();
-    let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let x: Value<X> = Rc::new(RefCell::new(X::new()));
+    let f: Value<std_function_void____> = Rc::new(RefCell::new(std_function_void____::new_1({
+        x.as_pointer()
+    })));
     return 0;
 }
 pub trait XImpl {

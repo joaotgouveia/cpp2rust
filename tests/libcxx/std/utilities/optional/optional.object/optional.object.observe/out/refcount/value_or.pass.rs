@@ -18,6 +18,11 @@ impl Y {
         Self { i_: i }
     }
 }
+impl CppMove for Y {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_0(x: Ptr<X>, y: Ptr<X>) -> bool {
     return ({ x.with(|__s| __s.i_) } == { y.with(|__s| __s.i_) });
 }
@@ -57,6 +62,11 @@ impl CppEq for X {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for X {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_eq_1(z1: Ptr<Z>, z2: Ptr<Z>) -> bool {
     return ({ z1.with(|__s| __s.i_) } == { z2.with(|__s| __s.i_) })
         && ({ z1.with(|__s| __s.j_) } == { z2.with(|__s| __s.j_) });
@@ -79,86 +89,126 @@ impl CppEq for Z {
         operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for Z {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_2() -> i32 {
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut y: Y = Y::new({ 3 });
+        let opt: Value<std_optional_X_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(2));
+            std_optional_X_::new_1({ (*in_place_3.with(Value::clone).borrow()).clone() }, {
+                __tmp_0.as_pointer()
+            })
+        }));
+        let y: Value<Y> = Rc::new(RefCell::new(Y::new({ 3 })));
         assert!(
             ({
-                let _x: Value<X> = Rc::new(RefCell::new(unimplemented!()));
+                let _x: Value<X> =
+                    Rc::new(RefCell::new(({ (*opt.borrow()).value_or(y.as_pointer()) })));
                 let _y: Value<X> = Rc::new(RefCell::new(X::new_1({ 2 })));
                 operator_eq_0(_x.as_pointer(), _y.as_pointer())
             })
         );
         assert!(
             ({
-                let _x: Ptr<X> = unimplemented!();
+                let _x: Ptr<X> = opt.as_pointer();
                 let _y: Value<X> = Rc::new(RefCell::new(X::new_1({ 0 })));
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_X_> = Rc::new(RefCell::new({
+            let __tmp_1: Value<i32> = Rc::new(RefCell::new(2));
+            std_optional_X_::new_1({ (*in_place_3.with(Value::clone).borrow()).clone() }, {
+                __tmp_1.as_pointer()
+            })
+        }));
         assert!(
             ({
-                let _x: Value<X> = Rc::new(RefCell::new(unimplemented!()));
+                let _x: Value<X> = Rc::new(RefCell::new(
+                    ({
+                        let ___u: Value<Y> = Rc::new(RefCell::new(Y::new({ 3 })));
+                        (*opt.borrow()).value_or(___u.as_pointer())
+                    }),
+                ));
                 let _y: Value<X> = Rc::new(RefCell::new(X::new_1({ 2 })));
                 operator_eq_0(_x.as_pointer(), _y.as_pointer())
             })
         );
         assert!(
             ({
-                let _x: Ptr<X> = unimplemented!();
+                let _x: Ptr<X> = opt.as_pointer();
                 let _y: Value<X> = Rc::new(RefCell::new(X::new_1({ 0 })));
                 operator_eq_0(_x, _y.as_pointer())
             })
         );
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut y: Y = Y::new({ 3 });
+        let opt: Value<std_optional_X_> = Rc::new(RefCell::new(<std_optional_X_>::default()));
+        let y: Value<Y> = Rc::new(RefCell::new(Y::new({ 3 })));
         assert!(
             ({
-                let _x: Value<X> = Rc::new(RefCell::new(unimplemented!()));
+                let _x: Value<X> =
+                    Rc::new(RefCell::new(({ (*opt.borrow()).value_or(y.as_pointer()) })));
                 let _y: Value<X> = Rc::new(RefCell::new(X::new_1({ 3 })));
                 operator_eq_0(_x.as_pointer(), _y.as_pointer())
             })
         );
-        assert!(!(unimplemented!()));
+        assert!(({ !({ (*opt.borrow())() }) }));
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_X_> = Rc::new(RefCell::new(<std_optional_X_>::default()));
         assert!(
             ({
-                let _x: Value<X> = Rc::new(RefCell::new(unimplemented!()));
+                let _x: Value<X> = Rc::new(RefCell::new(
+                    ({
+                        let ___u: Value<Y> = Rc::new(RefCell::new(Y::new({ 3 })));
+                        (*opt.borrow()).value_or(___u.as_pointer())
+                    }),
+                ));
                 let _y: Value<X> = Rc::new(RefCell::new(X::new_1({ 4 })));
                 operator_eq_0(_x.as_pointer(), _y.as_pointer())
             })
         );
-        assert!(!(unimplemented!()));
+        assert!(({ !({ (*opt.borrow())() }) }));
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_X_> = Rc::new(RefCell::new(<std_optional_X_>::default()));
         assert!(
             ({
-                let _x: Value<X> = Rc::new(RefCell::new(unimplemented!()));
+                let _x: Value<X> = Rc::new(RefCell::new(
+                    ({
+                        let ___u: Value<X> = Rc::new(RefCell::new({
+                            let __tmp_2: Value<Y> = Rc::new(RefCell::new(Y::new({ 3 })));
+                            X::new_3({ __tmp_2.as_pointer() })
+                        }));
+                        (*opt.borrow()).value_or(___u.as_pointer())
+                    }),
+                ));
                 let _y: Value<X> = Rc::new(RefCell::new(X::new_1({ 4 })));
                 operator_eq_0(_x.as_pointer(), _y.as_pointer())
             })
         );
-        assert!(!(unimplemented!()));
+        assert!(({ !({ (*opt.borrow())() }) }));
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_Z_> = Rc::new(RefCell::new(<std_optional_Z_>::default()));
         assert!(
             ({
-                let _z1: Value<Z> = Rc::new(RefCell::new(unimplemented!()));
+                let _z1: Value<Z> = Rc::new(RefCell::new(
+                    ({
+                        let ___u: Value<Z> = Rc::new(RefCell::new(Z::new({ 2 }, { 3 })));
+                        (*opt.borrow()).value_or(___u.as_pointer())
+                    }),
+                ));
                 let _z2: Value<Z> = Rc::new(RefCell::new(Z::new({ 2 }, { 3 })));
                 operator_eq_1(_z1.as_pointer(), _z2.as_pointer())
             })
         );
-        assert!(!(unimplemented!()));
+        assert!(({ !({ (*opt.borrow())() }) }));
     }
     return 0;
 }

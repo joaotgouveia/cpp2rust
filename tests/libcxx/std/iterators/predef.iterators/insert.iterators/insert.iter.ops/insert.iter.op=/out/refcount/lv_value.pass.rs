@@ -23,6 +23,11 @@ impl CppEq for nasty_vector_int_ {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for nasty_vector_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for nasty_vector_int_ {
     fn default() -> Self {
         { nasty_vector_int_::new_1() }
@@ -50,12 +55,24 @@ impl Clone for nasty_mutex {
         nasty_mutex::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for nasty_mutex {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for nasty_mutex {
     fn default() -> Self {
         { nasty_mutex::new() }
     }
 }
-pub fn test_1(c1: Vec<i32>, mut j: (), mut x1: i32, mut x2: i32, mut x3: i32, c2: Ptr<Vec<i32>>) {
+pub fn test_1(
+    c1: Vec<i32>,
+    mut j: isize,
+    mut x1: i32,
+    mut x2: i32,
+    mut x3: i32,
+    c2: Ptr<Vec<i32>>,
+) {
     let c1: Value<Vec<i32>> = Rc::new(RefCell::new(c1));
     let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -65,7 +82,7 @@ pub fn test_1(c1: Vec<i32>, mut j: (), mut x1: i32, mut x2: i32, mut x3: i32, c2
 }
 pub fn test_2(
     c1: nasty_vector_int_,
-    mut j: (),
+    mut j: isize,
     mut x1: i32,
     mut x2: i32,
     mut x3: i32,
@@ -92,23 +109,30 @@ pub fn insert3at_3(
     mut x3: i32,
 ) {
     let i: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(i));
-    (*i.borrow_mut()) = {
-        let __it = <RandomAccessIterator<i32>>::from((*i.borrow()).clone());
-        let __off = __it.index();
-        c.with_mut(|__v: &mut Vec<i32>| __v.insert(__off, x1));
-        __it
-    };
-    (*i.borrow_mut()) = {
-        let __it = <RandomAccessIterator<i32>>::from(((*i.borrow_mut()).iter_inc()).clone());
-        let __off = __it.index();
-        c.with_mut(|__v: &mut Vec<i32>| __v.insert(__off, x2));
-        __it
-    };
+    (*i.borrow_mut()) = match ({ <RandomAccessIterator<i32>>::from(({ (*i.borrow()).clone() })) },)
     {
-        let __it = <RandomAccessIterator<i32>>::from(((*i.borrow_mut()).iter_inc()).clone());
-        let __off = __it.index();
-        c.with_mut(|__v: &mut Vec<i32>| __v.insert(__off, x3));
-        __it
+        (mut __tmp_1,) => {
+            let __off = __tmp_1.index();
+            c.with_mut(|__v: &mut Vec<i32>| __v.insert(__off, x1));
+            (__tmp_1).clone()
+        }
+    };
+    (*i.borrow_mut()) = match ({
+        <RandomAccessIterator<i32>>::from(({ ((*i.borrow_mut()).iter_inc()).clone() }))
+    },)
+    {
+        (mut __tmp_2,) => {
+            let __off = __tmp_2.index();
+            c.with_mut(|__v: &mut Vec<i32>| __v.insert(__off, x2));
+            (__tmp_2).clone()
+        }
+    };
+    match ({ <RandomAccessIterator<i32>>::from(({ ((*i.borrow_mut()).iter_inc()).clone() })) },) {
+        (mut __tmp_3,) => {
+            let __off = __tmp_3.index();
+            c.with_mut(|__v: &mut Vec<i32>| __v.insert(__off, x3));
+            (__tmp_3).clone()
+        }
     };
 }
 pub fn insert3at_4(
@@ -124,19 +148,19 @@ pub fn insert3at_4(
     let x3: Value<i32> = Rc::new(RefCell::new(x3));
     (*i.borrow_mut()) = ({
         let _pos: RandomAccessIterator<i32> =
-            <RandomAccessIterator<i32>>::from((*i.borrow()).clone());
+            <RandomAccessIterator<i32>>::from(({ (*i.borrow()).clone() }));
         let _x: Ptr<i32> = x1.as_pointer();
         nasty_vector_int_Impl::insert_45(&c, _pos, _x)
     });
     (*i.borrow_mut()) = ({
         let _pos: RandomAccessIterator<i32> =
-            <RandomAccessIterator<i32>>::from(((*i.borrow_mut()).iter_inc()).clone());
+            <RandomAccessIterator<i32>>::from(({ ((*i.borrow_mut()).iter_inc()).clone() }));
         let _x: Ptr<i32> = x2.as_pointer();
         nasty_vector_int_Impl::insert_45(&c, _pos, _x)
     });
     ({
         let _pos: RandomAccessIterator<i32> =
-            <RandomAccessIterator<i32>>::from(((*i.borrow_mut()).iter_inc()).clone());
+            <RandomAccessIterator<i32>>::from(({ ((*i.borrow_mut()).iter_inc()).clone() }));
         let _x: Ptr<i32> = x3.as_pointer();
         nasty_vector_int_Impl::insert_45(&c, _pos, _x)
     });
@@ -186,7 +210,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ({
             test_1(
                 c1.clone(),
-                0_(),
+                0_isize,
                 (('a' as i8) as i32),
                 (('b' as i8) as i32),
                 (('c' as i8) as i32),
@@ -208,7 +232,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ({
             test_1(
                 c1.clone(),
-                1_(),
+                1_isize,
                 (('a' as i8) as i32),
                 (('b' as i8) as i32),
                 (('c' as i8) as i32),
@@ -230,7 +254,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ({
             test_1(
                 c1.clone(),
-                2_(),
+                2_isize,
                 (('a' as i8) as i32),
                 (('b' as i8) as i32),
                 (('c' as i8) as i32),
@@ -252,7 +276,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ({
             test_1(
                 c1.clone(),
-                3_(),
+                3_isize,
                 (('a' as i8) as i32),
                 (('b' as i8) as i32),
                 (('c' as i8) as i32),
@@ -285,7 +309,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ({
             test_2(
                 (*c1.borrow()).clone(),
-                0_(),
+                0_isize,
                 (('a' as i8) as i32),
                 (('b' as i8) as i32),
                 (('c' as i8) as i32),
@@ -308,7 +332,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ({
             test_2(
                 (*c1.borrow()).clone(),
-                1_(),
+                1_isize,
                 (('a' as i8) as i32),
                 (('b' as i8) as i32),
                 (('c' as i8) as i32),
@@ -331,7 +355,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ({
             test_2(
                 (*c1.borrow()).clone(),
-                2_(),
+                2_isize,
                 (('a' as i8) as i32),
                 (('b' as i8) as i32),
                 (('c' as i8) as i32),
@@ -354,7 +378,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ({
             test_2(
                 (*c1.borrow()).clone(),
-                3_(),
+                3_isize,
                 (('a' as i8) as i32),
                 (('b' as i8) as i32),
                 (('c' as i8) as i32),
@@ -550,11 +574,12 @@ impl nasty_vector_int_Impl for Ptr<nasty_vector_int_> {
     }
     fn insert_45(&self, pos: RandomAccessIterator<i32>, x: Ptr<i32>) -> RandomAccessIterator<i32> {
         let pos: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(pos));
-        return {
-            let __it = (*pos.borrow()).clone();
-            let __off = __it.index();
-            field!((*self), v_).with_mut(|__v: &mut Vec<i32>| __v.insert(__off, (x.read())));
-            __it
+        return match ({ (*pos.borrow()).clone() },) {
+            (mut __tmp_0,) => {
+                let __off = __tmp_0.index();
+                field!((*self), v_).with_mut(|__v: &mut Vec<i32>| __v.insert(__off, (x.read())));
+                (__tmp_0).clone()
+            }
         };
     }
 }

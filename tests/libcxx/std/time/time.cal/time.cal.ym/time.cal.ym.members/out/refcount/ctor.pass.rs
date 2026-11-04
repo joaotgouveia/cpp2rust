@@ -29,15 +29,27 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let ym0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ym0: Value<std_chrono_year_month> =
+        Rc::new(RefCell::new(<std_chrono_year_month>::default()));
     const _: () = assert!(true, "ym0.year()  == year{{}}");;
     const _: () = assert!(true, "ym0.month() == month{{}}");;
     const _: () = assert!(true, "!ym0.ok()");;
-    let ym1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ym1: Value<std_chrono_year_month> = Rc::new(RefCell::new({
+        let __tmp_0: Value<std_chrono_year> =
+            Rc::new(RefCell::new(std_chrono_year::new_1({ 2018 })));
+        std_chrono_year_month::new_1({ __tmp_0.as_pointer() }, {
+            January_0.with(|v| v.as_pointer())
+        })
+    }));
     const _: () = assert!(true, "ym1.year()  == year{{2018}}");;
     const _: () = assert!(true, "ym1.month() == std::chrono::January");;
     const _: () = assert!(true, "ym1.ok()");;
-    let ym2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ym2: Value<std_chrono_year_month> = Rc::new(RefCell::new({
+        let __tmp_1: Value<std_chrono_year> =
+            Rc::new(RefCell::new(std_chrono_year::new_1({ 2018 })));
+        let __tmp_2: Value<std_chrono_month> = Rc::new(RefCell::new(<std_chrono_month>::default()));
+        std_chrono_year_month::new_1({ __tmp_1.as_pointer() }, { __tmp_2.as_pointer() })
+    }));
     const _: () = assert!(true, "ym2.year()  == year{{2018}}");;
     const _: () = assert!(true, "ym2.month() == month{{}}");;
     const _: () = assert!(true, "!ym2.ok()");;

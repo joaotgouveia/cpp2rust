@@ -35,6 +35,11 @@ impl UserManagedBuffer {
         }
     }
 }
+impl CppMove for UserManagedBuffer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(usize, new, value)]
 #[byte_size(8)]
@@ -54,6 +59,11 @@ impl Callable1<Ptr<()>, ()> for LibraryManagedBuffer {
         })
     }
 }
+impl CppMove for LibraryManagedBuffer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
 pub struct LibraryDefaultBuffer {}
@@ -67,6 +77,11 @@ impl Callable1<Ptr<()>, ()> for LibraryDefaultBuffer {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             LibraryDefaultBufferImpl::operator_call_3_char(__it, a1)
         })
+    }
+}
+impl CppMove for LibraryDefaultBuffer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for LibraryDefaultBuffer {
@@ -699,7 +714,7 @@ pub fn get_temp_file_name_37() -> Vec<i8> {
         std::process::abort();
     }
     FdRegistry::close(FD);
-    return std::mem::take(&mut (*Name.borrow_mut()));
+    return ({ std::mem::take(&mut (*Name.borrow_mut())) });
 }
 pub fn glibc_version_less_than_38(mut version: Ptr<i8>) -> bool {
     let test_version: Value<Vec<i8>> = Rc::new(RefCell::new({
@@ -725,7 +740,7 @@ pub fn test_read_39(policy: LibraryDefaultBuffer, payload_sizes: Ptr<Vec<i64>>) 
     let policy: Value<LibraryDefaultBuffer> = Rc::new(RefCell::new(policy));
     let total_size: Value<()> = Rc::new(RefCell::new((unimplemented!() as ())));
     let data: Value<Vec<i8>> = Rc::new(RefCell::new(
-        (0..((*total_size.borrow()) as usize) as usize)
+        (0..({ ((*total_size.borrow()) as usize) }) as usize)
             .map(|_| 0_i8)
             .collect::<Vec<_>>(),
     ));
@@ -754,7 +769,7 @@ pub fn test_read_39(policy: LibraryDefaultBuffer, payload_sizes: Ptr<Vec<i64>>) 
             ({
                 let _condition: bool = (((data
                     .decay()
-                    .offset(((*j.borrow()) as usize) as isize)
+                    .offset(({ ((*j.borrow()) as usize) }) as isize)
                     .read()) as i32)
                     == ((*exp.borrow()) as i32));
                 let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
@@ -830,7 +845,7 @@ pub fn test_read_39(policy: LibraryDefaultBuffer, payload_sizes: Ptr<Vec<i64>>) 
         unimplemented!();
         let previously_read: Value<usize> = Rc::new(RefCell::new(0_usize));
         let in_buffer: Value<Vec<i8>> = Rc::new(RefCell::new(
-            (0..((*total_size.borrow()) as usize) as usize)
+            (0..({ ((*total_size.borrow()) as usize) }) as usize)
                 .map(|_| 0_i8)
                 .collect::<Vec<_>>(),
         ));
@@ -853,7 +868,7 @@ pub fn test_read_39(policy: LibraryDefaultBuffer, payload_sizes: Ptr<Vec<i64>>) 
                     let _condition: bool = (((in_buffer
                         .decay()
                         .offset(
-                            (*previously_read.borrow()).wrapping_add(((*j.borrow()) as usize))
+                            ({ (*previously_read.borrow()).wrapping_add(((*j.borrow()) as usize)) })
                                 as isize,
                         )
                         .read()) as i32)
@@ -903,7 +918,7 @@ pub fn test_read_40(policy: LibraryManagedBuffer, payload_sizes: Ptr<Vec<i64>>) 
     let policy: Value<LibraryManagedBuffer> = Rc::new(RefCell::new(policy));
     let total_size: Value<()> = Rc::new(RefCell::new((unimplemented!() as ())));
     let data: Value<Vec<i8>> = Rc::new(RefCell::new(
-        (0..((*total_size.borrow()) as usize) as usize)
+        (0..({ ((*total_size.borrow()) as usize) }) as usize)
             .map(|_| 0_i8)
             .collect::<Vec<_>>(),
     ));
@@ -932,7 +947,7 @@ pub fn test_read_40(policy: LibraryManagedBuffer, payload_sizes: Ptr<Vec<i64>>) 
             ({
                 let _condition: bool = (((data
                     .decay()
-                    .offset(((*j.borrow()) as usize) as isize)
+                    .offset(({ ((*j.borrow()) as usize) }) as isize)
                     .read()) as i32)
                     == ((*exp.borrow()) as i32));
                 let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
@@ -1008,7 +1023,7 @@ pub fn test_read_40(policy: LibraryManagedBuffer, payload_sizes: Ptr<Vec<i64>>) 
         unimplemented!();
         let previously_read: Value<usize> = Rc::new(RefCell::new(0_usize));
         let in_buffer: Value<Vec<i8>> = Rc::new(RefCell::new(
-            (0..((*total_size.borrow()) as usize) as usize)
+            (0..({ ((*total_size.borrow()) as usize) }) as usize)
                 .map(|_| 0_i8)
                 .collect::<Vec<_>>(),
         ));
@@ -1031,7 +1046,7 @@ pub fn test_read_40(policy: LibraryManagedBuffer, payload_sizes: Ptr<Vec<i64>>) 
                     let _condition: bool = (((in_buffer
                         .decay()
                         .offset(
-                            (*previously_read.borrow()).wrapping_add(((*j.borrow()) as usize))
+                            ({ (*previously_read.borrow()).wrapping_add(((*j.borrow()) as usize)) })
                                 as isize,
                         )
                         .read()) as i32)
@@ -1081,7 +1096,7 @@ pub fn test_read_41(policy: UserManagedBuffer, payload_sizes: Ptr<Vec<i64>>) {
     let policy: Value<UserManagedBuffer> = Rc::new(RefCell::new(policy));
     let total_size: Value<()> = Rc::new(RefCell::new((unimplemented!() as ())));
     let data: Value<Vec<i8>> = Rc::new(RefCell::new(
-        (0..((*total_size.borrow()) as usize) as usize)
+        (0..({ ((*total_size.borrow()) as usize) }) as usize)
             .map(|_| 0_i8)
             .collect::<Vec<_>>(),
     ));
@@ -1110,7 +1125,7 @@ pub fn test_read_41(policy: UserManagedBuffer, payload_sizes: Ptr<Vec<i64>>) {
             ({
                 let _condition: bool = (((data
                     .decay()
-                    .offset(((*j.borrow()) as usize) as isize)
+                    .offset(({ ((*j.borrow()) as usize) }) as isize)
                     .read()) as i32)
                     == ((*exp.borrow()) as i32));
                 let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
@@ -1186,7 +1201,7 @@ pub fn test_read_41(policy: UserManagedBuffer, payload_sizes: Ptr<Vec<i64>>) {
         unimplemented!();
         let previously_read: Value<usize> = Rc::new(RefCell::new(0_usize));
         let in_buffer: Value<Vec<i8>> = Rc::new(RefCell::new(
-            (0..((*total_size.borrow()) as usize) as usize)
+            (0..({ ((*total_size.borrow()) as usize) }) as usize)
                 .map(|_| 0_i8)
                 .collect::<Vec<_>>(),
         ));
@@ -1209,7 +1224,7 @@ pub fn test_read_41(policy: UserManagedBuffer, payload_sizes: Ptr<Vec<i64>>) {
                     let _condition: bool = (((in_buffer
                         .decay()
                         .offset(
-                            (*previously_read.borrow()).wrapping_add(((*j.borrow()) as usize))
+                            ({ (*previously_read.borrow()).wrapping_add(((*j.borrow()) as usize)) })
                                 as isize,
                         )
                         .read()) as i32)
@@ -1283,7 +1298,7 @@ pub fn test_read_codecvt_42(policy: LibraryDefaultBuffer, payload_sizes: Ptr<Vec
             ({
                 let _condition: bool = (((data
                     .decay()
-                    .offset(((*j.borrow()) as usize) as isize)
+                    .offset(({ ((*j.borrow()) as usize) }) as isize)
                     .read()) as i32)
                     == (*exp.borrow()));
                 let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
@@ -1353,7 +1368,7 @@ pub fn test_read_codecvt_42(policy: LibraryDefaultBuffer, payload_sizes: Ptr<Vec
                     let _condition: bool = (((in_buffer
                         .decay()
                         .offset(
-                            ((*j.borrow()) as usize).wrapping_add((*previously_read.borrow()))
+                            ({ ((*j.borrow()) as usize).wrapping_add((*previously_read.borrow())) })
                                 as isize,
                         )
                         .read()) as i32)
@@ -1427,7 +1442,7 @@ pub fn test_read_codecvt_43(policy: LibraryManagedBuffer, payload_sizes: Ptr<Vec
             ({
                 let _condition: bool = (((data
                     .decay()
-                    .offset(((*j.borrow()) as usize) as isize)
+                    .offset(({ ((*j.borrow()) as usize) }) as isize)
                     .read()) as i32)
                     == (*exp.borrow()));
                 let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
@@ -1497,7 +1512,7 @@ pub fn test_read_codecvt_43(policy: LibraryManagedBuffer, payload_sizes: Ptr<Vec
                     let _condition: bool = (((in_buffer
                         .decay()
                         .offset(
-                            ((*j.borrow()) as usize).wrapping_add((*previously_read.borrow()))
+                            ({ ((*j.borrow()) as usize).wrapping_add((*previously_read.borrow())) })
                                 as isize,
                         )
                         .read()) as i32)
@@ -1571,7 +1586,7 @@ pub fn test_read_codecvt_44(policy: UserManagedBuffer, payload_sizes: Ptr<Vec<i6
             ({
                 let _condition: bool = (((data
                     .decay()
-                    .offset(((*j.borrow()) as usize) as isize)
+                    .offset(({ ((*j.borrow()) as usize) }) as isize)
                     .read()) as i32)
                     == (*exp.borrow()));
                 let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
@@ -1636,7 +1651,7 @@ pub fn test_read_codecvt_44(policy: UserManagedBuffer, payload_sizes: Ptr<Vec<i6
                     let _condition: bool = (((in_buffer
                         .decay()
                         .offset(
-                            ((*j.borrow()) as usize).wrapping_add((*previously_read.borrow()))
+                            ({ ((*j.borrow()) as usize).wrapping_add((*previously_read.borrow())) })
                                 as isize,
                         )
                         .read()) as i32)

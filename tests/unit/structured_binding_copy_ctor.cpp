@@ -1,4 +1,3 @@
-// ADDITIONAL_COMPILE_FLAGS: -std=c++17
 #include <assert.h>
 
 static int copies = 0;

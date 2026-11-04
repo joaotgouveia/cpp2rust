@@ -8,20 +8,24 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0(s: Ptr<Vec<i8>>) {
     let sm: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*((*sm.borrow())
-        as (
-            Value<RandomAccessIterator<i8>>,
-            Value<RandomAccessIterator<i8>>,
-        ))
-        .0
-        .borrow_mut()) = unimplemented!();
-    (*((*sm.borrow())
-        as (
-            Value<RandomAccessIterator<i8>>,
-            Value<RandomAccessIterator<i8>>,
-        ))
-        .1
-        .borrow_mut()) = unimplemented!();
+    (*({
+        ((*sm.borrow())
+            as (
+                Value<RandomAccessIterator<i8>>,
+                Value<RandomAccessIterator<i8>>,
+            ))
+    })
+    .0
+    .borrow_mut()) = unimplemented!();
+    (*({
+        ((*sm.borrow())
+            as (
+                Value<RandomAccessIterator<i8>>,
+                Value<RandomAccessIterator<i8>>,
+            ))
+    })
+    .1
+    .borrow_mut()) = unimplemented!();
     (*sm.borrow_mut()).matched = true;
     let os: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -29,20 +33,24 @@ pub fn test_0(s: Ptr<Vec<i8>>) {
 }
 pub fn test_1(s: Ptr<Vec<i32>>) {
     let sm: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*((*sm.borrow())
-        as (
-            Value<RandomAccessIterator<i32>>,
-            Value<RandomAccessIterator<i32>>,
-        ))
-        .0
-        .borrow_mut()) = unimplemented!();
-    (*((*sm.borrow())
-        as (
-            Value<RandomAccessIterator<i32>>,
-            Value<RandomAccessIterator<i32>>,
-        ))
-        .1
-        .borrow_mut()) = unimplemented!();
+    (*({
+        ((*sm.borrow())
+            as (
+                Value<RandomAccessIterator<i32>>,
+                Value<RandomAccessIterator<i32>>,
+            ))
+    })
+    .0
+    .borrow_mut()) = unimplemented!();
+    (*({
+        ((*sm.borrow())
+            as (
+                Value<RandomAccessIterator<i32>>,
+                Value<RandomAccessIterator<i32>>,
+            ))
+    })
+    .1
+    .borrow_mut()) = unimplemented!();
     (*sm.borrow_mut()).matched = true;
     let os: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();

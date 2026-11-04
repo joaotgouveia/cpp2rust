@@ -11,12 +11,18 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_weekday__std_chrono_weekday_ {}
+impl CppMove for test_macros_detail_is_same_std_chrono_weekday__std_chrono_weekday_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_86400__1____std_chrono_duration_long__std_ratio_86400__1___
 {}
+impl CppMove for test_macros_detail_is_same_std_chrono_duration_long__std_ratio_86400__1____std_chrono_duration_long__std_ratio_86400__1___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn euclidian_subtraction_2(mut lhs: u32, mut rhs: u32) -> u32 {
     let mut modulus: u32 = ((6_u32 as u32).wrapping_sub((0_u32 as u32)) as u32).wrapping_add(1_u32);
     let ret: Value<u32> = Rc::new(RefCell::new((lhs).wrapping_sub(rhs)));

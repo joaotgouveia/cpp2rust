@@ -6,54 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn check_width_0() -> bool {
-    return (unimplemented!() == 0_u32);
-}
-pub fn check_width_1() -> bool {
-    return (unimplemented!() == 0_u32);
-}
-pub fn check_width_2() -> bool {
-    return (unimplemented!() == 0_u32);
-}
-pub fn check_width_3() -> bool {
-    return (unimplemented!() == 3_u32);
-}
-pub fn check_width_4() -> bool {
-    return (unimplemented!() == 6_u32);
-}
-pub fn check_width_5() -> bool {
-    return (unimplemented!() == 9_u32);
-}
-pub fn check_width_6() -> bool {
-    return (unimplemented!() == 1_u32);
-}
-pub fn check_width_7() -> bool {
-    return (unimplemented!() == 6_u32);
-}
-pub fn check_width_8() -> bool {
-    return (unimplemented!() == 2_u32);
-}
-pub fn check_width_9() -> bool {
-    return (unimplemented!() == 1_u32);
-}
-pub fn check_width_10() -> bool {
-    return (unimplemented!() == 6_u32);
-}
-pub fn check_width_11() -> bool {
-    return (unimplemented!() == 6_u32);
-}
-pub fn check_width_12() -> bool {
-    return (unimplemented!() == 3_u32);
-}
-pub fn check_width_13() -> bool {
-    return (unimplemented!() == 6_u32);
-}
-pub fn check_width_14() -> bool {
-    return (unimplemented!() == 1_u32);
-}
-pub fn check_width_15() -> bool {
-    return (unimplemented!() == 4_u32);
-}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

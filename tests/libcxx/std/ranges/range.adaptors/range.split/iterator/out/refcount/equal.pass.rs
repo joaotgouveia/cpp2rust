@@ -23,6 +23,11 @@ impl support_double_move_tracker {
         __this
     }
 }
+impl CppMove for support_double_move_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for support_double_move_tracker {
     fn default() -> Self {
         { support_double_move_tracker::new() }
@@ -32,18 +37,22 @@ impl Default for support_double_move_tracker {
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
@@ -60,6 +69,11 @@ impl cpp17_output_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -82,6 +96,11 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_input_iterator_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
@@ -121,14 +140,38 @@ impl forward_iterator_int_ptr_ {
         }
     }
 }
-impl CppEq for forward_iterator_int_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_0(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for forward_iterator_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_0(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for forward_iterator_int_ptr_ {}
 impl CppAdvance for forward_iterator_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
+    }
+}
+impl CppIterator<i32> for forward_iterator_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            forward_iterator_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            forward_iterator_int_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for forward_iterator_int_ptr_ {}
+impl CppMove for forward_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for forward_iterator_int_ptr_ {
@@ -178,14 +221,38 @@ impl bidirectional_iterator_int_ptr_ {
         }
     }
 }
-impl CppEq for bidirectional_iterator_int_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_2(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for bidirectional_iterator_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_2(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for bidirectional_iterator_int_ptr_ {}
 impl CppAdvance for bidirectional_iterator_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
+    }
+}
+impl CppIterator<i32> for bidirectional_iterator_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            bidirectional_iterator_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_int_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for bidirectional_iterator_int_ptr_ {}
+impl CppMove for bidirectional_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for bidirectional_iterator_int_ptr_ {
@@ -235,14 +302,38 @@ impl random_access_iterator_int_ptr_ {
         }
     }
 }
-impl CppEq for random_access_iterator_int_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_4(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for random_access_iterator_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_4(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for random_access_iterator_int_ptr_ {}
 impl CppAdvance for random_access_iterator_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_7();
+    }
+}
+impl CppIterator<i32> for random_access_iterator_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            random_access_iterator_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            random_access_iterator_int_ptr_Impl::operator_inc_7(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for random_access_iterator_int_ptr_ {}
+impl CppMove for random_access_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for random_access_iterator_int_ptr_ {
@@ -266,6 +357,11 @@ impl cpp20_random_access_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp20_random_access_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -314,14 +410,38 @@ impl contiguous_iterator_int_ptr_ {
         }
     }
 }
-impl CppEq for contiguous_iterator_int_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_6(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for contiguous_iterator_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_6(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for contiguous_iterator_int_ptr_ {}
 impl CppAdvance for contiguous_iterator_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_9();
+    }
+}
+impl CppIterator<i32> for contiguous_iterator_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            contiguous_iterator_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            contiguous_iterator_int_ptr_Impl::operator_inc_9(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for contiguous_iterator_int_ptr_ {}
+impl CppMove for contiguous_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for contiguous_iterator_int_ptr_ {
@@ -347,6 +467,11 @@ impl cpp20_input_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_input_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
@@ -366,6 +491,11 @@ impl cpp20_output_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp20_output_iterator<int*>, int>"
@@ -381,6 +511,11 @@ pub struct IteratorOpCounts {
     pub zero_moves: usize,
     #[offset(24)]
     pub equal_cmps: usize,
+}
+impl CppMove for IteratorOpCounts {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
@@ -413,6 +548,11 @@ impl CppEq for forward_sized_iterator_int_ptr_ {
         operator_eq_8(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for forward_sized_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -443,13 +583,17 @@ pub fn operator_add_10(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
 pub fn iter_swap_11(mut a: adl_Iterator, mut b: adl_Iterator) {
     cpp_swap!((a.ptr_).clone(), (b.ptr_).clone());
     if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+        a.iter_swaps_.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub fn iter_move_12(iter: adl_Iterator) -> Ptr<i32> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
-        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
+        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
@@ -499,22 +643,76 @@ impl adl_Iterator {
         });
     }
 }
-impl CppLess for adl_Iterator {
-    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_cmp_14(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
+impl std::cmp::Ord for adl_Iterator {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_cmp_14(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
-impl CppEq for adl_Iterator {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_13(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialOrd for adl_Iterator {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
     }
 }
+impl std::cmp::PartialEq for adl_Iterator {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_13(__lhs.clone(), __rhs.clone())
+            })
+        }
+    }
+}
+impl std::cmp::Eq for adl_Iterator {}
 impl CppAdvance for adl_Iterator {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_14();
     }
     fn cpp_dec(__it: &Ptr<Self>) {
         __it.operator_dec_16();
+    }
+}
+impl CppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            adl_IteratorImpl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_inc_14(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for adl_Iterator {}
+impl CppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_dec_16(__it);
+        });
+        self
+    }
+}
+impl CppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_add_assign(__it, n as _);
+        });
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        libcc2rs::with_record_ptrs(self, from, |__lhs, __rhs| {
+            (adl_IteratorImpl::operator_sub_11(__lhs, __rhs.read())) as isize
+        })
+    }
+}
+impl CppMove for adl_Iterator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for adl_Iterator {
@@ -547,6 +745,11 @@ impl CppEq for rvalue_iterator_int_ptr_ {
             == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for rvalue_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Ptr< i8  >  , new, value)]
@@ -557,101 +760,67 @@ impl util_iterator_error {
         Self {}
     }
 }
+impl CppMove for util_iterator_error {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn testOne_15() {
     const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
     {
         {
             let buffer: Value<Box<[i32]>> =
                 Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32, 4, 5, 6])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*b.borrow())));
-            assert!(unimplemented!());
-            assert!(!((*e.borrow()) != (*e.borrow())));
-            assert!(!(unimplemented!()));
+            let input : Value<std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized_ > = Rc::new(RefCell::new(std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized_ :: new_1 ( { forward_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> )  } , )   } , { forward_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> ) . offset ( ( 7 ) as isize )  } , )   } , )  )) ;
+            let sv : Value<std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { - 1_i32  } , )  )) ;
+            let b : Value<std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr____std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . begin ( ) } )  )) ;
+            let e : Value<std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr____std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . end ( ) } )  )) ;
+            assert!(({ (*b.borrow()) == (*b.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*b.borrow())) }));
+            assert!(({ (*e.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*e.borrow()) != (*e.borrow())) }));
+            assert!(({ !((*b.borrow()) == (*e.borrow())) }));
             assert!((*b.borrow()) != (*e.borrow()));
-            unimplemented!();
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*b.borrow())));
-            assert!(unimplemented!());
-            assert!(!((*e.borrow()) != (*e.borrow())));
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*e.borrow())));
+            ({ advance_16(b.as_pointer(), 2) });
+            assert!(({ (*b.borrow()) == (*b.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*b.borrow())) }));
+            assert!(({ (*e.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*e.borrow()) != (*e.borrow())) }));
+            assert!(({ (*b.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*e.borrow())) }));
         }
         {
             let buffer: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
+            let input : Value<std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized_ > = Rc::new(RefCell::new(std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized_ :: new_1 ( { forward_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> )  } , )   } , { forward_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> ) . offset ( ( 4 ) as isize )  } , )   } , )  )) ;
+            let sv : Value<std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { - 1_i32  } , )  )) ;
+            let b : Value<std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr____std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . begin ( ) } )  )) ;
+            let e : Value<std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr____std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . end ( ) } )  )) ;
+            {
+                b.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                b.as_pointer()
+            };
             assert!((*b.borrow()) != (*e.borrow()));
-            assert!(!(unimplemented!()));
-            unimplemented!();
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*e.borrow())));
+            assert!(({ !((*b.borrow()) == (*e.borrow())) }));
+            {
+                b.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                b.as_pointer()
+            };
+            assert!(({ (*b.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*e.borrow())) }));
         }
         {
             let buffer: Value<Box<[i32]>> =
                 Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32, 4, 5, 6])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(unimplemented!());
-            assert!(!((*i1.borrow()) != (*i2.borrow())));
-        }
-    }
-}
-pub fn testOne_16() {
-    const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
-    {
-        {
-            let buffer: Value<Box<[i32]>> =
-                Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32, 4, 5, 6])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*b.borrow())));
-            assert!(unimplemented!());
-            assert!(!((*e.borrow()) != (*e.borrow())));
-            assert!(!(unimplemented!()));
-            assert!((*b.borrow()) != (*e.borrow()));
-            unimplemented!();
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*b.borrow())));
-            assert!(unimplemented!());
-            assert!(!((*e.borrow()) != (*e.borrow())));
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*e.borrow())));
-        }
-        {
-            let buffer: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((*b.borrow()) != (*e.borrow()));
-            assert!(!(unimplemented!()));
-            unimplemented!();
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*e.borrow())));
-        }
-        {
-            let buffer: Value<Box<[i32]>> =
-                Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32, 4, 5, 6])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(unimplemented!());
-            assert!(!((*i1.borrow()) != (*i2.borrow())));
+            let input : Value<std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized_ > = Rc::new(RefCell::new(std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized_ :: new_1 ( { forward_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> )  } , )   } , { forward_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> ) . offset ( ( 7 ) as isize )  } , )   } , )  )) ;
+            let sv : Value<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int__ > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int__ :: new_1 ( { buffer .as_pointer()  } , { - 1_i32  } , )  )) ;
+            let i1 : Value<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator  >::default() )) ;
+            let i2 : Value<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator  >::default() )) ;
+            assert!(({ (*i1.borrow()) == (*i2.borrow()) }));
+            assert!(({ !((*i1.borrow()) != (*i2.borrow())) }));
         }
     }
 }
@@ -661,95 +830,56 @@ pub fn testOne_17() {
         {
             let buffer: Value<Box<[i32]>> =
                 Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32, 4, 5, 6])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*b.borrow())));
-            assert!(unimplemented!());
-            assert!(!((*e.borrow()) != (*e.borrow())));
-            assert!(!(unimplemented!()));
+            let input : Value<std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ > = Rc::new(RefCell::new(std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ :: new_1 ( { bidirectional_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> )  } , )   } , { bidirectional_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> ) . offset ( ( 7 ) as isize )  } , )   } , )  )) ;
+            let sv : Value<std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { - 1_i32  } , )  )) ;
+            let b : Value<std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr____std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . begin ( ) } )  )) ;
+            let e : Value<std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr____std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . end ( ) } )  )) ;
+            assert!(({ (*b.borrow()) == (*b.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*b.borrow())) }));
+            assert!(({ (*e.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*e.borrow()) != (*e.borrow())) }));
+            assert!(({ !((*b.borrow()) == (*e.borrow())) }));
             assert!((*b.borrow()) != (*e.borrow()));
-            unimplemented!();
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*b.borrow())));
-            assert!(unimplemented!());
-            assert!(!((*e.borrow()) != (*e.borrow())));
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*e.borrow())));
+            ({ advance_18(b.as_pointer(), 2) });
+            assert!(({ (*b.borrow()) == (*b.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*b.borrow())) }));
+            assert!(({ (*e.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*e.borrow()) != (*e.borrow())) }));
+            assert!(({ (*b.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*e.borrow())) }));
         }
         {
             let buffer: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
+            let input : Value<std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ > = Rc::new(RefCell::new(std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ :: new_1 ( { bidirectional_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> )  } , )   } , { bidirectional_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> ) . offset ( ( 4 ) as isize )  } , )   } , )  )) ;
+            let sv : Value<std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { - 1_i32  } , )  )) ;
+            let b : Value<std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr____std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . begin ( ) } )  )) ;
+            let e : Value<std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr____std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . end ( ) } )  )) ;
+            {
+                b.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                b.as_pointer()
+            };
             assert!((*b.borrow()) != (*e.borrow()));
-            assert!(!(unimplemented!()));
-            unimplemented!();
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*e.borrow())));
+            assert!(({ !((*b.borrow()) == (*e.borrow())) }));
+            {
+                b.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                b.as_pointer()
+            };
+            assert!(({ (*b.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*e.borrow())) }));
         }
         {
             let buffer: Value<Box<[i32]>> =
                 Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32, 4, 5, 6])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(unimplemented!());
-            assert!(!((*i1.borrow()) != (*i2.borrow())));
-        }
-    }
-}
-pub fn testOne_18() {
-    const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
-    {
-        {
-            let buffer: Value<Box<[i32]>> =
-                Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32, 4, 5, 6])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*b.borrow())));
-            assert!(unimplemented!());
-            assert!(!((*e.borrow()) != (*e.borrow())));
-            assert!(!(unimplemented!()));
-            assert!((*b.borrow()) != (*e.borrow()));
-            unimplemented!();
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*b.borrow())));
-            assert!(unimplemented!());
-            assert!(!((*e.borrow()) != (*e.borrow())));
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*e.borrow())));
-        }
-        {
-            let buffer: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            assert!((*b.borrow()) != (*e.borrow()));
-            assert!(!(unimplemented!()));
-            unimplemented!();
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*e.borrow())));
-        }
-        {
-            let buffer: Value<Box<[i32]>> =
-                Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32, 4, 5, 6])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(unimplemented!());
-            assert!(!((*i1.borrow()) != (*i2.borrow())));
+            let input : Value<std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ > = Rc::new(RefCell::new(std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized_ :: new_1 ( { bidirectional_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> )  } , )   } , { bidirectional_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> ) . offset ( ( 7 ) as isize )  } , )   } , )  )) ;
+            let sv : Value<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int__ > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int__ :: new_1 ( { buffer .as_pointer()  } , { - 1_i32  } , )  )) ;
+            let i1 : Value<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator  >::default() )) ;
+            let i2 : Value<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator  >::default() )) ;
+            assert!(({ (*i1.borrow()) == (*i2.borrow()) }));
+            assert!(({ !((*i1.borrow()) != (*i2.borrow())) }));
         }
     }
 }
@@ -759,55 +889,204 @@ pub fn testOne_19() {
         {
             let buffer: Value<Box<[i32]>> =
                 Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32, 4, 5, 6])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*b.borrow())));
-            assert!(unimplemented!());
-            assert!(!((*e.borrow()) != (*e.borrow())));
-            assert!(!(unimplemented!()));
+            let input : Value<std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ :: new_1 ( { random_access_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> )  } , )   } , { random_access_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> ) . offset ( ( 7 ) as isize )  } , )   } , )  )) ;
+            let sv : Value<std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { - 1_i32  } , )  )) ;
+            let b : Value<std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr____std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . begin ( ) } )  )) ;
+            let e : Value<std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr____std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . end ( ) } )  )) ;
+            assert!(({ (*b.borrow()) == (*b.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*b.borrow())) }));
+            assert!(({ (*e.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*e.borrow()) != (*e.borrow())) }));
+            assert!(({ !((*b.borrow()) == (*e.borrow())) }));
             assert!((*b.borrow()) != (*e.borrow()));
-            unimplemented!();
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*b.borrow())));
-            assert!(unimplemented!());
-            assert!(!((*e.borrow()) != (*e.borrow())));
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*e.borrow())));
+            ({ advance_20(b.as_pointer(), 2) });
+            assert!(({ (*b.borrow()) == (*b.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*b.borrow())) }));
+            assert!(({ (*e.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*e.borrow()) != (*e.borrow())) }));
+            assert!(({ (*b.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*e.borrow())) }));
         }
         {
             let buffer: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
+            let input : Value<std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ :: new_1 ( { random_access_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> )  } , )   } , { random_access_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> ) . offset ( ( 4 ) as isize )  } , )   } , )  )) ;
+            let sv : Value<std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { - 1_i32  } , )  )) ;
+            let b : Value<std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr____std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . begin ( ) } )  )) ;
+            let e : Value<std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr____std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . end ( ) } )  )) ;
+            {
+                b.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                b.as_pointer()
+            };
             assert!((*b.borrow()) != (*e.borrow()));
-            assert!(!(unimplemented!()));
-            unimplemented!();
-            assert!(unimplemented!());
-            assert!(!((*b.borrow()) != (*e.borrow())));
+            assert!(({ !((*b.borrow()) == (*e.borrow())) }));
+            {
+                b.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                b.as_pointer()
+            };
+            assert!(({ (*b.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*e.borrow())) }));
         }
         {
             let buffer: Value<Box<[i32]>> =
                 Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32, 4, 5, 6])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(unimplemented!());
-            assert!(!((*i1.borrow()) != (*i2.borrow())));
+            let input : Value<std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ :: new_1 ( { random_access_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> )  } , )   } , { random_access_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> ) . offset ( ( 7 ) as isize )  } , )   } , )  )) ;
+            let sv : Value<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int__ > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int__ :: new_1 ( { buffer .as_pointer()  } , { - 1_i32  } , )  )) ;
+            let i1 : Value<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator  >::default() )) ;
+            let i2 : Value<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator  >::default() )) ;
+            assert!(({ (*i1.borrow()) == (*i2.borrow()) }));
+            assert!(({ !((*i1.borrow()) != (*i2.borrow())) }));
         }
     }
 }
-pub fn test_20() -> bool {
+pub fn testOne_21() {
+    const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
+    {
+        {
+            let buffer: Value<Box<[i32]>> =
+                Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32, 4, 5, 6])));
+            let input : Value<std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ :: new_1 ( { contiguous_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> )  } , )   } , { contiguous_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> ) . offset ( ( 7 ) as isize )  } , )   } , )  )) ;
+            let sv : Value<std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { - 1_i32  } , )  )) ;
+            let b : Value<std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr____std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . begin ( ) } )  )) ;
+            let e : Value<std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr____std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . end ( ) } )  )) ;
+            assert!(({ (*b.borrow()) == (*b.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*b.borrow())) }));
+            assert!(({ (*e.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*e.borrow()) != (*e.borrow())) }));
+            assert!(({ !((*b.borrow()) == (*e.borrow())) }));
+            assert!((*b.borrow()) != (*e.borrow()));
+            ({ advance_22(b.as_pointer(), 2) });
+            assert!(({ (*b.borrow()) == (*b.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*b.borrow())) }));
+            assert!(({ (*e.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*e.borrow()) != (*e.borrow())) }));
+            assert!(({ (*b.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*e.borrow())) }));
+        }
+        {
+            let buffer: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32])));
+            let input : Value<std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ :: new_1 ( { contiguous_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> )  } , )   } , { contiguous_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> ) . offset ( ( 4 ) as isize )  } , )   } , )  )) ;
+            let sv : Value<std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { - 1_i32  } , )  )) ;
+            let b : Value<std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr____std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . begin ( ) } )  )) ;
+            let e : Value<std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr____std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . end ( ) } )  )) ;
+            {
+                b.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                b.as_pointer()
+            };
+            assert!((*b.borrow()) != (*e.borrow()));
+            assert!(({ !((*b.borrow()) == (*e.borrow())) }));
+            {
+                b.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                b.as_pointer()
+            };
+            assert!(({ (*b.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*e.borrow())) }));
+        }
+        {
+            let buffer: Value<Box<[i32]>> =
+                Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32, 4, 5, 6])));
+            let input : Value<std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized_ :: new_1 ( { contiguous_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> )  } , )   } , { contiguous_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<i32> ) . offset ( ( 7 ) as isize )  } , )   } , )  )) ;
+            let sv : Value<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int__ > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int__ :: new_1 ( { buffer .as_pointer()  } , { - 1_i32  } , )  )) ;
+            let i1 : Value<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator  >::default() )) ;
+            let i2 : Value<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator  >::default() )) ;
+            assert!(({ (*i1.borrow()) == (*i2.borrow()) }));
+            assert!(({ !((*i1.borrow()) != (*i2.borrow())) }));
+        }
+    }
+}
+pub fn testOne_23() {
+    const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
+    {
+        {
+            let buffer: Value<Box<[i32]>> =
+                Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32, 4, 5, 6])));
+            let input: Value<
+                std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_,
+            > = Rc::new(RefCell::new(
+                std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
+                    { (buffer.as_pointer() as Ptr<i32>) },
+                    { (buffer.as_pointer() as Ptr<i32>).offset((7) as isize) },
+                ),
+            ));
+            let sv : Value<std_ranges_split_view_std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized___std_ranges_single_view_int__ > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { - 1_i32  } , )  )) ;
+            let b : Value<std_ranges_split_view_std_ranges_subrange_int_ptr___std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . begin ( ) } )  )) ;
+            let e : Value<std_ranges_split_view_std_ranges_subrange_int_ptr___std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . end ( ) } )  )) ;
+            assert!(({ (*b.borrow()) == (*b.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*b.borrow())) }));
+            assert!(({ (*e.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*e.borrow()) != (*e.borrow())) }));
+            assert!(({ !((*b.borrow()) == (*e.borrow())) }));
+            assert!((*b.borrow()) != (*e.borrow()));
+            ({ advance_24(b.as_pointer(), 2) });
+            assert!(({ (*b.borrow()) == (*b.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*b.borrow())) }));
+            assert!(({ (*e.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*e.borrow()) != (*e.borrow())) }));
+            assert!(({ (*b.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*e.borrow())) }));
+        }
+        {
+            let buffer: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32])));
+            let input: Value<
+                std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_,
+            > = Rc::new(RefCell::new(
+                std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
+                    { (buffer.as_pointer() as Ptr<i32>) },
+                    { (buffer.as_pointer() as Ptr<i32>).offset((4) as isize) },
+                ),
+            ));
+            let sv : Value<std_ranges_split_view_std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized___std_ranges_single_view_int__ > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { - 1_i32  } , )  )) ;
+            let b : Value<std_ranges_split_view_std_ranges_subrange_int_ptr___std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . begin ( ) } )  )) ;
+            let e : Value<std_ranges_split_view_std_ranges_subrange_int_ptr___std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(( { (*sv.borrow()) . end ( ) } )  )) ;
+            {
+                b.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                b.as_pointer()
+            };
+            assert!((*b.borrow()) != (*e.borrow()));
+            assert!(({ !((*b.borrow()) == (*e.borrow())) }));
+            {
+                b.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                b.as_pointer()
+            };
+            assert!(({ (*b.borrow()) == (*e.borrow()) }));
+            assert!(({ !((*b.borrow()) != (*e.borrow())) }));
+        }
+        {
+            let buffer: Value<Box<[i32]>> =
+                Rc::new(RefCell::new(Box::new([0, 1, 2, -1_i32, 4, 5, 6])));
+            let input: Value<
+                std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_,
+            > = Rc::new(RefCell::new(
+                std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
+                    { (buffer.as_pointer() as Ptr<i32>) },
+                    { (buffer.as_pointer() as Ptr<i32>).offset((7) as isize) },
+                ),
+            ));
+            let sv : Value<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int__ > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int__ :: new_1 ( { buffer .as_pointer()  } , { - 1_i32  } , )  )) ;
+            let i1 : Value<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator  >::default() )) ;
+            let i2 : Value<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator > = Rc::new(RefCell::new(<std_ranges_split_view_std_ranges_ref_view_intarr7arr___std_ranges_single_view_int____Iterator  >::default() )) ;
+            assert!(({ (*i1.borrow()) == (*i2.borrow()) }));
+            assert!(({ !((*i1.borrow()) != (*i2.borrow())) }));
+        }
+    }
+}
+pub fn test_25() -> bool {
     ({ testOne_15() });
-    ({ testOne_16() });
     ({ testOne_17() });
-    ({ testOne_18() });
     ({ testOne_19() });
+    ({ testOne_21() });
+    ({ testOne_23() });
     return true;
 }
 pub fn main() {
@@ -830,7 +1109,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_20() });
+    ({ test_25() });
     const _: () = assert!(true, "test()");;
     return 0;
 }
@@ -888,21 +1167,29 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
         return (*self).clone();
     }
     fn operator_inc_14(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_15(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return prev;
     }
     fn operator_dec_16(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_17(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return prev;
     }
 }
@@ -928,7 +1215,9 @@ impl bidirectional_iterator_int_ptr_Impl for Ptr<bidirectional_iterator_int_ptr_
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -980,7 +1269,9 @@ impl contiguous_iterator_int_ptr_Impl for Ptr<contiguous_iterator_int_ptr_> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_9(&self) -> Ptr<contiguous_iterator_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -1167,7 +1458,9 @@ impl forward_iterator_int_ptr_Impl for Ptr<forward_iterator_int_ptr_> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(&self, _a0: Ptr<forward_iterator_int_ptr_>) -> Ptr<forward_iterator_int_ptr_> {
@@ -1222,7 +1515,9 @@ impl random_access_iterator_int_ptr_Impl for Ptr<random_access_iterator_int_ptr_
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -1281,11 +1576,11 @@ impl rvalue_iterator_int_ptr_Impl for Ptr<rvalue_iterator_int_ptr_> {
                 &((*self).with(|__s| __s.it_.clone())),
                 &(_a0.with(|__s| __s.it_.clone())),
             )));
-            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow());
+            if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+                return ({ (*cmp.borrow()) });
             }
         }
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> bool {
         return ({ (*self).with(|__s| __s.it_.clone()) } == { _a0.with(|__s| __s.it_.clone()) });

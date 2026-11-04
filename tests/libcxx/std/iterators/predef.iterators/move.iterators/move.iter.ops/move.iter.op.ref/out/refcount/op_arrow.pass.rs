@@ -8,10 +8,16 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     let a: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(b"123456789\0")));
-    let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let it2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == (a.as_pointer() as Ptr::<i8>)));
-    assert!((unimplemented!() == (a.as_pointer() as Ptr::<i8>).offset((1) as isize)));
+    let it1: Value<std_move_iterator_char_ptr_> = Rc::new(RefCell::new(
+        ({ make_move_iterator_1((a.as_pointer() as Ptr<i8>)) }),
+    ));
+    let it2: Value<std_move_iterator_char_ptr_> = Rc::new(RefCell::new(
+        ({ make_move_iterator_1((a.as_pointer() as Ptr<i8>).offset((1) as isize)) }),
+    ));
+    assert!(({ ((*it1.borrow()).iter_deref() == (a.as_pointer() as Ptr::<i8>)) }));
+    assert!(
+        ({ ((*it2.borrow()).iter_deref() == (a.as_pointer() as Ptr::<i8>).offset((1) as isize)) })
+    );
     return true;
 }
 pub fn main() {

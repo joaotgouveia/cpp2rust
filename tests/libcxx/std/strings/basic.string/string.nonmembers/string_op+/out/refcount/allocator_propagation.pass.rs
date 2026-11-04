@@ -24,6 +24,11 @@ impl soccc_allocator_char_ {
         }
     }
 }
+impl CppMove for soccc_allocator_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct soccc_allocator_wchar_t_ {
@@ -40,6 +45,11 @@ impl soccc_allocator_wchar_t_ {
             soccc_count: (soccc_count_).clone(),
             self_soccc_count: self_coccc_count_,
         }
+    }
+}
+impl CppMove for soccc_allocator_wchar_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn test_0() -> bool {
@@ -63,8 +73,8 @@ pub fn test_0() -> bool {
                 )
             }) == 1)
         );
-        assert!(((*soccc_lhs.borrow()) == 1));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 1) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -86,8 +96,8 @@ pub fn test_0() -> bool {
                 )
             }) == 0)
         );
-        assert!(((*soccc_lhs.borrow()) == 0));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 0) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -109,8 +119,8 @@ pub fn test_0() -> bool {
                 )
             }) == 0)
         );
-        assert!(((*soccc_lhs.borrow()) == 0));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 0) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -132,8 +142,8 @@ pub fn test_0() -> bool {
                 )
             }) == 0)
         );
-        assert!(((*soccc_lhs.borrow()) == 0));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 0) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -161,8 +171,8 @@ pub fn test_0() -> bool {
                 )
             }) == 1)
         );
-        assert!(((*soccc_lhs.borrow()) == 1));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 1) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -184,16 +194,16 @@ pub fn test_0() -> bool {
                 )
             }) == 1)
         );
-        assert!(((*soccc_lhs.borrow()) == 1));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 1) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
         let soccc_rhs: Value<i32> = Rc::new(RefCell::new(0));
-        let mut lhs: Vec<i8> = unimplemented!();
+        let lhs: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
         let rhs: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
         let mut r: Vec<i8> = {
-            let mut __tmp2 = (lhs).clone();
+            let mut __tmp2 = CppMove::cpp_move(lhs.as_pointer());
             __tmp2.pop();
             rhs.decay().with_c_str(|__s| __tmp2.extend_from_slice(__s));
             __tmp2.push(0_i8);
@@ -213,8 +223,8 @@ pub fn test_0() -> bool {
                 )
             }) == 0)
         );
-        assert!(((*soccc_lhs.borrow()) == 0));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 0) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -236,8 +246,8 @@ pub fn test_0() -> bool {
                 )
             }) == 0)
         );
-        assert!(((*soccc_lhs.borrow()) == 0));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 0) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -259,8 +269,8 @@ pub fn test_0() -> bool {
                 )
             }) == 1)
         );
-        assert!(((*soccc_lhs.borrow()) == 0));
-        assert!(((*soccc_rhs.borrow()) == 1));
+        assert!(({ ((*soccc_lhs.borrow()) == 0) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 1) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -282,8 +292,8 @@ pub fn test_0() -> bool {
                 )
             }) == 1)
         );
-        assert!(((*soccc_lhs.borrow()) == 0));
-        assert!(((*soccc_rhs.borrow()) == 1));
+        assert!(({ ((*soccc_lhs.borrow()) == 0) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 1) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -305,8 +315,8 @@ pub fn test_0() -> bool {
                 )
             }) == 0)
         );
-        assert!(((*soccc_lhs.borrow()) == 0));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 0) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -328,8 +338,8 @@ pub fn test_0() -> bool {
                 )
             }) == 0)
         );
-        assert!(((*soccc_lhs.borrow()) == 0));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 0) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     return true;
 }
@@ -354,8 +364,8 @@ pub fn test_1() -> bool {
                 )
             }) == 1)
         );
-        assert!(((*soccc_lhs.borrow()) == 1));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 1) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -377,8 +387,8 @@ pub fn test_1() -> bool {
                 )
             }) == 0)
         );
-        assert!(((*soccc_lhs.borrow()) == 0));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 0) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -400,8 +410,8 @@ pub fn test_1() -> bool {
                 )
             }) == 0)
         );
-        assert!(((*soccc_lhs.borrow()) == 0));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 0) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -423,8 +433,8 @@ pub fn test_1() -> bool {
                 )
             }) == 0)
         );
-        assert!(((*soccc_lhs.borrow()) == 0));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 0) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -452,8 +462,8 @@ pub fn test_1() -> bool {
                 )
             }) == 1)
         );
-        assert!(((*soccc_lhs.borrow()) == 1));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 1) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -475,16 +485,16 @@ pub fn test_1() -> bool {
                 )
             }) == 1)
         );
-        assert!(((*soccc_lhs.borrow()) == 1));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 1) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
         let soccc_rhs: Value<i32> = Rc::new(RefCell::new(0));
-        let mut lhs: Vec<i32> = unimplemented!();
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
         let rhs: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
         let mut r: Vec<i32> = {
-            let mut __tmp2 = (lhs).clone();
+            let mut __tmp2 = CppMove::cpp_move(lhs.as_pointer());
             __tmp2.pop();
             rhs.decay().with_c_str(|__s| __tmp2.extend_from_slice(__s));
             __tmp2.push(0_i32);
@@ -504,8 +514,8 @@ pub fn test_1() -> bool {
                 )
             }) == 0)
         );
-        assert!(((*soccc_lhs.borrow()) == 0));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 0) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -527,8 +537,8 @@ pub fn test_1() -> bool {
                 )
             }) == 0)
         );
-        assert!(((*soccc_lhs.borrow()) == 0));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 0) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -550,8 +560,8 @@ pub fn test_1() -> bool {
                 )
             }) == 1)
         );
-        assert!(((*soccc_lhs.borrow()) == 0));
-        assert!(((*soccc_rhs.borrow()) == 1));
+        assert!(({ ((*soccc_lhs.borrow()) == 0) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 1) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -573,8 +583,8 @@ pub fn test_1() -> bool {
                 )
             }) == 1)
         );
-        assert!(((*soccc_lhs.borrow()) == 0));
-        assert!(((*soccc_rhs.borrow()) == 1));
+        assert!(({ ((*soccc_lhs.borrow()) == 0) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 1) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -596,8 +606,8 @@ pub fn test_1() -> bool {
                 )
             }) == 0)
         );
-        assert!(((*soccc_lhs.borrow()) == 0));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 0) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     {
         let soccc_lhs: Value<i32> = Rc::new(RefCell::new(0));
@@ -619,8 +629,8 @@ pub fn test_1() -> bool {
                 )
             }) == 0)
         );
-        assert!(((*soccc_lhs.borrow()) == 0));
-        assert!(((*soccc_rhs.borrow()) == 0));
+        assert!(({ ((*soccc_lhs.borrow()) == 0) }));
+        assert!(({ ((*soccc_rhs.borrow()) == 0) }));
     }
     return true;
 }

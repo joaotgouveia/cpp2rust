@@ -6,10 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(a: Ptr<i32>, b: Ptr<i32>, c: (), x: Ptr<i32>) {
-    let c: Value<()> = Rc::new(RefCell::new(c));
-    assert!(({ (unimplemented!()) } == { (x).clone() }));
-}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -36,12 +33,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ({
             let _a: Ptr<i32> = x.as_pointer();
             let _x: Ptr<i32> = x.as_pointer();
-            test_0(_a, y.as_pointer(), unimplemented!(), _x)
+            test_0(_a, y.as_pointer(), <std_greater_int_>::default(), _x)
         });
         ({
             let _a: Ptr<i32> = y.as_pointer();
             let _x: Ptr<i32> = y.as_pointer();
-            test_0(_a, x.as_pointer(), unimplemented!(), _x)
+            test_0(_a, x.as_pointer(), <std_greater_int_>::default(), _x)
         });
     }
     {
@@ -50,12 +47,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ({
             let _b: Ptr<i32> = y.as_pointer();
             let _x: Ptr<i32> = y.as_pointer();
-            test_0(x.as_pointer(), _b, unimplemented!(), _x)
+            test_0(x.as_pointer(), _b, <std_greater_int_>::default(), _x)
         });
         ({
             let _a: Ptr<i32> = y.as_pointer();
             let _x: Ptr<i32> = y.as_pointer();
-            test_0(_a, x.as_pointer(), unimplemented!(), _x)
+            test_0(_a, x.as_pointer(), <std_greater_int_>::default(), _x)
         });
     }
     {
@@ -64,17 +61,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ({
             let _a: Ptr<i32> = x.as_pointer();
             let _x: Ptr<i32> = x.as_pointer();
-            test_0(_a, y.as_pointer(), unimplemented!(), _x)
+            test_0(_a, y.as_pointer(), <std_greater_int_>::default(), _x)
         });
         ({
             let _b: Ptr<i32> = x.as_pointer();
             let _x: Ptr<i32> = x.as_pointer();
-            test_0(y.as_pointer(), _b, unimplemented!(), _x)
+            test_0(y.as_pointer(), _b, <std_greater_int_>::default(), _x)
         });
     }
     {
-        let mut x: i32 = 1;
-        let mut y: i32 = 0;
+        let x: Value<i32> = Rc::new(RefCell::new(1));
+        let y: Value<i32> = Rc::new(RefCell::new(0));
         const _: () = assert!(true, "std::min(x, y, std::greater<int>()) == x");;
         const _: () = assert!(true, "std::min(y, x, std::greater<int>()) == x");;
     }

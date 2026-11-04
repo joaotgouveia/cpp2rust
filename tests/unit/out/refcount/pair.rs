@@ -62,7 +62,7 @@ fn main_0() -> i32 {
     )))
     .as_pointer(),)
     {
-        (__tmp_1,) => const_ptr_pairs.decay().offset(0_usize).write((
+        (__tmp_1,) => const_ptr_pairs.decay().offset(0_usize as isize).write((
             Rc::new(RefCell::new(
                 <Ptr<i32> as CppFrom<Ptr<i32>>>::cpp_from_move(
                     (*__tmp_1.upgrade().deref()).0.as_pointer(),
@@ -75,8 +75,23 @@ fn main_0() -> i32 {
     };
     assert!(
         ({
-            (((*(*const_ptr_pairs.borrow())[0_usize].0.borrow()).read()) == 2)
-                && ((*(*const_ptr_pairs.borrow())[0_usize].1.borrow()) == 2_u64)
+            (((*(*const_ptr_pairs
+                .decay()
+                .offset(0_usize as isize)
+                .upgrade()
+                .deref())
+            .0
+            .borrow())
+            .read())
+                == 2)
+                && ((*(*const_ptr_pairs
+                    .decay()
+                    .offset(0_usize as isize)
+                    .upgrade()
+                    .deref())
+                .1
+                .borrow())
+                    == 2_u64)
         })
     );
     return 0;

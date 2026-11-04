@@ -8,7 +8,9 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     const _: () = assert!(true, "std::is_default_constructible_v<Iter>");;
-    let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let iter: Value<std_ranges_repeat_view_int___Iterator> = Rc::new(RefCell::new(
+        <std_ranges_repeat_view_int___Iterator>::default(),
+    ));
     return true;
 }
 pub fn main() {

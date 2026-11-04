@@ -13,7 +13,7 @@ pub fn main() {
 fn main_0() -> i32 {
     let str: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __bytes = Ptr::<i8>::from_string_literal(b"Hello, world!\n").to_c_bytes();
-        __bytes.push(0);
+        __bytes.push(0_i8);
         __bytes
     }));
     let file: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(
@@ -28,15 +28,14 @@ fn main_0() -> i32 {
             RandomAccessIterator::Vec(str.decay().to_last())
         }) {
             (mut __tmp_0, mut __tmp_1) => {
-                let mut __it = (__tmp_0).clone();
-                let __out = &mut (*ofs.borrow_mut());
-                let mut __bytes: Vec<u8> = Vec::new();
-                while __it != __tmp_1 {
-                    __bytes.push(__it.iter_deref().read() as u8);
-                    __it.iter_inc();
+                let mut __first = (__tmp_0).clone();
+                let mut __out = OstreamIterator::new(ofs.as_pointer(), Ptr::null());
+                while __first != __tmp_1 {
+                    __out.iter_deref().write((__first.iter_deref().read()));
+                    __first.iter_inc();
+                    __out.iter_inc();
                 }
-                __out.write_all(&__bytes);
-                __out.try_clone().unwrap()
+                __out
             }
         };
     }

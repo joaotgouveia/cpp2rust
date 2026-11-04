@@ -67,6 +67,11 @@ impl MultiStringType {
         }
     }
 }
+impl CppMove for MultiStringType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(1)]
 pub struct support_double_move_tracker {
@@ -84,6 +89,11 @@ impl support_double_move_tracker {
         __this
     }
 }
+impl CppMove for support_double_move_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for support_double_move_tracker {
     fn default() -> Self {
         { support_double_move_tracker::new() }
@@ -93,18 +103,22 @@ impl Default for support_double_move_tracker {
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
@@ -121,6 +135,11 @@ impl cpp17_output_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -145,6 +164,11 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
         }
     }
 }
+impl CppMove for cpp17_input_iterator_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
@@ -164,6 +188,11 @@ impl random_access_iterator_char_ptr_ {
         }
     }
 }
+impl CppMove for random_access_iterator_char_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
@@ -180,6 +209,11 @@ impl cpp20_random_access_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp20_random_access_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -219,6 +253,11 @@ impl contiguous_iterator_const_char_ptr_ {
         }
     }
 }
+impl CppMove for contiguous_iterator_const_char_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_sub_2(
     mut x: contiguous_iterator_const_wchar_t_ptr_,
     mut y: contiguous_iterator_const_wchar_t_ptr_,
@@ -250,6 +289,11 @@ impl contiguous_iterator_const_wchar_t_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for contiguous_iterator_const_wchar_t_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_sub_4(
@@ -285,6 +329,11 @@ impl contiguous_iterator_const_char8_t_ptr_ {
         }
     }
 }
+impl CppMove for contiguous_iterator_const_char8_t_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_sub_6(
     mut x: contiguous_iterator_const_char16_t_ptr_,
     mut y: contiguous_iterator_const_char16_t_ptr_,
@@ -316,6 +365,11 @@ impl contiguous_iterator_const_char16_t_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for contiguous_iterator_const_char16_t_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_sub_8(
@@ -351,6 +405,11 @@ impl contiguous_iterator_const_char32_t_ptr_ {
         }
     }
 }
+impl CppMove for contiguous_iterator_const_char32_t_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct contiguous_iterator_char_ptr_ {
@@ -367,6 +426,11 @@ impl contiguous_iterator_char_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for contiguous_iterator_char_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn base_10(i: Ptr<i8>) -> Ptr<i8> {
@@ -407,6 +471,11 @@ impl cpp20_input_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_input_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
@@ -426,6 +495,11 @@ impl cpp20_output_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp20_output_iterator<int*>, int>"
@@ -441,6 +515,11 @@ pub struct IteratorOpCounts {
     pub zero_moves: usize,
     #[offset(24)]
     pub equal_cmps: usize,
+}
+impl CppMove for IteratorOpCounts {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
@@ -474,6 +553,11 @@ impl sized_sentinel_const_char_ptr_ {
         }
     }
 }
+impl CppMove for sized_sentinel_const_char_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_sub_17(
     s: Ptr<sized_sentinel_contiguous_iterator_const_char_ptr__>,
     i: Ptr<contiguous_iterator_const_char_ptr_>,
@@ -500,6 +584,11 @@ impl sized_sentinel_contiguous_iterator_const_char_ptr__ {
         }
     }
 }
+impl CppMove for sized_sentinel_contiguous_iterator_const_char_ptr__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_sub_19(s: Ptr<sized_sentinel_const_wchar_t_ptr_>, i: Ptr<Ptr<i32>>) -> i64 {
     return (s.with(|__s| __s.base_.clone()) - ({ base_11((i.read())) })) as i64;
 }
@@ -518,6 +607,11 @@ impl sized_sentinel_const_wchar_t_ptr_ {
         Self {
             base_: ({ base_11((it.read())) }),
         }
+    }
+}
+impl CppMove for sized_sentinel_const_wchar_t_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_sub_21(
@@ -546,6 +640,11 @@ impl sized_sentinel_contiguous_iterator_const_wchar_t_ptr__ {
         }
     }
 }
+impl CppMove for sized_sentinel_contiguous_iterator_const_wchar_t_ptr__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_sub_23(s: Ptr<sized_sentinel_const_char8_t_ptr_>, i: Ptr<Ptr<u8>>) -> i64 {
     return (s.with(|__s| __s.base_.clone()) - ({ base_12((i.read())) })) as i64;
 }
@@ -564,6 +663,11 @@ impl sized_sentinel_const_char8_t_ptr_ {
         Self {
             base_: ({ base_12((it.read())) }),
         }
+    }
+}
+impl CppMove for sized_sentinel_const_char8_t_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_sub_25(
@@ -592,6 +696,11 @@ impl sized_sentinel_contiguous_iterator_const_char8_t_ptr__ {
         }
     }
 }
+impl CppMove for sized_sentinel_contiguous_iterator_const_char8_t_ptr__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_sub_27(s: Ptr<sized_sentinel_const_char16_t_ptr_>, i: Ptr<Ptr<u16>>) -> i64 {
     return (s.with(|__s| __s.base_.clone()) - ({ base_13((i.read())) })) as i64;
 }
@@ -610,6 +719,11 @@ impl sized_sentinel_const_char16_t_ptr_ {
         Self {
             base_: ({ base_13((it.read())) }),
         }
+    }
+}
+impl CppMove for sized_sentinel_const_char16_t_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_sub_29(
@@ -638,6 +752,11 @@ impl sized_sentinel_contiguous_iterator_const_char16_t_ptr__ {
         }
     }
 }
+impl CppMove for sized_sentinel_contiguous_iterator_const_char16_t_ptr__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_sub_31(s: Ptr<sized_sentinel_const_char32_t_ptr_>, i: Ptr<Ptr<u32>>) -> i64 {
     return (s.with(|__s| __s.base_.clone()) - ({ base_14((i.read())) })) as i64;
 }
@@ -656,6 +775,11 @@ impl sized_sentinel_const_char32_t_ptr_ {
         Self {
             base_: ({ base_14((it.read())) }),
         }
+    }
+}
+impl CppMove for sized_sentinel_const_char32_t_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_sub_33(
@@ -684,6 +808,11 @@ impl sized_sentinel_contiguous_iterator_const_char32_t_ptr__ {
         }
     }
 }
+impl CppMove for sized_sentinel_contiguous_iterator_const_char32_t_ptr__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_35(
     _a0: Ptr<forward_sized_iterator_int_ptr_>,
     _a1: Ptr<forward_sized_iterator_int_ptr_>,
@@ -701,6 +830,11 @@ impl forward_sized_iterator_int_ptr_ {}
 impl CppEq for forward_sized_iterator_int_ptr_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_35(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for forward_sized_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for forward_sized_iterator_int_ptr_ {
@@ -733,13 +867,17 @@ pub fn operator_add_37(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
 pub fn iter_swap_38(mut a: adl_Iterator, mut b: adl_Iterator) {
     cpp_swap!((a.ptr_).clone(), (b.ptr_).clone());
     if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+        a.iter_swaps_.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub fn iter_move_39(iter: adl_Iterator) -> Ptr<i32> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
-        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
+        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
@@ -789,22 +927,76 @@ impl adl_Iterator {
         });
     }
 }
-impl CppLess for adl_Iterator {
-    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_cmp_41(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
+impl std::cmp::Ord for adl_Iterator {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_cmp_41(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
-impl CppEq for adl_Iterator {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_40(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialOrd for adl_Iterator {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
     }
 }
+impl std::cmp::PartialEq for adl_Iterator {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_40(__lhs.clone(), __rhs.clone())
+            })
+        }
+    }
+}
+impl std::cmp::Eq for adl_Iterator {}
 impl CppAdvance for adl_Iterator {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_14();
     }
     fn cpp_dec(__it: &Ptr<Self>) {
         __it.operator_dec_16();
+    }
+}
+impl CppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            adl_IteratorImpl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_inc_14(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for adl_Iterator {}
+impl CppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_dec_16(__it);
+        });
+        self
+    }
+}
+impl CppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_add_assign(__it, n as _);
+        });
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        libcc2rs::with_record_ptrs(self, from, |__lhs, __rhs| {
+            (adl_IteratorImpl::operator_sub_11(__lhs, __rhs.read())) as isize
+        })
+    }
+}
+impl CppMove for adl_Iterator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for adl_Iterator {
@@ -837,6 +1029,11 @@ impl CppEq for rvalue_iterator_int_ptr_ {
             == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for rvalue_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Ptr< i8  >  , new, value)]
@@ -847,230 +1044,1162 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn test_construction_42(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+impl CppMove for util_iterator_error {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
-pub fn test_construction_43(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_42(val: std_basic_string_view_char__std_char_traits_char__) {
+    let val: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1(
+            { ({ (*val.borrow()).data() }) },
+            { ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize) },
+        ),
+    ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_44(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_43(val: std_basic_string_view_char__std_char_traits_char__) {
+    let val: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_2(
+            { ({ (*val.borrow()).data() }) },
+            { ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize) },
+        ),
+    ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_45(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_44(val: std_basic_string_view_char__std_char_traits_char__) {
+    let val: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_3(
+            { ({ (*val.borrow()).data() }) },
+            { ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize) },
+        ),
+    ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_46(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_45(val: std_basic_string_view_char__std_char_traits_char__) {
+    let val: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_4(
+            { ({ (*val.borrow()).data() }) },
+            {
+                {
+                    let __tmp_0: Value<Ptr<i8>> = Rc::new(RefCell::new(
+                        ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize),
+                    ));
+                    sized_sentinel_const_char_ptr_::new_1({ __tmp_0.as_pointer() })
+                }
+            },
+        ),
+    ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_47(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_46(val: std_basic_string_view_char__std_char_traits_char__) {
+    let val: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_5(
+            { contiguous_iterator_const_char_ptr_::new_1({ ({ (*val.borrow()).data() }) }) },
+            {
+                contiguous_iterator_const_char_ptr_::new_1({
+                    ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize)
+                })
+            },
+        ),
+    ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_48(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_47(val: std_basic_string_view_char__std_char_traits_char__) {
+    let val: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_6(
+            { contiguous_iterator_const_char_ptr_::new_1({ ({ (*val.borrow()).data() }) }) },
+            {
+                {
+                    let __tmp_1: Value<contiguous_iterator_const_char_ptr_> =
+                        Rc::new(RefCell::new(contiguous_iterator_const_char_ptr_::new_1({
+                            ({ (*val.borrow()).data() })
+                                .offset(({ (*val.borrow()).size() }) as isize)
+                        })));
+                    sized_sentinel_contiguous_iterator_const_char_ptr__::new_1({
+                        __tmp_1.as_pointer()
+                    })
+                }
+            },
+        ),
+    ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_49(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_48(val: std_basic_string_view_wchar_t__std_char_traits_wchar_t__) {
+    let val: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_1(
+                { ({ (*val.borrow()).data() }) },
+                { ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize) },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_50(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_49(val: std_basic_string_view_wchar_t__std_char_traits_wchar_t__) {
+    let val: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_2(
+                { ({ (*val.borrow()).data() }) },
+                { ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize) },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_51(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_50(val: std_basic_string_view_wchar_t__std_char_traits_wchar_t__) {
+    let val: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_3(
+                { ({ (*val.borrow()).data() }) },
+                { ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize) },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_52(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_51(val: std_basic_string_view_wchar_t__std_char_traits_wchar_t__) {
+    let val: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_4(
+                { ({ (*val.borrow()).data() }) },
+                {
+                    {
+                        let __tmp_2: Value<Ptr<i32>> = Rc::new(RefCell::new(
+                            ({ (*val.borrow()).data() })
+                                .offset(({ (*val.borrow()).size() }) as isize),
+                        ));
+                        sized_sentinel_const_wchar_t_ptr_::new_1({ __tmp_2.as_pointer() })
+                    }
+                },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_53(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_52(val: std_basic_string_view_wchar_t__std_char_traits_wchar_t__) {
+    let val: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_5(
+                { contiguous_iterator_const_wchar_t_ptr_::new_1({ ({ (*val.borrow()).data() }) }) },
+                {
+                    contiguous_iterator_const_wchar_t_ptr_::new_1({
+                        ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize)
+                    })
+                },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_54(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_53(val: std_basic_string_view_wchar_t__std_char_traits_wchar_t__) {
+    let val: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_6(
+                { contiguous_iterator_const_wchar_t_ptr_::new_1({ ({ (*val.borrow()).data() }) }) },
+                {
+                    {
+                        let __tmp_3: Value<contiguous_iterator_const_wchar_t_ptr_> = Rc::new(
+                            RefCell::new(contiguous_iterator_const_wchar_t_ptr_::new_1({
+                                ({ (*val.borrow()).data() })
+                                    .offset(({ (*val.borrow()).size() }) as isize)
+                            })),
+                        );
+                        sized_sentinel_contiguous_iterator_const_wchar_t_ptr__::new_1({
+                            __tmp_3.as_pointer()
+                        })
+                    }
+                },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_55(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_54(val: std_basic_string_view_char8_t__std_char_traits_char8_t__) {
+    let val: Value<std_basic_string_view_char8_t__std_char_traits_char8_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char8_t__std_char_traits_char8_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char8_t__std_char_traits_char8_t__::new_1(
+                { ({ (*val.borrow()).data() }) },
+                { ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize) },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_56(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_55(val: std_basic_string_view_char8_t__std_char_traits_char8_t__) {
+    let val: Value<std_basic_string_view_char8_t__std_char_traits_char8_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char8_t__std_char_traits_char8_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char8_t__std_char_traits_char8_t__::new_2(
+                { ({ (*val.borrow()).data() }) },
+                { ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize) },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_57(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_56(val: std_basic_string_view_char8_t__std_char_traits_char8_t__) {
+    let val: Value<std_basic_string_view_char8_t__std_char_traits_char8_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char8_t__std_char_traits_char8_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char8_t__std_char_traits_char8_t__::new_3(
+                { ({ (*val.borrow()).data() }) },
+                { ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize) },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_58(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_57(val: std_basic_string_view_char8_t__std_char_traits_char8_t__) {
+    let val: Value<std_basic_string_view_char8_t__std_char_traits_char8_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char8_t__std_char_traits_char8_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char8_t__std_char_traits_char8_t__::new_4(
+                { ({ (*val.borrow()).data() }) },
+                {
+                    {
+                        let __tmp_4: Value<Ptr<u8>> = Rc::new(RefCell::new(
+                            ({ (*val.borrow()).data() })
+                                .offset(({ (*val.borrow()).size() }) as isize),
+                        ));
+                        sized_sentinel_const_char8_t_ptr_::new_1({ __tmp_4.as_pointer() })
+                    }
+                },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_59(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_58(val: std_basic_string_view_char8_t__std_char_traits_char8_t__) {
+    let val: Value<std_basic_string_view_char8_t__std_char_traits_char8_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char8_t__std_char_traits_char8_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char8_t__std_char_traits_char8_t__::new_5(
+                { contiguous_iterator_const_char8_t_ptr_::new_1({ ({ (*val.borrow()).data() }) }) },
+                {
+                    contiguous_iterator_const_char8_t_ptr_::new_1({
+                        ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize)
+                    })
+                },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_60(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_59(val: std_basic_string_view_char8_t__std_char_traits_char8_t__) {
+    let val: Value<std_basic_string_view_char8_t__std_char_traits_char8_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char8_t__std_char_traits_char8_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char8_t__std_char_traits_char8_t__::new_6(
+                { contiguous_iterator_const_char8_t_ptr_::new_1({ ({ (*val.borrow()).data() }) }) },
+                {
+                    {
+                        let __tmp_5: Value<contiguous_iterator_const_char8_t_ptr_> = Rc::new(
+                            RefCell::new(contiguous_iterator_const_char8_t_ptr_::new_1({
+                                ({ (*val.borrow()).data() })
+                                    .offset(({ (*val.borrow()).size() }) as isize)
+                            })),
+                        );
+                        sized_sentinel_contiguous_iterator_const_char8_t_ptr__::new_1({
+                            __tmp_5.as_pointer()
+                        })
+                    }
+                },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_61(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_60(val: std_basic_string_view_char16_t__std_char_traits_char16_t__) {
+    let val: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char16_t__std_char_traits_char16_t__::new_1(
+                { ({ (*val.borrow()).data() }) },
+                { ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize) },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_62(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_61(val: std_basic_string_view_char16_t__std_char_traits_char16_t__) {
+    let val: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char16_t__std_char_traits_char16_t__::new_2(
+                { ({ (*val.borrow()).data() }) },
+                { ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize) },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_63(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_62(val: std_basic_string_view_char16_t__std_char_traits_char16_t__) {
+    let val: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char16_t__std_char_traits_char16_t__::new_3(
+                { ({ (*val.borrow()).data() }) },
+                { ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize) },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_64(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_63(val: std_basic_string_view_char16_t__std_char_traits_char16_t__) {
+    let val: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char16_t__std_char_traits_char16_t__::new_4(
+                { ({ (*val.borrow()).data() }) },
+                {
+                    {
+                        let __tmp_6: Value<Ptr<u16>> = Rc::new(RefCell::new(
+                            ({ (*val.borrow()).data() })
+                                .offset(({ (*val.borrow()).size() }) as isize),
+                        ));
+                        sized_sentinel_const_char16_t_ptr_::new_1({ __tmp_6.as_pointer() })
+                    }
+                },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_65(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_64(val: std_basic_string_view_char16_t__std_char_traits_char16_t__) {
+    let val: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char16_t__std_char_traits_char16_t__::new_5(
+                {
+                    contiguous_iterator_const_char16_t_ptr_::new_1({ ({ (*val.borrow()).data() }) })
+                },
+                {
+                    contiguous_iterator_const_char16_t_ptr_::new_1({
+                        ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize)
+                    })
+                },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_66(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_65(val: std_basic_string_view_char16_t__std_char_traits_char16_t__) {
+    let val: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char16_t__std_char_traits_char16_t__::new_6(
+                {
+                    contiguous_iterator_const_char16_t_ptr_::new_1({ ({ (*val.borrow()).data() }) })
+                },
+                {
+                    {
+                        let __tmp_7: Value<contiguous_iterator_const_char16_t_ptr_> = Rc::new(
+                            RefCell::new(contiguous_iterator_const_char16_t_ptr_::new_1({
+                                ({ (*val.borrow()).data() })
+                                    .offset(({ (*val.borrow()).size() }) as isize)
+                            })),
+                        );
+                        sized_sentinel_contiguous_iterator_const_char16_t_ptr__::new_1({
+                            __tmp_7.as_pointer()
+                        })
+                    }
+                },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_67(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_66(val: std_basic_string_view_char32_t__std_char_traits_char32_t__) {
+    let val: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char32_t__std_char_traits_char32_t__::new_1(
+                { ({ (*val.borrow()).data() }) },
+                { ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize) },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_68(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_67(val: std_basic_string_view_char32_t__std_char_traits_char32_t__) {
+    let val: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char32_t__std_char_traits_char32_t__::new_2(
+                { ({ (*val.borrow()).data() }) },
+                { ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize) },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_69(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_68(val: std_basic_string_view_char32_t__std_char_traits_char32_t__) {
+    let val: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char32_t__std_char_traits_char32_t__::new_3(
+                { ({ (*val.borrow()).data() }) },
+                { ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize) },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_70(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_69(val: std_basic_string_view_char32_t__std_char_traits_char32_t__) {
+    let val: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char32_t__std_char_traits_char32_t__::new_4(
+                { ({ (*val.borrow()).data() }) },
+                {
+                    {
+                        let __tmp_8: Value<Ptr<u32>> = Rc::new(RefCell::new(
+                            ({ (*val.borrow()).data() })
+                                .offset(({ (*val.borrow()).size() }) as isize),
+                        ));
+                        sized_sentinel_const_char32_t_ptr_::new_1({ __tmp_8.as_pointer() })
+                    }
+                },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
-pub fn test_construction_71(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
-    assert!((unimplemented!() == unimplemented!()));
+pub fn test_construction_70(val: std_basic_string_view_char32_t__std_char_traits_char32_t__) {
+    let val: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char32_t__std_char_traits_char32_t__::new_5(
+                {
+                    contiguous_iterator_const_char32_t_ptr_::new_1({ ({ (*val.borrow()).data() }) })
+                },
+                {
+                    contiguous_iterator_const_char32_t_ptr_::new_1({
+                        ({ (*val.borrow()).data() }).offset(({ (*val.borrow()).size() }) as isize)
+                    })
+                },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
+}
+pub fn test_construction_71(val: std_basic_string_view_char32_t__std_char_traits_char32_t__) {
+    let val: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+        Rc::new(RefCell::new(val));
+    let sv: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char32_t__std_char_traits_char32_t__::new_6(
+                {
+                    contiguous_iterator_const_char32_t_ptr_::new_1({ ({ (*val.borrow()).data() }) })
+                },
+                {
+                    {
+                        let __tmp_9: Value<contiguous_iterator_const_char32_t_ptr_> = Rc::new(
+                            RefCell::new(contiguous_iterator_const_char32_t_ptr_::new_1({
+                                ({ (*val.borrow()).data() })
+                                    .offset(({ (*val.borrow()).size() }) as isize)
+                            })),
+                        );
+                        sized_sentinel_contiguous_iterator_const_char32_t_ptr__::new_1({
+                            __tmp_9.as_pointer()
+                        })
+                    }
+                },
+            ),
+        ));
+    assert!(({ (({ (*sv.borrow()).data() }) == ({ (*val.borrow()).data() })) }));
+    assert!(({ (({ (*sv.borrow()).size() }) == ({ (*val.borrow()).size() })) }));
 }
 pub fn test_with_char_72() {
-    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ test_construction_42(unimplemented!()) });
-    ({ test_construction_43(unimplemented!()) });
-    ({ test_construction_44(unimplemented!()) });
-    ({ test_construction_45(unimplemented!()) });
-    ({ test_construction_46(unimplemented!()) });
-    ({ test_construction_47(unimplemented!()) });
+    let val: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_7(
+            {
+                ({
+                    MultiStringTypeImpl::as_ptr_2(
+                        &Rc::new(RefCell::new(MultiStringType::new(
+                            {
+                                Ptr::<i32>::from_string_literal(&[
+                                    116 as i32, 101 as i32, 115 as i32, 116 as i32, 0 as i32,
+                                ])
+                            },
+                            {
+                                ((::std::mem::size_of::<[i32; 5]>() as usize)
+                                    .wrapping_div((::std::mem::size_of::<i32>() as usize))
+                                    as usize)
+                                    .wrapping_sub(1_usize)
+                            },
+                            {
+                                Ptr::<u8>::from_string_literal(&[
+                                    116 as u8, 101 as u8, 115 as u8, 116 as u8, 0 as u8,
+                                ])
+                            },
+                            {
+                                ((::std::mem::size_of::<[u8; 5]>() as usize)
+                                    .wrapping_div((::std::mem::size_of::<u8>() as usize))
+                                    as usize)
+                                    .wrapping_sub(1_usize)
+                            },
+                            {
+                                Ptr::<u16>::from_string_literal(&[
+                                    116 as u16, 101 as u16, 115 as u16, 116 as u16, 0 as u16,
+                                ])
+                            },
+                            {
+                                ((::std::mem::size_of::<[u16; 5]>() as usize)
+                                    .wrapping_div((::std::mem::size_of::<u16>() as usize))
+                                    as usize)
+                                    .wrapping_sub(1_usize)
+                            },
+                            {
+                                Ptr::<u32>::from_string_literal(&[
+                                    116 as u32, 101 as u32, 115 as u32, 116 as u32, 0 as u32,
+                                ])
+                            },
+                            {
+                                ((::std::mem::size_of::<[u32; 5]>() as usize)
+                                    .wrapping_div((::std::mem::size_of::<u32>() as usize))
+                                    as usize)
+                                    .wrapping_sub(1_usize)
+                            },
+                            { Ptr::<i8>::from_string_literal(b"test") },
+                            { (::std::mem::size_of::<[i8; 5]>() as usize).wrapping_sub(1_usize) },
+                        )))
+                        .as_pointer(),
+                        Ptr::<i8>::null(),
+                    )
+                })
+            },
+            {
+                (({
+                    MultiStringTypeImpl::length_7(
+                        &Rc::new(RefCell::new(MultiStringType::new(
+                            {
+                                Ptr::<i32>::from_string_literal(&[
+                                    116 as i32, 101 as i32, 115 as i32, 116 as i32, 0 as i32,
+                                ])
+                            },
+                            {
+                                ((::std::mem::size_of::<[i32; 5]>() as usize)
+                                    .wrapping_div((::std::mem::size_of::<i32>() as usize))
+                                    as usize)
+                                    .wrapping_sub(1_usize)
+                            },
+                            {
+                                Ptr::<u8>::from_string_literal(&[
+                                    116 as u8, 101 as u8, 115 as u8, 116 as u8, 0 as u8,
+                                ])
+                            },
+                            {
+                                ((::std::mem::size_of::<[u8; 5]>() as usize)
+                                    .wrapping_div((::std::mem::size_of::<u8>() as usize))
+                                    as usize)
+                                    .wrapping_sub(1_usize)
+                            },
+                            {
+                                Ptr::<u16>::from_string_literal(&[
+                                    116 as u16, 101 as u16, 115 as u16, 116 as u16, 0 as u16,
+                                ])
+                            },
+                            {
+                                ((::std::mem::size_of::<[u16; 5]>() as usize)
+                                    .wrapping_div((::std::mem::size_of::<u16>() as usize))
+                                    as usize)
+                                    .wrapping_sub(1_usize)
+                            },
+                            {
+                                Ptr::<u32>::from_string_literal(&[
+                                    116 as u32, 101 as u32, 115 as u32, 116 as u32, 0 as u32,
+                                ])
+                            },
+                            {
+                                ((::std::mem::size_of::<[u32; 5]>() as usize)
+                                    .wrapping_div((::std::mem::size_of::<u32>() as usize))
+                                    as usize)
+                                    .wrapping_sub(1_usize)
+                            },
+                            { Ptr::<i8>::from_string_literal(b"test") },
+                            { (::std::mem::size_of::<[i8; 5]>() as usize).wrapping_sub(1_usize) },
+                        )))
+                        .as_pointer(),
+                        Ptr::<i8>::null(),
+                    )
+                }) as u64)
+            },
+        ),
+    ));
+    ({ test_construction_42((*val.borrow()).clone()) });
+    ({ test_construction_43((*val.borrow()).clone()) });
+    ({ test_construction_44((*val.borrow()).clone()) });
+    ({ test_construction_45((*val.borrow()).clone()) });
+    ({ test_construction_46((*val.borrow()).clone()) });
+    ({ test_construction_47((*val.borrow()).clone()) });
 }
 pub fn test_with_char_73() {
-    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ test_construction_48(unimplemented!()) });
-    ({ test_construction_49(unimplemented!()) });
-    ({ test_construction_50(unimplemented!()) });
-    ({ test_construction_51(unimplemented!()) });
-    ({ test_construction_52(unimplemented!()) });
-    ({ test_construction_53(unimplemented!()) });
+    let val: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_7(
+                {
+                    ({
+                        MultiStringTypeImpl::as_ptr_3(
+                            &Rc::new(RefCell::new(MultiStringType::new(
+                                {
+                                    Ptr::<i32>::from_string_literal(&[
+                                        116 as i32, 101 as i32, 115 as i32, 116 as i32, 0 as i32,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[i32; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<i32>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u8>::from_string_literal(&[
+                                        116 as u8, 101 as u8, 115 as u8, 116 as u8, 0 as u8,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u8; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u8>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u16>::from_string_literal(&[
+                                        116 as u16, 101 as u16, 115 as u16, 116 as u16, 0 as u16,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u16; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u16>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u32>::from_string_literal(&[
+                                        116 as u32, 101 as u32, 115 as u32, 116 as u32, 0 as u32,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u32; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u32>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                { Ptr::<i8>::from_string_literal(b"test") },
+                                {
+                                    (::std::mem::size_of::<[i8; 5]>() as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                            )))
+                            .as_pointer(),
+                            Ptr::<i32>::null(),
+                        )
+                    })
+                },
+                {
+                    (({
+                        MultiStringTypeImpl::length_8(
+                            &Rc::new(RefCell::new(MultiStringType::new(
+                                {
+                                    Ptr::<i32>::from_string_literal(&[
+                                        116 as i32, 101 as i32, 115 as i32, 116 as i32, 0 as i32,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[i32; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<i32>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u8>::from_string_literal(&[
+                                        116 as u8, 101 as u8, 115 as u8, 116 as u8, 0 as u8,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u8; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u8>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u16>::from_string_literal(&[
+                                        116 as u16, 101 as u16, 115 as u16, 116 as u16, 0 as u16,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u16; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u16>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u32>::from_string_literal(&[
+                                        116 as u32, 101 as u32, 115 as u32, 116 as u32, 0 as u32,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u32; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u32>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                { Ptr::<i8>::from_string_literal(b"test") },
+                                {
+                                    (::std::mem::size_of::<[i8; 5]>() as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                            )))
+                            .as_pointer(),
+                            Ptr::<i32>::null(),
+                        )
+                    }) as u64)
+                },
+            ),
+        ));
+    ({ test_construction_48((*val.borrow()).clone()) });
+    ({ test_construction_49((*val.borrow()).clone()) });
+    ({ test_construction_50((*val.borrow()).clone()) });
+    ({ test_construction_51((*val.borrow()).clone()) });
+    ({ test_construction_52((*val.borrow()).clone()) });
+    ({ test_construction_53((*val.borrow()).clone()) });
 }
 pub fn test_with_char_74() {
-    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ test_construction_54(unimplemented!()) });
-    ({ test_construction_55(unimplemented!()) });
-    ({ test_construction_56(unimplemented!()) });
-    ({ test_construction_57(unimplemented!()) });
-    ({ test_construction_58(unimplemented!()) });
-    ({ test_construction_59(unimplemented!()) });
+    let val: Value<std_basic_string_view_char8_t__std_char_traits_char8_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char8_t__std_char_traits_char8_t__::new_7(
+                {
+                    ({
+                        MultiStringTypeImpl::as_ptr_4(
+                            &Rc::new(RefCell::new(MultiStringType::new(
+                                {
+                                    Ptr::<i32>::from_string_literal(&[
+                                        116 as i32, 101 as i32, 115 as i32, 116 as i32, 0 as i32,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[i32; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<i32>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u8>::from_string_literal(&[
+                                        116 as u8, 101 as u8, 115 as u8, 116 as u8, 0 as u8,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u8; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u8>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u16>::from_string_literal(&[
+                                        116 as u16, 101 as u16, 115 as u16, 116 as u16, 0 as u16,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u16; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u16>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u32>::from_string_literal(&[
+                                        116 as u32, 101 as u32, 115 as u32, 116 as u32, 0 as u32,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u32; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u32>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                { Ptr::<i8>::from_string_literal(b"test") },
+                                {
+                                    (::std::mem::size_of::<[i8; 5]>() as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                            )))
+                            .as_pointer(),
+                            Ptr::<u8>::null(),
+                        )
+                    })
+                },
+                {
+                    (({
+                        MultiStringTypeImpl::length_9(
+                            &Rc::new(RefCell::new(MultiStringType::new(
+                                {
+                                    Ptr::<i32>::from_string_literal(&[
+                                        116 as i32, 101 as i32, 115 as i32, 116 as i32, 0 as i32,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[i32; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<i32>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u8>::from_string_literal(&[
+                                        116 as u8, 101 as u8, 115 as u8, 116 as u8, 0 as u8,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u8; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u8>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u16>::from_string_literal(&[
+                                        116 as u16, 101 as u16, 115 as u16, 116 as u16, 0 as u16,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u16; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u16>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u32>::from_string_literal(&[
+                                        116 as u32, 101 as u32, 115 as u32, 116 as u32, 0 as u32,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u32; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u32>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                { Ptr::<i8>::from_string_literal(b"test") },
+                                {
+                                    (::std::mem::size_of::<[i8; 5]>() as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                            )))
+                            .as_pointer(),
+                            Ptr::<u8>::null(),
+                        )
+                    }) as u64)
+                },
+            ),
+        ));
+    ({ test_construction_54((*val.borrow()).clone()) });
+    ({ test_construction_55((*val.borrow()).clone()) });
+    ({ test_construction_56((*val.borrow()).clone()) });
+    ({ test_construction_57((*val.borrow()).clone()) });
+    ({ test_construction_58((*val.borrow()).clone()) });
+    ({ test_construction_59((*val.borrow()).clone()) });
 }
 pub fn test_with_char_75() {
-    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ test_construction_60(unimplemented!()) });
-    ({ test_construction_61(unimplemented!()) });
-    ({ test_construction_62(unimplemented!()) });
-    ({ test_construction_63(unimplemented!()) });
-    ({ test_construction_64(unimplemented!()) });
-    ({ test_construction_65(unimplemented!()) });
+    let val: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char16_t__std_char_traits_char16_t__::new_7(
+                {
+                    ({
+                        MultiStringTypeImpl::as_ptr_5(
+                            &Rc::new(RefCell::new(MultiStringType::new(
+                                {
+                                    Ptr::<i32>::from_string_literal(&[
+                                        116 as i32, 101 as i32, 115 as i32, 116 as i32, 0 as i32,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[i32; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<i32>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u8>::from_string_literal(&[
+                                        116 as u8, 101 as u8, 115 as u8, 116 as u8, 0 as u8,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u8; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u8>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u16>::from_string_literal(&[
+                                        116 as u16, 101 as u16, 115 as u16, 116 as u16, 0 as u16,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u16; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u16>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u32>::from_string_literal(&[
+                                        116 as u32, 101 as u32, 115 as u32, 116 as u32, 0 as u32,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u32; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u32>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                { Ptr::<i8>::from_string_literal(b"test") },
+                                {
+                                    (::std::mem::size_of::<[i8; 5]>() as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                            )))
+                            .as_pointer(),
+                            Ptr::<u16>::null(),
+                        )
+                    })
+                },
+                {
+                    (({
+                        MultiStringTypeImpl::length_10(
+                            &Rc::new(RefCell::new(MultiStringType::new(
+                                {
+                                    Ptr::<i32>::from_string_literal(&[
+                                        116 as i32, 101 as i32, 115 as i32, 116 as i32, 0 as i32,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[i32; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<i32>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u8>::from_string_literal(&[
+                                        116 as u8, 101 as u8, 115 as u8, 116 as u8, 0 as u8,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u8; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u8>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u16>::from_string_literal(&[
+                                        116 as u16, 101 as u16, 115 as u16, 116 as u16, 0 as u16,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u16; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u16>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u32>::from_string_literal(&[
+                                        116 as u32, 101 as u32, 115 as u32, 116 as u32, 0 as u32,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u32; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u32>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                { Ptr::<i8>::from_string_literal(b"test") },
+                                {
+                                    (::std::mem::size_of::<[i8; 5]>() as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                            )))
+                            .as_pointer(),
+                            Ptr::<u16>::null(),
+                        )
+                    }) as u64)
+                },
+            ),
+        ));
+    ({ test_construction_60((*val.borrow()).clone()) });
+    ({ test_construction_61((*val.borrow()).clone()) });
+    ({ test_construction_62((*val.borrow()).clone()) });
+    ({ test_construction_63((*val.borrow()).clone()) });
+    ({ test_construction_64((*val.borrow()).clone()) });
+    ({ test_construction_65((*val.borrow()).clone()) });
 }
 pub fn test_with_char_76() {
-    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ test_construction_66(unimplemented!()) });
-    ({ test_construction_67(unimplemented!()) });
-    ({ test_construction_68(unimplemented!()) });
-    ({ test_construction_69(unimplemented!()) });
-    ({ test_construction_70(unimplemented!()) });
-    ({ test_construction_71(unimplemented!()) });
+    let val: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char32_t__std_char_traits_char32_t__::new_7(
+                {
+                    ({
+                        MultiStringTypeImpl::as_ptr_6(
+                            &Rc::new(RefCell::new(MultiStringType::new(
+                                {
+                                    Ptr::<i32>::from_string_literal(&[
+                                        116 as i32, 101 as i32, 115 as i32, 116 as i32, 0 as i32,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[i32; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<i32>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u8>::from_string_literal(&[
+                                        116 as u8, 101 as u8, 115 as u8, 116 as u8, 0 as u8,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u8; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u8>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u16>::from_string_literal(&[
+                                        116 as u16, 101 as u16, 115 as u16, 116 as u16, 0 as u16,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u16; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u16>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u32>::from_string_literal(&[
+                                        116 as u32, 101 as u32, 115 as u32, 116 as u32, 0 as u32,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u32; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u32>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                { Ptr::<i8>::from_string_literal(b"test") },
+                                {
+                                    (::std::mem::size_of::<[i8; 5]>() as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                            )))
+                            .as_pointer(),
+                            Ptr::<u32>::null(),
+                        )
+                    })
+                },
+                {
+                    (({
+                        MultiStringTypeImpl::length_11(
+                            &Rc::new(RefCell::new(MultiStringType::new(
+                                {
+                                    Ptr::<i32>::from_string_literal(&[
+                                        116 as i32, 101 as i32, 115 as i32, 116 as i32, 0 as i32,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[i32; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<i32>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u8>::from_string_literal(&[
+                                        116 as u8, 101 as u8, 115 as u8, 116 as u8, 0 as u8,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u8; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u8>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u16>::from_string_literal(&[
+                                        116 as u16, 101 as u16, 115 as u16, 116 as u16, 0 as u16,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u16; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u16>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                {
+                                    Ptr::<u32>::from_string_literal(&[
+                                        116 as u32, 101 as u32, 115 as u32, 116 as u32, 0 as u32,
+                                    ])
+                                },
+                                {
+                                    ((::std::mem::size_of::<[u32; 5]>() as usize)
+                                        .wrapping_div((::std::mem::size_of::<u32>() as usize))
+                                        as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                                { Ptr::<i8>::from_string_literal(b"test") },
+                                {
+                                    (::std::mem::size_of::<[i8; 5]>() as usize)
+                                        .wrapping_sub(1_usize)
+                                },
+                            )))
+                            .as_pointer(),
+                            Ptr::<u32>::null(),
+                        )
+                    }) as u64)
+                },
+            ),
+        ));
+    ({ test_construction_66((*val.borrow()).clone()) });
+    ({ test_construction_67((*val.borrow()).clone()) });
+    ({ test_construction_68((*val.borrow()).clone()) });
+    ({ test_construction_69((*val.borrow()).clone()) });
+    ({ test_construction_70((*val.borrow()).clone()) });
+    ({ test_construction_71((*val.borrow()).clone()) });
 }
 pub fn test_77() -> bool {
     ({ test_with_char_72() });
@@ -1246,21 +2375,29 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
         return (*self).clone();
     }
     fn operator_inc_14(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_15(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return prev;
     }
     fn operator_dec_16(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_17(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return prev;
     }
 }
@@ -1822,11 +2959,11 @@ impl rvalue_iterator_int_ptr_Impl for Ptr<rvalue_iterator_int_ptr_> {
                 &((*self).with(|__s| __s.it_.clone())),
                 &(_a0.with(|__s| __s.it_.clone())),
             )));
-            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow());
+            if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+                return ({ (*cmp.borrow()) });
             }
         }
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> bool {
         return ({ (*self).with(|__s| __s.it_.clone()) } == { _a0.with(|__s| __s.it_.clone()) });

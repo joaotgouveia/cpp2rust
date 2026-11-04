@@ -17,6 +17,11 @@ impl A {
         Self {}
     }
 }
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for A {
     fn default() -> Self {
         { A::new() }
@@ -81,7 +86,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         "(std::is_same<decltype(std::move_if_noexcept(l)), const legacy&>::value)"
     );;
     let mut i1: i32 = 23;
-    let mut i2: i32 = i1;
+    let mut i2: i32 = 23;
     const _: () = assert!(true, "i2 == 23");;
     return 0;
 }

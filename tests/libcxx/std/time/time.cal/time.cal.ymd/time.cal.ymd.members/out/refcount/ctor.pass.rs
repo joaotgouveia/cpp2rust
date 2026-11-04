@@ -29,13 +29,23 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let January: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let ym0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let January: Value<std_chrono_month> = Rc::new(RefCell::new(
+        (*January_0.with(Value::clone).borrow()).clone(),
+    ));
+    let ym0: Value<std_chrono_year_month_day> =
+        Rc::new(RefCell::new(<std_chrono_year_month_day>::default()));
     const _: () = assert!(true, "ym0.year()  == year{{}}");;
     const _: () = assert!(true, "ym0.month() == month{{}}");;
     const _: () = assert!(true, "ym0.day()   == day{{}}");;
     const _: () = assert!(true, "!ym0.ok()");;
-    let ym1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ym1: Value<std_chrono_year_month_day> = Rc::new(RefCell::new({
+        let __tmp_0: Value<std_chrono_year> =
+            Rc::new(RefCell::new(std_chrono_year::new_1({ 2019 })));
+        let __tmp_1: Value<u32> = Rc::new(RefCell::new(12_u32));
+        std_chrono_year_month_day::new_1({ __tmp_0.as_pointer() }, { January.as_pointer() }, {
+            __tmp_1.as_pointer()
+        })
+    }));
     const _: () = assert!(true, "ym1.year()  == year{{2019}}");;
     const _: () = assert!(true, "ym1.month() == January");;
     const _: () = assert!(true, "ym1.day()   == day{{12}}");;

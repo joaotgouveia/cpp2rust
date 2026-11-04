@@ -6,67 +6,73 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(rhs: Ptr<()>, is_going_to_throw: Option<bool>) {
+pub fn test_0(rhs: Ptr<std_optional_int_>, is_going_to_throw: Option<bool>) {
     let mut is_going_to_throw: bool = is_going_to_throw.unwrap_or_else(|| false);
     const _: () = assert!(
         true,
         "!(std::is_convertible<const optional<U>&, optional<T>>::value)"
     );;
-    let mut rhs_engaged: bool = unimplemented!();
+    let mut rhs_engaged: bool = ({ (*rhs.upgrade().deref())() });
     if is_going_to_throw {
         return;
     }
-    let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as i32) == (rhs_engaged as i32)));
+    let lhs: Value<std_optional_X_> =
+        Rc::new(RefCell::new(std_optional_X_::new_1({ (rhs).clone() })));
+    assert!(({ ((({ (*lhs.borrow())() }) as i32) == (rhs_engaged as i32)) }));
     if rhs_engaged {
         assert!(
             ({
-                let _x: Ptr<X> = unimplemented!();
-                let _y: Value<X> = Rc::new(RefCell::new(X::new({ (unimplemented!().read()) })));
+                let _x: Ptr<X> = lhs.as_pointer();
+                let _y: Value<X> =
+                    Rc::new(RefCell::new(X::new({ ((*rhs.upgrade().deref()).read()) })));
                 operator_eq_1(_x, _y.as_pointer())
             })
         );
     }
 }
-pub fn test_2(rhs: Ptr<()>, is_going_to_throw: Option<bool>) {
+pub fn test_2(rhs: Ptr<std_optional_int_>, is_going_to_throw: Option<bool>) {
     let mut is_going_to_throw: bool = is_going_to_throw.unwrap_or_else(|| false);
     const _: () = assert!(
         true,
         "!(std::is_convertible<const optional<U>&, optional<T>>::value)"
     );;
-    let mut rhs_engaged: bool = unimplemented!();
+    let mut rhs_engaged: bool = ({ (*rhs.upgrade().deref())() });
     if is_going_to_throw {
         return;
     }
-    let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as i32) == (rhs_engaged as i32)));
+    let lhs: Value<std_optional_Y_> =
+        Rc::new(RefCell::new(std_optional_Y_::new_1({ (rhs).clone() })));
+    assert!(({ ((({ (*lhs.borrow())() }) as i32) == (rhs_engaged as i32)) }));
     if rhs_engaged {
         assert!(
             ({
-                let _x: Ptr<Y> = unimplemented!();
-                let _y: Value<Y> = Rc::new(RefCell::new(Y::new({ (unimplemented!().read()) })));
+                let _x: Ptr<Y> = lhs.as_pointer();
+                let _y: Value<Y> =
+                    Rc::new(RefCell::new(Y::new({ ((*rhs.upgrade().deref()).read()) })));
                 operator_eq_3(_x, _y.as_pointer())
             })
         );
     }
 }
-pub fn test_4(rhs: Ptr<()>, is_going_to_throw: Option<bool>) {
+pub fn test_4(rhs: Ptr<std_optional_int_>, is_going_to_throw: Option<bool>) {
     let mut is_going_to_throw: bool = is_going_to_throw.unwrap_or_else(|| false);
     const _: () = assert!(
         true,
         "!(std::is_convertible<const optional<U>&, optional<T>>::value)"
     );;
-    let mut rhs_engaged: bool = unimplemented!();
+    let mut rhs_engaged: bool = ({ (*rhs.upgrade().deref())() });
     if is_going_to_throw {
         return;
     }
-    let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as i32) == (rhs_engaged as i32)));
+    let lhs: Value<std_optional_Z_> =
+        Rc::new(RefCell::new(std_optional_Z_::new_1({ (rhs).clone() })));
+    assert!(({ ((({ (*lhs.borrow())() }) as i32) == (rhs_engaged as i32)) }));
     if rhs_engaged {
         assert!(
             ({
-                let _x: Ptr<Z> = unimplemented!();
-                let _y: Value<Z> = Rc::new(RefCell::new(Z::new({ (unimplemented!().read()) })));
+                let _x: Ptr<Z> = lhs.as_pointer();
+                let _y: Value<Z> =
+                    Rc::new(RefCell::new(Z::new({ ((*rhs.upgrade().deref()).read()) })));
                 operator_eq_5(_x, _y.as_pointer())
             })
         );
@@ -104,6 +110,11 @@ impl Clone for X {
         X::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for X {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_3(x: Ptr<Y>, y: Ptr<Y>) -> bool {
     return ({ x.with(|__s| __s.i_) } == { y.with(|__s| __s.i_) });
 }
@@ -121,6 +132,11 @@ impl Y {
 impl CppEq for Y {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_3(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for Y {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 thread_local!(
@@ -147,24 +163,29 @@ impl CppEq for Z {
         operator_eq_5(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for Z {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_all_7() -> bool {
     {
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let rhs: Value<std_optional_int_> = Rc::new(RefCell::new(<std_optional_int_>::default()));
         ({ test_0(rhs.as_pointer(), None) });
     }
     {
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let rhs: Value<std_optional_int_> = Rc::new(RefCell::new(3));
         ({ test_0(rhs.as_pointer(), None) });
     }
     return true;
 }
 pub fn test_all_8() -> bool {
     {
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let rhs: Value<std_optional_int_> = Rc::new(RefCell::new(<std_optional_int_>::default()));
         ({ test_2(rhs.as_pointer(), None) });
     }
     {
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let rhs: Value<std_optional_int_> = Rc::new(RefCell::new(3));
         ({ test_2(rhs.as_pointer(), None) });
     }
     return true;
@@ -194,11 +215,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "test_all<X, int>()");;
     const _: () = assert!(true, "test_all<Y, int>()");;
     {
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let rhs: Value<std_optional_int_> = Rc::new(RefCell::new(<std_optional_int_>::default()));
         ({ test_4(rhs.as_pointer(), None) });
     }
     {
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let rhs: Value<std_optional_int_> = Rc::new(RefCell::new(3));
         ({ test_4(rhs.as_pointer(), Some(true)) });
     }
     return 0;

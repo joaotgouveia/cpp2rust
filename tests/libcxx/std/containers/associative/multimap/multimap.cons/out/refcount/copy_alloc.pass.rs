@@ -32,6 +32,11 @@ impl Callable2<Ptr<i32>, Ptr<i32>, bool> for test_less_int_ {
         })
     }
 }
+impl CppMove for test_less_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(40)]
 pub struct test_allocator_statistics {
@@ -55,6 +60,11 @@ pub struct test_allocator_statistics {
     pub moved: i32,
     #[offset(36)]
     pub converted: i32,
+}
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for test_allocator_statistics {
     fn default() -> Self {
@@ -83,6 +93,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -163,6 +178,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -183,6 +203,11 @@ pub fn operator_eq_5(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_std_pair_const_int__int___rebind_std_pair_const_int__int__ {}
+impl CppMove for test_allocator_std_pair_const_int__int___rebind_std_pair_const_int__int__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_std_pair_const_int__int__ {
@@ -216,8 +241,12 @@ impl test_allocator_std_pair_const_int__int__ {
                     .is_null())
         );
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -238,6 +267,11 @@ impl Clone for test_allocator_std_pair_const_int__int__ {
         test_allocator_std_pair_const_int__int__::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_std_pair_const_int__int__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_std_pair_const_int__int__ {
     fn default() -> Self {
         {
@@ -252,6 +286,11 @@ impl Default for test_allocator_std_pair_const_int__int__ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -284,6 +323,11 @@ impl malloc_allocator_base {
         dealloc_count_8.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_6: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -304,6 +348,11 @@ pub struct min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_
     ptr_: Ptr<(Value<i32>, Value<i32>)>,
 }
 impl min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -312,6 +361,11 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_10(
     mut _a0: min_allocator_std_pair_const_int__int__,
     mut _a1: min_allocator_std_pair_const_int__int__,
@@ -324,6 +378,11 @@ pub struct min_allocator_std_pair_const_int__int__ {}
 impl CppEq for min_allocator_std_pair_const_int__int__ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_10(__lhs.read(), __rhs.read())
+    }
+}
+impl CppMove for min_allocator_std_pair_const_int__int__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn test_alloc_11(new_alloc: Ptr<()>) {
@@ -459,10 +518,12 @@ pub fn test_alloc_13(new_alloc: Ptr<min_allocator_std_pair_const_int__int__>) {
         assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
         assert!(
             ({
-                let _arg0: min_allocator_std_pair_const_int__int__ = unimplemented!();
-                let _arg1: min_allocator_std_pair_const_int__int__ =
-                    (*new_alloc.upgrade().deref()).clone();
-                operator_eq_10(_arg0, _arg1)
+                ({
+                    let _arg0: min_allocator_std_pair_const_int__int__ = unimplemented!();
+                    let _arg1: min_allocator_std_pair_const_int__int__ =
+                        (*new_alloc.upgrade().deref()).clone();
+                    operator_eq_10(_arg0, _arg1)
+                })
             })
         );
         assert!((unimplemented!() == 3_()));
@@ -733,7 +794,9 @@ impl test_allocator_std_pair_const_int__int__Impl
         assert!(((*self).with(|__s| __s.data_) != destructed_value_1.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_1.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_1.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_1.with(|rc| *rc.borrow()));

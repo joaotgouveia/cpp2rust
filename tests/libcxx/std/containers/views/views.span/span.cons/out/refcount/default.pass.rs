@@ -8,95 +8,159 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn checkCV_0() {
     {
-        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s1: Value<std_span_int__18446744073709551615_> = Rc::new(RefCell::new(
+            <std_span_int__18446744073709551615_>::default(),
+        ));
+        let s2: Value<std_span_const_int__18446744073709551615_> = Rc::new(RefCell::new(
+            <std_span_const_int__18446744073709551615_>::default(),
+        ));
+        let s3: Value<std_span_volatile_int__18446744073709551615_> = Rc::new(RefCell::new(
+            <std_span_volatile_int__18446744073709551615_>::default(),
+        ));
+        let s4: Value<std_span_const_volatile_int__18446744073709551615_> = Rc::new(RefCell::new(
+            <std_span_const_volatile_int__18446744073709551615_>::default(),
+        ));
         assert!(
-            ((((unimplemented!()).wrapping_add(unimplemented!())).wrapping_add(unimplemented!()))
-                .wrapping_add(unimplemented!())
-                == 0_())
+            ({
+                (((({ (*s1.borrow()).size() }).wrapping_add(({ (*s2.borrow()).size() })))
+                    .wrapping_add(({ (*s3.borrow()).size() })))
+                .wrapping_add(({ (*s4.borrow()).size() }))
+                    == 0_u64)
+            })
         );
     }
     {
-        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s1: Value<std_span_int__0_> = Rc::new(RefCell::new(<std_span_int__0_>::default()));
+        let s2: Value<std_span_const_int__0_> =
+            Rc::new(RefCell::new(<std_span_const_int__0_>::default()));
+        let s3: Value<std_span_volatile_int__0_> =
+            Rc::new(RefCell::new(<std_span_volatile_int__0_>::default()));
+        let s4: Value<std_span_const_volatile_int__0_> =
+            Rc::new(RefCell::new(<std_span_const_volatile_int__0_>::default()));
         assert!(
-            ((((unimplemented!() as ()).wrapping_add((unimplemented!() as ())) as ())
-                .wrapping_add((unimplemented!() as ())) as ())
-                .wrapping_add((unimplemented!() as ()))
-                == 0_())
+            ({
+                ((((({ (*s1.borrow()).size() }) as u64)
+                    .wrapping_add((({ (*s2.borrow()).size() }) as u64)) as u64)
+                    .wrapping_add((({ (*s3.borrow()).size() }) as u64)) as u64)
+                    .wrapping_add((({ (*s4.borrow()).size() }) as u64))
+                    == 0_u64)
+            })
         );
     }
 }
 pub fn testConstexprSpan_1() -> bool {
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return ((((unimplemented!()).is_null()) && (unimplemented!() == 0_()))
-        && ((unimplemented!()).is_null()))
-        && (unimplemented!() == 0_());
+    let s1: Value<std_span_const_int__18446744073709551615_> = Rc::new(RefCell::new(
+        <std_span_const_int__18446744073709551615_>::default(),
+    ));
+    let s2: Value<std_span_const_int__0_> =
+        Rc::new(RefCell::new(<std_span_const_int__0_>::default()));
+    return (((({ (*s1.borrow()).data() }).is_null()) && (({ (*s1.borrow()).size() }) == 0_u64))
+        && (({ (*s2.borrow()).data() }).is_null()))
+        && (({ (*s2.borrow()).size() }) == 0_u64);
 }
 pub fn testConstexprSpan_2() -> bool {
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return ((((unimplemented!()).is_null()) && (unimplemented!() == 0_()))
-        && ((unimplemented!()).is_null()))
-        && (unimplemented!() == 0_());
+    let s1: Value<std_span_const_long__18446744073709551615_> = Rc::new(RefCell::new(
+        <std_span_const_long__18446744073709551615_>::default(),
+    ));
+    let s2: Value<std_span_const_long__0_> =
+        Rc::new(RefCell::new(<std_span_const_long__0_>::default()));
+    return (((({ (*s1.borrow()).data() }).is_null()) && (({ (*s1.borrow()).size() }) == 0_u64))
+        && (({ (*s2.borrow()).data() }).is_null()))
+        && (({ (*s2.borrow()).size() }) == 0_u64);
 }
 pub fn testConstexprSpan_3() -> bool {
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return ((((unimplemented!()).is_null()) && (unimplemented!() == 0_()))
-        && ((unimplemented!()).is_null()))
-        && (unimplemented!() == 0_());
+    let s1: Value<std_span_const_double__18446744073709551615_> = Rc::new(RefCell::new(
+        <std_span_const_double__18446744073709551615_>::default(),
+    ));
+    let s2: Value<std_span_const_double__0_> =
+        Rc::new(RefCell::new(<std_span_const_double__0_>::default()));
+    return (((({ (*s1.borrow()).data() }).is_null()) && (({ (*s1.borrow()).size() }) == 0_u64))
+        && (({ (*s2.borrow()).data() }).is_null()))
+        && (({ (*s2.borrow()).size() }) == 0_u64);
 }
 pub fn testConstexprSpan_4() -> bool {
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return ((((unimplemented!()).is_null()) && (unimplemented!() == 0_()))
-        && ((unimplemented!()).is_null()))
-        && (unimplemented!() == 0_());
+    let s1: Value<std_span_const_A__18446744073709551615_> = Rc::new(RefCell::new(
+        <std_span_const_A__18446744073709551615_>::default(),
+    ));
+    let s2: Value<std_span_const_A__0_> = Rc::new(RefCell::new(<std_span_const_A__0_>::default()));
+    return (((({ (*s1.borrow()).data() }).is_null()) && (({ (*s1.borrow()).size() }) == 0_u64))
+        && (({ (*s2.borrow()).data() }).is_null()))
+        && (({ (*s2.borrow()).size() }) == 0_u64);
 }
 pub fn testRuntimeSpan_5() {
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
-    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
+    let s1: Value<std_span_const_int__18446744073709551615_> = Rc::new(RefCell::new(
+        <std_span_const_int__18446744073709551615_>::default(),
+    ));
+    let s2: Value<std_span_const_int__0_> =
+        Rc::new(RefCell::new(<std_span_const_int__0_>::default()));
+    assert!(
+        ({ (({ (*s1.borrow()).data() }).is_null()) && (({ (*s1.borrow()).size() }) == 0_u64) })
+    );
+    assert!(
+        ({ (({ (*s2.borrow()).data() }).is_null()) && (({ (*s2.borrow()).size() }) == 0_u64) })
+    );
 }
 pub fn testRuntimeSpan_6() {
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
-    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
+    let s1: Value<std_span_const_long__18446744073709551615_> = Rc::new(RefCell::new(
+        <std_span_const_long__18446744073709551615_>::default(),
+    ));
+    let s2: Value<std_span_const_long__0_> =
+        Rc::new(RefCell::new(<std_span_const_long__0_>::default()));
+    assert!(
+        ({ (({ (*s1.borrow()).data() }).is_null()) && (({ (*s1.borrow()).size() }) == 0_u64) })
+    );
+    assert!(
+        ({ (({ (*s2.borrow()).data() }).is_null()) && (({ (*s2.borrow()).size() }) == 0_u64) })
+    );
 }
 pub fn testRuntimeSpan_7() {
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
-    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
+    let s1: Value<std_span_const_double__18446744073709551615_> = Rc::new(RefCell::new(
+        <std_span_const_double__18446744073709551615_>::default(),
+    ));
+    let s2: Value<std_span_const_double__0_> =
+        Rc::new(RefCell::new(<std_span_const_double__0_>::default()));
+    assert!(
+        ({ (({ (*s1.borrow()).data() }).is_null()) && (({ (*s1.borrow()).size() }) == 0_u64) })
+    );
+    assert!(
+        ({ (({ (*s2.borrow()).data() }).is_null()) && (({ (*s2.borrow()).size() }) == 0_u64) })
+    );
 }
 pub fn testRuntimeSpan_8() {
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
-    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
+    let s1 : Value<std_span_const_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_ > = Rc::new(RefCell::new(<std_span_const_std_basic_string_char__std_char_traits_char___std_allocator_char____18446744073709551615_  >::default() )) ;
+    let s2 : Value<std_span_const_std_basic_string_char__std_char_traits_char___std_allocator_char____0_ > = Rc::new(RefCell::new(<std_span_const_std_basic_string_char__std_char_traits_char___std_allocator_char____0_  >::default() )) ;
+    assert!(
+        ({ (({ (*s1.borrow()).data() }).is_null()) && (({ (*s1.borrow()).size() }) == 0_u64) })
+    );
+    assert!(
+        ({ (({ (*s2.borrow()).data() }).is_null()) && (({ (*s2.borrow()).size() }) == 0_u64) })
+    );
 }
 pub fn testRuntimeSpan_9() {
     const _: () = assert!(true, "");;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
-    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
+    let s1: Value<std_span_const_A__18446744073709551615_> = Rc::new(RefCell::new(
+        <std_span_const_A__18446744073709551615_>::default(),
+    ));
+    let s2: Value<std_span_const_A__0_> = Rc::new(RefCell::new(<std_span_const_A__0_>::default()));
+    assert!(
+        ({ (({ (*s1.borrow()).data() }).is_null()) && (({ (*s1.borrow()).size() }) == 0_u64) })
+    );
+    assert!(
+        ({ (({ (*s2.borrow()).data() }).is_null()) && (({ (*s2.borrow()).size() }) == 0_u64) })
+    );
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A {}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

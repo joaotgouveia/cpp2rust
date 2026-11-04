@@ -60,6 +60,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_char_ {}
+impl CppMove for LockFreeStatusInfo_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_2: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i16>() == ::std::mem::size_of::<i8>())
@@ -109,6 +114,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_short_ {}
+impl CppMove for LockFreeStatusInfo_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_4: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i32>() == ::std::mem::size_of::<i8>())
@@ -158,6 +168,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_int_ {}
+impl CppMove for LockFreeStatusInfo_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_6: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i8>())
@@ -207,6 +222,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_long_ {}
+impl CppMove for LockFreeStatusInfo_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_8: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((8usize == ::std::mem::size_of::<i8>()) && (8usize >= 8usize)) {
@@ -244,6 +264,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_void_ptr_ {}
+impl CppMove for LockFreeStatusInfo_void_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_10: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i8>())
@@ -293,6 +318,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_long_long_ {}
+impl CppMove for LockFreeStatusInfo_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "LockFreeStatusInfo<char>::status_known");
 const _: () = assert!(true, "LockFreeStatusInfo<short>::status_known");
 const _: () = assert!(true, "LockFreeStatusInfo<int>::status_known");
@@ -332,6 +362,11 @@ impl UserAtomicType {
 impl CppEq for UserAtomicType {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_12(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for UserAtomicType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for UserAtomicType {
@@ -380,6 +415,11 @@ impl CppEq for LargeUserAtomicType {
         operator_eq_13(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for LargeUserAtomicType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for LargeUserAtomicType {
     fn default() -> Self {
         { LargeUserAtomicType::new(None) }
@@ -395,6 +435,11 @@ impl Callable0<()> for TestEachIntegralType_TestBitwiseXorAssign_ {
         })
     }
 }
+impl CppMove for TestEachIntegralType_TestBitwiseXorAssign_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestEachFloatingPointType_TestDoesNotHaveBitwiseXorAssign_ {}
@@ -403,6 +448,11 @@ impl Callable0<()> for TestEachFloatingPointType_TestDoesNotHaveBitwiseXorAssign
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestEachFloatingPointType_TestDoesNotHaveBitwiseXorAssign_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestEachFloatingPointType_TestDoesNotHaveBitwiseXorAssign_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -415,6 +465,11 @@ impl Callable0<()> for TestEachPointerType_TestDoesNotHaveBitwiseXorAssign_ {
         })
     }
 }
+impl CppMove for TestEachPointerType_TestDoesNotHaveBitwiseXorAssign_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseXorAssign_bool_ {}
@@ -423,6 +478,11 @@ impl Callable0<()> for TestDoesNotHaveBitwiseXorAssign_bool_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestDoesNotHaveBitwiseXorAssign_bool_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestDoesNotHaveBitwiseXorAssign_bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -435,6 +495,11 @@ impl Callable0<()> for TestDoesNotHaveBitwiseXorAssign_UserAtomicType_ {
         })
     }
 }
+impl CppMove for TestDoesNotHaveBitwiseXorAssign_UserAtomicType_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseXorAssign_LargeUserAtomicType_ {}
@@ -443,6 +508,11 @@ impl Callable0<()> for TestDoesNotHaveBitwiseXorAssign_LargeUserAtomicType_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestDoesNotHaveBitwiseXorAssign_LargeUserAtomicType_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestDoesNotHaveBitwiseXorAssign_LargeUserAtomicType_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -455,6 +525,11 @@ impl Callable0<()> for TestDoesNotHaveBitwiseXorAssign_float_ {
         })
     }
 }
+impl CppMove for TestDoesNotHaveBitwiseXorAssign_float_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseXorAssign_double_ {}
@@ -463,6 +538,11 @@ impl Callable0<()> for TestDoesNotHaveBitwiseXorAssign_double_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestDoesNotHaveBitwiseXorAssign_double_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestDoesNotHaveBitwiseXorAssign_double_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -475,6 +555,11 @@ impl Callable0<()> for TestDoesNotHaveBitwiseXorAssign_long_double_ {
         })
     }
 }
+impl CppMove for TestDoesNotHaveBitwiseXorAssign_long_double_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseXorAssign_int_ptr_ {}
@@ -483,6 +568,11 @@ impl Callable0<()> for TestDoesNotHaveBitwiseXorAssign_int_ptr_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestDoesNotHaveBitwiseXorAssign_int_ptr_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestDoesNotHaveBitwiseXorAssign_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -495,6 +585,11 @@ impl Callable0<()> for TestDoesNotHaveBitwiseXorAssign_const_int_ptr_ {
         })
     }
 }
+impl CppMove for TestDoesNotHaveBitwiseXorAssign_const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseXorAssign_char_ {}
@@ -503,6 +598,11 @@ impl Callable0<()> for TestBitwiseXorAssign_char_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestBitwiseXorAssign_char_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestBitwiseXorAssign_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -515,6 +615,11 @@ impl Callable0<()> for TestBitwiseXorAssign_signed_char_ {
         })
     }
 }
+impl CppMove for TestBitwiseXorAssign_signed_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseXorAssign_unsigned_char_ {}
@@ -523,6 +628,11 @@ impl Callable0<()> for TestBitwiseXorAssign_unsigned_char_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestBitwiseXorAssign_unsigned_char_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestBitwiseXorAssign_unsigned_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -535,6 +645,11 @@ impl Callable0<()> for TestBitwiseXorAssign_short_ {
         })
     }
 }
+impl CppMove for TestBitwiseXorAssign_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseXorAssign_unsigned_short_ {}
@@ -543,6 +658,11 @@ impl Callable0<()> for TestBitwiseXorAssign_unsigned_short_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestBitwiseXorAssign_unsigned_short_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestBitwiseXorAssign_unsigned_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -555,6 +675,11 @@ impl Callable0<()> for TestBitwiseXorAssign_int_ {
         })
     }
 }
+impl CppMove for TestBitwiseXorAssign_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseXorAssign_unsigned_int_ {}
@@ -563,6 +688,11 @@ impl Callable0<()> for TestBitwiseXorAssign_unsigned_int_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestBitwiseXorAssign_unsigned_int_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestBitwiseXorAssign_unsigned_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -575,6 +705,11 @@ impl Callable0<()> for TestBitwiseXorAssign_long_ {
         })
     }
 }
+impl CppMove for TestBitwiseXorAssign_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseXorAssign_unsigned_long_ {}
@@ -583,6 +718,11 @@ impl Callable0<()> for TestBitwiseXorAssign_unsigned_long_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestBitwiseXorAssign_unsigned_long_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestBitwiseXorAssign_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -595,6 +735,11 @@ impl Callable0<()> for TestBitwiseXorAssign_long_long_ {
         })
     }
 }
+impl CppMove for TestBitwiseXorAssign_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseXorAssign_unsigned_long_long_ {}
@@ -603,6 +748,11 @@ impl Callable0<()> for TestBitwiseXorAssign_unsigned_long_long_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestBitwiseXorAssign_unsigned_long_long_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestBitwiseXorAssign_unsigned_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -615,6 +765,11 @@ impl Callable0<()> for TestBitwiseXorAssign_wchar_t_ {
         })
     }
 }
+impl CppMove for TestBitwiseXorAssign_wchar_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseXorAssign_char8_t_ {}
@@ -623,6 +778,11 @@ impl Callable0<()> for TestBitwiseXorAssign_char8_t_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestBitwiseXorAssign_char8_t_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestBitwiseXorAssign_char8_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -635,6 +795,11 @@ impl Callable0<()> for TestBitwiseXorAssign_char16_t_ {
         })
     }
 }
+impl CppMove for TestBitwiseXorAssign_char16_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseXorAssign_char32_t_ {}
@@ -643,6 +808,11 @@ impl Callable0<()> for TestBitwiseXorAssign_char32_t_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestBitwiseXorAssign_char32_t_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestBitwiseXorAssign_char32_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

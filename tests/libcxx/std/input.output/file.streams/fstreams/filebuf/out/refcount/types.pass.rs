@@ -12,15 +12,15 @@ pub fn get_temp_file_name_0() -> Vec<i8> {
         __bytes.push(0_i8);
         __bytes
     }));
-    let mut FD: i32 = unimplemented!();
+    let mut FD: i32 = ({ mkstemp_1((Name.decay().offset(0_usize as isize))) });
     if (FD == -1_i32) {
-        unimplemented!();
+        ({ perror_2(Ptr::<i8>::from_string_literal(b"mkstemp")) });
         std::process::abort();
     }
     FdRegistry::close(FD);
-    return std::mem::take(&mut (*Name.borrow_mut()));
+    return ({ std::mem::take(&mut (*Name.borrow_mut())) });
 }
-pub fn glibc_version_less_than_1(mut version: Ptr<i8>) -> bool {
+pub fn glibc_version_less_than_3(mut version: Ptr<i8>) -> bool {
     let test_version: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __tmp2 = {
             let mut __bytes = Ptr::<i8>::from_string_literal(b"glibc ").to_c_bytes();
@@ -32,11 +32,25 @@ pub fn glibc_version_less_than_1(mut version: Ptr<i8>) -> bool {
         __tmp2.push(0_i8);
         __tmp2
     }));
-    let mut n: usize = unimplemented!();
+    let mut n: usize = ({
+        confstr_4(
+            (anon_5__CS_GNU_LIBC_VERSION as i32),
+            Ptr::<i8>::null(),
+            0_usize,
+        )
+    });
     let mut current_version: Ptr<i8> =
         Ptr::alloc_array((0..n).map(|_| 0_i8).collect::<Box<[i8]>>());
-    unimplemented!();
-    let result: Value<bool> = Rc::new(RefCell::new((unimplemented!() < 0)));
+    ({
+        confstr_4(
+            (anon_5__CS_GNU_LIBC_VERSION as i32),
+            (current_version).clone(),
+            n,
+        )
+    });
+    let result: Value<bool> = Rc::new(RefCell::new(
+        (({ strverscmp_6((current_version).clone(), test_version.decay()) }) < 0),
+    ));
     current_version.delete();
     return (*result.borrow());
 }
@@ -69,6 +83,11 @@ impl UserManagedBuffer {
         }
     }
 }
+impl CppMove for UserManagedBuffer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(usize, new, value)]
 #[byte_size(8)]
@@ -81,12 +100,22 @@ impl LibraryManagedBuffer {
         Self { size_: size }
     }
 }
+impl CppMove for LibraryManagedBuffer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
 pub struct LibraryDefaultBuffer {}
 impl LibraryDefaultBuffer {
     pub fn new() -> Self {
         Self {}
+    }
+}
+impl CppMove for LibraryDefaultBuffer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for LibraryDefaultBuffer {
@@ -141,14 +170,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     return 0;
 }
 pub trait UserManagedBufferImpl {
-    fn operator_call_4(&self, stream: Ptr<()>);
-    fn operator_call_5(&self, stream: Ptr<()>);
-    fn operator_call_6(&self, stream: Ptr<()>);
-    fn operator_call_7(&self, stream: Ptr<()>);
+    fn operator_call_4(&self, stream: Ptr<std_basic_ofstream_char__std_char_traits_char__>);
+    fn operator_call_5(&self, stream: Ptr<std_basic_ifstream_char__std_char_traits_char__>);
+    fn operator_call_6(&self, stream: Ptr<std_basic_ofstream_wchar_t__std_char_traits_wchar_t__>);
+    fn operator_call_7(&self, stream: Ptr<std_basic_ifstream_wchar_t__std_char_traits_wchar_t__>);
     fn destructor(&self);
 }
 impl UserManagedBufferImpl for Ptr<UserManagedBuffer> {
-    fn operator_call_4(&self, stream: Ptr<()>) {
+    fn operator_call_4(&self, stream: Ptr<std_basic_ofstream_char__std_char_traits_char__>) {
         {
             let __init = Ptr::alloc_array(
                 (0..(*self).with(|__s| __s.size_))
@@ -157,9 +186,16 @@ impl UserManagedBufferImpl for Ptr<UserManagedBuffer> {
             );
             field!((*self), buffers_).with_mut(|__v: &mut Vec<Ptr<i8>>| __v.push(__init))
         };
-        unimplemented!();
+        ({
+            let ___s: Ptr<i8> = (field_ref!((*self), buffers_).decay().to_last().read());
+            let ___n: i64 = ((*self).with(|__s| __s.size_) as i64);
+            (*(({ (*stream.upgrade().deref()).rdbuf() }) as *mut ::std::fs::File)
+                .upgrade()
+                .deref())
+            .pubsetbuf(___s, ___n)
+        });
     }
-    fn operator_call_5(&self, stream: Ptr<()>) {
+    fn operator_call_5(&self, stream: Ptr<std_basic_ifstream_char__std_char_traits_char__>) {
         {
             let __init = Ptr::alloc_array(
                 (0..(*self).with(|__s| __s.size_))
@@ -168,9 +204,16 @@ impl UserManagedBufferImpl for Ptr<UserManagedBuffer> {
             );
             field!((*self), buffers_).with_mut(|__v: &mut Vec<Ptr<i8>>| __v.push(__init))
         };
-        unimplemented!();
+        ({
+            let ___s: Ptr<i8> = (field_ref!((*self), buffers_).decay().to_last().read());
+            let ___n: i64 = ((*self).with(|__s| __s.size_) as i64);
+            (*((*stream.upgrade().deref()) as *mut ::std::fs::File)
+                .upgrade()
+                .deref())
+            .pubsetbuf(___s, ___n)
+        });
     }
-    fn operator_call_6(&self, stream: Ptr<()>) {
+    fn operator_call_6(&self, stream: Ptr<std_basic_ofstream_wchar_t__std_char_traits_wchar_t__>) {
         {
             let __init = Ptr::alloc_array(
                 (0..(*self).with(|__s| __s.size_))
@@ -179,9 +222,16 @@ impl UserManagedBufferImpl for Ptr<UserManagedBuffer> {
             );
             field!((*self), wbuffers_).with_mut(|__v: &mut Vec<Ptr<i32>>| __v.push(__init))
         };
-        unimplemented!();
+        ({
+            let ___s: Ptr<i32> = (field_ref!((*self), wbuffers_).decay().to_last().read());
+            let ___n: i64 = ((*self).with(|__s| __s.size_) as i64);
+            (*(({ (*stream.upgrade().deref()).rdbuf() }) as *mut ::std::fs::File)
+                .upgrade()
+                .deref())
+            .pubsetbuf(___s, ___n)
+        });
     }
-    fn operator_call_7(&self, stream: Ptr<()>) {
+    fn operator_call_7(&self, stream: Ptr<std_basic_ifstream_wchar_t__std_char_traits_wchar_t__>) {
         {
             let __init = Ptr::alloc_array(
                 (0..(*self).with(|__s| __s.size_))
@@ -190,19 +240,26 @@ impl UserManagedBufferImpl for Ptr<UserManagedBuffer> {
             );
             field!((*self), wbuffers_).with_mut(|__v: &mut Vec<Ptr<i32>>| __v.push(__init))
         };
-        unimplemented!();
+        ({
+            let ___s: Ptr<i32> = (field_ref!((*self), wbuffers_).decay().to_last().read());
+            let ___n: i64 = ((*self).with(|__s| __s.size_) as i64);
+            (*((*stream.upgrade().deref()) as *mut ::std::fs::File)
+                .upgrade()
+                .deref())
+            .pubsetbuf(___s, ___n)
+        });
     }
     fn destructor(&self) {
         'loop_: for p in IterRange::new(
-            field_ref!((*self), buffers_).decay().begin(),
-            field_ref!((*self), buffers_).decay().end(),
+            CppRange::begin(&field_ref!((*self), buffers_).decay()),
+            CppRange::end(&field_ref!((*self), buffers_).decay()),
         ) {
             let mut p: Ptr<i8> = (p.iter_deref().read());
             p.delete();
         }
         'loop_: for p in IterRange::new(
-            field_ref!((*self), wbuffers_).decay().begin(),
-            field_ref!((*self), wbuffers_).decay().end(),
+            CppRange::begin(&field_ref!((*self), wbuffers_).decay()),
+            CppRange::end(&field_ref!((*self), wbuffers_).decay()),
         ) {
             let mut p: Ptr<i32> = (p.iter_deref().read());
             p.delete();

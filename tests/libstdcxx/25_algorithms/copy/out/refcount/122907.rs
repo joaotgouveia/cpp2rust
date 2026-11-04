@@ -52,6 +52,11 @@ impl Clone for __gnu_test_object_counter {
         __gnu_test_object_counter::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_object_counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_object_counter {
     fn default() -> Self {
         { __gnu_test_object_counter::new() }
@@ -78,6 +83,11 @@ impl __gnu_test_copy_constructor {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_copy_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
@@ -99,6 +109,11 @@ impl __gnu_test_assignment_operator {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_assignment_operator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
@@ -111,6 +126,11 @@ impl __gnu_test_destructor {
     }
     pub fn reset() {
         _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
+    }
+}
+impl CppMove for __gnu_test_destructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -173,6 +193,11 @@ impl Clone for __gnu_test_copy_tracker {
         __gnu_test_copy_tracker::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_copy_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_copy_tracker {
     fn default() -> Self {
         { __gnu_test_copy_tracker::new(None, None) }
@@ -197,35 +222,42 @@ pub struct __gnu_test_semaphore {
     pid_: (),
 }
 impl __gnu_test_semaphore {}
+impl CppMove for __gnu_test_semaphore {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_pr122907_9(buf: Ptr<i8>) {
     let uc: Value<Box<[u8]>> = Rc::new(RefCell::new((0..4).map(|_| 0_u8).collect::<Box<[u8]>>()));
     let bool_buf: Value<Box<[bool]>> =
         Rc::new(RefCell::new((0..4).map(|_| false).collect::<Box<[bool]>>()));
-    {
-        let mut __first = (buf).clone();
-        let __last = (buf).offset((1) as isize);
-        let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
-        while __first != __last {
+    match ({ (buf).offset((1) as isize) },) {
+        (mut __tmp_0,) => {
+            let mut __first = (buf).clone();
+            let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
+            while __first != __tmp_0 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) != 0));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) != 0));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
-        let __last = (bool_buf.as_pointer() as Ptr<bool>).offset((1) as isize);
-        let mut __out = (uc.as_pointer() as Ptr<u8>);
-        while __first != __last {
+    match ({ (bool_buf.as_pointer() as Ptr<bool>).offset((1) as isize) },) {
+        (mut __tmp_1,) => {
+            let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
+            let mut __out = (uc.as_pointer() as Ptr<u8>);
+            while __first != __tmp_1 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as u8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as u8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -237,31 +269,33 @@ pub fn test_pr122907_9(buf: Ptr<i8>) {
             std::process::abort();
         }
     }
-    {
-        let mut __first = (buf).clone();
-        let __last = (buf).offset((4) as isize);
-        let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
-        while __first != __last {
+    match ({ (buf).offset((4) as isize) },) {
+        (mut __tmp_2,) => {
+            let mut __first = (buf).clone();
+            let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
+            while __first != __tmp_2 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) != 0));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) != 0));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
-        let __last = (bool_buf.as_pointer() as Ptr<bool>).offset((4) as isize);
-        let mut __out = (uc.as_pointer() as Ptr<u8>);
-        while __first != __last {
+    match ({ (bool_buf.as_pointer() as Ptr<bool>).offset((4) as isize) },) {
+        (mut __tmp_3,) => {
+            let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
+            let mut __out = (uc.as_pointer() as Ptr<u8>);
+            while __first != __tmp_3 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as u8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as u8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -308,31 +342,33 @@ pub fn test_pr122907_10(buf: Ptr<i8>) {
     let uc: Value<Box<[u8]>> = Rc::new(RefCell::new((0..4).map(|_| 0_u8).collect::<Box<[u8]>>()));
     let bool_buf: Value<Box<[bool]>> =
         Rc::new(RefCell::new((0..4).map(|_| false).collect::<Box<[bool]>>()));
-    {
-        let mut __first = (buf).clone();
-        let __last = (buf).offset((1) as isize);
-        let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
-        while __first != __last {
+    match ({ (buf).offset((1) as isize) },) {
+        (mut __tmp_4,) => {
+            let mut __first = (buf).clone();
+            let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
+            while __first != __tmp_4 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) != 0));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) != 0));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
-        let __last = (bool_buf.as_pointer() as Ptr<bool>).offset((1) as isize);
-        let mut __out = (uc.as_pointer() as Ptr<u8>);
-        while __first != __last {
+    match ({ (bool_buf.as_pointer() as Ptr<bool>).offset((1) as isize) },) {
+        (mut __tmp_5,) => {
+            let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
+            let mut __out = (uc.as_pointer() as Ptr<u8>);
+            while __first != __tmp_5 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as u8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as u8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -344,31 +380,33 @@ pub fn test_pr122907_10(buf: Ptr<i8>) {
             std::process::abort();
         }
     }
-    {
-        let mut __first = (buf).clone();
-        let __last = (buf).offset((4) as isize);
-        let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
-        while __first != __last {
+    match ({ (buf).offset((4) as isize) },) {
+        (mut __tmp_6,) => {
+            let mut __first = (buf).clone();
+            let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
+            while __first != __tmp_6 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) != 0));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) != 0));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
-        let __last = (bool_buf.as_pointer() as Ptr<bool>).offset((4) as isize);
-        let mut __out = (uc.as_pointer() as Ptr<u8>);
-        while __first != __last {
+    match ({ (bool_buf.as_pointer() as Ptr<bool>).offset((4) as isize) },) {
+        (mut __tmp_7,) => {
+            let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
+            let mut __out = (uc.as_pointer() as Ptr<u8>);
+            while __first != __tmp_7 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as u8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as u8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -415,31 +453,33 @@ pub fn test_pr122907_11(buf: Ptr<u8>) {
     let uc: Value<Box<[u8]>> = Rc::new(RefCell::new((0..4).map(|_| 0_u8).collect::<Box<[u8]>>()));
     let bool_buf: Value<Box<[bool]>> =
         Rc::new(RefCell::new((0..4).map(|_| false).collect::<Box<[bool]>>()));
-    {
-        let mut __first = (buf).clone();
-        let __last = (buf).offset((1) as isize);
-        let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
-        while __first != __last {
+    match ({ (buf).offset((1) as isize) },) {
+        (mut __tmp_8,) => {
+            let mut __first = (buf).clone();
+            let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
+            while __first != __tmp_8 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) != 0));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) != 0));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
-        let __last = (bool_buf.as_pointer() as Ptr<bool>).offset((1) as isize);
-        let mut __out = (uc.as_pointer() as Ptr<u8>);
-        while __first != __last {
+    match ({ (bool_buf.as_pointer() as Ptr<bool>).offset((1) as isize) },) {
+        (mut __tmp_9,) => {
+            let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
+            let mut __out = (uc.as_pointer() as Ptr<u8>);
+            while __first != __tmp_9 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as u8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as u8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -451,31 +491,33 @@ pub fn test_pr122907_11(buf: Ptr<u8>) {
             std::process::abort();
         }
     }
-    {
-        let mut __first = (buf).clone();
-        let __last = (buf).offset((4) as isize);
-        let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
-        while __first != __last {
+    match ({ (buf).offset((4) as isize) },) {
+        (mut __tmp_10,) => {
+            let mut __first = (buf).clone();
+            let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
+            while __first != __tmp_10 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) != 0));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) != 0));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
-        let __last = (bool_buf.as_pointer() as Ptr<bool>).offset((4) as isize);
-        let mut __out = (uc.as_pointer() as Ptr<u8>);
-        while __first != __last {
+    match ({ (bool_buf.as_pointer() as Ptr<bool>).offset((4) as isize) },) {
+        (mut __tmp_11,) => {
+            let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
+            let mut __out = (uc.as_pointer() as Ptr<u8>);
+            while __first != __tmp_11 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as u8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as u8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -522,29 +564,31 @@ pub fn test_pr122907_12(buf: Ptr<bool>) {
     let uc: Value<Box<[u8]>> = Rc::new(RefCell::new((0..4).map(|_| 0_u8).collect::<Box<[u8]>>()));
     let bool_buf: Value<Box<[bool]>> =
         Rc::new(RefCell::new((0..4).map(|_| false).collect::<Box<[bool]>>()));
-    {
-        let mut __first = (buf).clone();
-        let __last = (buf).offset((1) as isize);
-        let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
-        }
-        __out
-    };
-    {
-        let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
-        let __last = (bool_buf.as_pointer() as Ptr<bool>).offset((1) as isize);
-        let mut __out = (uc.as_pointer() as Ptr<u8>);
-        while __first != __last {
+    match ({ (buf).offset((1) as isize) },) {
+        (mut __tmp_12,) => {
+            let mut __first = (buf).clone();
+            let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
+            while __first != __tmp_12 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as u8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
+    };
+    match ({ (bool_buf.as_pointer() as Ptr<bool>).offset((1) as isize) },) {
+        (mut __tmp_13,) => {
+            let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
+            let mut __out = (uc.as_pointer() as Ptr<u8>);
+            while __first != __tmp_13 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as u8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
+        }
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -554,29 +598,31 @@ pub fn test_pr122907_12(buf: Ptr<bool>) {
             std::process::abort();
         }
     }
-    {
-        let mut __first = (buf).clone();
-        let __last = (buf).offset((4) as isize);
-        let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
-        }
-        __out
-    };
-    {
-        let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
-        let __last = (bool_buf.as_pointer() as Ptr<bool>).offset((4) as isize);
-        let mut __out = (uc.as_pointer() as Ptr<u8>);
-        while __first != __last {
+    match ({ (buf).offset((4) as isize) },) {
+        (mut __tmp_14,) => {
+            let mut __first = (buf).clone();
+            let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
+            while __first != __tmp_14 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as u8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
+    };
+    match ({ (bool_buf.as_pointer() as Ptr<bool>).offset((4) as isize) },) {
+        (mut __tmp_15,) => {
+            let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
+            let mut __out = (uc.as_pointer() as Ptr<u8>);
+            while __first != __tmp_15 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as u8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
+        }
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -615,31 +661,33 @@ pub fn test_pr122907_13(buf: Ptr<i32>) {
     let uc: Value<Box<[u8]>> = Rc::new(RefCell::new((0..4).map(|_| 0_u8).collect::<Box<[u8]>>()));
     let bool_buf: Value<Box<[bool]>> =
         Rc::new(RefCell::new((0..4).map(|_| false).collect::<Box<[bool]>>()));
-    {
-        let mut __first = (buf).clone();
-        let __last = (buf).offset((1) as isize);
-        let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
-        while __first != __last {
+    match ({ (buf).offset((1) as isize) },) {
+        (mut __tmp_16,) => {
+            let mut __first = (buf).clone();
+            let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
+            while __first != __tmp_16 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) != 0));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) != 0));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
-        let __last = (bool_buf.as_pointer() as Ptr<bool>).offset((1) as isize);
-        let mut __out = (uc.as_pointer() as Ptr<u8>);
-        while __first != __last {
+    match ({ (bool_buf.as_pointer() as Ptr<bool>).offset((1) as isize) },) {
+        (mut __tmp_17,) => {
+            let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
+            let mut __out = (uc.as_pointer() as Ptr<u8>);
+            while __first != __tmp_17 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as u8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as u8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -651,31 +699,33 @@ pub fn test_pr122907_13(buf: Ptr<i32>) {
             std::process::abort();
         }
     }
-    {
-        let mut __first = (buf).clone();
-        let __last = (buf).offset((4) as isize);
-        let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
-        while __first != __last {
+    match ({ (buf).offset((4) as isize) },) {
+        (mut __tmp_18,) => {
+            let mut __first = (buf).clone();
+            let mut __out = (bool_buf.as_pointer() as Ptr<bool>);
+            while __first != __tmp_18 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) != 0));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) != 0));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
-        let __last = (bool_buf.as_pointer() as Ptr<bool>).offset((4) as isize);
-        let mut __out = (uc.as_pointer() as Ptr<u8>);
-        while __first != __last {
+    match ({ (bool_buf.as_pointer() as Ptr<bool>).offset((4) as isize) },) {
+        (mut __tmp_19,) => {
+            let mut __first = (bool_buf.as_pointer() as Ptr<bool>);
+            let mut __out = (uc.as_pointer() as Ptr<u8>);
+            while __first != __tmp_19 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as u8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as u8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -893,22 +943,36 @@ pub fn run_tests_wrapped_env_23(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !(libc::setenv(env, name, 1) != 0) {
+    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+        true => {
+            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
+            0
+        }
+        false => 0,
+    } != 0)
+    {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: i32 = 0;
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        libc::setenv(
-            env,
+        match ({
             if !(oldENV).is_null() {
                 (oldENV).clone()
             } else {
                 Ptr::<i8>::from_string_literal(b"")
+            }
+        },)
+        {
+            (mut __tmp_0,) => match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+                true => {
+                    unsafe { ::std::env::set_var(env.to_rust_string(), __tmp_0.to_rust_string()) };
+                    0
+                }
+                false => 0,
             },
-            1,
-        );
+        };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = env.to_c_bytes();
@@ -957,6 +1021,11 @@ impl __gnu_test_semun {
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<u16>> {
         this.reinterpret_cast()
+    }
+}
+impl CppMove for __gnu_test_semun {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for __gnu_test_semun {
@@ -1034,7 +1103,9 @@ impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
     }
     fn push_back(&self, mut test: FnPtr<fn()>) {
         array_elem!((*self), _M_tests, (*self).with(|__s| __s._M_size)).write((test).clone());
-        field!((*self), _M_size).with_mut(|__v| __v.prefix_inc());
+        field!((*self), _M_size).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait __gnu_test_object_counterImpl {

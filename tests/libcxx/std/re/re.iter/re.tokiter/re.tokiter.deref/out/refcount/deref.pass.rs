@@ -28,98 +28,282 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let phone_numbers: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let phone_numbers: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+            RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                { Ptr::<i8>::from_string_literal(b"\\d{3}-\\d{4}") },
+                None,
+            )),
+        );
         let phone_book: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(
             b"start 555-1234, 555-2345, 555-3456 end\0",
         )));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((*i.borrow()) != unimplemented!());
-        assert!(
-            Ptr::<i8>::from_string_literal(b"start ").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
-        );
-        unimplemented!();
-        assert!((*i.borrow()) != unimplemented!());
-        assert!(
-            Ptr::<i8>::from_string_literal(b", ").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
-        );
-        unimplemented!();
-        assert!((*i.borrow()) != unimplemented!());
-        assert!(
-            Ptr::<i8>::from_string_literal(b", ").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
-        );
-        unimplemented!();
-        assert!((*i.borrow()) != unimplemented!());
-        assert!(
-            Ptr::<i8>::from_string_literal(b" end").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
-        );
-        unimplemented!();
-        assert!(unimplemented!());
+        let i: Value<std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__> =
+            Rc::new(RefCell::new(
+                std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__::new_1(
+                    { ({ begin_0(phone_book.as_pointer()) }) },
+                    {
+                        (phone_book.as_pointer() as Ptr<i8>)
+                            .to_end()
+                            .offset(-((1) as isize))
+                    },
+                    { phone_numbers.as_pointer() },
+                    { Some(-1_i32) },
+                    None,
+                ),
+            ));
+        assert!((*i.borrow())  != <std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__  >::default()  );
+        assert!(match (Rc::new(RefCell::new(
+            ({ (*(*i.borrow()).iter_deref().upgrade().deref()).str() })
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_0,) => {
+                Ptr::<i8>::from_string_literal(b"start ").with_c_str(|__s| {
+                    (*__tmp_0.upgrade().deref())
+                        [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
+        assert!((*i.borrow())  != <std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__  >::default()  );
+        assert!(match (Rc::new(RefCell::new(
+            ({ (*(*i.borrow()).iter_deref().upgrade().deref()).str() })
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_1,) => {
+                Ptr::<i8>::from_string_literal(b", ").with_c_str(|__s| {
+                    (*__tmp_1.upgrade().deref())
+                        [..(*__tmp_1.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
+        assert!((*i.borrow())  != <std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__  >::default()  );
+        assert!(match (Rc::new(RefCell::new(
+            ({ (*(*i.borrow()).iter_deref().upgrade().deref()).str() })
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_2,) => {
+                Ptr::<i8>::from_string_literal(b", ").with_c_str(|__s| {
+                    (*__tmp_2.upgrade().deref())
+                        [..(*__tmp_2.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
+        assert!((*i.borrow())  != <std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__  >::default()  );
+        assert!(match (Rc::new(RefCell::new(
+            ({ (*(*i.borrow()).iter_deref().upgrade().deref()).str() })
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_3,) => {
+                Ptr::<i8>::from_string_literal(b" end").with_c_str(|__s| {
+                    (*__tmp_3.upgrade().deref())
+                        [..(*__tmp_3.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
+        assert!((*i.borrow())  == <std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__  >::default()   );
     }
     {
-        let phone_numbers: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let phone_numbers: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+            RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                { Ptr::<i8>::from_string_literal(b"\\d{3}-\\d{4}") },
+                None,
+            )),
+        );
         let phone_book: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(
             b"start 555-1234, 555-2345, 555-3456 end\0",
         )));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((*i.borrow()) != unimplemented!());
-        assert!(
-            Ptr::<i8>::from_string_literal(b"555-1234").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
-        );
-        unimplemented!();
-        assert!((*i.borrow()) != unimplemented!());
-        assert!(
-            Ptr::<i8>::from_string_literal(b"555-2345").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
-        );
-        unimplemented!();
-        assert!((*i.borrow()) != unimplemented!());
-        assert!(
-            Ptr::<i8>::from_string_literal(b"555-3456").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
-        );
-        unimplemented!();
-        assert!(unimplemented!());
+        let i: Value<std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__> =
+            Rc::new(RefCell::new(
+                std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__::new_1(
+                    { ({ begin_0(phone_book.as_pointer()) }) },
+                    {
+                        (phone_book.as_pointer() as Ptr<i8>)
+                            .to_end()
+                            .offset(-((1) as isize))
+                    },
+                    { phone_numbers.as_pointer() },
+                    None,
+                    None,
+                ),
+            ));
+        assert!((*i.borrow())  != <std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__  >::default()  );
+        assert!(match (Rc::new(RefCell::new(
+            ({ (*(*i.borrow()).iter_deref().upgrade().deref()).str() })
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_4,) => {
+                Ptr::<i8>::from_string_literal(b"555-1234").with_c_str(|__s| {
+                    (*__tmp_4.upgrade().deref())
+                        [..(*__tmp_4.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
+        assert!((*i.borrow())  != <std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__  >::default()  );
+        assert!(match (Rc::new(RefCell::new(
+            ({ (*(*i.borrow()).iter_deref().upgrade().deref()).str() })
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_5,) => {
+                Ptr::<i8>::from_string_literal(b"555-2345").with_c_str(|__s| {
+                    (*__tmp_5.upgrade().deref())
+                        [..(*__tmp_5.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
+        assert!((*i.borrow())  != <std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__  >::default()  );
+        assert!(match (Rc::new(RefCell::new(
+            ({ (*(*i.borrow()).iter_deref().upgrade().deref()).str() })
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_6,) => {
+                Ptr::<i8>::from_string_literal(b"555-3456").with_c_str(|__s| {
+                    (*__tmp_6.upgrade().deref())
+                        [..(*__tmp_6.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
+        assert!((*i.borrow())  == <std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__  >::default()   );
     }
     {
-        let phone_numbers: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let phone_numbers: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+            RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                { Ptr::<i8>::from_string_literal(b"\\d{3}-(\\d{4})") },
+                None,
+            )),
+        );
         let phone_book: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(
             b"start 555-1234, 555-2345, 555-3456 end\0",
         )));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((*i.borrow()) != unimplemented!());
-        assert!(
-            Ptr::<i8>::from_string_literal(b"1234").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
-        );
-        unimplemented!();
-        assert!((*i.borrow()) != unimplemented!());
-        assert!(
-            Ptr::<i8>::from_string_literal(b"2345").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
-        );
-        unimplemented!();
-        assert!((*i.borrow()) != unimplemented!());
-        assert!(
-            Ptr::<i8>::from_string_literal(b"3456").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
-        );
-        unimplemented!();
-        assert!(unimplemented!());
+        let i: Value<std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__> =
+            Rc::new(RefCell::new(
+                std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__::new_1(
+                    { ({ begin_0(phone_book.as_pointer()) }) },
+                    {
+                        (phone_book.as_pointer() as Ptr<i8>)
+                            .to_end()
+                            .offset(-((1) as isize))
+                    },
+                    { phone_numbers.as_pointer() },
+                    { Some(1) },
+                    None,
+                ),
+            ));
+        assert!((*i.borrow())  != <std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__  >::default()  );
+        assert!(match (Rc::new(RefCell::new(
+            ({ (*(*i.borrow()).iter_deref().upgrade().deref()).str() })
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_7,) => {
+                Ptr::<i8>::from_string_literal(b"1234").with_c_str(|__s| {
+                    (*__tmp_7.upgrade().deref())
+                        [..(*__tmp_7.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
+        assert!((*i.borrow())  != <std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__  >::default()  );
+        assert!(match (Rc::new(RefCell::new(
+            ({ (*(*i.borrow()).iter_deref().upgrade().deref()).str() })
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_8,) => {
+                Ptr::<i8>::from_string_literal(b"2345").with_c_str(|__s| {
+                    (*__tmp_8.upgrade().deref())
+                        [..(*__tmp_8.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
+        assert!((*i.borrow())  != <std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__  >::default()  );
+        assert!(match (Rc::new(RefCell::new(
+            ({ (*(*i.borrow()).iter_deref().upgrade().deref()).str() })
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_9,) => {
+                Ptr::<i8>::from_string_literal(b"3456").with_c_str(|__s| {
+                    (*__tmp_9.upgrade().deref())
+                        [..(*__tmp_9.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
+        assert!((*i.borrow())  == <std_regex_token_iterator_const_char_ptr__char__std_regex_traits_char__  >::default()   );
     }
     return 0;
 }

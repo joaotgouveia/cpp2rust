@@ -30,11 +30,11 @@ pub fn operator_cmp_6(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> std::cmp::Order
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -66,6 +66,11 @@ impl CppEq for MoveOnly {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for MoveOnly {
     fn default() -> Self {
         { MoveOnly::new(None) }
@@ -95,11 +100,11 @@ pub fn operator_cmp_13(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> 
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -129,6 +134,11 @@ impl CppEq for TrivialMoveOnly {
         operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for TrivialMoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for TrivialMoveOnly {
     fn default() -> Self {
         { TrivialMoveOnly::new(None) }
@@ -151,6 +161,11 @@ impl support_double_move_tracker {
         __this
     }
 }
+impl CppMove for support_double_move_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for support_double_move_tracker {
     fn default() -> Self {
         { support_double_move_tracker::new() }
@@ -160,18 +175,22 @@ impl Default for support_double_move_tracker {
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
@@ -188,6 +207,11 @@ impl cpp17_output_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -210,6 +234,11 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_input_iterator_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_ne_14(
@@ -242,9 +271,38 @@ impl cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_14(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {}
 impl CppAdvance for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_5();
+    }
+}
+impl CppIterator<i32> for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_Impl::operator_inc_5(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {}
+impl CppMove for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_ne_15(
@@ -279,9 +337,43 @@ impl cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_15(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ {}
 impl CppAdvance for cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_5();
+    }
+}
+impl CppIterator<u32> for cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<u32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_Impl::operator_deref(
+                __it,
+            )
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_Impl::operator_inc_5(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<u32>
+    for cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_
+{
+}
+impl CppMove for cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
@@ -315,9 +407,38 @@ impl forward_iterator_const_unsigned_int_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for forward_iterator_const_unsigned_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_16(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for forward_iterator_const_unsigned_int_ptr_ {}
 impl CppAdvance for forward_iterator_const_unsigned_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
+    }
+}
+impl CppIterator<u32> for forward_iterator_const_unsigned_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<u32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            forward_iterator_const_unsigned_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            forward_iterator_const_unsigned_int_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<u32> for forward_iterator_const_unsigned_int_ptr_ {}
+impl CppMove for forward_iterator_const_unsigned_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_ne_17(
@@ -350,9 +471,38 @@ impl forward_iterator_const_int_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for forward_iterator_const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_17(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for forward_iterator_const_int_ptr_ {}
 impl CppAdvance for forward_iterator_const_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
+    }
+}
+impl CppIterator<i32> for forward_iterator_const_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            forward_iterator_const_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            forward_iterator_const_int_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for forward_iterator_const_int_ptr_ {}
+impl CppMove for forward_iterator_const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_ne_18(
@@ -385,9 +535,38 @@ impl bidirectional_iterator_const_unsigned_int_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for bidirectional_iterator_const_unsigned_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_18(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for bidirectional_iterator_const_unsigned_int_ptr_ {}
 impl CppAdvance for bidirectional_iterator_const_unsigned_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
+    }
+}
+impl CppIterator<u32> for bidirectional_iterator_const_unsigned_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<u32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            bidirectional_iterator_const_unsigned_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_const_unsigned_int_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<u32> for bidirectional_iterator_const_unsigned_int_ptr_ {}
+impl CppMove for bidirectional_iterator_const_unsigned_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_ne_19(
@@ -420,9 +599,38 @@ impl bidirectional_iterator_const_int_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for bidirectional_iterator_const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_19(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for bidirectional_iterator_const_int_ptr_ {}
 impl CppAdvance for bidirectional_iterator_const_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
+    }
+}
+impl CppIterator<i32> for bidirectional_iterator_const_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            bidirectional_iterator_const_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_const_int_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for bidirectional_iterator_const_int_ptr_ {}
+impl CppMove for bidirectional_iterator_const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_sub_20(
@@ -461,9 +669,38 @@ impl random_access_iterator_const_unsigned_int_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for random_access_iterator_const_unsigned_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_21(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for random_access_iterator_const_unsigned_int_ptr_ {}
 impl CppAdvance for random_access_iterator_const_unsigned_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_7();
+    }
+}
+impl CppIterator<u32> for random_access_iterator_const_unsigned_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<u32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            random_access_iterator_const_unsigned_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            random_access_iterator_const_unsigned_int_ptr_Impl::operator_inc_7(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<u32> for random_access_iterator_const_unsigned_int_ptr_ {}
+impl CppMove for random_access_iterator_const_unsigned_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_sub_22(
@@ -502,9 +739,38 @@ impl random_access_iterator_const_int_ptr_ {
         }
     }
 }
+impl std::cmp::PartialEq for random_access_iterator_const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_23(__lhs.clone(), __rhs.clone()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for random_access_iterator_const_int_ptr_ {}
 impl CppAdvance for random_access_iterator_const_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_7();
+    }
+}
+impl CppIterator<i32> for random_access_iterator_const_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            random_access_iterator_const_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            random_access_iterator_const_int_ptr_Impl::operator_inc_7(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for random_access_iterator_const_int_ptr_ {}
+impl CppMove for random_access_iterator_const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -523,6 +789,11 @@ impl cpp20_random_access_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp20_random_access_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -547,6 +818,11 @@ impl cpp20_input_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_input_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
@@ -566,6 +842,11 @@ impl cpp20_output_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp20_output_iterator<int*>, int>"
@@ -581,6 +862,11 @@ pub struct IteratorOpCounts {
     pub zero_moves: usize,
     #[offset(24)]
     pub equal_cmps: usize,
+}
+impl CppMove for IteratorOpCounts {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
@@ -613,6 +899,11 @@ impl CppEq for forward_sized_iterator_int_ptr_ {
         operator_eq_24(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for forward_sized_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -643,13 +934,17 @@ pub fn operator_add_26(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
 pub fn iter_swap_27(mut a: adl_Iterator, mut b: adl_Iterator) {
     cpp_swap!((a.ptr_).clone(), (b.ptr_).clone());
     if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+        a.iter_swaps_.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub fn iter_move_28(iter: adl_Iterator) -> Ptr<i32> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
-        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
+        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
@@ -699,22 +994,76 @@ impl adl_Iterator {
         });
     }
 }
-impl CppLess for adl_Iterator {
-    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_cmp_30(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
+impl std::cmp::Ord for adl_Iterator {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_cmp_30(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
-impl CppEq for adl_Iterator {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_29(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialOrd for adl_Iterator {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
     }
 }
+impl std::cmp::PartialEq for adl_Iterator {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_29(__lhs.clone(), __rhs.clone())
+            })
+        }
+    }
+}
+impl std::cmp::Eq for adl_Iterator {}
 impl CppAdvance for adl_Iterator {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_14();
     }
     fn cpp_dec(__it: &Ptr<Self>) {
         __it.operator_dec_16();
+    }
+}
+impl CppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            adl_IteratorImpl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_inc_14(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for adl_Iterator {}
+impl CppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_dec_16(__it);
+        });
+        self
+    }
+}
+impl CppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_add_assign(__it, n as _);
+        });
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        libcc2rs::with_record_ptrs(self, from, |__lhs, __rhs| {
+            (adl_IteratorImpl::operator_sub_11(__lhs, __rhs.read())) as isize
+        })
+    }
+}
+impl CppMove for adl_Iterator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for adl_Iterator {
@@ -747,6 +1096,11 @@ impl CppEq for rvalue_iterator_int_ptr_ {
             == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for rvalue_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Ptr< i8  >  , new, value)]
@@ -757,1367 +1111,12 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn test_31(
-    mut first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut first2: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_32(
-    mut first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_33(
-    mut first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut first2: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_34(
-    mut first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_35(
-    mut first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut first2: forward_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_36(
-    mut first1: forward_iterator_const_unsigned_int_ptr_,
-    mut last1: forward_iterator_const_unsigned_int_ptr_,
-    mut first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_37(
-    mut first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut first2: forward_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_38(
-    mut first1: forward_iterator_const_unsigned_int_ptr_,
-    mut last1: forward_iterator_const_unsigned_int_ptr_,
-    mut first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_39(
-    mut first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut first2: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_40(
-    mut first1: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut last1: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_41(
-    mut first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut first2: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_42(
-    mut first1: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut last1: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_43(
-    mut first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut first2: random_access_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_44(
-    mut first1: random_access_iterator_const_unsigned_int_ptr_,
-    mut last1: random_access_iterator_const_unsigned_int_ptr_,
-    mut first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_45(
-    mut first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut first2: random_access_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_46(
-    mut first1: random_access_iterator_const_unsigned_int_ptr_,
-    mut last1: random_access_iterator_const_unsigned_int_ptr_,
-    mut first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_47(
-    mut first1: forward_iterator_const_int_ptr_,
-    mut last1: forward_iterator_const_int_ptr_,
-    mut first2: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_48(
-    mut first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut first2: forward_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_49(
-    mut first1: forward_iterator_const_int_ptr_,
-    mut last1: forward_iterator_const_int_ptr_,
-    mut first2: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_50(
-    mut first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut first2: forward_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_51(
-    mut first1: forward_iterator_const_int_ptr_,
-    mut last1: forward_iterator_const_int_ptr_,
-    mut first2: forward_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_52(
-    mut first1: forward_iterator_const_unsigned_int_ptr_,
-    mut last1: forward_iterator_const_unsigned_int_ptr_,
-    mut first2: forward_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_53(
-    mut first1: forward_iterator_const_int_ptr_,
-    mut last1: forward_iterator_const_int_ptr_,
-    mut first2: forward_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_54(
-    mut first1: forward_iterator_const_unsigned_int_ptr_,
-    mut last1: forward_iterator_const_unsigned_int_ptr_,
-    mut first2: forward_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_55(
-    mut first1: forward_iterator_const_int_ptr_,
-    mut last1: forward_iterator_const_int_ptr_,
-    mut first2: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_56(
-    mut first1: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut last1: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut first2: forward_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_57(
-    mut first1: forward_iterator_const_int_ptr_,
-    mut last1: forward_iterator_const_int_ptr_,
-    mut first2: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_58(
-    mut first1: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut last1: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut first2: forward_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_59(
-    mut first1: forward_iterator_const_int_ptr_,
-    mut last1: forward_iterator_const_int_ptr_,
-    mut first2: random_access_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_60(
-    mut first1: random_access_iterator_const_unsigned_int_ptr_,
-    mut last1: random_access_iterator_const_unsigned_int_ptr_,
-    mut first2: forward_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_61(
-    mut first1: forward_iterator_const_int_ptr_,
-    mut last1: forward_iterator_const_int_ptr_,
-    mut first2: random_access_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_62(
-    mut first1: random_access_iterator_const_unsigned_int_ptr_,
-    mut last1: random_access_iterator_const_unsigned_int_ptr_,
-    mut first2: forward_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_63(
-    mut first1: bidirectional_iterator_const_int_ptr_,
-    mut last1: bidirectional_iterator_const_int_ptr_,
-    mut first2: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_64(
-    mut first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut first2: bidirectional_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_65(
-    mut first1: bidirectional_iterator_const_int_ptr_,
-    mut last1: bidirectional_iterator_const_int_ptr_,
-    mut first2: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_66(
-    mut first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut first2: bidirectional_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_67(
-    mut first1: bidirectional_iterator_const_int_ptr_,
-    mut last1: bidirectional_iterator_const_int_ptr_,
-    mut first2: forward_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_68(
-    mut first1: forward_iterator_const_unsigned_int_ptr_,
-    mut last1: forward_iterator_const_unsigned_int_ptr_,
-    mut first2: bidirectional_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_69(
-    mut first1: bidirectional_iterator_const_int_ptr_,
-    mut last1: bidirectional_iterator_const_int_ptr_,
-    mut first2: forward_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_70(
-    mut first1: forward_iterator_const_unsigned_int_ptr_,
-    mut last1: forward_iterator_const_unsigned_int_ptr_,
-    mut first2: bidirectional_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_71(
-    mut first1: bidirectional_iterator_const_int_ptr_,
-    mut last1: bidirectional_iterator_const_int_ptr_,
-    mut first2: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_72(
-    mut first1: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut last1: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut first2: bidirectional_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_73(
-    mut first1: bidirectional_iterator_const_int_ptr_,
-    mut last1: bidirectional_iterator_const_int_ptr_,
-    mut first2: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_74(
-    mut first1: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut last1: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut first2: bidirectional_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_75(
-    mut first1: bidirectional_iterator_const_int_ptr_,
-    mut last1: bidirectional_iterator_const_int_ptr_,
-    mut first2: random_access_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_76(
-    mut first1: random_access_iterator_const_unsigned_int_ptr_,
-    mut last1: random_access_iterator_const_unsigned_int_ptr_,
-    mut first2: bidirectional_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_77(
-    mut first1: bidirectional_iterator_const_int_ptr_,
-    mut last1: bidirectional_iterator_const_int_ptr_,
-    mut first2: random_access_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_78(
-    mut first1: random_access_iterator_const_unsigned_int_ptr_,
-    mut last1: random_access_iterator_const_unsigned_int_ptr_,
-    mut first2: bidirectional_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_79(
-    mut first1: random_access_iterator_const_int_ptr_,
-    mut last1: random_access_iterator_const_int_ptr_,
-    mut first2: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_80(
-    mut first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut first2: random_access_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_81(
-    mut first1: random_access_iterator_const_int_ptr_,
-    mut last1: random_access_iterator_const_int_ptr_,
-    mut first2: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_82(
-    mut first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_,
-    mut first2: random_access_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_83(
-    mut first1: random_access_iterator_const_int_ptr_,
-    mut last1: random_access_iterator_const_int_ptr_,
-    mut first2: forward_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_84(
-    mut first1: forward_iterator_const_unsigned_int_ptr_,
-    mut last1: forward_iterator_const_unsigned_int_ptr_,
-    mut first2: random_access_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_85(
-    mut first1: random_access_iterator_const_int_ptr_,
-    mut last1: random_access_iterator_const_int_ptr_,
-    mut first2: forward_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_86(
-    mut first1: forward_iterator_const_unsigned_int_ptr_,
-    mut last1: forward_iterator_const_unsigned_int_ptr_,
-    mut first2: random_access_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_87(
-    mut first1: random_access_iterator_const_int_ptr_,
-    mut last1: random_access_iterator_const_int_ptr_,
-    mut first2: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_88(
-    mut first1: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut last1: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut first2: random_access_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_89(
-    mut first1: random_access_iterator_const_int_ptr_,
-    mut last1: random_access_iterator_const_int_ptr_,
-    mut first2: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_90(
-    mut first1: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut last1: bidirectional_iterator_const_unsigned_int_ptr_,
-    mut first2: random_access_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_91(
-    mut first1: random_access_iterator_const_int_ptr_,
-    mut last1: random_access_iterator_const_int_ptr_,
-    mut first2: random_access_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_92(
-    mut first1: random_access_iterator_const_unsigned_int_ptr_,
-    mut last1: random_access_iterator_const_unsigned_int_ptr_,
-    mut first2: random_access_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_93(
-    mut first1: random_access_iterator_const_int_ptr_,
-    mut last1: random_access_iterator_const_int_ptr_,
-    mut first2: random_access_iterator_const_unsigned_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_94(
-    mut first1: random_access_iterator_const_unsigned_int_ptr_,
-    mut last1: random_access_iterator_const_unsigned_int_ptr_,
-    mut first2: random_access_iterator_const_int_ptr_,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!((unimplemented!() == x));
-}
-pub fn test_95(
-    mut first1: Ptr<i32>,
-    mut last1: Ptr<i32>,
-    mut first2: Ptr<u32>,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!(({ unimplemented!() } == { x }));
-}
-pub fn test_96(
-    mut first1: Ptr<u32>,
-    mut last1: Ptr<u32>,
-    mut first2: Ptr<i32>,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!(({ unimplemented!() } == { x }));
-}
-pub fn test_97(
-    mut first1: Ptr<i32>,
-    mut last1: Ptr<i32>,
-    mut first2: Ptr<u32>,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!(({ unimplemented!() } == { x }));
-}
-pub fn test_98(
-    mut first1: Ptr<u32>,
-    mut last1: Ptr<u32>,
-    mut first2: Ptr<i32>,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!(({ unimplemented!() } == { x }));
-}
-pub fn test_99(
-    mut first1: Ptr<i32>,
-    mut last1: Ptr<i32>,
-    mut first2: Ptr<u32>,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!(({ unimplemented!() } == { x }));
-}
-pub fn test_100(
-    mut first1: Ptr<u32>,
-    mut last1: Ptr<u32>,
-    mut first2: Ptr<i32>,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!(({ unimplemented!() } == { x }));
-}
-pub fn test_101(
-    mut first1: Ptr<i32>,
-    mut last1: Ptr<i32>,
-    mut first2: Ptr<u32>,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!(({ unimplemented!() } == { x }));
-}
-pub fn test_102(
-    mut first1: Ptr<u32>,
-    mut last1: Ptr<u32>,
-    mut first2: Ptr<i32>,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!(({ unimplemented!() } == { x }));
-}
-pub fn test_103(
-    mut first1: Ptr<i32>,
-    mut last1: Ptr<i32>,
-    mut first2: Ptr<u32>,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!(({ unimplemented!() } == { x }));
-}
-pub fn test_104(
-    mut first1: Ptr<u32>,
-    mut last1: Ptr<u32>,
-    mut first2: Ptr<i32>,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!(({ unimplemented!() } == { x }));
-}
-pub fn test_105(
-    mut first1: Ptr<i32>,
-    mut last1: Ptr<i32>,
-    mut first2: Ptr<u32>,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!(({ unimplemented!() } == { x }));
-}
-pub fn test_106(
-    mut first1: Ptr<u32>,
-    mut last1: Ptr<u32>,
-    mut first2: Ptr<i32>,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!(({ unimplemented!() } == { x }));
-}
-pub fn test_107(
-    mut first1: Ptr<i32>,
-    mut last1: Ptr<i32>,
-    mut first2: Ptr<u32>,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!(({ unimplemented!() } == { x }));
-}
-pub fn test_108(
-    mut first1: Ptr<u32>,
-    mut last1: Ptr<u32>,
-    mut first2: Ptr<i32>,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!(({ unimplemented!() } == { x }));
-}
-pub fn test_109(
-    mut first1: Ptr<i32>,
-    mut last1: Ptr<i32>,
-    mut first2: Ptr<u32>,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!(({ unimplemented!() } == { x }));
-}
-pub fn test_110(
-    mut first1: Ptr<u32>,
-    mut last1: Ptr<u32>,
-    mut first2: Ptr<i32>,
-    mut init: i32,
-    op1: (),
-    op2: (),
-    mut x: i32,
-) {
-    let op1: Value<()> = Rc::new(RefCell::new(op1));
-    let op2: Value<()> = Rc::new(RefCell::new(op2));
-    const _: () = assert!(
-        true,
-        "std::is_same_v<T,\n         decltype(std::transform_reduce(first1, last1, first2, init, op1, op2))>"
-    );;
-    assert!(({ unimplemented!() } == { x }));
-}
-pub fn test_111() {
+impl CppMove for util_iterator_error {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn test_31() {
     let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
     let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
         2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
@@ -2138,15 +1137,15 @@ pub fn test_111() {
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>)
             });
-        test_31(
+        test_32(
             _first1,
             _last1,
             cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
                 (ua.as_pointer() as Ptr<u32>)
             }),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             0,
         )
     });
@@ -2159,15 +1158,15 @@ pub fn test_111() {
             cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
                 (ua.as_pointer() as Ptr<u32>)
             });
-        test_32(
+        test_33(
             _first1,
             _last1,
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>)
             }),
             1,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             1,
         )
     });
@@ -2180,15 +1179,15 @@ pub fn test_111() {
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
             });
-        test_33(
+        test_34(
             _first1,
             _last1,
             cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
                 (ua.as_pointer() as Ptr<u32>)
             }),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             0,
         )
     });
@@ -2201,15 +1200,15 @@ pub fn test_111() {
             cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
                 (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
             });
-        test_34(
+        test_35(
             _first1,
             _last1,
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>)
             }),
             2,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             4,
         )
     });
@@ -2222,15 +1221,15 @@ pub fn test_111() {
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
             });
-        test_31(
+        test_32(
             _first1,
             _last1,
             cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
                 (ua.as_pointer() as Ptr<u32>)
             }),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             10,
         )
     });
@@ -2243,15 +1242,15 @@ pub fn test_111() {
             cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
                 (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
             });
-        test_32(
+        test_33(
             _first1,
             _last1,
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>)
             }),
             3,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             54,
         )
     });
@@ -2264,15 +1263,15 @@ pub fn test_111() {
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
             });
-        test_33(
+        test_34(
             _first1,
             _last1,
             cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
                 (ua.as_pointer() as Ptr<u32>)
             }),
             4,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             2099520,
         )
     });
@@ -2285,20 +1284,20 @@ pub fn test_111() {
             cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
                 (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
             });
-        test_34(
+        test_35(
             _first1,
             _last1,
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>)
             }),
             4,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             186,
         )
     });
 }
-pub fn test_112() {
+pub fn test_36() {
     let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
     let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
         2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
@@ -2319,13 +1318,13 @@ pub fn test_112() {
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>)
             });
-        test_35(
+        test_37(
             _first1,
             _last1,
             forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             0,
         )
     });
@@ -2334,15 +1333,15 @@ pub fn test_112() {
             forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
         let _last1: forward_iterator_const_unsigned_int_ptr_ =
             forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        test_36(
+        test_38(
             _first1,
             _last1,
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>)
             }),
             1,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             1,
         )
     });
@@ -2354,154 +1353,23 @@ pub fn test_112() {
         let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-            });
-        test_37(
-            _first1,
-            _last1,
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        let _last1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
-            });
-        test_38(
-            _first1,
-            _last1,
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_pointer() as Ptr<i32>)
-            }),
-            2,
-            unimplemented!(),
-            unimplemented!(),
-            4,
-        )
-    });
-    ({
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_pointer() as Ptr<i32>)
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-            });
-        test_35(
-            _first1,
-            _last1,
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            10,
-        )
-    });
-    ({
-        let _first1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        let _last1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
-            });
-        test_36(
-            _first1,
-            _last1,
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_pointer() as Ptr<i32>)
-            }),
-            3,
-            unimplemented!(),
-            unimplemented!(),
-            54,
-        )
-    });
-    ({
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_pointer() as Ptr<i32>)
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-            });
-        test_37(
-            _first1,
-            _last1,
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            2099520,
-        )
-    });
-    ({
-        let _first1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        let _last1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
-            });
-        test_38(
-            _first1,
-            _last1,
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_pointer() as Ptr<i32>)
-            }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            186,
-        )
-    });
-}
-pub fn test_113() {
-    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
-    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
-        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
-    ])));
-    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
-        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    assert!(
-        ((sa as usize)
-            == (::std::mem::size_of::<[u32; 6]>() as usize)
-                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
-    );
-    ({
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_pointer() as Ptr<i32>)
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_pointer() as Ptr<i32>)
             });
         test_39(
             _first1,
             _last1,
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             0,
         )
     });
     ({
-        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
+        let _first1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
+        let _last1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
             });
         test_40(
             _first1,
@@ -2509,51 +1377,9 @@ pub fn test_113() {
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>)
             }),
-            1,
-            unimplemented!(),
-            unimplemented!(),
-            1,
-        )
-    });
-    ({
-        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_pointer() as Ptr<i32>)
-            });
-        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-            });
-        test_41(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
-            });
-        test_42(
-            _first1,
-            _last1,
-            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
-                (ia.as_pointer() as Ptr<i32>)
-            }),
             2,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             4,
         )
     });
@@ -2566,36 +1392,32 @@ pub fn test_113() {
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
             });
-        test_39(
+        test_37(
             _first1,
             _last1,
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             10,
         )
     });
     ({
-        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+        let _first1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
+        let _last1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({
                 (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
             });
-        test_40(
+        test_38(
             _first1,
             _last1,
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>)
             }),
             3,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             54,
         )
     });
@@ -2608,41 +1430,37 @@ pub fn test_113() {
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
             });
-        test_41(
+        test_39(
             _first1,
             _last1,
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
             4,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             2099520,
         )
     });
     ({
-        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+        let _first1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
+        let _last1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({
                 (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
             });
-        test_42(
+        test_40(
             _first1,
             _last1,
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>)
             }),
             4,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             186,
         )
     });
 }
-pub fn test_114() {
+pub fn test_41() {
     let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
     let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
         2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
@@ -2663,36 +1481,36 @@ pub fn test_114() {
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>)
             });
-        test_43(
+        test_42(
             _first1,
             _last1,
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
                 (ua.as_pointer() as Ptr<u32>)
             }),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             0,
         )
     });
     ({
-        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
+        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
                 (ua.as_pointer() as Ptr<u32>)
             });
-        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
+        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
                 (ua.as_pointer() as Ptr<u32>)
             });
-        test_44(
+        test_43(
             _first1,
             _last1,
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>)
             }),
             1,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             1,
         )
     });
@@ -2705,36 +1523,36 @@ pub fn test_114() {
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
             });
-        test_45(
+        test_44(
             _first1,
             _last1,
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
                 (ua.as_pointer() as Ptr<u32>)
             }),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             0,
         )
     });
     ({
-        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
+        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
                 (ua.as_pointer() as Ptr<u32>)
             });
-        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
+        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
                 (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
             });
-        test_46(
+        test_45(
             _first1,
             _last1,
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>)
             }),
             2,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             4,
         )
     });
@@ -2747,36 +1565,36 @@ pub fn test_114() {
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
             });
-        test_43(
+        test_42(
             _first1,
             _last1,
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
                 (ua.as_pointer() as Ptr<u32>)
             }),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             10,
         )
     });
     ({
-        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
+        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
                 (ua.as_pointer() as Ptr<u32>)
             });
-        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
+        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
                 (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
             });
-        test_44(
+        test_43(
             _first1,
             _last1,
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>)
             }),
             3,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             54,
         )
     });
@@ -2789,15 +1607,196 @@ pub fn test_114() {
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
             });
+        test_44(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            4,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            2099520,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
+            });
         test_45(
+            _first1,
+            _last1,
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_pointer() as Ptr<i32>)
+            }),
+            4,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            186,
+        )
+    });
+}
+pub fn test_46() {
+    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
+    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
+        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
+    ])));
+    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
+        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
+    assert!(
+        ((sa as usize)
+            == (::std::mem::size_of::<[u32; 6]>() as usize)
+                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
+    );
+    ({
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_pointer() as Ptr<i32>)
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_pointer() as Ptr<i32>)
+            });
+        test_47(
+            _first1,
+            _last1,
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        test_48(
+            _first1,
+            _last1,
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_pointer() as Ptr<i32>)
+            }),
+            1,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            1,
+        )
+    });
+    ({
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_pointer() as Ptr<i32>)
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+            });
+        test_49(
+            _first1,
+            _last1,
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
+            });
+        test_50(
+            _first1,
+            _last1,
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_pointer() as Ptr<i32>)
+            }),
+            2,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            4,
+        )
+    });
+    ({
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_pointer() as Ptr<i32>)
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+            });
+        test_47(
+            _first1,
+            _last1,
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            10,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
+            });
+        test_48(
+            _first1,
+            _last1,
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_pointer() as Ptr<i32>)
+            }),
+            3,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            54,
+        )
+    });
+    ({
+        let _first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_pointer() as Ptr<i32>)
+            });
+        let _last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+            });
+        test_49(
             _first1,
             _last1,
             random_access_iterator_const_unsigned_int_ptr_::new_1({
                 (ua.as_pointer() as Ptr<u32>)
             }),
             4,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             2099520,
         )
     });
@@ -2810,20 +1809,20 @@ pub fn test_114() {
             random_access_iterator_const_unsigned_int_ptr_::new_1({
                 (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
             });
-        test_46(
+        test_50(
             _first1,
             _last1,
             cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
                 (ia.as_pointer() as Ptr<i32>)
             }),
             4,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             186,
         )
     });
 }
-pub fn test_115() {
+pub fn test_51() {
     let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
     let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
         2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
@@ -2840,15 +1839,15 @@ pub fn test_115() {
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
         let _last1: forward_iterator_const_int_ptr_ =
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        test_47(
+        test_52(
             _first1,
             _last1,
             cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
                 (ua.as_pointer() as Ptr<u32>)
             }),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             0,
         )
     });
@@ -2861,13 +1860,13 @@ pub fn test_115() {
             cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
                 (ua.as_pointer() as Ptr<u32>)
             });
-        test_48(
+        test_53(
             _first1,
             _last1,
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
             1,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             1,
         )
     });
@@ -2877,15 +1876,15 @@ pub fn test_115() {
         let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
         });
-        test_49(
+        test_54(
             _first1,
             _last1,
             cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
                 (ua.as_pointer() as Ptr<u32>)
             }),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             0,
         )
     });
@@ -2898,13 +1897,13 @@ pub fn test_115() {
             cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
                 (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
             });
-        test_50(
+        test_55(
             _first1,
             _last1,
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
             2,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             4,
         )
     });
@@ -2914,15 +1913,15 @@ pub fn test_115() {
         let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
         });
-        test_47(
+        test_52(
             _first1,
             _last1,
             cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
                 (ua.as_pointer() as Ptr<u32>)
             }),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             10,
         )
     });
@@ -2935,13 +1934,13 @@ pub fn test_115() {
             cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
                 (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
             });
-        test_48(
+        test_53(
             _first1,
             _last1,
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
             3,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             54,
         )
     });
@@ -2951,15 +1950,15 @@ pub fn test_115() {
         let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
         });
-        test_49(
+        test_54(
             _first1,
             _last1,
             cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
                 (ua.as_pointer() as Ptr<u32>)
             }),
             4,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             2099520,
         )
     });
@@ -2972,13 +1971,1860 @@ pub fn test_115() {
             cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
                 (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
             });
-        test_50(
+        test_55(
             _first1,
             _last1,
             forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
             4,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            186,
+        )
+    });
+}
+pub fn test_56() {
+    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
+    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
+        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
+    ])));
+    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
+        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
+    assert!(
+        ((sa as usize)
+            == (::std::mem::size_of::<[u32; 6]>() as usize)
+                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
+    );
+    ({
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        test_57(
+            _first1,
+            _last1,
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
+        let _last1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
+        test_58(
+            _first1,
+            _last1,
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            1,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            1,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+        });
+        test_59(
+            _first1,
+            _last1,
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
+            0,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
+        let _last1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
+            });
+        test_60(
+            _first1,
+            _last1,
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            2,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            4,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+        });
+        test_57(
+            _first1,
+            _last1,
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            10,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
+        let _last1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
+            });
+        test_58(
+            _first1,
+            _last1,
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            3,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            54,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+        });
+        test_59(
+            _first1,
+            _last1,
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
+            4,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            2099520,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
+        let _last1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
+            });
+        test_60(
+            _first1,
+            _last1,
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            4,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            186,
+        )
+    });
+}
+pub fn test_61() {
+    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
+    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
+        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
+    ])));
+    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
+        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
+    assert!(
+        ((sa as usize)
+            == (::std::mem::size_of::<[u32; 6]>() as usize)
+                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
+    );
+    ({
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        test_62(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        test_63(
+            _first1,
+            _last1,
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            1,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            1,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+        });
+        test_64(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
+            });
+        test_65(
+            _first1,
+            _last1,
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            2,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            4,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+        });
+        test_62(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            10,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
+            });
+        test_63(
+            _first1,
+            _last1,
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            3,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            54,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+        });
+        test_64(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            4,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            2099520,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
+            });
+        test_65(
+            _first1,
+            _last1,
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            4,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            186,
+        )
+    });
+}
+pub fn test_66() {
+    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
+    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
+        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
+    ])));
+    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
+        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
+    assert!(
+        ((sa as usize)
+            == (::std::mem::size_of::<[u32; 6]>() as usize)
+                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
+    );
+    ({
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        test_67(
+            _first1,
+            _last1,
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        test_68(
+            _first1,
+            _last1,
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            1,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            1,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+        });
+        test_69(
+            _first1,
+            _last1,
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
+            });
+        test_70(
+            _first1,
+            _last1,
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            2,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            4,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+        });
+        test_67(
+            _first1,
+            _last1,
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            10,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
+            });
+        test_68(
+            _first1,
+            _last1,
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            3,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            54,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_int_ptr_ =
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
+            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+        });
+        test_69(
+            _first1,
+            _last1,
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            4,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            2099520,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
+            });
+        test_70(
+            _first1,
+            _last1,
+            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            4,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            186,
+        )
+    });
+}
+pub fn test_71() {
+    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
+    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
+        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
+    ])));
+    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
+        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
+    assert!(
+        ((sa as usize)
+            == (::std::mem::size_of::<[u32; 6]>() as usize)
+                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
+    );
+    ({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        test_72(
+            _first1,
+            _last1,
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        test_73(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            1,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            1,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+            });
+        test_74(
+            _first1,
+            _last1,
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
+            });
+        test_75(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            2,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            4,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+            });
+        test_72(
+            _first1,
+            _last1,
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            10,
+        )
+    });
+    ({
+        let _first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
+            });
+        test_73(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            3,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            54,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+            });
+        test_74(
+            _first1,
+            _last1,
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            4,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            2099520,
+        )
+    });
+    ({
+        let _first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
+            });
+        test_75(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            4,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            186,
+        )
+    });
+}
+pub fn test_76() {
+    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
+    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
+        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
+    ])));
+    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
+        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
+    assert!(
+        ((sa as usize)
+            == (::std::mem::size_of::<[u32; 6]>() as usize)
+                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
+    );
+    ({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        test_77(
+            _first1,
+            _last1,
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
+        let _last1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
+        test_78(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            1,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            1,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+            });
+        test_79(
+            _first1,
+            _last1,
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
+            0,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
+        let _last1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
+            });
+        test_80(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            2,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            4,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+            });
+        test_77(
+            _first1,
+            _last1,
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            10,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
+        let _last1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
+            });
+        test_78(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            3,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            54,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+            });
+        test_79(
+            _first1,
+            _last1,
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
+            4,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            2099520,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
+        let _last1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
+            });
+        test_80(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            4,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            186,
+        )
+    });
+}
+pub fn test_81() {
+    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
+    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
+        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
+    ])));
+    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
+        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
+    assert!(
+        ((sa as usize)
+            == (::std::mem::size_of::<[u32; 6]>() as usize)
+                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
+    );
+    ({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        test_82(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        test_83(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            1,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            1,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+            });
+        test_84(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
+            });
+        test_85(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            2,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            4,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+            });
+        test_82(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            10,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
+            });
+        test_83(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            3,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            54,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+            });
+        test_84(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            4,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            2099520,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
+            });
+        test_85(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            4,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            186,
+        )
+    });
+}
+pub fn test_86() {
+    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
+    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
+        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
+    ])));
+    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
+        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
+    assert!(
+        ((sa as usize)
+            == (::std::mem::size_of::<[u32; 6]>() as usize)
+                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
+    );
+    ({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        test_87(
+            _first1,
+            _last1,
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        test_88(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            1,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            1,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+            });
+        test_89(
+            _first1,
+            _last1,
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
+            });
+        test_90(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            2,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            4,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+            });
+        test_87(
+            _first1,
+            _last1,
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            10,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
+            });
+        test_88(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            3,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            54,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+            });
+        test_89(
+            _first1,
+            _last1,
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            4,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            2099520,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
+            });
+        test_90(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            4,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            186,
+        )
+    });
+}
+pub fn test_91() {
+    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
+    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
+        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
+    ])));
+    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
+        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
+    assert!(
+        ((sa as usize)
+            == (::std::mem::size_of::<[u32; 6]>() as usize)
+                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
+    );
+    ({
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        test_92(
+            _first1,
+            _last1,
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        test_93(
+            _first1,
+            _last1,
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            1,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            1,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+            });
+        test_94(
+            _first1,
+            _last1,
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
+            });
+        test_95(
+            _first1,
+            _last1,
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            2,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            4,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+            });
+        test_92(
+            _first1,
+            _last1,
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            10,
+        )
+    });
+    ({
+        let _first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
+            });
+        test_93(
+            _first1,
+            _last1,
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            3,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            54,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+            });
+        test_94(
+            _first1,
+            _last1,
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            4,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            2099520,
+        )
+    });
+    ({
+        let _first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
+            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
+                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
+            });
+        test_95(
+            _first1,
+            _last1,
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            4,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            186,
+        )
+    });
+}
+pub fn test_96() {
+    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
+    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
+        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
+    ])));
+    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
+        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
+    assert!(
+        ((sa as usize)
+            == (::std::mem::size_of::<[u32; 6]>() as usize)
+                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
+    );
+    ({
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        test_97(
+            _first1,
+            _last1,
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
+        let _last1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
+        test_98(
+            _first1,
+            _last1,
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            1,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            1,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+            });
+        test_99(
+            _first1,
+            _last1,
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
+            0,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
+        let _last1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
+            });
+        test_100(
+            _first1,
+            _last1,
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            2,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            4,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+            });
+        test_97(
+            _first1,
+            _last1,
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            10,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
+        let _last1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
+            });
+        test_98(
+            _first1,
+            _last1,
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            3,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            54,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+            });
+        test_99(
+            _first1,
+            _last1,
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
+            4,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            2099520,
+        )
+    });
+    ({
+        let _first1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
+        let _last1: forward_iterator_const_unsigned_int_ptr_ =
+            forward_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
+            });
+        test_100(
+            _first1,
+            _last1,
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            4,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            186,
+        )
+    });
+}
+pub fn test_101() {
+    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
+    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
+        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
+    ])));
+    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
+        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
+    assert!(
+        ((sa as usize)
+            == (::std::mem::size_of::<[u32; 6]>() as usize)
+                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
+    );
+    ({
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        test_102(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        test_103(
+            _first1,
+            _last1,
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            1,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            1,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+            });
+        test_104(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
+            });
+        test_105(
+            _first1,
+            _last1,
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            2,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            4,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+            });
+        test_102(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            10,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
+            });
+        test_103(
+            _first1,
+            _last1,
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            3,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            54,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+            });
+        test_104(
+            _first1,
+            _last1,
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            4,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            2099520,
+        )
+    });
+    ({
+        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
+            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
+            });
+        test_105(
+            _first1,
+            _last1,
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            4,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            186,
+        )
+    });
+}
+pub fn test_106() {
+    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
+    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
+        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
+    ])));
+    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
+        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
+    assert!(
+        ((sa as usize)
+            == (::std::mem::size_of::<[u32; 6]>() as usize)
+                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
+    );
+    ({
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        test_107(
+            _first1,
+            _last1,
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        test_108(
+            _first1,
+            _last1,
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            1,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            1,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
+            });
+        test_109(
+            _first1,
+            _last1,
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
+            });
+        test_110(
+            _first1,
+            _last1,
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            2,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            4,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
+            });
+        test_107(
+            _first1,
+            _last1,
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            10,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
+            });
+        test_108(
+            _first1,
+            _last1,
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            3,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            54,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
+        let _last1: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({
+                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
+            });
+        test_109(
+            _first1,
+            _last1,
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            }),
+            4,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            2099520,
+        )
+    });
+    ({
+        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>)
+            });
+        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
+            random_access_iterator_const_unsigned_int_ptr_::new_1({
+                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
+            });
+        test_110(
+            _first1,
+            _last1,
+            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            4,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            186,
+        )
+    });
+}
+pub fn test_111() {
+    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
+    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
+        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
+    ])));
+    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
+        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
+    assert!(
+        ((sa as usize)
+            == (::std::mem::size_of::<[u32; 6]>() as usize)
+                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
+    );
+    ({
+        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        test_112(
+            _first1,
+            _last1,
+            (ua.as_pointer() as Ptr<u32>),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
+        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
+        test_113(
+            _first1,
+            _last1,
+            (ia.as_pointer() as Ptr<i32>),
+            1,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            1,
+        )
+    });
+    ({
+        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+        test_114(
+            _first1,
+            _last1,
+            (ua.as_pointer() as Ptr<u32>),
+            0,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            0,
+        )
+    });
+    ({
+        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
+        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((1) as isize);
+        test_115(
+            _first1,
+            _last1,
+            (ia.as_pointer() as Ptr<i32>),
+            2,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            4,
+        )
+    });
+    ({
+        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+        test_112(
+            _first1,
+            _last1,
+            (ua.as_pointer() as Ptr<u32>),
+            0,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
+            10,
+        )
+    });
+    ({
+        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
+        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((2) as isize);
+        test_113(
+            _first1,
+            _last1,
+            (ia.as_pointer() as Ptr<i32>),
+            3,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            54,
+        )
+    });
+    ({
+        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+        test_114(
+            _first1,
+            _last1,
+            (ua.as_pointer() as Ptr<u32>),
+            4,
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
+            2099520,
+        )
+    });
+    ({
+        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
+        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((sa) as isize);
+        test_115(
+            _first1,
+            _last1,
+            (ia.as_pointer() as Ptr<i32>),
+            4,
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             186,
         )
     });
@@ -2996,759 +3842,106 @@ pub fn test_116() {
                 .wrapping_div((::std::mem::size_of::<u32>() as usize)))
     );
     ({
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        test_51(
+        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        test_117(
             _first1,
             _last1,
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
+            (ua.as_pointer() as Ptr<u32>),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             0,
         )
     });
     ({
-        let _first1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        let _last1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        test_52(
+        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
+        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
+        test_118(
             _first1,
             _last1,
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            (ia.as_pointer() as Ptr<i32>),
             1,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             1,
         )
     });
     ({
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-        });
-        test_53(
+        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+        test_119(
             _first1,
             _last1,
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
+            (ua.as_pointer() as Ptr<u32>),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             0,
         )
     });
     ({
-        let _first1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        let _last1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
-            });
-        test_54(
+        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
+        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((1) as isize);
+        test_120(
             _first1,
             _last1,
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            (ia.as_pointer() as Ptr<i32>),
             2,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             4,
         )
     });
     ({
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-        });
-        test_51(
+        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+        test_117(
             _first1,
             _last1,
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
+            (ua.as_pointer() as Ptr<u32>),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             10,
         )
     });
     ({
-        let _first1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        let _last1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
-            });
-        test_52(
+        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
+        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((2) as isize);
+        test_118(
             _first1,
             _last1,
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            (ia.as_pointer() as Ptr<i32>),
             3,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             54,
         )
     });
     ({
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-        });
-        test_53(
+        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+        test_119(
             _first1,
             _last1,
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
+            (ua.as_pointer() as Ptr<u32>),
             4,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             2099520,
         )
     });
     ({
-        let _first1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        let _last1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
-            });
-        test_54(
+        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
+        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((sa) as isize);
+        test_120(
             _first1,
             _last1,
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            (ia.as_pointer() as Ptr<i32>),
             4,
-            unimplemented!(),
-            unimplemented!(),
-            186,
-        )
-    });
-}
-pub fn test_117() {
-    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
-    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
-        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
-    ])));
-    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
-        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    assert!(
-        ((sa as usize)
-            == (::std::mem::size_of::<[u32; 6]>() as usize)
-                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
-    );
-    ({
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        test_55(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        test_56(
-            _first1,
-            _last1,
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            1,
-            unimplemented!(),
-            unimplemented!(),
-            1,
-        )
-    });
-    ({
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-        });
-        test_57(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
-            });
-        test_58(
-            _first1,
-            _last1,
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            2,
-            unimplemented!(),
-            unimplemented!(),
-            4,
-        )
-    });
-    ({
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-        });
-        test_55(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            10,
-        )
-    });
-    ({
-        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
-            });
-        test_56(
-            _first1,
-            _last1,
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            3,
-            unimplemented!(),
-            unimplemented!(),
-            54,
-        )
-    });
-    ({
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-        });
-        test_57(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            2099520,
-        )
-    });
-    ({
-        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
-            });
-        test_58(
-            _first1,
-            _last1,
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            186,
-        )
-    });
-}
-pub fn test_118() {
-    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
-    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
-        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
-    ])));
-    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
-        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    assert!(
-        ((sa as usize)
-            == (::std::mem::size_of::<[u32; 6]>() as usize)
-                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
-    );
-    ({
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        test_59(
-            _first1,
-            _last1,
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        test_60(
-            _first1,
-            _last1,
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            1,
-            unimplemented!(),
-            unimplemented!(),
-            1,
-        )
-    });
-    ({
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-        });
-        test_61(
-            _first1,
-            _last1,
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
-            });
-        test_62(
-            _first1,
-            _last1,
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            2,
-            unimplemented!(),
-            unimplemented!(),
-            4,
-        )
-    });
-    ({
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-        });
-        test_59(
-            _first1,
-            _last1,
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            10,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
-            });
-        test_60(
-            _first1,
-            _last1,
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            3,
-            unimplemented!(),
-            unimplemented!(),
-            54,
-        )
-    });
-    ({
-        let _first1: forward_iterator_const_int_ptr_ =
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
-            (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-        });
-        test_61(
-            _first1,
-            _last1,
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            2099520,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
-            });
-        test_62(
-            _first1,
-            _last1,
-            forward_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            186,
-        )
-    });
-}
-pub fn test_119() {
-    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
-    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
-        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
-    ])));
-    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
-        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    assert!(
-        ((sa as usize)
-            == (::std::mem::size_of::<[u32; 6]>() as usize)
-                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
-    );
-    ({
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        test_63(
-            _first1,
-            _last1,
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        test_64(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            1,
-            unimplemented!(),
-            unimplemented!(),
-            1,
-        )
-    });
-    ({
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-            });
-        test_65(
-            _first1,
-            _last1,
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
-            });
-        test_66(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            2,
-            unimplemented!(),
-            unimplemented!(),
-            4,
-        )
-    });
-    ({
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-            });
-        test_63(
-            _first1,
-            _last1,
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            10,
-        )
-    });
-    ({
-        let _first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
-            });
-        test_64(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            3,
-            unimplemented!(),
-            unimplemented!(),
-            54,
-        )
-    });
-    ({
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-            });
-        test_65(
-            _first1,
-            _last1,
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            2099520,
-        )
-    });
-    ({
-        let _first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
-            });
-        test_66(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            186,
-        )
-    });
-}
-pub fn test_120() {
-    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
-    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
-        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
-    ])));
-    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
-        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    assert!(
-        ((sa as usize)
-            == (::std::mem::size_of::<[u32; 6]>() as usize)
-                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
-    );
-    ({
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        test_67(
-            _first1,
-            _last1,
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        let _last1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        test_68(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            1,
-            unimplemented!(),
-            unimplemented!(),
-            1,
-        )
-    });
-    ({
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-            });
-        test_69(
-            _first1,
-            _last1,
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        let _last1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
-            });
-        test_70(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            2,
-            unimplemented!(),
-            unimplemented!(),
-            4,
-        )
-    });
-    ({
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-            });
-        test_67(
-            _first1,
-            _last1,
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            10,
-        )
-    });
-    ({
-        let _first1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        let _last1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
-            });
-        test_68(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            3,
-            unimplemented!(),
-            unimplemented!(),
-            54,
-        )
-    });
-    ({
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-            });
-        test_69(
-            _first1,
-            _last1,
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            2099520,
-        )
-    });
-    ({
-        let _first1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        let _last1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
-            });
-        test_70(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             186,
         )
     });
@@ -3766,786 +3959,106 @@ pub fn test_121() {
                 .wrapping_div((::std::mem::size_of::<u32>() as usize)))
     );
     ({
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        test_71(
+        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        test_122(
             _first1,
             _last1,
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
+            (ua.as_pointer() as Ptr<u32>),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             0,
         )
     });
     ({
-        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        test_72(
+        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
+        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
+        test_123(
             _first1,
             _last1,
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            (ia.as_pointer() as Ptr<i32>),
             1,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             1,
         )
     });
     ({
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-            });
-        test_73(
+        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
+        test_124(
             _first1,
             _last1,
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
+            (ua.as_pointer() as Ptr<u32>),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             0,
         )
     });
     ({
-        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
-            });
-        test_74(
+        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
+        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((1) as isize);
+        test_125(
             _first1,
             _last1,
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            (ia.as_pointer() as Ptr<i32>),
             2,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             4,
         )
     });
     ({
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-            });
-        test_71(
+        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
+        test_122(
             _first1,
             _last1,
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
+            (ua.as_pointer() as Ptr<u32>),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             10,
         )
     });
     ({
-        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
-            });
-        test_72(
+        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
+        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((2) as isize);
+        test_123(
             _first1,
             _last1,
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            (ia.as_pointer() as Ptr<i32>),
             3,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             54,
         )
     });
     ({
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-            });
-        test_73(
+        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+        test_124(
             _first1,
             _last1,
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
+            (ua.as_pointer() as Ptr<u32>),
             4,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             2099520,
         )
     });
     ({
-        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
-            });
-        test_74(
+        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
+        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((sa) as isize);
+        test_125(
             _first1,
             _last1,
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
+            (ia.as_pointer() as Ptr<i32>),
             4,
-            unimplemented!(),
-            unimplemented!(),
-            186,
-        )
-    });
-}
-pub fn test_122() {
-    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
-    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
-        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
-    ])));
-    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
-        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    assert!(
-        ((sa as usize)
-            == (::std::mem::size_of::<[u32; 6]>() as usize)
-                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
-    );
-    ({
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        test_75(
-            _first1,
-            _last1,
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        test_76(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            1,
-            unimplemented!(),
-            unimplemented!(),
-            1,
-        )
-    });
-    ({
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-            });
-        test_77(
-            _first1,
-            _last1,
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
-            });
-        test_78(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            2,
-            unimplemented!(),
-            unimplemented!(),
-            4,
-        )
-    });
-    ({
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-            });
-        test_75(
-            _first1,
-            _last1,
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            10,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
-            });
-        test_76(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            3,
-            unimplemented!(),
-            unimplemented!(),
-            54,
-        )
-    });
-    ({
-        let _first1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-            });
-        test_77(
-            _first1,
-            _last1,
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            2099520,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
-            });
-        test_78(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            186,
-        )
-    });
-}
-pub fn test_123() {
-    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
-    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
-        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
-    ])));
-    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
-        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    assert!(
-        ((sa as usize)
-            == (::std::mem::size_of::<[u32; 6]>() as usize)
-                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
-    );
-    ({
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        test_79(
-            _first1,
-            _last1,
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        test_80(
-            _first1,
-            _last1,
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            1,
-            unimplemented!(),
-            unimplemented!(),
-            1,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-            });
-        test_81(
-            _first1,
-            _last1,
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
-            });
-        test_82(
-            _first1,
-            _last1,
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            2,
-            unimplemented!(),
-            unimplemented!(),
-            4,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-            });
-        test_79(
-            _first1,
-            _last1,
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            10,
-        )
-    });
-    ({
-        let _first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
-            });
-        test_80(
-            _first1,
-            _last1,
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            3,
-            unimplemented!(),
-            unimplemented!(),
-            54,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-            });
-        test_81(
-            _first1,
-            _last1,
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            2099520,
-        )
-    });
-    ({
-        let _first1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_ =
-            cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_::new({
-                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
-            });
-        test_82(
-            _first1,
-            _last1,
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            186,
-        )
-    });
-}
-pub fn test_124() {
-    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
-    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
-        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
-    ])));
-    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
-        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    assert!(
-        ((sa as usize)
-            == (::std::mem::size_of::<[u32; 6]>() as usize)
-                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
-    );
-    ({
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        test_83(
-            _first1,
-            _last1,
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        let _last1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        test_84(
-            _first1,
-            _last1,
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            1,
-            unimplemented!(),
-            unimplemented!(),
-            1,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-            });
-        test_85(
-            _first1,
-            _last1,
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        let _last1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
-            });
-        test_86(
-            _first1,
-            _last1,
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            2,
-            unimplemented!(),
-            unimplemented!(),
-            4,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-            });
-        test_83(
-            _first1,
-            _last1,
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            10,
-        )
-    });
-    ({
-        let _first1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        let _last1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
-            });
-        test_84(
-            _first1,
-            _last1,
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            3,
-            unimplemented!(),
-            unimplemented!(),
-            54,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-            });
-        test_85(
-            _first1,
-            _last1,
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            2099520,
-        )
-    });
-    ({
-        let _first1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({ (ua.as_pointer() as Ptr<u32>) });
-        let _last1: forward_iterator_const_unsigned_int_ptr_ =
-            forward_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
-            });
-        test_86(
-            _first1,
-            _last1,
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            186,
-        )
-    });
-}
-pub fn test_125() {
-    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
-    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
-        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
-    ])));
-    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
-        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    assert!(
-        ((sa as usize)
-            == (::std::mem::size_of::<[u32; 6]>() as usize)
-                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
-    );
-    ({
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        test_87(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        test_88(
-            _first1,
-            _last1,
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            1,
-            unimplemented!(),
-            unimplemented!(),
-            1,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-            });
-        test_89(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
-            });
-        test_90(
-            _first1,
-            _last1,
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            2,
-            unimplemented!(),
-            unimplemented!(),
-            4,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-            });
-        test_87(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            10,
-        )
-    });
-    ({
-        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
-            });
-        test_88(
-            _first1,
-            _last1,
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            3,
-            unimplemented!(),
-            unimplemented!(),
-            54,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-            });
-        test_89(
-            _first1,
-            _last1,
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            2099520,
-        )
-    });
-    ({
-        let _first1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: bidirectional_iterator_const_unsigned_int_ptr_ =
-            bidirectional_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
-            });
-        test_90(
-            _first1,
-            _last1,
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             186,
         )
     });
@@ -4563,620 +4076,106 @@ pub fn test_126() {
                 .wrapping_div((::std::mem::size_of::<u32>() as usize)))
     );
     ({
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        test_91(
-            _first1,
-            _last1,
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        test_92(
-            _first1,
-            _last1,
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            1,
-            unimplemented!(),
-            unimplemented!(),
-            1,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((1) as isize)
-            });
-        test_93(
-            _first1,
-            _last1,
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((1) as isize)
-            });
-        test_94(
-            _first1,
-            _last1,
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            2,
-            unimplemented!(),
-            unimplemented!(),
-            4,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((2) as isize)
-            });
-        test_91(
-            _first1,
-            _last1,
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            10,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((2) as isize)
-            });
-        test_92(
-            _first1,
-            _last1,
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            3,
-            unimplemented!(),
-            unimplemented!(),
-            54,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) });
-        let _last1: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({
-                (ia.as_pointer() as Ptr<i32>).offset((sa) as isize)
-            });
-        test_93(
-            _first1,
-            _last1,
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            2099520,
-        )
-    });
-    ({
-        let _first1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>)
-            });
-        let _last1: random_access_iterator_const_unsigned_int_ptr_ =
-            random_access_iterator_const_unsigned_int_ptr_::new_1({
-                (ua.as_pointer() as Ptr<u32>).offset((sa) as isize)
-            });
-        test_94(
-            _first1,
-            _last1,
-            random_access_iterator_const_int_ptr_::new_1({ (ia.as_pointer() as Ptr<i32>) }),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            186,
-        )
-    });
-}
-pub fn test_127() {
-    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
-    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
-        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
-    ])));
-    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
-        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    assert!(
-        ((sa as usize)
-            == (::std::mem::size_of::<[u32; 6]>() as usize)
-                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
-    );
-    ({
         let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
         let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        test_95(
+        test_127(
             _first1,
             _last1,
             (ua.as_pointer() as Ptr<u32>),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             0,
         )
     });
     ({
         let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
         let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
-        test_96(
+        test_128(
             _first1,
             _last1,
             (ia.as_pointer() as Ptr<i32>),
             1,
-            unimplemented!(),
-            unimplemented!(),
-            1,
-        )
-    });
-    ({
-        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-        test_97(
-            _first1,
-            _last1,
-            (ua.as_pointer() as Ptr<u32>),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
-        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((1) as isize);
-        test_98(
-            _first1,
-            _last1,
-            (ia.as_pointer() as Ptr<i32>),
-            2,
-            unimplemented!(),
-            unimplemented!(),
-            4,
-        )
-    });
-    ({
-        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-        test_95(
-            _first1,
-            _last1,
-            (ua.as_pointer() as Ptr<u32>),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            10,
-        )
-    });
-    ({
-        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
-        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((2) as isize);
-        test_96(
-            _first1,
-            _last1,
-            (ia.as_pointer() as Ptr<i32>),
-            3,
-            unimplemented!(),
-            unimplemented!(),
-            54,
-        )
-    });
-    ({
-        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
-        test_97(
-            _first1,
-            _last1,
-            (ua.as_pointer() as Ptr<u32>),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            2099520,
-        )
-    });
-    ({
-        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
-        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((sa) as isize);
-        test_98(
-            _first1,
-            _last1,
-            (ia.as_pointer() as Ptr<i32>),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            186,
-        )
-    });
-}
-pub fn test_128() {
-    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
-    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
-        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
-    ])));
-    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
-        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    assert!(
-        ((sa as usize)
-            == (::std::mem::size_of::<[u32; 6]>() as usize)
-                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
-    );
-    ({
-        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        test_99(
-            _first1,
-            _last1,
-            (ua.as_pointer() as Ptr<u32>),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
-        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
-        test_100(
-            _first1,
-            _last1,
-            (ia.as_pointer() as Ptr<i32>),
-            1,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             1,
         )
     });
     ({
         let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
         let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-        test_101(
+        test_129(
             _first1,
             _last1,
             (ua.as_pointer() as Ptr<u32>),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             0,
         )
     });
     ({
         let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
         let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((1) as isize);
-        test_102(
+        test_130(
             _first1,
             _last1,
             (ia.as_pointer() as Ptr<i32>),
             2,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             4,
         )
     });
     ({
         let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
         let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-        test_99(
+        test_127(
             _first1,
             _last1,
             (ua.as_pointer() as Ptr<u32>),
             0,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             10,
         )
     });
     ({
         let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
         let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((2) as isize);
-        test_100(
+        test_128(
             _first1,
             _last1,
             (ia.as_pointer() as Ptr<i32>),
             3,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             54,
         )
     });
     ({
         let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
         let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
-        test_101(
+        test_129(
             _first1,
             _last1,
             (ua.as_pointer() as Ptr<u32>),
             4,
-            unimplemented!(),
-            unimplemented!(),
+            <std_multiplies_void_>::default(),
+            <std_plus_void_>::default(),
             2099520,
         )
     });
     ({
         let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
         let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((sa) as isize);
-        test_102(
+        test_130(
             _first1,
             _last1,
             (ia.as_pointer() as Ptr<i32>),
             4,
-            unimplemented!(),
-            unimplemented!(),
-            186,
-        )
-    });
-}
-pub fn test_129() {
-    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
-    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
-        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
-    ])));
-    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
-        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    assert!(
-        ((sa as usize)
-            == (::std::mem::size_of::<[u32; 6]>() as usize)
-                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
-    );
-    ({
-        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        test_103(
-            _first1,
-            _last1,
-            (ua.as_pointer() as Ptr<u32>),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
-        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
-        test_104(
-            _first1,
-            _last1,
-            (ia.as_pointer() as Ptr<i32>),
-            1,
-            unimplemented!(),
-            unimplemented!(),
-            1,
-        )
-    });
-    ({
-        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-        test_105(
-            _first1,
-            _last1,
-            (ua.as_pointer() as Ptr<u32>),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
-        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((1) as isize);
-        test_106(
-            _first1,
-            _last1,
-            (ia.as_pointer() as Ptr<i32>),
-            2,
-            unimplemented!(),
-            unimplemented!(),
-            4,
-        )
-    });
-    ({
-        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-        test_103(
-            _first1,
-            _last1,
-            (ua.as_pointer() as Ptr<u32>),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            10,
-        )
-    });
-    ({
-        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
-        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((2) as isize);
-        test_104(
-            _first1,
-            _last1,
-            (ia.as_pointer() as Ptr<i32>),
-            3,
-            unimplemented!(),
-            unimplemented!(),
-            54,
-        )
-    });
-    ({
-        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
-        test_105(
-            _first1,
-            _last1,
-            (ua.as_pointer() as Ptr<u32>),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            2099520,
-        )
-    });
-    ({
-        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
-        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((sa) as isize);
-        test_106(
-            _first1,
-            _last1,
-            (ia.as_pointer() as Ptr<i32>),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            186,
-        )
-    });
-}
-pub fn test_130() {
-    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6])));
-    let ua: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([
-        2_u32, 4_u32, 6_u32, 8_u32, 10_u32, 12_u32,
-    ])));
-    let mut sa: u32 = (((::std::mem::size_of::<[i32; 6]>() as usize)
-        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
-    assert!(
-        ((sa as usize)
-            == (::std::mem::size_of::<[u32; 6]>() as usize)
-                .wrapping_div((::std::mem::size_of::<u32>() as usize)))
-    );
-    ({
-        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        test_107(
-            _first1,
-            _last1,
-            (ua.as_pointer() as Ptr<u32>),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
-        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
-        test_108(
-            _first1,
-            _last1,
-            (ia.as_pointer() as Ptr<i32>),
-            1,
-            unimplemented!(),
-            unimplemented!(),
-            1,
-        )
-    });
-    ({
-        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((1) as isize);
-        test_109(
-            _first1,
-            _last1,
-            (ua.as_pointer() as Ptr<u32>),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            0,
-        )
-    });
-    ({
-        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
-        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((1) as isize);
-        test_110(
-            _first1,
-            _last1,
-            (ia.as_pointer() as Ptr<i32>),
-            2,
-            unimplemented!(),
-            unimplemented!(),
-            4,
-        )
-    });
-    ({
-        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((2) as isize);
-        test_107(
-            _first1,
-            _last1,
-            (ua.as_pointer() as Ptr<u32>),
-            0,
-            unimplemented!(),
-            unimplemented!(),
-            10,
-        )
-    });
-    ({
-        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
-        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((2) as isize);
-        test_108(
-            _first1,
-            _last1,
-            (ia.as_pointer() as Ptr<i32>),
-            3,
-            unimplemented!(),
-            unimplemented!(),
-            54,
-        )
-    });
-    ({
-        let _first1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
-        let _last1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
-        test_109(
-            _first1,
-            _last1,
-            (ua.as_pointer() as Ptr<u32>),
-            4,
-            unimplemented!(),
-            unimplemented!(),
-            2099520,
-        )
-    });
-    ({
-        let _first1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>);
-        let _last1: Ptr<u32> = (ua.as_pointer() as Ptr<u32>).offset((sa) as isize);
-        test_110(
-            _first1,
-            _last1,
-            (ia.as_pointer() as Ptr<i32>),
-            4,
-            unimplemented!(),
-            unimplemented!(),
+            <std_plus_void_>::default(),
+            <std_multiplies_void_>::default(),
             186,
         )
     });
@@ -5236,16 +4235,64 @@ pub fn test_move_only_types_138() {
         MoveOnly::new({ Some(2) }),
         MoveOnly::new({ Some(3) }),
     ])));
-    let mut ib: [MoveOnly; 3] = [
+    let ib: Value<Box<[MoveOnly]>> = Rc::new(RefCell::new(Box::new([
         MoveOnly::new({ Some(1) }),
         MoveOnly::new({ Some(2) }),
         MoveOnly::new({ Some(3) }),
-    ];
+    ])));
     assert!(
-        (14 == ({ MoveOnlyImpl::get(&Rc::new(RefCell::new(unimplemented!())).as_pointer(),) }))
+        (14 == ({
+            MoveOnlyImpl::get(
+                &Rc::new(RefCell::new(
+                    ({
+                        let ___first1: Ptr<MoveOnly> = ({ begin_139(ia.as_pointer()) });
+                        let ___last1: Ptr<MoveOnly> = (ia.as_pointer() as Ptr<MoveOnly>).to_end();
+                        let ___first2: Ptr<MoveOnly> = ({ begin_139(ib.as_pointer()) });
+                        let ___init: MoveOnly = MoveOnly::new({ Some(0) });
+                        let ___binary_op1: FnPtr<fn(Ptr<MoveOnly>, Ptr<MoveOnly>) -> MoveOnly> =
+                            FnPtr::<fn(Ptr<MoveOnly>, Ptr<MoveOnly>) -> MoveOnly>::new(
+                                |lhs: Ptr<MoveOnly>, rhs: Ptr<MoveOnly>| -> MoveOnly {
+                                    {
+                                        return MoveOnly::new({
+                                            Some(
+                                                ({ ({ MoveOnlyImpl::get(&lhs) }) } + {
+                                                    ({ MoveOnlyImpl::get(&rhs) })
+                                                }),
+                                            )
+                                        });
+                                    }
+                                },
+                            );
+                        let ___binary_op2: FnPtr<fn(Ptr<MoveOnly>, Ptr<MoveOnly>) -> MoveOnly> =
+                            FnPtr::<fn(Ptr<MoveOnly>, Ptr<MoveOnly>) -> MoveOnly>::new(
+                                |lhs: Ptr<MoveOnly>, rhs: Ptr<MoveOnly>| -> MoveOnly {
+                                    {
+                                        return MoveOnly::new({
+                                            Some(
+                                                ({ ({ MoveOnlyImpl::get(&lhs) }) } * {
+                                                    ({ MoveOnlyImpl::get(&rhs) })
+                                                }),
+                                            )
+                                        });
+                                    }
+                                },
+                            );
+                        transform_reduce_140(
+                            ___first1,
+                            ___last1,
+                            ___first2,
+                            ___init,
+                            ___binary_op1,
+                            ___binary_op2,
+                        )
+                    }),
+                ))
+                .as_pointer(),
+            )
+        }))
     );
 }
-pub fn test_139() -> bool {
+pub fn test_141() -> bool {
     ({ test_return_type_131() });
     ({ test_return_type_132() });
     ({ test_return_type_133() });
@@ -5253,26 +4300,26 @@ pub fn test_139() -> bool {
     ({ test_return_type_135() });
     ({ test_return_type_136() });
     ({ test_return_type_137() });
+    ({ test_31() });
+    ({ test_36() });
+    ({ test_41() });
+    ({ test_46() });
+    ({ test_51() });
+    ({ test_56() });
+    ({ test_61() });
+    ({ test_66() });
+    ({ test_71() });
+    ({ test_76() });
+    ({ test_81() });
+    ({ test_86() });
+    ({ test_91() });
+    ({ test_96() });
+    ({ test_101() });
+    ({ test_106() });
     ({ test_111() });
-    ({ test_112() });
-    ({ test_113() });
-    ({ test_114() });
-    ({ test_115() });
     ({ test_116() });
-    ({ test_117() });
-    ({ test_118() });
-    ({ test_119() });
-    ({ test_120() });
     ({ test_121() });
-    ({ test_122() });
-    ({ test_123() });
-    ({ test_124() });
-    ({ test_125() });
     ({ test_126() });
-    ({ test_127() });
-    ({ test_128() });
-    ({ test_129() });
-    ({ test_130() });
     ({ test_move_only_types_138() });
     return true;
 }
@@ -5296,7 +4343,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_139() });
+    ({ test_141() });
     const _: () = assert!(true, "test()");;
     return 0;
 }
@@ -5405,21 +4452,29 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
         return (*self).clone();
     }
     fn operator_inc_14(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_15(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return prev;
     }
     fn operator_dec_16(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_17(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return prev;
     }
 }
@@ -5445,7 +4500,9 @@ impl bidirectional_iterator_const_int_ptr_Impl for Ptr<bidirectional_iterator_co
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_const_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -5484,7 +4541,9 @@ impl bidirectional_iterator_const_unsigned_int_ptr_Impl
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_const_unsigned_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -5520,7 +4579,9 @@ impl cpp17_input_iterator_const_int_ptr__const_int_ptr_Impl
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -5560,7 +4621,9 @@ impl cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_Impl
     fn operator_inc_5(
         &self,
     ) -> Ptr<cpp17_input_iterator_const_unsigned_int_ptr__const_unsigned_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -5750,7 +4813,9 @@ impl forward_iterator_const_int_ptr_Impl for Ptr<forward_iterator_const_int_ptr_
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_const_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -5783,7 +4848,9 @@ impl forward_iterator_const_unsigned_int_ptr_Impl
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_const_unsigned_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -5840,7 +4907,9 @@ impl random_access_iterator_const_int_ptr_Impl for Ptr<random_access_iterator_co
         return (*self).with(|__s| __s.it_.clone()).offset((n) as isize);
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_const_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_add_assign(&self, mut n: isize) -> Ptr<random_access_iterator_const_int_ptr_> {
@@ -5897,7 +4966,9 @@ impl random_access_iterator_const_unsigned_int_ptr_Impl
         return (*self).with(|__s| __s.it_.clone()).offset((n) as isize);
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_const_unsigned_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_add_assign(
@@ -5966,11 +5037,11 @@ impl rvalue_iterator_int_ptr_Impl for Ptr<rvalue_iterator_int_ptr_> {
                 &((*self).with(|__s| __s.it_.clone())),
                 &(_a0.with(|__s| __s.it_.clone())),
             )));
-            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow());
+            if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+                return ({ (*cmp.borrow()) });
             }
         }
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> bool {
         return ({ (*self).with(|__s| __s.it_.clone()) } == { _a0.with(|__s| __s.it_.clone()) });

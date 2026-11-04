@@ -9,7 +9,7 @@ use std::rc::{Rc, Weak};
 pub fn destroy_at_0(mut p: Ptr<ConstCopy>) {}
 pub fn destroy_1(mut first: Ptr<ConstCopy>, mut last: Ptr<ConstCopy>) {
     'loop_: while ({ (first).clone() } != { (last).clone() }) {
-        ({ destroy_at_0(unimplemented!()) });
+        ({ destroy_at_0(({ addressof_2((first).clone()) })) });
         first.prefix_inc();
     }
 }
@@ -37,6 +37,11 @@ pub struct test_allocator_statistics {
     #[offset(36)]
     pub converted: i32,
 }
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_statistics {
     fn default() -> Self {
         {
@@ -56,22 +61,27 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_2: Value<i32> = Rc::new(RefCell::new(-1_i32));
+    pub static destructed_value_3: Value<i32> = Rc::new(RefCell::new(-1_i32));
 );
 thread_local!(
-    pub static moved_value_3: Value<i32> = Rc::new(RefCell::new(2147483647));
+    pub static moved_value_4: Value<i32> = Rc::new(RefCell::new(2147483647));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
-pub fn operator_eq_4(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn operator_eq_5(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_5(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+pub fn operator_ne_6(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_4(_x, _y)
+        operator_eq_5(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -131,7 +141,7 @@ impl test_allocator_void_ {
 }
 impl CppEq for test_allocator_void_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_4(__lhs.clone(), __rhs.clone())
+        operator_eq_5(__lhs.clone(), __rhs.clone())
     }
 }
 impl Clone for test_allocator_void_ {
@@ -142,6 +152,11 @@ impl Clone for test_allocator_void_ {
             stats_: self.stats_.clone(),
         }));
         test_allocator_void_::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for test_allocator_void_ {
@@ -158,6 +173,11 @@ impl Default for test_allocator_void_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -189,12 +209,21 @@ impl MutableCopy {
             alloc_constructed: false,
         }
     }
-    pub fn new_2(_a0: (), _a1: Ptr<test_allocator_int_>, o: Ptr<MutableCopy>) -> Self {
-        let _a0: Value<()> = Rc::new(RefCell::new(_a0));
+    pub fn new_2(
+        _a0: std_allocator_arg_t,
+        _a1: Ptr<test_allocator_int_>,
+        o: Ptr<MutableCopy>,
+    ) -> Self {
+        let _a0: Value<std_allocator_arg_t> = Rc::new(RefCell::new(_a0));
         Self {
             val: o.with(|__s| __s.val),
             alloc_constructed: true,
         }
+    }
+}
+impl CppMove for MutableCopy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for MutableCopy {
@@ -223,12 +252,21 @@ impl ConstCopy {
             alloc_constructed: false,
         }
     }
-    pub fn new_2(_a0: (), _a1: Ptr<test_allocator_int_>, o: Ptr<ConstCopy>) -> Self {
-        let _a0: Value<()> = Rc::new(RefCell::new(_a0));
+    pub fn new_2(
+        _a0: std_allocator_arg_t,
+        _a1: Ptr<test_allocator_int_>,
+        o: Ptr<ConstCopy>,
+    ) -> Self {
+        let _a0: Value<std_allocator_arg_t> = Rc::new(RefCell::new(_a0));
         Self {
             val: o.with(|__s| __s.val),
             alloc_constructed: true,
         }
+    }
+}
+impl CppMove for ConstCopy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for ConstCopy {
@@ -263,12 +301,21 @@ impl MutableMove {
             alloc_constructed: { (*_a0.upgrade().deref()).alloc_constructed },
         }
     }
-    pub fn new_2(_a0: (), _a1: Ptr<test_allocator_int_>, o: Ptr<MutableMove>) -> Self {
-        let _a0: Value<()> = Rc::new(RefCell::new(_a0));
+    pub fn new_2(
+        _a0: std_allocator_arg_t,
+        _a1: Ptr<test_allocator_int_>,
+        o: Ptr<MutableMove>,
+    ) -> Self {
+        let _a0: Value<std_allocator_arg_t> = Rc::new(RefCell::new(_a0));
         Self {
             val: o.with(|__s| __s.val),
             alloc_constructed: true,
         }
+    }
+}
+impl CppMove for MutableMove {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for MutableMove {
@@ -303,12 +350,21 @@ impl ConstMove {
             alloc_constructed: false,
         }
     }
-    pub fn new_2(_a0: (), _a1: Ptr<test_allocator_int_>, o: Ptr<ConstMove>) -> Self {
-        let _a0: Value<()> = Rc::new(RefCell::new(_a0));
+    pub fn new_2(
+        _a0: std_allocator_arg_t,
+        _a1: Ptr<test_allocator_int_>,
+        o: Ptr<ConstMove>,
+    ) -> Self {
+        let _a0: Value<std_allocator_arg_t> = Rc::new(RefCell::new(_a0));
         Self {
             val: o.with(|__s| __s.val),
             alloc_constructed: true,
         }
+    }
+}
+impl CppMove for ConstMove {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for ConstMove {
@@ -385,6 +441,11 @@ impl Clone for TracedCopyMove {
         TracedCopyMove::new_1(__src.as_pointer())
     }
 }
+impl CppMove for TracedCopyMove {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for TracedCopyMove {
     fn default() -> Self {
         {
@@ -398,12 +459,12 @@ impl Default for TracedCopyMove {
         }
     }
 }
-pub fn nonConstCopyCtrCalled_6(obj: Ptr<TracedCopyMove>) -> bool {
+pub fn nonConstCopyCtrCalled_7(obj: Ptr<TracedCopyMove>) -> bool {
     return (((obj.with(|__s| __s.nonConstCopy) == 1) && (obj.with(|__s| __s.constCopy) == 0))
         && (obj.with(|__s| __s.constMove) == 0))
         && (obj.with(|__s| __s.nonConstMove) == 0);
 }
-pub fn constMoveCtrCalled_7(obj: Ptr<TracedCopyMove>) -> bool {
+pub fn constMoveCtrCalled_8(obj: Ptr<TracedCopyMove>) -> bool {
     return (((obj.with(|__s| __s.nonConstMove) == 0) && (obj.with(|__s| __s.constMove) == 1))
         && (obj.with(|__s| __s.constCopy) == 0))
         && (obj.with(|__s| __s.nonConstCopy) == 0);
@@ -411,38 +472,63 @@ pub fn constMoveCtrCalled_7(obj: Ptr<TracedCopyMove>) -> bool {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoConstructorFromInt {}
+impl CppMove for NoConstructorFromInt {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
-#[cpp_from(()  , new_1, mut_ptr)]
+#[cpp_from(std_tuple_CvtFromTupleRef_, new_1, mut_ptr)]
 #[byte_size(20)]
 pub struct CvtFromTupleRef {}
 impl CvtFromTupleRef {
-    pub fn new_1(other: Ptr<()>) -> Self {
+    pub fn new_1(other: Ptr<std_tuple_CvtFromTupleRef_>) -> Self {
         Self {}
+    }
+}
+impl CppMove for CvtFromTupleRef {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(20)]
 pub struct ExplicitCtrFromTupleRef {}
 impl ExplicitCtrFromTupleRef {
-    pub fn new_1(other: Ptr<()>) -> Self {
+    pub fn new_1(other: Ptr<std_tuple_ExplicitCtrFromTupleRef_>) -> Self {
         Self {}
     }
 }
+impl CppMove for ExplicitCtrFromTupleRef {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
-#[cpp_from_move(()  , new_1, ptr)]
+#[cpp_from_move(std_tuple_CvtFromConstTupleRefRef_, new_1, ptr)]
 #[byte_size(20)]
 pub struct CvtFromConstTupleRefRef {}
 impl CvtFromConstTupleRefRef {
-    pub fn new_1(other: Ptr<()>) -> Self {
+    pub fn new_1(other: Ptr<std_tuple_CvtFromConstTupleRefRef_>) -> Self {
         Self {}
+    }
+}
+impl CppMove for CvtFromConstTupleRefRef {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(20)]
 pub struct ExplicitCtrFromConstTupleRefRef {}
 impl ExplicitCtrFromConstTupleRefRef {
-    pub fn new_1(other: Ptr<()>) -> Self {
+    pub fn new_1(other: Ptr<std_tuple_const_ExplicitCtrFromConstTupleRefRef_>) -> Self {
         Self {}
+    }
+}
+impl CppMove for ExplicitCtrFromConstTupleRefRef {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, Default)]
@@ -526,18 +612,18 @@ pub struct B {
 impl B {
     pub fn new() -> Self {
         let __this: B = Self { data_: 1 };
-        (*population__9.with(Value::clone).borrow_mut()).prefix_inc();
+        (*population__10.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
     pub fn copy_from(b: Ptr<B>) -> Self {
         let __this: Value<B> = Rc::new(RefCell::new(Self { data_: 0_i32 }));
         let this: Ptr<B> = __this.as_pointer();
-        (*count__8.with(Value::clone).borrow_mut()).prefix_inc();
-        if (count__8.with(|rc| *rc.borrow()) == 3) {
+        (*count__9.with(Value::clone).borrow_mut()).prefix_inc();
+        if (count__9.with(|rc| *rc.borrow()) == 3) {
             std::process::abort();
         }
         field!(this, data_).write({ b.with(|__s| __s.data_) });
-        (*population__9.with(Value::clone).borrow_mut()).prefix_inc();
+        (*population__10.with(Value::clone).borrow_mut()).prefix_inc();
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
@@ -549,16 +635,21 @@ impl Clone for B {
         B::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for B {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for B {
     fn default() -> Self {
         { B::new() }
     }
 }
 thread_local!(
-    pub static count__8: Value<i32> = Rc::new(RefCell::new(0));
+    pub static count__9: Value<i32> = Rc::new(RefCell::new(0));
 );
 thread_local!(
-    pub static population__9: Value<i32> = Rc::new(RefCell::new(0));
+    pub static population__10: Value<i32> = Rc::new(RefCell::new(0));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
@@ -569,8 +660,13 @@ pub struct Nasty {
 impl Nasty {
     pub fn new() -> Self {
         Self {
-            i_: (*counter__10.with(Value::clone).borrow_mut()).postfix_inc(),
+            i_: (*counter__11.with(Value::clone).borrow_mut()).postfix_inc(),
         }
+    }
+}
+impl CppMove for Nasty {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for Nasty {
@@ -579,18 +675,23 @@ impl Default for Nasty {
     }
 }
 thread_local!(
-    pub static counter__10: Value<i32> = Rc::new(RefCell::new(0));
+    pub static counter__11: Value<i32> = Rc::new(RefCell::new(0));
 );
-pub fn test_11() -> bool {
+pub fn test_12() -> bool {
     let mut n: i32 = 3;
-    let mut value: ConstCopy = ConstCopy::new_1({ 42 });
-    let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut out: Ptr<ConstCopy> = unimplemented!();
-    let mut result: Ptr<ConstCopy> = unimplemented!();
+    let value: Value<ConstCopy> = Rc::new(RefCell::new(ConstCopy::new_1({ 42 })));
+    let alloc: Value<std_allocator_ConstCopy_> =
+        Rc::new(RefCell::new(<std_allocator_ConstCopy_>::default()));
+    let mut out: Ptr<ConstCopy> = ({ (*alloc.borrow()).allocate((n as usize)) });
+    let mut result: Ptr<ConstCopy> = ({
+        let ___first: Ptr<ConstCopy> = (out).clone();
+        let ___x: Ptr<ConstCopy> = value.as_pointer();
+        uninitialized_fill_n_13(___first, n, ___x)
+    });
     assert!(({ (result).clone() } == { out.offset((n) as isize) }));
     let mut i: i32 = 0;
     'loop_: while (i != n) {
-        assert!(({ elem!(out, i).with(|__s| __s.val) } == { value.val }));
+        assert!(({ ({ elem!(out, i).with(|__s| __s.val) } == { { (*value.borrow()).val } }) }));
         i.prefix_inc();
     }
     ({
@@ -598,7 +699,7 @@ pub fn test_11() -> bool {
         let _last: Ptr<ConstCopy> = out.offset((n) as isize);
         destroy_1(_first, _last)
     });
-    unimplemented!();
+    ({ (*alloc.borrow()).deallocate((out).clone(), (n as usize)) });
     return true;
 }
 pub fn main() {
@@ -628,16 +729,20 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8,
         ])));
         let mut bp: Ptr<B> = (pool.as_pointer() as Ptr<i8>).reinterpret_cast::<B>();
-        assert!((population__9.with(|rc| *rc.borrow()) == 0));
-        count__8.with(|rc| *rc.borrow_mut() = 0);
-        let mut r: Ptr<B> = unimplemented!();
+        assert!((population__10.with(|rc| *rc.borrow()) == 0));
+        count__9.with(|rc| *rc.borrow_mut() = 0);
+        let mut r: Ptr<B> = ({
+            let ___first: Ptr<B> = (bp).clone();
+            let ___x: Value<B> = Rc::new(RefCell::new(B::new()));
+            uninitialized_fill_n_14(___first, 2, ___x.as_pointer())
+        });
         assert!(({ (r).clone() } == { bp.offset((2) as isize) }));
         let mut i: i32 = 0;
         'loop_: while (i < 2) {
             assert!((elem!(bp, i).with(|__s| __s.data_) == 1));
             i.prefix_inc();
         }
-        assert!((population__9.with(|rc| *rc.borrow()) == 2));
+        assert!((population__10.with(|rc| *rc.borrow()) == 2));
     }
     {
         {
@@ -647,8 +752,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8,
             ])));
             let mut bp: Ptr<Nasty> = (pool.as_pointer() as Ptr<i8>).reinterpret_cast::<Nasty>();
-            counter__10.with(|rc| *rc.borrow_mut() = 23);
-            unimplemented!();
+            counter__11.with(|rc| *rc.borrow_mut() = 23);
+            ({
+                let ___first: Ptr<Nasty> = (bp).clone();
+                let ___x: Value<Nasty> = Rc::new(RefCell::new(Nasty::new()));
+                uninitialized_fill_n_15(___first, N, ___x.as_pointer())
+            });
             let mut i: i32 = 0;
             'loop_: while (i < N) {
                 assert!((elem!(bp, i).with(|__s| __s.i_) == 23));
@@ -656,7 +765,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }
         }
     }
-    ({ test_11() });
+    ({ test_12() });
     return 0;
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
@@ -669,7 +778,7 @@ pub trait BImpl {
 impl BImpl for Ptr<B> {
     fn destructor(&self) {
         field!((*self), data_).write(0);
-        (*population__9.with(Value::clone).borrow_mut()).prefix_dec();
+        (*population__10.with(Value::clone).borrow_mut()).prefix_dec();
     }
     fn copy_assign(&self, _a0: Ptr<B>) -> Ptr<B> {
         field!((*self), data_).write({ _a0.with(|__s| __s.data_) });
@@ -781,8 +890,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_2.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_2.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_3.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_3.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
@@ -798,9 +907,9 @@ impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = destructed_value_2.with(|_| ());
-    let _ = moved_value_3.with(|_| ());
-    let _ = count__8.with(|_| ());
-    let _ = population__9.with(|_| ());
-    let _ = counter__10.with(|_| ());
+    let _ = destructed_value_3.with(|_| ());
+    let _ = moved_value_4.with(|_| ());
+    let _ = count__9.with(|_| ());
+    let _ = population__10.with(|_| ());
+    let _ = counter__11.with(|_| ());
 }

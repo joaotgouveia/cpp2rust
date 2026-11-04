@@ -6,204 +6,100 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test1_0() {
+pub fn test2_0(mut s: Ptr<i8>, mut len: usize) {
     {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "sv1.size() == 0");;
-        const _: () = assert!(true, "sv1.empty()");;
-        const _: () = assert!(true, "sv1.size() == sv1.length()");;
-        const _: () = assert!(true, "sv1.max_size() > sv1.size()");;
-    }
-    {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
-        assert!(unimplemented!());
-        assert!((unimplemented!() == unimplemented!()));
-        assert!((unimplemented!() > unimplemented!()));
-    }
-    {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv1: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_basic_string_view_char__std_char_traits_char__::new_1({ (s).clone() }),
+        ));
+        assert!(({ ((({ (*sv1.borrow()).size() }) as usize) == len) }));
+        assert!(({ ({ ({ (*sv1.borrow()).data() }) } == { (s).clone() }) }));
+        assert!(({ ((({ (*sv1.borrow()).empty() }) as i32) == ((len == 0_usize) as i32)) }));
+        assert!(({ (({ (*sv1.borrow()).size() }) == ({ (*sv1.borrow()).length() })) }));
+        assert!(({ (({ (*sv1.borrow()).max_size() }) > ({ (*sv1.borrow()).size() })) }));
+        assert!(({ (({ (*sv1.borrow()).size() }) == ({ size_1(sv1.as_pointer(),) })) }));
         assert!(
-            (unimplemented!()
-                <= (u64::MAX as u64).wrapping_div((::std::mem::size_of::<()>() as u64)))
+            ({
+                ((({ (*sv1.borrow()).empty() }) as i32) == (({ empty_2(sv1.as_pointer()) }) as i32))
+            })
         );
-        const _: () = assert!(true, "");;
     }
 }
-pub fn test1_1() {
+pub fn test2_3(mut s: Ptr<i32>, mut len: usize) {
     {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "sv1.size() == 0");;
-        const _: () = assert!(true, "sv1.empty()");;
-        const _: () = assert!(true, "sv1.size() == sv1.length()");;
-        const _: () = assert!(true, "sv1.max_size() > sv1.size()");;
-    }
-    {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
-        assert!(unimplemented!());
-        assert!((unimplemented!() == unimplemented!()));
-        assert!((unimplemented!() > unimplemented!()));
-    }
-    {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv1: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_1({ (s).clone() }),
+            ));
+        assert!(({ ((({ (*sv1.borrow()).size() }) as usize) == len) }));
+        assert!(({ ({ ({ (*sv1.borrow()).data() }) } == { (s).clone() }) }));
+        assert!(({ ((({ (*sv1.borrow()).empty() }) as i32) == ((len == 0_usize) as i32)) }));
+        assert!(({ (({ (*sv1.borrow()).size() }) == ({ (*sv1.borrow()).length() })) }));
+        assert!(({ (({ (*sv1.borrow()).max_size() }) > ({ (*sv1.borrow()).size() })) }));
+        assert!(({ (({ (*sv1.borrow()).size() }) == ({ size_4(sv1.as_pointer(),) })) }));
         assert!(
-            (unimplemented!()
-                <= (u64::MAX as u64).wrapping_div((::std::mem::size_of::<()>() as u64)))
+            ({
+                ((({ (*sv1.borrow()).empty() }) as i32) == (({ empty_5(sv1.as_pointer()) }) as i32))
+            })
         );
-        const _: () = assert!(true, "");;
     }
 }
-pub fn test1_2() {
+pub fn test2_6(mut s: Ptr<u8>, mut len: usize) {
     {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "sv1.size() == 0");;
-        const _: () = assert!(true, "sv1.empty()");;
-        const _: () = assert!(true, "sv1.size() == sv1.length()");;
-        const _: () = assert!(true, "sv1.max_size() > sv1.size()");;
-    }
-    {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
-        assert!(unimplemented!());
-        assert!((unimplemented!() == unimplemented!()));
-        assert!((unimplemented!() > unimplemented!()));
-    }
-    {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv1: Value<std_basic_string_view_char8_t__std_char_traits_char8_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char8_t__std_char_traits_char8_t__::new_1({ (s).clone() }),
+            ));
+        assert!(({ ((({ (*sv1.borrow()).size() }) as usize) == len) }));
+        assert!(({ ({ ({ (*sv1.borrow()).data() }) } == { (s).clone() }) }));
+        assert!(({ ((({ (*sv1.borrow()).empty() }) as i32) == ((len == 0_usize) as i32)) }));
+        assert!(({ (({ (*sv1.borrow()).size() }) == ({ (*sv1.borrow()).length() })) }));
+        assert!(({ (({ (*sv1.borrow()).max_size() }) > ({ (*sv1.borrow()).size() })) }));
+        assert!(({ (({ (*sv1.borrow()).size() }) == ({ size_7(sv1.as_pointer(),) })) }));
         assert!(
-            (unimplemented!()
-                <= (u64::MAX as u64).wrapping_div((::std::mem::size_of::<()>() as u64)))
+            ({
+                ((({ (*sv1.borrow()).empty() }) as i32) == (({ empty_8(sv1.as_pointer()) }) as i32))
+            })
         );
-        const _: () = assert!(true, "");;
     }
 }
-pub fn test1_3() {
+pub fn test2_9(mut s: Ptr<u16>, mut len: usize) {
     {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "sv1.size() == 0");;
-        const _: () = assert!(true, "sv1.empty()");;
-        const _: () = assert!(true, "sv1.size() == sv1.length()");;
-        const _: () = assert!(true, "sv1.max_size() > sv1.size()");;
-    }
-    {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
-        assert!(unimplemented!());
-        assert!((unimplemented!() == unimplemented!()));
-        assert!((unimplemented!() > unimplemented!()));
-    }
-    {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv1: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char16_t__std_char_traits_char16_t__::new_1({ (s).clone() }),
+            ));
+        assert!(({ ((({ (*sv1.borrow()).size() }) as usize) == len) }));
+        assert!(({ ({ ({ (*sv1.borrow()).data() }) } == { (s).clone() }) }));
+        assert!(({ ((({ (*sv1.borrow()).empty() }) as i32) == ((len == 0_usize) as i32)) }));
+        assert!(({ (({ (*sv1.borrow()).size() }) == ({ (*sv1.borrow()).length() })) }));
+        assert!(({ (({ (*sv1.borrow()).max_size() }) > ({ (*sv1.borrow()).size() })) }));
+        assert!(({ (({ (*sv1.borrow()).size() }) == ({ size_10(sv1.as_pointer(),) })) }));
         assert!(
-            (unimplemented!()
-                <= (u64::MAX as u64).wrapping_div((::std::mem::size_of::<()>() as u64)))
+            ({
+                ((({ (*sv1.borrow()).empty() }) as i32)
+                    == (({ empty_11(sv1.as_pointer()) }) as i32))
+            })
         );
-        const _: () = assert!(true, "");;
     }
 }
-pub fn test1_4() {
+pub fn test2_12(mut s: Ptr<u32>, mut len: usize) {
     {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "sv1.size() == 0");;
-        const _: () = assert!(true, "sv1.empty()");;
-        const _: () = assert!(true, "sv1.size() == sv1.length()");;
-        const _: () = assert!(true, "sv1.max_size() > sv1.size()");;
-    }
-    {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
-        assert!(unimplemented!());
-        assert!((unimplemented!() == unimplemented!()));
-        assert!((unimplemented!() > unimplemented!()));
-    }
-    {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv1: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char32_t__std_char_traits_char32_t__::new_1({ (s).clone() }),
+            ));
+        assert!(({ ((({ (*sv1.borrow()).size() }) as usize) == len) }));
+        assert!(({ ({ ({ (*sv1.borrow()).data() }) } == { (s).clone() }) }));
+        assert!(({ ((({ (*sv1.borrow()).empty() }) as i32) == ((len == 0_usize) as i32)) }));
+        assert!(({ (({ (*sv1.borrow()).size() }) == ({ (*sv1.borrow()).length() })) }));
+        assert!(({ (({ (*sv1.borrow()).max_size() }) > ({ (*sv1.borrow()).size() })) }));
+        assert!(({ (({ (*sv1.borrow()).size() }) == ({ size_13(sv1.as_pointer(),) })) }));
         assert!(
-            (unimplemented!()
-                <= (u64::MAX as u64).wrapping_div((::std::mem::size_of::<()>() as u64)))
+            ({
+                ((({ (*sv1.borrow()).empty() }) as i32)
+                    == (({ empty_14(sv1.as_pointer()) }) as i32))
+            })
         );
-        const _: () = assert!(true, "");;
-    }
-}
-pub fn test2_5(mut s: Ptr<i8>, mut len: usize) {
-    {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as usize) == len));
-        assert!(({ unimplemented!() } == { (s).clone() }));
-        assert!(((unimplemented!() as i32) == ((len == 0_usize) as i32)));
-        assert!((unimplemented!() == unimplemented!()));
-        assert!((unimplemented!() > unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
-        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
-    }
-}
-pub fn test2_6(mut s: Ptr<i32>, mut len: usize) {
-    {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as usize) == len));
-        assert!(({ unimplemented!() } == { (s).clone() }));
-        assert!(((unimplemented!() as i32) == ((len == 0_usize) as i32)));
-        assert!((unimplemented!() == unimplemented!()));
-        assert!((unimplemented!() > unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
-        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
-    }
-}
-pub fn test2_7(mut s: Ptr<u8>, mut len: usize) {
-    {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as usize) == len));
-        assert!(({ unimplemented!() } == { (s).clone() }));
-        assert!(((unimplemented!() as i32) == ((len == 0_usize) as i32)));
-        assert!((unimplemented!() == unimplemented!()));
-        assert!((unimplemented!() > unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
-        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
-    }
-}
-pub fn test2_8(mut s: Ptr<u16>, mut len: usize) {
-    {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as usize) == len));
-        assert!(({ unimplemented!() } == { (s).clone() }));
-        assert!(((unimplemented!() as i32) == ((len == 0_usize) as i32)));
-        assert!((unimplemented!() == unimplemented!()));
-        assert!((unimplemented!() > unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
-        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
-    }
-}
-pub fn test2_9(mut s: Ptr<u32>, mut len: usize) {
-    {
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as usize) == len));
-        assert!(({ unimplemented!() } == { (s).clone() }));
-        assert!(((unimplemented!() as i32) == ((len == 0_usize) as i32)));
-        assert!((unimplemented!() == unimplemented!()));
-        assert!((unimplemented!() > unimplemented!()));
-        assert!((unimplemented!() == unimplemented!()));
-        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
     }
 }
 pub fn main() {
@@ -226,19 +122,19 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test1_0() });
-    ({ test1_1() });
-    ({ test1_2() });
-    ({ test1_3() });
-    ({ test1_4() });
+    ({ test1_15() });
+    ({ test1_16() });
+    ({ test1_17() });
+    ({ test1_18() });
+    ({ test1_19() });
     ({
-        test2_5 ( Ptr::<i8 >::from_string_literal(b"ABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDE" )  , 105_usize  , )
+        test2_0 ( Ptr::<i8 >::from_string_literal(b"ABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDE" )  , 105_usize  , )
     });
-    ({ test2_5(Ptr::<i8>::from_string_literal(b"ABCDE"), 5_usize) });
-    ({ test2_5(Ptr::<i8>::from_string_literal(b"a"), 1_usize) });
-    ({ test2_5(Ptr::<i8>::from_string_literal(b""), 0_usize) });
+    ({ test2_0(Ptr::<i8>::from_string_literal(b"ABCDE"), 5_usize) });
+    ({ test2_0(Ptr::<i8>::from_string_literal(b"a"), 1_usize) });
+    ({ test2_0(Ptr::<i8>::from_string_literal(b""), 0_usize) });
     ({
-        test2_6(
+        test2_3(
             Ptr::<i32>::from_string_literal(&[
                 65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32,
                 67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32,
@@ -261,7 +157,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         )
     });
     ({
-        test2_6(
+        test2_3(
             Ptr::<i32>::from_string_literal(&[
                 65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 0 as i32,
             ]),
@@ -269,14 +165,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         )
     });
     ({
-        test2_6(
+        test2_3(
             Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32]),
             1_usize,
         )
     });
-    ({ test2_6(Ptr::<i32>::from_string_literal(&[0 as i32]), 0_usize) });
+    ({ test2_3(Ptr::<i32>::from_string_literal(&[0 as i32]), 0_usize) });
     ({
-        test2_7(
+        test2_6(
             Ptr::<u8>::from_string_literal(&[
                 65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8,
                 68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8,
@@ -297,7 +193,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         )
     });
     ({
-        test2_7(
+        test2_6(
             Ptr::<u8>::from_string_literal(&[
                 65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 0 as u8,
             ]),
@@ -305,14 +201,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         )
     });
     ({
-        test2_7(
+        test2_6(
             Ptr::<u8>::from_string_literal(&[97 as u8, 0 as u8]),
             1_usize,
         )
     });
-    ({ test2_7(Ptr::<u8>::from_string_literal(&[0 as u8]), 0_usize) });
+    ({ test2_6(Ptr::<u8>::from_string_literal(&[0 as u8]), 0_usize) });
     ({
-        test2_8(
+        test2_9(
             Ptr::<u16>::from_string_literal(&[
                 65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16,
                 67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16,
@@ -335,7 +231,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         )
     });
     ({
-        test2_8(
+        test2_9(
             Ptr::<u16>::from_string_literal(&[
                 65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 0 as u16,
             ]),
@@ -343,14 +239,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         )
     });
     ({
-        test2_8(
+        test2_9(
             Ptr::<u16>::from_string_literal(&[97 as u16, 0 as u16]),
             1_usize,
         )
     });
-    ({ test2_8(Ptr::<u16>::from_string_literal(&[0 as u16]), 0_usize) });
+    ({ test2_9(Ptr::<u16>::from_string_literal(&[0 as u16]), 0_usize) });
     ({
-        test2_9(
+        test2_12(
             Ptr::<u32>::from_string_literal(&[
                 65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32,
                 67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32,
@@ -373,7 +269,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         )
     });
     ({
-        test2_9(
+        test2_12(
             Ptr::<u32>::from_string_literal(&[
                 65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 0 as u32,
             ]),
@@ -381,12 +277,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         )
     });
     ({
-        test2_9(
+        test2_12(
             Ptr::<u32>::from_string_literal(&[97 as u32, 0 as u32]),
             1_usize,
         )
     });
-    ({ test2_9(Ptr::<u32>::from_string_literal(&[0 as u32]), 0_usize) });
+    ({ test2_12(Ptr::<u32>::from_string_literal(&[0 as u32]), 0_usize) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

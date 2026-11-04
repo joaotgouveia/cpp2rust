@@ -33,9 +33,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         true,
         "std::same_as<decltype(std::default_sentinel), const std::default_sentinel_t>"
     );;
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let s1: Value<std_default_sentinel_t> =
+        Rc::new(RefCell::new(<std_default_sentinel_t>::default()));
+    let s2: Value<std_default_sentinel_t> =
+        Rc::new(RefCell::new(<std_default_sentinel_t>::default()));
+    (*s2.borrow_mut()) = (*s1.borrow()).clone();
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

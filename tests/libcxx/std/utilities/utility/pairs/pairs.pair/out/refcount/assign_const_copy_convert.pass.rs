@@ -30,6 +30,11 @@ pub struct test_allocator_statistics {
     #[offset(36)]
     pub converted: i32,
 }
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_statistics {
     fn default() -> Self {
         {
@@ -57,6 +62,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_2(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -137,6 +147,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -151,6 +166,11 @@ impl Default for test_allocator_void_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -182,12 +202,21 @@ impl MutableCopy {
             alloc_constructed: false,
         }
     }
-    pub fn new_2(_a0: (), _a1: Ptr<test_allocator_int_>, o: Ptr<MutableCopy>) -> Self {
-        let _a0: Value<()> = Rc::new(RefCell::new(_a0));
+    pub fn new_2(
+        _a0: std_allocator_arg_t,
+        _a1: Ptr<test_allocator_int_>,
+        o: Ptr<MutableCopy>,
+    ) -> Self {
+        let _a0: Value<std_allocator_arg_t> = Rc::new(RefCell::new(_a0));
         Self {
             val: o.with(|__s| __s.val),
             alloc_constructed: true,
         }
+    }
+}
+impl CppMove for MutableCopy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for MutableCopy {
@@ -216,12 +245,21 @@ impl ConstCopy {
             alloc_constructed: false,
         }
     }
-    pub fn new_2(_a0: (), _a1: Ptr<test_allocator_int_>, o: Ptr<ConstCopy>) -> Self {
-        let _a0: Value<()> = Rc::new(RefCell::new(_a0));
+    pub fn new_2(
+        _a0: std_allocator_arg_t,
+        _a1: Ptr<test_allocator_int_>,
+        o: Ptr<ConstCopy>,
+    ) -> Self {
+        let _a0: Value<std_allocator_arg_t> = Rc::new(RefCell::new(_a0));
         Self {
             val: o.with(|__s| __s.val),
             alloc_constructed: true,
         }
+    }
+}
+impl CppMove for ConstCopy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for ConstCopy {
@@ -256,12 +294,21 @@ impl MutableMove {
             alloc_constructed: { (*_a0.upgrade().deref()).alloc_constructed },
         }
     }
-    pub fn new_2(_a0: (), _a1: Ptr<test_allocator_int_>, o: Ptr<MutableMove>) -> Self {
-        let _a0: Value<()> = Rc::new(RefCell::new(_a0));
+    pub fn new_2(
+        _a0: std_allocator_arg_t,
+        _a1: Ptr<test_allocator_int_>,
+        o: Ptr<MutableMove>,
+    ) -> Self {
+        let _a0: Value<std_allocator_arg_t> = Rc::new(RefCell::new(_a0));
         Self {
             val: o.with(|__s| __s.val),
             alloc_constructed: true,
         }
+    }
+}
+impl CppMove for MutableMove {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for MutableMove {
@@ -296,12 +343,21 @@ impl ConstMove {
             alloc_constructed: false,
         }
     }
-    pub fn new_2(_a0: (), _a1: Ptr<test_allocator_int_>, o: Ptr<ConstMove>) -> Self {
-        let _a0: Value<()> = Rc::new(RefCell::new(_a0));
+    pub fn new_2(
+        _a0: std_allocator_arg_t,
+        _a1: Ptr<test_allocator_int_>,
+        o: Ptr<ConstMove>,
+    ) -> Self {
+        let _a0: Value<std_allocator_arg_t> = Rc::new(RefCell::new(_a0));
         Self {
             val: o.with(|__s| __s.val),
             alloc_constructed: true,
         }
+    }
+}
+impl CppMove for ConstMove {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for ConstMove {
@@ -378,6 +434,11 @@ impl Clone for TracedCopyMove {
         TracedCopyMove::new_1(__src.as_pointer())
     }
 }
+impl CppMove for TracedCopyMove {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for TracedCopyMove {
     fn default() -> Self {
         {
@@ -404,38 +465,63 @@ pub fn constMoveCtrCalled_5(obj: Ptr<TracedCopyMove>) -> bool {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoConstructorFromInt {}
+impl CppMove for NoConstructorFromInt {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
-#[cpp_from(()  , new_1, mut_ptr)]
+#[cpp_from(std_tuple_CvtFromTupleRef_, new_1, mut_ptr)]
 #[byte_size(20)]
 pub struct CvtFromTupleRef {}
 impl CvtFromTupleRef {
-    pub fn new_1(other: Ptr<()>) -> Self {
+    pub fn new_1(other: Ptr<std_tuple_CvtFromTupleRef_>) -> Self {
         Self {}
+    }
+}
+impl CppMove for CvtFromTupleRef {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(20)]
 pub struct ExplicitCtrFromTupleRef {}
 impl ExplicitCtrFromTupleRef {
-    pub fn new_1(other: Ptr<()>) -> Self {
+    pub fn new_1(other: Ptr<std_tuple_ExplicitCtrFromTupleRef_>) -> Self {
         Self {}
     }
 }
+impl CppMove for ExplicitCtrFromTupleRef {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
-#[cpp_from_move(()  , new_1, ptr)]
+#[cpp_from_move(std_tuple_CvtFromConstTupleRefRef_, new_1, ptr)]
 #[byte_size(20)]
 pub struct CvtFromConstTupleRefRef {}
 impl CvtFromConstTupleRefRef {
-    pub fn new_1(other: Ptr<()>) -> Self {
+    pub fn new_1(other: Ptr<std_tuple_CvtFromConstTupleRefRef_>) -> Self {
         Self {}
+    }
+}
+impl CppMove for CvtFromConstTupleRefRef {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(20)]
 pub struct ExplicitCtrFromConstTupleRefRef {}
 impl ExplicitCtrFromConstTupleRefRef {
-    pub fn new_1(other: Ptr<()>) -> Self {
+    pub fn new_1(other: Ptr<std_tuple_const_ExplicitCtrFromConstTupleRefRef_>) -> Self {
         Self {}
+    }
+}
+impl CppMove for ExplicitCtrFromConstTupleRefRef {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, Default)]
@@ -565,15 +651,19 @@ const _: () = assert!(
 );
 pub fn test_6() -> bool {
     {
-        let mut i1: i32 = 1;
-        let mut i2: i32 = 2;
-        let mut j1: i64 = 3_i64;
-        let mut j2: i64 = 4_i64;
-        let p1: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(unimplemented!()));
-        let p2: Value<(Value<Ptr<i64>>, Value<Ptr<i64>>)> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!((((*p2.borrow()).0.borrow().clone().read()) == 1_i64));
-        assert!((((*p2.borrow()).1.borrow().clone().read()) == 2_i64));
+        let i1: Value<i32> = Rc::new(RefCell::new(1));
+        let i2: Value<i32> = Rc::new(RefCell::new(2));
+        let j1: Value<i64> = Rc::new(RefCell::new(3_i64));
+        let j2: Value<i64> = Rc::new(RefCell::new(4_i64));
+        let p1: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(
+            std_pair_int_ref__int_ref_::new_1({ i1.as_pointer() }, { i2.as_pointer() }),
+        ));
+        let p2: Value<(Value<Ptr<i64>>, Value<Ptr<i64>>)> = Rc::new(RefCell::new(
+            std_pair_long_ref__long_ref_::new_1({ j1.as_pointer() }, { j2.as_pointer() }),
+        ));
+        (*p2.borrow_mut()) = (*p1.borrow()).clone();
+        assert!(({ (((*p2.borrow()).0.borrow().clone().read()) == 1_i64) }));
+        assert!(({ (((*p2.borrow()).1.borrow().clone().read()) == 2_i64) }));
     }
     {
         let p1: Value<(Value<ConstCopyAssign>, Value<ConstCopyAssign>)> = Rc::new(RefCell::new((
@@ -593,20 +683,26 @@ pub fn test_6() -> bool {
                 AssignableFrom_ConstCopyAssign_::new_1({ __tmp_1.as_pointer() })
             })),
         )));
-        unimplemented!();
-        assert!(({ (*(*p2.borrow()).0.borrow()).v.val } == 1));
-        assert!(({ (*(*p2.borrow()).1.borrow()).v.val } == 2));
+        (*p2.borrow_mut()) = (*p1.borrow()).clone();
+        assert!(({ ({ (*(*p2.borrow()).0.borrow()).v.val } == 1) }));
+        assert!(({ ({ (*(*p2.borrow()).1.borrow()).v.val } == 2) }));
     }
     {
         let t1: Value<(Value<TracedAssignment>, Value<TracedAssignment>)> =
-            Rc::new(RefCell::new(unimplemented!()));
+            Rc::new(RefCell::new((
+                Rc::new(RefCell::new(<TracedAssignment>::default())),
+                Rc::new(RefCell::new(<TracedAssignment>::default())),
+            )));
         let t2: Value<(
             Value<AssignableFrom_TracedAssignment_>,
             Value<AssignableFrom_TracedAssignment_>,
-        )> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(({ (*(*t2.borrow()).0.borrow()).v.constCopyAssign } == 1));
-        assert!(({ (*(*t2.borrow()).1.borrow()).v.constCopyAssign } == 1));
+        )> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(<AssignableFrom_TracedAssignment_>::default())),
+            Rc::new(RefCell::new(<AssignableFrom_TracedAssignment_>::default())),
+        )));
+        (*t2.borrow_mut()) = (*t1.borrow()).clone();
+        assert!(({ ({ (*(*t2.borrow()).0.borrow()).v.constCopyAssign } == 1) }));
+        assert!(({ ({ (*(*t2.borrow()).1.borrow()).v.constCopyAssign } == 1) }));
     }
     return true;
 }

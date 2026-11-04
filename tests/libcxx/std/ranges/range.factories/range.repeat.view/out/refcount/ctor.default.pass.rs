@@ -12,6 +12,11 @@ pub struct DefaultInt42 {
     #[offset(0)]
     pub value: i32,
 }
+impl CppMove for DefaultInt42 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for DefaultInt42 {
     fn default() -> Self {
         { DefaultInt42 { value: 42 } }
@@ -26,6 +31,11 @@ impl Int {
         Self {}
     }
 }
+impl CppMove for Int {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "std::default_initializable<std::ranges::repeat_view<DefaultInt42>>"
@@ -35,8 +45,15 @@ const _: () = assert!(
     "!std::default_initializable<std::ranges::repeat_view<Int>>"
 );
 pub fn test_0() -> bool {
-    let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(({ ((unimplemented!()).clone()).value } == 42));
+    let rv: Value<std_ranges_repeat_view_DefaultInt42__std_unreachable_sentinel_t_> = Rc::new(
+        RefCell::new(<std_ranges_repeat_view_DefaultInt42__std_unreachable_sentinel_t_>::default()),
+    );
+    assert!(
+        (({ (*rv.borrow()).begin() })
+            .iter_deref()
+            .with(|__s| (__s).value)
+            == 42)
+    );
     return true;
 }
 pub fn main() {

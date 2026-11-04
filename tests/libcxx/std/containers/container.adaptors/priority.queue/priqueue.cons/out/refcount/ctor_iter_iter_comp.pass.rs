@@ -12,13 +12,24 @@ pub fn test_0() -> bool {
         ((::std::mem::size_of::<[i32; 7]>() as usize)
             .wrapping_div((::std::mem::size_of::<i32>() as usize))) as isize,
     );
-    let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let q: Value<std_priority_queue_int__std_vector_int__std_allocator_int____std_greater_int__> =
+        Rc::new(RefCell::new({
+            let __tmp_0: Value<std_greater_int_> =
+                Rc::new(RefCell::new(<std_greater_int_>::default()));
+            std_priority_queue_int__std_vector_int__std_allocator_int____std_greater_int__::new_1(
+                { (a.as_pointer() as Ptr<i32>) },
+                { (an).clone() },
+                { __tmp_0.as_pointer() },
+            )
+        }));
     assert!(
-        ({ (unimplemented!() as usize) } == {
-            ((((an).clone() - (a.as_pointer() as Ptr<i32>)) as i64) as usize)
+        ({
+            ({ (({ (*q.borrow()).size() }) as usize) } == {
+                ((((an).clone() - (a.as_pointer() as Ptr<i32>)) as i64) as usize)
+            })
         })
     );
-    assert!(((unimplemented!().read()) == 0));
+    assert!(({ ((({ (*q.borrow()).top() }).read()) == 0) }));
     return true;
 }
 pub fn main() {

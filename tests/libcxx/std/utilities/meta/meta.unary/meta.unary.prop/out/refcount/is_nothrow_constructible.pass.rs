@@ -9,12 +9,27 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TrivialNotNoexcept {}
+impl CppMove for TrivialNotNoexcept {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Empty {}
+impl CppMove for Empty {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct NotEmpty {}
+impl CppMove for NotEmpty {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
 #[byte_size(1)]
 pub struct Union {
@@ -23,6 +38,11 @@ pub struct Union {
     __bytes: Box<[u8]>,
 }
 impl Union {}
+impl CppMove for Union {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Union {
     fn default() -> Self {
         Union {
@@ -36,6 +56,11 @@ pub struct bit_zero {
     #[offset(0)]
     pub anon_0: i32,
 }
+impl CppMove for bit_zero {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A {}
@@ -44,6 +69,11 @@ impl A {}
 #[byte_size(1)]
 pub struct NonPODClass {}
 impl NonPODClass {}
+impl CppMove for NonPODClass {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type Enum = u32;
 pub const Enum_EV: Enum = 0;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -59,15 +89,35 @@ pub struct Base {
     #[byte_size(8)]
     pub p: Ptr<NonPODClass>,
 }
+impl CppMove for Base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(24)]
 pub struct Derived {}
+impl CppMove for Derived {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ExplicitConversionRvalueRef {}
+impl CppMove for ExplicitConversionRvalueRef {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ExplicitConversionRef {}
+impl CppMove for ExplicitConversionRef {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_is_nothrow_constructible_1() {
     const _: () = assert!(true, "( std::is_nothrow_constructible<T>::value)");;
     const _: () = assert!(true, "( std::is_nothrow_constructible_v<T>)");;
@@ -119,6 +169,11 @@ pub struct Tuple {}
 impl Tuple {
     pub fn new(_a0: Ptr<Empty>) -> Self {
         Self {}
+    }
+}
+impl CppMove for Tuple {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

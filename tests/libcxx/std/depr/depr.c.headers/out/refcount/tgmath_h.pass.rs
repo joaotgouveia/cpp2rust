@@ -27,7 +27,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let cd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let cd: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
     &(*cd.borrow_mut());
     let mut x: f64 = 1_f64.sin();
     &(x);

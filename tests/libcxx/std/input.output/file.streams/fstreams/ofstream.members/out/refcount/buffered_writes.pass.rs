@@ -35,6 +35,11 @@ impl UserManagedBuffer {
         }
     }
 }
+impl CppMove for UserManagedBuffer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(usize, new, value)]
 #[byte_size(8)]
@@ -54,6 +59,11 @@ impl Callable1<Ptr<()>, ()> for LibraryManagedBuffer {
         })
     }
 }
+impl CppMove for LibraryManagedBuffer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
 pub struct LibraryDefaultBuffer {}
@@ -67,6 +77,11 @@ impl Callable1<Ptr<()>, ()> for LibraryDefaultBuffer {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             LibraryDefaultBufferImpl::operator_call_2_char(__it, a1)
         })
+    }
+}
+impl CppMove for LibraryDefaultBuffer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for LibraryDefaultBuffer {
@@ -721,7 +736,7 @@ pub fn get_temp_file_name_38() -> Vec<i8> {
         std::process::abort();
     }
     FdRegistry::close(FD);
-    return std::mem::take(&mut (*Name.borrow_mut()));
+    return ({ std::mem::take(&mut (*Name.borrow_mut())) });
 }
 pub fn glibc_version_less_than_39(mut version: Ptr<i8>) -> bool {
     let test_version: Value<Vec<i8>> = Rc::new(RefCell::new({
@@ -748,7 +763,7 @@ pub fn test_write_40(policy: LibraryDefaultBuffer, payload_sizes: Ptr<Vec<i64>>)
     let previously_written: Value<usize> = Rc::new(RefCell::new(0_usize));
     let total_size: Value<()> = Rc::new(RefCell::new((unimplemented!() as ())));
     let data: Value<Vec<i8>> = Rc::new(RefCell::new(
-        (0..((*total_size.borrow()) as usize) as usize)
+        (0..({ ((*total_size.borrow()) as usize) }) as usize)
             .map(|_| 0_i8)
             .collect::<Vec<_>>(),
     ));
@@ -790,8 +805,10 @@ pub fn test_write_40(policy: LibraryDefaultBuffer, payload_sizes: Ptr<Vec<i64>>)
                     let _condition: bool = (((data
                         .decay()
                         .offset(
-                            (*previously_written.borrow()).wrapping_add(((*j.borrow()) as usize))
-                                as isize,
+                            ({
+                                (*previously_written.borrow())
+                                    .wrapping_add(((*j.borrow()) as usize))
+                            }) as isize,
                         )
                         .read()) as i32)
                         == ((*exp.borrow()) as i32));
@@ -836,7 +853,9 @@ pub fn test_write_40(policy: LibraryDefaultBuffer, payload_sizes: Ptr<Vec<i64>>)
         unimplemented!();
     }
     {
-        let ifs: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
+        let ifs: Value<::std::fs::File> = Rc::new(RefCell::new(
+            ::std::fs::File::open(p.decay().to_string()).expect("Failed to open file"),
+        ));
         let in_sz: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
             let _condition: bool = ((*in_sz.borrow()) == (*total_size.borrow()));
@@ -864,7 +883,7 @@ pub fn test_write_40(policy: LibraryDefaultBuffer, payload_sizes: Ptr<Vec<i64>>)
             )
         });
         let in_buffer: Value<Vec<i8>> = Rc::new(RefCell::new(
-            (0..((*total_size.borrow()) as usize) as usize)
+            (0..({ ((*total_size.borrow()) as usize) }) as usize)
                 .map(|_| 0_i8)
                 .collect::<Vec<_>>(),
         ));
@@ -879,8 +898,10 @@ pub fn test_write_40(policy: LibraryDefaultBuffer, payload_sizes: Ptr<Vec<i64>>)
                 )) as i8),
             ));
             ({
-                let _condition: bool = (((in_buffer.decay().offset((*i.borrow()) as isize).read())
-                    as i32)
+                let _condition: bool = (((in_buffer
+                    .decay()
+                    .offset(({ (*i.borrow()) }) as isize)
+                    .read()) as i32)
                     == ((*exp.borrow()) as i32));
                 let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                     {
@@ -921,7 +942,7 @@ pub fn test_write_41(policy: LibraryManagedBuffer, payload_sizes: Ptr<Vec<i64>>)
     let previously_written: Value<usize> = Rc::new(RefCell::new(0_usize));
     let total_size: Value<()> = Rc::new(RefCell::new((unimplemented!() as ())));
     let data: Value<Vec<i8>> = Rc::new(RefCell::new(
-        (0..((*total_size.borrow()) as usize) as usize)
+        (0..({ ((*total_size.borrow()) as usize) }) as usize)
             .map(|_| 0_i8)
             .collect::<Vec<_>>(),
     ));
@@ -963,8 +984,10 @@ pub fn test_write_41(policy: LibraryManagedBuffer, payload_sizes: Ptr<Vec<i64>>)
                     let _condition: bool = (((data
                         .decay()
                         .offset(
-                            (*previously_written.borrow()).wrapping_add(((*j.borrow()) as usize))
-                                as isize,
+                            ({
+                                (*previously_written.borrow())
+                                    .wrapping_add(((*j.borrow()) as usize))
+                            }) as isize,
                         )
                         .read()) as i32)
                         == ((*exp.borrow()) as i32));
@@ -1009,7 +1032,9 @@ pub fn test_write_41(policy: LibraryManagedBuffer, payload_sizes: Ptr<Vec<i64>>)
         unimplemented!();
     }
     {
-        let ifs: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
+        let ifs: Value<::std::fs::File> = Rc::new(RefCell::new(
+            ::std::fs::File::open(p.decay().to_string()).expect("Failed to open file"),
+        ));
         let in_sz: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
             let _condition: bool = ((*in_sz.borrow()) == (*total_size.borrow()));
@@ -1037,7 +1062,7 @@ pub fn test_write_41(policy: LibraryManagedBuffer, payload_sizes: Ptr<Vec<i64>>)
             )
         });
         let in_buffer: Value<Vec<i8>> = Rc::new(RefCell::new(
-            (0..((*total_size.borrow()) as usize) as usize)
+            (0..({ ((*total_size.borrow()) as usize) }) as usize)
                 .map(|_| 0_i8)
                 .collect::<Vec<_>>(),
         ));
@@ -1052,8 +1077,10 @@ pub fn test_write_41(policy: LibraryManagedBuffer, payload_sizes: Ptr<Vec<i64>>)
                 )) as i8),
             ));
             ({
-                let _condition: bool = (((in_buffer.decay().offset((*i.borrow()) as isize).read())
-                    as i32)
+                let _condition: bool = (((in_buffer
+                    .decay()
+                    .offset(({ (*i.borrow()) }) as isize)
+                    .read()) as i32)
                     == ((*exp.borrow()) as i32));
                 let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                     {
@@ -1094,7 +1121,7 @@ pub fn test_write_42(policy: UserManagedBuffer, payload_sizes: Ptr<Vec<i64>>) {
     let previously_written: Value<usize> = Rc::new(RefCell::new(0_usize));
     let total_size: Value<()> = Rc::new(RefCell::new((unimplemented!() as ())));
     let data: Value<Vec<i8>> = Rc::new(RefCell::new(
-        (0..((*total_size.borrow()) as usize) as usize)
+        (0..({ ((*total_size.borrow()) as usize) }) as usize)
             .map(|_| 0_i8)
             .collect::<Vec<_>>(),
     ));
@@ -1136,8 +1163,10 @@ pub fn test_write_42(policy: UserManagedBuffer, payload_sizes: Ptr<Vec<i64>>) {
                     let _condition: bool = (((data
                         .decay()
                         .offset(
-                            (*previously_written.borrow()).wrapping_add(((*j.borrow()) as usize))
-                                as isize,
+                            ({
+                                (*previously_written.borrow())
+                                    .wrapping_add(((*j.borrow()) as usize))
+                            }) as isize,
                         )
                         .read()) as i32)
                         == ((*exp.borrow()) as i32));
@@ -1182,7 +1211,9 @@ pub fn test_write_42(policy: UserManagedBuffer, payload_sizes: Ptr<Vec<i64>>) {
         unimplemented!();
     }
     {
-        let ifs: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
+        let ifs: Value<::std::fs::File> = Rc::new(RefCell::new(
+            ::std::fs::File::open(p.decay().to_string()).expect("Failed to open file"),
+        ));
         let in_sz: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
             let _condition: bool = ((*in_sz.borrow()) == (*total_size.borrow()));
@@ -1210,7 +1241,7 @@ pub fn test_write_42(policy: UserManagedBuffer, payload_sizes: Ptr<Vec<i64>>) {
             )
         });
         let in_buffer: Value<Vec<i8>> = Rc::new(RefCell::new(
-            (0..((*total_size.borrow()) as usize) as usize)
+            (0..({ ((*total_size.borrow()) as usize) }) as usize)
                 .map(|_| 0_i8)
                 .collect::<Vec<_>>(),
         ));
@@ -1225,8 +1256,10 @@ pub fn test_write_42(policy: UserManagedBuffer, payload_sizes: Ptr<Vec<i64>>) {
                 )) as i8),
             ));
             ({
-                let _condition: bool = (((in_buffer.decay().offset((*i.borrow()) as isize).read())
-                    as i32)
+                let _condition: bool = (((in_buffer
+                    .decay()
+                    .offset(({ (*i.borrow()) }) as isize)
+                    .read()) as i32)
                     == ((*exp.borrow()) as i32));
                 let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                     {
@@ -1305,8 +1338,10 @@ pub fn test_write_codecvt_43(policy: LibraryDefaultBuffer, payload_sizes: Ptr<Ve
                     let _condition: bool = (((data
                         .decay()
                         .offset(
-                            (*previously_written.borrow()).wrapping_add(((*j.borrow()) as usize))
-                                as isize,
+                            ({
+                                (*previously_written.borrow())
+                                    .wrapping_add(((*j.borrow()) as usize))
+                            }) as isize,
                         )
                         .read()) as i32)
                         == (*exp.borrow()));
@@ -1351,7 +1386,9 @@ pub fn test_write_codecvt_43(policy: LibraryDefaultBuffer, payload_sizes: Ptr<Ve
         unimplemented!();
     }
     {
-        let ifs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ifs: Value<()> = Rc::new(RefCell::new(
+            ::std::fs::File::open(p.decay().to_string()).expect("Failed to open file"),
+        ));
         unimplemented!();
         let in_buffer: Value<Vec<i32>> = Rc::new(RefCell::new(
             (0..(total_size as usize) as usize)
@@ -1363,8 +1400,10 @@ pub fn test_write_codecvt_43(policy: LibraryDefaultBuffer, payload_sizes: Ptr<Ve
         'loop_: while ((*i.borrow()) < (*in_buffer.borrow()).len()) {
             let exp: Value<i32> = Rc::new(RefCell::new(((*i.borrow()) as i32)));
             ({
-                let _condition: bool = (((in_buffer.decay().offset((*i.borrow()) as isize).read())
-                    as i32)
+                let _condition: bool = (((in_buffer
+                    .decay()
+                    .offset(({ (*i.borrow()) }) as isize)
+                    .read()) as i32)
                     == (*exp.borrow()));
                 let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                     {
@@ -1443,8 +1482,10 @@ pub fn test_write_codecvt_44(policy: LibraryManagedBuffer, payload_sizes: Ptr<Ve
                     let _condition: bool = (((data
                         .decay()
                         .offset(
-                            (*previously_written.borrow()).wrapping_add(((*j.borrow()) as usize))
-                                as isize,
+                            ({
+                                (*previously_written.borrow())
+                                    .wrapping_add(((*j.borrow()) as usize))
+                            }) as isize,
                         )
                         .read()) as i32)
                         == (*exp.borrow()));
@@ -1489,7 +1530,9 @@ pub fn test_write_codecvt_44(policy: LibraryManagedBuffer, payload_sizes: Ptr<Ve
         unimplemented!();
     }
     {
-        let ifs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ifs: Value<()> = Rc::new(RefCell::new(
+            ::std::fs::File::open(p.decay().to_string()).expect("Failed to open file"),
+        ));
         unimplemented!();
         let in_buffer: Value<Vec<i32>> = Rc::new(RefCell::new(
             (0..(total_size as usize) as usize)
@@ -1501,8 +1544,10 @@ pub fn test_write_codecvt_44(policy: LibraryManagedBuffer, payload_sizes: Ptr<Ve
         'loop_: while ((*i.borrow()) < (*in_buffer.borrow()).len()) {
             let exp: Value<i32> = Rc::new(RefCell::new(((*i.borrow()) as i32)));
             ({
-                let _condition: bool = (((in_buffer.decay().offset((*i.borrow()) as isize).read())
-                    as i32)
+                let _condition: bool = (((in_buffer
+                    .decay()
+                    .offset(({ (*i.borrow()) }) as isize)
+                    .read()) as i32)
                     == (*exp.borrow()));
                 let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                     {
@@ -1576,8 +1621,10 @@ pub fn test_write_codecvt_45(policy: UserManagedBuffer, payload_sizes: Ptr<Vec<i
                     let _condition: bool = (((data
                         .decay()
                         .offset(
-                            (*previously_written.borrow()).wrapping_add(((*j.borrow()) as usize))
-                                as isize,
+                            ({
+                                (*previously_written.borrow())
+                                    .wrapping_add(((*j.borrow()) as usize))
+                            }) as isize,
                         )
                         .read()) as i32)
                         == (*exp.borrow()));
@@ -1622,7 +1669,9 @@ pub fn test_write_codecvt_45(policy: UserManagedBuffer, payload_sizes: Ptr<Vec<i
         unimplemented!();
     }
     {
-        let ifs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ifs: Value<()> = Rc::new(RefCell::new(
+            ::std::fs::File::open(p.decay().to_string()).expect("Failed to open file"),
+        ));
         unimplemented!();
         let in_buffer: Value<Vec<i32>> = Rc::new(RefCell::new(
             (0..(total_size as usize) as usize)
@@ -1634,8 +1683,10 @@ pub fn test_write_codecvt_45(policy: UserManagedBuffer, payload_sizes: Ptr<Vec<i
         'loop_: while ((*i.borrow()) < (*in_buffer.borrow()).len()) {
             let exp: Value<i32> = Rc::new(RefCell::new(((*i.borrow()) as i32)));
             ({
-                let _condition: bool = (((in_buffer.decay().offset((*i.borrow()) as isize).read())
-                    as i32)
+                let _condition: bool = (((in_buffer
+                    .decay()
+                    .offset(({ (*i.borrow()) }) as isize)
+                    .read()) as i32)
                     == (*exp.borrow()));
                 let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                     {

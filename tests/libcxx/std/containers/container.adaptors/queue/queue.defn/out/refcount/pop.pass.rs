@@ -27,24 +27,35 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    assert!((unimplemented!() == 3_()));
-    assert!(((unimplemented!().read()) == 1));
-    assert!(((unimplemented!().read()) == 3));
-    unimplemented!();
-    assert!((unimplemented!() == 2_()));
-    assert!(((unimplemented!().read()) == 2));
-    assert!(((unimplemented!().read()) == 3));
-    unimplemented!();
-    assert!((unimplemented!() == 1_()));
-    assert!(((unimplemented!().read()) == 3));
-    assert!(((unimplemented!().read()) == 3));
-    unimplemented!();
-    assert!((unimplemented!() == 0_()));
+    let q: Value<std_queue_int__std_deque_int__std_allocator_int___> = Rc::new(RefCell::new(
+        <std_queue_int__std_deque_int__std_allocator_int___>::default(),
+    ));
+    assert!(({ (({ (*q.borrow()).size() }) == 0_u64) }));
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(1));
+        (*q.borrow()).push_20(___x.as_pointer())
+    });
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(2));
+        (*q.borrow()).push_20(___x.as_pointer())
+    });
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(3));
+        (*q.borrow()).push_20(___x.as_pointer())
+    });
+    assert!(({ (({ (*q.borrow()).size() }) == 3_u64) }));
+    assert!(({ ((({ (*q.borrow()).front_15() }).read()) == 1) }));
+    assert!(({ ((({ (*q.borrow()).back_17() }).read()) == 3) }));
+    ({ (*q.borrow()).pop() });
+    assert!(({ (({ (*q.borrow()).size() }) == 2_u64) }));
+    assert!(({ ((({ (*q.borrow()).front_15() }).read()) == 2) }));
+    assert!(({ ((({ (*q.borrow()).back_17() }).read()) == 3) }));
+    ({ (*q.borrow()).pop() });
+    assert!(({ (({ (*q.borrow()).size() }) == 1_u64) }));
+    assert!(({ ((({ (*q.borrow()).front_15() }).read()) == 3) }));
+    assert!(({ ((({ (*q.borrow()).back_17() }).read()) == 3) }));
+    ({ (*q.borrow()).pop() });
+    assert!(({ (({ (*q.borrow()).size() }) == 0_u64) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

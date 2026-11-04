@@ -6,8 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(_a0: ()) {
-    let _a0: Value<()> = Rc::new(RefCell::new(_a0));
+pub fn test_0(_a0: std_allocator_arg_t) {
+    let _a0: Value<std_allocator_arg_t> = Rc::new(RefCell::new(_a0));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -29,7 +29,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_0(unimplemented!()) });
+    ({ test_0((*allocator_arg_1.with(Value::clone).borrow()).clone()) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

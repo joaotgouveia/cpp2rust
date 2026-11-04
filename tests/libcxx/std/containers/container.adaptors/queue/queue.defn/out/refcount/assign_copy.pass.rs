@@ -13,7 +13,7 @@ pub fn make_0(mut n: i32) -> Vec<i32> {
         (*c.borrow_mut()).push(i);
         i.prefix_inc();
     }
-    return std::mem::take(&mut (*c.borrow_mut()));
+    return ({ std::mem::take(&mut (*c.borrow_mut())) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

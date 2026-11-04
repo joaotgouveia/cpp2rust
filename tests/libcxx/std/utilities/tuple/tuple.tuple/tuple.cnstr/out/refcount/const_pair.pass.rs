@@ -32,16 +32,25 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new((2 as i64))),
             Rc::new(RefCell::new(('a' as i8))),
         )));
-        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!().read()) == 2_()));
-        assert!((((unimplemented!().read()) as i32) == ((('a' as i8) as i16) as i32)));
+        let t1: Value<std_tuple_long_long__short_> =
+            Rc::new(RefCell::new(std_tuple_long_long__short_::new_1({
+                t0.as_pointer()
+            })));
+        assert!(((({ libcc2rs::get_refcount(t1.as_pointer(),) }).read()) == 2_i64));
+        assert!(
+            (((({ libcc2rs::get_refcount(t1.as_pointer(),) }).read()) as i32)
+                == ((('a' as i8) as i16) as i32))
+        );
     }
     {
         let p0: Value<(Value<i64>, Value<i8>)> = Rc::new(RefCell::new((
             Rc::new(RefCell::new((2 as i64))),
             Rc::new(RefCell::new(('a' as i8))),
         )));
-        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t1: Value<std_tuple_long_long__short_> =
+            Rc::new(RefCell::new(std_tuple_long_long__short_::new_2({
+                p0.as_pointer()
+            })));
         const _: () = assert!(true, "std::get<0>(t1) == std::get<0>(p0)");;
         const _: () = assert!(true, "std::get<1>(t1) == std::get<1>(p0)");;
         const _: () = assert!(true, "std::get<0>(t1) == 2");;

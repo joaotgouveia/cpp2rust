@@ -7,43 +7,63 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_const_container_0(c: Ptr<Vec<i32>>) {
-    assert!(({ (unimplemented!() as i32) } == { ((*c.upgrade().deref()).is_empty() as i32) }));
-}
-pub fn test_const_container_1(c: Ptr<()>) {
-    assert!(({ (unimplemented!() as i32) } == { (unimplemented!() as i32) }));
+    assert!(
+        ({
+            ({ (({ empty_1((c).clone()) }) as i32) } == {
+                ((*c.upgrade().deref()).is_empty() as i32)
+            })
+        })
+    );
 }
 pub fn test_const_container_2(c: Ptr<Vec<i32>>) {
-    assert!(({ (unimplemented!() as i32) } == { (unimplemented!() as i32) }));
-}
-pub fn test_const_container_3(c: Ptr<()>) {
-    assert!(({ (unimplemented!() as i32) } == { (unimplemented!() as i32) }));
+    assert!(
+        ({
+            ({ (({ empty_3((c).clone()) }) as i32) } == {
+                (({ (*c.upgrade().deref()).empty() }) as i32)
+            })
+        })
+    );
 }
 pub fn test_const_container_4(c: Ptr<Vec<i32>>) {
     assert!(
-        ({ (unimplemented!() as i32) } == { (((*c.upgrade().deref()).len() == 0_usize) as i32) })
+        ({
+            ({ (({ empty_5((*c.upgrade().deref()).clone()) }) as i32) } == {
+                (((*c.upgrade().deref()).len() == 0_usize) as i32)
+            })
+        })
     );
 }
-pub fn test_container_5(c: Ptr<Vec<i32>>) {
-    assert!(({ (unimplemented!() as i32) } == { ((*c.upgrade().deref()).is_empty() as i32) }));
-}
-pub fn test_container_6(c: Ptr<()>) {
-    assert!(({ (unimplemented!() as i32) } == { (unimplemented!() as i32) }));
+pub fn test_container_6(c: Ptr<Vec<i32>>) {
+    assert!(
+        ({
+            ({ (({ empty_1((c).clone()) }) as i32) } == {
+                ((*c.upgrade().deref()).is_empty() as i32)
+            })
+        })
+    );
 }
 pub fn test_container_7(c: Ptr<Vec<i32>>) {
-    assert!(({ (unimplemented!() as i32) } == { (unimplemented!() as i32) }));
-}
-pub fn test_container_8(c: Ptr<()>) {
-    assert!(({ (unimplemented!() as i32) } == { (unimplemented!() as i32) }));
-}
-pub fn test_container_9(c: Ptr<Vec<i32>>) {
-    const _: () = assert!(true, "");;
     assert!(
-        ({ (unimplemented!() as i32) } == { (((*c.upgrade().deref()).len() == 0_usize) as i32) })
+        ({
+            ({ (({ empty_3((c).clone()) }) as i32) } == {
+                (({ (*c.upgrade().deref()).empty() }) as i32)
+            })
+        })
     );
 }
-pub fn test_const_array_10(array: Ptr<i32>) {
+pub fn test_container_8(c: Ptr<Vec<i32>>) {
     const _: () = assert!(true, "");;
-    assert!(!(unimplemented!()));
+    assert!(
+        ({
+            ({ (({ empty_5((*c.upgrade().deref()).clone()) }) as i32) } == {
+                (((*c.upgrade().deref()).len() == 0_usize) as i32)
+            })
+        })
+    );
+}
+pub fn test_const_array_9(array: Ptr<i32>) {
+    const _: () = assert!(true, "");;
+    assert!(!({ empty_10((array).clone(),) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -70,28 +90,36 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let __a1 = 1;
         (*v.borrow_mut()).push(__a1)
     };
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let l: Value<std_list_int__std_allocator_int__> =
+        Rc::new(RefCell::new(<std_list_int__std_allocator_int__>::default()));
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(2));
+        (*l.borrow()).push_back_52(___x.as_pointer())
+    });
     let a: Value<Vec<i32>> = Rc::new(RefCell::new(
         std::array::from_fn::<_, 1, _>(|_| 0_i32).to_vec(),
     ));
     a.decay().offset(0_usize as isize).write(3);
     let il: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([4])));
-    ({ test_container_5(v.as_pointer()) });
-    ({ test_container_6(l.as_pointer()) });
+    ({ test_container_6(v.as_pointer()) });
+    ({ test_container_11(l.as_pointer()) });
     ({ test_container_7(a.as_pointer()) });
-    ({ test_container_9(il.as_pointer()) });
+    ({ test_container_8(il.as_pointer()) });
     ({ test_const_container_0(v.as_pointer()) });
-    ({ test_const_container_1(l.as_pointer()) });
+    ({ test_const_container_12(l.as_pointer()) });
     ({ test_const_container_2(a.as_pointer()) });
     ({ test_const_container_4(il.as_pointer()) });
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ test_container_8(sv.as_pointer()) });
-    ({ test_const_container_3(sv.as_pointer()) });
-    ({ test_const_array_10(arrA_11.with(|v| v.as_pointer())) });
+    let sv: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1({
+            Ptr::<i8>::from_string_literal(b"ABC")
+        }),
+    ));
+    ({ test_container_13(sv.as_pointer()) });
+    ({ test_const_container_14(sv.as_pointer()) });
+    ({ test_const_array_9(arrA_15.with(|v| v.as_pointer())) });
     return 0;
 }
 thread_local!(
-    static arrA_11: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+    static arrA_15: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
 );
 pub fn __cpp2rust_init_globals() {}

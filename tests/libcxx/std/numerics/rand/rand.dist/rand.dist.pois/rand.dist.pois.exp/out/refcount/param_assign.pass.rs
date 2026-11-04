@@ -28,10 +28,14 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p0: Value<std_exponential_distribution___param_type> = Rc::new(RefCell::new(
+            std_exponential_distribution___param_type::new_1({ 0.7_f64 }),
+        ));
+        let p: Value<std_exponential_distribution___param_type> = Rc::new(RefCell::new(
+            <std_exponential_distribution___param_type>::default(),
+        ));
         (*p.borrow_mut()) = (*p0.borrow()).clone();
-        assert!((unimplemented!() == 0.7_f64));
+        assert!(({ (({ (*p.borrow()).lambda() }) == 0.7_f64) }));
     }
     return 0;
 }

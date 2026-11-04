@@ -27,25 +27,52 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let from: Value<Box<[()]>> = Rc::new(RefCell::new(Box::from([
-        115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (), 120 as (),
-        116 as (), 0 as (),
+    let from: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::from([
+        115 as u8, 111 as u8, 109 as u8, 101 as u8, 32 as u8, 116 as u8, 101 as u8, 120 as u8,
+        116 as u8, 0 as u8,
     ])));
-    let to: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..9).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let f: Ptr<()> = unimplemented!();
+    let to: Value<Box<[u16]>> =
+        Rc::new(RefCell::new((0..9).map(|_| 0_u16).collect::<Box<[u16]>>()));
+    let f: Ptr<std_codecvt_char16_t__char8_t____mbstate_t_> =
+        ({ use_facet_0(({ std_locale::classic() })) });
     let mbs: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-    let mut from_next: Ptr<()> = Ptr::<()>::null();
-    let mut to_next: Ptr<()> = Ptr::<()>::null();
-    assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
-    assert!((((from_next).clone() - (from.as_pointer() as Ptr::<()>)) as i64 == 9_i64));
-    assert!((((to_next).clone() - (to.as_pointer() as Ptr::<()>)) as i64 == 9_i64));
+    let from_next: Value<Ptr<u8>> = Rc::new(RefCell::new(Ptr::<u8>::null()));
+    let to_next: Value<Ptr<u16>> = Rc::new(RefCell::new(Ptr::<u16>::null()));
+    assert!(
+        ({
+            ((({
+                let ___from: Ptr<u8> = (from.as_pointer() as Ptr<u8>);
+                let ___from_end: Ptr<u8> = (from.as_pointer() as Ptr<u8>).offset((9) as isize);
+                let ___to: Ptr<u16> = (to.as_pointer() as Ptr<u16>);
+                let ___to_end: Ptr<u16> = (to.as_pointer() as Ptr<u16>).offset((9) as isize);
+                ((*f.upgrade().deref())
+                    as std___codecvt_abstract_base_char16_t__char8_t____mbstate_t_)
+                    .in_(
+                        mbs.as_pointer(),
+                        ___from,
+                        ___from_end,
+                        from_next.as_pointer(),
+                        ___to,
+                        ___to_end,
+                        to_next.as_pointer(),
+                    )
+            }) as i32)
+                == (std_codecvt_base_result_ok as i32))
+        })
+    );
+    assert!(
+        ({ (((*from_next.borrow()).clone() - (from.as_pointer() as Ptr::<u8>)) as i64 == 9_i64) })
+    );
+    assert!(
+        ({ (((*to_next.borrow()).clone() - (to.as_pointer() as Ptr::<u16>)) as i64 == 9_i64) })
+    );
     let mut i: u32 = 0_u32;
     'loop_: while (i < 9_u32) {
         assert!(
-            (((*to.borrow())[(i) as usize] as i32)
-                == (((*from.borrow())[(i) as usize] as u16) as i32))
+            ({
+                (((*to.borrow())[(i) as usize] as i32)
+                    == (((*from.borrow())[(i) as usize] as u16) as i32))
+            })
         );
         i.prefix_inc();
     }

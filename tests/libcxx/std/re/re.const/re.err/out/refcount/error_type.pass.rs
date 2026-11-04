@@ -40,84 +40,318 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
+    assert!(
+        ((error_collate_0.with(|rc| *rc.borrow()) as i32)
+            != (error_ctype_1.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_collate_0.with(|rc| *rc.borrow()) as i32)
+            != (error_escape_2.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_collate_0.with(|rc| *rc.borrow()) as i32)
+            != (error_backref_3.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_collate_0.with(|rc| *rc.borrow()) as i32)
+            != (error_brack_4.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_collate_0.with(|rc| *rc.borrow()) as i32)
+            != (error_paren_5.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_collate_0.with(|rc| *rc.borrow()) as i32)
+            != (error_brace_6.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_collate_0.with(|rc| *rc.borrow()) as i32)
+            != (error_badbrace_7.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_collate_0.with(|rc| *rc.borrow()) as i32)
+            != (error_range_8.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_collate_0.with(|rc| *rc.borrow()) as i32)
+            != (error_space_9.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_collate_0.with(|rc| *rc.borrow()) as i32)
+            != (error_badrepeat_10.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_collate_0.with(|rc| *rc.borrow()) as i32)
+            != (error_complexity_11.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_collate_0.with(|rc| *rc.borrow()) as i32)
+            != (error_stack_12.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_ctype_1.with(|rc| *rc.borrow()) as i32)
+            != (error_escape_2.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_ctype_1.with(|rc| *rc.borrow()) as i32)
+            != (error_backref_3.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_ctype_1.with(|rc| *rc.borrow()) as i32)
+            != (error_brack_4.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_ctype_1.with(|rc| *rc.borrow()) as i32)
+            != (error_paren_5.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_ctype_1.with(|rc| *rc.borrow()) as i32)
+            != (error_brace_6.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_ctype_1.with(|rc| *rc.borrow()) as i32)
+            != (error_badbrace_7.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_ctype_1.with(|rc| *rc.borrow()) as i32)
+            != (error_range_8.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_ctype_1.with(|rc| *rc.borrow()) as i32)
+            != (error_space_9.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_ctype_1.with(|rc| *rc.borrow()) as i32)
+            != (error_badrepeat_10.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_ctype_1.with(|rc| *rc.borrow()) as i32)
+            != (error_complexity_11.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_ctype_1.with(|rc| *rc.borrow()) as i32)
+            != (error_stack_12.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_escape_2.with(|rc| *rc.borrow()) as i32)
+            != (error_backref_3.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_escape_2.with(|rc| *rc.borrow()) as i32)
+            != (error_brack_4.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_escape_2.with(|rc| *rc.borrow()) as i32)
+            != (error_paren_5.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_escape_2.with(|rc| *rc.borrow()) as i32)
+            != (error_brace_6.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_escape_2.with(|rc| *rc.borrow()) as i32)
+            != (error_badbrace_7.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_escape_2.with(|rc| *rc.borrow()) as i32)
+            != (error_range_8.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_escape_2.with(|rc| *rc.borrow()) as i32)
+            != (error_space_9.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_escape_2.with(|rc| *rc.borrow()) as i32)
+            != (error_badrepeat_10.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_escape_2.with(|rc| *rc.borrow()) as i32)
+            != (error_complexity_11.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_escape_2.with(|rc| *rc.borrow()) as i32)
+            != (error_stack_12.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_backref_3.with(|rc| *rc.borrow()) as i32)
+            != (error_brack_4.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_backref_3.with(|rc| *rc.borrow()) as i32)
+            != (error_paren_5.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_backref_3.with(|rc| *rc.borrow()) as i32)
+            != (error_brace_6.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_backref_3.with(|rc| *rc.borrow()) as i32)
+            != (error_badbrace_7.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_backref_3.with(|rc| *rc.borrow()) as i32)
+            != (error_range_8.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_backref_3.with(|rc| *rc.borrow()) as i32)
+            != (error_space_9.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_backref_3.with(|rc| *rc.borrow()) as i32)
+            != (error_badrepeat_10.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_backref_3.with(|rc| *rc.borrow()) as i32)
+            != (error_complexity_11.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_backref_3.with(|rc| *rc.borrow()) as i32)
+            != (error_stack_12.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_brack_4.with(|rc| *rc.borrow()) as i32)
+            != (error_paren_5.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_brack_4.with(|rc| *rc.borrow()) as i32)
+            != (error_brace_6.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_brack_4.with(|rc| *rc.borrow()) as i32)
+            != (error_badbrace_7.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_brack_4.with(|rc| *rc.borrow()) as i32)
+            != (error_range_8.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_brack_4.with(|rc| *rc.borrow()) as i32)
+            != (error_space_9.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_brack_4.with(|rc| *rc.borrow()) as i32)
+            != (error_badrepeat_10.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_brack_4.with(|rc| *rc.borrow()) as i32)
+            != (error_complexity_11.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_brack_4.with(|rc| *rc.borrow()) as i32)
+            != (error_stack_12.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_paren_5.with(|rc| *rc.borrow()) as i32)
+            != (error_brace_6.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_paren_5.with(|rc| *rc.borrow()) as i32)
+            != (error_badbrace_7.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_paren_5.with(|rc| *rc.borrow()) as i32)
+            != (error_range_8.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_paren_5.with(|rc| *rc.borrow()) as i32)
+            != (error_space_9.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_paren_5.with(|rc| *rc.borrow()) as i32)
+            != (error_badrepeat_10.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_paren_5.with(|rc| *rc.borrow()) as i32)
+            != (error_complexity_11.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_paren_5.with(|rc| *rc.borrow()) as i32)
+            != (error_stack_12.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_brace_6.with(|rc| *rc.borrow()) as i32)
+            != (error_badbrace_7.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_brace_6.with(|rc| *rc.borrow()) as i32)
+            != (error_range_8.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_brace_6.with(|rc| *rc.borrow()) as i32)
+            != (error_space_9.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_brace_6.with(|rc| *rc.borrow()) as i32)
+            != (error_badrepeat_10.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_brace_6.with(|rc| *rc.borrow()) as i32)
+            != (error_complexity_11.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_brace_6.with(|rc| *rc.borrow()) as i32)
+            != (error_stack_12.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_badbrace_7.with(|rc| *rc.borrow()) as i32)
+            != (error_range_8.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_badbrace_7.with(|rc| *rc.borrow()) as i32)
+            != (error_space_9.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_badbrace_7.with(|rc| *rc.borrow()) as i32)
+            != (error_badrepeat_10.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_badbrace_7.with(|rc| *rc.borrow()) as i32)
+            != (error_complexity_11.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_badbrace_7.with(|rc| *rc.borrow()) as i32)
+            != (error_stack_12.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_range_8.with(|rc| *rc.borrow()) as i32)
+            != (error_space_9.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_range_8.with(|rc| *rc.borrow()) as i32)
+            != (error_badrepeat_10.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_range_8.with(|rc| *rc.borrow()) as i32)
+            != (error_complexity_11.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_range_8.with(|rc| *rc.borrow()) as i32)
+            != (error_stack_12.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_space_9.with(|rc| *rc.borrow()) as i32)
+            != (error_badrepeat_10.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_space_9.with(|rc| *rc.borrow()) as i32)
+            != (error_complexity_11.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_space_9.with(|rc| *rc.borrow()) as i32)
+            != (error_stack_12.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_badrepeat_10.with(|rc| *rc.borrow()) as i32)
+            != (error_complexity_11.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_badrepeat_10.with(|rc| *rc.borrow()) as i32)
+            != (error_stack_12.with(|rc| *rc.borrow()) as i32))
+    );
+    assert!(
+        ((error_complexity_11.with(|rc| *rc.borrow()) as i32)
+            != (error_stack_12.with(|rc| *rc.borrow()) as i32))
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

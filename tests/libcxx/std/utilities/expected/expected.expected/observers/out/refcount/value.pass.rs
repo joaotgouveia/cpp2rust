@@ -8,31 +8,31 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Ptr<i32> = unimplemented!();
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new(5));
+        let x: Ptr<i32> = ({ (*e.borrow()).value_35() });
         const _: () = assert!(true, "std::same_as<decltype(x), int&>");;
-        assert!(({ (x).clone() } == { (unimplemented!()) }));
+        assert!(({ (x).clone() } == { (e.as_pointer()) }));
         assert!(((x.read()) == 5));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Ptr<i32> = unimplemented!();
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new(5));
+        let x: Ptr<i32> = ({ (*e.borrow()).value_34() });
         const _: () = assert!(true, "std::same_as<decltype(x), const int&>");;
-        assert!(({ (x).clone() } == { (unimplemented!()) }));
+        assert!(({ (x).clone() } == { (e.as_pointer()) }));
         assert!(((x.read()) == 5));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Ptr<i32> = unimplemented!();
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new(5));
+        let x: Ptr<i32> = ({ (*e.borrow()).value_37() });
         const _: () = assert!(true, "std::same_as<decltype(x), int&&>");;
-        assert!(({ (x).clone() } == { (unimplemented!()) }));
+        assert!(({ (x).clone() } == { (e.as_pointer()) }));
         assert!(((x.read()) == 5));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Ptr<i32> = unimplemented!();
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new(5));
+        let x: Ptr<i32> = ({ (*e.borrow()).value_36() });
         const _: () = assert!(true, "std::same_as<decltype(x), const int&&>");;
-        assert!(({ (x).clone() } == { (unimplemented!()) }));
+        assert!(({ (x).clone() } == { (e.as_pointer()) }));
         assert!(((x.read()) == 5));
     }
     return true;

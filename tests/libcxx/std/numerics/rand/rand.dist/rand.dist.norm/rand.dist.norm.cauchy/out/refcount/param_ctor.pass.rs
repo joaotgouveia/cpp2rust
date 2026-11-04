@@ -28,19 +28,25 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_f64));
-        assert!((unimplemented!() == 1_f64));
+        let p: Value<std_cauchy_distribution___param_type> = Rc::new(RefCell::new(
+            <std_cauchy_distribution___param_type>::default(),
+        ));
+        assert!(({ (({ (*p.borrow()).a() }) == 0_f64) }));
+        assert!(({ (({ (*p.borrow()).b() }) == 1_f64) }));
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10_f64));
-        assert!((unimplemented!() == 1_f64));
+        let p: Value<std_cauchy_distribution___param_type> = Rc::new(RefCell::new(
+            std_cauchy_distribution___param_type::new_1({ 10_f64 }, None),
+        ));
+        assert!(({ (({ (*p.borrow()).a() }) == 10_f64) }));
+        assert!(({ (({ (*p.borrow()).b() }) == 1_f64) }));
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10_f64));
-        assert!((unimplemented!() == 5_f64));
+        let p: Value<std_cauchy_distribution___param_type> = Rc::new(RefCell::new(
+            std_cauchy_distribution___param_type::new_1({ 10_f64 }, { Some(5_f64) }),
+        ));
+        assert!(({ (({ (*p.borrow()).a() }) == 10_f64) }));
+        assert!(({ (({ (*p.borrow()).b() }) == 5_f64) }));
     }
     return 0;
 }

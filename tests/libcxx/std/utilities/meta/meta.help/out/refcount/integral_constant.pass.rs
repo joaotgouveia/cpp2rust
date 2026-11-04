@@ -31,7 +31,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "(std::is_same<_5::value_type, int>::value)");;
     const _: () = assert!(true, "(std::is_same<_5::type, _5>::value)");;
     const _: () = assert!(true, "(_5() == 5)");;
-    assert!((unimplemented!() == 5));
+    assert!((({ <std_integral_constant_int__5_>::default()() }) == 5));
     const _: () = assert!(true, "_5{{}}() == 5");;
     const _: () = assert!(true, "std::true_type{{}}()");;
     const _: () = assert!(true, "std::false_type::value == false");;
@@ -52,12 +52,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         true,
         "(std::is_same<std::true_type::type, std::true_type>::value)"
     );;
-    let f1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let f2: Value<()> = Rc::new(RefCell::new((*f1.borrow()).clone()));
-    assert!(!(unimplemented!()));
-    let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let t2: Value<()> = Rc::new(RefCell::new((*t1.borrow()).clone()));
-    assert!((unimplemented!() as bool));
+    let f1: Value<std_integral_constant_bool__false_> =
+        Rc::new(RefCell::new(<std_integral_constant_bool__false_>::default()));
+    let f2: Value<std_integral_constant_bool__false_> =
+        Rc::new(RefCell::new((*f1.borrow()).clone()));
+    assert!(({ !({ (*f2.borrow())() }) }));
+    let t1: Value<std_integral_constant_bool__true_> =
+        Rc::new(RefCell::new(<std_integral_constant_bool__true_>::default()));
+    let t2: Value<std_integral_constant_bool__true_> =
+        Rc::new(RefCell::new((*t1.borrow()).clone()));
+    assert!(({ (({ (*t2.borrow())() }) as bool) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

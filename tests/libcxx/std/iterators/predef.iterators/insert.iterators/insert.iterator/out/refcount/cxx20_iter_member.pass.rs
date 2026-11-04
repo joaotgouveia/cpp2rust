@@ -12,6 +12,7 @@ pub const anon_0_value: anon_0 = 1;
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_insert_iterator_NoIteratorAlias___std_insert_iterator_NoIteratorAlias__
 {}
+impl CppMove for test_macros_detail_is_same_std_insert_iterator_NoIteratorAlias___std_insert_iterator_NoIteratorAlias__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(f64, new, value)]
 #[cpp_into(f64, to_f64)]
@@ -25,12 +26,22 @@ impl NoIteratorAlias_value_type {
         Self { x: (d as i32) }
     }
 }
+impl CppMove for NoIteratorAlias_value_type {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(24)]
 pub struct NoIteratorAlias {
     #[offset(0)]
     #[byte_size(24)]
     pub data_: Box<[f64]>,
+}
+impl CppMove for NoIteratorAlias {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for NoIteratorAlias {
     fn default() -> Self {

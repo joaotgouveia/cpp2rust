@@ -11,16 +11,31 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_strong_ordering__std_strong_ordering_ {}
+impl CppMove for test_macros_detail_is_same_std_strong_ordering__std_strong_ordering_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_partial_ordering__std_partial_ordering_ {}
+impl CppMove for test_macros_detail_is_same_std_partial_ordering__std_partial_ordering_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_weak_ordering__std_weak_ordering_ {}
+impl CppMove for test_macros_detail_is_same_std_weak_ordering__std_weak_ordering_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn synth_three_way_3(t: Ptr<i32>, u: Ptr<i32>) -> () {
     return unimplemented!();
 }
@@ -63,6 +78,11 @@ pub fn operator_lt_21(mut _a0: i32, _a1: Ptr<CustomEquality>) -> bool {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct CustomEquality {}
+impl CppMove for CustomEquality {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_22() -> bool {
     {
         assert!(
@@ -70,27 +90,27 @@ pub fn test_22() -> bool {
                 let _t: Value<i32> = Rc::new(RefCell::new(1));
                 let _u: Value<i32> = Rc::new(RefCell::new(1));
                 synth_three_way_3(_t.as_pointer(), _u.as_pointer())
-            }) == std::cmp::Ordering::Equal
+            }) == ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) })
         );
         assert!(
             ({
                 let _t: Value<i32> = Rc::new(RefCell::new(2));
                 let _u: Value<i32> = Rc::new(RefCell::new(1));
                 synth_three_way_3(_t.as_pointer(), _u.as_pointer())
-            }) == std::cmp::Ordering::Greater
+            }) == ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) })
         );
         assert!(
             ({
                 let _t: Value<i32> = Rc::new(RefCell::new(1));
                 let _u: Value<i32> = Rc::new(RefCell::new(2));
                 synth_three_way_3(_t.as_pointer(), _u.as_pointer())
-            }) == std::cmp::Ordering::Less
+            }) == ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) })
         );
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
     {
-        let nan: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
+        let nan: Value<f64> = Rc::new(RefCell::new(nan_f64));
         assert!(unimplemented!());
         assert!(unimplemented!());
         assert!(unimplemented!());
@@ -108,7 +128,7 @@ pub fn test_22() -> bool {
                 let _u: Value<StrongSpaceship_6> =
                     Rc::new(RefCell::new(StrongSpaceship_6 { value: 1 }));
                 synth_three_way_5(_t.as_pointer(), _u.as_pointer())
-            }) == std::cmp::Ordering::Equal
+            }) == ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) })
         );
         assert!(
             ({
@@ -117,7 +137,7 @@ pub fn test_22() -> bool {
                 let _u: Value<StrongSpaceship_6> =
                     Rc::new(RefCell::new(StrongSpaceship_6 { value: 1 }));
                 synth_three_way_5(_t.as_pointer(), _u.as_pointer())
-            }) == std::cmp::Ordering::Greater
+            }) == ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) })
         );
         assert!(
             ({
@@ -126,7 +146,7 @@ pub fn test_22() -> bool {
                 let _u: Value<StrongSpaceship_6> =
                     Rc::new(RefCell::new(StrongSpaceship_6 { value: 2 }));
                 synth_three_way_5(_t.as_pointer(), _u.as_pointer())
-            }) == std::cmp::Ordering::Less
+            }) == ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) })
         );
         const _: () = assert!(true, "");;
     }
@@ -137,7 +157,7 @@ pub fn test_22() -> bool {
         const _: () = assert!(true, "");;
     }
     {
-        let mut nan: f64 = unimplemented!();
+        let mut nan: f64 = nan_f64;
         assert!(unimplemented!());
         assert!(unimplemented!());
         assert!(unimplemented!());
@@ -203,19 +223,19 @@ pub fn test_22() -> bool {
                 let _t: Value<i64> = Rc::new(RefCell::new((-1_i32 as i64)));
                 let _u: Value<u8> = Rc::new(RefCell::new(0_u8));
                 synth_three_way_18(_t.as_pointer(), _u.as_pointer())
-            }) == std::cmp::Ordering::Less
+            }) == ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) })
         );
         assert!(
             ({
                 let _t: Value<i64> = Rc::new(RefCell::new((-1_i32 as i64)));
                 let _u: Value<u8> = Rc::new(RefCell::new(0_u8));
                 synth_three_way_18(_t.as_pointer(), _u.as_pointer())
-            }) == std::cmp::Ordering::Less
+            }) == ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) })
         );
         const _: () = assert!(true, "");;
     }
     {
-        let nan: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
+        let nan: Value<f64> = Rc::new(RefCell::new(nan_f64));
         assert!(unimplemented!());
     }
     return true;
@@ -236,6 +256,11 @@ impl CppEq for StrongSpaceship_6 {
         StrongSpaceship_6Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for StrongSpaceship_6 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct WeakSpaceship_8 {
@@ -250,6 +275,11 @@ impl CppLess for WeakSpaceship_8 {
 impl CppEq for WeakSpaceship_8 {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         WeakSpaceship_8Impl::operator_eq(__lhs, __rhs.clone())
+    }
+}
+impl CppMove for WeakSpaceship_8 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -268,6 +298,11 @@ impl CppEq for PartialSpaceship_10 {
         PartialSpaceship_10Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for PartialSpaceship_10 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct NoSpaceship_12 {
@@ -284,6 +319,11 @@ impl CppEq for NoSpaceship_12 {
         NoSpaceship_12Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for NoSpaceship_12 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct SpaceshipNoEquals_14 {}
@@ -297,15 +337,35 @@ impl CppEq for SpaceshipNoEquals_14 {
         SpaceshipNoEquals_14Impl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for SpaceshipNoEquals_14 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct CustomSpaceship_16 {}
+impl CppMove for CustomSpaceship_16 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoRelative_23 {}
+impl CppMove for NoRelative_23 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoLessThan_24 {}
+impl CppMove for NoLessThan_24 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -391,7 +451,7 @@ pub trait SpaceshipNoEquals_14Impl {
 }
 impl SpaceshipNoEquals_14Impl for Ptr<SpaceshipNoEquals_14> {
     fn operator_cmp(&self, _a0: Ptr<SpaceshipNoEquals_14>) -> std::cmp::Ordering {
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equivalent().upgrade().deref()) });
     }
 }
 pub trait StrongSpaceship_6Impl {

@@ -20,6 +20,11 @@ impl SafePointer {
         }
     }
 }
+impl CppMove for SafePointer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct Pair {
@@ -28,22 +33,29 @@ pub struct Pair {
     #[offset(4)]
     pub y: i32,
 }
+impl CppMove for Pair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn DoStuffWithSafePointer_0(safe_ptr: Ptr<Option<Value<SafePointer>>>) {
     let x1: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Some(Rc::new(RefCell::new(0)))));
-    let x2: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Some(Rc::new(RefCell::new(0)))));
-    (*x2.borrow()).as_pointer().write(1);
-    x1.as_pointer().write((*x2.borrow_mut()).take());
+    let mut x2: Option<Value<i32>> = Some(Rc::new(RefCell::new(0)));
+    x2.as_pointer().write(1);
+    x1.as_pointer().write(x2.take());
     let mut raw_ptr1: Ptr<i32> = ((*x1.borrow()).as_pointer());
-    raw_ptr1.with_mut(|__v| __v.prefix_inc());
+    raw_ptr1.with_mut(|__v| {
+        __v.prefix_inc();
+    });
     ({ field_ptr!(((*safe_ptr.upgrade().deref()).as_pointer()), ptr) })
         .write((*x1.borrow_mut()).take());
     ({ SafePointerImpl::inc(&((*safe_ptr.upgrade().deref()).as_pointer())) });
     ({ SafePointerImpl::inc(&((*safe_ptr.upgrade().deref()).as_pointer())) });
-    let x3: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Some(Rc::new(RefCell::new(10)))));
+    let mut x3: Option<Value<i32>> = Some(Rc::new(RefCell::new(10)));
     let x4: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Some(Rc::new(RefCell::new(20)))));
-    let __rhs = (((*x3.borrow()).as_pointer().read()) + ((*x4.borrow()).as_pointer().read()));
-    (*x3.borrow()).as_pointer().write(__rhs);
-    x4.as_pointer().write((*x3.borrow_mut()).take());
+    let __rhs = ((x3.as_pointer().read()) + ((*x4.borrow()).as_pointer().read()));
+    x3.as_pointer().write(__rhs);
+    x4.as_pointer().write(x3.take());
     let mut raw_ptr2: Ptr<i32> = ((*x4.borrow()).as_pointer());
     {
         raw_ptr2.with_mut(|__v| *__v = *__v + 1)
@@ -72,9 +84,8 @@ pub fn DoStuffWithSafePointer_0(safe_ptr: Ptr<Option<Value<SafePointer>>>) {
     .as_pointer()
     .write(__rhs);
 }
-pub fn Consume_1(safe_ptr: Option<Value<SafePointer>>) -> i32 {
-    let safe_ptr: Value<Option<Value<SafePointer>>> = Rc::new(RefCell::new(safe_ptr));
-    let mut x: Option<Value<SafePointer>> = (*safe_ptr.borrow_mut()).take();
+pub fn Consume_1(mut safe_ptr: Option<Value<SafePointer>>) -> i32 {
+    let mut x: Option<Value<SafePointer>> = safe_ptr.take();
     let mut p: Option<Value<Pair>> = Ptr::alloc(<Pair>::default()).to_owned_opt();
     return ((x
         .as_pointer()
@@ -175,7 +186,9 @@ pub fn RndStuff_2() {
 }
 pub fn unique_ptr_that_wraps_container_3() {
     let mut v: Option<Value<Box<[Vec<i8>]>>> = Some(Rc::new(RefCell::new(
-        (0..2_usize).map(|_| vec![0]).collect::<Box<[_]>>(),
+        (0..2_usize)
+            .map(|_| vec![i8::default()])
+            .collect::<Box<[_]>>(),
     )));
     assert!(
         ({
@@ -205,10 +218,10 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let x: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Some(Rc::new(RefCell::new(0)))));
+    let mut x: Option<Value<i32>> = Some(Rc::new(RefCell::new(0)));
     let safe_ptr: Value<Option<Value<SafePointer>>> =
         Rc::new(RefCell::new(Some(Rc::new(RefCell::new(SafePointer {
-            ptr: (*x.borrow_mut()).take(),
+            ptr: x.take(),
         })))));
     ({ DoStuffWithSafePointer_0(safe_ptr.as_pointer()) });
     assert!(({ (({ Consume_1((*safe_ptr.borrow_mut()).take(),) }) == 60) }));
@@ -218,7 +231,10 @@ fn main_0() -> i32 {
         p.as_pointer().write(_p.to_owned_opt())
     };
     assert!(({ (((*p.borrow()).as_pointer().read()) == 2) }));
-    p.as_pointer().write(None);
+    {
+        let _p: Ptr<_> = Ptr::null();
+        p.as_pointer().write(_p.to_owned_opt())
+    };
     assert!(({ (*p.borrow()).is_none() }));
     ({ unique_ptr_that_wraps_container_3() });
     return 0;
@@ -247,7 +263,9 @@ impl SafePointerImpl for Ptr<SafePointer> {
         (*self)
             .with(|__s| __s.ptr.clone())
             .as_pointer()
-            .with_mut(|__v| __v.prefix_inc());
+            .with_mut(|__v| {
+                __v.prefix_inc();
+            });
     }
     fn move_assign(&self, _a0: Ptr<SafePointer>) -> Ptr<SafePointer> {
         field_ptr!((*self), ptr)

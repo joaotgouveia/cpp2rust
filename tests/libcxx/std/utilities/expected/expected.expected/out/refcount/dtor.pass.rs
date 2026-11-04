@@ -9,6 +9,11 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(1)]
 pub struct NonTrivial {}
+impl CppMove for NonTrivial {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "std::is_trivially_destructible_v<std::expected<int, int>>"
@@ -40,20 +45,35 @@ impl TrackedDestroy {
         }
     }
 }
+impl CppMove for TrackedDestroy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0() -> bool {
     {
-        let mut valueDestroyed: bool = false;
+        let valueDestroyed: Value<bool> = Rc::new(RefCell::new(false));
         {
-            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let e: Value<std_expected_TrackedDestroy__TrackedDestroy_> = Rc::new(RefCell::new(
+                std_expected_TrackedDestroy__TrackedDestroy_::new_1(
+                    { (*in_place_1.with(Value::clone).borrow()).clone() },
+                    { valueDestroyed.as_pointer() },
+                ),
+            ));
         }
-        assert!(valueDestroyed);
+        assert!(({ (*valueDestroyed.borrow()) }));
     }
     {
-        let mut errorDestroyed: bool = false;
+        let errorDestroyed: Value<bool> = Rc::new(RefCell::new(false));
         {
-            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let e: Value<std_expected_TrackedDestroy__TrackedDestroy_> = Rc::new(RefCell::new(
+                std_expected_TrackedDestroy__TrackedDestroy_::new_2(
+                    { (*unexpect_2.with(Value::clone).borrow()).clone() },
+                    { errorDestroyed.as_pointer() },
+                ),
+            ));
         }
-        assert!(errorDestroyed);
+        assert!(({ (*errorDestroyed.borrow()) }));
     }
     return true;
 }
@@ -77,7 +97,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let a: Value<std_expected_std_unique_ptr_int__std_default_delete_int____int_> =
+        Rc::new(RefCell::new(Some(Rc::new(RefCell::new(42)))));
     ({ test_0() });
     const _: () = assert!(true, "test()");;
     return 0;

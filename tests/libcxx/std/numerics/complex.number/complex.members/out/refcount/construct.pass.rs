@@ -8,126 +8,134 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_f32));
-        assert!((unimplemented!() == 0_f32));
+        let c: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
+        assert!(({ (({ (*c.borrow()).real_5() }) == 0_f32) }));
+        assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f32) }));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as f64) == 7.5_f64));
-        assert!((unimplemented!() == 0_f32));
+        let c: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
+        assert!(({ ((({ (*c.borrow()).real_5() }) as f64) == 7.5_f64) }));
+        assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f32) }));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as f64) == 8.5_f64));
-        assert!((unimplemented!() == 0_f32));
+        let c: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
+        assert!(({ ((({ (*c.borrow()).real_5() }) as f64) == 8.5_f64) }));
+        assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f32) }));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as f64) == 10.5_f64));
-        assert!(((unimplemented!() as f64) == -9.5_f64));
+        let c: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
+        assert!(({ ((({ (*c.borrow()).real_5() }) as f64) == 10.5_f64) }));
+        assert!(({ ((({ (*c.borrow()).imag_6() }) as f64) == -9.5_f64) }));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
         const _: () = assert!(true, "c.real() == 0");;
         const _: () = assert!(true, "c.imag() == 0");;
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
         const _: () = assert!(true, "c.real() == 7.5");;
         const _: () = assert!(true, "c.imag() == 0");;
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
         const _: () = assert!(true, "c.real() == 8.5");;
         const _: () = assert!(true, "c.imag() == 0");;
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
         const _: () = assert!(true, "c.real() == 10.5");;
         const _: () = assert!(true, "c.imag() == -9.5");;
     }
 }
 pub fn test_1() {
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_f64));
-        assert!((unimplemented!() == 0_f64));
+        let c: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+        assert!(({ (({ (*c.borrow()).real_5() }) == 0_f64) }));
+        assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f64) }));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 7.5_f64));
-        assert!((unimplemented!() == 0_f64));
+        let c: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+        assert!(({ (({ (*c.borrow()).real_5() }) == 7.5_f64) }));
+        assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f64) }));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 8.5_f64));
-        assert!((unimplemented!() == 0_f64));
+        let c: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+        assert!(({ (({ (*c.borrow()).real_5() }) == 8.5_f64) }));
+        assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f64) }));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10.5_f64));
-        assert!((unimplemented!() == -9.5_f64));
+        let c: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+        assert!(({ (({ (*c.borrow()).real_5() }) == 10.5_f64) }));
+        assert!(({ (({ (*c.borrow()).imag_6() }) == -9.5_f64) }));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
         const _: () = assert!(true, "c.real() == 0");;
         const _: () = assert!(true, "c.imag() == 0");;
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
         const _: () = assert!(true, "c.real() == 7.5");;
         const _: () = assert!(true, "c.imag() == 0");;
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
         const _: () = assert!(true, "c.real() == 8.5");;
         const _: () = assert!(true, "c.imag() == 0");;
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
         const _: () = assert!(true, "c.real() == 10.5");;
         const _: () = assert!(true, "c.imag() == -9.5");;
     }
 }
 pub fn test_2() {
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_f64));
-        assert!((unimplemented!() == 0_f64));
+        let c: Value<std_complex_long_double_> =
+            Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+        assert!(({ (({ (*c.borrow()).real_5() }) == 0_f64) }));
+        assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f64) }));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 7.5_f64));
-        assert!((unimplemented!() == 0_f64));
+        let c: Value<std_complex_long_double_> =
+            Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+        assert!(({ (({ (*c.borrow()).real_5() }) == 7.5_f64) }));
+        assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f64) }));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 8.5_f64));
-        assert!((unimplemented!() == 0_f64));
+        let c: Value<std_complex_long_double_> =
+            Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+        assert!(({ (({ (*c.borrow()).real_5() }) == 8.5_f64) }));
+        assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f64) }));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 10.5_f64));
-        assert!((unimplemented!() == -9.5_f64));
+        let c: Value<std_complex_long_double_> =
+            Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+        assert!(({ (({ (*c.borrow()).real_5() }) == 10.5_f64) }));
+        assert!(({ (({ (*c.borrow()).imag_6() }) == -9.5_f64) }));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<std_complex_long_double_> =
+            Rc::new(RefCell::new(<std_complex_long_double_>::default()));
         const _: () = assert!(true, "c.real() == 0");;
         const _: () = assert!(true, "c.imag() == 0");;
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<std_complex_long_double_> =
+            Rc::new(RefCell::new(<std_complex_long_double_>::default()));
         const _: () = assert!(true, "c.real() == 7.5");;
         const _: () = assert!(true, "c.imag() == 0");;
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<std_complex_long_double_> =
+            Rc::new(RefCell::new(<std_complex_long_double_>::default()));
         const _: () = assert!(true, "c.real() == 8.5");;
         const _: () = assert!(true, "c.imag() == 0");;
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<std_complex_long_double_> =
+            Rc::new(RefCell::new(<std_complex_long_double_>::default()));
         const _: () = assert!(true, "c.real() == 10.5");;
         const _: () = assert!(true, "c.imag() == -9.5");;
     }

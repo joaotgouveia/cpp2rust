@@ -27,15 +27,62 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let f: Ptr<()> = unimplemented!();
+    let l: Value<std_locale> = Rc::new(RefCell::new(
+        (*({ std_locale::classic() }).upgrade().deref()).clone(),
+    ));
+    let f: Ptr<std_codecvt_char32_t__char____mbstate_t_> = ({ use_facet_0(l.as_pointer()) });
     let mbs: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
     let from: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(b"some text\0")));
-    assert!((unimplemented!() == 0));
-    assert!((unimplemented!() == 8));
-    assert!((unimplemented!() == 9));
-    assert!((unimplemented!() == 10));
-    assert!((unimplemented!() == 10));
+    assert!(
+        ({
+            (({
+                let ___from: Ptr<i8> = (from.as_pointer() as Ptr<i8>);
+                let ___end: Ptr<i8> = (from.as_pointer() as Ptr<i8>).offset((10) as isize);
+                ((*f.upgrade().deref()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                    .length(mbs.as_pointer(), ___from, ___end, 0_usize)
+            }) == 0)
+        })
+    );
+    assert!(
+        ({
+            (({
+                let ___from: Ptr<i8> = (from.as_pointer() as Ptr<i8>);
+                let ___end: Ptr<i8> = (from.as_pointer() as Ptr<i8>).offset((10) as isize);
+                ((*f.upgrade().deref()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                    .length(mbs.as_pointer(), ___from, ___end, 8_usize)
+            }) == 8)
+        })
+    );
+    assert!(
+        ({
+            (({
+                let ___from: Ptr<i8> = (from.as_pointer() as Ptr<i8>);
+                let ___end: Ptr<i8> = (from.as_pointer() as Ptr<i8>).offset((10) as isize);
+                ((*f.upgrade().deref()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                    .length(mbs.as_pointer(), ___from, ___end, 9_usize)
+            }) == 9)
+        })
+    );
+    assert!(
+        ({
+            (({
+                let ___from: Ptr<i8> = (from.as_pointer() as Ptr<i8>);
+                let ___end: Ptr<i8> = (from.as_pointer() as Ptr<i8>).offset((10) as isize);
+                ((*f.upgrade().deref()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                    .length(mbs.as_pointer(), ___from, ___end, 10_usize)
+            }) == 10)
+        })
+    );
+    assert!(
+        ({
+            (({
+                let ___from: Ptr<i8> = (from.as_pointer() as Ptr<i8>);
+                let ___end: Ptr<i8> = (from.as_pointer() as Ptr<i8>).offset((10) as isize);
+                ((*f.upgrade().deref()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                    .length(mbs.as_pointer(), ___from, ___end, 100_usize)
+            }) == 10)
+        })
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

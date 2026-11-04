@@ -13,6 +13,11 @@ pub struct rand1_unsigned_long__0__10_ {
     x_: u64,
 }
 impl rand1_unsigned_long__0__10_ {}
+impl CppMove for rand1_unsigned_long__0__10_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct rand1_unsigned_long_long__0__10_ {
@@ -20,6 +25,11 @@ pub struct rand1_unsigned_long_long__0__10_ {
     x_: u64,
 }
 impl rand1_unsigned_long_long__0__10_ {}
+impl CppMove for rand1_unsigned_long_long__0__10_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test1_0() {
     const _: () = assert!(
         true,

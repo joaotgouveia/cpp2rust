@@ -6,18 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_convertible_imp_0(mut _a0: i32) -> bool {
-    return true;
-}
-pub fn test_convertible_imp_1(mut _a0: i64) -> bool {
-    return false;
-}
-pub fn test_convertible_2() -> bool {
-    return ({ test_convertible_imp_0(0) });
-}
-pub fn test_convertible_3() -> bool {
-    return ({ test_convertible_imp_1(0_i64) });
-}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -39,12 +28,12 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let myconv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_usize));
+        let myconv : Value<std_wstring_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__ > = Rc::new(RefCell::new(<std_wstring_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__  >::default() )) ;
+        assert!(({ (({ (*myconv.borrow()).converted() }) == 0_usize) }));
     }
     {
-        let myconv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_usize));
+        let myconv : Value<std_wstring_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__ > = Rc::new(RefCell::new(std_wstring_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__ :: new_1 ( { Ptr::alloc( <std_codecvt_utf8_wchar_t__1114111__0_  >::default() )  } , )  )) ;
+        assert!(({ (({ (*myconv.borrow()).converted() }) == 0_usize) }));
         const _: () = assert!(true, "!std::is_convertible<Codecvt*, Myconv>::value");;
         const _: () = assert!(true, "std::is_constructible<Myconv, Codecvt*>::value");;
     }

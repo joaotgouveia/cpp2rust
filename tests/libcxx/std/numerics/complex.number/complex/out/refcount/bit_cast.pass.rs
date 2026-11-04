@@ -7,28 +7,31 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
-    let mut data: [u8; 8] = [0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8];
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-}
-pub fn test_1() {
-    let mut data: [u8; 16] = [
-        0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8,
-        0_u8,
-    ];
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let data: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([
+        0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8,
+    ])));
+    let c: Value<std_complex_float_> = Rc::new(RefCell::new(({ bit_cast_1(data.as_pointer()) })));
 }
 pub fn test_2() {
-    let mut data: [u8; 32] = [
+    let data: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([
+        0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8,
+        0_u8,
+    ])));
+    let c: Value<std_complex_double_> = Rc::new(RefCell::new(({ bit_cast_3(data.as_pointer()) })));
+}
+pub fn test_4() {
+    let data: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([
         0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8,
         0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8, 0_u8,
         0_u8, 0_u8,
-    ];
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    ])));
+    let c: Value<std_complex_long_double_> =
+        Rc::new(RefCell::new(({ bit_cast_5(data.as_pointer()) })));
 }
-pub fn test_all_3() -> bool {
+pub fn test_all_6() -> bool {
     ({ test_0() });
-    ({ test_1() });
     ({ test_2() });
+    ({ test_4() });
     return true;
 }
 pub fn main() {
@@ -51,7 +54,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_all_3() });
+    ({ test_all_6() });
     const _: () = assert!(true, "test_all()");;
     return 0;
 }

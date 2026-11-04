@@ -72,41 +72,6 @@ pub fn test_cat_9() {
     );;
     const _: () = assert!(true, "std::is_same<CatT, Expect>::value");;
 }
-pub fn test_cat_10() {
-    const _: () = assert!(
-        true,
-        "std::is_same<CatT, std::common_comparison_category_t<Args...>>::value"
-    );;
-    const _: () = assert!(true, "std::is_same<CatT, Expect>::value");;
-}
-pub fn test_cat_11() {
-    const _: () = assert!(
-        true,
-        "std::is_same<CatT, std::common_comparison_category_t<Args...>>::value"
-    );;
-    const _: () = assert!(true, "std::is_same<CatT, Expect>::value");;
-}
-pub fn test_cat_12() {
-    const _: () = assert!(
-        true,
-        "std::is_same<CatT, std::common_comparison_category_t<Args...>>::value"
-    );;
-    const _: () = assert!(true, "std::is_same<CatT, Expect>::value");;
-}
-pub fn test_cat_13() {
-    const _: () = assert!(
-        true,
-        "std::is_same<CatT, std::common_comparison_category_t<Args...>>::value"
-    );;
-    const _: () = assert!(true, "std::is_same<CatT, Expect>::value");;
-}
-pub fn test_cat_14() {
-    const _: () = assert!(
-        true,
-        "std::is_same<CatT, std::common_comparison_category_t<Args...>>::value"
-    );;
-    const _: () = assert!(true, "std::is_same<CatT, Expect>::value");;
-}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -136,20 +101,20 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ({ test_cat_6() });
     }
     {
-        ({ test_cat_7() });
-        ({ test_cat_8() });
-        ({ test_cat_9() });
-    }
-    {
         ({ test_cat_10() });
         ({ test_cat_11() });
-    }
-    {
         ({ test_cat_12() });
-        ({ test_cat_13() });
     }
     {
+        ({ test_cat_13() });
         ({ test_cat_14() });
+    }
+    {
+        ({ test_cat_7() });
+        ({ test_cat_8() });
+    }
+    {
+        ({ test_cat_9() });
     }
     return 0;
 }

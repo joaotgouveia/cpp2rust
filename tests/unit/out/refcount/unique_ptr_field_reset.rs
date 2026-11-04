@@ -12,6 +12,11 @@ pub struct Data {
     #[offset(0)]
     pub v: i32,
 }
+impl CppMove for Data {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct Holder {
@@ -27,6 +32,11 @@ impl Holder {
             data: field!(_a0, data).with_mut(|__v: &mut Option<Value<Data>>| __v.take()),
             n: { (*_a0.upgrade().deref()).n },
         }
+    }
+}
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn main() {

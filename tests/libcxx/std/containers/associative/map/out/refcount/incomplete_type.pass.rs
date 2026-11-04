@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -39,6 +44,11 @@ thread_local!(
 #[byte_size(1)]
 pub struct complete_type_allocator_std_pair_const_int__int__ {}
 impl complete_type_allocator_std_pair_const_int__int__ {}
+impl CppMove for complete_type_allocator_std_pair_const_int__int__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(72)]
 pub struct A {
@@ -73,6 +83,11 @@ impl CppLess for A {
 impl CppEq for A {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_5(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_eq_5(L: Ptr<A>, R: Ptr<A>) -> bool {
@@ -120,8 +135,10 @@ impl AImpl for Ptr<A> {
                 .with_mut(|__m: &mut Map<A, (Value<A>, Value<A>)>| std::mem::take(__m));
             field_ptr!((*self), m).write(__src)
         };
-        field!((*self), it).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).it.clone() });
-        field!((*self), cit).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).cit.clone() });
+        field!((*self), it)
+            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).it.clone() } }));
+        field!((*self), cit)
+            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).cit.clone() } }));
         return (*self).clone();
     }
 }

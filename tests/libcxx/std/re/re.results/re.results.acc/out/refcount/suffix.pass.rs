@@ -7,26 +7,51 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
-    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let m : Value<std_match_results_const_char_ptr__std_allocator_std_sub_match_const_char_ptr___ > = Rc::new(RefCell::new(<std_match_results_const_char_ptr__std_allocator_std_sub_match_const_char_ptr___  >::default() )) ;
     let s: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(b"abcdefghijk\0")));
-    assert!(unimplemented!());
     assert!(
         ({
-            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+            let ___e: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
+                std_basic_regex_char__std_regex_traits_char__::new_1(
+                    { Ptr::<i8>::from_string_literal(b"cd((e)fg)hi") },
+                    None,
+                ),
+            ));
+            regex_search_1(
+                (s.as_pointer() as Ptr<i8>),
+                m.as_pointer(),
+                ___e.as_pointer(),
+                None,
+            )
+        })
+    );
+    assert!(
+        ({
+            ({
+                (*({
+                    ((*({ (*m.borrow()).suffix() }).upgrade().deref())
+                        as (Value<*const i8>, Value<*const i8>))
+                })
                 .0
                 .borrow())
-            .clone()
-        } == { (s.as_pointer() as Ptr::<i8>).offset((9) as isize) })
+                .clone()
+            } == { (s.as_pointer() as Ptr<i8>).offset((9) as isize) })
+        })
     );
     assert!(
         ({
-            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
+            ({
+                (*({
+                    ((*({ (*m.borrow()).suffix() }).upgrade().deref())
+                        as (Value<*const i8>, Value<*const i8>))
+                })
                 .1
                 .borrow())
-            .clone()
-        } == { (s.as_pointer() as Ptr::<i8>).offset((11) as isize) })
+                .clone()
+            } == { (s.as_pointer() as Ptr<i8>).offset((11) as isize) })
+        })
     );
-    assert!((({ (unimplemented!()).clone().matched } as i32) == (true as i32)));
+    assert!(({ ((({ (*m.borrow()).suffix() }).with(|__s| __s.matched) as i32) == (true as i32)) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

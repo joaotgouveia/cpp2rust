@@ -28,9 +28,10 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*p.borrow()).len() == 1_usize));
+        let d: Value<std_discrete_distribution_int_> =
+            Rc::new(RefCell::new(<std_discrete_distribution_int_>::default()));
+        let p: Value<Vec<f64>> = Rc::new(RefCell::new(({ (*d.borrow()).probabilities() })));
+        assert!(({ ((*p.borrow()).len() == 1_usize) }));
         assert!(((p.decay().offset(0_usize as isize).read()) == 1_f64));
     }
     return 0;

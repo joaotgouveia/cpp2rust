@@ -12,6 +12,11 @@ pub struct Counter {
     #[offset(0)]
     pub n: i32,
 }
+impl CppMove for Counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(40)]
 pub struct S {
@@ -37,6 +42,11 @@ impl S {
             })),
             v: field!(_a0, v).with_mut(std::mem::take),
         }
+    }
+}
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for S {
@@ -97,7 +107,8 @@ pub fn run_0(mut o: Ptr<S>) {
     };
     assert!(
         ({
-            ((*o.upgrade().deref()).v.len() == 1_usize) && ((vec_elem!(o, v, 0_usize).read()) == 1)
+            ((*o.upgrade().deref()).v.len() == 1_usize)
+                && ((field_ref!(o, v).decay().offset(0_usize as isize).read()) == 1)
         })
     );
     assert!((o.with(|__s| __s.tag) == 1));

@@ -25,14 +25,27 @@ pub fn test02_0() {
     ]);
     let carray: Value<Box<[i32]>> =
         Rc::new(RefCell::new((0..50).map(|_| 0_i32).collect::<Box<[i32]>>()));
-    unimplemented!();
+    ({ wcscpy_1((carray.as_pointer() as Ptr<i32>), (ccarray1).clone()) });
     let mut cw: Ptr<i32> = Ptr::<i32>::null();
     let mut w: Ptr<i32> = Ptr::<i32>::null();
-    cw = unimplemented!();
-    cw = unimplemented!();
-    cw = unimplemented!();
-    cw = unimplemented!();
-    w = unimplemented!();
+    cw = ({
+        let ___s: Ptr<i32> = (ccarray1).clone();
+        wmemchr_2(___s, (47 as i32), 3_usize)
+    });
+    cw = ({
+        let ___wcs: Ptr<i32> = (ccarray1).clone();
+        wcschr_3(___wcs, (47 as i32))
+    });
+    cw = ({ wcspbrk_4((ccarray1).clone(), (ccarray2).clone()) });
+    cw = ({
+        let ___wcs: Ptr<i32> = (ccarray1).clone();
+        wcsrchr_5(___wcs, (99 as i32))
+    });
+    w = ({
+        let ___s1: Ptr<i32> = (carray.as_pointer() as Ptr<i32>);
+        let ___s2: Ptr<i32> = (carray.as_pointer() as Ptr<i32>);
+        wcsstr_6(___s1, ___s2)
+    });
     cw = { (cw).clone() };
     w = { (w).clone() };
 }

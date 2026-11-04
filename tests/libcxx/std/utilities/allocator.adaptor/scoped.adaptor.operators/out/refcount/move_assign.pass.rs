@@ -36,6 +36,11 @@ impl CppEq for A1_int_ {
         operator_eq_4(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for A1_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for A1_int_ {
     fn default() -> Self {
         { A1_int_::new(None) }
@@ -82,6 +87,11 @@ impl Clone for A2_int_ {
         A2_int_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for A2_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for A2_int_ {
     fn default() -> Self {
         { A2_int_::new(None) }
@@ -126,6 +136,11 @@ impl Clone for A3_int_ {
             id_: self.id_.clone(),
         }));
         A3_int_::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for A3_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for A3_int_ {

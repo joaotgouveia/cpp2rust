@@ -27,21 +27,93 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let l: Value<std_locale> = Rc::new(RefCell::new(
+        (*({ std_locale::classic() }).upgrade().deref()).clone(),
+    ));
     {
         let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(b"1234\0")));
         let mut sa: u32 = (((::std::mem::size_of::<[i8; 5]>() as usize)
             .wrapping_div((::std::mem::size_of::<i8>() as usize)))
             as u32);
         let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(b"123\0")));
-        let f: Ptr<()> = unimplemented!();
-        assert!((unimplemented!() == 1));
-        assert!((unimplemented!() == -1_i32));
-        assert!((unimplemented!() == 1));
-        assert!((unimplemented!() == -1_i32));
-        assert!((unimplemented!() == -1_i32));
-        assert!((unimplemented!() == 1));
-        assert!((unimplemented!() == 0));
+        let f: Ptr<std_collate_char_> = ({ use_facet_0(l.as_pointer()) });
+        assert!(
+            ({
+                (({
+                    let ___lo1: Ptr<i8> = (ia.as_pointer() as Ptr<i8>);
+                    let ___hi1: Ptr<i8> = (ia.as_pointer() as Ptr<i8>).offset((sa) as isize);
+                    let ___lo2: Ptr<i8> = (ib.as_pointer() as Ptr<i8>);
+                    let ___hi2: Ptr<i8> = (ib.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    (*f.upgrade().deref()).compare(___lo1, ___hi1, ___lo2, ___hi2)
+                }) == 1)
+            })
+        );
+        assert!(
+            ({
+                (({
+                    let ___lo1: Ptr<i8> = (ib.as_pointer() as Ptr<i8>);
+                    let ___hi1: Ptr<i8> = (ib.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    let ___lo2: Ptr<i8> = (ia.as_pointer() as Ptr<i8>);
+                    let ___hi2: Ptr<i8> = (ia.as_pointer() as Ptr<i8>).offset((sa) as isize);
+                    (*f.upgrade().deref()).compare(___lo1, ___hi1, ___lo2, ___hi2)
+                }) == -1_i32)
+            })
+        );
+        assert!(
+            ({
+                (({
+                    let ___lo1: Ptr<i8> = (ia.as_pointer() as Ptr<i8>);
+                    let ___hi1: Ptr<i8> = (ia.as_pointer() as Ptr<i8>).offset((sa) as isize);
+                    let ___lo2: Ptr<i8> = (ib.as_pointer() as Ptr<i8>);
+                    let ___hi2: Ptr<i8> = (ib.as_pointer() as Ptr<i8>).offset((3) as isize);
+                    (*f.upgrade().deref()).compare(___lo1, ___hi1, ___lo2, ___hi2)
+                }) == 1)
+            })
+        );
+        assert!(
+            ({
+                (({
+                    let ___lo1: Ptr<i8> = (ib.as_pointer() as Ptr<i8>);
+                    let ___hi1: Ptr<i8> = (ib.as_pointer() as Ptr<i8>).offset((3) as isize);
+                    let ___lo2: Ptr<i8> = (ia.as_pointer() as Ptr<i8>);
+                    let ___hi2: Ptr<i8> = (ia.as_pointer() as Ptr<i8>).offset((sa) as isize);
+                    (*f.upgrade().deref()).compare(___lo1, ___hi1, ___lo2, ___hi2)
+                }) == -1_i32)
+            })
+        );
+        assert!(
+            ({
+                (({
+                    let ___lo1: Ptr<i8> = (ia.as_pointer() as Ptr<i8>);
+                    let ___hi1: Ptr<i8> = (ia.as_pointer() as Ptr<i8>).offset((sa) as isize);
+                    let ___lo2: Ptr<i8> = (ib.as_pointer() as Ptr<i8>).offset((1) as isize);
+                    let ___hi2: Ptr<i8> = (ib.as_pointer() as Ptr<i8>).offset((3) as isize);
+                    (*f.upgrade().deref()).compare(___lo1, ___hi1, ___lo2, ___hi2)
+                }) == -1_i32)
+            })
+        );
+        assert!(
+            ({
+                (({
+                    let ___lo1: Ptr<i8> = (ib.as_pointer() as Ptr<i8>).offset((1) as isize);
+                    let ___hi1: Ptr<i8> = (ib.as_pointer() as Ptr<i8>).offset((3) as isize);
+                    let ___lo2: Ptr<i8> = (ia.as_pointer() as Ptr<i8>);
+                    let ___hi2: Ptr<i8> = (ia.as_pointer() as Ptr<i8>).offset((sa) as isize);
+                    (*f.upgrade().deref()).compare(___lo1, ___hi1, ___lo2, ___hi2)
+                }) == 1)
+            })
+        );
+        assert!(
+            ({
+                (({
+                    let ___lo1: Ptr<i8> = (ia.as_pointer() as Ptr<i8>);
+                    let ___hi1: Ptr<i8> = (ia.as_pointer() as Ptr<i8>).offset((3) as isize);
+                    let ___lo2: Ptr<i8> = (ib.as_pointer() as Ptr<i8>);
+                    let ___hi2: Ptr<i8> = (ib.as_pointer() as Ptr<i8>).offset((3) as isize);
+                    (*f.upgrade().deref()).compare(___lo1, ___hi1, ___lo2, ___hi2)
+                }) == 0)
+            })
+        );
     }
     {
         let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::from([
@@ -53,14 +125,84 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::from([
             49 as i32, 50 as i32, 51 as i32, 0 as i32,
         ])));
-        let f: Ptr<()> = unimplemented!();
-        assert!((unimplemented!() == 1));
-        assert!((unimplemented!() == -1_i32));
-        assert!((unimplemented!() == 1));
-        assert!((unimplemented!() == -1_i32));
-        assert!((unimplemented!() == -1_i32));
-        assert!((unimplemented!() == 1));
-        assert!((unimplemented!() == 0));
+        let f: Ptr<std_collate_wchar_t_> = ({ use_facet_1(l.as_pointer()) });
+        assert!(
+            ({
+                (({
+                    let ___lo1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                    let ___hi1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+                    let ___lo2: Ptr<i32> = (ib.as_pointer() as Ptr<i32>);
+                    let ___hi2: Ptr<i32> = (ib.as_pointer() as Ptr<i32>).offset((2) as isize);
+                    (*f.upgrade().deref()).compare(___lo1, ___hi1, ___lo2, ___hi2)
+                }) == 1)
+            })
+        );
+        assert!(
+            ({
+                (({
+                    let ___lo1: Ptr<i32> = (ib.as_pointer() as Ptr<i32>);
+                    let ___hi1: Ptr<i32> = (ib.as_pointer() as Ptr<i32>).offset((2) as isize);
+                    let ___lo2: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                    let ___hi2: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+                    (*f.upgrade().deref()).compare(___lo1, ___hi1, ___lo2, ___hi2)
+                }) == -1_i32)
+            })
+        );
+        assert!(
+            ({
+                (({
+                    let ___lo1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                    let ___hi1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+                    let ___lo2: Ptr<i32> = (ib.as_pointer() as Ptr<i32>);
+                    let ___hi2: Ptr<i32> = (ib.as_pointer() as Ptr<i32>).offset((3) as isize);
+                    (*f.upgrade().deref()).compare(___lo1, ___hi1, ___lo2, ___hi2)
+                }) == 1)
+            })
+        );
+        assert!(
+            ({
+                (({
+                    let ___lo1: Ptr<i32> = (ib.as_pointer() as Ptr<i32>);
+                    let ___hi1: Ptr<i32> = (ib.as_pointer() as Ptr<i32>).offset((3) as isize);
+                    let ___lo2: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                    let ___hi2: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+                    (*f.upgrade().deref()).compare(___lo1, ___hi1, ___lo2, ___hi2)
+                }) == -1_i32)
+            })
+        );
+        assert!(
+            ({
+                (({
+                    let ___lo1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                    let ___hi1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+                    let ___lo2: Ptr<i32> = (ib.as_pointer() as Ptr<i32>).offset((1) as isize);
+                    let ___hi2: Ptr<i32> = (ib.as_pointer() as Ptr<i32>).offset((3) as isize);
+                    (*f.upgrade().deref()).compare(___lo1, ___hi1, ___lo2, ___hi2)
+                }) == -1_i32)
+            })
+        );
+        assert!(
+            ({
+                (({
+                    let ___lo1: Ptr<i32> = (ib.as_pointer() as Ptr<i32>).offset((1) as isize);
+                    let ___hi1: Ptr<i32> = (ib.as_pointer() as Ptr<i32>).offset((3) as isize);
+                    let ___lo2: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                    let ___hi2: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+                    (*f.upgrade().deref()).compare(___lo1, ___hi1, ___lo2, ___hi2)
+                }) == 1)
+            })
+        );
+        assert!(
+            ({
+                (({
+                    let ___lo1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+                    let ___hi1: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((3) as isize);
+                    let ___lo2: Ptr<i32> = (ib.as_pointer() as Ptr<i32>);
+                    let ___hi2: Ptr<i32> = (ib.as_pointer() as Ptr<i32>).offset((3) as isize);
+                    (*f.upgrade().deref()).compare(___lo1, ___hi1, ___lo2, ___hi2)
+                }) == 0)
+            })
+        );
     }
     return 0;
 }

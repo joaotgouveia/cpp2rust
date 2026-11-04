@@ -33,9 +33,23 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         __bytes.push(0_i8);
         __bytes
     }));
-    let mut expected: Vec<i32> = unimplemented!();
+    let mut expected: Vec<i32> = match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+        (__tmp_0,) => {
+            let mut __bytes: Vec<u8> = Vec::new();
+            if !(__tmp_0).clone().is_null() {
+                (__tmp_0)
+                    .clone()
+                    .with_mut(|__f: &mut std::fs::File| {
+                        std::io::Read::read_to_end(__f, &mut __bytes)
+                    })
+                    .expect("couldn't read the file");
+            }
+            __bytes.push(0);
+            CChar::from_byte_vec(__bytes)
+        }
+    };
     let to: Value<Vec<i32>> = Rc::new(RefCell::new(
-        vec![(unimplemented!() as i32); ((*from.borrow()).len() - 1) as usize]
+        vec![(unimplemented!() as i32); ({ ((*from.borrow()).len() - 1) }) as usize]
             .iter()
             .cloned()
             .chain(std::iter::once(0_i32))
@@ -48,8 +62,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let mut r: () = unimplemented!();
     assert!(((r as i32) == (unimplemented!() as i32)));
     assert!(
-        ({ ((((from_next).clone() - from.decay()) as i64) as usize) } == {
-            ((*from.borrow()).len() - 1)
+        ({
+            ({ ((((from_next).clone() - from.decay()) as i64) as usize) } == {
+                ((*from.borrow()).len() - 1)
+            })
         })
     );
     assert!(({ ((((to_next).clone() - to.decay()) as i64) as usize) } == { (expected.len() - 1) }));

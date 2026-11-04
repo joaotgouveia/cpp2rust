@@ -30,11 +30,11 @@ pub fn operator_cmp_6(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> std::cmp::Order
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -66,6 +66,11 @@ impl CppEq for MoveOnly {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for MoveOnly {
     fn default() -> Self {
         { MoveOnly::new(None) }
@@ -95,11 +100,11 @@ pub fn operator_cmp_13(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> 
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -129,6 +134,11 @@ impl CppEq for TrivialMoveOnly {
         operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for TrivialMoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for TrivialMoveOnly {
     fn default() -> Self {
         { TrivialMoveOnly::new(None) }
@@ -147,13 +157,13 @@ pub fn make_14(mut n: i32) -> Vec<MoveOnly> {
     return std::mem::take(&mut c);
 }
 pub fn test_15() -> bool {
-    let qo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 5_()));
+    let qo : Value<std_priority_queue_MoveOnly__std_vector_MoveOnly__std_allocator_MoveOnly____std_less_MoveOnly__ > = Rc::new(RefCell::new({ let __tmp_0 : Value<std_less_MoveOnly_ > = Rc::new(RefCell::new(<std_less_MoveOnly_  >::default() ));let __tmp_1 : Value<Vec<MoveOnly  > > = Rc::new(RefCell::new(( { make_14 ( 5  , ) } )  )); std_priority_queue_MoveOnly__std_vector_MoveOnly__std_allocator_MoveOnly____std_less_MoveOnly__ :: new_1 ( { __tmp_0.as_pointer() } , { __tmp_1.as_pointer() } , )  } )) ;
+    let q : Value<std_priority_queue_MoveOnly__std_vector_MoveOnly__std_allocator_MoveOnly____std_less_MoveOnly__ > = Rc::new(RefCell::new(<std_priority_queue_MoveOnly__std_vector_MoveOnly__std_allocator_MoveOnly____std_less_MoveOnly__  >::default() )) ;
+    (*q.borrow_mut()) = (*qo.borrow()).clone();
+    assert!(({ (({ (*q.borrow()).size() }) == 5_u64) }));
     assert!(
         ({
-            let _x: Ptr<MoveOnly> = unimplemented!();
+            let _x: Ptr<MoveOnly> = ({ (*q.borrow()).top() });
             let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(4) })));
             operator_eq_0(_x, _y.as_pointer())
         })

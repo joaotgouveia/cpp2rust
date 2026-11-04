@@ -47,6 +47,11 @@ impl CppEq for Moveable {
         MoveableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for Moveable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for Moveable {
     fn default() -> Self {
         { Moveable::new_1() }
@@ -58,86 +63,157 @@ pub fn test_0() -> bool {
         let r: Value<(
             Value<BidirectionalIterator<(Value<i32>, Value<Moveable>)>>,
             Value<bool>,
-        )> = Rc::new(RefCell::new(unimplemented!()));
-        let mut i: i32 = 0;
-        'loop_: while (i < 20) {
-            unimplemented!();
-            i += 2;
+        )> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(BidirectionalIterator::default())),
+            Rc::new(RefCell::new(false)),
+        )));
+        let i: Value<i32> = Rc::new(RefCell::new(0));
+        'loop_: while ((*i.borrow()) < 20) {
+            {
+                let __init = (
+                    Rc::new(RefCell::new(({ (*i.borrow()) }))),
+                    Rc::new(RefCell::new(Moveable::new_2({ (*i.borrow()) }, {
+                        ((*i.borrow()) as f64)
+                    }))),
+                );
+                let __key = __init.0.as_pointer();
+                let __inserted =
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<Moveable>)>| {
+                            __m.get(&__key).is_none()
+                        });
+                if __inserted {
+                    Map::subscript(m.as_pointer().clone(), __key.clone())
+                        .write(__init.1.borrow().clone());
+                }
+                (
+                    Rc::new(RefCell::new(m.as_pointer().with(
+                        |__m: &Map<i32, (Value<i32>, Value<Moveable>)>| __m.find(&__key),
+                    ))),
+                    Rc::new(RefCell::new(__inserted)),
+                )
+            };
+            (*i.borrow_mut()) += 2;
         }
-        assert!(((*m.borrow()).len() == 10_usize));
+        assert!(({ ((*m.borrow()).len() == 10_usize) }));
         let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 3 }, { 3_f64 })));
-        let mut i: i32 = 0;
-        'loop_: while (i < 20) {
-            r.as_pointer().write(unimplemented!());
-            assert!(((*m.borrow()).len() == 10_usize));
-            assert!(!(*(*r.borrow()).1.borrow()));
+        let i: Value<i32> = Rc::new(RefCell::new(0));
+        'loop_: while ((*i.borrow()) < 20) {
+            r.as_pointer().write({
+                let __inserted =
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<Moveable>)>| {
+                            __m.get(&i.as_pointer()).is_none()
+                        });
+                if __inserted {
+                    Map::subscript(m.as_pointer().clone(), i.as_pointer().clone())
+                        .write(Moveable::move_from({ mv1.as_pointer() }));
+                }
+                (
+                    Rc::new(RefCell::new(m.as_pointer().with(
+                        |__m: &Map<i32, (Value<i32>, Value<Moveable>)>| __m.find(&i.as_pointer()),
+                    ))),
+                    Rc::new(RefCell::new(__inserted)),
+                )
+            });
+            assert!(({ ((*m.borrow()).len() == 10_usize) }));
+            assert!(({ !(*(*r.borrow()).1.borrow()) }));
             assert!(!({ MoveableImpl::moved(&mv1.as_pointer(),) }));
             assert!(
+                ({
+                    ((*(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
+                        .0
+                        .borrow())
+                        == (*i.borrow()))
+                })
+            );
+            (*i.borrow_mut()) += 2;
+        }
+        r.as_pointer().write(
+            ({
+                let ___k: Value<i32> = Rc::new(RefCell::new(-1_i32));
+                (*m.borrow()).try_emplace(___k.as_pointer(), mv1.as_pointer())
+            }),
+        );
+        assert!(({ ((*m.borrow()).len() == 11_usize) }));
+        assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
+        assert!(({ MoveableImpl::moved(&mv1.as_pointer(),) }));
+        assert!(
+            ({
                 ((*(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
                     .0
                     .borrow())
-                    == i)
-            );
-            i += 2;
-        }
-        r.as_pointer().write(unimplemented!());
-        assert!(((*m.borrow()).len() == 11_usize));
-        assert!(((*(*r.borrow()).1.borrow()) as bool));
-        assert!(({ MoveableImpl::moved(&mv1.as_pointer(),) }));
-        assert!(
-            ((*(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                .0
-                .borrow())
-                == -1_i32)
+                    == -1_i32)
+            })
         );
         assert!(
-            (({
-                MoveableImpl::get(
-                    &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                        .1
-                        .as_pointer(),
-                )
-            }) == 3)
+            ({
+                (({
+                    MoveableImpl::get(
+                        &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
+                            .1
+                            .as_pointer(),
+                    )
+                }) == 3)
+            })
         );
         let mv2: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 5 }, { 3_f64 })));
-        r.as_pointer().write(unimplemented!());
-        assert!(((*m.borrow()).len() == 12_usize));
-        assert!(((*(*r.borrow()).1.borrow()) as bool));
+        r.as_pointer().write(
+            ({
+                let ___k: Value<i32> = Rc::new(RefCell::new(5));
+                (*m.borrow()).try_emplace(___k.as_pointer(), mv2.as_pointer())
+            }),
+        );
+        assert!(({ ((*m.borrow()).len() == 12_usize) }));
+        assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
         assert!(({ MoveableImpl::moved(&mv2.as_pointer(),) }));
         assert!(
-            ((*(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                .0
-                .borrow())
-                == 5)
+            ({
+                ((*(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
+                    .0
+                    .borrow())
+                    == 5)
+            })
         );
         assert!(
-            (({
-                MoveableImpl::get(
-                    &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                        .1
-                        .as_pointer(),
-                )
-            }) == 5)
+            ({
+                (({
+                    MoveableImpl::get(
+                        &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
+                            .1
+                            .as_pointer(),
+                    )
+                }) == 5)
+            })
         );
         let mv3: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ -1_i32 }, { 3_f64 })));
-        r.as_pointer().write(unimplemented!());
-        assert!(((*m.borrow()).len() == 13_usize));
-        assert!(((*(*r.borrow()).1.borrow()) as bool));
+        r.as_pointer().write(
+            ({
+                let ___k: Value<i32> = Rc::new(RefCell::new(117));
+                (*m.borrow()).try_emplace(___k.as_pointer(), mv3.as_pointer())
+            }),
+        );
+        assert!(({ ((*m.borrow()).len() == 13_usize) }));
+        assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
         assert!(({ MoveableImpl::moved(&mv3.as_pointer(),) }));
         assert!(
-            ((*(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                .0
-                .borrow())
-                == 117)
+            ({
+                ((*(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
+                    .0
+                    .borrow())
+                    == 117)
+            })
         );
         assert!(
-            (({
-                MoveableImpl::get(
-                    &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                        .1
-                        .as_pointer(),
-                )
-            }) == -1_i32)
+            ({
+                (({
+                    MoveableImpl::get(
+                        &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
+                            .1
+                            .as_pointer(),
+                    )
+                }) == -1_i32)
+            })
         );
     }
     {
@@ -146,65 +222,126 @@ pub fn test_0() -> bool {
         let r: Value<(
             Value<BidirectionalIterator<(Value<Moveable>, Value<Moveable>)>>,
             Value<bool>,
-        )> = Rc::new(RefCell::new(unimplemented!()));
+        )> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(BidirectionalIterator::default())),
+            Rc::new(RefCell::new(false)),
+        )));
         let mut i: i32 = 0;
         'loop_: while (i < 20) {
-            unimplemented!();
+            {
+                let __init = (
+                    Rc::new(RefCell::new(Moveable::new_2({ i }, { (i as f64) }))),
+                    Rc::new(RefCell::new(Moveable::new_2({ (i + 1) }, {
+                        ((i as f64) + 1_f64)
+                    }))),
+                );
+                let __key = __init.0.as_pointer();
+                let __inserted = m.as_pointer().with(
+                    |__m: &Map<Moveable, (Value<Moveable>, Value<Moveable>)>| {
+                        __m.get(&__key).is_none()
+                    },
+                );
+                if __inserted {
+                    Map::subscript(m.as_pointer().clone(), __key.clone())
+                        .write(__init.1.borrow().clone());
+                }
+                (
+                    Rc::new(RefCell::new(m.as_pointer().with(
+                        |__m: &Map<Moveable, (Value<Moveable>, Value<Moveable>)>| __m.find(&__key),
+                    ))),
+                    Rc::new(RefCell::new(__inserted)),
+                )
+            };
             i += 2;
         }
-        assert!(((*m.borrow()).len() == 10_usize));
+        assert!(({ ((*m.borrow()).len() == 10_usize) }));
         let mvkey1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 2 }, { 2_f64 })));
         let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 4 }, { 4_f64 })));
-        r.as_pointer().write(unimplemented!());
-        assert!(((*m.borrow()).len() == 10_usize));
-        assert!(!(*(*r.borrow()).1.borrow()));
+        r.as_pointer().write(
+            ({
+                let ___k: Ptr<Moveable> = mvkey1.as_pointer();
+                let ___args: Ptr<Moveable> = mv1.as_pointer();
+                (*m.borrow()).try_emplace(___k, ___args)
+            }),
+        );
+        assert!(({ ((*m.borrow()).len() == 10_usize) }));
+        assert!(({ !(*(*r.borrow()).1.borrow()) }));
         assert!(!({ MoveableImpl::moved(&mv1.as_pointer(),) }));
         assert!(!({ MoveableImpl::moved(&mvkey1.as_pointer(),) }));
         assert!(
             ({
-                MoveableImpl::operator_eq(
-                    &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                        .0
-                        .as_pointer(),
-                    mvkey1.as_pointer(),
-                )
+                ({
+                    MoveableImpl::operator_eq(
+                        &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
+                            .0
+                            .as_pointer(),
+                        mvkey1.as_pointer(),
+                    )
+                })
             })
         );
         let mvkey2: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 3 }, { 3_f64 })));
-        r.as_pointer().write(unimplemented!());
-        assert!(((*m.borrow()).len() == 11_usize));
-        assert!(((*(*r.borrow()).1.borrow()) as bool));
+        r.as_pointer().write(
+            ({
+                let ___k: Ptr<Moveable> = mvkey2.as_pointer();
+                let ___args: Ptr<Moveable> = mv1.as_pointer();
+                (*m.borrow()).try_emplace(___k, ___args)
+            }),
+        );
+        assert!(({ ((*m.borrow()).len() == 11_usize) }));
+        assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
         assert!(({ MoveableImpl::moved(&mv1.as_pointer(),) }));
         assert!(({ MoveableImpl::moved(&mvkey2.as_pointer(),) }));
         assert!(
-            (({
-                MoveableImpl::get(
-                    &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                        .0
-                        .as_pointer(),
-                )
-            }) == 3)
+            ({
+                (({
+                    MoveableImpl::get(
+                        &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
+                            .0
+                            .as_pointer(),
+                    )
+                }) == 3)
+            })
         );
         assert!(
-            (({
-                MoveableImpl::get(
-                    &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                        .1
-                        .as_pointer(),
-                )
-            }) == 4)
+            ({
+                (({
+                    MoveableImpl::get(
+                        &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
+                            .1
+                            .as_pointer(),
+                    )
+                }) == 4)
+            })
         );
     }
     {
         let m: Value<Map<i32, (Value<i32>, Value<Moveable>)>> = Rc::new(RefCell::new(Map::new()));
         let r: Value<BidirectionalIterator<(Value<i32>, Value<Moveable>)>> =
             Rc::new(RefCell::new(BidirectionalIterator::default()));
-        let mut i: i32 = 0;
-        'loop_: while (i < 20) {
-            unimplemented!();
-            i += 2;
+        let i: Value<i32> = Rc::new(RefCell::new(0));
+        'loop_: while ((*i.borrow()) < 20) {
+            {
+                let __inserted =
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<Moveable>)>| {
+                            __m.get(&i.as_pointer()).is_none()
+                        });
+                if __inserted {
+                    Map::subscript(m.as_pointer().clone(), i.as_pointer().clone()).write(
+                        Moveable::new_2({ (*i.borrow()) }, { ((*i.borrow()) as f64) }),
+                    );
+                }
+                (
+                    Rc::new(RefCell::new(m.as_pointer().with(
+                        |__m: &Map<i32, (Value<i32>, Value<Moveable>)>| __m.find(&i.as_pointer()),
+                    ))),
+                    Rc::new(RefCell::new(__inserted)),
+                )
+            };
+            (*i.borrow_mut()) += 2;
         }
-        assert!(((*m.borrow()).len() == 10_usize));
+        assert!(({ ((*m.borrow()).len() == 10_usize) }));
         let it: Value<BidirectionalIterator<(Value<i32>, Value<Moveable>)>> = Rc::new(
             RefCell::new(
                 <BidirectionalIterator<(Value<i32>, Value<Moveable>)>>::from(
@@ -219,35 +356,48 @@ pub fn test_0() -> bool {
             ),
         );
         let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 3 }, { 3_f64 })));
-        let mut i: i32 = 0;
-        'loop_: while (i < 20) {
-            (*r.borrow_mut()) = unimplemented!();
-            assert!(((*m.borrow()).len() == 10_usize));
+        let i: Value<i32> = Rc::new(RefCell::new(0));
+        'loop_: while ((*i.borrow()) < 20) {
+            (*r.borrow_mut()) = ({
+                (*m.borrow()).try_emplace((*it.borrow()).clone(), i.as_pointer(), mv1.as_pointer())
+            });
+            assert!(({ ((*m.borrow()).len() == 10_usize) }));
             assert!(!({ MoveableImpl::moved(&mv1.as_pointer(),) }));
-            assert!(((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == i));
             assert!(
+                ({
+                    ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == (*i.borrow()))
+                })
+            );
+            assert!(
+                ({
+                    (({
+                        MoveableImpl::get(
+                            &(*(*r.borrow()).iter_deref().upgrade().deref())
+                                .1
+                                .as_pointer(),
+                        )
+                    }) == (*i.borrow()))
+                })
+            );
+            (*i.borrow_mut()) += 2;
+        }
+        (*r.borrow_mut()) = ({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*m.borrow()).try_emplace((*it.borrow()).clone(), ___k.as_pointer(), mv1.as_pointer())
+        });
+        assert!(({ ((*m.borrow()).len() == 11_usize) }));
+        assert!(({ MoveableImpl::moved(&mv1.as_pointer(),) }));
+        assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
+        assert!(
+            ({
                 (({
                     MoveableImpl::get(
                         &(*(*r.borrow()).iter_deref().upgrade().deref())
                             .1
                             .as_pointer(),
                     )
-                }) == i)
-            );
-            i += 2;
-        }
-        (*r.borrow_mut()) = unimplemented!();
-        assert!(((*m.borrow()).len() == 11_usize));
-        assert!(({ MoveableImpl::moved(&mv1.as_pointer(),) }));
-        assert!(((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
-        assert!(
-            (({
-                MoveableImpl::get(
-                    &(*(*r.borrow()).iter_deref().upgrade().deref())
-                        .1
-                        .as_pointer(),
-                )
-            }) == 3)
+                }) == 3)
+            })
         );
     }
     {
@@ -257,51 +407,90 @@ pub fn test_0() -> bool {
             Rc::new(RefCell::new(BidirectionalIterator::default()));
         let mut i: i32 = 0;
         'loop_: while (i < 20) {
-            unimplemented!();
+            {
+                let __init = (
+                    Rc::new(RefCell::new(Moveable::new_2({ i }, { (i as f64) }))),
+                    Rc::new(RefCell::new(Moveable::new_2({ (i + 1) }, {
+                        ((i as f64) + 1_f64)
+                    }))),
+                );
+                let __key = __init.0.as_pointer();
+                let __inserted = m.as_pointer().with(
+                    |__m: &Map<Moveable, (Value<Moveable>, Value<Moveable>)>| {
+                        __m.get(&__key).is_none()
+                    },
+                );
+                if __inserted {
+                    Map::subscript(m.as_pointer().clone(), __key.clone())
+                        .write(__init.1.borrow().clone());
+                }
+                (
+                    Rc::new(RefCell::new(m.as_pointer().with(
+                        |__m: &Map<Moveable, (Value<Moveable>, Value<Moveable>)>| __m.find(&__key),
+                    ))),
+                    Rc::new(RefCell::new(__inserted)),
+                )
+            };
             i += 2;
         }
-        assert!(((*m.borrow()).len() == 10_usize));
-        let it: Value<BidirectionalIterator<(Value<Moveable>, Value<Moveable>)>> = Rc::new(
-            RefCell::new(libcc2rs::next_refcount(unimplemented!(), 1_isize)),
-        );
+        assert!(({ ((*m.borrow()).len() == 10_usize) }));
+        let it: Value<BidirectionalIterator<(Value<Moveable>, Value<Moveable>)>> =
+            Rc::new(RefCell::new(libcc2rs::next_refcount(
+                ({ ({ (*m.borrow()).cbegin() }) }),
+                1_isize,
+            )));
         let mvkey1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 2 }, { 2_f64 })));
         let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 4 }, { 4_f64 })));
-        (*r.borrow_mut()) = unimplemented!();
-        assert!(((*m.borrow()).len() == 10_usize));
+        (*r.borrow_mut()) = ({
+            let ___k: Ptr<Moveable> = mvkey1.as_pointer();
+            let ___args: Ptr<Moveable> = mv1.as_pointer();
+            (*m.borrow()).try_emplace((*it.borrow()).clone(), ___k, ___args)
+        });
+        assert!(({ ((*m.borrow()).len() == 10_usize) }));
         assert!(!({ MoveableImpl::moved(&mv1.as_pointer(),) }));
         assert!(!({ MoveableImpl::moved(&mvkey1.as_pointer(),) }));
         assert!(
             ({
-                MoveableImpl::operator_eq(
-                    &(*(*r.borrow()).iter_deref().upgrade().deref())
-                        .0
-                        .as_pointer(),
-                    mvkey1.as_pointer(),
-                )
+                ({
+                    MoveableImpl::operator_eq(
+                        &(*(*r.borrow()).iter_deref().upgrade().deref())
+                            .0
+                            .as_pointer(),
+                        mvkey1.as_pointer(),
+                    )
+                })
             })
         );
         let mvkey2: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 3 }, { 3_f64 })));
-        (*r.borrow_mut()) = unimplemented!();
-        assert!(((*m.borrow()).len() == 11_usize));
+        (*r.borrow_mut()) = ({
+            let ___k: Ptr<Moveable> = mvkey2.as_pointer();
+            let ___args: Ptr<Moveable> = mv1.as_pointer();
+            (*m.borrow()).try_emplace((*it.borrow()).clone(), ___k, ___args)
+        });
+        assert!(({ ((*m.borrow()).len() == 11_usize) }));
         assert!(({ MoveableImpl::moved(&mv1.as_pointer(),) }));
         assert!(({ MoveableImpl::moved(&mvkey2.as_pointer(),) }));
         assert!(
-            (({
-                MoveableImpl::get(
-                    &(*(*r.borrow()).iter_deref().upgrade().deref())
-                        .0
-                        .as_pointer(),
-                )
-            }) == 3)
+            ({
+                (({
+                    MoveableImpl::get(
+                        &(*(*r.borrow()).iter_deref().upgrade().deref())
+                            .0
+                            .as_pointer(),
+                    )
+                }) == 3)
+            })
         );
         assert!(
-            (({
-                MoveableImpl::get(
-                    &(*(*r.borrow()).iter_deref().upgrade().deref())
-                        .1
-                        .as_pointer(),
-                )
-            }) == 4)
+            ({
+                (({
+                    MoveableImpl::get(
+                        &(*(*r.borrow()).iter_deref().upgrade().deref())
+                            .1
+                            .as_pointer(),
+                    )
+                }) == 4)
+            })
         );
     }
     return true;

@@ -11,68 +11,123 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_char_ref__const_char_ref_ {}
+impl CppMove for test_macros_detail_is_same_const_char_ref__const_char_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_wchar_t_ref__const_wchar_t_ref_ {}
+impl CppMove for test_macros_detail_is_same_const_wchar_t_ref__const_wchar_t_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_char16_t_ref__const_char16_t_ref_ {}
+impl CppMove for test_macros_detail_is_same_const_char16_t_ref__const_char16_t_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_char32_t_ref__const_char32_t_ref_ {}
+impl CppMove for test_macros_detail_is_same_const_char32_t_ref__const_char32_t_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_4(mut s: Ptr<i8>, mut len: usize) -> bool {
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let sv: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1({ (s).clone() }, {
+            (len as u64)
+        }),
+    ));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == len));
+    assert!(({ ((({ (*sv.borrow()).length() }) as usize) == len) }));
     assert!(
-        ({ ((unimplemented!().read()) as i32) } == {
-            ((elem!(s, (len).wrapping_sub(1_usize)).read()) as i32)
+        ({
+            ({ ((({ (*sv.borrow()).back() }).read()) as i32) } == {
+                ((elem!(s, (len).wrapping_sub(1_usize)).read()) as i32)
+            })
         })
     );
-    return ({ (unimplemented!()) } == { s.offset((len) as isize).offset(-((1) as isize)) });
+    return ({ ({ (*sv.borrow()).back() }) } == {
+        s.offset((len) as isize).offset(-((1) as isize))
+    });
 }
 pub fn test_5(mut s: Ptr<i32>, mut len: usize) -> bool {
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let sv: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_1({ (s).clone() }, {
+                (len as u64)
+            }),
+        ));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == len));
+    assert!(({ ((({ (*sv.borrow()).length() }) as usize) == len) }));
     assert!(
-        ({ ((unimplemented!().read()) as i32) } == {
-            (elem!(s, (len).wrapping_sub(1_usize)).read())
+        ({
+            ({ (({ (*sv.borrow()).back() }).read()) } == {
+                (elem!(s, (len).wrapping_sub(1_usize)).read())
+            })
         })
     );
-    return ({ (unimplemented!()) } == { s.offset((len) as isize).offset(-((1) as isize)) });
+    return ({ ({ (*sv.borrow()).back() }) } == {
+        s.offset((len) as isize).offset(-((1) as isize))
+    });
 }
 pub fn test_6(mut s: Ptr<u16>, mut len: usize) -> bool {
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let sv: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char16_t__std_char_traits_char16_t__::new_1({ (s).clone() }, {
+                (len as u64)
+            }),
+        ));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == len));
+    assert!(({ ((({ (*sv.borrow()).length() }) as usize) == len) }));
     assert!(
-        ({ ((unimplemented!().read()) as i32) } == {
-            ((elem!(s, (len).wrapping_sub(1_usize)).read()) as i32)
+        ({
+            ({ ((({ (*sv.borrow()).back() }).read()) as i32) } == {
+                ((elem!(s, (len).wrapping_sub(1_usize)).read()) as i32)
+            })
         })
     );
-    return ({ (unimplemented!()) } == { s.offset((len) as isize).offset(-((1) as isize)) });
+    return ({ ({ (*sv.borrow()).back() }) } == {
+        s.offset((len) as isize).offset(-((1) as isize))
+    });
 }
 pub fn test_7(mut s: Ptr<u32>, mut len: usize) -> bool {
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let sv: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
+        Rc::new(RefCell::new(
+            std_basic_string_view_char32_t__std_char_traits_char32_t__::new_1({ (s).clone() }, {
+                (len as u64)
+            }),
+        ));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    assert!(((unimplemented!() as usize) == len));
+    assert!(({ ((({ (*sv.borrow()).length() }) as usize) == len) }));
     assert!(
-        ({ ((unimplemented!().read()) as u32) } == {
-            (elem!(s, (len).wrapping_sub(1_usize)).read())
+        ({
+            ({ (({ (*sv.borrow()).back() }).read()) } == {
+                (elem!(s, (len).wrapping_sub(1_usize)).read())
+            })
         })
     );
-    return ({ (unimplemented!()) } == { s.offset((len) as isize).offset(-((1) as isize)) });
+    return ({ ({ (*sv.borrow()).back() }) } == {
+        s.offset((len) as isize).offset(-((1) as isize))
+    });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -151,7 +206,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         })
     );
     {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_basic_string_view_char__std_char_traits_char__::new_1(
+                { Ptr::<i8>::from_string_literal(b"ABC") },
+                { 2_u64 },
+            ),
+        ));
         const _: () = assert!(true, "sv.length() == 2");;
         const _: () = assert!(true, "sv.back() == \'B\'");;
     }

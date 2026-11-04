@@ -7,8 +7,12 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let d1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let d2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let d1: Value<std_default_delete_intarrarr_> =
+        Rc::new(RefCell::new(<std_default_delete_intarrarr_>::default()));
+    let d2: Value<std_default_delete_const_intarrarr_> =
+        Rc::new(RefCell::new(std_default_delete_const_intarrarr_::new_1({
+            d1.as_pointer()
+        })));
     (&(*d2.borrow_mut()));
     return true;
 }

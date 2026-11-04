@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_void__void_ {}
+impl CppMove for test_macros_detail_is_same_void__void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static count_1: Value<i32> = Rc::new(RefCell::new(0));
 );
@@ -22,6 +27,11 @@ impl destroyable {
         let __this: destroyable = Self {};
         (*count_1.with(Value::clone).borrow_mut()).prefix_inc();
         __this
+    }
+}
+impl CppMove for destroyable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for destroyable {
@@ -50,7 +60,9 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_pmr_polymorphic_allocator_double_> = Rc::new(RefCell::new(
+            <std_pmr_polymorphic_allocator_double_>::default(),
+        ));
         const _: () = assert!(true, "");;
     }
     {
@@ -58,7 +70,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new((0..1).map(|_| 0_i8).collect::<Box<[i8]>>()));
         let mut ptr: Ptr<destroyable> = Ptr::alloc(destroyable::new());
         assert!((count_1.with(|rc| *rc.borrow()) == 1));
-        unimplemented!();
+        ({ <std_pmr_polymorphic_allocator_double_>::default().destroy((ptr).clone()) });
         assert!((count_1.with(|rc| *rc.borrow()) == 0));
     }
     return 0;

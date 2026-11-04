@@ -6,11 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = u32;
-pub const anon_0_value: anon_0 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_year__std_chrono_year_ {}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -35,8 +31,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
     let mut i: i32 = 1;
     'loop_: while (i <= 50) {
-        let ym: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == i));
+        let ym: Value<std_chrono_year_month_day_last> = Rc::new(RefCell::new({
+            let __tmp_0: Value<std_chrono_year> =
+                Rc::new(RefCell::new(std_chrono_year::new_1({ i })));
+            let __tmp_1: Value<std_chrono_month_day_last> = Rc::new(RefCell::new({
+                let __tmp_2: Value<std_chrono_month> =
+                    Rc::new(RefCell::new(<std_chrono_month>::default()));
+                std_chrono_month_day_last::new({ __tmp_2.as_pointer() })
+            }));
+            std_chrono_year_month_day_last::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+        }));
+        assert!((({ ({ (*ym.borrow()).year() })() }) == i));
         i.prefix_inc();
     }
     return 0;

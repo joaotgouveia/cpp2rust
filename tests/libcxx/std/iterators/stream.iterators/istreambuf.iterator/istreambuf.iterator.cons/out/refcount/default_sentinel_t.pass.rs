@@ -28,16 +28,25 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let mut it: Ptr<::std::fs::File> =
+            std_istreambuf_iterator_char__std_char_traits_char__::new_1({
+                (*default_sentinel_0.with(Value::clone).borrow()).clone()
+            });
+        assert!(it == Ptr::null());
     }
     {
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let mut it: Ptr<::std::fs::File> =
+            std_istreambuf_iterator_char__std_char_traits_char__::new_1({
+                (*default_sentinel_0.with(Value::clone).borrow()).clone()
+            });
+        assert!(it == Ptr::null());
     }
     {
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        &(*it.borrow_mut());
+        let mut it: Ptr<::std::fs::File> =
+            std_istreambuf_iterator_char__std_char_traits_char__::new_1({
+                (*default_sentinel_0.with(Value::clone).borrow()).clone()
+            });
+        &(it);
     }
     const _: () = assert!(true, "");;
     return 0;

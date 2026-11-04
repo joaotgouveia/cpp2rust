@@ -9,6 +9,11 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_traits_char_ {}
+impl CppMove for test_traits_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(40)]
 pub struct test_allocator_statistics {
@@ -32,6 +37,11 @@ pub struct test_allocator_statistics {
     pub moved: i32,
     #[offset(36)]
     pub converted: i32,
+}
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for test_allocator_statistics {
     fn default() -> Self {
@@ -60,6 +70,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_2(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -140,6 +155,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -177,6 +197,11 @@ impl Default for test_allocator_char_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -209,6 +234,11 @@ impl malloc_allocator_base {
         dealloc_count_6.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_4: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -222,143 +252,14 @@ thread_local!(
     pub static disable_default_constructor_7: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_char__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<i8>,
-}
-impl min_pointer_char__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<i8>,
-}
-impl min_pointer_const_char__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_char_ {}
+impl CppMove for min_allocator_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_8() {
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::traits_type, Traits>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::value_type, typename Traits::char_type>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::value_type, typename Allocator::value_type>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::allocator_type, Allocator>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::size_type, typename std::allocator_traits<Allocator>::size_type>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::difference_type, typename std::allocator_traits<Allocator>::difference_type>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::reference, typename S::value_type&>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::const_reference, const typename S::value_type&>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::pointer, typename std::allocator_traits<Allocator>::pointer>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::const_pointer, typename std::allocator_traits<Allocator>::const_pointer>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same< typename std::iterator_traits<typename S::iterator>::iterator_category,\n                               std::random_access_iterator_tag>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same< typename std::iterator_traits<typename S::const_iterator>::iterator_category,\n                               std::random_access_iterator_tag>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same< typename S::reverse_iterator, std::reverse_iterator<typename S::iterator> >::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same< typename S::const_reverse_iterator, std::reverse_iterator<typename S::const_iterator> >::value)"
-    );;
-    const _: () = assert!(true, "S::npos == -1");;
-}
-pub fn test_9() {
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::traits_type, Traits>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::value_type, typename Traits::char_type>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::value_type, typename Allocator::value_type>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::allocator_type, Allocator>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::size_type, typename std::allocator_traits<Allocator>::size_type>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::difference_type, typename std::allocator_traits<Allocator>::difference_type>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::reference, typename S::value_type&>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::const_reference, const typename S::value_type&>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::pointer, typename std::allocator_traits<Allocator>::pointer>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same<typename S::const_pointer, typename std::allocator_traits<Allocator>::const_pointer>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same< typename std::iterator_traits<typename S::iterator>::iterator_category,\n                               std::random_access_iterator_tag>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same< typename std::iterator_traits<typename S::const_iterator>::iterator_category,\n                               std::random_access_iterator_tag>::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same< typename S::reverse_iterator, std::reverse_iterator<typename S::iterator> >::value)"
-    );;
-    const _: () = assert!(
-        true,
-        "(std::is_same< typename S::const_reverse_iterator, std::reverse_iterator<typename S::const_iterator> >::value)"
-    );;
-    const _: () = assert!(true, "S::npos == -1");;
-}
-pub fn test_10() {
     const _: () = assert!(
         true,
         "(std::is_same<typename S::traits_type, Traits>::value)"
@@ -450,6 +351,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_10() });
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_char__std_integral_constant_unsigned_long__0__;
 pub trait Tag_XImpl {
     fn copy_assign(&self, _a0: Ptr<Tag_X>) -> Ptr<Tag_X>;
     fn move_assign(&self, _a0: Ptr<Tag_X>) -> Ptr<Tag_X>;
@@ -475,138 +379,14 @@ pub trait min_allocator_char_Impl {
     }
 }
 impl min_allocator_char_Impl for Ptr<min_allocator_char_> {}
-pub trait min_pointer_char__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<i8> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<i8> {
-        unimplemented!()
-    }
-    fn operator_inc_8(&self) -> Ptr<min_pointer_char__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_9(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_char__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_10(&self) -> Ptr<min_pointer_char__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_11(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_char__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_char__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_char__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_char__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_char__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<i8> {
-        unimplemented!()
-    }
-}
-impl min_pointer_char__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_char__std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_const_char__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<i8> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<i8> {
-        unimplemented!()
-    }
-    fn operator_inc_9(
-        &self,
-    ) -> Ptr<min_pointer_const_char__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_10(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_11(
-        &self,
-    ) -> Ptr<min_pointer_const_char__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_12(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_const_char__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_const_char__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<i8> {
-        unimplemented!()
-    }
-}
-impl min_pointer_const_char__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_const_char__std_integral_constant_unsigned_long__0__>
-{
-}
 pub trait test_allocator_char_Impl {
     fn destructor(&self) {
         unimplemented!()
     }
-    fn address_11(&self, x: ()) -> Ptr<i8> {
+    fn address_11(&self, x: Ptr<i8>) -> Ptr<i8> {
         unimplemented!()
     }
-    fn address_12(&self, x: ()) -> Ptr<i8> {
+    fn address_12(&self, x: Ptr<i8>) -> Ptr<i8> {
         unimplemented!()
     }
     fn allocate(&self, mut n: u32, _a1: Option<AnyPtr>) -> Ptr<i8> {

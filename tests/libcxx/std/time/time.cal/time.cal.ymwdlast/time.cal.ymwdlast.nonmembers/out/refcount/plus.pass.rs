@@ -12,6 +12,7 @@ pub const anon_0_value: anon_0 = 1;
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_year_month_weekday_last__std_chrono_year_month_weekday_last_
 {}
+impl CppMove for test_macros_detail_is_same_std_chrono_year_month_weekday_last__std_chrono_year_month_weekday_last_ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn test_1() -> bool {
     let Tuesday: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let January: Value<()> = Rc::new(RefCell::new(unimplemented!()));

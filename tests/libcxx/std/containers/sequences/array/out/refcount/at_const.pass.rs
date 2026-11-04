@@ -9,9 +9,9 @@ use std::rc::{Rc, Weak};
 pub fn tests_0() -> bool {
     {
         let c: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([1_f64, 2_f64, 3.5_f64])));
-        let r1: () = unimplemented!();
+        let r1: Ptr<f64> = ({ (*c.borrow()).at_21(0_usize) });
         assert!(((r1.read()) == 1_f64));
-        let r2: () = unimplemented!();
+        let r2: Ptr<f64> = ({ (*c.borrow()).at_21(2_usize) });
         assert!(((r2.read()) == 3.5_f64));
     }
     return true;

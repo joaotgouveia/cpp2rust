@@ -36,11 +36,14 @@ impl S_1_ {
             data: (0..1).map(|_| 0_i8).collect::<Box<[i8]>>(),
         }));
         let this: Ptr<S_1_> = __this.as_pointer();
-        {
-            (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>)
-                .to_any()
-                .memset((v as i32) as u8, ::std::mem::size_of::<[i8; 1]>() as usize);
+        match ({
             (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>).to_any()
+        },)
+        {
+            (mut __tmp_0,) => {
+                __tmp_0.memset((v as i32) as u8, ::std::mem::size_of::<[i8; 1]>() as usize);
+                (__tmp_0).clone()
+            }
         };
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -48,6 +51,11 @@ impl S_1_ {
 impl CppEq for S_1_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_0(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for S_1_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for S_1_ {
@@ -85,11 +93,14 @@ impl S_2_ {
             data: (0..2).map(|_| 0_i8).collect::<Box<[i8]>>(),
         }));
         let this: Ptr<S_2_> = __this.as_pointer();
-        {
-            (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>)
-                .to_any()
-                .memset((v as i32) as u8, ::std::mem::size_of::<[i8; 2]>() as usize);
+        match ({
             (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>).to_any()
+        },)
+        {
+            (mut __tmp_1,) => {
+                __tmp_1.memset((v as i32) as u8, ::std::mem::size_of::<[i8; 2]>() as usize);
+                (__tmp_1).clone()
+            }
         };
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -97,6 +108,11 @@ impl S_2_ {
 impl CppEq for S_2_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_2(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for S_2_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for S_2_ {
@@ -134,11 +150,14 @@ impl S_3_ {
             data: (0..3).map(|_| 0_i8).collect::<Box<[i8]>>(),
         }));
         let this: Ptr<S_3_> = __this.as_pointer();
-        {
-            (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>)
-                .to_any()
-                .memset((v as i32) as u8, ::std::mem::size_of::<[i8; 3]>() as usize);
+        match ({
             (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>).to_any()
+        },)
+        {
+            (mut __tmp_2,) => {
+                __tmp_2.memset((v as i32) as u8, ::std::mem::size_of::<[i8; 3]>() as usize);
+                (__tmp_2).clone()
+            }
         };
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -146,6 +165,11 @@ impl S_3_ {
 impl CppEq for S_3_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_4(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for S_3_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for S_3_ {
@@ -183,11 +207,14 @@ impl S_4_ {
             data: (0..4).map(|_| 0_i8).collect::<Box<[i8]>>(),
         }));
         let this: Ptr<S_4_> = __this.as_pointer();
-        {
-            (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>)
-                .to_any()
-                .memset((v as i32) as u8, ::std::mem::size_of::<[i8; 4]>() as usize);
+        match ({
             (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>).to_any()
+        },)
+        {
+            (mut __tmp_3,) => {
+                __tmp_3.memset((v as i32) as u8, ::std::mem::size_of::<[i8; 4]>() as usize);
+                (__tmp_3).clone()
+            }
         };
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -195,6 +222,11 @@ impl S_4_ {
 impl CppEq for S_4_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_6(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for S_4_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for S_4_ {
@@ -232,11 +264,14 @@ impl S_5_ {
             data: (0..5).map(|_| 0_i8).collect::<Box<[i8]>>(),
         }));
         let this: Ptr<S_5_> = __this.as_pointer();
-        {
-            (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>)
-                .to_any()
-                .memset((v as i32) as u8, ::std::mem::size_of::<[i8; 5]>() as usize);
+        match ({
             (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>).to_any()
+        },)
+        {
+            (mut __tmp_4,) => {
+                __tmp_4.memset((v as i32) as u8, ::std::mem::size_of::<[i8; 5]>() as usize);
+                (__tmp_4).clone()
+            }
         };
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -244,6 +279,11 @@ impl S_5_ {
 impl CppEq for S_5_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_8(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for S_5_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for S_5_ {
@@ -281,11 +321,14 @@ impl S_6_ {
             data: (0..6).map(|_| 0_i8).collect::<Box<[i8]>>(),
         }));
         let this: Ptr<S_6_> = __this.as_pointer();
-        {
-            (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>)
-                .to_any()
-                .memset((v as i32) as u8, ::std::mem::size_of::<[i8; 6]>() as usize);
+        match ({
             (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>).to_any()
+        },)
+        {
+            (mut __tmp_5,) => {
+                __tmp_5.memset((v as i32) as u8, ::std::mem::size_of::<[i8; 6]>() as usize);
+                (__tmp_5).clone()
+            }
         };
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -293,6 +336,11 @@ impl S_6_ {
 impl CppEq for S_6_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_10(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for S_6_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for S_6_ {
@@ -316,6 +364,11 @@ impl Expected_1_ {
             s: (ss).clone(),
             b: true,
         }
+    }
+}
+impl CppMove for Expected_1_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for Expected_1_ {
@@ -346,6 +399,11 @@ impl Expected_2_ {
         }
     }
 }
+impl CppMove for Expected_2_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Expected_2_ {
     fn default() -> Self {
         {
@@ -372,6 +430,11 @@ impl Expected_3_ {
             s: (ss).clone(),
             b: true,
         }
+    }
+}
+impl CppMove for Expected_3_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for Expected_3_ {
@@ -402,6 +465,11 @@ impl Expected_4_ {
         }
     }
 }
+impl CppMove for Expected_4_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Expected_4_ {
     fn default() -> Self {
         {
@@ -428,6 +496,11 @@ impl Expected_5_ {
             s: (ss).clone(),
             b: true,
         }
+    }
+}
+impl CppMove for Expected_5_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for Expected_5_ {
@@ -458,6 +531,11 @@ impl Expected_6_ {
         }
     }
 }
+impl CppMove for Expected_6_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Expected_6_ {
     fn default() -> Self {
         {
@@ -469,18 +547,26 @@ impl Default for Expected_6_ {
     }
 }
 pub fn test_12() {
-    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let a: Value<std_atomic_S_1__> = Rc::new(RefCell::new(std_atomic_S_1__::new_1({
+        S_1_::new({ Some(0_i8) })
+    })));
     let expected: Value<Expected_1_> = Rc::new(RefCell::new(Expected_1_::new({
         S_1_::new({ Some(17_i8) })
     })));
     assert!(
         ({
-            let _lhs: Value<S_1_> = Rc::new(RefCell::new(unimplemented!()));
+            let _lhs: Value<S_1_> = Rc::new(RefCell::new(({ (*a.borrow()).load_15(None) })));
             operator_ne_1(_lhs.as_pointer(), field_ptr!(expected.as_pointer(), s))
         })
     );
-    assert!({ (*expected.borrow()).b });
-    let mut r1: bool = unimplemented!();
+    assert!(({ { (*expected.borrow()).b } }));
+    let mut r1: bool = ({
+        (*a.borrow()).compare_exchange_strong_25(
+            field_ptr!(expected.as_pointer(), s),
+            S_1_::new({ Some(18_i8) }),
+            memory_order_relaxed_13.with(|rc| *rc.borrow()),
+        )
+    });
     assert!(!(r1));
     assert!(
         ({
@@ -489,19 +575,25 @@ pub fn test_12() {
             operator_eq_0(_lhs, _rhs.as_pointer())
         })
     );
-    assert!({ (*expected.borrow()).b });
+    assert!(({ { (*expected.borrow()).b } }));
     assert!(
         ({
-            let _lhs: Value<S_1_> = Rc::new(RefCell::new(unimplemented!()));
+            let _lhs: Value<S_1_> = Rc::new(RefCell::new(({ (*a.borrow()).load_15(None) })));
             let _rhs: Value<S_1_> = Rc::new(RefCell::new(S_1_::new({ Some(0_i8) })));
             operator_eq_0(_lhs.as_pointer(), _rhs.as_pointer())
         })
     );
-    let mut r2: bool = unimplemented!();
+    let mut r2: bool = ({
+        (*a.borrow()).compare_exchange_strong_25(
+            field_ptr!(expected.as_pointer(), s),
+            S_1_::new({ Some(18_i8) }),
+            memory_order_relaxed_13.with(|rc| *rc.borrow()),
+        )
+    });
     assert!((r2 as bool));
     assert!(
         ({
-            let _lhs: Value<S_1_> = Rc::new(RefCell::new(unimplemented!()));
+            let _lhs: Value<S_1_> = Rc::new(RefCell::new(({ (*a.borrow()).load_15(None) })));
             let _rhs: Value<S_1_> = Rc::new(RefCell::new(S_1_::new({ Some(18_i8) })));
             operator_eq_0(_lhs.as_pointer(), _rhs.as_pointer())
         })
@@ -513,21 +605,29 @@ pub fn test_12() {
             operator_eq_0(_lhs, _rhs.as_pointer())
         })
     );
-    assert!({ (*expected.borrow()).b });
+    assert!(({ { (*expected.borrow()).b } }));
 }
-pub fn test_13() {
-    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_14() {
+    let a: Value<std_atomic_S_2__> = Rc::new(RefCell::new(std_atomic_S_2__::new_1({
+        S_2_::new({ Some(0_i8) })
+    })));
     let expected: Value<Expected_2_> = Rc::new(RefCell::new(Expected_2_::new({
         S_2_::new({ Some(17_i8) })
     })));
     assert!(
         ({
-            let _lhs: Value<S_2_> = Rc::new(RefCell::new(unimplemented!()));
+            let _lhs: Value<S_2_> = Rc::new(RefCell::new(({ (*a.borrow()).load_15(None) })));
             operator_ne_3(_lhs.as_pointer(), field_ptr!(expected.as_pointer(), s))
         })
     );
-    assert!({ (*expected.borrow()).b });
-    let mut r1: bool = unimplemented!();
+    assert!(({ { (*expected.borrow()).b } }));
+    let mut r1: bool = ({
+        (*a.borrow()).compare_exchange_strong_25(
+            field_ptr!(expected.as_pointer(), s),
+            S_2_::new({ Some(18_i8) }),
+            memory_order_relaxed_13.with(|rc| *rc.borrow()),
+        )
+    });
     assert!(!(r1));
     assert!(
         ({
@@ -536,19 +636,25 @@ pub fn test_13() {
             operator_eq_2(_lhs, _rhs.as_pointer())
         })
     );
-    assert!({ (*expected.borrow()).b });
+    assert!(({ { (*expected.borrow()).b } }));
     assert!(
         ({
-            let _lhs: Value<S_2_> = Rc::new(RefCell::new(unimplemented!()));
+            let _lhs: Value<S_2_> = Rc::new(RefCell::new(({ (*a.borrow()).load_15(None) })));
             let _rhs: Value<S_2_> = Rc::new(RefCell::new(S_2_::new({ Some(0_i8) })));
             operator_eq_2(_lhs.as_pointer(), _rhs.as_pointer())
         })
     );
-    let mut r2: bool = unimplemented!();
+    let mut r2: bool = ({
+        (*a.borrow()).compare_exchange_strong_25(
+            field_ptr!(expected.as_pointer(), s),
+            S_2_::new({ Some(18_i8) }),
+            memory_order_relaxed_13.with(|rc| *rc.borrow()),
+        )
+    });
     assert!((r2 as bool));
     assert!(
         ({
-            let _lhs: Value<S_2_> = Rc::new(RefCell::new(unimplemented!()));
+            let _lhs: Value<S_2_> = Rc::new(RefCell::new(({ (*a.borrow()).load_15(None) })));
             let _rhs: Value<S_2_> = Rc::new(RefCell::new(S_2_::new({ Some(18_i8) })));
             operator_eq_2(_lhs.as_pointer(), _rhs.as_pointer())
         })
@@ -560,21 +666,29 @@ pub fn test_13() {
             operator_eq_2(_lhs, _rhs.as_pointer())
         })
     );
-    assert!({ (*expected.borrow()).b });
+    assert!(({ { (*expected.borrow()).b } }));
 }
-pub fn test_14() {
-    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_15() {
+    let a: Value<std_atomic_S_3__> = Rc::new(RefCell::new(std_atomic_S_3__::new_1({
+        S_3_::new({ Some(0_i8) })
+    })));
     let expected: Value<Expected_3_> = Rc::new(RefCell::new(Expected_3_::new({
         S_3_::new({ Some(17_i8) })
     })));
     assert!(
         ({
-            let _lhs: Value<S_3_> = Rc::new(RefCell::new(unimplemented!()));
+            let _lhs: Value<S_3_> = Rc::new(RefCell::new(({ (*a.borrow()).load_15(None) })));
             operator_ne_5(_lhs.as_pointer(), field_ptr!(expected.as_pointer(), s))
         })
     );
-    assert!({ (*expected.borrow()).b });
-    let mut r1: bool = unimplemented!();
+    assert!(({ { (*expected.borrow()).b } }));
+    let mut r1: bool = ({
+        (*a.borrow()).compare_exchange_strong_25(
+            field_ptr!(expected.as_pointer(), s),
+            S_3_::new({ Some(18_i8) }),
+            memory_order_relaxed_13.with(|rc| *rc.borrow()),
+        )
+    });
     assert!(!(r1));
     assert!(
         ({
@@ -583,19 +697,25 @@ pub fn test_14() {
             operator_eq_4(_lhs, _rhs.as_pointer())
         })
     );
-    assert!({ (*expected.borrow()).b });
+    assert!(({ { (*expected.borrow()).b } }));
     assert!(
         ({
-            let _lhs: Value<S_3_> = Rc::new(RefCell::new(unimplemented!()));
+            let _lhs: Value<S_3_> = Rc::new(RefCell::new(({ (*a.borrow()).load_15(None) })));
             let _rhs: Value<S_3_> = Rc::new(RefCell::new(S_3_::new({ Some(0_i8) })));
             operator_eq_4(_lhs.as_pointer(), _rhs.as_pointer())
         })
     );
-    let mut r2: bool = unimplemented!();
+    let mut r2: bool = ({
+        (*a.borrow()).compare_exchange_strong_25(
+            field_ptr!(expected.as_pointer(), s),
+            S_3_::new({ Some(18_i8) }),
+            memory_order_relaxed_13.with(|rc| *rc.borrow()),
+        )
+    });
     assert!((r2 as bool));
     assert!(
         ({
-            let _lhs: Value<S_3_> = Rc::new(RefCell::new(unimplemented!()));
+            let _lhs: Value<S_3_> = Rc::new(RefCell::new(({ (*a.borrow()).load_15(None) })));
             let _rhs: Value<S_3_> = Rc::new(RefCell::new(S_3_::new({ Some(18_i8) })));
             operator_eq_4(_lhs.as_pointer(), _rhs.as_pointer())
         })
@@ -607,21 +727,29 @@ pub fn test_14() {
             operator_eq_4(_lhs, _rhs.as_pointer())
         })
     );
-    assert!({ (*expected.borrow()).b });
+    assert!(({ { (*expected.borrow()).b } }));
 }
-pub fn test_15() {
-    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_16() {
+    let a: Value<std_atomic_S_4__> = Rc::new(RefCell::new(std_atomic_S_4__::new_1({
+        S_4_::new({ Some(0_i8) })
+    })));
     let expected: Value<Expected_4_> = Rc::new(RefCell::new(Expected_4_::new({
         S_4_::new({ Some(17_i8) })
     })));
     assert!(
         ({
-            let _lhs: Value<S_4_> = Rc::new(RefCell::new(unimplemented!()));
+            let _lhs: Value<S_4_> = Rc::new(RefCell::new(({ (*a.borrow()).load_15(None) })));
             operator_ne_7(_lhs.as_pointer(), field_ptr!(expected.as_pointer(), s))
         })
     );
-    assert!({ (*expected.borrow()).b });
-    let mut r1: bool = unimplemented!();
+    assert!(({ { (*expected.borrow()).b } }));
+    let mut r1: bool = ({
+        (*a.borrow()).compare_exchange_strong_25(
+            field_ptr!(expected.as_pointer(), s),
+            S_4_::new({ Some(18_i8) }),
+            memory_order_relaxed_13.with(|rc| *rc.borrow()),
+        )
+    });
     assert!(!(r1));
     assert!(
         ({
@@ -630,19 +758,25 @@ pub fn test_15() {
             operator_eq_6(_lhs, _rhs.as_pointer())
         })
     );
-    assert!({ (*expected.borrow()).b });
+    assert!(({ { (*expected.borrow()).b } }));
     assert!(
         ({
-            let _lhs: Value<S_4_> = Rc::new(RefCell::new(unimplemented!()));
+            let _lhs: Value<S_4_> = Rc::new(RefCell::new(({ (*a.borrow()).load_15(None) })));
             let _rhs: Value<S_4_> = Rc::new(RefCell::new(S_4_::new({ Some(0_i8) })));
             operator_eq_6(_lhs.as_pointer(), _rhs.as_pointer())
         })
     );
-    let mut r2: bool = unimplemented!();
+    let mut r2: bool = ({
+        (*a.borrow()).compare_exchange_strong_25(
+            field_ptr!(expected.as_pointer(), s),
+            S_4_::new({ Some(18_i8) }),
+            memory_order_relaxed_13.with(|rc| *rc.borrow()),
+        )
+    });
     assert!((r2 as bool));
     assert!(
         ({
-            let _lhs: Value<S_4_> = Rc::new(RefCell::new(unimplemented!()));
+            let _lhs: Value<S_4_> = Rc::new(RefCell::new(({ (*a.borrow()).load_15(None) })));
             let _rhs: Value<S_4_> = Rc::new(RefCell::new(S_4_::new({ Some(18_i8) })));
             operator_eq_6(_lhs.as_pointer(), _rhs.as_pointer())
         })
@@ -654,21 +788,29 @@ pub fn test_15() {
             operator_eq_6(_lhs, _rhs.as_pointer())
         })
     );
-    assert!({ (*expected.borrow()).b });
+    assert!(({ { (*expected.borrow()).b } }));
 }
-pub fn test_16() {
-    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_17() {
+    let a: Value<std_atomic_S_5__> = Rc::new(RefCell::new(std_atomic_S_5__::new_1({
+        S_5_::new({ Some(0_i8) })
+    })));
     let expected: Value<Expected_5_> = Rc::new(RefCell::new(Expected_5_::new({
         S_5_::new({ Some(17_i8) })
     })));
     assert!(
         ({
-            let _lhs: Value<S_5_> = Rc::new(RefCell::new(unimplemented!()));
+            let _lhs: Value<S_5_> = Rc::new(RefCell::new(({ (*a.borrow()).load_15(None) })));
             operator_ne_9(_lhs.as_pointer(), field_ptr!(expected.as_pointer(), s))
         })
     );
-    assert!({ (*expected.borrow()).b });
-    let mut r1: bool = unimplemented!();
+    assert!(({ { (*expected.borrow()).b } }));
+    let mut r1: bool = ({
+        (*a.borrow()).compare_exchange_strong_25(
+            field_ptr!(expected.as_pointer(), s),
+            S_5_::new({ Some(18_i8) }),
+            memory_order_relaxed_13.with(|rc| *rc.borrow()),
+        )
+    });
     assert!(!(r1));
     assert!(
         ({
@@ -677,19 +819,25 @@ pub fn test_16() {
             operator_eq_8(_lhs, _rhs.as_pointer())
         })
     );
-    assert!({ (*expected.borrow()).b });
+    assert!(({ { (*expected.borrow()).b } }));
     assert!(
         ({
-            let _lhs: Value<S_5_> = Rc::new(RefCell::new(unimplemented!()));
+            let _lhs: Value<S_5_> = Rc::new(RefCell::new(({ (*a.borrow()).load_15(None) })));
             let _rhs: Value<S_5_> = Rc::new(RefCell::new(S_5_::new({ Some(0_i8) })));
             operator_eq_8(_lhs.as_pointer(), _rhs.as_pointer())
         })
     );
-    let mut r2: bool = unimplemented!();
+    let mut r2: bool = ({
+        (*a.borrow()).compare_exchange_strong_25(
+            field_ptr!(expected.as_pointer(), s),
+            S_5_::new({ Some(18_i8) }),
+            memory_order_relaxed_13.with(|rc| *rc.borrow()),
+        )
+    });
     assert!((r2 as bool));
     assert!(
         ({
-            let _lhs: Value<S_5_> = Rc::new(RefCell::new(unimplemented!()));
+            let _lhs: Value<S_5_> = Rc::new(RefCell::new(({ (*a.borrow()).load_15(None) })));
             let _rhs: Value<S_5_> = Rc::new(RefCell::new(S_5_::new({ Some(18_i8) })));
             operator_eq_8(_lhs.as_pointer(), _rhs.as_pointer())
         })
@@ -701,21 +849,29 @@ pub fn test_16() {
             operator_eq_8(_lhs, _rhs.as_pointer())
         })
     );
-    assert!({ (*expected.borrow()).b });
+    assert!(({ { (*expected.borrow()).b } }));
 }
-pub fn test_17() {
-    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_18() {
+    let a: Value<std_atomic_S_6__> = Rc::new(RefCell::new(std_atomic_S_6__::new_1({
+        S_6_::new({ Some(0_i8) })
+    })));
     let expected: Value<Expected_6_> = Rc::new(RefCell::new(Expected_6_::new({
         S_6_::new({ Some(17_i8) })
     })));
     assert!(
         ({
-            let _lhs: Value<S_6_> = Rc::new(RefCell::new(unimplemented!()));
+            let _lhs: Value<S_6_> = Rc::new(RefCell::new(({ (*a.borrow()).load_15(None) })));
             operator_ne_11(_lhs.as_pointer(), field_ptr!(expected.as_pointer(), s))
         })
     );
-    assert!({ (*expected.borrow()).b });
-    let mut r1: bool = unimplemented!();
+    assert!(({ { (*expected.borrow()).b } }));
+    let mut r1: bool = ({
+        (*a.borrow()).compare_exchange_strong_25(
+            field_ptr!(expected.as_pointer(), s),
+            S_6_::new({ Some(18_i8) }),
+            memory_order_relaxed_13.with(|rc| *rc.borrow()),
+        )
+    });
     assert!(!(r1));
     assert!(
         ({
@@ -724,19 +880,25 @@ pub fn test_17() {
             operator_eq_10(_lhs, _rhs.as_pointer())
         })
     );
-    assert!({ (*expected.borrow()).b });
+    assert!(({ { (*expected.borrow()).b } }));
     assert!(
         ({
-            let _lhs: Value<S_6_> = Rc::new(RefCell::new(unimplemented!()));
+            let _lhs: Value<S_6_> = Rc::new(RefCell::new(({ (*a.borrow()).load_15(None) })));
             let _rhs: Value<S_6_> = Rc::new(RefCell::new(S_6_::new({ Some(0_i8) })));
             operator_eq_10(_lhs.as_pointer(), _rhs.as_pointer())
         })
     );
-    let mut r2: bool = unimplemented!();
+    let mut r2: bool = ({
+        (*a.borrow()).compare_exchange_strong_25(
+            field_ptr!(expected.as_pointer(), s),
+            S_6_::new({ Some(18_i8) }),
+            memory_order_relaxed_13.with(|rc| *rc.borrow()),
+        )
+    });
     assert!((r2 as bool));
     assert!(
         ({
-            let _lhs: Value<S_6_> = Rc::new(RefCell::new(unimplemented!()));
+            let _lhs: Value<S_6_> = Rc::new(RefCell::new(({ (*a.borrow()).load_15(None) })));
             let _rhs: Value<S_6_> = Rc::new(RefCell::new(S_6_::new({ Some(18_i8) })));
             operator_eq_10(_lhs.as_pointer(), _rhs.as_pointer())
         })
@@ -748,7 +910,7 @@ pub fn test_17() {
             operator_eq_10(_lhs, _rhs.as_pointer())
         })
     );
-    assert!({ (*expected.borrow()).b });
+    assert!(({ { (*expected.borrow()).b } }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -771,11 +933,11 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_12() });
-    ({ test_13() });
     ({ test_14() });
     ({ test_15() });
     ({ test_16() });
     ({ test_17() });
+    ({ test_18() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

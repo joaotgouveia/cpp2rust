@@ -27,15 +27,32 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let inf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let icopy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
+    let inf: Value<std_basic_istringstream_char__std_char_traits_char___std_allocator_char__> =
+        Rc::new(RefCell::new({
+            let __tmp_0: Value<Vec<i8>> = Rc::new(RefCell::new({
+                let mut __bytes = Ptr::<i8>::from_string_literal(b" 1 23").to_c_bytes();
+                __bytes.push(0_i8);
+                __bytes
+            }));
+            std_basic_istringstream_char__std_char_traits_char___std_allocator_char__::new_1(
+                { __tmp_0.as_pointer() },
+                None,
+            )
+        }));
+    let i: Value<std_istream_iterator_int__char__std_char_traits_char___long_> =
+        Rc::new(RefCell::new(
+            std_istream_iterator_int__char__std_char_traits_char___long_::new_1({
+                inf.as_pointer()
+            }),
+        ));
+    let icopy: Value<std_istream_iterator_int__char__std_char_traits_char___long_> =
+        Rc::new(RefCell::new((*i.borrow_mut()).iter_post_inc()));
+    assert!(({ (*icopy.borrow()) == (*i.borrow()) }));
     let mut j: i32 = 0;
-    j = (unimplemented!().read());
+    j = ((*i.borrow()).iter_deref().read());
     assert!((j == 23));
     j = 0;
-    j = (unimplemented!().read());
+    j = ((*icopy.borrow()).iter_deref().read());
     assert!((j == 1));
     return 0;
 }

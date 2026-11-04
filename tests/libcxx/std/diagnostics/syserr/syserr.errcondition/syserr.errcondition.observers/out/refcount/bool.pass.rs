@@ -28,12 +28,18 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let ec: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let ec: Value<std_error_condition> =
+            Rc::new(RefCell::new(std_error_condition::new_1({ 6 }, {
+                ({ generic_category_0() })
+            })));
+        assert!(({ ({ (*ec.borrow())() }) }));
     }
     {
-        let ec: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(!(unimplemented!()));
+        let ec: Value<std_error_condition> =
+            Rc::new(RefCell::new(std_error_condition::new_1({ 0 }, {
+                ({ generic_category_0() })
+            })));
+        assert!(({ !({ (*ec.borrow())() }) }));
     }
     return 0;
 }

@@ -6,11 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn is_contiguous_container_asan_correct_0(_a0: Ptr<Vec<CMyClass>>) -> bool {
-    return true;
-}
 thread_local!(
-    pub static gCopyConstructorShouldThrow_1: Value<bool> = Rc::new(RefCell::new(false));
+    pub static gCopyConstructorShouldThrow_0: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CppFrom, CopyAssign, Destructor, Default)]
 #[cpp_from(i32, new, value)]
@@ -24,29 +21,29 @@ pub struct CMyClass {
 impl CMyClass {
     pub fn new(mut tag: i32) -> Self {
         let __this: Value<CMyClass> = Rc::new(RefCell::new(Self {
-            fMagicValue: kStartedConstructionMagicValue_2.with(|rc| *rc.borrow()),
+            fMagicValue: kStartedConstructionMagicValue_1.with(|rc| *rc.borrow()),
             fTag: tag,
         }));
         let this: Ptr<CMyClass> = __this.as_pointer();
-        field!(this, fMagicValue).write(kFinishedConstructionMagicValue_3.with(|rc| *rc.borrow()));
+        field!(this, fMagicValue).write(kFinishedConstructionMagicValue_2.with(|rc| *rc.borrow()));
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
     pub fn copy_from(iOther: Ptr<CMyClass>) -> Self {
         let __this: Value<CMyClass> = Rc::new(RefCell::new(Self {
-            fMagicValue: kStartedConstructionMagicValue_2.with(|rc| *rc.borrow()),
+            fMagicValue: kStartedConstructionMagicValue_1.with(|rc| *rc.borrow()),
             fTag: iOther.with(|__s| __s.fTag),
         }));
         let this: Ptr<CMyClass> = __this.as_pointer();
-        if gCopyConstructorShouldThrow_1.with(|rc| *rc.borrow()) {
+        if gCopyConstructorShouldThrow_0.with(|rc| *rc.borrow()) {
             std::process::abort();
         }
-        field!(this, fMagicValue).write(kFinishedConstructionMagicValue_3.with(|rc| *rc.borrow()));
+        field!(this, fMagicValue).write(kFinishedConstructionMagicValue_2.with(|rc| *rc.borrow()));
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
 impl CppEq for CMyClass {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_4(__lhs.clone(), __rhs.clone())
+        operator_eq_3(__lhs.clone(), __rhs.clone())
     }
 }
 impl Clone for CMyClass {
@@ -58,15 +55,20 @@ impl Clone for CMyClass {
         CMyClass::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for CMyClass {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
-    static kStartedConstructionMagicValue_2: Value<i32> = Rc::new(RefCell::new(0));
+    static kStartedConstructionMagicValue_1: Value<i32> = Rc::new(RefCell::new(0));
 );
 thread_local!(
-    static kFinishedConstructionMagicValue_3: Value<i32> = Rc::new(RefCell::new(12345));
+    static kFinishedConstructionMagicValue_2: Value<i32> = Rc::new(RefCell::new(12345));
 );
 impl CMyClass {}
 impl CMyClass {}
-pub fn operator_eq_4(lhs: Ptr<CMyClass>, rhs: Ptr<CMyClass>) -> bool {
+pub fn operator_eq_3(lhs: Ptr<CMyClass>, rhs: Ptr<CMyClass>) -> bool {
     return ({
         let _rhs: Ptr<CMyClass> = (rhs).clone();
         CMyClassImpl::equal(&lhs, _rhs)
@@ -100,8 +102,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         (*vec_.borrow_mut()).push(a0_clone)
     };
     let vec2: Value<Vec<CMyClass>> = Rc::new(RefCell::new((*vec_.borrow()).clone()));
-    assert!(({ is_contiguous_container_asan_correct_0(vec_.as_pointer(),) }));
-    assert!(({ is_contiguous_container_asan_correct_0(vec2.as_pointer(),) }));
+    assert!(({ is_contiguous_container_asan_correct_4(vec_.as_pointer(),) }));
+    assert!(({ is_contiguous_container_asan_correct_4(vec2.as_pointer(),) }));
     return 0;
 }
 pub trait CMyClassImpl {
@@ -122,12 +124,12 @@ impl CMyClassImpl for Ptr<CMyClass> {
     fn destructor(&self) {
         assert!(
             ((*self).with(|__s| __s.fMagicValue)
-                == kFinishedConstructionMagicValue_3.with(|rc| *rc.borrow()))
+                == kFinishedConstructionMagicValue_2.with(|rc| *rc.borrow()))
         );
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = gCopyConstructorShouldThrow_1.with(|_| ());
-    let _ = kStartedConstructionMagicValue_2.with(|_| ());
-    let _ = kFinishedConstructionMagicValue_3.with(|_| ());
+    let _ = gCopyConstructorShouldThrow_0.with(|_| ());
+    let _ = kStartedConstructionMagicValue_1.with(|_| ());
+    let _ = kFinishedConstructionMagicValue_2.with(|_| ());
 }

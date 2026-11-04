@@ -99,3 +99,11 @@ fn f1<T1: CppArray<T2>, T2: Default>(a0: usize) -> Option<Value<Box<[T2]>>> {
 fn f32<T1: ByteRepr, T2>(a0: Ptr<Option<Value<Box<[T1]>>>>) {
     a0.write(None)
 }
+
+fn f30<T1, T2>(a0: Option<Value<Box<[T1]>>>) -> bool {
+    a0.is_some()
+}
+
+fn f50<T1, T2>(a0: Option<Value<T1>>) -> bool {
+    a0.is_some()
+}

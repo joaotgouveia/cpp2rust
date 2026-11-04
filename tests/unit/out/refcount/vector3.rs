@@ -43,24 +43,26 @@ fn main_0() -> i32 {
         .decay()
         .offset(0_usize as isize)
         .write(6);
-    'loop_: for v2 in IterRange::new(v.decay().begin(), v.decay().end()) {
+    'loop_: for v2 in IterRange::new(CppRange::begin(&v.decay()), CppRange::end(&v.decay())) {
         let v2: Ptr<Vec<i32>> = v2.iter_deref();
-        'loop_: for i in IterRange::new(v2.decay().begin(), v2.decay().end()) {
+        'loop_: for i in IterRange::new(CppRange::begin(&v2.decay()), CppRange::end(&v2.decay())) {
             let i: Ptr<i32> = i.iter_deref();
-            i.with_mut(|__v| __v.prefix_inc());
+            i.with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
     }
-    'loop_: for v2 in IterRange::new(v.decay().begin(), v.decay().end()) {
+    'loop_: for v2 in IterRange::new(CppRange::begin(&v.decay()), CppRange::end(&v.decay())) {
         let v2: Ptr<Vec<i32>> = v2.iter_deref();
-        'loop_: for i in IterRange::new(v2.decay().begin(), v2.decay().end()) {
+        'loop_: for i in IterRange::new(CppRange::begin(&v2.decay()), CppRange::end(&v2.decay())) {
             let mut i: i32 = (i.iter_deref().read());
             println!("{}", (i + 3));
         }
     }
-    'loop_: for v2 in IterRange::new(v.decay().begin(), v.decay().end()) {
+    'loop_: for v2 in IterRange::new(CppRange::begin(&v.decay()), CppRange::end(&v.decay())) {
         let v2: Value<Vec<i32>> =
             Rc::new(RefCell::new((*v2.iter_deref().upgrade().deref()).clone()));
-        'loop_: for i in IterRange::new(v2.decay().begin(), v2.decay().end()) {
+        'loop_: for i in IterRange::new(CppRange::begin(&v2.decay()), CppRange::end(&v2.decay())) {
             let mut i: i32 = (i.iter_deref().read());
             println!("{}", i);
         }

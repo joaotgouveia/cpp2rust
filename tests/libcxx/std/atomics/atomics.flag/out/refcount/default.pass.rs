@@ -27,13 +27,13 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == 0));
+    let f: Value<std_atomic_flag> = Rc::new(RefCell::new(<std_atomic_flag>::default()));
+    ({ (*f.borrow()).clear_14(None) });
+    assert!(({ ((({ (*f.borrow()).test_and_set_7(None,) }) as i32) == 0) }));
     {
         let storage: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8])));
-        let zero: Ptr<()> = Ptr::alloc(Rc::new(RefCell::new(unimplemented!())).as_pointer());
-        assert!(!(unimplemented!()));
+        let zero: Ptr<std_atomic_flag> = Ptr::alloc(<std_atomic_flag>::default());
+        assert!(({ !({ (*zero.upgrade().deref()).test_and_set_7(None,) }) }));
     }
     return 0;
 }

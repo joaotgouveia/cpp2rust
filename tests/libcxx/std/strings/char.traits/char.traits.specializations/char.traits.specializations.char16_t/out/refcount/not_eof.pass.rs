@@ -27,10 +27,34 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(((unimplemented!() as i32) == ((97 as u16) as i32)));
-    assert!(((unimplemented!() as i32) == ((65 as u16) as i32)));
-    assert!(((unimplemented!() as i32) == 0));
-    assert!(((unimplemented!() as i32) != (unimplemented!() as i32)));
+    assert!(
+        ((({
+            let ___c: Value<u16> = Rc::new(RefCell::new((97 as u16)));
+            std_char_traits_char16_t_::not_eof(___c.as_pointer())
+        }) as i32)
+            == ((97 as u16) as i32))
+    );
+    assert!(
+        ((({
+            let ___c: Value<u16> = Rc::new(RefCell::new((65 as u16)));
+            std_char_traits_char16_t_::not_eof(___c.as_pointer())
+        }) as i32)
+            == ((65 as u16) as i32))
+    );
+    assert!(
+        ((({
+            let ___c: Value<u16> = Rc::new(RefCell::new(0_u16));
+            std_char_traits_char16_t_::not_eof(___c.as_pointer())
+        }) as i32)
+            == 0)
+    );
+    assert!(
+        ((({
+            let ___c: Value<u16> = Rc::new(RefCell::new(({ std_char_traits_char16_t_::eof() })));
+            std_char_traits_char16_t_::not_eof(___c.as_pointer())
+        }) as i32)
+            != (({ std_char_traits_char16_t_::eof() }) as i32))
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

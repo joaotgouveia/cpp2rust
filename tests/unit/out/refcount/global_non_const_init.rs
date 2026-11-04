@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn next_0() -> i32 {
-    return (*counter_1.with(Value::clone).borrow_mut()).prefix_inc();
+    return (*(*counter_1.with(Value::clone).borrow_mut()).prefix_inc());
 }
 thread_local!(
     static counter_1: Value<i32> = Rc::new(RefCell::new(0));
@@ -46,6 +46,11 @@ impl Ctor {
         Self { v: x }
     }
 }
+impl CppMove for Ctor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Ctor {
     fn default() -> Self {
         { Ctor::new_1() }
@@ -60,7 +65,7 @@ thread_local!(
 thread_local!(
     pub static str_9: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __bytes = Ptr::<i8>::from_string_literal(b"abc").to_c_bytes();
-        __bytes.push(0);
+        __bytes.push(0_i8);
         __bytes
     }));
 );
@@ -70,6 +75,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Holder {}
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static member_10: Value<i32> = Rc::new(RefCell::new(({ next_0() })));
 );
@@ -94,6 +104,11 @@ impl Singleton {
     }
     pub fn instance() -> Ptr<Singleton> {
         return s_15.with(|v| v.as_pointer());
+    }
+}
+impl CppMove for Singleton {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for Singleton {

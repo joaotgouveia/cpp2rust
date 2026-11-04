@@ -9,11 +9,21 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct functor1 {}
+impl CppMove for functor1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct convertible_to_int_ref {
     #[offset(0)]
     pub val: i32,
+}
+impl CppMove for convertible_to_int_ref {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for convertible_to_int_ref {
     fn default() -> Self {
@@ -24,42 +34,42 @@ pub fn test_0(t: Ptr<FnPtr<fn()>>) {
     let mut r: Ptr<FnPtr<fn()>> = (t).clone();
     let t2: Value<FnPtr<fn()>> = Rc::new(RefCell::new((t.read())));
     let mut r2: Ptr<FnPtr<fn()>> = t2.as_pointer();
-    unimplemented!();
+    r2 = (r).clone();
     assert!(({ (r2).clone() } == { (t).clone() }));
 }
 pub fn test_1(t: Ptr<functor1>) {
     let mut r: Ptr<functor1> = (t).clone();
     let t2: Value<functor1> = Rc::new(RefCell::new((*t.upgrade().deref()).clone()));
     let mut r2: Ptr<functor1> = t2.as_pointer();
-    unimplemented!();
+    r2 = (r).clone();
     assert!(({ (r2).clone() } == { (t).clone() }));
 }
 pub fn test_2(t: Ptr<i32>) {
     let mut r: Ptr<i32> = (t).clone();
     let t2: Value<i32> = Rc::new(RefCell::new((t.read())));
     let mut r2: Ptr<i32> = t2.as_pointer();
-    unimplemented!();
+    r2 = (r).clone();
     assert!(({ (r2).clone() } == { (t).clone() }));
 }
 pub fn test_3(t: Ptr<i32>) {
     let mut r: Ptr<i32> = (t).clone();
     let t2: Value<i32> = Rc::new(RefCell::new((t.read())));
     let mut r2: Ptr<i32> = t2.as_pointer();
-    unimplemented!();
+    r2 = (r).clone();
     assert!(({ (r2).clone() } == { (t).clone() }));
 }
 pub fn test_4(t: Ptr<convertible_to_int_ref>) {
     let mut r: Ptr<convertible_to_int_ref> = (t).clone();
     let t2: Value<convertible_to_int_ref> = Rc::new(RefCell::new((*t.upgrade().deref()).clone()));
     let mut r2: Ptr<convertible_to_int_ref> = t2.as_pointer();
-    unimplemented!();
+    r2 = (r).clone();
     assert!(({ (r2).clone() } == { (t).clone() }));
 }
 pub fn test_5(t: Ptr<convertible_to_int_ref>) {
     let mut r: Ptr<convertible_to_int_ref> = (t).clone();
     let t2: Value<convertible_to_int_ref> = Rc::new(RefCell::new((*t.upgrade().deref()).clone()));
     let mut r2: Ptr<convertible_to_int_ref> = t2.as_pointer();
-    unimplemented!();
+    r2 = (r).clone();
     assert!(({ (r2).clone() } == { (t).clone() }));
 }
 pub fn f_6() {}
@@ -67,7 +77,7 @@ pub fn g_7() {}
 pub fn test_function_8() {
     let mut r: FnPtr<fn()> = FnPtr::<fn()>::new(f_6);
     let mut r2: FnPtr<fn()> = FnPtr::<fn()>::new(g_7);
-    unimplemented!();
+    r2 = (r).clone();
     assert!(((r2) == (FnPtr::<fn()>::new(f_6))));
 }
 pub fn main() {

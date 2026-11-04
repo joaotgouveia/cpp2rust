@@ -11,11 +11,21 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_bool__bool_ {}
+impl CppMove for test_macros_detail_is_same_bool__bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_InTemplate_true___InTemplate_true__ {}
+impl CppMove for test_macros_detail_is_same_InTemplate_true___InTemplate_true__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -39,20 +49,23 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        let mut p: bool = unimplemented!();
+        let mut p: bool = true;
         assert!(p);
     }
     {
         const _: () = assert!(true, "std::is_constant_evaluated()");;
-        let mut p: bool = unimplemented!();
+        let mut p: bool = ({ is_constant_evaluated_2() });
         assert!(!(p));
         const _: () = assert!(true, "");;
-        assert!((local_static_2.with(|rc| *rc.borrow()) == 42));
+        assert!((local_static_3.with(|rc| *rc.borrow()) == 42));
     }
     return 0;
 }
 thread_local!(
-    static local_static_2: Value<i32> =
-        Rc::new(RefCell::new(if unimplemented!() { 42 } else { -1_i32 }));
+    static local_static_3: Value<i32> = Rc::new(RefCell::new(if ({ is_constant_evaluated_2() }) {
+        42
+    } else {
+        -1_i32
+    }));
 );
 pub fn __cpp2rust_init_globals() {}

@@ -9,6 +9,11 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoDefaultCtor {}
+impl CppMove for NoDefaultCtor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "std::is_nothrow_default_constructible_v<std::expected<void, int>>"
@@ -31,14 +36,21 @@ impl CppEq for MyInt {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for MyInt {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_1() -> bool {
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let e: Value<std_expected_void__int_> =
+            Rc::new(RefCell::new(<std_expected_void__int_>::default()));
+        assert!(({ ({ (*e.borrow()).has_value() }) }));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let e: Value<std_expected_void__NoDefaultCtor_> =
+            Rc::new(RefCell::new(<std_expected_void__NoDefaultCtor_>::default()));
+        assert!(({ ({ (*e.borrow()).has_value() }) }));
     }
     return true;
 }

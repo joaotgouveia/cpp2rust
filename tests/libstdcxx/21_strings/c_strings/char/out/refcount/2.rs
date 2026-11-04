@@ -13,7 +13,7 @@ pub fn test02_0() {
         Ptr::<i8>::from_string_literal(b"san francisco sunny-day park inspectors");
     let carray: Value<Box<[i8]>> =
         Rc::new(RefCell::new((0..50).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    unimplemented!();
+    ({ strcpy_1((carray.as_pointer() as Ptr<i8>), (ccarray1).clone()) });
     let mut cv: AnyPtr = (ccarray1).to_any();
     let mut cv1: AnyPtr = AnyPtr::default();
     let mut cc: Ptr<i8> = Ptr::<i8>::null();
@@ -33,13 +33,12 @@ pub fn test02_0() {
         }
     };
     cc = {
-        let __s = (ccarray1).clone();
         let __t = (('/' as i8) as i32) as i8;
-        match __s.to_c_string_iterator().position(|__c| __c == __t) {
-            Some(__i) => __s.offset(__i),
+        match ccarray1.to_c_string_iterator().position(|__c| __c == __t) {
+            Some(__i) => ccarray1.offset(__i),
             None => {
                 if __t == 0 {
-                    __s.offset(__s.to_c_string_iterator().count())
+                    ccarray1.offset(ccarray1.to_c_string_iterator().count())
                 } else {
                     Ptr::null()
                 }
@@ -47,50 +46,46 @@ pub fn test02_0() {
         }
     };
     cc = {
-        let __s = (ccarray1).clone();
         let __t = (('c' as i8) as i32) as i8;
-        match __s
+        match ccarray1
             .to_c_string_iterator()
             .enumerate()
             .filter(|__e| __e.1 == __t)
             .last()
         {
-            Some((__i, _)) => __s.offset(__i),
+            Some((__i, _)) => ccarray1.offset(__i),
             None => {
                 if __t == 0 {
-                    __s.offset(__s.to_c_string_iterator().count())
+                    ccarray1.offset(ccarray1.to_c_string_iterator().count())
                 } else {
                     Ptr::null()
                 }
             }
         }
     };
-    cc = {
-        let __s = (ccarray1).clone();
-        let __set = (ccarray2).clone();
-        match __s
-            .to_c_string_iterator()
-            .position(|__c| __set.to_c_string_iterator().any(|__r| __r == __c))
-        {
-            Some(__i) => __s.offset(__i),
-            None => Ptr::null(),
-        }
+    cc = match ccarray1
+        .to_c_string_iterator()
+        .position(|__c| ccarray2.to_c_string_iterator().any(|__r| __r == __c))
+    {
+        Some(__i) => ccarray1.offset(__i),
+        None => Ptr::null(),
     };
-    c = {
-        let __needle = (carray.as_pointer() as Ptr<i8>);
-        let mut __p = (carray.as_pointer() as Ptr<i8>);
-        loop {
-            let mut __h = __p.to_c_string_iterator();
-            if __needle
-                .to_c_string_iterator()
-                .all(|__c| __h.next() == Some(__c))
-            {
-                break __p;
+    c = match ({ (carray.as_pointer() as Ptr<i8>) },) {
+        (mut __tmp_0,) => {
+            let mut __p = (carray.as_pointer() as Ptr<i8>);
+            loop {
+                let mut __h = __p.to_c_string_iterator();
+                if __tmp_0
+                    .to_c_string_iterator()
+                    .all(|__c| __h.next() == Some(__c))
+                {
+                    break __p;
+                }
+                if __p.read() == 0 {
+                    break Ptr::null();
+                }
+                __p += 1;
             }
-            if __p.read() == 0 {
-                break Ptr::null();
-            }
-            __p += 1;
         }
     };
     cv1 = { (cv1).clone() };

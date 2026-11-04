@@ -6,87 +6,123 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_seq_cst_0(store_op: FnPtr<fn(Ptr<()>, f32, f32)>, load_op: FnPtr<Generic>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+pub fn test_seq_cst_0(
+    store_op: FnPtr<fn(Ptr<std_atomic_float_>, f32, f32)>,
+    load_op: FnPtr<Generic>,
+) {
+    let store_op: Value<FnPtr<fn(Ptr<std_atomic_float_>, f32, f32)>> =
+        Rc::new(RefCell::new(store_op));
     let load_op: Value<FnPtr<Generic>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_1(store_op: FnPtr<fn(Ptr<()>, f32, f32)>, load_op: FnPtr<Generic>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+pub fn test_seq_cst_1(
+    store_op: FnPtr<fn(Ptr<std_atomic_float_>, f32, f32)>,
+    load_op: FnPtr<Generic>,
+) {
+    let store_op: Value<FnPtr<fn(Ptr<std_atomic_float_>, f32, f32)>> =
+        Rc::new(RefCell::new(store_op));
     let load_op: Value<FnPtr<Generic>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_2(store_op: FnPtr<fn(Ptr<()>, f32, f32)>, load_op: FnPtr<Generic>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+pub fn test_seq_cst_2(
+    store_op: FnPtr<fn(Ptr<std_atomic_float_>, f32, f32)>,
+    load_op: FnPtr<Generic>,
+) {
+    let store_op: Value<FnPtr<fn(Ptr<std_atomic_float_>, f32, f32)>> =
+        Rc::new(RefCell::new(store_op));
     let load_op: Value<FnPtr<Generic>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_3(store_op: FnPtr<fn(Ptr<()>, f32, f32)>, load_op: FnPtr<Generic>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+pub fn test_seq_cst_3(
+    store_op: FnPtr<fn(Ptr<std_atomic_float_>, f32, f32)>,
+    load_op: FnPtr<Generic>,
+) {
+    let store_op: Value<FnPtr<fn(Ptr<std_atomic_float_>, f32, f32)>> =
+        Rc::new(RefCell::new(store_op));
     let load_op: Value<FnPtr<Generic>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_4(store_op: FnPtr<fn(Ptr<()>, f64, f64)>, load_op: FnPtr<Generic>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+pub fn test_seq_cst_4(
+    store_op: FnPtr<fn(Ptr<std_atomic_double_>, f64, f64)>,
+    load_op: FnPtr<Generic>,
+) {
+    let store_op: Value<FnPtr<fn(Ptr<std_atomic_double_>, f64, f64)>> =
+        Rc::new(RefCell::new(store_op));
     let load_op: Value<FnPtr<Generic>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_5(store_op: FnPtr<fn(Ptr<()>, f64, f64)>, load_op: FnPtr<Generic>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+pub fn test_seq_cst_5(
+    store_op: FnPtr<fn(Ptr<std_atomic_double_>, f64, f64)>,
+    load_op: FnPtr<Generic>,
+) {
+    let store_op: Value<FnPtr<fn(Ptr<std_atomic_double_>, f64, f64)>> =
+        Rc::new(RefCell::new(store_op));
     let load_op: Value<FnPtr<Generic>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_6(store_op: FnPtr<fn(Ptr<()>, f64, f64)>, load_op: FnPtr<Generic>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+pub fn test_seq_cst_6(
+    store_op: FnPtr<fn(Ptr<std_atomic_double_>, f64, f64)>,
+    load_op: FnPtr<Generic>,
+) {
+    let store_op: Value<FnPtr<fn(Ptr<std_atomic_double_>, f64, f64)>> =
+        Rc::new(RefCell::new(store_op));
     let load_op: Value<FnPtr<Generic>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_7(store_op: FnPtr<fn(Ptr<()>, f64, f64)>, load_op: FnPtr<Generic>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+pub fn test_seq_cst_7(
+    store_op: FnPtr<fn(Ptr<std_atomic_double_>, f64, f64)>,
+    load_op: FnPtr<Generic>,
+) {
+    let store_op: Value<FnPtr<fn(Ptr<std_atomic_double_>, f64, f64)>> =
+        Rc::new(RefCell::new(store_op));
     let load_op: Value<FnPtr<Generic>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_8(
-    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
-    load_op: FnPtr<fn(Ptr<()>) -> f32>,
+    store_op: FnPtr<fn(Ptr<std_atomic_float_>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<std_atomic_float_>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<std_atomic_float_>, f32, f32)>> =
+        Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<std_atomic_float_>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_9(
-    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
-    load_op: FnPtr<fn(Ptr<()>) -> f32>,
+    store_op: FnPtr<fn(Ptr<std_atomic_float_>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<std_atomic_float_>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<std_atomic_float_>, f32, f32)>> =
+        Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<std_atomic_float_>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_10(
-    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
-    load_op: FnPtr<fn(Ptr<()>) -> f64>,
+    store_op: FnPtr<fn(Ptr<std_atomic_double_>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<std_atomic_double_>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<std_atomic_double_>, f64, f64)>> =
+        Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<std_atomic_double_>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_11(
-    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
-    load_op: FnPtr<fn(Ptr<()>) -> f64>,
+    store_op: FnPtr<fn(Ptr<std_atomic_double_>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<std_atomic_double_>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<std_atomic_double_>, f64, f64)>> =
+        Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<std_atomic_double_>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
@@ -100,41 +136,66 @@ pub fn test_impl_12() {
         "noexcept(std::declval<MaybeVolatile<std::atomic<T>>&>().fetch_sub(T(0)))"
     );;
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: f32 = unimplemented!();
+        let a: Value<std_atomic_float_> =
+            Rc::new(RefCell::new(std_atomic_float_::new_1({ (3.1_f64 as f32) })));
+        let mut r: f32 = ({
+            ((*a.borrow()) as std___atomic_float_float_)
+                .fetch_sub_31((1.2_f64 as f32), Some(std_memory_order_relaxed))
+        });
         assert!((r == (3.1_f64 as f32)));
-        assert!((unimplemented!() == ((3.1_f64 as f32) - (1.2_f64 as f32))));
+        assert!(
+            ({
+                (({ ((*a.borrow()) as std___atomic_float_float_).load_13(None) })
+                    == ((3.1_f64 as f32) - (1.2_f64 as f32)))
+            })
+        );
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
-                |x: Ptr<()>, mut old_val: f32, mut new_val: f32| {
-                    unimplemented!();
+        let store: Value<FnPtr<fn(Ptr<std_atomic_float_>, f32, f32)>> = Rc::new(RefCell::new(
+            FnPtr::<fn(Ptr<std_atomic_float_>, f32, f32)>::new(
+                |x: Ptr<std_atomic_float_>, mut old_val: f32, mut new_val: f32| {
+                    ({
+                        ((*x.upgrade().deref()) as std___atomic_float_float_)
+                            .fetch_sub_31((old_val - new_val), Some(std_memory_order_release))
+                    });
                 },
-            )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> f32>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
-                |x: Ptr<()>| -> f32 {
-                    {
-                        return unimplemented!();
-                    }
-                },
-            )));
+            ),
+        ));
+        let load: Value<FnPtr<fn(Ptr<std_atomic_float_>) -> f32>> = Rc::new(RefCell::new(FnPtr::<
+            fn(Ptr<std_atomic_float_>) -> f32,
+        >::new(
+            |x: Ptr<std_atomic_float_>| -> f32 {
+                {
+                    return ({
+                        ((*x.upgrade().deref()) as std___atomic_float_float_)
+                            .load_13(Some(std_memory_order_acquire))
+                    });
+                }
+            },
+        )));
         ({ test_acquire_release_8((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
     }
     {
-        let fetch_sub: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
-                |x: Ptr<()>, mut old_value: f32, mut new_val: f32| {
-                    unimplemented!();
+        let fetch_sub: Value<FnPtr<fn(Ptr<std_atomic_float_>, f32, f32)>> = Rc::new(RefCell::new(
+            FnPtr::<fn(Ptr<std_atomic_float_>, f32, f32)>::new(
+                |x: Ptr<std_atomic_float_>, mut old_value: f32, mut new_val: f32| {
+                    ({
+                        ((*x.upgrade().deref()) as std___atomic_float_float_)
+                            .fetch_sub_31((old_value - new_val), None)
+                    });
                 },
-            )));
-        let fetch_sub_with_order: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
-                |x: Ptr<()>, mut old_value: f32, mut new_val: f32| {
-                    unimplemented!();
+            ),
+        ));
+        let fetch_sub_with_order: Value<FnPtr<fn(Ptr<std_atomic_float_>, f32, f32)>> = Rc::new(
+            RefCell::new(FnPtr::<fn(Ptr<std_atomic_float_>, f32, f32)>::new(
+                |x: Ptr<std_atomic_float_>, mut old_value: f32, mut new_val: f32| {
+                    ({
+                        ((*x.upgrade().deref()) as std___atomic_float_float_)
+                            .fetch_sub_31((old_value - new_val), Some(std_memory_order_seq_cst))
+                    });
                 },
-            )));
+            )),
+        );
         let load: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {})));
         ({
             test_seq_cst_0(
@@ -160,41 +221,66 @@ pub fn test_impl_13() {
         "noexcept(std::declval<MaybeVolatile<std::atomic<T>>&>().fetch_sub(T(0)))"
     );;
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: f32 = unimplemented!();
+        let a: Value<std_atomic_float_> =
+            Rc::new(RefCell::new(std_atomic_float_::new_1({ (3.1_f64 as f32) })));
+        let mut r: f32 = ({
+            ((*a.borrow()) as std___atomic_float_float_)
+                .fetch_sub_32((1.2_f64 as f32), Some(std_memory_order_relaxed))
+        });
         assert!((r == (3.1_f64 as f32)));
-        assert!((unimplemented!() == ((3.1_f64 as f32) - (1.2_f64 as f32))));
+        assert!(
+            ({
+                (({ ((*a.borrow()) as std___atomic_float_float_).load_12(None) })
+                    == ((3.1_f64 as f32) - (1.2_f64 as f32)))
+            })
+        );
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
-                |x: Ptr<()>, mut old_val: f32, mut new_val: f32| {
-                    unimplemented!();
+        let store: Value<FnPtr<fn(Ptr<std_atomic_float_>, f32, f32)>> = Rc::new(RefCell::new(
+            FnPtr::<fn(Ptr<std_atomic_float_>, f32, f32)>::new(
+                |x: Ptr<std_atomic_float_>, mut old_val: f32, mut new_val: f32| {
+                    ({
+                        ((*x.upgrade().deref()) as std___atomic_float_float_)
+                            .fetch_sub_32((old_val - new_val), Some(std_memory_order_release))
+                    });
                 },
-            )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> f32>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
-                |x: Ptr<()>| -> f32 {
-                    {
-                        return unimplemented!();
-                    }
-                },
-            )));
+            ),
+        ));
+        let load: Value<FnPtr<fn(Ptr<std_atomic_float_>) -> f32>> = Rc::new(RefCell::new(FnPtr::<
+            fn(Ptr<std_atomic_float_>) -> f32,
+        >::new(
+            |x: Ptr<std_atomic_float_>| -> f32 {
+                {
+                    return ({
+                        ((*x.upgrade().deref()) as std___atomic_float_float_)
+                            .load_12(Some(std_memory_order_acquire))
+                    });
+                }
+            },
+        )));
         ({ test_acquire_release_9((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
     }
     {
-        let fetch_sub: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
-                |x: Ptr<()>, mut old_value: f32, mut new_val: f32| {
-                    unimplemented!();
+        let fetch_sub: Value<FnPtr<fn(Ptr<std_atomic_float_>, f32, f32)>> = Rc::new(RefCell::new(
+            FnPtr::<fn(Ptr<std_atomic_float_>, f32, f32)>::new(
+                |x: Ptr<std_atomic_float_>, mut old_value: f32, mut new_val: f32| {
+                    ({
+                        ((*x.upgrade().deref()) as std___atomic_float_float_)
+                            .fetch_sub_32((old_value - new_val), None)
+                    });
                 },
-            )));
-        let fetch_sub_with_order: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
-                |x: Ptr<()>, mut old_value: f32, mut new_val: f32| {
-                    unimplemented!();
+            ),
+        ));
+        let fetch_sub_with_order: Value<FnPtr<fn(Ptr<std_atomic_float_>, f32, f32)>> = Rc::new(
+            RefCell::new(FnPtr::<fn(Ptr<std_atomic_float_>, f32, f32)>::new(
+                |x: Ptr<std_atomic_float_>, mut old_value: f32, mut new_val: f32| {
+                    ({
+                        ((*x.upgrade().deref()) as std___atomic_float_float_)
+                            .fetch_sub_32((old_value - new_val), Some(std_memory_order_seq_cst))
+                    });
                 },
-            )));
+            )),
+        );
         let load: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {})));
         ({
             test_seq_cst_2(
@@ -220,41 +306,64 @@ pub fn test_impl_14() {
         "noexcept(std::declval<MaybeVolatile<std::atomic<T>>&>().fetch_sub(T(0)))"
     );;
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: f64 = unimplemented!();
+        let a: Value<std_atomic_double_> =
+            Rc::new(RefCell::new(std_atomic_double_::new_1({ 3.1_f64 })));
+        let mut r: f64 = ({
+            ((*a.borrow()) as std___atomic_float_double_)
+                .fetch_sub_31(1.2_f64, Some(std_memory_order_relaxed))
+        });
         assert!((r == 3.1_f64));
-        assert!((unimplemented!() == (3.1_f64 - 1.2_f64)));
+        assert!(
+            ({
+                (({ ((*a.borrow()) as std___atomic_float_double_).load_13(None) })
+                    == (3.1_f64 - 1.2_f64))
+            })
+        );
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
-                |x: Ptr<()>, mut old_val: f64, mut new_val: f64| {
-                    unimplemented!();
+        let store: Value<FnPtr<fn(Ptr<std_atomic_double_>, f64, f64)>> = Rc::new(RefCell::new(
+            FnPtr::<fn(Ptr<std_atomic_double_>, f64, f64)>::new(
+                |x: Ptr<std_atomic_double_>, mut old_val: f64, mut new_val: f64| {
+                    ({
+                        ((*x.upgrade().deref()) as std___atomic_float_double_)
+                            .fetch_sub_31((old_val - new_val), Some(std_memory_order_release))
+                    });
                 },
-            )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> f64>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
-                |x: Ptr<()>| -> f64 {
-                    {
-                        return unimplemented!();
-                    }
-                },
-            )));
+            ),
+        ));
+        let load: Value<FnPtr<fn(Ptr<std_atomic_double_>) -> f64>> = Rc::new(RefCell::new(
+            FnPtr::<fn(Ptr<std_atomic_double_>) -> f64>::new(|x: Ptr<std_atomic_double_>| -> f64 {
+                {
+                    return ({
+                        ((*x.upgrade().deref()) as std___atomic_float_double_)
+                            .load_13(Some(std_memory_order_acquire))
+                    });
+                }
+            }),
+        ));
         ({ test_acquire_release_10((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
     }
     {
-        let fetch_sub: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
-                |x: Ptr<()>, mut old_value: f64, mut new_val: f64| {
-                    unimplemented!();
+        let fetch_sub: Value<FnPtr<fn(Ptr<std_atomic_double_>, f64, f64)>> = Rc::new(RefCell::new(
+            FnPtr::<fn(Ptr<std_atomic_double_>, f64, f64)>::new(
+                |x: Ptr<std_atomic_double_>, mut old_value: f64, mut new_val: f64| {
+                    ({
+                        ((*x.upgrade().deref()) as std___atomic_float_double_)
+                            .fetch_sub_31((old_value - new_val), None)
+                    });
                 },
-            )));
-        let fetch_sub_with_order: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
-                |x: Ptr<()>, mut old_value: f64, mut new_val: f64| {
-                    unimplemented!();
+            ),
+        ));
+        let fetch_sub_with_order: Value<FnPtr<fn(Ptr<std_atomic_double_>, f64, f64)>> = Rc::new(
+            RefCell::new(FnPtr::<fn(Ptr<std_atomic_double_>, f64, f64)>::new(
+                |x: Ptr<std_atomic_double_>, mut old_value: f64, mut new_val: f64| {
+                    ({
+                        ((*x.upgrade().deref()) as std___atomic_float_double_)
+                            .fetch_sub_31((old_value - new_val), Some(std_memory_order_seq_cst))
+                    });
                 },
-            )));
+            )),
+        );
         let load: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {})));
         ({
             test_seq_cst_4(
@@ -280,41 +389,64 @@ pub fn test_impl_15() {
         "noexcept(std::declval<MaybeVolatile<std::atomic<T>>&>().fetch_sub(T(0)))"
     );;
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: f64 = unimplemented!();
+        let a: Value<std_atomic_double_> =
+            Rc::new(RefCell::new(std_atomic_double_::new_1({ 3.1_f64 })));
+        let mut r: f64 = ({
+            ((*a.borrow()) as std___atomic_float_double_)
+                .fetch_sub_32(1.2_f64, Some(std_memory_order_relaxed))
+        });
         assert!((r == 3.1_f64));
-        assert!((unimplemented!() == (3.1_f64 - 1.2_f64)));
+        assert!(
+            ({
+                (({ ((*a.borrow()) as std___atomic_float_double_).load_12(None) })
+                    == (3.1_f64 - 1.2_f64))
+            })
+        );
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
-                |x: Ptr<()>, mut old_val: f64, mut new_val: f64| {
-                    unimplemented!();
+        let store: Value<FnPtr<fn(Ptr<std_atomic_double_>, f64, f64)>> = Rc::new(RefCell::new(
+            FnPtr::<fn(Ptr<std_atomic_double_>, f64, f64)>::new(
+                |x: Ptr<std_atomic_double_>, mut old_val: f64, mut new_val: f64| {
+                    ({
+                        ((*x.upgrade().deref()) as std___atomic_float_double_)
+                            .fetch_sub_32((old_val - new_val), Some(std_memory_order_release))
+                    });
                 },
-            )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> f64>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
-                |x: Ptr<()>| -> f64 {
-                    {
-                        return unimplemented!();
-                    }
-                },
-            )));
+            ),
+        ));
+        let load: Value<FnPtr<fn(Ptr<std_atomic_double_>) -> f64>> = Rc::new(RefCell::new(
+            FnPtr::<fn(Ptr<std_atomic_double_>) -> f64>::new(|x: Ptr<std_atomic_double_>| -> f64 {
+                {
+                    return ({
+                        ((*x.upgrade().deref()) as std___atomic_float_double_)
+                            .load_12(Some(std_memory_order_acquire))
+                    });
+                }
+            }),
+        ));
         ({ test_acquire_release_11((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
     }
     {
-        let fetch_sub: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
-                |x: Ptr<()>, mut old_value: f64, mut new_val: f64| {
-                    unimplemented!();
+        let fetch_sub: Value<FnPtr<fn(Ptr<std_atomic_double_>, f64, f64)>> = Rc::new(RefCell::new(
+            FnPtr::<fn(Ptr<std_atomic_double_>, f64, f64)>::new(
+                |x: Ptr<std_atomic_double_>, mut old_value: f64, mut new_val: f64| {
+                    ({
+                        ((*x.upgrade().deref()) as std___atomic_float_double_)
+                            .fetch_sub_32((old_value - new_val), None)
+                    });
                 },
-            )));
-        let fetch_sub_with_order: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
-                |x: Ptr<()>, mut old_value: f64, mut new_val: f64| {
-                    unimplemented!();
+            ),
+        ));
+        let fetch_sub_with_order: Value<FnPtr<fn(Ptr<std_atomic_double_>, f64, f64)>> = Rc::new(
+            RefCell::new(FnPtr::<fn(Ptr<std_atomic_double_>, f64, f64)>::new(
+                |x: Ptr<std_atomic_double_>, mut old_value: f64, mut new_val: f64| {
+                    ({
+                        ((*x.upgrade().deref()) as std___atomic_float_double_)
+                            .fetch_sub_32((old_value - new_val), Some(std_memory_order_seq_cst))
+                    });
                 },
-            )));
+            )),
+        );
         let load: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {})));
         ({
             test_seq_cst_6(

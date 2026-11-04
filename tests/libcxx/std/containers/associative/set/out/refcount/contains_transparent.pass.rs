@@ -30,6 +30,11 @@ impl Callable2<i32, Ptr<(Value<i32>, Value<i32>)>, bool> for Comp {
         })
     }
 }
+impl CppMove for Comp {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0() {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     assert!((unimplemented!() as bool));

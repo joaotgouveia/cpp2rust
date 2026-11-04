@@ -28,6 +28,11 @@ impl CppEq for A {
         operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for A {
     fn default() -> Self {
         { A::new(None) }

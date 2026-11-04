@@ -52,6 +52,11 @@ impl Clone for __gnu_test_object_counter {
         __gnu_test_object_counter::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_object_counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_object_counter {
     fn default() -> Self {
         { __gnu_test_object_counter::new() }
@@ -78,6 +83,11 @@ impl __gnu_test_copy_constructor {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_copy_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
@@ -99,6 +109,11 @@ impl __gnu_test_assignment_operator {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_assignment_operator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
@@ -111,6 +126,11 @@ impl __gnu_test_destructor {
     }
     pub fn reset() {
         _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
+    }
+}
+impl CppMove for __gnu_test_destructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -173,6 +193,11 @@ impl Clone for __gnu_test_copy_tracker {
         __gnu_test_copy_tracker::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_copy_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_copy_tracker {
     fn default() -> Self {
         { __gnu_test_copy_tracker::new(None, None) }
@@ -197,6 +222,11 @@ pub struct __gnu_test_semaphore {
     pid_: (),
 }
 impl __gnu_test_semaphore {}
+impl CppMove for __gnu_test_semaphore {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(32)]
 pub struct PathPoint {
@@ -226,6 +256,11 @@ impl PathPoint {
         }
     }
 }
+impl CppMove for PathPoint {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct PathPointLess {}
@@ -234,6 +269,11 @@ impl Callable2<Ptr<PathPoint>, Ptr<PathPoint>, bool> for PathPointLess {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             PathPointLessImpl::operator_call(__it, a1, a2)
         })
+    }
+}
+impl CppMove for PathPointLess {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn test01_9() {
@@ -281,19 +321,13 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            let __idx = 0_usize;
-            if __idx as usize
-                >= (*({ PathPointImpl::getCoords(&(*it.borrow()).iter_deref()) })
-                    .upgrade()
-                    .deref())
-                .len()
-            {
-                panic!("out of bounds access")
-            } else {
-                ({ PathPointImpl::getCoords(&(*it.borrow()).iter_deref()) })
-                    .decay()
-                    .offset(__idx as isize)
+        if !((match (({ PathPointImpl::getCoords(&(*it.borrow()).iter_deref()) }),) {
+            (__tmp_0,) => {
+                if 0_usize as usize >= (*__tmp_0.upgrade().deref()).len() {
+                    panic!("out of bounds access")
+                } else {
+                    __tmp_0.decay().offset(0_usize as isize)
+                }
             }
         }
         .read())
@@ -325,19 +359,13 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({
-            let __idx = 0_usize;
-            if __idx as usize
-                >= (*({ PathPointImpl::getCoords(&(*it.borrow()).iter_deref()) })
-                    .upgrade()
-                    .deref())
-                .len()
-            {
-                panic!("out of bounds access")
-            } else {
-                ({ PathPointImpl::getCoords(&(*it.borrow()).iter_deref()) })
-                    .decay()
-                    .offset(__idx as isize)
+        if !((match (({ PathPointImpl::getCoords(&(*it.borrow()).iter_deref()) }),) {
+            (__tmp_1,) => {
+                if 0_usize as usize >= (*__tmp_1.upgrade().deref()).len() {
+                    panic!("out of bounds access")
+                } else {
+                    __tmp_1.decay().offset(0_usize as isize)
+                }
             }
         }
         .read())
@@ -371,19 +399,13 @@ pub fn test01_9() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({
-            ({
-                let __idx = 0_usize;
-                if __idx as usize
-                    >= (*({ PathPointImpl::getCoords(&(*it.borrow()).iter_deref()) })
-                        .upgrade()
-                        .deref())
-                    .len()
-                {
-                    panic!("out of bounds access")
-                } else {
-                    ({ PathPointImpl::getCoords(&(*it.borrow()).iter_deref()) })
-                        .decay()
-                        .offset(__idx as isize)
+            (match (({ PathPointImpl::getCoords(&(*it.borrow()).iter_deref()) }),) {
+                (__tmp_2,) => {
+                    if 0_usize as usize >= (*__tmp_2.upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        __tmp_2.decay().offset(0_usize as isize)
+                    }
                 }
             })
         } == { (px).clone() })
@@ -534,22 +556,36 @@ pub fn run_tests_wrapped_env_14(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !(libc::setenv(env, name, 1) != 0) {
+    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+        true => {
+            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
+            0
+        }
+        false => 0,
+    } != 0)
+    {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: i32 = 0;
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        libc::setenv(
-            env,
+        match ({
             if !(oldENV).is_null() {
                 (oldENV).clone()
             } else {
                 Ptr::<i8>::from_string_literal(b"")
+            }
+        },)
+        {
+            (mut __tmp_0,) => match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+                true => {
+                    unsafe { ::std::env::set_var(env.to_rust_string(), __tmp_0.to_rust_string()) };
+                    0
+                }
+                false => 0,
             },
-            1,
-        );
+        };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = env.to_c_bytes();
@@ -598,6 +634,11 @@ impl __gnu_test_semun {
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<u16>> {
         this.reinterpret_cast()
+    }
+}
+impl CppMove for __gnu_test_semun {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for __gnu_test_semun {
@@ -705,7 +746,9 @@ impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
     }
     fn push_back(&self, mut test: FnPtr<fn()>) {
         array_elem!((*self), _M_tests, (*self).with(|__s| __s._M_size)).write((test).clone());
-        field!((*self), _M_size).with_mut(|__v| __v.prefix_inc());
+        field!((*self), _M_size).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait __gnu_test_object_counterImpl {

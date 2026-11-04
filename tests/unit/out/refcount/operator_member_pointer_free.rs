@@ -12,6 +12,11 @@ pub struct Inner {
     #[offset(0)]
     pub x: i32,
 }
+impl CppMove for Inner {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(16)]
 pub struct S {
@@ -21,6 +26,11 @@ pub struct S {
     #[offset(12)]
     #[byte_size(4)]
     pub inner: Inner,
+}
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for S {
     fn default() -> Self {

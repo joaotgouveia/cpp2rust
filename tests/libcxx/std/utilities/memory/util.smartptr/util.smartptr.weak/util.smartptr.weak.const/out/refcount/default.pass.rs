@@ -27,8 +27,12 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_i64));
+    let p: Value<std_weak_ptr_A_> = Rc::new(RefCell::new(<std_weak_ptr_A_>::default()));
+    assert!(
+        ({
+            (({ ((*p.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count() }) == 0_i64)
+        })
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

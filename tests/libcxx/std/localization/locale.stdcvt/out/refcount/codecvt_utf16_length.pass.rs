@@ -12,127 +12,288 @@ pub struct TestHelper_wchar_t__4_ {}
 impl TestHelper_wchar_t__4_ {
     pub fn test() {
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let c: Value<std_codecvt_utf16_char32_t__1114111__0_> = Rc::new(RefCell::new(
+                <std_codecvt_utf16_char32_t__1114111__0_>::default(),
+            ));
             let n: Value<Box<[i8]>> =
                 Rc::new(RefCell::new(Box::new([-40_i8, -64_i8, -36_i8, 3_i8])));
             let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-            let mut r: i32 = unimplemented!();
+            let mut r: i32 =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((4) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 4));
             (*n.borrow_mut())[(0) as usize] = 16_i8;
             (*n.borrow_mut())[(1) as usize] = 5_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(0) as usize] = 4_i8;
             (*n.borrow_mut())[(1) as usize] = 83_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(0) as usize] = 0_i8;
             (*n.borrow_mut())[(1) as usize] = 86_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
         }
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let c: Value<std_codecvt_utf16_char32_t__4096__0_> = Rc::new(RefCell::new(
+                <std_codecvt_utf16_char32_t__4096__0_>::default(),
+            ));
             let n: Value<Box<[i8]>> =
                 Rc::new(RefCell::new(Box::new([-40_i8, -64_i8, -36_i8, 3_i8])));
             let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-            let mut r: i32 = unimplemented!();
+            let mut r: i32 =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((4) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 0));
             (*n.borrow_mut())[(0) as usize] = 16_i8;
             (*n.borrow_mut())[(1) as usize] = 5_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 0));
             (*n.borrow_mut())[(0) as usize] = 4_i8;
             (*n.borrow_mut())[(1) as usize] = 83_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(0) as usize] = 0_i8;
             (*n.borrow_mut())[(1) as usize] = 86_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
         }
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let c: Value<std_codecvt_utf16_char32_t__1114111__std_consume_header_> = Rc::new(
+                RefCell::new(<std_codecvt_utf16_char32_t__1114111__std_consume_header_>::default()),
+            );
             let n: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
                 -2_i8, -1_i8, -40_i8, -64_i8, -36_i8, 3_i8,
             ])));
             let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-            let mut r: i32 = unimplemented!();
+            let mut r: i32 =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((6) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 6));
             (*n.borrow_mut())[(0) as usize] = 16_i8;
             (*n.borrow_mut())[(1) as usize] = 5_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(0) as usize] = 4_i8;
             (*n.borrow_mut())[(1) as usize] = 83_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(0) as usize] = 0_i8;
             (*n.borrow_mut())[(1) as usize] = 86_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
         }
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let c: Value<std_codecvt_utf16_char32_t__1114111__std_little_endian_> = Rc::new(
+                RefCell::new(<std_codecvt_utf16_char32_t__1114111__std_little_endian_>::default()),
+            );
             let n: Value<Box<[i8]>> =
                 Rc::new(RefCell::new(Box::new([-64_i8, -40_i8, 3_i8, -36_i8])));
             let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-            let mut r: i32 = unimplemented!();
+            let mut r: i32 =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((4) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 4));
             (*n.borrow_mut())[(1) as usize] = 16_i8;
             (*n.borrow_mut())[(0) as usize] = 5_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(1) as usize] = 4_i8;
             (*n.borrow_mut())[(0) as usize] = 83_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(1) as usize] = 0_i8;
             (*n.borrow_mut())[(0) as usize] = 86_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
         }
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let c: Value<std_codecvt_utf16_char32_t__4096__std_little_endian_> = Rc::new(
+                RefCell::new(<std_codecvt_utf16_char32_t__4096__std_little_endian_>::default()),
+            );
             let n: Value<Box<[i8]>> =
                 Rc::new(RefCell::new(Box::new([-64_i8, -40_i8, 3_i8, -36_i8])));
             let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-            let mut r: i32 = unimplemented!();
+            let mut r: i32 =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((4) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 0));
             (*n.borrow_mut())[(1) as usize] = 16_i8;
             (*n.borrow_mut())[(0) as usize] = 5_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 0));
             (*n.borrow_mut())[(1) as usize] = 4_i8;
             (*n.borrow_mut())[(0) as usize] = 83_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(1) as usize] = 0_i8;
             (*n.borrow_mut())[(0) as usize] = 86_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
         }
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let c: Value<std_codecvt_utf16_char32_t__1114111__5_> = Rc::new(RefCell::new(
+                <std_codecvt_utf16_char32_t__1114111__5_>::default(),
+            ));
             let n: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
                 -1_i8, -2_i8, -64_i8, -40_i8, 3_i8, -36_i8,
             ])));
             let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-            let mut r: i32 = unimplemented!();
+            let mut r: i32 =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((6) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 6));
             (*n.borrow_mut())[(1) as usize] = 16_i8;
             (*n.borrow_mut())[(0) as usize] = 5_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(1) as usize] = 4_i8;
             (*n.borrow_mut())[(0) as usize] = 83_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(1) as usize] = 0_i8;
             (*n.borrow_mut())[(0) as usize] = 86_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
         }
+    }
+}
+impl CppMove for TestHelper_wchar_t__4_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -141,127 +302,288 @@ pub struct TestHelper_char16_t__2_ {}
 impl TestHelper_char16_t__2_ {
     pub fn test() {
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let c: Value<std_codecvt_utf16_char16_t__1114111__0_> = Rc::new(RefCell::new(
+                <std_codecvt_utf16_char16_t__1114111__0_>::default(),
+            ));
             let n: Value<Box<[i8]>> =
                 Rc::new(RefCell::new(Box::new([-40_i8, -64_i8, -36_i8, 3_i8])));
             let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-            let mut r: i32 = unimplemented!();
+            let mut r: i32 =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((4) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 0));
             (*n.borrow_mut())[(0) as usize] = 16_i8;
             (*n.borrow_mut())[(1) as usize] = 5_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(0) as usize] = 4_i8;
             (*n.borrow_mut())[(1) as usize] = 83_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(0) as usize] = 0_i8;
             (*n.borrow_mut())[(1) as usize] = 86_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
         }
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let c: Value<std_codecvt_utf16_char16_t__4096__0_> = Rc::new(RefCell::new(
+                <std_codecvt_utf16_char16_t__4096__0_>::default(),
+            ));
             let n: Value<Box<[i8]>> =
                 Rc::new(RefCell::new(Box::new([-40_i8, -64_i8, -36_i8, 3_i8])));
             let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-            let mut r: i32 = unimplemented!();
+            let mut r: i32 =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((4) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 0));
             (*n.borrow_mut())[(0) as usize] = 16_i8;
             (*n.borrow_mut())[(1) as usize] = 5_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 0));
             (*n.borrow_mut())[(0) as usize] = 4_i8;
             (*n.borrow_mut())[(1) as usize] = 83_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(0) as usize] = 0_i8;
             (*n.borrow_mut())[(1) as usize] = 86_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
         }
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let c: Value<std_codecvt_utf16_char16_t__1114111__std_consume_header_> = Rc::new(
+                RefCell::new(<std_codecvt_utf16_char16_t__1114111__std_consume_header_>::default()),
+            );
             let n: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
                 -2_i8, -1_i8, -40_i8, -64_i8, -36_i8, 3_i8,
             ])));
             let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-            let mut r: i32 = unimplemented!();
+            let mut r: i32 =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((6) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(0) as usize] = 16_i8;
             (*n.borrow_mut())[(1) as usize] = 5_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(0) as usize] = 4_i8;
             (*n.borrow_mut())[(1) as usize] = 83_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(0) as usize] = 0_i8;
             (*n.borrow_mut())[(1) as usize] = 86_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
         }
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let c: Value<std_codecvt_utf16_char16_t__1114111__std_little_endian_> = Rc::new(
+                RefCell::new(<std_codecvt_utf16_char16_t__1114111__std_little_endian_>::default()),
+            );
             let n: Value<Box<[i8]>> =
                 Rc::new(RefCell::new(Box::new([-64_i8, -40_i8, 3_i8, -36_i8])));
             let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-            let mut r: i32 = unimplemented!();
+            let mut r: i32 =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((4) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 0));
             (*n.borrow_mut())[(1) as usize] = 16_i8;
             (*n.borrow_mut())[(0) as usize] = 5_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(1) as usize] = 4_i8;
             (*n.borrow_mut())[(0) as usize] = 83_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(1) as usize] = 0_i8;
             (*n.borrow_mut())[(0) as usize] = 86_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
         }
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let c: Value<std_codecvt_utf16_char16_t__4096__std_little_endian_> = Rc::new(
+                RefCell::new(<std_codecvt_utf16_char16_t__4096__std_little_endian_>::default()),
+            );
             let n: Value<Box<[i8]>> =
                 Rc::new(RefCell::new(Box::new([-64_i8, -40_i8, 3_i8, -36_i8])));
             let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-            let mut r: i32 = unimplemented!();
+            let mut r: i32 =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((4) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 0));
             (*n.borrow_mut())[(1) as usize] = 16_i8;
             (*n.borrow_mut())[(0) as usize] = 5_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 0));
             (*n.borrow_mut())[(1) as usize] = 4_i8;
             (*n.borrow_mut())[(0) as usize] = 83_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(1) as usize] = 0_i8;
             (*n.borrow_mut())[(0) as usize] = 86_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
         }
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let c: Value<std_codecvt_utf16_char16_t__1114111__5_> = Rc::new(RefCell::new(
+                <std_codecvt_utf16_char16_t__1114111__5_>::default(),
+            ));
             let n: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
                 -1_i8, -2_i8, -64_i8, -40_i8, 3_i8, -36_i8,
             ])));
             let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-            let mut r: i32 = unimplemented!();
+            let mut r: i32 =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((6) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(1) as usize] = 16_i8;
             (*n.borrow_mut())[(0) as usize] = 5_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(1) as usize] = 4_i8;
             (*n.borrow_mut())[(0) as usize] = 83_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(1) as usize] = 0_i8;
             (*n.borrow_mut())[(0) as usize] = 86_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char16_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
         }
+    }
+}
+impl CppMove for TestHelper_char16_t__2_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -270,127 +592,288 @@ pub struct TestHelper_char32_t__4_ {}
 impl TestHelper_char32_t__4_ {
     pub fn test() {
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let c: Value<std_codecvt_utf16_char32_t__1114111__0_> = Rc::new(RefCell::new(
+                <std_codecvt_utf16_char32_t__1114111__0_>::default(),
+            ));
             let n: Value<Box<[i8]>> =
                 Rc::new(RefCell::new(Box::new([-40_i8, -64_i8, -36_i8, 3_i8])));
             let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-            let mut r: i32 = unimplemented!();
+            let mut r: i32 =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((4) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 4));
             (*n.borrow_mut())[(0) as usize] = 16_i8;
             (*n.borrow_mut())[(1) as usize] = 5_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(0) as usize] = 4_i8;
             (*n.borrow_mut())[(1) as usize] = 83_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(0) as usize] = 0_i8;
             (*n.borrow_mut())[(1) as usize] = 86_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
         }
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let c: Value<std_codecvt_utf16_char32_t__4096__0_> = Rc::new(RefCell::new(
+                <std_codecvt_utf16_char32_t__4096__0_>::default(),
+            ));
             let n: Value<Box<[i8]>> =
                 Rc::new(RefCell::new(Box::new([-40_i8, -64_i8, -36_i8, 3_i8])));
             let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-            let mut r: i32 = unimplemented!();
+            let mut r: i32 =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((4) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 0));
             (*n.borrow_mut())[(0) as usize] = 16_i8;
             (*n.borrow_mut())[(1) as usize] = 5_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 0));
             (*n.borrow_mut())[(0) as usize] = 4_i8;
             (*n.borrow_mut())[(1) as usize] = 83_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(0) as usize] = 0_i8;
             (*n.borrow_mut())[(1) as usize] = 86_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
         }
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let c: Value<std_codecvt_utf16_char32_t__1114111__std_consume_header_> = Rc::new(
+                RefCell::new(<std_codecvt_utf16_char32_t__1114111__std_consume_header_>::default()),
+            );
             let n: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
                 -2_i8, -1_i8, -40_i8, -64_i8, -36_i8, 3_i8,
             ])));
             let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-            let mut r: i32 = unimplemented!();
+            let mut r: i32 =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((6) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 6));
             (*n.borrow_mut())[(0) as usize] = 16_i8;
             (*n.borrow_mut())[(1) as usize] = 5_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(0) as usize] = 4_i8;
             (*n.borrow_mut())[(1) as usize] = 83_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(0) as usize] = 0_i8;
             (*n.borrow_mut())[(1) as usize] = 86_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
         }
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let c: Value<std_codecvt_utf16_char32_t__1114111__std_little_endian_> = Rc::new(
+                RefCell::new(<std_codecvt_utf16_char32_t__1114111__std_little_endian_>::default()),
+            );
             let n: Value<Box<[i8]>> =
                 Rc::new(RefCell::new(Box::new([-64_i8, -40_i8, 3_i8, -36_i8])));
             let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-            let mut r: i32 = unimplemented!();
+            let mut r: i32 =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((4) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 4));
             (*n.borrow_mut())[(1) as usize] = 16_i8;
             (*n.borrow_mut())[(0) as usize] = 5_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(1) as usize] = 4_i8;
             (*n.borrow_mut())[(0) as usize] = 83_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(1) as usize] = 0_i8;
             (*n.borrow_mut())[(0) as usize] = 86_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
         }
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let c: Value<std_codecvt_utf16_char32_t__4096__std_little_endian_> = Rc::new(
+                RefCell::new(<std_codecvt_utf16_char32_t__4096__std_little_endian_>::default()),
+            );
             let n: Value<Box<[i8]>> =
                 Rc::new(RefCell::new(Box::new([-64_i8, -40_i8, 3_i8, -36_i8])));
             let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-            let mut r: i32 = unimplemented!();
+            let mut r: i32 =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((4) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 0));
             (*n.borrow_mut())[(1) as usize] = 16_i8;
             (*n.borrow_mut())[(0) as usize] = 5_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 0));
             (*n.borrow_mut())[(1) as usize] = 4_i8;
             (*n.borrow_mut())[(0) as usize] = 83_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(1) as usize] = 0_i8;
             (*n.borrow_mut())[(0) as usize] = 86_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
         }
         {
-            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let c: Value<std_codecvt_utf16_char32_t__1114111__5_> = Rc::new(RefCell::new(
+                <std_codecvt_utf16_char32_t__1114111__5_>::default(),
+            ));
             let n: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
                 -1_i8, -2_i8, -64_i8, -40_i8, 3_i8, -36_i8,
             ])));
             let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-            let mut r: i32 = unimplemented!();
+            let mut r: i32 =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((6) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 6));
             (*n.borrow_mut())[(1) as usize] = 16_i8;
             (*n.borrow_mut())[(0) as usize] = 5_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(1) as usize] = 4_i8;
             (*n.borrow_mut())[(0) as usize] = 83_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
             (*n.borrow_mut())[(1) as usize] = 0_i8;
             (*n.borrow_mut())[(0) as usize] = 86_i8;
-            r = unimplemented!();
+            r =
+                ({
+                    let ___from: Ptr<i8> = (n.as_pointer() as Ptr<i8>);
+                    let ___end: Ptr<i8> = (n.as_pointer() as Ptr<i8>).offset((2) as isize);
+                    ((*c.borrow()) as std___codecvt_abstract_base_char32_t__char____mbstate_t_)
+                        .length(m.as_pointer(), ___from, ___end, 2_usize)
+                });
             assert!((r == 2));
         }
+    }
+}
+impl CppMove for TestHelper_char32_t__4_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

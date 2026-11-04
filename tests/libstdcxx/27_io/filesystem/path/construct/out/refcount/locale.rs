@@ -52,6 +52,11 @@ impl Clone for __gnu_test_object_counter {
         __gnu_test_object_counter::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_object_counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_object_counter {
     fn default() -> Self {
         { __gnu_test_object_counter::new() }
@@ -78,6 +83,11 @@ impl __gnu_test_copy_constructor {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_copy_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
@@ -99,6 +109,11 @@ impl __gnu_test_assignment_operator {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_assignment_operator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
@@ -111,6 +126,11 @@ impl __gnu_test_destructor {
     }
     pub fn reset() {
         _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
+    }
+}
+impl CppMove for __gnu_test_destructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -173,6 +193,11 @@ impl Clone for __gnu_test_copy_tracker {
         __gnu_test_copy_tracker::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_copy_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_copy_tracker {
     fn default() -> Self {
         { __gnu_test_copy_tracker::new(None, None) }
@@ -197,6 +222,11 @@ pub struct __gnu_test_semaphore {
     pid_: (),
 }
 impl __gnu_test_semaphore {}
+impl CppMove for __gnu_test_semaphore {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct __gnu_test_BoundsContainer_char_ {
@@ -213,6 +243,11 @@ impl __gnu_test_BoundsContainer_char_ {
             first: (_first).clone(),
             last: (_last).clone(),
         }
+    }
+}
+impl CppMove for __gnu_test_BoundsContainer_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -233,6 +268,11 @@ impl __gnu_test_BoundsContainer_const_char_ {
         }
     }
 }
+impl CppMove for __gnu_test_BoundsContainer_const_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct __gnu_test_input_iterator_wrapper_char__post_inc_proxy_deref_proxy {
@@ -240,12 +280,22 @@ pub struct __gnu_test_input_iterator_wrapper_char__post_inc_proxy_deref_proxy {
     #[byte_size(8)]
     pub ptr: Ptr<i8>,
 }
+impl CppMove for __gnu_test_input_iterator_wrapper_char__post_inc_proxy_deref_proxy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 struct __gnu_test_input_iterator_wrapper_char__post_inc_proxy {
     #[offset(0)]
     #[byte_size(8)]
     pub p: __gnu_test_input_iterator_wrapper_char__post_inc_proxy_deref_proxy,
+}
+impl CppMove for __gnu_test_input_iterator_wrapper_char__post_inc_proxy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
@@ -284,14 +334,38 @@ impl __gnu_test_input_iterator_wrapper_char_ {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-impl CppEq for __gnu_test_input_iterator_wrapper_char_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        __gnu_test_input_iterator_wrapper_char_Impl::operator_eq(__lhs, __rhs.clone())
+impl std::cmp::PartialEq for __gnu_test_input_iterator_wrapper_char_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                __gnu_test_input_iterator_wrapper_char_Impl::operator_eq(__lhs, __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for __gnu_test_input_iterator_wrapper_char_ {}
 impl CppAdvance for __gnu_test_input_iterator_wrapper_char_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_9();
+    }
+}
+impl CppIterator<i8> for __gnu_test_input_iterator_wrapper_char_ {
+    fn iter_deref(&self) -> Ptr<i8> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            __gnu_test_input_iterator_wrapper_char_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            __gnu_test_input_iterator_wrapper_char_Impl::operator_inc_9(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i8> for __gnu_test_input_iterator_wrapper_char_ {}
+impl CppMove for __gnu_test_input_iterator_wrapper_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -301,12 +375,22 @@ pub struct __gnu_test_input_iterator_wrapper_const_char__post_inc_proxy_deref_pr
     #[byte_size(8)]
     pub ptr: Ptr<i8>,
 }
+impl CppMove for __gnu_test_input_iterator_wrapper_const_char__post_inc_proxy_deref_proxy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 struct __gnu_test_input_iterator_wrapper_const_char__post_inc_proxy {
     #[offset(0)]
     #[byte_size(8)]
     pub p: __gnu_test_input_iterator_wrapper_const_char__post_inc_proxy_deref_proxy,
+}
+impl CppMove for __gnu_test_input_iterator_wrapper_const_char__post_inc_proxy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
@@ -346,14 +430,38 @@ impl __gnu_test_input_iterator_wrapper_const_char_ {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-impl CppEq for __gnu_test_input_iterator_wrapper_const_char_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        __gnu_test_input_iterator_wrapper_const_char_Impl::operator_eq(__lhs, __rhs.clone())
+impl std::cmp::PartialEq for __gnu_test_input_iterator_wrapper_const_char_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                __gnu_test_input_iterator_wrapper_const_char_Impl::operator_eq(__lhs, __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for __gnu_test_input_iterator_wrapper_const_char_ {}
 impl CppAdvance for __gnu_test_input_iterator_wrapper_const_char_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_9();
+    }
+}
+impl CppIterator<i8> for __gnu_test_input_iterator_wrapper_const_char_ {
+    fn iter_deref(&self) -> Ptr<i8> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            __gnu_test_input_iterator_wrapper_const_char_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            __gnu_test_input_iterator_wrapper_const_char_Impl::operator_inc_9(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i8> for __gnu_test_input_iterator_wrapper_const_char_ {}
+impl CppMove for __gnu_test_input_iterator_wrapper_const_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -372,6 +480,11 @@ impl __gnu_test_test_container_char____gnu_test_input_iterator_wrapper_ {
         }
     }
 }
+impl CppMove for __gnu_test_test_container_char____gnu_test_input_iterator_wrapper_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct __gnu_test_test_container_const_char____gnu_test_input_iterator_wrapper_ {
@@ -388,14 +501,22 @@ impl __gnu_test_test_container_const_char____gnu_test_input_iterator_wrapper_ {
         }
     }
 }
+impl CppMove for __gnu_test_test_container_const_char____gnu_test_input_iterator_wrapper_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test01_9() {
     let p: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(Ptr::<i8>::from_string_literal(b"/foo/bar").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        })) {
+        if !(match (unimplemented!(),) {
+            (__tmp_0,) => Ptr::<i8>::from_string_literal(b"/foo/bar").with_c_str(|__s| {
+                (*__tmp_0.upgrade().deref())[..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                    == *__s
+            }),
+        }) {
             unimplemented!();
             std::process::abort();
         }
@@ -638,22 +759,36 @@ pub fn run_tests_wrapped_env_15(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !(libc::setenv(env, name, 1) != 0) {
+    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+        true => {
+            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
+            0
+        }
+        false => 0,
+    } != 0)
+    {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: i32 = 0;
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        libc::setenv(
-            env,
+        match ({
             if !(oldENV).is_null() {
                 (oldENV).clone()
             } else {
                 Ptr::<i8>::from_string_literal(b"")
+            }
+        },)
+        {
+            (mut __tmp_0,) => match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+                true => {
+                    unsafe { ::std::env::set_var(env.to_rust_string(), __tmp_0.to_rust_string()) };
+                    0
+                }
+                false => 0,
             },
-            1,
-        );
+        };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = env.to_c_bytes();
@@ -702,6 +837,11 @@ impl __gnu_test_semun {
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<u16>> {
         this.reinterpret_cast()
+    }
+}
+impl CppMove for __gnu_test_semun {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for __gnu_test_semun {
@@ -791,7 +931,9 @@ impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
     }
     fn push_back(&self, mut test: FnPtr<fn()>) {
         array_elem!((*self), _M_tests, (*self).with(|__s| __s._M_size)).write((test).clone());
-        field!((*self), _M_size).with_mut(|__v| __v.prefix_inc());
+        field!((*self), _M_size).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait __gnu_test_input_iterator_wrapper_char_Impl {

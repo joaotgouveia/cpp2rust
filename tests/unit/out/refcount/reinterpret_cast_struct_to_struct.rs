@@ -14,6 +14,11 @@ pub struct Point {
     #[offset(4)]
     pub y: u32,
 }
+impl CppMove for Point {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct Pair {
@@ -21,6 +26,11 @@ pub struct Pair {
     pub first: u32,
     #[offset(4)]
     pub second: u32,
+}
+impl CppMove for Pair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     __cpp2rust_init_globals();

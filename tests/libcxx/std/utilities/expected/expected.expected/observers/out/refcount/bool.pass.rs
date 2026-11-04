@@ -9,6 +9,11 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Foo {}
+impl CppMove for Foo {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(!(false), "!OpBoolNoexcept<Foo>");
 const _: () = assert!(true, "OpBoolNoexcept<std::expected<int, int>>");
 const _: () = assert!(true, "OpBoolNoexcept<const std::expected<int, int>>");
@@ -18,12 +23,17 @@ const _: () = assert!(
 );
 pub fn test_0() -> bool {
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new(5));
+        assert!(({ ({ (*e.borrow())() }) }));
     }
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(!(unimplemented!()));
+        let e: Value<std_expected_int__int_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(5));
+            std_expected_int__int_::new_1({ (*unexpect_1.with(Value::clone).borrow()).clone() }, {
+                __tmp_0.as_pointer()
+            })
+        }));
+        assert!(({ !({ (*e.borrow())() }) }));
     }
     return true;
 }

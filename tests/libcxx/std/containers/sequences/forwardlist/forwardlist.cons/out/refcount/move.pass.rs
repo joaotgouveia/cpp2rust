@@ -30,6 +30,11 @@ pub struct test_allocator_statistics {
     #[offset(36)]
     pub converted: i32,
 }
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_statistics {
     fn default() -> Self {
         {
@@ -57,6 +62,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_2(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -137,6 +147,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -154,6 +169,11 @@ pub fn operator_eq_4(x: Ptr<test_allocator_MoveOnly_>, y: Ptr<test_allocator_Mov
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_MoveOnly__rebind_MoveOnly_ {}
+impl CppMove for test_allocator_MoveOnly__rebind_MoveOnly_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_MoveOnly_ {
@@ -209,6 +229,11 @@ impl CppEq for other_allocator_MoveOnly_ {
         operator_eq_5(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for other_allocator_MoveOnly_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for other_allocator_MoveOnly_ {
     fn default() -> Self {
         { other_allocator_MoveOnly_ { data_: 0_i32 } }
@@ -217,6 +242,11 @@ impl Default for other_allocator_MoveOnly_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -256,11 +286,11 @@ pub fn operator_cmp_12(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> std::cmp::Orde
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -292,6 +322,11 @@ impl CppEq for MoveOnly {
         operator_eq_6(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for MoveOnly {
     fn default() -> Self {
         { MoveOnly::new(None) }
@@ -321,11 +356,11 @@ pub fn operator_cmp_19(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> 
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -355,6 +390,11 @@ impl CppEq for TrivialMoveOnly {
         operator_eq_13(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for TrivialMoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for TrivialMoveOnly {
     fn default() -> Self {
         { TrivialMoveOnly::new(None) }
@@ -379,6 +419,11 @@ impl malloc_allocator_base {
         dealloc_count_22.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_20: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -391,22 +436,6 @@ thread_local!(
 thread_local!(
     pub static disable_default_constructor_23: Value<bool> = Rc::new(RefCell::new(false));
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<MoveOnly>,
-}
-impl min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 pub fn operator_eq_24(mut _a0: min_allocator_MoveOnly_, mut _a1: min_allocator_MoveOnly_) -> bool {
     return true;
 }
@@ -416,6 +445,11 @@ pub struct min_allocator_MoveOnly_ {}
 impl CppEq for min_allocator_MoveOnly_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_24(__lhs.read(), __rhs.read())
+    }
+}
+impl CppMove for min_allocator_MoveOnly_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn test_25() -> bool {
@@ -432,11 +466,29 @@ pub fn test_25() -> bool {
             MoveOnly::new({ Some(8) }),
             MoveOnly::new({ Some(9) }),
         ])));
-        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c0: Value<std_forward_list_MoveOnly__test_allocator_MoveOnly__> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<test_allocator_MoveOnly_> =
+                    Rc::new(RefCell::new(test_allocator_MoveOnly_::new_1({ 10 })));
+                std_forward_list_MoveOnly__test_allocator_MoveOnly__::new_1(
+                    { std_move_iterator_MoveOnly_ptr_::new_1({ ({ begin_26(t.as_pointer()) }) }) },
+                    {
+                        std_move_iterator_MoveOnly_ptr_::new_1({
+                            (t.as_pointer() as Ptr<MoveOnly>).to_end()
+                        })
+                    },
+                    { __tmp_0.as_pointer() },
+                )
+            }));
+        let c: Value<std_forward_list_MoveOnly__test_allocator_MoveOnly__> =
+            Rc::new(RefCell::new((*c0.borrow_mut()).clone()));
         let mut n: i32 = 0;
-        let i: Value<()> = Rc::new(RefCell::new(<()>::from(unimplemented!())));
-        let e: Value<()> = Rc::new(RefCell::new(<()>::from(unimplemented!())));
+        let i: Value<std__Fwd_list_const_iterator_MoveOnly_> = Rc::new(RefCell::new(
+            <std__Fwd_list_const_iterator_MoveOnly_>::from(({ (*c.borrow()).begin_25() })),
+        ));
+        let e: Value<std__Fwd_list_const_iterator_MoveOnly_> = Rc::new(RefCell::new(
+            <std__Fwd_list_const_iterator_MoveOnly_>::from(({ (*c.borrow()).end_27() })),
+        ));
         'loop_: while (*i.borrow()) != (*e.borrow()) {
             assert!(
                 ({
@@ -446,17 +498,25 @@ pub fn test_25() -> bool {
                 })
             );
             {
-                (*i.borrow_mut()).iter_inc();
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 &(n.prefix_inc())
             };
         }
         assert!(
-            ((n as i64) == ((t.as_pointer() as Ptr<MoveOnly>).to_end() - unimplemented!()) as i64)
+            ((n as i64)
+                == ((t.as_pointer() as Ptr<MoveOnly>).to_end() - ({ begin_26(t.as_pointer(),) }))
+                    as i64)
         );
-        assert!(unimplemented!());
+        assert!(({ ({ (*c0.borrow()).empty() }) }));
         assert!(
             ({
-                let _x: Value<test_allocator_MoveOnly_> = Rc::new(RefCell::new(unimplemented!()));
+                let _x: Value<test_allocator_MoveOnly_> =
+                    Rc::new(RefCell::new(({ (*c.borrow()).get_allocator() })));
                 let _y: Value<test_allocator_MoveOnly_> =
                     Rc::new(RefCell::new(test_allocator_MoveOnly_::new_1({ 10 })));
                 operator_eq_4(_x.as_pointer(), _y.as_pointer())
@@ -476,11 +536,29 @@ pub fn test_25() -> bool {
             MoveOnly::new({ Some(8) }),
             MoveOnly::new({ Some(9) }),
         ])));
-        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c0: Value<std_forward_list_MoveOnly__other_allocator_MoveOnly__> =
+            Rc::new(RefCell::new({
+                let __tmp_1: Value<other_allocator_MoveOnly_> =
+                    Rc::new(RefCell::new(other_allocator_MoveOnly_::new_1({ 10 })));
+                std_forward_list_MoveOnly__other_allocator_MoveOnly__::new_1(
+                    { std_move_iterator_MoveOnly_ptr_::new_1({ ({ begin_26(t.as_pointer()) }) }) },
+                    {
+                        std_move_iterator_MoveOnly_ptr_::new_1({
+                            (t.as_pointer() as Ptr<MoveOnly>).to_end()
+                        })
+                    },
+                    { __tmp_1.as_pointer() },
+                )
+            }));
+        let c: Value<std_forward_list_MoveOnly__other_allocator_MoveOnly__> =
+            Rc::new(RefCell::new((*c0.borrow_mut()).clone()));
         let mut n: i32 = 0;
-        let i: Value<()> = Rc::new(RefCell::new(<()>::from(unimplemented!())));
-        let e: Value<()> = Rc::new(RefCell::new(<()>::from(unimplemented!())));
+        let i: Value<std__Fwd_list_const_iterator_MoveOnly_> = Rc::new(RefCell::new(
+            <std__Fwd_list_const_iterator_MoveOnly_>::from(({ (*c.borrow()).begin_25() })),
+        ));
+        let e: Value<std__Fwd_list_const_iterator_MoveOnly_> = Rc::new(RefCell::new(
+            <std__Fwd_list_const_iterator_MoveOnly_>::from(({ (*c.borrow()).end_27() })),
+        ));
         'loop_: while (*i.borrow()) != (*e.borrow()) {
             assert!(
                 ({
@@ -490,17 +568,25 @@ pub fn test_25() -> bool {
                 })
             );
             {
-                (*i.borrow_mut()).iter_inc();
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 &(n.prefix_inc())
             };
         }
         assert!(
-            ((n as i64) == ((t.as_pointer() as Ptr<MoveOnly>).to_end() - unimplemented!()) as i64)
+            ((n as i64)
+                == ((t.as_pointer() as Ptr<MoveOnly>).to_end() - ({ begin_26(t.as_pointer(),) }))
+                    as i64)
         );
-        assert!(unimplemented!());
+        assert!(({ ({ (*c0.borrow()).empty() }) }));
         assert!(
             ({
-                let _x: Value<other_allocator_MoveOnly_> = Rc::new(RefCell::new(unimplemented!()));
+                let _x: Value<other_allocator_MoveOnly_> =
+                    Rc::new(RefCell::new(({ (*c.borrow()).get_allocator() })));
                 let _y: Value<other_allocator_MoveOnly_> =
                     Rc::new(RefCell::new(other_allocator_MoveOnly_::new_1({ 10 })));
                 operator_eq_5(_x.as_pointer(), _y.as_pointer())
@@ -520,11 +606,25 @@ pub fn test_25() -> bool {
             MoveOnly::new({ Some(8) }),
             MoveOnly::new({ Some(9) }),
         ])));
-        let c0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c0: Value<std_forward_list_MoveOnly__min_allocator_MoveOnly__> =
+            Rc::new(RefCell::new({
+                let __tmp_2: Value<min_allocator_MoveOnly_> =
+                    Rc::new(RefCell::new(<min_allocator_MoveOnly_>::default()));
+                std_forward_list_MoveOnly__min_allocator_MoveOnly__::new_1(
+                    { std_move_iterator_MoveOnly_ptr_::new_1({ ({ begin_26(t.as_pointer()) }) }) },
+                    {
+                        std_move_iterator_MoveOnly_ptr_::new_1({
+                            (t.as_pointer() as Ptr<MoveOnly>).to_end()
+                        })
+                    },
+                    { __tmp_2.as_pointer() },
+                )
+            }));
+        let c: Value<std_forward_list_MoveOnly__min_allocator_MoveOnly__> =
+            Rc::new(RefCell::new((*c0.borrow_mut()).clone()));
         let mut n: i32 = 0;
-        let i: Value<()> = Rc::new(RefCell::new(<()>::from(unimplemented!())));
-        let e: Value<()> = Rc::new(RefCell::new(<()>::from(unimplemented!())));
+        let i : Value<std___fwdlist__Iterator_true__min_pointer_MoveOnly__std_integral_constant_unsigned_long__0___ > = Rc::new(RefCell::new(<std___fwdlist__Iterator_true__min_pointer_MoveOnly__std_integral_constant_unsigned_long__0___  >::from(( { (*c.borrow()) . begin_25 ( ) } )  ) )) ;
+        let e : Value<std___fwdlist__Iterator_true__min_pointer_MoveOnly__std_integral_constant_unsigned_long__0___ > = Rc::new(RefCell::new(<std___fwdlist__Iterator_true__min_pointer_MoveOnly__std_integral_constant_unsigned_long__0___  >::from(( { (*c.borrow()) . end_27 ( ) } )  ) )) ;
         'loop_: while (*i.borrow()) != (*e.borrow()) {
             assert!(
                 ({
@@ -534,18 +634,27 @@ pub fn test_25() -> bool {
                 })
             );
             {
-                (*i.borrow_mut()).iter_inc();
+                {
+                    i.as_pointer().with_mut(|__it| {
+                        __it.iter_inc();
+                    });
+                    i.as_pointer()
+                };
                 &(n.prefix_inc())
             };
         }
         assert!(
-            ((n as i64) == ((t.as_pointer() as Ptr<MoveOnly>).to_end() - unimplemented!()) as i64)
+            ((n as i64)
+                == ((t.as_pointer() as Ptr<MoveOnly>).to_end() - ({ begin_26(t.as_pointer(),) }))
+                    as i64)
         );
-        assert!(unimplemented!());
+        assert!(({ ({ (*c0.borrow()).empty() }) }));
         assert!(
             ({
-                let _arg0: min_allocator_MoveOnly_ = unimplemented!();
-                operator_eq_24(_arg0, <min_allocator_MoveOnly_>::default())
+                ({
+                    let _arg0: min_allocator_MoveOnly_ = ({ (*c.borrow()).get_allocator() });
+                    operator_eq_24(_arg0, <min_allocator_MoveOnly_>::default())
+                })
             })
         );
     }
@@ -574,6 +683,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     assert!(({ test_25() }));
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__;
 pub trait MoveOnlyImpl {
     fn move_assign(&self, x: Ptr<MoveOnly>) -> Ptr<MoveOnly>;
     fn get(&self) -> i32;
@@ -653,79 +765,6 @@ pub trait min_allocator_MoveOnly_Impl {
     }
 }
 impl min_allocator_MoveOnly_Impl for Ptr<min_allocator_MoveOnly_> {}
-pub trait min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<MoveOnly> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<MoveOnly> {
-        unimplemented!()
-    }
-    fn operator_inc_8(
-        &self,
-    ) -> Ptr<min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_9(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_10(
-        &self,
-    ) -> Ptr<min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_11(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<MoveOnly> {
-        unimplemented!()
-    }
-}
-impl min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
-{
-}
 pub trait other_allocator_MoveOnly_Impl {
     fn allocate(&self, mut n: usize) -> Ptr<MoveOnly> {
         unimplemented!()
@@ -743,10 +782,10 @@ pub trait other_allocator_MoveOnly_Impl {
 impl other_allocator_MoveOnly_Impl for Ptr<other_allocator_MoveOnly_> {}
 pub trait test_allocator_MoveOnly_Impl {
     fn destructor(&self);
-    fn address_11(&self, x: ()) -> Ptr<MoveOnly> {
+    fn address_11(&self, x: Ptr<MoveOnly>) -> Ptr<MoveOnly> {
         unimplemented!()
     }
-    fn address_12(&self, x: ()) -> Ptr<MoveOnly> {
+    fn address_12(&self, x: Ptr<MoveOnly>) -> Ptr<MoveOnly> {
         unimplemented!()
     }
     fn allocate(&self, mut n: u32, mut _a1: AnyPtr) -> Ptr<MoveOnly> {
@@ -773,7 +812,9 @@ impl test_allocator_MoveOnly_Impl for Ptr<test_allocator_MoveOnly_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_0.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_0.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_0.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_0.with(|rc| *rc.borrow()));

@@ -32,13 +32,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let mut N: u32 = (((::std::mem::size_of::<[i32; 5]>() as usize)
             .wrapping_div((::std::mem::size_of::<i32>() as usize)))
             as u32);
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == (N as usize)));
-        assert!((unimplemented!() == 0_usize));
+        let v: Value<std_valarray_int_> = Rc::new(RefCell::new(std_valarray_int_::new_1(
+            { (a.as_pointer() as Ptr<i32>) },
+            { (N as usize) },
+        )));
+        let v2: Value<std_valarray_int_> = Rc::new(RefCell::new((*v.borrow_mut()).clone()));
+        assert!(({ (({ (*v2.borrow()).size() }) == (N as usize)) }));
+        assert!(({ (({ (*v.borrow()).size() }) == 0_usize) }));
         let mut i: usize = 0_usize;
-        'loop_: while (i < unimplemented!()) {
-            assert!(((unimplemented!().read()) == (*a.borrow())[(i) as usize]));
+        'loop_: while (i < ({ (*v2.borrow()).size() })) {
+            assert!(({ ({ (*v2.borrow())[i] } == (*a.borrow())[(i) as usize]) }));
             i.prefix_inc();
         }
     }
@@ -49,35 +52,52 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let mut N: u32 = (((::std::mem::size_of::<[f64; 5]>() as usize)
             .wrapping_div((::std::mem::size_of::<f64>() as usize)))
             as u32);
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == (N as usize)));
-        assert!((unimplemented!() == 0_usize));
+        let v: Value<std_valarray_double_> = Rc::new(RefCell::new(std_valarray_double_::new_1(
+            { (a.as_pointer() as Ptr<f64>) },
+            { (N as usize) },
+        )));
+        let v2: Value<std_valarray_double_> = Rc::new(RefCell::new((*v.borrow_mut()).clone()));
+        assert!(({ (({ (*v2.borrow()).size() }) == (N as usize)) }));
+        assert!(({ (({ (*v.borrow()).size() }) == 0_usize) }));
         let mut i: usize = 0_usize;
-        'loop_: while (i < unimplemented!()) {
-            assert!(((unimplemented!().read()) == (*a.borrow())[(i) as usize]));
+        'loop_: while (i < ({ (*v2.borrow()).size() })) {
+            assert!(({ ({ (*v2.borrow())[i] } == (*a.borrow())[(i) as usize]) }));
             i.prefix_inc();
         }
     }
     {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let a: Value<Box<[std_valarray_double_]>> = Rc::new(RefCell::new(Box::new([
+            std_valarray_double_::new_2({ 1_usize }),
+            std_valarray_double_::new_2({ 2_usize }),
+            std_valarray_double_::new_2({ 3_usize }),
+            std_valarray_double_::new_2({ 4_usize }),
+            std_valarray_double_::new_2({ 5_usize }),
         ])));
         let mut N: u32 = (((80usize as usize).wrapping_div((16usize as usize))) as u32);
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == (N as usize)));
-        assert!((unimplemented!() == 0_usize));
+        let v: Value<std_valarray_std_valarray_double__> =
+            Rc::new(RefCell::new(std_valarray_std_valarray_double__::new_1(
+                { (a.as_pointer() as Ptr<std_valarray_double_>) },
+                { (N as usize) },
+            )));
+        let v2: Value<std_valarray_std_valarray_double__> =
+            Rc::new(RefCell::new((*v.borrow_mut()).clone()));
+        assert!(({ (({ (*v2.borrow()).size() }) == (N as usize)) }));
+        assert!(({ (({ (*v.borrow()).size() }) == 0_usize) }));
         let mut i: u32 = 0_u32;
         'loop_: while (i < N) {
-            assert!((unimplemented!() == unimplemented!()));
+            assert!(
+                ({
+                    (({ (*v2.borrow())[(i as usize)].size() })
+                        == ({ (*a.borrow())[(i) as usize].size() }))
+                })
+            );
             let mut j: usize = 0_usize;
-            'loop_: while (j < unimplemented!()) {
-                assert!(((unimplemented!().read()) == (unimplemented!().read())));
+            'loop_: while (j < ({ (*v2.borrow())[(i as usize)].size() })) {
+                assert!(
+                    ((elem!(v2.as_pointer().offset((i as usize)), j).read())
+                        == (elem!((a.as_pointer() as Ptr<std_valarray_double_>).offset(i), j)
+                            .read()))
+                );
                 j.prefix_inc();
             }
             i.prefix_inc();

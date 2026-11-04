@@ -12,6 +12,11 @@ pub struct S {
     #[offset(0)]
     pub v: i32,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_0(mut a: i32, b: Ptr<S>) -> bool {
     return ({ a } == { b.with(|__s| __s.v) });
 }

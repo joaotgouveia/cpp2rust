@@ -7,130 +7,130 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0(mut expected: bool) {
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_bool_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_bool_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_bool_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_bool_::infinity() }) as i32) == (expected as i32)));
 }
 pub fn test_1(mut expected: i8) {
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_char_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_char_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_char_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_char_::infinity() }) as i32) == (expected as i32)));
 }
 pub fn test_2(mut expected: i8) {
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_signed_char_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_signed_char_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_signed_char_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_signed_char_::infinity() }) as i32) == (expected as i32)));
 }
 pub fn test_3(mut expected: u8) {
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_unsigned_char_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_unsigned_char_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_unsigned_char_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_unsigned_char_::infinity() }) as i32) == (expected as i32)));
 }
 pub fn test_4(mut expected: i32) {
-    assert!(((unimplemented!() as i32) == expected));
-    assert!(((unimplemented!() as i32) == expected));
-    assert!(((unimplemented!() as i32) == expected));
-    assert!(((unimplemented!() as i32) == expected));
+    assert!((({ std_numeric_limits_wchar_t_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_wchar_t_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_wchar_t_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_wchar_t_::infinity() }) == expected));
 }
 pub fn test_5(mut expected: u8) {
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_char8_t_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_char8_t_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_char8_t_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_char8_t_::infinity() }) as i32) == (expected as i32)));
 }
 pub fn test_6(mut expected: u16) {
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_char16_t_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_char16_t_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_char16_t_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_char16_t_::infinity() }) as i32) == (expected as i32)));
 }
 pub fn test_7(mut expected: u32) {
-    assert!(((unimplemented!() as u32) == expected));
-    assert!(((unimplemented!() as u32) == expected));
-    assert!(((unimplemented!() as u32) == expected));
-    assert!(((unimplemented!() as u32) == expected));
+    assert!((({ std_numeric_limits_char32_t_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_char32_t_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_char32_t_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_char32_t_::infinity() }) == expected));
 }
 pub fn test_8(mut expected: i16) {
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_short_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_short_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_short_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_short_::infinity() }) as i32) == (expected as i32)));
 }
 pub fn test_9(mut expected: u16) {
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
-    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_unsigned_short_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_unsigned_short_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_unsigned_short_::infinity() }) as i32) == (expected as i32)));
+    assert!(((({ std_numeric_limits_unsigned_short_::infinity() }) as i32) == (expected as i32)));
 }
 pub fn test_10(mut expected: i32) {
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
+    assert!((({ std_numeric_limits_int_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_int_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_int_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_int_::infinity() }) == expected));
 }
 pub fn test_11(mut expected: u32) {
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
+    assert!((({ std_numeric_limits_unsigned_int_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_unsigned_int_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_unsigned_int_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_unsigned_int_::infinity() }) == expected));
 }
 pub fn test_12(mut expected: i64) {
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
+    assert!((({ std_numeric_limits_long_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_long_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_long_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_long_::infinity() }) == expected));
 }
 pub fn test_13(mut expected: u64) {
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
+    assert!((({ std_numeric_limits_unsigned_long_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_unsigned_long_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_unsigned_long_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_unsigned_long_::infinity() }) == expected));
 }
 pub fn test_14(mut expected: i64) {
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
+    assert!((({ std_numeric_limits_long_long_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_long_long_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_long_long_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_long_long_::infinity() }) == expected));
 }
 pub fn test_15(mut expected: u64) {
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
+    assert!((({ std_numeric_limits_unsigned_long_long_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_unsigned_long_long_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_unsigned_long_long_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_unsigned_long_long_::infinity() }) == expected));
 }
 pub fn test_16(mut expected: i128) {
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
+    assert!((({ std_numeric_limits___int128_::infinity() }) == expected));
+    assert!((({ std_numeric_limits___int128_::infinity() }) == expected));
+    assert!((({ std_numeric_limits___int128_::infinity() }) == expected));
+    assert!((({ std_numeric_limits___int128_::infinity() }) == expected));
 }
 pub fn test_17(mut expected: u128) {
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
+    assert!((({ std_numeric_limits_unsigned___int128_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_unsigned___int128_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_unsigned___int128_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_unsigned___int128_::infinity() }) == expected));
 }
 pub fn test_18(mut expected: f32) {
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
+    assert!((({ std_numeric_limits_float_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_float_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_float_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_float_::infinity() }) == expected));
 }
 pub fn test_19(mut expected: f64) {
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
+    assert!((({ std_numeric_limits_double_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_double_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_double_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_double_::infinity() }) == expected));
 }
 pub fn test_20(mut expected: f64) {
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
-    assert!((unimplemented!() == expected));
+    assert!((({ std_numeric_limits_long_double_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_long_double_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_long_double_::infinity() }) == expected));
+    assert!((({ std_numeric_limits_long_double_::infinity() }) == expected));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

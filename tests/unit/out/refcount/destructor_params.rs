@@ -18,13 +18,20 @@ pub struct S {
     #[offset(0)]
     pub v: i32,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn by_value_2(s: S) -> i32 {
     let s: Value<S> = Rc::new(RefCell::new(s));
+    let _dtor_s = ScopedDestructor::new(&s, |__p| __p.destructor());
     assert!((destroyed_0.with(|rc| *rc.borrow()) == 0));
     return { (*s.borrow()).v };
 }
 pub fn with_default_3(s: Option<S>) -> i32 {
     let s: Value<S> = Rc::new(RefCell::new(s.unwrap_or_else(|| S { v: 5 })));
+    let _dtor_s = ScopedDestructor::new(&s, |__p| __p.destructor());
     return { (*s.borrow()).v };
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -36,9 +43,15 @@ pub struct Holder {
 impl Holder {
     pub fn new(s: S) -> Self {
         let s: Value<S> = Rc::new(RefCell::new(s));
+        let _dtor_s = ScopedDestructor::new(&s, |__p| __p.destructor());
         Self {
             v: { (*s.borrow()).v },
         }
+    }
+}
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {
@@ -49,7 +62,7 @@ fn main_0() -> i32 {
     {
         let s: Value<S> = Rc::new(RefCell::new(S { v: 1 }));
         let _dtor_s = ScopedDestructor::new(&s, |__p| __p.destructor());
-        assert!((({ by_value_2((*s.borrow()).clone(),) }) == 1));
+        assert!(({ (({ by_value_2((*s.borrow()).clone(),) }) == 1) }));
         assert!(
             (destroyed_0.with(|rc| *rc.borrow()) == 1) && (last_1.with(|rc| *rc.borrow()) == 1)
         );
@@ -81,6 +94,7 @@ pub trait HolderImpl {
 impl HolderImpl for Ptr<Holder> {
     fn add(&self, s: S) -> i32 {
         let s: Value<S> = Rc::new(RefCell::new(s));
+        let _dtor_s = ScopedDestructor::new(&s, |__p| __p.destructor());
         return ((*self).with(|__s| __s.v) + { (*s.borrow()).v });
     }
 }

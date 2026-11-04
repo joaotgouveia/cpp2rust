@@ -64,6 +64,11 @@ impl malloc_allocator_base {
         dealloc_count_6.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_4: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -109,14 +114,38 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
         Self { ptr_: (p).clone() }
     }
 }
-impl CppEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_9(__lhs.read(), __rhs.read())
+impl std::cmp::PartialEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_9(__lhs.read(), __rhs.read())
+            })
+        }
     }
 }
+impl std::cmp::Eq for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
 impl CppAdvance for min_pointer_int__std_integral_constant_unsigned_long__0__ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_8();
+    }
+}
+impl CppIterator<i32> for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            min_pointer_int__std_integral_constant_unsigned_long__0__Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            min_pointer_int__std_integral_constant_unsigned_long__0__Impl::operator_inc_8(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -127,6 +156,11 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_lt_11(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
@@ -158,19 +192,62 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
         }
     }
 }
-impl CppLess for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_lt_11(__lhs.read(), __rhs.read())
+impl std::cmp::Ord for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                if operator_lt_11(__lhs.read(), __rhs.read()) {
+                    std::cmp::Ordering::Less
+                } else if operator_lt_11(__rhs.read(), __lhs.read()) {
+                    std::cmp::Ordering::Greater
+                } else {
+                    std::cmp::Ordering::Equal
+                }
+            })
+        }
     }
 }
-impl CppEq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_12(__lhs.read(), __rhs.read())
+impl std::cmp::PartialOrd for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
     }
 }
+impl std::cmp::PartialEq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_12(__lhs.read(), __rhs.read())
+            })
+        }
+    }
+}
+impl std::cmp::Eq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
 impl CppAdvance for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_9();
+    }
+}
+impl CppIterator<i32> for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl::operator_deref(
+                __it,
+            )
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl::operator_inc_9(
+                __it,
+            );
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -181,6 +258,11 @@ pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_sub_13(
     mut x: min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__,
@@ -214,14 +296,47 @@ impl min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__ {
         Self { ptr_: (p).clone() }
     }
 }
-impl CppEq for min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_14(__lhs.read(), __rhs.read())
+impl std::cmp::PartialEq for min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_14(__lhs.read(), __rhs.read())
+            })
+        }
     }
 }
+impl std::cmp::Eq for min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__ {}
 impl CppAdvance for min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_8();
+    }
+}
+impl CppIterator<DefaultOnly>
+    for min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__
+{
+    fn iter_deref(&self) -> Ptr<DefaultOnly> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__Impl::operator_deref(
+                __it,
+            )
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__Impl::operator_inc_8(
+                __it,
+            );
+        });
+        self
+    }
+}
+impl CppInputIterator<DefaultOnly>
+    for min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__
+{
+}
+impl CppMove for min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_lt_16(
@@ -255,19 +370,67 @@ impl min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__ {
         }
     }
 }
-impl CppLess for min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__ {
-    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_lt_16(__lhs.read(), __rhs.read())
+impl std::cmp::Ord for min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__ {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                if operator_lt_16(__lhs.read(), __rhs.read()) {
+                    std::cmp::Ordering::Less
+                } else if operator_lt_16(__rhs.read(), __lhs.read()) {
+                    std::cmp::Ordering::Greater
+                } else {
+                    std::cmp::Ordering::Equal
+                }
+            })
+        }
     }
 }
-impl CppEq for min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_17(__lhs.read(), __rhs.read())
+impl std::cmp::PartialOrd
+    for min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__
+{
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
     }
 }
+impl std::cmp::PartialEq
+    for min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__
+{
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_17(__lhs.read(), __rhs.read())
+            })
+        }
+    }
+}
+impl std::cmp::Eq for min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__ {}
 impl CppAdvance for min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_9();
+    }
+}
+impl CppIterator<DefaultOnly>
+    for min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__
+{
+    fn iter_deref(&self) -> Ptr<DefaultOnly> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__Impl::operator_inc_9(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<DefaultOnly>
+    for min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__
+{
+}
+impl CppMove for min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -278,6 +441,11 @@ pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<u64>,
 }
 impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_18(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> bool {
     return true;
 }
@@ -287,6 +455,11 @@ pub struct min_allocator_int_ {}
 impl CppEq for min_allocator_int_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_18(__lhs.read(), __rhs.read())
+    }
+}
+impl CppMove for min_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_eq_19(
@@ -303,9 +476,19 @@ impl CppEq for min_allocator_DefaultOnly_ {
         operator_eq_19(__lhs.read(), __rhs.read())
     }
 }
+impl CppMove for min_allocator_DefaultOnly_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_unsigned_long_ {}
+impl CppMove for min_allocator_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_20(mut _a0: safe_allocator_int_, mut _a1: safe_allocator_int_) -> bool {
     return true;
 }
@@ -320,6 +503,11 @@ impl safe_allocator_int_ {
 impl CppEq for safe_allocator_int_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_20(__lhs.read(), __rhs.read())
+    }
+}
+impl CppMove for safe_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for safe_allocator_int_ {
@@ -346,6 +534,11 @@ impl CppEq for safe_allocator_DefaultOnly_ {
         operator_eq_21(__lhs.read(), __rhs.read())
     }
 }
+impl CppMove for safe_allocator_DefaultOnly_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for safe_allocator_DefaultOnly_ {
     fn default() -> Self {
         { safe_allocator_DefaultOnly_::new() }
@@ -355,6 +548,11 @@ impl Default for safe_allocator_DefaultOnly_ {
 #[byte_size(1)]
 pub struct safe_allocator_unsigned_long_ {}
 impl safe_allocator_unsigned_long_ {}
+impl CppMove for safe_allocator_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(40)]
 pub struct test_allocator_statistics {
@@ -378,6 +576,11 @@ pub struct test_allocator_statistics {
     pub moved: i32,
     #[offset(36)]
     pub converted: i32,
+}
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for test_allocator_statistics {
     fn default() -> Self {
@@ -406,6 +609,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_24(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -486,6 +694,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -506,9 +719,19 @@ pub fn operator_eq_26(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_DefaultOnly__rebind_DefaultOnly_ {}
+impl CppMove for test_allocator_DefaultOnly__rebind_DefaultOnly_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_DefaultOnly__rebind_unsigned_long_ {}
+impl CppMove for test_allocator_DefaultOnly__rebind_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_DefaultOnly_ {
@@ -542,8 +765,12 @@ impl test_allocator_DefaultOnly_ {
                     .is_null())
         );
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -562,6 +789,11 @@ impl Clone for test_allocator_DefaultOnly_ {
                 stats_: self.stats_.clone(),
             }));
         test_allocator_DefaultOnly_::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for test_allocator_DefaultOnly_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for test_allocator_DefaultOnly_ {
@@ -601,6 +833,11 @@ impl Default for test_allocator_unsigned_long_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -629,13 +866,13 @@ pub fn test_27(mut n: usize, a: Option<Ptr<()>>) {
             (0..(n) as usize).map(|_| 0_i32).collect::<Vec<_>>(),
         ));
         const _: () = assert!(true, "");;
-        assert!(((*c.borrow()).len() == n));
+        assert!(({ ((*c.borrow()).len() == n) }));
         assert!(unimplemented!());
         const _: () = assert!(true, "");;
         let i: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(unimplemented!()));
         let e: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(c.decay().end()));
         'loop_: while (*i.borrow()) != (*e.borrow()) {
-            assert!((((*i.borrow()).iter_deref().read()) == 0_i32));
+            assert!(({ (((*i.borrow()).iter_deref().read()) == 0_i32) }));
             (*i.borrow_mut()).iter_inc();
         }
     }
@@ -644,13 +881,13 @@ pub fn test_27(mut n: usize, a: Option<Ptr<()>>) {
             (0..(n) as usize).map(|_| 0_i32).collect::<Vec<_>>(),
         ));
         const _: () = assert!(true, "");;
-        assert!(((*c.borrow()).len() == n));
+        assert!(({ ((*c.borrow()).len() == n) }));
         assert!(unimplemented!());
         const _: () = assert!(true, "");;
         let i: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(unimplemented!()));
         let e: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(c.decay().end()));
         'loop_: while (*i.borrow()) != (*e.borrow()) {
-            assert!((((*i.borrow()).iter_deref().read()) == 0_i32));
+            assert!(({ (((*i.borrow()).iter_deref().read()) == 0_i32) }));
             (*i.borrow_mut()).iter_inc();
         }
     }
@@ -668,7 +905,7 @@ pub fn test_28(mut n: usize, a: Option<Ptr<min_allocator_int_>>) {
             (0..(n) as usize).map(|_| 0_i32).collect::<Vec<_>>(),
         ));
         const _: () = assert!(true, "");;
-        assert!(((*c.borrow()).len() == n));
+        assert!(({ ((*c.borrow()).len() == n) }));
         assert!(
             ({
                 let _arg0: min_allocator_int_ = unimplemented!();
@@ -679,7 +916,7 @@ pub fn test_28(mut n: usize, a: Option<Ptr<min_allocator_int_>>) {
         let i: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(unimplemented!()));
         let e: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(c.decay().end()));
         'loop_: while (*i.borrow()) != (*e.borrow()) {
-            assert!((((*i.borrow()).iter_deref().read()) == 0_i32));
+            assert!(({ (((*i.borrow()).iter_deref().read()) == 0_i32) }));
             (*i.borrow_mut()).iter_inc();
         }
     }
@@ -688,19 +925,21 @@ pub fn test_28(mut n: usize, a: Option<Ptr<min_allocator_int_>>) {
             (0..(n) as usize).map(|_| 0_i32).collect::<Vec<_>>(),
         ));
         const _: () = assert!(true, "");;
-        assert!(((*c.borrow()).len() == n));
+        assert!(({ ((*c.borrow()).len() == n) }));
         assert!(
             ({
-                let _arg0: min_allocator_int_ = unimplemented!();
-                let _arg1: min_allocator_int_ = (*a.upgrade().deref()).clone();
-                operator_eq_18(_arg0, _arg1)
+                ({
+                    let _arg0: min_allocator_int_ = unimplemented!();
+                    let _arg1: min_allocator_int_ = (*a.upgrade().deref()).clone();
+                    operator_eq_18(_arg0, _arg1)
+                })
             })
         );
         const _: () = assert!(true, "");;
         let i: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(unimplemented!()));
         let e: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(c.decay().end()));
         'loop_: while (*i.borrow()) != (*e.borrow()) {
-            assert!((((*i.borrow()).iter_deref().read()) == 0_i32));
+            assert!(({ (((*i.borrow()).iter_deref().read()) == 0_i32) }));
             (*i.borrow_mut()).iter_inc();
         }
     }
@@ -718,7 +957,7 @@ pub fn test_29(mut n: usize, a: Option<Ptr<safe_allocator_int_>>) {
             (0..(n) as usize).map(|_| 0_i32).collect::<Vec<_>>(),
         ));
         const _: () = assert!(true, "");;
-        assert!(((*c.borrow()).len() == n));
+        assert!(({ ((*c.borrow()).len() == n) }));
         assert!(
             ({
                 let _arg0: safe_allocator_int_ = unimplemented!();
@@ -729,7 +968,7 @@ pub fn test_29(mut n: usize, a: Option<Ptr<safe_allocator_int_>>) {
         let i: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(unimplemented!()));
         let e: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(c.decay().end()));
         'loop_: while (*i.borrow()) != (*e.borrow()) {
-            assert!((((*i.borrow()).iter_deref().read()) == 0_i32));
+            assert!(({ (((*i.borrow()).iter_deref().read()) == 0_i32) }));
             (*i.borrow_mut()).iter_inc();
         }
     }
@@ -738,19 +977,21 @@ pub fn test_29(mut n: usize, a: Option<Ptr<safe_allocator_int_>>) {
             (0..(n) as usize).map(|_| 0_i32).collect::<Vec<_>>(),
         ));
         const _: () = assert!(true, "");;
-        assert!(((*c.borrow()).len() == n));
+        assert!(({ ((*c.borrow()).len() == n) }));
         assert!(
             ({
-                let _arg0: safe_allocator_int_ = unimplemented!();
-                let _arg1: safe_allocator_int_ = (*a.upgrade().deref()).clone();
-                operator_eq_20(_arg0, _arg1)
+                ({
+                    let _arg0: safe_allocator_int_ = unimplemented!();
+                    let _arg1: safe_allocator_int_ = (*a.upgrade().deref()).clone();
+                    operator_eq_20(_arg0, _arg1)
+                })
             })
         );
         const _: () = assert!(true, "");;
         let i: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(unimplemented!()));
         let e: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(c.decay().end()));
         'loop_: while (*i.borrow()) != (*e.borrow()) {
-            assert!((((*i.borrow()).iter_deref().read()) == 0_i32));
+            assert!(({ (((*i.borrow()).iter_deref().read()) == 0_i32) }));
             (*i.borrow_mut()).iter_inc();
         }
     }
@@ -770,7 +1011,7 @@ pub fn test_30(mut n: usize, a: Option<Ptr<()>>) {
                 .collect::<Vec<_>>(),
         ));
         const _: () = assert!(true, "");;
-        assert!(((*c.borrow()).len() == n));
+        assert!(({ ((*c.borrow()).len() == n) }));
         assert!(unimplemented!());
         const _: () = assert!(true, "");;
         let i: Value<RandomAccessIterator<DefaultOnly>> = Rc::new(RefCell::new(unimplemented!()));
@@ -793,7 +1034,7 @@ pub fn test_30(mut n: usize, a: Option<Ptr<()>>) {
                 .collect::<Vec<_>>(),
         ));
         const _: () = assert!(true, "");;
-        assert!(((*c.borrow()).len() == n));
+        assert!(({ ((*c.borrow()).len() == n) }));
         assert!(unimplemented!());
         const _: () = assert!(true, "");;
         let i: Value<RandomAccessIterator<DefaultOnly>> = Rc::new(RefCell::new(unimplemented!()));
@@ -827,7 +1068,7 @@ pub fn test_31(mut n: usize, a: Option<Ptr<min_allocator_DefaultOnly_>>) {
                 .collect::<Vec<_>>(),
         ));
         const _: () = assert!(true, "");;
-        assert!(((*c.borrow()).len() == n));
+        assert!(({ ((*c.borrow()).len() == n) }));
         assert!(
             ({
                 let _arg0: min_allocator_DefaultOnly_ = unimplemented!();
@@ -855,12 +1096,14 @@ pub fn test_31(mut n: usize, a: Option<Ptr<min_allocator_DefaultOnly_>>) {
                 .collect::<Vec<_>>(),
         ));
         const _: () = assert!(true, "");;
-        assert!(((*c.borrow()).len() == n));
+        assert!(({ ((*c.borrow()).len() == n) }));
         assert!(
             ({
-                let _arg0: min_allocator_DefaultOnly_ = unimplemented!();
-                let _arg1: min_allocator_DefaultOnly_ = (*a.upgrade().deref()).clone();
-                operator_eq_19(_arg0, _arg1)
+                ({
+                    let _arg0: min_allocator_DefaultOnly_ = unimplemented!();
+                    let _arg1: min_allocator_DefaultOnly_ = (*a.upgrade().deref()).clone();
+                    operator_eq_19(_arg0, _arg1)
+                })
             })
         );
         const _: () = assert!(true, "");;
@@ -893,7 +1136,7 @@ pub fn test_32(mut n: usize, a: Option<Ptr<safe_allocator_DefaultOnly_>>) {
                 .collect::<Vec<_>>(),
         ));
         const _: () = assert!(true, "");;
-        assert!(((*c.borrow()).len() == n));
+        assert!(({ ((*c.borrow()).len() == n) }));
         assert!(
             ({
                 let _arg0: safe_allocator_DefaultOnly_ = unimplemented!();
@@ -921,12 +1164,14 @@ pub fn test_32(mut n: usize, a: Option<Ptr<safe_allocator_DefaultOnly_>>) {
                 .collect::<Vec<_>>(),
         ));
         const _: () = assert!(true, "");;
-        assert!(((*c.borrow()).len() == n));
+        assert!(({ ((*c.borrow()).len() == n) }));
         assert!(
             ({
-                let _arg0: safe_allocator_DefaultOnly_ = unimplemented!();
-                let _arg1: safe_allocator_DefaultOnly_ = (*a.upgrade().deref()).clone();
-                operator_eq_21(_arg0, _arg1)
+                ({
+                    let _arg0: safe_allocator_DefaultOnly_ = unimplemented!();
+                    let _arg1: safe_allocator_DefaultOnly_ = (*a.upgrade().deref()).clone();
+                    operator_eq_21(_arg0, _arg1)
+                })
             })
         );
         const _: () = assert!(true, "");;
@@ -953,7 +1198,7 @@ pub fn test_33(mut n: usize, a: Ptr<test_allocator_DefaultOnly_>) {
                 .collect::<Vec<_>>(),
         ));
         const _: () = assert!(true, "");;
-        assert!(((*c.borrow()).len() == n));
+        assert!(({ ((*c.borrow()).len() == n) }));
         assert!(
             ({
                 let _x: Value<test_allocator_DefaultOnly_> =
@@ -984,7 +1229,7 @@ pub fn test_33(mut n: usize, a: Ptr<test_allocator_DefaultOnly_>) {
                 .collect::<Vec<_>>(),
         ));
         const _: () = assert!(true, "");;
-        assert!(((*c.borrow()).len() == n));
+        assert!(({ ((*c.borrow()).len() == n) }));
         assert!(
             ({
                 let _x: Value<test_allocator_DefaultOnly_> =
@@ -1207,7 +1452,9 @@ impl min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__Impl
     fn operator_inc_8(
         &self,
     ) -> Ptr<min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_add_assign(
@@ -1297,7 +1544,9 @@ impl min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__Impl
     fn operator_inc_9(
         &self,
     ) -> Ptr<min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0__> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
 }
@@ -1366,7 +1615,9 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl
     fn operator_inc_9(
         &self,
     ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
 }
@@ -1432,7 +1683,9 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
         return (*self).with(|__s| __s.ptr_.clone());
     }
     fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_add_assign(
@@ -1541,12 +1794,14 @@ impl safe_allocator_DefaultOnly_Impl for Ptr<safe_allocator_DefaultOnly_> {
     fn allocate(&self, mut n: usize) -> Ptr<DefaultOnly> {
         let memory: Value<Ptr<DefaultOnly>> = Rc::new(RefCell::new(unimplemented!()));
         {
-            {
-                (*memory.borrow()).to_any().memset(
-                    (0) as u8,
-                    ((4usize as u64).wrapping_mul((n as u64)) as usize) as usize,
-                );
-                (*memory.borrow()).to_any()
+            match ({ (*memory.borrow()).to_any() },) {
+                (mut __tmp_2,) => {
+                    __tmp_2.memset(
+                        (0) as u8,
+                        ((4usize as u64).wrapping_mul((n as u64)) as usize) as usize,
+                    );
+                    (__tmp_2).clone()
+                }
             };
         }
         return (*memory.borrow()).clone();
@@ -1554,12 +1809,14 @@ impl safe_allocator_DefaultOnly_Impl for Ptr<safe_allocator_DefaultOnly_> {
     fn deallocate(&self, mut p: Ptr<DefaultOnly>, mut n: usize) {
         {
             ({
-                let _value: Value<AnyPtr> = Rc::new(RefCell::new({
-                    (p).to_any().memset(
-                        (0) as u8,
-                        ((4usize as u64).wrapping_mul((n as u64)) as usize) as usize,
-                    );
-                    (p).to_any()
+                let _value: Value<AnyPtr> = Rc::new(RefCell::new(match ({ (p).to_any() },) {
+                    (mut __tmp_3,) => {
+                        __tmp_3.memset(
+                            (0) as u8,
+                            ((4usize as u64).wrapping_mul((n as u64)) as usize) as usize,
+                        );
+                        (__tmp_3).clone()
+                    }
                 }));
                 DoNotOptimize_0(_value.as_pointer())
             });
@@ -1575,13 +1832,15 @@ impl safe_allocator_int_Impl for Ptr<safe_allocator_int_> {
     fn allocate(&self, mut n: usize) -> Ptr<i32> {
         let memory: Value<Ptr<i32>> = Rc::new(RefCell::new(unimplemented!()));
         {
-            {
-                (*memory.borrow()).to_any().memset(
-                    (0) as u8,
-                    ((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64)) as usize)
-                        as usize,
-                );
-                (*memory.borrow()).to_any()
+            match ({ (*memory.borrow()).to_any() },) {
+                (mut __tmp_0,) => {
+                    __tmp_0.memset(
+                        (0) as u8,
+                        ((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64)) as usize)
+                            as usize,
+                    );
+                    (__tmp_0).clone()
+                }
             };
         }
         return (*memory.borrow()).clone();
@@ -1589,13 +1848,15 @@ impl safe_allocator_int_Impl for Ptr<safe_allocator_int_> {
     fn deallocate(&self, mut p: Ptr<i32>, mut n: usize) {
         {
             ({
-                let _value: Value<AnyPtr> = Rc::new(RefCell::new({
-                    (p).to_any().memset(
-                        (0) as u8,
-                        ((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64)) as usize)
-                            as usize,
-                    );
-                    (p).to_any()
+                let _value: Value<AnyPtr> = Rc::new(RefCell::new(match ({ (p).to_any() },) {
+                    (mut __tmp_1,) => {
+                        __tmp_1.memset(
+                            (0) as u8,
+                            ((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64))
+                                as usize) as usize,
+                        );
+                        (__tmp_1).clone()
+                    }
                 }));
                 DoNotOptimize_0(_value.as_pointer())
             });
@@ -1636,7 +1897,9 @@ impl test_allocator_DefaultOnly_Impl for Ptr<test_allocator_DefaultOnly_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_22.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_22.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_22.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_22.with(|rc| *rc.borrow()));
@@ -1656,10 +1919,12 @@ impl test_allocator_DefaultOnly_Impl for Ptr<test_allocator_DefaultOnly_> {
             }) {
                 std::process::abort();
             }
-            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
-                .with_mut(|__v| __v.prefix_inc());
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -1672,8 +1937,9 @@ impl test_allocator_DefaultOnly_Impl for Ptr<test_allocator_DefaultOnly_> {
     fn deallocate(&self, mut p: Ptr<DefaultOnly>, mut s: u32) {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_22.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -1690,8 +1956,9 @@ impl test_allocator_DefaultOnly_Impl for Ptr<test_allocator_DefaultOnly_> {
     }
     fn destroy(&self, mut p: Ptr<DefaultOnly>) {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), destroy_count)
-                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), destroy_count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         ({ DefaultOnlyImpl::destructor(&p) });
     }

@@ -30,11 +30,11 @@ pub fn operator_cmp_6(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> std::cmp::Order
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -66,6 +66,11 @@ impl CppEq for MoveOnly {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for MoveOnly {
     fn default() -> Self {
         { MoveOnly::new(None) }
@@ -95,11 +100,11 @@ pub fn operator_cmp_13(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> 
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow());
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new, some_value)]
@@ -129,6 +134,11 @@ impl CppEq for TrivialMoveOnly {
         operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for TrivialMoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for TrivialMoveOnly {
     fn default() -> Self {
         { TrivialMoveOnly::new(None) }
@@ -154,30 +164,42 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 1_()));
+    let q: Value<std_stack_MoveOnly__std_deque_MoveOnly__std_allocator_MoveOnly___> =
+        Rc::new(RefCell::new(
+            <std_stack_MoveOnly__std_deque_MoveOnly__std_allocator_MoveOnly___>::default(),
+        ));
+    ({
+        let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
+        (*q.borrow()).push_18(___x.as_pointer())
+    });
+    assert!(({ (({ (*q.borrow()).size() }) == 1_u64) }));
     assert!(
         ({
-            let _x: Ptr<MoveOnly> = unimplemented!();
+            let _x: Ptr<MoveOnly> = ({ (*q.borrow()).top_15() });
             let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
             operator_eq_0(_x, _y.as_pointer())
         })
     );
-    unimplemented!();
-    assert!((unimplemented!() == 2_()));
+    ({
+        let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
+        (*q.borrow()).push_18(___x.as_pointer())
+    });
+    assert!(({ (({ (*q.borrow()).size() }) == 2_u64) }));
     assert!(
         ({
-            let _x: Ptr<MoveOnly> = unimplemented!();
+            let _x: Ptr<MoveOnly> = ({ (*q.borrow()).top_15() });
             let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
             operator_eq_0(_x, _y.as_pointer())
         })
     );
-    unimplemented!();
-    assert!((unimplemented!() == 3_()));
+    ({
+        let ___x: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+        (*q.borrow()).push_18(___x.as_pointer())
+    });
+    assert!(({ (({ (*q.borrow()).size() }) == 3_u64) }));
     assert!(
         ({
-            let _x: Ptr<MoveOnly> = unimplemented!();
+            let _x: Ptr<MoveOnly> = ({ (*q.borrow()).top_15() });
             let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
             operator_eq_0(_x, _y.as_pointer())
         })

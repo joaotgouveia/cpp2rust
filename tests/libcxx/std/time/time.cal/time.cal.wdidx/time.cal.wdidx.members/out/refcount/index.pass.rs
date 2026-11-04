@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_unsigned_int__unsigned_int_ {}
+impl CppMove for test_macros_detail_is_same_unsigned_int__unsigned_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -36,8 +41,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "weekday_indexed{{}}.index() == 0");;
     let mut i: u32 = 0_u32;
     'loop_: while (i <= 7_u32) {
-        let wdi: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == i));
+        let wdi: Value<std_chrono_weekday_indexed> = Rc::new(RefCell::new({
+            let __tmp_0: Value<std_chrono_weekday> =
+                Rc::new(RefCell::new(std_chrono_weekday::new_1({ 2_u32 })));
+            std_chrono_weekday_indexed::new_1({ __tmp_0.as_pointer() }, { i })
+        }));
+        assert!(({ (({ (*wdi.borrow()).index() }) == i) }));
         i.prefix_inc();
     }
     return 0;

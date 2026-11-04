@@ -9,8 +9,9 @@ use std::rc::{Rc, Weak};
 const _: () = assert!(!(false), "!DerefNoexcept<int>");
 const _: () = assert!(true, "DerefNoexcept<std::expected<void, int>>");
 pub fn test_0() -> bool {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let e: Value<std_expected_void__int_> =
+        Rc::new(RefCell::new(<std_expected_void__int_>::default()));
+    (*(*e.borrow_mut()).upgrade().deref());
     const _: () = assert!(true, "std::is_same_v<decltype(*e), void>");;
     return true;
 }

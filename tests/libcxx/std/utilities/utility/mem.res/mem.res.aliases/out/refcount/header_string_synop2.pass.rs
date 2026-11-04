@@ -28,10 +28,10 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut s: () = vec![i8::default()];
-        let mut ws: () = vec![i32::default()];
-        let mut u16s: () = vec![u16::default()];
-        let mut u32s: () = vec![u32::default()];
+        let mut s: Vec<i8> = vec![i8::default()];
+        let mut ws: Vec<i32> = vec![i32::default()];
+        let mut u16s: Vec<u16> = vec![u16::default()];
+        let mut u32s: Vec<u32> = vec![u32::default()];
     }
     return 0;
 }

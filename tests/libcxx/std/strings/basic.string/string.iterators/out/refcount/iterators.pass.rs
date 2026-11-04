@@ -15,23 +15,33 @@ pub fn test_0() {
         let ii4: Value<RandomAccessIterator<i8>> = Rc::new(RefCell::new((*ii1.borrow()).clone()));
         let cii: Value<RandomAccessIterator<i8>> =
             Rc::new(RefCell::new(RandomAccessIterator::default()));
-        assert!((*ii1.borrow()) == (*ii2.borrow()));
-        assert!((*ii1.borrow()) == (*ii4.borrow()));
-        assert!(!((*ii1.borrow()) != (*ii2.borrow())));
-        assert!(((*ii1.borrow()) == (*cii.borrow())));
-        assert!(((*cii.borrow()) == (*ii1.borrow())));
-        assert!(!((*ii1.borrow()) != (*cii.borrow())));
-        assert!(!((*cii.borrow()) != (*ii1.borrow())));
-        assert!(!((*ii1.borrow()) < (*cii.borrow()).clone().into()));
-        assert!(!((*cii.borrow()) < (*ii1.borrow()).clone().into()));
-        assert!(((*ii1.borrow()) <= (*cii.borrow()).clone().into()));
-        assert!(((*cii.borrow()) <= (*ii1.borrow()).clone().into()));
-        assert!(!((*ii1.borrow()) > (*cii.borrow()).clone().into()));
-        assert!(!((*cii.borrow()) > (*ii1.borrow()).clone().into()));
-        assert!(((*ii1.borrow()) >= (*cii.borrow()).clone().into()));
-        assert!(((*cii.borrow()) >= (*ii1.borrow()).clone().into()));
-        assert!(((*cii.borrow()).iter_distance(&(*ii1.borrow()).clone().into()) as i64 == 0_i64));
-        assert!(((*ii1.borrow()).iter_distance(&(*cii.borrow()).clone().into()) as i64 == 0_i64));
+        assert!(({ (*ii1.borrow()) == (*ii2.borrow()) }));
+        assert!(({ (*ii1.borrow()) == (*ii4.borrow()) }));
+        assert!(({ !((*ii1.borrow()) != (*ii2.borrow())) }));
+        assert!(({ ((*ii1.borrow()) == (*cii.borrow())) }));
+        assert!(({ ((*cii.borrow()) == (*ii1.borrow())) }));
+        assert!(({ !((*ii1.borrow()) != (*cii.borrow())) }));
+        assert!(({ !((*cii.borrow()) != (*ii1.borrow())) }));
+        assert!(({ !((*ii1.borrow()) < ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ !((*cii.borrow()) < ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(({ ((*ii1.borrow()) <= ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ ((*cii.borrow()) <= ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(({ !((*ii1.borrow()) > ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ !((*cii.borrow()) > ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(({ ((*ii1.borrow()) >= ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ ((*cii.borrow()) >= ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(
+            ({
+                ((*cii.borrow()).iter_distance(&({ (*ii1.borrow()).clone() }).into()) as i64
+                    == 0_i64)
+            })
+        );
+        assert!(
+            ({
+                ((*ii1.borrow()).iter_distance(&({ (*cii.borrow()).clone() }).into()) as i64
+                    == 0_i64)
+            })
+        );
     }
     {
         let a: Value<Vec<i8>> = Rc::new(RefCell::new(vec![i8::default()]));
@@ -40,7 +50,7 @@ pub fn test_0() {
         let i2: Value<RandomAccessIterator<i8>> =
             Rc::new(RefCell::new(RandomAccessIterator::default()));
         (*i2.borrow_mut()) = (*i1.borrow()).clone();
-        assert!((*i1.borrow()) == (*i2.borrow()));
+        assert!(({ (*i1.borrow()) == (*i2.borrow()) }));
     }
 }
 pub fn test_1() {
@@ -52,23 +62,33 @@ pub fn test_1() {
         let ii4: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new((*ii1.borrow()).clone()));
         let cii: Value<RandomAccessIterator<i32>> =
             Rc::new(RefCell::new(RandomAccessIterator::default()));
-        assert!((*ii1.borrow()) == (*ii2.borrow()));
-        assert!((*ii1.borrow()) == (*ii4.borrow()));
-        assert!(!((*ii1.borrow()) != (*ii2.borrow())));
-        assert!(((*ii1.borrow()) == (*cii.borrow())));
-        assert!(((*cii.borrow()) == (*ii1.borrow())));
-        assert!(!((*ii1.borrow()) != (*cii.borrow())));
-        assert!(!((*cii.borrow()) != (*ii1.borrow())));
-        assert!(!((*ii1.borrow()) < (*cii.borrow()).clone().into()));
-        assert!(!((*cii.borrow()) < (*ii1.borrow()).clone().into()));
-        assert!(((*ii1.borrow()) <= (*cii.borrow()).clone().into()));
-        assert!(((*cii.borrow()) <= (*ii1.borrow()).clone().into()));
-        assert!(!((*ii1.borrow()) > (*cii.borrow()).clone().into()));
-        assert!(!((*cii.borrow()) > (*ii1.borrow()).clone().into()));
-        assert!(((*ii1.borrow()) >= (*cii.borrow()).clone().into()));
-        assert!(((*cii.borrow()) >= (*ii1.borrow()).clone().into()));
-        assert!(((*cii.borrow()).iter_distance(&(*ii1.borrow()).clone().into()) as i64 == 0_i64));
-        assert!(((*ii1.borrow()).iter_distance(&(*cii.borrow()).clone().into()) as i64 == 0_i64));
+        assert!(({ (*ii1.borrow()) == (*ii2.borrow()) }));
+        assert!(({ (*ii1.borrow()) == (*ii4.borrow()) }));
+        assert!(({ !((*ii1.borrow()) != (*ii2.borrow())) }));
+        assert!(({ ((*ii1.borrow()) == (*cii.borrow())) }));
+        assert!(({ ((*cii.borrow()) == (*ii1.borrow())) }));
+        assert!(({ !((*ii1.borrow()) != (*cii.borrow())) }));
+        assert!(({ !((*cii.borrow()) != (*ii1.borrow())) }));
+        assert!(({ !((*ii1.borrow()) < ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ !((*cii.borrow()) < ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(({ ((*ii1.borrow()) <= ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ ((*cii.borrow()) <= ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(({ !((*ii1.borrow()) > ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ !((*cii.borrow()) > ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(({ ((*ii1.borrow()) >= ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ ((*cii.borrow()) >= ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(
+            ({
+                ((*cii.borrow()).iter_distance(&({ (*ii1.borrow()).clone() }).into()) as i64
+                    == 0_i64)
+            })
+        );
+        assert!(
+            ({
+                ((*ii1.borrow()).iter_distance(&({ (*cii.borrow()).clone() }).into()) as i64
+                    == 0_i64)
+            })
+        );
     }
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(vec![i32::default()]));
@@ -77,7 +97,7 @@ pub fn test_1() {
         let i2: Value<RandomAccessIterator<i32>> =
             Rc::new(RefCell::new(RandomAccessIterator::default()));
         (*i2.borrow_mut()) = (*i1.borrow()).clone();
-        assert!((*i1.borrow()) == (*i2.borrow()));
+        assert!(({ (*i1.borrow()) == (*i2.borrow()) }));
     }
 }
 pub fn test_2() {
@@ -89,23 +109,33 @@ pub fn test_2() {
         let ii4: Value<RandomAccessIterator<u8>> = Rc::new(RefCell::new((*ii1.borrow()).clone()));
         let cii: Value<RandomAccessIterator<u8>> =
             Rc::new(RefCell::new(RandomAccessIterator::default()));
-        assert!((*ii1.borrow()) == (*ii2.borrow()));
-        assert!((*ii1.borrow()) == (*ii4.borrow()));
-        assert!(!((*ii1.borrow()) != (*ii2.borrow())));
-        assert!(((*ii1.borrow()) == (*cii.borrow())));
-        assert!(((*cii.borrow()) == (*ii1.borrow())));
-        assert!(!((*ii1.borrow()) != (*cii.borrow())));
-        assert!(!((*cii.borrow()) != (*ii1.borrow())));
-        assert!(!((*ii1.borrow()) < (*cii.borrow()).clone().into()));
-        assert!(!((*cii.borrow()) < (*ii1.borrow()).clone().into()));
-        assert!(((*ii1.borrow()) <= (*cii.borrow()).clone().into()));
-        assert!(((*cii.borrow()) <= (*ii1.borrow()).clone().into()));
-        assert!(!((*ii1.borrow()) > (*cii.borrow()).clone().into()));
-        assert!(!((*cii.borrow()) > (*ii1.borrow()).clone().into()));
-        assert!(((*ii1.borrow()) >= (*cii.borrow()).clone().into()));
-        assert!(((*cii.borrow()) >= (*ii1.borrow()).clone().into()));
-        assert!(((*cii.borrow()).iter_distance(&(*ii1.borrow()).clone().into()) as i64 == 0_i64));
-        assert!(((*ii1.borrow()).iter_distance(&(*cii.borrow()).clone().into()) as i64 == 0_i64));
+        assert!(({ (*ii1.borrow()) == (*ii2.borrow()) }));
+        assert!(({ (*ii1.borrow()) == (*ii4.borrow()) }));
+        assert!(({ !((*ii1.borrow()) != (*ii2.borrow())) }));
+        assert!(({ ((*ii1.borrow()) == (*cii.borrow())) }));
+        assert!(({ ((*cii.borrow()) == (*ii1.borrow())) }));
+        assert!(({ !((*ii1.borrow()) != (*cii.borrow())) }));
+        assert!(({ !((*cii.borrow()) != (*ii1.borrow())) }));
+        assert!(({ !((*ii1.borrow()) < ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ !((*cii.borrow()) < ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(({ ((*ii1.borrow()) <= ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ ((*cii.borrow()) <= ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(({ !((*ii1.borrow()) > ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ !((*cii.borrow()) > ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(({ ((*ii1.borrow()) >= ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ ((*cii.borrow()) >= ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(
+            ({
+                ((*cii.borrow()).iter_distance(&({ (*ii1.borrow()).clone() }).into()) as i64
+                    == 0_i64)
+            })
+        );
+        assert!(
+            ({
+                ((*ii1.borrow()).iter_distance(&({ (*cii.borrow()).clone() }).into()) as i64
+                    == 0_i64)
+            })
+        );
     }
     {
         let a: Value<Vec<u8>> = Rc::new(RefCell::new(vec![u8::default()]));
@@ -114,7 +144,7 @@ pub fn test_2() {
         let i2: Value<RandomAccessIterator<u8>> =
             Rc::new(RefCell::new(RandomAccessIterator::default()));
         (*i2.borrow_mut()) = (*i1.borrow()).clone();
-        assert!((*i1.borrow()) == (*i2.borrow()));
+        assert!(({ (*i1.borrow()) == (*i2.borrow()) }));
     }
 }
 pub fn test_3() {
@@ -126,23 +156,33 @@ pub fn test_3() {
         let ii4: Value<RandomAccessIterator<u16>> = Rc::new(RefCell::new((*ii1.borrow()).clone()));
         let cii: Value<RandomAccessIterator<u16>> =
             Rc::new(RefCell::new(RandomAccessIterator::default()));
-        assert!((*ii1.borrow()) == (*ii2.borrow()));
-        assert!((*ii1.borrow()) == (*ii4.borrow()));
-        assert!(!((*ii1.borrow()) != (*ii2.borrow())));
-        assert!(((*ii1.borrow()) == (*cii.borrow())));
-        assert!(((*cii.borrow()) == (*ii1.borrow())));
-        assert!(!((*ii1.borrow()) != (*cii.borrow())));
-        assert!(!((*cii.borrow()) != (*ii1.borrow())));
-        assert!(!((*ii1.borrow()) < (*cii.borrow()).clone().into()));
-        assert!(!((*cii.borrow()) < (*ii1.borrow()).clone().into()));
-        assert!(((*ii1.borrow()) <= (*cii.borrow()).clone().into()));
-        assert!(((*cii.borrow()) <= (*ii1.borrow()).clone().into()));
-        assert!(!((*ii1.borrow()) > (*cii.borrow()).clone().into()));
-        assert!(!((*cii.borrow()) > (*ii1.borrow()).clone().into()));
-        assert!(((*ii1.borrow()) >= (*cii.borrow()).clone().into()));
-        assert!(((*cii.borrow()) >= (*ii1.borrow()).clone().into()));
-        assert!(((*cii.borrow()).iter_distance(&(*ii1.borrow()).clone().into()) as i64 == 0_i64));
-        assert!(((*ii1.borrow()).iter_distance(&(*cii.borrow()).clone().into()) as i64 == 0_i64));
+        assert!(({ (*ii1.borrow()) == (*ii2.borrow()) }));
+        assert!(({ (*ii1.borrow()) == (*ii4.borrow()) }));
+        assert!(({ !((*ii1.borrow()) != (*ii2.borrow())) }));
+        assert!(({ ((*ii1.borrow()) == (*cii.borrow())) }));
+        assert!(({ ((*cii.borrow()) == (*ii1.borrow())) }));
+        assert!(({ !((*ii1.borrow()) != (*cii.borrow())) }));
+        assert!(({ !((*cii.borrow()) != (*ii1.borrow())) }));
+        assert!(({ !((*ii1.borrow()) < ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ !((*cii.borrow()) < ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(({ ((*ii1.borrow()) <= ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ ((*cii.borrow()) <= ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(({ !((*ii1.borrow()) > ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ !((*cii.borrow()) > ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(({ ((*ii1.borrow()) >= ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ ((*cii.borrow()) >= ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(
+            ({
+                ((*cii.borrow()).iter_distance(&({ (*ii1.borrow()).clone() }).into()) as i64
+                    == 0_i64)
+            })
+        );
+        assert!(
+            ({
+                ((*ii1.borrow()).iter_distance(&({ (*cii.borrow()).clone() }).into()) as i64
+                    == 0_i64)
+            })
+        );
     }
     {
         let a: Value<Vec<u16>> = Rc::new(RefCell::new(vec![u16::default()]));
@@ -151,7 +191,7 @@ pub fn test_3() {
         let i2: Value<RandomAccessIterator<u16>> =
             Rc::new(RefCell::new(RandomAccessIterator::default()));
         (*i2.borrow_mut()) = (*i1.borrow()).clone();
-        assert!((*i1.borrow()) == (*i2.borrow()));
+        assert!(({ (*i1.borrow()) == (*i2.borrow()) }));
     }
 }
 pub fn test_4() {
@@ -163,23 +203,33 @@ pub fn test_4() {
         let ii4: Value<RandomAccessIterator<u32>> = Rc::new(RefCell::new((*ii1.borrow()).clone()));
         let cii: Value<RandomAccessIterator<u32>> =
             Rc::new(RefCell::new(RandomAccessIterator::default()));
-        assert!((*ii1.borrow()) == (*ii2.borrow()));
-        assert!((*ii1.borrow()) == (*ii4.borrow()));
-        assert!(!((*ii1.borrow()) != (*ii2.borrow())));
-        assert!(((*ii1.borrow()) == (*cii.borrow())));
-        assert!(((*cii.borrow()) == (*ii1.borrow())));
-        assert!(!((*ii1.borrow()) != (*cii.borrow())));
-        assert!(!((*cii.borrow()) != (*ii1.borrow())));
-        assert!(!((*ii1.borrow()) < (*cii.borrow()).clone().into()));
-        assert!(!((*cii.borrow()) < (*ii1.borrow()).clone().into()));
-        assert!(((*ii1.borrow()) <= (*cii.borrow()).clone().into()));
-        assert!(((*cii.borrow()) <= (*ii1.borrow()).clone().into()));
-        assert!(!((*ii1.borrow()) > (*cii.borrow()).clone().into()));
-        assert!(!((*cii.borrow()) > (*ii1.borrow()).clone().into()));
-        assert!(((*ii1.borrow()) >= (*cii.borrow()).clone().into()));
-        assert!(((*cii.borrow()) >= (*ii1.borrow()).clone().into()));
-        assert!(((*cii.borrow()).iter_distance(&(*ii1.borrow()).clone().into()) as i64 == 0_i64));
-        assert!(((*ii1.borrow()).iter_distance(&(*cii.borrow()).clone().into()) as i64 == 0_i64));
+        assert!(({ (*ii1.borrow()) == (*ii2.borrow()) }));
+        assert!(({ (*ii1.borrow()) == (*ii4.borrow()) }));
+        assert!(({ !((*ii1.borrow()) != (*ii2.borrow())) }));
+        assert!(({ ((*ii1.borrow()) == (*cii.borrow())) }));
+        assert!(({ ((*cii.borrow()) == (*ii1.borrow())) }));
+        assert!(({ !((*ii1.borrow()) != (*cii.borrow())) }));
+        assert!(({ !((*cii.borrow()) != (*ii1.borrow())) }));
+        assert!(({ !((*ii1.borrow()) < ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ !((*cii.borrow()) < ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(({ ((*ii1.borrow()) <= ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ ((*cii.borrow()) <= ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(({ !((*ii1.borrow()) > ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ !((*cii.borrow()) > ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(({ ((*ii1.borrow()) >= ({ (*cii.borrow()).clone() }).into()) }));
+        assert!(({ ((*cii.borrow()) >= ({ (*ii1.borrow()).clone() }).into()) }));
+        assert!(
+            ({
+                ((*cii.borrow()).iter_distance(&({ (*ii1.borrow()).clone() }).into()) as i64
+                    == 0_i64)
+            })
+        );
+        assert!(
+            ({
+                ((*ii1.borrow()).iter_distance(&({ (*cii.borrow()).clone() }).into()) as i64
+                    == 0_i64)
+            })
+        );
     }
     {
         let a: Value<Vec<u32>> = Rc::new(RefCell::new(vec![u32::default()]));
@@ -188,7 +238,7 @@ pub fn test_4() {
         let i2: Value<RandomAccessIterator<u32>> =
             Rc::new(RefCell::new(RandomAccessIterator::default()));
         (*i2.borrow_mut()) = (*i1.borrow()).clone();
-        assert!((*i1.borrow()) == (*i2.borrow()));
+        assert!(({ (*i1.borrow()) == (*i2.borrow()) }));
     }
 }
 pub fn test_5() -> bool {

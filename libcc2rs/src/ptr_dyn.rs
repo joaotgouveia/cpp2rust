@@ -6,17 +6,21 @@ use std::rc::{Rc, Weak};
 
 use crate::rc::{Ptr, PtrKind};
 
-pub struct StrongPtrDyn<T: ?Sized> {
-    rc: Rc<RefCell<T>>,
+pub enum StrongPtrDyn<T: ?Sized> {
+    Single(Rc<RefCell<T>>),
 }
 
 impl<T: ?Sized> StrongPtrDyn<T> {
     pub fn deref(&self) -> Ref<'_, T> {
-        self.rc.borrow()
+        match self {
+            Self::Single(rc) => rc.borrow(),
+        }
     }
 
     pub fn deref_mut(&self) -> RefMut<'_, T> {
-        self.rc.borrow_mut()
+        match self {
+            Self::Single(rc) => rc.borrow_mut(),
+        }
     }
 }
 
@@ -50,9 +54,7 @@ impl<T: ?Sized> PtrDyn<T> {
             PtrKindDyn::Null => panic!("ub: dereference of null pointer"),
             PtrKindDyn::StackSingle(weak) | PtrKindDyn::HeapSingle(weak) => {
                 assert_eq!(self.offset, 0, "ub: invalid offset");
-                StrongPtrDyn {
-                    rc: weak.upgrade().expect("ub: dangling pointer"),
-                }
+                StrongPtrDyn::Single(weak.upgrade().expect("ub: dangling pointer"))
             }
         }
     }

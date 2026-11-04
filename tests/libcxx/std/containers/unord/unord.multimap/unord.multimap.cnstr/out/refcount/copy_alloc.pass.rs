@@ -25,6 +25,11 @@ impl CppEq for test_equal_to_int_ {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for test_equal_to_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct test_hash_int_ {
@@ -47,6 +52,11 @@ impl Callable1<Ptr<i32>, usize> for test_hash_int_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             test_hash_int_Impl::operator_call(__it, a1)
         })
+    }
+}
+impl CppMove for test_hash_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for test_hash_int_ {
@@ -78,6 +88,11 @@ pub struct test_allocator_statistics {
     #[offset(36)]
     pub converted: i32,
 }
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_statistics {
     fn default() -> Self {
         {
@@ -105,6 +120,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -185,6 +205,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -205,6 +230,11 @@ pub fn operator_eq_5(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_std_pair_const_int__int___rebind_std_pair_const_int__int__ {}
+impl CppMove for test_allocator_std_pair_const_int__int___rebind_std_pair_const_int__int__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_std_pair_const_int__int__ {
@@ -244,6 +274,11 @@ impl Default for test_allocator_std_pair_const_int__int__ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -276,6 +311,11 @@ impl malloc_allocator_base {
         dealloc_count_8.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_6: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -288,22 +328,6 @@ thread_local!(
 thread_local!(
     pub static disable_default_constructor_9: Value<bool> = Rc::new(RefCell::new(false));
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<(Value<i32>, Value<i32>)>,
-}
-impl min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 pub fn operator_eq_10(
     mut _a0: min_allocator_std_pair_const_int__int__,
     mut _a1: min_allocator_std_pair_const_int__int__,
@@ -318,7 +342,12 @@ impl CppEq for min_allocator_std_pair_const_int__int__ {
         operator_eq_10(__lhs.read(), __rhs.read())
     }
 }
-pub fn test_alloc_11(new_alloc: Ptr<()>) {
+impl CppMove for min_allocator_std_pair_const_int__int__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn test_alloc_11(new_alloc: Ptr<min_allocator_std_pair_const_int__int__>) {
     {
         let arr: Value<Box<[(Value<i32>, Value<i32>)]>> = Rc::new(RefCell::new(Box::new([
             (Rc::new(RefCell::new(1)), Rc::new(RefCell::new(2))),
@@ -326,132 +355,224 @@ pub fn test_alloc_11(new_alloc: Ptr<()>) {
             (Rc::new(RefCell::new(3)), Rc::new(RefCell::new(1))),
             (Rc::new(RefCell::new(3)), Rc::new(RefCell::new(2))),
         ])));
-        let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let orig : Value<std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__int___ :: new_1 ( { ( { begin_12 ( arr .as_pointer()  , ) } )   } , { (arr .as_pointer()  as Ptr< (Value<i32  >, Value<i32  >)  > ).to_end()   } , None , None , None , None , )  )) ;
+        let copy : Value<std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__int___ :: new_2 ( { orig .as_pointer()  } , { (new_alloc ).clone() } , )  )) ;
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 4_()));
+        assert!(({ (({ (*copy.borrow()).size() }) == 4_u64) }));
         assert!(
-            ((*(*unimplemented!().iter_deref().upgrade().deref())
-                .1
-                .borrow())
+            ((*(*({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*copy.borrow()).find_60(___x.as_pointer())
+            })
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
                 == 2)
         );
         assert!(
-            ((*(*unimplemented!().iter_deref().upgrade().deref())
-                .1
-                .borrow())
+            ((*(*({
+                let ___x: Value<i32> = Rc::new(RefCell::new(2));
+                (*copy.borrow()).find_60(___x.as_pointer())
+            })
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
                 == 4)
         );
         {
-            let range: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
-            let first_element: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-                (*(*range.borrow()).0.borrow()).clone(),
+            let range: Value<(
+                Value<std___detail__Node_iterator_std_pair_const_int__int___false__false_>,
+                Value<std___detail__Node_iterator_std_pair_const_int__int___false__false_>,
+            )> = Rc::new(RefCell::new(
+                ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                    (*copy.borrow()).equal_range_68(___x.as_pointer())
+                }),
+            ));
+            let first_element: Value<
+                std___detail__Node_iterator_std_pair_const_int__int___false__false_,
+            > = Rc::new(RefCell::new(libcc2rs::next_refcount(
+                ({ (*(*range.borrow()).0.borrow()).clone() }),
                 0_isize,
             )));
-            let second_element: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-                (*(*range.borrow()).0.borrow()).clone(),
+            let second_element: Value<
+                std___detail__Node_iterator_std_pair_const_int__int___false__false_,
+            > = Rc::new(RefCell::new(libcc2rs::next_refcount(
+                ({ (*(*range.borrow()).0.borrow()).clone() }),
                 1_isize,
             )));
-            let end: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-                (*(*range.borrow()).0.borrow()).clone(),
-                2_isize,
-            )));
-            assert!((*(*range.borrow()).1.borrow()) == (*end.borrow()));
+            let end: Value<std___detail__Node_iterator_std_pair_const_int__int___false__false_> =
+                Rc::new(RefCell::new(libcc2rs::next_refcount(
+                    ({ (*(*range.borrow()).0.borrow()).clone() }),
+                    2_isize,
+                )));
+            assert!(({ (*(*range.borrow()).1.borrow()) == (*end.borrow()) }));
             assert!(
-                ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
-                    .1
-                    .borrow())
-                    == 1)
-                    || ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
+                ({
+                    ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
                         .1
                         .borrow())
-                        == 2)
+                        == 1)
+                        || ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
+                            .1
+                            .borrow())
+                            == 2)
+                })
             );
             assert!(
-                ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
-                    .1
-                    .borrow())
-                    == 1)
-                    || ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
+                ({
+                    ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
                         .1
                         .borrow())
-                        == 2)
+                        == 1)
+                        || ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
+                            .1
+                            .borrow())
+                            == 2)
+                })
             );
             assert!(
-                ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
-                    .1
-                    .borrow())
-                    != (*(*(*(*range.borrow()).0.borrow())
-                        .iter_deref()
-                        .upgrade()
-                        .deref())
-                    .1
-                    .borrow()))
+                ({
+                    ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
+                        .1
+                        .borrow())
+                        != (*(*(*(*range.borrow()).0.borrow())
+                            .iter_deref()
+                            .upgrade()
+                            .deref())
+                        .1
+                        .borrow()))
+                })
             );
         }
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() < 1.1920929e-07_f32));
-        assert!((unimplemented!() == 1_f32));
-        assert!(unimplemented!());
-        const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 4_()));
         assert!(
-            ((*(*unimplemented!().iter_deref().upgrade().deref())
-                .1
-                .borrow())
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__int___false__false_   = ( { (*copy.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__int___false__false_   = ( { (*copy.borrow()) . end_30 ( ) } )   ;
+                    distance_13(___first, ___last)
+                }) as usize)
+                    == (({ (*copy.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                (({
+                    fabs_14(
+                        (({ (*copy.borrow()).load_factor() })
+                            - ((({ (*copy.borrow()).size() }) as f32)
+                                / (({ (*copy.borrow()).bucket_count() }) as f32))),
+                    )
+                }) < 1.1920929e-07_f32)
+            })
+        );
+        assert!(({ (({ (*copy.borrow()).max_load_factor_83() }) == 1_f32) }));
+        assert!(
+            ({
+                ({
+                    let _arg0: min_allocator_std_pair_const_int__int__ =
+                        ({ (*copy.borrow()).get_allocator() });
+                    let _arg1: min_allocator_std_pair_const_int__int__ =
+                        (*new_alloc.upgrade().deref()).clone();
+                    operator_eq_10(_arg0, _arg1)
+                })
+            })
+        );
+        const _: () = assert!(true, "");;
+        assert!(({ (({ (*orig.borrow()).size() }) == 4_u64) }));
+        assert!(
+            ((*(*({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*orig.borrow()).find_62(___x.as_pointer())
+            })
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
                 == 2)
         );
         assert!(
-            ((*(*unimplemented!().iter_deref().upgrade().deref())
-                .1
-                .borrow())
+            ((*(*({
+                let ___x: Value<i32> = Rc::new(RefCell::new(2));
+                (*orig.borrow()).find_62(___x.as_pointer())
+            })
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
                 == 4)
         );
         {
-            let range: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
-            let first_element: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-                (*(*range.borrow()).0.borrow()).clone(),
+            let range: Value<(
+                Value<std___detail__Node_const_iterator_std_pair_const_int__int___false__false_>,
+                Value<std___detail__Node_const_iterator_std_pair_const_int__int___false__false_>,
+            )> = Rc::new(RefCell::new(
+                ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                    (*orig.borrow()).equal_range_70(___x.as_pointer())
+                }),
+            ));
+            let first_element: Value<
+                std___detail__Node_const_iterator_std_pair_const_int__int___false__false_,
+            > = Rc::new(RefCell::new(libcc2rs::next_refcount(
+                ({ (*(*range.borrow()).0.borrow()).clone() }),
                 0_isize,
             )));
-            let second_element: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-                (*(*range.borrow()).0.borrow()).clone(),
+            let second_element: Value<
+                std___detail__Node_const_iterator_std_pair_const_int__int___false__false_,
+            > = Rc::new(RefCell::new(libcc2rs::next_refcount(
+                ({ (*(*range.borrow()).0.borrow()).clone() }),
                 1_isize,
             )));
-            let end: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-                (*(*range.borrow()).0.borrow()).clone(),
+            let end: Value<
+                std___detail__Node_const_iterator_std_pair_const_int__int___false__false_,
+            > = Rc::new(RefCell::new(libcc2rs::next_refcount(
+                ({ (*(*range.borrow()).0.borrow()).clone() }),
                 2_isize,
             )));
-            assert!((*(*range.borrow()).1.borrow()) == (*end.borrow()));
+            assert!(({ (*(*range.borrow()).1.borrow()) == (*end.borrow()) }));
             assert!(
-                ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
-                    .1
-                    .borrow())
-                    == 1)
-                    || ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
+                ({
+                    ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
                         .1
                         .borrow())
-                        == 2)
+                        == 1)
+                        || ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
+                            .1
+                            .borrow())
+                            == 2)
+                })
             );
             assert!(
-                ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
-                    .1
-                    .borrow())
-                    == 1)
-                    || ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
+                ({
+                    ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
                         .1
                         .borrow())
-                        == 2)
+                        == 1)
+                        || ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
+                            .1
+                            .borrow())
+                            == 2)
+                })
             );
             assert!(
-                ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
-                    .1
-                    .borrow())
-                    != (*(*(*(*range.borrow()).0.borrow())
-                        .iter_deref()
-                        .upgrade()
-                        .deref())
-                    .1
-                    .borrow()))
+                ({
+                    ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
+                        .1
+                        .borrow())
+                        != (*(*(*(*range.borrow()).0.borrow())
+                            .iter_deref()
+                            .upgrade()
+                            .deref())
+                        .1
+                        .borrow()))
+                })
             );
         }
     }
@@ -460,80 +581,162 @@ pub fn test_alloc_11(new_alloc: Ptr<()>) {
             Rc::new(RefCell::new(1)),
             Rc::new(RefCell::new(2)),
         )])));
-        let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let orig : Value<std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__int___ :: new_1 ( { ( { begin_15 ( arr .as_pointer()  , ) } )   } , { (arr .as_pointer()  as Ptr< (Value<i32  >, Value<i32  >)  > ).to_end()   } , None , None , None , None , )  )) ;
+        let copy : Value<std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__int___ :: new_2 ( { orig .as_pointer()  } , { (new_alloc ).clone() } , )  )) ;
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 1_()));
+        assert!(({ (({ (*copy.borrow()).size() }) == 1_u64) }));
         assert!(
-            ((*(*unimplemented!().iter_deref().upgrade().deref())
-                .1
-                .borrow())
+            ((*(*({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*copy.borrow()).find_60(___x.as_pointer())
+            })
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
                 == 2)
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() < 1.1920929e-07_f32));
-        assert!((unimplemented!() == 1_f32));
-        assert!(unimplemented!());
-        const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 1_()));
         assert!(
-            ((*(*unimplemented!().iter_deref().upgrade().deref())
-                .1
-                .borrow())
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__int___false__false_   = ( { (*copy.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__int___false__false_   = ( { (*copy.borrow()) . end_30 ( ) } )   ;
+                    distance_13(___first, ___last)
+                }) as usize)
+                    == (({ (*copy.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                (({
+                    fabs_14(
+                        (({ (*copy.borrow()).load_factor() })
+                            - ((({ (*copy.borrow()).size() }) as f32)
+                                / (({ (*copy.borrow()).bucket_count() }) as f32))),
+                    )
+                }) < 1.1920929e-07_f32)
+            })
+        );
+        assert!(({ (({ (*copy.borrow()).max_load_factor_83() }) == 1_f32) }));
+        assert!(
+            ({
+                ({
+                    let _arg0: min_allocator_std_pair_const_int__int__ =
+                        ({ (*copy.borrow()).get_allocator() });
+                    let _arg1: min_allocator_std_pair_const_int__int__ =
+                        (*new_alloc.upgrade().deref()).clone();
+                    operator_eq_10(_arg0, _arg1)
+                })
+            })
+        );
+        const _: () = assert!(true, "");;
+        assert!(({ (({ (*orig.borrow()).size() }) == 1_u64) }));
+        assert!(
+            ((*(*({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*orig.borrow()).find_62(___x.as_pointer())
+            })
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
                 == 2)
         );
     }
     {
-        let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let orig : Value<std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(<std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__int___  >::default() )) ;
+        let copy : Value<std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__int___ :: new_2 ( { orig .as_pointer()  } , { (new_alloc ).clone() } , )  )) ;
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 1_f32));
-        assert!(unimplemented!());
+        assert!(({ (({ (*copy.borrow()).size() }) == 0_u64) }));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__int___false__false_   = ( { (*copy.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__int___false__false_   = ( { (*copy.borrow()) . end_30 ( ) } )   ;
+                    distance_13(___first, ___last)
+                }) as usize)
+                    == (({ (*copy.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*copy.borrow()).max_load_factor_83() }) == 1_f32) }));
+        assert!(
+            ({
+                ({
+                    let _arg0: min_allocator_std_pair_const_int__int__ =
+                        ({ (*copy.borrow()).get_allocator() });
+                    let _arg1: min_allocator_std_pair_const_int__int__ =
+                        (*new_alloc.upgrade().deref()).clone();
+                    operator_eq_10(_arg0, _arg1)
+                })
+            })
+        );
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
+        assert!(({ (({ (*orig.borrow()).size() }) == 0_u64) }));
     }
     {
-        let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let orig : Value<std_unordered_multimap_int__int__test_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new({ let __tmp_0 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 23  ) } , )  )); std_unordered_multimap_int__int__test_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__int___ :: new_1 ( { 0_u64  } , { __tmp_0.as_pointer() } , None , None , )  } )) ;
+        let copy : Value<std_unordered_multimap_int__int__test_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(std_unordered_multimap_int__int__test_hash_int___std_equal_to_int___min_allocator_std_pair_const_int__int___ :: new_2 ( { orig .as_pointer()  } , { (new_alloc ).clone() } , )  )) ;
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(23) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*copy.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
-        assert!(unimplemented!());
+        assert!(
+            ({
+                ({
+                    let _arg0: min_allocator_std_pair_const_int__int__ =
+                        ({ (*copy.borrow()).get_allocator() });
+                    let _arg1: min_allocator_std_pair_const_int__int__ =
+                        (*new_alloc.upgrade().deref()).clone();
+                    operator_eq_10(_arg0, _arg1)
+                })
+            })
+        );
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(23) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*orig.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
     }
     {
-        let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let orig : Value<std_unordered_multimap_int__int__std_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new({ let __tmp_1 : Value<std_hash_int_ > = Rc::new(RefCell::new(<std_hash_int_  >::default() ));let __tmp_2 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 56  } , )  )); std_unordered_multimap_int__int__std_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__int___ :: new_1 ( { 0_u64  } , { __tmp_1.as_pointer() } , { __tmp_2.as_pointer() } , None , )  } )) ;
+        let copy : Value<std_unordered_multimap_int__int__std_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__int___ :: new_2 ( { orig .as_pointer()  } , { (new_alloc ).clone() } , )  )) ;
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*copy.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 56 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
             })
         );
-        assert!(unimplemented!());
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                ({
+                    let _arg0: min_allocator_std_pair_const_int__int__ =
+                        ({ (*copy.borrow()).get_allocator() });
+                    let _arg1: min_allocator_std_pair_const_int__int__ =
+                        (*new_alloc.upgrade().deref()).clone();
+                    operator_eq_10(_arg0, _arg1)
+                })
+            })
+        );
+        assert!(
+            ({
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*orig.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 56 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -541,7 +744,7 @@ pub fn test_alloc_11(new_alloc: Ptr<()>) {
         );
     }
 }
-pub fn test_alloc_12(new_alloc: Ptr<min_allocator_std_pair_const_int__int__>) {
+pub fn test_alloc_16(new_alloc: Ptr<test_allocator_std_pair_const_int__int__>) {
     {
         let arr: Value<Box<[(Value<i32>, Value<i32>)]>> = Rc::new(RefCell::new(Box::new([
             (Rc::new(RefCell::new(1)), Rc::new(RefCell::new(2))),
@@ -549,139 +752,221 @@ pub fn test_alloc_12(new_alloc: Ptr<min_allocator_std_pair_const_int__int__>) {
             (Rc::new(RefCell::new(3)), Rc::new(RefCell::new(1))),
             (Rc::new(RefCell::new(3)), Rc::new(RefCell::new(2))),
         ])));
-        let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let orig : Value<std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___test_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___test_allocator_std_pair_const_int__int___ :: new_1 ( { ( { begin_12 ( arr .as_pointer()  , ) } )   } , { (arr .as_pointer()  as Ptr< (Value<i32  >, Value<i32  >)  > ).to_end()   } , None , None , None , None , )  )) ;
+        let copy : Value<std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___test_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___test_allocator_std_pair_const_int__int___ :: new_2 ( { orig .as_pointer()  } , { (new_alloc ).clone() } , )  )) ;
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 4_()));
+        assert!(({ (({ (*copy.borrow()).size() }) == 4_u64) }));
         assert!(
-            ((*(*unimplemented!().iter_deref().upgrade().deref())
-                .1
-                .borrow())
+            ((*(*({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*copy.borrow()).find_60(___x.as_pointer())
+            })
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
                 == 2)
         );
         assert!(
-            ((*(*unimplemented!().iter_deref().upgrade().deref())
-                .1
-                .borrow())
+            ((*(*({
+                let ___x: Value<i32> = Rc::new(RefCell::new(2));
+                (*copy.borrow()).find_60(___x.as_pointer())
+            })
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
                 == 4)
         );
         {
-            let range: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
-            let first_element: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-                (*(*range.borrow()).0.borrow()).clone(),
+            let range: Value<(
+                Value<std___detail__Node_iterator_std_pair_const_int__int___false__false_>,
+                Value<std___detail__Node_iterator_std_pair_const_int__int___false__false_>,
+            )> = Rc::new(RefCell::new(
+                ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                    (*copy.borrow()).equal_range_68(___x.as_pointer())
+                }),
+            ));
+            let first_element: Value<
+                std___detail__Node_iterator_std_pair_const_int__int___false__false_,
+            > = Rc::new(RefCell::new(libcc2rs::next_refcount(
+                ({ (*(*range.borrow()).0.borrow()).clone() }),
                 0_isize,
             )));
-            let second_element: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-                (*(*range.borrow()).0.borrow()).clone(),
+            let second_element: Value<
+                std___detail__Node_iterator_std_pair_const_int__int___false__false_,
+            > = Rc::new(RefCell::new(libcc2rs::next_refcount(
+                ({ (*(*range.borrow()).0.borrow()).clone() }),
                 1_isize,
             )));
-            let end: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-                (*(*range.borrow()).0.borrow()).clone(),
-                2_isize,
-            )));
-            assert!((*(*range.borrow()).1.borrow()) == (*end.borrow()));
+            let end: Value<std___detail__Node_iterator_std_pair_const_int__int___false__false_> =
+                Rc::new(RefCell::new(libcc2rs::next_refcount(
+                    ({ (*(*range.borrow()).0.borrow()).clone() }),
+                    2_isize,
+                )));
+            assert!(({ (*(*range.borrow()).1.borrow()) == (*end.borrow()) }));
             assert!(
-                ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
-                    .1
-                    .borrow())
-                    == 1)
-                    || ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
+                ({
+                    ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
                         .1
                         .borrow())
-                        == 2)
+                        == 1)
+                        || ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
+                            .1
+                            .borrow())
+                            == 2)
+                })
             );
             assert!(
-                ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
-                    .1
-                    .borrow())
-                    == 1)
-                    || ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
+                ({
+                    ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
                         .1
                         .borrow())
-                        == 2)
+                        == 1)
+                        || ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
+                            .1
+                            .borrow())
+                            == 2)
+                })
             );
             assert!(
-                ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
-                    .1
-                    .borrow())
-                    != (*(*(*(*range.borrow()).0.borrow())
-                        .iter_deref()
-                        .upgrade()
-                        .deref())
-                    .1
-                    .borrow()))
+                ({
+                    ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
+                        .1
+                        .borrow())
+                        != (*(*(*(*range.borrow()).0.borrow())
+                            .iter_deref()
+                            .upgrade()
+                            .deref())
+                        .1
+                        .borrow()))
+                })
             );
         }
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() < 1.1920929e-07_f32));
-        assert!((unimplemented!() == 1_f32));
         assert!(
             ({
-                let _arg0: min_allocator_std_pair_const_int__int__ = unimplemented!();
-                let _arg1: min_allocator_std_pair_const_int__int__ =
-                    (*new_alloc.upgrade().deref()).clone();
-                operator_eq_10(_arg0, _arg1)
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__int___false__false_   = ( { (*copy.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__int___false__false_   = ( { (*copy.borrow()) . end_30 ( ) } )   ;
+                    distance_13(___first, ___last)
+                }) as usize)
+                    == (({ (*copy.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                (({
+                    fabs_14(
+                        (({ (*copy.borrow()).load_factor() })
+                            - ((({ (*copy.borrow()).size() }) as f32)
+                                / (({ (*copy.borrow()).bucket_count() }) as f32))),
+                    )
+                }) < 1.1920929e-07_f32)
+            })
+        );
+        assert!(({ (({ (*copy.borrow()).max_load_factor_83() }) == 1_f32) }));
+        assert!(
+            ({
+                let _x: Value<test_allocator_std_pair_const_int__int__> =
+                    Rc::new(RefCell::new(({ (*copy.borrow()).get_allocator() })));
+                let _y: Ptr<test_allocator_std_pair_const_int__int__> = (new_alloc).clone();
+                operator_eq_5(_x.as_pointer(), _y)
             })
         );
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 4_()));
+        assert!(({ (({ (*orig.borrow()).size() }) == 4_u64) }));
         assert!(
-            ((*(*unimplemented!().iter_deref().upgrade().deref())
-                .1
-                .borrow())
+            ((*(*({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*orig.borrow()).find_62(___x.as_pointer())
+            })
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
                 == 2)
         );
         assert!(
-            ((*(*unimplemented!().iter_deref().upgrade().deref())
-                .1
-                .borrow())
+            ((*(*({
+                let ___x: Value<i32> = Rc::new(RefCell::new(2));
+                (*orig.borrow()).find_62(___x.as_pointer())
+            })
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
                 == 4)
         );
         {
-            let range: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
-            let first_element: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-                (*(*range.borrow()).0.borrow()).clone(),
+            let range: Value<(
+                Value<std___detail__Node_const_iterator_std_pair_const_int__int___false__false_>,
+                Value<std___detail__Node_const_iterator_std_pair_const_int__int___false__false_>,
+            )> = Rc::new(RefCell::new(
+                ({
+                    let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                    (*orig.borrow()).equal_range_70(___x.as_pointer())
+                }),
+            ));
+            let first_element: Value<
+                std___detail__Node_const_iterator_std_pair_const_int__int___false__false_,
+            > = Rc::new(RefCell::new(libcc2rs::next_refcount(
+                ({ (*(*range.borrow()).0.borrow()).clone() }),
                 0_isize,
             )));
-            let second_element: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-                (*(*range.borrow()).0.borrow()).clone(),
+            let second_element: Value<
+                std___detail__Node_const_iterator_std_pair_const_int__int___false__false_,
+            > = Rc::new(RefCell::new(libcc2rs::next_refcount(
+                ({ (*(*range.borrow()).0.borrow()).clone() }),
                 1_isize,
             )));
-            let end: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-                (*(*range.borrow()).0.borrow()).clone(),
+            let end: Value<
+                std___detail__Node_const_iterator_std_pair_const_int__int___false__false_,
+            > = Rc::new(RefCell::new(libcc2rs::next_refcount(
+                ({ (*(*range.borrow()).0.borrow()).clone() }),
                 2_isize,
             )));
-            assert!((*(*range.borrow()).1.borrow()) == (*end.borrow()));
+            assert!(({ (*(*range.borrow()).1.borrow()) == (*end.borrow()) }));
             assert!(
-                ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
-                    .1
-                    .borrow())
-                    == 1)
-                    || ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
+                ({
+                    ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
                         .1
                         .borrow())
-                        == 2)
+                        == 1)
+                        || ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
+                            .1
+                            .borrow())
+                            == 2)
+                })
             );
             assert!(
-                ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
-                    .1
-                    .borrow())
-                    == 1)
-                    || ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
+                ({
+                    ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
                         .1
                         .borrow())
-                        == 2)
+                        == 1)
+                        || ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
+                            .1
+                            .borrow())
+                            == 2)
+                })
             );
             assert!(
-                ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
-                    .1
-                    .borrow())
-                    != (*(*(*(*range.borrow()).0.borrow())
-                        .iter_deref()
-                        .upgrade()
-                        .deref())
-                    .1
-                    .borrow()))
+                ({
+                    ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
+                        .1
+                        .borrow())
+                        != (*(*(*(*range.borrow()).0.borrow())
+                            .iter_deref()
+                            .upgrade()
+                            .deref())
+                        .1
+                        .borrow()))
+                })
             );
         }
     }
@@ -690,321 +975,103 @@ pub fn test_alloc_12(new_alloc: Ptr<min_allocator_std_pair_const_int__int__>) {
             Rc::new(RefCell::new(1)),
             Rc::new(RefCell::new(2)),
         )])));
-        let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let orig : Value<std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___test_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___test_allocator_std_pair_const_int__int___ :: new_1 ( { ( { begin_15 ( arr .as_pointer()  , ) } )   } , { (arr .as_pointer()  as Ptr< (Value<i32  >, Value<i32  >)  > ).to_end()   } , None , None , None , None , )  )) ;
+        let copy : Value<std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___test_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___test_allocator_std_pair_const_int__int___ :: new_2 ( { orig .as_pointer()  } , { (new_alloc ).clone() } , )  )) ;
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 1_()));
+        assert!(({ (({ (*copy.borrow()).size() }) == 1_u64) }));
         assert!(
-            ((*(*unimplemented!().iter_deref().upgrade().deref())
-                .1
-                .borrow())
-                == 2)
-        );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() < 1.1920929e-07_f32));
-        assert!((unimplemented!() == 1_f32));
-        assert!(
-            ({
-                let _arg0: min_allocator_std_pair_const_int__int__ = unimplemented!();
-                let _arg1: min_allocator_std_pair_const_int__int__ =
-                    (*new_alloc.upgrade().deref()).clone();
-                operator_eq_10(_arg0, _arg1)
+            ((*(*({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*copy.borrow()).find_60(___x.as_pointer())
             })
-        );
-        const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 1_()));
-        assert!(
-            ((*(*unimplemented!().iter_deref().upgrade().deref())
-                .1
-                .borrow())
-                == 2)
-        );
-    }
-    {
-        let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 1_f32));
-        assert!(
-            ({
-                let _arg0: min_allocator_std_pair_const_int__int__ = unimplemented!();
-                let _arg1: min_allocator_std_pair_const_int__int__ =
-                    (*new_alloc.upgrade().deref()).clone();
-                operator_eq_10(_arg0, _arg1)
-            })
-        );
-        const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
-    }
-    {
-        let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(
-            ({
-                let _c: Value<test_hash_int_> =
-                    Rc::new(RefCell::new(test_hash_int_::new({ Some(23) })));
-                test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
-                    _c.as_pointer(),
-                )
-            })
-        );
-        assert!(
-            ({
-                let _arg0: min_allocator_std_pair_const_int__int__ = unimplemented!();
-                let _arg1: min_allocator_std_pair_const_int__int__ =
-                    (*new_alloc.upgrade().deref()).clone();
-                operator_eq_10(_arg0, _arg1)
-            })
-        );
-        assert!(
-            ({
-                let _c: Value<test_hash_int_> =
-                    Rc::new(RefCell::new(test_hash_int_::new({ Some(23) })));
-                test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
-                    _c.as_pointer(),
-                )
-            })
-        );
-    }
-    {
-        let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(
-            ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
-                let _b: Value<test_equal_to_int_> =
-                    Rc::new(RefCell::new(test_equal_to_int_::new_1({ 56 })));
-                operator_eq_0(_a.as_pointer(), _b.as_pointer())
-            })
-        );
-        assert!(
-            ({
-                let _arg0: min_allocator_std_pair_const_int__int__ = unimplemented!();
-                let _arg1: min_allocator_std_pair_const_int__int__ =
-                    (*new_alloc.upgrade().deref()).clone();
-                operator_eq_10(_arg0, _arg1)
-            })
-        );
-        assert!(
-            ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
-                let _b: Value<test_equal_to_int_> =
-                    Rc::new(RefCell::new(test_equal_to_int_::new_1({ 56 })));
-                operator_eq_0(_a.as_pointer(), _b.as_pointer())
-            })
-        );
-    }
-}
-pub fn test_alloc_13(new_alloc: Ptr<test_allocator_std_pair_const_int__int__>) {
-    {
-        let arr: Value<Box<[(Value<i32>, Value<i32>)]>> = Rc::new(RefCell::new(Box::new([
-            (Rc::new(RefCell::new(1)), Rc::new(RefCell::new(2))),
-            (Rc::new(RefCell::new(2)), Rc::new(RefCell::new(4))),
-            (Rc::new(RefCell::new(3)), Rc::new(RefCell::new(1))),
-            (Rc::new(RefCell::new(3)), Rc::new(RefCell::new(2))),
-        ])));
-        let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 4_()));
-        assert!(
-            ((*(*unimplemented!().iter_deref().upgrade().deref())
-                .1
-                .borrow())
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
                 == 2)
         );
         assert!(
-            ((*(*unimplemented!().iter_deref().upgrade().deref())
-                .1
-                .borrow())
-                == 4)
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__int___false__false_   = ( { (*copy.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__int___false__false_   = ( { (*copy.borrow()) . end_30 ( ) } )   ;
+                    distance_13(___first, ___last)
+                }) as usize)
+                    == (({ (*copy.borrow()).size() }) as usize))
+            })
         );
-        {
-            let range: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
-            let first_element: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-                (*(*range.borrow()).0.borrow()).clone(),
-                0_isize,
-            )));
-            let second_element: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-                (*(*range.borrow()).0.borrow()).clone(),
-                1_isize,
-            )));
-            let end: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-                (*(*range.borrow()).0.borrow()).clone(),
-                2_isize,
-            )));
-            assert!((*(*range.borrow()).1.borrow()) == (*end.borrow()));
-            assert!(
-                ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
-                    .1
-                    .borrow())
-                    == 1)
-                    || ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
-                        .1
-                        .borrow())
-                        == 2)
-            );
-            assert!(
-                ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
-                    .1
-                    .borrow())
-                    == 1)
-                    || ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
-                        .1
-                        .borrow())
-                        == 2)
-            );
-            assert!(
-                ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
-                    .1
-                    .borrow())
-                    != (*(*(*(*range.borrow()).0.borrow())
-                        .iter_deref()
-                        .upgrade()
-                        .deref())
-                    .1
-                    .borrow()))
-            );
-        }
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() < 1.1920929e-07_f32));
-        assert!((unimplemented!() == 1_f32));
+        assert!(
+            ({
+                (({
+                    fabs_14(
+                        (({ (*copy.borrow()).load_factor() })
+                            - ((({ (*copy.borrow()).size() }) as f32)
+                                / (({ (*copy.borrow()).bucket_count() }) as f32))),
+                    )
+                }) < 1.1920929e-07_f32)
+            })
+        );
+        assert!(({ (({ (*copy.borrow()).max_load_factor_83() }) == 1_f32) }));
         assert!(
             ({
                 let _x: Value<test_allocator_std_pair_const_int__int__> =
-                    Rc::new(RefCell::new(unimplemented!()));
+                    Rc::new(RefCell::new(({ (*copy.borrow()).get_allocator() })));
                 let _y: Ptr<test_allocator_std_pair_const_int__int__> = (new_alloc).clone();
                 operator_eq_5(_x.as_pointer(), _y)
             })
         );
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 4_()));
+        assert!(({ (({ (*orig.borrow()).size() }) == 1_u64) }));
         assert!(
-            ((*(*unimplemented!().iter_deref().upgrade().deref())
-                .1
-                .borrow())
+            ((*(*({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*orig.borrow()).find_62(___x.as_pointer())
+            })
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
                 == 2)
         );
-        assert!(
-            ((*(*unimplemented!().iter_deref().upgrade().deref())
-                .1
-                .borrow())
-                == 4)
-        );
-        {
-            let range: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
-            let first_element: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-                (*(*range.borrow()).0.borrow()).clone(),
-                0_isize,
-            )));
-            let second_element: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-                (*(*range.borrow()).0.borrow()).clone(),
-                1_isize,
-            )));
-            let end: Value<()> = Rc::new(RefCell::new(libcc2rs::next_refcount(
-                (*(*range.borrow()).0.borrow()).clone(),
-                2_isize,
-            )));
-            assert!((*(*range.borrow()).1.borrow()) == (*end.borrow()));
-            assert!(
-                ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
-                    .1
-                    .borrow())
-                    == 1)
-                    || ((*(*(*first_element.borrow()).iter_deref().upgrade().deref())
-                        .1
-                        .borrow())
-                        == 2)
-            );
-            assert!(
-                ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
-                    .1
-                    .borrow())
-                    == 1)
-                    || ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
-                        .1
-                        .borrow())
-                        == 2)
-            );
-            assert!(
-                ((*(*(*second_element.borrow()).iter_deref().upgrade().deref())
-                    .1
-                    .borrow())
-                    != (*(*(*(*range.borrow()).0.borrow())
-                        .iter_deref()
-                        .upgrade()
-                        .deref())
-                    .1
-                    .borrow()))
-            );
-        }
     }
     {
-        let arr: Value<Box<[(Value<i32>, Value<i32>)]>> = Rc::new(RefCell::new(Box::new([(
-            Rc::new(RefCell::new(1)),
-            Rc::new(RefCell::new(2)),
-        )])));
-        let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let orig : Value<std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___test_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(<std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___test_allocator_std_pair_const_int__int___  >::default() )) ;
+        let copy : Value<std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___test_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___std_equal_to_int___test_allocator_std_pair_const_int__int___ :: new_2 ( { orig .as_pointer()  } , { (new_alloc ).clone() } , )  )) ;
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 1_()));
+        assert!(({ (({ (*copy.borrow()).size() }) == 0_u64) }));
         assert!(
-            ((*(*unimplemented!().iter_deref().upgrade().deref())
-                .1
-                .borrow())
-                == 2)
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__int___false__false_   = ( { (*copy.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__int___false__false_   = ( { (*copy.borrow()) . end_30 ( ) } )   ;
+                    distance_13(___first, ___last)
+                }) as usize)
+                    == (({ (*copy.borrow()).size() }) as usize))
+            })
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() < 1.1920929e-07_f32));
-        assert!((unimplemented!() == 1_f32));
+        assert!(({ (({ (*copy.borrow()).max_load_factor_83() }) == 1_f32) }));
         assert!(
             ({
                 let _x: Value<test_allocator_std_pair_const_int__int__> =
-                    Rc::new(RefCell::new(unimplemented!()));
+                    Rc::new(RefCell::new(({ (*copy.borrow()).get_allocator() })));
                 let _y: Ptr<test_allocator_std_pair_const_int__int__> = (new_alloc).clone();
                 operator_eq_5(_x.as_pointer(), _y)
             })
         );
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 1_()));
-        assert!(
-            ((*(*unimplemented!().iter_deref().upgrade().deref())
-                .1
-                .borrow())
-                == 2)
-        );
+        assert!(({ (({ (*orig.borrow()).size() }) == 0_u64) }));
     }
     {
-        let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 1_f32));
-        assert!(
-            ({
-                let _x: Value<test_allocator_std_pair_const_int__int__> =
-                    Rc::new(RefCell::new(unimplemented!()));
-                let _y: Ptr<test_allocator_std_pair_const_int__int__> = (new_alloc).clone();
-                operator_eq_5(_x.as_pointer(), _y)
-            })
-        );
-        const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
-    }
-    {
-        let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let orig : Value<std_unordered_multimap_int__int__test_hash_int___std_equal_to_int___test_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new({ let __tmp_3 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 23  ) } , )  )); std_unordered_multimap_int__int__test_hash_int___std_equal_to_int___test_allocator_std_pair_const_int__int___ :: new_1 ( { 0_u64  } , { __tmp_3.as_pointer() } , None , None , )  } )) ;
+        let copy : Value<std_unordered_multimap_int__int__test_hash_int___std_equal_to_int___test_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(std_unordered_multimap_int__int__test_hash_int___std_equal_to_int___test_allocator_std_pair_const_int__int___ :: new_2 ( { orig .as_pointer()  } , { (new_alloc ).clone() } , )  )) ;
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(23) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*copy.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
@@ -1012,7 +1079,7 @@ pub fn test_alloc_13(new_alloc: Ptr<test_allocator_std_pair_const_int__int__>) {
         assert!(
             ({
                 let _x: Value<test_allocator_std_pair_const_int__int__> =
-                    Rc::new(RefCell::new(unimplemented!()));
+                    Rc::new(RefCell::new(({ (*copy.borrow()).get_allocator() })));
                 let _y: Ptr<test_allocator_std_pair_const_int__int__> = (new_alloc).clone();
                 operator_eq_5(_x.as_pointer(), _y)
             })
@@ -1022,18 +1089,19 @@ pub fn test_alloc_13(new_alloc: Ptr<test_allocator_std_pair_const_int__int__>) {
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(23) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*orig.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
     }
     {
-        let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let orig : Value<std_unordered_multimap_int__int__std_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new({ let __tmp_4 : Value<std_hash_int_ > = Rc::new(RefCell::new(<std_hash_int_  >::default() ));let __tmp_5 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 56  } , )  )); std_unordered_multimap_int__int__std_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__int___ :: new_1 ( { 0_u64  } , { __tmp_4.as_pointer() } , { __tmp_5.as_pointer() } , None , )  } )) ;
+        let copy : Value<std_unordered_multimap_int__int__std_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(std_unordered_multimap_int__int__std_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__int___ :: new_2 ( { orig .as_pointer()  } , { (new_alloc ).clone() } , )  )) ;
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*copy.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 56 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -1042,14 +1110,15 @@ pub fn test_alloc_13(new_alloc: Ptr<test_allocator_std_pair_const_int__int__>) {
         assert!(
             ({
                 let _x: Value<test_allocator_std_pair_const_int__int__> =
-                    Rc::new(RefCell::new(unimplemented!()));
+                    Rc::new(RefCell::new(({ (*copy.borrow()).get_allocator() })));
                 let _y: Ptr<test_allocator_std_pair_const_int__int__> = (new_alloc).clone();
                 operator_eq_5(_x.as_pointer(), _y)
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*orig.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 56 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -1057,22 +1126,24 @@ pub fn test_alloc_13(new_alloc: Ptr<test_allocator_std_pair_const_int__int__>) {
         );
     }
 }
-pub fn test_14() {
+pub fn test_17() {
     ({
-        let _new_alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_alloc_11(_new_alloc.as_pointer())
+        let _new_alloc: Value<std_allocator_std_pair_const_int__int__> = Rc::new(RefCell::new(
+            <std_allocator_std_pair_const_int__int__>::default(),
+        ));
+        test_alloc_18(_new_alloc.as_pointer())
     });
     ({
         let _new_alloc: Value<min_allocator_std_pair_const_int__int__> = Rc::new(RefCell::new(
             <min_allocator_std_pair_const_int__int__>::default(),
         ));
-        test_alloc_12(_new_alloc.as_pointer())
+        test_alloc_11(_new_alloc.as_pointer())
     });
     ({
         let _new_alloc: Value<test_allocator_std_pair_const_int__int__> = Rc::new(RefCell::new(
             test_allocator_std_pair_const_int__int__::new_1({ 25 }),
         ));
-        test_alloc_13(_new_alloc.as_pointer())
+        test_alloc_16(_new_alloc.as_pointer())
     });
 }
 pub fn main() {
@@ -1095,9 +1166,12 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_14() });
+    ({ test_17() });
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__;
 pub trait Tag_XImpl {
     fn copy_assign(&self, _a0: Ptr<Tag_X>) -> Ptr<Tag_X>;
     fn move_assign(&self, _a0: Ptr<Tag_X>) -> Ptr<Tag_X>;
@@ -1126,79 +1200,6 @@ pub trait min_allocator_std_pair_const_int__int__Impl {
     }
 }
 impl min_allocator_std_pair_const_int__int__Impl for Ptr<min_allocator_std_pair_const_int__int__> {}
-pub trait min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<(Value<i32>, Value<i32>)> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<(Value<i32>, Value<i32>)> {
-        unimplemented!()
-    }
-    fn operator_inc_8(
-        &self,
-    ) -> Ptr<min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_9(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_10(
-        &self,
-    ) -> Ptr<min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_11(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<(Value<i32>, Value<i32>)> {
-        unimplemented!()
-    }
-}
-impl min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
-{
-}
 pub trait test_allocator_statisticsImpl {
     fn clear(&self);
     fn clear_ctor_counters(&self);
@@ -1227,10 +1228,10 @@ impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
 }
 pub trait test_allocator_std_pair_const_int__int__Impl {
     fn destructor(&self);
-    fn address_11(&self, x: ()) -> Ptr<(Value<i32>, Value<i32>)> {
+    fn address_11(&self, x: Ptr<(Value<i32>, Value<i32>)>) -> Ptr<(Value<i32>, Value<i32>)> {
         unimplemented!()
     }
-    fn address_12(&self, x: ()) -> Ptr<(Value<i32>, Value<i32>)> {
+    fn address_12(&self, x: Ptr<(Value<i32>, Value<i32>)>) -> Ptr<(Value<i32>, Value<i32>)> {
         unimplemented!()
     }
     fn allocate(&self, mut n: u32, mut _a1: AnyPtr) -> Ptr<(Value<i32>, Value<i32>)> {
@@ -1259,7 +1260,9 @@ impl test_allocator_std_pair_const_int__int__Impl
         assert!(((*self).with(|__s| __s.data_) != destructed_value_1.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_1.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_1.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_1.with(|rc| *rc.borrow()));
@@ -1301,7 +1304,7 @@ pub trait test_hash_int_Impl {
 }
 impl test_hash_int_Impl for Ptr<test_hash_int_> {
     fn operator_call(&self, x: Ptr<i32>) -> usize {
-        return unimplemented!();
+        return ({ <std_hash_int_>::default()((x.read())) });
     }
     fn operator_eq(&self, c: Ptr<test_hash_int_>) -> bool {
         return ({ (*self).with(|__s| __s.data_) } == { c.with(|__s| __s.data_) });

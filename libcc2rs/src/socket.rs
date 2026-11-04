@@ -72,11 +72,12 @@ impl SockaddrIn {
             sin_addr: InAddr {
                 s_addr: l.sin_addr.s_addr,
             },
-            sin_zero: l.sin_zero
-                    .iter()
-                    .map(|&b| b as u8)
-                    .collect::<Vec<u8>>()
-                    .into_boxed_slice(),
+            sin_zero: l
+                .sin_zero
+                .iter()
+                .map(|&b| b as u8)
+                .collect::<Vec<u8>>()
+                .into_boxed_slice(),
         }
     }
 

@@ -7,14 +7,50 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let cs: Ptr<()> = s.as_pointer();
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
+    let s: Value<std_multiset_int__std_less_int___std_allocator_int__> = Rc::new(RefCell::new(
+        <std_multiset_int__std_less_int___std_allocator_int__>::default(),
+    ));
+    let i1: Value<BidirectionalIterator<i32>> = Rc::new(RefCell::new(
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(1));
+            (*s.borrow()).insert_37(___x.as_pointer())
+        }),
+    ));
+    let i2: Value<BidirectionalIterator<i32>> = Rc::new(RefCell::new(
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(2));
+            (*s.borrow()).insert_37(___x.as_pointer())
+        }),
+    ));
+    let cs: Ptr<std_multiset_int__std_less_int___std_allocator_int__> = s.as_pointer();
+    assert!(
+        ({
+            let ___x: Ptr<i32> = (*i1.borrow()).iter_deref();
+            let ___y: Ptr<i32> = (*i2.borrow()).iter_deref();
+            ({ (*cs.upgrade().deref()).key_comp() })(___x, ___y)
+        })
+    );
+    assert!(
+        !({
+            let ___x: Ptr<i32> = (*i2.borrow()).iter_deref();
+            let ___y: Ptr<i32> = (*i1.borrow()).iter_deref();
+            ({ (*cs.upgrade().deref()).key_comp() })(___x, ___y)
+        })
+    );
+    assert!(
+        ({
+            let ___x: Ptr<i32> = (*i1.borrow()).iter_deref();
+            let ___y: Ptr<i32> = (*i2.borrow()).iter_deref();
+            ({ (*cs.upgrade().deref()).value_comp() })(___x, ___y)
+        })
+    );
+    assert!(
+        !({
+            let ___x: Ptr<i32> = (*i2.borrow()).iter_deref();
+            let ___y: Ptr<i32> = (*i1.borrow()).iter_deref();
+            ({ (*cs.upgrade().deref()).value_comp() })(___x, ___y)
+        })
+    );
     return true;
 }
 pub fn main() {

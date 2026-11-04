@@ -28,13 +28,17 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let ios: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!()).is_null());
+        let ios: Value<std_basic_ios_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_basic_ios_char__std_char_traits_char__::new_1({ Ptr::<::std::fs::File>::null() }),
+        ));
+        assert!(({ ({ (*ios.borrow()).rdbuf_17() }).is_null() }));
     }
     {
-        let mut sb: Ptr<()> = <Ptr<()>>::from_int(1);
-        let ios: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ unimplemented!() } == { (sb).clone() }));
+        let mut sb: Ptr<::std::fs::File> = <Ptr<::std::fs::File>>::from_int(1);
+        let ios: Value<std_basic_ios_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_basic_ios_char__std_char_traits_char__::new_1({ (sb).clone() }),
+        ));
+        assert!(({ ({ ({ (*ios.borrow()).rdbuf_17() }) } == { (sb).clone() }) }));
     }
     return 0;
 }

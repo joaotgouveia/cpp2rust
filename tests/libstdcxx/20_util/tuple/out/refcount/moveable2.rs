@@ -17,6 +17,11 @@ impl MoveOnly {
         Self {}
     }
 }
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for MoveOnly {
     fn default() -> Self {
         { MoveOnly::new() }
@@ -26,14 +31,20 @@ pub fn make_move_only_0() -> MoveOnly {
     return MoveOnly::new();
 }
 pub fn test01_1() {
-    let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let t4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let t5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let t6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let t1: Value<std_tuple_MoveOnly_> = Rc::new(RefCell::new(({ make_move_only_0() })));
+    let t2: Value<std_tuple_MoveOnly_> = Rc::new(RefCell::new((*t1.borrow_mut()).clone()));
+    let t3: Value<std_tuple_MoveOnly_> = Rc::new(RefCell::new((*t2.borrow_mut()).clone()));
+    (*t1.borrow_mut()) = (*t3.borrow()).clone();
+    let t4: Value<std_tuple_MoveOnly__MoveOnly_> = Rc::new(RefCell::new({
+        let __tmp_0: Value<MoveOnly> = Rc::new(RefCell::new(({ make_move_only_0() })));
+        let __tmp_1: Value<MoveOnly> = Rc::new(RefCell::new(({ make_move_only_0() })));
+        std_tuple_MoveOnly__MoveOnly_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+    }));
+    let t5: Value<std_tuple_MoveOnly__MoveOnly_> =
+        Rc::new(RefCell::new((*t4.borrow_mut()).clone()));
+    let t6: Value<std_tuple_MoveOnly__MoveOnly_> =
+        Rc::new(RefCell::new((*t5.borrow_mut()).clone()));
+    (*t4.borrow_mut()) = (*t6.borrow()).clone();
 }
 pub fn main() {
     __cpp2rust_init_globals();

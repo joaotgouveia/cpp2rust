@@ -11,30 +11,56 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_Base_ref__Base_ref_ {}
+impl CppMove for test_macros_detail_is_same_Base_ref__Base_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_Base_refref__Base_refref_ {}
+impl CppMove for test_macros_detail_is_same_Base_refref__Base_refref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_Base_ref__const_Base_ref_ {}
+impl CppMove for test_macros_detail_is_same_const_Base_ref__const_Base_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_Base_refref__const_Base_refref_ {}
+impl CppMove for test_macros_detail_is_same_const_Base_refref__const_Base_refref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Base {}
+impl CppMove for Base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_4() -> bool {
-    let ov: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let b1: Ptr<Base> = unimplemented!();
-    let b2: Ptr<Base> = unimplemented!();
-    let b3: Ptr<Base> = unimplemented!();
-    let b4: Ptr<Base> = unimplemented!();
+    let ov: Value<std_ranges_owning_view_Base_> =
+        Rc::new(RefCell::new(<std_ranges_owning_view_Base_>::default()));
+    let b1: Ptr<Base> = ({ (*ov.borrow()).base_5() });
+    let b2: Ptr<Base> = ({ (*ov.borrow()).base_7() });
+    let b3: Ptr<Base> = ({ (*ov.borrow()).base_6() });
+    let b4: Ptr<Base> = ({ (*ov.borrow()).base_8() });
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;

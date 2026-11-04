@@ -138,8 +138,7 @@ void AddRequiredClasses(clang::QualType type,
       return;
     }
     if (declared) {
-      return DeclareNames(clang::QualType(qualifier.getAsType(), 0),
-                          *declared);
+      return DeclareNames(clang::QualType(qualifier.getAsType(), 0), *declared);
     }
     return AddRequiredClasses(clang::QualType(qualifier.getAsType(), 0),
                               required);
@@ -210,8 +209,7 @@ RequiredClasses(const clang::Decl *rule, const clang::TypedefNameDecl *alias,
         qualifier = ref->getQualifier();
       }
       if (qualifier.getKind() == clang::NestedNameSpecifier::Kind::Type) {
-        AddRequiredClasses(clang::QualType(qualifier.getAsType(), 0),
-                           required);
+        AddRequiredClasses(clang::QualType(qualifier.getAsType(), 0), required);
       }
     }
   } else if (auto var = llvm::dyn_cast<clang::VarDecl>(rule)) {
@@ -225,7 +223,8 @@ RequiredClasses(const clang::Decl *rule, const clang::TypedefNameDecl *alias,
 // user may not include, and the rule only parses where they are declared.
 class DeclaredNames : public clang::RecursiveASTVisitor<DeclaredNames> {
 public:
-  bool VisitTemplateSpecializationType(clang::TemplateSpecializationType *type) {
+  bool
+  VisitTemplateSpecializationType(clang::TemplateSpecializationType *type) {
     auto name = type->getTemplateName();
     if (auto shadow = name.getAsUsingShadowDecl()) {
       Add(shadow);
@@ -321,8 +320,8 @@ std::set<std::string> TemplateParameterNames(const clang::Decl *rule) {
 // A use has the type an alias template names, never the alias
 // (std::iter_difference_t<T1> arrives as long).
 bool IsAliasTemplateSpecialization(clang::QualType type) {
-  auto spec = type.getNonReferenceType()
-                  ->getAs<clang::TemplateSpecializationType>();
+  auto spec =
+      type.getNonReferenceType()->getAs<clang::TemplateSpecializationType>();
   return spec && spec->isTypeAlias();
 }
 
@@ -422,9 +421,9 @@ std::vector<std::string> DependentExprKeys(const clang::Expr *expr) {
       member->getBaseType()
           .getNonReferenceType()
           ->getAs<clang::TemplateSpecializationType>()) {
-    return Keys(RulesLoader::MemberKey(
-        ClassOf(member->getBaseType()),
-        RulesLoader::MemberName(member->getMember())));
+    return Keys(
+        RulesLoader::MemberKey(ClassOf(member->getBaseType()),
+                               RulesLoader::MemberName(member->getMember())));
   }
   if (auto construct =
           llvm::dyn_cast<clang::CXXUnresolvedConstructExpr>(expr)) {
@@ -484,15 +483,6 @@ std::string TypeKey(const clang::TypedefNameDecl *rule) {
   return ClassOf(type);
 }
 
-void AddRule(llvm::json::Object &rules, std::string key,
-             llvm::json::Value rule) {
-  auto &slot = rules[llvm::json::ObjectKey(std::move(key))];
-  if (!slot.getAsArray()) {
-    slot = llvm::json::Array();
-  }
-  slot.getAsArray()->push_back(std::move(rule));
-}
-
 void IndexRuleFile(clang::ASTContext &ctx, const std::string &dir_name,
                    llvm::json::Object &rules) {
   auto &sm = ctx.getSourceManager();
@@ -520,7 +510,8 @@ void IndexRuleFile(clang::ASTContext &ctx, const std::string &dir_name,
     if (keys.empty()) {
       keys = Keys(ClassOfParameters(decl));
     }
-    if (auto fn = decl->getAsFunction(); keys.empty() && fn &&
+    if (auto fn = decl->getAsFunction();
+        keys.empty() && fn &&
         !IsAliasTemplateSpecialization(fn->getReturnType())) {
       keys = Keys(ClassOf(fn->getReturnType()));
     }
@@ -555,7 +546,8 @@ void IndexRuleFile(clang::ASTContext &ctx, const std::string &dir_name,
       rule["declares"] = llvm::json::Array(declared);
     }
     for (const auto &key : keys) {
-      AddRule(rules, key, llvm::json::Value(llvm::json::Object(rule)));
+      RulesLoader::AddRule(rules, key,
+                           llvm::json::Value(llvm::json::Object(rule)));
     }
   }
 }
@@ -644,15 +636,8 @@ StandardRange RuleFileStandards(const fs::path &src_path) {
   return range;
 }
 
-void MergeRules(llvm::json::Object &into, llvm::json::Object &&from) {
-  for (auto &[key, entries] : from) {
-    for (auto &entry : *entries.getAsArray()) {
-      AddRule(into, key.str(), std::move(entry));
-    }
-  }
-}
-
-void IndexDir(const fs::path &rule_dir, const fs::path &out) {
+void IndexDir(const fs::path &rule_dir, const fs::path &out,
+              const std::vector<std::string> &cxx_flags) {
   auto dir_name = rule_dir.filename().string();
   llvm::json::Object c_rules;
   if (fs::exists(rule_dir / "src.c")) {
@@ -671,11 +656,12 @@ void IndexDir(const fs::path &rule_dir, const fs::path &out) {
   for (const auto &src_path : cxx_srcs) {
     auto range = RuleFileStandards(src_path);
     llvm::json::Object rules;
-    std::vector<std::string> cxx_flags{std::format("-std=c++{}", range.since)};
+    std::vector<std::string> flags = {std::format("-std=c++{}", range.since)};
+    flags.insert(flags.end(), cxx_flags.begin(), cxx_flags.end());
     if (range.library == "libcxx") {
-      cxx_flags.push_back("-stdlib=libc++");
+      flags.push_back("-stdlib=libc++");
     }
-    Index(src_path, /*is_c=*/false, dir_name, cxx_flags, rules);
+    Index(src_path, /*is_c=*/false, dir_name, flags, rules);
     for (auto &[key, entries] : rules) {
       for (auto &entry : *entries.getAsArray()) {
         auto &rule = *entry.getAsObject();
@@ -688,7 +674,7 @@ void IndexDir(const fs::path &rule_dir, const fs::path &out) {
         }
       }
     }
-    MergeRules(cxx_rules, std::move(rules));
+    RulesLoader::MergeRules(cxx_rules, std::move(rules));
   }
   WriteJson(out, llvm::json::Object{{"c", std::move(c_rules)},
                                     {"cpp", std::move(cxx_rules)}});
@@ -701,8 +687,8 @@ void MergeIndexes(const std::vector<std::string> &parts,
   llvm::json::Object cxx_rules;
   for (const auto &part : parts) {
     auto json = ReadJson(part);
-    MergeRules(c_rules, std::move(*json.getObject("c")));
-    MergeRules(cxx_rules, std::move(*json.getObject("cpp")));
+    RulesLoader::MergeRules(c_rules, std::move(*json.getObject("c")));
+    RulesLoader::MergeRules(cxx_rules, std::move(*json.getObject("cpp")));
   }
   std::string common;
   for (const auto &header : common_headers) {
@@ -734,6 +720,12 @@ llvm::cl::list<std::string> CommonHeaders(
     "common-header", llvm::cl::desc("Header the C++ rules depend on"),
     llvm::cl::value_desc("header"), llvm::cl::ZeroOrMore, llvm::cl::cat(cat));
 
+llvm::cl::list<std::string>
+    CXXFlags("cxxflags",
+             llvm::cl::desc("Additional CXXFLAGS used to index the C++ rules"),
+             llvm::cl::value_desc("flag"), llvm::cl::ZeroOrMore,
+             llvm::cl::cat(cat));
+
 llvm::cl::opt<std::string>
     Out("o",
         llvm::cl::desc("Output part of a rule directory, or index directory"),
@@ -746,7 +738,8 @@ int main(int argc, char *argv[]) {
   llvm::cl::ParseCommandLineOptions(argc, argv);
 
   if (!Dir.empty()) {
-    cpp2rust::IndexDir(Dir.getValue(), Out.getValue());
+    cpp2rust::IndexDir(Dir.getValue(), Out.getValue(),
+                       {CXXFlags.begin(), CXXFlags.end()});
   } else {
     cpp2rust::MergeIndexes({Parts.begin(), Parts.end()},
                            {CommonHeaders.begin(), CommonHeaders.end()},

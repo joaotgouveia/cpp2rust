@@ -27,10 +27,12 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let ios: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((unimplemented!() as i32) == (!(unimplemented!()) as i32)));
-    unimplemented!();
-    assert!(((unimplemented!() as i32) == (!(unimplemented!()) as i32)));
+    let ios: Value<std_basic_ios_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_ios_char__std_char_traits_char__::new_1({ Ptr::<::std::fs::File>::null() }),
+    ));
+    assert!(({ ((({ (*ios.borrow())() }) as i32) == (!({ (*ios.borrow()).fail() }) as i32)) }));
+    ({ (*ios.borrow()).setstate(failbit_0.with(|rc| *rc.borrow())) });
+    assert!(({ ((({ (*ios.borrow())() }) as i32) == (!({ (*ios.borrow()).fail() }) as i32)) }));
     const _: () = assert!(true, "(!std::is_convertible<std::ios, int>::value)");;
     const _: () = assert!(true, "(!std::is_convertible<std::ios const&, int>::value)");;
     const _: () = assert!(true, "!std::is_convertible<std::ios, void*>::value");;

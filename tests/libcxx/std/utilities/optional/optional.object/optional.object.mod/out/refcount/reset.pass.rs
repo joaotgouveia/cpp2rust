@@ -9,20 +9,25 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(1)]
 pub struct X {}
+impl CppMove for X {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static dtor_called_0: Value<bool> = Rc::new(RefCell::new(false));
 );
 pub fn check_reset_1() -> bool {
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_int_> = Rc::new(RefCell::new(<std_optional_int_>::default()));
         const _: () = assert!(true, "noexcept(opt.reset()) == true");;
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (false as i32)));
+        ({ (*opt.borrow()).reset() });
+        assert!(({ ((({ (*opt.borrow())() }) as i32) == (false as i32)) }));
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (false as i32)));
+        let opt: Value<std_optional_int_> = Rc::new(RefCell::new(3));
+        ({ (*opt.borrow()).reset() });
+        assert!(({ ((({ (*opt.borrow())() }) as i32) == (false as i32)) }));
     }
     return true;
 }
@@ -49,19 +54,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ check_reset_1() });
     const _: () = assert!(true, "check_reset()");;
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_X_> = Rc::new(RefCell::new(<std_optional_X_>::default()));
         const _: () = assert!(true, "noexcept(opt.reset()) == true");;
         assert!(((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (false as i32)));
-        unimplemented!();
+        ({ (*opt.borrow()).reset() });
         assert!(((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (false as i32)));
-        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!(({ ((({ (*opt.borrow())() }) as i32) == (false as i32)) }));
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_X_> = Rc::new(RefCell::new(<X>::default()));
         dtor_called_0.with(|rc| *rc.borrow_mut() = false);
-        unimplemented!();
+        ({ (*opt.borrow()).reset() });
         assert!(((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (true as i32)));
-        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!(({ ((({ (*opt.borrow())() }) as i32) == (false as i32)) }));
         dtor_called_0.with(|rc| *rc.borrow_mut() = false);
     }
     return 0;

@@ -10,18 +10,31 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct NonConvertible {}
 impl NonConvertible {}
+impl CppMove for NonConvertible {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::semiregular<NonConvertible>");
 const _: () = assert!(true, "std::is_convertible_v<long, NonConvertible>");
 const _: () = assert!(!(false), "!std::convertible_to<long, NonConvertible>");
 pub fn test_0() -> bool {
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 42_i64));
+        let m: Value<std_move_sentinel_int_> =
+            Rc::new(RefCell::new(std_move_sentinel_int_::new_1({ 42 })));
+        let m2: Value<std_move_sentinel_long_> =
+            Rc::new(RefCell::new(std_move_sentinel_long_::new_1({
+                m.as_pointer()
+            })));
+        assert!(({ (({ (*m2.borrow()).base() }) == 42_i64) }));
     }
     {
-        let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 43_i64));
+        let m2: Value<std_move_sentinel_long_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<std_move_sentinel_int_> =
+                Rc::new(RefCell::new(std_move_sentinel_int_::new_1({ 43 })));
+            std_move_sentinel_long_::new_1({ __tmp_0.as_pointer() })
+        }));
+        assert!(({ (({ (*m2.borrow()).base() }) == 43_i64) }));
     }
     {
         const _: () = assert!(

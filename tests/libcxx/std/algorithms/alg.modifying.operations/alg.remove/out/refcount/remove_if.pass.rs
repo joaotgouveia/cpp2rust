@@ -23,6 +23,11 @@ impl support_double_move_tracker {
         __this
     }
 }
+impl CppMove for support_double_move_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for support_double_move_tracker {
     fn default() -> Self {
         { support_double_move_tracker::new() }
@@ -32,18 +37,22 @@ impl Default for support_double_move_tracker {
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
@@ -60,6 +69,11 @@ impl cpp17_output_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -82,6 +96,11 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_input_iterator_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
@@ -166,6 +185,11 @@ impl CppInputIterator<Option<Value<i32>>>
     for forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_
 {
 }
+impl CppMove for forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_eq_3(
     x: Ptr<bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
     y: Ptr<bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
@@ -244,6 +268,11 @@ impl CppIterator<Option<Value<i32>>>
 impl CppInputIterator<Option<Value<i32>>>
     for bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_
 {
+}
+impl CppMove for bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
 }
 pub fn operator_eq_6(
     x: Ptr<random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_>,
@@ -324,6 +353,11 @@ impl CppInputIterator<Option<Value<i32>>>
     for random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_
 {
 }
+impl CppMove for random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
@@ -340,6 +374,11 @@ impl cpp20_random_access_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp20_random_access_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -368,6 +407,11 @@ impl cpp20_input_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_input_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
@@ -387,6 +431,11 @@ impl cpp20_output_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp20_output_iterator<int*>, int>"
@@ -402,6 +451,11 @@ pub struct IteratorOpCounts {
     pub zero_moves: usize,
     #[offset(24)]
     pub equal_cmps: usize,
+}
+impl CppMove for IteratorOpCounts {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
@@ -434,6 +488,11 @@ impl CppEq for forward_sized_iterator_int_ptr_ {
         operator_eq_10(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for forward_sized_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -464,13 +523,17 @@ pub fn operator_add_12(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
 pub fn iter_swap_13(mut a: adl_Iterator, mut b: adl_Iterator) {
     cpp_swap!((a.ptr_).clone(), (b.ptr_).clone());
     if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+        a.iter_swaps_.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub fn iter_move_14(iter: adl_Iterator) -> Ptr<i32> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
-        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
+        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
@@ -587,6 +650,11 @@ impl CppRandomAccessIterator<i32> for adl_Iterator {
         })
     }
 }
+impl CppMove for adl_Iterator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
@@ -617,6 +685,11 @@ impl CppEq for rvalue_iterator_int_ptr_ {
             == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for rvalue_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Ptr< i8  >  , new, value)]
@@ -625,6 +698,11 @@ pub struct util_iterator_error {}
 impl util_iterator_error {
     pub fn new(mut what: Ptr<i8>) -> Self {
         Self {}
+    }
+}
+impl CppMove for util_iterator_error {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Destructor, Default)]
@@ -652,20 +730,35 @@ impl Callable1<Ptr<i32>, bool> for unary_counting_predicate_bool__ptr__int___int
         })
     }
 }
+impl CppMove for unary_counting_predicate_bool__ptr__int___int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn equal2_17(mut i: i32) -> bool {
     return (i == 2);
 }
 pub fn test_constexpr_18() -> bool {
     let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 3, 5, 2, 5, 6])));
-    let mut it: Ptr<i32> = unimplemented!();
+    let mut it: Ptr<i32> = ({
+        let ___first: Ptr<i32> = ({ begin_19(ia.as_pointer()) });
+        let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).to_end();
+        remove_if_20(___first, ___last, FnPtr::<fn(i32) -> bool>::new(equal2_17))
+    });
     return ({
-        (unimplemented!()
-            .offset((unimplemented!()) as isize)
+        (({ begin_19(ia.as_pointer()) })
+            .offset(({ size_21(ia.as_pointer()) }) as isize)
             .offset(-((1) as isize)))
     } == { (it).clone() })
-        && (unimplemented!());
+        && ({
+            none_of_22(
+                ({ begin_19(ia.as_pointer()) }),
+                (it).clone(),
+                FnPtr::<fn(i32) -> bool>::new(equal2_17),
+            )
+        });
 }
-pub fn test_19() {
+pub fn test_23() {
     let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4, 2, 3, 4, 2])));
     let mut sa: u32 = (((::std::mem::size_of::<[i32; 9]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
@@ -675,7 +768,11 @@ pub fn test_19() {
         }),
     ));
     let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
-    let mut r: Ptr<i32> = unimplemented!();
+    let mut r: Ptr<i32> = ({
+        let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+        remove_if_24(___first, ___last, ({ ref_25(cp.as_pointer()) }))
+    });
     assert!(
         ({ (r).clone() } == {
             (ia.as_pointer() as Ptr<i32>)
@@ -683,18 +780,18 @@ pub fn test_19() {
                 .offset(-((3) as isize))
         })
     );
-    assert!(((*ia.borrow())[(0) as usize] == 0));
-    assert!(((*ia.borrow())[(1) as usize] == 1));
-    assert!(((*ia.borrow())[(2) as usize] == 3));
-    assert!(((*ia.borrow())[(3) as usize] == 4));
-    assert!(((*ia.borrow())[(4) as usize] == 3));
-    assert!(((*ia.borrow())[(5) as usize] == 4));
+    assert!(({ ((*ia.borrow())[(0) as usize] == 0) }));
+    assert!(({ ((*ia.borrow())[(1) as usize] == 1) }));
+    assert!(({ ((*ia.borrow())[(2) as usize] == 3) }));
+    assert!(({ ((*ia.borrow())[(3) as usize] == 4) }));
+    assert!(({ ((*ia.borrow())[(4) as usize] == 3) }));
+    assert!(({ ((*ia.borrow())[(5) as usize] == 4) }));
     assert!(
         (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
             == (sa as usize))
     );
 }
-pub fn test_20() {
+pub fn test_26() {
     let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4, 2, 3, 4, 2])));
     let mut sa: u32 = (((::std::mem::size_of::<[i32; 9]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
@@ -704,7 +801,11 @@ pub fn test_20() {
         }),
     ));
     let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
-    let mut r: Ptr<i32> = unimplemented!();
+    let mut r: Ptr<i32> = ({
+        let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+        remove_if_24(___first, ___last, ({ ref_25(cp.as_pointer()) }))
+    });
     assert!(
         ({ (r).clone() } == {
             (ia.as_pointer() as Ptr<i32>)
@@ -712,18 +813,18 @@ pub fn test_20() {
                 .offset(-((3) as isize))
         })
     );
-    assert!(((*ia.borrow())[(0) as usize] == 0));
-    assert!(((*ia.borrow())[(1) as usize] == 1));
-    assert!(((*ia.borrow())[(2) as usize] == 3));
-    assert!(((*ia.borrow())[(3) as usize] == 4));
-    assert!(((*ia.borrow())[(4) as usize] == 3));
-    assert!(((*ia.borrow())[(5) as usize] == 4));
+    assert!(({ ((*ia.borrow())[(0) as usize] == 0) }));
+    assert!(({ ((*ia.borrow())[(1) as usize] == 1) }));
+    assert!(({ ((*ia.borrow())[(2) as usize] == 3) }));
+    assert!(({ ((*ia.borrow())[(3) as usize] == 4) }));
+    assert!(({ ((*ia.borrow())[(4) as usize] == 3) }));
+    assert!(({ ((*ia.borrow())[(5) as usize] == 4) }));
     assert!(
         (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
             == (sa as usize))
     );
 }
-pub fn test_21() {
+pub fn test_27() {
     let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4, 2, 3, 4, 2])));
     let mut sa: u32 = (((::std::mem::size_of::<[i32; 9]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
@@ -733,7 +834,11 @@ pub fn test_21() {
         }),
     ));
     let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
-    let mut r: Ptr<i32> = unimplemented!();
+    let mut r: Ptr<i32> = ({
+        let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+        remove_if_24(___first, ___last, ({ ref_25(cp.as_pointer()) }))
+    });
     assert!(
         ({ (r).clone() } == {
             (ia.as_pointer() as Ptr<i32>)
@@ -741,18 +846,18 @@ pub fn test_21() {
                 .offset(-((3) as isize))
         })
     );
-    assert!(((*ia.borrow())[(0) as usize] == 0));
-    assert!(((*ia.borrow())[(1) as usize] == 1));
-    assert!(((*ia.borrow())[(2) as usize] == 3));
-    assert!(((*ia.borrow())[(3) as usize] == 4));
-    assert!(((*ia.borrow())[(4) as usize] == 3));
-    assert!(((*ia.borrow())[(5) as usize] == 4));
+    assert!(({ ((*ia.borrow())[(0) as usize] == 0) }));
+    assert!(({ ((*ia.borrow())[(1) as usize] == 1) }));
+    assert!(({ ((*ia.borrow())[(2) as usize] == 3) }));
+    assert!(({ ((*ia.borrow())[(3) as usize] == 4) }));
+    assert!(({ ((*ia.borrow())[(4) as usize] == 3) }));
+    assert!(({ ((*ia.borrow())[(5) as usize] == 4) }));
     assert!(
         (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
             == (sa as usize))
     );
 }
-pub fn test_22() {
+pub fn test_28() {
     let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4, 2, 3, 4, 2])));
     let mut sa: u32 = (((::std::mem::size_of::<[i32; 9]>() as usize)
         .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
@@ -762,7 +867,11 @@ pub fn test_22() {
         }),
     ));
     let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
-    let mut r: Ptr<i32> = unimplemented!();
+    let mut r: Ptr<i32> = ({
+        let ___first: Ptr<i32> = (ia.as_pointer() as Ptr<i32>);
+        let ___last: Ptr<i32> = (ia.as_pointer() as Ptr<i32>).offset((sa) as isize);
+        remove_if_24(___first, ___last, ({ ref_25(cp.as_pointer()) }))
+    });
     assert!(
         ({ (r).clone() } == {
             (ia.as_pointer() as Ptr<i32>)
@@ -770,12 +879,12 @@ pub fn test_22() {
                 .offset(-((3) as isize))
         })
     );
-    assert!(((*ia.borrow())[(0) as usize] == 0));
-    assert!(((*ia.borrow())[(1) as usize] == 1));
-    assert!(((*ia.borrow())[(2) as usize] == 3));
-    assert!(((*ia.borrow())[(3) as usize] == 4));
-    assert!(((*ia.borrow())[(4) as usize] == 3));
-    assert!(((*ia.borrow())[(5) as usize] == 4));
+    assert!(({ ((*ia.borrow())[(0) as usize] == 0) }));
+    assert!(({ ((*ia.borrow())[(1) as usize] == 1) }));
+    assert!(({ ((*ia.borrow())[(2) as usize] == 3) }));
+    assert!(({ ((*ia.borrow())[(3) as usize] == 4) }));
+    assert!(({ ((*ia.borrow())[(4) as usize] == 3) }));
+    assert!(({ ((*ia.borrow())[(5) as usize] == 4) }));
     assert!(
         (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
             == (sa as usize))
@@ -789,7 +898,12 @@ impl Callable1<Ptr<Option<Value<i32>>>, bool> for pred {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| predImpl::operator_call(__it, a1))
     }
 }
-pub fn test1_23() {
+impl CppMove for pred {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn test1_29() {
     let mut sa: u32 = 9_u32;
     let ia: Value<Box<[Option<Value<i32>>]>> = Rc::new(RefCell::new(
         (0..9).map(|_| None).collect::<Box<[Option<Value<i32>>]>>(),
@@ -849,21 +963,33 @@ pub fn test1_23() {
             .write(_p.to_owned_opt())
     };
     let r: Value<forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_> =
-        Rc::new(RefCell::new(unimplemented!()));
+        Rc::new(RefCell::new(
+            ({
+                let ___first: forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ =
+                    forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_::new_1({
+                        (ia.as_pointer() as Ptr<Option<Value<i32>>>)
+                    });
+                let ___last: forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ =
+                    forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_::new_1({
+                        (ia.as_pointer() as Ptr<Option<Value<i32>>>).offset((sa) as isize)
+                    });
+                remove_if_30(___first, ___last, <pred>::default())
+            }),
+        ));
     assert!(
         (({ base_2(r.as_pointer(),) })
             == (ia.as_pointer() as Ptr<Option<Value<i32>>>)
                 .offset((sa) as isize)
                 .offset(-((3) as isize)))
     );
-    assert!((((*ia.borrow())[(0) as usize].as_pointer().read()) == 0));
-    assert!((((*ia.borrow())[(1) as usize].as_pointer().read()) == 1));
-    assert!((((*ia.borrow())[(2) as usize].as_pointer().read()) == 3));
-    assert!((((*ia.borrow())[(3) as usize].as_pointer().read()) == 4));
-    assert!((((*ia.borrow())[(4) as usize].as_pointer().read()) == 3));
-    assert!((((*ia.borrow())[(5) as usize].as_pointer().read()) == 4));
+    assert!(({ (((*ia.borrow())[(0) as usize].as_pointer().read()) == 0) }));
+    assert!(({ (((*ia.borrow())[(1) as usize].as_pointer().read()) == 1) }));
+    assert!(({ (((*ia.borrow())[(2) as usize].as_pointer().read()) == 3) }));
+    assert!(({ (((*ia.borrow())[(3) as usize].as_pointer().read()) == 4) }));
+    assert!(({ (((*ia.borrow())[(4) as usize].as_pointer().read()) == 3) }));
+    assert!(({ (((*ia.borrow())[(5) as usize].as_pointer().read()) == 4) }));
 }
-pub fn test1_24() {
+pub fn test1_31() {
     let mut sa: u32 = 9_u32;
     let ia: Value<Box<[Option<Value<i32>>]>> = Rc::new(RefCell::new(
         (0..9).map(|_| None).collect::<Box<[Option<Value<i32>>]>>(),
@@ -923,21 +1049,27 @@ pub fn test1_24() {
             .write(_p.to_owned_opt())
     };
     let r: Value<bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_> =
-        Rc::new(RefCell::new(unimplemented!()));
+        Rc::new(RefCell::new(
+            ({
+                let ___first: bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_   = bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ :: new_1 ( { ( ia .as_pointer()  as Ptr< Option<Value<i32  >>  >   )  } , )   ;
+                let ___last: bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_   = bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ :: new_1 ( { ( ia .as_pointer()  as Ptr< Option<Value<i32  >>  >   ) . offset ( ( sa ) as isize )  } , )   ;
+                remove_if_32(___first, ___last, <pred>::default())
+            }),
+        ));
     assert!(
         (({ base_5(r.as_pointer(),) })
             == (ia.as_pointer() as Ptr<Option<Value<i32>>>)
                 .offset((sa) as isize)
                 .offset(-((3) as isize)))
     );
-    assert!((((*ia.borrow())[(0) as usize].as_pointer().read()) == 0));
-    assert!((((*ia.borrow())[(1) as usize].as_pointer().read()) == 1));
-    assert!((((*ia.borrow())[(2) as usize].as_pointer().read()) == 3));
-    assert!((((*ia.borrow())[(3) as usize].as_pointer().read()) == 4));
-    assert!((((*ia.borrow())[(4) as usize].as_pointer().read()) == 3));
-    assert!((((*ia.borrow())[(5) as usize].as_pointer().read()) == 4));
+    assert!(({ (((*ia.borrow())[(0) as usize].as_pointer().read()) == 0) }));
+    assert!(({ (((*ia.borrow())[(1) as usize].as_pointer().read()) == 1) }));
+    assert!(({ (((*ia.borrow())[(2) as usize].as_pointer().read()) == 3) }));
+    assert!(({ (((*ia.borrow())[(3) as usize].as_pointer().read()) == 4) }));
+    assert!(({ (((*ia.borrow())[(4) as usize].as_pointer().read()) == 3) }));
+    assert!(({ (((*ia.borrow())[(5) as usize].as_pointer().read()) == 4) }));
 }
-pub fn test1_25() {
+pub fn test1_33() {
     let mut sa: u32 = 9_u32;
     let ia: Value<Box<[Option<Value<i32>>]>> = Rc::new(RefCell::new(
         (0..9).map(|_| None).collect::<Box<[Option<Value<i32>>]>>(),
@@ -997,21 +1129,27 @@ pub fn test1_25() {
             .write(_p.to_owned_opt())
     };
     let r: Value<random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_> =
-        Rc::new(RefCell::new(unimplemented!()));
+        Rc::new(RefCell::new(
+            ({
+                let ___first: random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_   = random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ :: new_1 ( { ( ia .as_pointer()  as Ptr< Option<Value<i32  >>  >   )  } , )   ;
+                let ___last: random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_   = random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_ :: new_1 ( { ( ia .as_pointer()  as Ptr< Option<Value<i32  >>  >   ) . offset ( ( sa ) as isize )  } , )   ;
+                remove_if_34(___first, ___last, <pred>::default())
+            }),
+        ));
     assert!(
         (({ base_8(r.as_pointer(),) })
             == (ia.as_pointer() as Ptr<Option<Value<i32>>>)
                 .offset((sa) as isize)
                 .offset(-((3) as isize)))
     );
-    assert!((((*ia.borrow())[(0) as usize].as_pointer().read()) == 0));
-    assert!((((*ia.borrow())[(1) as usize].as_pointer().read()) == 1));
-    assert!((((*ia.borrow())[(2) as usize].as_pointer().read()) == 3));
-    assert!((((*ia.borrow())[(3) as usize].as_pointer().read()) == 4));
-    assert!((((*ia.borrow())[(4) as usize].as_pointer().read()) == 3));
-    assert!((((*ia.borrow())[(5) as usize].as_pointer().read()) == 4));
+    assert!(({ (((*ia.borrow())[(0) as usize].as_pointer().read()) == 0) }));
+    assert!(({ (((*ia.borrow())[(1) as usize].as_pointer().read()) == 1) }));
+    assert!(({ (((*ia.borrow())[(2) as usize].as_pointer().read()) == 3) }));
+    assert!(({ (((*ia.borrow())[(3) as usize].as_pointer().read()) == 4) }));
+    assert!(({ (((*ia.borrow())[(4) as usize].as_pointer().read()) == 3) }));
+    assert!(({ (((*ia.borrow())[(5) as usize].as_pointer().read()) == 4) }));
 }
-pub fn test1_26() {
+pub fn test1_35() {
     let mut sa: u32 = 9_u32;
     let ia: Value<Box<[Option<Value<i32>>]>> = Rc::new(RefCell::new(
         (0..9).map(|_| None).collect::<Box<[Option<Value<i32>>]>>(),
@@ -1070,7 +1208,12 @@ pub fn test1_26() {
             .offset(8)
             .write(_p.to_owned_opt())
     };
-    let mut r: Ptr<Option<Value<i32>>> = unimplemented!();
+    let mut r: Ptr<Option<Value<i32>>> = ({
+        let ___first: Ptr<Option<Value<i32>>> = (ia.as_pointer() as Ptr<Option<Value<i32>>>);
+        let ___last: Ptr<Option<Value<i32>>> =
+            (ia.as_pointer() as Ptr<Option<Value<i32>>>).offset((sa) as isize);
+        remove_if_36(___first, ___last, <pred>::default())
+    });
     assert!(
         ({ ({ base_9((r).clone(),) }) } == {
             (ia.as_pointer() as Ptr<Option<Value<i32>>>)
@@ -1078,12 +1221,12 @@ pub fn test1_26() {
                 .offset(-((3) as isize))
         })
     );
-    assert!((((*ia.borrow())[(0) as usize].as_pointer().read()) == 0));
-    assert!((((*ia.borrow())[(1) as usize].as_pointer().read()) == 1));
-    assert!((((*ia.borrow())[(2) as usize].as_pointer().read()) == 3));
-    assert!((((*ia.borrow())[(3) as usize].as_pointer().read()) == 4));
-    assert!((((*ia.borrow())[(4) as usize].as_pointer().read()) == 3));
-    assert!((((*ia.borrow())[(5) as usize].as_pointer().read()) == 4));
+    assert!(({ (((*ia.borrow())[(0) as usize].as_pointer().read()) == 0) }));
+    assert!(({ (((*ia.borrow())[(1) as usize].as_pointer().read()) == 1) }));
+    assert!(({ (((*ia.borrow())[(2) as usize].as_pointer().read()) == 3) }));
+    assert!(({ (((*ia.borrow())[(3) as usize].as_pointer().read()) == 4) }));
+    assert!(({ (((*ia.borrow())[(4) as usize].as_pointer().read()) == 3) }));
+    assert!(({ (((*ia.borrow())[(5) as usize].as_pointer().read()) == 4) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -1105,14 +1248,14 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_19() });
-    ({ test_20() });
-    ({ test_21() });
-    ({ test_22() });
-    ({ test1_23() });
-    ({ test1_24() });
-    ({ test1_25() });
-    ({ test1_26() });
+    ({ test_23() });
+    ({ test_26() });
+    ({ test_27() });
+    ({ test_28() });
+    ({ test1_29() });
+    ({ test1_31() });
+    ({ test1_33() });
+    ({ test1_35() });
     const _: () = assert!(true, "test_constexpr()");;
     return 0;
 }
@@ -1170,21 +1313,29 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
         return (*self).clone();
     }
     fn operator_inc_14(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_15(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return prev;
     }
     fn operator_dec_16(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_17(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return prev;
     }
 }
@@ -1224,7 +1375,9 @@ impl bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_Imp
     fn operator_inc_6(
         &self,
     ) -> Ptr<bidirectional_iterator_std_unique_ptr_int__std_default_delete_int___ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -1423,7 +1576,9 @@ impl forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_Impl
     fn operator_inc_6(
         &self,
     ) -> Ptr<forward_iterator_std_unique_ptr_int__std_default_delete_int___ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -1509,7 +1664,9 @@ impl random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_Imp
     fn operator_inc_7(
         &self,
     ) -> Ptr<random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -1568,11 +1725,11 @@ impl rvalue_iterator_int_ptr_Impl for Ptr<rvalue_iterator_int_ptr_> {
                 &((*self).with(|__s| __s.it_.clone())),
                 &(_a0.with(|__s| __s.it_.clone())),
             )));
-            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow());
+            if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+                return ({ (*cmp.borrow()) });
             }
         }
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> bool {
         return ({ (*self).with(|__s| __s.it_.clone()) } == { _a0.with(|__s| __s.it_.clone()) });
@@ -1608,7 +1765,9 @@ impl unary_counting_predicate_bool__ptr__int___int_Impl
 {
     fn destructor(&self) {}
     fn operator_call(&self, a: Ptr<i32>) -> bool {
-        field!((*self), count_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), count_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return ({ (*self).with(|__s| __s.p_.clone()).call((a.read())) });
     }
     fn count(&self) -> usize {

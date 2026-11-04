@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_optional_int___std_optional_int__ {}
+impl CppMove for test_macros_detail_is_same_std_optional_int___std_optional_int__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LVal {}
@@ -19,6 +24,11 @@ impl Callable1<Ptr<i32>, i32> for LVal {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             LValImpl::operator_call_1(__it, a1)
         })
+    }
+}
+impl CppMove for LVal {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -31,6 +41,11 @@ impl Callable1<Ptr<i32>, i32> for CLVal {
         })
     }
 }
+impl CppMove for CLVal {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RVal {}
@@ -39,6 +54,11 @@ impl Callable1<Ptr<i32>, i32> for RVal {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             RValImpl::operator_call_3(__it, a1)
         })
+    }
+}
+impl CppMove for RVal {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -51,6 +71,11 @@ impl Callable1<Ptr<i32>, i32> for CRVal {
         })
     }
 }
+impl CppMove for CRVal {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RefQual {}
@@ -59,6 +84,11 @@ impl Callable1<i32, i32> for RefQual {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             RefQualImpl::operator_call_1(__it, a1)
         })
+    }
+}
+impl CppMove for RefQual {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -71,6 +101,11 @@ impl Callable1<i32, i32> for CRefQual {
         })
     }
 }
+impl CppMove for CRefQual {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RVRefQual {}
@@ -81,6 +116,11 @@ impl Callable1<i32, i32> for RVRefQual {
         })
     }
 }
+impl CppMove for RVRefQual {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct RVCRefQual {}
@@ -89,6 +129,11 @@ impl Callable1<i32, i32> for RVCRefQual {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             RVCRefQualImpl::operator_call_4(__it, a1)
         })
+    }
+}
+impl CppMove for RVCRefQual {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Default)]
@@ -112,6 +157,11 @@ impl Clone for NoCopy {
     fn clone(&self) -> Self {
         let __src: Value<NoCopy> = Rc::new(RefCell::new(NoCopy {}));
         NoCopy::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for NoCopy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
@@ -173,6 +223,11 @@ pub fn test_val_types_1() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NonConst {}
+impl CppMove for NonConst {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_sfinae_2() {
     let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let l: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(

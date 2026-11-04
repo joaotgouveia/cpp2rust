@@ -9,6 +9,11 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Counter_base {}
+impl CppMove for Counter_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Destructor, Default)]
 #[cpp_from(i32, new_1, ptr)]
 #[byte_size(4)]
@@ -48,6 +53,11 @@ impl Clone for Counter_int_ {
             data_: self.data_.clone(),
         }));
         Counter_int_::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for Counter_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 thread_local!(
@@ -140,6 +150,11 @@ impl Callable2<Ptr<Counter_int_>, Ptr<Counter_int_>, bool> for comparator_6 {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             comparator_6Impl::operator_call(__it, a1, a2)
         })
+    }
+}
+impl CppMove for comparator_6 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

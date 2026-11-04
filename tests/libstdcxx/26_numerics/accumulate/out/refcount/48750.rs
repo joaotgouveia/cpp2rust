@@ -25,6 +25,11 @@ impl NaturalParameters {
         }
     }
 }
+impl CppMove for NaturalParameters {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for NaturalParameters {
     fn default() -> Self {
         { NaturalParameters::new() }
@@ -49,7 +54,13 @@ pub fn test01_1() {
                 .collect::<Vec<_>>(),
         ));
         let init: Value<NaturalParameters> = Rc::new(RefCell::new(NaturalParameters::new()));
-        let mut NP: NaturalParameters = unimplemented!();
+        let mut NP: NaturalParameters = ({
+            let ___first: RandomAccessIterator<NaturalParameters> =
+                CppRange::begin(&ChildrenNP.decay());
+            let ___last: RandomAccessIterator<NaturalParameters> =
+                CppRange::end(&ChildrenNP.decay());
+            accumulate_2(___first, ___last, (*init.borrow()).clone())
+        });
         i.prefix_inc();
     }
 }
@@ -69,10 +80,10 @@ pub trait NaturalParametersImpl {
 }
 impl NaturalParametersImpl for Ptr<NaturalParameters> {
     fn begin(&self) -> RandomAccessIterator<f64> {
-        return field_ref!((*self), m_data).decay().begin();
+        return CppRange::begin(&field_ref!((*self), m_data).decay());
     }
     fn end(&self) -> RandomAccessIterator<f64> {
-        return field_ref!((*self), m_data).decay().begin();
+        return CppRange::begin(&field_ref!((*self), m_data).decay());
     }
     fn operator_add_assign(&self, _a0: Ptr<NaturalParameters>) -> Ptr<NaturalParameters> {
         return (*self).clone();

@@ -25,20 +25,28 @@ impl CppEq for test_less_int_ {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for test_less_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_1() -> bool {
-    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(unimplemented!() == unimplemented!());
+    let m: Value<std_multiset_int__test_less_int___std_allocator_int__> = Rc::new(RefCell::new({
+        let __tmp_0: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 3 })));
+        std_multiset_int__test_less_int___std_allocator_int__::new_1({ __tmp_0.as_pointer() }, None)
+    }));
+    assert!(({ ({ (*m.borrow()).empty() }) }));
+    assert!(({ (*m.borrow()).begin() }) == ({ (*m.borrow()).end() }));
     assert!(
         ({
-            let _a: Value<test_less_int_> = Rc::new(RefCell::new(unimplemented!()));
+            let _a: Value<test_less_int_> = Rc::new(RefCell::new(({ (*m.borrow()).key_comp() })));
             let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 3 })));
             operator_eq_0(_a.as_pointer(), _b.as_pointer())
         })
     );
     assert!(
         ({
-            let _a: Value<test_less_int_> = Rc::new(RefCell::new(unimplemented!()));
+            let _a: Value<test_less_int_> = Rc::new(RefCell::new(({ (*m.borrow()).value_comp() })));
             let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 3 })));
             operator_eq_0(_a.as_pointer(), _b.as_pointer())
         })

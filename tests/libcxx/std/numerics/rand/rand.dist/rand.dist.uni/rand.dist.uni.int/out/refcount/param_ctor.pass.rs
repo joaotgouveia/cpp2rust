@@ -28,19 +28,25 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_()));
-        assert!((unimplemented!() == i64::MAX));
+        let p: Value<std_uniform_int_distribution_long__param_type> = Rc::new(RefCell::new(
+            <std_uniform_int_distribution_long__param_type>::default(),
+        ));
+        assert!(({ (({ (*p.borrow()).a() }) == 0_i64) }));
+        assert!(({ (({ (*p.borrow()).b() }) == i64::MAX) }));
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 5_()));
-        assert!((unimplemented!() == i64::MAX));
+        let p: Value<std_uniform_int_distribution_long__param_type> = Rc::new(RefCell::new(
+            std_uniform_int_distribution_long__param_type::new_1({ 5_i64 }, None),
+        ));
+        assert!(({ (({ (*p.borrow()).a() }) == 5_i64) }));
+        assert!(({ (({ (*p.borrow()).b() }) == i64::MAX) }));
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 5_()));
-        assert!((unimplemented!() == 10_()));
+        let p: Value<std_uniform_int_distribution_long__param_type> = Rc::new(RefCell::new(
+            std_uniform_int_distribution_long__param_type::new_1({ 5_i64 }, { Some(10_i64) }),
+        ));
+        assert!(({ (({ (*p.borrow()).a() }) == 5_i64) }));
+        assert!(({ (({ (*p.borrow()).b() }) == 10_i64) }));
     }
     return 0;
 }

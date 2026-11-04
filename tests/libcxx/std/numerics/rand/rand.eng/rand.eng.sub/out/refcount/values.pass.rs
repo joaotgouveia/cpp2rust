@@ -15,22 +15,22 @@ pub fn test1_2() {
     const _: () = assert!(true, "(E::min() == 0)");;
     const _: () = assert!(true, "(E::max() == 0xFFFFFF)");;
     const _: () = assert!(true, "(E::default_seed == 19780503u)");;
-    ({ where_0((unimplemented!()).reinterpret_cast::<u64>()) });
-    ({ where_0((unimplemented!()).reinterpret_cast::<u64>()) });
-    ({ where_0((unimplemented!()).reinterpret_cast::<u64>()) });
-    ({ where_1((unimplemented!()).reinterpret_cast::<u32>()) });
+    ({ where_0((word_size_3.with(|v| v.as_pointer())).reinterpret_cast::<u64>()) });
+    ({ where_0((short_lag_4.with(|v| v.as_pointer())).reinterpret_cast::<u64>()) });
+    ({ where_0((long_lag_5.with(|v| v.as_pointer())).reinterpret_cast::<u64>()) });
+    ({ where_1(default_seed_6.with(|v| v.as_pointer())) });
 }
-pub fn test2_3() {
+pub fn test2_7() {
     const _: () = assert!(true, "(E::word_size == 48)");;
     const _: () = assert!(true, "(E::short_lag == 5)");;
     const _: () = assert!(true, "(E::long_lag == 12)");;
     const _: () = assert!(true, "(E::min() == 0)");;
     const _: () = assert!(true, "(E::max() == 0xFFFFFFFFFFFFull)");;
     const _: () = assert!(true, "(E::default_seed == 19780503u)");;
-    ({ where_0((unimplemented!()).reinterpret_cast::<u64>()) });
-    ({ where_0((unimplemented!()).reinterpret_cast::<u64>()) });
-    ({ where_0((unimplemented!()).reinterpret_cast::<u64>()) });
-    ({ where_1((unimplemented!()).reinterpret_cast::<u32>()) });
+    ({ where_0((word_size_8.with(|v| v.as_pointer())).reinterpret_cast::<u64>()) });
+    ({ where_0((short_lag_9.with(|v| v.as_pointer())).reinterpret_cast::<u64>()) });
+    ({ where_0((long_lag_10.with(|v| v.as_pointer())).reinterpret_cast::<u64>()) });
+    ({ where_1(default_seed_11.with(|v| v.as_pointer())) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -53,7 +53,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test1_2() });
-    ({ test2_3() });
+    ({ test2_7() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

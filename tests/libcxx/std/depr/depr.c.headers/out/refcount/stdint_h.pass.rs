@@ -15,23 +15,23 @@ pub fn use_0() {
     &(::std::mem::size_of::<u16>());
     &(::std::mem::size_of::<u32>());
     &(::std::mem::size_of::<u64>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
+    &(::std::mem::size_of::<i8>());
+    &(::std::mem::size_of::<i16>());
+    &(::std::mem::size_of::<i32>());
+    &(::std::mem::size_of::<i64>());
+    &(::std::mem::size_of::<u8>());
+    &(::std::mem::size_of::<u16>());
+    &(::std::mem::size_of::<u32>());
+    &(::std::mem::size_of::<u64>());
+    &(::std::mem::size_of::<i8>());
+    &(::std::mem::size_of::<i64>());
+    &(::std::mem::size_of::<i64>());
+    &(::std::mem::size_of::<i64>());
+    &(::std::mem::size_of::<u8>());
+    &(::std::mem::size_of::<u64>());
+    &(::std::mem::size_of::<u64>());
+    &(::std::mem::size_of::<u64>());
+    &(::std::mem::size_of::<i64>());
     &(::std::mem::size_of::<usize>());
     &(::std::mem::size_of::<i64>());
     &(::std::mem::size_of::<u64>());
@@ -105,7 +105,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "sizeof(uint_fast64_t)*CHAR_BIT >= 64");;
     const _: () = assert!(true, "std::is_unsigned<uint_fast64_t>::value");;
     const _: () = assert!(
-        (::std::mem::size_of::<()>() >= 8usize),
+        (::std::mem::size_of::<i64>() >= 8usize),
         "sizeof(intptr_t) >= sizeof(void*)"
     );;
     const _: () = assert!(true, "std::is_signed<intptr_t>::value");;

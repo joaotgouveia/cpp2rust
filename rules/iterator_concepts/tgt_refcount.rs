@@ -3,8 +3,11 @@
 
 use libcc2rs::*;
 
-fn f1<T1: CppBidirectionalIterator<T2>, T2>(a0: &mut T1) -> &mut T1 {
-    a0.iter_dec()
+fn f1<T1: CppBidirectionalIterator<T2> + ByteRepr, T2>(a0: Ptr<T1>) -> Ptr<T1> {
+    a0.with_mut(|__it| {
+        __it.iter_dec();
+    });
+    a0
 }
 
 fn f2<T1: CppBidirectionalIterator<T2>, T2>(a0: &mut T1) -> T1 {
@@ -47,8 +50,11 @@ fn f18<T1: CppIterator<T2>, T2>(a0: &mut T1, a1: T1) {
     *a0 = a1
 }
 
-fn f20<T1: CppIterator<T2>, T2>(a0: &mut T1) -> &mut T1 {
-    a0.iter_inc()
+fn f20<T1: CppIterator<T2> + ByteRepr, T2>(a0: Ptr<T1>) -> Ptr<T1> {
+    a0.with_mut(|__it| {
+        __it.iter_inc();
+    });
+    a0
 }
 
 fn f21<T1: CppIterator<T2>, T2>(a0: &mut T1) -> T1 {
@@ -71,8 +77,11 @@ fn f30<T1: CppRandomAccessIterator<T2>, T2>(a0: T1, a1: T1) -> bool {
     a0 >= a1
 }
 
-fn f31<T1: CppRandomAccessIterator<T2>, T2>(a0: &mut T1, a1: isize) -> T1 {
-    a0.iter_add_assign(a1)
+fn f31<T1: CppRandomAccessIterator<T2> + ByteRepr, T2>(a0: Ptr<T1>, a1: isize) -> Ptr<T1> {
+    a0.with_mut(|__it| {
+        __it.iter_add_assign(a1);
+    });
+    a0
 }
 
 fn f32<T1: CppRandomAccessIterator<T2>, T2>(a0: T1, a1: isize) -> T1 {
@@ -83,8 +92,11 @@ fn f33<T1: CppRandomAccessIterator<T2>, T2>(a0: isize, a1: T1) -> T1 {
     a1.iter_add(a0)
 }
 
-fn f34<T1: CppRandomAccessIterator<T2>, T2>(a0: &mut T1, a1: isize) -> T1 {
-    a0.iter_add_assign(-a1)
+fn f34<T1: CppRandomAccessIterator<T2> + ByteRepr, T2>(a0: Ptr<T1>, a1: isize) -> Ptr<T1> {
+    a0.with_mut(|__it| {
+        __it.iter_add_assign(-a1);
+    });
+    a0
 }
 
 fn f35<T1: CppRandomAccessIterator<T2>, T2>(a0: T1, a1: isize) -> T1 {

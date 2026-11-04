@@ -8,33 +8,37 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
     const _: () = assert!(true, "");;
-    let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let bs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut result: usize = unimplemented!();
+    let h: Value<std_hash_std_bitset_0__> =
+        Rc::new(RefCell::new(<std_hash_std_bitset_0__>::default()));
+    let bs: Value<std_bitset_0_> = Rc::new(RefCell::new(std_bitset_0_::new_1({ 0_u64 })));
+    let mut result: usize = ({ (*h.borrow_mut())(bs.as_pointer()) });
     const _: () = assert!(true, "");;
     (&(result));
 }
 pub fn test_1() {
     const _: () = assert!(true, "");;
-    let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let bs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut result: usize = unimplemented!();
+    let h: Value<std_hash_std_bitset_10__> =
+        Rc::new(RefCell::new(<std_hash_std_bitset_10__>::default()));
+    let bs: Value<std_bitset_10_> = Rc::new(RefCell::new(std_bitset_10_::new_1({ 10_u64 })));
+    let mut result: usize = ({ (*h.borrow_mut())(bs.as_pointer()) });
     const _: () = assert!(true, "");;
     (&(result));
 }
 pub fn test_2() {
     const _: () = assert!(true, "");;
-    let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let bs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut result: usize = unimplemented!();
+    let h: Value<std_hash_std_bitset_100__> =
+        Rc::new(RefCell::new(<std_hash_std_bitset_100__>::default()));
+    let bs: Value<std_bitset_100_> = Rc::new(RefCell::new(std_bitset_100_::new_1({ 100_u64 })));
+    let mut result: usize = ({ (*h.borrow_mut())(bs.as_pointer()) });
     const _: () = assert!(true, "");;
     (&(result));
 }
 pub fn test_3() {
     const _: () = assert!(true, "");;
-    let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let bs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut result: usize = unimplemented!();
+    let h: Value<std_hash_std_bitset_1000__> =
+        Rc::new(RefCell::new(<std_hash_std_bitset_1000__>::default()));
+    let bs: Value<std_bitset_1000_> = Rc::new(RefCell::new(std_bitset_1000_::new_1({ 1000_u64 })));
+    let mut result: usize = ({ (*h.borrow_mut())(bs.as_pointer()) });
     const _: () = assert!(true, "");;
     (&(result));
 }

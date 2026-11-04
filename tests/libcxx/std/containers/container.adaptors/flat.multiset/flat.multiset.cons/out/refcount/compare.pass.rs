@@ -23,6 +23,11 @@ impl support_double_move_tracker {
         __this
     }
 }
+impl CppMove for support_double_move_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for support_double_move_tracker {
     fn default() -> Self {
         { support_double_move_tracker::new() }
@@ -32,18 +37,22 @@ impl Default for support_double_move_tracker {
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
@@ -60,6 +69,11 @@ impl cpp17_output_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -84,6 +98,11 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
         }
     }
 }
+impl CppMove for cpp17_input_iterator_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
@@ -103,6 +122,11 @@ impl three_way_random_access_iterator_const_int_ptr_ {
         }
     }
 }
+impl CppMove for three_way_random_access_iterator_const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
@@ -119,6 +143,11 @@ impl cpp20_random_access_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp20_random_access_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -143,6 +172,11 @@ impl cpp20_input_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_input_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
@@ -162,6 +196,11 @@ impl cpp20_output_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp20_output_iterator<int*>, int>"
@@ -177,6 +216,11 @@ pub struct IteratorOpCounts {
     pub zero_moves: usize,
     #[offset(24)]
     pub equal_cmps: usize,
+}
+impl CppMove for IteratorOpCounts {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
@@ -209,6 +253,11 @@ impl CppEq for forward_sized_iterator_int_ptr_ {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for forward_sized_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -239,13 +288,17 @@ pub fn operator_add_2(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
 pub fn iter_swap_3(mut a: adl_Iterator, mut b: adl_Iterator) {
     cpp_swap!((a.ptr_).clone(), (b.ptr_).clone());
     if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+        a.iter_swaps_.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub fn iter_move_4(iter: adl_Iterator) -> Ptr<i32> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
-        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
+        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
@@ -362,6 +415,11 @@ impl CppRandomAccessIterator<i32> for adl_Iterator {
         })
     }
 }
+impl CppMove for adl_Iterator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
@@ -392,6 +450,11 @@ impl CppEq for rvalue_iterator_int_ptr_ {
             == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for rvalue_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Ptr< i8  >  , new, value)]
@@ -400,6 +463,11 @@ pub struct util_iterator_error {}
 impl util_iterator_error {
     pub fn new(mut what: Ptr<i8>) -> Self {
         Self {}
+    }
+}
+impl CppMove for util_iterator_error {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -411,6 +479,7 @@ pub struct MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___
     data_: Vec<i32>,
 }
 impl MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ { pub fn move_from ( _a0 : Ptr< MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__  > , ) -> Self { Self { data_ : field!(_a0, data_).with_mut(std::mem::take)  , }  } }
+impl CppMove for MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ { fn cpp_move(src: Ptr<Self>) -> Self { Self::move_from(src) } }
 const _: () = assert!(!(false), "!HasAllocatorType<MinSequenceContainer<int>>");
 const _: () = assert!(!(false), "!HasEmplace<MinSequenceContainer<int>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -430,6 +499,11 @@ impl malloc_allocator_base {
         dealloc_count_9.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_7: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -443,16 +517,13 @@ thread_local!(
     pub static disable_default_constructor_10: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<i32>,
-}
-impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
+impl CppMove for min_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_11(a: Ptr<test_less_int_>, b: Ptr<test_less_int_>) -> bool {
     return ({ a.with(|__s| __s.data_) } == { b.with(|__s| __s.data_) });
 }
@@ -470,6 +541,11 @@ impl test_less_int_ {
 impl CppEq for test_less_int_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_11(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for test_less_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -495,6 +571,11 @@ pub struct test_allocator_statistics {
     pub moved: i32,
     #[offset(36)]
     pub converted: i32,
+}
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for test_allocator_statistics {
     fn default() -> Self {
@@ -523,6 +604,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_14(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -603,6 +689,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -620,9 +711,19 @@ pub fn operator_eq_16(x: Ptr<test_allocator_int_>, y: Ptr<test_allocator_int_>) 
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_int__rebind_int_ {}
+impl CppMove for test_allocator_int__rebind_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_int__rebind_int_ptr_ {}
+impl CppMove for test_allocator_int__rebind_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_int_ {
@@ -656,8 +757,12 @@ impl test_allocator_int_ {
                     .is_null())
         );
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), copied).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -669,8 +774,12 @@ impl test_allocator_int_ {
         }));
         let this: Ptr<test_allocator_int_> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         assert!(
             (({ a.with(|__s| __s.data_) } != { destructed_value_12.with(|rc| *rc.borrow()) })
@@ -697,6 +806,11 @@ impl Clone for test_allocator_int_ {
         test_allocator_int_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for test_allocator_int_ {
     fn default() -> Self {
         {
@@ -717,8 +831,12 @@ impl test_allocator_int_ptr_ {
         }));
         let this: Ptr<test_allocator_int_ptr_> = __this.as_pointer();
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
-            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
-            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| __v.prefix_inc());
+            field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!(this.with(|__s| __s.stats_.clone()), converted).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -754,6 +872,11 @@ pub struct other_allocator_int_ {
     data_: i32,
 }
 impl other_allocator_int_ {}
+impl CppMove for other_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for other_allocator_int_ {
     fn default() -> Self {
         { other_allocator_int_ { data_: 0_i32 } }
@@ -766,6 +889,11 @@ pub struct other_allocator_int_ptr_ {
     data_: i32,
 }
 impl other_allocator_int_ptr_ {}
+impl CppMove for other_allocator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for other_allocator_int_ptr_ {
     fn default() -> Self {
         { other_allocator_int_ptr_ { data_: 0_i32 } }
@@ -774,6 +902,11 @@ impl Default for other_allocator_int_ptr_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -809,12 +942,35 @@ pub fn test_compare_17() {
         );;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(unimplemented!() == unimplemented!());
+        let m: Value<std_flat_multiset_int__test_less_int___std_vector_int__std_allocator_int___> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<test_less_int_> =
+                    Rc::new(RefCell::new(test_less_int_::new_1({ 3 })));
+                std_flat_multiset_int__test_less_int___std_vector_int__std_allocator_int___::new_1(
+                    { __tmp_0.as_pointer() },
+                )
+            }));
         assert!(
             ({
-                let _a: Value<test_less_int_> = Rc::new(RefCell::new(unimplemented!()));
+                ({
+                    ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__std_allocator_int____true_ ) . empty ( )
+                })
+            })
+        );
+        assert!(
+            ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__std_allocator_int____true_ ) . begin ( )
+            }) == ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__std_allocator_int____true_ ) . end ( )
+            })
+        );
+        assert!(
+            ({
+                let _a: Value<test_less_int_> = Rc::new(RefCell::new(
+                    ({
+                        ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__std_allocator_int____true_ ) . key_comp ( )
+                    }),
+                ));
                 let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 3 })));
                 operator_eq_11(_a.as_pointer(), _b.as_pointer())
             })
@@ -841,12 +997,35 @@ pub fn test_compare_18() {
         );;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(unimplemented!() == unimplemented!());
+        let m: Value<std_flat_multiset_int__test_less_int___std_vector_int__std_allocator_int___> =
+            Rc::new(RefCell::new({
+                let __tmp_1: Value<test_less_int_> =
+                    Rc::new(RefCell::new(test_less_int_::new_1({ 3 })));
+                std_flat_multiset_int__test_less_int___std_vector_int__std_allocator_int___::new_1(
+                    { __tmp_1.as_pointer() },
+                )
+            }));
         assert!(
             ({
-                let _a: Value<test_less_int_> = Rc::new(RefCell::new(unimplemented!()));
+                ({
+                    ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__std_allocator_int____true_ ) . empty ( )
+                })
+            })
+        );
+        assert!(
+            ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__std_allocator_int____true_ ) . begin ( )
+            }) == ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__std_allocator_int____true_ ) . end ( )
+            })
+        );
+        assert!(
+            ({
+                let _a: Value<test_less_int_> = Rc::new(RefCell::new(
+                    ({
+                        ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__std_allocator_int____true_ ) . key_comp ( )
+                    }),
+                ));
                 let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 3 })));
                 operator_eq_11(_a.as_pointer(), _b.as_pointer())
             })
@@ -873,12 +1052,35 @@ pub fn test_compare_19() {
         );;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(unimplemented!() == unimplemented!());
+        let m: Value<std_flat_multiset_int__test_less_int___std_vector_int__std_allocator_int___> =
+            Rc::new(RefCell::new({
+                let __tmp_2: Value<test_less_int_> =
+                    Rc::new(RefCell::new(test_less_int_::new_1({ 3 })));
+                std_flat_multiset_int__test_less_int___std_vector_int__std_allocator_int___::new_1(
+                    { __tmp_2.as_pointer() },
+                )
+            }));
         assert!(
             ({
-                let _a: Value<test_less_int_> = Rc::new(RefCell::new(unimplemented!()));
+                ({
+                    ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__std_allocator_int____true_ ) . empty ( )
+                })
+            })
+        );
+        assert!(
+            ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__std_allocator_int____true_ ) . begin ( )
+            }) == ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__std_allocator_int____true_ ) . end ( )
+            })
+        );
+        assert!(
+            ({
+                let _a: Value<test_less_int_> = Rc::new(RefCell::new(
+                    ({
+                        ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__std_allocator_int____true_ ) . key_comp ( )
+                    }),
+                ));
                 let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 3 })));
                 operator_eq_11(_a.as_pointer(), _b.as_pointer())
             })
@@ -905,12 +1107,35 @@ pub fn test_compare_20() {
         );;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(unimplemented!() == unimplemented!());
+        let m: Value<std_flat_multiset_int__test_less_int___std_vector_int__std_allocator_int___> =
+            Rc::new(RefCell::new({
+                let __tmp_3: Value<test_less_int_> =
+                    Rc::new(RefCell::new(test_less_int_::new_1({ 3 })));
+                std_flat_multiset_int__test_less_int___std_vector_int__std_allocator_int___::new_1(
+                    { __tmp_3.as_pointer() },
+                )
+            }));
         assert!(
             ({
-                let _a: Value<test_less_int_> = Rc::new(RefCell::new(unimplemented!()));
+                ({
+                    ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__std_allocator_int____true_ ) . empty ( )
+                })
+            })
+        );
+        assert!(
+            ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__std_allocator_int____true_ ) . begin ( )
+            }) == ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__std_allocator_int____true_ ) . end ( )
+            })
+        );
+        assert!(
+            ({
+                let _a: Value<test_less_int_> = Rc::new(RefCell::new(
+                    ({
+                        ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__std_allocator_int____true_ ) . key_comp ( )
+                    }),
+                ));
                 let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 3 })));
                 operator_eq_11(_a.as_pointer(), _b.as_pointer())
             })
@@ -925,19 +1150,49 @@ pub fn test_compare_alloc_21() {
         const _: () = assert!(true, "!std::is_constructible_v<M2, const C&, const A1&>");;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(unimplemented!() == unimplemented!());
+        let m: Value<std_flat_multiset_int__test_less_int___std_vector_int__test_allocator_int___> =
+            Rc::new(RefCell::new({
+                let __tmp_4: Value<test_less_int_> =
+                    Rc::new(RefCell::new(test_less_int_::new_1({ 4 })));
+                let __tmp_5: Value<test_allocator_int_> =
+                    Rc::new(RefCell::new(test_allocator_int_::new_1({ 5 })));
+                std_flat_multiset_int__test_less_int___std_vector_int__test_allocator_int___::new_1(
+                    { __tmp_4.as_pointer() },
+                    { __tmp_5.as_pointer() },
+                )
+            }));
         assert!(
             ({
-                let _a: Value<test_less_int_> = Rc::new(RefCell::new(unimplemented!()));
+                ({
+                    ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__test_allocator_int____true_ ) . empty ( )
+                })
+            })
+        );
+        assert!(
+            ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__test_allocator_int____true_ ) . begin ( )
+            }) == ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__test_allocator_int____true_ ) . end ( )
+            })
+        );
+        assert!(
+            ({
+                let _a: Value<test_less_int_> = Rc::new(RefCell::new(
+                    ({
+                        ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__test_allocator_int____true_ ) . key_comp ( )
+                    }),
+                ));
                 let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 4 })));
                 operator_eq_11(_a.as_pointer(), _b.as_pointer())
             })
         );
         assert!(
             ({
-                let _x: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _x: Value<test_allocator_int_> = Rc::new(RefCell::new(
+                    ({
+                        ( ( { ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__test_allocator_int____true_ ) . extract  ( ) } )  as std__Vector_base_int__test_allocator_int__ ) . get_allocator ( )
+                    }),
+                ));
                 let _y: Value<test_allocator_int_> =
                     Rc::new(RefCell::new(test_allocator_int_::new_1({ 5 })));
                 operator_eq_16(_x.as_pointer(), _y.as_pointer())
@@ -945,19 +1200,49 @@ pub fn test_compare_alloc_21() {
         );
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(unimplemented!() == unimplemented!());
+        let m: Value<std_flat_multiset_int__test_less_int___std_vector_int__test_allocator_int___> =
+            Rc::new(RefCell::new({
+                let __tmp_6: Value<test_less_int_> =
+                    Rc::new(RefCell::new(test_less_int_::new_1({ 4 })));
+                let __tmp_7: Value<test_allocator_int_> =
+                    Rc::new(RefCell::new(test_allocator_int_::new_1({ 5 })));
+                std_flat_multiset_int__test_less_int___std_vector_int__test_allocator_int___::new_1(
+                    { __tmp_6.as_pointer() },
+                    { __tmp_7.as_pointer() },
+                )
+            }));
         assert!(
             ({
-                let _a: Value<test_less_int_> = Rc::new(RefCell::new(unimplemented!()));
+                ({
+                    ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__test_allocator_int____true_ ) . empty ( )
+                })
+            })
+        );
+        assert!(
+            ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__test_allocator_int____true_ ) . begin ( )
+            }) == ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__test_allocator_int____true_ ) . end ( )
+            })
+        );
+        assert!(
+            ({
+                let _a: Value<test_less_int_> = Rc::new(RefCell::new(
+                    ({
+                        ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__test_allocator_int____true_ ) . key_comp ( )
+                    }),
+                ));
                 let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 4 })));
                 operator_eq_11(_a.as_pointer(), _b.as_pointer())
             })
         );
         assert!(
             ({
-                let _x: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _x: Value<test_allocator_int_> = Rc::new(RefCell::new(
+                    ({
+                        ( ( { ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_vector_int__test_allocator_int____true_ ) . extract  ( ) } )  as std__Vector_base_int__test_allocator_int__ ) . get_allocator ( )
+                    }),
+                ));
                 let _y: Value<test_allocator_int_> =
                     Rc::new(RefCell::new(test_allocator_int_::new_1({ 5 })));
                 operator_eq_16(_x.as_pointer(), _y.as_pointer())
@@ -973,19 +1258,49 @@ pub fn test_compare_alloc_22() {
         const _: () = assert!(true, "!std::is_constructible_v<M2, const C&, const A1&>");;
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(unimplemented!() == unimplemented!());
+        let m: Value<std_flat_multiset_int__test_less_int___std_deque_int__test_allocator_int___> =
+            Rc::new(RefCell::new({
+                let __tmp_8: Value<test_less_int_> =
+                    Rc::new(RefCell::new(test_less_int_::new_1({ 4 })));
+                let __tmp_9: Value<test_allocator_int_> =
+                    Rc::new(RefCell::new(test_allocator_int_::new_1({ 5 })));
+                std_flat_multiset_int__test_less_int___std_deque_int__test_allocator_int___::new_1(
+                    { __tmp_8.as_pointer() },
+                    { __tmp_9.as_pointer() },
+                )
+            }));
         assert!(
             ({
-                let _a: Value<test_less_int_> = Rc::new(RefCell::new(unimplemented!()));
+                ({
+                    ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_deque_int__test_allocator_int____true_ ) . empty ( )
+                })
+            })
+        );
+        assert!(
+            ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_deque_int__test_allocator_int____true_ ) . begin ( )
+            }) == ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_deque_int__test_allocator_int____true_ ) . end ( )
+            })
+        );
+        assert!(
+            ({
+                let _a: Value<test_less_int_> = Rc::new(RefCell::new(
+                    ({
+                        ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_deque_int__test_allocator_int____true_ ) . key_comp ( )
+                    }),
+                ));
                 let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 4 })));
                 operator_eq_11(_a.as_pointer(), _b.as_pointer())
             })
         );
         assert!(
             ({
-                let _x: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _x: Value<test_allocator_int_> = Rc::new(RefCell::new(
+                    ({
+                        ( { ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_deque_int__test_allocator_int____true_ ) . extract  ( ) } )  . get_allocator ( )
+                    }),
+                ));
                 let _y: Value<test_allocator_int_> =
                     Rc::new(RefCell::new(test_allocator_int_::new_1({ 5 })));
                 operator_eq_16(_x.as_pointer(), _y.as_pointer())
@@ -993,19 +1308,49 @@ pub fn test_compare_alloc_22() {
         );
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(unimplemented!() == unimplemented!());
+        let m: Value<std_flat_multiset_int__test_less_int___std_deque_int__test_allocator_int___> =
+            Rc::new(RefCell::new({
+                let __tmp_10: Value<test_less_int_> =
+                    Rc::new(RefCell::new(test_less_int_::new_1({ 4 })));
+                let __tmp_11: Value<test_allocator_int_> =
+                    Rc::new(RefCell::new(test_allocator_int_::new_1({ 5 })));
+                std_flat_multiset_int__test_less_int___std_deque_int__test_allocator_int___::new_1(
+                    { __tmp_10.as_pointer() },
+                    { __tmp_11.as_pointer() },
+                )
+            }));
         assert!(
             ({
-                let _a: Value<test_less_int_> = Rc::new(RefCell::new(unimplemented!()));
+                ({
+                    ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_deque_int__test_allocator_int____true_ ) . empty ( )
+                })
+            })
+        );
+        assert!(
+            ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_deque_int__test_allocator_int____true_ ) . begin ( )
+            }) == ({
+                ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_deque_int__test_allocator_int____true_ ) . end ( )
+            })
+        );
+        assert!(
+            ({
+                let _a: Value<test_less_int_> = Rc::new(RefCell::new(
+                    ({
+                        ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_deque_int__test_allocator_int____true_ ) . key_comp ( )
+                    }),
+                ));
                 let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 4 })));
                 operator_eq_11(_a.as_pointer(), _b.as_pointer())
             })
         );
         assert!(
             ({
-                let _x: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _x: Value<test_allocator_int_> = Rc::new(RefCell::new(
+                    ({
+                        ( { ( (*m.borrow()) as std__Flat_set_impl_int__test_less_int___std_deque_int__test_allocator_int____true_ ) . extract  ( ) } )  . get_allocator ( )
+                    }),
+                ));
                 let _y: Value<test_allocator_int_> =
                     Rc::new(RefCell::new(test_allocator_int_::new_1({ 5 })));
                 operator_eq_16(_x.as_pointer(), _y.as_pointer())
@@ -1047,6 +1392,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_23() });
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
 pub struct three_way_random_access_iterator_int_ptr_;
@@ -1207,21 +1555,29 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
         return (*self).clone();
     }
     fn operator_inc_14(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_15(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return prev;
     }
     fn operator_dec_16(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_17(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return prev;
     }
 }
@@ -1409,66 +1765,6 @@ pub trait min_allocator_int_Impl {
     }
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {}
-pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_9(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_10(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_11(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
-        unimplemented!()
-    }
-}
-impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>
-{
-}
 pub trait other_allocator_int_Impl {
     fn allocate(&self, mut n: usize) -> Ptr<i32> {
         unimplemented!()
@@ -1543,11 +1839,11 @@ impl rvalue_iterator_int_ptr_Impl for Ptr<rvalue_iterator_int_ptr_> {
                 &((*self).with(|__s| __s.it_.clone())),
                 &(_a0.with(|__s| __s.it_.clone())),
             )));
-            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow());
+            if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+                return ({ (*cmp.borrow()) });
             }
         }
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> bool {
         return ({ (*self).with(|__s| __s.it_.clone()) } == { _a0.with(|__s| __s.it_.clone()) });
@@ -1572,10 +1868,10 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
 }
 pub trait test_allocator_int_Impl {
     fn destructor(&self);
-    fn address_11(&self, x: ()) -> Ptr<i32> {
+    fn address_11(&self, x: Ptr<i32>) -> Ptr<i32> {
         unimplemented!()
     }
-    fn address_12(&self, x: ()) -> Ptr<i32> {
+    fn address_12(&self, x: Ptr<i32>) -> Ptr<i32> {
         unimplemented!()
     }
     fn allocate(&self, n: u32, _a1: Option<AnyPtr>) -> Ptr<i32>;
@@ -1596,7 +1892,9 @@ impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_12.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_12.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_12.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_12.with(|rc| *rc.borrow()));
@@ -1616,10 +1914,12 @@ impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
             }) {
                 std::process::abort();
             }
-            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
-                .with_mut(|__v| __v.prefix_inc());
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -1627,13 +1927,14 @@ impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
                     .wrapping_add(n)) as i32
             });
         }
-        return unimplemented!();
+        return ({ <std_allocator_int_>::default().allocate((n as usize)) });
     }
     fn deallocate(&self, mut p: Ptr<i32>, mut s: u32) {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_12.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -1641,21 +1942,22 @@ impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
                     .wrapping_sub(s)) as i32
             });
         }
-        unimplemented!();
+        ({ <std_allocator_int_>::default().deallocate((p).clone(), (s as usize)) });
     }
     fn destroy(&self, mut p: Ptr<i32>) {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), destroy_count)
-                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), destroy_count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         };
     }
 }
 pub trait test_allocator_int_ptr_Impl {
     fn destructor(&self);
-    fn address_11(&self, x: ()) -> Ptr<Ptr<i32>> {
+    fn address_11(&self, x: Ptr<Ptr<i32>>) -> Ptr<Ptr<i32>> {
         unimplemented!()
     }
-    fn address_12(&self, x: ()) -> Ptr<Ptr<i32>> {
+    fn address_12(&self, x: Ptr<Ptr<i32>>) -> Ptr<Ptr<i32>> {
         unimplemented!()
     }
     fn allocate(&self, n: u32, _a1: Option<AnyPtr>) -> Ptr<Ptr<i32>>;
@@ -1678,7 +1980,9 @@ impl test_allocator_int_ptr_Impl for Ptr<test_allocator_int_ptr_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_12.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_12.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_12.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_12.with(|rc| *rc.borrow()));
@@ -1698,10 +2002,12 @@ impl test_allocator_int_ptr_Impl for Ptr<test_allocator_int_ptr_> {
             }) {
                 std::process::abort();
             }
-            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
-                .with_mut(|__v| __v.prefix_inc());
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_inc());
+            field!((*self).with(|__s| __s.stats_.clone()), time_to_throw).with_mut(|__v| {
+                __v.prefix_inc();
+            });
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_inc();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -1709,13 +2015,14 @@ impl test_allocator_int_ptr_Impl for Ptr<test_allocator_int_ptr_> {
                     .wrapping_add(n)) as i32
             });
         }
-        return unimplemented!();
+        return ({ <std_allocator_int_ptr_>::default().allocate((n as usize)) });
     }
     fn deallocate(&self, mut p: Ptr<Ptr<i32>>, mut s: u32) {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_12.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
-                .with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
                 (((*self)
                     .with(|__s| __s.stats_.clone())
@@ -1723,7 +2030,7 @@ impl test_allocator_int_ptr_Impl for Ptr<test_allocator_int_ptr_> {
                     .wrapping_sub(s)) as i32
             });
         }
-        unimplemented!();
+        ({ <std_allocator_int_ptr_>::default().deallocate((p).clone(), (s as usize)) });
     }
 }
 pub trait test_allocator_statisticsImpl {

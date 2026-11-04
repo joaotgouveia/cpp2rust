@@ -8,54 +8,129 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"abcde");
-    let sv0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let sv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let sv3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let sv4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let sv5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let svNot: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let svNot2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let svNot3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let sv0: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        <std_basic_string_view_char__std_char_traits_char__>::default(),
+    ));
+    let sv1: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1({ s.offset((1) as isize) }, {
+            1_u64
+        }),
+    ));
+    let sv2: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1({ s.offset((1) as isize) }, {
+            2_u64
+        }),
+    ));
+    let sv3: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1({ s.offset((1) as isize) }, {
+            3_u64
+        }),
+    ));
+    let sv4: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1({ s.offset((1) as isize) }, {
+            4_u64
+        }),
+    ));
+    let sv5: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1({ (s).clone() }, { 5_u64 }),
+    ));
+    let svNot: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1(
+            { Ptr::<i8>::from_string_literal(b"xyz") },
+            { 3_u64 },
+        ),
+    ));
+    let svNot2: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1(
+            { Ptr::<i8>::from_string_literal(b"bd") },
+            { 2_u64 },
+        ),
+    ));
+    let svNot3: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1(
+            { Ptr::<i8>::from_string_literal(b"dcb") },
+            { 3_u64 },
+        ),
+    ));
     const _: () = assert!(true, "");;
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
+    assert!(
+        ({
+            ({
+                let ___x: std_basic_string_view_char__std_char_traits_char__ =
+                    (*sv0.borrow()).clone();
+                (*sv0.borrow()).contains_43(___x)
+            })
+        })
+    );
+    assert!(({ !({ (*sv0.borrow()).contains_43((*sv1.borrow()).clone(),) }) }));
+    assert!(({ ({ (*sv1.borrow()).contains_43((*sv0.borrow()).clone(),) }) }));
+    assert!(
+        ({
+            ({
+                let ___x: std_basic_string_view_char__std_char_traits_char__ =
+                    (*sv1.borrow()).clone();
+                (*sv1.borrow()).contains_43(___x)
+            })
+        })
+    );
+    assert!(({ !({ (*sv1.borrow()).contains_43((*sv2.borrow()).clone(),) }) }));
+    assert!(({ !({ (*sv1.borrow()).contains_43((*sv3.borrow()).clone(),) }) }));
+    assert!(({ !({ (*sv1.borrow()).contains_43((*sv4.borrow()).clone(),) }) }));
+    assert!(({ !({ (*sv1.borrow()).contains_43((*sv5.borrow()).clone(),) }) }));
+    assert!(({ !({ (*sv1.borrow()).contains_43((*svNot.borrow()).clone(),) }) }));
+    assert!(({ !({ (*sv1.borrow()).contains_43((*svNot2.borrow()).clone(),) }) }));
+    assert!(({ !({ (*sv1.borrow()).contains_43((*svNot3.borrow()).clone(),) }) }));
+    assert!(({ ({ (*sv3.borrow()).contains_43((*sv0.borrow()).clone(),) }) }));
+    assert!(({ ({ (*sv3.borrow()).contains_43((*sv1.borrow()).clone(),) }) }));
+    assert!(({ ({ (*sv3.borrow()).contains_43((*sv2.borrow()).clone(),) }) }));
+    assert!(
+        ({
+            ({
+                let ___x: std_basic_string_view_char__std_char_traits_char__ =
+                    (*sv3.borrow()).clone();
+                (*sv3.borrow()).contains_43(___x)
+            })
+        })
+    );
+    assert!(({ !({ (*sv3.borrow()).contains_43((*sv4.borrow()).clone(),) }) }));
+    assert!(({ !({ (*sv3.borrow()).contains_43((*sv5.borrow()).clone(),) }) }));
+    assert!(({ !({ (*sv3.borrow()).contains_43((*svNot.borrow()).clone(),) }) }));
+    assert!(({ !({ (*sv3.borrow()).contains_43((*svNot2.borrow()).clone(),) }) }));
+    assert!(({ !({ (*sv3.borrow()).contains_43((*svNot3.borrow()).clone(),) }) }));
+    assert!(({ ({ (*sv5.borrow()).contains_43((*sv0.borrow()).clone(),) }) }));
+    assert!(({ ({ (*sv5.borrow()).contains_43((*sv1.borrow()).clone(),) }) }));
+    assert!(({ ({ (*sv5.borrow()).contains_43((*sv2.borrow()).clone(),) }) }));
+    assert!(({ ({ (*sv5.borrow()).contains_43((*sv3.borrow()).clone(),) }) }));
+    assert!(({ ({ (*sv5.borrow()).contains_43((*sv4.borrow()).clone(),) }) }));
+    assert!(
+        ({
+            ({
+                let ___x: std_basic_string_view_char__std_char_traits_char__ =
+                    (*sv5.borrow()).clone();
+                (*sv5.borrow()).contains_43(___x)
+            })
+        })
+    );
+    assert!(({ !({ (*sv5.borrow()).contains_43((*svNot.borrow()).clone(),) }) }));
+    assert!(({ !({ (*sv5.borrow()).contains_43((*svNot2.borrow()).clone(),) }) }));
+    assert!(({ !({ (*sv5.borrow()).contains_43((*svNot3.borrow()).clone(),) }) }));
+    assert!(({ ({ (*svNot.borrow()).contains_43((*sv0.borrow()).clone(),) }) }));
+    assert!(({ !({ (*svNot.borrow()).contains_43((*sv1.borrow()).clone(),) }) }));
+    assert!(({ !({ (*svNot.borrow()).contains_43((*sv2.borrow()).clone(),) }) }));
+    assert!(({ !({ (*svNot.borrow()).contains_43((*sv3.borrow()).clone(),) }) }));
+    assert!(({ !({ (*svNot.borrow()).contains_43((*sv4.borrow()).clone(),) }) }));
+    assert!(({ !({ (*svNot.borrow()).contains_43((*sv5.borrow()).clone(),) }) }));
+    assert!(
+        ({
+            ({
+                let ___x: std_basic_string_view_char__std_char_traits_char__ =
+                    (*svNot.borrow()).clone();
+                (*svNot.borrow()).contains_43(___x)
+            })
+        })
+    );
+    assert!(({ !({ (*svNot.borrow()).contains_43((*svNot2.borrow()).clone(),) }) }));
+    assert!(({ !({ (*svNot.borrow()).contains_43((*svNot3.borrow()).clone(),) }) }));
     return true;
 }
 pub fn main() {

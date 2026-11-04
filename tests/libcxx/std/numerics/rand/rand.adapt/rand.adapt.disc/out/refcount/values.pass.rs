@@ -12,16 +12,16 @@ pub fn test1_1() {
     const _: () = assert!(true, "(E::used_block == 23)");;
     const _: () = assert!(true, "(E::min() == 0)");;
     const _: () = assert!(true, "(E::max() == 0xFFFFFF)");;
-    ({ where_0((unimplemented!()).reinterpret_cast::<u64>()) });
-    ({ where_0((unimplemented!()).reinterpret_cast::<u64>()) });
+    ({ where_0((block_size_2.with(|v| v.as_pointer())).reinterpret_cast::<u64>()) });
+    ({ where_0((used_block_3.with(|v| v.as_pointer())).reinterpret_cast::<u64>()) });
 }
-pub fn test2_2() {
+pub fn test2_4() {
     const _: () = assert!(true, "(E::block_size == 389)");;
     const _: () = assert!(true, "(E::used_block == 11)");;
     const _: () = assert!(true, "(E::min() == 0)");;
     const _: () = assert!(true, "(E::max() == 0xFFFFFFFFFFFFull)");;
-    ({ where_0((unimplemented!()).reinterpret_cast::<u64>()) });
-    ({ where_0((unimplemented!()).reinterpret_cast::<u64>()) });
+    ({ where_0((block_size_5.with(|v| v.as_pointer())).reinterpret_cast::<u64>()) });
+    ({ where_0((used_block_6.with(|v| v.as_pointer())).reinterpret_cast::<u64>()) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -44,7 +44,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test1_1() });
-    ({ test2_2() });
+    ({ test2_4() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

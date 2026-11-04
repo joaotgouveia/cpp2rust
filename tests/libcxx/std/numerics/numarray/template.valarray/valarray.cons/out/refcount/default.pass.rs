@@ -16,6 +16,11 @@ impl S {
         __this
     }
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for S {
     fn default() -> Self {
         { S::new() }
@@ -46,24 +51,26 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_usize));
+        let v: Value<std_valarray_int_> = Rc::new(RefCell::new(<std_valarray_int_>::default()));
+        assert!(({ (({ (*v.borrow()).size() }) == 0_usize) }));
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_usize));
+        let v: Value<std_valarray_float_> = Rc::new(RefCell::new(<std_valarray_float_>::default()));
+        assert!(({ (({ (*v.borrow()).size() }) == 0_usize) }));
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_usize));
+        let v: Value<std_valarray_double_> =
+            Rc::new(RefCell::new(<std_valarray_double_>::default()));
+        assert!(({ (({ (*v.borrow()).size() }) == 0_usize) }));
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_usize));
+        let v: Value<std_valarray_std_valarray_double__> =
+            Rc::new(RefCell::new(<std_valarray_std_valarray_double__>::default()));
+        assert!(({ (({ (*v.borrow()).size() }) == 0_usize) }));
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_usize));
+        let v: Value<std_valarray_S_> = Rc::new(RefCell::new(<std_valarray_S_>::default()));
+        assert!(({ (({ (*v.borrow()).size() }) == 0_usize) }));
         assert!(!(ctor_called_0.with(|rc| *rc.borrow())));
     }
     return 0;

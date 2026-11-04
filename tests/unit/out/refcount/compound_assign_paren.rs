@@ -12,6 +12,11 @@ pub struct Item {
     #[offset(0)]
     pub flags: u8,
 }
+impl CppMove for Item {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());

@@ -23,6 +23,11 @@ impl Clone for CopyOnly {
         CopyOnly::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for CopyOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for CopyOnly {
     fn default() -> Self {
         { CopyOnly::new() }
@@ -37,6 +42,11 @@ impl MoveOnly {
     }
     pub fn move_from(_a0: Ptr<MoveOnly>) -> Self {
         Self {}
+    }
+}
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for MoveOnly {
@@ -55,6 +65,11 @@ impl NoexceptMoveOnly {
         Self {}
     }
 }
+impl CppMove for NoexceptMoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for NoexceptMoveOnly {
     fn default() -> Self {
         { NoexceptMoveOnly::new() }
@@ -69,21 +84,21 @@ impl NotMoveConstructible {}
 pub struct NotMoveAssignable {}
 impl NotMoveAssignable {}
 pub fn can_swap_0() -> bool {
-    return unimplemented!();
-}
-pub fn can_swap_1() -> bool {
-    return unimplemented!();
+    return value_1.with(|rc| *rc.borrow());
 }
 pub fn can_swap_2() -> bool {
-    return unimplemented!();
+    return value_1.with(|rc| *rc.borrow());
 }
 pub fn can_swap_3() -> bool {
-    return unimplemented!();
+    return value_1.with(|rc| *rc.borrow());
 }
 pub fn can_swap_4() -> bool {
-    return unimplemented!();
+    return value_5.with(|rc| *rc.borrow());
 }
-pub fn test_swap_constexpr_5() -> bool {
+pub fn can_swap_6() -> bool {
+    return value_5.with(|rc| *rc.borrow());
+}
+pub fn test_swap_constexpr_7() -> bool {
     let i: Value<i32> = Rc::new(RefCell::new(1));
     let j: Value<i32> = Rc::new(RefCell::new(2));
     cpp_swap!(i.as_pointer(), j.as_pointer());
@@ -113,15 +128,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let i: Value<i32> = Rc::new(RefCell::new(1));
         let j: Value<i32> = Rc::new(RefCell::new(2));
         cpp_swap!(i.as_pointer(), j.as_pointer());
-        assert!(((*i.borrow()) == 2));
-        assert!(((*j.borrow()) == 1));
+        assert!(({ ((*i.borrow()) == 2) }));
+        assert!(({ ((*j.borrow()) == 1) }));
     }
     {
-        let mut i: Option<Value<i32>> = Ptr::alloc(1).to_owned_opt();
-        let mut j: Option<Value<i32>> = Ptr::alloc(2).to_owned_opt();
-        unimplemented!();
-        assert!(((i.as_pointer().read()) == 2));
-        assert!(((j.as_pointer().read()) == 1));
+        let i: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Ptr::alloc(1).to_owned_opt()));
+        let j: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Ptr::alloc(2).to_owned_opt()));
+        cpp_swap!(i.as_pointer(), j.as_pointer());
+        assert!(({ (((*i.borrow()).as_pointer().read()) == 2) }));
+        assert!(({ (((*j.borrow()).as_pointer().read()) == 1) }));
     }
     {
         const _: () = assert!(true, "can_swap<CopyOnly&>()");;

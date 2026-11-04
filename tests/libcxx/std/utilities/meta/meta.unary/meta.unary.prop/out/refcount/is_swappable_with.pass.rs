@@ -15,9 +15,19 @@ pub struct MyNS_B {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct MyNS_C {}
+impl CppMove for MyNS_C {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct MyNS_D {}
+impl CppMove for MyNS_D {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn swap_0(_a0: Ptr<MyNS_A>, _a1: Ptr<MyNS_A>) {}
 pub fn swap_1(_a0: Ptr<MyNS_A>, _a1: Ptr<MyNS_B>) {}
 pub fn swap_2(_a0: Ptr<MyNS_B>, _a1: Ptr<MyNS_A>) {}
@@ -26,6 +36,11 @@ pub fn swap_4(_a0: Ptr<MyNS_D>, _a1: Ptr<MyNS_C>) {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct MyNS_M {}
+impl CppMove for MyNS_M {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn swap_5(_a0: Ptr<MyNS_M>, _a1: Ptr<MyNS_M>) {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

@@ -12,30 +12,35 @@ pub const anon_0_value: anon_0 = 1;
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_time_point_std_chrono_local_t__std_chrono_duration_long__std_ratio_1__1_____std_chrono_time_point_std_chrono_local_t__std_chrono_duration_long__std_ratio_1__1____
 {}
+impl CppMove for test_macros_detail_is_same_std_chrono_time_point_std_chrono_local_t__std_chrono_duration_long__std_ratio_1__1_____std_chrono_time_point_std_chrono_local_t__std_chrono_duration_long__std_ratio_1__1____ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_time_point_std_chrono_local_t__std_chrono_duration_long__std_ratio_86400__1_____std_chrono_time_point_std_chrono_local_t__std_chrono_duration_long__std_ratio_86400__1____
 {}
+impl CppMove for test_macros_detail_is_same_std_chrono_time_point_std_chrono_local_t__std_chrono_duration_long__std_ratio_86400__1_____std_chrono_time_point_std_chrono_local_t__std_chrono_duration_long__std_ratio_86400__1____ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_time_point_std_chrono_local_t__std_chrono_duration_long__std_ratio_60__1_____std_chrono_time_point_std_chrono_local_t__std_chrono_duration_long__std_ratio_60__1____
 {}
+impl CppMove for test_macros_detail_is_same_std_chrono_time_point_std_chrono_local_t__std_chrono_duration_long__std_ratio_60__1_____std_chrono_time_point_std_chrono_local_t__std_chrono_duration_long__std_ratio_60__1____ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_86400__1____std_chrono_duration_long__std_ratio_86400__1___
 {}
+impl CppMove for test_macros_detail_is_same_std_chrono_duration_long__std_ratio_86400__1____std_chrono_duration_long__std_ratio_86400__1___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_4 = u32;
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1____std_chrono_duration_long__std_ratio_1__1___
 {}
+impl CppMove for test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1____std_chrono_duration_long__std_ratio_1__1___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

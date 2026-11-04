@@ -11,29 +11,34 @@ use std::rc::{Rc, Weak};
 pub struct A {
     #[offset(0)]
     #[byte_size(24)]
-    pub l: (),
+    pub l: std_list_A__std_allocator_A__,
     #[offset(24)]
     #[byte_size(8)]
-    pub it: (),
+    pub it: BidirectionalIterator<A>,
     #[offset(32)]
     #[byte_size(8)]
-    pub cit: (),
+    pub cit: BidirectionalIterator<A>,
     #[offset(40)]
     #[byte_size(8)]
-    pub rit: (),
+    pub rit: BidirectionalIterator<A>,
     #[offset(48)]
     #[byte_size(8)]
-    pub crit: (),
+    pub crit: BidirectionalIterator<A>,
 }
 impl A {
     pub fn move_from(_a0: Ptr<A>) -> Self {
         Self {
-            l: unimplemented!(),
+            l: field!(_a0, l).with_mut(std::mem::take),
             it: field!(_a0, it).with_mut(std::mem::take),
             cit: field!(_a0, cit).with_mut(std::mem::take),
-            rit: unimplemented!(),
-            crit: unimplemented!(),
+            rit: { (*_a0.upgrade().deref()).rit.clone() },
+            crit: { (*_a0.upgrade().deref()).crit.clone() },
         }
+    }
+}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn test_0() -> bool {
@@ -69,11 +74,13 @@ pub trait AImpl {
 }
 impl AImpl for Ptr<A> {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
-        unimplemented!();
-        field!((*self), it).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).it.clone() });
-        field!((*self), cit).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).cit.clone() });
-        unimplemented!();
-        unimplemented!();
+        field!((*self), l).write({ { (*_a0.upgrade().deref()).l.clone() } });
+        field!((*self), it)
+            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).it.clone() } }));
+        field!((*self), cit)
+            .with_mut(|__b0| (*__b0) = ({ { (*_a0.upgrade().deref()).cit.clone() } }));
+        field!((*self), rit).with_mut(|__b0| (*__b0) = (*_a0.upgrade().deref()).rit.clone());
+        field!((*self), crit).with_mut(|__b0| (*__b0) = (*_a0.upgrade().deref()).crit.clone());
         return (*self).clone();
     }
 }

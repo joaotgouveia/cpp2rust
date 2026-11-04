@@ -9,12 +9,22 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct B {}
+impl CppMove for B {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A1 {
     #[offset(0)]
     #[byte_size(1)]
     pub b_: B,
+}
+impl CppMove for A1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -23,6 +33,11 @@ pub struct A2 {
     #[byte_size(1)]
     pub b_: B,
 }
+impl CppMove for A2 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0() -> bool {
     {
         let a: Value<A1> = Rc::new(RefCell::new(<A1>::default()));
@@ -30,7 +45,7 @@ pub fn test_0() -> bool {
         let mut b1: Ptr<B> = a.as_pointer();
         assert!(((b1) == (field_ptr!(a.as_pointer(), b_))));
         const _: () = assert!(true, "");;
-        unimplemented!();
+        b1 = a.as_pointer();
         assert!(((b1) == (field_ptr!(a.as_pointer(), b_))));
     }
     {
@@ -39,7 +54,7 @@ pub fn test_0() -> bool {
         let mut b2: Ptr<B> = a.as_pointer();
         assert!(((b2) == (field_ptr!(a.as_pointer(), b_))));
         const _: () = assert!(true, "");;
-        unimplemented!();
+        b2 = a.as_pointer();
         assert!(((b2) == (field_ptr!(a.as_pointer(), b_))));
     }
     return true;

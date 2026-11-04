@@ -29,17 +29,30 @@ pub fn test01_0() {
     ]);
     let carray: Value<Box<[i32]>> =
         Rc::new(RefCell::new((0..50).map(|_| 0_i32).collect::<Box<[i32]>>()));
-    unimplemented!();
-    cc1 = unimplemented!();
-    c1 = unimplemented!();
-    cc1 = unimplemented!();
-    c1 = unimplemented!();
-    cc1 = unimplemented!();
-    c1 = unimplemented!();
-    cc1 = unimplemented!();
-    c1 = unimplemented!();
-    cc1 = unimplemented!();
-    c1 = unimplemented!();
+    ({ wcscpy_1((carray.as_pointer() as Ptr<i32>), (ccarray1).clone()) });
+    cc1 = ({
+        let ___wcs: Ptr<i32> = (ccarray1).clone();
+        wcschr_2(___wcs, (99 as i32))
+    });
+    c1 = ({ wcschr_3((carray.as_pointer() as Ptr<i32>), (99 as i32)) });
+    cc1 = ({ wcspbrk_4((ccarray1).clone(), (ccarray2).clone()) });
+    c1 = ({ wcspbrk_5((carray.as_pointer() as Ptr<i32>), (ccarray2).clone()) });
+    cc1 = ({
+        let ___wcs: Ptr<i32> = (ccarray1).clone();
+        wcsrchr_6(___wcs, (99 as i32))
+    });
+    c1 = ({ wcsrchr_7((carray.as_pointer() as Ptr<i32>), (99 as i32)) });
+    cc1 = ({ wcsstr_8((ccarray1).clone(), (ccarray2).clone()) });
+    c1 = ({
+        let ___s1: Ptr<i32> = (carray.as_pointer() as Ptr<i32>);
+        let ___s2: Ptr<i32> = (carray.as_pointer() as Ptr<i32>);
+        wcsstr_9(___s1, ___s2)
+    });
+    cc1 = ({
+        let ___s: Ptr<i32> = (ccarray1).clone();
+        wmemchr_10(___s, (97 as i32), 3_usize)
+    });
+    c1 = ({ wmemchr_11((carray.as_pointer() as Ptr<i32>), (97 as i32), 3_usize) });
     cc1 = { (cc1).clone() };
     c1 = { (c1).clone() };
 }

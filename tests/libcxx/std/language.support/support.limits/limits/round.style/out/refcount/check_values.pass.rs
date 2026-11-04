@@ -13,6 +13,11 @@ pub struct two {
     #[byte_size(2)]
     pub __: Box<[i8]>,
 }
+impl CppMove for two {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for two {
     fn default() -> Self {
         {

@@ -28,29 +28,39 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 100_usize));
+        let v: Value<std_valarray_int_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(5));
+            std_valarray_int_::new_1({ __tmp_0.as_pointer() }, { 100_usize })
+        }));
+        assert!(({ (({ (*v.borrow()).size() }) == 100_usize) }));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!(((unimplemented!().read()) == 5));
+            assert!(({ ({ (*v.borrow())[(i as usize)] } == 5) }));
             i.prefix_inc();
         }
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 100_usize));
+        let v: Value<std_valarray_double_> = Rc::new(RefCell::new({
+            let __tmp_1: Value<f64> = Rc::new(RefCell::new(2.5_f64));
+            std_valarray_double_::new_1({ __tmp_1.as_pointer() }, { 100_usize })
+        }));
+        assert!(({ (({ (*v.borrow()).size() }) == 100_usize) }));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!(((unimplemented!().read()) == 2.5_f64));
+            assert!(({ ({ (*v.borrow())[(i as usize)] } == 2.5_f64) }));
             i.prefix_inc();
         }
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 100_usize));
+        let v: Value<std_valarray_std_valarray_double__> = Rc::new(RefCell::new({
+            let __tmp_2: Value<std_valarray_double_> =
+                Rc::new(RefCell::new(std_valarray_double_::new_2({ 10_usize })));
+            std_valarray_std_valarray_double__::new_1({ __tmp_2.as_pointer() }, { 100_usize })
+        }));
+        assert!(({ (({ (*v.borrow()).size() }) == 100_usize) }));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!() == 10_usize));
+            assert!(({ (({ (*v.borrow())[(i as usize)].size() }) == 10_usize) }));
             i.prefix_inc();
         }
     }

@@ -29,17 +29,17 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let c: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([1_f64, 2_f64, 3.5_f64])));
-        assert!(((*c.borrow()).len() == 3_usize));
-        assert!((unimplemented!() == 3_usize));
-        assert!(!(unimplemented!()));
+        assert!(({ ((*c.borrow()).len() == 3_usize) }));
+        assert!(({ (({ (*c.borrow()).max_size() }) == 3_usize) }));
+        assert!(({ !({ (*c.borrow()).empty() }) }));
     }
     {
         let c: Value<Vec<f64>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 0, _>(|_| 0_f64).to_vec(),
         ));
-        assert!(((*c.borrow()).len() == 0_usize));
-        assert!((unimplemented!() == 0_usize));
-        assert!(unimplemented!());
+        assert!(({ ((*c.borrow()).len() == 0_usize) }));
+        assert!(({ (({ (*c.borrow()).max_size() }) == 0_usize) }));
+        assert!(({ ({ (*c.borrow()).empty() }) }));
     }
     {
         let c: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([1_f64, 2_f64, 3.5_f64])));

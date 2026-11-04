@@ -17,12 +17,22 @@ pub struct Pair {
     #[offset(4)]
     pub b: i32,
 }
+impl CppMove for Pair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(8)]
 pub struct Holder {
     #[offset(0)]
     #[byte_size(8)]
     pub p: Pair,
+}
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for Holder {
     fn default() -> Self {

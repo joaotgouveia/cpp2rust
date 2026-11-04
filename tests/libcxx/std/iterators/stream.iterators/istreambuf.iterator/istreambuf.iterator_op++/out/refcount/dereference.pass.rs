@@ -28,22 +28,68 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let inf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as i32) == (('a' as i8) as i32)));
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (('b' as i8) as i32)));
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (('c' as i8) as i32)));
+        let inf: Value<std_basic_istringstream_char__std_char_traits_char___std_allocator_char__> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"abc").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                std_basic_istringstream_char__std_char_traits_char___std_allocator_char__::new_1(
+                    { __tmp_0.as_pointer() },
+                    None,
+                )
+            }));
+        let i: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(
+            std_istreambuf_iterator_char__std_char_traits_char__::new_1({ inf.as_pointer() }),
+        ));
+        assert!(({ (((*i.borrow()).iter_deref() as i32) == (('a' as i8) as i32)) }));
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
+        assert!(({ (((*i.borrow()).iter_deref() as i32) == (('b' as i8) as i32)) }));
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
+        assert!(({ (((*i.borrow()).iter_deref() as i32) == (('c' as i8) as i32)) }));
     }
     {
-        let inf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!() as i32) == (97 as i32)));
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (98 as i32)));
-        unimplemented!();
-        assert!(((unimplemented!() as i32) == (99 as i32)));
+        let inf: Value<
+            std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__,
+        > = Rc::new(RefCell::new({
+            let __tmp_1: Value<Vec<i32>> = Rc::new(RefCell::new({
+                let mut __bytes =
+                    Ptr::<i32>::from_string_literal(&[97 as i32, 98 as i32, 99 as i32, 0 as i32])
+                        .to_c_bytes();
+                __bytes.push(0_i32);
+                __bytes
+            }));
+            std_basic_istringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { __tmp_1.as_pointer() } , None , )
+        }));
+        let i: Value<Ptr<::std::fs::File>> = Rc::new(RefCell::new(
+            std_istreambuf_iterator_wchar_t__std_char_traits_wchar_t__::new_1({ inf.as_pointer() }),
+        ));
+        assert!(({ (((*i.borrow()).iter_deref() as i32) == (97 as i32)) }));
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
+        assert!(({ (((*i.borrow()).iter_deref() as i32) == (98 as i32)) }));
+        {
+            i.as_pointer().with_mut(|__it| {
+                __it.iter_inc();
+            });
+            i.as_pointer()
+        };
+        assert!(({ (((*i.borrow()).iter_deref() as i32) == (99 as i32)) }));
     }
     return 0;
 }

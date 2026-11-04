@@ -44,6 +44,11 @@ impl Clone for Elem {
         Elem::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Elem {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
@@ -56,14 +61,14 @@ fn main_0() -> i32 {
     };
     let a: Value<Elem> = Rc::new(RefCell::new(Elem::new({ 1 })));
     let mut b: Elem = Elem::new({ 2 });
-    match ({ <RandomAccessIterator<Elem>>::from(v.decay().end()) },) {
+    match ({ <RandomAccessIterator<Elem>>::from(CppRange::end(&v.decay())) },) {
         (mut __tmp_0,) => {
             let __off = __tmp_0.index();
             (*v.borrow_mut()).insert(__off, Elem::move_from({ a.as_pointer() }));
             (__tmp_0).clone()
         }
     };
-    match ({ <RandomAccessIterator<Elem>>::from(v.decay().end()) },) {
+    match ({ <RandomAccessIterator<Elem>>::from(CppRange::end(&v.decay())) },) {
         (mut __tmp_1,) => {
             let __off = __tmp_1.index();
             (*v.borrow_mut()).insert(__off, (b).clone());
@@ -72,8 +77,8 @@ fn main_0() -> i32 {
     };
     let mut ok: bool = (((copies_0.with(|rc| *rc.borrow()) == 1)
         && (moves_1.with(|rc| *rc.borrow()) == 1))
-        && ({ (*v.borrow())[0_usize].v } == 1))
-        && ({ (*v.borrow())[1_usize].v } == 2);
+        && (v.decay().offset(0_usize as isize).with(|__s| __s.v) == 1))
+        && (v.decay().offset(1_usize as isize).with(|__s| __s.v) == 2);
     let mut pa: Ptr<Elem> = (a.as_pointer());
     println!(
         "{} {} {}",

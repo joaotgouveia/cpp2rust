@@ -27,9 +27,11 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    &(unimplemented!());
-    &(unimplemented!());
+    let x: Value<std_error_condition> = Rc::new(RefCell::new(std_error_condition::new_1({
+        ((0) as std_errc)
+    })));
+    &({ (*x.borrow()).category() });
+    &({ (*x.borrow()).message() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

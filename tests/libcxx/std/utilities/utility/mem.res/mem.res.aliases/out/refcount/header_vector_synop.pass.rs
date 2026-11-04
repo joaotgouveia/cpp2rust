@@ -28,8 +28,16 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::is_same<StdVector, PmrVector>::value");;
-    let d: Value<()> = Rc::new(RefCell::new(Vec::new()));
-    assert!((unimplemented!() == unimplemented!()));
+    let d: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
+    assert!(
+        (({
+            ({
+                ((*d.borrow()) as std__Vector_base_int__std_pmr_polymorphic_allocator_int__)
+                    .get_allocator()
+            })
+            .resource()
+        }) == ({ get_default_resource_0() }))
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

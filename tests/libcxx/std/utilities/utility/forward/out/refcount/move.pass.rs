@@ -17,6 +17,11 @@ impl move_only {
         Self {}
     }
 }
+impl CppMove for move_only {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for move_only {
     fn default() -> Self {
         { move_only::new() }
@@ -63,6 +68,11 @@ impl Clone for A {
     fn clone(&self) -> Self {
         let __src: Value<A> = Rc::new(RefCell::new(A {}));
         A::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for A {

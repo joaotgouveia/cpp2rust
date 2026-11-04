@@ -23,6 +23,11 @@ impl S {
         }
     }
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn add_0(mut v: Ptr<Vec<i32>>, mut k: i32) {
     {
         let a0_clone = k.clone();
@@ -43,8 +48,8 @@ pub fn run_1(mut h: Ptr<S>) {
     assert!(
         ({
             (((*h.upgrade().deref()).v.len() == 2_usize)
-                && ((vec_elem!(h, v, 0_usize).read()) == 7))
-                && ((vec_elem!(h, v, 1_usize).read()) == 1)
+                && ((field_ref!(h, v).decay().offset(0_usize as isize).read()) == 7))
+                && ((field_ref!(h, v).decay().offset(1_usize as isize).read()) == 1)
         })
     );
     assert!((h.with(|__s| __s.tag) == 7));

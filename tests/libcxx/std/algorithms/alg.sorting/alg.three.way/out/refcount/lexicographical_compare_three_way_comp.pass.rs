@@ -23,6 +23,11 @@ impl support_double_move_tracker {
         __this
     }
 }
+impl CppMove for support_double_move_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for support_double_move_tracker {
     fn default() -> Self {
         { support_double_move_tracker::new() }
@@ -32,18 +37,22 @@ impl Default for support_double_move_tracker {
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
@@ -60,6 +69,11 @@ impl cpp17_output_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -82,6 +96,11 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_input_iterator_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_eq_0(
@@ -120,14 +139,38 @@ impl cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
         }
     }
 }
-impl CppEq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_0(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_0(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {}
 impl CppAdvance for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_5();
+    }
+}
+impl CppIterator<i32> for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_Impl::operator_inc_5(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {}
+impl CppMove for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
@@ -167,14 +210,38 @@ impl forward_iterator_const_int_ptr_ {
         }
     }
 }
-impl CppEq for forward_iterator_const_int_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_2(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for forward_iterator_const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_2(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for forward_iterator_const_int_ptr_ {}
 impl CppAdvance for forward_iterator_const_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
+    }
+}
+impl CppIterator<i32> for forward_iterator_const_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            forward_iterator_const_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            forward_iterator_const_int_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for forward_iterator_const_int_ptr_ {}
+impl CppMove for forward_iterator_const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_eq_4(
@@ -213,14 +280,38 @@ impl bidirectional_iterator_const_int_ptr_ {
         }
     }
 }
-impl CppEq for bidirectional_iterator_const_int_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_4(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for bidirectional_iterator_const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_4(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for bidirectional_iterator_const_int_ptr_ {}
 impl CppAdvance for bidirectional_iterator_const_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_6();
+    }
+}
+impl CppIterator<i32> for bidirectional_iterator_const_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            bidirectional_iterator_const_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            bidirectional_iterator_const_int_ptr_Impl::operator_inc_6(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for bidirectional_iterator_const_int_ptr_ {}
+impl CppMove for bidirectional_iterator_const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_eq_6(
@@ -259,14 +350,38 @@ impl random_access_iterator_const_int_ptr_ {
         }
     }
 }
-impl CppEq for random_access_iterator_const_int_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_6(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for random_access_iterator_const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_6(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for random_access_iterator_const_int_ptr_ {}
 impl CppAdvance for random_access_iterator_const_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_7();
+    }
+}
+impl CppIterator<i32> for random_access_iterator_const_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            random_access_iterator_const_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            random_access_iterator_const_int_ptr_Impl::operator_inc_7(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for random_access_iterator_const_int_ptr_ {}
+impl CppMove for random_access_iterator_const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -285,6 +400,11 @@ impl cpp20_random_access_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp20_random_access_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -327,14 +447,38 @@ impl contiguous_iterator_const_int_ptr_ {
         }
     }
 }
-impl CppEq for contiguous_iterator_const_int_ptr_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_8(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialEq for contiguous_iterator_const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_8(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for contiguous_iterator_const_int_ptr_ {}
 impl CppAdvance for contiguous_iterator_const_int_ptr_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_9();
+    }
+}
+impl CppIterator<i32> for contiguous_iterator_const_int_ptr_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            contiguous_iterator_const_int_ptr_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            contiguous_iterator_const_int_ptr_Impl::operator_inc_9(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for contiguous_iterator_const_int_ptr_ {}
+impl CppMove for contiguous_iterator_const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -353,6 +497,11 @@ impl cpp20_input_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp20_input_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
@@ -374,6 +523,11 @@ impl cpp20_output_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp20_output_iterator<int*>, int>"
@@ -389,6 +543,11 @@ pub struct IteratorOpCounts {
     pub zero_moves: usize,
     #[offset(24)]
     pub equal_cmps: usize,
+}
+impl CppMove for IteratorOpCounts {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
@@ -421,6 +580,11 @@ impl CppEq for forward_sized_iterator_int_ptr_ {
         operator_eq_10(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for forward_sized_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
@@ -451,13 +615,17 @@ pub fn operator_add_12(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
 pub fn iter_swap_13(mut a: adl_Iterator, mut b: adl_Iterator) {
     cpp_swap!((a.ptr_).clone(), (b.ptr_).clone());
     if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+        a.iter_swaps_.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub fn iter_move_14(iter: adl_Iterator) -> Ptr<i32> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
-        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
+        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
@@ -507,22 +675,76 @@ impl adl_Iterator {
         });
     }
 }
-impl CppLess for adl_Iterator {
-    fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_cmp_16(__lhs.clone(), __rhs.clone()) == std::cmp::Ordering::Less
+impl std::cmp::Ord for adl_Iterator {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_cmp_16(__lhs.clone(), __rhs.clone())
+            })
+        }
     }
 }
-impl CppEq for adl_Iterator {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_15(__lhs.clone(), __rhs.clone())
+impl std::cmp::PartialOrd for adl_Iterator {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
     }
 }
+impl std::cmp::PartialEq for adl_Iterator {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_15(__lhs.clone(), __rhs.clone())
+            })
+        }
+    }
+}
+impl std::cmp::Eq for adl_Iterator {}
 impl CppAdvance for adl_Iterator {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_14();
     }
     fn cpp_dec(__it: &Ptr<Self>) {
         __it.operator_dec_16();
+    }
+}
+impl CppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            adl_IteratorImpl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_inc_14(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for adl_Iterator {}
+impl CppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_dec_16(__it);
+        });
+        self
+    }
+}
+impl CppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            adl_IteratorImpl::operator_add_assign(__it, n as _);
+        });
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        libcc2rs::with_record_ptrs(self, from, |__lhs, __rhs| {
+            (adl_IteratorImpl::operator_sub_11(__lhs, __rhs.read())) as isize
+        })
+    }
+}
+impl CppMove for adl_Iterator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for adl_Iterator {
@@ -555,6 +777,11 @@ impl CppEq for rvalue_iterator_int_ptr_ {
             == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for rvalue_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Ptr< i8  >  , new, value)]
@@ -563,6 +790,11 @@ pub struct util_iterator_error {}
 impl util_iterator_error {
     pub fn new(mut what: Ptr<i8>) -> Self {
         Self {}
+    }
+}
+impl CppMove for util_iterator_error {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 thread_local!(
@@ -578,30 +810,34 @@ thread_local!(
         ));
 );
 thread_local!(
-    pub static compare_last_digit_weak_18: Value<FnPtr<fn(i32, i32) -> ()>> =
-        Rc::new(RefCell::new(FnPtr::<fn(i32, i32) -> ()>::new(
-            |mut a: i32, mut b: i32| -> () {
-                {
-                    return unimplemented!();
-                }
-            },
-        )));
-);
-thread_local!(
-    pub static compare_last_digit_partial_19: Value<FnPtr<fn(i32, i32) -> ()>> =
-        Rc::new(RefCell::new(FnPtr::<fn(i32, i32) -> ()>::new(
-            |mut a: i32, mut b: i32| -> () {
-                {
-                    if (a == i32::MIN) || (b == i32::MIN) {
-                        return unimplemented!();
+    pub static compare_last_digit_weak_18: Value<FnPtr<fn(i32, i32) -> std_weak_ordering>> =
+        Rc::new(RefCell::new(
+            FnPtr::<fn(i32, i32) -> std_weak_ordering>::new(
+                |mut a: i32, mut b: i32| -> std_weak_ordering {
+                    {
+                        return ({ std::cmp::Ord::cmp(&(a % 10), &(b % 10))() });
                     }
-                    return unimplemented!();
-                }
-            },
-        )));
+                },
+            ),
+        ));
 );
 thread_local!(
-    pub static compare_int_result_20: Value<FnPtr<fn(i32, i32) -> i32>> = Rc::new(RefCell::new(
+    pub static compare_last_digit_partial_19: Value<FnPtr<fn(i32, i32) -> std_partial_ordering>> =
+        Rc::new(RefCell::new(
+            FnPtr::<fn(i32, i32) -> std_partial_ordering>::new(
+                |mut a: i32, mut b: i32| -> std_partial_ordering {
+                    {
+                        if (a == i32::MIN) || (b == i32::MIN) {
+                            return (*unordered_20.with(Value::clone).borrow()).clone();
+                        }
+                        return ({ std::cmp::Ord::cmp(&(a % 10), &(b % 10))() });
+                    }
+                },
+            ),
+        ));
+);
+thread_local!(
+    pub static compare_int_result_21: Value<FnPtr<fn(i32, i32) -> i32>> = Rc::new(RefCell::new(
         FnPtr::<fn(i32, i32) -> i32>::new(|mut a: i32, mut b: i32| -> i32 {
             {
                 return ((a % 10) - (b % 10));
@@ -612,6 +848,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct StructWithoutCallOperator {}
+impl CppMove for StructWithoutCallOperator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "has_lexicographical_compare<decltype(compare_last_digit_strong)>"
@@ -632,19 +873,6 @@ const _: () = assert!(
     true,
     "has_lexicographical_compare<decltype(compare_int_result)>"
 );
-pub fn test_lexicographical_compare_21(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
 pub fn test_lexicographical_compare_22(
     a: Vec<i32>,
     b: Vec<i32>,
@@ -655,21 +883,22 @@ pub fn test_lexicographical_compare_22(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_23(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_23(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_24(
     a: Vec<i32>,
@@ -681,8 +910,22 @@ pub fn test_lexicographical_compare_24(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_23(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_25(
     a: Vec<i32>,
@@ -694,8 +937,22 @@ pub fn test_lexicographical_compare_25(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_23(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_26(
     a: Vec<i32>,
@@ -707,8 +964,22 @@ pub fn test_lexicographical_compare_26(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_23(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_27(
     a: Vec<i32>,
@@ -720,8 +991,22 @@ pub fn test_lexicographical_compare_27(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_23(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_28(
     a: Vec<i32>,
@@ -733,8 +1018,22 @@ pub fn test_lexicographical_compare_28(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_23(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_29(
     a: Vec<i32>,
@@ -746,21 +1045,22 @@ pub fn test_lexicographical_compare_29(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_30(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_30(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_31(
     a: Vec<i32>,
@@ -772,8 +1072,22 @@ pub fn test_lexicographical_compare_31(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_30(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_32(
     a: Vec<i32>,
@@ -785,8 +1099,22 @@ pub fn test_lexicographical_compare_32(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_30(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_33(
     a: Vec<i32>,
@@ -798,8 +1126,22 @@ pub fn test_lexicographical_compare_33(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_30(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_34(
     a: Vec<i32>,
@@ -811,8 +1153,22 @@ pub fn test_lexicographical_compare_34(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_30(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_35(
     a: Vec<i32>,
@@ -824,8 +1180,22 @@ pub fn test_lexicographical_compare_35(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_30(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_36(
     a: Vec<i32>,
@@ -837,21 +1207,26 @@ pub fn test_lexicographical_compare_36(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_37(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_37(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_38(
     a: Vec<i32>,
@@ -863,8 +1238,26 @@ pub fn test_lexicographical_compare_38(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_37(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_39(
     a: Vec<i32>,
@@ -876,8 +1269,26 @@ pub fn test_lexicographical_compare_39(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_37(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_40(
     a: Vec<i32>,
@@ -889,8 +1300,26 @@ pub fn test_lexicographical_compare_40(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_37(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_41(
     a: Vec<i32>,
@@ -902,8 +1331,26 @@ pub fn test_lexicographical_compare_41(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_37(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_42(
     a: Vec<i32>,
@@ -915,8 +1362,26 @@ pub fn test_lexicographical_compare_42(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_37(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_43(
     a: Vec<i32>,
@@ -928,21 +1393,26 @@ pub fn test_lexicographical_compare_43(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_44(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_44(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_45(
     a: Vec<i32>,
@@ -954,8 +1424,26 @@ pub fn test_lexicographical_compare_45(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_44(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_46(
     a: Vec<i32>,
@@ -967,8 +1455,26 @@ pub fn test_lexicographical_compare_46(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_44(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_47(
     a: Vec<i32>,
@@ -980,8 +1486,26 @@ pub fn test_lexicographical_compare_47(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_44(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_48(
     a: Vec<i32>,
@@ -993,8 +1517,26 @@ pub fn test_lexicographical_compare_48(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_44(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_49(
     a: Vec<i32>,
@@ -1006,8 +1548,26 @@ pub fn test_lexicographical_compare_49(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_44(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_50(
     a: Vec<i32>,
@@ -1019,21 +1579,26 @@ pub fn test_lexicographical_compare_50(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_51(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_51(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_52(
     a: Vec<i32>,
@@ -1045,8 +1610,26 @@ pub fn test_lexicographical_compare_52(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_51(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_53(
     a: Vec<i32>,
@@ -1058,8 +1641,26 @@ pub fn test_lexicographical_compare_53(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_51(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_54(
     a: Vec<i32>,
@@ -1071,8 +1672,26 @@ pub fn test_lexicographical_compare_54(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_51(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_55(
     a: Vec<i32>,
@@ -1084,8 +1703,26 @@ pub fn test_lexicographical_compare_55(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_51(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_56(
     a: Vec<i32>,
@@ -1097,8 +1734,26 @@ pub fn test_lexicographical_compare_56(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_51(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_57(
     a: Vec<i32>,
@@ -1110,21 +1765,26 @@ pub fn test_lexicographical_compare_57(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_58(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_58(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_59(
     a: Vec<i32>,
@@ -1136,8 +1796,26 @@ pub fn test_lexicographical_compare_59(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_58(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_60(
     a: Vec<i32>,
@@ -1149,8 +1827,26 @@ pub fn test_lexicographical_compare_60(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_58(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_61(
     a: Vec<i32>,
@@ -1162,8 +1858,26 @@ pub fn test_lexicographical_compare_61(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_58(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_62(
     a: Vec<i32>,
@@ -1175,8 +1889,26 @@ pub fn test_lexicographical_compare_62(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_58(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_63(
     a: Vec<i32>,
@@ -1188,8 +1920,26 @@ pub fn test_lexicographical_compare_63(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_58(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_64(
     a: Vec<i32>,
@@ -1201,21 +1951,26 @@ pub fn test_lexicographical_compare_64(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_65(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_65(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_66(
     a: Vec<i32>,
@@ -1227,8 +1982,26 @@ pub fn test_lexicographical_compare_66(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_65(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_67(
     a: Vec<i32>,
@@ -1240,8 +2013,26 @@ pub fn test_lexicographical_compare_67(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_65(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_68(
     a: Vec<i32>,
@@ -1253,8 +2044,26 @@ pub fn test_lexicographical_compare_68(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_65(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_69(
     a: Vec<i32>,
@@ -1266,8 +2075,26 @@ pub fn test_lexicographical_compare_69(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_65(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_70(
     a: Vec<i32>,
@@ -1279,8 +2106,26 @@ pub fn test_lexicographical_compare_70(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_65(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_71(
     a: Vec<i32>,
@@ -1292,21 +2137,22 @@ pub fn test_lexicographical_compare_71(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_72(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_72(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_73(
     a: Vec<i32>,
@@ -1318,8 +2164,22 @@ pub fn test_lexicographical_compare_73(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_72(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_74(
     a: Vec<i32>,
@@ -1331,8 +2191,22 @@ pub fn test_lexicographical_compare_74(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_72(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_75(
     a: Vec<i32>,
@@ -1344,8 +2218,22 @@ pub fn test_lexicographical_compare_75(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_72(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_76(
     a: Vec<i32>,
@@ -1357,8 +2245,22 @@ pub fn test_lexicographical_compare_76(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_72(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_77(
     a: Vec<i32>,
@@ -1370,8 +2272,22 @@ pub fn test_lexicographical_compare_77(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_72(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_78(
     a: Vec<i32>,
@@ -1383,21 +2299,22 @@ pub fn test_lexicographical_compare_78(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_79(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_79(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_80(
     a: Vec<i32>,
@@ -1409,8 +2326,22 @@ pub fn test_lexicographical_compare_80(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_79(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_81(
     a: Vec<i32>,
@@ -1422,8 +2353,22 @@ pub fn test_lexicographical_compare_81(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_79(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_82(
     a: Vec<i32>,
@@ -1435,8 +2380,22 @@ pub fn test_lexicographical_compare_82(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_79(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_83(
     a: Vec<i32>,
@@ -1448,8 +2407,22 @@ pub fn test_lexicographical_compare_83(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_79(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_84(
     a: Vec<i32>,
@@ -1461,8 +2434,22 @@ pub fn test_lexicographical_compare_84(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_79(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_85(
     a: Vec<i32>,
@@ -1474,21 +2461,26 @@ pub fn test_lexicographical_compare_85(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_86(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_86(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_87(
     a: Vec<i32>,
@@ -1500,8 +2492,26 @@ pub fn test_lexicographical_compare_87(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_86(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_88(
     a: Vec<i32>,
@@ -1513,8 +2523,26 @@ pub fn test_lexicographical_compare_88(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_86(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_89(
     a: Vec<i32>,
@@ -1526,8 +2554,26 @@ pub fn test_lexicographical_compare_89(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_86(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_90(
     a: Vec<i32>,
@@ -1539,8 +2585,26 @@ pub fn test_lexicographical_compare_90(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_86(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_91(
     a: Vec<i32>,
@@ -1552,8 +2616,26 @@ pub fn test_lexicographical_compare_91(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_86(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_92(
     a: Vec<i32>,
@@ -1565,21 +2647,26 @@ pub fn test_lexicographical_compare_92(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_93(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_93(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_94(
     a: Vec<i32>,
@@ -1591,8 +2678,26 @@ pub fn test_lexicographical_compare_94(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_93(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_95(
     a: Vec<i32>,
@@ -1604,8 +2709,26 @@ pub fn test_lexicographical_compare_95(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_93(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_96(
     a: Vec<i32>,
@@ -1617,8 +2740,26 @@ pub fn test_lexicographical_compare_96(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_93(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_97(
     a: Vec<i32>,
@@ -1630,8 +2771,26 @@ pub fn test_lexicographical_compare_97(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_93(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_98(
     a: Vec<i32>,
@@ -1643,8 +2802,26 @@ pub fn test_lexicographical_compare_98(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_93(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_99(
     a: Vec<i32>,
@@ -1656,21 +2833,26 @@ pub fn test_lexicographical_compare_99(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_100(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_100(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_101(
     a: Vec<i32>,
@@ -1682,8 +2864,26 @@ pub fn test_lexicographical_compare_101(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_100(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_102(
     a: Vec<i32>,
@@ -1695,8 +2895,26 @@ pub fn test_lexicographical_compare_102(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_100(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_103(
     a: Vec<i32>,
@@ -1708,8 +2926,26 @@ pub fn test_lexicographical_compare_103(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_100(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_104(
     a: Vec<i32>,
@@ -1721,8 +2957,26 @@ pub fn test_lexicographical_compare_104(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_100(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_105(
     a: Vec<i32>,
@@ -1734,8 +2988,26 @@ pub fn test_lexicographical_compare_105(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_100(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_106(
     a: Vec<i32>,
@@ -1747,21 +3019,26 @@ pub fn test_lexicographical_compare_106(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_107(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_107(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_108(
     a: Vec<i32>,
@@ -1773,8 +3050,26 @@ pub fn test_lexicographical_compare_108(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_107(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_109(
     a: Vec<i32>,
@@ -1786,8 +3081,26 @@ pub fn test_lexicographical_compare_109(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_107(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_110(
     a: Vec<i32>,
@@ -1799,8 +3112,26 @@ pub fn test_lexicographical_compare_110(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_107(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_111(
     a: Vec<i32>,
@@ -1812,8 +3143,26 @@ pub fn test_lexicographical_compare_111(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_107(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_112(
     a: Vec<i32>,
@@ -1825,8 +3174,26 @@ pub fn test_lexicographical_compare_112(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_107(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_113(
     a: Vec<i32>,
@@ -1838,21 +3205,26 @@ pub fn test_lexicographical_compare_113(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_114(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_114(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_115(
     a: Vec<i32>,
@@ -1864,8 +3236,26 @@ pub fn test_lexicographical_compare_115(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_114(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_116(
     a: Vec<i32>,
@@ -1877,8 +3267,26 @@ pub fn test_lexicographical_compare_116(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_114(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_117(
     a: Vec<i32>,
@@ -1890,8 +3298,26 @@ pub fn test_lexicographical_compare_117(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_114(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_118(
     a: Vec<i32>,
@@ -1903,8 +3329,26 @@ pub fn test_lexicographical_compare_118(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_114(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_119(
     a: Vec<i32>,
@@ -1916,8 +3360,26 @@ pub fn test_lexicographical_compare_119(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_114(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_120(
     a: Vec<i32>,
@@ -1929,21 +3391,26 @@ pub fn test_lexicographical_compare_120(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_121(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_121(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_122(
     a: Vec<i32>,
@@ -1955,8 +3422,26 @@ pub fn test_lexicographical_compare_122(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_121(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_123(
     a: Vec<i32>,
@@ -1968,8 +3453,26 @@ pub fn test_lexicographical_compare_123(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_121(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_124(
     a: Vec<i32>,
@@ -1981,8 +3484,26 @@ pub fn test_lexicographical_compare_124(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_121(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_125(
     a: Vec<i32>,
@@ -1994,8 +3515,26 @@ pub fn test_lexicographical_compare_125(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_121(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_126(
     a: Vec<i32>,
@@ -2007,8 +3546,26 @@ pub fn test_lexicographical_compare_126(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_121(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_127(
     a: Vec<i32>,
@@ -2020,21 +3577,26 @@ pub fn test_lexicographical_compare_127(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_128(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_128(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_129(
     a: Vec<i32>,
@@ -2046,8 +3608,26 @@ pub fn test_lexicographical_compare_129(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_128(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_130(
     a: Vec<i32>,
@@ -2059,8 +3639,26 @@ pub fn test_lexicographical_compare_130(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_128(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_131(
     a: Vec<i32>,
@@ -2072,8 +3670,26 @@ pub fn test_lexicographical_compare_131(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_128(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_132(
     a: Vec<i32>,
@@ -2085,8 +3701,26 @@ pub fn test_lexicographical_compare_132(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_128(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_133(
     a: Vec<i32>,
@@ -2098,8 +3732,26 @@ pub fn test_lexicographical_compare_133(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_128(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_134(
     a: Vec<i32>,
@@ -2111,21 +3763,30 @@ pub fn test_lexicographical_compare_134(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_135(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_135(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_136(
     a: Vec<i32>,
@@ -2137,8 +3798,30 @@ pub fn test_lexicographical_compare_136(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_135(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_137(
     a: Vec<i32>,
@@ -2150,8 +3833,30 @@ pub fn test_lexicographical_compare_137(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_135(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_138(
     a: Vec<i32>,
@@ -2163,8 +3868,30 @@ pub fn test_lexicographical_compare_138(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_135(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_139(
     a: Vec<i32>,
@@ -2176,8 +3903,30 @@ pub fn test_lexicographical_compare_139(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_135(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_140(
     a: Vec<i32>,
@@ -2189,8 +3938,30 @@ pub fn test_lexicographical_compare_140(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_135(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_141(
     a: Vec<i32>,
@@ -2202,21 +3973,30 @@ pub fn test_lexicographical_compare_141(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_142(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_142(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_143(
     a: Vec<i32>,
@@ -2228,8 +4008,30 @@ pub fn test_lexicographical_compare_143(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_142(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_144(
     a: Vec<i32>,
@@ -2241,8 +4043,30 @@ pub fn test_lexicographical_compare_144(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_142(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_145(
     a: Vec<i32>,
@@ -2254,8 +4078,30 @@ pub fn test_lexicographical_compare_145(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_142(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_146(
     a: Vec<i32>,
@@ -2267,8 +4113,30 @@ pub fn test_lexicographical_compare_146(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_142(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_147(
     a: Vec<i32>,
@@ -2280,8 +4148,30 @@ pub fn test_lexicographical_compare_147(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_142(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_148(
     a: Vec<i32>,
@@ -2293,21 +4183,30 @@ pub fn test_lexicographical_compare_148(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_149(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_149(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_150(
     a: Vec<i32>,
@@ -2319,8 +4218,30 @@ pub fn test_lexicographical_compare_150(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_149(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_151(
     a: Vec<i32>,
@@ -2332,8 +4253,30 @@ pub fn test_lexicographical_compare_151(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_149(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_152(
     a: Vec<i32>,
@@ -2345,8 +4288,30 @@ pub fn test_lexicographical_compare_152(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_149(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_153(
     a: Vec<i32>,
@@ -2358,8 +4323,30 @@ pub fn test_lexicographical_compare_153(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_149(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_154(
     a: Vec<i32>,
@@ -2371,8 +4358,30 @@ pub fn test_lexicographical_compare_154(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_149(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_155(
     a: Vec<i32>,
@@ -2384,21 +4393,30 @@ pub fn test_lexicographical_compare_155(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_156(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_156(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_157(
     a: Vec<i32>,
@@ -2410,8 +4428,30 @@ pub fn test_lexicographical_compare_157(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_156(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_158(
     a: Vec<i32>,
@@ -2423,8 +4463,30 @@ pub fn test_lexicographical_compare_158(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_156(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_159(
     a: Vec<i32>,
@@ -2436,8 +4498,30 @@ pub fn test_lexicographical_compare_159(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_156(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_160(
     a: Vec<i32>,
@@ -2449,8 +4533,30 @@ pub fn test_lexicographical_compare_160(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_156(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_161(
     a: Vec<i32>,
@@ -2462,8 +4568,30 @@ pub fn test_lexicographical_compare_161(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_156(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_162(
     a: Vec<i32>,
@@ -2475,21 +4603,30 @@ pub fn test_lexicographical_compare_162(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_163(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_163(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_164(
     a: Vec<i32>,
@@ -2501,8 +4638,30 @@ pub fn test_lexicographical_compare_164(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_163(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_165(
     a: Vec<i32>,
@@ -2514,8 +4673,30 @@ pub fn test_lexicographical_compare_165(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_163(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_166(
     a: Vec<i32>,
@@ -2527,8 +4708,30 @@ pub fn test_lexicographical_compare_166(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_163(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_167(
     a: Vec<i32>,
@@ -2540,8 +4743,30 @@ pub fn test_lexicographical_compare_167(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_163(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_168(
     a: Vec<i32>,
@@ -2553,8 +4778,30 @@ pub fn test_lexicographical_compare_168(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ a.decay() });
+            let ___last1: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_163(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_169(
     a: Vec<i32>,
@@ -2566,21 +4813,26 @@ pub fn test_lexicographical_compare_169(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_170(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_170(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_171(
     a: Vec<i32>,
@@ -2592,8 +4844,26 @@ pub fn test_lexicographical_compare_171(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_170(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_172(
     a: Vec<i32>,
@@ -2605,8 +4875,26 @@ pub fn test_lexicographical_compare_172(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_170(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_173(
     a: Vec<i32>,
@@ -2618,8 +4906,26 @@ pub fn test_lexicographical_compare_173(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_170(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_174(
     a: Vec<i32>,
@@ -2631,8 +4937,26 @@ pub fn test_lexicographical_compare_174(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_170(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_175(
     a: Vec<i32>,
@@ -2644,8 +4968,26 @@ pub fn test_lexicographical_compare_175(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_170(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_176(
     a: Vec<i32>,
@@ -2657,21 +4999,26 @@ pub fn test_lexicographical_compare_176(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_177(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_177(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_178(
     a: Vec<i32>,
@@ -2683,8 +5030,26 @@ pub fn test_lexicographical_compare_178(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_177(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_179(
     a: Vec<i32>,
@@ -2696,8 +5061,26 @@ pub fn test_lexicographical_compare_179(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_177(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_180(
     a: Vec<i32>,
@@ -2709,8 +5092,26 @@ pub fn test_lexicographical_compare_180(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_177(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_181(
     a: Vec<i32>,
@@ -2722,8 +5123,26 @@ pub fn test_lexicographical_compare_181(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_177(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_182(
     a: Vec<i32>,
@@ -2735,8 +5154,26 @@ pub fn test_lexicographical_compare_182(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_177(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_183(
     a: Vec<i32>,
@@ -2748,21 +5185,30 @@ pub fn test_lexicographical_compare_183(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_184(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_184(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_185(
     a: Vec<i32>,
@@ -2774,8 +5220,30 @@ pub fn test_lexicographical_compare_185(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_184(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_186(
     a: Vec<i32>,
@@ -2787,8 +5255,30 @@ pub fn test_lexicographical_compare_186(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_184(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_187(
     a: Vec<i32>,
@@ -2800,8 +5290,30 @@ pub fn test_lexicographical_compare_187(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_184(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_188(
     a: Vec<i32>,
@@ -2813,8 +5325,30 @@ pub fn test_lexicographical_compare_188(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_184(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_189(
     a: Vec<i32>,
@@ -2826,8 +5360,30 @@ pub fn test_lexicographical_compare_189(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_184(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_190(
     a: Vec<i32>,
@@ -2839,21 +5395,30 @@ pub fn test_lexicographical_compare_190(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_191(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_191(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_192(
     a: Vec<i32>,
@@ -2865,8 +5430,30 @@ pub fn test_lexicographical_compare_192(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_191(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_193(
     a: Vec<i32>,
@@ -2878,8 +5465,30 @@ pub fn test_lexicographical_compare_193(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_191(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_194(
     a: Vec<i32>,
@@ -2891,8 +5500,30 @@ pub fn test_lexicographical_compare_194(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_191(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_195(
     a: Vec<i32>,
@@ -2904,8 +5535,30 @@ pub fn test_lexicographical_compare_195(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_191(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_196(
     a: Vec<i32>,
@@ -2917,8 +5570,30 @@ pub fn test_lexicographical_compare_196(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_191(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_197(
     a: Vec<i32>,
@@ -2930,21 +5605,30 @@ pub fn test_lexicographical_compare_197(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_198(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_198(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_199(
     a: Vec<i32>,
@@ -2956,8 +5640,30 @@ pub fn test_lexicographical_compare_199(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_198(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_200(
     a: Vec<i32>,
@@ -2969,8 +5675,30 @@ pub fn test_lexicographical_compare_200(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_198(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_201(
     a: Vec<i32>,
@@ -2982,8 +5710,30 @@ pub fn test_lexicographical_compare_201(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_198(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_202(
     a: Vec<i32>,
@@ -2995,8 +5745,30 @@ pub fn test_lexicographical_compare_202(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_198(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_203(
     a: Vec<i32>,
@@ -3008,8 +5780,30 @@ pub fn test_lexicographical_compare_203(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_198(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_204(
     a: Vec<i32>,
@@ -3021,21 +5815,30 @@ pub fn test_lexicographical_compare_204(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_205(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_205(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_206(
     a: Vec<i32>,
@@ -3047,8 +5850,30 @@ pub fn test_lexicographical_compare_206(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_205(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_207(
     a: Vec<i32>,
@@ -3060,8 +5885,30 @@ pub fn test_lexicographical_compare_207(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_205(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_208(
     a: Vec<i32>,
@@ -3073,8 +5920,30 @@ pub fn test_lexicographical_compare_208(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_205(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_209(
     a: Vec<i32>,
@@ -3086,8 +5955,30 @@ pub fn test_lexicographical_compare_209(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_205(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_210(
     a: Vec<i32>,
@@ -3099,8 +5990,30 @@ pub fn test_lexicographical_compare_210(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_205(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_211(
     a: Vec<i32>,
@@ -3112,21 +6025,30 @@ pub fn test_lexicographical_compare_211(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_212(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_212(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_213(
     a: Vec<i32>,
@@ -3138,8 +6060,30 @@ pub fn test_lexicographical_compare_213(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_212(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_214(
     a: Vec<i32>,
@@ -3151,8 +6095,30 @@ pub fn test_lexicographical_compare_214(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_212(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_215(
     a: Vec<i32>,
@@ -3164,8 +6130,30 @@ pub fn test_lexicographical_compare_215(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_212(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_216(
     a: Vec<i32>,
@@ -3177,8 +6165,30 @@ pub fn test_lexicographical_compare_216(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_212(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_217(
     a: Vec<i32>,
@@ -3190,8 +6200,30 @@ pub fn test_lexicographical_compare_217(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_212(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_218(
     a: Vec<i32>,
@@ -3203,21 +6235,26 @@ pub fn test_lexicographical_compare_218(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_219(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_219(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_220(
     a: Vec<i32>,
@@ -3229,8 +6266,26 @@ pub fn test_lexicographical_compare_220(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_219(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_221(
     a: Vec<i32>,
@@ -3242,8 +6297,26 @@ pub fn test_lexicographical_compare_221(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_219(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_222(
     a: Vec<i32>,
@@ -3255,8 +6328,26 @@ pub fn test_lexicographical_compare_222(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_219(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_223(
     a: Vec<i32>,
@@ -3268,8 +6359,26 @@ pub fn test_lexicographical_compare_223(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_219(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_224(
     a: Vec<i32>,
@@ -3281,8 +6390,26 @@ pub fn test_lexicographical_compare_224(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_219(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_225(
     a: Vec<i32>,
@@ -3294,21 +6421,26 @@ pub fn test_lexicographical_compare_225(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_226(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_226(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_227(
     a: Vec<i32>,
@@ -3320,8 +6452,26 @@ pub fn test_lexicographical_compare_227(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_226(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_228(
     a: Vec<i32>,
@@ -3333,8 +6483,26 @@ pub fn test_lexicographical_compare_228(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_226(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_229(
     a: Vec<i32>,
@@ -3346,8 +6514,26 @@ pub fn test_lexicographical_compare_229(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_226(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_230(
     a: Vec<i32>,
@@ -3359,8 +6545,26 @@ pub fn test_lexicographical_compare_230(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_226(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_231(
     a: Vec<i32>,
@@ -3372,8 +6576,26 @@ pub fn test_lexicographical_compare_231(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_226(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_232(
     a: Vec<i32>,
@@ -3385,21 +6607,30 @@ pub fn test_lexicographical_compare_232(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_233(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_233(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_234(
     a: Vec<i32>,
@@ -3411,8 +6642,30 @@ pub fn test_lexicographical_compare_234(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_233(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_235(
     a: Vec<i32>,
@@ -3424,8 +6677,30 @@ pub fn test_lexicographical_compare_235(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_233(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_236(
     a: Vec<i32>,
@@ -3437,8 +6712,30 @@ pub fn test_lexicographical_compare_236(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_233(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_237(
     a: Vec<i32>,
@@ -3450,8 +6747,30 @@ pub fn test_lexicographical_compare_237(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_233(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_238(
     a: Vec<i32>,
@@ -3463,8 +6782,30 @@ pub fn test_lexicographical_compare_238(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_233(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_239(
     a: Vec<i32>,
@@ -3476,21 +6817,30 @@ pub fn test_lexicographical_compare_239(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_240(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_240(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_241(
     a: Vec<i32>,
@@ -3502,8 +6852,30 @@ pub fn test_lexicographical_compare_241(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_240(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_242(
     a: Vec<i32>,
@@ -3515,8 +6887,30 @@ pub fn test_lexicographical_compare_242(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_240(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_243(
     a: Vec<i32>,
@@ -3528,8 +6922,30 @@ pub fn test_lexicographical_compare_243(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_240(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_244(
     a: Vec<i32>,
@@ -3541,8 +6957,30 @@ pub fn test_lexicographical_compare_244(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_240(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_245(
     a: Vec<i32>,
@@ -3554,8 +6992,30 @@ pub fn test_lexicographical_compare_245(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_240(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_246(
     a: Vec<i32>,
@@ -3567,21 +7027,30 @@ pub fn test_lexicographical_compare_246(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_247(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_247(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_248(
     a: Vec<i32>,
@@ -3593,8 +7062,30 @@ pub fn test_lexicographical_compare_248(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_247(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_249(
     a: Vec<i32>,
@@ -3606,8 +7097,30 @@ pub fn test_lexicographical_compare_249(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_247(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_250(
     a: Vec<i32>,
@@ -3619,8 +7132,30 @@ pub fn test_lexicographical_compare_250(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_247(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_251(
     a: Vec<i32>,
@@ -3632,8 +7167,30 @@ pub fn test_lexicographical_compare_251(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_247(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_252(
     a: Vec<i32>,
@@ -3645,8 +7202,30 @@ pub fn test_lexicographical_compare_252(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_247(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_253(
     a: Vec<i32>,
@@ -3658,21 +7237,30 @@ pub fn test_lexicographical_compare_253(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_254(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_254(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_255(
     a: Vec<i32>,
@@ -3684,8 +7272,30 @@ pub fn test_lexicographical_compare_255(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_254(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_256(
     a: Vec<i32>,
@@ -3697,8 +7307,30 @@ pub fn test_lexicographical_compare_256(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_254(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_257(
     a: Vec<i32>,
@@ -3710,8 +7342,30 @@ pub fn test_lexicographical_compare_257(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_254(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_258(
     a: Vec<i32>,
@@ -3723,8 +7377,30 @@ pub fn test_lexicographical_compare_258(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_254(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_259(
     a: Vec<i32>,
@@ -3736,8 +7412,30 @@ pub fn test_lexicographical_compare_259(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_254(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_260(
     a: Vec<i32>,
@@ -3749,21 +7447,30 @@ pub fn test_lexicographical_compare_260(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_261(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_261(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_262(
     a: Vec<i32>,
@@ -3775,8 +7482,30 @@ pub fn test_lexicographical_compare_262(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_261(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_263(
     a: Vec<i32>,
@@ -3788,8 +7517,30 @@ pub fn test_lexicographical_compare_263(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_261(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_264(
     a: Vec<i32>,
@@ -3801,8 +7552,30 @@ pub fn test_lexicographical_compare_264(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_261(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_265(
     a: Vec<i32>,
@@ -3814,8 +7587,30 @@ pub fn test_lexicographical_compare_265(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_261(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_266(
     a: Vec<i32>,
@@ -3827,8 +7622,30 @@ pub fn test_lexicographical_compare_266(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_261(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_267(
     a: Vec<i32>,
@@ -3840,21 +7657,26 @@ pub fn test_lexicographical_compare_267(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_268(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_268(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_269(
     a: Vec<i32>,
@@ -3866,8 +7688,26 @@ pub fn test_lexicographical_compare_269(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_268(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_270(
     a: Vec<i32>,
@@ -3879,8 +7719,26 @@ pub fn test_lexicographical_compare_270(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_268(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_271(
     a: Vec<i32>,
@@ -3892,8 +7750,26 @@ pub fn test_lexicographical_compare_271(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_268(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_272(
     a: Vec<i32>,
@@ -3905,8 +7781,26 @@ pub fn test_lexicographical_compare_272(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_268(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_273(
     a: Vec<i32>,
@@ -3918,8 +7812,26 @@ pub fn test_lexicographical_compare_273(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_268(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_274(
     a: Vec<i32>,
@@ -3931,21 +7843,26 @@ pub fn test_lexicographical_compare_274(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_275(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_275(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_276(
     a: Vec<i32>,
@@ -3957,8 +7874,26 @@ pub fn test_lexicographical_compare_276(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_275(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_277(
     a: Vec<i32>,
@@ -3970,8 +7905,26 @@ pub fn test_lexicographical_compare_277(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_275(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_278(
     a: Vec<i32>,
@@ -3983,8 +7936,26 @@ pub fn test_lexicographical_compare_278(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_275(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_279(
     a: Vec<i32>,
@@ -3996,8 +7967,26 @@ pub fn test_lexicographical_compare_279(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_275(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_280(
     a: Vec<i32>,
@@ -4009,8 +7998,26 @@ pub fn test_lexicographical_compare_280(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_275(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_281(
     a: Vec<i32>,
@@ -4022,21 +8029,30 @@ pub fn test_lexicographical_compare_281(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_282(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_282(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_283(
     a: Vec<i32>,
@@ -4048,8 +8064,30 @@ pub fn test_lexicographical_compare_283(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_282(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_284(
     a: Vec<i32>,
@@ -4061,8 +8099,30 @@ pub fn test_lexicographical_compare_284(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_282(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_285(
     a: Vec<i32>,
@@ -4074,8 +8134,30 @@ pub fn test_lexicographical_compare_285(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_282(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_286(
     a: Vec<i32>,
@@ -4087,8 +8169,30 @@ pub fn test_lexicographical_compare_286(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_282(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_287(
     a: Vec<i32>,
@@ -4100,8 +8204,30 @@ pub fn test_lexicographical_compare_287(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_282(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_288(
     a: Vec<i32>,
@@ -4113,21 +8239,30 @@ pub fn test_lexicographical_compare_288(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_289(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_289(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_290(
     a: Vec<i32>,
@@ -4139,8 +8274,30 @@ pub fn test_lexicographical_compare_290(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_289(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_291(
     a: Vec<i32>,
@@ -4152,8 +8309,30 @@ pub fn test_lexicographical_compare_291(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_289(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_292(
     a: Vec<i32>,
@@ -4165,8 +8344,30 @@ pub fn test_lexicographical_compare_292(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_289(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_293(
     a: Vec<i32>,
@@ -4178,8 +8379,30 @@ pub fn test_lexicographical_compare_293(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_289(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_294(
     a: Vec<i32>,
@@ -4191,8 +8414,30 @@ pub fn test_lexicographical_compare_294(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_289(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_295(
     a: Vec<i32>,
@@ -4204,21 +8449,30 @@ pub fn test_lexicographical_compare_295(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_296(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_296(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_297(
     a: Vec<i32>,
@@ -4230,8 +8484,30 @@ pub fn test_lexicographical_compare_297(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_296(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_298(
     a: Vec<i32>,
@@ -4243,8 +8519,30 @@ pub fn test_lexicographical_compare_298(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_296(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_299(
     a: Vec<i32>,
@@ -4256,8 +8554,30 @@ pub fn test_lexicographical_compare_299(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_296(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_300(
     a: Vec<i32>,
@@ -4269,8 +8589,30 @@ pub fn test_lexicographical_compare_300(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_296(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_301(
     a: Vec<i32>,
@@ -4282,8 +8624,30 @@ pub fn test_lexicographical_compare_301(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_296(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_302(
     a: Vec<i32>,
@@ -4295,21 +8659,30 @@ pub fn test_lexicographical_compare_302(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_303(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_303(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_304(
     a: Vec<i32>,
@@ -4321,8 +8694,30 @@ pub fn test_lexicographical_compare_304(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_303(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_305(
     a: Vec<i32>,
@@ -4334,8 +8729,30 @@ pub fn test_lexicographical_compare_305(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_303(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_306(
     a: Vec<i32>,
@@ -4347,8 +8764,30 @@ pub fn test_lexicographical_compare_306(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_303(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_307(
     a: Vec<i32>,
@@ -4360,8 +8799,30 @@ pub fn test_lexicographical_compare_307(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_303(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_308(
     a: Vec<i32>,
@@ -4373,8 +8834,30 @@ pub fn test_lexicographical_compare_308(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_303(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_309(
     a: Vec<i32>,
@@ -4386,21 +8869,30 @@ pub fn test_lexicographical_compare_309(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_lexicographical_compare_310(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
-    expected: std::cmp::Ordering,
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
-    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_310(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_311(
     a: Vec<i32>,
@@ -4412,8 +8904,30 @@ pub fn test_lexicographical_compare_311(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_310(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_312(
     a: Vec<i32>,
@@ -4425,8 +8939,30 @@ pub fn test_lexicographical_compare_312(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_310(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_313(
     a: Vec<i32>,
@@ -4438,8 +8974,30 @@ pub fn test_lexicographical_compare_313(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_310(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_314(
     a: Vec<i32>,
@@ -4451,36 +9009,32 @@ pub fn test_lexicographical_compare_314(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_310(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_315(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> ()>,
-    expected: (),
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> ()>> = Rc::new(RefCell::new(comp));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
-}
-pub fn test_lexicographical_compare_316(
-    a: Vec<i32>,
-    b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> ()>,
-    expected: (),
-) {
-    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
-    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> ()>> = Rc::new(RefCell::new(comp));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
-}
-pub fn test_lexicographical_compare_317(
     a: Vec<i32>,
     b: Vec<i32>,
     comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
@@ -4490,47 +9044,154 @@ pub fn test_lexicographical_compare_317(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_310(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
+}
+pub fn test_lexicographical_compare_316(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_317(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_318(
     a: Vec<i32>,
     b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> ()>,
-    expected: (),
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
 ) {
     let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> ()>> = Rc::new(RefCell::new(comp));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_317(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_319(
     a: Vec<i32>,
     b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> ()>,
-    expected: (),
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
 ) {
     let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> ()>> = Rc::new(RefCell::new(comp));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_317(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_320(
     a: Vec<i32>,
     b: Vec<i32>,
-    comp: FnPtr<fn(i32, i32) -> ()>,
-    expected: (),
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
 ) {
     let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
-    let comp: Value<FnPtr<fn(i32, i32) -> ()>> = Rc::new(RefCell::new(comp));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_317(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_321(
     a: Vec<i32>,
@@ -4542,8 +9203,26 @@ pub fn test_lexicographical_compare_321(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_317(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_lexicographical_compare_322(
     a: Vec<i32>,
@@ -4555,4001 +9234,1426 @@ pub fn test_lexicographical_compare_322(
     let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
     let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
     let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*expected.borrow()) == (*result.borrow()));
-}
-pub fn test_given_iterator_types_323() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_317(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_21(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_22(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_23(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_24(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_24(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_24(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_24(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_25(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_26(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_24(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_324() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_323(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_324(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_27(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_28(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_29(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_30(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_30(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_30(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_30(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_31(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_32(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_30(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_325() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_325(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_324(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_33(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_34(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_35(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_36(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_36(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_36(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_36(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_37(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_38(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_36(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_326() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_326(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_324(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_39(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_40(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_41(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_42(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_42(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_42(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_42(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_43(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_44(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_42(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_327() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_327(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_324(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_45(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_46(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_47(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_48(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_48(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_48(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_48(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_49(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_50(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_48(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_328() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_328(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_324(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_51(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_52(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_53(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_54(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_54(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_54(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_54(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_55(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_56(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_54(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_329() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_329(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_324(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_57(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_58(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_59(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_60(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_60(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_60(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_60(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_61(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_62(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_60(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_330() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_330(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_331(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_63(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_64(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_65(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_66(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_66(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_66(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_66(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_67(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_68(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_66(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_331() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_332(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_331(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_69(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_70(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_71(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_72(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_72(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_72(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_72(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_73(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_74(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_72(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_332() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_333(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_331(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_75(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_76(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_77(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_78(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_78(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_78(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_78(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_79(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_80(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_78(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_333() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_334(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_331(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_81(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_82(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_83(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_84(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_84(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_84(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_84(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_85(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_86(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_84(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_334() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_335(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_331(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_87(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_88(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_89(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_90(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_90(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_90(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_90(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_91(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_92(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_90(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_335() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_336(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({ b.decay() });
+            let ___last2: cpp17_input_iterator_const_int_ptr__const_int_ptr_ =
+                cpp17_input_iterator_const_int_ptr__const_int_ptr_::new({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_331(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_93(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_94(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_95(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_96(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_96(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_96(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_96(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_97(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_98(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_96(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_336() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_337(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_338(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_99(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_100(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_101(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_102(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_102(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_102(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_102(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_103(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_104(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_102(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_337() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_339(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_338(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_105(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_106(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_107(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_108(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_108(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_108(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_108(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_109(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_110(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_108(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_338() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_340(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_338(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_111(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_112(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_113(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_114(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_114(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_114(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_114(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_115(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_116(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_114(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_339() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_341(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_338(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_117(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_118(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_119(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_120(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_120(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_120(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_120(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_121(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_122(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_120(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_340() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_342(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_338(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_123(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_124(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_125(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_126(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_126(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_126(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_126(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_127(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_128(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_126(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_341() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_343(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: forward_iterator_const_int_ptr_ =
+                forward_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_338(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_129(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_130(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_131(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_132(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_132(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_132(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_132(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_133(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_134(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_132(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_342() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_344(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_345(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_135(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_136(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_137(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_138(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_138(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_138(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_138(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_139(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_140(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_138(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_343() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_346(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_345(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_141(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_142(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_143(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_144(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_144(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_144(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_144(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_145(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_146(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_144(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_344() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_347(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_345(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_147(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_148(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_149(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_150(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_150(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_150(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_150(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_151(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_152(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_150(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_345() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_348(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_345(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_153(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_154(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_155(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_156(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_156(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_156(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_156(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_157(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_158(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_156(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_346() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_349(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_345(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_159(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_160(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_161(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_162(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_162(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_162(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_162(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_163(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_164(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_162(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_347() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_350(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: bidirectional_iterator_const_int_ptr_ =
+                bidirectional_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_345(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_165(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_166(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_167(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_168(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_168(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_168(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_168(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_169(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_170(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_168(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_348() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_351(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_352(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_171(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_172(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_173(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_174(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_174(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_174(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_174(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_175(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_176(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_174(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_349() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_353(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_352(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_177(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_178(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_179(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_180(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_180(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_180(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_180(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_181(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_182(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_180(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_350() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_354(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_352(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_183(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_184(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_185(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_186(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_186(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_186(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_186(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_187(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_188(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_186(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_351() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_355(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_352(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_189(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_190(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_191(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_192(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_192(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_192(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_192(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_193(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_194(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_192(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_352() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_356(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_352(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_195(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_196(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_197(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_198(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_198(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_198(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_198(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_199(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_200(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_198(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_353() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_357(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: random_access_iterator_const_int_ptr_ =
+                random_access_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_352(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_201(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_202(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_203(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_204(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_204(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_204(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_204(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_205(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_206(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_204(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_354() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_358(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_359(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_207(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_208(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_209(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_210(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_210(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_210(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_210(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_211(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_212(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_210(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_355() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_360(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_359(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_213(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_214(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_215(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_216(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_216(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_216(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_216(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_217(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_218(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_216(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_356() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_361(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_359(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_219(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_220(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_221(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_222(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_222(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_222(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_222(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_223(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_224(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_222(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_357() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_362(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_359(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_225(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_226(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_227(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_228(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_228(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_228(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_228(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_229(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_230(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_228(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_358() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_363(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_359(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_231(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_232(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_233(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_234(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_234(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_234(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_234(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_235(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_236(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_234(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_359() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_364(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ a.decay() });
+            let ___last1: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    a.decay().offset(((*a.borrow()).len()) as isize)
+                });
+            let ___first2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({ b.decay() });
+            let ___last2: contiguous_iterator_const_int_ptr_ =
+                contiguous_iterator_const_int_ptr_::new_1({
+                    b.decay().offset(((*b.borrow()).len()) as isize)
+                });
+            lexicographical_compare_three_way_359(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_237(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_238(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_239(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_240(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_240(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_240(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_240(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_241(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_242(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_240(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_360() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_365(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_79(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_243(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_244(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_245(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_246(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_246(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_246(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_246(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_247(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_248(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_246(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_361() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_366(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_367(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_249(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_250(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_251(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_252(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_252(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_252(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_252(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_253(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_254(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_252(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
-pub fn test_given_iterator_types_362() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+pub fn test_lexicographical_compare_368(
+    a: Vec<i32>,
+    b: Vec<i32>,
+    comp: FnPtr<fn(i32, i32) -> std::cmp::Ordering>,
+    expected: std::cmp::Ordering,
+) {
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(a));
+    let b: Value<Vec<i32>> = Rc::new(RefCell::new(b));
+    let comp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(comp));
+    let expected: Value<std::cmp::Ordering> = Rc::new(RefCell::new(expected));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: Ptr<i32> = a.decay();
+            let ___last1: Ptr<i32> = a.decay().offset(((*a.borrow()).len()) as isize);
+            let ___first2: Ptr<i32> = b.decay();
+            let ___last2: Ptr<i32> = b.decay().offset(((*b.borrow()).len()) as isize);
+            lexicographical_compare_three_way_367(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*comp.borrow()).copy_from(),
+            )
+        }),
     ));
-    ({
-        test_lexicographical_compare_255(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_256(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_257(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_258(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_258(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_258(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_258(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_259(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_260(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_258(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-}
-pub fn test_given_iterator_types_363() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
-    ));
-    ({
-        test_lexicographical_compare_261(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_262(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_263(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_264(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_264(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_264(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_264(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_265(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_266(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_264(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-}
-pub fn test_given_iterator_types_364() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
-    ));
-    ({
-        test_lexicographical_compare_267(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_268(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_269(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_270(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_270(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_270(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_270(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_271(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_272(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_270(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-}
-pub fn test_given_iterator_types_365() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
-    ));
-    ({
-        test_lexicographical_compare_273(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_274(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_275(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_276(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_276(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_276(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_276(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_277(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_278(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_276(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-}
-pub fn test_given_iterator_types_366() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
-    ));
-    ({
-        test_lexicographical_compare_279(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_280(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_281(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_282(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_282(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_282(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_282(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_283(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_284(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_282(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-}
-pub fn test_given_iterator_types_367() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
-    ));
-    ({
-        test_lexicographical_compare_285(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_286(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_287(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_288(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_288(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_288(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_288(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_289(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_290(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_288(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-}
-pub fn test_given_iterator_types_368() {
-    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
-        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
-    ));
-    ({
-        test_lexicographical_compare_291(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_292(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_293(
-            Vec::from([0, 1]),
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_294(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_294(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_294(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_294(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_295(
-            Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_296(
-            Vec::from([0, 1, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_294(
-            Vec::from([10, 21]),
-            Vec::from([10, 31]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
+    assert!(({ (*expected.borrow()) }) == ({ (*result.borrow()) }));
 }
 pub fn test_given_iterator_types_369() {
     let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
         (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
     ));
     ({
-        test_lexicographical_compare_297(
+        test_lexicographical_compare_22(
             std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
             std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_298(
+        test_lexicographical_compare_24(
             std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
             Vec::from([0, 1]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_299(
+        test_lexicographical_compare_25(
             Vec::from([0, 1]),
             std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_300(
+        test_lexicographical_compare_26(
             Vec::from([0, 1]),
             Vec::from([0, 1]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_300(
+        test_lexicographical_compare_26(
             Vec::from([0, 1]),
             Vec::from([0, 2]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_300(
+        test_lexicographical_compare_26(
             Vec::from([0, 2]),
             Vec::from([0, 1]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_300(
+        test_lexicographical_compare_26(
             Vec::from([0, 2]),
             Vec::from([1, 1]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_301(
+        test_lexicographical_compare_27(
             Vec::from([0, 1]),
             Vec::from([0, 1, 2]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_302(
+        test_lexicographical_compare_28(
             Vec::from([0, 1, 2]),
             Vec::from([0, 1]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_300(
+        test_lexicographical_compare_26(
             Vec::from([10, 21]),
             Vec::from([10, 31]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
         )
     });
 }
@@ -8558,83 +10662,83 @@ pub fn test_given_iterator_types_370() {
         (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
     ));
     ({
-        test_lexicographical_compare_303(
+        test_lexicographical_compare_29(
             std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
             std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_304(
+        test_lexicographical_compare_31(
             std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
             Vec::from([0, 1]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_305(
+        test_lexicographical_compare_32(
             Vec::from([0, 1]),
             std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_306(
+        test_lexicographical_compare_33(
             Vec::from([0, 1]),
             Vec::from([0, 1]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_306(
+        test_lexicographical_compare_33(
             Vec::from([0, 1]),
             Vec::from([0, 2]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_306(
+        test_lexicographical_compare_33(
             Vec::from([0, 2]),
             Vec::from([0, 1]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_306(
+        test_lexicographical_compare_33(
             Vec::from([0, 2]),
             Vec::from([1, 1]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_307(
+        test_lexicographical_compare_34(
             Vec::from([0, 1]),
             Vec::from([0, 1, 2]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_308(
+        test_lexicographical_compare_35(
             Vec::from([0, 1, 2]),
             Vec::from([0, 1]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_306(
+        test_lexicographical_compare_33(
             Vec::from([10, 21]),
             Vec::from([10, 31]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
         )
     });
 }
@@ -8643,209 +10747,4119 @@ pub fn test_given_iterator_types_371() {
         (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
     ));
     ({
+        test_lexicographical_compare_36(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_38(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_39(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_40(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_40(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_40(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_40(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_41(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_42(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_40(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_372() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_43(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_45(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_46(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_47(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_47(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_47(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_47(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_48(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_49(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_47(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_373() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_50(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_52(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_53(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_54(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_54(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_54(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_54(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_55(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_56(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_54(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_374() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_57(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_59(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_60(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_61(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_61(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_61(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_61(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_62(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_63(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_61(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_375() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_64(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_66(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_67(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_68(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_68(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_68(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_68(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_69(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_70(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_68(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_376() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_71(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_73(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_74(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_75(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_75(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_75(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_75(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_76(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_77(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_75(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_377() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_78(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_80(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_81(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_82(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_82(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_82(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_82(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_83(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_84(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_82(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_378() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_85(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_87(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_88(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_89(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_89(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_89(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_89(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_90(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_91(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_89(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_379() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_92(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_94(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_95(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_96(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_96(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_96(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_96(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_97(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_98(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_96(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_380() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_99(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_101(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_102(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_103(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_103(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_103(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_103(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_104(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_105(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_103(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_381() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_106(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_108(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_109(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_110(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_110(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_110(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_110(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_111(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_112(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_110(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_382() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_113(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_115(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_116(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_117(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_117(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_117(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_117(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_118(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_119(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_117(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_383() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_120(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_122(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_123(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_124(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_124(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_124(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_124(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_125(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_126(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_124(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_384() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_127(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_129(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_130(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_131(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_131(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_131(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_131(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_132(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_133(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_131(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_385() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_134(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_136(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_137(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_138(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_138(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_138(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_138(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_139(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_140(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_138(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_386() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_141(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_143(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_144(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_145(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_145(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_145(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_145(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_146(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_147(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_145(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_387() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_148(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_150(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_151(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_152(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_152(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_152(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_152(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_153(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_154(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_152(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_388() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_155(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_157(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_158(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_159(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_159(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_159(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_159(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_160(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_161(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_159(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_389() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_162(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_164(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_165(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_166(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_166(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_166(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_166(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_167(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_168(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_166(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_390() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_169(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_171(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_172(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_173(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_173(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_173(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_173(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_174(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_175(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_173(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_391() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_176(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_178(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_179(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_180(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_180(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_180(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_180(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_181(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_182(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_180(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_392() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_183(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_185(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_186(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_187(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_187(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_187(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_187(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_188(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_189(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_187(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_393() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_190(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_192(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_193(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_194(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_194(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_194(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_194(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_195(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_196(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_194(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_394() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_197(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_199(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_200(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_201(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_201(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_201(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_201(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_202(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_203(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_201(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_395() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_204(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_206(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_207(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_208(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_208(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_208(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_208(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_209(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_210(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_208(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_396() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_211(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_213(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_214(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_215(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_215(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_215(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_215(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_216(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_217(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_215(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_397() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_218(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_220(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_221(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_222(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_222(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_222(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_222(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_223(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_224(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_222(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_398() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_225(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_227(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_228(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_229(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_229(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_229(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_229(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_230(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_231(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_229(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_399() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_232(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_234(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_235(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_236(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_236(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_236(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_236(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_237(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_238(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_236(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_400() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_239(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_241(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_242(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_243(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_243(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_243(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_243(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_244(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_245(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_243(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_401() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_246(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_248(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_249(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_250(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_250(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_250(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_250(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_251(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_252(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_250(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_402() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_253(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_255(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_256(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_257(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_257(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_257(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_257(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_258(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_259(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_257(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_403() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_260(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_262(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_263(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_264(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_264(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_264(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_264(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_265(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_266(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_264(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_404() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_267(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_269(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_270(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_271(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_271(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_271(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_271(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_272(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_273(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_271(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_405() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_274(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_276(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_277(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_278(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_278(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_278(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_278(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_279(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_280(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_278(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_406() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_281(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_283(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_284(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_285(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_285(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_285(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_285(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_286(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_287(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_285(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_407() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_288(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_290(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_291(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_292(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_292(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_292(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_292(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_293(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_294(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_292(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_408() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_295(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_297(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_298(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_299(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_299(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_299(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_299(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_300(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_301(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_299(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_409() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_302(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_304(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_305(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_306(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_306(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_306(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_306(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_307(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_308(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_306(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_410() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
         test_lexicographical_compare_309(
             std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
             std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_310(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
         )
     });
     ({
         test_lexicographical_compare_311(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_312(
             Vec::from([0, 1]),
             std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_312(
-            Vec::from([0, 1]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
-        )
-    });
-    ({
-        test_lexicographical_compare_312(
-            Vec::from([0, 1]),
-            Vec::from([0, 2]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
-        )
-    });
-    ({
-        test_lexicographical_compare_312(
-            Vec::from([0, 2]),
-            Vec::from([0, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
-        )
-    });
-    ({
-        test_lexicographical_compare_312(
-            Vec::from([0, 2]),
-            Vec::from([1, 1]),
-            (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
         )
     });
     ({
         test_lexicographical_compare_313(
             Vec::from([0, 1]),
-            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_313(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_313(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_313(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
         )
     });
     ({
         test_lexicographical_compare_314(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_315(
             Vec::from([0, 1, 2]),
             Vec::from([0, 1]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
         )
     });
     ({
-        test_lexicographical_compare_312(
+        test_lexicographical_compare_313(
             Vec::from([10, 21]),
             Vec::from([10, 31]),
             (*cmp.borrow()).copy_from(),
-            std::cmp::Ordering::Equal,
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
         )
     });
 }
-pub fn test_iterator_types1_372() {
-    ({ test_given_iterator_types_323() });
-    ({ test_given_iterator_types_324() });
-    ({ test_given_iterator_types_325() });
-    ({ test_given_iterator_types_326() });
-    ({ test_given_iterator_types_327() });
-    ({ test_given_iterator_types_328() });
-    ({ test_given_iterator_types_329() });
-}
-pub fn test_iterator_types1_373() {
-    ({ test_given_iterator_types_330() });
-    ({ test_given_iterator_types_331() });
-    ({ test_given_iterator_types_332() });
-    ({ test_given_iterator_types_333() });
-    ({ test_given_iterator_types_334() });
-    ({ test_given_iterator_types_335() });
-    ({ test_given_iterator_types_336() });
-}
-pub fn test_iterator_types1_374() {
-    ({ test_given_iterator_types_337() });
-    ({ test_given_iterator_types_338() });
-    ({ test_given_iterator_types_339() });
-    ({ test_given_iterator_types_340() });
-    ({ test_given_iterator_types_341() });
-    ({ test_given_iterator_types_342() });
-    ({ test_given_iterator_types_343() });
-}
-pub fn test_iterator_types1_375() {
-    ({ test_given_iterator_types_344() });
-    ({ test_given_iterator_types_345() });
-    ({ test_given_iterator_types_346() });
-    ({ test_given_iterator_types_347() });
-    ({ test_given_iterator_types_348() });
-    ({ test_given_iterator_types_349() });
-    ({ test_given_iterator_types_350() });
-}
-pub fn test_iterator_types1_376() {
-    ({ test_given_iterator_types_351() });
-    ({ test_given_iterator_types_352() });
-    ({ test_given_iterator_types_353() });
-    ({ test_given_iterator_types_354() });
-    ({ test_given_iterator_types_355() });
-    ({ test_given_iterator_types_356() });
-    ({ test_given_iterator_types_357() });
-}
-pub fn test_iterator_types1_377() {
-    ({ test_given_iterator_types_358() });
-    ({ test_given_iterator_types_359() });
-    ({ test_given_iterator_types_360() });
-    ({ test_given_iterator_types_361() });
-    ({ test_given_iterator_types_362() });
-    ({ test_given_iterator_types_363() });
-    ({ test_given_iterator_types_364() });
-}
-pub fn test_iterator_types1_378() {
-    ({ test_given_iterator_types_365() });
-    ({ test_given_iterator_types_366() });
-    ({ test_given_iterator_types_367() });
-    ({ test_given_iterator_types_368() });
-    ({ test_given_iterator_types_369() });
-    ({ test_given_iterator_types_370() });
-    ({ test_given_iterator_types_371() });
-}
-pub fn test_iterator_types_379() {
-    ({ test_iterator_types1_372() });
-    ({ test_iterator_types1_373() });
-    ({ test_iterator_types1_374() });
-    ({ test_iterator_types1_375() });
-    ({ test_iterator_types1_376() });
-    ({ test_iterator_types1_377() });
-    ({ test_iterator_types1_378() });
-}
-pub fn test_comparison_categories_380() {
-    ({
-        test_lexicographical_compare_315(
-            Vec::from([0, 1]),
-            Vec::from([10, 11]),
-            (*compare_last_digit_weak_18.with(Value::clone).borrow()).copy_from(),
-            unimplemented!(),
-        )
-    });
+pub fn test_given_iterator_types_411() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
     ({
         test_lexicographical_compare_316(
-            Vec::from([0, 1]),
-            Vec::from([20, 11]),
-            (*compare_last_digit_partial_19.with(Value::clone).borrow()).copy_from(),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_lexicographical_compare_317(
-            Vec::from([0]),
-            Vec::from([0, 1]),
-            (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
-            std::cmp::Ordering::Less,
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
         )
     });
     ({
         test_lexicographical_compare_318(
-            Vec::from([0]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
             Vec::from([0, 1]),
-            (*compare_last_digit_weak_18.with(Value::clone).borrow()).copy_from(),
-            unimplemented!(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
         )
     });
     ({
         test_lexicographical_compare_319(
-            Vec::from([0]),
             Vec::from([0, 1]),
-            (*compare_last_digit_partial_19.with(Value::clone).borrow()).copy_from(),
-            unimplemented!(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
         )
     });
     ({
         test_lexicographical_compare_320(
-            Vec::from([i32::MIN, 1]),
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_320(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_320(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_320(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_321(
+            Vec::from([0, 1]),
             Vec::from([0, 1, 2]),
-            (*compare_last_digit_partial_19.with(Value::clone).borrow()).copy_from(),
-            unimplemented!(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_322(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_320(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
         )
     });
 }
-pub fn test_comparator_invocation_count_381() {
+pub fn test_given_iterator_types_412() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_323(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_325(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_326(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_327(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_327(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_327(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_327(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_328(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_329(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_327(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_413() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_330(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_332(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_333(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_334(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_334(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_334(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_334(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_335(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_336(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_334(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_414() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_337(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_339(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_340(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_341(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_341(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_341(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_341(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_342(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_343(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_341(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_415() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_344(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_346(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_347(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_348(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_348(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_348(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_348(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_349(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_350(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_348(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_416() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_351(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_353(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_354(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_355(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_355(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_355(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_355(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_356(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_357(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_355(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_given_iterator_types_417() {
+    let cmp: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> = Rc::new(RefCell::new(
+        (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+    ));
+    ({
+        test_lexicographical_compare_358(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_360(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_361(
+            Vec::from([0, 1]),
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_362(
+            Vec::from([0, 1]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_362(
+            Vec::from([0, 1]),
+            Vec::from([0, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_362(
+            Vec::from([0, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_362(
+            Vec::from([0, 2]),
+            Vec::from([1, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_363(
+            Vec::from([0, 1]),
+            Vec::from([0, 1, 2]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_364(
+            Vec::from([0, 1, 2]),
+            Vec::from([0, 1]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_362(
+            Vec::from([10, 21]),
+            Vec::from([10, 31]),
+            (*cmp.borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) }),
+        )
+    });
+}
+pub fn test_iterator_types1_418() {
+    ({ test_given_iterator_types_369() });
+    ({ test_given_iterator_types_370() });
+    ({ test_given_iterator_types_371() });
+    ({ test_given_iterator_types_372() });
+    ({ test_given_iterator_types_373() });
+    ({ test_given_iterator_types_374() });
+    ({ test_given_iterator_types_375() });
+}
+pub fn test_iterator_types1_419() {
+    ({ test_given_iterator_types_376() });
+    ({ test_given_iterator_types_377() });
+    ({ test_given_iterator_types_378() });
+    ({ test_given_iterator_types_379() });
+    ({ test_given_iterator_types_380() });
+    ({ test_given_iterator_types_381() });
+    ({ test_given_iterator_types_382() });
+}
+pub fn test_iterator_types1_420() {
+    ({ test_given_iterator_types_383() });
+    ({ test_given_iterator_types_384() });
+    ({ test_given_iterator_types_385() });
+    ({ test_given_iterator_types_386() });
+    ({ test_given_iterator_types_387() });
+    ({ test_given_iterator_types_388() });
+    ({ test_given_iterator_types_389() });
+}
+pub fn test_iterator_types1_421() {
+    ({ test_given_iterator_types_390() });
+    ({ test_given_iterator_types_391() });
+    ({ test_given_iterator_types_392() });
+    ({ test_given_iterator_types_393() });
+    ({ test_given_iterator_types_394() });
+    ({ test_given_iterator_types_395() });
+    ({ test_given_iterator_types_396() });
+}
+pub fn test_iterator_types1_422() {
+    ({ test_given_iterator_types_397() });
+    ({ test_given_iterator_types_398() });
+    ({ test_given_iterator_types_399() });
+    ({ test_given_iterator_types_400() });
+    ({ test_given_iterator_types_401() });
+    ({ test_given_iterator_types_402() });
+    ({ test_given_iterator_types_403() });
+}
+pub fn test_iterator_types1_423() {
+    ({ test_given_iterator_types_404() });
+    ({ test_given_iterator_types_405() });
+    ({ test_given_iterator_types_406() });
+    ({ test_given_iterator_types_407() });
+    ({ test_given_iterator_types_408() });
+    ({ test_given_iterator_types_409() });
+    ({ test_given_iterator_types_410() });
+}
+pub fn test_iterator_types1_424() {
+    ({ test_given_iterator_types_411() });
+    ({ test_given_iterator_types_412() });
+    ({ test_given_iterator_types_413() });
+    ({ test_given_iterator_types_414() });
+    ({ test_given_iterator_types_415() });
+    ({ test_given_iterator_types_416() });
+    ({ test_given_iterator_types_417() });
+}
+pub fn test_iterator_types_425() {
+    ({ test_iterator_types1_418() });
+    ({ test_iterator_types1_419() });
+    ({ test_iterator_types1_420() });
+    ({ test_iterator_types1_421() });
+    ({ test_iterator_types1_422() });
+    ({ test_iterator_types1_423() });
+    ({ test_iterator_types1_424() });
+}
+pub fn test_comparison_categories_426() {
+    ({
+        test_lexicographical_compare_427(
+            Vec::from([0, 1]),
+            Vec::from([10, 11]),
+            (*compare_last_digit_weak_18.with(Value::clone).borrow()).copy_from(),
+            (*equivalent_428.with(Value::clone).borrow()).clone(),
+        )
+    });
+    ({
+        test_lexicographical_compare_429(
+            Vec::from([0, 1]),
+            Vec::from([20, 11]),
+            (*compare_last_digit_partial_19.with(Value::clone).borrow()).copy_from(),
+            (*equivalent_430.with(Value::clone).borrow()).clone(),
+        )
+    });
+    ({
+        test_lexicographical_compare_365(
+            Vec::from([0]),
+            Vec::from([0, 1]),
+            (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
+        )
+    });
+    ({
+        test_lexicographical_compare_431(
+            Vec::from([0]),
+            Vec::from([0, 1]),
+            (*compare_last_digit_weak_18.with(Value::clone).borrow()).copy_from(),
+            (*less_432.with(Value::clone).borrow()).clone(),
+        )
+    });
+    ({
+        test_lexicographical_compare_433(
+            Vec::from([0]),
+            Vec::from([0, 1]),
+            (*compare_last_digit_partial_19.with(Value::clone).borrow()).copy_from(),
+            (*less_434.with(Value::clone).borrow()).clone(),
+        )
+    });
+    ({
+        test_lexicographical_compare_435(
+            Vec::from([i32::MIN, 1]),
+            Vec::from([0, 1, 2]),
+            (*compare_last_digit_partial_19.with(Value::clone).borrow()).copy_from(),
+            (*unordered_20.with(Value::clone).borrow()).clone(),
+        )
+    });
+}
+pub fn test_comparator_invocation_count_436() {
     let compare_invocation_count: Value<i32> = Rc::new(RefCell::new(0));
     let compare_last_digit_counting: Value<FnPtr<fn(i32, i32) -> std::cmp::Ordering>> =
         Rc::new(RefCell::new(lambda!(
@@ -8853,40 +14867,62 @@ pub fn test_comparator_invocation_count_381() {
                 let compare_invocation_count: Ptr<i32> = compare_invocation_count.as_pointer();
             },
             |mut a: i32, mut b: i32| -> std::cmp::Ordering {
-                compare_invocation_count.with_mut(|__v| __v.prefix_inc());
+                compare_invocation_count.with_mut(|__v| {
+                    __v.prefix_inc();
+                });
                 return std::cmp::Ord::cmp(&(a % 10), &(b % 10));
             }
         )));
     (*compare_invocation_count.borrow_mut()) = 0;
     ({
-        test_lexicographical_compare_321(
+        test_lexicographical_compare_366(
             Vec::from([0, 1, 2, 3]),
             std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
             (*compare_last_digit_counting.borrow()).copy_from(),
-            std::cmp::Ordering::Greater,
+            ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) }),
         )
     });
-    assert!(((*compare_invocation_count.borrow()) == 0));
+    assert!(({ ((*compare_invocation_count.borrow()) == 0) }));
     ({
-        test_lexicographical_compare_322(
+        test_lexicographical_compare_368(
             Vec::from([0, 1, 2]),
             Vec::from([0, 1, 2, 3]),
             (*compare_last_digit_counting.borrow()).copy_from(),
-            std::cmp::Ordering::Less,
+            ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) }),
         )
     });
-    assert!(((*compare_invocation_count.borrow()) <= 6));
+    assert!(({ ((*compare_invocation_count.borrow()) <= 6) }));
 }
-pub fn test_proxy_iterators_382() {
-    let vec_: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((*result.borrow()) == std::cmp::Ordering::Equal);
+pub fn test_proxy_iterators_437() {
+    let vec_: Value<Vec<bool>> = Rc::new(RefCell::new(
+        (0..(10_usize) as usize)
+            .map(|_| true)
+            .collect::<Vec<bool>>(),
+    ));
+    let result: Value<std::cmp::Ordering> = Rc::new(RefCell::new(
+        ({
+            let ___first1: RandomAccessIterator<bool> = vec_.decay().begin();
+            let ___last1: RandomAccessIterator<bool> = vec_.decay().end();
+            let ___first2: RandomAccessIterator<bool> = vec_.decay().begin();
+            let ___last2: RandomAccessIterator<bool> = vec_.decay().end();
+            lexicographical_compare_three_way_438(
+                ___first1,
+                ___last1,
+                ___first2,
+                ___last2,
+                (*compare_last_digit_strong_17.with(Value::clone).borrow()).copy_from(),
+            )
+        }),
+    ));
+    assert!(
+        ({ (*result.borrow()) }) == ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) })
+    );
 }
-pub fn test_383() -> bool {
-    ({ test_iterator_types_379() });
-    ({ test_comparison_categories_380() });
-    ({ test_comparator_invocation_count_381() });
-    ({ test_proxy_iterators_382() });
+pub fn test_439() -> bool {
+    ({ test_iterator_types_425() });
+    ({ test_comparison_categories_426() });
+    ({ test_comparator_invocation_count_436() });
+    ({ test_proxy_iterators_437() });
     return true;
 }
 pub fn main() {
@@ -8909,7 +14945,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_383() });
+    ({ test_439() });
     const _: () = assert!(true, "test()");;
     return 0;
 }
@@ -8967,21 +15003,29 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
         return (*self).clone();
     }
     fn operator_inc_14(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_15(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return prev;
     }
     fn operator_dec_16(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_17(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return prev;
     }
 }
@@ -9007,7 +15051,9 @@ impl bidirectional_iterator_const_int_ptr_Impl for Ptr<bidirectional_iterator_co
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_const_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -9059,7 +15105,9 @@ impl contiguous_iterator_const_int_ptr_Impl for Ptr<contiguous_iterator_const_in
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_9(&self) -> Ptr<contiguous_iterator_const_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -9095,7 +15143,9 @@ impl cpp17_input_iterator_const_int_ptr__const_int_ptr_Impl
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -9285,7 +15335,9 @@ impl forward_iterator_const_int_ptr_Impl for Ptr<forward_iterator_const_int_ptr_
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_const_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -9343,7 +15395,9 @@ impl random_access_iterator_const_int_ptr_Impl for Ptr<random_access_iterator_co
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_const_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -9402,11 +15456,11 @@ impl rvalue_iterator_int_ptr_Impl for Ptr<rvalue_iterator_int_ptr_> {
                 &((*self).with(|__s| __s.it_.clone())),
                 &(_a0.with(|__s| __s.it_.clone())),
             )));
-            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow());
+            if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+                return ({ (*cmp.borrow()) });
             }
         }
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> bool {
         return ({ (*self).with(|__s| __s.it_.clone()) } == { _a0.with(|__s| __s.it_.clone()) });
@@ -9433,5 +15487,5 @@ pub fn __cpp2rust_init_globals() {
     let _ = compare_last_digit_strong_17.with(|_| ());
     let _ = compare_last_digit_weak_18.with(|_| ());
     let _ = compare_last_digit_partial_19.with(|_| ());
-    let _ = compare_int_result_20.with(|_| ());
+    let _ = compare_int_result_21.with(|_| ());
 }

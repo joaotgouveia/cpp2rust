@@ -34,9 +34,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );;
     }
     {
-        let d1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let d2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let d1: Value<std_filesystem_directory_iterator> =
+            Rc::new(RefCell::new(<std_filesystem_directory_iterator>::default()));
+        let d2: Value<std_filesystem_directory_iterator> =
+            Rc::new(RefCell::new(<std_filesystem_directory_iterator>::default()));
+        assert!(({ (*d1.borrow()) == (*d2.borrow()) }));
     }
     return 0;
 }

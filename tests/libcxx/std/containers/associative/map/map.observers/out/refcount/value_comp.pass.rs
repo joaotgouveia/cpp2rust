@@ -11,14 +11,50 @@ pub fn test_0() -> bool {
     let p1: Value<(
         Value<BidirectionalIterator<(Value<i32>, Value<Vec<i8>>)>>,
         Value<bool>,
-    )> = Rc::new(RefCell::new(unimplemented!()));
+    )> = Rc::new(RefCell::new(
+        ({
+            let ___x: Value<(Value<i32>, Value<Vec<i8>>)> = Rc::new(RefCell::new((
+                Rc::new(RefCell::new(1)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"abc").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            )));
+            (*m.borrow()).insert_54(___x.as_pointer())
+        }),
+    ));
     let p2: Value<(
         Value<BidirectionalIterator<(Value<i32>, Value<Vec<i8>>)>>,
         Value<bool>,
-    )> = Rc::new(RefCell::new(unimplemented!()));
+    )> = Rc::new(RefCell::new(
+        ({
+            let ___x: Value<(Value<i32>, Value<Vec<i8>>)> = Rc::new(RefCell::new((
+                Rc::new(RefCell::new(2)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"abc").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            )));
+            (*m.borrow()).insert_54(___x.as_pointer())
+        }),
+    ));
     let cm: Ptr<Map<i32, (Value<i32>, Value<Vec<i8>>)>> = m.as_pointer();
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
+    assert!(
+        ({
+            let ___x: Ptr<(Value<i32>, Value<Vec<i8>>)> = (*(*p1.borrow()).0.borrow()).iter_deref();
+            let ___y: Ptr<(Value<i32>, Value<Vec<i8>>)> = (*(*p2.borrow()).0.borrow()).iter_deref();
+            ({ (*cm.upgrade().deref()).value_comp() })(___x, ___y)
+        })
+    );
+    assert!(
+        !({
+            let ___x: Ptr<(Value<i32>, Value<Vec<i8>>)> = (*(*p2.borrow()).0.borrow()).iter_deref();
+            let ___y: Ptr<(Value<i32>, Value<Vec<i8>>)> = (*(*p1.borrow()).0.borrow()).iter_deref();
+            ({ (*cm.upgrade().deref()).value_comp() })(___x, ___y)
+        })
+    );
     return true;
 }
 pub fn main() {

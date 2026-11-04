@@ -47,35 +47,52 @@ impl CppEq for Emplaceable {
         EmplaceableImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for Emplaceable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for Emplaceable {
     fn default() -> Self {
         { Emplaceable::new_1() }
     }
 }
 pub fn test_0() -> bool {
-    let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let q : Value<std_priority_queue_Emplaceable__std_vector_Emplaceable__std_allocator_Emplaceable____std_less_Emplaceable__ > = Rc::new(RefCell::new(<std_priority_queue_Emplaceable__std_vector_Emplaceable__std_allocator_Emplaceable____std_less_Emplaceable__  >::default() )) ;
+    ({
+        let ___args_0: Value<i32> = Rc::new(RefCell::new(1));
+        let ___args_1: Value<f64> = Rc::new(RefCell::new(2.5_f64));
+        (*q.borrow()).emplace(___args_0.as_pointer(), ___args_1.as_pointer())
+    });
     assert!(
         ({
             let _x: Value<Emplaceable> =
                 Rc::new(RefCell::new(Emplaceable::new_2({ 1 }, { 2.5_f64 })));
-            EmplaceableImpl::operator_eq(&unimplemented!(), _x.as_pointer())
+            EmplaceableImpl::operator_eq(&({ (*q.borrow()).top() }), _x.as_pointer())
         })
     );
-    unimplemented!();
+    ({
+        let ___args_0: Value<i32> = Rc::new(RefCell::new(3));
+        let ___args_1: Value<f64> = Rc::new(RefCell::new(4.5_f64));
+        (*q.borrow()).emplace(___args_0.as_pointer(), ___args_1.as_pointer())
+    });
     assert!(
         ({
             let _x: Value<Emplaceable> =
                 Rc::new(RefCell::new(Emplaceable::new_2({ 3 }, { 4.5_f64 })));
-            EmplaceableImpl::operator_eq(&unimplemented!(), _x.as_pointer())
+            EmplaceableImpl::operator_eq(&({ (*q.borrow()).top() }), _x.as_pointer())
         })
     );
-    unimplemented!();
+    ({
+        let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
+        let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
+        (*q.borrow()).emplace(___args_0.as_pointer(), ___args_1.as_pointer())
+    });
     assert!(
         ({
             let _x: Value<Emplaceable> =
                 Rc::new(RefCell::new(Emplaceable::new_2({ 3 }, { 4.5_f64 })));
-            EmplaceableImpl::operator_eq(&unimplemented!(), _x.as_pointer())
+            EmplaceableImpl::operator_eq(&({ (*q.borrow()).top() }), _x.as_pointer())
         })
     );
     return true;

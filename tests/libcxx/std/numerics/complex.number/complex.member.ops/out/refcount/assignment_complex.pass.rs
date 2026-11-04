@@ -7,129 +7,138 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_f32));
-    assert!((unimplemented!() == 0_f32));
-    let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((unimplemented!() as f64) == 1.5_f64));
-    assert!(((unimplemented!() as f64) == 2.5_f64));
-    let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((unimplemented!() as f64) == 3.5_f64));
-    assert!(((unimplemented!() as f64) == -4.5_f64));
+    let c: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
+    assert!(({ (({ (*c.borrow()).real_5() }) == 0_f32) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f32) }));
+    let c2: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
+    (*c.borrow_mut()) = (*c2.borrow()).clone();
+    assert!(({ ((({ (*c.borrow()).real_5() }) as f64) == 1.5_f64) }));
+    assert!(({ ((({ (*c.borrow()).imag_6() }) as f64) == 2.5_f64) }));
+    let c3: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
+    (*c.borrow_mut()) = (*c3.borrow()).clone();
+    assert!(({ ((({ (*c.borrow()).real_5() }) as f64) == 3.5_f64) }));
+    assert!(({ ((({ (*c.borrow()).imag_6() }) as f64) == -4.5_f64) }));
     return true;
 }
 pub fn test_1() -> bool {
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_f32));
-    assert!((unimplemented!() == 0_f32));
-    let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((unimplemented!() as f64) == 1.5_f64));
-    assert!(((unimplemented!() as f64) == 2.5_f64));
-    let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((unimplemented!() as f64) == 3.5_f64));
-    assert!(((unimplemented!() as f64) == -4.5_f64));
+    let c: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
+    assert!(({ (({ (*c.borrow()).real_5() }) == 0_f32) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f32) }));
+    let c2: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
+    (*c.borrow_mut()) = (*c2.borrow()).clone();
+    assert!(({ ((({ (*c.borrow()).real_5() }) as f64) == 1.5_f64) }));
+    assert!(({ ((({ (*c.borrow()).imag_6() }) as f64) == 2.5_f64) }));
+    let c3: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+    (*c.borrow_mut()) = (*c3.borrow()).clone();
+    assert!(({ ((({ (*c.borrow()).real_5() }) as f64) == 3.5_f64) }));
+    assert!(({ ((({ (*c.borrow()).imag_6() }) as f64) == -4.5_f64) }));
     return true;
 }
 pub fn test_2() -> bool {
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_f32));
-    assert!((unimplemented!() == 0_f32));
-    let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((unimplemented!() as f64) == 1.5_f64));
-    assert!(((unimplemented!() as f64) == 2.5_f64));
-    let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((unimplemented!() as f64) == 3.5_f64));
-    assert!(((unimplemented!() as f64) == -4.5_f64));
+    let c: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
+    assert!(({ (({ (*c.borrow()).real_5() }) == 0_f32) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f32) }));
+    let c2: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
+    (*c.borrow_mut()) = (*c2.borrow()).clone();
+    assert!(({ ((({ (*c.borrow()).real_5() }) as f64) == 1.5_f64) }));
+    assert!(({ ((({ (*c.borrow()).imag_6() }) as f64) == 2.5_f64) }));
+    let c3: Value<std_complex_long_double_> =
+        Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+    (*c.borrow_mut()) = (*c3.borrow()).clone();
+    assert!(({ ((({ (*c.borrow()).real_5() }) as f64) == 3.5_f64) }));
+    assert!(({ ((({ (*c.borrow()).imag_6() }) as f64) == -4.5_f64) }));
     return true;
 }
 pub fn test_3() -> bool {
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_f64));
-    assert!((unimplemented!() == 0_f64));
-    let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 1.5_f64));
-    assert!((unimplemented!() == 2.5_f64));
-    let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 3.5_f64));
-    assert!((unimplemented!() == -4.5_f64));
+    let c: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+    assert!(({ (({ (*c.borrow()).real_5() }) == 0_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f64) }));
+    let c2: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+    (*c.borrow_mut()) = (*c2.borrow()).clone();
+    assert!(({ (({ (*c.borrow()).real_5() }) == 1.5_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 2.5_f64) }));
+    let c3: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
+    (*c.borrow_mut()) = (*c3.borrow()).clone();
+    assert!(({ (({ (*c.borrow()).real_5() }) == 3.5_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == -4.5_f64) }));
     return true;
 }
 pub fn test_4() -> bool {
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_f64));
-    assert!((unimplemented!() == 0_f64));
-    let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 1.5_f64));
-    assert!((unimplemented!() == 2.5_f64));
-    let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 3.5_f64));
-    assert!((unimplemented!() == -4.5_f64));
+    let c: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+    assert!(({ (({ (*c.borrow()).real_5() }) == 0_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f64) }));
+    let c2: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+    (*c.borrow_mut()) = (*c2.borrow()).clone();
+    assert!(({ (({ (*c.borrow()).real_5() }) == 1.5_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 2.5_f64) }));
+    let c3: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+    (*c.borrow_mut()) = (*c3.borrow()).clone();
+    assert!(({ (({ (*c.borrow()).real_5() }) == 3.5_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == -4.5_f64) }));
     return true;
 }
 pub fn test_5() -> bool {
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_f64));
-    assert!((unimplemented!() == 0_f64));
-    let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 1.5_f64));
-    assert!((unimplemented!() == 2.5_f64));
-    let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 3.5_f64));
-    assert!((unimplemented!() == -4.5_f64));
+    let c: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+    assert!(({ (({ (*c.borrow()).real_5() }) == 0_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f64) }));
+    let c2: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+    (*c.borrow_mut()) = (*c2.borrow()).clone();
+    assert!(({ (({ (*c.borrow()).real_5() }) == 1.5_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 2.5_f64) }));
+    let c3: Value<std_complex_long_double_> =
+        Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+    (*c.borrow_mut()) = (*c3.borrow()).clone();
+    assert!(({ (({ (*c.borrow()).real_5() }) == 3.5_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == -4.5_f64) }));
     return true;
 }
 pub fn test_6() -> bool {
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_f64));
-    assert!((unimplemented!() == 0_f64));
-    let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 1.5_f64));
-    assert!((unimplemented!() == 2.5_f64));
-    let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 3.5_f64));
-    assert!((unimplemented!() == -4.5_f64));
+    let c: Value<std_complex_long_double_> =
+        Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+    assert!(({ (({ (*c.borrow()).real_5() }) == 0_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f64) }));
+    let c2: Value<std_complex_long_double_> =
+        Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+    (*c.borrow_mut()) = (*c2.borrow()).clone();
+    assert!(({ (({ (*c.borrow()).real_5() }) == 1.5_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 2.5_f64) }));
+    let c3: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
+    (*c.borrow_mut()) = (*c3.borrow()).clone();
+    assert!(({ (({ (*c.borrow()).real_5() }) == 3.5_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == -4.5_f64) }));
     return true;
 }
 pub fn test_7() -> bool {
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_f64));
-    assert!((unimplemented!() == 0_f64));
-    let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 1.5_f64));
-    assert!((unimplemented!() == 2.5_f64));
-    let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 3.5_f64));
-    assert!((unimplemented!() == -4.5_f64));
+    let c: Value<std_complex_long_double_> =
+        Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+    assert!(({ (({ (*c.borrow()).real_5() }) == 0_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f64) }));
+    let c2: Value<std_complex_long_double_> =
+        Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+    (*c.borrow_mut()) = (*c2.borrow()).clone();
+    assert!(({ (({ (*c.borrow()).real_5() }) == 1.5_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 2.5_f64) }));
+    let c3: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+    (*c.borrow_mut()) = (*c3.borrow()).clone();
+    assert!(({ (({ (*c.borrow()).real_5() }) == 3.5_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == -4.5_f64) }));
     return true;
 }
 pub fn test_8() -> bool {
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_f64));
-    assert!((unimplemented!() == 0_f64));
-    let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 1.5_f64));
-    assert!((unimplemented!() == 2.5_f64));
-    let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 3.5_f64));
-    assert!((unimplemented!() == -4.5_f64));
+    let c: Value<std_complex_long_double_> =
+        Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+    assert!(({ (({ (*c.borrow()).real_5() }) == 0_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f64) }));
+    let c2: Value<std_complex_long_double_> =
+        Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+    (*c.borrow_mut()) = (*c2.borrow()).clone();
+    assert!(({ (({ (*c.borrow()).real_5() }) == 1.5_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 2.5_f64) }));
+    let c3: Value<std_complex_long_double_> =
+        Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+    (*c.borrow_mut()) = (*c3.borrow()).clone();
+    assert!(({ (({ (*c.borrow()).real_5() }) == 3.5_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == -4.5_f64) }));
     return true;
 }
 pub fn main() {

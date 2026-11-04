@@ -52,6 +52,11 @@ impl Clone for __gnu_test_object_counter {
         __gnu_test_object_counter::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_object_counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_object_counter {
     fn default() -> Self {
         { __gnu_test_object_counter::new() }
@@ -78,6 +83,11 @@ impl __gnu_test_copy_constructor {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_copy_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
@@ -99,6 +109,11 @@ impl __gnu_test_assignment_operator {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_assignment_operator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
@@ -111,6 +126,11 @@ impl __gnu_test_destructor {
     }
     pub fn reset() {
         _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
+    }
+}
+impl CppMove for __gnu_test_destructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -173,6 +193,11 @@ impl Clone for __gnu_test_copy_tracker {
         __gnu_test_copy_tracker::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_copy_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_copy_tracker {
     fn default() -> Self {
         { __gnu_test_copy_tracker::new(None, None) }
@@ -197,6 +222,11 @@ pub struct __gnu_test_semaphore {
     pid_: (),
 }
 impl __gnu_test_semaphore {}
+impl CppMove for __gnu_test_semaphore {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
 #[cpp_from(i32, new_1, value)]
 #[byte_size(8)]
@@ -247,6 +277,11 @@ impl CppLess for __gnu_test_rvalstruct {
 impl CppEq for __gnu_test_rvalstruct {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_10(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for __gnu_test_rvalstruct {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for __gnu_test_rvalstruct {
@@ -352,6 +387,11 @@ impl Clone for __gnu_test_copycounter {
         __gnu_test_copycounter::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_copycounter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for __gnu_test_copycounter {
     fn default() -> Self {
         { __gnu_test_copycounter::new_2() }
@@ -445,6 +485,11 @@ impl Clone for __gnu_test_rvalstruct_compare_by_value {
         __gnu_test_rvalstruct_compare_by_value::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_rvalstruct_compare_by_value {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_lt_16(
     mut lh: __gnu_test_rvalstruct_compare_by_value,
     mut rh: __gnu_test_rvalstruct_compare_by_value,
@@ -502,6 +547,11 @@ impl __gnu_test_throwing_move_constructor {
         __this
     }
 }
+impl CppMove for __gnu_test_throwing_move_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn test01_18() {
     let a: Value<Vec<__gnu_test_copycounter>> = Rc::new(RefCell::new(Vec::new()));
     let c: Value<__gnu_test_copycounter> =
@@ -526,13 +576,17 @@ pub fn test01_18() {
     }
     let mut i: i32 = 0;
     'loop_: while (i < 100) {
-        {
-            let __it = <RandomAccessIterator<__gnu_test_copycounter>>::from(
+        match ({
+            <RandomAccessIterator<__gnu_test_copycounter>>::from(
                 a.decay().begin().iter_add((i as isize)),
-            );
-            let __off = __it.index();
-            (*a.borrow_mut()).insert(__off, (*c.borrow()).clone());
-            __it
+            )
+        },)
+        {
+            (mut __tmp_0,) => {
+                let __off = __tmp_0.index();
+                (*a.borrow_mut()).insert(__off, ({ (*c.borrow()).clone() }));
+                (__tmp_0).clone()
+            }
         };
         i.prefix_inc();
     }
@@ -546,11 +600,12 @@ pub fn test01_18() {
     }
     let mut i: i32 = 0;
     'loop_: while (i < 1000) {
-        {
-            let __it = <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().end());
-            let __off = __it.index();
-            (*a.borrow_mut()).insert(__off, (*c.borrow()).clone());
-            __it
+        match ({ <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().end()) },) {
+            (mut __tmp_1,) => {
+                let __off = __tmp_1.index();
+                (*a.borrow_mut()).insert(__off, ({ (*c.borrow()).clone() }));
+                (__tmp_1).clone()
+            }
         };
         i.prefix_inc();
     }
@@ -568,28 +623,37 @@ pub fn test02_19() {
         Rc::new(RefCell::new(__gnu_test_copycounter::new_1({ 1 })));
     let _dtor_c = ScopedDestructor::new(&c, |__p| __p.destructor());
     let a: Value<Vec<__gnu_test_copycounter>> =
-        Rc::new(RefCell::new(vec![(*c.borrow()).clone(); 10_usize as usize]));
-    let b: Value<Vec<__gnu_test_copycounter>> = Rc::new(RefCell::new(vec![
-        (*c.borrow()).clone();
-        100_usize as usize
-    ]));
+        Rc::new(RefCell::new(vec![
+            ({ (*c.borrow()).clone() });
+            10_usize as usize
+        ]));
+    let b: Value<Vec<__gnu_test_copycounter>> =
+        Rc::new(RefCell::new(vec![
+            ({ (*c.borrow()).clone() });
+            100_usize as usize
+        ]));
     copycount_12.with(|rc| *rc.borrow_mut() = 0);
-    {
-        let __pos = <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().begin());
-        let __start = __pos.index();
-        let mut __tmp: Vec<__gnu_test_copycounter> = Vec::new();
-        let mut __it = b.decay().begin();
-        while __it != b.decay().begin().iter_add(20_isize) {
-            __tmp.push(<__gnu_test_copycounter as CppFrom<
-                __gnu_test_copycounter,
-            >>::cpp_from(__it.iter_deref()));
-            __it.iter_inc();
+    match (
+        { <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().begin()) },
+        { b.decay().begin() },
+        { b.decay().begin().iter_add(20_isize) },
+    ) {
+        (mut __tmp_2, mut __tmp_3, mut __tmp_4) => {
+            let __start = __tmp_2.index();
+            let mut __tmp: Vec<__gnu_test_copycounter> = Vec::new();
+            let mut __it = (__tmp_3).clone();
+            while __it != __tmp_4 {
+                __tmp.push(<__gnu_test_copycounter as CppFrom<
+                    __gnu_test_copycounter,
+                >>::cpp_from(__it.iter_deref()));
+                __it.iter_inc();
+            }
+            a.as_pointer()
+                .with_mut(|__v: &mut Vec<__gnu_test_copycounter>| {
+                    __v.splice(__start..__start, __tmp);
+                });
+            (__tmp_2).clone()
         }
-        a.as_pointer()
-            .with_mut(|__v: &mut Vec<__gnu_test_copycounter>| {
-                __v.splice(__start..__start, __tmp);
-            });
-        __pos
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -599,22 +663,27 @@ pub fn test02_19() {
             std::process::abort();
         }
     }
-    {
-        let __pos = <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().end());
-        let __start = __pos.index();
-        let mut __tmp: Vec<__gnu_test_copycounter> = Vec::new();
-        let mut __it = b.decay().begin();
-        while __it != b.decay().begin().iter_add(50_isize) {
-            __tmp.push(<__gnu_test_copycounter as CppFrom<
-                __gnu_test_copycounter,
-            >>::cpp_from(__it.iter_deref()));
-            __it.iter_inc();
+    match (
+        { <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().end()) },
+        { b.decay().begin() },
+        { b.decay().begin().iter_add(50_isize) },
+    ) {
+        (mut __tmp_5, mut __tmp_6, mut __tmp_7) => {
+            let __start = __tmp_5.index();
+            let mut __tmp: Vec<__gnu_test_copycounter> = Vec::new();
+            let mut __it = (__tmp_6).clone();
+            while __it != __tmp_7 {
+                __tmp.push(<__gnu_test_copycounter as CppFrom<
+                    __gnu_test_copycounter,
+                >>::cpp_from(__it.iter_deref()));
+                __it.iter_inc();
+            }
+            a.as_pointer()
+                .with_mut(|__v: &mut Vec<__gnu_test_copycounter>| {
+                    __v.splice(__start..__start, __tmp);
+                });
+            (__tmp_5).clone()
         }
-        a.as_pointer()
-            .with_mut(|__v: &mut Vec<__gnu_test_copycounter>| {
-                __v.splice(__start..__start, __tmp);
-            });
-        __pos
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -624,24 +693,31 @@ pub fn test02_19() {
             std::process::abort();
         }
     }
-    {
-        let __pos = <RandomAccessIterator<__gnu_test_copycounter>>::from(
-            a.decay().begin().iter_add(50_isize),
-        );
-        let __start = __pos.index();
-        let mut __tmp: Vec<__gnu_test_copycounter> = Vec::new();
-        let mut __it = b.decay().begin();
-        while __it != b.decay().end() {
-            __tmp.push(<__gnu_test_copycounter as CppFrom<
-                __gnu_test_copycounter,
-            >>::cpp_from(__it.iter_deref()));
-            __it.iter_inc();
+    match (
+        {
+            <RandomAccessIterator<__gnu_test_copycounter>>::from(
+                a.decay().begin().iter_add(50_isize),
+            )
+        },
+        { b.decay().begin() },
+        { b.decay().end() },
+    ) {
+        (mut __tmp_8, mut __tmp_9, mut __tmp_10) => {
+            let __start = __tmp_8.index();
+            let mut __tmp: Vec<__gnu_test_copycounter> = Vec::new();
+            let mut __it = (__tmp_9).clone();
+            while __it != __tmp_10 {
+                __tmp.push(<__gnu_test_copycounter as CppFrom<
+                    __gnu_test_copycounter,
+                >>::cpp_from(__it.iter_deref()));
+                __it.iter_inc();
+            }
+            a.as_pointer()
+                .with_mut(|__v: &mut Vec<__gnu_test_copycounter>| {
+                    __v.splice(__start..__start, __tmp);
+                });
+            (__tmp_8).clone()
         }
-        a.as_pointer()
-            .with_mut(|__v: &mut Vec<__gnu_test_copycounter>| {
-                __v.splice(__start..__start, __tmp);
-            });
-        __pos
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -657,11 +733,15 @@ pub fn test03_20() {
         Rc::new(RefCell::new(__gnu_test_copycounter::new_1({ 1 })));
     let _dtor_c = ScopedDestructor::new(&c, |__p| __p.destructor());
     let a: Value<Vec<__gnu_test_copycounter>> =
-        Rc::new(RefCell::new(vec![(*c.borrow()).clone(); 10_usize as usize]));
-    let b: Value<Vec<__gnu_test_copycounter>> = Rc::new(RefCell::new(vec![
-        (*c.borrow()).clone();
-        100_usize as usize
-    ]));
+        Rc::new(RefCell::new(vec![
+            ({ (*c.borrow()).clone() });
+            10_usize as usize
+        ]));
+    let b: Value<Vec<__gnu_test_copycounter>> =
+        Rc::new(RefCell::new(vec![
+            ({ (*c.borrow()).clone() });
+            100_usize as usize
+        ]));
     copycount_12.with(|rc| *rc.borrow_mut() = 0);
     if 1000_usize as usize > (*a.borrow()).capacity() as usize {
         let len_0 = (*a.borrow()).len();
@@ -675,22 +755,27 @@ pub fn test03_20() {
             std::process::abort();
         }
     }
-    {
-        let __pos = <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().begin());
-        let __start = __pos.index();
-        let mut __tmp: Vec<__gnu_test_copycounter> = Vec::new();
-        let mut __it = b.decay().begin();
-        while __it != b.decay().begin().iter_add(20_isize) {
-            __tmp.push(<__gnu_test_copycounter as CppFrom<
-                __gnu_test_copycounter,
-            >>::cpp_from(__it.iter_deref()));
-            __it.iter_inc();
+    match (
+        { <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().begin()) },
+        { b.decay().begin() },
+        { b.decay().begin().iter_add(20_isize) },
+    ) {
+        (mut __tmp_11, mut __tmp_12, mut __tmp_13) => {
+            let __start = __tmp_11.index();
+            let mut __tmp: Vec<__gnu_test_copycounter> = Vec::new();
+            let mut __it = (__tmp_12).clone();
+            while __it != __tmp_13 {
+                __tmp.push(<__gnu_test_copycounter as CppFrom<
+                    __gnu_test_copycounter,
+                >>::cpp_from(__it.iter_deref()));
+                __it.iter_inc();
+            }
+            a.as_pointer()
+                .with_mut(|__v: &mut Vec<__gnu_test_copycounter>| {
+                    __v.splice(__start..__start, __tmp);
+                });
+            (__tmp_11).clone()
         }
-        a.as_pointer()
-            .with_mut(|__v: &mut Vec<__gnu_test_copycounter>| {
-                __v.splice(__start..__start, __tmp);
-            });
-        __pos
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -700,22 +785,27 @@ pub fn test03_20() {
             std::process::abort();
         }
     }
-    {
-        let __pos = <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().end());
-        let __start = __pos.index();
-        let mut __tmp: Vec<__gnu_test_copycounter> = Vec::new();
-        let mut __it = b.decay().begin();
-        while __it != b.decay().begin().iter_add(50_isize) {
-            __tmp.push(<__gnu_test_copycounter as CppFrom<
-                __gnu_test_copycounter,
-            >>::cpp_from(__it.iter_deref()));
-            __it.iter_inc();
+    match (
+        { <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().end()) },
+        { b.decay().begin() },
+        { b.decay().begin().iter_add(50_isize) },
+    ) {
+        (mut __tmp_14, mut __tmp_15, mut __tmp_16) => {
+            let __start = __tmp_14.index();
+            let mut __tmp: Vec<__gnu_test_copycounter> = Vec::new();
+            let mut __it = (__tmp_15).clone();
+            while __it != __tmp_16 {
+                __tmp.push(<__gnu_test_copycounter as CppFrom<
+                    __gnu_test_copycounter,
+                >>::cpp_from(__it.iter_deref()));
+                __it.iter_inc();
+            }
+            a.as_pointer()
+                .with_mut(|__v: &mut Vec<__gnu_test_copycounter>| {
+                    __v.splice(__start..__start, __tmp);
+                });
+            (__tmp_14).clone()
         }
-        a.as_pointer()
-            .with_mut(|__v: &mut Vec<__gnu_test_copycounter>| {
-                __v.splice(__start..__start, __tmp);
-            });
-        __pos
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -725,24 +815,31 @@ pub fn test03_20() {
             std::process::abort();
         }
     }
-    {
-        let __pos = <RandomAccessIterator<__gnu_test_copycounter>>::from(
-            a.decay().begin().iter_add(50_isize),
-        );
-        let __start = __pos.index();
-        let mut __tmp: Vec<__gnu_test_copycounter> = Vec::new();
-        let mut __it = b.decay().begin();
-        while __it != b.decay().end() {
-            __tmp.push(<__gnu_test_copycounter as CppFrom<
-                __gnu_test_copycounter,
-            >>::cpp_from(__it.iter_deref()));
-            __it.iter_inc();
+    match (
+        {
+            <RandomAccessIterator<__gnu_test_copycounter>>::from(
+                a.decay().begin().iter_add(50_isize),
+            )
+        },
+        { b.decay().begin() },
+        { b.decay().end() },
+    ) {
+        (mut __tmp_17, mut __tmp_18, mut __tmp_19) => {
+            let __start = __tmp_17.index();
+            let mut __tmp: Vec<__gnu_test_copycounter> = Vec::new();
+            let mut __it = (__tmp_18).clone();
+            while __it != __tmp_19 {
+                __tmp.push(<__gnu_test_copycounter as CppFrom<
+                    __gnu_test_copycounter,
+                >>::cpp_from(__it.iter_deref()));
+                __it.iter_inc();
+            }
+            a.as_pointer()
+                .with_mut(|__v: &mut Vec<__gnu_test_copycounter>| {
+                    __v.splice(__start..__start, __tmp);
+                });
+            (__tmp_17).clone()
         }
-        a.as_pointer()
-            .with_mut(|__v: &mut Vec<__gnu_test_copycounter>| {
-                __v.splice(__start..__start, __tmp);
-            });
-        __pos
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -758,16 +855,20 @@ pub fn test04_21() {
         Rc::new(RefCell::new(__gnu_test_copycounter::new_1({ 1 })));
     let _dtor_c = ScopedDestructor::new(&c, |__p| __p.destructor());
     let a: Value<Vec<__gnu_test_copycounter>> =
-        Rc::new(RefCell::new(vec![(*c.borrow()).clone(); 10_usize as usize]));
+        Rc::new(RefCell::new(vec![
+            ({ (*c.borrow()).clone() });
+            10_usize as usize
+        ]));
     copycount_12.with(|rc| *rc.borrow_mut() = 0);
-    {
-        let __it = <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().begin());
-        let __off = __it.index();
-        (*a.borrow_mut()).splice(
-            __off..__off,
-            std::iter::repeat_n((*c.borrow()).clone(), 20_usize),
-        );
-        __it
+    match ({ <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().begin()) },) {
+        (mut __tmp_20,) => {
+            let __off = __tmp_20.index();
+            (*a.borrow_mut()).splice(
+                __off..__off,
+                std::iter::repeat_n(({ (*c.borrow()).clone() }), 20_usize),
+            );
+            (__tmp_20).clone()
+        }
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -777,14 +878,15 @@ pub fn test04_21() {
             std::process::abort();
         }
     }
-    {
-        let __it = <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().end());
-        let __off = __it.index();
-        (*a.borrow_mut()).splice(
-            __off..__off,
-            std::iter::repeat_n((*c.borrow()).clone(), 50_usize),
-        );
-        __it
+    match ({ <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().end()) },) {
+        (mut __tmp_21,) => {
+            let __off = __tmp_21.index();
+            (*a.borrow_mut()).splice(
+                __off..__off,
+                std::iter::repeat_n(({ (*c.borrow()).clone() }), 50_usize),
+            );
+            (__tmp_21).clone()
+        }
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -794,16 +896,18 @@ pub fn test04_21() {
             std::process::abort();
         }
     }
+    match ({
+        <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().begin().iter_add(50_isize))
+    },)
     {
-        let __it = <RandomAccessIterator<__gnu_test_copycounter>>::from(
-            a.decay().begin().iter_add(50_isize),
-        );
-        let __off = __it.index();
-        (*a.borrow_mut()).splice(
-            __off..__off,
-            std::iter::repeat_n((*c.borrow()).clone(), 100_usize),
-        );
-        __it
+        (mut __tmp_22,) => {
+            let __off = __tmp_22.index();
+            (*a.borrow_mut()).splice(
+                __off..__off,
+                std::iter::repeat_n(({ (*c.borrow()).clone() }), 100_usize),
+            );
+            (__tmp_22).clone()
+        }
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -819,20 +923,24 @@ pub fn test05_22() {
         Rc::new(RefCell::new(__gnu_test_copycounter::new_1({ 1 })));
     let _dtor_c = ScopedDestructor::new(&c, |__p| __p.destructor());
     let a: Value<Vec<__gnu_test_copycounter>> =
-        Rc::new(RefCell::new(vec![(*c.borrow()).clone(); 10_usize as usize]));
+        Rc::new(RefCell::new(vec![
+            ({ (*c.borrow()).clone() });
+            10_usize as usize
+        ]));
     copycount_12.with(|rc| *rc.borrow_mut() = 0);
     if 1000_usize as usize > (*a.borrow()).capacity() as usize {
         let len_0 = (*a.borrow()).len();
         (*a.borrow_mut()).reserve_exact(1000_usize as usize - len_0 as usize);
     };
-    {
-        let __it = <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().begin());
-        let __off = __it.index();
-        (*a.borrow_mut()).splice(
-            __off..__off,
-            std::iter::repeat_n((*c.borrow()).clone(), 20_usize),
-        );
-        __it
+    match ({ <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().begin()) },) {
+        (mut __tmp_23,) => {
+            let __off = __tmp_23.index();
+            (*a.borrow_mut()).splice(
+                __off..__off,
+                std::iter::repeat_n(({ (*c.borrow()).clone() }), 20_usize),
+            );
+            (__tmp_23).clone()
+        }
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -842,14 +950,15 @@ pub fn test05_22() {
             std::process::abort();
         }
     }
-    {
-        let __it = <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().end());
-        let __off = __it.index();
-        (*a.borrow_mut()).splice(
-            __off..__off,
-            std::iter::repeat_n((*c.borrow()).clone(), 50_usize),
-        );
-        __it
+    match ({ <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().end()) },) {
+        (mut __tmp_24,) => {
+            let __off = __tmp_24.index();
+            (*a.borrow_mut()).splice(
+                __off..__off,
+                std::iter::repeat_n(({ (*c.borrow()).clone() }), 50_usize),
+            );
+            (__tmp_24).clone()
+        }
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -859,16 +968,18 @@ pub fn test05_22() {
             std::process::abort();
         }
     }
+    match ({
+        <RandomAccessIterator<__gnu_test_copycounter>>::from(a.decay().begin().iter_add(50_isize))
+    },)
     {
-        let __it = <RandomAccessIterator<__gnu_test_copycounter>>::from(
-            a.decay().begin().iter_add(50_isize),
-        );
-        let __off = __it.index();
-        (*a.borrow_mut()).splice(
-            __off..__off,
-            std::iter::repeat_n((*c.borrow()).clone(), 100_usize),
-        );
-        __it
+        (mut __tmp_25,) => {
+            let __off = __tmp_25.index();
+            (*a.borrow_mut()).splice(
+                __off..__off,
+                std::iter::repeat_n(({ (*c.borrow()).clone() }), 100_usize),
+            );
+            (__tmp_25).clone()
+        }
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -1024,22 +1135,36 @@ pub fn run_tests_wrapped_env_27(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !(libc::setenv(env, name, 1) != 0) {
+    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+        true => {
+            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
+            0
+        }
+        false => 0,
+    } != 0)
+    {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: i32 = 0;
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        libc::setenv(
-            env,
+        match ({
             if !(oldENV).is_null() {
                 (oldENV).clone()
             } else {
                 Ptr::<i8>::from_string_literal(b"")
+            }
+        },)
+        {
+            (mut __tmp_0,) => match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+                true => {
+                    unsafe { ::std::env::set_var(env.to_rust_string(), __tmp_0.to_rust_string()) };
+                    0
+                }
+                false => 0,
             },
-            1,
-        );
+        };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = env.to_c_bytes();
@@ -1088,6 +1213,11 @@ impl __gnu_test_semun {
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<u16>> {
         this.reinterpret_cast()
+    }
+}
+impl CppMove for __gnu_test_semun {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for __gnu_test_semun {
@@ -1209,7 +1339,9 @@ impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
     }
     fn push_back(&self, mut test: FnPtr<fn()>) {
         array_elem!((*self), _M_tests, (*self).with(|__s| __s._M_size)).write((test).clone());
-        field!((*self), _M_size).with_mut(|__v| __v.prefix_inc());
+        field!((*self), _M_size).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait __gnu_test_object_counterImpl {

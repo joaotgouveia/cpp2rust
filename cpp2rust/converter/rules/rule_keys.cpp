@@ -435,8 +435,8 @@ std::vector<ExprKey> GetExprKeys(clang::Sema &sema,
       }
       if (keys.empty()) {
         llvm::errs() << "expression rule " << rule->getQualifiedNameAsString()
-                     << " has no key: cast member type "
-                     << type.getAsString() << " has no class\n";
+                     << " has no key: cast member type " << type.getAsString()
+                     << " has no class\n";
         rule->dump(llvm::errs());
       }
       assert(!keys.empty() && "expression rule has no key");
@@ -540,8 +540,8 @@ std::vector<TypeKey> GetTypeKeys(clang::Sema &sema,
     if (!parent) {
       llvm::errs() << "type rule " << rule->getQualifiedNameAsString()
                    << " has no key: qualifier "
-                   << clang::QualType(outermost, 0).getAsString()
-                   << " of " << pattern.getAsString()
+                   << clang::QualType(outermost, 0).getAsString() << " of "
+                   << pattern.getAsString()
                    << " is neither a class nor an alias template\n";
       rule->dump(llvm::errs());
     }
@@ -597,8 +597,8 @@ std::vector<TypeKey> GetTypeKeys(clang::ASTContext &ctx, clang::QualType use) {
       record && !use->isDependentType()) {
     for (auto owner =
              llvm::dyn_cast<clang::CXXRecordDecl>(record->getDeclContext());
-         owner;
-         owner = llvm::dyn_cast<clang::CXXRecordDecl>(owner->getDeclContext())) {
+         owner; owner = llvm::dyn_cast<clang::CXXRecordDecl>(
+                    owner->getDeclContext())) {
       auto key = GetTypeKey(ctx.getCanonicalTagType(owner));
       if (key && !llvm::is_contained(keys, *key)) {
         keys.push_back(*key);

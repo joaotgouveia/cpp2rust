@@ -27,6 +27,11 @@ impl Clone for A {
         A::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for A {
     fn default() -> Self {
         { A::new() }
@@ -57,12 +62,30 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let w1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 1_i64));
-        unimplemented!();
-        assert!((unimplemented!() == 0_i64));
-        assert!((unimplemented!() == 1_i64));
+        let p1: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({
+            Ptr::alloc(A::new())
+        })));
+        let w1: Value<std_weak_ptr_A_> =
+            Rc::new(RefCell::new(std_weak_ptr_A_::new_1({ p1.as_pointer() })));
+        assert!(
+            ({
+                (({ ((*w1.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count() })
+                    == 1_i64)
+            })
+        );
+        ({ ((*w1.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).reset() });
+        assert!(
+            ({
+                (({ ((*w1.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count() })
+                    == 0_i64)
+            })
+        );
+        assert!(
+            ({
+                (({ ((*p1.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() })
+                    == 1_i64)
+            })
+        );
     }
     assert!((count_0.with(|rc| *rc.borrow()) == 0));
     return 0;

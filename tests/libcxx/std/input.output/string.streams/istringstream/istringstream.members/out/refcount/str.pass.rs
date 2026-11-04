@@ -32,9 +32,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!((unimplemented!()).is_null()));
         assert!(unimplemented!());
         assert!(
-            Ptr::<i8>::from_string_literal(b" 123 456").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_0,) => {
+                    Ptr::<i8>::from_string_literal(b" 123 456").with_c_str(|__s| {
+                        (*__tmp_0.upgrade().deref())
+                            [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         let mut i: i32 = 0;
         unimplemented!();
@@ -45,9 +51,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         unimplemented!();
         assert!(unimplemented!());
         assert!(
-            Ptr::<i8>::from_string_literal(b" 789").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_1,) => {
+                    Ptr::<i8>::from_string_literal(b" 789").with_c_str(|__s| {
+                        (*__tmp_1.upgrade().deref())
+                            [..(*__tmp_1.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         unimplemented!();
         assert!((i == 789));
@@ -57,11 +69,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!((unimplemented!()).is_null()));
         assert!(unimplemented!());
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                32 as i32, 49 as i32, 50 as i32, 51 as i32, 32 as i32, 52 as i32, 53 as i32,
-                54 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_2,) => {
+                    Ptr::<i32>::from_string_literal(&[
+                        32 as i32, 49 as i32, 50 as i32, 51 as i32, 32 as i32, 52 as i32,
+                        53 as i32, 54 as i32, 0 as i32,
+                    ])
+                    .with_c_str(|__s| {
+                        (*__tmp_2.upgrade().deref())
+                            [..(*__tmp_2.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         let mut i: i32 = 0;
         unimplemented!();
@@ -72,10 +92,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         unimplemented!();
         assert!(unimplemented!());
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                32 as i32, 55 as i32, 56 as i32, 57 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+            match (Rc::new(RefCell::new(unimplemented!())).as_pointer(),) {
+                (__tmp_3,) => {
+                    Ptr::<i32>::from_string_literal(&[
+                        32 as i32, 55 as i32, 56 as i32, 57 as i32, 0 as i32,
+                    ])
+                    .with_c_str(|__s| {
+                        (*__tmp_3.upgrade().deref())
+                            [..(*__tmp_3.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
         unimplemented!();
         assert!((i == 789));

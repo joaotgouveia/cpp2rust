@@ -6,34 +6,14 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = u32;
-pub const anon_0_value: anon_0 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_optional_int___std_optional_int__ {}
-pub type anon_1 = u32;
-pub const anon_1_value: anon_1 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_optional_A___std_optional_A__ {}
-pub type anon_2 = u32;
-pub const anon_2_value: anon_2 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_optional_const_int_ptr___std_optional_const_int_ptr__ {}
-pub type anon_3 = u32;
-pub const anon_3_value: anon_3 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_optional_int_ptr___std_optional_int_ptr__ {}
-pub type anon_4 = u32;
-pub const anon_4_value: anon_4 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_optional_char___std_optional_char__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A {}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -55,44 +35,51 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_int_> = Rc::new(RefCell::new(5));
         const _: () = assert!(true, "");;
-        assert!(unimplemented!());
-        assert!(((unimplemented!().read()) == 5));
+        assert!(({ ({ (*opt.borrow())() }) }));
+        assert!(({ (((*opt.borrow()).read()) == 5) }));
     }
     {
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_A_> = Rc::new(RefCell::new(<A>::default()));
         const _: () = assert!(true, "");;
-        assert!(unimplemented!());
+        assert!(({ ({ (*opt.borrow())() }) }));
     }
     {
         let __tmp_0: Value<i32> = Rc::new(RefCell::new(5));
         let source: Ptr<i32> = __tmp_0.as_pointer();
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let opt: Value<std_optional_int_> =
+            Rc::new(RefCell::new(std_optional_int_::new_1({ (source).clone() })));
         const _: () = assert!(true, "");;
-        assert!(unimplemented!());
-        assert!(((unimplemented!().read()) == 5));
+        assert!(({ ({ (*opt.borrow())() }) }));
+        assert!(({ (((*opt.borrow()).read()) == 5) }));
     }
     {
-        let mut source: Ptr<i32> = Ptr::<i32>::null();
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let source: Value<Ptr<i32>> = Rc::new(RefCell::new(Ptr::<i32>::null()));
+        let opt: Value<std_optional_const_int_ptr_> =
+            Rc::new(RefCell::new(std_optional_const_int_ptr_::new_1({
+                source.as_pointer()
+            })));
         const _: () = assert!(true, "");;
-        assert!(unimplemented!());
-        assert!((unimplemented!().read()).is_null());
+        assert!(({ ({ (*opt.borrow())() }) }));
+        assert!(({ ((*opt.borrow()).read()).is_null() }));
     }
     {
-        let mut source: [i32; 3] = [1, 2, 3];
-        let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let source: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        let opt: Value<std_optional_int_ptr_> =
+            Rc::new(RefCell::new(std_optional_int_ptr_::new_1({
+                source.as_pointer()
+            })));
         const _: () = assert!(true, "");;
-        assert!(unimplemented!());
-        assert!(((elem!((unimplemented!().read()), 0).read()) == 1));
+        assert!(({ ({ (*opt.borrow())() }) }));
+        assert!(({ ((elem!(((*opt.borrow()).read()), 0).read()) == 1) }));
     }
     {
-        let source: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let opt: Value<()> = Rc::new(RefCell::new((*source.borrow()).clone()));
+        let source: Value<std_optional_char_> = Rc::new(RefCell::new(('A' as i8)));
+        let opt: Value<std_optional_char_> = Rc::new(RefCell::new((*source.borrow()).clone()));
         const _: () = assert!(true, "");;
-        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
-        assert!((((unimplemented!().read()) as i32) == ((unimplemented!().read()) as i32)));
+        assert!(({ ((({ (*opt.borrow())() }) as i32) == (({ (*source.borrow())() }) as i32)) }));
+        assert!(({ ((((*opt.borrow()).read()) as i32) == (((*source.borrow()).read()) as i32)) }));
     }
     return 0;
 }

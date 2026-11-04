@@ -28,13 +28,23 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 3000_()));
+        let i: Value<std_chrono_duration_int__std_ratio_1__1__> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(3));
+            std_chrono_duration_int__std_ratio_1__1__::new_1({ __tmp_0.as_pointer() })
+        }));
+        let d: Value<std_chrono_duration_double__std_ratio_1__1000__> = Rc::new(RefCell::new(
+            std_chrono_duration_double__std_ratio_1__1000__::new_1({ i.as_pointer() }),
+        ));
+        assert!(({ (({ (*d.borrow()).count() }) == 3000_f64) }));
     }
     {
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let i: Value<std_chrono_duration_int__std_ratio_1__1__> = Rc::new(RefCell::new({
+            let __tmp_1: Value<i32> = Rc::new(RefCell::new(3));
+            std_chrono_duration_int__std_ratio_1__1__::new_1({ __tmp_1.as_pointer() })
+        }));
+        let d: Value<std_chrono_duration_double__std_ratio_1__1000__> = Rc::new(RefCell::new(
+            std_chrono_duration_double__std_ratio_1__1000__::new_1({ i.as_pointer() }),
+        ));
         const _: () = assert!(true, "d.count() == 3000");;
     }
     return 0;

@@ -31,11 +31,17 @@ impl Callable1<Ptr<i32>, bool> for unary_counting_predicate_bool__ptr__int___int
         })
     }
 }
+impl CppMove for unary_counting_predicate_bool__ptr__int___int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn is5_0(mut i: i32) -> bool {
     return (i == 5);
 }
 pub fn call_pred_1(pred: unary_counting_predicate_bool__ptr__int___int_) -> bool {
     let pred: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(pred));
+    let _dtor_pred = ScopedDestructor::new(&pred, |__p| __p.destructor());
     return ({
         let _a: Value<i32> = Rc::new(RefCell::new(5));
         unary_counting_predicate_bool__ptr__int___int_Impl::operator_call(
@@ -44,24 +50,35 @@ pub fn call_pred_1(pred: unary_counting_predicate_bool__ptr__int___int_) -> bool
         )
     });
 }
-pub fn call_pred_2(mut pred: Ptr<unary_counting_predicate_bool__ptr__int___int_>) -> bool {
-    return unimplemented!();
+pub fn call_pred_2(pred: Ptr<unary_counting_predicate_bool__ptr__int___int_>) -> bool {
+    let pred: Value<Ptr<unary_counting_predicate_bool__ptr__int___int_>> =
+        Rc::new(RefCell::new(pred));
+    return ({
+        let ___args: Value<i32> = Rc::new(RefCell::new(5));
+        (*pred.borrow_mut())(___args.as_pointer())
+    })
+    .clone();
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct adl_A {}
+impl CppMove for adl_A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn ref_3(mut _a0: adl_A) {}
 pub fn test_4() -> bool {
     {
         let i: Value<i32> = Rc::new(RefCell::new(0));
-        let mut r1: Ptr<i32> = unimplemented!();
-        let mut r2: Ptr<i32> = unimplemented!();
+        let mut r1: Ptr<i32> = ({ ref_5(i.as_pointer()) });
+        let mut r2: Ptr<i32> = ({ ref_6((r1).clone()) });
         assert!(((r2) == (i.as_pointer())));
     }
     {
         let a: Value<adl_A> = Rc::new(RefCell::new(<adl_A>::default()));
-        let mut a1: Ptr<adl_A> = unimplemented!();
-        let mut a2: Ptr<adl_A> = unimplemented!();
+        let mut a1: Ptr<adl_A> = ({ ref_7(a.as_pointer()) });
+        let mut a2: Ptr<adl_A> = ({ ref_8((a1).clone()) });
         assert!(((a2) == (a.as_pointer())));
     }
     return true;
@@ -108,12 +125,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
                 == 1_usize)
         );
-        assert!(({ call_pred_1((*cp.borrow()).clone(),) }));
+        assert!(({ ({ call_pred_1((*cp.borrow()).clone(),) }) }));
         assert!(
             (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
                 == 1_usize)
         );
-        assert!(({ call_pred_2(unimplemented!(),) }));
+        assert!(({ call_pred_2(({ ref_9(cp.as_pointer(),) }),) }));
         assert!(
             (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
                 == 2_usize)
@@ -134,7 +151,9 @@ impl unary_counting_predicate_bool__ptr__int___int_Impl
 {
     fn destructor(&self) {}
     fn operator_call(&self, a: Ptr<i32>) -> bool {
-        field!((*self), count_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), count_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return ({ (*self).with(|__s| __s.p_.clone()).call((a.read())) });
     }
     fn count(&self) -> usize {

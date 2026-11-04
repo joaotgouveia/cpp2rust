@@ -19,6 +19,11 @@ impl Pointer {
         Self { value: (v).clone() }
     }
 }
+impl CppMove for Pointer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct A {
@@ -28,6 +33,11 @@ pub struct A {
 impl A {
     pub fn new() -> Self {
         Self { n: 42 }
+    }
+}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for A {
@@ -67,7 +77,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::addressof(i) == &i");;
     const _: () = assert!(true, "std::addressof(d) == &d");;
-    let mut ap: Ptr<A> = unimplemented!();
+    let mut ap: Ptr<A> = ({ addressof_3(a_2.with(|v| v.as_pointer())) });
     const _: () = assert!(true, "&ap->n == &a.n");;
     return 0;
 }

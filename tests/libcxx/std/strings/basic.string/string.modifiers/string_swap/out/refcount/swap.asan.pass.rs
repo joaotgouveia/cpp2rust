@@ -7,282 +7,322 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0(mut val: i8) {
-    let mut empty_s: Vec<i8> = vec![i8::default()];
-    let mut short_s: Vec<i8> = vec![val; (3_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_i8))
-        .collect();
-    let mut long_s: Vec<i8> = vec![val; (1100_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_i8))
-        .collect();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let empty_s: Value<Vec<i8>> = Rc::new(RefCell::new(vec![i8::default()]));
+    let short_s: Value<Vec<i8>> = Rc::new(RefCell::new(
+        vec![val; (3_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_i8))
+            .collect(),
+    ));
+    let long_s: Value<Vec<i8>> = Rc::new(RefCell::new(
+        vec![val; (1100_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_i8))
+            .collect(),
+    ));
+    cpp_swap!(empty_s.as_pointer(), empty_s.as_pointer());
+    cpp_swap!(short_s.as_pointer(), short_s.as_pointer());
+    cpp_swap!(long_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), short_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), short_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(short_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(short_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut long_s2: Vec<i8> = vec![val; (11100_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_i8))
-        .collect();
-    unimplemented!();
+    let long_s2: Value<Vec<i8>> = Rc::new(RefCell::new(
+        vec![val; (11100_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_i8))
+            .collect(),
+    ));
+    cpp_swap!(long_s.as_pointer(), long_s2.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(long_s.as_pointer(), long_s2.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut long_s3: Vec<i8> = vec![val; (111_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_i8))
-        .collect();
-    unimplemented!();
+    let long_s3: Value<Vec<i8>> = Rc::new(RefCell::new(
+        vec![val; (111_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_i8))
+            .collect(),
+    ));
+    cpp_swap!(long_s.as_pointer(), long_s3.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
 pub fn test_1(mut val: i32) {
-    let mut empty_s: Vec<i32> = vec![i32::default()];
-    let mut short_s: Vec<i32> = vec![val; (3_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_i32))
-        .collect();
-    let mut long_s: Vec<i32> = vec![val; (1100_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_i32))
-        .collect();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let empty_s: Value<Vec<i32>> = Rc::new(RefCell::new(vec![i32::default()]));
+    let short_s: Value<Vec<i32>> = Rc::new(RefCell::new(
+        vec![val; (3_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_i32))
+            .collect(),
+    ));
+    let long_s: Value<Vec<i32>> = Rc::new(RefCell::new(
+        vec![val; (1100_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_i32))
+            .collect(),
+    ));
+    cpp_swap!(empty_s.as_pointer(), empty_s.as_pointer());
+    cpp_swap!(short_s.as_pointer(), short_s.as_pointer());
+    cpp_swap!(long_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), short_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), short_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(short_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(short_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut long_s2: Vec<i32> = vec![val; (11100_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_i32))
-        .collect();
-    unimplemented!();
+    let long_s2: Value<Vec<i32>> = Rc::new(RefCell::new(
+        vec![val; (11100_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_i32))
+            .collect(),
+    ));
+    cpp_swap!(long_s.as_pointer(), long_s2.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(long_s.as_pointer(), long_s2.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut long_s3: Vec<i32> = vec![val; (111_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_i32))
-        .collect();
-    unimplemented!();
+    let long_s3: Value<Vec<i32>> = Rc::new(RefCell::new(
+        vec![val; (111_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_i32))
+            .collect(),
+    ));
+    cpp_swap!(long_s.as_pointer(), long_s3.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
 pub fn test_2(mut val: u16) {
-    let mut empty_s: Vec<u16> = vec![u16::default()];
-    let mut short_s: Vec<u16> = vec![val; (3_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_u16))
-        .collect();
-    let mut long_s: Vec<u16> = vec![val; (1100_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_u16))
-        .collect();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let empty_s: Value<Vec<u16>> = Rc::new(RefCell::new(vec![u16::default()]));
+    let short_s: Value<Vec<u16>> = Rc::new(RefCell::new(
+        vec![val; (3_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_u16))
+            .collect(),
+    ));
+    let long_s: Value<Vec<u16>> = Rc::new(RefCell::new(
+        vec![val; (1100_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_u16))
+            .collect(),
+    ));
+    cpp_swap!(empty_s.as_pointer(), empty_s.as_pointer());
+    cpp_swap!(short_s.as_pointer(), short_s.as_pointer());
+    cpp_swap!(long_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), short_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), short_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(short_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(short_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut long_s2: Vec<u16> = vec![val; (11100_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_u16))
-        .collect();
-    unimplemented!();
+    let long_s2: Value<Vec<u16>> = Rc::new(RefCell::new(
+        vec![val; (11100_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_u16))
+            .collect(),
+    ));
+    cpp_swap!(long_s.as_pointer(), long_s2.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(long_s.as_pointer(), long_s2.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut long_s3: Vec<u16> = vec![val; (111_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_u16))
-        .collect();
-    unimplemented!();
+    let long_s3: Value<Vec<u16>> = Rc::new(RefCell::new(
+        vec![val; (111_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_u16))
+            .collect(),
+    ));
+    cpp_swap!(long_s.as_pointer(), long_s3.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
 pub fn test_3(mut val: u32) {
-    let mut empty_s: Vec<u32> = vec![u32::default()];
-    let mut short_s: Vec<u32> = vec![val; (3_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_u32))
-        .collect();
-    let mut long_s: Vec<u32> = vec![val; (1100_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_u32))
-        .collect();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let empty_s: Value<Vec<u32>> = Rc::new(RefCell::new(vec![u32::default()]));
+    let short_s: Value<Vec<u32>> = Rc::new(RefCell::new(
+        vec![val; (3_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_u32))
+            .collect(),
+    ));
+    let long_s: Value<Vec<u32>> = Rc::new(RefCell::new(
+        vec![val; (1100_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_u32))
+            .collect(),
+    ));
+    cpp_swap!(empty_s.as_pointer(), empty_s.as_pointer());
+    cpp_swap!(short_s.as_pointer(), short_s.as_pointer());
+    cpp_swap!(long_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), short_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), short_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(short_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(short_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut long_s2: Vec<u32> = vec![val; (11100_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_u32))
-        .collect();
-    unimplemented!();
+    let long_s2: Value<Vec<u32>> = Rc::new(RefCell::new(
+        vec![val; (11100_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_u32))
+            .collect(),
+    ));
+    cpp_swap!(long_s.as_pointer(), long_s2.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(long_s.as_pointer(), long_s2.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut long_s3: Vec<u32> = vec![val; (111_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_u32))
-        .collect();
-    unimplemented!();
+    let long_s3: Value<Vec<u32>> = Rc::new(RefCell::new(
+        vec![val; (111_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_u32))
+            .collect(),
+    ));
+    cpp_swap!(long_s.as_pointer(), long_s3.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
 pub fn test_4(mut val: u8) {
-    let mut empty_s: Vec<u8> = vec![u8::default()];
-    let mut short_s: Vec<u8> = vec![val; (3_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_u8))
-        .collect();
-    let mut long_s: Vec<u8> = vec![val; (1100_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_u8))
-        .collect();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let empty_s: Value<Vec<u8>> = Rc::new(RefCell::new(vec![u8::default()]));
+    let short_s: Value<Vec<u8>> = Rc::new(RefCell::new(
+        vec![val; (3_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_u8))
+            .collect(),
+    ));
+    let long_s: Value<Vec<u8>> = Rc::new(RefCell::new(
+        vec![val; (1100_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_u8))
+            .collect(),
+    ));
+    cpp_swap!(empty_s.as_pointer(), empty_s.as_pointer());
+    cpp_swap!(short_s.as_pointer(), short_s.as_pointer());
+    cpp_swap!(long_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), short_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), short_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(empty_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(short_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(short_s.as_pointer(), long_s.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut long_s2: Vec<u8> = vec![val; (11100_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_u8))
-        .collect();
-    unimplemented!();
+    let long_s2: Value<Vec<u8>> = Rc::new(RefCell::new(
+        vec![val; (11100_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_u8))
+            .collect(),
+    ));
+    cpp_swap!(long_s.as_pointer(), long_s2.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    cpp_swap!(long_s.as_pointer(), long_s2.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut long_s3: Vec<u8> = vec![val; (111_usize) as usize]
-        .iter()
-        .cloned()
-        .chain(std::iter::once(0_u8))
-        .collect();
-    unimplemented!();
+    let long_s3: Value<Vec<u8>> = Rc::new(RefCell::new(
+        vec![val; (111_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_u8))
+            .collect(),
+    ));
+    cpp_swap!(long_s.as_pointer(), long_s3.as_pointer());
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }

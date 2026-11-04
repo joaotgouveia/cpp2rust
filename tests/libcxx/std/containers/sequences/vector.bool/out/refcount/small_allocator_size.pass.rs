@@ -17,6 +17,11 @@ impl sized_allocator_bool__unsigned_char__signed_char_ {
         Self { data_: d }
     }
 }
+impl CppMove for sized_allocator_bool__unsigned_char__signed_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl sized_allocator_unsigned_long__unsigned_char__signed_char_ {
     pub fn new_1(a: Ptr<sized_allocator_bool__unsigned_char__signed_char_>) -> Self {
         Self {
@@ -32,6 +37,11 @@ pub struct sized_allocator_unsigned_long__unsigned_char__signed_char_ {
     data_: i32,
 }
 impl sized_allocator_unsigned_long__unsigned_char__signed_char_ {}
+impl CppMove for sized_allocator_unsigned_long__unsigned_char__signed_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct sized_allocator_bool__unsigned_short__short_ {
@@ -41,6 +51,11 @@ pub struct sized_allocator_bool__unsigned_short__short_ {
 impl sized_allocator_bool__unsigned_short__short_ {
     pub fn new(mut d: i32) -> Self {
         Self { data_: d }
+    }
+}
+impl CppMove for sized_allocator_bool__unsigned_short__short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl sized_allocator_unsigned_long__unsigned_short__short_ {
@@ -58,6 +73,11 @@ pub struct sized_allocator_unsigned_long__unsigned_short__short_ {
     data_: i32,
 }
 impl sized_allocator_unsigned_long__unsigned_short__short_ {}
+impl CppMove for sized_allocator_unsigned_long__unsigned_short__short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct sized_allocator_bool__unsigned_int__int_ {
@@ -67,6 +87,11 @@ pub struct sized_allocator_bool__unsigned_int__int_ {
 impl sized_allocator_bool__unsigned_int__int_ {
     pub fn new(mut d: i32) -> Self {
         Self { data_: d }
+    }
+}
+impl CppMove for sized_allocator_bool__unsigned_int__int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl sized_allocator_unsigned_long__unsigned_int__int_ {
@@ -84,6 +109,11 @@ pub struct sized_allocator_unsigned_long__unsigned_int__int_ {
     data_: i32,
 }
 impl sized_allocator_unsigned_long__unsigned_int__int_ {}
+impl CppMove for sized_allocator_unsigned_long__unsigned_int__int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct sized_allocator_bool__unsigned_long__long_ {
@@ -93,6 +123,11 @@ pub struct sized_allocator_bool__unsigned_long__long_ {
 impl sized_allocator_bool__unsigned_long__long_ {
     pub fn new(mut d: i32) -> Self {
         Self { data_: d }
+    }
+}
+impl CppMove for sized_allocator_bool__unsigned_long__long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl sized_allocator_unsigned_long__unsigned_long__long_ {
@@ -110,72 +145,162 @@ pub struct sized_allocator_unsigned_long__unsigned_long__long_ {
     data_: i32,
 }
 impl sized_allocator_unsigned_long__unsigned_long__long_ {}
+impl CppMove for sized_allocator_unsigned_long__unsigned_long__long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn tests_0() -> bool {
     {
-        let mut c: Vec<bool> = unimplemented!();
+        let mut c: Vec<bool> = {
+            let __tmp_0: Value<sized_allocator_bool__unsigned_char__signed_char_> =
+                Rc::new(RefCell::new(
+                    sized_allocator_bool__unsigned_char__signed_char_::new({ 1 }),
+                ));
+            std_vector_bool__sized_allocator_bool__unsigned_char__signed_char__::new_1({
+                __tmp_0.as_pointer()
+            })
+        };
         {
             let __a0 = 10_usize as usize;
             c.resize_with(__a0, || false)
         };
         assert!(((&c).len() == 10_usize));
-        assert!((unimplemented!() >= 10_usize));
+        assert!((c.capacity() >= 10_usize));
     }
     {
-        let mut c: Vec<bool> = unimplemented!();
-        unimplemented!();
-        assert!(((&c).len() == 10_usize));
-        assert!((unimplemented!() >= 10_usize));
+        let c: Value<Vec<bool>> = Rc::new(RefCell::new({
+            let __tmp_1: Value<sized_allocator_bool__unsigned_char__signed_char_> =
+                Rc::new(RefCell::new(
+                    sized_allocator_bool__unsigned_char__signed_char_::new({ 1 }),
+                ));
+            std_vector_bool__sized_allocator_bool__unsigned_char__signed_char__::new_1({
+                __tmp_1.as_pointer()
+            })
+        }));
+        ({
+            let ___x: Value<bool> = Rc::new(RefCell::new(true));
+            (*c.borrow_mut()).assign_19(10_usize, ___x.as_pointer())
+        });
+        assert!(({ ((&(*c.borrow())).len() == 10_usize) }));
+        assert!(({ ((*c.borrow()).capacity() >= 10_usize) }));
     }
     {
-        let c: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(((&(*c.borrow())).len() == 1_usize));
-        assert!((unimplemented!() >= 1_usize));
+        let c: Value<Vec<bool>> = Rc::new(RefCell::new({
+            let __tmp_2: Value<sized_allocator_bool__unsigned_char__signed_char_> =
+                Rc::new(RefCell::new(
+                    sized_allocator_bool__unsigned_char__signed_char_::new({ 1 }),
+                ));
+            std_vector_bool__sized_allocator_bool__unsigned_char__signed_char__::new_1({
+                __tmp_2.as_pointer()
+            })
+        }));
+        ({
+            let ___position: RandomAccessIterator<bool> =
+                <RandomAccessIterator<bool>>::from(c.decay().end());
+            let ___x: Value<bool> = Rc::new(RefCell::new(true));
+            (*c.borrow_mut()).insert_52(___position, ___x.as_pointer())
+        });
+        assert!(({ ((&(*c.borrow())).len() == 1_usize) }));
+        assert!(({ ((*c.borrow()).capacity() >= 1_usize) }));
     }
     {
-        let c: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        assert!(((&(*c.borrow())).len() == 10_usize));
-        assert!((unimplemented!() >= 10_usize));
+        let c: Value<Vec<bool>> = Rc::new(RefCell::new({
+            let __tmp_3: Value<sized_allocator_bool__unsigned_short__short_> = Rc::new(
+                RefCell::new(sized_allocator_bool__unsigned_short__short_::new({ 1 })),
+            );
+            std_vector_bool__sized_allocator_bool__unsigned_short__short__::new_1({
+                __tmp_3.as_pointer()
+            })
+        }));
+        ({
+            let ___position: RandomAccessIterator<bool> =
+                <RandomAccessIterator<bool>>::from(c.decay().end());
+            let ___x: Value<bool> = Rc::new(RefCell::new(true));
+            (*c.borrow_mut()).insert_55(___position, 10_usize, ___x.as_pointer())
+        });
+        assert!(({ ((&(*c.borrow())).len() == 10_usize) }));
+        assert!(({ ((*c.borrow()).capacity() >= 10_usize) }));
     }
     {
-        let mut c: Vec<bool> = unimplemented!();
-        unimplemented!();
+        let mut c: Vec<bool> = {
+            let __tmp_4: Value<sized_allocator_bool__unsigned_short__short_> = Rc::new(
+                RefCell::new(sized_allocator_bool__unsigned_short__short_::new({ 1 })),
+            );
+            std_vector_bool__sized_allocator_bool__unsigned_short__short__::new_1({
+                __tmp_4.as_pointer()
+            })
+        };
+        {
+            let a0_clone = true.clone();
+            c.push(a0_clone)
+        };
         assert!(((&c).len() == 1_usize));
-        assert!((unimplemented!() >= 1_usize));
+        assert!((c.capacity() >= 1_usize));
     }
     {
-        let mut c: Vec<bool> = unimplemented!();
-        unimplemented!();
+        let mut c: Vec<bool> = {
+            let __tmp_5: Value<sized_allocator_bool__unsigned_short__short_> = Rc::new(
+                RefCell::new(sized_allocator_bool__unsigned_short__short_::new({ 1 })),
+            );
+            std_vector_bool__sized_allocator_bool__unsigned_short__short__::new_1({
+                __tmp_5.as_pointer()
+            })
+        };
+        {
+            let __a0 = 10_usize as usize;
+            c.resize(__a0, true)
+        };
         assert!(((&c).len() == 10_usize));
-        assert!((unimplemented!() >= 10_usize));
+        assert!((c.capacity() >= 10_usize));
     }
     {
-        let mut c: Vec<bool> = unimplemented!();
+        let mut c: Vec<bool> = {
+            let __tmp_6: Value<sized_allocator_bool__unsigned_int__int_> = Rc::new(RefCell::new(
+                sized_allocator_bool__unsigned_int__int_::new({ 1 }),
+            ));
+            std_vector_bool__sized_allocator_bool__unsigned_int__int__::new_1({
+                __tmp_6.as_pointer()
+            })
+        };
         {
             let __a0 = 10_usize as usize;
             c.resize_with(__a0, || false)
         };
         assert!(((&c).len() == 10_usize));
-        assert!((unimplemented!() >= 10_usize));
+        assert!((c.capacity() >= 10_usize));
     }
     {
-        let mut c: Vec<bool> = unimplemented!();
+        let mut c: Vec<bool> = {
+            let __tmp_7: Value<sized_allocator_bool__unsigned_long__long_> = Rc::new(RefCell::new(
+                sized_allocator_bool__unsigned_long__long_::new({ 1 }),
+            ));
+            std_vector_bool__sized_allocator_bool__unsigned_long__long__::new_1({
+                __tmp_7.as_pointer()
+            })
+        };
         {
             let __a0 = 10_usize as usize;
             c.resize_with(__a0, || false)
         };
         assert!(((&c).len() == 10_usize));
-        assert!((unimplemented!() >= 10_usize));
+        assert!((c.capacity() >= 10_usize));
     }
     {
-        let mut c: Vec<bool> = unimplemented!();
+        let mut c: Vec<bool> = {
+            let __tmp_8: Value<sized_allocator_bool__unsigned_long__long_> = Rc::new(RefCell::new(
+                sized_allocator_bool__unsigned_long__long_::new({ 1 }),
+            ));
+            std_vector_bool__sized_allocator_bool__unsigned_long__long__::new_1({
+                __tmp_8.as_pointer()
+            })
+        };
         {
             let __a0 = 10_usize as usize;
             c.resize_with(__a0, || false)
         };
         assert!(((&c).len() == 10_usize));
-        assert!((unimplemented!() >= 10_usize));
+        assert!((c.capacity() >= 10_usize));
     }
     return true;
 }
@@ -278,10 +403,14 @@ impl sized_allocator_unsigned_long__unsigned_char__signed_char_Impl
         {
             std::process::abort();
         }
-        return unimplemented!();
+        return ({ <std_allocator_unsigned_long_>::default().allocate((n as usize)) });
     }
     fn deallocate(&self, mut p: Ptr<u64>, mut n: u8) {
-        unimplemented!();
+        ({
+            let ___p: Ptr<u64> = (p).clone();
+            let ___n: usize = (n as usize);
+            <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
+        });
     }
     fn max_size(&self) -> u8 {
         return (((u8::MAX as usize).wrapping_div((::std::mem::size_of::<u64>() as usize))) as u8);
@@ -299,10 +428,14 @@ impl sized_allocator_unsigned_long__unsigned_int__int_Impl
         if (n > ({ sized_allocator_unsigned_long__unsigned_int__int_Impl::max_size(self) })) {
             std::process::abort();
         }
-        return unimplemented!();
+        return ({ <std_allocator_unsigned_long_>::default().allocate((n as usize)) });
     }
     fn deallocate(&self, mut p: Ptr<u64>, mut n: u32) {
-        unimplemented!();
+        ({
+            let ___p: Ptr<u64> = (p).clone();
+            let ___n: usize = (n as usize);
+            <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
+        });
     }
     fn max_size(&self) -> u32 {
         return (((u32::MAX as usize).wrapping_div((::std::mem::size_of::<u64>() as usize)))
@@ -321,10 +454,14 @@ impl sized_allocator_unsigned_long__unsigned_long__long_Impl
         if (n > ({ sized_allocator_unsigned_long__unsigned_long__long_Impl::max_size(self) })) {
             std::process::abort();
         }
-        return unimplemented!();
+        return ({ <std_allocator_unsigned_long_>::default().allocate((n as usize)) });
     }
     fn deallocate(&self, mut p: Ptr<u64>, mut n: u64) {
-        unimplemented!();
+        ({
+            let ___p: Ptr<u64> = (p).clone();
+            let ___n: usize = (n as usize);
+            <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
+        });
     }
     fn max_size(&self) -> u64 {
         return (u64::MAX as u64).wrapping_div((::std::mem::size_of::<u64>() as u64));
@@ -345,10 +482,14 @@ impl sized_allocator_unsigned_long__unsigned_short__short_Impl
         {
             std::process::abort();
         }
-        return unimplemented!();
+        return ({ <std_allocator_unsigned_long_>::default().allocate((n as usize)) });
     }
     fn deallocate(&self, mut p: Ptr<u64>, mut n: u16) {
-        unimplemented!();
+        ({
+            let ___p: Ptr<u64> = (p).clone();
+            let ___n: usize = (n as usize);
+            <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
+        });
     }
     fn max_size(&self) -> u16 {
         return (((u16::MAX as usize).wrapping_div((::std::mem::size_of::<u64>() as usize)))

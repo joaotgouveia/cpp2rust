@@ -45,6 +45,11 @@ impl Clone for A1_int_ {
         A1_int_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for A1_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 thread_local!(
     pub static copy_called_4: Value<bool> = Rc::new(RefCell::new(false));
 );
@@ -82,6 +87,11 @@ impl Clone for A2_int_ {
             id_: self.id_.clone(),
         }));
         A2_int_::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for A2_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 thread_local!(
@@ -123,6 +133,11 @@ impl Clone for A3_int_ {
         A3_int_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for A3_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -144,26 +159,108 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((({ A1_int_Impl::id(&unimplemented!(),) }) == 3));
-        let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((({ A1_int_Impl::id(&unimplemented!(),) }) == 3));
+        let a1: Value<std_scoped_allocator_adaptor_A1_int__> =
+            Rc::new(RefCell::new(A1_int_::new({ 3 })));
+        assert!(({ (({ A1_int_Impl::id(&({ (*a1.borrow()).outer_allocator_14() }),) }) == 3) }));
+        let a2: Value<std_scoped_allocator_adaptor_A1_int__> = Rc::new(RefCell::new(
+            ({
+                std_allocator_traits_std_scoped_allocator_adaptor_A1_int___::select_on_container_copy_construction ( a1 .as_pointer()  , )
+            }),
+        ));
+        assert!(({ (({ A1_int_Impl::id(&({ (*a2.borrow()).outer_allocator_14() }),) }) == 3) }));
     }
     {
-        let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((({ A3_int_Impl::id(&unimplemented!(),) }) == 3));
-        let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((({ A3_int_Impl::id(&unimplemented!(),) }) == -1_i32));
+        let a1: Value<std_scoped_allocator_adaptor_A3_int__> =
+            Rc::new(RefCell::new(A3_int_::new({ 3 })));
+        assert!(({ (({ A3_int_Impl::id(&({ (*a1.borrow()).outer_allocator_14() }),) }) == 3) }));
+        let a2: Value<std_scoped_allocator_adaptor_A3_int__> = Rc::new(RefCell::new(
+            ({
+                std_allocator_traits_std_scoped_allocator_adaptor_A3_int___::select_on_container_copy_construction ( a1 .as_pointer()  , )
+            }),
+        ));
+        assert!(
+            ({ (({ A3_int_Impl::id(&({ (*a2.borrow()).outer_allocator_14() }),) }) == -1_i32) })
+        );
     }
     {
-        let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((({ A1_int_Impl::id(&unimplemented!(),) }) == 1));
-        assert!((({ A2_int_Impl::id(&unimplemented!(),) }) == 2));
-        assert!((({ A3_int_Impl::id(&unimplemented!(),) }) == 3));
-        let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((({ A1_int_Impl::id(&unimplemented!(),) }) == 1));
-        assert!((({ A2_int_Impl::id(&unimplemented!(),) }) == 2));
-        assert!((({ A3_int_Impl::id(&unimplemented!(),) }) == -1_i32));
+        let a1: Value<std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ 1 })));
+                let __tmp_1: Value<A2_int_> = Rc::new(RefCell::new(A2_int_::new({ 2 })));
+                let __tmp_2: Value<A3_int_> = Rc::new(RefCell::new(A3_int_::new({ 3 })));
+                std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__::new_1(
+                    { __tmp_0.as_pointer() },
+                    { __tmp_1.as_pointer() },
+                    { __tmp_2.as_pointer() },
+                )
+            }));
+        assert!(({ (({ A1_int_Impl::id(&({ (*a1.borrow()).outer_allocator_14() }),) }) == 1) }));
+        assert!(
+            ({
+                (({
+                    A2_int_Impl::id(
+                        &({
+                            (*({ (*a1.borrow()).inner_allocator_12() }).upgrade().deref())
+                                .outer_allocator_14()
+                        }),
+                    )
+                }) == 2)
+            })
+        );
+        assert!(
+            ({
+                (({
+                    A3_int_Impl::id(
+                        &({
+                            (*({
+                                (*({ (*a1.borrow()).inner_allocator_12() }).upgrade().deref())
+                                    .inner_allocator_12()
+                            })
+                            .upgrade()
+                            .deref())
+                            .outer_allocator_14()
+                        }),
+                    )
+                }) == 3)
+            })
+        );
+        let a2: Value<std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__> = Rc::new(
+            RefCell::new(
+                ({
+                    std_allocator_traits_std_scoped_allocator_adaptor_A1_int___A2_int___A3_int___::select_on_container_copy_construction ( a1 .as_pointer()  , )
+                }),
+            ),
+        );
+        assert!(({ (({ A1_int_Impl::id(&({ (*a2.borrow()).outer_allocator_14() }),) }) == 1) }));
+        assert!(
+            ({
+                (({
+                    A2_int_Impl::id(
+                        &({
+                            (*({ (*a2.borrow()).inner_allocator_12() }).upgrade().deref())
+                                .outer_allocator_14()
+                        }),
+                    )
+                }) == 2)
+            })
+        );
+        assert!(
+            ({
+                (({
+                    A3_int_Impl::id(
+                        &({
+                            (*({
+                                (*({ (*a2.borrow()).inner_allocator_12() }).upgrade().deref())
+                                    .inner_allocator_12()
+                            })
+                            .upgrade()
+                            .deref())
+                            .outer_allocator_14()
+                        }),
+                    )
+                }) == -1_i32)
+            })
+        );
     }
     return 0;
 }

@@ -23,6 +23,11 @@ impl CppEq for Defaulted {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for Defaulted {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_cmp_1(_a0: Ptr<DefaultedOrd>, _a1: Ptr<DefaultedOrd>) -> std::cmp::Ordering {
     {
         let cmp: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
@@ -30,10 +35,10 @@ pub fn operator_cmp_1(_a0: Ptr<DefaultedOrd>, _a1: Ptr<DefaultedOrd>) -> std::cm
             &(_a1.with(|__s| __s.a)),
         )));
         if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow_mut());
+            return ({ (*cmp.borrow()) });
         }
     }
-    return std::cmp::Ordering::Equal;
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 pub fn operator_eq_2(_a0: Ptr<DefaultedOrd>, _a1: Ptr<DefaultedOrd>) -> bool {
     return ({ _a0.with(|__s| __s.a) } == { _a1.with(|__s| __s.a) });
@@ -52,6 +57,11 @@ impl CppLess for DefaultedOrd {
 impl CppEq for DefaultedOrd {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_2(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for DefaultedOrd {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_eq_3(x: Ptr<Inline>, y: Ptr<Inline>) -> bool {
@@ -81,6 +91,11 @@ impl CppEq for Inline {
         operator_eq_3(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for Inline {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct OutOfLine {
@@ -90,6 +105,11 @@ pub struct OutOfLine {
 impl CppEq for OutOfLine {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_6(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for OutOfLine {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_eq_6(x: Ptr<OutOfLine>, y: Ptr<OutOfLine>) -> bool {
@@ -127,11 +147,21 @@ impl CppEq for Tmpl_int_ {
         operator_eq_8(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for Tmpl_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct Tmpl_long_ {
     #[offset(0)]
     pub v: i64,
+}
+impl CppMove for Tmpl_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn operator_eq_11(_a0: Ptr<TmplDefaulted_int_>, _a1: Ptr<TmplDefaulted_int_>) -> bool {
     return ({ _a0.with(|__s| __s.v) } == { _a1.with(|__s| __s.v) });
@@ -145,6 +175,11 @@ pub struct TmplDefaulted_int_ {
 impl CppEq for TmplDefaulted_int_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_11(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for TmplDefaulted_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {
@@ -198,7 +233,7 @@ fn main_0() -> i32 {
         ({
             let _arg0: Ptr<DefaultedOrd> = o1.as_pointer();
             operator_cmp_1(_arg0, o2.as_pointer())
-        }) == std::cmp::Ordering::Less
+        }) == ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) })
     );
     let i1: Value<Inline> = Rc::new(RefCell::new(Inline { a: 1 }));
     let i2: Value<Inline> = Rc::new(RefCell::new(Inline { a: 2 }));

@@ -70,8 +70,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Box::new(std::array::from_fn::<_, 29, _>(|_| Default::default())),
             Box::new(std::array::from_fn::<_, 29, _>(|_| Default::default())),
         ])));
-        unimplemented!();
-        unimplemented!();
+        ({
+            iter_swap_0(
+                (t1.as_pointer() as Ptr<Box<[f64]>>),
+                (t2.as_pointer() as Ptr<Box<[f64]>>),
+            )
+        });
+        ({
+            let ___first1: Ptr<Box<[f64]>> = (t1.as_pointer() as Ptr<Box<[f64]>>);
+            let ___last1: Ptr<Box<[f64]>> =
+                (t1.as_pointer() as Ptr<Box<[f64]>>).offset((17) as isize);
+            swap_ranges_1(___first1, ___last1, (t2.as_pointer() as Ptr<Box<[f64]>>))
+        });
     }
     return 0;
 }

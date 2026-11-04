@@ -139,12 +139,11 @@ DeduceFromArguments(clang::Sema &sema, clang::TemplateParameterList *params,
 
 namespace {
 
-bool deduceFromClass(clang::Sema &sema, clang::TemplateParameterList *params,
-                     clang::QualType pattern,
-                     const clang::CXXRecordDecl *record,
-                     clang::sema::TemplateDeductionInfo &info,
-                     llvm::SmallVectorImpl<clang::DeducedTemplateArgument>
-                         &deduced) {
+bool deduceFromClass(
+    clang::Sema &sema, clang::TemplateParameterList *params,
+    clang::QualType pattern, const clang::CXXRecordDecl *record,
+    clang::sema::TemplateDeductionInfo &info,
+    llvm::SmallVectorImpl<clang::DeducedTemplateArgument> &deduced) {
   auto owner = llvm::dyn_cast<clang::CXXRecordDecl>(record->getDeclContext());
   if (auto member = pattern->getAs<clang::DependentNameType>()) {
     auto qualifier = member->getQualifier();
@@ -156,14 +155,14 @@ bool deduceFromClass(clang::Sema &sema, clang::TemplateParameterList *params,
       }
       auto definition = owner ? owner->getDefinition() : nullptr;
       return definition &&
-             llvm::any_of(definition->lookup(member->getIdentifier()),
-                          [&](const clang::NamedDecl *decl) {
-                            auto alias =
-                                llvm::dyn_cast<clang::TypedefNameDecl>(decl);
-                            return alias &&
-                                   alias->getUnderlyingType()
-                                           ->getAsCXXRecordDecl() == record;
-                          });
+             llvm::any_of(
+                 definition->lookup(member->getIdentifier()),
+                 [&](const clang::NamedDecl *decl) {
+                   auto alias = llvm::dyn_cast<clang::TypedefNameDecl>(decl);
+                   return alias &&
+                          alias->getUnderlyingType()->getAsCXXRecordDecl() ==
+                              record;
+                 });
     };
     return owner &&
            qualifier.getKind() == clang::NestedNameSpecifier::Kind::Type &&
@@ -184,10 +183,10 @@ bool deduceFromClass(clang::Sema &sema, clang::TemplateParameterList *params,
            deduceFromClass(sema, params,
                            clang::QualType(qualifier.getAsType(), 0), owner,
                            info, deduced) &&
-           sema.DeduceTemplateArguments(
-               params, spec->template_arguments(),
-               nested->getTemplateArgs().asArray(), info, deduced,
-               /*NumberOfArgumentsMustMatch=*/true) ==
+           sema.DeduceTemplateArguments(params, spec->template_arguments(),
+                                        nested->getTemplateArgs().asArray(),
+                                        info, deduced,
+                                        /*NumberOfArgumentsMustMatch=*/true) ==
                clang::TemplateDeductionResult::Success;
   }
   auto actual =
@@ -307,10 +306,118 @@ DeduceFromDefaults(clang::Sema &sema, const clang::TemplateDecl *rule,
   auto args = deducedArguments(sema, params, deduced);
   clang::MultiLevelTemplateArgumentList bound(
       const_cast<clang::TemplateDecl *>(rule), args, /*Final=*/true);
-  auto resolved =
-      sema.SubstType(pattern, bound, loc, clang::DeclarationName());
+  auto resolved = sema.SubstType(pattern, bound, loc, clang::DeclarationName());
   if (resolved.isNull() || trial.failed() ||
       !sema.Context.hasSameUnqualifiedType(resolved, actual)) {
+    return std::nullopt;
+  }
+  return args;
+}
+
+namespace {
+
+const clang::TemplateSpecializationType *
+getMemberParentClass(clang::QualType pattern, clang::ClassTemplateDecl *&tmpl) {
+  auto member = pattern->getAs<clang::DependentNameType>();
+  if (!member || member->getQualifier().getKind() !=
+                     clang::NestedNameSpecifier::Kind::Type) {
+    return nullptr;
+  }
+  auto spec = member->getQualifier()
+                  .getAsType()
+                  ->getAs<clang::TemplateSpecializationType>();
+  tmpl = spec ? llvm::dyn_cast_or_null<clang::ClassTemplateDecl>(
+                    spec->getTemplateName().getAsTemplateDecl())
+              : nullptr;
+  return tmpl && !tmpl->getTemplateParameters()->hasParameterPack() ? spec
+                                                                    : nullptr;
+}
+
+std::optional<std::vector<clang::TemplateArgument>>
+getDefaultedArgumentsOfRule(clang::Sema &sema, const clang::TemplateDecl *rule,
+                            clang::ClassTemplateDecl *tmpl,
+                            const clang::TemplateSpecializationType *spec) {
+  auto params = rule->getTemplateParameters();
+  auto loc = params->getTemplateLoc();
+  clang::TemplateArgumentListInfo written(loc, loc);
+  llvm::SmallVector<std::optional<unsigned>, 4> positions(params->size());
+  for (auto [i, arg] : llvm::enumerate(spec->template_arguments())) {
+    auto parm = arg.getKind() == clang::TemplateArgument::Type
+                    ? arg.getAsType()->getAs<clang::TemplateTypeParmType>()
+                    : nullptr;
+    if (parm && parm->getDepth() == params->getDepth() &&
+        !parm->isParameterPack()) {
+      if (positions[parm->getIndex()]) {
+        return std::nullopt;
+      }
+      positions[parm->getIndex()] = i;
+      continue;
+    }
+    if (arg.isDependent() || written.size() != i) {
+      return std::nullopt;
+    }
+    written.addArgument(sema.getTrivialTemplateArgumentLoc(
+        arg, arg.getNonTypeTemplateArgumentType(), loc));
+  }
+  if (!llvm::all_of(positions, [](const std::optional<unsigned> &position) {
+        return position.has_value();
+      })) {
+    return std::nullopt;
+  }
+  Trial trial(sema);
+  clang::Sema::CheckTemplateArgumentInfo info;
+  if (sema.CheckTemplateArgumentList(tmpl, loc, written, /*DefaultArgs=*/{},
+                                     /*PartialTemplateArgs=*/false, info) ||
+      trial.failed()) {
+    return std::nullopt;
+  }
+  std::vector<clang::TemplateArgument> args(params->size());
+  for (unsigned i = 0; i < params->size(); ++i) {
+    args[i] = info.CanonicalConverted[*positions[i]];
+  }
+  return args;
+}
+
+bool resolvesTo(clang::Sema &sema, const clang::TemplateDecl *rule,
+                llvm::ArrayRef<clang::TemplateArgument> args,
+                clang::QualType pattern, clang::QualType actual) {
+  Trial trial(sema);
+  clang::MultiLevelTemplateArgumentList bound(
+      const_cast<clang::TemplateDecl *>(rule), args, /*Final=*/true);
+  auto resolved = sema.SubstType(
+      pattern, bound, rule->getTemplateParameters()->getTemplateLoc(),
+      clang::DeclarationName());
+  return !resolved.isNull() && !trial.failed() &&
+         sema.Context.hasSameUnqualifiedType(resolved, actual);
+}
+
+} // namespace
+
+std::optional<std::vector<clang::TemplateArgument>>
+DeduceMemberType(clang::Sema &sema, const clang::TemplateDecl *rule,
+                 clang::QualType pattern, clang::QualType use) {
+  auto &ctx = sema.Context;
+  clang::ClassTemplateDecl *tmpl = nullptr;
+  auto spec = getMemberParentClass(pattern, tmpl);
+  if (!spec) {
+    return std::nullopt;
+  }
+  auto member = pattern->getAs<clang::DependentNameType>();
+  auto params = rule->getTemplateParameters();
+  if (auto alias = SpelledTypedef(ctx, use)) {
+    if (alias->getIdentifier() != member->getIdentifier()) {
+      return std::nullopt;
+    }
+    auto owner = llvm::dyn_cast<clang::CXXRecordDecl>(alias->getDeclContext());
+    if (auto args = owner
+                        ? DeduceFromType(sema, params, clang::QualType(spec, 0),
+                                         ctx.getCanonicalTagType(owner))
+                        : std::nullopt) {
+      return args;
+    }
+  }
+  auto args = getDefaultedArgumentsOfRule(sema, rule, tmpl, spec);
+  if (!args || !resolvesTo(sema, rule, *args, pattern, use)) {
     return std::nullopt;
   }
   return args;

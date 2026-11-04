@@ -23,6 +23,11 @@ impl NonCopy {
         }
     }
 }
+impl CppMove for NonCopy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for NonCopy {
     fn default() -> Self {
         {
@@ -48,8 +53,8 @@ fn main_0() -> i32 {
         let __a1 = 42;
         (*arr.borrow_mut())[(1) as usize].data.push(__a1)
     };
-    assert!(({ (*arr.borrow())[(0) as usize].tag } == 7));
-    assert!(((*arr.borrow())[(1) as usize].data.len() == 1_usize));
+    assert!(({ ({ (*arr.borrow())[(0) as usize].tag } == 7) }));
+    assert!(({ ((*arr.borrow())[(1) as usize].data.len() == 1_usize) }));
     assert!(
         ((field_ref!((arr.as_pointer() as Ptr<NonCopy>).offset(1), data)
             .decay()
@@ -57,8 +62,8 @@ fn main_0() -> i32 {
             .read())
             == 42)
     );
-    assert!(({ (*arr.borrow())[(2) as usize].tag } == 0));
-    assert!(((*arr.borrow())[(2) as usize].data.len() == 0_usize));
+    assert!(({ ({ (*arr.borrow())[(2) as usize].tag } == 0) }));
+    assert!(({ ((*arr.borrow())[(2) as usize].data.len() == 0_usize) }));
     return 0;
 }
 pub trait NonCopyImpl {

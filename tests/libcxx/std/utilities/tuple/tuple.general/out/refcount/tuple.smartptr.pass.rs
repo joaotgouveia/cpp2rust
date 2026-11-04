@@ -28,14 +28,25 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let up: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let wp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let up: Value<std_tuple_std_unique_ptr_char__std_default_delete_char___> = Rc::new(
+            RefCell::new(<std_tuple_std_unique_ptr_char__std_default_delete_char___>::default()),
+        );
+        let sp: Value<std_tuple_std_shared_ptr_char__> =
+            Rc::new(RefCell::new(<std_tuple_std_shared_ptr_char__>::default()));
+        let wp: Value<std_tuple_std_weak_ptr_char__> =
+            Rc::new(RefCell::new(<std_tuple_std_weak_ptr_char__>::default()));
     }
     {
-        let up: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let wp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let up: Value<std_tuple_std_unique_ptr_chararrarr__std_default_delete_chararrarr___> =
+            Rc::new(RefCell::new(
+                <std_tuple_std_unique_ptr_chararrarr__std_default_delete_chararrarr___>::default(),
+            ));
+        let sp: Value<std_tuple_std_shared_ptr_chararrarr__> = Rc::new(RefCell::new(
+            <std_tuple_std_shared_ptr_chararrarr__>::default(),
+        ));
+        let wp: Value<std_tuple_std_weak_ptr_chararrarr__> = Rc::new(RefCell::new(
+            <std_tuple_std_weak_ptr_chararrarr__>::default(),
+        ));
     }
     return 0;
 }

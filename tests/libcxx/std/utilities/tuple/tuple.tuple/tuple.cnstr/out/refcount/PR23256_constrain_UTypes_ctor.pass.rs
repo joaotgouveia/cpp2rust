@@ -17,6 +17,11 @@ impl UnconstrainedCtor {
         Self { value_: 0 }
     }
 }
+impl CppMove for UnconstrainedCtor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for UnconstrainedCtor {
     fn default() -> Self {
         { UnconstrainedCtor::new() }
@@ -31,6 +36,11 @@ pub struct ExplicitUnconstrainedCtor {
 impl ExplicitUnconstrainedCtor {
     pub fn new() -> Self {
         Self { value_: 0 }
+    }
+}
+impl CppMove for ExplicitUnconstrainedCtor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for ExplicitUnconstrainedCtor {
@@ -89,9 +99,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );;
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t: Value<std_tuple_UnconstrainedCtor_refref_> = Rc::new(RefCell::new(
+            ({
+                let ___args: Value<UnconstrainedCtor> =
+                    Rc::new(RefCell::new(UnconstrainedCtor::new()));
+                forward_as_tuple_0(___args.as_pointer())
+            }),
+        ));
         (&(*t.borrow_mut()));
-        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t2: Value<std_tuple_ExplicitUnconstrainedCtor_refref_> = Rc::new(RefCell::new(
+            ({
+                let ___args: Value<ExplicitUnconstrainedCtor> =
+                    Rc::new(RefCell::new(ExplicitUnconstrainedCtor::new()));
+                forward_as_tuple_1(___args.as_pointer())
+            }),
+        ));
         (&(*t2.borrow_mut()));
     }
     return 0;

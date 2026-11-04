@@ -131,10 +131,15 @@ impl Callable3<i32, i32, i32, i32> for ConstexprSumT {
         })
     }
 }
+impl CppMove for ConstexprSumT {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_constexpr_evaluation_20() {
-    let mut sum_obj: ConstexprSumT = <ConstexprSumT>::default();
+    let sum_obj: Value<ConstexprSumT> = Rc::new(RefCell::new(<ConstexprSumT>::default()));
     {
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t: Value<std_tuple__> = Rc::new(RefCell::new(<std_tuple__>::default()));
         const _: () = assert!(
             true,
             "std::apply(static_cast<Fn>(constexpr_sum_fn), t) == 0"
@@ -142,7 +147,7 @@ pub fn test_constexpr_evaluation_20() {
         const _: () = assert!(true, "std::apply(sum_obj, t) == 0");;
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t: Value<std_tuple_int_> = Rc::new(RefCell::new(42));
         const _: () = assert!(
             true,
             "std::apply(static_cast<Fn>(constexpr_sum_fn), t) == 42"
@@ -150,7 +155,11 @@ pub fn test_constexpr_evaluation_20() {
         const _: () = assert!(true, "std::apply(sum_obj, t) == 42");;
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t: Value<std_tuple_int__long_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(42));
+            let __tmp_1: Value<i32> = Rc::new(RefCell::new(101));
+            std_tuple_int__long_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+        }));
         const _: () = assert!(
             true,
             "std::apply(static_cast<Fn>(constexpr_sum_fn), t) == 143"
@@ -169,7 +178,14 @@ pub fn test_constexpr_evaluation_20() {
         const _: () = assert!(true, "std::apply(sum_obj, t) == 143");;
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t: Value<std_tuple_int__long__int_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<i32> = Rc::new(RefCell::new(42));
+            let __tmp_3: Value<i32> = Rc::new(RefCell::new(101));
+            let __tmp_4: Value<i32> = Rc::new(RefCell::new(-1_i32));
+            std_tuple_int__long__int_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() }, {
+                __tmp_4.as_pointer()
+            })
+        }));
         const _: () = assert!(
             true,
             "std::apply(static_cast<Fn>(constexpr_sum_fn), t) == 142"
@@ -191,134 +207,6 @@ pub const CallQuals_CQ_LValue: CallQuals = 1;
 pub const CallQuals_CQ_ConstLValue: CallQuals = 2;
 pub const CallQuals_CQ_RValue: CallQuals = 3;
 pub const CallQuals_CQ_ConstRValue: CallQuals = 4;
-impl CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
-    pub fn new(mut q: CallQuals, xargs_1: Ptr<i32>, xargs_2: Ptr<i32>, xargs_3: Ptr<u32>) -> Self {
-        Self {
-            quals: q,
-            arg_types: ({ makeArgumentID_10() }),
-            args: unimplemented!(),
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
-#[byte_size(40)]
-pub struct CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
-    #[offset(0)]
-    pub quals: CallQuals,
-    #[offset(8)]
-    #[byte_size(8)]
-    pub arg_types: Ptr<TypeID>,
-    #[offset(16)]
-    #[byte_size(24)]
-    pub args: (),
-}
-impl CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
-    pub fn move_from(
-        _a0: Ptr<CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__>,
-    ) -> Self {
-        Self {
-            quals: { (*_a0.upgrade().deref()).quals },
-            arg_types: { (*_a0.upgrade().deref()).arg_types.clone() },
-            args: unimplemented!(),
-        }
-    }
-}
-impl CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
-    pub fn new(mut q: CallQuals, xargs_1: Ptr<i32>, xargs_2: Ptr<i32>, xargs_3: Ptr<u32>) -> Self {
-        Self {
-            quals: q,
-            arg_types: ({ makeArgumentID_11() }),
-            args: unimplemented!(),
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
-#[byte_size(40)]
-pub struct CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
-    #[offset(0)]
-    pub quals: CallQuals,
-    #[offset(8)]
-    #[byte_size(8)]
-    pub arg_types: Ptr<TypeID>,
-    #[offset(16)]
-    #[byte_size(24)]
-    pub args: (),
-}
-impl CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
-    pub fn move_from(
-        _a0: Ptr<CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__>,
-    ) -> Self {
-        Self {
-            quals: { (*_a0.upgrade().deref()).quals },
-            arg_types: { (*_a0.upgrade().deref()).arg_types.clone() },
-            args: unimplemented!(),
-        }
-    }
-}
-impl CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ {
-    pub fn new(mut q: CallQuals, xargs_1: Ptr<i32>, xargs_2: Ptr<i32>, xargs_3: Ptr<u32>) -> Self {
-        Self {
-            quals: q,
-            arg_types: ({ makeArgumentID_12() }),
-            args: unimplemented!(),
-        }
-    }
-}
-#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, Default)]
-#[byte_size(40)]
-pub struct CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ {
-    #[offset(0)]
-    pub quals: CallQuals,
-    #[offset(8)]
-    #[byte_size(8)]
-    pub arg_types: Ptr<TypeID>,
-    #[offset(16)]
-    #[byte_size(24)]
-    pub args: (),
-}
-impl CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ {
-    pub fn move_from(
-        _a0: Ptr<CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__>,
-    ) -> Self {
-        Self {
-            quals: { (*_a0.upgrade().deref()).quals },
-            arg_types: { (*_a0.upgrade().deref()).arg_types.clone() },
-            args: unimplemented!(),
-        }
-    }
-}
-impl CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ {
-    pub fn new(mut q: CallQuals, xargs_1: Ptr<i32>, xargs_2: Ptr<i32>, xargs_3: Ptr<u32>) -> Self {
-        Self {
-            quals: q,
-            arg_types: ({ makeArgumentID_13() }),
-            args: unimplemented!(),
-        }
-    }
-}
-#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, Default)]
-#[byte_size(40)]
-pub struct CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ {
-    #[offset(0)]
-    pub quals: CallQuals,
-    #[offset(8)]
-    #[byte_size(8)]
-    pub arg_types: Ptr<TypeID>,
-    #[offset(16)]
-    #[byte_size(24)]
-    pub args: (),
-}
-impl CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ {
-    pub fn move_from(
-        _a0: Ptr<CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__>,
-    ) -> Self {
-        Self {
-            quals: { (*_a0.upgrade().deref()).quals },
-            arg_types: { (*_a0.upgrade().deref()).arg_types.clone() },
-            args: unimplemented!(),
-        }
-    }
-}
 pub fn makeCallInfo_21(
     mut quals: CallQuals,
     args_1: Ptr<i32>,
@@ -456,147 +344,27 @@ impl
         })
     }
 }
-pub fn check_apply_quals_and_types_25(t: Ptr<()>) {
-    let mut expect_args: Ptr<TypeID> = ({ makeArgumentID_10() });
-    let obj: Value<TrackedCallable> = Rc::new(RefCell::new(<TrackedCallable>::default()));
-    let cobj: Ptr<TrackedCallable> = obj.as_pointer();
-    {
-        let mut ret: CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ =
-            unimplemented!();
-        assert!(((ret.quals as i32) == (CallQuals_CQ_LValue as i32)));
-        assert!(({ (ret.arg_types).clone() } == { (expect_args).clone() }));
-        assert!(unimplemented!());
-    }
-    {
-        let mut ret: CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ =
-            unimplemented!();
-        assert!(((ret.quals as i32) == (CallQuals_CQ_ConstLValue as i32)));
-        assert!(({ (ret.arg_types).clone() } == { (expect_args).clone() }));
-        assert!(unimplemented!());
-    }
-    {
-        let mut ret: CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ =
-            unimplemented!();
-        assert!(((ret.quals as i32) == (CallQuals_CQ_RValue as i32)));
-        assert!(({ (ret.arg_types).clone() } == { (expect_args).clone() }));
-        assert!(unimplemented!());
-    }
-    {
-        let mut ret: CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ =
-            unimplemented!();
-        assert!(((ret.quals as i32) == (CallQuals_CQ_ConstRValue as i32)));
-        assert!(({ (ret.arg_types).clone() } == { (expect_args).clone() }));
-        assert!(unimplemented!());
+impl CppMove for TrackedCallable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
-pub fn check_apply_quals_and_types_26(t: Ptr<()>) {
-    let mut expect_args: Ptr<TypeID> = ({ makeArgumentID_11() });
-    let obj: Value<TrackedCallable> = Rc::new(RefCell::new(<TrackedCallable>::default()));
-    let cobj: Ptr<TrackedCallable> = obj.as_pointer();
-    {
-        let mut ret: CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ =
-            unimplemented!();
-        assert!(((ret.quals as i32) == (CallQuals_CQ_LValue as i32)));
-        assert!(({ (ret.arg_types).clone() } == { (expect_args).clone() }));
-        assert!(unimplemented!());
-    }
-    {
-        let mut ret: CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ =
-            unimplemented!();
-        assert!(((ret.quals as i32) == (CallQuals_CQ_ConstLValue as i32)));
-        assert!(({ (ret.arg_types).clone() } == { (expect_args).clone() }));
-        assert!(unimplemented!());
-    }
-    {
-        let mut ret: CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ =
-            unimplemented!();
-        assert!(((ret.quals as i32) == (CallQuals_CQ_RValue as i32)));
-        assert!(({ (ret.arg_types).clone() } == { (expect_args).clone() }));
-        assert!(unimplemented!());
-    }
-    {
-        let mut ret: CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ =
-            unimplemented!();
-        assert!(((ret.quals as i32) == (CallQuals_CQ_ConstRValue as i32)));
-        assert!(({ (ret.arg_types).clone() } == { (expect_args).clone() }));
-        assert!(unimplemented!());
-    }
-}
-pub fn check_apply_quals_and_types_27(t: Ptr<()>) {
-    let mut expect_args: Ptr<TypeID> = ({ makeArgumentID_12() });
-    let obj: Value<TrackedCallable> = Rc::new(RefCell::new(<TrackedCallable>::default()));
-    let cobj: Ptr<TrackedCallable> = obj.as_pointer();
-    {
-        let mut ret: CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ =
-            unimplemented!();
-        assert!(((ret.quals as i32) == (CallQuals_CQ_LValue as i32)));
-        assert!(({ (ret.arg_types).clone() } == { (expect_args).clone() }));
-        assert!(unimplemented!());
-    }
-    {
-        let mut ret: CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ =
-            unimplemented!();
-        assert!(((ret.quals as i32) == (CallQuals_CQ_ConstLValue as i32)));
-        assert!(({ (ret.arg_types).clone() } == { (expect_args).clone() }));
-        assert!(unimplemented!());
-    }
-    {
-        let mut ret: CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ =
-            unimplemented!();
-        assert!(((ret.quals as i32) == (CallQuals_CQ_RValue as i32)));
-        assert!(({ (ret.arg_types).clone() } == { (expect_args).clone() }));
-        assert!(unimplemented!());
-    }
-    {
-        let mut ret: CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ =
-            unimplemented!();
-        assert!(((ret.quals as i32) == (CallQuals_CQ_ConstRValue as i32)));
-        assert!(({ (ret.arg_types).clone() } == { (expect_args).clone() }));
-        assert!(unimplemented!());
-    }
-}
-pub fn check_apply_quals_and_types_28(t: Ptr<()>) {
-    let mut expect_args: Ptr<TypeID> = ({ makeArgumentID_13() });
-    let obj: Value<TrackedCallable> = Rc::new(RefCell::new(<TrackedCallable>::default()));
-    let cobj: Ptr<TrackedCallable> = obj.as_pointer();
-    {
-        let mut ret: CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ =
-            unimplemented!();
-        assert!(((ret.quals as i32) == (CallQuals_CQ_LValue as i32)));
-        assert!(({ (ret.arg_types).clone() } == { (expect_args).clone() }));
-        assert!(unimplemented!());
-    }
-    {
-        let mut ret: CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ =
-            unimplemented!();
-        assert!(((ret.quals as i32) == (CallQuals_CQ_ConstLValue as i32)));
-        assert!(({ (ret.arg_types).clone() } == { (expect_args).clone() }));
-        assert!(unimplemented!());
-    }
-    {
-        let mut ret: CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ =
-            unimplemented!();
-        assert!(((ret.quals as i32) == (CallQuals_CQ_RValue as i32)));
-        assert!(({ (ret.arg_types).clone() } == { (expect_args).clone() }));
-        assert!(unimplemented!());
-    }
-    {
-        let mut ret: CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ =
-            unimplemented!();
-        assert!(((ret.quals as i32) == (CallQuals_CQ_ConstRValue as i32)));
-        assert!(({ (ret.arg_types).clone() } == { (expect_args).clone() }));
-        assert!(unimplemented!());
-    }
-}
-pub fn test_call_quals_and_arg_types_29() {
+pub fn test_call_quals_and_arg_types_25() {
     let x: Value<i32> = Rc::new(RefCell::new(42));
     let y: Value<u32> = Rc::new(RefCell::new(101_u32));
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let ct: Ptr<()> = t.as_pointer();
-    ({ check_apply_quals_and_types_25(t.as_pointer()) });
-    ({ check_apply_quals_and_types_26((ct).clone()) });
-    ({ check_apply_quals_and_types_27(t.as_pointer()) });
-    ({ check_apply_quals_and_types_28((ct).clone()) });
+    let t: Value<std_tuple_int__const_int_ref__unsigned_int_refref_> = Rc::new(RefCell::new({
+        let __tmp_5: Value<i32> = Rc::new(RefCell::new(-1_i32));
+        std_tuple_int__const_int_ref__unsigned_int_refref_::new_1(
+            { __tmp_5.as_pointer() },
+            { x.as_pointer() },
+            { y.as_pointer() },
+        )
+    }));
+    let ct: Ptr<std_tuple_int__const_int_ref__unsigned_int_refref_> = t.as_pointer();
+    ({ check_apply_quals_and_types_26(t.as_pointer()) });
+    ({ check_apply_quals_and_types_27((ct).clone()) });
+    ({ check_apply_quals_and_types_28(t.as_pointer()) });
+    ({ check_apply_quals_and_types_29((ct).clone()) });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
 #[byte_size(1)]
@@ -613,6 +381,11 @@ impl Clone for NothrowMoveable {
     fn clone(&self) -> Self {
         let __src: Value<NothrowMoveable> = Rc::new(RefCell::new(NothrowMoveable {}));
         NothrowMoveable::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for NothrowMoveable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -634,6 +407,11 @@ impl Callable2<NothrowMoveable, i32, NothrowMoveable> for TestNoexceptCallable_t
         })
     }
 }
+impl CppMove for TestNoexceptCallable_true_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestNoexceptCallable_false_ {}
@@ -646,16 +424,26 @@ impl Callable3<i32, Ptr<i8>, i64, NothrowMoveable> for TestNoexceptCallable_fals
         })
     }
 }
+impl CppMove for TestNoexceptCallable_false_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_noexcept_30() {
-    let mut nec: TestNoexceptCallable_true_ = <TestNoexceptCallable_true_>::default();
-    let mut tc: TestNoexceptCallable_false_ = <TestNoexceptCallable_false_>::default();
+    let nec: Value<TestNoexceptCallable_true_> =
+        Rc::new(RefCell::new(<TestNoexceptCallable_true_>::default()));
+    let tc: Value<TestNoexceptCallable_false_> =
+        Rc::new(RefCell::new(<TestNoexceptCallable_false_>::default()));
     {
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t: Value<std_tuple_int__const_char_ptr__long_> = Rc::new(RefCell::new(
+            <std_tuple_int__const_char_ptr__long_>::default(),
+        ));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t: Value<std_tuple_NothrowMoveable__int_> =
+            Rc::new(RefCell::new(<std_tuple_NothrowMoveable__int_>::default()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
@@ -666,45 +454,115 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnTypeTest_index_0_ {}
+impl CppMove for ReturnTypeTest_index_0_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnTypeTest_index_1_ {}
+impl CppMove for ReturnTypeTest_index_1_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnTypeTest_index_2_ {}
+impl CppMove for ReturnTypeTest_index_2_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnTypeTest_index_3_ {}
+impl CppMove for ReturnTypeTest_index_3_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnTypeTest_index_4_ {}
+impl CppMove for ReturnTypeTest_index_4_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnTypeTest_index_5_ {}
+impl CppMove for ReturnTypeTest_index_5_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnTypeTest_index_6_ {}
+impl CppMove for ReturnTypeTest_index_6_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnTypeTest_index_7_ {}
+impl CppMove for ReturnTypeTest_index_7_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnTypeTest_index_8_ {}
+impl CppMove for ReturnTypeTest_index_8_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnTypeTest_index_9_ {}
+impl CppMove for ReturnTypeTest_index_9_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnTypeTest_index_10_ {}
+impl CppMove for ReturnTypeTest_index_10_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnTypeTest_index_11_ {}
+impl CppMove for ReturnTypeTest_index_11_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnTypeTest_index_12_ {}
+impl CppMove for ReturnTypeTest_index_12_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnTypeTest_index_13_ {}
+impl CppMove for ReturnTypeTest_index_13_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn f_32(mut _a0: ReturnTypeTest_index_0_) {}
 pub fn f_33(mut _a0: ReturnTypeTest_index_1_) -> i32 {
     return 0;
@@ -747,113 +605,150 @@ pub fn f_45(mut _a0: ReturnTypeTest_index_13_) -> Ptr<i32> {
 }
 pub fn test_46() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: FnPtr<fn(ReturnTypeTest_index_0_)> =
-        FnPtr::<fn(ReturnTypeTest_index_0_)>::new(f_32);
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fn_: Value<FnPtr<fn(ReturnTypeTest_index_0_)>> = Rc::new(RefCell::new(FnPtr::<
+        fn(ReturnTypeTest_index_0_),
+    >::new(f_32)));
+    let t: Value<std_tuple_ReturnTypeTest_index_0__> =
+        Rc::new(RefCell::new(<std_tuple_ReturnTypeTest_index_0__>::default()));
     (&(*t.borrow_mut()));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub fn test_47() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: FnPtr<fn(ReturnTypeTest_index_1_) -> i32> =
-        FnPtr::<fn(ReturnTypeTest_index_1_) -> i32>::new(f_33);
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fn_: Value<FnPtr<fn(ReturnTypeTest_index_1_) -> i32>> =
+        Rc::new(RefCell::new(
+            FnPtr::<fn(ReturnTypeTest_index_1_) -> i32>::new(f_33),
+        ));
+    let t: Value<std_tuple_ReturnTypeTest_index_1__> =
+        Rc::new(RefCell::new(<std_tuple_ReturnTypeTest_index_1__>::default()));
     (&(*t.borrow_mut()));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub fn test_48() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: FnPtr<fn(ReturnTypeTest_index_2_) -> Ptr<i32>> =
-        FnPtr::<fn(ReturnTypeTest_index_2_) -> Ptr<i32>>::new(f_34);
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fn_: Value<FnPtr<fn(ReturnTypeTest_index_2_) -> Ptr<i32>>> = Rc::new(RefCell::new(
+        FnPtr::<fn(ReturnTypeTest_index_2_) -> Ptr<i32>>::new(f_34),
+    ));
+    let t: Value<std_tuple_ReturnTypeTest_index_2__> =
+        Rc::new(RefCell::new(<std_tuple_ReturnTypeTest_index_2__>::default()));
     (&(*t.borrow_mut()));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub fn test_49() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: FnPtr<fn(ReturnTypeTest_index_3_) -> Ptr<i32>> =
-        FnPtr::<fn(ReturnTypeTest_index_3_) -> Ptr<i32>>::new(f_35);
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fn_: Value<FnPtr<fn(ReturnTypeTest_index_3_) -> Ptr<i32>>> = Rc::new(RefCell::new(
+        FnPtr::<fn(ReturnTypeTest_index_3_) -> Ptr<i32>>::new(f_35),
+    ));
+    let t: Value<std_tuple_ReturnTypeTest_index_3__> =
+        Rc::new(RefCell::new(<std_tuple_ReturnTypeTest_index_3__>::default()));
     (&(*t.borrow_mut()));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub fn test_50() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: FnPtr<fn(ReturnTypeTest_index_4_) -> Ptr<i32>> =
-        FnPtr::<fn(ReturnTypeTest_index_4_) -> Ptr<i32>>::new(f_36);
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fn_: Value<FnPtr<fn(ReturnTypeTest_index_4_) -> Ptr<i32>>> = Rc::new(RefCell::new(
+        FnPtr::<fn(ReturnTypeTest_index_4_) -> Ptr<i32>>::new(f_36),
+    ));
+    let t: Value<std_tuple_ReturnTypeTest_index_4__> =
+        Rc::new(RefCell::new(<std_tuple_ReturnTypeTest_index_4__>::default()));
     (&(*t.borrow_mut()));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub fn test_51() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: FnPtr<fn(ReturnTypeTest_index_5_) -> Ptr<i32>> =
-        FnPtr::<fn(ReturnTypeTest_index_5_) -> Ptr<i32>>::new(f_37);
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fn_: Value<FnPtr<fn(ReturnTypeTest_index_5_) -> Ptr<i32>>> = Rc::new(RefCell::new(
+        FnPtr::<fn(ReturnTypeTest_index_5_) -> Ptr<i32>>::new(f_37),
+    ));
+    let t: Value<std_tuple_ReturnTypeTest_index_5__> =
+        Rc::new(RefCell::new(<std_tuple_ReturnTypeTest_index_5__>::default()));
     (&(*t.borrow_mut()));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub fn test_52() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: FnPtr<fn(ReturnTypeTest_index_6_) -> Ptr<i32>> =
-        FnPtr::<fn(ReturnTypeTest_index_6_) -> Ptr<i32>>::new(f_38);
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fn_: Value<FnPtr<fn(ReturnTypeTest_index_6_) -> Ptr<i32>>> = Rc::new(RefCell::new(
+        FnPtr::<fn(ReturnTypeTest_index_6_) -> Ptr<i32>>::new(f_38),
+    ));
+    let t: Value<std_tuple_ReturnTypeTest_index_6__> =
+        Rc::new(RefCell::new(<std_tuple_ReturnTypeTest_index_6__>::default()));
     (&(*t.borrow_mut()));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub fn test_53() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: FnPtr<fn(ReturnTypeTest_index_7_) -> Ptr<i32>> =
-        FnPtr::<fn(ReturnTypeTest_index_7_) -> Ptr<i32>>::new(f_39);
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fn_: Value<FnPtr<fn(ReturnTypeTest_index_7_) -> Ptr<i32>>> = Rc::new(RefCell::new(
+        FnPtr::<fn(ReturnTypeTest_index_7_) -> Ptr<i32>>::new(f_39),
+    ));
+    let t: Value<std_tuple_ReturnTypeTest_index_7__> =
+        Rc::new(RefCell::new(<std_tuple_ReturnTypeTest_index_7__>::default()));
     (&(*t.borrow_mut()));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub fn test_54() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: FnPtr<fn(ReturnTypeTest_index_8_) -> Ptr<i32>> =
-        FnPtr::<fn(ReturnTypeTest_index_8_) -> Ptr<i32>>::new(f_40);
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fn_: Value<FnPtr<fn(ReturnTypeTest_index_8_) -> Ptr<i32>>> = Rc::new(RefCell::new(
+        FnPtr::<fn(ReturnTypeTest_index_8_) -> Ptr<i32>>::new(f_40),
+    ));
+    let t: Value<std_tuple_ReturnTypeTest_index_8__> =
+        Rc::new(RefCell::new(<std_tuple_ReturnTypeTest_index_8__>::default()));
     (&(*t.borrow_mut()));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub fn test_55() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: FnPtr<fn(ReturnTypeTest_index_9_) -> Ptr<i32>> =
-        FnPtr::<fn(ReturnTypeTest_index_9_) -> Ptr<i32>>::new(f_41);
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fn_: Value<FnPtr<fn(ReturnTypeTest_index_9_) -> Ptr<i32>>> = Rc::new(RefCell::new(
+        FnPtr::<fn(ReturnTypeTest_index_9_) -> Ptr<i32>>::new(f_41),
+    ));
+    let t: Value<std_tuple_ReturnTypeTest_index_9__> =
+        Rc::new(RefCell::new(<std_tuple_ReturnTypeTest_index_9__>::default()));
     (&(*t.borrow_mut()));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub fn test_56() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: FnPtr<fn(ReturnTypeTest_index_10_) -> Ptr<i32>> =
-        FnPtr::<fn(ReturnTypeTest_index_10_) -> Ptr<i32>>::new(f_42);
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fn_: Value<FnPtr<fn(ReturnTypeTest_index_10_) -> Ptr<i32>>> =
+        Rc::new(RefCell::new(FnPtr::<
+            fn(ReturnTypeTest_index_10_) -> Ptr<i32>,
+        >::new(f_42)));
+    let t: Value<std_tuple_ReturnTypeTest_index_10__> = Rc::new(RefCell::new(
+        <std_tuple_ReturnTypeTest_index_10__>::default(),
+    ));
     (&(*t.borrow_mut()));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub fn test_57() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: FnPtr<fn(ReturnTypeTest_index_11_) -> Ptr<i32>> =
-        FnPtr::<fn(ReturnTypeTest_index_11_) -> Ptr<i32>>::new(f_43);
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fn_: Value<FnPtr<fn(ReturnTypeTest_index_11_) -> Ptr<i32>>> =
+        Rc::new(RefCell::new(FnPtr::<
+            fn(ReturnTypeTest_index_11_) -> Ptr<i32>,
+        >::new(f_43)));
+    let t: Value<std_tuple_ReturnTypeTest_index_11__> = Rc::new(RefCell::new(
+        <std_tuple_ReturnTypeTest_index_11__>::default(),
+    ));
     (&(*t.borrow_mut()));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub fn test_58() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: FnPtr<fn(ReturnTypeTest_index_12_) -> Ptr<i32>> =
-        FnPtr::<fn(ReturnTypeTest_index_12_) -> Ptr<i32>>::new(f_44);
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fn_: Value<FnPtr<fn(ReturnTypeTest_index_12_) -> Ptr<i32>>> =
+        Rc::new(RefCell::new(FnPtr::<
+            fn(ReturnTypeTest_index_12_) -> Ptr<i32>,
+        >::new(f_44)));
+    let t: Value<std_tuple_ReturnTypeTest_index_12__> = Rc::new(RefCell::new(
+        <std_tuple_ReturnTypeTest_index_12__>::default(),
+    ));
     (&(*t.borrow_mut()));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub fn test_59() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: FnPtr<fn(ReturnTypeTest_index_13_) -> Ptr<i32>> =
-        FnPtr::<fn(ReturnTypeTest_index_13_) -> Ptr<i32>>::new(f_45);
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fn_: Value<FnPtr<fn(ReturnTypeTest_index_13_) -> Ptr<i32>>> =
+        Rc::new(RefCell::new(FnPtr::<
+            fn(ReturnTypeTest_index_13_) -> Ptr<i32>,
+        >::new(f_45)));
+    let t: Value<std_tuple_ReturnTypeTest_index_13__> = Rc::new(RefCell::new(
+        <std_tuple_ReturnTypeTest_index_13__>::default(),
+    ));
     (&(*t.borrow_mut()));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
@@ -894,11 +789,23 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_constexpr_evaluation_20() });
-    ({ test_call_quals_and_arg_types_29() });
+    ({ test_call_quals_and_arg_types_25() });
     ({ test_return_type_60() });
     ({ test_noexcept_30() });
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__;
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__;
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__;
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__;
 pub trait ConstexprSumTImpl {
     fn operator_call_2(&self) -> i32;
     fn operator_call_2_int(&self, values: i32) -> i32;

@@ -52,6 +52,11 @@ impl Clone for __gnu_test_object_counter {
         __gnu_test_object_counter::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_object_counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_object_counter {
     fn default() -> Self {
         { __gnu_test_object_counter::new() }
@@ -78,6 +83,11 @@ impl __gnu_test_copy_constructor {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_copy_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
@@ -99,6 +109,11 @@ impl __gnu_test_assignment_operator {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_assignment_operator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
@@ -111,6 +126,11 @@ impl __gnu_test_destructor {
     }
     pub fn reset() {
         _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
+    }
+}
+impl CppMove for __gnu_test_destructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -173,6 +193,11 @@ impl Clone for __gnu_test_copy_tracker {
         __gnu_test_copy_tracker::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_copy_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_copy_tracker {
     fn default() -> Self {
         { __gnu_test_copy_tracker::new(None, None) }
@@ -197,6 +222,11 @@ pub struct __gnu_test_semaphore {
     pid_: (),
 }
 impl __gnu_test_semaphore {}
+impl CppMove for __gnu_test_semaphore {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test02_9() {
     let mut c1: i16 = (('z' as i8) as i16);
     let mut c2: i16 = (('u' as i8) as i16);
@@ -290,7 +320,22 @@ pub fn test02_9() {
         (('h' as i8) as i16),
         0_i16,
     ])));
-    let str_01: Value<Vec<i16>> = Rc::new(RefCell::new(unimplemented!()));
+    let str_01: Value<Vec<i16>> = Rc::new(RefCell::new(
+        match ({ (array1.as_pointer() as Ptr<i16>).offset((0) as isize) },) {
+            (mut __tmp_0,) => {
+                let mut __bytes: Vec<u8> = Vec::new();
+                if !__tmp_0.is_null() {
+                    __tmp_0
+                        .with_mut(|__f: &mut std::fs::File| {
+                            std::io::Read::read_to_end(__f, &mut __bytes)
+                        })
+                        .expect("couldn't read the file");
+                }
+                __bytes.push(0);
+                CChar::from_byte_vec(__bytes)
+            }
+        },
+    ));
     let str_lit1: Value<Box<[i16]>> = Rc::new(RefCell::new(Box::new([
         (('m' as i8) as i16),
         (('o' as i8) as i16),
@@ -353,14 +398,14 @@ pub fn test02_9() {
     let array2: Value<Box<[i16]>> =
         Rc::new(RefCell::new((0..34).map(|_| 0_i16).collect::<Box<[i16]>>()));
     let mut len: i32 = {
-        let __tmp_0: Value<i32> = Rc::new(RefCell::new(
+        let __tmp_1: Value<i32> = Rc::new(RefCell::new(
             (((::std::mem::size_of::<[i16; 21]>() as usize)
                 .wrapping_div((::std::mem::size_of::<i16>() as usize))) as i32),
         ));
-        ({
-            let __a = array2_len.as_pointer();
-            let __b = __tmp_0.as_pointer();
-            if CppLess::less(&__b, &__a) { __b } else { __a }
+        (if CppLess::less(&__tmp_1.as_pointer(), &array2_len.as_pointer()) {
+            __tmp_1.as_pointer()
+        } else {
+            array2_len.as_pointer()
         }
         .read())
     };
@@ -584,15 +629,17 @@ pub fn test02_9() {
             std::process::abort();
         }
     }
-    {
-        ((array2.as_pointer() as Ptr<i16>) as Ptr<i16>)
-            .to_any()
-            .memset(
+    match ({ ((array2.as_pointer() as Ptr<i16>) as Ptr<i16>).to_any() },) {
+        (mut __tmp_2,) => {
+            __tmp_2.memset(
                 (175) as u8,
-                ((*array2_len.borrow()) as usize)
-                    .wrapping_mul((::std::mem::size_of::<i16>() as usize)) as usize,
+                ({
+                    ((*array2_len.borrow()) as usize)
+                        .wrapping_mul((::std::mem::size_of::<i16>() as usize))
+                }) as usize,
             );
-        ((array2.as_pointer() as Ptr<i16>) as Ptr<i16>).to_any()
+            (__tmp_2).clone()
+        }
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -825,22 +872,36 @@ pub fn run_tests_wrapped_env_14(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !(libc::setenv(env, name, 1) != 0) {
+    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+        true => {
+            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
+            0
+        }
+        false => 0,
+    } != 0)
+    {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: i32 = 0;
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        libc::setenv(
-            env,
+        match ({
             if !(oldENV).is_null() {
                 (oldENV).clone()
             } else {
                 Ptr::<i8>::from_string_literal(b"")
+            }
+        },)
+        {
+            (mut __tmp_0,) => match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+                true => {
+                    unsafe { ::std::env::set_var(env.to_rust_string(), __tmp_0.to_rust_string()) };
+                    0
+                }
+                false => 0,
             },
-            1,
-        );
+        };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = env.to_c_bytes();
@@ -889,6 +950,11 @@ impl __gnu_test_semun {
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<u16>> {
         this.reinterpret_cast()
+    }
+}
+impl CppMove for __gnu_test_semun {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for __gnu_test_semun {
@@ -966,7 +1032,9 @@ impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
     }
     fn push_back(&self, mut test: FnPtr<fn()>) {
         array_elem!((*self), _M_tests, (*self).with(|__s| __s._M_size)).write((test).clone());
-        field!((*self), _M_size).with_mut(|__v| __v.prefix_inc());
+        field!((*self), _M_size).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait __gnu_test_object_counterImpl {

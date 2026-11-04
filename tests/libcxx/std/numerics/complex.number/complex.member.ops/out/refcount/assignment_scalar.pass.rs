@@ -7,39 +7,40 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_f32));
-    assert!((unimplemented!() == 0_f32));
-    unimplemented!();
-    assert!(((unimplemented!() as f64) == 1.5_f64));
-    assert!((unimplemented!() == 0_f32));
-    unimplemented!();
-    assert!(((unimplemented!() as f64) == -1.5_f64));
-    assert!((unimplemented!() == 0_f32));
+    let c: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
+    assert!(({ (({ (*c.borrow()).real_5() }) == 0_f32) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f32) }));
+    (*c.borrow_mut()) = (1.5_f64 as f32);
+    assert!(({ ((({ (*c.borrow()).real_5() }) as f64) == 1.5_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f32) }));
+    (*c.borrow_mut()) = (-1.5_f64 as f32);
+    assert!(({ ((({ (*c.borrow()).real_5() }) as f64) == -1.5_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f32) }));
     return true;
 }
 pub fn test_1() -> bool {
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_f64));
-    assert!((unimplemented!() == 0_f64));
-    unimplemented!();
-    assert!((unimplemented!() == 1.5_f64));
-    assert!((unimplemented!() == 0_f64));
-    unimplemented!();
-    assert!((unimplemented!() == -1.5_f64));
-    assert!((unimplemented!() == 0_f64));
+    let c: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+    assert!(({ (({ (*c.borrow()).real_5() }) == 0_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f64) }));
+    (*c.borrow_mut()) = 1.5_f64;
+    assert!(({ (({ (*c.borrow()).real_5() }) == 1.5_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f64) }));
+    (*c.borrow_mut()) = -1.5_f64;
+    assert!(({ (({ (*c.borrow()).real_5() }) == -1.5_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f64) }));
     return true;
 }
 pub fn test_2() -> bool {
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_f64));
-    assert!((unimplemented!() == 0_f64));
-    unimplemented!();
-    assert!((unimplemented!() == 1.5_f64));
-    assert!((unimplemented!() == 0_f64));
-    unimplemented!();
-    assert!((unimplemented!() == -1.5_f64));
-    assert!((unimplemented!() == 0_f64));
+    let c: Value<std_complex_long_double_> =
+        Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+    assert!(({ (({ (*c.borrow()).real_5() }) == 0_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f64) }));
+    (*c.borrow_mut()) = 1.5_f64;
+    assert!(({ (({ (*c.borrow()).real_5() }) == 1.5_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f64) }));
+    (*c.borrow_mut()) = -1.5_f64;
+    assert!(({ (({ (*c.borrow()).real_5() }) == -1.5_f64) }));
+    assert!(({ (({ (*c.borrow()).imag_6() }) == 0_f64) }));
     return true;
 }
 pub fn main() {

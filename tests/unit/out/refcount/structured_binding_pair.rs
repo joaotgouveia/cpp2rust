@@ -25,8 +25,8 @@ fn main_0() -> i32 {
         Rc::new(RefCell::new(2)),
     )));
     let __decomp_2: Value<(Value<i32>, Value<i32>)> = Rc::new(RefCell::new((
-        Rc::new(RefCell::new((*p.borrow()).0.borrow().clone())),
-        Rc::new(RefCell::new((*p.borrow()).1.borrow().clone())),
+        Rc::new(RefCell::new(((*p.borrow()).0.as_pointer().read()))),
+        Rc::new(RefCell::new(((*p.borrow()).1.as_pointer().read()))),
     )));
     let a: Ptr<i32> = (*__decomp_2.borrow()).get_value::<0>().as_pointer();
     let b: Ptr<i32> = (*__decomp_2.borrow()).get_value::<1>().as_pointer();

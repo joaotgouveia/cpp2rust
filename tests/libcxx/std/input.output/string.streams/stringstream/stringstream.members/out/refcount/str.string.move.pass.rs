@@ -67,11 +67,76 @@ impl MultiStringType {
         }
     }
 }
+impl CppMove for MultiStringType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0() {
     {
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: Vec<i8> = {
-            let mut __v = Vec::with_capacity(
+        let mut s: Vec<i8> = match (
+            {
+                ({
+                    MultiStringTypeImpl::as_ptr_2(
+                        &Rc::new(RefCell::new(MultiStringType::new(
+                            {
+                                Ptr::<i32>::from_string_literal(&[
+                                    116 as i32, 101 as i32, 115 as i32, 116 as i32, 105 as i32,
+                                    110 as i32, 103 as i32, 0 as i32,
+                                ])
+                            },
+                            {
+                                ((::std::mem::size_of::<[i32; 8]>() as usize)
+                                    .wrapping_div((::std::mem::size_of::<i32>() as usize))
+                                    as usize)
+                                    .wrapping_sub(1_usize)
+                            },
+                            {
+                                Ptr::<u8>::from_string_literal(&[
+                                    116 as u8, 101 as u8, 115 as u8, 116 as u8, 105 as u8,
+                                    110 as u8, 103 as u8, 0 as u8,
+                                ])
+                            },
+                            {
+                                ((::std::mem::size_of::<[u8; 8]>() as usize)
+                                    .wrapping_div((::std::mem::size_of::<u8>() as usize))
+                                    as usize)
+                                    .wrapping_sub(1_usize)
+                            },
+                            {
+                                Ptr::<u16>::from_string_literal(&[
+                                    116 as u16, 101 as u16, 115 as u16, 116 as u16, 105 as u16,
+                                    110 as u16, 103 as u16, 0 as u16,
+                                ])
+                            },
+                            {
+                                ((::std::mem::size_of::<[u16; 8]>() as usize)
+                                    .wrapping_div((::std::mem::size_of::<u16>() as usize))
+                                    as usize)
+                                    .wrapping_sub(1_usize)
+                            },
+                            {
+                                Ptr::<u32>::from_string_literal(&[
+                                    116 as u32, 101 as u32, 115 as u32, 116 as u32, 105 as u32,
+                                    110 as u32, 103 as u32, 0 as u32,
+                                ])
+                            },
+                            {
+                                ((::std::mem::size_of::<[u32; 8]>() as usize)
+                                    .wrapping_div((::std::mem::size_of::<u32>() as usize))
+                                    as usize)
+                                    .wrapping_sub(1_usize)
+                            },
+                            { Ptr::<i8>::from_string_literal(b"testing") },
+                            { (::std::mem::size_of::<[i8; 8]>() as usize).wrapping_sub(1_usize) },
+                        )))
+                        .as_pointer(),
+                        Ptr::<i8>::null(),
+                    )
+                })
+            },
+            {
                 ({
                     MultiStringTypeImpl::length_7(
                         &Rc::new(RefCell::new(MultiStringType::new(
@@ -129,130 +194,15 @@ pub fn test_0() {
                         .as_pointer(),
                         Ptr::<i8>::null(),
                     )
-                }) as usize
-                    + 1,
-            );
-            ({
-                MultiStringTypeImpl::as_ptr_2(
-                    &Rc::new(RefCell::new(MultiStringType::new(
-                        {
-                            Ptr::<i32>::from_string_literal(&[
-                                116 as i32, 101 as i32, 115 as i32, 116 as i32, 105 as i32,
-                                110 as i32, 103 as i32, 0 as i32,
-                            ])
-                        },
-                        {
-                            ((::std::mem::size_of::<[i32; 8]>() as usize)
-                                .wrapping_div((::std::mem::size_of::<i32>() as usize))
-                                as usize)
-                                .wrapping_sub(1_usize)
-                        },
-                        {
-                            Ptr::<u8>::from_string_literal(&[
-                                116 as u8, 101 as u8, 115 as u8, 116 as u8, 105 as u8, 110 as u8,
-                                103 as u8, 0 as u8,
-                            ])
-                        },
-                        {
-                            ((::std::mem::size_of::<[u8; 8]>() as usize)
-                                .wrapping_div((::std::mem::size_of::<u8>() as usize))
-                                as usize)
-                                .wrapping_sub(1_usize)
-                        },
-                        {
-                            Ptr::<u16>::from_string_literal(&[
-                                116 as u16, 101 as u16, 115 as u16, 116 as u16, 105 as u16,
-                                110 as u16, 103 as u16, 0 as u16,
-                            ])
-                        },
-                        {
-                            ((::std::mem::size_of::<[u16; 8]>() as usize)
-                                .wrapping_div((::std::mem::size_of::<u16>() as usize))
-                                as usize)
-                                .wrapping_sub(1_usize)
-                        },
-                        {
-                            Ptr::<u32>::from_string_literal(&[
-                                116 as u32, 101 as u32, 115 as u32, 116 as u32, 105 as u32,
-                                110 as u32, 103 as u32, 0 as u32,
-                            ])
-                        },
-                        {
-                            ((::std::mem::size_of::<[u32; 8]>() as usize)
-                                .wrapping_div((::std::mem::size_of::<u32>() as usize))
-                                as usize)
-                                .wrapping_sub(1_usize)
-                        },
-                        { Ptr::<i8>::from_string_literal(b"testing") },
-                        { (::std::mem::size_of::<[i8; 8]>() as usize).wrapping_sub(1_usize) },
-                    )))
-                    .as_pointer(),
-                    Ptr::<i8>::null(),
-                )
-            })
-            .with_slice(
-                ({
-                    MultiStringTypeImpl::length_7(
-                        &Rc::new(RefCell::new(MultiStringType::new(
-                            {
-                                Ptr::<i32>::from_string_literal(&[
-                                    116 as i32, 101 as i32, 115 as i32, 116 as i32, 105 as i32,
-                                    110 as i32, 103 as i32, 0 as i32,
-                                ])
-                            },
-                            {
-                                ((::std::mem::size_of::<[i32; 8]>() as usize)
-                                    .wrapping_div((::std::mem::size_of::<i32>() as usize))
-                                    as usize)
-                                    .wrapping_sub(1_usize)
-                            },
-                            {
-                                Ptr::<u8>::from_string_literal(&[
-                                    116 as u8, 101 as u8, 115 as u8, 116 as u8, 105 as u8,
-                                    110 as u8, 103 as u8, 0 as u8,
-                                ])
-                            },
-                            {
-                                ((::std::mem::size_of::<[u8; 8]>() as usize)
-                                    .wrapping_div((::std::mem::size_of::<u8>() as usize))
-                                    as usize)
-                                    .wrapping_sub(1_usize)
-                            },
-                            {
-                                Ptr::<u16>::from_string_literal(&[
-                                    116 as u16, 101 as u16, 115 as u16, 116 as u16, 105 as u16,
-                                    110 as u16, 103 as u16, 0 as u16,
-                                ])
-                            },
-                            {
-                                ((::std::mem::size_of::<[u16; 8]>() as usize)
-                                    .wrapping_div((::std::mem::size_of::<u16>() as usize))
-                                    as usize)
-                                    .wrapping_sub(1_usize)
-                            },
-                            {
-                                Ptr::<u32>::from_string_literal(&[
-                                    116 as u32, 101 as u32, 115 as u32, 116 as u32, 105 as u32,
-                                    110 as u32, 103 as u32, 0 as u32,
-                                ])
-                            },
-                            {
-                                ((::std::mem::size_of::<[u32; 8]>() as usize)
-                                    .wrapping_div((::std::mem::size_of::<u32>() as usize))
-                                    as usize)
-                                    .wrapping_sub(1_usize)
-                            },
-                            { Ptr::<i8>::from_string_literal(b"testing") },
-                            { (::std::mem::size_of::<[i8; 8]>() as usize).wrapping_sub(1_usize) },
-                        )))
-                        .as_pointer(),
-                        Ptr::<i8>::null(),
-                    )
-                }) as usize,
-                |__s| __v.extend_from_slice(__s),
-            );
-            __v.push(0_i8);
-            __v
+                })
+            },
+        ) {
+            (mut __tmp_0, mut __tmp_1) => {
+                let mut __v = Vec::with_capacity(__tmp_1 as usize + 1);
+                __tmp_0.with_slice(__tmp_1 as usize, |__s| __v.extend_from_slice(__s));
+                __v.push(0_i8);
+                __v
+            }
         };
         unimplemented!();
         assert!(unimplemented!());
@@ -261,8 +211,68 @@ pub fn test_0() {
 pub fn test_1() {
     {
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: Vec<i32> = {
-            let mut __v = Vec::with_capacity(
+        let mut s: Vec<i32> = match (
+            {
+                ({
+                    MultiStringTypeImpl::as_ptr_3(
+                        &Rc::new(RefCell::new(MultiStringType::new(
+                            {
+                                Ptr::<i32>::from_string_literal(&[
+                                    116 as i32, 101 as i32, 115 as i32, 116 as i32, 105 as i32,
+                                    110 as i32, 103 as i32, 0 as i32,
+                                ])
+                            },
+                            {
+                                ((::std::mem::size_of::<[i32; 8]>() as usize)
+                                    .wrapping_div((::std::mem::size_of::<i32>() as usize))
+                                    as usize)
+                                    .wrapping_sub(1_usize)
+                            },
+                            {
+                                Ptr::<u8>::from_string_literal(&[
+                                    116 as u8, 101 as u8, 115 as u8, 116 as u8, 105 as u8,
+                                    110 as u8, 103 as u8, 0 as u8,
+                                ])
+                            },
+                            {
+                                ((::std::mem::size_of::<[u8; 8]>() as usize)
+                                    .wrapping_div((::std::mem::size_of::<u8>() as usize))
+                                    as usize)
+                                    .wrapping_sub(1_usize)
+                            },
+                            {
+                                Ptr::<u16>::from_string_literal(&[
+                                    116 as u16, 101 as u16, 115 as u16, 116 as u16, 105 as u16,
+                                    110 as u16, 103 as u16, 0 as u16,
+                                ])
+                            },
+                            {
+                                ((::std::mem::size_of::<[u16; 8]>() as usize)
+                                    .wrapping_div((::std::mem::size_of::<u16>() as usize))
+                                    as usize)
+                                    .wrapping_sub(1_usize)
+                            },
+                            {
+                                Ptr::<u32>::from_string_literal(&[
+                                    116 as u32, 101 as u32, 115 as u32, 116 as u32, 105 as u32,
+                                    110 as u32, 103 as u32, 0 as u32,
+                                ])
+                            },
+                            {
+                                ((::std::mem::size_of::<[u32; 8]>() as usize)
+                                    .wrapping_div((::std::mem::size_of::<u32>() as usize))
+                                    as usize)
+                                    .wrapping_sub(1_usize)
+                            },
+                            { Ptr::<i8>::from_string_literal(b"testing") },
+                            { (::std::mem::size_of::<[i8; 8]>() as usize).wrapping_sub(1_usize) },
+                        )))
+                        .as_pointer(),
+                        Ptr::<i32>::null(),
+                    )
+                })
+            },
+            {
                 ({
                     MultiStringTypeImpl::length_8(
                         &Rc::new(RefCell::new(MultiStringType::new(
@@ -320,130 +330,15 @@ pub fn test_1() {
                         .as_pointer(),
                         Ptr::<i32>::null(),
                     )
-                }) as usize
-                    + 1,
-            );
-            ({
-                MultiStringTypeImpl::as_ptr_3(
-                    &Rc::new(RefCell::new(MultiStringType::new(
-                        {
-                            Ptr::<i32>::from_string_literal(&[
-                                116 as i32, 101 as i32, 115 as i32, 116 as i32, 105 as i32,
-                                110 as i32, 103 as i32, 0 as i32,
-                            ])
-                        },
-                        {
-                            ((::std::mem::size_of::<[i32; 8]>() as usize)
-                                .wrapping_div((::std::mem::size_of::<i32>() as usize))
-                                as usize)
-                                .wrapping_sub(1_usize)
-                        },
-                        {
-                            Ptr::<u8>::from_string_literal(&[
-                                116 as u8, 101 as u8, 115 as u8, 116 as u8, 105 as u8, 110 as u8,
-                                103 as u8, 0 as u8,
-                            ])
-                        },
-                        {
-                            ((::std::mem::size_of::<[u8; 8]>() as usize)
-                                .wrapping_div((::std::mem::size_of::<u8>() as usize))
-                                as usize)
-                                .wrapping_sub(1_usize)
-                        },
-                        {
-                            Ptr::<u16>::from_string_literal(&[
-                                116 as u16, 101 as u16, 115 as u16, 116 as u16, 105 as u16,
-                                110 as u16, 103 as u16, 0 as u16,
-                            ])
-                        },
-                        {
-                            ((::std::mem::size_of::<[u16; 8]>() as usize)
-                                .wrapping_div((::std::mem::size_of::<u16>() as usize))
-                                as usize)
-                                .wrapping_sub(1_usize)
-                        },
-                        {
-                            Ptr::<u32>::from_string_literal(&[
-                                116 as u32, 101 as u32, 115 as u32, 116 as u32, 105 as u32,
-                                110 as u32, 103 as u32, 0 as u32,
-                            ])
-                        },
-                        {
-                            ((::std::mem::size_of::<[u32; 8]>() as usize)
-                                .wrapping_div((::std::mem::size_of::<u32>() as usize))
-                                as usize)
-                                .wrapping_sub(1_usize)
-                        },
-                        { Ptr::<i8>::from_string_literal(b"testing") },
-                        { (::std::mem::size_of::<[i8; 8]>() as usize).wrapping_sub(1_usize) },
-                    )))
-                    .as_pointer(),
-                    Ptr::<i32>::null(),
-                )
-            })
-            .with_slice(
-                ({
-                    MultiStringTypeImpl::length_8(
-                        &Rc::new(RefCell::new(MultiStringType::new(
-                            {
-                                Ptr::<i32>::from_string_literal(&[
-                                    116 as i32, 101 as i32, 115 as i32, 116 as i32, 105 as i32,
-                                    110 as i32, 103 as i32, 0 as i32,
-                                ])
-                            },
-                            {
-                                ((::std::mem::size_of::<[i32; 8]>() as usize)
-                                    .wrapping_div((::std::mem::size_of::<i32>() as usize))
-                                    as usize)
-                                    .wrapping_sub(1_usize)
-                            },
-                            {
-                                Ptr::<u8>::from_string_literal(&[
-                                    116 as u8, 101 as u8, 115 as u8, 116 as u8, 105 as u8,
-                                    110 as u8, 103 as u8, 0 as u8,
-                                ])
-                            },
-                            {
-                                ((::std::mem::size_of::<[u8; 8]>() as usize)
-                                    .wrapping_div((::std::mem::size_of::<u8>() as usize))
-                                    as usize)
-                                    .wrapping_sub(1_usize)
-                            },
-                            {
-                                Ptr::<u16>::from_string_literal(&[
-                                    116 as u16, 101 as u16, 115 as u16, 116 as u16, 105 as u16,
-                                    110 as u16, 103 as u16, 0 as u16,
-                                ])
-                            },
-                            {
-                                ((::std::mem::size_of::<[u16; 8]>() as usize)
-                                    .wrapping_div((::std::mem::size_of::<u16>() as usize))
-                                    as usize)
-                                    .wrapping_sub(1_usize)
-                            },
-                            {
-                                Ptr::<u32>::from_string_literal(&[
-                                    116 as u32, 101 as u32, 115 as u32, 116 as u32, 105 as u32,
-                                    110 as u32, 103 as u32, 0 as u32,
-                                ])
-                            },
-                            {
-                                ((::std::mem::size_of::<[u32; 8]>() as usize)
-                                    .wrapping_div((::std::mem::size_of::<u32>() as usize))
-                                    as usize)
-                                    .wrapping_sub(1_usize)
-                            },
-                            { Ptr::<i8>::from_string_literal(b"testing") },
-                            { (::std::mem::size_of::<[i8; 8]>() as usize).wrapping_sub(1_usize) },
-                        )))
-                        .as_pointer(),
-                        Ptr::<i32>::null(),
-                    )
-                }) as usize,
-                |__s| __v.extend_from_slice(__s),
-            );
-            __v.push(0_i32);
-            __v
+                })
+            },
+        ) {
+            (mut __tmp_2, mut __tmp_3) => {
+                let mut __v = Vec::with_capacity(__tmp_3 as usize + 1);
+                __tmp_2.with_slice(__tmp_3 as usize, |__s| __v.extend_from_slice(__s));
+                __v.push(0_i32);
+                __v
+            }
         };
         unimplemented!();
         assert!(unimplemented!());

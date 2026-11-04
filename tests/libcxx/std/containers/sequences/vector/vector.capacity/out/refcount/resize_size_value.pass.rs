@@ -34,6 +34,11 @@ pub struct test_allocator_statistics {
     #[offset(36)]
     pub converted: i32,
 }
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_statistics {
     fn default() -> Self {
         {
@@ -61,6 +66,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -141,6 +151,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -155,6 +170,11 @@ impl Default for test_allocator_void_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -178,6 +198,11 @@ pub struct limited_alloc_handle_301_ {
     #[offset(8)]
     #[byte_size(8)]
     pub last_alloc_: AnyPtr,
+}
+impl CppMove for limited_alloc_handle_301_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for limited_alloc_handle_301_ {
     fn default() -> Self {
@@ -218,6 +243,11 @@ struct detail_thread_unsafe_shared_ptr_limited_alloc_handle_301___control_block 
     #[byte_size(16)]
     pub content: limited_alloc_handle_301_,
 }
+impl CppMove for detail_thread_unsafe_shared_ptr_limited_alloc_handle_301___control_block {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_301___control_block {
     fn default() -> Self {
         {
@@ -245,7 +275,9 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_301__ {
             }));
         let this: Ptr<detail_thread_unsafe_shared_ptr_limited_alloc_handle_301__> =
             __this.as_pointer();
-        field!(this.with(|__s| __s.block.clone()), ref_count).with_mut(|__v| __v.prefix_inc());
+        field!(this.with(|__s| __s.block.clone()), ref_count).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
@@ -257,6 +289,11 @@ impl Clone for detail_thread_unsafe_shared_ptr_limited_alloc_handle_301__ {
             }),
         );
         detail_thread_unsafe_shared_ptr_limited_alloc_handle_301__::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for detail_thread_unsafe_shared_ptr_limited_alloc_handle_301__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_301__ {
@@ -273,9 +310,19 @@ impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_301__ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct limited_allocator_int__301__rebind_int_ {}
+impl CppMove for limited_allocator_int__301__rebind_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct limited_allocator_int__301__rebind_unsigned_long_ {}
+impl CppMove for limited_allocator_int__301__rebind_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(8)]
 pub struct limited_allocator_int__301_ {
@@ -288,6 +335,11 @@ impl limited_allocator_int__301_ {
         Self {
             handle_: ({ make_thread_unsafe_shared_5() }),
         }
+    }
+}
+impl CppMove for limited_allocator_int__301_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for limited_allocator_int__301_ {
@@ -303,6 +355,11 @@ pub struct limited_allocator_unsigned_long__301_ {
     handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_301__,
 }
 impl limited_allocator_unsigned_long__301_ {}
+impl CppMove for limited_allocator_unsigned_long__301_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
@@ -318,6 +375,11 @@ impl malloc_allocator_base {
         outstanding_bytes_6.with(|rc| *rc.borrow_mut() = 0_usize);
         alloc_count_7.with(|rc| *rc.borrow_mut() = 0_usize);
         dealloc_count_8.with(|rc| *rc.borrow_mut() = 0_usize);
+    }
+}
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 thread_local!(
@@ -365,14 +427,38 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
         Self { ptr_: (p).clone() }
     }
 }
-impl CppEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_11(__lhs.read(), __rhs.read())
+impl std::cmp::PartialEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                operator_eq_11(__lhs.read(), __rhs.read())
+            })
+        }
     }
 }
+impl std::cmp::Eq for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
 impl CppAdvance for min_pointer_int__std_integral_constant_unsigned_long__0__ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_8();
+    }
+}
+impl CppIterator<i32> for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            min_pointer_int__std_integral_constant_unsigned_long__0__Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            min_pointer_int__std_integral_constant_unsigned_long__0__Impl::operator_inc_8(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -383,6 +469,11 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_ne_13(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
@@ -408,9 +499,42 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
         }
     }
 }
+impl std::cmp::PartialEq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                !(operator_ne_13(__lhs.read(), __rhs.read()))
+            })
+        }
+    }
+}
+impl std::cmp::Eq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
 impl CppAdvance for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_9();
+    }
+}
+impl CppIterator<i32> for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl::operator_deref(
+                __it,
+            )
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl::operator_inc_9(
+                __it,
+            );
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -421,6 +545,11 @@ pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
     ptr_: AnyPtr,
 }
 impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
@@ -429,18 +558,38 @@ pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
     ptr_: Ptr<u64>,
 }
 impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {}
+impl CppMove for min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
+impl CppMove for min_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_unsigned_long_ {}
+impl CppMove for min_allocator_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
 pub struct safe_allocator_int_ {}
 impl safe_allocator_int_ {
     pub fn new() -> Self {
         Self {}
+    }
+}
+impl CppMove for safe_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for safe_allocator_int_ {
@@ -452,6 +601,11 @@ impl Default for safe_allocator_int_ {
 #[byte_size(1)]
 pub struct safe_allocator_unsigned_long_ {}
 impl safe_allocator_unsigned_long_ {}
+impl CppMove for safe_allocator_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn is_contiguous_container_asan_correct_14(_a0: Ptr<Vec<i32>>) -> bool {
     return true;
 }
@@ -473,15 +627,15 @@ pub fn tests_18() -> bool {
             let __a0 = 50_usize as usize;
             (*v.borrow_mut()).resize(__a0, 1)
         };
-        assert!(((*v.borrow()).len() == 50_usize));
-        assert!(((*v.borrow()).capacity() == 100_usize));
+        assert!(({ ((*v.borrow()).len() == 50_usize) }));
+        assert!(({ ((*v.borrow()).capacity() == 100_usize) }));
         assert!(unimplemented!());
         {
             let __a0 = 200_usize as usize;
             (*v.borrow_mut()).resize(__a0, 1)
         };
-        assert!(((*v.borrow()).len() == 200_usize));
-        assert!(((*v.borrow()).capacity() >= 200_usize));
+        assert!(({ ((*v.borrow()).len() == 200_usize) }));
+        assert!(({ ((*v.borrow()).capacity() >= 200_usize) }));
         assert!(({ is_contiguous_container_asan_correct_14(v.as_pointer(),) }));
         let mut i: u32 = 0_u32;
         'loop_: while (i < 50_u32) {
@@ -502,14 +656,14 @@ pub fn tests_18() -> bool {
             let __a0 = 50_usize as usize;
             (*v.borrow_mut()).resize(__a0, 1)
         };
-        assert!(((*v.borrow()).len() == 50_usize));
-        assert!(((*v.borrow()).capacity() == 100_usize));
+        assert!(({ ((*v.borrow()).len() == 50_usize) }));
+        assert!(({ ((*v.borrow()).capacity() == 100_usize) }));
         {
             let __a0 = 200_usize as usize;
             (*v.borrow_mut()).resize(__a0, 1)
         };
-        assert!(((*v.borrow()).len() == 200_usize));
-        assert!(((*v.borrow()).capacity() >= 200_usize));
+        assert!(({ ((*v.borrow()).len() == 200_usize) }));
+        assert!(({ ((*v.borrow()).capacity() >= 200_usize) }));
         assert!(({ is_contiguous_container_asan_correct_15(v.as_pointer(),) }));
     }
     {
@@ -520,16 +674,16 @@ pub fn tests_18() -> bool {
             let __a0 = 50_usize as usize;
             (*v.borrow_mut()).resize(__a0, 1)
         };
-        assert!(((*v.borrow()).len() == 50_usize));
-        assert!(((*v.borrow()).capacity() == 100_usize));
+        assert!(({ ((*v.borrow()).len() == 50_usize) }));
+        assert!(({ ((*v.borrow()).capacity() == 100_usize) }));
         assert!(({ is_contiguous_container_asan_correct_16(v.as_pointer(),) }));
         assert!((unimplemented!()));
         {
             let __a0 = 200_usize as usize;
             (*v.borrow_mut()).resize(__a0, 1)
         };
-        assert!(((*v.borrow()).len() == 200_usize));
-        assert!(((*v.borrow()).capacity() >= 200_usize));
+        assert!(({ ((*v.borrow()).len() == 200_usize) }));
+        assert!(({ ((*v.borrow()).capacity() >= 200_usize) }));
         assert!(({ is_contiguous_container_asan_correct_16(v.as_pointer(),) }));
         let mut i: u32 = 0_u32;
         'loop_: while (i < 50_u32) {
@@ -550,15 +704,15 @@ pub fn tests_18() -> bool {
             let __a0 = 50_usize as usize;
             (*v.borrow_mut()).resize(__a0, 1)
         };
-        assert!(((*v.borrow()).len() == 50_usize));
-        assert!(((*v.borrow()).capacity() == 100_usize));
+        assert!(({ ((*v.borrow()).len() == 50_usize) }));
+        assert!(({ ((*v.borrow()).capacity() == 100_usize) }));
         assert!(({ is_contiguous_container_asan_correct_16(v.as_pointer(),) }));
         {
             let __a0 = 200_usize as usize;
             (*v.borrow_mut()).resize(__a0, 1)
         };
-        assert!(((*v.borrow()).len() == 200_usize));
-        assert!(((*v.borrow()).capacity() >= 200_usize));
+        assert!(({ ((*v.borrow()).len() == 200_usize) }));
+        assert!(({ ((*v.borrow()).capacity() >= 200_usize) }));
         assert!(({ is_contiguous_container_asan_correct_16(v.as_pointer(),) }));
     }
     {
@@ -569,16 +723,16 @@ pub fn tests_18() -> bool {
             let __a0 = 50_usize as usize;
             (*v.borrow_mut()).resize(__a0, 1)
         };
-        assert!(((*v.borrow()).len() == 50_usize));
-        assert!(((*v.borrow()).capacity() == 100_usize));
+        assert!(({ ((*v.borrow()).len() == 50_usize) }));
+        assert!(({ ((*v.borrow()).capacity() == 100_usize) }));
         assert!(({ is_contiguous_container_asan_correct_17(v.as_pointer(),) }));
         assert!((unimplemented!()));
         {
             let __a0 = 200_usize as usize;
             (*v.borrow_mut()).resize(__a0, 1)
         };
-        assert!(((*v.borrow()).len() == 200_usize));
-        assert!(((*v.borrow()).capacity() >= 200_usize));
+        assert!(({ ((*v.borrow()).len() == 200_usize) }));
+        assert!(({ ((*v.borrow()).capacity() >= 200_usize) }));
         assert!(({ is_contiguous_container_asan_correct_17(v.as_pointer(),) }));
         let mut i: u32 = 0_u32;
         'loop_: while (i < 50_u32) {
@@ -599,15 +753,15 @@ pub fn tests_18() -> bool {
             let __a0 = 50_usize as usize;
             (*v.borrow_mut()).resize(__a0, 1)
         };
-        assert!(((*v.borrow()).len() == 50_usize));
-        assert!(((*v.borrow()).capacity() == 100_usize));
+        assert!(({ ((*v.borrow()).len() == 50_usize) }));
+        assert!(({ ((*v.borrow()).capacity() == 100_usize) }));
         assert!(({ is_contiguous_container_asan_correct_17(v.as_pointer(),) }));
         {
             let __a0 = 200_usize as usize;
             (*v.borrow_mut()).resize(__a0, 1)
         };
-        assert!(((*v.borrow()).len() == 200_usize));
-        assert!(((*v.borrow()).capacity() >= 200_usize));
+        assert!(({ ((*v.borrow()).len() == 200_usize) }));
+        assert!(({ ((*v.borrow()).capacity() >= 200_usize) }));
         assert!(({ is_contiguous_container_asan_correct_17(v.as_pointer(),) }));
     }
     return true;
@@ -675,7 +829,9 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_301__Impl
     for Ptr<detail_thread_unsafe_shared_ptr_limited_alloc_handle_301__>
 {
     fn destructor(&self) {
-        field!((*self).with(|__s| __s.block.clone()), ref_count).with_mut(|__v| __v.prefix_dec());
+        field!((*self).with(|__s| __s.block.clone()), ref_count).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         if ((*self)
             .with(|__s| __s.block.clone())
             .with(|__s| __s.ref_count)
@@ -884,7 +1040,9 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl
     fn operator_inc_9(
         &self,
     ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
 }
@@ -950,7 +1108,9 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
         return (*self).with(|__s| __s.ptr_.clone());
     }
     fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_add_assign(
@@ -1059,13 +1219,15 @@ impl safe_allocator_int_Impl for Ptr<safe_allocator_int_> {
     fn allocate(&self, mut n: usize) -> Ptr<i32> {
         let memory: Value<Ptr<i32>> = Rc::new(RefCell::new(unimplemented!()));
         {
-            {
-                (*memory.borrow()).to_any().memset(
-                    (0) as u8,
-                    ((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64)) as usize)
-                        as usize,
-                );
-                (*memory.borrow()).to_any()
+            match ({ (*memory.borrow()).to_any() },) {
+                (mut __tmp_0,) => {
+                    __tmp_0.memset(
+                        (0) as u8,
+                        ((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64)) as usize)
+                            as usize,
+                    );
+                    (__tmp_0).clone()
+                }
             };
         }
         return (*memory.borrow()).clone();
@@ -1073,13 +1235,15 @@ impl safe_allocator_int_Impl for Ptr<safe_allocator_int_> {
     fn deallocate(&self, mut p: Ptr<i32>, mut n: usize) {
         {
             ({
-                let _value: Value<AnyPtr> = Rc::new(RefCell::new({
-                    (p).to_any().memset(
-                        (0) as u8,
-                        ((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64)) as usize)
-                            as usize,
-                    );
-                    (p).to_any()
+                let _value: Value<AnyPtr> = Rc::new(RefCell::new(match ({ (p).to_any() },) {
+                    (mut __tmp_1,) => {
+                        __tmp_1.memset(
+                            (0) as u8,
+                            ((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64))
+                                as usize) as usize,
+                        );
+                        (__tmp_1).clone()
+                    }
                 }));
                 DoNotOptimize_0(_value.as_pointer())
             });

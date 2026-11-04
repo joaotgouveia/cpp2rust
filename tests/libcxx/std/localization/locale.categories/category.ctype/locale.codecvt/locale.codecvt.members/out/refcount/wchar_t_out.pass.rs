@@ -27,8 +27,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let f: Ptr<()> = unimplemented!();
+    let l: Value<std_locale> = Rc::new(RefCell::new(
+        (*({ std_locale::classic() }).upgrade().deref()).clone(),
+    ));
+    let f: Ptr<std_codecvt_wchar_t__char____mbstate_t_> = ({ use_facet_0(l.as_pointer()) });
     {
         let from: Value<Vec<i32>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i32>::from_string_literal(&[
@@ -40,39 +42,58 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             __bytes
         }));
         let to: Value<Vec<i8>> = Rc::new(RefCell::new(
-            (0..(((*from.borrow()).len() - 1).wrapping_add(1_usize)) as usize)
+            (0..({ ((*from.borrow()).len() - 1).wrapping_add(1_usize) }) as usize)
                 .map(|_| 0_i8)
                 .collect::<Vec<_>>(),
         ));
         let mbs: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-        let mut from_next: Ptr<()> = Ptr::<()>::null();
-        let mut to_next: Ptr<i8> = Ptr::<i8>::null();
-        let mut r: () = unimplemented!();
-        assert!(((r as i32) == (unimplemented!() as i32)));
+        let from_next: Value<Ptr<i32>> = Rc::new(RefCell::new(Ptr::<i32>::null()));
+        let to_next: Value<Ptr<i8>> = Rc::new(RefCell::new(Ptr::<i8>::null()));
+        let mut r: std_codecvt_base_result = ({
+            let ___from: Ptr<i32> = from.decay();
+            let ___from_end: Ptr<i32> = from.decay().offset(((*from.borrow()).len() - 1) as isize);
+            let ___to: Ptr<i8> = to.decay();
+            let ___to_end: Ptr<i8> = to.decay().offset(((*to.borrow()).len()) as isize);
+            ((*f.upgrade().deref()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).out(
+                mbs.as_pointer(),
+                ___from,
+                ___from_end,
+                from_next.as_pointer(),
+                ___to,
+                ___to_end,
+                to_next.as_pointer(),
+            )
+        });
+        assert!(((r as i32) == (std_codecvt_base_result_ok as i32)));
         assert!(
-            ({ ((((from_next).clone() - from.decay()) as i64) as usize) } == {
-                ((*from.borrow()).len() - 1)
+            ({
+                ({ ((((*from_next.borrow()).clone() - from.decay()) as i64) as usize) } == {
+                    ((*from.borrow()).len() - 1)
+                })
             })
         );
         assert!(
-            ({ ((((to_next).clone() - to.decay()) as i64) as usize) } == {
-                ((*from.borrow()).len() - 1)
+            ({
+                ({ ((((*to_next.borrow()).clone() - to.decay()) as i64) as usize) } == {
+                    ((*from.borrow()).len() - 1)
+                })
             })
         );
-        assert!(
-            to.decay().with_c_str(|__s| {
-                let mut __bytes = Ptr::<i8>::from_string_literal(b"some text").to_c_bytes();
-                __bytes.push(0_i8);
-                __bytes
-            }[..{
-                let mut __bytes = Ptr::<i8>::from_string_literal(b"some text").to_c_bytes();
-                __bytes.push(0_i8);
-                __bytes
+        assert!(match (Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"some text").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }))
+        .as_pointer(),)
+        {
+            (__tmp_0,) => {
+                to.decay().with_c_str(|__s| {
+                    (*__tmp_0.upgrade().deref())
+                        [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
             }
-            .len()
-            .saturating_sub(1)]
-                == *__s)
-        );
+        });
     }
     {
         let from: Value<Vec<i32>> = Rc::new(RefCell::new({
@@ -88,29 +109,47 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             .offset(4_usize as isize)
             .write((('\0' as i8) as i32));
         let to: Value<Vec<i8>> = Rc::new(RefCell::new(
-            (0..(((*from.borrow()).len() - 1).wrapping_add(1_usize)) as usize)
+            (0..({ ((*from.borrow()).len() - 1).wrapping_add(1_usize) }) as usize)
                 .map(|_| 0_i8)
                 .collect::<Vec<_>>(),
         ));
         let mbs: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-        let mut from_next: Ptr<()> = Ptr::<()>::null();
-        let mut to_next: Ptr<i8> = Ptr::<i8>::null();
-        let mut r: () = unimplemented!();
-        assert!(((r as i32) == (unimplemented!() as i32)));
+        let from_next: Value<Ptr<i32>> = Rc::new(RefCell::new(Ptr::<i32>::null()));
+        let to_next: Value<Ptr<i8>> = Rc::new(RefCell::new(Ptr::<i8>::null()));
+        let mut r: std_codecvt_base_result = ({
+            let ___from: Ptr<i32> = from.decay();
+            let ___from_end: Ptr<i32> = from.decay().offset(((*from.borrow()).len() - 1) as isize);
+            let ___to: Ptr<i8> = to.decay();
+            let ___to_end: Ptr<i8> = to.decay().offset(((*to.borrow()).len()) as isize);
+            ((*f.upgrade().deref()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).out(
+                mbs.as_pointer(),
+                ___from,
+                ___from_end,
+                from_next.as_pointer(),
+                ___to,
+                ___to_end,
+                to_next.as_pointer(),
+            )
+        });
+        assert!(((r as i32) == (std_codecvt_base_result_ok as i32)));
         assert!(
-            ({ ((((from_next).clone() - from.decay()) as i64) as usize) } == {
-                ((*from.borrow()).len() - 1)
+            ({
+                ({ ((((*from_next.borrow()).clone() - from.decay()) as i64) as usize) } == {
+                    ((*from.borrow()).len() - 1)
+                })
             })
         );
         assert!(
-            ({ ((((to_next).clone() - to.decay()) as i64) as usize) } == {
-                ((*from.borrow()).len() - 1)
+            ({
+                ({ ((((*to_next.borrow()).clone() - to.decay()) as i64) as usize) } == {
+                    ((*from.borrow()).len() - 1)
+                })
             })
         );
         assert!(
             ((to.decay() as Ptr<i8>).to_any().memcmp(
                 &Ptr::<i8>::from_string_literal(b"some\0text").to_any(),
-                ((*from.borrow()).len() - 1)
+                ({ ((*from.borrow()).len() - 1) })
             ) == 0)
         );
     }
@@ -125,39 +164,61 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             __bytes
         }));
         let to: Value<Vec<i8>> = Rc::new(RefCell::new(
-            (0..(((*from.borrow()).len() - 1).wrapping_sub(1_usize)) as usize)
+            (0..({ ((*from.borrow()).len() - 1).wrapping_sub(1_usize) }) as usize)
                 .map(|_| 0_i8)
                 .collect::<Vec<_>>(),
         ));
         let mbs: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-        let mut from_next: Ptr<()> = Ptr::<()>::null();
-        let mut to_next: Ptr<i8> = Ptr::<i8>::null();
-        let mut r: () = unimplemented!();
-        assert!(((r as i32) == (unimplemented!() as i32)));
+        let from_next: Value<Ptr<i32>> = Rc::new(RefCell::new(Ptr::<i32>::null()));
+        let to_next: Value<Ptr<i8>> = Rc::new(RefCell::new(Ptr::<i8>::null()));
+        let mut r: std_codecvt_base_result = ({
+            let ___from: Ptr<i32> = from.decay();
+            let ___from_end: Ptr<i32> = from.decay().offset(((*from.borrow()).len() - 1) as isize);
+            let ___to: Ptr<i8> = to.decay();
+            let ___to_end: Ptr<i8> = to
+                .decay()
+                .offset(((*to.borrow()).len()) as isize)
+                .offset(-((1) as isize));
+            ((*f.upgrade().deref()) as std___codecvt_abstract_base_wchar_t__char____mbstate_t_).out(
+                mbs.as_pointer(),
+                ___from,
+                ___from_end,
+                from_next.as_pointer(),
+                ___to,
+                ___to_end,
+                to_next.as_pointer(),
+            )
+        });
+        assert!(((r as i32) == (std_codecvt_base_result_partial as i32)));
         assert!(
-            ({ ((((from_next).clone() - from.decay()) as i64) as usize) } == {
-                ((*to.borrow()).len()).wrapping_sub(1_usize)
+            ({
+                ({ ((((*from_next.borrow()).clone() - from.decay()) as i64) as usize) } == {
+                    ((*to.borrow()).len()).wrapping_sub(1_usize)
+                })
             })
         );
         assert!(
-            ({ ((((to_next).clone() - to.decay()) as i64) as usize) } == {
-                ((*to.borrow()).len()).wrapping_sub(1_usize)
+            ({
+                ({ ((((*to_next.borrow()).clone() - to.decay()) as i64) as usize) } == {
+                    ((*to.borrow()).len()).wrapping_sub(1_usize)
+                })
             })
         );
-        assert!(
-            to.decay().with_c_str(|__s| {
-                let mut __bytes = Ptr::<i8>::from_string_literal(b"some te").to_c_bytes();
-                __bytes.push(0_i8);
-                __bytes
-            }[..{
-                let mut __bytes = Ptr::<i8>::from_string_literal(b"some te").to_c_bytes();
-                __bytes.push(0_i8);
-                __bytes
+        assert!(match (Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"some te").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }))
+        .as_pointer(),)
+        {
+            (__tmp_1,) => {
+                to.decay().with_c_str(|__s| {
+                    (*__tmp_1.upgrade().deref())
+                        [..(*__tmp_1.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
             }
-            .len()
-            .saturating_sub(1)]
-                == *__s)
-        );
+        });
     }
     return 0;
 }

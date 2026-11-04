@@ -6,17 +6,11 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = u32;
-pub const anon_0_value: anon_0 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_chrono_time_point_std_filesystem___file_clock__std_chrono_duration_long__std_ratio_1__1000000000_____std_chrono_time_point_std_filesystem___file_clock__std_chrono_duration_long__std_ratio_1__1000000000____
-{}
-pub fn test_trivial_clock_1() {
+pub fn test_trivial_clock_0() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut odr_use: Ptr<bool> = (unimplemented!());
+    let mut odr_use: Ptr<bool> = (is_steady_1.with(|v| v.as_pointer()));
     (&(odr_use));
 }
 pub fn main() {
@@ -39,7 +33,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_trivial_clock_1() });
+    ({ test_trivial_clock_0() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

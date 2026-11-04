@@ -11,55 +11,49 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_long__long_ {}
+impl CppMove for test_macros_detail_is_same_long__long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct short_container {}
+impl CppMove for short_container {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_container_1(c: Ptr<Vec<i32>>) {
     const _: () = assert!(true, "std::is_signed_v<decltype(std::ssize(c))>");;
-    assert!(({ unimplemented!() } == { ((*c.upgrade().deref()).len() as i64) }));
-}
-pub fn test_container_2(c: Ptr<()>) {
-    const _: () = assert!(true, "std::is_signed_v<decltype(std::ssize(c))>");;
-    assert!(({ unimplemented!() } == { (unimplemented!() as i64) }));
+    assert!(({ ({ ({ ssize_2((c).clone(),) }) } == { ((*c.upgrade().deref()).len() as i64) }) }));
 }
 pub fn test_container_3(c: Ptr<Vec<i32>>) {
     const _: () = assert!(true, "std::is_signed_v<decltype(std::ssize(c))>");;
-    assert!(({ unimplemented!() } == { ((*c.upgrade().deref()).len() as i64) }));
-}
-pub fn test_container_4(c: Ptr<()>) {
-    const _: () = assert!(true, "std::is_signed_v<decltype(std::ssize(c))>");;
-    assert!(({ unimplemented!() } == { (unimplemented!() as i64) }));
+    assert!(({ ({ ({ ssize_4((c).clone(),) }) } == { ((*c.upgrade().deref()).len() as i64) }) }));
 }
 pub fn test_const_container_5(c: Ptr<Vec<i32>>) {
     const _: () = assert!(true, "std::is_signed_v<decltype(std::ssize(c))>");;
-    assert!(({ unimplemented!() } == { ((*c.upgrade().deref()).len() as i64) }));
+    assert!(({ ({ ({ ssize_2((c).clone(),) }) } == { ((*c.upgrade().deref()).len() as i64) }) }));
 }
-pub fn test_const_container_6(c: Ptr<()>) {
+pub fn test_const_container_6(c: Ptr<Vec<i32>>) {
     const _: () = assert!(true, "std::is_signed_v<decltype(std::ssize(c))>");;
-    assert!(({ unimplemented!() } == { (unimplemented!() as i64) }));
+    assert!(({ ({ ({ ssize_4((c).clone(),) }) } == { ((*c.upgrade().deref()).len() as i64) }) }));
 }
 pub fn test_const_container_7(c: Ptr<Vec<i32>>) {
-    const _: () = assert!(true, "std::is_signed_v<decltype(std::ssize(c))>");;
-    assert!(({ unimplemented!() } == { ((*c.upgrade().deref()).len() as i64) }));
-}
-pub fn test_const_container_8(c: Ptr<()>) {
-    const _: () = assert!(true, "std::is_signed_v<decltype(std::ssize(c))>");;
-    assert!(({ unimplemented!() } == { (unimplemented!() as i64) }));
-}
-pub fn test_const_container_9(c: Ptr<Vec<i32>>) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "std::is_signed_v<decltype(std::ssize(c))>");;
-    assert!(({ unimplemented!() } == { ((*c.upgrade().deref()).len() as i64) }));
+    assert!(({ ({ ({ ssize_8((c).clone(),) }) } == { ((*c.upgrade().deref()).len() as i64) }) }));
 }
-pub fn test_container_10(c: Ptr<Vec<i32>>) {
+pub fn test_container_9(c: Ptr<Vec<i32>>) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "std::is_signed_v<decltype(std::ssize(c))>");;
-    assert!(({ unimplemented!() } == { ((*c.upgrade().deref()).len() as i64) }));
+    assert!(({ ({ ({ ssize_8((c).clone(),) }) } == { ((*c.upgrade().deref()).len() as i64) }) }));
 }
-pub fn test_const_array_11(array: Ptr<i32>) {
+pub fn test_const_array_10(array: Ptr<i32>) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "std::is_signed_v<decltype(std::ssize(array))>");;
-    assert!(((unimplemented!() as u64) == 3_u64));
+    assert!(((({ ssize_11((array).clone(),) }) as u64) == 3_u64));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -86,8 +80,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let __a1 = 1;
         (*v.borrow_mut()).push(__a1)
     };
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let l: Value<std_list_int__std_allocator_int__> =
+        Rc::new(RefCell::new(<std_list_int__std_allocator_int__>::default()));
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(2));
+        (*l.borrow()).push_back_52(___x.as_pointer())
+    });
     let a: Value<Vec<i32>> = Rc::new(RefCell::new(
         std::array::from_fn::<_, 1, _>(|_| 0_i32).to_vec(),
     ));
@@ -95,24 +93,28 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let il: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([4])));
     ({ test_container_1(v.as_pointer()) });
     const _: () = assert!(true, "");;
-    ({ test_container_2(l.as_pointer()) });
+    ({ test_container_12(l.as_pointer()) });
     const _: () = assert!(true, "");;
     ({ test_container_3(a.as_pointer()) });
     const _: () = assert!(true, "");;
-    ({ test_container_10(il.as_pointer()) });
+    ({ test_container_9(il.as_pointer()) });
     const _: () = assert!(true, "");;
     ({ test_const_container_5(v.as_pointer()) });
-    ({ test_const_container_6(l.as_pointer()) });
-    ({ test_const_container_7(a.as_pointer()) });
-    ({ test_const_container_9(il.as_pointer()) });
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ test_container_4(sv.as_pointer()) });
+    ({ test_const_container_13(l.as_pointer()) });
+    ({ test_const_container_6(a.as_pointer()) });
+    ({ test_const_container_7(il.as_pointer()) });
+    let sv: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_string_view_char__std_char_traits_char__::new_1({
+            Ptr::<i8>::from_string_literal(b"ABC")
+        }),
+    ));
+    ({ test_container_14(sv.as_pointer()) });
     const _: () = assert!(true, "");;
-    ({ test_const_container_8(sv.as_pointer()) });
+    ({ test_const_container_15(sv.as_pointer()) });
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "std::is_signed_v<decltype(std::ssize(arrA))>");;
-    ({ test_const_array_11(arrA_12.with(|v| v.as_pointer())) });
-    let mut sc: short_container = <short_container>::default();
+    ({ test_const_array_10(arrA_16.with(|v| v.as_pointer())) });
+    let sc: Value<short_container> = Rc::new(RefCell::new(<short_container>::default()));
     const _: () = assert!(
         true,
         "std::is_signed_v<                      decltype(std::ssize(sc))>"
@@ -125,12 +127,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         true,
         "std::numeric_limits<std::make_signed_t<decltype(std:: size(sc))>>::max() < 60000"
     );;
-    assert!((unimplemented!() == 60000_i64));
+    assert!((({ ssize_17(sc.as_pointer(),) }) == 60000_i64));
     const _: () = assert!(true, "");;
     return 0;
 }
 thread_local!(
-    static arrA_12: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+    static arrA_16: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
 );
 pub trait short_containerImpl {
     fn size(&self) -> u16;

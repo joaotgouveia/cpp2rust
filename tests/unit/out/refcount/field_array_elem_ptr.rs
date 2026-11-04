@@ -14,6 +14,11 @@ pub struct Point {
     #[offset(4)]
     pub y: i32,
 }
+impl CppMove for Point {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(48)]
 pub struct Shape {
@@ -27,6 +32,11 @@ pub struct Shape {
     pub points: Box<[Point]>,
     #[offset(44)]
     pub tail: i32,
+}
+impl CppMove for Shape {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for Shape {
     fn default() -> Self {

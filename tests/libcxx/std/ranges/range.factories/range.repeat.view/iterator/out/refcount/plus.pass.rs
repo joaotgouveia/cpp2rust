@@ -7,12 +7,32 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
+    let v: Value<std_ranges_repeat_view_int__std_unreachable_sentinel_t_> =
+        Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(10));
+            std_ranges_repeat_view_int__std_unreachable_sentinel_t_::new_1(
+                { __tmp_0.as_pointer() },
+                None,
+            )
+        }));
+    let iter: Value<std_ranges_repeat_view_int___Iterator> =
+        Rc::new(RefCell::new(({ (*v.borrow()).begin() })));
+    assert!(
+        ({ (*iter.borrow()).clone() }).iter_add(5_isize)
+            == ({ ({ (*v.borrow()).begin() }) }).iter_add(5_isize)
+    );
+    assert!(
+        ({ (*iter.borrow()).clone() }).iter_add(5_isize)
+            == ({ ({ (*v.borrow()).begin() }) }).iter_add(5_isize)
+    );
+    assert!(
+        ({ (*iter.borrow()).clone() }).iter_add(2_isize)
+            == ({ ({ (*v.borrow()).begin() }) }).iter_add(2_isize)
+    );
+    assert!(
+        ({ (*iter.borrow()).clone() }).iter_add(3_isize)
+            == ({ ({ (*v.borrow()).begin() }) }).iter_add(3_isize)
+    );
     const _: () = assert!(true, "std::same_as<decltype(iter + 5), Iter>");;
     const _: () = assert!(true, "std::same_as<decltype(5 + iter), Iter>");;
     return true;

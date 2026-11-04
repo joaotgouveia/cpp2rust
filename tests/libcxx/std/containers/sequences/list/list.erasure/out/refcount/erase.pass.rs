@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_unsigned_long__unsigned_long_ {}
+impl CppMove for test_macros_detail_is_same_unsigned_long__unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(40)]
 pub struct test_allocator_statistics {
@@ -34,6 +39,11 @@ pub struct test_allocator_statistics {
     pub moved: i32,
     #[offset(36)]
     pub converted: i32,
+}
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for test_allocator_statistics {
     fn default() -> Self {
@@ -62,6 +72,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -142,6 +157,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -156,6 +176,11 @@ impl Default for test_allocator_void_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_int__rebind_int_ {}
+impl CppMove for test_allocator_int__rebind_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_int_ {
@@ -182,6 +207,11 @@ impl Default for test_allocator_int_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -214,6 +244,11 @@ impl malloc_allocator_base {
         dealloc_count_7.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_5: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -227,375 +262,19 @@ thread_local!(
     pub static disable_default_constructor_8: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<i32>,
-}
-impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
-pub fn test0_9(s: (), mut val: i32, expected: (), mut expected_erased_count: usize) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    const _: () = assert!(true, "");;
-    assert!((expected_erased_count == (unimplemented!() as usize)));
-    assert!(unimplemented!());
+impl CppMove for min_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
-pub fn test0_10(s: (), val: (), expected: (), mut expected_erased_count: usize) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    const _: () = assert!(true, "");;
-    assert!((expected_erased_count == (unimplemented!() as usize)));
-    assert!(unimplemented!());
-}
-pub fn test0_11(s: (), mut val: i32, expected: (), mut expected_erased_count: usize) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    const _: () = assert!(true, "");;
-    assert!((expected_erased_count == (unimplemented!() as usize)));
-    assert!(unimplemented!());
-}
-pub fn test0_12(s: (), val: (), expected: (), mut expected_erased_count: usize) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    const _: () = assert!(true, "");;
-    assert!((expected_erased_count == (unimplemented!() as usize)));
-    assert!(unimplemented!());
-}
-pub fn test0_13(s: (), mut val: i32, expected: (), mut expected_erased_count: usize) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    const _: () = assert!(true, "");;
-    assert!((expected_erased_count == (unimplemented!() as usize)));
-    assert!(unimplemented!());
-}
-pub fn test0_14(s: (), val: (), expected: (), mut expected_erased_count: usize) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    const _: () = assert!(true, "");;
-    assert!((expected_erased_count == (unimplemented!() as usize)));
-    assert!(unimplemented!());
-}
-pub fn test0_15(s: (), mut val: i32, expected: (), mut expected_erased_count: usize) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    const _: () = assert!(true, "");;
-    assert!((expected_erased_count == (unimplemented!() as usize)));
-    assert!(unimplemented!());
-}
-pub fn test0_16(s: (), val: (), expected: (), mut expected_erased_count: usize) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    const _: () = assert!(true, "");;
-    assert!((expected_erased_count == (unimplemented!() as usize)));
-    assert!(unimplemented!());
-}
-pub fn test0_17(s: (), mut val: i32, expected: (), mut expected_erased_count: usize) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    const _: () = assert!(true, "");;
-    assert!((expected_erased_count == (unimplemented!() as usize)));
-    assert!(unimplemented!());
-}
-pub fn test0_18(s: (), val: (), expected: (), mut expected_erased_count: usize) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    const _: () = assert!(true, "");;
-    assert!((expected_erased_count == (unimplemented!() as usize)));
-    assert!(unimplemented!());
-}
-pub fn test1_19() {
-    ({ test0_9(unimplemented!(), 1, unimplemented!(), 0_usize) });
-    ({ test0_9(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_9(unimplemented!(), 2, unimplemented!(), 0_usize) });
-    ({ test0_9(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_9(unimplemented!(), 2, unimplemented!(), 1_usize) });
-    ({ test0_9(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({ test0_9(unimplemented!(), 1, unimplemented!(), 2_usize) });
-    ({ test0_9(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({ test0_9(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_9(unimplemented!(), 2, unimplemented!(), 1_usize) });
-    ({ test0_9(unimplemented!(), 3, unimplemented!(), 1_usize) });
-    ({ test0_9(unimplemented!(), 4, unimplemented!(), 0_usize) });
-    ({ test0_9(unimplemented!(), 1, unimplemented!(), 3_usize) });
-    ({ test0_9(unimplemented!(), 2, unimplemented!(), 0_usize) });
-    ({ test0_9(unimplemented!(), 1, unimplemented!(), 2_usize) });
-    ({ test0_9(unimplemented!(), 2, unimplemented!(), 1_usize) });
-    ({ test0_9(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({ test0_9(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_9(unimplemented!(), 2, unimplemented!(), 2_usize) });
-    ({ test0_9(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({
-        test0_10(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            0_usize,
-        )
-    });
-    ({
-        test0_10(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            2_usize,
-        )
-    });
-    ({
-        test0_10(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            1_usize,
-        )
-    });
-    ({
-        test0_10(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            0_usize,
-        )
-    });
-}
-pub fn test1_20() {
-    ({ test0_11(unimplemented!(), 1, unimplemented!(), 0_usize) });
-    ({ test0_11(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_11(unimplemented!(), 2, unimplemented!(), 0_usize) });
-    ({ test0_11(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_11(unimplemented!(), 2, unimplemented!(), 1_usize) });
-    ({ test0_11(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({ test0_11(unimplemented!(), 1, unimplemented!(), 2_usize) });
-    ({ test0_11(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({ test0_11(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_11(unimplemented!(), 2, unimplemented!(), 1_usize) });
-    ({ test0_11(unimplemented!(), 3, unimplemented!(), 1_usize) });
-    ({ test0_11(unimplemented!(), 4, unimplemented!(), 0_usize) });
-    ({ test0_11(unimplemented!(), 1, unimplemented!(), 3_usize) });
-    ({ test0_11(unimplemented!(), 2, unimplemented!(), 0_usize) });
-    ({ test0_11(unimplemented!(), 1, unimplemented!(), 2_usize) });
-    ({ test0_11(unimplemented!(), 2, unimplemented!(), 1_usize) });
-    ({ test0_11(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({ test0_11(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_11(unimplemented!(), 2, unimplemented!(), 2_usize) });
-    ({ test0_11(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({
-        test0_12(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            0_usize,
-        )
-    });
-    ({
-        test0_12(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            2_usize,
-        )
-    });
-    ({
-        test0_12(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            1_usize,
-        )
-    });
-    ({
-        test0_12(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            0_usize,
-        )
-    });
-}
-pub fn test1_21() {
-    ({ test0_13(unimplemented!(), 1, unimplemented!(), 0_usize) });
-    ({ test0_13(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_13(unimplemented!(), 2, unimplemented!(), 0_usize) });
-    ({ test0_13(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_13(unimplemented!(), 2, unimplemented!(), 1_usize) });
-    ({ test0_13(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({ test0_13(unimplemented!(), 1, unimplemented!(), 2_usize) });
-    ({ test0_13(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({ test0_13(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_13(unimplemented!(), 2, unimplemented!(), 1_usize) });
-    ({ test0_13(unimplemented!(), 3, unimplemented!(), 1_usize) });
-    ({ test0_13(unimplemented!(), 4, unimplemented!(), 0_usize) });
-    ({ test0_13(unimplemented!(), 1, unimplemented!(), 3_usize) });
-    ({ test0_13(unimplemented!(), 2, unimplemented!(), 0_usize) });
-    ({ test0_13(unimplemented!(), 1, unimplemented!(), 2_usize) });
-    ({ test0_13(unimplemented!(), 2, unimplemented!(), 1_usize) });
-    ({ test0_13(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({ test0_13(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_13(unimplemented!(), 2, unimplemented!(), 2_usize) });
-    ({ test0_13(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({
-        test0_14(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            0_usize,
-        )
-    });
-    ({
-        test0_14(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            2_usize,
-        )
-    });
-    ({
-        test0_14(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            1_usize,
-        )
-    });
-    ({
-        test0_14(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            0_usize,
-        )
-    });
-}
-pub fn test1_22() {
-    ({ test0_15(unimplemented!(), 1, unimplemented!(), 0_usize) });
-    ({ test0_15(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_15(unimplemented!(), 2, unimplemented!(), 0_usize) });
-    ({ test0_15(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_15(unimplemented!(), 2, unimplemented!(), 1_usize) });
-    ({ test0_15(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({ test0_15(unimplemented!(), 1, unimplemented!(), 2_usize) });
-    ({ test0_15(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({ test0_15(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_15(unimplemented!(), 2, unimplemented!(), 1_usize) });
-    ({ test0_15(unimplemented!(), 3, unimplemented!(), 1_usize) });
-    ({ test0_15(unimplemented!(), 4, unimplemented!(), 0_usize) });
-    ({ test0_15(unimplemented!(), 1, unimplemented!(), 3_usize) });
-    ({ test0_15(unimplemented!(), 2, unimplemented!(), 0_usize) });
-    ({ test0_15(unimplemented!(), 1, unimplemented!(), 2_usize) });
-    ({ test0_15(unimplemented!(), 2, unimplemented!(), 1_usize) });
-    ({ test0_15(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({ test0_15(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_15(unimplemented!(), 2, unimplemented!(), 2_usize) });
-    ({ test0_15(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({
-        test0_16(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            0_usize,
-        )
-    });
-    ({
-        test0_16(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            2_usize,
-        )
-    });
-    ({
-        test0_16(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            1_usize,
-        )
-    });
-    ({
-        test0_16(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            0_usize,
-        )
-    });
-}
-pub fn test1_23() {
-    ({ test0_17(unimplemented!(), 1, unimplemented!(), 0_usize) });
-    ({ test0_17(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_17(unimplemented!(), 2, unimplemented!(), 0_usize) });
-    ({ test0_17(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_17(unimplemented!(), 2, unimplemented!(), 1_usize) });
-    ({ test0_17(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({ test0_17(unimplemented!(), 1, unimplemented!(), 2_usize) });
-    ({ test0_17(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({ test0_17(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_17(unimplemented!(), 2, unimplemented!(), 1_usize) });
-    ({ test0_17(unimplemented!(), 3, unimplemented!(), 1_usize) });
-    ({ test0_17(unimplemented!(), 4, unimplemented!(), 0_usize) });
-    ({ test0_17(unimplemented!(), 1, unimplemented!(), 3_usize) });
-    ({ test0_17(unimplemented!(), 2, unimplemented!(), 0_usize) });
-    ({ test0_17(unimplemented!(), 1, unimplemented!(), 2_usize) });
-    ({ test0_17(unimplemented!(), 2, unimplemented!(), 1_usize) });
-    ({ test0_17(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({ test0_17(unimplemented!(), 1, unimplemented!(), 1_usize) });
-    ({ test0_17(unimplemented!(), 2, unimplemented!(), 2_usize) });
-    ({ test0_17(unimplemented!(), 3, unimplemented!(), 0_usize) });
-    ({
-        test0_18(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            0_usize,
-        )
-    });
-    ({
-        test0_18(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            2_usize,
-        )
-    });
-    ({
-        test0_18(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            1_usize,
-        )
-    });
-    ({
-        test0_18(
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            0_usize,
-        )
-    });
-}
-pub fn test_24() -> bool {
-    ({ test1_19() });
-    ({ test1_20() });
-    ({ test1_21() });
-    ({ test1_22() });
-    ({ test1_23() });
+pub fn test_9() -> bool {
+    ({ test1_10() });
+    ({ test1_11() });
+    ({ test1_12() });
+    ({ test1_13() });
+    ({ test1_14() });
     return true;
 }
 pub fn main() {
@@ -618,9 +297,12 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(({ test_24() }));
+    assert!(({ test_9() }));
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
 pub trait Tag_XImpl {
     fn copy_assign(&self, _a0: Ptr<Tag_X>) -> Ptr<Tag_X>;
     fn move_assign(&self, _a0: Ptr<Tag_X>) -> Ptr<Tag_X>;
@@ -646,81 +328,12 @@ pub trait min_allocator_int_Impl {
     }
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {}
-pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_9(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_10(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_11(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
-        unimplemented!()
-    }
-}
-impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
-{
-}
 pub trait test_allocator_int_Impl {
     fn destructor(&self);
-    fn address_11(&self, x: ()) -> Ptr<i32> {
+    fn address_11(&self, x: Ptr<i32>) -> Ptr<i32> {
         unimplemented!()
     }
-    fn address_12(&self, x: ()) -> Ptr<i32> {
+    fn address_12(&self, x: Ptr<i32>) -> Ptr<i32> {
         unimplemented!()
     }
     fn allocate(&self, mut n: u32, mut _a1: AnyPtr) -> Ptr<i32> {
@@ -747,7 +360,9 @@ impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
         assert!(((*self).with(|__s| __s.data_) != destructed_value_1.with(|rc| *rc.borrow())));
         assert!(((*self).with(|__s| __s.id_) != destructed_value_1.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
+            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
+                __v.prefix_dec();
+            });
         }
         field!((*self), data_).write(destructed_value_1.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_1.with(|rc| *rc.borrow()));

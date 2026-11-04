@@ -33,8 +33,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let m2: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
     let m3: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
     assert!(!(m1.len() <= 1));
-    assert!(!((*m2.borrow()).len() <= 1));
-    assert!(!((*m3.borrow()).len() <= 1));
+    assert!(({ !((*m2.borrow()).len() <= 1) }));
+    assert!(({ !((*m3.borrow()).len() <= 1) }));
     const _: () = assert!(true, "");;
     assert!(!(unimplemented!()));
     return 0;

@@ -27,6 +27,11 @@ impl Clone for A {
         A::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for A {
     fn default() -> Self {
         { A::new() }
@@ -57,18 +62,60 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let wp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_i64));
-        assert!(((unimplemented!() as i32) == ((unimplemented!() == 0_i64) as i32)));
+        let wp: Value<std_weak_ptr_A_> = Rc::new(RefCell::new(<std_weak_ptr_A_>::default()));
+        assert!(
+            ({
+                (({ ((*wp.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count() })
+                    == 0_i64)
+            })
+        );
+        assert!(
+            ({
+                ((({ ((*wp.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).expired() })
+                    as i32)
+                    == ((({
+                        ((*wp.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count()
+                    }) == 0_i64) as i32))
+            })
+        );
     }
     {
-        let sp0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let wp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 1_i64));
-        assert!(((unimplemented!() as i32) == ((unimplemented!() == 0_i64) as i32)));
-        unimplemented!();
-        assert!((unimplemented!() == 0_i64));
-        assert!(((unimplemented!() as i32) == ((unimplemented!() == 0_i64) as i32)));
+        let sp0: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({
+            Ptr::alloc(A::new())
+        })));
+        let wp: Value<std_weak_ptr_A_> =
+            Rc::new(RefCell::new(std_weak_ptr_A_::new_1({ sp0.as_pointer() })));
+        assert!(
+            ({
+                (({ ((*wp.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count() })
+                    == 1_i64)
+            })
+        );
+        assert!(
+            ({
+                ((({ ((*wp.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).expired() })
+                    as i32)
+                    == ((({
+                        ((*wp.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count()
+                    }) == 0_i64) as i32))
+            })
+        );
+        ({ ((*sp0.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).reset() });
+        assert!(
+            ({
+                (({ ((*wp.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count() })
+                    == 0_i64)
+            })
+        );
+        assert!(
+            ({
+                ((({ ((*wp.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).expired() })
+                    as i32)
+                    == ((({
+                        ((*wp.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count()
+                    }) == 0_i64) as i32))
+            })
+        );
     }
     return 0;
 }

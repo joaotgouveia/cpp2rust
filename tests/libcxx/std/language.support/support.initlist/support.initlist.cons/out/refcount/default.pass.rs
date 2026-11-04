@@ -9,6 +9,11 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A {}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -29,9 +34,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let il: Value<Vec<A>> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(((*il.borrow()).len() == 0_usize));
-    let il2: Value<Vec<A>> = Rc::new(RefCell::new(unimplemented!()));
+    let il: Value<Vec<A>> = Rc::new(RefCell::new(Default::default()));
+    assert!(({ ((*il.borrow()).len() == 0_usize) }));
+    let il2: Value<Vec<A>> = Rc::new(RefCell::new(Default::default()));
     const _: () = assert!(true, "il2.size() == 0");;
     return 0;
 }

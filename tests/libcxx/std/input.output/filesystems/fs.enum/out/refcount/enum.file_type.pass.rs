@@ -6,8 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn ME_0(mut val: i32) -> () {
-    return ((val) as ());
+pub fn ME_0(mut val: i32) -> std_filesystem_file_type {
+    return ((val) as std_filesystem_file_type);
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

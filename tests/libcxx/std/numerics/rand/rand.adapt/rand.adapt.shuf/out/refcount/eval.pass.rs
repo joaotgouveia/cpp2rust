@@ -37,24 +37,29 @@ impl Callable0<u64> for rand1_unsigned_long_long__0__18446744073709551615_ {
         })
     }
 }
+impl CppMove for rand1_unsigned_long_long__0__18446744073709551615_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for rand1_unsigned_long_long__0__18446744073709551615_ {
     fn default() -> Self {
         { rand1_unsigned_long_long__0__18446744073709551615_::new(None) }
     }
 }
 pub fn test1_0() {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 152607844_()));
+    let e : Value<std_shuffle_order_engine_std_linear_congruential_engine_unsigned_long__16807__0__2147483647___256_ > = Rc::new(RefCell::new(<std_shuffle_order_engine_std_linear_congruential_engine_unsigned_long__16807__0__2147483647___256_  >::default() )) ;
+    assert!(({ (({ (*e.borrow_mut())() }) == 152607844_u64) }));
 }
 pub fn test2_1() {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 501_()));
+    let e : Value<std_shuffle_order_engine_rand1_unsigned_long_long__0__18446744073709551615___101_ > = Rc::new(RefCell::new(<std_shuffle_order_engine_rand1_unsigned_long_long__0__18446744073709551615___101_  >::default() )) ;
+    ({ (*e.borrow()).discard(400_u64) });
+    assert!(({ (({ (*e.borrow_mut())() }) == 501_u64) }));
 }
 pub fn test3_2() {
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == 500_()));
+    let e : Value<std_shuffle_order_engine_rand1_unsigned_long_long__0__18446744073709551615___100_ > = Rc::new(RefCell::new(<std_shuffle_order_engine_rand1_unsigned_long_long__0__18446744073709551615___100_  >::default() )) ;
+    ({ (*e.borrow()).discard(400_u64) });
+    assert!(({ (({ (*e.borrow_mut())() }) == 500_u64) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -90,7 +95,9 @@ impl rand1_unsigned_long_long__0__18446744073709551615_Impl
     fn operator_call(&self) -> u64 {
         let r: Value<u64> = Rc::new(RefCell::new((*self).with(|__s| __s.x_)));
         if ((*self).with(|__s| __s.x_) < 18446744073709551615_u64) {
-            field!((*self), x_).with_mut(|__v| __v.prefix_inc());
+            field!((*self), x_).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         } else {
             field!((*self), x_).write(0_u64);
         }

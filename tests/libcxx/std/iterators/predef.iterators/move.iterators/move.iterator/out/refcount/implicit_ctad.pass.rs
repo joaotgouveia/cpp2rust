@@ -6,11 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = u32;
-pub const anon_0_value: anon_0 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_move_iterator_int_ptr___std_move_iterator_int_ptr__ {}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -32,7 +28,10 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let mut it: Ptr<i32> = Ptr::<i32>::null();
-    let move_it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let move_it: Value<std_move_iterator_int_ptr_> =
+        Rc::new(RefCell::new(std_move_iterator_int_ptr_::new_1({
+            (it).clone()
+        })));
     const _: () = assert!(true, "");;
     return 0;
 }

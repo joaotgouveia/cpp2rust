@@ -8,9 +8,12 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0(mut i: i32) {
     const _: () = assert!(true, "");;
-    let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let ec: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut result: usize = unimplemented!();
+    let h: Value<std_hash_std_error_code_> =
+        Rc::new(RefCell::new(<std_hash_std_error_code_>::default()));
+    let ec: Value<std_error_code> = Rc::new(RefCell::new(std_error_code::new_1({ i }, {
+        ({ system_category_1() })
+    })));
+    let mut result: usize = ({ (*h.borrow_mut())(ec.as_pointer()) });
     const _: () = assert!(true, "");;
     (&(result));
 }

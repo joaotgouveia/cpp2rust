@@ -32,6 +32,11 @@ impl Callable2<Ptr<i32>, Ptr<i32>, bool> for test_equal_to_int_ {
         })
     }
 }
+impl CppMove for test_equal_to_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct test_hash_int_ {
@@ -54,6 +59,11 @@ impl Callable1<Ptr<i32>, usize> for test_hash_int_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             test_hash_int_Impl::operator_call(__it, a1)
         })
+    }
+}
+impl CppMove for test_hash_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for test_hash_int_ {
@@ -85,6 +95,11 @@ pub struct test_allocator_statistics {
     #[offset(36)]
     pub converted: i32,
 }
+impl CppMove for test_allocator_statistics {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_statistics {
     fn default() -> Self {
         {
@@ -112,6 +127,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
+impl CppMove for test_alloc_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -192,6 +212,11 @@ impl Clone for test_allocator_void_ {
         test_allocator_void_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_allocator_void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
@@ -207,6 +232,7 @@ impl Default for test_allocator_void_ {
 #[byte_size(1)]
 pub struct test_allocator_std_pair_const_int__std_basic_string_char____rebind_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____
 {}
+impl CppMove for test_allocator_std_pair_const_int__std_basic_string_char____rebind_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Record, ByteRepr, FnPtrArg, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____
@@ -236,10 +262,16 @@ pub struct other_allocator_std_pair_const_int__std_basic_string_char__std_char_t
 }
 impl other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { pub fn new_1 ( mut i : i32  , ) -> Self { Self { data_ : i  , }  } }
 impl CppEq for other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool { operator_eq_5(__lhs.clone(), __rhs.clone()) } }
+impl CppMove for other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 impl Default for other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { fn default() -> Self { { other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { data_ : 0_i32 , } } } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
+impl CppMove for Ctor_Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
@@ -272,6 +304,11 @@ impl malloc_allocator_base {
         dealloc_count_8.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_6: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -284,23 +321,6 @@ thread_local!(
 thread_local!(
     pub static disable_default_constructor_9: Value<bool> = Rc::new(RefCell::new(false));
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__
-{
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<(Value<i32>, Value<Vec<i8>>)>,
-}
-impl min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__ { }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 pub fn operator_eq_10(
     mut _a0 : min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____,
     mut _a1 : min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____,
@@ -312,6 +332,7 @@ pub fn operator_eq_10(
 pub struct min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____
 {}
 impl CppEq for min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool { operator_eq_10(__lhs.read(), __rhs.read()) } }
+impl CppMove for min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -333,25 +354,26 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let c1 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_0 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 1  ) } , )  ));let __tmp_1 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 1  } , )  ));let __tmp_2 : Value<test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 1  } , { 1  } , )  )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { 0_u64  } , { __tmp_0.as_pointer() } , { __tmp_1.as_pointer() } , { __tmp_2.as_pointer() } , )  } )) ;
+        let c2 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_3 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 2  ) } , )  ));let __tmp_4 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 2  } , )  ));let __tmp_5 : Value<test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 1  } , { 2  } , )  )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { 0_u64  } , { __tmp_3.as_pointer() } , { __tmp_4.as_pointer() } , { __tmp_5.as_pointer() } , )  } )) ;
+        ({ (*c2.borrow()).max_load_factor_96(2_f32) });
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
+        assert!(({ (({ (*c1.borrow()).size() }) == 0_u64) }));
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(2) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c1.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c1.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 2 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -359,27 +381,46 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             (({
-                test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl :: get_id ( &Rc::new(RefCell::new(unimplemented!()  )).as_pointer() , )
+                test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl :: get_id ( &Rc::new(RefCell::new(( { (*c1.borrow()) . get_allocator ( ) } )  )).as_pointer() , )
             }) == 1)
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 2_f32));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*c1.borrow()).max_load_factor_95() }) == 2_f32) }));
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
+        assert!(({ (({ (*c2.borrow()).size() }) == 0_u64) }));
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(1) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c2.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c2.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 1 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -387,12 +428,30 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             (({
-                test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl :: get_id ( &Rc::new(RefCell::new(unimplemented!()  )).as_pointer() , )
+                test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl :: get_id ( &Rc::new(RefCell::new(( { (*c2.borrow()) . get_allocator ( ) } )  )).as_pointer() , )
             }) == 2)
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 1_f32));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*c2.borrow()).max_load_factor_95() }) == 1_f32) }));
     }
     {
         let a2: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -461,59 +520,130 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        assert!((unimplemented!() >= 8_()));
-        assert!((unimplemented!() == 8_()));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"ten").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(Ptr::<i8>::from_string_literal(b"twenty").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        }));
-        assert!(Ptr::<i8>::from_string_literal(b"thirty").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        }));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"forty").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"fifty").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"sixty").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"seventy").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(Ptr::<i8>::from_string_literal(b"eighty").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        }));
+        let c1 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_6 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 1  ) } , )  ));let __tmp_7 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 1  } , )  ));let __tmp_8 : Value<test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 1  } , { 1  } , )  )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { 0_u64  } , { __tmp_6.as_pointer() } , { __tmp_7.as_pointer() } , { __tmp_8.as_pointer() } , )  } )) ;
+        let c2 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_9 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 2  ) } , )  ));let __tmp_10 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 2  } , )  ));let __tmp_11 : Value<test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 1  } , { 2  } , )  )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_2 ( { ( { begin_13 ( a2 .as_pointer()  , ) } )   } , { (a2 .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  > ).to_end()   } , { 0_u64  } , { __tmp_9.as_pointer() } , { __tmp_10.as_pointer() } , { __tmp_11.as_pointer() } , )  } )) ;
+        ({ (*c2.borrow()).max_load_factor_96(2_f32) });
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
+        assert!(({ (({ (*c1.borrow()).bucket_count() }) >= 8_u64) }));
+        assert!(({ (({ (*c1.borrow()).size() }) == 8_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(10));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_12,) => {
+                Ptr::<i8>::from_string_literal(b"ten").with_c_str(|__s| {
+                    (*__tmp_12.upgrade().deref())
+                        [..(*__tmp_12.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(20));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_13,) => {
+                Ptr::<i8>::from_string_literal(b"twenty").with_c_str(|__s| {
+                    (*__tmp_13.upgrade().deref())
+                        [..(*__tmp_13.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(30));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_14,) => {
+                Ptr::<i8>::from_string_literal(b"thirty").with_c_str(|__s| {
+                    (*__tmp_14.upgrade().deref())
+                        [..(*__tmp_14.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(40));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_15,) => {
+                Ptr::<i8>::from_string_literal(b"forty").with_c_str(|__s| {
+                    (*__tmp_15.upgrade().deref())
+                        [..(*__tmp_15.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(50));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_16,) => {
+                Ptr::<i8>::from_string_literal(b"fifty").with_c_str(|__s| {
+                    (*__tmp_16.upgrade().deref())
+                        [..(*__tmp_16.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(60));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_17,) => {
+                Ptr::<i8>::from_string_literal(b"sixty").with_c_str(|__s| {
+                    (*__tmp_17.upgrade().deref())
+                        [..(*__tmp_17.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(70));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_18,) => {
+                Ptr::<i8>::from_string_literal(b"seventy").with_c_str(|__s| {
+                    (*__tmp_18.upgrade().deref())
+                        [..(*__tmp_18.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(80));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_19,) => {
+                Ptr::<i8>::from_string_literal(b"eighty").with_c_str(|__s| {
+                    (*__tmp_19.upgrade().deref())
+                        [..(*__tmp_19.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(2) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c1.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c1.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 2 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -521,27 +651,46 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             (({
-                test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl :: get_id ( &Rc::new(RefCell::new(unimplemented!()  )).as_pointer() , )
+                test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl :: get_id ( &Rc::new(RefCell::new(( { (*c1.borrow()) . get_allocator ( ) } )  )).as_pointer() , )
             }) == 1)
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 2_f32));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*c1.borrow()).max_load_factor_95() }) == 2_f32) }));
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
+        assert!(({ (({ (*c2.borrow()).size() }) == 0_u64) }));
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(1) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c2.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c2.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 1 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -549,12 +698,30 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             (({
-                test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl :: get_id ( &Rc::new(RefCell::new(unimplemented!()  )).as_pointer() , )
+                test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl :: get_id ( &Rc::new(RefCell::new(( { (*c2.borrow()) . get_allocator ( ) } )  )).as_pointer() , )
             }) == 2)
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 1_f32));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*c2.borrow()).max_load_factor_95() }) == 1_f32) }));
     }
     {
         let a1: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -607,25 +774,26 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let c1 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_20 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 1  ) } , )  ));let __tmp_21 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 1  } , )  ));let __tmp_22 : Value<test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 1  } , { 1  } , )  )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_2 ( { ( { begin_14 ( a1 .as_pointer()  , ) } )   } , { (a1 .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  > ).to_end()   } , { 0_u64  } , { __tmp_20.as_pointer() } , { __tmp_21.as_pointer() } , { __tmp_22.as_pointer() } , )  } )) ;
+        let c2 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_23 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 2  ) } , )  ));let __tmp_24 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 2  } , )  ));let __tmp_25 : Value<test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 1  } , { 2  } , )  )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { 0_u64  } , { __tmp_23.as_pointer() } , { __tmp_24.as_pointer() } , { __tmp_25.as_pointer() } , )  } )) ;
+        ({ (*c2.borrow()).max_load_factor_96(2_f32) });
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
+        assert!(({ (({ (*c1.borrow()).size() }) == 0_u64) }));
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(2) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c1.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c1.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 2 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -633,47 +801,98 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             (({
-                test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl :: get_id ( &Rc::new(RefCell::new(unimplemented!()  )).as_pointer() , )
+                test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl :: get_id ( &Rc::new(RefCell::new(( { (*c1.borrow()) . get_allocator ( ) } )  )).as_pointer() , )
             }) == 1)
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 2_f32));
-        assert!((unimplemented!() >= 4_()));
-        assert!((unimplemented!() == 4_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
         );
         assert!(
-            Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
         );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
+        assert!(({ (({ (*c1.borrow()).max_load_factor_95() }) == 2_f32) }));
+        assert!(({ (({ (*c2.borrow()).bucket_count() }) >= 4_u64) }));
+        assert!(({ (({ (*c2.borrow()).size() }) == 4_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(1));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_26,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_26.upgrade().deref())
+                        [..(*__tmp_26.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(2));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_27,) => {
+                Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| {
+                    (*__tmp_27.upgrade().deref())
+                        [..(*__tmp_27.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_28,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_28.upgrade().deref())
+                        [..(*__tmp_28.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(4));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_29,) => {
+                Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                    (*__tmp_29.upgrade().deref())
+                        [..(*__tmp_29.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(1) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c2.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c2.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 1 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -681,12 +900,30 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             (({
-                test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl :: get_id ( &Rc::new(RefCell::new(unimplemented!()  )).as_pointer() , )
+                test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl :: get_id ( &Rc::new(RefCell::new(( { (*c2.borrow()) . get_allocator ( ) } )  )).as_pointer() , )
             }) == 2)
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 1_f32));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*c2.borrow()).max_load_factor_95() }) == 1_f32) }));
     }
     {
         let a1: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -805,59 +1042,130 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        assert!((unimplemented!() >= 8_()));
-        assert!((unimplemented!() == 8_()));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"ten").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(Ptr::<i8>::from_string_literal(b"twenty").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        }));
-        assert!(Ptr::<i8>::from_string_literal(b"thirty").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        }));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"forty").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"fifty").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"sixty").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"seventy").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(Ptr::<i8>::from_string_literal(b"eighty").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        }));
+        let c1 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_30 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 1  ) } , )  ));let __tmp_31 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 1  } , )  ));let __tmp_32 : Value<test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 1  } , { 1  } , )  )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_2 ( { ( { begin_14 ( a1 .as_pointer()  , ) } )   } , { (a1 .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  > ).to_end()   } , { 0_u64  } , { __tmp_30.as_pointer() } , { __tmp_31.as_pointer() } , { __tmp_32.as_pointer() } , )  } )) ;
+        let c2 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_33 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 2  ) } , )  ));let __tmp_34 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 2  } , )  ));let __tmp_35 : Value<test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 1  } , { 2  } , )  )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_2 ( { ( { begin_13 ( a2 .as_pointer()  , ) } )   } , { (a2 .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  > ).to_end()   } , { 0_u64  } , { __tmp_33.as_pointer() } , { __tmp_34.as_pointer() } , { __tmp_35.as_pointer() } , )  } )) ;
+        ({ (*c2.borrow()).max_load_factor_96(2_f32) });
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
+        assert!(({ (({ (*c1.borrow()).bucket_count() }) >= 8_u64) }));
+        assert!(({ (({ (*c1.borrow()).size() }) == 8_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(10));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_36,) => {
+                Ptr::<i8>::from_string_literal(b"ten").with_c_str(|__s| {
+                    (*__tmp_36.upgrade().deref())
+                        [..(*__tmp_36.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(20));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_37,) => {
+                Ptr::<i8>::from_string_literal(b"twenty").with_c_str(|__s| {
+                    (*__tmp_37.upgrade().deref())
+                        [..(*__tmp_37.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(30));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_38,) => {
+                Ptr::<i8>::from_string_literal(b"thirty").with_c_str(|__s| {
+                    (*__tmp_38.upgrade().deref())
+                        [..(*__tmp_38.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(40));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_39,) => {
+                Ptr::<i8>::from_string_literal(b"forty").with_c_str(|__s| {
+                    (*__tmp_39.upgrade().deref())
+                        [..(*__tmp_39.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(50));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_40,) => {
+                Ptr::<i8>::from_string_literal(b"fifty").with_c_str(|__s| {
+                    (*__tmp_40.upgrade().deref())
+                        [..(*__tmp_40.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(60));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_41,) => {
+                Ptr::<i8>::from_string_literal(b"sixty").with_c_str(|__s| {
+                    (*__tmp_41.upgrade().deref())
+                        [..(*__tmp_41.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(70));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_42,) => {
+                Ptr::<i8>::from_string_literal(b"seventy").with_c_str(|__s| {
+                    (*__tmp_42.upgrade().deref())
+                        [..(*__tmp_42.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(80));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_43,) => {
+                Ptr::<i8>::from_string_literal(b"eighty").with_c_str(|__s| {
+                    (*__tmp_43.upgrade().deref())
+                        [..(*__tmp_43.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(2) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c1.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c1.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 2 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -865,47 +1173,98 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             (({
-                test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl :: get_id ( &Rc::new(RefCell::new(unimplemented!()  )).as_pointer() , )
+                test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl :: get_id ( &Rc::new(RefCell::new(( { (*c1.borrow()) . get_allocator ( ) } )  )).as_pointer() , )
             }) == 1)
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 2_f32));
-        assert!((unimplemented!() >= 4_()));
-        assert!((unimplemented!() == 4_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
         );
         assert!(
-            Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
         );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
+        assert!(({ (({ (*c1.borrow()).max_load_factor_95() }) == 2_f32) }));
+        assert!(({ (({ (*c2.borrow()).bucket_count() }) >= 4_u64) }));
+        assert!(({ (({ (*c2.borrow()).size() }) == 4_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(1));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_44,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_44.upgrade().deref())
+                        [..(*__tmp_44.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(2));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_45,) => {
+                Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| {
+                    (*__tmp_45.upgrade().deref())
+                        [..(*__tmp_45.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_46,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_46.upgrade().deref())
+                        [..(*__tmp_46.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(4));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_47,) => {
+                Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                    (*__tmp_47.upgrade().deref())
+                        [..(*__tmp_47.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(1) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c2.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c2.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 1 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -913,33 +1272,52 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             (({
-                test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl :: get_id ( &Rc::new(RefCell::new(unimplemented!()  )).as_pointer() , )
+                test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl :: get_id ( &Rc::new(RefCell::new(( { (*c2.borrow()) . get_allocator ( ) } )  )).as_pointer() , )
             }) == 2)
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 1_f32));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*c2.borrow()).max_load_factor_95() }) == 1_f32) }));
     }
     {
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let c1 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_48 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 1  ) } , )  ));let __tmp_49 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 1  } , )  ));let __tmp_50 : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 1  } , )  )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { 0_u64  } , { __tmp_48.as_pointer() } , { __tmp_49.as_pointer() } , { __tmp_50.as_pointer() } , )  } )) ;
+        let c2 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_51 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 2  ) } , )  ));let __tmp_52 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 2  } , )  ));let __tmp_53 : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 2  } , )  )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { 0_u64  } , { __tmp_51.as_pointer() } , { __tmp_52.as_pointer() } , { __tmp_53.as_pointer() } , )  } )) ;
+        ({ (*c2.borrow()).max_load_factor_96(2_f32) });
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
+        assert!(({ (({ (*c1.borrow()).size() }) == 0_u64) }));
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(2) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c1.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c1.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 2 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -947,29 +1325,48 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             ({
-                let _x : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(unimplemented!()  ));
+                let _x : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(( { (*c1.borrow()) . get_allocator ( ) } )  ));
                 let _y : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 2  } , )  ));
                 operator_eq_5(_x.as_pointer(), _y.as_pointer())
             })
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 2_f32));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*c1.borrow()).max_load_factor_95() }) == 2_f32) }));
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
+        assert!(({ (({ (*c2.borrow()).size() }) == 0_u64) }));
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(1) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c2.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c2.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 1 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -977,14 +1374,32 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             ({
-                let _x : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(unimplemented!()  ));
+                let _x : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(( { (*c2.borrow()) . get_allocator ( ) } )  ));
                 let _y : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 1  } , )  ));
                 operator_eq_5(_x.as_pointer(), _y.as_pointer())
             })
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 1_f32));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*c2.borrow()).max_load_factor_95() }) == 1_f32) }));
     }
     {
         let a2: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -1053,59 +1468,130 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        assert!((unimplemented!() >= 8_()));
-        assert!((unimplemented!() == 8_()));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"ten").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(Ptr::<i8>::from_string_literal(b"twenty").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        }));
-        assert!(Ptr::<i8>::from_string_literal(b"thirty").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        }));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"forty").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"fifty").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"sixty").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"seventy").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(Ptr::<i8>::from_string_literal(b"eighty").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        }));
+        let c1 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_54 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 1  ) } , )  ));let __tmp_55 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 1  } , )  ));let __tmp_56 : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 1  } , )  )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { 0_u64  } , { __tmp_54.as_pointer() } , { __tmp_55.as_pointer() } , { __tmp_56.as_pointer() } , )  } )) ;
+        let c2 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_57 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 2  ) } , )  ));let __tmp_58 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 2  } , )  ));let __tmp_59 : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 2  } , )  )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_2 ( { ( { begin_13 ( a2 .as_pointer()  , ) } )   } , { (a2 .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  > ).to_end()   } , { 0_u64  } , { __tmp_57.as_pointer() } , { __tmp_58.as_pointer() } , { __tmp_59.as_pointer() } , )  } )) ;
+        ({ (*c2.borrow()).max_load_factor_96(2_f32) });
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
+        assert!(({ (({ (*c1.borrow()).bucket_count() }) >= 8_u64) }));
+        assert!(({ (({ (*c1.borrow()).size() }) == 8_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(10));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_60,) => {
+                Ptr::<i8>::from_string_literal(b"ten").with_c_str(|__s| {
+                    (*__tmp_60.upgrade().deref())
+                        [..(*__tmp_60.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(20));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_61,) => {
+                Ptr::<i8>::from_string_literal(b"twenty").with_c_str(|__s| {
+                    (*__tmp_61.upgrade().deref())
+                        [..(*__tmp_61.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(30));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_62,) => {
+                Ptr::<i8>::from_string_literal(b"thirty").with_c_str(|__s| {
+                    (*__tmp_62.upgrade().deref())
+                        [..(*__tmp_62.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(40));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_63,) => {
+                Ptr::<i8>::from_string_literal(b"forty").with_c_str(|__s| {
+                    (*__tmp_63.upgrade().deref())
+                        [..(*__tmp_63.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(50));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_64,) => {
+                Ptr::<i8>::from_string_literal(b"fifty").with_c_str(|__s| {
+                    (*__tmp_64.upgrade().deref())
+                        [..(*__tmp_64.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(60));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_65,) => {
+                Ptr::<i8>::from_string_literal(b"sixty").with_c_str(|__s| {
+                    (*__tmp_65.upgrade().deref())
+                        [..(*__tmp_65.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(70));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_66,) => {
+                Ptr::<i8>::from_string_literal(b"seventy").with_c_str(|__s| {
+                    (*__tmp_66.upgrade().deref())
+                        [..(*__tmp_66.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(80));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_67,) => {
+                Ptr::<i8>::from_string_literal(b"eighty").with_c_str(|__s| {
+                    (*__tmp_67.upgrade().deref())
+                        [..(*__tmp_67.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(2) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c1.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c1.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 2 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -1113,29 +1599,48 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             ({
-                let _x : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(unimplemented!()  ));
+                let _x : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(( { (*c1.borrow()) . get_allocator ( ) } )  ));
                 let _y : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 2  } , )  ));
                 operator_eq_5(_x.as_pointer(), _y.as_pointer())
             })
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 2_f32));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*c1.borrow()).max_load_factor_95() }) == 2_f32) }));
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
+        assert!(({ (({ (*c2.borrow()).size() }) == 0_u64) }));
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(1) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c2.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c2.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 1 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -1143,14 +1648,32 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             ({
-                let _x : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(unimplemented!()  ));
+                let _x : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(( { (*c2.borrow()) . get_allocator ( ) } )  ));
                 let _y : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 1  } , )  ));
                 operator_eq_5(_x.as_pointer(), _y.as_pointer())
             })
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 1_f32));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*c2.borrow()).max_load_factor_95() }) == 1_f32) }));
     }
     {
         let a1: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -1203,25 +1726,26 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let c1 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_68 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 1  ) } , )  ));let __tmp_69 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 1  } , )  ));let __tmp_70 : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 1  } , )  )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_2 ( { ( { begin_14 ( a1 .as_pointer()  , ) } )   } , { (a1 .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  > ).to_end()   } , { 0_u64  } , { __tmp_68.as_pointer() } , { __tmp_69.as_pointer() } , { __tmp_70.as_pointer() } , )  } )) ;
+        let c2 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_71 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 2  ) } , )  ));let __tmp_72 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 2  } , )  ));let __tmp_73 : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 2  } , )  )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { 0_u64  } , { __tmp_71.as_pointer() } , { __tmp_72.as_pointer() } , { __tmp_73.as_pointer() } , )  } )) ;
+        ({ (*c2.borrow()).max_load_factor_96(2_f32) });
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
+        assert!(({ (({ (*c1.borrow()).size() }) == 0_u64) }));
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(2) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c1.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c1.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 2 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -1229,49 +1753,100 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             ({
-                let _x : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(unimplemented!()  ));
+                let _x : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(( { (*c1.borrow()) . get_allocator ( ) } )  ));
                 let _y : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 2  } , )  ));
                 operator_eq_5(_x.as_pointer(), _y.as_pointer())
             })
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 2_f32));
-        assert!((unimplemented!() >= 4_()));
-        assert!((unimplemented!() == 4_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
         );
         assert!(
-            Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
         );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
+        assert!(({ (({ (*c1.borrow()).max_load_factor_95() }) == 2_f32) }));
+        assert!(({ (({ (*c2.borrow()).bucket_count() }) >= 4_u64) }));
+        assert!(({ (({ (*c2.borrow()).size() }) == 4_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(1));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_74,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_74.upgrade().deref())
+                        [..(*__tmp_74.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(2));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_75,) => {
+                Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| {
+                    (*__tmp_75.upgrade().deref())
+                        [..(*__tmp_75.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_76,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_76.upgrade().deref())
+                        [..(*__tmp_76.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(4));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_77,) => {
+                Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                    (*__tmp_77.upgrade().deref())
+                        [..(*__tmp_77.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(1) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c2.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c2.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 1 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -1279,14 +1854,32 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             ({
-                let _x : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(unimplemented!()  ));
+                let _x : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(( { (*c2.borrow()) . get_allocator ( ) } )  ));
                 let _y : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 1  } , )  ));
                 operator_eq_5(_x.as_pointer(), _y.as_pointer())
             })
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 1_f32));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*c2.borrow()).max_load_factor_95() }) == 1_f32) }));
     }
     {
         let a1: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -1405,59 +1998,130 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        assert!((unimplemented!() >= 8_()));
-        assert!((unimplemented!() == 8_()));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"ten").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(Ptr::<i8>::from_string_literal(b"twenty").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        }));
-        assert!(Ptr::<i8>::from_string_literal(b"thirty").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        }));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"forty").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"fifty").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"sixty").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"seventy").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(Ptr::<i8>::from_string_literal(b"eighty").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        }));
+        let c1 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_78 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 1  ) } , )  ));let __tmp_79 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 1  } , )  ));let __tmp_80 : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 1  } , )  )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_2 ( { ( { begin_14 ( a1 .as_pointer()  , ) } )   } , { (a1 .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  > ).to_end()   } , { 0_u64  } , { __tmp_78.as_pointer() } , { __tmp_79.as_pointer() } , { __tmp_80.as_pointer() } , )  } )) ;
+        let c2 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_81 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 2  ) } , )  ));let __tmp_82 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 2  } , )  ));let __tmp_83 : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 2  } , )  )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_2 ( { ( { begin_13 ( a2 .as_pointer()  , ) } )   } , { (a2 .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  > ).to_end()   } , { 0_u64  } , { __tmp_81.as_pointer() } , { __tmp_82.as_pointer() } , { __tmp_83.as_pointer() } , )  } )) ;
+        ({ (*c2.borrow()).max_load_factor_96(2_f32) });
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
+        assert!(({ (({ (*c1.borrow()).bucket_count() }) >= 8_u64) }));
+        assert!(({ (({ (*c1.borrow()).size() }) == 8_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(10));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_84,) => {
+                Ptr::<i8>::from_string_literal(b"ten").with_c_str(|__s| {
+                    (*__tmp_84.upgrade().deref())
+                        [..(*__tmp_84.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(20));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_85,) => {
+                Ptr::<i8>::from_string_literal(b"twenty").with_c_str(|__s| {
+                    (*__tmp_85.upgrade().deref())
+                        [..(*__tmp_85.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(30));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_86,) => {
+                Ptr::<i8>::from_string_literal(b"thirty").with_c_str(|__s| {
+                    (*__tmp_86.upgrade().deref())
+                        [..(*__tmp_86.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(40));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_87,) => {
+                Ptr::<i8>::from_string_literal(b"forty").with_c_str(|__s| {
+                    (*__tmp_87.upgrade().deref())
+                        [..(*__tmp_87.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(50));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_88,) => {
+                Ptr::<i8>::from_string_literal(b"fifty").with_c_str(|__s| {
+                    (*__tmp_88.upgrade().deref())
+                        [..(*__tmp_88.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(60));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_89,) => {
+                Ptr::<i8>::from_string_literal(b"sixty").with_c_str(|__s| {
+                    (*__tmp_89.upgrade().deref())
+                        [..(*__tmp_89.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(70));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_90,) => {
+                Ptr::<i8>::from_string_literal(b"seventy").with_c_str(|__s| {
+                    (*__tmp_90.upgrade().deref())
+                        [..(*__tmp_90.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(80));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_91,) => {
+                Ptr::<i8>::from_string_literal(b"eighty").with_c_str(|__s| {
+                    (*__tmp_91.upgrade().deref())
+                        [..(*__tmp_91.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(2) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c1.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c1.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 2 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -1465,49 +2129,100 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             ({
-                let _x : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(unimplemented!()  ));
+                let _x : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(( { (*c1.borrow()) . get_allocator ( ) } )  ));
                 let _y : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 2  } , )  ));
                 operator_eq_5(_x.as_pointer(), _y.as_pointer())
             })
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 2_f32));
-        assert!((unimplemented!() >= 4_()));
-        assert!((unimplemented!() == 4_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
         );
         assert!(
-            Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
         );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
+        assert!(({ (({ (*c1.borrow()).max_load_factor_95() }) == 2_f32) }));
+        assert!(({ (({ (*c2.borrow()).bucket_count() }) >= 4_u64) }));
+        assert!(({ (({ (*c2.borrow()).size() }) == 4_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(1));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_92,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_92.upgrade().deref())
+                        [..(*__tmp_92.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(2));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_93,) => {
+                Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| {
+                    (*__tmp_93.upgrade().deref())
+                        [..(*__tmp_93.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_94,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_94.upgrade().deref())
+                        [..(*__tmp_94.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(4));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_95,) => {
+                Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                    (*__tmp_95.upgrade().deref())
+                        [..(*__tmp_95.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(1) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c2.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c2.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 1 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -1515,35 +2230,54 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             ({
-                let _x : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(unimplemented!()  ));
+                let _x : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(( { (*c2.borrow()) . get_allocator ( ) } )  ));
                 let _y : Value<other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ :: new_1 ( { 1  } , )  ));
                 operator_eq_5(_x.as_pointer(), _y.as_pointer())
             })
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 1_f32));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*c2.borrow()).max_load_factor_95() }) == 1_f32) }));
     }
     {
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let c1 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_96 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 1  ) } , )  ));let __tmp_97 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 1  } , )  ));let __tmp_98 : Value<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { 0_u64  } , { __tmp_96.as_pointer() } , { __tmp_97.as_pointer() } , { __tmp_98.as_pointer() } , )  } )) ;
+        let c2 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_99 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 2  ) } , )  ));let __tmp_100 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 2  } , )  ));let __tmp_101 : Value<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { 0_u64  } , { __tmp_99.as_pointer() } , { __tmp_100.as_pointer() } , { __tmp_101.as_pointer() } , )  } )) ;
+        ({ (*c2.borrow()).max_load_factor_96(2_f32) });
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
+        assert!(({ (({ (*c1.borrow()).size() }) == 0_u64) }));
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(2) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c1.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c1.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 2 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -1551,28 +2285,49 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             ({
-                let _arg0: min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____   = unimplemented!()   ;
-                operator_eq_10 ( _arg0 , <min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default()  , )
+                ({
+                    let _arg0: min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____   = ( { (*c1.borrow()) . get_allocator ( ) } )   ;
+                    operator_eq_10 ( _arg0 , <min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default()  , )
+                })
             })
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 2_f32));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*c1.borrow()).max_load_factor_95() }) == 2_f32) }));
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
+        assert!(({ (({ (*c2.borrow()).size() }) == 0_u64) }));
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(1) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c2.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c2.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 1 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -1580,13 +2335,33 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             ({
-                let _arg0: min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____   = unimplemented!()   ;
-                operator_eq_10 ( _arg0 , <min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default()  , )
+                ({
+                    let _arg0: min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____   = ( { (*c2.borrow()) . get_allocator ( ) } )   ;
+                    operator_eq_10 ( _arg0 , <min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default()  , )
+                })
             })
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 1_f32));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*c2.borrow()).max_load_factor_95() }) == 1_f32) }));
     }
     {
         let a2: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -1655,59 +2430,130 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        assert!((unimplemented!() >= 8_()));
-        assert!((unimplemented!() == 8_()));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"ten").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(Ptr::<i8>::from_string_literal(b"twenty").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        }));
-        assert!(Ptr::<i8>::from_string_literal(b"thirty").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        }));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"forty").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"fifty").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"sixty").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"seventy").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(Ptr::<i8>::from_string_literal(b"eighty").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        }));
+        let c1 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_102 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 1  ) } , )  ));let __tmp_103 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 1  } , )  ));let __tmp_104 : Value<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { 0_u64  } , { __tmp_102.as_pointer() } , { __tmp_103.as_pointer() } , { __tmp_104.as_pointer() } , )  } )) ;
+        let c2 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_105 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 2  ) } , )  ));let __tmp_106 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 2  } , )  ));let __tmp_107 : Value<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_2 ( { ( { begin_13 ( a2 .as_pointer()  , ) } )   } , { (a2 .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  > ).to_end()   } , { 0_u64  } , { __tmp_105.as_pointer() } , { __tmp_106.as_pointer() } , { __tmp_107.as_pointer() } , )  } )) ;
+        ({ (*c2.borrow()).max_load_factor_96(2_f32) });
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
+        assert!(({ (({ (*c1.borrow()).bucket_count() }) >= 8_u64) }));
+        assert!(({ (({ (*c1.borrow()).size() }) == 8_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(10));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_108,) => {
+                Ptr::<i8>::from_string_literal(b"ten").with_c_str(|__s| {
+                    (*__tmp_108.upgrade().deref())
+                        [..(*__tmp_108.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(20));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_109,) => {
+                Ptr::<i8>::from_string_literal(b"twenty").with_c_str(|__s| {
+                    (*__tmp_109.upgrade().deref())
+                        [..(*__tmp_109.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(30));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_110,) => {
+                Ptr::<i8>::from_string_literal(b"thirty").with_c_str(|__s| {
+                    (*__tmp_110.upgrade().deref())
+                        [..(*__tmp_110.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(40));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_111,) => {
+                Ptr::<i8>::from_string_literal(b"forty").with_c_str(|__s| {
+                    (*__tmp_111.upgrade().deref())
+                        [..(*__tmp_111.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(50));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_112,) => {
+                Ptr::<i8>::from_string_literal(b"fifty").with_c_str(|__s| {
+                    (*__tmp_112.upgrade().deref())
+                        [..(*__tmp_112.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(60));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_113,) => {
+                Ptr::<i8>::from_string_literal(b"sixty").with_c_str(|__s| {
+                    (*__tmp_113.upgrade().deref())
+                        [..(*__tmp_113.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(70));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_114,) => {
+                Ptr::<i8>::from_string_literal(b"seventy").with_c_str(|__s| {
+                    (*__tmp_114.upgrade().deref())
+                        [..(*__tmp_114.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(80));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_115,) => {
+                Ptr::<i8>::from_string_literal(b"eighty").with_c_str(|__s| {
+                    (*__tmp_115.upgrade().deref())
+                        [..(*__tmp_115.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(2) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c1.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c1.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 2 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -1715,28 +2561,49 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             ({
-                let _arg0: min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____   = unimplemented!()   ;
-                operator_eq_10 ( _arg0 , <min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default()  , )
+                ({
+                    let _arg0: min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____   = ( { (*c1.borrow()) . get_allocator ( ) } )   ;
+                    operator_eq_10 ( _arg0 , <min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default()  , )
+                })
             })
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 2_f32));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*c1.borrow()).max_load_factor_95() }) == 2_f32) }));
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
+        assert!(({ (({ (*c2.borrow()).size() }) == 0_u64) }));
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(1) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c2.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c2.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 1 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -1744,13 +2611,33 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             ({
-                let _arg0: min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____   = unimplemented!()   ;
-                operator_eq_10 ( _arg0 , <min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default()  , )
+                ({
+                    let _arg0: min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____   = ( { (*c2.borrow()) . get_allocator ( ) } )   ;
+                    operator_eq_10 ( _arg0 , <min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default()  , )
+                })
             })
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 1_f32));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*c2.borrow()).max_load_factor_95() }) == 1_f32) }));
     }
     {
         let a1: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -1803,25 +2690,26 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let c1 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_116 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 1  ) } , )  ));let __tmp_117 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 1  } , )  ));let __tmp_118 : Value<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_2 ( { ( { begin_14 ( a1 .as_pointer()  , ) } )   } , { (a1 .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  > ).to_end()   } , { 0_u64  } , { __tmp_116.as_pointer() } , { __tmp_117.as_pointer() } , { __tmp_118.as_pointer() } , )  } )) ;
+        let c2 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_119 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 2  ) } , )  ));let __tmp_120 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 2  } , )  ));let __tmp_121 : Value<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_1 ( { 0_u64  } , { __tmp_119.as_pointer() } , { __tmp_120.as_pointer() } , { __tmp_121.as_pointer() } , )  } )) ;
+        ({ (*c2.borrow()).max_load_factor_96(2_f32) });
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
         const _: () = assert!(true, "");;
-        assert!((unimplemented!() == 0_()));
+        assert!(({ (({ (*c1.borrow()).size() }) == 0_u64) }));
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(2) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c1.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c1.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 2 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -1829,48 +2717,101 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             ({
-                let _arg0: min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____   = unimplemented!()   ;
-                operator_eq_10 ( _arg0 , <min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default()  , )
+                ({
+                    let _arg0: min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____   = ( { (*c1.borrow()) . get_allocator ( ) } )   ;
+                    operator_eq_10 ( _arg0 , <min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default()  , )
+                })
             })
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 2_f32));
-        assert!((unimplemented!() >= 4_()));
-        assert!((unimplemented!() == 4_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
         );
         assert!(
-            Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
         );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
+        assert!(({ (({ (*c1.borrow()).max_load_factor_95() }) == 2_f32) }));
+        assert!(({ (({ (*c2.borrow()).bucket_count() }) >= 4_u64) }));
+        assert!(({ (({ (*c2.borrow()).size() }) == 4_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(1));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_122,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_122.upgrade().deref())
+                        [..(*__tmp_122.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(2));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_123,) => {
+                Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| {
+                    (*__tmp_123.upgrade().deref())
+                        [..(*__tmp_123.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_124,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_124.upgrade().deref())
+                        [..(*__tmp_124.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(4));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_125,) => {
+                Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                    (*__tmp_125.upgrade().deref())
+                        [..(*__tmp_125.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(1) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c2.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c2.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 1 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -1878,13 +2819,33 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             ({
-                let _arg0: min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____   = unimplemented!()   ;
-                operator_eq_10 ( _arg0 , <min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default()  , )
+                ({
+                    let _arg0: min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____   = ( { (*c2.borrow()) . get_allocator ( ) } )   ;
+                    operator_eq_10 ( _arg0 , <min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default()  , )
+                })
             })
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 1_f32));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*c2.borrow()).max_load_factor_95() }) == 1_f32) }));
     }
     {
         let a1: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -2003,59 +2964,130 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 })),
             ),
         ])));
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        assert!((unimplemented!() >= 8_()));
-        assert!((unimplemented!() == 8_()));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"ten").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(Ptr::<i8>::from_string_literal(b"twenty").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        }));
-        assert!(Ptr::<i8>::from_string_literal(b"thirty").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        }));
-        assert!(
-            Ptr::<i8>::from_string_literal(b"forty").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"fifty").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"sixty").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"seventy").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(Ptr::<i8>::from_string_literal(b"eighty").with_c_str(|__s| {
-            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
-        }));
+        let c1 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_126 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 1  ) } , )  ));let __tmp_127 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 1  } , )  ));let __tmp_128 : Value<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_2 ( { ( { begin_14 ( a1 .as_pointer()  , ) } )   } , { (a1 .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  > ).to_end()   } , { 0_u64  } , { __tmp_126.as_pointer() } , { __tmp_127.as_pointer() } , { __tmp_128.as_pointer() } , )  } )) ;
+        let c2 : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new({ let __tmp_129 : Value<test_hash_int_ > = Rc::new(RefCell::new(test_hash_int_ :: new ( { Some ( 2  ) } , )  ));let __tmp_130 : Value<test_equal_to_int_ > = Rc::new(RefCell::new(test_equal_to_int_ :: new_1 ( { 2  } , )  ));let __tmp_131 : Value<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )); std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____test_hash_int___test_equal_to_int___min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ :: new_2 ( { ( { begin_13 ( a2 .as_pointer()  , ) } )   } , { (a2 .as_pointer()  as Ptr< (Value<i32  >, Value<Vec<i8  >  >)  > ).to_end()   } , { 0_u64  } , { __tmp_129.as_pointer() } , { __tmp_130.as_pointer() } , { __tmp_131.as_pointer() } , )  } )) ;
+        ({ (*c2.borrow()).max_load_factor_96(2_f32) });
+        ({ (*c1.borrow()).swap(c2.as_pointer()) });
+        assert!(({ (({ (*c1.borrow()).bucket_count() }) >= 8_u64) }));
+        assert!(({ (({ (*c1.borrow()).size() }) == 8_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(10));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_132,) => {
+                Ptr::<i8>::from_string_literal(b"ten").with_c_str(|__s| {
+                    (*__tmp_132.upgrade().deref())
+                        [..(*__tmp_132.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(20));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_133,) => {
+                Ptr::<i8>::from_string_literal(b"twenty").with_c_str(|__s| {
+                    (*__tmp_133.upgrade().deref())
+                        [..(*__tmp_133.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(30));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_134,) => {
+                Ptr::<i8>::from_string_literal(b"thirty").with_c_str(|__s| {
+                    (*__tmp_134.upgrade().deref())
+                        [..(*__tmp_134.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(40));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_135,) => {
+                Ptr::<i8>::from_string_literal(b"forty").with_c_str(|__s| {
+                    (*__tmp_135.upgrade().deref())
+                        [..(*__tmp_135.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(50));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_136,) => {
+                Ptr::<i8>::from_string_literal(b"fifty").with_c_str(|__s| {
+                    (*__tmp_136.upgrade().deref())
+                        [..(*__tmp_136.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(60));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_137,) => {
+                Ptr::<i8>::from_string_literal(b"sixty").with_c_str(|__s| {
+                    (*__tmp_137.upgrade().deref())
+                        [..(*__tmp_137.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(70));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_138,) => {
+                Ptr::<i8>::from_string_literal(b"seventy").with_c_str(|__s| {
+                    (*__tmp_138.upgrade().deref())
+                        [..(*__tmp_138.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(80));
+            (*c1.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_139,) => {
+                Ptr::<i8>::from_string_literal(b"eighty").with_c_str(|__s| {
+                    (*__tmp_139.upgrade().deref())
+                        [..(*__tmp_139.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(2) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c1.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c1.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 2 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -2063,48 +3095,101 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             ({
-                let _arg0: min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____   = unimplemented!()   ;
-                operator_eq_10 ( _arg0 , <min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default()  , )
+                ({
+                    let _arg0: min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____   = ( { (*c1.borrow()) . get_allocator ( ) } )   ;
+                    operator_eq_10 ( _arg0 , <min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default()  , )
+                })
             })
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 2_f32));
-        assert!((unimplemented!() >= 4_()));
-        assert!((unimplemented!() == 4_()));
         assert!(
-            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
         );
         assert!(
-            Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c1.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c1.borrow()).size() }) as usize))
+            })
         );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
-        assert!(
-            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
-                [..(unimplemented!()).clone().len().saturating_sub(1)]
-                == *__s)
-        );
+        assert!(({ (({ (*c1.borrow()).max_load_factor_95() }) == 2_f32) }));
+        assert!(({ (({ (*c2.borrow()).bucket_count() }) >= 4_u64) }));
+        assert!(({ (({ (*c2.borrow()).size() }) == 4_u64) }));
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(1));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_140,) => {
+                Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
+                    (*__tmp_140.upgrade().deref())
+                        [..(*__tmp_140.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(2));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_141,) => {
+                Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| {
+                    (*__tmp_141.upgrade().deref())
+                        [..(*__tmp_141.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_142,) => {
+                Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+                    (*__tmp_142.upgrade().deref())
+                        [..(*__tmp_142.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
+        assert!(match (({
+            let ___k: Value<i32> = Rc::new(RefCell::new(4));
+            (*c2.borrow()).at_82(___k.as_pointer())
+        }),)
+        {
+            (__tmp_143,) => {
+                Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+                    (*__tmp_143.upgrade().deref())
+                        [..(*__tmp_143.upgrade().deref()).len().saturating_sub(1)]
+                        == *__s
+                })
+            }
+        });
         assert!(
             ({
                 let _c: Value<test_hash_int_> =
                     Rc::new(RefCell::new(test_hash_int_::new({ Some(1) })));
                 test_hash_int_Impl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new(({ (*c2.borrow()).hash_function() }))).as_pointer(),
                     _c.as_pointer(),
                 )
             })
         );
         assert!(
             ({
-                let _a: Value<test_equal_to_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _a: Value<test_equal_to_int_> =
+                    Rc::new(RefCell::new(({ (*c2.borrow()).key_eq() })));
                 let _b: Value<test_equal_to_int_> =
                     Rc::new(RefCell::new(test_equal_to_int_::new_1({ 1 })));
                 operator_eq_0(_a.as_pointer(), _b.as_pointer())
@@ -2112,16 +3197,39 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             ({
-                let _arg0: min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____   = unimplemented!()   ;
-                operator_eq_10 ( _arg0 , <min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default()  , )
+                ({
+                    let _arg0: min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____   = ( { (*c2.borrow()) . get_allocator ( ) } )   ;
+                    operator_eq_10 ( _arg0 , <min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default()  , )
+                })
             })
         );
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
-        assert!((unimplemented!() == 1_f32));
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . begin_27 ( ) } )   ;
+                    let ___last: std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . end_30 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___first: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cbegin_29 ( ) } )   ;
+                    let ___last: std___detail__Node_const_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__true_   = ( { (*c2.borrow()) . cend_32 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) as usize)
+                    == (({ (*c2.borrow()).size() }) as usize))
+            })
+        );
+        assert!(({ (({ (*c2.borrow()).max_load_factor_95() }) == 1_f32) }));
     }
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__;
 pub trait Tag_XImpl {
     fn copy_assign(&self, _a0: Ptr<Tag_X>) -> Ptr<Tag_X>;
     fn move_assign(&self, _a0: Ptr<Tag_X>) -> Ptr<Tag_X>;
@@ -2148,48 +3256,6 @@ pub trait min_allocator_std_pair_const_int__std_basic_string_char__std_char_trai
     }
 }
 impl min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl for Ptr<min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____> {
-}
-pub trait min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__Impl
-{
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
-        unimplemented!()
-    }    fn operator_inc_8 ( &self , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_inc_9 ( &self , mut _a0 : i32  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_dec_10 ( &self , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_post_dec_11 ( &self , mut _a0 : i32  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_add_assign ( &self , mut n : isize  , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_sub_assign ( &self , mut n : isize  , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
-        unimplemented!()
-    }    fn operator_add ( &self , mut n : isize  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }    fn operator_sub ( &self , mut n : isize  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
-        unimplemented!()
-    }
-}
-impl min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__Impl for Ptr<min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__> {
-}
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
-{
 }
 pub trait other_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl
 {
@@ -2236,10 +3302,16 @@ impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
 pub trait test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl
 {
     fn destructor(&self);
-    fn address_11(&self, x: ()) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
+    fn address_11(
+        &self,
+        x: Ptr<(Value<i32>, Value<Vec<i8>>)>,
+    ) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
         unimplemented!()
     }
-    fn address_12(&self, x: ()) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
+    fn address_12(
+        &self,
+        x: Ptr<(Value<i32>, Value<Vec<i8>>)>,
+    ) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
         unimplemented!()
     }
     fn allocate(&self, mut n: u32, mut _a1: AnyPtr) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
@@ -2262,7 +3334,7 @@ pub trait test_allocator_std_pair_const_int__std_basic_string_char__std_char_tra
 impl test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl for Ptr<test_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____> {
 fn destructor ( &self , ) { assert!(( (* self ) .with(|__s| __s . data_ ) != destructed_value_1 .with(|rc| *rc.borrow()) ) )  ;
  assert!(( (* self ) .with(|__s| __s . id_ ) != destructed_value_1 .with(|rc| *rc.borrow()) ) )  ;
- if ! ( ( (* self ) .with(|__s| __s . stats_ .clone()) ).is_null() ) { field!((* self ) .with(|__s| __s . stats_ .clone()) , count) .with_mut(|__v| __v. prefix_dec ()) ;
+ if ! ( ( (* self ) .with(|__s| __s . stats_ .clone()) ).is_null() ) { field!((* self ) .with(|__s| __s . stats_ .clone()) , count) .with_mut(|__v| { __v. prefix_dec (); }) ;
  } field!((* self ) , data_) .write( destructed_value_1 .with(|rc| *rc.borrow())  ) ;
  field!((* self ) , id_) .write( destructed_value_1 .with(|rc| *rc.borrow())  ) ;
  } fn get_id ( &self , ) -> i32  { return (* self ) .with(|__s| __s . id_ )   ;
@@ -2305,7 +3377,7 @@ pub trait test_hash_int_Impl {
 }
 impl test_hash_int_Impl for Ptr<test_hash_int_> {
     fn operator_call(&self, x: Ptr<i32>) -> usize {
-        return unimplemented!();
+        return ({ <std_hash_int_>::default()((x.read())) });
     }
     fn operator_eq(&self, c: Ptr<test_hash_int_>) -> bool {
         return ({ (*self).with(|__s| __s.data_) } == { c.with(|__s| __s.data_) });

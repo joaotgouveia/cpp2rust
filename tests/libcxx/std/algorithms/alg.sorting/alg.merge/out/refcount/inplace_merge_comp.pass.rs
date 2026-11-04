@@ -9,42 +9,107 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_is_valid_integer_type_for_random_signed_char_ {}
+impl CppMove for support_detail_is_valid_integer_type_for_random_signed_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_is_valid_integer_type_for_random_short_ {}
+impl CppMove for support_detail_is_valid_integer_type_for_random_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_is_valid_integer_type_for_random_int_ {}
+impl CppMove for support_detail_is_valid_integer_type_for_random_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_is_valid_integer_type_for_random_long_ {}
+impl CppMove for support_detail_is_valid_integer_type_for_random_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_is_valid_integer_type_for_random_long_long_ {}
+impl CppMove for support_detail_is_valid_integer_type_for_random_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_is_valid_integer_type_for_random_unsigned_char_ {}
+impl CppMove for support_detail_is_valid_integer_type_for_random_unsigned_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_is_valid_integer_type_for_random_unsigned_short_ {}
+impl CppMove for support_detail_is_valid_integer_type_for_random_unsigned_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_is_valid_integer_type_for_random_unsigned_int_ {}
+impl CppMove for support_detail_is_valid_integer_type_for_random_unsigned_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_is_valid_integer_type_for_random_unsigned_long_ {}
+impl CppMove for support_detail_is_valid_integer_type_for_random_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_is_valid_integer_type_for_random_unsigned_long_long_ {}
+impl CppMove for support_detail_is_valid_integer_type_for_random_unsigned_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_is_valid_integer_type_for_random___int128_ {}
+impl CppMove for support_detail_is_valid_integer_type_for_random___int128_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_is_valid_integer_type_for_random_unsigned___int128_ {}
+impl CppMove for support_detail_is_valid_integer_type_for_random_unsigned___int128_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_is_valid_urng_support_simple_random_generator__void_ {}
+impl CppMove for support_detail_is_valid_urng_support_simple_random_generator__void_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_0: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 63_u64)) != 0) {
@@ -57,6 +122,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__63_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__63_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_1: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 62_u64)) != 0) {
@@ -69,6 +139,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__62_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__62_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_2: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 61_u64)) != 0) {
@@ -81,6 +156,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__61_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__61_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_3: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 60_u64)) != 0) {
@@ -93,6 +173,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__60_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__60_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_4: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 59_u64)) != 0) {
@@ -105,6 +190,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__59_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__59_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_5: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 58_u64)) != 0) {
@@ -117,6 +207,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__58_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__58_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_6: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 57_u64)) != 0) {
@@ -129,6 +224,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__57_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__57_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_7: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 56_u64)) != 0) {
@@ -141,6 +241,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__56_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__56_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_8: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 55_u64)) != 0) {
@@ -153,6 +258,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__55_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__55_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_9: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 54_u64)) != 0) {
@@ -165,6 +275,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__54_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__54_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_10: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 53_u64)) != 0) {
@@ -177,6 +292,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__53_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__53_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_11: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 52_u64)) != 0) {
@@ -189,6 +309,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__52_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__52_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_12: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 51_u64)) != 0) {
@@ -201,6 +326,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__51_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__51_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_13: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 50_u64)) != 0) {
@@ -213,6 +343,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__50_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__50_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_14: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 49_u64)) != 0) {
@@ -225,6 +360,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__49_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__49_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_15: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 48_u64)) != 0) {
@@ -237,6 +377,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__48_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__48_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_16: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 47_u64)) != 0) {
@@ -249,6 +394,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__47_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__47_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_17: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 46_u64)) != 0) {
@@ -261,6 +411,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__46_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__46_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_18: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 45_u64)) != 0) {
@@ -273,6 +428,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__45_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__45_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_19: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 44_u64)) != 0) {
@@ -285,6 +445,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__44_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__44_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_20: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 43_u64)) != 0) {
@@ -297,6 +462,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__43_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__43_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_21: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 42_u64)) != 0) {
@@ -309,6 +479,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__42_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__42_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_22: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 41_u64)) != 0) {
@@ -321,6 +496,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__41_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__41_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_23: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 40_u64)) != 0) {
@@ -333,6 +513,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__40_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__40_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_24: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 39_u64)) != 0) {
@@ -345,6 +530,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__39_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__39_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_25: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 38_u64)) != 0) {
@@ -357,6 +547,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__38_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__38_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_26: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 37_u64)) != 0) {
@@ -369,6 +564,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__37_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__37_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_27: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 36_u64)) != 0) {
@@ -381,6 +581,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__36_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__36_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_28: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 35_u64)) != 0) {
@@ -393,6 +598,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__35_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__35_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_29: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 34_u64)) != 0) {
@@ -405,6 +615,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__34_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__34_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_30: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 33_u64)) != 0) {
@@ -417,6 +632,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__33_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__33_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_31: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 32_u64)) != 0) {
@@ -429,6 +649,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__32_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__32_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_32: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 31_u64)) != 0) {
@@ -441,6 +666,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__31_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__31_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_33: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 30_u64)) != 0) {
@@ -453,6 +683,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__30_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__30_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_34: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 29_u64)) != 0) {
@@ -465,6 +700,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__29_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__29_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_35: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 28_u64)) != 0) {
@@ -477,6 +717,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__28_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__28_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_36: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 27_u64)) != 0) {
@@ -489,6 +734,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__27_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__27_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_37: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 26_u64)) != 0) {
@@ -501,6 +751,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__26_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__26_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_38: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 25_u64)) != 0) {
@@ -513,6 +768,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__25_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__25_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_39: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 24_u64)) != 0) {
@@ -525,6 +785,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__24_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__24_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_40: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 23_u64)) != 0) {
@@ -537,6 +802,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__23_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__23_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_41: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 22_u64)) != 0) {
@@ -549,6 +819,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__22_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__22_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_42: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 21_u64)) != 0) {
@@ -561,6 +836,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__21_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__21_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_43: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 20_u64)) != 0) {
@@ -573,6 +853,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__20_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__20_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_44: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 19_u64)) != 0) {
@@ -585,6 +870,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__19_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__19_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_45: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 18_u64)) != 0) {
@@ -597,6 +887,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__18_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__18_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_46: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 17_u64)) != 0) {
@@ -609,6 +904,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__17_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__17_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_47: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 16_u64)) != 0) {
@@ -621,6 +921,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__16_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__16_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_48: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 15_u64)) != 0) {
@@ -633,6 +938,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__15_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__15_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_49: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 14_u64)) != 0) {
@@ -645,6 +955,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__14_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__14_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_50: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 13_u64)) != 0) {
@@ -657,6 +972,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__13_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__13_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_51: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 12_u64)) != 0) {
@@ -669,6 +989,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__12_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__12_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_52: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 11_u64)) != 0) {
@@ -681,6 +1006,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__11_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__11_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_53: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 10_u64)) != 0) {
@@ -693,6 +1023,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__10_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__10_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_54: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 9_u64)) != 0) {
@@ -705,6 +1040,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__9_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__9_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_55: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 8_u64)) != 0) {
@@ -717,6 +1057,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__8_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__8_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_56: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 7_u64)) != 0) {
@@ -729,6 +1074,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__7_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__7_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_57: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 6_u64)) != 0) {
@@ -741,6 +1091,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__6_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__6_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_58: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 5_u64)) != 0) {
@@ -753,6 +1108,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__5_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__5_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_59: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 4_u64)) != 0) {
@@ -765,6 +1125,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__4_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__4_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_60: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 3_u64)) != 0) {
@@ -777,6 +1142,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__3_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__3_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_61: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 2_u64)) != 0) {
@@ -789,6 +1159,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__2_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__2_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_62: Value<usize> = Rc::new(RefCell::new(
         (if ((65536_u64 & (((1) as u64) << 1_u64)) != 0) {
@@ -801,18 +1176,33 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__1_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__1_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_63: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_imp_unsigned_long_long__65536__0_ {}
+impl CppMove for support_detail_meta_log2_imp_unsigned_long_long__65536__0_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_64: Value<usize> = Rc::new(RefCell::new(value_0.with(|rc| *rc.borrow())));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct support_detail_meta_log2_unsigned_long__65536_ {}
+impl CppMove for support_detail_meta_log2_unsigned_long__65536_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn countl_zero_65(mut n: u32) -> i32 {
     return n.leading_zeros() as i32;
 }
@@ -820,20 +1210,16 @@ pub fn countl_zero_66(mut n: u64) -> i32 {
     return n.leading_zeros() as i32;
 }
 thread_local!(
-    static rp_67: Value<()> = Rc::new(RefCell::new(
-        (((({ support_simple_random_generator::max() }) as i32)
-            - (({ support_simple_random_generator::min() }) as i32)) as ())
-            .wrapping_add((1_() as ())),
-    ));
+    static rp_67: Value<u64> = Rc::new(RefCell::new(65536_u64));
 );
 thread_local!(
-    static rp_log2_68: Value<usize> = Rc::new(RefCell::new(value_64.with(|rc| *rc.borrow())));
+    static rp_log2_68: Value<usize> = Rc::new(RefCell::new(16_usize));
 );
 thread_local!(
-    static w_digits_69: Value<usize> = Rc::new(RefCell::new((unimplemented!() as usize)));
+    static w_digits_69: Value<usize> = Rc::new(RefCell::new(64_usize));
 );
 thread_local!(
-    static e_digits_70: Value<usize> = Rc::new(RefCell::new((unimplemented!() as usize)));
+    static e_digits_70: Value<usize> = Rc::new(RefCell::new(16_usize));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(64)]
@@ -850,9 +1236,9 @@ pub struct support_detail_independent_bits_engine_support_simple_random_generato
     #[offset(32)]
     round_count_regular_: usize,
     #[offset(40)]
-    y0_: (),
+    y0_: u64,
     #[offset(48)]
-    y1_: (),
+    y1_: u64,
     #[offset(56)]
     mask0_: u16,
     #[offset(58)]
@@ -868,8 +1254,8 @@ impl support_detail_independent_bits_engine_support_simple_random_generator__uns
             wid0_: 0_usize,
             round_count_all_: 0_usize,
             round_count_regular_: 0_usize,
-            y0_: unimplemented!(),
-            y1_: unimplemented!(),
+            y0_: 0_u64,
+            y1_: 0_u64,
             mask0_: 0_u16,
             mask1_: 0_u16,
         }));
@@ -894,14 +1280,16 @@ impl support_detail_independent_bits_engine_support_simple_random_generator__uns
                         << this.with(|__s| __s.wid0_)),
                 );
             } else {
-                field!(this, y0_).write(0_());
+                field!(this, y0_).write(0_u64);
             }
         }
         if ((rp_67.with(|rc| *rc.borrow())).wrapping_sub(this.with(|__s| __s.y0_))
-            > (this.with(|__s| __s.y0_) as u64)
+            > (this.with(|__s| __s.y0_))
                 .wrapping_div((this.with(|__s| __s.round_count_all_) as u64)))
         {
-            field!(this, round_count_all_).with_mut(|__v| __v.prefix_inc());
+            field!(this, round_count_all_).with_mut(|__v| {
+                __v.prefix_inc();
+            });
             field!(this, wid0_).write(
                 (this.with(|__s| __s.width_)).wrapping_div(this.with(|__s| __s.round_count_all_)),
             );
@@ -911,7 +1299,7 @@ impl support_detail_independent_bits_engine_support_simple_random_generator__uns
                         << this.with(|__s| __s.wid0_)),
                 );
             } else {
-                field!(this, y0_).write(0_());
+                field!(this, y0_).write(0_u64);
             }
         }
         field!(this, round_count_regular_).write(
@@ -928,7 +1316,7 @@ impl support_detail_independent_bits_engine_support_simple_random_generator__uns
                     << ((this.with(|__s| __s.wid0_)).wrapping_add(1_usize))),
             );
         } else {
-            field!(this, y1_).write(0_());
+            field!(this, y1_).write(0_u64);
         }
         field!(this, mask0_).write(if (this.with(|__s| __s.wid0_) > 0_usize) {
             ((((!0 as u16) as i32)
@@ -961,17 +1349,24 @@ impl Callable0<u64>
         })
     }
 }
-pub fn operator_eq_71(
+impl CppMove
+    for support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_
+{
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn operator_eq_72(
     _a0: Ptr<support_uniform_int_distribution_long_>,
     _a1: Ptr<support_uniform_int_distribution_long_>,
 ) -> bool {
     return ({
         let _arg0: Ptr<support_uniform_int_distribution_long__param_type> = field_ptr!(_a0, param_);
         let _arg1: Ptr<support_uniform_int_distribution_long__param_type> = field_ptr!(_a1, param_);
-        operator_eq_72(_arg0, _arg1)
+        operator_eq_73(_arg0, _arg1)
     });
 }
-pub fn operator_eq_72(
+pub fn operator_eq_73(
     _a0: Ptr<support_uniform_int_distribution_long__param_type>,
     _a1: Ptr<support_uniform_int_distribution_long__param_type>,
 ) -> bool {
@@ -997,7 +1392,12 @@ impl support_uniform_int_distribution_long__param_type {
 }
 impl CppEq for support_uniform_int_distribution_long__param_type {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_72(__lhs.clone(), __rhs.clone())
+        operator_eq_73(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for support_uniform_int_distribution_long__param_type {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for support_uniform_int_distribution_long__param_type {
@@ -1015,7 +1415,7 @@ pub struct support_uniform_int_distribution_long_ {
 impl support_uniform_int_distribution_long_ {}
 impl CppEq for support_uniform_int_distribution_long_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_71(__lhs.clone(), __rhs.clone())
+        operator_eq_72(__lhs.clone(), __rhs.clone())
     }
 }
 impl
@@ -1035,8 +1435,13 @@ impl
         })
     }
 }
+impl CppMove for support_uniform_int_distribution_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
-    pub static default_seed_73: Value<u16> = Rc::new(RefCell::new(19937_u16));
+    pub static default_seed_74: Value<u16> = Rc::new(RefCell::new(19937_u16));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
@@ -1052,7 +1457,7 @@ impl support_simple_random_generator {
         return (-1_i32 as u16);
     }
     pub fn new_1() -> Self {
-        support_simple_random_generator::new_2({ default_seed_73.with(|rc| *rc.borrow()) })
+        support_simple_random_generator::new_2({ default_seed_74.with(|rc| *rc.borrow()) })
     }
     pub fn new_2(mut s: u16) -> Self {
         Self {
@@ -1067,12 +1472,17 @@ impl Callable0<u16> for support_simple_random_generator {
         })
     }
 }
+impl CppMove for support_simple_random_generator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for support_simple_random_generator {
     fn default() -> Self {
         { support_simple_random_generator::new_1() }
     }
 }
-pub fn shuffle_74(
+pub fn shuffle_75(
     mut first: Ptr<Option<Value<i32>>>,
     mut last: Ptr<Option<Value<i32>>>,
     gen_: Ptr<support_simple_random_generator>,
@@ -1099,7 +1509,7 @@ pub fn shuffle_74(
                 support_uniform_int_distribution_long_Impl :: operator_call_6_class_support_simple_random_generator ( &uid .as_pointer()  , _gen_ , _param.as_pointer() , )
             }) as isize);
             if (index != 0_isize) {
-                unimplemented!();
+                cpp_swap!((first).clone(), (first.offset((index) as isize)));
             }
             {
                 first.prefix_inc();
@@ -1108,7 +1518,7 @@ pub fn shuffle_74(
         }
     }
 }
-pub fn shuffle_75(
+pub fn shuffle_76(
     mut first: Ptr<i32>,
     mut last: Ptr<i32>,
     gen_: Ptr<support_simple_random_generator>,
@@ -1144,7 +1554,7 @@ pub fn shuffle_75(
         }
     }
 }
-pub fn shuffle_76(mut first: Ptr<S>, mut last: Ptr<S>, gen_: Ptr<support_simple_random_generator>) {
+pub fn shuffle_77(mut first: Ptr<S>, mut last: Ptr<S>, gen_: Ptr<support_simple_random_generator>) {
     let mut last_iter: Ptr<S> = (last).clone();
     let mut diff: isize = (((last_iter).clone() - (first).clone()) as i64 as isize);
     if (diff > 1_isize) {
@@ -1184,6 +1594,11 @@ impl Callable2<Ptr<Option<Value<i32>>>, Ptr<Option<Value<i32>>>, bool> for indir
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             indirect_lessImpl::operator_call_1_class_std_unique_ptr_int_(__it, a1, a2)
         })
+    }
+}
+impl CppMove for indirect_less {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, CppFrom, CopyAssign, MoveAssign)]
@@ -1231,6 +1646,11 @@ impl Clone for S {
         S::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for S {
     fn default() -> Self {
         { S::new_2() }
@@ -1253,6 +1673,11 @@ impl support_double_move_tracker {
         __this
     }
 }
+impl CppMove for support_double_move_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for support_double_move_tracker {
     fn default() -> Self {
         { support_double_move_tracker::new() }
@@ -1262,18 +1687,22 @@ impl Default for support_double_move_tracker {
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t___types_type_list_signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128___types_type_list_unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128___types_type_list_bool__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
+impl CppMove for types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
@@ -1290,6 +1719,11 @@ impl cpp17_output_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp17_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -1314,14 +1748,19 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
         }
     }
 }
+impl CppMove for cpp17_input_iterator_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
-pub fn operator_eq_77(
+pub fn operator_eq_78(
     x: Ptr<bidirectional_iterator_int_ptr_>,
     y: Ptr<bidirectional_iterator_int_ptr_>,
 ) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
-pub fn operator_ne_78(
+pub fn operator_ne_79(
     x: Ptr<bidirectional_iterator_int_ptr_>,
     y: Ptr<bidirectional_iterator_int_ptr_>,
 ) -> bool {
@@ -1355,7 +1794,7 @@ impl std::cmp::PartialEq for bidirectional_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         {
             libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
-                operator_eq_77(__lhs.clone(), __rhs.clone())
+                operator_eq_78(__lhs.clone(), __rhs.clone())
             })
         }
     }
@@ -1391,13 +1830,18 @@ impl CppBidirectionalIterator<i32> for bidirectional_iterator_int_ptr_ {
         self
     }
 }
-pub fn operator_eq_79(
+impl CppMove for bidirectional_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
+pub fn operator_eq_80(
     x: Ptr<bidirectional_iterator_S_ptr_>,
     y: Ptr<bidirectional_iterator_S_ptr_>,
 ) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
-pub fn operator_ne_80(
+pub fn operator_ne_81(
     x: Ptr<bidirectional_iterator_S_ptr_>,
     y: Ptr<bidirectional_iterator_S_ptr_>,
 ) -> bool {
@@ -1431,7 +1875,7 @@ impl std::cmp::PartialEq for bidirectional_iterator_S_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         {
             libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
-                operator_eq_79(__lhs.clone(), __rhs.clone())
+                operator_eq_80(__lhs.clone(), __rhs.clone())
             })
         }
     }
@@ -1467,7 +1911,12 @@ impl CppBidirectionalIterator<S> for bidirectional_iterator_S_ptr_ {
         self
     }
 }
-pub fn operator_add_81(
+impl CppMove for bidirectional_iterator_S_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
+pub fn operator_add_82(
     x: random_access_iterator_int_ptr_,
     mut n: isize,
 ) -> random_access_iterator_int_ptr_ {
@@ -1475,7 +1924,7 @@ pub fn operator_add_81(
     ({ random_access_iterator_int_ptr_Impl::operator_add_assign(&x.as_pointer(), n) });
     return random_access_iterator_int_ptr_::move_from({ x.as_pointer() });
 }
-pub fn operator_sub_82(
+pub fn operator_sub_83(
     x: random_access_iterator_int_ptr_,
     mut n: isize,
 ) -> random_access_iterator_int_ptr_ {
@@ -1483,19 +1932,19 @@ pub fn operator_sub_82(
     ({ random_access_iterator_int_ptr_Impl::operator_sub_assign(&x.as_pointer(), n) });
     return random_access_iterator_int_ptr_::move_from({ x.as_pointer() });
 }
-pub fn operator_sub_83(
+pub fn operator_sub_84(
     mut x: random_access_iterator_int_ptr_,
     mut y: random_access_iterator_int_ptr_,
 ) -> isize {
     return (((x.it_).clone() - (y.it_).clone()) as i64 as isize);
 }
-pub fn operator_eq_84(
+pub fn operator_eq_85(
     x: Ptr<random_access_iterator_int_ptr_>,
     y: Ptr<random_access_iterator_int_ptr_>,
 ) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
-pub fn operator_ne_85(
+pub fn operator_ne_86(
     x: Ptr<random_access_iterator_int_ptr_>,
     y: Ptr<random_access_iterator_int_ptr_>,
 ) -> bool {
@@ -1529,7 +1978,7 @@ impl std::cmp::PartialEq for random_access_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         {
             libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
-                operator_eq_84(__lhs.clone(), __rhs.clone())
+                operator_eq_85(__lhs.clone(), __rhs.clone())
             })
         }
     }
@@ -1565,7 +2014,12 @@ impl CppBidirectionalIterator<i32> for random_access_iterator_int_ptr_ {
         self
     }
 }
-pub fn operator_add_86(
+impl CppMove for random_access_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
+pub fn operator_add_87(
     x: random_access_iterator_S_ptr_,
     mut n: isize,
 ) -> random_access_iterator_S_ptr_ {
@@ -1573,7 +2027,7 @@ pub fn operator_add_86(
     ({ random_access_iterator_S_ptr_Impl::operator_add_assign(&x.as_pointer(), n) });
     return random_access_iterator_S_ptr_::move_from({ x.as_pointer() });
 }
-pub fn operator_sub_87(
+pub fn operator_sub_88(
     x: random_access_iterator_S_ptr_,
     mut n: isize,
 ) -> random_access_iterator_S_ptr_ {
@@ -1581,19 +2035,19 @@ pub fn operator_sub_87(
     ({ random_access_iterator_S_ptr_Impl::operator_sub_assign(&x.as_pointer(), n) });
     return random_access_iterator_S_ptr_::move_from({ x.as_pointer() });
 }
-pub fn operator_sub_88(
+pub fn operator_sub_89(
     mut x: random_access_iterator_S_ptr_,
     mut y: random_access_iterator_S_ptr_,
 ) -> isize {
     return (((x.it_).clone() - (y.it_).clone()) as i64 as isize);
 }
-pub fn operator_eq_89(
+pub fn operator_eq_90(
     x: Ptr<random_access_iterator_S_ptr_>,
     y: Ptr<random_access_iterator_S_ptr_>,
 ) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
-pub fn operator_ne_90(
+pub fn operator_ne_91(
     x: Ptr<random_access_iterator_S_ptr_>,
     y: Ptr<random_access_iterator_S_ptr_>,
 ) -> bool {
@@ -1627,7 +2081,7 @@ impl std::cmp::PartialEq for random_access_iterator_S_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         {
             libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
-                operator_eq_89(__lhs.clone(), __rhs.clone())
+                operator_eq_90(__lhs.clone(), __rhs.clone())
             })
         }
     }
@@ -1663,6 +2117,11 @@ impl CppBidirectionalIterator<S> for random_access_iterator_S_ptr_ {
         self
     }
 }
+impl CppMove for random_access_iterator_S_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
@@ -1679,6 +2138,11 @@ impl cpp20_random_access_iterator_int_ptr_ {
             it_: { (*_a0.upgrade().deref()).it_.clone() },
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
+    }
+}
+impl CppMove for cpp20_random_access_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -1703,6 +2167,11 @@ impl cpp20_input_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_input_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
@@ -1722,6 +2191,11 @@ impl cpp20_output_iterator_int_ptr_ {
         }
     }
 }
+impl CppMove for cpp20_output_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp20_output_iterator<int*>, int>"
@@ -1738,6 +2212,11 @@ pub struct IteratorOpCounts {
     #[offset(24)]
     pub equal_cmps: usize,
 }
+impl CppMove for IteratorOpCounts {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for IteratorOpCounts {
     fn default() -> Self {
         {
@@ -1750,7 +2229,7 @@ impl Default for IteratorOpCounts {
         }
     }
 }
-pub fn operator_eq_91(
+pub fn operator_eq_92(
     _a0: Ptr<forward_sized_iterator_int_ptr_>,
     _a1: Ptr<forward_sized_iterator_int_ptr_>,
 ) -> bool {
@@ -1766,7 +2245,12 @@ pub struct forward_sized_iterator_int_ptr_ {
 impl forward_sized_iterator_int_ptr_ {}
 impl CppEq for forward_sized_iterator_int_ptr_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_91(__lhs.clone(), __rhs.clone())
+        operator_eq_92(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for forward_sized_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for forward_sized_iterator_int_ptr_ {
@@ -1783,36 +2267,40 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub fn operator_add_92(mut i: adl_Iterator, mut n: isize) -> adl_Iterator {
+pub fn operator_add_93(mut i: adl_Iterator, mut n: isize) -> adl_Iterator {
     return adl_Iterator::new_1(
         { i.ptr_.offset((n) as isize) },
         { (i.iter_moves_).clone() },
         { (i.iter_swaps_).clone() },
     );
 }
-pub fn operator_add_93(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
+pub fn operator_add_94(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
     return ({
         let _i: adl_Iterator = i;
-        operator_add_92(_i, n)
+        operator_add_93(_i, n)
     });
 }
-pub fn iter_swap_94(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub fn iter_swap_95(mut a: adl_Iterator, mut b: adl_Iterator) {
     cpp_swap!((a.ptr_).clone(), (b.ptr_).clone());
     if !(a.iter_swaps_).is_null() {
-        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
+        a.iter_swaps_.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
-pub fn iter_move_95(iter: adl_Iterator) -> Ptr<i32> {
+pub fn iter_move_96(iter: adl_Iterator) -> Ptr<i32> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
-        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
+        { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
-pub fn operator_eq_96(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> bool {
+pub fn operator_eq_97(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> bool {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_97(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> std::cmp::Ordering {
+pub fn operator_cmp_98(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> std::cmp::Ordering {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -1859,7 +2347,7 @@ impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
             libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
-                operator_cmp_97(__lhs.clone(), __rhs.clone())
+                operator_cmp_98(__lhs.clone(), __rhs.clone())
             })
         }
     }
@@ -1873,7 +2361,7 @@ impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
             libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
-                operator_eq_96(__lhs.clone(), __rhs.clone())
+                operator_eq_97(__lhs.clone(), __rhs.clone())
             })
         }
     }
@@ -1922,6 +2410,11 @@ impl CppRandomAccessIterator<i32> for adl_Iterator {
         })
     }
 }
+impl CppMove for adl_Iterator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
@@ -1952,6 +2445,11 @@ impl CppEq for rvalue_iterator_int_ptr_ {
             == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for rvalue_iterator_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Ptr< i8  >  , new, value)]
@@ -1962,104 +2460,10 @@ impl util_iterator_error {
         Self {}
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
-#[cpp_from(()  , new, value)]
-#[byte_size(16)]
-pub struct binary_counting_predicate_std_greater_int___int__int_ {
-    #[offset(0)]
-    #[byte_size(1)]
-    p_: (),
-    #[offset(8)]
-    count_: usize,
-}
-impl binary_counting_predicate_std_greater_int___int__int_ {
-    pub fn new(p: ()) -> Self {
-        let p: Value<()> = Rc::new(RefCell::new(p));
-        Self {
-            p_: (*p.borrow()).clone(),
-            count_: 0_usize,
-        }
+impl CppMove for util_iterator_error {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
-}
-impl Callable2<Ptr<i32>, Ptr<i32>, bool> for binary_counting_predicate_std_greater_int___int__int_ {
-    fn call(&self, a1: Ptr<i32>, a2: Ptr<i32>) -> bool {
-        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
-            binary_counting_predicate_std_greater_int___int__int_Impl::operator_call(__it, a1, a2)
-        })
-    }
-}
-impl Default for binary_counting_predicate_std_greater_int___int__int_ {
-    fn default() -> Self {
-        {
-            binary_counting_predicate_std_greater_int___int__int_ {
-                p_: unimplemented!(),
-                count_: 0_usize,
-            }
-        }
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
-#[cpp_from(()  , new, value)]
-#[byte_size(16)]
-pub struct binary_counting_predicate_std_greater_S___S__S_ {
-    #[offset(0)]
-    #[byte_size(1)]
-    p_: (),
-    #[offset(8)]
-    count_: usize,
-}
-impl binary_counting_predicate_std_greater_S___S__S_ {
-    pub fn new(p: ()) -> Self {
-        let p: Value<()> = Rc::new(RefCell::new(p));
-        Self {
-            p_: (*p.borrow()).clone(),
-            count_: 0_usize,
-        }
-    }
-}
-impl Callable2<Ptr<S>, Ptr<S>, bool> for binary_counting_predicate_std_greater_S___S__S_ {
-    fn call(&self, a1: Ptr<S>, a2: Ptr<S>) -> bool {
-        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
-            binary_counting_predicate_std_greater_S___S__S_Impl::operator_call(__it, a1, a2)
-        })
-    }
-}
-impl Default for binary_counting_predicate_std_greater_S___S__S_ {
-    fn default() -> Self {
-        {
-            binary_counting_predicate_std_greater_S___S__S_ {
-                p_: unimplemented!(),
-                count_: 0_usize,
-            }
-        }
-    }
-}
-pub fn test_one_98(mut N: u32, mut M: u32, randomness: Ptr<support_simple_random_generator>) {
-    assert!((M <= N));
-    let mut ia: Ptr<i32> =
-        Ptr::alloc_array((0..(N as usize)).map(|_| 0_i32).collect::<Box<[i32]>>());
-    let mut i: u32 = 0_u32;
-    'loop_: while (i < N) {
-        elem!(ia, i).write({ (i as i32) });
-        i.prefix_inc();
-    }
-    ({
-        let _first: Ptr<i32> = (ia).clone();
-        let _last: Ptr<i32> = ia.offset((N) as isize);
-        let _gen_: Ptr<support_simple_random_generator> = (randomness).clone();
-        shuffle_75(_first, _last, _gen_)
-    });
-    unimplemented!();
-    unimplemented!();
-    let mut pred: binary_counting_predicate_std_greater_int___int__int_ =
-        binary_counting_predicate_std_greater_int___int__int_::new({ (unimplemented!()) });
-    unimplemented!();
-    if (N > 0_u32) {
-        assert!(({ (elem!(ia, 0).read()) } == { ((N as i32) - 1) }));
-        assert!(((elem!(ia, (N).wrapping_sub(1_u32)).read()) == 0));
-        assert!(unimplemented!());
-    }
-    ia.delete();
 }
 pub fn test_one_99(mut N: u32, mut M: u32, randomness: Ptr<support_simple_random_generator>) {
     assert!((M <= N));
@@ -2074,21 +2478,51 @@ pub fn test_one_99(mut N: u32, mut M: u32, randomness: Ptr<support_simple_random
         let _first: Ptr<i32> = (ia).clone();
         let _last: Ptr<i32> = ia.offset((N) as isize);
         let _gen_: Ptr<support_simple_random_generator> = (randomness).clone();
-        shuffle_75(_first, _last, _gen_)
+        shuffle_76(_first, _last, _gen_)
     });
-    unimplemented!();
-    unimplemented!();
-    let mut pred: binary_counting_predicate_std_greater_int___int__int_ =
-        binary_counting_predicate_std_greater_int___int__int_::new({ (unimplemented!()) });
-    unimplemented!();
+    ({
+        let ___first: Ptr<i32> = (ia).clone();
+        let ___last: Ptr<i32> = ia.offset((M) as isize);
+        libcc2rs::sort_refcount(___first, ___last, <std_greater_int_>::default())
+    });
+    ({
+        let ___first: Ptr<i32> = ia.offset((M) as isize);
+        let ___last: Ptr<i32> = ia.offset((N) as isize);
+        libcc2rs::sort_refcount(___first, ___last, <std_greater_int_>::default())
+    });
+    let pred: Value<binary_counting_predicate_std_greater_int___int__int_> = Rc::new(RefCell::new(
+        binary_counting_predicate_std_greater_int___int__int_::new({
+            (<std_greater_int_>::default())
+        }),
+    ));
+    ({
+        let ___first: bidirectional_iterator_int_ptr_ =
+            bidirectional_iterator_int_ptr_::new_1({ (ia).clone() });
+        let ___middle: bidirectional_iterator_int_ptr_ =
+            bidirectional_iterator_int_ptr_::new_1({ ia.offset((M) as isize) });
+        let ___last: bidirectional_iterator_int_ptr_ =
+            bidirectional_iterator_int_ptr_::new_1({ ia.offset((N) as isize) });
+        inplace_merge_100(
+            ___first,
+            ___middle,
+            ___last,
+            ({ ref_101(pred.as_pointer()) }),
+        )
+    });
     if (N > 0_u32) {
         assert!(({ (elem!(ia, 0).read()) } == { ((N as i32) - 1) }));
         assert!(((elem!(ia, (N).wrapping_sub(1_u32)).read()) == 0));
-        assert!(unimplemented!());
+        assert!(
+            ({
+                let ___first: Ptr<i32> = (ia).clone();
+                let ___last: Ptr<i32> = ia.offset((N) as isize);
+                is_sorted_102(___first, ___last, <std_greater_int_>::default())
+            })
+        );
     }
     ia.delete();
 }
-pub fn test_one_100(mut N: u32, mut M: u32, randomness: Ptr<support_simple_random_generator>) {
+pub fn test_one_103(mut N: u32, mut M: u32, randomness: Ptr<support_simple_random_generator>) {
     assert!((M <= N));
     let mut ia: Ptr<i32> =
         Ptr::alloc_array((0..(N as usize)).map(|_| 0_i32).collect::<Box<[i32]>>());
@@ -2101,21 +2535,105 @@ pub fn test_one_100(mut N: u32, mut M: u32, randomness: Ptr<support_simple_rando
         let _first: Ptr<i32> = (ia).clone();
         let _last: Ptr<i32> = ia.offset((N) as isize);
         let _gen_: Ptr<support_simple_random_generator> = (randomness).clone();
-        shuffle_75(_first, _last, _gen_)
+        shuffle_76(_first, _last, _gen_)
     });
-    unimplemented!();
-    unimplemented!();
-    let mut pred: binary_counting_predicate_std_greater_int___int__int_ =
-        binary_counting_predicate_std_greater_int___int__int_::new({ (unimplemented!()) });
-    unimplemented!();
+    ({
+        let ___first: Ptr<i32> = (ia).clone();
+        let ___last: Ptr<i32> = ia.offset((M) as isize);
+        libcc2rs::sort_refcount(___first, ___last, <std_greater_int_>::default())
+    });
+    ({
+        let ___first: Ptr<i32> = ia.offset((M) as isize);
+        let ___last: Ptr<i32> = ia.offset((N) as isize);
+        libcc2rs::sort_refcount(___first, ___last, <std_greater_int_>::default())
+    });
+    let pred: Value<binary_counting_predicate_std_greater_int___int__int_> = Rc::new(RefCell::new(
+        binary_counting_predicate_std_greater_int___int__int_::new({
+            (<std_greater_int_>::default())
+        }),
+    ));
+    ({
+        let ___first: random_access_iterator_int_ptr_ =
+            random_access_iterator_int_ptr_::new_1({ (ia).clone() });
+        let ___middle: random_access_iterator_int_ptr_ =
+            random_access_iterator_int_ptr_::new_1({ ia.offset((M) as isize) });
+        let ___last: random_access_iterator_int_ptr_ =
+            random_access_iterator_int_ptr_::new_1({ ia.offset((N) as isize) });
+        inplace_merge_104(
+            ___first,
+            ___middle,
+            ___last,
+            ({ ref_101(pred.as_pointer()) }),
+        )
+    });
     if (N > 0_u32) {
         assert!(({ (elem!(ia, 0).read()) } == { ((N as i32) - 1) }));
         assert!(((elem!(ia, (N).wrapping_sub(1_u32)).read()) == 0));
-        assert!(unimplemented!());
+        assert!(
+            ({
+                let ___first: Ptr<i32> = (ia).clone();
+                let ___last: Ptr<i32> = ia.offset((N) as isize);
+                is_sorted_102(___first, ___last, <std_greater_int_>::default())
+            })
+        );
     }
     ia.delete();
 }
-pub fn test_one_101(mut N: u32, mut M: u32, randomness: Ptr<support_simple_random_generator>) {
+pub fn test_one_105(mut N: u32, mut M: u32, randomness: Ptr<support_simple_random_generator>) {
+    assert!((M <= N));
+    let mut ia: Ptr<i32> =
+        Ptr::alloc_array((0..(N as usize)).map(|_| 0_i32).collect::<Box<[i32]>>());
+    let mut i: u32 = 0_u32;
+    'loop_: while (i < N) {
+        elem!(ia, i).write({ (i as i32) });
+        i.prefix_inc();
+    }
+    ({
+        let _first: Ptr<i32> = (ia).clone();
+        let _last: Ptr<i32> = ia.offset((N) as isize);
+        let _gen_: Ptr<support_simple_random_generator> = (randomness).clone();
+        shuffle_76(_first, _last, _gen_)
+    });
+    ({
+        let ___first: Ptr<i32> = (ia).clone();
+        let ___last: Ptr<i32> = ia.offset((M) as isize);
+        libcc2rs::sort_refcount(___first, ___last, <std_greater_int_>::default())
+    });
+    ({
+        let ___first: Ptr<i32> = ia.offset((M) as isize);
+        let ___last: Ptr<i32> = ia.offset((N) as isize);
+        libcc2rs::sort_refcount(___first, ___last, <std_greater_int_>::default())
+    });
+    let pred: Value<binary_counting_predicate_std_greater_int___int__int_> = Rc::new(RefCell::new(
+        binary_counting_predicate_std_greater_int___int__int_::new({
+            (<std_greater_int_>::default())
+        }),
+    ));
+    ({
+        let ___first: Ptr<i32> = (ia).clone();
+        let ___middle: Ptr<i32> = ia.offset((M) as isize);
+        let ___last: Ptr<i32> = ia.offset((N) as isize);
+        inplace_merge_106(
+            ___first,
+            ___middle,
+            ___last,
+            ({ ref_101(pred.as_pointer()) }),
+        )
+    });
+    if (N > 0_u32) {
+        assert!(({ (elem!(ia, 0).read()) } == { ((N as i32) - 1) }));
+        assert!(((elem!(ia, (N).wrapping_sub(1_u32)).read()) == 0));
+        assert!(
+            ({
+                let ___first: Ptr<i32> = (ia).clone();
+                let ___last: Ptr<i32> = ia.offset((N) as isize);
+                is_sorted_102(___first, ___last, <std_greater_int_>::default())
+            })
+        );
+    }
+    ia.delete();
+}
+pub fn test_one_107(mut N: u32, mut M: u32, randomness: Ptr<support_simple_random_generator>) {
     assert!((M <= N));
     let mut ia: Ptr<S> = Ptr::alloc_array(
         (0..(N as usize))
@@ -2134,13 +2652,35 @@ pub fn test_one_101(mut N: u32, mut M: u32, randomness: Ptr<support_simple_rando
         let _first: Ptr<S> = (ia).clone();
         let _last: Ptr<S> = ia.offset((N) as isize);
         let _gen_: Ptr<support_simple_random_generator> = (randomness).clone();
-        shuffle_76(_first, _last, _gen_)
+        shuffle_77(_first, _last, _gen_)
     });
-    unimplemented!();
-    unimplemented!();
-    let mut pred: binary_counting_predicate_std_greater_S___S__S_ =
-        binary_counting_predicate_std_greater_S___S__S_::new({ (unimplemented!()) });
-    unimplemented!();
+    ({
+        let ___first: Ptr<S> = (ia).clone();
+        let ___last: Ptr<S> = ia.offset((M) as isize);
+        libcc2rs::sort_refcount(___first, ___last, <std_greater_S_>::default())
+    });
+    ({
+        let ___first: Ptr<S> = ia.offset((M) as isize);
+        let ___last: Ptr<S> = ia.offset((N) as isize);
+        libcc2rs::sort_refcount(___first, ___last, <std_greater_S_>::default())
+    });
+    let pred: Value<binary_counting_predicate_std_greater_S___S__S_> = Rc::new(RefCell::new(
+        binary_counting_predicate_std_greater_S___S__S_::new({ (<std_greater_S_>::default()) }),
+    ));
+    ({
+        let ___first: bidirectional_iterator_S_ptr_ =
+            bidirectional_iterator_S_ptr_::new_1({ (ia).clone() });
+        let ___middle: bidirectional_iterator_S_ptr_ =
+            bidirectional_iterator_S_ptr_::new_1({ ia.offset((M) as isize) });
+        let ___last: bidirectional_iterator_S_ptr_ =
+            bidirectional_iterator_S_ptr_::new_1({ ia.offset((N) as isize) });
+        inplace_merge_108(
+            ___first,
+            ___middle,
+            ___last,
+            ({ ref_109(pred.as_pointer()) }),
+        )
+    });
     if (N > 0_u32) {
         assert!(
             ({
@@ -2149,11 +2689,17 @@ pub fn test_one_101(mut N: u32, mut M: u32, randomness: Ptr<support_simple_rando
             })
         );
         assert!(({ SImpl::operator_eq_11(&ia.offset(((N).wrapping_sub(1_u32)) as isize), 0,) }));
-        assert!(unimplemented!());
+        assert!(
+            ({
+                let ___first: Ptr<S> = (ia).clone();
+                let ___last: Ptr<S> = ia.offset((N) as isize);
+                is_sorted_110(___first, ___last, <std_greater_S_>::default())
+            })
+        );
     }
     ia.delete();
 }
-pub fn test_one_102(mut N: u32, mut M: u32, randomness: Ptr<support_simple_random_generator>) {
+pub fn test_one_111(mut N: u32, mut M: u32, randomness: Ptr<support_simple_random_generator>) {
     assert!((M <= N));
     let mut ia: Ptr<S> = Ptr::alloc_array(
         (0..(N as usize))
@@ -2172,13 +2718,35 @@ pub fn test_one_102(mut N: u32, mut M: u32, randomness: Ptr<support_simple_rando
         let _first: Ptr<S> = (ia).clone();
         let _last: Ptr<S> = ia.offset((N) as isize);
         let _gen_: Ptr<support_simple_random_generator> = (randomness).clone();
-        shuffle_76(_first, _last, _gen_)
+        shuffle_77(_first, _last, _gen_)
     });
-    unimplemented!();
-    unimplemented!();
-    let mut pred: binary_counting_predicate_std_greater_S___S__S_ =
-        binary_counting_predicate_std_greater_S___S__S_::new({ (unimplemented!()) });
-    unimplemented!();
+    ({
+        let ___first: Ptr<S> = (ia).clone();
+        let ___last: Ptr<S> = ia.offset((M) as isize);
+        libcc2rs::sort_refcount(___first, ___last, <std_greater_S_>::default())
+    });
+    ({
+        let ___first: Ptr<S> = ia.offset((M) as isize);
+        let ___last: Ptr<S> = ia.offset((N) as isize);
+        libcc2rs::sort_refcount(___first, ___last, <std_greater_S_>::default())
+    });
+    let pred: Value<binary_counting_predicate_std_greater_S___S__S_> = Rc::new(RefCell::new(
+        binary_counting_predicate_std_greater_S___S__S_::new({ (<std_greater_S_>::default()) }),
+    ));
+    ({
+        let ___first: random_access_iterator_S_ptr_ =
+            random_access_iterator_S_ptr_::new_1({ (ia).clone() });
+        let ___middle: random_access_iterator_S_ptr_ =
+            random_access_iterator_S_ptr_::new_1({ ia.offset((M) as isize) });
+        let ___last: random_access_iterator_S_ptr_ =
+            random_access_iterator_S_ptr_::new_1({ ia.offset((N) as isize) });
+        inplace_merge_112(
+            ___first,
+            ___middle,
+            ___last,
+            ({ ref_109(pred.as_pointer()) }),
+        )
+    });
     if (N > 0_u32) {
         assert!(
             ({
@@ -2187,11 +2755,17 @@ pub fn test_one_102(mut N: u32, mut M: u32, randomness: Ptr<support_simple_rando
             })
         );
         assert!(({ SImpl::operator_eq_11(&ia.offset(((N).wrapping_sub(1_u32)) as isize), 0,) }));
-        assert!(unimplemented!());
+        assert!(
+            ({
+                let ___first: Ptr<S> = (ia).clone();
+                let ___last: Ptr<S> = ia.offset((N) as isize);
+                is_sorted_110(___first, ___last, <std_greater_S_>::default())
+            })
+        );
     }
     ia.delete();
 }
-pub fn test_one_103(mut N: u32, mut M: u32, randomness: Ptr<support_simple_random_generator>) {
+pub fn test_one_113(mut N: u32, mut M: u32, randomness: Ptr<support_simple_random_generator>) {
     assert!((M <= N));
     let mut ia: Ptr<S> = Ptr::alloc_array(
         (0..(N as usize))
@@ -2210,13 +2784,32 @@ pub fn test_one_103(mut N: u32, mut M: u32, randomness: Ptr<support_simple_rando
         let _first: Ptr<S> = (ia).clone();
         let _last: Ptr<S> = ia.offset((N) as isize);
         let _gen_: Ptr<support_simple_random_generator> = (randomness).clone();
-        shuffle_76(_first, _last, _gen_)
+        shuffle_77(_first, _last, _gen_)
     });
-    unimplemented!();
-    unimplemented!();
-    let mut pred: binary_counting_predicate_std_greater_S___S__S_ =
-        binary_counting_predicate_std_greater_S___S__S_::new({ (unimplemented!()) });
-    unimplemented!();
+    ({
+        let ___first: Ptr<S> = (ia).clone();
+        let ___last: Ptr<S> = ia.offset((M) as isize);
+        libcc2rs::sort_refcount(___first, ___last, <std_greater_S_>::default())
+    });
+    ({
+        let ___first: Ptr<S> = ia.offset((M) as isize);
+        let ___last: Ptr<S> = ia.offset((N) as isize);
+        libcc2rs::sort_refcount(___first, ___last, <std_greater_S_>::default())
+    });
+    let pred: Value<binary_counting_predicate_std_greater_S___S__S_> = Rc::new(RefCell::new(
+        binary_counting_predicate_std_greater_S___S__S_::new({ (<std_greater_S_>::default()) }),
+    ));
+    ({
+        let ___first: Ptr<S> = (ia).clone();
+        let ___middle: Ptr<S> = ia.offset((M) as isize);
+        let ___last: Ptr<S> = ia.offset((N) as isize);
+        inplace_merge_114(
+            ___first,
+            ___middle,
+            ___last,
+            ({ ref_109(pred.as_pointer()) }),
+        )
+    });
     if (N > 0_u32) {
         assert!(
             ({
@@ -2225,42 +2818,17 @@ pub fn test_one_103(mut N: u32, mut M: u32, randomness: Ptr<support_simple_rando
             })
         );
         assert!(({ SImpl::operator_eq_11(&ia.offset(((N).wrapping_sub(1_u32)) as isize), 0,) }));
-        assert!(unimplemented!());
+        assert!(
+            ({
+                let ___first: Ptr<S> = (ia).clone();
+                let ___last: Ptr<S> = ia.offset((N) as isize);
+                is_sorted_110(___first, ___last, <std_greater_S_>::default())
+            })
+        );
     }
     ia.delete();
 }
-pub fn test_104(mut N: u32, randomness: Ptr<support_simple_random_generator>) {
-    ({
-        let _N: u32 = N;
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_98(_N, 0_u32, _randomness)
-    });
-    ({
-        let _N: u32 = N;
-        let _M: u32 = (N).wrapping_div(4_u32);
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_98(_N, _M, _randomness)
-    });
-    ({
-        let _N: u32 = N;
-        let _M: u32 = (N).wrapping_div(2_u32);
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_98(_N, _M, _randomness)
-    });
-    ({
-        let _N: u32 = N;
-        let _M: u32 = ((3_u32).wrapping_mul(N)).wrapping_div(4_u32);
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_98(_N, _M, _randomness)
-    });
-    ({
-        let _N: u32 = N;
-        let _M: u32 = N;
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_98(_N, _M, _randomness)
-    });
-}
-pub fn test_105(mut N: u32, randomness: Ptr<support_simple_random_generator>) {
+pub fn test_115(mut N: u32, randomness: Ptr<support_simple_random_generator>) {
     ({
         let _N: u32 = N;
         let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
@@ -2291,100 +2859,7 @@ pub fn test_105(mut N: u32, randomness: Ptr<support_simple_random_generator>) {
         test_one_99(_N, _M, _randomness)
     });
 }
-pub fn test_106(mut N: u32, randomness: Ptr<support_simple_random_generator>) {
-    ({
-        let _N: u32 = N;
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_100(_N, 0_u32, _randomness)
-    });
-    ({
-        let _N: u32 = N;
-        let _M: u32 = (N).wrapping_div(4_u32);
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_100(_N, _M, _randomness)
-    });
-    ({
-        let _N: u32 = N;
-        let _M: u32 = (N).wrapping_div(2_u32);
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_100(_N, _M, _randomness)
-    });
-    ({
-        let _N: u32 = N;
-        let _M: u32 = ((3_u32).wrapping_mul(N)).wrapping_div(4_u32);
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_100(_N, _M, _randomness)
-    });
-    ({
-        let _N: u32 = N;
-        let _M: u32 = N;
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_100(_N, _M, _randomness)
-    });
-}
-pub fn test_107(mut N: u32, randomness: Ptr<support_simple_random_generator>) {
-    ({
-        let _N: u32 = N;
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_101(_N, 0_u32, _randomness)
-    });
-    ({
-        let _N: u32 = N;
-        let _M: u32 = (N).wrapping_div(4_u32);
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_101(_N, _M, _randomness)
-    });
-    ({
-        let _N: u32 = N;
-        let _M: u32 = (N).wrapping_div(2_u32);
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_101(_N, _M, _randomness)
-    });
-    ({
-        let _N: u32 = N;
-        let _M: u32 = ((3_u32).wrapping_mul(N)).wrapping_div(4_u32);
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_101(_N, _M, _randomness)
-    });
-    ({
-        let _N: u32 = N;
-        let _M: u32 = N;
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_101(_N, _M, _randomness)
-    });
-}
-pub fn test_108(mut N: u32, randomness: Ptr<support_simple_random_generator>) {
-    ({
-        let _N: u32 = N;
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_102(_N, 0_u32, _randomness)
-    });
-    ({
-        let _N: u32 = N;
-        let _M: u32 = (N).wrapping_div(4_u32);
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_102(_N, _M, _randomness)
-    });
-    ({
-        let _N: u32 = N;
-        let _M: u32 = (N).wrapping_div(2_u32);
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_102(_N, _M, _randomness)
-    });
-    ({
-        let _N: u32 = N;
-        let _M: u32 = ((3_u32).wrapping_mul(N)).wrapping_div(4_u32);
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_102(_N, _M, _randomness)
-    });
-    ({
-        let _N: u32 = N;
-        let _M: u32 = N;
-        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
-        test_one_102(_N, _M, _randomness)
-    });
-}
-pub fn test_109(mut N: u32, randomness: Ptr<support_simple_random_generator>) {
+pub fn test_116(mut N: u32, randomness: Ptr<support_simple_random_generator>) {
     ({
         let _N: u32 = N;
         let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
@@ -2415,26 +2890,131 @@ pub fn test_109(mut N: u32, randomness: Ptr<support_simple_random_generator>) {
         test_one_103(_N, _M, _randomness)
     });
 }
-pub fn test_110(randomness: Ptr<support_simple_random_generator>) {
-    ({ test_one_98(0_u32, 0_u32, (randomness).clone()) });
-    ({ test_one_98(1_u32, 0_u32, (randomness).clone()) });
-    ({ test_one_98(1_u32, 1_u32, (randomness).clone()) });
-    ({ test_one_98(2_u32, 0_u32, (randomness).clone()) });
-    ({ test_one_98(2_u32, 1_u32, (randomness).clone()) });
-    ({ test_one_98(2_u32, 2_u32, (randomness).clone()) });
-    ({ test_one_98(3_u32, 0_u32, (randomness).clone()) });
-    ({ test_one_98(3_u32, 1_u32, (randomness).clone()) });
-    ({ test_one_98(3_u32, 2_u32, (randomness).clone()) });
-    ({ test_one_98(3_u32, 3_u32, (randomness).clone()) });
-    ({ test_104(4_u32, (randomness).clone()) });
-    ({ test_104(20_u32, (randomness).clone()) });
-    ({ test_104(50_u32, (randomness).clone()) });
-    {
-        ({ test_104(100_u32, (randomness).clone()) });
-        ({ test_104(1000_u32, (randomness).clone()) });
-    }
+pub fn test_117(mut N: u32, randomness: Ptr<support_simple_random_generator>) {
+    ({
+        let _N: u32 = N;
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_105(_N, 0_u32, _randomness)
+    });
+    ({
+        let _N: u32 = N;
+        let _M: u32 = (N).wrapping_div(4_u32);
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_105(_N, _M, _randomness)
+    });
+    ({
+        let _N: u32 = N;
+        let _M: u32 = (N).wrapping_div(2_u32);
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_105(_N, _M, _randomness)
+    });
+    ({
+        let _N: u32 = N;
+        let _M: u32 = ((3_u32).wrapping_mul(N)).wrapping_div(4_u32);
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_105(_N, _M, _randomness)
+    });
+    ({
+        let _N: u32 = N;
+        let _M: u32 = N;
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_105(_N, _M, _randomness)
+    });
 }
-pub fn test_111(randomness: Ptr<support_simple_random_generator>) {
+pub fn test_118(mut N: u32, randomness: Ptr<support_simple_random_generator>) {
+    ({
+        let _N: u32 = N;
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_107(_N, 0_u32, _randomness)
+    });
+    ({
+        let _N: u32 = N;
+        let _M: u32 = (N).wrapping_div(4_u32);
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_107(_N, _M, _randomness)
+    });
+    ({
+        let _N: u32 = N;
+        let _M: u32 = (N).wrapping_div(2_u32);
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_107(_N, _M, _randomness)
+    });
+    ({
+        let _N: u32 = N;
+        let _M: u32 = ((3_u32).wrapping_mul(N)).wrapping_div(4_u32);
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_107(_N, _M, _randomness)
+    });
+    ({
+        let _N: u32 = N;
+        let _M: u32 = N;
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_107(_N, _M, _randomness)
+    });
+}
+pub fn test_119(mut N: u32, randomness: Ptr<support_simple_random_generator>) {
+    ({
+        let _N: u32 = N;
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_111(_N, 0_u32, _randomness)
+    });
+    ({
+        let _N: u32 = N;
+        let _M: u32 = (N).wrapping_div(4_u32);
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_111(_N, _M, _randomness)
+    });
+    ({
+        let _N: u32 = N;
+        let _M: u32 = (N).wrapping_div(2_u32);
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_111(_N, _M, _randomness)
+    });
+    ({
+        let _N: u32 = N;
+        let _M: u32 = ((3_u32).wrapping_mul(N)).wrapping_div(4_u32);
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_111(_N, _M, _randomness)
+    });
+    ({
+        let _N: u32 = N;
+        let _M: u32 = N;
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_111(_N, _M, _randomness)
+    });
+}
+pub fn test_120(mut N: u32, randomness: Ptr<support_simple_random_generator>) {
+    ({
+        let _N: u32 = N;
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_113(_N, 0_u32, _randomness)
+    });
+    ({
+        let _N: u32 = N;
+        let _M: u32 = (N).wrapping_div(4_u32);
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_113(_N, _M, _randomness)
+    });
+    ({
+        let _N: u32 = N;
+        let _M: u32 = (N).wrapping_div(2_u32);
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_113(_N, _M, _randomness)
+    });
+    ({
+        let _N: u32 = N;
+        let _M: u32 = ((3_u32).wrapping_mul(N)).wrapping_div(4_u32);
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_113(_N, _M, _randomness)
+    });
+    ({
+        let _N: u32 = N;
+        let _M: u32 = N;
+        let _randomness: Ptr<support_simple_random_generator> = (randomness).clone();
+        test_one_113(_N, _M, _randomness)
+    });
+}
+pub fn test_121(randomness: Ptr<support_simple_random_generator>) {
     ({ test_one_99(0_u32, 0_u32, (randomness).clone()) });
     ({ test_one_99(1_u32, 0_u32, (randomness).clone()) });
     ({ test_one_99(1_u32, 1_u32, (randomness).clone()) });
@@ -2445,72 +3025,15 @@ pub fn test_111(randomness: Ptr<support_simple_random_generator>) {
     ({ test_one_99(3_u32, 1_u32, (randomness).clone()) });
     ({ test_one_99(3_u32, 2_u32, (randomness).clone()) });
     ({ test_one_99(3_u32, 3_u32, (randomness).clone()) });
-    ({ test_105(4_u32, (randomness).clone()) });
-    ({ test_105(20_u32, (randomness).clone()) });
-    ({ test_105(50_u32, (randomness).clone()) });
+    ({ test_115(4_u32, (randomness).clone()) });
+    ({ test_115(20_u32, (randomness).clone()) });
+    ({ test_115(50_u32, (randomness).clone()) });
     {
-        ({ test_105(100_u32, (randomness).clone()) });
-        ({ test_105(1000_u32, (randomness).clone()) });
+        ({ test_115(100_u32, (randomness).clone()) });
+        ({ test_115(1000_u32, (randomness).clone()) });
     }
 }
-pub fn test_112(randomness: Ptr<support_simple_random_generator>) {
-    ({ test_one_100(0_u32, 0_u32, (randomness).clone()) });
-    ({ test_one_100(1_u32, 0_u32, (randomness).clone()) });
-    ({ test_one_100(1_u32, 1_u32, (randomness).clone()) });
-    ({ test_one_100(2_u32, 0_u32, (randomness).clone()) });
-    ({ test_one_100(2_u32, 1_u32, (randomness).clone()) });
-    ({ test_one_100(2_u32, 2_u32, (randomness).clone()) });
-    ({ test_one_100(3_u32, 0_u32, (randomness).clone()) });
-    ({ test_one_100(3_u32, 1_u32, (randomness).clone()) });
-    ({ test_one_100(3_u32, 2_u32, (randomness).clone()) });
-    ({ test_one_100(3_u32, 3_u32, (randomness).clone()) });
-    ({ test_106(4_u32, (randomness).clone()) });
-    ({ test_106(20_u32, (randomness).clone()) });
-    ({ test_106(50_u32, (randomness).clone()) });
-    {
-        ({ test_106(100_u32, (randomness).clone()) });
-        ({ test_106(1000_u32, (randomness).clone()) });
-    }
-}
-pub fn test_113(randomness: Ptr<support_simple_random_generator>) {
-    ({ test_one_101(0_u32, 0_u32, (randomness).clone()) });
-    ({ test_one_101(1_u32, 0_u32, (randomness).clone()) });
-    ({ test_one_101(1_u32, 1_u32, (randomness).clone()) });
-    ({ test_one_101(2_u32, 0_u32, (randomness).clone()) });
-    ({ test_one_101(2_u32, 1_u32, (randomness).clone()) });
-    ({ test_one_101(2_u32, 2_u32, (randomness).clone()) });
-    ({ test_one_101(3_u32, 0_u32, (randomness).clone()) });
-    ({ test_one_101(3_u32, 1_u32, (randomness).clone()) });
-    ({ test_one_101(3_u32, 2_u32, (randomness).clone()) });
-    ({ test_one_101(3_u32, 3_u32, (randomness).clone()) });
-    ({ test_107(4_u32, (randomness).clone()) });
-    ({ test_107(20_u32, (randomness).clone()) });
-    ({ test_107(50_u32, (randomness).clone()) });
-    {
-        ({ test_107(100_u32, (randomness).clone()) });
-        ({ test_107(1000_u32, (randomness).clone()) });
-    }
-}
-pub fn test_114(randomness: Ptr<support_simple_random_generator>) {
-    ({ test_one_102(0_u32, 0_u32, (randomness).clone()) });
-    ({ test_one_102(1_u32, 0_u32, (randomness).clone()) });
-    ({ test_one_102(1_u32, 1_u32, (randomness).clone()) });
-    ({ test_one_102(2_u32, 0_u32, (randomness).clone()) });
-    ({ test_one_102(2_u32, 1_u32, (randomness).clone()) });
-    ({ test_one_102(2_u32, 2_u32, (randomness).clone()) });
-    ({ test_one_102(3_u32, 0_u32, (randomness).clone()) });
-    ({ test_one_102(3_u32, 1_u32, (randomness).clone()) });
-    ({ test_one_102(3_u32, 2_u32, (randomness).clone()) });
-    ({ test_one_102(3_u32, 3_u32, (randomness).clone()) });
-    ({ test_108(4_u32, (randomness).clone()) });
-    ({ test_108(20_u32, (randomness).clone()) });
-    ({ test_108(50_u32, (randomness).clone()) });
-    {
-        ({ test_108(100_u32, (randomness).clone()) });
-        ({ test_108(1000_u32, (randomness).clone()) });
-    }
-}
-pub fn test_115(randomness: Ptr<support_simple_random_generator>) {
+pub fn test_122(randomness: Ptr<support_simple_random_generator>) {
     ({ test_one_103(0_u32, 0_u32, (randomness).clone()) });
     ({ test_one_103(1_u32, 0_u32, (randomness).clone()) });
     ({ test_one_103(1_u32, 1_u32, (randomness).clone()) });
@@ -2521,12 +3044,88 @@ pub fn test_115(randomness: Ptr<support_simple_random_generator>) {
     ({ test_one_103(3_u32, 1_u32, (randomness).clone()) });
     ({ test_one_103(3_u32, 2_u32, (randomness).clone()) });
     ({ test_one_103(3_u32, 3_u32, (randomness).clone()) });
-    ({ test_109(4_u32, (randomness).clone()) });
-    ({ test_109(20_u32, (randomness).clone()) });
-    ({ test_109(50_u32, (randomness).clone()) });
+    ({ test_116(4_u32, (randomness).clone()) });
+    ({ test_116(20_u32, (randomness).clone()) });
+    ({ test_116(50_u32, (randomness).clone()) });
     {
-        ({ test_109(100_u32, (randomness).clone()) });
-        ({ test_109(1000_u32, (randomness).clone()) });
+        ({ test_116(100_u32, (randomness).clone()) });
+        ({ test_116(1000_u32, (randomness).clone()) });
+    }
+}
+pub fn test_123(randomness: Ptr<support_simple_random_generator>) {
+    ({ test_one_105(0_u32, 0_u32, (randomness).clone()) });
+    ({ test_one_105(1_u32, 0_u32, (randomness).clone()) });
+    ({ test_one_105(1_u32, 1_u32, (randomness).clone()) });
+    ({ test_one_105(2_u32, 0_u32, (randomness).clone()) });
+    ({ test_one_105(2_u32, 1_u32, (randomness).clone()) });
+    ({ test_one_105(2_u32, 2_u32, (randomness).clone()) });
+    ({ test_one_105(3_u32, 0_u32, (randomness).clone()) });
+    ({ test_one_105(3_u32, 1_u32, (randomness).clone()) });
+    ({ test_one_105(3_u32, 2_u32, (randomness).clone()) });
+    ({ test_one_105(3_u32, 3_u32, (randomness).clone()) });
+    ({ test_117(4_u32, (randomness).clone()) });
+    ({ test_117(20_u32, (randomness).clone()) });
+    ({ test_117(50_u32, (randomness).clone()) });
+    {
+        ({ test_117(100_u32, (randomness).clone()) });
+        ({ test_117(1000_u32, (randomness).clone()) });
+    }
+}
+pub fn test_124(randomness: Ptr<support_simple_random_generator>) {
+    ({ test_one_107(0_u32, 0_u32, (randomness).clone()) });
+    ({ test_one_107(1_u32, 0_u32, (randomness).clone()) });
+    ({ test_one_107(1_u32, 1_u32, (randomness).clone()) });
+    ({ test_one_107(2_u32, 0_u32, (randomness).clone()) });
+    ({ test_one_107(2_u32, 1_u32, (randomness).clone()) });
+    ({ test_one_107(2_u32, 2_u32, (randomness).clone()) });
+    ({ test_one_107(3_u32, 0_u32, (randomness).clone()) });
+    ({ test_one_107(3_u32, 1_u32, (randomness).clone()) });
+    ({ test_one_107(3_u32, 2_u32, (randomness).clone()) });
+    ({ test_one_107(3_u32, 3_u32, (randomness).clone()) });
+    ({ test_118(4_u32, (randomness).clone()) });
+    ({ test_118(20_u32, (randomness).clone()) });
+    ({ test_118(50_u32, (randomness).clone()) });
+    {
+        ({ test_118(100_u32, (randomness).clone()) });
+        ({ test_118(1000_u32, (randomness).clone()) });
+    }
+}
+pub fn test_125(randomness: Ptr<support_simple_random_generator>) {
+    ({ test_one_111(0_u32, 0_u32, (randomness).clone()) });
+    ({ test_one_111(1_u32, 0_u32, (randomness).clone()) });
+    ({ test_one_111(1_u32, 1_u32, (randomness).clone()) });
+    ({ test_one_111(2_u32, 0_u32, (randomness).clone()) });
+    ({ test_one_111(2_u32, 1_u32, (randomness).clone()) });
+    ({ test_one_111(2_u32, 2_u32, (randomness).clone()) });
+    ({ test_one_111(3_u32, 0_u32, (randomness).clone()) });
+    ({ test_one_111(3_u32, 1_u32, (randomness).clone()) });
+    ({ test_one_111(3_u32, 2_u32, (randomness).clone()) });
+    ({ test_one_111(3_u32, 3_u32, (randomness).clone()) });
+    ({ test_119(4_u32, (randomness).clone()) });
+    ({ test_119(20_u32, (randomness).clone()) });
+    ({ test_119(50_u32, (randomness).clone()) });
+    {
+        ({ test_119(100_u32, (randomness).clone()) });
+        ({ test_119(1000_u32, (randomness).clone()) });
+    }
+}
+pub fn test_126(randomness: Ptr<support_simple_random_generator>) {
+    ({ test_one_113(0_u32, 0_u32, (randomness).clone()) });
+    ({ test_one_113(1_u32, 0_u32, (randomness).clone()) });
+    ({ test_one_113(1_u32, 1_u32, (randomness).clone()) });
+    ({ test_one_113(2_u32, 0_u32, (randomness).clone()) });
+    ({ test_one_113(2_u32, 1_u32, (randomness).clone()) });
+    ({ test_one_113(2_u32, 2_u32, (randomness).clone()) });
+    ({ test_one_113(3_u32, 0_u32, (randomness).clone()) });
+    ({ test_one_113(3_u32, 1_u32, (randomness).clone()) });
+    ({ test_one_113(3_u32, 2_u32, (randomness).clone()) });
+    ({ test_one_113(3_u32, 3_u32, (randomness).clone()) });
+    ({ test_120(4_u32, (randomness).clone()) });
+    ({ test_120(20_u32, (randomness).clone()) });
+    ({ test_120(50_u32, (randomness).clone()) });
+    {
+        ({ test_120(100_u32, (randomness).clone()) });
+        ({ test_120(1000_u32, (randomness).clone()) });
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -2541,7 +3140,12 @@ impl Callable2<Ptr<(Value<i32>, Value<i32>)>, Ptr<(Value<i32>, Value<i32>)>, boo
         })
     }
 }
-pub fn test_PR31166_116() {
+impl CppMove for less_by_first {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn test_PR31166_127() {
     let vec_: Value<Box<[(Value<i32>, Value<i32>)]>> = Rc::new(RefCell::new(Box::new([
         (Rc::new(RefCell::new(1)), Rc::new(RefCell::new(0))),
         (Rc::new(RefCell::new(2)), Rc::new(RefCell::new(0))),
@@ -2551,34 +3155,57 @@ pub fn test_PR31166_116() {
     ])));
     let mut i: i32 = 0;
     'loop_: while (i < 5) {
-        let res: Value<Vec<(Value<i32>, Value<i32>)>> = Rc::new(RefCell::new({
-            let mut __v = Vec::new();
-            let mut __it = (vec_.as_pointer() as Ptr<(Value<i32>, Value<i32>)>);
-            while __it != (vec_.as_pointer() as Ptr<(Value<i32>, Value<i32>)>).offset((5) as isize)
-            {
-                __v.push(<(Value<i32>, Value<i32>) as CppFrom<(
-                    Value<i32>,
-                    Value<i32>,
-                )>>::cpp_from(__it.iter_deref()));
-                __it.iter_inc();
-            }
-            __v
-        }));
-        unimplemented!();
-        assert!(((*res.borrow()).len() == 5_usize));
-        assert!(unimplemented!());
+        let res: Value<Vec<(Value<i32>, Value<i32>)>> = Rc::new(RefCell::new(
+            match ({ (vec_.as_pointer() as Ptr<(Value<i32>, Value<i32>)>).offset((5) as isize) },) {
+                (mut __tmp_0,) => {
+                    let mut __v = Vec::new();
+                    let mut __it = (vec_.as_pointer() as Ptr<(Value<i32>, Value<i32>)>);
+                    while __it != __tmp_0 {
+                        __v.push(<(Value<i32>, Value<i32>) as CppFrom<(
+                            Value<i32>,
+                            Value<i32>,
+                        )>>::cpp_from(__it.iter_deref()));
+                        __it.iter_inc();
+                    }
+                    __v
+                }
+            },
+        ));
+        ({
+            let ___first: RandomAccessIterator<(Value<i32>, Value<i32>)> =
+                CppRange::begin(&res.decay());
+            let ___middle: RandomAccessIterator<(Value<i32>, Value<i32>)> =
+                CppRange::begin(&res.decay()).iter_add((i as isize));
+            let ___last: RandomAccessIterator<(Value<i32>, Value<i32>)> =
+                CppRange::end(&res.decay());
+            inplace_merge_128(___first, ___middle, ___last, <less_by_first>::default())
+        });
+        assert!(({ ((*res.borrow()).len() == 5_usize) }));
+        assert!(
+            ({
+                let ___first1: RandomAccessIterator<(Value<i32>, Value<i32>)> =
+                    CppRange::begin(&res.decay());
+                let ___last1: RandomAccessIterator<(Value<i32>, Value<i32>)> =
+                    CppRange::end(&res.decay());
+                equal_129(
+                    ___first1,
+                    ___last1,
+                    (vec_.as_pointer() as Ptr<(Value<i32>, Value<i32>)>),
+                )
+            })
+        );
         i.prefix_inc();
     }
 }
-pub fn test_117() -> bool {
+pub fn test_130() -> bool {
     let randomness: Value<support_simple_random_generator> =
         Rc::new(RefCell::new(support_simple_random_generator::new_1()));
-    ({ test_110(randomness.as_pointer()) });
-    ({ test_111(randomness.as_pointer()) });
-    ({ test_112(randomness.as_pointer()) });
-    ({ test_113(randomness.as_pointer()) });
-    ({ test_114(randomness.as_pointer()) });
-    ({ test_115(randomness.as_pointer()) });
+    ({ test_121(randomness.as_pointer()) });
+    ({ test_122(randomness.as_pointer()) });
+    ({ test_123(randomness.as_pointer()) });
+    ({ test_124(randomness.as_pointer()) });
+    ({ test_125(randomness.as_pointer()) });
+    ({ test_126(randomness.as_pointer()) });
     {
         let mut N: i32 = 100;
         let mut M: i32 = 50;
@@ -2598,17 +3225,40 @@ pub fn test_117() -> bool {
         ({
             let _first: Ptr<Option<Value<i32>>> = (ia).clone();
             let _last: Ptr<Option<Value<i32>>> = ia.offset((N) as isize);
-            shuffle_74(_first, _last, randomness.as_pointer())
+            shuffle_75(_first, _last, randomness.as_pointer())
         });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        assert!((((*elem!(ia, 0).upgrade().deref()).as_pointer().read()) == 0));
-        assert!(({ ((*elem!(ia, (N - 1)).upgrade().deref()).as_pointer().read()) } == { (N - 1) }));
-        assert!(unimplemented!());
+        ({
+            let ___first: Ptr<Option<Value<i32>>> = (ia).clone();
+            let ___last: Ptr<Option<Value<i32>>> = ia.offset((M) as isize);
+            libcc2rs::sort_refcount(___first, ___last, <indirect_less>::default())
+        });
+        ({
+            let ___first: Ptr<Option<Value<i32>>> = ia.offset((M) as isize);
+            let ___last: Ptr<Option<Value<i32>>> = ia.offset((N) as isize);
+            libcc2rs::sort_refcount(___first, ___last, <indirect_less>::default())
+        });
+        ({
+            let ___first: Ptr<Option<Value<i32>>> = (ia).clone();
+            let ___middle: Ptr<Option<Value<i32>>> = ia.offset((M) as isize);
+            let ___last: Ptr<Option<Value<i32>>> = ia.offset((N) as isize);
+            inplace_merge_131(___first, ___middle, ___last, <indirect_less>::default())
+        });
+        assert!(({ (((*elem!(ia, 0).upgrade().deref()).as_pointer().read()) == 0) }));
+        assert!(
+            ({
+                ({ ((*elem!(ia, (N - 1)).upgrade().deref()).as_pointer().read()) } == { (N - 1) })
+            })
+        );
+        assert!(
+            ({
+                let ___first: Ptr<Option<Value<i32>>> = (ia).clone();
+                let ___last: Ptr<Option<Value<i32>>> = ia.offset((N) as isize);
+                is_sorted_132(___first, ___last, <indirect_less>::default())
+            })
+        );
         ia.delete();
     }
-    ({ test_PR31166_116() });
+    ({ test_PR31166_127() });
     return true;
 }
 pub fn main() {
@@ -2631,9 +3281,15 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_117() });
+    ({ test_130() });
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct binary_counting_predicate_std_greater_int___int__int_;
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct binary_counting_predicate_std_greater_S___S__S_;
 pub trait SImpl {
     fn copy_assign(&self, rhs: Ptr<S>) -> Ptr<S>;
     fn move_assign(&self, rhs: Ptr<S>) -> Ptr<S>;
@@ -2729,21 +3385,29 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
         return (*self).clone();
     }
     fn operator_inc_14(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_15(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return prev;
     }
     fn operator_dec_16(&self) -> Ptr<adl_Iterator> {
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_17(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
-        field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), ptr_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return prev;
     }
 }
@@ -2767,11 +3431,15 @@ impl bidirectional_iterator_S_ptr_Impl for Ptr<bidirectional_iterator_S_ptr_> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_S_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_S_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -2806,11 +3474,15 @@ impl bidirectional_iterator_int_ptr_Impl for Ptr<bidirectional_iterator_int_ptr_
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn move_assign(
@@ -2823,40 +3495,6 @@ impl bidirectional_iterator_int_ptr_Impl for Ptr<bidirectional_iterator_int_ptr_
             support_double_move_trackerImpl::move_assign(&field_ptr!((*self), tracker_), _other)
         });
         return (*self).clone();
-    }
-}
-pub trait binary_counting_predicate_std_greater_S___S__S_Impl {
-    fn operator_call(&self, a1: Ptr<S>, a2: Ptr<S>) -> bool;
-    fn count(&self) -> usize {
-        unimplemented!()
-    }
-    fn reset(&self) {
-        unimplemented!()
-    }
-}
-impl binary_counting_predicate_std_greater_S___S__S_Impl
-    for Ptr<binary_counting_predicate_std_greater_S___S__S_>
-{
-    fn operator_call(&self, a1: Ptr<S>, a2: Ptr<S>) -> bool {
-        field!((*self), count_).with_mut(|__v| __v.prefix_inc());
-        return unimplemented!();
-    }
-}
-pub trait binary_counting_predicate_std_greater_int___int__int_Impl {
-    fn operator_call(&self, a1: Ptr<i32>, a2: Ptr<i32>) -> bool;
-    fn count(&self) -> usize {
-        unimplemented!()
-    }
-    fn reset(&self) {
-        unimplemented!()
-    }
-}
-impl binary_counting_predicate_std_greater_int___int__int_Impl
-    for Ptr<binary_counting_predicate_std_greater_int___int__int_>
-{
-    fn operator_call(&self, a1: Ptr<i32>, a2: Ptr<i32>) -> bool {
-        field!((*self), count_).with_mut(|__v| __v.prefix_inc());
-        return unimplemented!();
     }
 }
 pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
@@ -3061,7 +3699,11 @@ impl less_by_firstImpl for Ptr<less_by_first> {
         lhs: Ptr<(Value<i32>, Value<i32>)>,
         rhs: Ptr<(Value<i32>, Value<i32>)>,
     ) -> bool {
-        return unimplemented!();
+        return ({
+            let ___x: Ptr<i32> = (*lhs.upgrade().deref()).0.as_pointer();
+            let ___y: Ptr<i32> = (*rhs.upgrade().deref()).0.as_pointer();
+            <std_less_int_>::default()(___x, ___y)
+        });
     }
 }
 pub trait random_access_iterator_S_ptr_Impl {
@@ -3089,11 +3731,15 @@ impl random_access_iterator_S_ptr_Impl for Ptr<random_access_iterator_S_ptr_> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_S_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_dec_8(&self) -> Ptr<random_access_iterator_S_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_add_assign(&self, mut n: isize) -> Ptr<random_access_iterator_S_ptr_> {
@@ -3147,11 +3793,15 @@ impl random_access_iterator_int_ptr_Impl for Ptr<random_access_iterator_int_ptr_
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_dec_8(&self) -> Ptr<random_access_iterator_int_ptr_> {
-        field!((*self), it_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), it_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_add_assign(&self, mut n: isize) -> Ptr<random_access_iterator_int_ptr_> {
@@ -3224,11 +3874,11 @@ impl rvalue_iterator_int_ptr_Impl for Ptr<rvalue_iterator_int_ptr_> {
                 &((*self).with(|__s| __s.it_.clone())),
                 &(_a0.with(|__s| __s.it_.clone())),
             )));
-            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow());
+            if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+                return ({ (*cmp.borrow()) });
             }
         }
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> bool {
         return ({ (*self).with(|__s| __s.it_.clone()) } == { _a0.with(|__s| __s.it_.clone()) });
@@ -3237,28 +3887,28 @@ impl rvalue_iterator_int_ptr_Impl for Ptr<rvalue_iterator_int_ptr_> {
 pub trait support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_Impl
 {
     fn operator_call(&self) -> u64;
-    fn generate_3(&self, _a0: ()) -> u64 {
+    fn generate_3(&self, _a0: std_integral_constant_bool__false_) -> u64 {
         unimplemented!()
     }
-    fn generate_4(&self, _a0: ()) -> u64;
+    fn generate_4(&self, _a0: std_integral_constant_bool__true_) -> u64;
 }
 impl support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_Impl
     for Ptr<support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_>
 {
     fn operator_call(&self) -> u64 {
         return ({
-            support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_Impl :: generate_4 ( self , unimplemented!()  , )
+            support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_Impl :: generate_4 ( self , <std_integral_constant_bool__true_  >::default()  , )
         });
     }
-    fn generate_4(&self, _a0: ()) -> u64 {
-        let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-        let mut r_digits: usize = (unimplemented!() as usize);
+    fn generate_4(&self, _a0: std_integral_constant_bool__true_) -> u64 {
+        let _a0: Value<std_integral_constant_bool__true_> = Rc::new(RefCell::new(_a0));
+        let mut r_digits: usize = (digits_71.with(|rc| *rc.borrow()) as usize);
         let result: Value<u64> = Rc::new(RefCell::new(0_u64));
         let mut k: usize = 0_usize;
         'loop_: while (k < (*self).with(|__s| __s.round_count_regular_)) {
             let mut eng_result: u16 = 0_u16;
             let mut __do_while = true;
-            'loop_: while __do_while || ((eng_result as ()) >= (*self).with(|__s| __s.y0_)) {
+            'loop_: while __do_while || ((eng_result as u64) >= (*self).with(|__s| __s.y0_)) {
                 __do_while = false;
                 eng_result = (({
                     (({
@@ -3285,7 +3935,7 @@ impl support_detail_independent_bits_engine_support_simple_random_generator__uns
         'loop_: while (k < (*self).with(|__s| __s.round_count_all_)) {
             let mut eng_result: u16 = 0_u16;
             let mut __do_while = true;
-            'loop_: while __do_while || ((eng_result as ()) >= (*self).with(|__s| __s.y1_)) {
+            'loop_: while __do_while || ((eng_result as u64) >= (*self).with(|__s| __s.y1_)) {
                 __do_while = false;
                 eng_result = (({
                     (({
@@ -3376,38 +4026,37 @@ impl support_uniform_int_distribution_long_Impl for Ptr<support_uniform_int_dist
         param: Ptr<support_uniform_int_distribution_long__param_type>,
     ) -> i64 {
         const _: () = assert!(true, "detail::is_valid_urng<URNG>::value");;
-        let mut rp: () = ((({ support_uniform_int_distribution_long__param_typeImpl::b(&param) })
-            as ())
+        let mut rp: u64 = ((({ support_uniform_int_distribution_long__param_typeImpl::b(&param) })
+            as u64)
             .wrapping_sub(
-                (({ support_uniform_int_distribution_long__param_typeImpl::a(&param) }) as ()),
+                (({ support_uniform_int_distribution_long__param_typeImpl::a(&param) }) as u64),
             ))
-        .wrapping_add((1_() as ()));
-        if (rp == 1_()) {
+        .wrapping_add((1_u64 as u64));
+        if (rp == 1_u64) {
             return ({ support_uniform_int_distribution_long__param_typeImpl::a(&param) });
         }
-        let mut ur_digits: usize = (unimplemented!() as usize);
-        if (rp == 0_()) {
+        let mut ur_digits: usize = (digits_71.with(|rc| *rc.borrow()) as usize);
+        if (rp == 0_u64) {
             return (({
                 support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_Impl :: operator_call ( &Rc::new(RefCell::new(support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_ :: new ( { (gen_ ).clone() } , { ur_digits  } , )  )).as_pointer() , )
             }) as i64);
         }
-        let mut width: usize = ((ur_digits)
-            .wrapping_sub((({ countl_zero_66((rp as u64)) }) as usize)))
-        .wrapping_sub(1_usize);
-        if (((rp as u64) & (u64::MAX >> ((ur_digits).wrapping_sub(width)))) != 0_u64) {
+        let mut width: usize =
+            ((ur_digits).wrapping_sub((({ countl_zero_66(rp) }) as usize))).wrapping_sub(1_usize);
+        if ((rp & (u64::MAX >> ((ur_digits).wrapping_sub(width)))) != 0_u64) {
             width.prefix_inc();
         }
         let eng : Value<support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_ > = Rc::new(RefCell::new(support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_ :: new ( { (gen_ ).clone() } , { width  } , )  )) ;
-        let mut eng_result: () = 0_();
+        let mut eng_result: u64 = 0_u64;
         let mut __do_while = true;
         'loop_: while __do_while || (eng_result >= rp) {
             __do_while = false;
-            eng_result = (({
+            eng_result = ({
                 support_detail_independent_bits_engine_support_simple_random_generator__unsigned_long_Impl :: operator_call ( &eng .as_pointer()  , )
-            }) as ());
+            });
         }
         return (((eng_result).wrapping_add(
-            (({ support_uniform_int_distribution_long__param_typeImpl::a(&param) }) as ()),
+            (({ support_uniform_int_distribution_long__param_typeImpl::a(&param) }) as u64),
         )) as i64);
     }
 }
@@ -3495,5 +4144,5 @@ pub fn __cpp2rust_init_globals() {
     let _ = rp_log2_68.with(|_| ());
     let _ = w_digits_69.with(|_| ());
     let _ = e_digits_70.with(|_| ());
-    let _ = default_seed_73.with(|_| ());
+    let _ = default_seed_74.with(|_| ());
 }

@@ -32,6 +32,11 @@ impl CppEq for A1_int_ {
         operator_eq_4(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for A1_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn operator_eq_4(x: Ptr<A1_int_>, y: Ptr<A1_int_>) -> bool {
     return ({ ({ A1_int_Impl::id(&x) }) } == { ({ A1_int_Impl::id(&y) }) });
 }
@@ -64,6 +69,11 @@ impl Clone for A2_int_ {
         A2_int_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for A2_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static copy_called_8: Value<bool> = Rc::new(RefCell::new(false));
 );
@@ -93,6 +103,11 @@ impl Clone for A3_int_ {
         A3_int_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for A3_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -114,30 +129,47 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_scoped_allocator_adaptor_A1_int__> =
+            Rc::new(RefCell::new(A1_int_::new({ 5 })));
         assert!(
             ({
-                let _x: Ptr<A1_int_> = unimplemented!();
+                let _x: Ptr<A1_int_> = ({ (*a.borrow()).outer_allocator_14() });
                 let _y: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ 5 })));
                 operator_eq_4(_x, _y.as_pointer())
             })
         );
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_scoped_allocator_adaptor_A1_int___A2_int__> = Rc::new(RefCell::new({
+            let __tmp_0: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ 5 })));
+            let __tmp_1: Value<A2_int_> = Rc::new(RefCell::new(A2_int_::new({ 6 })));
+            std_scoped_allocator_adaptor_A1_int___A2_int__::new_1({ __tmp_0.as_pointer() }, {
+                __tmp_1.as_pointer()
+            })
+        }));
         assert!(
             ({
-                let _x: Ptr<A1_int_> = unimplemented!();
+                let _x: Ptr<A1_int_> = ({ (*a.borrow()).outer_allocator_14() });
                 let _y: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ 5 })));
                 operator_eq_4(_x, _y.as_pointer())
             })
         );
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let a: Value<std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__> =
+            Rc::new(RefCell::new({
+                let __tmp_2: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ 5 })));
+                let __tmp_3: Value<A2_int_> = Rc::new(RefCell::new(A2_int_::new({ 6 })));
+                let __tmp_4: Value<A3_int_> = Rc::new(RefCell::new(A3_int_::new({ 8 })));
+                std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__::new_1(
+                    { __tmp_2.as_pointer() },
+                    { __tmp_3.as_pointer() },
+                    { __tmp_4.as_pointer() },
+                )
+            }));
         assert!(
             ({
-                let _x: Ptr<A1_int_> = unimplemented!();
+                let _x: Ptr<A1_int_> = ({ (*a.borrow()).outer_allocator_14() });
                 let _y: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ 5 })));
                 operator_eq_4(_x, _y.as_pointer())
             })

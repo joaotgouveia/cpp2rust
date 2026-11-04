@@ -52,6 +52,11 @@ impl Clone for Movable {
         Movable::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Movable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(48)]
 pub struct Holder {
@@ -68,6 +73,11 @@ impl Holder {
             xs: field!(_a0, xs).with_mut(std::mem::take),
             ys: field!(_a0, ys).with_mut(std::mem::take),
         }
+    }
+}
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn main() {
@@ -91,8 +101,20 @@ fn main_0() -> i32 {
         Rc::new(RefCell::new(({ HolderImpl::extract(&h.as_pointer()) })));
     assert!(({ ((*__decomp_3.borrow()).xs.len() == 3_usize) }));
     assert!(({ ((*__decomp_3.borrow()).ys.len() == 2_usize) }));
-    assert!(((elem!(field_ref!(__decomp_3.as_pointer(), xs).decay(), 2_usize).read()) == 3));
-    assert!(((elem!(field_ref!(__decomp_3.as_pointer(), ys).decay(), 0_usize).read()) == 4));
+    assert!(
+        ((field_ref!(__decomp_3.as_pointer(), xs)
+            .decay()
+            .offset(2_usize as isize)
+            .read())
+            == 3)
+    );
+    assert!(
+        ((field_ref!(__decomp_3.as_pointer(), ys)
+            .decay()
+            .offset(0_usize as isize)
+            .read())
+            == 4)
+    );
     assert!(({ (*h.borrow()).xs.is_empty() }));
     assert!(({ (*h.borrow()).ys.is_empty() }));
     return 0;

@@ -14,6 +14,11 @@ pub struct Inner {
     #[offset(4)]
     pub y: i32,
 }
+impl CppMove for Inner {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Inner {
     fn default() -> Self {
         { Inner { x: 3, y: 4 } }
@@ -32,6 +37,11 @@ pub struct S {
     #[offset(16)]
     #[byte_size(8)]
     pub d: Inner,
+}
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for S {
     fn default() -> Self {
@@ -56,6 +66,11 @@ pub struct Boxed_int_ {
 impl Boxed_int_ {
     pub fn new(mut x: i32, mut t: i32) -> Self {
         Self { v: x, tag: t }
+    }
+}
+impl CppMove for Boxed_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for Boxed_int_ {

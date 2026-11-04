@@ -16,6 +16,11 @@ pub struct Stats {
     #[offset(8)]
     pub moved: i32,
 }
+impl CppMove for Stats {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Stats {
     fn default() -> Self {
         {
@@ -84,6 +89,11 @@ impl Clone for MyInt {
         MyInt::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for MyInt {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -104,13 +114,13 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let mut N: i32 = (1 << 20);
+    let mut N: i32 = 1048576;
     let v: Value<Vec<MyInt>> = Rc::new(RefCell::new(Vec::new()));
     if (N as usize) as usize > (*v.borrow()).capacity() as usize {
         let len_0 = (*v.borrow()).len();
         (*v.borrow_mut()).reserve_exact((N as usize) as usize - len_0 as usize);
     };
-    let g: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let g : Value<std_mersenne_twister_engine_unsigned_long__32__624__397__31__2567483615__11__4294967295__7__2636928640__15__4022730752__18__1812433253_ > = Rc::new(RefCell::new(<std_mersenne_twister_engine_unsigned_long__32__624__397__31__2567483615__11__4294967295__7__2636928640__15__4022730752__18__1812433253_  >::default() )) ;
     let i: Value<i32> = Rc::new(RefCell::new(0));
     'loop_: while ((*i.borrow()) < N) {
         {
@@ -122,25 +132,32 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let mut logn: i32 = 10;
     'loop_: while (logn <= 20) {
         let n: Value<i32> = Rc::new(RefCell::new((1 << logn)));
-        let first: Value<RandomAccessIterator<MyInt>> = Rc::new(RefCell::new(v.decay().begin()));
+        let first: Value<RandomAccessIterator<MyInt>> =
+            Rc::new(RefCell::new(CppRange::begin(&v.decay())));
         let last: Value<RandomAccessIterator<MyInt>> = Rc::new(RefCell::new(
-            v.decay().begin().iter_add(((*n.borrow()) as isize)),
+            CppRange::begin(&v.decay()).iter_add(({ ((*n.borrow()) as isize) })),
         ));
         let mut debug_elements: i32 = {
             let __tmp_0: Value<i32> = Rc::new(RefCell::new(100));
-            ({
-                let __a = __tmp_0.as_pointer();
-                let __b = n.as_pointer();
-                if CppLess::less(&__b, &__a) { __b } else { __a }
+            (if CppLess::less(&n.as_pointer(), &__tmp_0.as_pointer()) {
+                n.as_pointer()
+            } else {
+                __tmp_0.as_pointer()
             }
             .read())
         };
         let mut debug_comparisons: i32 = ((2 * (debug_elements + 1)) * debug_elements);
         &(debug_comparisons);
-        unimplemented!();
-        unimplemented!();
+        ({
+            shuffle_2(
+                (*first.borrow()).clone(),
+                (*last.borrow()).clone(),
+                g.as_pointer(),
+            )
+        });
+        ({ make_heap_3((*first.borrow()).clone(), (*last.borrow()).clone()) });
         stats_0.with(|rc| *rc.borrow_mut() = <Stats>::default());
-        unimplemented!();
+        ({ sort_heap_4((*first.borrow()).clone(), (*last.borrow()).clone()) });
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;

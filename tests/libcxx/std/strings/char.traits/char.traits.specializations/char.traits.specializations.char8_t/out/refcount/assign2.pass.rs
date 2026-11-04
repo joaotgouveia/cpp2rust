@@ -7,9 +7,12 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_constexpr_0() -> bool {
-    let mut c: u8 = (49 as u8);
-    unimplemented!();
-    return ((c as i32) == ((97 as u8) as i32));
+    let c: Value<u8> = Rc::new(RefCell::new((49 as u8)));
+    ({
+        let ___c2: Value<u8> = Rc::new(RefCell::new(((97 as u16) as u8)));
+        std_char_traits_char8_t_::assign_1(c.as_pointer(), ___c2.as_pointer())
+    });
+    return (((*c.borrow()) as i32) == ((97 as u8) as i32));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -31,9 +34,12 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let mut c: u8 = (0 as u8);
-    unimplemented!();
-    assert!(((c as i32) == ((97 as u8) as i32)));
+    let c: Value<u8> = Rc::new(RefCell::new((0 as u8)));
+    ({
+        let ___c2: Value<u8> = Rc::new(RefCell::new((97 as u8)));
+        std_char_traits_char8_t_::assign_1(c.as_pointer(), ___c2.as_pointer())
+    });
+    assert!(({ (((*c.borrow()) as i32) == ((97 as u8) as i32)) }));
     const _: () = assert!(true, "test_constexpr()");;
     return 0;
 }

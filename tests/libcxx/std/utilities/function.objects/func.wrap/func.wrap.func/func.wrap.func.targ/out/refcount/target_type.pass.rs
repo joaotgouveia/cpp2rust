@@ -48,6 +48,11 @@ impl Clone for A {
         A::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for A {
     fn default() -> Self {
         { A::new() }
@@ -112,14 +117,14 @@ impl AImpl for Ptr<A> {
         return 1;
     }
     fn copy_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
-        {
-            ((array_field_ptr!((*self), data_)) as Ptr<i32>)
-                .to_any()
-                .memcpy(
+        match ({ ((array_field_ptr!((*self), data_)) as Ptr<i32>).to_any() },) {
+            (mut __tmp_0,) => {
+                __tmp_0.memcpy(
                     &((array_field_ptr!(_a0, data_)) as Ptr<i32>).to_any(),
                     40_usize as usize,
                 );
-            ((array_field_ptr!((*self), data_)) as Ptr<i32>).to_any()
+                (__tmp_0).clone()
+            }
         };
         return (*self).clone();
     }

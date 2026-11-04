@@ -9,6 +9,11 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct P {}
+impl CppMove for P {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
 #[byte_size(1)]
 pub struct U1 {
@@ -17,6 +22,11 @@ pub struct U1 {
     __bytes: Box<[u8]>,
 }
 impl U1 {}
+impl CppMove for U1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for U1 {
     fn default() -> Self {
         U1 {
@@ -32,6 +42,11 @@ pub struct U2 {
     __bytes: Box<[u8]>,
 }
 impl U2 {}
+impl CppMove for U2 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for U2 {
     fn default() -> Self {
         U2 {

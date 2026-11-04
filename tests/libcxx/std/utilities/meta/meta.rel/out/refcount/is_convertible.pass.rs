@@ -775,6 +775,11 @@ impl StringType {
         Self {}
     }
 }
+impl CppMove for StringType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NonCopyable {}

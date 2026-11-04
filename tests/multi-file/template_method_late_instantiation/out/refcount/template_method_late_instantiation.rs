@@ -12,6 +12,11 @@ pub struct S_int_ {
     #[offset(0)]
     pub x: i32,
 }
+impl CppMove for S_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for S_int_ {
     fn default() -> Self {
         { S_int_ { x: 0 } }

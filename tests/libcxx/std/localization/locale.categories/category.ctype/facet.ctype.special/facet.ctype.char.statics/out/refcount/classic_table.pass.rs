@@ -27,9 +27,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(!((unimplemented!()).is_null()));
-    assert!((unimplemented!() >= 256_usize));
-    let mut p: Ptr<()> = unimplemented!();
+    assert!(!(({ std_ctype_char_::classic_table() }).is_null()));
+    assert!((table_size_0.with(|rc| *rc.borrow()) >= 256_usize));
+    let mut p: Ptr<u16> = ({ std_ctype_char_::classic_table() });
     let mut i: usize = 0_usize;
     'loop_: while (i < 128_usize) {
         let mut expect_cntrl: bool = ((i < 32_usize) || (126_usize < i));
@@ -55,52 +55,72 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             || ((123_usize <= i) && (i <= 126_usize));
         assert!(
             ({
-                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+                ((({ ((elem!(p, i).read()) as i32) } & {
+                    (cntrl_1.with(|rc| *rc.borrow()) as i32)
+                }) != 0) as i32)
             } == { (expect_cntrl as i32) })
         );
         assert!(
             ({
-                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+                ((({ ((elem!(p, i).read()) as i32) } & {
+                    (print_2.with(|rc| *rc.borrow()) as i32)
+                }) != 0) as i32)
             } == { (expect_print as i32) })
         );
         assert!(
             ({
-                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+                ((({ ((elem!(p, i).read()) as i32) } & {
+                    (space_3.with(|rc| *rc.borrow()) as i32)
+                }) != 0) as i32)
             } == { (expect_space as i32) })
         );
         assert!(
             ({
-                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+                ((({ ((elem!(p, i).read()) as i32) } & {
+                    (blank_4.with(|rc| *rc.borrow()) as i32)
+                }) != 0) as i32)
             } == { (expect_blank as i32) })
         );
         assert!(
             ({
-                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+                ((({ ((elem!(p, i).read()) as i32) } & {
+                    (lower_5.with(|rc| *rc.borrow()) as i32)
+                }) != 0) as i32)
             } == { (expect_lower as i32) })
         );
         assert!(
             ({
-                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+                ((({ ((elem!(p, i).read()) as i32) } & {
+                    (upper_6.with(|rc| *rc.borrow()) as i32)
+                }) != 0) as i32)
             } == { (expect_upper as i32) })
         );
         assert!(
             ({
-                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+                ((({ ((elem!(p, i).read()) as i32) } & {
+                    (alpha_7.with(|rc| *rc.borrow()) as i32)
+                }) != 0) as i32)
             } == { (expect_alpha as i32) })
         );
         assert!(
             ({
-                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+                ((({ ((elem!(p, i).read()) as i32) } & {
+                    (digit_8.with(|rc| *rc.borrow()) as i32)
+                }) != 0) as i32)
             } == { (expect_digit as i32) })
         );
         assert!(
             ({
-                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+                ((({ ((elem!(p, i).read()) as i32) } & {
+                    (xdigit_9.with(|rc| *rc.borrow()) as i32)
+                }) != 0) as i32)
             } == { (expect_xdigit as i32) })
         );
         assert!(
             ({
-                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+                ((({ ((elem!(p, i).read()) as i32) } & {
+                    (punct_10.with(|rc| *rc.borrow()) as i32)
+                }) != 0) as i32)
             } == { (expect_punct as i32) })
         );
         i.prefix_inc();

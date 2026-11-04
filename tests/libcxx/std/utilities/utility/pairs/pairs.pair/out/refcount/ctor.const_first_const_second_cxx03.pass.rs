@@ -23,6 +23,11 @@ impl CppEq for A {
         AImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -44,9 +49,13 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p: Value<(Value<f32>, Value<Ptr<i16>>)> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*(*p.borrow()).0.borrow()) == 3.5_f32));
-        assert!((*(*p.borrow()).1.borrow()).is_null());
+        let p: Value<(Value<f32>, Value<Ptr<i16>>)> = Rc::new(RefCell::new({
+            let __tmp_0: Value<f32> = Rc::new(RefCell::new(3.5_f32));
+            let __tmp_1: Value<Ptr<i16>> = Rc::new(RefCell::new(Ptr::<i16>::null()));
+            std_pair_float__short_ptr_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+        }));
+        assert!(({ ((*(*p.borrow()).0.borrow()) == 3.5_f32) }));
+        assert!(({ (*(*p.borrow()).1.borrow()).is_null() }));
     }
     {
         let p: Value<(Value<A>, Value<i32>)> = Rc::new(RefCell::new((
@@ -59,7 +68,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 AImpl::operator_eq(&(*p.borrow()).0.as_pointer(), _a.as_pointer())
             })
         );
-        assert!(((*(*p.borrow()).1.borrow()) == 2));
+        assert!(({ ((*(*p.borrow()).1.borrow()) == 2) }));
     }
     return 0;
 }

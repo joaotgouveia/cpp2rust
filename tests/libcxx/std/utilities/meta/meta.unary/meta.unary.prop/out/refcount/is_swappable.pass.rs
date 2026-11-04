@@ -15,9 +15,19 @@ pub struct MyNS_B {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct MyNS_C {}
+impl CppMove for MyNS_C {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct MyNS_D {}
+impl CppMove for MyNS_D {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn swap_0(_a0: Ptr<MyNS_A>, _a1: Ptr<MyNS_A>) {}
 pub fn swap_1(_a0: Ptr<MyNS_A>, _a1: Ptr<MyNS_B>) {}
 pub fn swap_2(_a0: Ptr<MyNS_B>, _a1: Ptr<MyNS_A>) {}
@@ -30,9 +40,19 @@ pub fn swap_5(_a0: Ptr<MyNS_M>, _a1: Ptr<MyNS_M>) {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct MyNS_DeletedSwap {}
+impl CppMove for MyNS_DeletedSwap {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct MyNS2_AmbiguousSwap {}
+impl CppMove for MyNS2_AmbiguousSwap {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

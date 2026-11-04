@@ -9,6 +9,11 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ExplicitAllocator_int_ {}
+impl CppMove for ExplicitAllocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -29,7 +34,14 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let ptr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ptr: Value<std_shared_ptr_int_> = Rc::new(RefCell::new(
+        ({
+            let ___a: Value<ExplicitAllocator_int_> =
+                Rc::new(RefCell::new(<ExplicitAllocator_int_>::default()));
+            let ___args: Value<i32> = Rc::new(RefCell::new(0));
+            allocate_shared_0(___a.as_pointer(), ___args.as_pointer())
+        }),
+    ));
     &(*ptr.borrow_mut());
     return 0;
 }

@@ -7,8 +7,11 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_constexpr_0() -> bool {
-    let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i: Value<()> = Rc::new(RefCell::new((*io.borrow()).try_clone().unwrap()));
+    let io: Value<std_istream_iterator_int__char__std_char_traits_char___long_> = Rc::new(
+        RefCell::new(<std_istream_iterator_int__char__std_char_traits_char___long_>::default()),
+    );
+    let i: Value<std_istream_iterator_int__char__std_char_traits_char___long_> =
+        Rc::new(RefCell::new((*io.borrow()).try_clone().unwrap()));
     return true;
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign)]
@@ -27,6 +30,11 @@ impl Clone for throwing_copy_constructor {
         let __src: Value<throwing_copy_constructor> =
             Rc::new(RefCell::new(throwing_copy_constructor {}));
         throwing_copy_constructor::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for throwing_copy_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for throwing_copy_constructor {
@@ -55,30 +63,58 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new((*io.borrow()).try_clone().unwrap()));
-        assert!(unimplemented!());
+        let io: Value<std_istream_iterator_int__char__std_char_traits_char___long_> = Rc::new(
+            RefCell::new(<std_istream_iterator_int__char__std_char_traits_char___long_>::default()),
+        );
+        let i: Value<std_istream_iterator_int__char__std_char_traits_char___long_> =
+            Rc::new(RefCell::new((*io.borrow()).try_clone().unwrap()));
+        assert!(
+            (*i.borrow())
+                == <std_istream_iterator_int__char__std_char_traits_char___long_>::default()
+        );
         const _: () = assert!(
             true,
             "std::is_nothrow_copy_constructible<std::istream_iterator<int>>::value"
         );;
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new((*io.borrow()).try_clone().unwrap()));
-        assert!(unimplemented!());
+        let io : Value<std_istream_iterator_throwing_copy_constructor__char__std_char_traits_char___long_ > = Rc::new(RefCell::new(<std_istream_iterator_throwing_copy_constructor__char__std_char_traits_char___long_  >::default() )) ;
+        let i: Value<
+            std_istream_iterator_throwing_copy_constructor__char__std_char_traits_char___long_,
+        > = Rc::new(RefCell::new((*io.borrow()).try_clone().unwrap()));
+        assert!((*i.borrow())  == <std_istream_iterator_throwing_copy_constructor__char__std_char_traits_char___long_  >::default()   );
         const _: () = assert!(
             true,
             "!std::is_nothrow_copy_constructible<std::istream_iterator<throwing_copy_constructor>>::value"
         );;
     }
     {
-        let inf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new((*io.borrow()).try_clone().unwrap()));
-        assert!((*i.borrow()) != unimplemented!());
+        let inf: Value<std_basic_istringstream_char__std_char_traits_char___std_allocator_char__> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b" 1 23").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                std_basic_istringstream_char__std_char_traits_char___std_allocator_char__::new_1(
+                    { __tmp_0.as_pointer() },
+                    None,
+                )
+            }));
+        let io: Value<std_istream_iterator_int__char__std_char_traits_char___long_> =
+            Rc::new(RefCell::new(
+                std_istream_iterator_int__char__std_char_traits_char___long_::new_1({
+                    inf.as_pointer()
+                }),
+            ));
+        let i: Value<std_istream_iterator_int__char__std_char_traits_char___long_> =
+            Rc::new(RefCell::new((*io.borrow()).try_clone().unwrap()));
+        assert!(
+            (*i.borrow())
+                != <std_istream_iterator_int__char__std_char_traits_char___long_>::default()
+        );
         let mut j: i32 = 0;
-        j = (unimplemented!().read());
+        j = ((*i.borrow()).iter_deref().read());
         assert!((j == 1));
     }
     const _: () = assert!(true, "test_constexpr()");;

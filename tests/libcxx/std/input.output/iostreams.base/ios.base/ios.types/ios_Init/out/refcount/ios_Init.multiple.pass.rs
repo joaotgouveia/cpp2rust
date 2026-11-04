@@ -34,7 +34,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         });
         __s
     };
-    let mut stock_flags: () = unimplemented!();
+    let mut stock_flags: std__Ios_Fmtflags =
+        ({ ((*libcc2rs::cout().upgrade().deref()) as ::std::fs::File).flags_6() });
     {
         let __s = {
             let __s = libcc2rs::cout();
@@ -43,10 +44,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         write_bool_refcount(&__s, true);
         __s
     };
-    let mut ba_flags: () = unimplemented!();
+    let mut ba_flags: std__Ios_Fmtflags =
+        ({ ((*libcc2rs::cout().upgrade().deref()) as ::std::fs::File).flags_6() });
     assert!(((stock_flags as i32) != (ba_flags as i32)));
-    let init_streams: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut after_init: () = unimplemented!();
+    let init_streams: Value<std_ios_base_Init> =
+        Rc::new(RefCell::new(<std_ios_base_Init>::default()));
+    let mut after_init: std__Ios_Fmtflags =
+        ({ ((*libcc2rs::cout().upgrade().deref()) as ::std::fs::File).flags_6() });
     assert!(((after_init as i32) == (ba_flags as i32)));
     return 0;
 }

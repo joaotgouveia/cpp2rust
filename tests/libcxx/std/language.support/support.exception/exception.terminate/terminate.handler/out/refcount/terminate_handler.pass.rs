@@ -31,7 +31,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         true,
         "(std::is_same<std::terminate_handler, void(*)()>::value)"
     );;
-    let mut p: () = FnPtr::<fn()>::new(f_0);
+    let mut p: FnPtr<fn()> = FnPtr::<fn()>::new(f_0);
     assert!(({ (p).clone() } == { (FnPtr::<fn()>::new(f_0)) }));
     return 0;
 }

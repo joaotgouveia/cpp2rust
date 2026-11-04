@@ -28,7 +28,9 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let l: Value<std_list_int__std_pmr_polymorphic_allocator_int__> = Rc::new(RefCell::new(
+            <std_list_int__std_pmr_polymorphic_allocator_int__>::default(),
+        ));
     }
     return 0;
 }

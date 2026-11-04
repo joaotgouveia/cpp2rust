@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -38,9 +43,19 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoDestroy_CountDestructor_ {}
+impl CppMove for NoDestroy_CountDestructor_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoDestroy_Holder_NS_Incomplete__ptr_ {}
+impl CppMove for NoDestroy_Holder_NS_Incomplete__ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct CountDestroy_CountDestructor_ {
@@ -53,6 +68,11 @@ impl CountDestroy_CountDestructor_ {
         Self {
             counter_: (counter).clone(),
         }
+    }
+}
+impl CppMove for CountDestroy_CountDestructor_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
@@ -69,38 +89,116 @@ impl CountDestructor {
         }
     }
 }
+impl CppMove for CountDestructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_4() -> bool {
     {
         let destructors: Value<i32> = Rc::new(RefCell::new(0));
-        let mut alloc: NoDestroy_CountDestructor_ = <NoDestroy_CountDestructor_>::default();
-        let mut pool: Ptr<CountDestructor> = unimplemented!();
-        unimplemented!();
-        assert!(((*destructors.borrow()) == 0));
-        unimplemented!();
-        assert!(((*destructors.borrow()) == 1));
-        unimplemented!();
+        let alloc: Value<NoDestroy_CountDestructor_> =
+            Rc::new(RefCell::new(<NoDestroy_CountDestructor_>::default()));
+        let mut pool: Ptr<CountDestructor> = ({
+            std_allocator_traits_NoDestroy_CountDestructor__::allocate_1(
+                alloc.as_pointer(),
+                1_usize,
+            )
+        });
+        ({
+            let ___args: Value<Ptr<i32>> = Rc::new(RefCell::new((destructors.as_pointer())));
+            std_allocator_traits_NoDestroy_CountDestructor__::construct(
+                alloc.as_pointer(),
+                (pool).clone(),
+                ___args.as_pointer(),
+            )
+        });
+        assert!(({ ((*destructors.borrow()) == 0) }));
+        ({
+            std_allocator_traits_NoDestroy_CountDestructor__::destroy(
+                alloc.as_pointer(),
+                (pool).clone(),
+            )
+        });
+        assert!(({ ((*destructors.borrow()) == 1) }));
+        ({
+            std_allocator_traits_NoDestroy_CountDestructor__::deallocate(
+                alloc.as_pointer(),
+                (pool).clone(),
+                1_usize,
+            )
+        });
     }
     {
-        let mut alloc: NoDestroy_Holder_NS_Incomplete__ptr_ =
-            <NoDestroy_Holder_NS_Incomplete__ptr_>::default();
-        let mut pool: Ptr<Ptr<Holder_NS_Incomplete_>> = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let alloc: Value<NoDestroy_Holder_NS_Incomplete__ptr_> = Rc::new(RefCell::new(
+            <NoDestroy_Holder_NS_Incomplete__ptr_>::default(),
+        ));
+        let mut pool: Ptr<Ptr<Holder_NS_Incomplete_>> = ({
+            std_allocator_traits_NoDestroy_Holder_NS_Incomplete__ptr__::allocate_1(
+                alloc.as_pointer(),
+                1_usize,
+            )
+        });
+        ({
+            let ___args: Value<AnyPtr> = Rc::new(RefCell::new(Default::default()));
+            std_allocator_traits_NoDestroy_Holder_NS_Incomplete__ptr__::construct(
+                alloc.as_pointer(),
+                (pool).clone(),
+                ___args.as_pointer(),
+            )
+        });
+        ({
+            std_allocator_traits_NoDestroy_Holder_NS_Incomplete__ptr__::destroy(
+                alloc.as_pointer(),
+                (pool).clone(),
+            )
+        });
+        ({
+            std_allocator_traits_NoDestroy_Holder_NS_Incomplete__ptr__::deallocate(
+                alloc.as_pointer(),
+                (pool).clone(),
+                1_usize,
+            )
+        });
     }
     {
         let destroys_called: Value<i32> = Rc::new(RefCell::new(0));
         let destructors_called: Value<i32> = Rc::new(RefCell::new(0));
-        let mut alloc: CountDestroy_CountDestructor_ =
-            CountDestroy_CountDestructor_::new({ (destroys_called.as_pointer()) });
-        let mut pool: Ptr<CountDestructor> = unimplemented!();
-        unimplemented!();
-        assert!(((*destroys_called.borrow()) == 0));
-        assert!(((*destructors_called.borrow()) == 0));
-        unimplemented!();
-        assert!(((*destroys_called.borrow()) == 1));
-        assert!(((*destructors_called.borrow()) == 1));
-        unimplemented!();
+        let alloc: Value<CountDestroy_CountDestructor_> =
+            Rc::new(RefCell::new(CountDestroy_CountDestructor_::new({
+                (destroys_called.as_pointer())
+            })));
+        let mut pool: Ptr<CountDestructor> = ({
+            std_allocator_traits_CountDestroy_CountDestructor__::allocate_1(
+                alloc.as_pointer(),
+                1_usize,
+            )
+        });
+        ({
+            let ___args: Value<Ptr<i32>> = Rc::new(RefCell::new((destructors_called.as_pointer())));
+            std_allocator_traits_CountDestroy_CountDestructor__::construct(
+                alloc.as_pointer(),
+                (pool).clone(),
+                ___args.as_pointer(),
+            )
+        });
+        assert!(({ ((*destroys_called.borrow()) == 0) }));
+        assert!(({ ((*destructors_called.borrow()) == 0) }));
+        ({
+            std_allocator_traits_CountDestroy_CountDestructor__::destroy(
+                alloc.as_pointer(),
+                (pool).clone(),
+            )
+        });
+        assert!(({ ((*destroys_called.borrow()) == 1) }));
+        assert!(({ ((*destructors_called.borrow()) == 1) }));
+        ({
+            std_allocator_traits_CountDestroy_CountDestructor__::deallocate(
+                alloc.as_pointer(),
+                (pool).clone(),
+                1_usize,
+            )
+        });
     }
     return true;
 }
@@ -138,16 +236,16 @@ pub trait CountDestroy_CountDestructor_Impl {
 }
 impl CountDestroy_CountDestructor_Impl for Ptr<CountDestroy_CountDestructor_> {
     fn allocate(&self, mut n: usize) -> Ptr<CountDestructor> {
-        return unimplemented!();
+        return ({ <std_allocator_CountDestructor_>::default().allocate(n) });
     }
     fn deallocate(&self, mut p: Ptr<CountDestructor>, mut n: usize) {
-        unimplemented!();
+        ({ <std_allocator_CountDestructor_>::default().deallocate(p, n) });
         return;
     }
     fn destroy_4_struct_CountDestructor(&self, mut p: Ptr<CountDestructor>) {
-        (*self)
-            .with(|__s| __s.counter_.clone())
-            .with_mut(|__v| __v.prefix_inc());
+        (*self).with(|__s| __s.counter_.clone()).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         ({ CountDestructorImpl::destructor(&p) });
     }
 }
@@ -156,9 +254,9 @@ pub trait CountDestructorImpl {
 }
 impl CountDestructorImpl for Ptr<CountDestructor> {
     fn destructor(&self) {
-        (*self)
-            .with(|__s| __s.counter_.clone())
-            .with_mut(|__v| __v.prefix_inc());
+        (*self).with(|__s| __s.counter_.clone()).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait NoDestroy_CountDestructor_Impl {
@@ -167,10 +265,10 @@ pub trait NoDestroy_CountDestructor_Impl {
 }
 impl NoDestroy_CountDestructor_Impl for Ptr<NoDestroy_CountDestructor_> {
     fn allocate(&self, mut n: usize) -> Ptr<CountDestructor> {
-        return unimplemented!();
+        return ({ <std_allocator_CountDestructor_>::default().allocate(n) });
     }
     fn deallocate(&self, mut p: Ptr<CountDestructor>, mut n: usize) {
-        unimplemented!();
+        ({ <std_allocator_CountDestructor_>::default().deallocate(p, n) });
         return;
     }
 }
@@ -180,10 +278,10 @@ pub trait NoDestroy_Holder_NS_Incomplete__ptr_Impl {
 }
 impl NoDestroy_Holder_NS_Incomplete__ptr_Impl for Ptr<NoDestroy_Holder_NS_Incomplete__ptr_> {
     fn allocate(&self, mut n: usize) -> Ptr<Ptr<Holder_NS_Incomplete_>> {
-        return unimplemented!();
+        return ({ <std_allocator_Holder_NS_Incomplete__ptr_>::default().allocate(n) });
     }
     fn deallocate(&self, mut p: Ptr<Ptr<Holder_NS_Incomplete_>>, mut n: usize) {
-        unimplemented!();
+        ({ <std_allocator_Holder_NS_Incomplete__ptr_>::default().deallocate(p, n) });
         return;
     }
 }

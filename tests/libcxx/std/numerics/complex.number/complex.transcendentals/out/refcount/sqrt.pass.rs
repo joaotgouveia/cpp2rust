@@ -7,160 +7,160 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static testcases_0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+    pub static testcases_0: Value<Box<[std_complex_double_]>> = Rc::new(RefCell::new(Box::new([
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
+        <std_complex_double_>::default(),
     ])));
 );
 pub type anon_1 = u32;
@@ -173,113 +173,207 @@ pub fn classify_2(mut x: f64) -> i32 {
     if (x == 0_f64) {
         return (anon_1_zero as i32);
     }
-    if unimplemented!() {
+    if ({ isinf_3(x) }) {
         return (anon_1_inf as i32);
     }
-    if unimplemented!() {
+    if ({ isnan_4(x) }) {
         return (anon_1_NaN as i32);
     }
     return (anon_1_non_zero as i32);
 }
-pub fn is_about_3(mut x: f32, mut y: f32) {
-    assert!(((unimplemented!() as f64) < 1e-06_f64));
+pub fn is_about_5(mut x: f32, mut y: f32) {
+    assert!(((({ libcc2rs::abs_refcount(((x - y) / (x + y)),) }) as f64) < 1e-06_f64));
 }
-pub fn is_about_4(mut x: f64, mut y: f64) {
-    assert!((unimplemented!() < 1e-14_f64));
+pub fn is_about_6(mut x: f64, mut y: f64) {
+    assert!((({ libcc2rs::abs_refcount(((x - y) / (x + y)),) }) < 1e-14_f64));
 }
-pub fn is_about_5(mut x: f64, mut y: f64) {
-    assert!((unimplemented!() < 1e-14_f64));
+pub fn is_about_7(mut x: f64, mut y: f64) {
+    assert!((({ libcc2rs::abs_refcount(((x - y) / (x + y)),) }) < 1e-14_f64));
 }
-pub fn test_6(c: Ptr<()>, x: ()) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
-    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_8(c: Ptr<std_complex_float_>, x: std_complex_float_) {
+    let x: Value<std_complex_float_> = Rc::new(RefCell::new(x));
+    let a: Value<std_complex_float_> = Rc::new(RefCell::new(({ sqrt_9((c).clone()) })));
     ({
-        let _x: f32 = unimplemented!();
-        let _y: f32 = unimplemented!();
-        is_about_3(_x, _y)
-    });
-    assert!(((unimplemented!() as f64) < 1e-06_f64));
-}
-pub fn test_7(c: Ptr<()>, x: ()) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
-    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        let _x: f64 = unimplemented!();
-        let _y: f64 = unimplemented!();
-        is_about_4(_x, _y)
-    });
-    assert!((unimplemented!() < 1e-06_f64));
-}
-pub fn test_8(c: Ptr<()>, x: ()) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
-    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        let _x: f64 = unimplemented!();
-        let _y: f64 = unimplemented!();
+        let _x: f32 = ({ real_10(a.as_pointer()) });
+        let _y: f32 = ({ real_10(x.as_pointer()) });
         is_about_5(_x, _y)
     });
-    assert!((unimplemented!() < 1e-06_f64));
+    assert!(((({ libcc2rs::abs_refcount(({ imag_11((c).clone(),) }),) }) as f64) < 1e-06_f64));
 }
-pub fn test_9() {
+pub fn test_12(c: Ptr<std_complex_double_>, x: std_complex_double_) {
+    let x: Value<std_complex_double_> = Rc::new(RefCell::new(x));
+    let a: Value<std_complex_double_> = Rc::new(RefCell::new(({ sqrt_13((c).clone()) })));
     ({
-        let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_6(_c.as_pointer(), unimplemented!())
+        let _x: f64 = ({ real_14(a.as_pointer()) });
+        let _y: f64 = ({ real_14(x.as_pointer()) });
+        is_about_6(_x, _y)
+    });
+    assert!((({ libcc2rs::abs_refcount(({ imag_15((c).clone(),) }),) }) < 1e-06_f64));
+}
+pub fn test_16(c: Ptr<std_complex_long_double_>, x: std_complex_long_double_) {
+    let x: Value<std_complex_long_double_> = Rc::new(RefCell::new(x));
+    let a: Value<std_complex_long_double_> = Rc::new(RefCell::new(({ sqrt_17((c).clone()) })));
+    ({
+        let _x: f64 = ({ real_18(a.as_pointer()) });
+        let _y: f64 = ({ real_18(x.as_pointer()) });
+        is_about_7(_x, _y)
+    });
+    assert!((({ libcc2rs::abs_refcount(({ imag_19((c).clone(),) }),) }) < 1e-06_f64));
+}
+pub fn test_20() {
+    ({
+        let _c: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
+        test_8(_c.as_pointer(), <std_complex_float_>::default())
     });
 }
-pub fn test_10() {
+pub fn test_21() {
     ({
-        let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_7(_c.as_pointer(), unimplemented!())
+        let _c: Value<std_complex_double_> =
+            Rc::new(RefCell::new(<std_complex_double_>::default()));
+        test_12(_c.as_pointer(), <std_complex_double_>::default())
     });
 }
-pub fn test_11() {
+pub fn test_22() {
     ({
-        let _c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_8(_c.as_pointer(), unimplemented!())
+        let _c: Value<std_complex_long_double_> =
+            Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+        test_16(_c.as_pointer(), <std_complex_long_double_>::default())
     });
 }
-pub fn test_edges_12() {
+pub fn test_edges_23() {
     let mut N: u32 = (((2448usize as usize).wrapping_div((16usize as usize))) as u32);
     let mut i: u32 = 0_u32;
     'loop_: while (i < N) {
-        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        if (unimplemented!() == 0_f64) && (unimplemented!() == 0_f64) {
-            assert!(!(unimplemented!()));
-            assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
-        } else if unimplemented!() {
-            assert!(unimplemented!());
-            assert!((unimplemented!() > 0_f64));
-            assert!(unimplemented!());
-            assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
-        } else if (unimplemented!()) && (unimplemented!()) {
-            assert!(unimplemented!());
-            assert!(unimplemented!());
-        } else if ((unimplemented!()) && (unimplemented!() < 0_f64)) && (unimplemented!()) {
-            assert!((unimplemented!() == 0_f64));
-            assert!(!(unimplemented!()));
-            assert!(unimplemented!());
-            assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
-        } else if ((unimplemented!()) && (unimplemented!() > 0_f64)) && (unimplemented!()) {
-            assert!(unimplemented!());
-            assert!((unimplemented!() > 0_f64));
-            assert!((unimplemented!() == 0_f64));
-            assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
-        } else if ((unimplemented!()) && (unimplemented!() < 0_f64)) && (unimplemented!()) {
-            assert!(unimplemented!());
-            assert!(unimplemented!());
-        } else if ((unimplemented!()) && (unimplemented!() > 0_f64)) && (unimplemented!()) {
-            assert!(unimplemented!());
-            assert!((unimplemented!() > 0_f64));
-            assert!(unimplemented!());
-        } else if (unimplemented!()) && ((unimplemented!()) || (unimplemented!())) {
-            assert!(unimplemented!());
-            assert!(unimplemented!());
-        } else if unimplemented!() {
-            assert!(!(unimplemented!()));
-            assert!(unimplemented!());
+        let r: Value<std_complex_double_> = Rc::new(RefCell::new(
+            ({
+                sqrt_13(
+                    (testcases_0.with(|v| v.as_pointer()) as Ptr<std_complex_double_>).offset(i),
+                )
+            }),
+        ));
+        if (({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].real_5() }) == 0_f64)
+            && (({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].imag_6() }) == 0_f64)
+        {
+            assert!(({ !({ signbit_24(({ (*r.borrow()).real_5() }),) }) }));
+            assert!(
+                ({
+                    ((({ signbit_24(({ (*r.borrow()).imag_6() })) }) as i32)
+                        == (({
+                            signbit_24(
+                                ({
+                                    (*testcases_0.with(Value::clone).borrow())[(i) as usize]
+                                        .imag_6()
+                                }),
+                            )
+                        }) as i32))
+                })
+            );
+        } else if ({
+            isinf_3(({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].imag_6() }))
+        }) {
+            assert!(({ ({ isinf_3(({ (*r.borrow()).real_5() }),) }) }));
+            assert!(({ (({ (*r.borrow()).real_5() }) > 0_f64) }));
+            assert!(({ ({ isinf_3(({ (*r.borrow()).imag_6() }),) }) }));
+            assert!(
+                ({
+                    ((({ signbit_24(({ (*r.borrow()).imag_6() })) }) as i32)
+                        == (({
+                            signbit_24(
+                                ({
+                                    (*testcases_0.with(Value::clone).borrow())[(i) as usize]
+                                        .imag_6()
+                                }),
+                            )
+                        }) as i32))
+                })
+            );
+        } else if ({
+            isfinite_25(({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].real_5() }))
+        }) && ({
+            isnan_4(({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].imag_6() }))
+        }) {
+            assert!(({ ({ isnan_4(({ (*r.borrow()).real_5() }),) }) }));
+            assert!(({ ({ isnan_4(({ (*r.borrow()).imag_6() }),) }) }));
+        } else if (({
+            isinf_3(({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].real_5() }))
+        }) && (({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].real_5() })
+            < 0_f64))
+            && ({
+                isfinite_25(({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].imag_6() }))
+            })
+        {
+            assert!(({ (({ (*r.borrow()).real_5() }) == 0_f64) }));
+            assert!(({ !({ signbit_24(({ (*r.borrow()).real_5() }),) }) }));
+            assert!(({ ({ isinf_3(({ (*r.borrow()).imag_6() }),) }) }));
+            assert!(
+                ({
+                    ((({
+                        signbit_24(
+                            ({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].imag_6() }),
+                        )
+                    }) as i32)
+                        == (({ signbit_24(({ (*r.borrow()).imag_6() })) }) as i32))
+                })
+            );
+        } else if (({
+            isinf_3(({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].real_5() }))
+        }) && (({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].real_5() })
+            > 0_f64))
+            && ({
+                isfinite_25(({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].imag_6() }))
+            })
+        {
+            assert!(({ ({ isinf_3(({ (*r.borrow()).real_5() }),) }) }));
+            assert!(({ (({ (*r.borrow()).real_5() }) > 0_f64) }));
+            assert!(({ (({ (*r.borrow()).imag_6() }) == 0_f64) }));
+            assert!(
+                ({
+                    ((({
+                        signbit_24(
+                            ({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].imag_6() }),
+                        )
+                    }) as i32)
+                        == (({ signbit_24(({ (*r.borrow()).imag_6() })) }) as i32))
+                })
+            );
+        } else if (({
+            isinf_3(({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].real_5() }))
+        }) && (({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].real_5() })
+            < 0_f64))
+            && ({
+                isnan_4(({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].imag_6() }))
+            })
+        {
+            assert!(({ ({ isnan_4(({ (*r.borrow()).real_5() }),) }) }));
+            assert!(({ ({ isinf_3(({ (*r.borrow()).imag_6() }),) }) }));
+        } else if (({
+            isinf_3(({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].real_5() }))
+        }) && (({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].real_5() })
+            > 0_f64))
+            && ({
+                isnan_4(({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].imag_6() }))
+            })
+        {
+            assert!(({ ({ isinf_3(({ (*r.borrow()).real_5() }),) }) }));
+            assert!(({ (({ (*r.borrow()).real_5() }) > 0_f64) }));
+            assert!(({ ({ isnan_4(({ (*r.borrow()).imag_6() }),) }) }));
+        } else if ({
+            isnan_4(({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].real_5() }))
+        }) && (({
+            isfinite_25(({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].imag_6() }))
+        }) || ({
+            isnan_4(({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].imag_6() }))
+        })) {
+            assert!(({ ({ isnan_4(({ (*r.borrow()).real_5() }),) }) }));
+            assert!(({ ({ isnan_4(({ (*r.borrow()).imag_6() }),) }) }));
+        } else if ({
+            signbit_24(({ (*testcases_0.with(Value::clone).borrow())[(i) as usize].imag_6() }))
+        }) {
+            assert!(({ !({ signbit_24(({ (*r.borrow()).real_5() }),) }) }));
+            assert!(({ ({ signbit_24(({ (*r.borrow()).imag_6() }),) }) }));
         } else {
-            assert!(!(unimplemented!()));
-            assert!(!(unimplemented!()));
+            assert!(({ !({ signbit_24(({ (*r.borrow()).real_5() }),) }) }));
+            assert!(({ !({ signbit_24(({ (*r.borrow()).imag_6() }),) }) }));
         }
         i.prefix_inc();
     }
@@ -304,10 +398,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_9() });
-    ({ test_10() });
-    ({ test_11() });
-    ({ test_edges_12() });
+    ({ test_20() });
+    ({ test_21() });
+    ({ test_22() });
+    ({ test_edges_23() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {

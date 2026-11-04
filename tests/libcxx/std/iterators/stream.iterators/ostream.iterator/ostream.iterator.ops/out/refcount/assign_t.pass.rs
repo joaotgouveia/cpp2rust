@@ -28,56 +28,80 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let outf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let outf : Value<std_basic_ostringstream_char__std_char_traits_char___std_allocator_char__ > = Rc::new(RefCell::new(<std_basic_ostringstream_char__std_char_traits_char___std_allocator_char__  >::default() )) ;
         let i: Value<OstreamIterator<i32>> = Rc::new(RefCell::new(OstreamIterator::new(
             outf.as_pointer(),
             Ptr::null(),
         )));
-        unimplemented!();
+        (*i.borrow_mut()) = (2.4_f64 as i32);
         assert!(
-            Ptr::<i8>::from_string_literal(b"2").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(({ (*outf.borrow()).str_16() }))).as_pointer(),) {
+                (__tmp_0,) => {
+                    Ptr::<i8>::from_string_literal(b"2").with_c_str(|__s| {
+                        (*__tmp_0.upgrade().deref())
+                            [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
-        let outf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let outf : Value<std_basic_ostringstream_char__std_char_traits_char___std_allocator_char__ > = Rc::new(RefCell::new(<std_basic_ostringstream_char__std_char_traits_char___std_allocator_char__  >::default() )) ;
         let i: Value<OstreamIterator<i32>> = Rc::new(RefCell::new(OstreamIterator::new(
             outf.as_pointer(),
             Ptr::<i8>::from_string_literal(b", "),
         )));
-        unimplemented!();
+        (*i.borrow_mut()) = (2.4_f64 as i32);
         assert!(
-            Ptr::<i8>::from_string_literal(b"2, ").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            match (Rc::new(RefCell::new(({ (*outf.borrow()).str_16() }))).as_pointer(),) {
+                (__tmp_1,) => {
+                    Ptr::<i8>::from_string_literal(b"2, ").with_c_str(|__s| {
+                        (*__tmp_1.upgrade().deref())
+                            [..(*__tmp_1.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
-        let outf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let outf : Value<std_basic_ostringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ > = Rc::new(RefCell::new(<std_basic_ostringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__  >::default() )) ;
         let i: Value<OstreamIterator<i32>> = Rc::new(RefCell::new(OstreamIterator::new(
             outf.as_pointer(),
             Ptr::null(),
         )));
-        unimplemented!();
+        (*i.borrow_mut()) = (2.4_f64 as i32);
         assert!(
-            Ptr::<i32>::from_string_literal(&[50 as i32, 0 as i32,]).with_c_str(
-                |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-            )
+            match (Rc::new(RefCell::new(({ (*outf.borrow()).str_16() }))).as_pointer(),) {
+                (__tmp_2,) => {
+                    Ptr::<i32>::from_string_literal(&[50 as i32, 0 as i32]).with_c_str(|__s| {
+                        (*__tmp_2.upgrade().deref())
+                            [..(*__tmp_2.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
-        let outf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let outf : Value<std_basic_ostringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ > = Rc::new(RefCell::new(<std_basic_ostringstream_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__  >::default() )) ;
         let i: Value<OstreamIterator<i32>> = Rc::new(RefCell::new(OstreamIterator::new(
             outf.as_pointer(),
             Ptr::<i32>::from_string_literal(&[44 as i32, 32 as i32, 0 as i32]),
         )));
-        unimplemented!();
+        (*i.borrow_mut()) = (2.4_f64 as i32);
         assert!(
-            Ptr::<i32>::from_string_literal(&[50 as i32, 44 as i32, 32 as i32, 0 as i32,])
-                .with_c_str(
-                    |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
-                )
+            match (Rc::new(RefCell::new(({ (*outf.borrow()).str_16() }))).as_pointer(),) {
+                (__tmp_3,) => {
+                    Ptr::<i32>::from_string_literal(&[50 as i32, 44 as i32, 32 as i32, 0 as i32])
+                        .with_c_str(|__s| {
+                            (*__tmp_3.upgrade().deref())
+                                [..(*__tmp_3.upgrade().deref()).len().saturating_sub(1)]
+                                == *__s
+                        })
+                }
+            }
         );
     }
     return 0;

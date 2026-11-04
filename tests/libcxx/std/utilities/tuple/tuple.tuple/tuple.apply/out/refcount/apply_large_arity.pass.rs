@@ -9,929 +9,2211 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__0_ {}
+impl CppMove for always_imp_int__0_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_const_int__0_ {}
+impl CppMove for always_imp_const_int__0_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int_ref__0_ {}
+impl CppMove for always_imp_int_ref__0_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_const_int_ref__0_ {}
+impl CppMove for always_imp_const_int_ref__0_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int_refref__0_ {}
+impl CppMove for always_imp_int_refref__0_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__1_ {}
+impl CppMove for always_imp_int__1_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_const_int__1_ {}
+impl CppMove for always_imp_const_int__1_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int_ref__1_ {}
+impl CppMove for always_imp_int_ref__1_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_const_int_ref__1_ {}
+impl CppMove for always_imp_const_int_ref__1_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int_refref__1_ {}
+impl CppMove for always_imp_int_refref__1_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__2_ {}
+impl CppMove for always_imp_int__2_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_const_int__2_ {}
+impl CppMove for always_imp_const_int__2_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int_ref__2_ {}
+impl CppMove for always_imp_int_ref__2_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_const_int_ref__2_ {}
+impl CppMove for always_imp_const_int_ref__2_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int_refref__2_ {}
+impl CppMove for always_imp_int_refref__2_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__3_ {}
+impl CppMove for always_imp_int__3_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_const_int__3_ {}
+impl CppMove for always_imp_const_int__3_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int_ref__3_ {}
+impl CppMove for always_imp_int_ref__3_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_const_int_ref__3_ {}
+impl CppMove for always_imp_const_int_ref__3_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int_refref__3_ {}
+impl CppMove for always_imp_int_refref__3_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__4_ {}
+impl CppMove for always_imp_int__4_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_const_int__4_ {}
+impl CppMove for always_imp_const_int__4_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int_ref__4_ {}
+impl CppMove for always_imp_int_ref__4_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_const_int_ref__4_ {}
+impl CppMove for always_imp_const_int_ref__4_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int_refref__4_ {}
+impl CppMove for always_imp_int_refref__4_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__5_ {}
+impl CppMove for always_imp_int__5_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__6_ {}
+impl CppMove for always_imp_int__6_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__7_ {}
+impl CppMove for always_imp_int__7_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__8_ {}
+impl CppMove for always_imp_int__8_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__9_ {}
+impl CppMove for always_imp_int__9_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__10_ {}
+impl CppMove for always_imp_int__10_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__11_ {}
+impl CppMove for always_imp_int__11_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__12_ {}
+impl CppMove for always_imp_int__12_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__13_ {}
+impl CppMove for always_imp_int__13_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__14_ {}
+impl CppMove for always_imp_int__14_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__15_ {}
+impl CppMove for always_imp_int__15_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__16_ {}
+impl CppMove for always_imp_int__16_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__17_ {}
+impl CppMove for always_imp_int__17_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__18_ {}
+impl CppMove for always_imp_int__18_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__19_ {}
+impl CppMove for always_imp_int__19_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__20_ {}
+impl CppMove for always_imp_int__20_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__21_ {}
+impl CppMove for always_imp_int__21_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__22_ {}
+impl CppMove for always_imp_int__22_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__23_ {}
+impl CppMove for always_imp_int__23_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__24_ {}
+impl CppMove for always_imp_int__24_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__25_ {}
+impl CppMove for always_imp_int__25_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__26_ {}
+impl CppMove for always_imp_int__26_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__27_ {}
+impl CppMove for always_imp_int__27_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__28_ {}
+impl CppMove for always_imp_int__28_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__29_ {}
+impl CppMove for always_imp_int__29_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__30_ {}
+impl CppMove for always_imp_int__30_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__31_ {}
+impl CppMove for always_imp_int__31_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__32_ {}
+impl CppMove for always_imp_int__32_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__33_ {}
+impl CppMove for always_imp_int__33_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__34_ {}
+impl CppMove for always_imp_int__34_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__35_ {}
+impl CppMove for always_imp_int__35_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__36_ {}
+impl CppMove for always_imp_int__36_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__37_ {}
+impl CppMove for always_imp_int__37_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__38_ {}
+impl CppMove for always_imp_int__38_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__39_ {}
+impl CppMove for always_imp_int__39_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__40_ {}
+impl CppMove for always_imp_int__40_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__41_ {}
+impl CppMove for always_imp_int__41_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__42_ {}
+impl CppMove for always_imp_int__42_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__43_ {}
+impl CppMove for always_imp_int__43_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__44_ {}
+impl CppMove for always_imp_int__44_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__45_ {}
+impl CppMove for always_imp_int__45_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__46_ {}
+impl CppMove for always_imp_int__46_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__47_ {}
+impl CppMove for always_imp_int__47_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__48_ {}
+impl CppMove for always_imp_int__48_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__49_ {}
+impl CppMove for always_imp_int__49_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__50_ {}
+impl CppMove for always_imp_int__50_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__51_ {}
+impl CppMove for always_imp_int__51_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__52_ {}
+impl CppMove for always_imp_int__52_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__53_ {}
+impl CppMove for always_imp_int__53_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__54_ {}
+impl CppMove for always_imp_int__54_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__55_ {}
+impl CppMove for always_imp_int__55_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__56_ {}
+impl CppMove for always_imp_int__56_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__57_ {}
+impl CppMove for always_imp_int__57_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__58_ {}
+impl CppMove for always_imp_int__58_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__59_ {}
+impl CppMove for always_imp_int__59_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__60_ {}
+impl CppMove for always_imp_int__60_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__61_ {}
+impl CppMove for always_imp_int__61_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__62_ {}
+impl CppMove for always_imp_int__62_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__63_ {}
+impl CppMove for always_imp_int__63_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__64_ {}
+impl CppMove for always_imp_int__64_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__65_ {}
+impl CppMove for always_imp_int__65_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__66_ {}
+impl CppMove for always_imp_int__66_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__67_ {}
+impl CppMove for always_imp_int__67_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__68_ {}
+impl CppMove for always_imp_int__68_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__69_ {}
+impl CppMove for always_imp_int__69_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__70_ {}
+impl CppMove for always_imp_int__70_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__71_ {}
+impl CppMove for always_imp_int__71_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__72_ {}
+impl CppMove for always_imp_int__72_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__73_ {}
+impl CppMove for always_imp_int__73_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__74_ {}
+impl CppMove for always_imp_int__74_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__75_ {}
+impl CppMove for always_imp_int__75_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__76_ {}
+impl CppMove for always_imp_int__76_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__77_ {}
+impl CppMove for always_imp_int__77_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__78_ {}
+impl CppMove for always_imp_int__78_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__79_ {}
+impl CppMove for always_imp_int__79_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__80_ {}
+impl CppMove for always_imp_int__80_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__81_ {}
+impl CppMove for always_imp_int__81_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__82_ {}
+impl CppMove for always_imp_int__82_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__83_ {}
+impl CppMove for always_imp_int__83_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__84_ {}
+impl CppMove for always_imp_int__84_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__85_ {}
+impl CppMove for always_imp_int__85_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__86_ {}
+impl CppMove for always_imp_int__86_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__87_ {}
+impl CppMove for always_imp_int__87_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__88_ {}
+impl CppMove for always_imp_int__88_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__89_ {}
+impl CppMove for always_imp_int__89_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__90_ {}
+impl CppMove for always_imp_int__90_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__91_ {}
+impl CppMove for always_imp_int__91_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__92_ {}
+impl CppMove for always_imp_int__92_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__93_ {}
+impl CppMove for always_imp_int__93_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__94_ {}
+impl CppMove for always_imp_int__94_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__95_ {}
+impl CppMove for always_imp_int__95_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__96_ {}
+impl CppMove for always_imp_int__96_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__97_ {}
+impl CppMove for always_imp_int__97_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__98_ {}
+impl CppMove for always_imp_int__98_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__99_ {}
+impl CppMove for always_imp_int__99_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__100_ {}
+impl CppMove for always_imp_int__100_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__101_ {}
+impl CppMove for always_imp_int__101_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__102_ {}
+impl CppMove for always_imp_int__102_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__103_ {}
+impl CppMove for always_imp_int__103_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__104_ {}
+impl CppMove for always_imp_int__104_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__105_ {}
+impl CppMove for always_imp_int__105_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__106_ {}
+impl CppMove for always_imp_int__106_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__107_ {}
+impl CppMove for always_imp_int__107_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__108_ {}
+impl CppMove for always_imp_int__108_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__109_ {}
+impl CppMove for always_imp_int__109_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__110_ {}
+impl CppMove for always_imp_int__110_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__111_ {}
+impl CppMove for always_imp_int__111_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__112_ {}
+impl CppMove for always_imp_int__112_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__113_ {}
+impl CppMove for always_imp_int__113_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__114_ {}
+impl CppMove for always_imp_int__114_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__115_ {}
+impl CppMove for always_imp_int__115_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__116_ {}
+impl CppMove for always_imp_int__116_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__117_ {}
+impl CppMove for always_imp_int__117_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__118_ {}
+impl CppMove for always_imp_int__118_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__119_ {}
+impl CppMove for always_imp_int__119_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__120_ {}
+impl CppMove for always_imp_int__120_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__121_ {}
+impl CppMove for always_imp_int__121_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__122_ {}
+impl CppMove for always_imp_int__122_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__123_ {}
+impl CppMove for always_imp_int__123_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__124_ {}
+impl CppMove for always_imp_int__124_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__125_ {}
+impl CppMove for always_imp_int__125_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__126_ {}
+impl CppMove for always_imp_int__126_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__127_ {}
+impl CppMove for always_imp_int__127_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__128_ {}
+impl CppMove for always_imp_int__128_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__129_ {}
+impl CppMove for always_imp_int__129_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__130_ {}
+impl CppMove for always_imp_int__130_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__131_ {}
+impl CppMove for always_imp_int__131_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__132_ {}
+impl CppMove for always_imp_int__132_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__133_ {}
+impl CppMove for always_imp_int__133_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__134_ {}
+impl CppMove for always_imp_int__134_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__135_ {}
+impl CppMove for always_imp_int__135_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__136_ {}
+impl CppMove for always_imp_int__136_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__137_ {}
+impl CppMove for always_imp_int__137_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__138_ {}
+impl CppMove for always_imp_int__138_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__139_ {}
+impl CppMove for always_imp_int__139_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__140_ {}
+impl CppMove for always_imp_int__140_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__141_ {}
+impl CppMove for always_imp_int__141_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__142_ {}
+impl CppMove for always_imp_int__142_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__143_ {}
+impl CppMove for always_imp_int__143_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__144_ {}
+impl CppMove for always_imp_int__144_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__145_ {}
+impl CppMove for always_imp_int__145_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__146_ {}
+impl CppMove for always_imp_int__146_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__147_ {}
+impl CppMove for always_imp_int__147_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__148_ {}
+impl CppMove for always_imp_int__148_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__149_ {}
+impl CppMove for always_imp_int__149_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__150_ {}
+impl CppMove for always_imp_int__150_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__151_ {}
+impl CppMove for always_imp_int__151_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__152_ {}
+impl CppMove for always_imp_int__152_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__153_ {}
+impl CppMove for always_imp_int__153_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__154_ {}
+impl CppMove for always_imp_int__154_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__155_ {}
+impl CppMove for always_imp_int__155_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__156_ {}
+impl CppMove for always_imp_int__156_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__157_ {}
+impl CppMove for always_imp_int__157_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__158_ {}
+impl CppMove for always_imp_int__158_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__159_ {}
+impl CppMove for always_imp_int__159_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__160_ {}
+impl CppMove for always_imp_int__160_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__161_ {}
+impl CppMove for always_imp_int__161_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__162_ {}
+impl CppMove for always_imp_int__162_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__163_ {}
+impl CppMove for always_imp_int__163_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__164_ {}
+impl CppMove for always_imp_int__164_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__165_ {}
+impl CppMove for always_imp_int__165_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__166_ {}
+impl CppMove for always_imp_int__166_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__167_ {}
+impl CppMove for always_imp_int__167_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__168_ {}
+impl CppMove for always_imp_int__168_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__169_ {}
+impl CppMove for always_imp_int__169_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__170_ {}
+impl CppMove for always_imp_int__170_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__171_ {}
+impl CppMove for always_imp_int__171_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__172_ {}
+impl CppMove for always_imp_int__172_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__173_ {}
+impl CppMove for always_imp_int__173_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__174_ {}
+impl CppMove for always_imp_int__174_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__175_ {}
+impl CppMove for always_imp_int__175_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__176_ {}
+impl CppMove for always_imp_int__176_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__177_ {}
+impl CppMove for always_imp_int__177_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__178_ {}
+impl CppMove for always_imp_int__178_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__179_ {}
+impl CppMove for always_imp_int__179_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__180_ {}
+impl CppMove for always_imp_int__180_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__181_ {}
+impl CppMove for always_imp_int__181_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__182_ {}
+impl CppMove for always_imp_int__182_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__183_ {}
+impl CppMove for always_imp_int__183_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__184_ {}
+impl CppMove for always_imp_int__184_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__185_ {}
+impl CppMove for always_imp_int__185_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__186_ {}
+impl CppMove for always_imp_int__186_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__187_ {}
+impl CppMove for always_imp_int__187_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__188_ {}
+impl CppMove for always_imp_int__188_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__189_ {}
+impl CppMove for always_imp_int__189_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__190_ {}
+impl CppMove for always_imp_int__190_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__191_ {}
+impl CppMove for always_imp_int__191_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__192_ {}
+impl CppMove for always_imp_int__192_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__193_ {}
+impl CppMove for always_imp_int__193_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__194_ {}
+impl CppMove for always_imp_int__194_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__195_ {}
+impl CppMove for always_imp_int__195_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__196_ {}
+impl CppMove for always_imp_int__196_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__197_ {}
+impl CppMove for always_imp_int__197_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__198_ {}
+impl CppMove for always_imp_int__198_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__199_ {}
+impl CppMove for always_imp_int__199_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__200_ {}
+impl CppMove for always_imp_int__200_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__201_ {}
+impl CppMove for always_imp_int__201_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__202_ {}
+impl CppMove for always_imp_int__202_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__203_ {}
+impl CppMove for always_imp_int__203_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__204_ {}
+impl CppMove for always_imp_int__204_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__205_ {}
+impl CppMove for always_imp_int__205_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__206_ {}
+impl CppMove for always_imp_int__206_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__207_ {}
+impl CppMove for always_imp_int__207_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__208_ {}
+impl CppMove for always_imp_int__208_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__209_ {}
+impl CppMove for always_imp_int__209_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__210_ {}
+impl CppMove for always_imp_int__210_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__211_ {}
+impl CppMove for always_imp_int__211_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__212_ {}
+impl CppMove for always_imp_int__212_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__213_ {}
+impl CppMove for always_imp_int__213_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__214_ {}
+impl CppMove for always_imp_int__214_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__215_ {}
+impl CppMove for always_imp_int__215_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__216_ {}
+impl CppMove for always_imp_int__216_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__217_ {}
+impl CppMove for always_imp_int__217_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__218_ {}
+impl CppMove for always_imp_int__218_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__219_ {}
+impl CppMove for always_imp_int__219_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__220_ {}
+impl CppMove for always_imp_int__220_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__221_ {}
+impl CppMove for always_imp_int__221_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__222_ {}
+impl CppMove for always_imp_int__222_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__223_ {}
+impl CppMove for always_imp_int__223_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__224_ {}
+impl CppMove for always_imp_int__224_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__225_ {}
+impl CppMove for always_imp_int__225_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__226_ {}
+impl CppMove for always_imp_int__226_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__227_ {}
+impl CppMove for always_imp_int__227_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__228_ {}
+impl CppMove for always_imp_int__228_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__229_ {}
+impl CppMove for always_imp_int__229_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__230_ {}
+impl CppMove for always_imp_int__230_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__231_ {}
+impl CppMove for always_imp_int__231_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__232_ {}
+impl CppMove for always_imp_int__232_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__233_ {}
+impl CppMove for always_imp_int__233_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__234_ {}
+impl CppMove for always_imp_int__234_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__235_ {}
+impl CppMove for always_imp_int__235_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__236_ {}
+impl CppMove for always_imp_int__236_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__237_ {}
+impl CppMove for always_imp_int__237_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__238_ {}
+impl CppMove for always_imp_int__238_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__239_ {}
+impl CppMove for always_imp_int__239_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__240_ {}
+impl CppMove for always_imp_int__240_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__241_ {}
+impl CppMove for always_imp_int__241_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__242_ {}
+impl CppMove for always_imp_int__242_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__243_ {}
+impl CppMove for always_imp_int__243_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__244_ {}
+impl CppMove for always_imp_int__244_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__245_ {}
+impl CppMove for always_imp_int__245_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__246_ {}
+impl CppMove for always_imp_int__246_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__247_ {}
+impl CppMove for always_imp_int__247_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__248_ {}
+impl CppMove for always_imp_int__248_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__249_ {}
+impl CppMove for always_imp_int__249_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__250_ {}
+impl CppMove for always_imp_int__250_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__251_ {}
+impl CppMove for always_imp_int__251_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__252_ {}
+impl CppMove for always_imp_int__252_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__253_ {}
+impl CppMove for always_imp_int__253_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__254_ {}
+impl CppMove for always_imp_int__254_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_imp_int__255_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_int__std_integer_sequence_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_int_ref__std_integer_sequence_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_const_int_ref__std_integer_sequence_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_int_refref__std_integer_sequence_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_int__std_integer_sequence_unsigned_long__0__1__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_int_ref__std_integer_sequence_unsigned_long__0__1__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_const_int_ref__std_integer_sequence_unsigned_long__0__1__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_int_refref__std_integer_sequence_unsigned_long__0__1__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_int__std_integer_sequence_unsigned_long__0__1__2__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_int_ref__std_integer_sequence_unsigned_long__0__1__2__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_const_int_ref__std_integer_sequence_unsigned_long__0__1__2__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_int_refref__std_integer_sequence_unsigned_long__0__1__2__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_int__std_integer_sequence_unsigned_long__0__1__2__3__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_int_ref__std_integer_sequence_unsigned_long__0__1__2__3__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_const_int_ref__std_integer_sequence_unsigned_long__0__1__2__3__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_int_refref__std_integer_sequence_unsigned_long__0__1__2__3__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_int__std_integer_sequence_unsigned_long__0__1__2__3__4__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_int_ref__std_integer_sequence_unsigned_long__0__1__2__3__4__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_const_int_ref__std_integer_sequence_unsigned_long__0__1__2__3__4__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_int_refref__std_integer_sequence_unsigned_long__0__1__2__3__4__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_function_int__std_integer_sequence_unsigned_long__0__1__2__3__4__5__6__7__8__9__10__11__12__13__14__15__16__17__18__19__20__21__22__23__24__25__26__27__28__29__30__31__32__33__34__35__36__37__38__39__40__41__42__43__44__45__46__47__48__49__50__51__52__53__54__55__56__57__58__59__60__61__62__63__64__65__66__67__68__69__70__71__72__73__74__75__76__77__78__79__80__81__82__83__84__85__86__87__88__89__90__91__92__93__94__95__96__97__98__99__100__101__102__103__104__105__106__107__108__109__110__111__112__113__114__115__116__117__118__119__120__121__122__123__124__125__126__127__128__129__130__131__132__133__134__135__136__137__138__139__140__141__142__143__144__145__146__147__148__149__150__151__152__153__154__155__156__157__158__159__160__161__162__163__164__165__166__167__168__169__170__171__172__173__174__175__176__177__178__179__180__181__182__183__184__185__186__187__188__189__190__191__192__193__194__195__196__197__198__199__200__201__202__203__204__205__206__207__208__209__210__211__212__213__214__215__216__217__218__219__220__221__222__223__224__225__226__227__228__229__230__231__232__233__234__235__236__237__238__239__240__241__242__243__244__245__246__247__248__249__250__251__252__253__254__255__
-{}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_tuple_imp_int__std_integer_sequence_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_tuple_imp_const_int__std_integer_sequence_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_tuple_imp_int__std_integer_sequence_unsigned_long__0__1__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_tuple_imp_const_int__std_integer_sequence_unsigned_long__0__1__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_tuple_imp_int__std_integer_sequence_unsigned_long__0__1__2__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_tuple_imp_const_int__std_integer_sequence_unsigned_long__0__1__2__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_tuple_imp_int__std_integer_sequence_unsigned_long__0__1__2__3__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_tuple_imp_const_int__std_integer_sequence_unsigned_long__0__1__2__3__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_tuple_imp_int__std_integer_sequence_unsigned_long__0__1__2__3__4__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_tuple_imp_const_int__std_integer_sequence_unsigned_long__0__1__2__3__4__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct make_tuple_imp_int__std_integer_sequence_unsigned_long__0__1__2__3__4__5__6__7__8__9__10__11__12__13__14__15__16__17__18__19__20__21__22__23__24__25__26__27__28__29__30__31__32__33__34__35__36__37__38__39__40__41__42__43__44__45__46__47__48__49__50__51__52__53__54__55__56__57__58__59__60__61__62__63__64__65__66__67__68__69__70__71__72__73__74__75__76__77__78__79__80__81__82__83__84__85__86__87__88__89__90__91__92__93__94__95__96__97__98__99__100__101__102__103__104__105__106__107__108__109__110__111__112__113__114__115__116__117__118__119__120__121__122__123__124__125__126__127__128__129__130__131__132__133__134__135__136__137__138__139__140__141__142__143__144__145__146__147__148__149__150__151__152__153__154__155__156__157__158__159__160__161__162__163__164__165__166__167__168__169__170__171__172__173__174__175__176__177__178__179__180__181__182__183__184__185__186__187__188__189__190__191__192__193__194__195__196__197__198__199__200__201__202__203__204__205__206__207__208__209__210__211__212__213__214__215__216__217__218__219__220__221__222__223__224__225__226__227__228__229__230__231__232__233__234__235__236__237__238__239__240__241__242__243__244__245__246__247__248__249__250__251__252__253__254__255__
-{}
+impl CppMove for always_imp_int__255_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_apply_fn_0(mut _a0: i32) -> bool {
     return true;
 }
@@ -1277,729 +2559,772 @@ pub fn test_apply_fn_20(
     return true;
 }
 pub fn test_all_21() {
-    let mut val_fn: FnPtr<fn(i32) -> bool> = (FnPtr::<fn(i32) -> bool>::new(test_apply_fn_0));
-    let mut ref_fn: FnPtr<fn(Ptr<i32>) -> bool> =
-        (FnPtr::<fn(Ptr<i32>) -> bool>::new(test_apply_fn_1));
-    let mut cref_fn: FnPtr<fn(Ptr<i32>) -> bool> =
-        (FnPtr::<fn(Ptr<i32>) -> bool>::new(test_apply_fn_2));
-    let mut rref_fn: FnPtr<fn(Ptr<i32>) -> bool> =
-        (FnPtr::<fn(Ptr<i32>) -> bool>::new(test_apply_fn_3));
+    let val_fn: Value<FnPtr<fn(i32) -> bool>> = Rc::new(RefCell::new(
+        (FnPtr::<fn(i32) -> bool>::new(test_apply_fn_0)),
+    ));
+    let ref_fn: Value<FnPtr<fn(Ptr<i32>) -> bool>> = Rc::new(RefCell::new(
+        (FnPtr::<fn(Ptr<i32>) -> bool>::new(test_apply_fn_1)),
+    ));
+    let cref_fn: Value<FnPtr<fn(Ptr<i32>) -> bool>> = Rc::new(RefCell::new(
+        (FnPtr::<fn(Ptr<i32>) -> bool>::new(test_apply_fn_2)),
+    ));
+    let rref_fn: Value<FnPtr<fn(Ptr<i32>) -> bool>> = Rc::new(RefCell::new(
+        (FnPtr::<fn(Ptr<i32>) -> bool>::new(test_apply_fn_3)),
+    ));
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 1, _>(|_| 0_i32).to_vec(),
         ));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        assert!((({ apply_22(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_23(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_24(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_25(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 1, _>(|_| 0_i32).to_vec(),
         ));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        assert!((({ apply_26(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_27(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        let a: Value<std_tuple_int_> = Rc::new(RefCell::new(<std_tuple_int_>::default()));
+        assert!((({ apply_28(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_29(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_30(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_31(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        let a: Value<std_tuple_const_int_> =
+            Rc::new(RefCell::new(<std_tuple_const_int_>::default()));
+        assert!((({ apply_32(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_33(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
 }
-pub fn test_all_22() {
-    let mut val_fn: FnPtr<fn(i32, i32) -> bool> =
-        (FnPtr::<fn(i32, i32) -> bool>::new(test_apply_fn_4));
-    let mut ref_fn: FnPtr<fn(Ptr<i32>, Ptr<i32>) -> bool> =
-        (FnPtr::<fn(Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_5));
-    let mut cref_fn: FnPtr<fn(Ptr<i32>, Ptr<i32>) -> bool> =
-        (FnPtr::<fn(Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_6));
-    let mut rref_fn: FnPtr<fn(Ptr<i32>, Ptr<i32>) -> bool> =
-        (FnPtr::<fn(Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_7));
+pub fn test_all_34() {
+    let val_fn: Value<FnPtr<fn(i32, i32) -> bool>> = Rc::new(RefCell::new(
+        (FnPtr::<fn(i32, i32) -> bool>::new(test_apply_fn_4)),
+    ));
+    let ref_fn: Value<FnPtr<fn(Ptr<i32>, Ptr<i32>) -> bool>> = Rc::new(RefCell::new(
+        (FnPtr::<fn(Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_5)),
+    ));
+    let cref_fn: Value<FnPtr<fn(Ptr<i32>, Ptr<i32>) -> bool>> = Rc::new(RefCell::new(
+        (FnPtr::<fn(Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_6)),
+    ));
+    let rref_fn: Value<FnPtr<fn(Ptr<i32>, Ptr<i32>) -> bool>> = Rc::new(RefCell::new(
+        (FnPtr::<fn(Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_7)),
+    ));
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 2, _>(|_| 0_i32).to_vec(),
         ));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        assert!((({ apply_35(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_36(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_37(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_38(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 2, _>(|_| 0_i32).to_vec(),
         ));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        assert!((({ apply_39(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_40(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        let a: Value<std_tuple_int__int_> = Rc::new(RefCell::new(<std_tuple_int__int_>::default()));
+        assert!((({ apply_41(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_42(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_43(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_44(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        let a: Value<std_tuple_const_int__const_int_> =
+            Rc::new(RefCell::new(<std_tuple_const_int__const_int_>::default()));
+        assert!((({ apply_45(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_46(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
 }
-pub fn test_all_23() {
-    let mut val_fn: FnPtr<fn(i32, i32, i32) -> bool> =
-        (FnPtr::<fn(i32, i32, i32) -> bool>::new(test_apply_fn_8));
-    let mut ref_fn: FnPtr<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool> =
-        (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_9));
-    let mut cref_fn: FnPtr<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool> =
-        (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_10));
-    let mut rref_fn: FnPtr<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool> =
-        (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_11));
+pub fn test_all_47() {
+    let val_fn: Value<FnPtr<fn(i32, i32, i32) -> bool>> = Rc::new(RefCell::new(
+        (FnPtr::<fn(i32, i32, i32) -> bool>::new(test_apply_fn_8)),
+    ));
+    let ref_fn: Value<FnPtr<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>> = Rc::new(RefCell::new(
+        (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_9)),
+    ));
+    let cref_fn: Value<FnPtr<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>> = Rc::new(RefCell::new(
+        (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_10)),
+    ));
+    let rref_fn: Value<FnPtr<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>> = Rc::new(RefCell::new(
+        (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_11)),
+    ));
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 3, _>(|_| 0_i32).to_vec(),
         ));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        assert!((({ apply_48(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_49(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_50(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_51(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 3, _>(|_| 0_i32).to_vec(),
         ));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        assert!((({ apply_52(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_53(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        let a: Value<std_tuple_int__int__int_> =
+            Rc::new(RefCell::new(<std_tuple_int__int__int_>::default()));
+        assert!((({ apply_54(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_55(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_56(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_57(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        let a: Value<std_tuple_const_int__const_int__const_int_> = Rc::new(RefCell::new(
+            <std_tuple_const_int__const_int__const_int_>::default(),
+        ));
+        assert!((({ apply_58(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_59(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
 }
-pub fn test_all_24() {
-    let mut val_fn: FnPtr<fn(i32, i32, i32, i32) -> bool> =
-        (FnPtr::<fn(i32, i32, i32, i32) -> bool>::new(test_apply_fn_12));
-    let mut ref_fn: FnPtr<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool> =
-        (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_13));
-    let mut cref_fn: FnPtr<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool> =
-        (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_14));
-    let mut rref_fn: FnPtr<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool> =
-        (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_15));
+pub fn test_all_60() {
+    let val_fn: Value<FnPtr<fn(i32, i32, i32, i32) -> bool>> = Rc::new(RefCell::new(
+        (FnPtr::<fn(i32, i32, i32, i32) -> bool>::new(test_apply_fn_12)),
+    ));
+    let ref_fn: Value<FnPtr<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>> =
+        Rc::new(RefCell::new(
+            (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_13)),
+        ));
+    let cref_fn: Value<FnPtr<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>> =
+        Rc::new(RefCell::new(
+            (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_14)),
+        ));
+    let rref_fn: Value<FnPtr<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>> =
+        Rc::new(RefCell::new(
+            (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_15)),
+        ));
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 4, _>(|_| 0_i32).to_vec(),
         ));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        assert!((({ apply_61(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_62(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_63(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_64(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 4, _>(|_| 0_i32).to_vec(),
         ));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        assert!((({ apply_65(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_66(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        let a: Value<std_tuple_int__int__int__int_> =
+            Rc::new(RefCell::new(<std_tuple_int__int__int__int_>::default()));
+        assert!((({ apply_67(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_68(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_69(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_70(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        let a: Value<std_tuple_const_int__const_int__const_int__const_int_> = Rc::new(
+            RefCell::new(<std_tuple_const_int__const_int__const_int__const_int_>::default()),
+        );
+        assert!((({ apply_71(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_72(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
 }
-pub fn test_all_25() {
-    let mut val_fn: FnPtr<fn(i32, i32, i32, i32, i32) -> bool> =
-        (FnPtr::<fn(i32, i32, i32, i32, i32) -> bool>::new(test_apply_fn_16));
-    let mut ref_fn: FnPtr<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool> =
-        (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(
-            test_apply_fn_17,
+pub fn test_all_73() {
+    let val_fn: Value<FnPtr<fn(i32, i32, i32, i32, i32) -> bool>> = Rc::new(RefCell::new(
+        (FnPtr::<fn(i32, i32, i32, i32, i32) -> bool>::new(test_apply_fn_16)),
+    ));
+    let ref_fn: Value<FnPtr<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>> =
+        Rc::new(RefCell::new(
+            (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(
+                test_apply_fn_17,
+            )),
         ));
-    let mut cref_fn: FnPtr<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool> =
-        (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(
-            test_apply_fn_18,
+    let cref_fn: Value<FnPtr<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>> =
+        Rc::new(RefCell::new(
+            (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(
+                test_apply_fn_18,
+            )),
         ));
-    let mut rref_fn: FnPtr<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool> =
-        (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(
-            test_apply_fn_19,
+    let rref_fn: Value<FnPtr<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>> =
+        Rc::new(RefCell::new(
+            (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(
+                test_apply_fn_19,
+            )),
         ));
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 5, _>(|_| 0_i32).to_vec(),
         ));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        assert!((({ apply_74(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_75(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_76(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_77(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 5, _>(|_| 0_i32).to_vec(),
         ));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        assert!((({ apply_78(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_79(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        let a: Value<std_tuple_int__int__int__int__int_> =
+            Rc::new(RefCell::new(<std_tuple_int__int__int__int__int_>::default()));
+        assert!((({ apply_80(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_81(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_82(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_83(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() as bool));
-        assert!((unimplemented!() as bool));
+        let a: Value<std_tuple_const_int__const_int__const_int__const_int__const_int_> =
+            Rc::new(RefCell::new(
+                <std_tuple_const_int__const_int__const_int__const_int__const_int_>::default(),
+            ));
+        assert!((({ apply_84(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        assert!((({ apply_85(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
 }
-pub fn test_one_26() {
-    let mut val_fn: FnPtr<
-        fn(
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-        ) -> bool,
-    > = (FnPtr::<
-        fn(
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-            i32,
-        ) -> bool,
-    >::new(test_apply_fn_20));
+pub fn test_one_86() {
+    let val_fn: Value<
+        FnPtr<
+            fn(
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+            ) -> bool,
+        >,
+    > = Rc::new(RefCell::new(
+        (FnPtr::<
+            fn(
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+                i32,
+            ) -> bool,
+        >::new(test_apply_fn_20)),
+    ));
     {
         let a: Value<Vec<i32>> = Rc::new(RefCell::new(
             std::array::from_fn::<_, 256, _>(|_| 0_i32).to_vec(),
         ));
-        assert!((unimplemented!() as bool));
+        assert!((({ apply_87(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
     {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() as bool));
+        let a : Value<std_tuple_int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_ > = Rc::new(RefCell::new(<std_tuple_int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_  >::default() )) ;
+        assert!((({ apply_88(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
     }
 }
 pub fn main() {
@@ -2023,11 +3348,11 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_all_21() });
-    ({ test_all_22() });
-    ({ test_all_23() });
-    ({ test_all_24() });
-    ({ test_all_25() });
-    ({ test_one_26() });
+    ({ test_all_34() });
+    ({ test_all_47() });
+    ({ test_all_60() });
+    ({ test_all_73() });
+    ({ test_one_86() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

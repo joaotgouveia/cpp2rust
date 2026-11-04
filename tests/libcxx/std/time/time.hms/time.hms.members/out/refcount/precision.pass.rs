@@ -30,54 +30,7 @@ thread_local!(
         10000000000000000000_u64,
     ])));
 );
-pub fn check_precision_1() -> bool {
-    return unimplemented!();
-}
-pub fn check_precision_2() -> bool {
-    return unimplemented!();
-}
-pub fn check_precision_3() -> bool {
-    return unimplemented!();
-}
-pub fn check_precision_4() -> bool {
-    return unimplemented!();
-}
-pub fn check_precision_5() -> bool {
-    return unimplemented!();
-}
-pub fn check_precision_6() -> bool {
-    return unimplemented!();
-}
-pub fn check_precision_7() -> bool {
-    return unimplemented!();
-}
-pub fn check_precision_8() -> bool {
-    return unimplemented!();
-}
-pub fn check_precision_9() -> bool {
-    return unimplemented!();
-}
-pub fn check_precision_10() -> bool {
-    return unimplemented!();
-}
-pub fn check_precision_11() -> bool {
-    return unimplemented!();
-}
-pub fn check_precision_12() -> bool {
-    return unimplemented!();
-}
-pub fn check_precision_13() -> bool {
-    return unimplemented!();
-}
-pub fn check_precision_14() -> bool {
-    return unimplemented!();
-}
-pub fn check_precision_15() -> bool {
-    return unimplemented!();
-}
-pub fn check_precision_16() -> bool {
-    return unimplemented!();
-}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

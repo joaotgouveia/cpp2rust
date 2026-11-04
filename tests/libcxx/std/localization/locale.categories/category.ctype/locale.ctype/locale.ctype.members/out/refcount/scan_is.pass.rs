@@ -27,9 +27,11 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let l: Value<std_locale> = Rc::new(RefCell::new(
+        (*({ std_locale::classic() }).upgrade().deref()).clone(),
+    ));
     {
-        let f: Ptr<()> = unimplemented!();
+        let f: Ptr<std_ctype_wchar_t_> = ({ use_facet_0(l.as_pointer()) });
         let in_: Value<Vec<i32>> = Rc::new(RefCell::new({
             let mut __bytes = Ptr::<i32>::from_string_literal(&[
                 32 as i32, 65 as i32, 7 as i32, 46 as i32, 97 as i32, 49 as i32, 0 as i32,
@@ -38,21 +40,177 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             __bytes.push(0_i32);
             __bytes
         }));
-        let mut m: Vec<u16> = (0..((*in_.borrow()).len() - 1) as usize)
+        let mut m: Vec<u16> = (0..({ ((*in_.borrow()).len() - 1) }) as usize)
             .map(|_| 0_u16)
             .collect::<Vec<_>>();
-        assert!(((unimplemented!() - in_.decay()) as i64 == 0_i64));
-        assert!(((unimplemented!() - in_.decay()) as i64 == 0_i64));
-        assert!(((unimplemented!() - in_.decay()) as i64 == 2_i64));
-        assert!(((unimplemented!() - in_.decay()) as i64 == 1_i64));
-        assert!(((unimplemented!() - in_.decay()) as i64 == 4_i64));
-        assert!(((unimplemented!() - in_.decay()) as i64 == 1_i64));
-        assert!(((unimplemented!() - in_.decay()) as i64 == 5_i64));
-        assert!(((unimplemented!() - in_.decay()) as i64 == 3_i64));
-        assert!(((unimplemented!() - in_.decay()) as i64 == 1_i64));
-        assert!(((unimplemented!() - in_.decay()) as i64 == 0_i64));
-        assert!(((unimplemented!() - in_.decay()) as i64 == 1_i64));
-        assert!(((unimplemented!() - in_.decay()) as i64 == 1_i64));
+        assert!(
+            ({
+                ((({
+                    let ___lo: Ptr<i32> = in_.decay();
+                    let ___hi: Ptr<i32> = in_.decay().offset(((*in_.borrow()).len() - 1) as isize);
+                    ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_).scan_is(
+                        space_1.with(|rc| *rc.borrow()),
+                        ___lo,
+                        ___hi,
+                    )
+                }) - in_.decay()) as i64
+                    == 0_i64)
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___lo: Ptr<i32> = in_.decay();
+                    let ___hi: Ptr<i32> = in_.decay().offset(((*in_.borrow()).len() - 1) as isize);
+                    ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_).scan_is(
+                        print_2.with(|rc| *rc.borrow()),
+                        ___lo,
+                        ___hi,
+                    )
+                }) - in_.decay()) as i64
+                    == 0_i64)
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___lo: Ptr<i32> = in_.decay();
+                    let ___hi: Ptr<i32> = in_.decay().offset(((*in_.borrow()).len() - 1) as isize);
+                    ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_).scan_is(
+                        cntrl_3.with(|rc| *rc.borrow()),
+                        ___lo,
+                        ___hi,
+                    )
+                }) - in_.decay()) as i64
+                    == 2_i64)
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___lo: Ptr<i32> = in_.decay();
+                    let ___hi: Ptr<i32> = in_.decay().offset(((*in_.borrow()).len() - 1) as isize);
+                    ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_).scan_is(
+                        upper_4.with(|rc| *rc.borrow()),
+                        ___lo,
+                        ___hi,
+                    )
+                }) - in_.decay()) as i64
+                    == 1_i64)
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___lo: Ptr<i32> = in_.decay();
+                    let ___hi: Ptr<i32> = in_.decay().offset(((*in_.borrow()).len() - 1) as isize);
+                    ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_).scan_is(
+                        lower_5.with(|rc| *rc.borrow()),
+                        ___lo,
+                        ___hi,
+                    )
+                }) - in_.decay()) as i64
+                    == 4_i64)
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___lo: Ptr<i32> = in_.decay();
+                    let ___hi: Ptr<i32> = in_.decay().offset(((*in_.borrow()).len() - 1) as isize);
+                    ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_).scan_is(
+                        alpha_6.with(|rc| *rc.borrow()),
+                        ___lo,
+                        ___hi,
+                    )
+                }) - in_.decay()) as i64
+                    == 1_i64)
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___lo: Ptr<i32> = in_.decay();
+                    let ___hi: Ptr<i32> = in_.decay().offset(((*in_.borrow()).len() - 1) as isize);
+                    ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_).scan_is(
+                        digit_7.with(|rc| *rc.borrow()),
+                        ___lo,
+                        ___hi,
+                    )
+                }) - in_.decay()) as i64
+                    == 5_i64)
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___lo: Ptr<i32> = in_.decay();
+                    let ___hi: Ptr<i32> = in_.decay().offset(((*in_.borrow()).len() - 1) as isize);
+                    ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_).scan_is(
+                        punct_8.with(|rc| *rc.borrow()),
+                        ___lo,
+                        ___hi,
+                    )
+                }) - in_.decay()) as i64
+                    == 3_i64)
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___lo: Ptr<i32> = in_.decay();
+                    let ___hi: Ptr<i32> = in_.decay().offset(((*in_.borrow()).len() - 1) as isize);
+                    ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_).scan_is(
+                        xdigit_9.with(|rc| *rc.borrow()),
+                        ___lo,
+                        ___hi,
+                    )
+                }) - in_.decay()) as i64
+                    == 1_i64)
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___lo: Ptr<i32> = in_.decay();
+                    let ___hi: Ptr<i32> = in_.decay().offset(((*in_.borrow()).len() - 1) as isize);
+                    ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_).scan_is(
+                        blank_10.with(|rc| *rc.borrow()),
+                        ___lo,
+                        ___hi,
+                    )
+                }) - in_.decay()) as i64
+                    == 0_i64)
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___lo: Ptr<i32> = in_.decay();
+                    let ___hi: Ptr<i32> = in_.decay().offset(((*in_.borrow()).len() - 1) as isize);
+                    ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_).scan_is(
+                        alnum_11.with(|rc| *rc.borrow()),
+                        ___lo,
+                        ___hi,
+                    )
+                }) - in_.decay()) as i64
+                    == 1_i64)
+            })
+        );
+        assert!(
+            ({
+                ((({
+                    let ___lo: Ptr<i32> = in_.decay();
+                    let ___hi: Ptr<i32> = in_.decay().offset(((*in_.borrow()).len() - 1) as isize);
+                    ((*f.upgrade().deref()) as std___ctype_abstract_base_wchar_t_).scan_is(
+                        graph_12.with(|rc| *rc.borrow()),
+                        ___lo,
+                        ___hi,
+                    )
+                }) - in_.decay()) as i64
+                    == 1_i64)
+            })
+        );
     }
     return 0;
 }

@@ -11,21 +11,31 @@ use std::rc::{Rc, Weak};
 pub struct X {
     #[offset(8)]
     #[byte_size(32)]
-    _cb: (),
+    _cb: std_function_void__X_ref__,
 }
 impl X {}
+impl CppMove for X {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(32)]
 pub struct IncompleteReturnType {
     #[offset(0)]
     #[byte_size(32)]
-    pub fn_: (),
+    pub fn_: std_function_IncompleteReturnType____,
 }
 impl IncompleteReturnType {
     pub fn move_from(_a0: Ptr<IncompleteReturnType>) -> Self {
         Self {
-            fn_: unimplemented!(),
+            fn_: field!(_a0, fn_).with_mut(std::mem::take),
         }
+    }
+}
+impl CppMove for IncompleteReturnType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 thread_local!(
@@ -45,19 +55,20 @@ pub fn test_pr34298_2() {
     {
         let X: Value<IncompleteReturnType> =
             Rc::new(RefCell::new(<IncompleteReturnType>::default()));
-        unimplemented!();
+        (*X.borrow_mut()).fn_ = test_fn_1;
         let CX: Ptr<IncompleteReturnType> = X.as_pointer();
-        let mut X2: IncompleteReturnType = (*CX.upgrade().deref()).clone();
-        assert!(unimplemented!());
+        let X2: Value<IncompleteReturnType> =
+            Rc::new(RefCell::new((*CX.upgrade().deref()).clone()));
+        assert!(({ ({ (*X2.borrow()).fn_() }) }));
         assert!((called_0.with(|rc| *rc.borrow()) == 0));
-        unimplemented!();
+        ({ (*X2.borrow()).fn_() });
         assert!((called_0.with(|rc| *rc.borrow()) == 1));
     }
     {
         let Empty: Value<IncompleteReturnType> =
             Rc::new(RefCell::new(<IncompleteReturnType>::default()));
-        let mut X2: IncompleteReturnType = (*Empty.borrow()).clone();
-        assert!(!(unimplemented!()));
+        let X2: Value<IncompleteReturnType> = Rc::new(RefCell::new((*Empty.borrow()).clone()));
+        assert!(({ !({ (*X2.borrow()).fn_() }) }));
     }
 }
 pub fn main() {
@@ -88,7 +99,7 @@ pub trait IncompleteReturnTypeImpl {
 }
 impl IncompleteReturnTypeImpl for Ptr<IncompleteReturnType> {
     fn move_assign(&self, _a0: Ptr<IncompleteReturnType>) -> Ptr<IncompleteReturnType> {
-        unimplemented!();
+        field!((*self), fn_).write({ { (*_a0.upgrade().deref()).fn_.clone() } });
         return (*self).clone();
     }
 }

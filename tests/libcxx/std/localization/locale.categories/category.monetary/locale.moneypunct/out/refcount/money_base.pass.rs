@@ -27,7 +27,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let mb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mb: Value<std_money_base> = Rc::new(RefCell::new(<std_money_base>::default()));
     (&(*mb.borrow_mut()));
     const _: () = assert!(true, "std::money_base::none == 0");;
     const _: () = assert!(true, "std::money_base::space == 1");;
@@ -35,9 +35,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::money_base::sign == 3");;
     const _: () = assert!(true, "std::money_base::value == 4");;
     const _: () = assert!((4usize == 4_usize), "sizeof(std::money_base::pattern) == 4");;
-    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let p: Value<std_money_base_pattern> =
+        Rc::new(RefCell::new(<std_money_base_pattern>::default()));
     &(*p.borrow_mut());
-    array_elem!(p.as_pointer(), field, 0).write((unimplemented!() as i8));
+    array_elem!(p.as_pointer(), field, 0).write((std_money_base_part_none as i8));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

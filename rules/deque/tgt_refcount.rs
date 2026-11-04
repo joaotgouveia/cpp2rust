@@ -28,3 +28,9 @@ fn t5<T1>() -> Ptr<T1> {
 fn t6<T1>() -> Ptr<T1> {
     Ptr::null()
 }
+
+fn f61<T1: ByteRepr + 'static>(a0: Ptr<Vec<T1>>, init: T1) -> Ptr<T1> {
+    let __init = init;
+    a0.with_mut(|__v: &mut Vec<T1>| __v.push(__init));
+    a0.decay().to_last()
+}

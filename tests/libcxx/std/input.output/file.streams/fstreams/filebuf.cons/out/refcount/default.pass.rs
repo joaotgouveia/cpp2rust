@@ -28,12 +28,16 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(!(unimplemented!()));
+        let f: Value<std_basic_filebuf_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            <std_basic_filebuf_char__std_char_traits_char__>::default(),
+        ));
+        assert!(({ !({ (*f.borrow()).is_open() }) }));
     }
     {
-        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(!(unimplemented!()));
+        let f: Value<std_basic_filebuf_wchar_t__std_char_traits_wchar_t__> = Rc::new(RefCell::new(
+            <std_basic_filebuf_wchar_t__std_char_traits_wchar_t__>::default(),
+        ));
+        assert!(({ !({ (*f.borrow()).is_open() }) }));
     }
     return 0;
 }

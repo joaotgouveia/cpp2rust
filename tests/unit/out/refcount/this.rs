@@ -48,6 +48,11 @@ impl S {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn bump_0(mut p: Ptr<S>) {
     field!(p, a_).with_mut(|__v| __v.postfix_inc());
 }
@@ -66,6 +71,11 @@ impl D {
             field!(this, a_).with_mut(|__v| *__v = *__v * 2)
         };
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+}
+impl CppMove for D {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

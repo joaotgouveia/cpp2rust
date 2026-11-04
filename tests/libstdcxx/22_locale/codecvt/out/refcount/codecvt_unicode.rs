@@ -52,6 +52,11 @@ impl Clone for __gnu_test_object_counter {
         __gnu_test_object_counter::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_object_counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_object_counter {
     fn default() -> Self {
         { __gnu_test_object_counter::new() }
@@ -78,6 +83,11 @@ impl __gnu_test_copy_constructor {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_copy_constructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
@@ -99,6 +109,11 @@ impl __gnu_test_assignment_operator {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
+impl CppMove for __gnu_test_assignment_operator {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
@@ -111,6 +126,11 @@ impl __gnu_test_destructor {
     }
     pub fn reset() {
         _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
+    }
+}
+impl CppMove for __gnu_test_destructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -173,6 +193,11 @@ impl Clone for __gnu_test_copy_tracker {
         __gnu_test_copy_tracker::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for __gnu_test_copy_tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for __gnu_test_copy_tracker {
     fn default() -> Self {
         { __gnu_test_copy_tracker::new(None, None) }
@@ -197,6 +222,11 @@ pub struct __gnu_test_semaphore {
     pid_: (),
 }
 impl __gnu_test_semaphore {}
+impl CppMove for __gnu_test_semaphore {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct test_offsets_ok {
@@ -204,6 +234,11 @@ pub struct test_offsets_ok {
     pub in_size: usize,
     #[offset(8)]
     pub out_size: usize,
+}
+impl CppMove for test_offsets_ok {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(32)]
@@ -216,6 +251,11 @@ pub struct test_offsets_partial {
     pub expected_in_next: usize,
     #[offset(24)]
     pub expected_out_next: usize,
+}
+impl CppMove for test_offsets_partial {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(48)]
@@ -233,6 +273,11 @@ pub struct test_offsets_error_unsigned_char_ {
     #[offset(40)]
     pub replace_pos: usize,
 }
+impl CppMove for test_offsets_error_unsigned_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(48)]
 pub struct test_offsets_error_char16_t_ {
@@ -249,6 +294,11 @@ pub struct test_offsets_error_char16_t_ {
     #[offset(40)]
     pub replace_pos: usize,
 }
+impl CppMove for test_offsets_error_char16_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(48)]
 pub struct test_offsets_error_char32_t_ {
@@ -264,6 +314,11 @@ pub struct test_offsets_error_char32_t_ {
     pub replace_char: u32,
     #[offset(40)]
     pub replace_pos: usize,
+}
+impl CppMove for test_offsets_error_char32_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn array_size_9(_a0: Ptr<u8>) -> usize {
     return (11_u64 as usize);
@@ -326,29 +381,35 @@ pub fn utf8_to_utf32_in_ok_24(cvt: Ptr<()>) {
     let in_: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
     let exp: Value<Box<[u32]>> =
         Rc::new(RefCell::new((0..5).map(|_| 0_u32).collect::<Box<[u32]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_0, mut __tmp_1) => {
+            let mut __first = (__tmp_0).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_1 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u32>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u32>).to_end()
+    }) {
+        (mut __tmp_2, mut __tmp_3) => {
+            let mut __first = (__tmp_2).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_3 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -590,29 +651,35 @@ pub fn utf8_to_utf32_in_partial_25(cvt: Ptr<()>) {
     let in_: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
     let exp: Value<Box<[u32]>> =
         Rc::new(RefCell::new((0..5).map(|_| 0_u32).collect::<Box<[u32]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_4, mut __tmp_5) => {
+            let mut __first = (__tmp_4).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_5 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u32>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u32>).to_end()
+    }) {
+        (mut __tmp_6, mut __tmp_7) => {
+            let mut __first = (__tmp_6).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_7 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -853,29 +920,35 @@ pub fn utf8_to_utf32_in_error_26(cvt: Ptr<()>) {
     let in_: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
     let exp: Value<Box<[u32]>> =
         Rc::new(RefCell::new((0..5).map(|_| 0_u32).collect::<Box<[u32]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_8, mut __tmp_9) => {
+            let mut __first = (__tmp_8).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_9 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u32>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u32>).to_end()
+    }) {
+        (mut __tmp_10, mut __tmp_11) => {
+            let mut __first = (__tmp_10).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_11 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -1333,29 +1406,35 @@ pub fn utf32_to_utf8_out_ok_28(cvt: Ptr<()>) {
     let in_: Value<Box<[u32]>> =
         Rc::new(RefCell::new((0..5).map(|_| 0_u32).collect::<Box<[u32]>>()));
     let exp: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u32>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
-        }
-        __out
-    };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u32>).to_end()
+    }) {
+        (mut __tmp_12, mut __tmp_13) => {
+            let mut __first = (__tmp_12).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_13 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
+    };
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_14, mut __tmp_15) => {
+            let mut __first = (__tmp_14).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_15 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
+        }
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -1488,29 +1567,35 @@ pub fn utf32_to_utf8_out_partial_29(cvt: Ptr<()>) {
     let in_: Value<Box<[u32]>> =
         Rc::new(RefCell::new((0..5).map(|_| 0_u32).collect::<Box<[u32]>>()));
     let exp: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u32>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
-        }
-        __out
-    };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u32>).to_end()
+    }) {
+        (mut __tmp_16, mut __tmp_17) => {
+            let mut __first = (__tmp_16).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_17 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
+    };
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_18, mut __tmp_19) => {
+            let mut __first = (__tmp_18).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_19 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
+        }
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -1699,29 +1784,35 @@ pub fn utf32_to_utf8_out_error_30(cvt: Ptr<()>) {
     let in_: Value<Box<[u32]>> =
         Rc::new(RefCell::new((0..5).map(|_| 0_u32).collect::<Box<[u32]>>()));
     let exp: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u32>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
-        }
-        __out
-    };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u32>).to_end()
+    }) {
+        (mut __tmp_20, mut __tmp_21) => {
+            let mut __first = (__tmp_20).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_21 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
+    };
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_22, mut __tmp_23) => {
+            let mut __first = (__tmp_22).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_23 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
+        }
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -1927,29 +2018,35 @@ pub fn utf8_to_utf16_in_ok_33(cvt: Ptr<()>) {
     let in_: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
     let exp: Value<Box<[u16]>> =
         Rc::new(RefCell::new((0..6).map(|_| 0_u16).collect::<Box<[u16]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_24, mut __tmp_25) => {
+            let mut __first = (__tmp_24).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_25 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_26, mut __tmp_27) => {
+            let mut __first = (__tmp_26).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_27 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -2194,31 +2291,37 @@ pub fn utf8_to_utf16_in_ok_34(cvt: Ptr<()>) {
     let in_: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
     let exp: Value<Box<[u32]>> =
         Rc::new(RefCell::new((0..6).map(|_| 0_u32).collect::<Box<[u32]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_28, mut __tmp_29) => {
+            let mut __first = (__tmp_28).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_29 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_30, mut __tmp_31) => {
+            let mut __first = (__tmp_30).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_31 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as u32));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as u32));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -2463,29 +2566,35 @@ pub fn utf8_to_utf16_in_partial_35(cvt: Ptr<()>) {
     let in_: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
     let exp: Value<Box<[u16]>> =
         Rc::new(RefCell::new((0..6).map(|_| 0_u16).collect::<Box<[u16]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_32, mut __tmp_33) => {
+            let mut __first = (__tmp_32).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_33 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_34, mut __tmp_35) => {
+            let mut __first = (__tmp_34).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_35 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -2752,31 +2861,37 @@ pub fn utf8_to_utf16_in_partial_36(cvt: Ptr<()>) {
     let in_: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
     let exp: Value<Box<[u32]>> =
         Rc::new(RefCell::new((0..6).map(|_| 0_u32).collect::<Box<[u32]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_36, mut __tmp_37) => {
+            let mut __first = (__tmp_36).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_37 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_38, mut __tmp_39) => {
+            let mut __first = (__tmp_38).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_39 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as u32));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as u32));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -3043,29 +3158,35 @@ pub fn utf8_to_utf16_in_error_37(cvt: Ptr<()>) {
     let in_: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
     let exp: Value<Box<[u16]>> =
         Rc::new(RefCell::new((0..6).map(|_| 0_u16).collect::<Box<[u16]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_40, mut __tmp_41) => {
+            let mut __first = (__tmp_40).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_41 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_42, mut __tmp_43) => {
+            let mut __first = (__tmp_42).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_43 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -3520,31 +3641,37 @@ pub fn utf8_to_utf16_in_error_38(cvt: Ptr<()>) {
     let in_: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
     let exp: Value<Box<[u32]>> =
         Rc::new(RefCell::new((0..6).map(|_| 0_u32).collect::<Box<[u32]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_44, mut __tmp_45) => {
+            let mut __first = (__tmp_44).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_45 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_46, mut __tmp_47) => {
+            let mut __first = (__tmp_46).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_47 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as u32));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as u32));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -4009,29 +4136,35 @@ pub fn utf16_to_utf8_out_ok_41(cvt: Ptr<()>) {
     let in_: Value<Box<[u16]>> =
         Rc::new(RefCell::new((0..6).map(|_| 0_u16).collect::<Box<[u16]>>()));
     let exp: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
-        }
-        __out
-    };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_48, mut __tmp_49) => {
+            let mut __first = (__tmp_48).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_49 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
+    };
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_50, mut __tmp_51) => {
+            let mut __first = (__tmp_50).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_51 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
+        }
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -4165,31 +4298,37 @@ pub fn utf16_to_utf8_out_ok_42(cvt: Ptr<()>) {
     let in_: Value<Box<[u32]>> =
         Rc::new(RefCell::new((0..6).map(|_| 0_u32).collect::<Box<[u32]>>()));
     let exp: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_52, mut __tmp_53) => {
+            let mut __first = (__tmp_52).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_53 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as u32));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as u32));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_54, mut __tmp_55) => {
+            let mut __first = (__tmp_54).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_55 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -4323,29 +4462,35 @@ pub fn utf16_to_utf8_out_partial_43(cvt: Ptr<()>) {
     let in_: Value<Box<[u16]>> =
         Rc::new(RefCell::new((0..6).map(|_| 0_u16).collect::<Box<[u16]>>()));
     let exp: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
-        }
-        __out
-    };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_56, mut __tmp_57) => {
+            let mut __first = (__tmp_56).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_57 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
+    };
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_58, mut __tmp_59) => {
+            let mut __first = (__tmp_58).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_59 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
+        }
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -4565,31 +4710,37 @@ pub fn utf16_to_utf8_out_partial_44(cvt: Ptr<()>) {
     let in_: Value<Box<[u32]>> =
         Rc::new(RefCell::new((0..6).map(|_| 0_u32).collect::<Box<[u32]>>()));
     let exp: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_60, mut __tmp_61) => {
+            let mut __first = (__tmp_60).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_61 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as u32));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as u32));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_62, mut __tmp_63) => {
+            let mut __first = (__tmp_62).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_63 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -4809,29 +4960,35 @@ pub fn utf16_to_utf8_out_error_45(cvt: Ptr<()>) {
     let in_: Value<Box<[u16]>> =
         Rc::new(RefCell::new((0..6).map(|_| 0_u16).collect::<Box<[u16]>>()));
     let exp: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
-        }
-        __out
-    };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_64, mut __tmp_65) => {
+            let mut __first = (__tmp_64).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_65 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
+    };
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_66, mut __tmp_67) => {
+            let mut __first = (__tmp_66).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_67 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
+        }
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -5100,31 +5257,37 @@ pub fn utf16_to_utf8_out_error_46(cvt: Ptr<()>) {
     let in_: Value<Box<[u32]>> =
         Rc::new(RefCell::new((0..6).map(|_| 0_u32).collect::<Box<[u32]>>()));
     let exp: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_68, mut __tmp_69) => {
+            let mut __first = (__tmp_68).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_69 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as u32));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as u32));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_70, mut __tmp_71) => {
+            let mut __first = (__tmp_70).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_71 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -5409,29 +5572,35 @@ pub fn utf8_to_ucs2_in_ok_51(cvt: Ptr<()>) {
     let in_: Value<Box<[i8]>> = Rc::new(RefCell::new((0..7).map(|_| 0_i8).collect::<Box<[i8]>>()));
     let exp: Value<Box<[u16]>> =
         Rc::new(RefCell::new((0..4).map(|_| 0_u16).collect::<Box<[u16]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_72, mut __tmp_73) => {
+            let mut __first = (__tmp_72).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_73 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_74, mut __tmp_75) => {
+            let mut __first = (__tmp_74).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_75 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -5667,29 +5836,35 @@ pub fn utf8_to_ucs2_in_partial_52(cvt: Ptr<()>) {
     let in_: Value<Box<[i8]>> = Rc::new(RefCell::new((0..7).map(|_| 0_i8).collect::<Box<[i8]>>()));
     let exp: Value<Box<[u16]>> =
         Rc::new(RefCell::new((0..4).map(|_| 0_u16).collect::<Box<[u16]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_76, mut __tmp_77) => {
+            let mut __first = (__tmp_76).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_77 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_78, mut __tmp_79) => {
+            let mut __first = (__tmp_78).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_79 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -5889,29 +6064,35 @@ pub fn utf8_to_ucs2_in_error_53(cvt: Ptr<()>) {
     let in_: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
     let exp: Value<Box<[u16]>> =
         Rc::new(RefCell::new((0..6).map(|_| 0_u16).collect::<Box<[u16]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_80, mut __tmp_81) => {
+            let mut __first = (__tmp_80).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_81 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
     };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_82, mut __tmp_83) => {
+            let mut __first = (__tmp_82).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_83 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -6433,29 +6614,35 @@ pub fn ucs2_to_utf8_out_ok_55(cvt: Ptr<()>) {
     let in_: Value<Box<[u16]>> =
         Rc::new(RefCell::new((0..4).map(|_| 0_u16).collect::<Box<[u16]>>()));
     let exp: Value<Box<[i8]>> = Rc::new(RefCell::new((0..7).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
-        }
-        __out
-    };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_84, mut __tmp_85) => {
+            let mut __first = (__tmp_84).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_85 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
+    };
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_86, mut __tmp_87) => {
+            let mut __first = (__tmp_86).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_87 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
+        }
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -6582,29 +6769,35 @@ pub fn ucs2_to_utf8_out_partial_56(cvt: Ptr<()>) {
     let in_: Value<Box<[u16]>> =
         Rc::new(RefCell::new((0..4).map(|_| 0_u16).collect::<Box<[u16]>>()));
     let exp: Value<Box<[i8]>> = Rc::new(RefCell::new((0..7).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
-        }
-        __out
-    };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_88, mut __tmp_89) => {
+            let mut __first = (__tmp_88).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_89 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
+    };
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_90, mut __tmp_91) => {
+            let mut __first = (__tmp_90).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_91 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
+        }
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -6769,29 +6962,35 @@ pub fn ucs2_to_utf8_out_error_57(cvt: Ptr<()>) {
     let in_: Value<Box<[u16]>> =
         Rc::new(RefCell::new((0..6).map(|_| 0_u16).collect::<Box<[u16]>>()));
     let exp: Value<Box<[i8]>> = Rc::new(RefCell::new((0..11).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
-        }
-        __out
-    };
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u8>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_92, mut __tmp_93) => {
+            let mut __first = (__tmp_92).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_93 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
             __out
-                .iter_deref()
-                .write(((__first.iter_deref().read()) as i8));
-            __first.iter_inc();
-            __out.iter_inc();
         }
-        __out
+    };
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u8>).to_end()
+    }) {
+        (mut __tmp_94, mut __tmp_95) => {
+            let mut __first = (__tmp_94).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_95 {
+                __out
+                    .iter_deref()
+                    .write(((__first.iter_deref().read()) as i8));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
+        }
     };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -7197,16 +7396,19 @@ pub fn utf16_to_utf32_in_ok_62(cvt: Ptr<()>, mut endianess: utf16_endianess) {
         let _l: Ptr<u16> = (input.as_pointer() as Ptr<u16>).to_end();
         utf16_to_bytes_60(_f, _l, unimplemented!(), endianess)
     });
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u32>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u32>).to_end()
+    }) {
+        (mut __tmp_96, mut __tmp_97) => {
+            let mut __first = (__tmp_96).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_97 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     let offsets: Value<Box<[test_offsets_ok]>> = Rc::new(RefCell::new(Box::new([
         test_offsets_ok {
@@ -7442,16 +7644,19 @@ pub fn utf16_to_utf32_in_partial_63(cvt: Ptr<()>, mut endianess: utf16_endianess
         let _l: Ptr<u16> = (input.as_pointer() as Ptr<u16>).to_end();
         utf16_to_bytes_60(_f, _l, unimplemented!(), endianess)
     });
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u32>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u32>).to_end()
+    }) {
+        (mut __tmp_98, mut __tmp_99) => {
+            let mut __first = (__tmp_98).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_99 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     let offsets: Value<Box<[test_offsets_partial]>> = Rc::new(RefCell::new(Box::new([
         test_offsets_partial {
@@ -7680,16 +7885,19 @@ pub fn utf16_to_utf32_in_error_64(cvt: Ptr<()>, mut endianess: utf16_endianess) 
     const _: () = assert!(true, "array_size (expected) == 5");;
     let exp: Value<Box<[u32]>> =
         Rc::new(RefCell::new((0..5).map(|_| 0_u32).collect::<Box<[u32]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u32>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u32>).to_end()
+    }) {
+        (mut __tmp_100, mut __tmp_101) => {
+            let mut __first = (__tmp_100).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_101 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     let offsets: Value<Box<[test_offsets_error_char16_t_]>> = Rc::new(RefCell::new(Box::new([
         test_offsets_error_char16_t_ {
@@ -7969,16 +8177,19 @@ pub fn utf32_to_utf16_out_ok_65(cvt: Ptr<()>, mut endianess: utf16_endianess) {
     let in_: Value<Box<[u32]>> =
         Rc::new(RefCell::new((0..5).map(|_| 0_u32).collect::<Box<[u32]>>()));
     let exp: Value<Box<[i8]>> = Rc::new(RefCell::new((0..12).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u32>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u32>).to_end()
+    }) {
+        (mut __tmp_102, mut __tmp_103) => {
+            let mut __first = (__tmp_102).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_103 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     ({
         let _f: Ptr<u16> = unimplemented!();
@@ -8105,16 +8316,19 @@ pub fn utf32_to_utf16_out_partial_66(cvt: Ptr<()>, mut endianess: utf16_endianes
     let in_: Value<Box<[u32]>> =
         Rc::new(RefCell::new((0..5).map(|_| 0_u32).collect::<Box<[u32]>>()));
     let exp: Value<Box<[i8]>> = Rc::new(RefCell::new((0..12).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u32>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u32>).to_end()
+    }) {
+        (mut __tmp_104, mut __tmp_105) => {
+            let mut __first = (__tmp_104).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_105 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     ({
         let _f: Ptr<u16> = unimplemented!();
@@ -8297,16 +8511,19 @@ pub fn utf32_to_utf16_out_error_67(cvt: Ptr<()>, mut endianess: utf16_endianess)
     let in_: Value<Box<[u32]>> =
         Rc::new(RefCell::new((0..5).map(|_| 0_u32).collect::<Box<[u32]>>()));
     let exp: Value<Box<[i8]>> = Rc::new(RefCell::new((0..12).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u32>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u32>).to_end()
+    }) {
+        (mut __tmp_106, mut __tmp_107) => {
+            let mut __first = (__tmp_106).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_107 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     ({
         let _f: Ptr<u16> = unimplemented!();
@@ -8530,16 +8747,19 @@ pub fn utf16_to_ucs2_in_ok_69(cvt: Ptr<()>, mut endianess: utf16_endianess) {
         let _l: Ptr<u16> = (input.as_pointer() as Ptr<u16>).to_end();
         utf16_to_bytes_60(_f, _l, unimplemented!(), endianess)
     });
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_108, mut __tmp_109) => {
+            let mut __first = (__tmp_108).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_109 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     let offsets: Value<Box<[test_offsets_ok]>> = Rc::new(RefCell::new(Box::new([
         test_offsets_ok {
@@ -8767,16 +8987,19 @@ pub fn utf16_to_ucs2_in_partial_70(cvt: Ptr<()>, mut endianess: utf16_endianess)
         let _l: Ptr<u16> = (input.as_pointer() as Ptr<u16>).to_end();
         utf16_to_bytes_60(_f, _l, unimplemented!(), endianess)
     });
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_110, mut __tmp_111) => {
+            let mut __first = (__tmp_110).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_111 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     let offsets: Value<Box<[test_offsets_partial]>> = Rc::new(RefCell::new(Box::new([
         test_offsets_partial {
@@ -8964,16 +9187,19 @@ pub fn utf16_to_ucs2_in_error_71(cvt: Ptr<()>, mut endianess: utf16_endianess) {
     const _: () = assert!(true, "array_size (expected) == 6");;
     let exp: Value<Box<[u16]>> =
         Rc::new(RefCell::new((0..6).map(|_| 0_u16).collect::<Box<[u16]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (expected.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (expected.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_112, mut __tmp_113) => {
+            let mut __first = (__tmp_112).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_113 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     let offsets: Value<Box<[test_offsets_error_char16_t_]>> = Rc::new(RefCell::new(Box::new([
         test_offsets_error_char16_t_ {
@@ -9299,16 +9525,19 @@ pub fn ucs2_to_utf16_out_ok_72(cvt: Ptr<()>, mut endianess: utf16_endianess) {
     let in_: Value<Box<[u16]>> =
         Rc::new(RefCell::new((0..4).map(|_| 0_u16).collect::<Box<[u16]>>()));
     let exp: Value<Box<[i8]>> = Rc::new(RefCell::new((0..8).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_114, mut __tmp_115) => {
+            let mut __first = (__tmp_114).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_115 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     ({
         let _f: Ptr<u16> = unimplemented!();
@@ -9427,16 +9656,19 @@ pub fn ucs2_to_utf16_out_partial_73(cvt: Ptr<()>, mut endianess: utf16_endianess
     let in_: Value<Box<[u16]>> =
         Rc::new(RefCell::new((0..4).map(|_| 0_u16).collect::<Box<[u16]>>()));
     let exp: Value<Box<[i8]>> = Rc::new(RefCell::new((0..8).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_116, mut __tmp_117) => {
+            let mut __first = (__tmp_116).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_117 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     ({
         let _f: Ptr<u16> = unimplemented!();
@@ -9595,16 +9827,19 @@ pub fn ucs2_to_utf16_out_error_74(cvt: Ptr<()>, mut endianess: utf16_endianess) 
     let in_: Value<Box<[u16]>> =
         Rc::new(RefCell::new((0..6).map(|_| 0_u16).collect::<Box<[u16]>>()));
     let exp: Value<Box<[i8]>> = Rc::new(RefCell::new((0..12).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    {
-        let mut __first = unimplemented!();
-        let __last = (input.as_pointer() as Ptr<u16>).to_end();
-        let mut __out = unimplemented!();
-        while __first != __last {
-            __out.iter_deref().write((__first.iter_deref().read()));
-            __first.iter_inc();
-            __out.iter_inc();
+    match ({ unimplemented!() }, {
+        (input.as_pointer() as Ptr<u16>).to_end()
+    }) {
+        (mut __tmp_118, mut __tmp_119) => {
+            let mut __first = (__tmp_118).clone();
+            let mut __out = unimplemented!();
+            while __first != __tmp_119 {
+                __out.iter_deref().write((__first.iter_deref().read()));
+                __first.iter_inc();
+                __out.iter_inc();
+            }
+            __out
         }
-        __out
     };
     ({
         let _f: Ptr<u16> = unimplemented!();
@@ -10118,12 +10353,12 @@ pub fn run_tests_wrapped_env_85(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !({
-        let __name = env.to_rust_string();
-        if 1 != 0 || ::std::env::var_os(&__name).is_none() {
-            unsafe { ::std::env::set_var(__name, name.to_rust_string()) };
+    if !(match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+        true => {
+            unsafe { ::std::env::set_var(env.to_rust_string(), name.to_rust_string()) };
+            0
         }
-        0
+        false => 0,
     } != 0)
     {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
@@ -10132,22 +10367,21 @@ pub fn run_tests_wrapped_env_85(
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        {
-            let __name = env.to_rust_string();
-            if 1 != 0 || ::std::env::var_os(&__name).is_none() {
-                unsafe {
-                    ::std::env::set_var(
-                        __name,
-                        if !(oldENV).is_null() {
-                            (oldENV).clone()
-                        } else {
-                            Ptr::<i8>::from_string_literal(b"")
-                        }
-                        .to_rust_string(),
-                    )
-                };
+        match ({
+            if !(oldENV).is_null() {
+                (oldENV).clone()
+            } else {
+                Ptr::<i8>::from_string_literal(b"")
             }
-            0
+        },)
+        {
+            (mut __tmp_0,) => match 1 != 0 || ::std::env::var_os(env.to_rust_string()).is_none() {
+                true => {
+                    unsafe { ::std::env::set_var(env.to_rust_string(), __tmp_0.to_rust_string()) };
+                    0
+                }
+                false => 0,
+            },
         };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
@@ -10197,6 +10431,11 @@ impl __gnu_test_semun {
     }
     pub fn array(this: Ptr<Self>) -> Ptr<Ptr<u16>> {
         this.reinterpret_cast()
+    }
+}
+impl CppMove for __gnu_test_semun {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for __gnu_test_semun {
@@ -10274,7 +10513,9 @@ impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
     }
     fn push_back(&self, mut test: FnPtr<fn()>) {
         array_elem!((*self), _M_tests, (*self).with(|__s| __s._M_size)).write((test).clone());
-        field!((*self), _M_size).with_mut(|__v| __v.prefix_inc());
+        field!((*self), _M_size).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait __gnu_test_object_counterImpl {

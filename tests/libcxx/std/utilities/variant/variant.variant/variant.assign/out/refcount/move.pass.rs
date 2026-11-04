@@ -44,6 +44,11 @@ pub fn operator_bitor_2(mut LHS: CallType, mut RHS: CallType) -> CallType {
 #[cpp_into(i32, to_i32)]
 #[byte_size(1)]
 pub struct ForwardingCallObject {}
+impl CppMove for ForwardingCallObject {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static last_call_type_3: Value<CallType> = Rc::new(RefCell::new(CallType_CT_None));
 );
@@ -53,21 +58,41 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnFirst {}
+impl CppMove for ReturnFirst {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnArity {}
+impl CppMove for ReturnArity {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoCopy {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct CopyOnly {}
+impl CppMove for CopyOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(1)]
 pub struct MoveOnly {}
 impl MoveOnly {
     pub fn move_from(_a0: Ptr<MoveOnly>) -> Self {
         Self {}
+    }
+}
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -78,12 +103,22 @@ impl MoveOnlyNT {
         Self {}
     }
 }
+impl CppMove for MoveOnlyNT {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(1)]
 pub struct MoveOnlyOddNothrow {}
 impl MoveOnlyOddNothrow {
     pub fn move_from(_a0: Ptr<MoveOnlyOddNothrow>) -> Self {
         Self {}
+    }
+}
+impl CppMove for MoveOnlyOddNothrow {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveAssign, Default)]
@@ -116,10 +151,16 @@ impl MoveAssign {
             move_assign: o.with(|__s| __s.move_assign.clone()),
         }));
         let this: Ptr<MoveAssign> = __this.as_pointer();
-        this.with(|__s| __s.move_construct.clone())
-            .with_mut(|__v| __v.prefix_inc());
+        this.with(|__s| __s.move_construct.clone()).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         field!(o, value).write(-1_i32);
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+}
+impl CppMove for MoveAssign {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, MoveAssign, Default)]
@@ -132,6 +173,11 @@ pub struct NTMoveAssign {
 impl NTMoveAssign {
     pub fn new(mut v: i32) -> Self {
         Self { value: v }
+    }
+}
+impl CppMove for NTMoveAssign {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 const _: () = assert!(
@@ -156,6 +202,11 @@ impl TMoveAssign {
         }
     }
 }
+impl CppMove for TMoveAssign {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(
     true,
     "std::is_trivially_move_assignable<TMoveAssign>::value"
@@ -172,6 +223,11 @@ impl TMoveAssignNTCopyAssign {
         Self { value: v }
     }
 }
+impl CppMove for TMoveAssignNTCopyAssign {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "std::is_trivially_move_assignable_v<TMoveAssignNTCopyAssign>"
@@ -182,6 +238,11 @@ pub struct TrivialCopyNontrivialMove {}
 impl TrivialCopyNontrivialMove {
     pub fn move_from(_a0: Ptr<TrivialCopyNontrivialMove>) -> Self {
         Self {}
+    }
+}
+impl CppMove for TrivialCopyNontrivialMove {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -262,6 +323,11 @@ pub struct Result_int_ {
     #[offset(8)]
     pub value: i32,
 }
+impl CppMove for Result_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct Result_long_ {
@@ -270,108 +336,77 @@ pub struct Result_long_ {
     #[offset(8)]
     pub value: i64,
 }
+impl CppMove for Result_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_move_assignment_same_index_10() {
     {
-        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let vref: Ptr<()> = (unimplemented!());
+        let v1: Value<std_variant_int_> = Rc::new(RefCell::new(43));
+        let v2: Value<std_variant_int_> = Rc::new(RefCell::new(42));
+        let vref: Ptr<std_variant_int_> = ((*v1.borrow_mut()) = (*v2.borrow()).clone());
         assert!(({ (vref).clone() } == { (v1.as_pointer()) }));
-        assert!((unimplemented!() == 0_usize));
-        assert!(((unimplemented!().read()) == 42));
+        assert!(({ (({ (*v1.borrow()).index() }) == 0_usize) }));
+        assert!(((({ get_11(v1.as_pointer(),) }).read()) == 42));
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let vref: Ptr<()> = (unimplemented!());
+        let v1: Value<std_variant_int__long__unsigned_int_> = Rc::new(RefCell::new(43_i64));
+        let v2: Value<std_variant_int__long__unsigned_int_> = Rc::new(RefCell::new(42_i64));
+        let vref: Ptr<std_variant_int__long__unsigned_int_> =
+            ((*v1.borrow_mut()) = (*v2.borrow()).clone());
         assert!(({ (vref).clone() } == { (v1.as_pointer()) }));
-        assert!((unimplemented!() == 1_usize));
-        assert!(((unimplemented!().read()) == 42_()));
+        assert!(({ (({ (*v1.borrow()).index() }) == 1_usize) }));
+        assert!(((({ get_12(v1.as_pointer(),) }).read()) == 42_i64));
     }
     {
         let move_construct: Value<i32> = Rc::new(RefCell::new(0));
         let move_assign: Value<i32> = Rc::new(RefCell::new(0));
-        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let vref: Ptr<()> = (unimplemented!());
+        let v1: Value<std_variant_int__MoveAssign__unsigned_int_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(43));
+            let __tmp_1: Value<Ptr<i32>> = Rc::new(RefCell::new((move_construct.as_pointer())));
+            let __tmp_2: Value<Ptr<i32>> = Rc::new(RefCell::new((move_assign.as_pointer())));
+            std_variant_int__MoveAssign__unsigned_int_::new_1(
+                { (*in_place_type_13.with(Value::clone).borrow()).clone() },
+                { __tmp_0.as_pointer() },
+                { __tmp_1.as_pointer() },
+                { __tmp_2.as_pointer() },
+            )
+        }));
+        let v2: Value<std_variant_int__MoveAssign__unsigned_int_> = Rc::new(RefCell::new({
+            let __tmp_3: Value<i32> = Rc::new(RefCell::new(42));
+            let __tmp_4: Value<Ptr<i32>> = Rc::new(RefCell::new((move_construct.as_pointer())));
+            let __tmp_5: Value<Ptr<i32>> = Rc::new(RefCell::new((move_assign.as_pointer())));
+            std_variant_int__MoveAssign__unsigned_int_::new_1(
+                { (*in_place_type_13.with(Value::clone).borrow()).clone() },
+                { __tmp_3.as_pointer() },
+                { __tmp_4.as_pointer() },
+                { __tmp_5.as_pointer() },
+            )
+        }));
+        let vref: Ptr<std_variant_int__MoveAssign__unsigned_int_> =
+            ((*v1.borrow_mut()) = (*v2.borrow()).clone());
         assert!(({ (vref).clone() } == { (v1.as_pointer()) }));
-        assert!((unimplemented!() == 1_usize));
-        assert!(({ (unimplemented!()).clone().value } == 42));
-        assert!(((*move_construct.borrow()) == 0));
-        assert!(((*move_assign.borrow()) == 1));
+        assert!(({ (({ (*v1.borrow()).index() }) == 1_usize) }));
+        assert!((({ get_14(v1.as_pointer(),) }).with(|__s| __s.value) == 42));
+        assert!(({ ((*move_construct.borrow()) == 0) }));
+        assert!(({ ((*move_assign.borrow()) == 1) }));
     }
     {
-        let test: Value<anon_11> = Rc::new(RefCell::new(<anon_11>::default()));
-        let mut result: Result_int_ = ({ anon_11Impl::operator_call(&test.as_pointer()) });
+        let test: Value<anon_15> = Rc::new(RefCell::new(<anon_15>::default()));
+        let mut result: Result_int_ = ({ anon_15Impl::operator_call(&test.as_pointer()) });
         const _: () = assert!(true, "result.index == 0");;
         const _: () = assert!(true, "result.value == 42");;
     }
     {
-        let test: Value<anon_12> = Rc::new(RefCell::new(<anon_12>::default()));
-        let mut result: Result_long_ = ({ anon_12Impl::operator_call(&test.as_pointer()) });
-        const _: () = assert!(true, "result.index == 1");;
-        const _: () = assert!(true, "result.value == 42l");;
-    }
-    {
-        let test: Value<anon_13> = Rc::new(RefCell::new(<anon_13>::default()));
-        let mut result: Result_int_ = ({ anon_13Impl::operator_call(&test.as_pointer()) });
-        const _: () = assert!(true, "result.index == 1");;
-        const _: () = assert!(true, "result.value == 42");;
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct anon_11 {}
-impl Callable0<Result_int_> for anon_11 {
-    fn call(&self) -> Result_int_ {
-        libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_11Impl::operator_call(__it))
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct anon_12 {}
-impl Callable0<Result_long_> for anon_12 {
-    fn call(&self) -> Result_long_ {
-        libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_12Impl::operator_call(__it))
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct anon_13 {}
-impl Callable0<Result_int_> for anon_13 {
-    fn call(&self) -> Result_int_ {
-        libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_13Impl::operator_call(__it))
-    }
-}
-pub fn test_move_assignment_different_index_14() {
-    {
-        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let vref: Ptr<()> = (unimplemented!());
-        assert!(({ (vref).clone() } == { (v1.as_pointer()) }));
-        assert!((unimplemented!() == 1_usize));
-        assert!(((unimplemented!().read()) == 42_()));
-    }
-    {
-        let move_construct: Value<i32> = Rc::new(RefCell::new(0));
-        let move_assign: Value<i32> = Rc::new(RefCell::new(0));
-        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let vref: Ptr<()> = (unimplemented!());
-        assert!(({ (vref).clone() } == { (v1.as_pointer()) }));
-        assert!((unimplemented!() == 1_usize));
-        assert!(({ (unimplemented!()).clone().value } == 42));
-        assert!(((*move_construct.borrow()) == 1));
-        assert!(((*move_assign.borrow()) == 0));
-    }
-    {
-        let test: Value<anon_15> = Rc::new(RefCell::new(<anon_15>::default()));
-        let mut result: Result_long_ = ({ anon_15Impl::operator_call(&test.as_pointer()) });
-        const _: () = assert!(true, "result.index == 1");;
-        const _: () = assert!(true, "result.value == 42l");;
-    }
-    {
         let test: Value<anon_16> = Rc::new(RefCell::new(<anon_16>::default()));
         let mut result: Result_long_ = ({ anon_16Impl::operator_call(&test.as_pointer()) });
+        const _: () = assert!(true, "result.index == 1");;
+        const _: () = assert!(true, "result.value == 42l");;
+    }
+    {
+        let test: Value<anon_17> = Rc::new(RefCell::new(<anon_17>::default()));
+        let mut result: Result_int_ = ({ anon_17Impl::operator_call(&test.as_pointer()) });
         const _: () = assert!(true, "result.index == 1");;
         const _: () = assert!(true, "result.value == 42");;
     }
@@ -379,9 +414,14 @@ pub fn test_move_assignment_different_index_14() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct anon_15 {}
-impl Callable0<Result_long_> for anon_15 {
-    fn call(&self) -> Result_long_ {
+impl Callable0<Result_int_> for anon_15 {
+    fn call(&self) -> Result_int_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_15Impl::operator_call(__it))
+    }
+}
+impl CppMove for anon_15 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -392,79 +432,128 @@ impl Callable0<Result_long_> for anon_16 {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_16Impl::operator_call(__it))
     }
 }
-pub fn test_assignment_throw_17() {}
-pub fn test_constexpr_assign_imp_18(v: Ptr<()>, new_value: Ptr<i64>) {
-    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == (0_u64 as usize)));
-    assert!(({ (unimplemented!().read()) } == { (unimplemented!().read()) }));
+impl CppMove for anon_16 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
-pub fn test_constexpr_assign_imp_19(v: Ptr<()>, new_value: Ptr<()>) {
-    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == (1_u64 as usize)));
-    assert!(({ (unimplemented!().read()) } == { (unimplemented!().read()) }));
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct anon_17 {}
+impl Callable0<Result_int_> for anon_17 {
+    fn call(&self) -> Result_int_ {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_17Impl::operator_call(__it))
+    }
 }
-pub fn test_constexpr_assign_imp_20(v: Ptr<()>, new_value: Ptr<i32>) {
-    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == (2_u64 as usize)));
-    assert!(({ (unimplemented!().read()) } == { (unimplemented!().read()) }));
+impl CppMove for anon_17 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
-pub fn test_constexpr_assign_imp_21(v: Ptr<()>, new_value: Ptr<i64>) {
-    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == (0_u64 as usize)));
-    assert!(({ (unimplemented!().read()) } == { (unimplemented!().read()) }));
+pub fn test_move_assignment_different_index_20() {
+    {
+        let v1: Value<std_variant_int__long__unsigned_int_> = Rc::new(RefCell::new(43));
+        let v2: Value<std_variant_int__long__unsigned_int_> = Rc::new(RefCell::new(42_i64));
+        let vref: Ptr<std_variant_int__long__unsigned_int_> =
+            ((*v1.borrow_mut()) = (*v2.borrow()).clone());
+        assert!(({ (vref).clone() } == { (v1.as_pointer()) }));
+        assert!(({ (({ (*v1.borrow()).index() }) == 1_usize) }));
+        assert!(((({ get_12(v1.as_pointer(),) }).read()) == 42_i64));
+    }
+    {
+        let move_construct: Value<i32> = Rc::new(RefCell::new(0));
+        let move_assign: Value<i32> = Rc::new(RefCell::new(0));
+        let v1: Value<std_variant_int__MoveAssign__unsigned_int_> = Rc::new(RefCell::new({
+            let __tmp_8: Value<u32> = Rc::new(RefCell::new(43_u32));
+            std_variant_int__MoveAssign__unsigned_int_::new_2(
+                { (*in_place_type_21.with(Value::clone).borrow()).clone() },
+                { __tmp_8.as_pointer() },
+            )
+        }));
+        let v2: Value<std_variant_int__MoveAssign__unsigned_int_> = Rc::new(RefCell::new({
+            let __tmp_9: Value<i32> = Rc::new(RefCell::new(42));
+            let __tmp_10: Value<Ptr<i32>> = Rc::new(RefCell::new((move_construct.as_pointer())));
+            let __tmp_11: Value<Ptr<i32>> = Rc::new(RefCell::new((move_assign.as_pointer())));
+            std_variant_int__MoveAssign__unsigned_int_::new_1(
+                { (*in_place_type_13.with(Value::clone).borrow()).clone() },
+                { __tmp_9.as_pointer() },
+                { __tmp_10.as_pointer() },
+                { __tmp_11.as_pointer() },
+            )
+        }));
+        let vref: Ptr<std_variant_int__MoveAssign__unsigned_int_> =
+            ((*v1.borrow_mut()) = (*v2.borrow()).clone());
+        assert!(({ (vref).clone() } == { (v1.as_pointer()) }));
+        assert!(({ (({ (*v1.borrow()).index() }) == 1_usize) }));
+        assert!((({ get_14(v1.as_pointer(),) }).with(|__s| __s.value) == 42));
+        assert!(({ ((*move_construct.borrow()) == 1) }));
+        assert!(({ ((*move_assign.borrow()) == 0) }));
+    }
+    {
+        let test: Value<anon_22> = Rc::new(RefCell::new(<anon_22>::default()));
+        let mut result: Result_long_ = ({ anon_22Impl::operator_call(&test.as_pointer()) });
+        const _: () = assert!(true, "result.index == 1");;
+        const _: () = assert!(true, "result.value == 42l");;
+    }
+    {
+        let test: Value<anon_23> = Rc::new(RefCell::new(<anon_23>::default()));
+        let mut result: Result_long_ = ({ anon_23Impl::operator_call(&test.as_pointer()) });
+        const _: () = assert!(true, "result.index == 1");;
+        const _: () = assert!(true, "result.value == 42");;
+    }
 }
-pub fn test_constexpr_assign_imp_22(v: Ptr<()>, new_value: Ptr<()>) {
-    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == (1_u64 as usize)));
-    assert!(({ (unimplemented!().read()) } == { (unimplemented!().read()) }));
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct anon_22 {}
+impl Callable0<Result_long_> for anon_22 {
+    fn call(&self) -> Result_long_ {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_22Impl::operator_call(__it))
+    }
 }
-pub fn test_constexpr_assign_imp_23(v: Ptr<()>, new_value: Ptr<NonTrivialMoveAssign>) {
-    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!((unimplemented!() == (2_u64 as usize)));
-    assert!(
-        ({
-            let _x: Ptr<NonTrivialMoveAssign> = unimplemented!();
-            operator_eq_24(_x, unimplemented!())
-        })
-    );
+impl CppMove for anon_22 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct anon_23 {}
+impl Callable0<Result_long_> for anon_23 {
+    fn call(&self) -> Result_long_ {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_23Impl::operator_call(__it))
+    }
+}
+impl CppMove for anon_23 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn test_assignment_throw_24() {}
 pub fn test_constexpr_move_assignment_trivial_25() {
     const _: () = assert!(true, "std::is_trivially_copyable<V>::value");;
     const _: () = assert!(true, "std::is_trivially_move_assignable<V>::value");;
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _v: Value<std_variant_long__void_ptr__int_> = Rc::new(RefCell::new(42_i64));
         let _new_value: Value<i64> = Rc::new(RefCell::new(101_i64));
-        test_constexpr_assign_imp_18(_v.as_pointer(), _new_value.as_pointer())
+        test_constexpr_assign_imp_26(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _v: Value<std_variant_long__void_ptr__int_> = Rc::new(RefCell::new(Default::default()));
         let _new_value: Value<i64> = Rc::new(RefCell::new(101_i64));
-        test_constexpr_assign_imp_18(_v.as_pointer(), _new_value.as_pointer())
+        test_constexpr_assign_imp_26(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let _new_value: Value<()> = Rc::new(RefCell::new(Default::default()));
-        test_constexpr_assign_imp_19(_v.as_pointer(), _new_value.as_pointer())
+        let _v: Value<std_variant_long__void_ptr__int_> = Rc::new(RefCell::new(42_i64));
+        let _new_value: Value<AnyPtr> = Rc::new(RefCell::new(Default::default()));
+        test_constexpr_assign_imp_27(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _v: Value<std_variant_long__void_ptr__int_> = Rc::new(RefCell::new(42_i64));
         let _new_value: Value<i32> = Rc::new(RefCell::new(101));
-        test_constexpr_assign_imp_20(_v.as_pointer(), _new_value.as_pointer())
+        test_constexpr_assign_imp_28(_v.as_pointer(), _new_value.as_pointer())
     });
 }
-pub fn operator_eq_24(x: Ptr<NonTrivialMoveAssign>, y: Ptr<NonTrivialMoveAssign>) -> bool {
+pub fn operator_eq_29(x: Ptr<NonTrivialMoveAssign>, y: Ptr<NonTrivialMoveAssign>) -> bool {
     return ({ x.with(|__s| __s.i) } == { y.with(|__s| __s.i) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
@@ -486,7 +575,12 @@ impl NonTrivialMoveAssign {
 }
 impl CppEq for NonTrivialMoveAssign {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_24(__lhs.clone(), __rhs.clone())
+        operator_eq_29(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for NonTrivialMoveAssign {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for NonTrivialMoveAssign {
@@ -494,53 +588,58 @@ impl Default for NonTrivialMoveAssign {
         { NonTrivialMoveAssign { i: 0 } }
     }
 }
-pub fn test_constexpr_move_assignment_non_trivial_26() {
+pub fn test_constexpr_move_assignment_non_trivial_30() {
     const _: () = assert!(true, "!std::is_trivially_copyable<V>::value");;
     const _: () = assert!(true, "!std::is_trivially_move_assignable<V>::value");;
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _v: Value<std_variant_long__void_ptr__NonTrivialMoveAssign_> =
+            Rc::new(RefCell::new(42_i64));
         let _new_value: Value<i64> = Rc::new(RefCell::new(101_i64));
-        test_constexpr_assign_imp_21(_v.as_pointer(), _new_value.as_pointer())
+        test_constexpr_assign_imp_31(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _v: Value<std_variant_long__void_ptr__NonTrivialMoveAssign_> =
+            Rc::new(RefCell::new(Default::default()));
         let _new_value: Value<i64> = Rc::new(RefCell::new(101_i64));
-        test_constexpr_assign_imp_21(_v.as_pointer(), _new_value.as_pointer())
+        test_constexpr_assign_imp_31(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let _new_value: Value<()> = Rc::new(RefCell::new(Default::default()));
-        test_constexpr_assign_imp_22(_v.as_pointer(), _new_value.as_pointer())
+        let _v: Value<std_variant_long__void_ptr__NonTrivialMoveAssign_> =
+            Rc::new(RefCell::new(42_i64));
+        let _new_value: Value<AnyPtr> = Rc::new(RefCell::new(Default::default()));
+        test_constexpr_assign_imp_32(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _v: Value<std_variant_long__void_ptr__NonTrivialMoveAssign_> =
+            Rc::new(RefCell::new(42_i64));
         let _new_value: Value<NonTrivialMoveAssign> =
             Rc::new(RefCell::new(NonTrivialMoveAssign::new({ 5 })));
-        test_constexpr_assign_imp_23(_v.as_pointer(), _new_value.as_pointer())
+        test_constexpr_assign_imp_33(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _v: Value<std_variant_long__void_ptr__NonTrivialMoveAssign_> =
+            Rc::new(RefCell::new(NonTrivialMoveAssign::new({ 3 })));
         let _new_value: Value<NonTrivialMoveAssign> =
             Rc::new(RefCell::new(NonTrivialMoveAssign::new({ 5 })));
-        test_constexpr_assign_imp_23(_v.as_pointer(), _new_value.as_pointer())
+        test_constexpr_assign_imp_33(_v.as_pointer(), _new_value.as_pointer())
     });
 }
-pub fn non_constexpr_test_27() {
+pub fn non_constexpr_test_34() {
     ({ test_move_assignment_empty_empty_7() });
     ({ test_move_assignment_non_empty_empty_8() });
     ({ test_move_assignment_empty_non_empty_9() });
-    ({ test_assignment_throw_17() });
+    ({ test_assignment_throw_24() });
 }
-pub fn cxx17_constexpr_test_28() -> bool {
+pub fn cxx17_constexpr_test_35() -> bool {
     ({ test_move_assignment_sfinae_6() });
     ({ test_move_assignment_noexcept_5() });
     ({ test_constexpr_move_assignment_trivial_25() });
     return true;
 }
-pub fn cxx20_constexpr_test_29() -> bool {
+pub fn cxx20_constexpr_test_36() -> bool {
     ({ test_move_assignment_same_index_10() });
-    ({ test_move_assignment_different_index_14() });
-    ({ test_constexpr_move_assignment_non_trivial_26() });
+    ({ test_move_assignment_different_index_20() });
+    ({ test_constexpr_move_assignment_non_trivial_30() });
     return true;
 }
 pub fn main() {
@@ -563,9 +662,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ non_constexpr_test_27() });
-    ({ cxx17_constexpr_test_28() });
-    ({ cxx20_constexpr_test_29() });
+    ({ non_constexpr_test_34() });
+    ({ cxx17_constexpr_test_35() });
+    ({ cxx20_constexpr_test_36() });
     const _: () = assert!(true, "cxx17_constexpr_test()");;
     const _: () = assert!(true, "cxx20_constexpr_test()");;
     return 0;
@@ -586,9 +685,9 @@ impl MoveAssignImpl for Ptr<MoveAssign> {
         field!((*self), value).write({ o.with(|__s| __s.value) });
         field!((*self), move_construct).write({ o.with(|__s| __s.move_construct.clone()) });
         field!((*self), move_assign).write({ o.with(|__s| __s.move_assign.clone()) });
-        (*self)
-            .with(|__s| __s.move_assign.clone())
-            .with_mut(|__v| __v.prefix_inc());
+        (*self).with(|__s| __s.move_assign.clone()).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         field!(o, value).write(-1_i32);
         return (*self).clone();
     }
@@ -687,59 +786,17 @@ impl TypeIDImpl for Ptr<TypeID> {
         };
     }
 }
-pub trait anon_11Impl {
-    fn operator_call(&self) -> Result_int_;
-}
-impl anon_11Impl for Ptr<anon_11> {
-    fn operator_call(&self) -> Result_int_ {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        return Result_int_ {
-            index: unimplemented!(),
-            value: ((unimplemented!().read()) as i32),
-        };
-    }
-}
-pub trait anon_12Impl {
-    fn operator_call(&self) -> Result_long_;
-}
-impl anon_12Impl for Ptr<anon_12> {
-    fn operator_call(&self) -> Result_long_ {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        return Result_long_ {
-            index: unimplemented!(),
-            value: ((unimplemented!().read()) as i64),
-        };
-    }
-}
-pub trait anon_13Impl {
-    fn operator_call(&self) -> Result_int_;
-}
-impl anon_13Impl for Ptr<anon_13> {
-    fn operator_call(&self) -> Result_int_ {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        return Result_int_ {
-            index: unimplemented!(),
-            value: { (unimplemented!()).clone().value },
-        };
-    }
-}
 pub trait anon_15Impl {
-    fn operator_call(&self) -> Result_long_;
+    fn operator_call(&self) -> Result_int_;
 }
 impl anon_15Impl for Ptr<anon_15> {
-    fn operator_call(&self) -> Result_long_ {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        return Result_long_ {
-            index: unimplemented!(),
-            value: ((unimplemented!().read()) as i64),
+    fn operator_call(&self) -> Result_int_ {
+        let v: Value<std_variant_int_> = Rc::new(RefCell::new(43));
+        let v2: Value<std_variant_int_> = Rc::new(RefCell::new(42));
+        (*v.borrow_mut()) = (*v2.borrow()).clone();
+        return Result_int_ {
+            index: ({ (*v.borrow()).index() }),
+            value: (({ get_11(v.as_pointer()) }).read()),
         };
     }
 }
@@ -748,12 +805,78 @@ pub trait anon_16Impl {
 }
 impl anon_16Impl for Ptr<anon_16> {
     fn operator_call(&self) -> Result_long_ {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let v: Value<std_variant_int__long__unsigned_int_> = Rc::new(RefCell::new(43_i64));
+        let v2: Value<std_variant_int__long__unsigned_int_> = Rc::new(RefCell::new(42_i64));
+        (*v.borrow_mut()) = (*v2.borrow()).clone();
         return Result_long_ {
-            index: unimplemented!(),
-            value: ({ (unimplemented!()).clone().value } as i64),
+            index: ({ (*v.borrow()).index() }),
+            value: (({ get_12(v.as_pointer()) }).read()),
+        };
+    }
+}
+pub trait anon_17Impl {
+    fn operator_call(&self) -> Result_int_;
+}
+impl anon_17Impl for Ptr<anon_17> {
+    fn operator_call(&self) -> Result_int_ {
+        let v: Value<std_variant_int__TMoveAssign__unsigned_int_> = Rc::new(RefCell::new({
+            let __tmp_6: Value<i32> = Rc::new(RefCell::new(43));
+            std_variant_int__TMoveAssign__unsigned_int_::new_1(
+                { (*in_place_type_18.with(Value::clone).borrow()).clone() },
+                { __tmp_6.as_pointer() },
+            )
+        }));
+        let v2: Value<std_variant_int__TMoveAssign__unsigned_int_> = Rc::new(RefCell::new({
+            let __tmp_7: Value<i32> = Rc::new(RefCell::new(42));
+            std_variant_int__TMoveAssign__unsigned_int_::new_1(
+                { (*in_place_type_18.with(Value::clone).borrow()).clone() },
+                { __tmp_7.as_pointer() },
+            )
+        }));
+        (*v.borrow_mut()) = (*v2.borrow()).clone();
+        return Result_int_ {
+            index: ({ (*v.borrow()).index() }),
+            value: ({ get_19(v.as_pointer()) }).with(|__s| __s.value),
+        };
+    }
+}
+pub trait anon_22Impl {
+    fn operator_call(&self) -> Result_long_;
+}
+impl anon_22Impl for Ptr<anon_22> {
+    fn operator_call(&self) -> Result_long_ {
+        let v: Value<std_variant_int__long__unsigned_int_> = Rc::new(RefCell::new(43));
+        let v2: Value<std_variant_int__long__unsigned_int_> = Rc::new(RefCell::new(42_i64));
+        (*v.borrow_mut()) = (*v2.borrow()).clone();
+        return Result_long_ {
+            index: ({ (*v.borrow()).index() }),
+            value: (({ get_12(v.as_pointer()) }).read()),
+        };
+    }
+}
+pub trait anon_23Impl {
+    fn operator_call(&self) -> Result_long_;
+}
+impl anon_23Impl for Ptr<anon_23> {
+    fn operator_call(&self) -> Result_long_ {
+        let v: Value<std_variant_int__TMoveAssign__unsigned_int_> = Rc::new(RefCell::new({
+            let __tmp_12: Value<u32> = Rc::new(RefCell::new(43_u32));
+            std_variant_int__TMoveAssign__unsigned_int_::new_2(
+                { (*in_place_type_21.with(Value::clone).borrow()).clone() },
+                { __tmp_12.as_pointer() },
+            )
+        }));
+        let v2: Value<std_variant_int__TMoveAssign__unsigned_int_> = Rc::new(RefCell::new({
+            let __tmp_13: Value<i32> = Rc::new(RefCell::new(42));
+            std_variant_int__TMoveAssign__unsigned_int_::new_1(
+                { (*in_place_type_18.with(Value::clone).borrow()).clone() },
+                { __tmp_13.as_pointer() },
+            )
+        }));
+        (*v.borrow_mut()) = (*v2.borrow()).clone();
+        return Result_long_ {
+            index: ({ (*v.borrow()).index() }),
+            value: (({ get_19(v.as_pointer()) }).with(|__s| __s.value) as i64),
         };
     }
 }

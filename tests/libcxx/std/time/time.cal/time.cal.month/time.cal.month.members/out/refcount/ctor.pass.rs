@@ -30,14 +30,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let m0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let m0: Value<std_chrono_month> = Rc::new(RefCell::new(<std_chrono_month>::default()));
     const _: () = assert!(true, "static_cast<unsigned>(m0) == 0");;
-    let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let m1: Value<std_chrono_month> = Rc::new(RefCell::new(std_chrono_month::new_1({ 1_u32 })));
     const _: () = assert!(true, "static_cast<unsigned>(m1) == 1");;
     let mut i: u32 = 0_u32;
     'loop_: while (i <= 255_u32) {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == i));
+        let m: Value<std_chrono_month> = Rc::new(RefCell::new(std_chrono_month::new_1({ i })));
+        assert!(({ (({ (*m.borrow())() }) == i) }));
         i.prefix_inc();
     }
     return 0;

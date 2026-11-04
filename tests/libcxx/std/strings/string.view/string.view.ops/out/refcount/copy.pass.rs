@@ -6,18 +6,22 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test1_0(sv: (), n: usize, mut pos: usize) {
+pub fn test1_0(sv: (), mut n: usize, mut pos: usize) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
-    let n: Value<usize> = Rc::new(RefCell::new(n));
     let mut rlen: usize = ({
-        let __tmp_0: Value<u64> = Rc::new(RefCell::new(((*n.borrow()) as u64)));
-        let __tmp_1: Value<u64> = Rc::new(RefCell::new(
+        let __tmp_1: Value<u64> = Rc::new(RefCell::new((n as u64)));
+        (match (Rc::new(RefCell::new(
             (unimplemented!() as u64).wrapping_sub((pos as u64)),
-        ));
-        ({
-            let __a = __tmp_0.as_pointer();
-            let __b = __tmp_1.as_pointer();
-            if CppLess::less(&__b, &__a) { __b } else { __a }
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_0,) => {
+                if CppLess::less(&(__tmp_0).clone(), &__tmp_1.as_pointer()) {
+                    (__tmp_0).clone()
+                } else {
+                    __tmp_1.as_pointer()
+                }
+            }
         }
         .read())
     } as usize);
@@ -48,18 +52,22 @@ pub fn test1_0(sv: (), n: usize, mut pos: usize) {
     dest1.delete();
     dest2.delete();
 }
-pub fn test1_1(sv: (), n: usize, mut pos: usize) {
+pub fn test1_1(sv: (), mut n: usize, mut pos: usize) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
-    let n: Value<usize> = Rc::new(RefCell::new(n));
     let mut rlen: usize = ({
-        let __tmp_2: Value<u64> = Rc::new(RefCell::new(((*n.borrow()) as u64)));
-        let __tmp_3: Value<u64> = Rc::new(RefCell::new(
+        let __tmp_3: Value<u64> = Rc::new(RefCell::new((n as u64)));
+        (match (Rc::new(RefCell::new(
             (unimplemented!() as u64).wrapping_sub((pos as u64)),
-        ));
-        ({
-            let __a = __tmp_2.as_pointer();
-            let __b = __tmp_3.as_pointer();
-            if CppLess::less(&__b, &__a) { __b } else { __a }
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_2,) => {
+                if CppLess::less(&(__tmp_2).clone(), &__tmp_3.as_pointer()) {
+                    (__tmp_2).clone()
+                } else {
+                    __tmp_3.as_pointer()
+                }
+            }
         }
         .read())
     } as usize);
@@ -88,18 +96,22 @@ pub fn test1_1(sv: (), n: usize, mut pos: usize) {
     dest1.delete();
     dest2.delete();
 }
-pub fn test1_2(sv: (), n: usize, mut pos: usize) {
+pub fn test1_2(sv: (), mut n: usize, mut pos: usize) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
-    let n: Value<usize> = Rc::new(RefCell::new(n));
     let mut rlen: usize = ({
-        let __tmp_4: Value<u64> = Rc::new(RefCell::new(((*n.borrow()) as u64)));
-        let __tmp_5: Value<u64> = Rc::new(RefCell::new(
+        let __tmp_5: Value<u64> = Rc::new(RefCell::new((n as u64)));
+        (match (Rc::new(RefCell::new(
             (unimplemented!() as u64).wrapping_sub((pos as u64)),
-        ));
-        ({
-            let __a = __tmp_4.as_pointer();
-            let __b = __tmp_5.as_pointer();
-            if CppLess::less(&__b, &__a) { __b } else { __a }
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_4,) => {
+                if CppLess::less(&(__tmp_4).clone(), &__tmp_5.as_pointer()) {
+                    (__tmp_4).clone()
+                } else {
+                    __tmp_5.as_pointer()
+                }
+            }
         }
         .read())
     } as usize);
@@ -130,18 +142,22 @@ pub fn test1_2(sv: (), n: usize, mut pos: usize) {
     dest1.delete();
     dest2.delete();
 }
-pub fn test1_3(sv: (), n: usize, mut pos: usize) {
+pub fn test1_3(sv: (), mut n: usize, mut pos: usize) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
-    let n: Value<usize> = Rc::new(RefCell::new(n));
     let mut rlen: usize = ({
-        let __tmp_6: Value<u64> = Rc::new(RefCell::new(((*n.borrow()) as u64)));
-        let __tmp_7: Value<u64> = Rc::new(RefCell::new(
+        let __tmp_7: Value<u64> = Rc::new(RefCell::new((n as u64)));
+        (match (Rc::new(RefCell::new(
             (unimplemented!() as u64).wrapping_sub((pos as u64)),
-        ));
-        ({
-            let __a = __tmp_6.as_pointer();
-            let __b = __tmp_7.as_pointer();
-            if CppLess::less(&__b, &__a) { __b } else { __a }
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_6,) => {
+                if CppLess::less(&(__tmp_6).clone(), &__tmp_7.as_pointer()) {
+                    (__tmp_6).clone()
+                } else {
+                    __tmp_7.as_pointer()
+                }
+            }
         }
         .read())
     } as usize);

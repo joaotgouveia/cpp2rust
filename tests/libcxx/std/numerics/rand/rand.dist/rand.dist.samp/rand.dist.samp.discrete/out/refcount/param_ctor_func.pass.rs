@@ -30,28 +30,44 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*p.borrow()).len() == 1_usize));
+        let pa: Value<std_discrete_distribution___param_type> = Rc::new(RefCell::new(
+            std_discrete_distribution___param_type::new_1({ 0_usize }, { 0_f64 }, { 1_f64 }, {
+                FnPtr::<fn(f64) -> f64>::new(fw_0)
+            }),
+        ));
+        let p: Value<Vec<f64>> = Rc::new(RefCell::new(({ (*pa.borrow()).probabilities() })));
+        assert!(({ ((*p.borrow()).len() == 1_usize) }));
         assert!(((p.decay().offset(0_usize as isize).read()) == 1_f64));
     }
     {
-        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*p.borrow()).len() == 1_usize));
+        let pa: Value<std_discrete_distribution___param_type> = Rc::new(RefCell::new(
+            std_discrete_distribution___param_type::new_1({ 1_usize }, { 0_f64 }, { 1_f64 }, {
+                FnPtr::<fn(f64) -> f64>::new(fw_0)
+            }),
+        ));
+        let p: Value<Vec<f64>> = Rc::new(RefCell::new(({ (*pa.borrow()).probabilities() })));
+        assert!(({ ((*p.borrow()).len() == 1_usize) }));
         assert!(((p.decay().offset(0_usize as isize).read()) == 1_f64));
     }
     {
-        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*p.borrow()).len() == 2_usize));
+        let pa: Value<std_discrete_distribution___param_type> = Rc::new(RefCell::new(
+            std_discrete_distribution___param_type::new_1({ 2_usize }, { 0.5_f64 }, { 1.5_f64 }, {
+                FnPtr::<fn(f64) -> f64>::new(fw_0)
+            }),
+        ));
+        let p: Value<Vec<f64>> = Rc::new(RefCell::new(({ (*pa.borrow()).probabilities() })));
+        assert!(({ ((*p.borrow()).len() == 2_usize) }));
         assert!(((p.decay().offset(0_usize as isize).read()) == 0.4375_f64));
         assert!(((p.decay().offset(1_usize as isize).read()) == 0.5625_f64));
     }
     {
-        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*p.borrow()).len() == 4_usize));
+        let pa: Value<std_discrete_distribution___param_type> = Rc::new(RefCell::new(
+            std_discrete_distribution___param_type::new_1({ 4_usize }, { 0_f64 }, { 2_f64 }, {
+                FnPtr::<fn(f64) -> f64>::new(fw_0)
+            }),
+        ));
+        let p: Value<Vec<f64>> = Rc::new(RefCell::new(({ (*pa.borrow()).probabilities() })));
+        assert!(({ ((*p.borrow()).len() == 4_usize) }));
         assert!(((p.decay().offset(0_usize as isize).read()) == 0.15625_f64));
         assert!(((p.decay().offset(1_usize as isize).read()) == 0.21875_f64));
         assert!(((p.decay().offset(2_usize as isize).read()) == 0.28125_f64));

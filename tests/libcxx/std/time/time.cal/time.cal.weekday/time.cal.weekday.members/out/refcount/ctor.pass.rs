@@ -30,14 +30,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let m0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let m0: Value<std_chrono_weekday> = Rc::new(RefCell::new(<std_chrono_weekday>::default()));
     const _: () = assert!(true, "m0.c_encoding() == 0");;
-    let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let m1: Value<std_chrono_weekday> = Rc::new(RefCell::new(std_chrono_weekday::new_1({ 1_u32 })));
     const _: () = assert!(true, "m1.c_encoding() == 1");;
     let mut i: u32 = 0_u32;
     'loop_: while (i <= 255_u32) {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == (if (i == 7_u32) { 0_u32 } else { i })));
+        let m: Value<std_chrono_weekday> = Rc::new(RefCell::new(std_chrono_weekday::new_1({ i })));
+        assert!(({ (({ (*m.borrow()).c_encoding() }) == (if (i == 7_u32) { 0_u32 } else { i })) }));
         i.prefix_inc();
     }
     return 0;

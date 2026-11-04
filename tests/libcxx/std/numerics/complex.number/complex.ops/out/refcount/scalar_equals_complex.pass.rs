@@ -8,22 +8,22 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_constexpr_0() {
     {
-        let lhs: Value<f32> = Rc::new(RefCell::new((-2.5_f64 as f32)));
+        let lhs: Value<f32> = Rc::new(RefCell::new(-2.5_f32));
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "!(lhs == rhs)");;
     }
     {
-        let lhs: Value<f32> = Rc::new(RefCell::new((-2.5_f64 as f32)));
+        let lhs: Value<f32> = Rc::new(RefCell::new(-2.5_f32));
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "!(lhs == rhs)");;
     }
     {
-        let lhs: Value<f32> = Rc::new(RefCell::new((1.5_f64 as f32)));
+        let lhs: Value<f32> = Rc::new(RefCell::new(1.5_f32));
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "!(lhs == rhs)");;
     }
     {
-        let lhs: Value<f32> = Rc::new(RefCell::new((1.5_f64 as f32)));
+        let lhs: Value<f32> = Rc::new(RefCell::new(1.5_f32));
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "lhs == rhs");;
     }

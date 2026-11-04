@@ -84,6 +84,11 @@ impl Clone for Buffer {
         Buffer::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Buffer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for Buffer {
     fn default() -> Self {
         {

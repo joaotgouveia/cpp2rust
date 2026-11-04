@@ -16,6 +16,11 @@ impl Callable2<Ptr<Option<Value<i32>>>, Ptr<Option<Value<i32>>>, bool> for indir
         })
     }
 }
+impl CppMove for indirect_less {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -48,9 +53,23 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             v.decay().offset((i as usize) as isize).write(__rhs);
             i.prefix_inc();
         }
-        unimplemented!();
-        unimplemented!();
-        assert!(unimplemented!());
+        ({
+            let ___first: RandomAccessIterator<i32> = CppRange::begin(&v.decay());
+            let ___last: RandomAccessIterator<i32> = CppRange::end(&v.decay());
+            libcc2rs::sort_refcount(___first, ___last, <std_greater_int_>::default())
+        });
+        ({
+            let ___first: RandomAccessIterator<i32> = CppRange::begin(&v.decay());
+            let ___last: RandomAccessIterator<i32> = CppRange::end(&v.decay());
+            reverse_0(___first, ___last)
+        });
+        assert!(
+            ({
+                let ___first: RandomAccessIterator<i32> = CppRange::begin(&v.decay());
+                let ___last: RandomAccessIterator<i32> = CppRange::end(&v.decay());
+                is_sorted_1(___first, ___last)
+            })
+        );
     }
     {
         let v: Value<Vec<Option<Value<i32>>>> = Rc::new(RefCell::new(
@@ -58,33 +77,50 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ));
         let mut i: i32 = 0;
         'loop_: while ((i as usize) < (*v.borrow()).len()) {
-            {
-                let _p: Ptr<_> = Ptr::alloc(i);
-                v.decay()
-                    .offset((i as usize) as isize)
-                    .write(_p.to_owned_opt())
+            match (v.decay().offset((i as usize) as isize),) {
+                (__tmp_0,) => {
+                    let _p: Ptr<_> = Ptr::alloc(i);
+                    __tmp_0.write(_p.to_owned_opt())
+                }
             };
             i.prefix_inc();
         }
-        unimplemented!();
-        assert!(unimplemented!());
+        ({
+            let ___first: RandomAccessIterator<Option<Value<i32>>> = CppRange::begin(&v.decay());
+            let ___last: RandomAccessIterator<Option<Value<i32>>> = CppRange::end(&v.decay());
+            libcc2rs::sort_refcount(___first, ___last, <indirect_less>::default())
+        });
         assert!(
-            (((*v.decay().offset(0_usize as isize).upgrade().deref())
-                .as_pointer()
-                .read())
-                == 0)
+            ({
+                let ___first: RandomAccessIterator<Option<Value<i32>>> =
+                    CppRange::begin(&v.decay());
+                let ___last: RandomAccessIterator<Option<Value<i32>>> = CppRange::end(&v.decay());
+                is_sorted_2(___first, ___last, <indirect_less>::default())
+            })
         );
         assert!(
-            (((*v.decay().offset(1_usize as isize).upgrade().deref())
-                .as_pointer()
-                .read())
-                == 1)
+            ({
+                (((*v.decay().offset(0_usize as isize).upgrade().deref())
+                    .as_pointer()
+                    .read())
+                    == 0)
+            })
         );
         assert!(
-            (((*v.decay().offset(2_usize as isize).upgrade().deref())
-                .as_pointer()
-                .read())
-                == 2)
+            ({
+                (((*v.decay().offset(1_usize as isize).upgrade().deref())
+                    .as_pointer()
+                    .read())
+                    == 1)
+            })
+        );
+        assert!(
+            ({
+                (((*v.decay().offset(2_usize as isize).upgrade().deref())
+                    .as_pointer()
+                    .read())
+                    == 2)
+            })
         );
     }
     return 0;

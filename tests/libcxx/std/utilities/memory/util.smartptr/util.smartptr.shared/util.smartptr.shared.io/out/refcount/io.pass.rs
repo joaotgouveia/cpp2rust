@@ -27,11 +27,15 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let os: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(unimplemented!().len() <= 1);
-    unimplemented!();
-    assert!(!(unimplemented!().len() <= 1));
+    let p: Value<std_shared_ptr_int_> =
+        Rc::new(RefCell::new(std_shared_ptr_int_::new_1({ Ptr::alloc(3) })));
+    let os: Value<std_basic_ostringstream_char__std_char_traits_char___std_allocator_char__> =
+        Rc::new(RefCell::new(
+            <std_basic_ostringstream_char__std_char_traits_char___std_allocator_char__>::default(),
+        ));
+    assert!(({ (*os.borrow()).str_16() }).len() <= 1);
+    write!(os.as_pointer(), "{:}", (*p.borrow_mut()),);
+    assert!(!(({ (*os.borrow()).str_16() }).len() <= 1));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

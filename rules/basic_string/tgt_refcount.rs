@@ -231,3 +231,10 @@ fn f151<T1, T2, T3, T4, T5>(a0: std::fs::File, a1: std::fs::File, a2: T3) -> Vec
     __bytes.push(0);
     CChar::from_byte_vec(__bytes)
 }
+
+fn f22<T1: CChar, T2, T3>(a0: Ptr<Vec<T1>>, a1: Ptr<T1>) -> Ptr<Vec<T1>> {
+    let mut __bytes = a1.to_c_bytes();
+    __bytes.push(T1::default());
+    a0.write(__bytes);
+    a0
+}

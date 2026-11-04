@@ -34,8 +34,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let mut N1: u32 = (((::std::mem::size_of::<[f64; 5]>() as usize)
             .wrapping_div((::std::mem::size_of::<f64>() as usize)))
             as u32);
-        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 16.5_f64));
+        let v1: Value<std_valarray_double_> = Rc::new(RefCell::new(std_valarray_double_::new_1(
+            { (a1.as_pointer() as Ptr<f64>) },
+            { (N1 as usize) },
+        )));
+        assert!(({ (({ (*v1.borrow()).sum() }) == 16.5_f64) }));
     }
     return 0;
 }

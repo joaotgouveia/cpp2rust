@@ -11,11 +11,21 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_year__std_chrono_year_ {}
+impl CppMove for test_macros_detail_is_same_std_chrono_year__std_chrono_year_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_year_ref__std_chrono_year_ref_ {}
+impl CppMove for test_macros_detail_is_same_std_chrono_year_ref__std_chrono_year_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_2() -> bool {
     let mut i: i32 = 11000;
     'loop_: while (i <= 11020) {

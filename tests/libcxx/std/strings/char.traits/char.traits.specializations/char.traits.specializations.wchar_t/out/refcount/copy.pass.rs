@@ -9,12 +9,37 @@ use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     let s1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
     let s2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32, 0_i32])));
-    assert!((unimplemented!() == (s2.as_pointer() as Ptr::<i32>)));
-    assert!(((*s2.borrow())[(0) as usize] == 1_i32));
-    assert!(((*s2.borrow())[(1) as usize] == 2_i32));
-    assert!(((*s2.borrow())[(2) as usize] == 3_i32));
-    assert!((unimplemented!()).is_null());
-    assert!((unimplemented!() == (s1.as_pointer() as Ptr::<i32>)));
+    assert!(
+        (({
+            std_char_traits_wchar_t_::copy(
+                (s2.as_pointer() as Ptr<i32>),
+                (s1.as_pointer() as Ptr<i32>),
+                3_usize,
+            )
+        }) == (s2.as_pointer() as Ptr::<i32>))
+    );
+    assert!(({ ((*s2.borrow())[(0) as usize] == 1_i32) }));
+    assert!(({ ((*s2.borrow())[(1) as usize] == 2_i32) }));
+    assert!(({ ((*s2.borrow())[(2) as usize] == 3_i32) }));
+    assert!(
+        ({
+            std_char_traits_wchar_t_::copy(
+                Ptr::<i32>::null(),
+                (s1.as_pointer() as Ptr<i32>),
+                0_usize,
+            )
+        })
+        .is_null()
+    );
+    assert!(
+        (({
+            std_char_traits_wchar_t_::copy(
+                (s1.as_pointer() as Ptr<i32>),
+                Ptr::<i32>::null(),
+                0_usize,
+            )
+        }) == (s1.as_pointer() as Ptr::<i32>))
+    );
     return true;
 }
 pub fn main() {

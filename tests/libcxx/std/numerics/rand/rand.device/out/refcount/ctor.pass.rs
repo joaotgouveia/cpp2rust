@@ -6,16 +6,11 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_convertible_imp_0(mut _a0: i32) -> bool {
-    return true;
+pub fn check_random_device_valid_0(token: Ptr<Vec<i8>>) {
+    let r: Value<std_random_device> =
+        Rc::new(RefCell::new(std_random_device::new_1({ (token).clone() })));
 }
-pub fn test_convertible_1() -> bool {
-    return ({ test_convertible_imp_0(0) });
-}
-pub fn check_random_device_valid_2(token: Ptr<Vec<i8>>) {
-    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-}
-pub fn check_random_device_invalid_3(token: Ptr<Vec<i8>>) {
+pub fn check_random_device_invalid_1(token: Ptr<Vec<i8>>) {
     (&(*token.upgrade().deref()));
 }
 pub fn main() {
@@ -39,7 +34,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let r: Value<std_random_device> = Rc::new(RefCell::new(<std_random_device>::default()));
         &(*r.borrow_mut());
     }
     {
@@ -49,7 +44,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 __bytes.push(0_i8);
                 __bytes
             }));
-            check_random_device_valid_2(_token.as_pointer())
+            check_random_device_valid_0(_token.as_pointer())
         });
         ({
             let _token: Value<Vec<i8>> = Rc::new(RefCell::new({
@@ -57,7 +52,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 __bytes.push(0_i8);
                 __bytes
             }));
-            check_random_device_invalid_3(_token.as_pointer())
+            check_random_device_invalid_1(_token.as_pointer())
         });
         ({
             let _token: Value<Vec<i8>> = Rc::new(RefCell::new({
@@ -65,7 +60,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 __bytes.push(0_i8);
                 __bytes
             }));
-            check_random_device_invalid_3(_token.as_pointer())
+            check_random_device_invalid_1(_token.as_pointer())
         });
         ({
             let _token: Value<Vec<i8>> = Rc::new(RefCell::new({
@@ -73,7 +68,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 __bytes.push(0_i8);
                 __bytes
             }));
-            check_random_device_invalid_3(_token.as_pointer())
+            check_random_device_invalid_1(_token.as_pointer())
         });
         ({
             let _token: Value<Vec<i8>> = Rc::new(RefCell::new({
@@ -81,7 +76,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 __bytes.push(0_i8);
                 __bytes
             }));
-            check_random_device_invalid_3(_token.as_pointer())
+            check_random_device_invalid_1(_token.as_pointer())
         });
     }
     {
@@ -92,7 +87,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(!(ec != 0));
         ec = FdRegistry::close(2);
         assert!(!(ec != 0));
-        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let r: Value<std_random_device> = Rc::new(RefCell::new(<std_random_device>::default()));
     }
     const _: () = assert!(true, "test_convertible<std::random_device>()");;
     return 0;

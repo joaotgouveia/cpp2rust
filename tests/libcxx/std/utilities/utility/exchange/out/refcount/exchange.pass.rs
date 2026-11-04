@@ -7,14 +7,20 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_constexpr_0() -> bool {
-    let mut v: i32 = 12;
-    if (12 != unimplemented!()) || (v != 23) {
+    let v: Value<i32> = Rc::new(RefCell::new(12));
+    if (12 != unimplemented!()) || ((*v.borrow()) != 23) {
         return false;
     }
-    if (23 != unimplemented!()) || (v != 67) {
+    if (23 != unimplemented!()) || ((*v.borrow()) != 67) {
         return false;
     }
-    if (67 != unimplemented!()) || (v != 0) {
+    if (67
+        != ({
+            let ___new_val: Value<i16> = Rc::new(RefCell::new(0_i16));
+            libcc2rs::exchange_refcount(v.as_pointer(), ___new_val.as_pointer())
+        }))
+        || ((*v.borrow()) != 0)
+    {
         return false;
     }
     return true;
@@ -72,13 +78,18 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut v: i32 = 12;
+        let v: Value<i32> = Rc::new(RefCell::new(12));
         assert!((unimplemented!() == 12));
-        assert!((v == 23));
+        assert!(({ ((*v.borrow()) == 23) }));
         assert!((unimplemented!() == 23));
-        assert!((v == 67));
-        assert!(((unimplemented!()) == 67));
-        assert!((v == 0));
+        assert!(({ ((*v.borrow()) == 67) }));
+        assert!(
+            (({
+                let ___new_val: Value<i16> = Rc::new(RefCell::new(0_i16));
+                libcc2rs::exchange_refcount(v.as_pointer(), ___new_val.as_pointer())
+            }) == 67)
+        );
+        assert!(({ ((*v.borrow()) == 0) }));
     }
     {
         let mut b: bool = false;
@@ -103,10 +114,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!(unimplemented!());
         s3.as_pointer().write((s2).clone());
         assert!(unimplemented!());
-        assert!((((*s3.borrow()).len() - 1) == 0_usize));
+        assert!(({ (((*s3.borrow()).len() - 1) == 0_usize) }));
         s3.as_pointer().write((s2).clone());
         assert!(unimplemented!());
-        assert!((((*s3.borrow()).len() - 1) == 0_usize));
+        assert!(({ (((*s3.borrow()).len() - 1) == 0_usize) }));
     }
     const _: () = assert!(true, "test_constexpr()");;
     const _: () = assert!(true, "test_noexcept()");;

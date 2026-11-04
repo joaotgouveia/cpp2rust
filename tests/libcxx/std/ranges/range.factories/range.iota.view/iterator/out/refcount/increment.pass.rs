@@ -82,6 +82,11 @@ impl CppAdvance for SomeInt {
         __it.operator_dec_5();
     }
 }
+impl CppMove for SomeInt {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for SomeInt {
     fn default() -> Self {
         { SomeInt::new(None) }
@@ -138,6 +143,11 @@ impl CppAdvance for NotIncrementable {
         __it.operator_dec();
     }
 }
+impl CppMove for NotIncrementable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for NotIncrementable {
     fn default() -> Self {
         { NotIncrementable::new(None) }
@@ -192,6 +202,11 @@ impl CppAdvance for NotDecrementable {
         __it.operator_inc_3();
     }
 }
+impl CppMove for NotDecrementable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for NotDecrementable {
     fn default() -> Self {
         { NotDecrementable::new(None) }
@@ -202,12 +217,26 @@ pub const CtorKind_DefaultTo42: CtorKind = 0;
 pub const CtorKind_ValueCtor: CtorKind = 1;
 pub fn test_18() -> bool {
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
-        assert!((unimplemented!()).clone() != unimplemented!());
-        assert!(unimplemented!());
+        let io: Value<std_ranges_iota_view_int__std_unreachable_sentinel_t_> = Rc::new(
+            RefCell::new(std_ranges_iota_view_int__std_unreachable_sentinel_t_::new_1({ 0 })),
+        );
+        let iter1: Value<std_ranges_iota_view_int___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter2: Value<std_ranges_iota_view_int___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        assert!(({ (*iter1.borrow()) == (*iter2.borrow()) }));
+        assert!(
+            (*{
+                iter1.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                iter1.as_pointer()
+            }
+            .upgrade()
+            .deref())
+                != (*iter2.borrow_mut()).iter_post_inc()
+        );
+        assert!(({ (*iter1.borrow()) == (*iter2.borrow()) }));
         const _: () = assert!(true, "!std::is_reference_v<decltype(iter2++)>");;
         const _: () = assert!(true, "std::is_reference_v<decltype(++iter2)>");;
         const _: () = assert!(
@@ -216,12 +245,29 @@ pub fn test_18() -> bool {
         );;
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
-        assert!((unimplemented!()).clone() != unimplemented!());
-        assert!(unimplemented!());
+        let io: Value<std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_::new_1({
+                    SomeInt::new({ Some(0) })
+                }),
+            ));
+        let iter1: Value<std_ranges_iota_view_SomeInt___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter2: Value<std_ranges_iota_view_SomeInt___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        assert!(({ (*iter1.borrow()) == (*iter2.borrow()) }));
+        assert!(
+            (*{
+                iter1.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                iter1.as_pointer()
+            }
+            .upgrade()
+            .deref())
+                != (*iter2.borrow_mut()).iter_post_inc()
+        );
+        assert!(({ (*iter1.borrow()) == (*iter2.borrow()) }));
         const _: () = assert!(true, "!std::is_reference_v<decltype(iter2++)>");;
         const _: () = assert!(true, "std::is_reference_v<decltype(++iter2)>");;
         const _: () = assert!(
@@ -230,13 +276,30 @@ pub fn test_18() -> bool {
         );;
     }
     {
-        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
-        assert!((unimplemented!()).clone() != (*iter2.borrow()));
-        unimplemented!();
-        assert!(unimplemented!());
+        let io: Value<std_ranges_iota_view_NotIncrementable__std_unreachable_sentinel_t_> =
+            Rc::new(RefCell::new(
+                std_ranges_iota_view_NotIncrementable__std_unreachable_sentinel_t_::new_1({
+                    NotIncrementable::new({ Some(0) })
+                }),
+            ));
+        let iter1: Value<std_ranges_iota_view_NotIncrementable___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        let iter2: Value<std_ranges_iota_view_NotIncrementable___Iterator> =
+            Rc::new(RefCell::new(({ (*io.borrow()).begin() })));
+        assert!(({ (*iter1.borrow()) == (*iter2.borrow()) }));
+        assert!(
+            (*{
+                iter1.as_pointer().with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                iter1.as_pointer()
+            }
+            .upgrade()
+            .deref())
+                != (*iter2.borrow())
+        );
+        (*iter2.borrow_mut()).iter_post_inc();
+        assert!(({ (*iter1.borrow()) == (*iter2.borrow()) }));
         const _: () = assert!(true, "std::same_as<decltype(iter2++), void>");;
         const _: () = assert!(true, "std::is_reference_v<decltype(++iter2)>");;
     }
@@ -276,11 +339,15 @@ impl NotDecrementableImpl for Ptr<NotDecrementable> {
         return ({ (*self).with(|__s| __s.value_) } == { _a0.with(|__s| __s.value_) });
     }
     fn operator_inc_3(&self) -> Ptr<NotDecrementable> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_4(&self, mut _a0: i32) {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait NotIncrementableImpl {
@@ -294,14 +361,20 @@ impl NotIncrementableImpl for Ptr<NotIncrementable> {
         return ({ (*self).with(|__s| __s.value_) } == { _a0.with(|__s| __s.value_) });
     }
     fn operator_inc_3(&self) -> Ptr<NotIncrementable> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_4(&self, mut _a0: i32) {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     fn operator_dec(&self) -> Ptr<NotIncrementable> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
 }
@@ -320,28 +393,36 @@ impl SomeIntImpl for Ptr<SomeInt> {
                 &((*self).with(|__s| __s.value_)),
                 &(_a0.with(|__s| __s.value_)),
             )));
-            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow());
+            if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+                return ({ (*cmp.borrow()) });
             }
         }
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_inc_3(&self) -> Ptr<SomeInt> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_4(&self, mut _a0: i32) -> SomeInt {
         let mut tmp: SomeInt = (*(*self).upgrade().deref()).clone();
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return tmp;
     }
     fn operator_dec_5(&self) -> Ptr<SomeInt> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_6(&self, mut _a0: i32) -> SomeInt {
         let mut tmp: SomeInt = (*(*self).upgrade().deref()).clone();
-        field!((*self), value_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return tmp;
     }
     fn operator_eq(&self, _a0: Ptr<SomeInt>) -> bool {

@@ -32,7 +32,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             3.5_f64,
         )
         .to_owned_opt()])));
-        let mut t: Option<Value<f64>> = unimplemented!().take();
+        let mut t: Option<Value<f64>> = c
+            .decay()
+            .offset(0 as isize)
+            .with_mut(|__v: &mut Option<Value<f64>>| __v.take());
         assert!(((t.as_pointer().read()) == 3.5_f64));
     }
     return 0;

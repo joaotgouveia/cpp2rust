@@ -45,8 +45,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         true,
         "std::is_same<decltype(f), decltype(std::launder(f))>::value"
     );;
-    assert!(({ (*i.borrow()).clone() } == { (*i.borrow()).clone() }));
-    assert!(({ (*f.borrow()).clone() } == { (*f.borrow()).clone() }));
+    assert!(({ ({ (*i.borrow()).clone() } == { (*i.borrow()).clone() }) }));
+    assert!(({ ({ (*f.borrow()).clone() } == { (*f.borrow()).clone() }) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {

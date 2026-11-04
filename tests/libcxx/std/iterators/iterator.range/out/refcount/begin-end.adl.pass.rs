@@ -21,6 +21,11 @@ pub fn end_3(_a0: Ptr<ArrayHijacker>) -> i32 {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ArrayHijacker {}
+impl CppMove for ArrayHijacker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn begin_4(_a0: Ptr<ContainerHijacker>) -> i32 {
     return 42;
 }
@@ -76,6 +81,11 @@ pub struct ContainerHijacker {
     #[byte_size(8)]
     pub a_: Ptr<i32>,
 }
+impl CppMove for ContainerHijacker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_20() -> bool {
     {
         let a: Value<Box<[ArrayHijacker]>> = Rc::new(RefCell::new(Box::new([
@@ -85,17 +95,31 @@ pub fn test_20() -> bool {
         ])));
         assert!((({ begin_0(a.as_pointer(),) }) == 42));
         assert!((({ end_1(a.as_pointer(),) }) == 42));
-        assert!((unimplemented!() == (a.as_pointer() as Ptr<ArrayHijacker>)));
+        assert!((({ begin_21(a.as_pointer(),) }) == (a.as_pointer() as Ptr<ArrayHijacker>)));
         assert!(
             ((a.as_pointer() as Ptr<ArrayHijacker>).to_end()
                 == (a.as_pointer() as Ptr<ArrayHijacker>).offset((3) as isize))
         );
-        assert!((unimplemented!() == (a.as_pointer() as Ptr<ArrayHijacker>)));
-        assert!((unimplemented!() == (a.as_pointer() as Ptr<ArrayHijacker>).offset((3) as isize)));
-        assert!((unimplemented!() == (a.as_pointer() as Ptr<ArrayHijacker>).offset((3) as isize)));
-        assert!((unimplemented!() == (a.as_pointer() as Ptr<ArrayHijacker>)));
-        assert!((unimplemented!() == (a.as_pointer() as Ptr<ArrayHijacker>).offset((3) as isize)));
-        assert!((unimplemented!() == (a.as_pointer() as Ptr<ArrayHijacker>)));
+        assert!((({ cbegin_22(a.as_pointer(),) }) == (a.as_pointer() as Ptr<ArrayHijacker>)));
+        assert!(
+            (({ cend_23(a.as_pointer(),) })
+                == (a.as_pointer() as Ptr<ArrayHijacker>).offset((3) as isize))
+        );
+        assert!(
+            (({ ({ rbegin_24(a.as_pointer(),) }).base() })
+                == (a.as_pointer() as Ptr<ArrayHijacker>).offset((3) as isize))
+        );
+        assert!(
+            (({ ({ rend_25(a.as_pointer(),) }).base() }) == (a.as_pointer() as Ptr<ArrayHijacker>))
+        );
+        assert!(
+            (({ ({ crbegin_26(a.as_pointer(),) }).base() })
+                == (a.as_pointer() as Ptr<ArrayHijacker>).offset((3) as isize))
+        );
+        assert!(
+            (({ ({ crend_27(a.as_pointer(),) }).base() })
+                == (a.as_pointer() as Ptr<ArrayHijacker>))
+        );
     }
     {
         let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32, 0_i32])));
@@ -104,14 +128,24 @@ pub fn test_20() -> bool {
         }));
         assert!((({ begin_4(c.as_pointer(),) }) == 42));
         assert!((({ end_5(c.as_pointer(),) }) == 42));
-        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>)));
-        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>)));
-        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>)));
-        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>).offset((3) as isize)));
-        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>)));
-        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>).offset((3) as isize)));
+        assert!((({ begin_28(c.as_pointer(),) }) == (a.as_pointer() as Ptr::<i32>)));
+        assert!(
+            (({ libcc2rs::end_refcount(c.as_pointer(),) })
+                == (a.as_pointer() as Ptr::<i32>).offset((3) as isize))
+        );
+        assert!((({ cbegin_29(c.as_pointer(),) }) == (a.as_pointer() as Ptr::<i32>)));
+        assert!(
+            (({ cend_30(c.as_pointer(),) }) == (a.as_pointer() as Ptr::<i32>).offset((3) as isize))
+        );
+        assert!((({ rbegin_31(c.as_pointer(),) }) == (a.as_pointer() as Ptr::<i32>)));
+        assert!(
+            (({ rend_32(c.as_pointer(),) }) == (a.as_pointer() as Ptr::<i32>).offset((3) as isize))
+        );
+        assert!((({ crbegin_33(c.as_pointer(),) }) == (a.as_pointer() as Ptr::<i32>)));
+        assert!(
+            (({ crend_34(c.as_pointer(),) })
+                == (a.as_pointer() as Ptr::<i32>).offset((3) as isize))
+        );
     }
     return true;
 }

@@ -11,19 +11,29 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_double_ref__double_ref_ {}
+impl CppMove for test_macros_detail_is_same_double_ref__double_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_double_ref__const_double_ref_ {}
+impl CppMove for test_macros_detail_is_same_const_double_ref__const_double_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn tests_2() -> bool {
     {
         let c: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([1_f64, 2_f64, 3.5_f64])));
-        let r1: () = unimplemented!();
+        let r1: Ptr<f64> = ({ (*c.borrow_mut()).front_22() });
         assert!(((r1.read()) == 1_f64));
         r1.write(5.5_f64);
         assert!(((c.decay().offset(0_usize as isize).read()) == 5.5_f64));
-        let r2: () = unimplemented!();
+        let r2: Ptr<f64> = ({ (*c.borrow_mut()).back_24() });
         assert!(((r2.read()) == 3.5_f64));
         r2.write(7.5_f64);
         assert!(((c.decay().offset(2_usize as isize).read()) == 7.5_f64));

@@ -10,8 +10,10 @@ pub fn test08_0() {
     let buff: Value<Box<[i32]>> = Rc::new(RefCell::new(
         (0..2048).map(|_| 0_i32).collect::<Box<[i32]>>(),
     ));
-    unimplemented!();
-    unimplemented!();
+    write!(wcout_1.with(|v| v.as_pointer()), "Enter name: ",);
+    ({
+        (*wcin_2.with(Value::clone).borrow()).getline_28((buff.as_pointer() as Ptr<i32>), 2048_i64)
+    });
 }
 pub fn main() {
     __cpp2rust_init_globals();

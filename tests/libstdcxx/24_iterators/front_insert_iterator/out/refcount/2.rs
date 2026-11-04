@@ -7,9 +7,11 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test02_0() {
-    let li: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let li: Value<std_list_int__std_allocator_int__> =
+        Rc::new(RefCell::new(<std_list_int__std_allocator_int__>::default()));
+    let it: Value<std_front_insert_iterator_std_list_int__std_allocator_int___> =
+        Rc::new(RefCell::new(({ front_inserter_1(li.as_pointer()) })));
+    (*it.borrow_mut()) = { (*it.borrow()).clone() };
 }
 pub fn main() {
     __cpp2rust_init_globals();

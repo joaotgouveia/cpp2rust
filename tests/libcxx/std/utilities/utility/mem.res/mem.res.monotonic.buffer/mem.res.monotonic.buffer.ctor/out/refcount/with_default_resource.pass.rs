@@ -27,29 +27,45 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let mut expected: Ptr<()> = unimplemented!();
-    unimplemented!();
+    let mut expected: Ptr<std_pmr_memory_resource> = ({ null_memory_resource_0() });
+    ({ set_default_resource_1((expected).clone()) });
     {
         let buffer: Value<Box<[i8]>> =
             Rc::new(RefCell::new((0..16).map(|_| 0_i8).collect::<Box<[i8]>>()));
-        let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let r3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ unimplemented!() } == { (expected).clone() }));
-        assert!(({ unimplemented!() } == { (expected).clone() }));
-        assert!(({ unimplemented!() } == { (expected).clone() }));
+        let r1: Value<std_pmr_monotonic_buffer_resource> =
+            Rc::new(RefCell::new(<std_pmr_monotonic_buffer_resource>::default()));
+        let r2: Value<std_pmr_monotonic_buffer_resource> =
+            Rc::new(RefCell::new(std_pmr_monotonic_buffer_resource::new_1({
+                16_usize
+            })));
+        let r3: Value<std_pmr_monotonic_buffer_resource> =
+            Rc::new(RefCell::new(std_pmr_monotonic_buffer_resource::new_2(
+                { ((buffer.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any() },
+                { ::std::mem::size_of::<[i8; 16]>() },
+            )));
+        assert!(({ ({ ({ (*r1.borrow()).upstream_resource() }) } == { (expected).clone() }) }));
+        assert!(({ ({ ({ (*r2.borrow()).upstream_resource() }) } == { (expected).clone() }) }));
+        assert!(({ ({ ({ (*r3.borrow()).upstream_resource() }) } == { (expected).clone() }) }));
     }
-    expected = unimplemented!();
-    unimplemented!();
+    expected = ({ new_delete_resource_2() });
+    ({ set_default_resource_1((expected).clone()) });
     {
         let buffer: Value<Box<[i8]>> =
             Rc::new(RefCell::new((0..16).map(|_| 0_i8).collect::<Box<[i8]>>()));
-        let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let r3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ unimplemented!() } == { (expected).clone() }));
-        assert!(({ unimplemented!() } == { (expected).clone() }));
-        assert!(({ unimplemented!() } == { (expected).clone() }));
+        let r1: Value<std_pmr_monotonic_buffer_resource> =
+            Rc::new(RefCell::new(<std_pmr_monotonic_buffer_resource>::default()));
+        let r2: Value<std_pmr_monotonic_buffer_resource> =
+            Rc::new(RefCell::new(std_pmr_monotonic_buffer_resource::new_1({
+                16_usize
+            })));
+        let r3: Value<std_pmr_monotonic_buffer_resource> =
+            Rc::new(RefCell::new(std_pmr_monotonic_buffer_resource::new_2(
+                { ((buffer.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any() },
+                { ::std::mem::size_of::<[i8; 16]>() },
+            )));
+        assert!(({ ({ ({ (*r1.borrow()).upstream_resource() }) } == { (expected).clone() }) }));
+        assert!(({ ({ ({ (*r2.borrow()).upstream_resource() }) } == { (expected).clone() }) }));
+        assert!(({ ({ ({ (*r3.borrow()).upstream_resource() }) } == { (expected).clone() }) }));
     }
     return 0;
 }

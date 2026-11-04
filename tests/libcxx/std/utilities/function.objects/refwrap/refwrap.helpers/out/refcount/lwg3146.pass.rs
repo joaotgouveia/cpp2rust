@@ -12,44 +12,46 @@ pub const anon_0_value: anon_0 = 1;
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_reference_wrapper_std_reference_wrapper_int____std_reference_wrapper_std_reference_wrapper_int___
 {}
+impl CppMove for test_macros_detail_is_same_std_reference_wrapper_std_reference_wrapper_int____std_reference_wrapper_std_reference_wrapper_int___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_reference_wrapper_const_std_reference_wrapper_int____std_reference_wrapper_const_std_reference_wrapper_int___
 {}
+impl CppMove for test_macros_detail_is_same_std_reference_wrapper_const_std_reference_wrapper_int____std_reference_wrapper_const_std_reference_wrapper_int___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn test_2() -> bool {
     {
         let i: Value<i32> = Rc::new(RefCell::new(0));
         let ri: Value<Ptr<i32>> = Rc::new(RefCell::new(i.as_pointer()));
         let mut rri: Ptr<Ptr<i32>> = ri.as_pointer();
-        let rrj: Value<Ptr<Ptr<i32>>> = Rc::new(RefCell::new(unimplemented!()));
+        let rrj: Value<Ptr<Ptr<i32>>> = Rc::new(RefCell::new(({ ref_3((rri).clone()) })));
         const _: () = assert!(true, "");;
-        assert!(((*rrj.borrow()) == (ri.as_pointer())));
+        assert!(({ ((*rrj.borrow()) == (ri.as_pointer())) }));
     }
     {
         let i: Value<i32> = Rc::new(RefCell::new(0));
         let ri: Value<Ptr<i32>> = Rc::new(RefCell::new(i.as_pointer()));
         let mut rri: Ptr<Ptr<i32>> = ri.as_pointer();
-        let rrj: Value<Ptr<Ptr<i32>>> = Rc::new(RefCell::new(unimplemented!()));
+        let rrj: Value<Ptr<Ptr<i32>>> = Rc::new(RefCell::new(({ ref_4((rri).clone()) })));
         const _: () = assert!(true, "");;
-        assert!(((*rrj.borrow()) == (ri.as_pointer())));
+        assert!(({ ((*rrj.borrow()) == (ri.as_pointer())) }));
     }
     {
         let i: Value<i32> = Rc::new(RefCell::new(0));
         let ri: Value<Ptr<i32>> = Rc::new(RefCell::new(i.as_pointer()));
         let mut rri: Ptr<Ptr<i32>> = ri.as_pointer();
-        let rrj: Value<Ptr<Ptr<i32>>> = Rc::new(RefCell::new(unimplemented!()));
+        let rrj: Value<Ptr<Ptr<i32>>> = Rc::new(RefCell::new(({ cref_5((rri).clone()) })));
         const _: () = assert!(true, "");;
-        assert!(((*rrj.borrow()) == (ri.as_pointer())));
+        assert!(({ ((*rrj.borrow()) == (ri.as_pointer())) }));
     }
     {
         let i: Value<i32> = Rc::new(RefCell::new(0));
         let ri: Value<Ptr<i32>> = Rc::new(RefCell::new(i.as_pointer()));
         let mut rri: Ptr<Ptr<i32>> = ri.as_pointer();
-        let rrj: Value<Ptr<Ptr<i32>>> = Rc::new(RefCell::new(unimplemented!()));
+        let rrj: Value<Ptr<Ptr<i32>>> = Rc::new(RefCell::new(({ cref_6((rri).clone()) })));
         const _: () = assert!(true, "");;
-        assert!(((*rrj.borrow()) == (ri.as_pointer())));
+        assert!(({ ((*rrj.borrow()) == (ri.as_pointer())) }));
     }
     return true;
 }

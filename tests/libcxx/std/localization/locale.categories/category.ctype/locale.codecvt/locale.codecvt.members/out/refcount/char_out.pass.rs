@@ -27,24 +27,47 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let l: Value<std_locale> = Rc::new(RefCell::new(
+        (*({ std_locale::classic() }).upgrade().deref()).clone(),
+    ));
     let from: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __bytes = Ptr::<i8>::from_string_literal(b"some text").to_c_bytes();
         __bytes.push(0_i8);
         __bytes
     }));
     let to: Value<Vec<i8>> = Rc::new(RefCell::new(
-        (0..((*from.borrow()).len() - 1) as usize)
+        (0..({ ((*from.borrow()).len() - 1) }) as usize)
             .map(|_| 0_i8)
             .collect::<Vec<_>>(),
     ));
-    let f: Ptr<()> = unimplemented!();
+    let f: Ptr<std_codecvt_char__char____mbstate_t_> = ({ use_facet_0(l.as_pointer()) });
     let mbs: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
-    let mut from_next: Ptr<i8> = Ptr::<i8>::null();
-    let mut to_next: Ptr<i8> = Ptr::<i8>::null();
-    assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
-    assert!(({ (from_next).clone() } == { from.decay() }));
-    assert!(({ (to_next).clone() } == { to.decay() }));
+    let from_next: Value<Ptr<i8>> = Rc::new(RefCell::new(Ptr::<i8>::null()));
+    let to_next: Value<Ptr<i8>> = Rc::new(RefCell::new(Ptr::<i8>::null()));
+    assert!(
+        ({
+            ((({
+                let ___from: Ptr<i8> = from.decay();
+                let ___from_end: Ptr<i8> =
+                    from.decay().offset(((*from.borrow()).len() - 1) as isize);
+                let ___to: Ptr<i8> = to.decay();
+                let ___to_end: Ptr<i8> = to.decay().offset(((*to.borrow()).len()) as isize);
+                ((*f.upgrade().deref()) as std___codecvt_abstract_base_char__char____mbstate_t_)
+                    .out(
+                        mbs.as_pointer(),
+                        ___from,
+                        ___from_end,
+                        from_next.as_pointer(),
+                        ___to,
+                        ___to_end,
+                        to_next.as_pointer(),
+                    )
+            }) as i32)
+                == (std_codecvt_base_result_noconv as i32))
+        })
+    );
+    assert!(({ ({ (*from_next.borrow()).clone() } == { from.decay() }) }));
+    assert!(({ ({ (*to_next.borrow()).clone() } == { to.decay() }) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

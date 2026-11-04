@@ -28,25 +28,37 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut uPtr: Option<Value<i32>> = Some(Rc::new(RefCell::new(84)));
-        let ioPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let uPtr: Value<Option<Value<i32>>> =
+            Rc::new(RefCell::new(Some(Rc::new(RefCell::new(84)))));
+        let ioPtr: Value<std_inout_ptr_t_std_unique_ptr_int__std_default_delete_int____int_ptr_> =
+            Rc::new(RefCell::new(
+                std_inout_ptr_t_std_unique_ptr_int__std_default_delete_int____int_ptr_::new({
+                    uPtr.as_pointer()
+                }),
+            ));
         const _: () = assert!(true, "noexcept(ioPtr.operator int**())");;
-        let mut pPtr: Ptr<Ptr<i32>> = unimplemented!();
+        let mut pPtr: Ptr<Ptr<i32>> = ({ (*ioPtr.borrow())() });
         assert!((((pPtr.read()).read()) == 84));
     }
     {
         let uPtr: Value<Option<Value<i32>>> =
             Rc::new(RefCell::new(Some(Rc::new(RefCell::new(84)))));
-        let ioPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ioPtr : Value<std_inout_ptr_t_std_unique_ptr_int__std_default_delete_int____int_ptr__std_default_delete_int__ > = Rc::new(RefCell::new(std_inout_ptr_t_std_unique_ptr_int__std_default_delete_int____int_ptr__std_default_delete_int__ :: new ( { uPtr .as_pointer()  } , { <std_default_delete_int_  >::default()  } , )  )) ;
         const _: () = assert!(true, "noexcept(ioPtr.operator int**())");;
-        let mut pPtr: Ptr<Ptr<i32>> = unimplemented!();
+        let mut pPtr: Ptr<Ptr<i32>> = ({ (*ioPtr.borrow())() });
         assert!((((pPtr.read()).read()) == 84));
     }
     {
-        let mut uPtr: Option<Value<i32>> = Some(Rc::new(RefCell::new(84)));
-        let ioPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let uPtr: Value<Option<Value<i32>>> =
+            Rc::new(RefCell::new(Some(Rc::new(RefCell::new(84)))));
+        let ioPtr: Value<std_inout_ptr_t_std_unique_ptr_int__std_default_delete_int____void_ptr_> =
+            Rc::new(RefCell::new(
+                std_inout_ptr_t_std_unique_ptr_int__std_default_delete_int____void_ptr_::new({
+                    uPtr.as_pointer()
+                }),
+            ));
         const _: () = assert!(true, "noexcept(ioPtr.operator void**())");;
-        let mut pPtr: Ptr<AnyPtr> = unimplemented!();
+        let mut pPtr: Ptr<AnyPtr> = ({ (*ioPtr.borrow()).to_pmutAnyPtr_4() });
         assert!((((pPtr.reinterpret_cast::<Ptr<i32>>().read()).read()) == 84));
     }
     return 0;

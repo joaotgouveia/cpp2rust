@@ -55,6 +55,11 @@ impl constexpr_char_traits_char_ {
         return (*len.borrow());
     }
 }
+impl CppMove for constexpr_char_traits_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -77,41 +82,102 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"abcde");
-        let sv0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let svNot: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv0: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            <std_basic_string_view_char__std_char_traits_char__>::default(),
+        ));
+        let sv1: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_basic_string_view_char__std_char_traits_char__::new_1({ (s).clone() }, { 1_u64 }),
+        ));
+        let sv2: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_basic_string_view_char__std_char_traits_char__::new_1({ (s).clone() }, { 2_u64 }),
+        ));
+        let svNot: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(
+            RefCell::new(std_basic_string_view_char__std_char_traits_char__::new_1(
+                { Ptr::<i8>::from_string_literal(b"def") },
+                { 3_u64 },
+            )),
+        );
         const _: () = assert!(true, "");;
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(unimplemented!());
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(!(unimplemented!()));
-        assert!(unimplemented!());
+        assert!(({ ({ (*sv0.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b""),) }) }));
+        assert!(({ !({ (*sv0.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"a"),) }) }));
+        assert!(({ ({ (*sv1.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b""),) }) }));
+        assert!(({ ({ (*sv1.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"a"),) }) }));
+        assert!(
+            ({ !({ (*sv1.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"ab"),) }) })
+        );
+        assert!(
+            ({ !({ (*sv1.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"abc"),) }) })
+        );
+        assert!(
+            ({ !({ (*sv1.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"abcd"),) }) })
+        );
+        assert!(
+            ({ !({ (*sv1.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"abcde"),) }) })
+        );
+        assert!(
+            ({ !({ (*sv1.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"def"),) }) })
+        );
+        assert!(({ ({ (*sv2.borrow()).starts_with_39(s.offset((5) as isize),) }) }));
+        assert!(({ ({ (*sv2.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"a"),) }) }));
+        assert!(({ ({ (*sv2.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"ab"),) }) }));
+        assert!(
+            ({ !({ (*sv2.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"abc"),) }) })
+        );
+        assert!(
+            ({ !({ (*sv2.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"abcd"),) }) })
+        );
+        assert!(
+            ({ !({ (*sv2.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"abcde"),) }) })
+        );
+        assert!(
+            ({ !({ (*sv2.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"def"),) }) })
+        );
+        assert!(({ ({ (*svNot.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b""),) }) }));
+        assert!(
+            ({ !({ (*svNot.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"a"),) }) })
+        );
+        assert!(
+            ({ !({ (*svNot.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"ab"),) }) })
+        );
+        assert!(
+            ({ !({ (*svNot.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"abc"),) }) })
+        );
+        assert!(
+            ({ !({ (*svNot.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"abcd"),) }) })
+        );
+        assert!(
+            ({
+                !({ (*svNot.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"abcde")) })
+            })
+        );
+        assert!(
+            ({ ({ (*svNot.borrow()).starts_with_39(Ptr::<i8>::from_string_literal(b"def"),) }) })
+        );
     }
     {
         let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"abcde");
-        let sv0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let svNot: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let sv0: Value<std_basic_string_view_char__constexpr_char_traits_char__> = Rc::new(
+            RefCell::new(<std_basic_string_view_char__constexpr_char_traits_char__>::default()),
+        );
+        let sv1: Value<std_basic_string_view_char__constexpr_char_traits_char__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char__constexpr_char_traits_char__::new_1({ (s).clone() }, {
+                    1_u64
+                }),
+            ));
+        let sv2: Value<std_basic_string_view_char__constexpr_char_traits_char__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char__constexpr_char_traits_char__::new_1({ (s).clone() }, {
+                    2_u64
+                }),
+            ));
+        let svNot: Value<std_basic_string_view_char__constexpr_char_traits_char__> =
+            Rc::new(RefCell::new(
+                std_basic_string_view_char__constexpr_char_traits_char__::new_1(
+                    { Ptr::<i8>::from_string_literal(b"def") },
+                    { 3_u64 },
+                ),
+            ));
         const _: () = assert!(true, "sv0.starts_with(\"\")");;
         const _: () = assert!(true, "!sv0.starts_with(\"a\")");;
         const _: () = assert!(true, "sv1.starts_with(\"\")");;

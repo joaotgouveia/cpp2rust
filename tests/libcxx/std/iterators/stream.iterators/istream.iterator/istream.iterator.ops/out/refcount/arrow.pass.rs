@@ -14,6 +14,11 @@ pub struct A {
     #[offset(8)]
     pub i_: i32,
 }
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_addr_0(_a0: Ptr<A>) {}
 pub fn operator_shr_1(is: Ptr<()>, a: Ptr<A>) -> Ptr<()> {
     return unimplemented!();

@@ -21,7 +21,7 @@ fn main_0() -> i32 {
         i.prefix_inc();
     }
     let mut sum: i32 = 0;
-    'loop_: for x in IterRange::new(v.decay().begin(), v.decay().end()) {
+    'loop_: for x in IterRange::new(CppRange::begin(&v.decay()), CppRange::end(&v.decay())) {
         let mut x: i32 = (x.iter_deref().read());
         sum += x;
     }

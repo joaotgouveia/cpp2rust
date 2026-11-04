@@ -27,13 +27,13 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let mut d: () = unimplemented!();
+    let mut d: std_time_base_dateorder = std_time_base_dateorder_no_order;
     (&(d));
-    assert!(((unimplemented!() as i32) == 0));
-    assert!(((unimplemented!() as i32) == 1));
-    assert!(((unimplemented!() as i32) == 2));
-    assert!(((unimplemented!() as i32) == 3));
-    assert!(((unimplemented!() as i32) == 4));
+    assert!(((std_time_base_dateorder_no_order as i32) == 0));
+    assert!(((std_time_base_dateorder_dmy as i32) == 1));
+    assert!(((std_time_base_dateorder_mdy as i32) == 2));
+    assert!(((std_time_base_dateorder_ymd as i32) == 3));
+    assert!(((std_time_base_dateorder_ydm as i32) == 4));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -27,13 +27,13 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(((unimplemented!() as i32) == 0));
-    assert!(((unimplemented!() as i32) == 1));
-    assert!(((unimplemented!() as i32) == 2));
-    assert!(((unimplemented!() as i32) == 3));
-    assert!(((unimplemented!() as i32) == 4));
-    assert!(((unimplemented!() as i32) == 5));
-    let mut o: () = unimplemented!();
+    assert!(((memory_order_relaxed_0.with(|rc| *rc.borrow()) as i32) == 0));
+    assert!(((memory_order_consume_1.with(|rc| *rc.borrow()) as i32) == 1));
+    assert!(((memory_order_acquire_2.with(|rc| *rc.borrow()) as i32) == 2));
+    assert!(((memory_order_release_3.with(|rc| *rc.borrow()) as i32) == 3));
+    assert!(((memory_order_acq_rel_4.with(|rc| *rc.borrow()) as i32) == 4));
+    assert!(((memory_order_seq_cst_5.with(|rc| *rc.borrow()) as i32) == 5));
+    let mut o: std_memory_order = memory_order_seq_cst_5.with(|rc| *rc.borrow());
     assert!(((o as i32) == 5));
     return 0;
 }

@@ -11,12 +11,26 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_filesystem_copy_options__std_filesystem_copy_options_ {}
+impl CppMove
+    for test_macros_detail_is_same_std_filesystem_copy_options__std_filesystem_copy_options_
+{
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_filesystem_copy_options_ref__std_filesystem_copy_options_ref_
 {}
+impl CppMove
+    for test_macros_detail_is_same_std_filesystem_copy_options_ref__std_filesystem_copy_options_ref_
+{
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct check_bitmask_type_std_filesystem_copy_options__std_filesystem_copy_options_skip_existing__std_filesystem_copy_options_update_existing__unsigned_short__1__4__0__std_filesystem_copy_options_none_
@@ -84,6 +98,7 @@ impl check_bitmask_type_std_filesystem_copy_options__std_filesystem_copy_options
  assert!(( ( ( { check_bitmask_type_std_filesystem_copy_options__std_filesystem_copy_options_skip_existing__std_filesystem_copy_options_update_existing__unsigned_short__1__4__0__std_filesystem_copy_options_none_::dcast ( (eref.read())  , ) } )  as i32 ) == ( ( ( 1_u16 as i32 ) ^ ( 4_u16 as i32 ) ) ) ) )  ;
  } return true   ;
  } }
+impl CppMove for check_bitmask_type_std_filesystem_copy_options__std_filesystem_copy_options_skip_existing__std_filesystem_copy_options_update_existing__unsigned_short__1__4__0__std_filesystem_copy_options_none_ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
 pub fn ME_2(mut val: i32) -> () {
     return ((val) as ());
 }
@@ -114,32 +129,32 @@ pub fn test_bitmask_binary_operations_3() -> bool {
             {
                 let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 assert!(((unimplemented!()) == (e.as_pointer())));
-                assert!(((*e.borrow()) == elem));
+                assert!(({ ((*e.borrow()) == elem) }));
             }
             {
                 let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 assert!(((unimplemented!()) == (e.as_pointer())));
-                assert!(((*e.borrow()) == unimplemented!()));
+                assert!(({ ((*e.borrow()) == unimplemented!()) }));
             }
             {
                 let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 assert!(((unimplemented!()) == (e.as_pointer())));
-                assert!(((*e.borrow()) == elem));
+                assert!(({ ((*e.borrow()) == elem) }));
             }
             {
                 let e: Value<()> = Rc::new(RefCell::new(elem));
                 assert!(((unimplemented!()) == (e.as_pointer())));
-                assert!(((*e.borrow()) == elem));
+                assert!(({ ((*e.borrow()) == elem) }));
             }
             {
                 let e: Value<()> = Rc::new(RefCell::new(elem));
                 assert!(((unimplemented!()) == (e.as_pointer())));
-                assert!(((*e.borrow()) == elem));
+                assert!(({ ((*e.borrow()) == elem) }));
             }
             {
                 let e: Value<()> = Rc::new(RefCell::new(elem));
                 assert!(((unimplemented!()) == (e.as_pointer())));
-                assert!(((*e.borrow()) == unimplemented!()));
+                assert!(({ ((*e.borrow()) == unimplemented!()) }));
             }
         }
     }

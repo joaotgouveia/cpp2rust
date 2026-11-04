@@ -27,11 +27,40 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let p: Value<(Value<()>, Value<bool>)> = Rc::new(RefCell::new(unimplemented!()));
-    let cs: Ptr<()> = s.as_pointer();
-    assert!(({ unimplemented!() } == { unimplemented!() }));
-    assert!(({ unimplemented!() } == { unimplemented!() }));
+    let s: Value<std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__> =
+        Rc::new(RefCell::new(
+            <std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__>::default(
+            ),
+        ));
+    let p: Value<(
+        Value<std___detail__Node_iterator_int__true__false_>,
+        Value<bool>,
+    )> = Rc::new(RefCell::new(
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(1));
+            (*s.borrow()).insert_36(___x.as_pointer())
+        }),
+    ));
+    let cs: Ptr<std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__> =
+        s.as_pointer();
+    assert!(
+        ({
+            ({
+                ({ (*cs.upgrade().deref()).hash_function() })(
+                    ((*(*p.borrow()).0.borrow()).iter_deref().read()),
+                )
+            })
+        } == { ({ ({ (*cs.upgrade().deref()).hash_function() })(1,) }) })
+    );
+    assert!(
+        ({ ({ ({ (*cs.upgrade().deref()).hash_function() })(1,) }) } == {
+            ({
+                ({ (*cs.upgrade().deref()).hash_function() })(
+                    ((*(*p.borrow()).0.borrow()).iter_deref().read()),
+                )
+            })
+        })
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

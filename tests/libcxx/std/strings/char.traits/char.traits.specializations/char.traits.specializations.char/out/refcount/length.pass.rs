@@ -7,7 +7,9 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_constexpr_0() -> bool {
-    return (unimplemented!() == 0_usize) && (unimplemented!() == 4_usize);
+    return (({ std_char_traits_char_::length(Ptr::<i8>::from_string_literal(b"")) }) == 0_usize)
+        && (({ std_char_traits_char_::length(Ptr::<i8>::from_string_literal(b"abcd")) })
+            == 4_usize);
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -29,11 +31,19 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!((unimplemented!() == 0_usize));
-    assert!((unimplemented!() == 1_usize));
-    assert!((unimplemented!() == 2_usize));
-    assert!((unimplemented!() == 3_usize));
-    assert!((unimplemented!() == 4_usize));
+    assert!((({ std_char_traits_char_::length(Ptr::<i8>::from_string_literal(b""),) }) == 0_usize));
+    assert!(
+        (({ std_char_traits_char_::length(Ptr::<i8>::from_string_literal(b"a"),) }) == 1_usize)
+    );
+    assert!(
+        (({ std_char_traits_char_::length(Ptr::<i8>::from_string_literal(b"aa"),) }) == 2_usize)
+    );
+    assert!(
+        (({ std_char_traits_char_::length(Ptr::<i8>::from_string_literal(b"aaa"),) }) == 3_usize)
+    );
+    assert!(
+        (({ std_char_traits_char_::length(Ptr::<i8>::from_string_literal(b"aaaa"),) }) == 4_usize)
+    );
     const _: () = assert!(true, "test_constexpr()");;
     return 0;
 }

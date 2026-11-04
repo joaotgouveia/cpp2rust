@@ -27,7 +27,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let t1 : Value<std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_1__1000000000___ > = Rc::new(RefCell::new(( { std_chrono_system_clock::from_time_t ( ( { let ___t : Value<std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_1__1000000000___ > = Rc::new(RefCell::new(( { std_chrono_system_clock::now ( ) } )  )); std_chrono_system_clock::to_time_t ( ___t.as_pointer() , ) } )   , ) } )  )) ;
     (&(*t1.borrow_mut()));
     return 0;
 }

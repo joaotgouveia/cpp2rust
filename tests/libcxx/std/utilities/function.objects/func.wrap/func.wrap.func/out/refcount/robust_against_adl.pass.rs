@@ -16,6 +16,11 @@ impl Callable0<()> for Callable_Holder_Incomplete__ {
         })
     }
 }
+impl CppMove for Callable_Holder_Incomplete__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn no_args_0() -> Ptr<Holder_Incomplete_> {
     return Ptr::<Holder_Incomplete_>::null();
 }
@@ -69,13 +74,26 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let mut x: Ptr<Holder_Incomplete_> = Ptr::<Holder_Incomplete_>::null();
-    let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let g: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let f: Value<std_function_Holder_Incomplete__ptr___> =
+        Rc::new(RefCell::new(std_function_Holder_Incomplete__ptr___::new_1(
+            { FnPtr::<fn() -> Ptr<Holder_Incomplete_>>::new(no_args_0) },
+        )));
+    ({ (*f.borrow_mut())() });
+    let g: Value<std_function_Holder_Incomplete__ptr_Holder_Incomplete__ptr__> =
+        Rc::new(RefCell::new(
+            std_function_Holder_Incomplete__ptr_Holder_Incomplete__ptr__::new_1({
+                FnPtr::<fn(Ptr<Holder_Incomplete_>) -> Ptr<Holder_Incomplete_>>::new(one_arg_1)
+            }),
+        ));
+    ({ (*g.borrow_mut())((x).clone()) });
+    let h: Value<std_function_void__Holder_Incomplete__ptr__> = Rc::new(RefCell::new(
+        std_function_void__Holder_Incomplete__ptr__::new_1({
+            FnPtr::<fn(Ptr<Holder_Incomplete_>)>::new(one_arg_void_5)
+        }),
+    ));
+    ({ (*h.borrow_mut())((x).clone()) });
+    let i: Value<std_function_void____> =
+        Rc::new(RefCell::new(<Callable_Holder_Incomplete__>::default()));
     return 0;
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]

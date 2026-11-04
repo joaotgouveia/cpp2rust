@@ -12,6 +12,11 @@ pub struct Tracker {
     #[offset(0)]
     pub move_constructs: usize,
 }
+impl CppMove for Tracker {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Tracker {
     fn default() -> Self {
         {
@@ -69,6 +74,11 @@ impl Clone for Inner {
         Inner::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Inner {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, Default)]
 #[byte_size(8)]
 pub struct NotTriviallyMovable {
@@ -86,6 +96,11 @@ impl NotTriviallyMovable {
         Self {
             inner_: Inner::move_from({ field_ptr!(other, inner_) }),
         }
+    }
+}
+impl CppMove for NotTriviallyMovable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 const _: () = assert!(
@@ -107,14 +122,14 @@ pub fn tests_0() -> bool {
             v.push(__init)
         };
     }
-    assert!(({ (*track.borrow()).move_constructs } == 0_usize));
+    assert!(({ ({ (*track.borrow()).move_constructs } == 0_usize) }));
     assert!((v.capacity() == capacity));
     assert!((v.len() == capacity));
     {
         let __init = NotTriviallyMovable::new({ (track.as_pointer()) });
         v.push(__init)
     };
-    assert!(({ (*track.borrow()).move_constructs } == capacity));
+    assert!(({ ({ (*track.borrow()).move_constructs } == capacity) }));
     return true;
 }
 pub fn main() {

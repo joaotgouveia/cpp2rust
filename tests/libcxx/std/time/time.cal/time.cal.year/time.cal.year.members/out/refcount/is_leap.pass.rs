@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_bool__bool_ {}
+impl CppMove for test_macros_detail_is_same_bool__bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -37,22 +42,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "!year{{2}}.is_leap()");;
     const _: () = assert!(true, "!year{{3}}.is_leap()");;
     const _: () = assert!(true, "year{{4}}.is_leap()");;
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
+    assert!(({ std_chrono_year::new_1({ -2000_i32 },).is_leap() }));
+    assert!(({ std_chrono_year::new_1({ -400_i32 },).is_leap() }));
+    assert!(!({ std_chrono_year::new_1({ -300_i32 },).is_leap() }));
+    assert!(!({ std_chrono_year::new_1({ -200_i32 },).is_leap() }));
+    assert!(!({ std_chrono_year::new_1({ 200 },).is_leap() }));
+    assert!(!({ std_chrono_year::new_1({ 300 },).is_leap() }));
+    assert!(({ std_chrono_year::new_1({ 400 },).is_leap() }));
+    assert!(!({ std_chrono_year::new_1({ 1997 },).is_leap() }));
+    assert!(!({ std_chrono_year::new_1({ 1998 },).is_leap() }));
+    assert!(!({ std_chrono_year::new_1({ 1999 },).is_leap() }));
+    assert!(({ std_chrono_year::new_1({ 2000 },).is_leap() }));
+    assert!(!({ std_chrono_year::new_1({ 2001 },).is_leap() }));
+    assert!(!({ std_chrono_year::new_1({ 2002 },).is_leap() }));
+    assert!(!({ std_chrono_year::new_1({ 2003 },).is_leap() }));
+    assert!(({ std_chrono_year::new_1({ 2004 },).is_leap() }));
+    assert!(!({ std_chrono_year::new_1({ 2100 },).is_leap() }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -7,10 +7,21 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test01_0() {
-    let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    let s1: Value<std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__> =
+        Rc::new(RefCell::new(
+            <std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__>::default(
+            ),
+        ));
+    let s2: Value<std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__> =
+        Rc::new(RefCell::new(
+            <std_unordered_set_int__std_hash_int___std_equal_to_int___std_allocator_int__>::default(
+            ),
+        ));
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(2));
+        (*s2.borrow()).insert_36(___x.as_pointer())
+    });
+    (*s1.borrow_mut()) = (*s2.borrow()).clone();
 }
 pub fn main() {
     __cpp2rust_init_globals();

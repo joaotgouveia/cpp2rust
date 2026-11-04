@@ -13,6 +13,11 @@ pub struct list_head {
     #[byte_size(8)]
     pub next: Ptr<list_head>,
 }
+impl CppMove for list_head {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct node {
@@ -22,6 +27,11 @@ pub struct node {
     #[byte_size(8)]
     pub value_ptr: Ptr<i32>,
 }
+impl CppMove for node {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(16)]
 pub struct node_with_defaults {
@@ -30,6 +40,11 @@ pub struct node_with_defaults {
     pub next: Ptr<node_with_defaults>,
     #[offset(8)]
     pub value: i32,
+}
+impl CppMove for node_with_defaults {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for node_with_defaults {
     fn default() -> Self {
@@ -41,9 +56,10 @@ impl Default for node_with_defaults {
         }
     }
 }
-pub fn init_0(mut l: Ptr<list_head>) -> Ptr<list_head> {
-    field!(l, next).write(Ptr::<list_head>::null());
-    return l;
+pub fn init_0(l: Ptr<list_head>) -> Ptr<list_head> {
+    let l: Value<Ptr<list_head>> = Rc::new(RefCell::new(l));
+    field!((*l.borrow()), next).write(Ptr::<list_head>::null());
+    return (*l.borrow()).clone();
 }
 pub fn main() {
     __cpp2rust_init_globals();

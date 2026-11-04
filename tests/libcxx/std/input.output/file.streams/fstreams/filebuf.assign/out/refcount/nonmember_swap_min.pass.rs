@@ -12,15 +12,15 @@ pub fn get_temp_file_name_0() -> Vec<i8> {
         __bytes.push(0_i8);
         __bytes
     }));
-    let mut FD: i32 = unimplemented!();
+    let mut FD: i32 = ({ mkstemp_1((Name.decay().offset(0_usize as isize))) });
     if (FD == -1_i32) {
-        unimplemented!();
+        ({ perror_2(Ptr::<i8>::from_string_literal(b"mkstemp")) });
         std::process::abort();
     }
     FdRegistry::close(FD);
-    return std::mem::take(&mut (*Name.borrow_mut()));
+    return ({ std::mem::take(&mut (*Name.borrow_mut())) });
 }
-pub fn glibc_version_less_than_1(mut version: Ptr<i8>) -> bool {
+pub fn glibc_version_less_than_3(mut version: Ptr<i8>) -> bool {
     let test_version: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __tmp2 = {
             let mut __bytes = Ptr::<i8>::from_string_literal(b"glibc ").to_c_bytes();
@@ -32,11 +32,25 @@ pub fn glibc_version_less_than_1(mut version: Ptr<i8>) -> bool {
         __tmp2.push(0_i8);
         __tmp2
     }));
-    let mut n: usize = unimplemented!();
+    let mut n: usize = ({
+        confstr_4(
+            (anon_5__CS_GNU_LIBC_VERSION as i32),
+            Ptr::<i8>::null(),
+            0_usize,
+        )
+    });
     let mut current_version: Ptr<i8> =
         Ptr::alloc_array((0..n).map(|_| 0_i8).collect::<Box<[i8]>>());
-    unimplemented!();
-    let result: Value<bool> = Rc::new(RefCell::new((unimplemented!() < 0)));
+    ({
+        confstr_4(
+            (anon_5__CS_GNU_LIBC_VERSION as i32),
+            (current_version).clone(),
+            n,
+        )
+    });
+    let result: Value<bool> = Rc::new(RefCell::new(
+        (({ strverscmp_6((current_version).clone(), test_version.decay()) }) < 0),
+    ));
     current_version.delete();
     return (*result.borrow());
 }
@@ -63,8 +77,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let tmpA: Value<Vec<i8>> = Rc::new(RefCell::new(({ get_temp_file_name_0() })));
     let tmpB: Value<Vec<i8>> = Rc::new(RefCell::new(({ get_temp_file_name_0() })));
     {
-        let sa: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
-        let sb: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
+        let sa: Value<::std::fs::File> = Rc::new(RefCell::new(
+            std_basic_ofstream_char__std_char_traits_char__::new_1({ tmpA.as_pointer() }, None),
+        ));
+        let sb: Value<::std::fs::File> = Rc::new(RefCell::new(
+            std_basic_ofstream_char__std_char_traits_char__::new_1({ tmpB.as_pointer() }, None),
+        ));
         {
             let __s = sa.as_pointer();
             let _ = Ptr::<i8>::from_string_literal(b"AAAA").with_c_str(|__cs| {
@@ -80,23 +98,27 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             __s
         };
     }
-    let f1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(!((unimplemented!()).is_null()));
-    assert!(unimplemented!());
-    unimplemented!();
-    let f2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(!((unimplemented!()).is_null()));
-    assert!(unimplemented!());
-    unimplemented!();
-    assert!((unimplemented!() == (('A' as i8) as i32)));
-    assert!((unimplemented!() == (('B' as i8) as i32)));
-    unimplemented!();
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!((unimplemented!() == (('B' as i8) as i32)));
-    assert!((unimplemented!() == (('A' as i8) as i32)));
-    unimplemented!();
-    unimplemented!();
+    let f1: Value<std_basic_filebuf_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        <std_basic_filebuf_char__std_char_traits_char__>::default(),
+    ));
+    assert!(({ !(({ (*f1.borrow()).open_12(tmpA.as_pointer(), 8_i32,) }).is_null()) }));
+    assert!(({ ({ (*f1.borrow()).is_open() }) }));
+    ({ ((*f1.borrow()) as ::std::fs::File).pubsetbuf(Ptr::<i8>::null(), 0_i64) });
+    let f2: Value<std_basic_filebuf_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        <std_basic_filebuf_char__std_char_traits_char__>::default(),
+    ));
+    assert!(({ !(({ (*f2.borrow()).open_12(tmpB.as_pointer(), 8_i32,) }).is_null()) }));
+    assert!(({ ({ (*f2.borrow()).is_open() }) }));
+    ({ ((*f2.borrow()) as ::std::fs::File).pubsetbuf(Ptr::<i8>::null(), 0_i64) });
+    assert!(({ (({ ((*f1.borrow()) as ::std::fs::File).sgetc() }) == (('A' as i8) as i32)) }));
+    assert!(({ (({ ((*f2.borrow()) as ::std::fs::File).sgetc() }) == (('B' as i8) as i32)) }));
+    cpp_swap!(f1.as_pointer(), f2.as_pointer());
+    assert!(({ ({ (*f1.borrow()).is_open() }) }));
+    assert!(({ ({ (*f2.borrow()).is_open() }) }));
+    assert!(({ (({ ((*f1.borrow()) as ::std::fs::File).sgetc() }) == (('B' as i8) as i32)) }));
+    assert!(({ (({ ((*f2.borrow()) as ::std::fs::File).sgetc() }) == (('A' as i8) as i32)) }));
+    ({ remove_7(tmpA.decay()) });
+    ({ remove_7(tmpB.decay()) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

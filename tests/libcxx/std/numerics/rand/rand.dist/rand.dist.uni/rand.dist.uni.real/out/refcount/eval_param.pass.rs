@@ -30,47 +30,59 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let g: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let g: Value<std_linear_congruential_engine_unsigned_long__48271__0__2147483647_> =
+            Rc::new(RefCell::new(
+                <std_linear_congruential_engine_unsigned_long__48271__0__2147483647_>::default(),
+            ));
+        let d: Value<std_uniform_real_distribution_double_> = Rc::new(RefCell::new(
+            std_uniform_real_distribution_double_::new_1({ 5.5_f64 }, { 25_f64 }),
+        ));
+        let p: Value<std_uniform_real_distribution___param_type> = Rc::new(RefCell::new(
+            std_uniform_real_distribution___param_type::new_1({ (-10_i32 as f64) }, { 20_f64 }),
+        ));
         let mut N: i32 = 100000;
         let u: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::new()));
         let mut i: i32 = 0;
         'loop_: while (i < N) {
-            let mut v: () = unimplemented!();
-            assert!((unimplemented!() <= v) && (v < unimplemented!()));
+            let mut v: f64 = ({ (*d.borrow_mut())(g.as_pointer(), p.as_pointer()) });
+            assert!(({ (({ (*p.borrow()).a() }) <= v) && (v < ({ (*p.borrow()).b() })) }));
             {
                 let a0_clone = v.clone();
                 (*u.borrow_mut()).push(a0_clone)
             };
             i.prefix_inc();
         }
-        let mut mean: () = (unimplemented!() / ((*u.borrow()).len() as f64));
-        let mut var: () = 0_();
-        let mut skew: () = 0_();
-        let mut kurtosis: () = 0_();
+        let mut mean: f64 = (({
+            let ___first: RandomAccessIterator<f64> = CppRange::begin(&u.decay());
+            let ___last: RandomAccessIterator<f64> = CppRange::end(&u.decay());
+            accumulate_1(___first, ___last, 0_f64)
+        }) / ((*u.borrow()).len() as f64));
+        let mut var: f64 = 0_f64;
+        let mut skew: f64 = 0_f64;
+        let mut kurtosis: f64 = 0_f64;
         let mut i: usize = 0_usize;
         'loop_: while (i < (*u.borrow()).len()) {
-            let mut dbl: () = ((u.decay().offset(i as isize).read()) - mean);
-            let mut d2: () = ({ sqr_0(dbl) });
+            let mut dbl: f64 = ((u.decay().offset(i as isize).read()) - mean);
+            let mut d2: f64 = ({ sqr_0(dbl) });
             var += d2;
             skew += (dbl * d2);
             kurtosis += (d2 * d2);
             i.prefix_inc();
         }
-        var /= ((*u.borrow()).len() as ());
-        let mut dev: () = unimplemented!();
-        skew /= ((((*u.borrow()).len() as ()) * dev) * var);
-        kurtosis /= ((((*u.borrow()).len() as ()) * var) * var);
-        kurtosis -= 3_();
-        let mut x_mean: () = ((unimplemented!() + unimplemented!()) / 2_());
-        let mut x_var: () = (({ sqr_0((unimplemented!() - unimplemented!())) }) / 12_f64);
-        let mut x_skew: () = 0_();
-        let mut x_kurtosis: () = (-6_f64 / 5_f64);
-        assert!((unimplemented!() < 0.01_f64));
-        assert!((unimplemented!() < 0.01_f64));
-        assert!((unimplemented!() < 0.01_f64));
-        assert!((unimplemented!() < 0.01_f64));
+        var /= ((*u.borrow()).len() as f64);
+        let mut dev: f64 = ({ sqrt_2(var) });
+        skew /= ((((*u.borrow()).len() as f64) * dev) * var);
+        kurtosis /= ((((*u.borrow()).len() as f64) * var) * var);
+        kurtosis -= 3_f64;
+        let mut x_mean: f64 = ((({ (*p.borrow()).a() }) + ({ (*p.borrow()).b() })) / 2_f64);
+        let mut x_var: f64 =
+            (({ sqr_0((({ (*p.borrow()).b() }) - ({ (*p.borrow()).a() }))) }) / 12_f64);
+        let mut x_skew: f64 = 0_f64;
+        let mut x_kurtosis: f64 = (-6_f64 / 5_f64);
+        assert!((({ libcc2rs::abs_refcount(((mean - x_mean) / x_mean),) }) < 0.01_f64));
+        assert!((({ libcc2rs::abs_refcount(((var - x_var) / x_var),) }) < 0.01_f64));
+        assert!((({ libcc2rs::abs_refcount((skew - x_skew),) }) < 0.01_f64));
+        assert!((({ libcc2rs::abs_refcount(((kurtosis - x_kurtosis) / x_kurtosis),) }) < 0.01_f64));
     }
     return 0;
 }

@@ -16,7 +16,7 @@ pub fn test08_0() {
         });
         __s
     };
-    unimplemented!();
+    ({ (*cin_1.with(Value::clone).borrow()).getline_28((buff.as_pointer() as Ptr<i8>), 2048_i64) });
 }
 pub fn main() {
     __cpp2rust_init_globals();

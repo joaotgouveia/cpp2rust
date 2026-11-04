@@ -27,13 +27,15 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let l: Value<std_locale> = Rc::new(RefCell::new(
+        (*({ std_locale::classic() }).upgrade().deref()).clone(),
+    ));
     {
-        assert!(unimplemented!());
-        let f: Ptr<()> = unimplemented!();
+        assert!(({ has_facet_0(l.as_pointer(),) }));
+        let f: Ptr<std_collate_char_> = ({ use_facet_1(l.as_pointer()) });
         (&(*f.upgrade().deref()));
         {
-            &(unimplemented!());
+            &(*id_2.with(Value::clone).borrow_mut());
         }
         const _: () = assert!(
             true,
@@ -49,11 +51,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );;
     }
     {
-        assert!(unimplemented!());
-        let f: Ptr<()> = unimplemented!();
+        assert!(({ has_facet_3(l.as_pointer(),) }));
+        let f: Ptr<std_collate_wchar_t_> = ({ use_facet_4(l.as_pointer()) });
         (&(*f.upgrade().deref()));
         {
-            &(unimplemented!());
+            &(*id_5.with(Value::clone).borrow_mut());
         }
         const _: () = assert!(
             true,

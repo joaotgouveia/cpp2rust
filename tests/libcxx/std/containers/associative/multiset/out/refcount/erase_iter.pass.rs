@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -36,24 +41,13 @@ thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: Ptr<i32>,
-}
-impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(8)]
-pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    #[offset(0)]
-    #[byte_size(8)]
-    ptr_: AnyPtr,
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
+impl CppMove for min_allocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl TemplateConstructor {
     pub fn new(_a0: Ptr<i32>) -> Self {
         Self {}
@@ -74,415 +68,536 @@ impl CppEq for TemplateConstructor {
             && !(operator_lt_4(__rhs.clone(), __lhs.clone()))
     }
 }
+impl CppMove for TemplateConstructor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_lt_4(_a0: Ptr<TemplateConstructor>, _a1: Ptr<TemplateConstructor>) -> bool {
     return false;
 }
 pub fn test_5() -> bool {
     {
         let ar: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6, 7, 8])));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 8_()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 7_()));
-        assert!((*i.borrow()) == libcc2rs::next_refcount(unimplemented!(), 3_isize));
+        let m: Value<std_multiset_int__std_less_int___std_allocator_int__> = Rc::new(RefCell::new(
+            std_multiset_int__std_less_int___std_allocator_int__::new_1(
+                { (ar.as_pointer() as Ptr<i32>) },
+                {
+                    (ar.as_pointer() as Ptr<i32>).offset(
+                        ((::std::mem::size_of::<[i32; 8]>() as usize)
+                            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                            as isize,
+                    )
+                },
+            ),
+        ));
+        assert!(({ (({ (*m.borrow()).size() }) == 8_u64) }));
+        let i: Value<BidirectionalIterator<i32>> = Rc::new(RefCell::new(
+            ({
+                let ___position: BidirectionalIterator<i32> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 3_isize);
+                (*m.borrow()).erase_51(___position)
+            }),
+        ));
+        assert!(({ (({ (*m.borrow()).size() }) == 7_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize)
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 4_isize)
                 .iter_deref()
                 .read())
                 == 6)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 5_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 5_isize)
                 .iter_deref()
                 .read())
                 == 7)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 6_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 6_isize)
                 .iter_deref()
                 .read())
                 == 8)
         );
-        (*i.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 6_()));
-        assert!((*i.borrow()) == unimplemented!());
+        (*i.borrow_mut()) = ({
+            let ___position: BidirectionalIterator<i32> =
+                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 0_isize);
+            (*m.borrow()).erase_51(___position)
+        });
+        assert!(({ (({ (*m.borrow()).size() }) == 6_u64) }));
+        assert!((*i.borrow()) == ({ (*m.borrow()).begin() }));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize)
                 .iter_deref()
                 .read())
                 == 6)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 4_isize)
                 .iter_deref()
                 .read())
                 == 7)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 5_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 5_isize)
                 .iter_deref()
                 .read())
                 == 8)
         );
-        (*i.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 5_()));
-        assert!((*i.borrow()) == unimplemented!());
+        (*i.borrow_mut()) = ({
+            let ___position: BidirectionalIterator<i32> =
+                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 5_isize);
+            (*m.borrow()).erase_51(___position)
+        });
+        assert!(({ (({ (*m.borrow()).size() }) == 5_u64) }));
+        assert!((*i.borrow()) == ({ (*m.borrow()).end() }));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize)
                 .iter_deref()
                 .read())
                 == 6)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 4_isize)
                 .iter_deref()
                 .read())
                 == 7)
         );
-        (*i.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 4_()));
-        assert!((*i.borrow()) == libcc2rs::next_refcount(unimplemented!(), 1_isize));
+        (*i.borrow_mut()) = ({
+            let ___position: BidirectionalIterator<i32> =
+                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 1_isize);
+            (*m.borrow()).erase_51(___position)
+        });
+        assert!(({ (({ (*m.borrow()).size() }) == 4_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 6)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize)
                 .iter_deref()
                 .read())
                 == 7)
         );
-        (*i.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 3_()));
-        assert!((*i.borrow()) == libcc2rs::next_refcount(unimplemented!(), 2_isize));
+        (*i.borrow_mut()) = ({
+            let ___position: BidirectionalIterator<i32> =
+                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize);
+            (*m.borrow()).erase_51(___position)
+        });
+        assert!(({ (({ (*m.borrow()).size() }) == 3_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize)
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 7)
         );
-        (*i.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 2_()));
-        assert!((*i.borrow()) == libcc2rs::next_refcount(unimplemented!(), 2_isize));
+        (*i.borrow_mut()) = ({
+            let ___position: BidirectionalIterator<i32> =
+                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize);
+            (*m.borrow()).erase_51(___position)
+        });
+        assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize)
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
-        (*i.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 1_()));
-        assert!((*i.borrow()) == libcc2rs::next_refcount(unimplemented!(), 0_isize));
+        (*i.borrow_mut()) = ({
+            let ___position: BidirectionalIterator<i32> =
+                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 0_isize);
+            (*m.borrow()).erase_51(___position)
+        });
+        assert!(({ (({ (*m.borrow()).size() }) == 1_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize)
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
-        (*i.borrow_mut()) = unimplemented!();
-        assert!((unimplemented!() == 0_()));
-        assert!((*i.borrow()) == unimplemented!());
-        assert!((*i.borrow()) == unimplemented!());
+        (*i.borrow_mut()) = ({
+            let ___position: BidirectionalIterator<i32> = ({ (*m.borrow()).cbegin() });
+            (*m.borrow()).erase_51(___position)
+        });
+        assert!(({ (({ (*m.borrow()).size() }) == 0_u64) }));
+        assert!((*i.borrow()) == ({ (*m.borrow()).begin() }));
+        assert!((*i.borrow()) == ({ (*m.borrow()).end() }));
     }
     {
         let ar: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6, 7, 8])));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 8_()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 7_()));
-        assert!((*i.borrow()) == libcc2rs::next_refcount(unimplemented!(), 3_isize));
+        let m: Value<std_multiset_int__std_less_int___min_allocator_int__> = Rc::new(RefCell::new(
+            std_multiset_int__std_less_int___min_allocator_int__::new_1(
+                { (ar.as_pointer() as Ptr<i32>) },
+                {
+                    (ar.as_pointer() as Ptr<i32>).offset(
+                        ((::std::mem::size_of::<[i32; 8]>() as usize)
+                            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                            as isize,
+                    )
+                },
+            ),
+        ));
+        assert!(({ (({ (*m.borrow()).size() }) == 8_u64) }));
+        let i: Value<BidirectionalIterator<i32>> = Rc::new(RefCell::new(
+            ({
+                let ___position: BidirectionalIterator<i32> =
+                    libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 3_isize);
+                (*m.borrow()).erase_51(___position)
+            }),
+        ));
+        assert!(({ (({ (*m.borrow()).size() }) == 7_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize)
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 1)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 4_isize)
                 .iter_deref()
                 .read())
                 == 6)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 5_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 5_isize)
                 .iter_deref()
                 .read())
                 == 7)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 6_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 6_isize)
                 .iter_deref()
                 .read())
                 == 8)
         );
-        (*i.borrow_mut()) = unimplemented!().clone();
-        assert!((unimplemented!() == 6_()));
-        assert!((*i.borrow()) == unimplemented!());
+        (*i.borrow_mut()) = ({
+            let ___position: BidirectionalIterator<i32> =
+                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 0_isize);
+            (*m.borrow()).erase_51(___position)
+        })
+        .clone();
+        assert!(({ (({ (*m.borrow()).size() }) == 6_u64) }));
+        assert!((*i.borrow()) == ({ (*m.borrow()).begin() }));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize)
                 .iter_deref()
                 .read())
                 == 6)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 4_isize)
                 .iter_deref()
                 .read())
                 == 7)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 5_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 5_isize)
                 .iter_deref()
                 .read())
                 == 8)
         );
-        (*i.borrow_mut()) = unimplemented!().clone();
-        assert!((unimplemented!() == 5_()));
-        assert!((*i.borrow()) == unimplemented!());
+        (*i.borrow_mut()) = ({
+            let ___position: BidirectionalIterator<i32> =
+                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 5_isize);
+            (*m.borrow()).erase_51(___position)
+        })
+        .clone();
+        assert!(({ (({ (*m.borrow()).size() }) == 5_u64) }));
+        assert!((*i.borrow()) == ({ (*m.borrow()).end() }));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 3)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize)
                 .iter_deref()
                 .read())
                 == 6)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 4_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 4_isize)
                 .iter_deref()
                 .read())
                 == 7)
         );
-        (*i.borrow_mut()) = unimplemented!().clone();
-        assert!((unimplemented!() == 4_()));
-        assert!((*i.borrow()) == libcc2rs::next_refcount(unimplemented!(), 1_isize));
+        (*i.borrow_mut()) = ({
+            let ___position: BidirectionalIterator<i32> =
+                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 1_isize);
+            (*m.borrow()).erase_51(___position)
+        })
+        .clone();
+        assert!(({ (({ (*m.borrow()).size() }) == 4_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 6)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 3_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize)
                 .iter_deref()
                 .read())
                 == 7)
         );
-        (*i.borrow_mut()) = unimplemented!().clone();
-        assert!((unimplemented!() == 3_()));
-        assert!((*i.borrow()) == libcc2rs::next_refcount(unimplemented!(), 2_isize));
+        (*i.borrow_mut()) = ({
+            let ___position: BidirectionalIterator<i32> =
+                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize);
+            (*m.borrow()).erase_51(___position)
+        })
+        .clone();
+        assert!(({ (({ (*m.borrow()).size() }) == 3_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize)
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize)
                 .iter_deref()
                 .read())
                 == 7)
         );
-        (*i.borrow_mut()) = unimplemented!().clone();
-        assert!((unimplemented!() == 2_()));
-        assert!((*i.borrow()) == libcc2rs::next_refcount(unimplemented!(), 2_isize));
+        (*i.borrow_mut()) = ({
+            let ___position: BidirectionalIterator<i32> =
+                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 2_isize);
+            (*m.borrow()).erase_51(___position)
+        })
+        .clone();
+        assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize)
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 2)
         );
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
-        (*i.borrow_mut()) = unimplemented!().clone();
-        assert!((unimplemented!() == 1_()));
-        assert!((*i.borrow()) == libcc2rs::next_refcount(unimplemented!(), 0_isize));
+        (*i.borrow_mut()) = ({
+            let ___position: BidirectionalIterator<i32> =
+                libcc2rs::next_refcount(({ ({ (*m.borrow()).cbegin() }) }), 0_isize);
+            (*m.borrow()).erase_51(___position)
+        })
+        .clone();
+        assert!(({ (({ (*m.borrow()).size() }) == 1_u64) }));
         assert!(
-            ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+            (*i.borrow()) == libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize)
+        );
+        assert!(
+            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize)
                 .iter_deref()
                 .read())
                 == 5)
         );
-        (*i.borrow_mut()) = unimplemented!().clone();
-        assert!((unimplemented!() == 0_()));
-        assert!((*i.borrow()) == unimplemented!());
-        assert!((*i.borrow()) == unimplemented!());
+        (*i.borrow_mut()) = ({
+            let ___position: BidirectionalIterator<i32> = ({ (*m.borrow()).cbegin() });
+            (*m.borrow()).erase_51(___position)
+        })
+        .clone();
+        assert!(({ (({ (*m.borrow()).size() }) == 0_u64) }));
+        assert!((*i.borrow()) == ({ (*m.borrow()).begin() }));
+        assert!((*i.borrow()) == ({ (*m.borrow()).end() }));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut a: TemplateConstructor = {
+        let c : Value<std_multiset_TemplateConstructor__std_less_TemplateConstructor___std_allocator_TemplateConstructor__ > = Rc::new(RefCell::new(<std_multiset_TemplateConstructor__std_less_TemplateConstructor___std_allocator_TemplateConstructor__  >::default() )) ;
+        let a: Value<TemplateConstructor> = Rc::new(RefCell::new({
             let __tmp_0: Value<i32> = Rc::new(RefCell::new(0));
             TemplateConstructor::new({ __tmp_0.as_pointer() })
-        };
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        if (*it.borrow()) != unimplemented!() {
-            unimplemented!();
+        }));
+        let it: Value<BidirectionalIterator<TemplateConstructor>> =
+            Rc::new(RefCell::new(({ (*c.borrow()).find_59(a.as_pointer()) })));
+        if (*it.borrow()) != ({ (*c.borrow()).end() }) {
+            ({ (*c.borrow()).erase_51((*it.borrow()).clone()) });
         }
     }
     return true;
@@ -510,6 +625,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_5() });
     return 0;
 }
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
 pub trait min_allocator_int_Impl {
     fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
@@ -523,75 +641,6 @@ pub trait min_allocator_int_Impl {
     }
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {}
-pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-    fn operator_deref(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_arrow(&self) -> Ptr<i32> {
-        unimplemented!()
-    }
-    fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_inc_9(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_dec_10(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_post_dec_11(
-        &self,
-        mut _a0: i32,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_add_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_sub_assign(
-        &self,
-        mut n: isize,
-    ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
-        unimplemented!()
-    }
-    fn operator_add(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_sub(
-        &self,
-        mut n: isize,
-    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
-        unimplemented!()
-    }
-}
-impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>
-{
-}
-pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_bool(&self) -> bool {
-        unimplemented!()
-    }
-}
-impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
-    for Ptr<min_pointer_void__std_integral_constant_unsigned_long__0__>
-{
-}
 pub fn __cpp2rust_init_globals() {
     let _ = outstanding_bytes_0.with(|_| ());
     let _ = alloc_count_1.with(|_| ());

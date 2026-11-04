@@ -34,10 +34,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::is_polymorphic<std::length_error>::value");;
     {
         let mut msg: Ptr<i8> = Ptr::<i8>::from_string_literal(b"length_error message");
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let e: Value<std_length_error> =
+            Rc::new(RefCell::new(std_length_error::new_1({ (msg).clone() })));
         assert!(
             ({
-                let mut __it1 = unimplemented!().to_c_string_iterator();
+                let mut __it1 =
+                    ({ ({ ((*e.borrow()) as std_logic_error).what() }) }).to_c_string_iterator();
                 let mut __it2 = msg.to_c_string_iterator();
                 loop {
                     let __c1 = __it1.next();
@@ -51,10 +53,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }
             } == 0)
         );
-        let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let e2: Value<std_length_error> = Rc::new(RefCell::new((*e.borrow()).clone()));
         assert!(
             ({
-                let mut __it1 = unimplemented!().to_c_string_iterator();
+                let mut __it1 =
+                    ({ ({ ((*e2.borrow()) as std_logic_error).what() }) }).to_c_string_iterator();
                 let mut __it2 = msg.to_c_string_iterator();
                 loop {
                     let __c1 = __it1.next();
@@ -68,10 +71,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 }
             } == 0)
         );
-        unimplemented!();
+        (*e2.borrow_mut()) = (*e.borrow()).clone();
         assert!(
             ({
-                let mut __it1 = unimplemented!().to_c_string_iterator();
+                let mut __it1 =
+                    ({ ({ ((*e2.borrow()) as std_logic_error).what() }) }).to_c_string_iterator();
                 let mut __it2 = msg.to_c_string_iterator();
                 loop {
                     let __c1 = __it1.next();
@@ -93,23 +97,30 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             __bytes.push(0_i8);
             __bytes
         }));
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let e: Value<std_length_error> =
+            Rc::new(RefCell::new(std_length_error::new_2({ msg.as_pointer() })));
         assert!(
-            unimplemented!().with_c_str(|__s| (*msg.borrow())
-                [..(*msg.borrow()).len().saturating_sub(1)]
-                == *__s)
+            ({
+                ({ ({ ((*e.borrow()) as std_logic_error).what() }) }).with_c_str(|__s| {
+                    (*msg.borrow())[..(*msg.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
-        let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let e2: Value<std_length_error> = Rc::new(RefCell::new((*e.borrow()).clone()));
         assert!(
-            unimplemented!().with_c_str(|__s| (*msg.borrow())
-                [..(*msg.borrow()).len().saturating_sub(1)]
-                == *__s)
+            ({
+                ({ ({ ((*e2.borrow()) as std_logic_error).what() }) }).with_c_str(|__s| {
+                    (*msg.borrow())[..(*msg.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
-        unimplemented!();
+        (*e2.borrow_mut()) = (*e.borrow()).clone();
         assert!(
-            unimplemented!().with_c_str(|__s| (*msg.borrow())
-                [..(*msg.borrow()).len().saturating_sub(1)]
-                == *__s)
+            ({
+                ({ ({ ((*e2.borrow()) as std_logic_error).what() }) }).with_c_str(|__s| {
+                    (*msg.borrow())[..(*msg.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
         );
     }
     return 0;

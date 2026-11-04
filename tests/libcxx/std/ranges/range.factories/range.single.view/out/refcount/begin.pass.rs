@@ -11,40 +11,80 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int_ptr__int_ptr_ {}
+impl CppMove for test_macros_detail_is_same_int_ptr__int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_int_ptr__const_int_ptr_ {}
+impl CppMove for test_macros_detail_is_same_const_int_ptr__const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_Empty_ptr__Empty_ptr_ {}
+impl CppMove for test_macros_detail_is_same_Empty_ptr__Empty_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_Empty_ptr__const_Empty_ptr_ {}
+impl CppMove for test_macros_detail_is_same_const_Empty_ptr__const_Empty_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_4 = u32;
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_BigType_ptr__BigType_ptr_ {}
+impl CppMove for test_macros_detail_is_same_BigType_ptr__BigType_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_5 = u32;
 pub const anon_5_value: anon_5 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_BigType_ptr__const_BigType_ptr_ {}
+impl CppMove for test_macros_detail_is_same_const_BigType_ptr__const_BigType_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Empty {}
+impl CppMove for Empty {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(64)]
 pub struct BigType {
     #[offset(0)]
     #[byte_size(64)]
     pub buffer: Box<[i8]>,
+}
+impl CppMove for BigType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for BigType {
     fn default() -> Self {
@@ -63,35 +103,57 @@ impl Default for BigType {
 }
 pub fn test_6() -> bool {
     {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!().read()) == 42));
+        let sv: Value<std_ranges_single_view_int_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(42));
+            std_ranges_single_view_int_::new_1({ __tmp_0.as_pointer() })
+        }));
+        assert!(({ ((({ (*sv.borrow()).begin_5() }).read()) == 42) }));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "noexcept(sv.begin())");;
     }
     {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((unimplemented!().read()) == 42));
+        let sv: Value<std_ranges_single_view_int_> = Rc::new(RefCell::new({
+            let __tmp_1: Value<i32> = Rc::new(RefCell::new(42));
+            std_ranges_single_view_int_::new_1({ __tmp_1.as_pointer() })
+        }));
+        assert!(({ ((({ (*sv.borrow()).begin_6() }).read()) == 42) }));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "noexcept(sv.begin())");;
     }
     {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(!((unimplemented!()).is_null()));
+        let sv: Value<std_ranges_single_view_Empty_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<Empty> = Rc::new(RefCell::new(<Empty>::default()));
+            std_ranges_single_view_Empty_::new_1({ __tmp_2.as_pointer() })
+        }));
+        assert!(({ !(({ (*sv.borrow()).begin_5() }).is_null()) }));
         const _: () = assert!(true, "");;
     }
     {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(!((unimplemented!()).is_null()));
+        let sv: Value<std_ranges_single_view_Empty_> = Rc::new(RefCell::new({
+            let __tmp_3: Value<Empty> = Rc::new(RefCell::new(<Empty>::default()));
+            std_ranges_single_view_Empty_::new_1({ __tmp_3.as_pointer() })
+        }));
+        assert!(({ !(({ (*sv.borrow()).begin_6() }).is_null()) }));
         const _: () = assert!(true, "");;
     }
     {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((array_elem!(unimplemented!(), buffer, 0).read()) as i32) == 10));
+        let sv: Value<std_ranges_single_view_BigType_> = Rc::new(RefCell::new({
+            let __tmp_4: Value<BigType> = Rc::new(RefCell::new(<BigType>::default()));
+            std_ranges_single_view_BigType_::new_1({ __tmp_4.as_pointer() })
+        }));
+        assert!(
+            ({ (((array_elem!(({ (*sv.borrow()).begin_5() }), buffer, 0).read()) as i32) == 10) })
+        );
         const _: () = assert!(true, "");;
     }
     {
-        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((array_elem!(unimplemented!(), buffer, 0).read()) as i32) == 10));
+        let sv: Value<std_ranges_single_view_BigType_> = Rc::new(RefCell::new({
+            let __tmp_5: Value<BigType> = Rc::new(RefCell::new(<BigType>::default()));
+            std_ranges_single_view_BigType_::new_1({ __tmp_5.as_pointer() })
+        }));
+        assert!(
+            ({ (((array_elem!(({ (*sv.borrow()).begin_6() }), buffer, 0).read()) as i32) == 10) })
+        );
         const _: () = assert!(true, "");;
     }
     return true;

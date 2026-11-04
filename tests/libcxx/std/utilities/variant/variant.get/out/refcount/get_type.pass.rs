@@ -11,31 +11,61 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_int_ref__const_int_ref_ {}
+impl CppMove for test_macros_detail_is_same_const_int_ref__const_int_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_long_ref__const_long_ref_ {}
+impl CppMove for test_macros_detail_is_same_const_long_ref__const_long_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int_ref__int_ref_ {}
+impl CppMove for test_macros_detail_is_same_int_ref__int_ref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int_refref__int_refref_ {}
+impl CppMove for test_macros_detail_is_same_int_refref__int_refref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_4 = u32;
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_long_refref__const_long_refref_ {}
+impl CppMove for test_macros_detail_is_same_const_long_refref__const_long_refref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type anon_5 = u32;
 pub const anon_5_value: anon_5 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_int_refref__const_int_refref_ {}
+impl CppMove for test_macros_detail_is_same_const_int_refref__const_int_refref_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_6(LHS: Ptr<TypeID>, RHS: Ptr<TypeID>) -> bool {
     return ({ LHS.with(|__s| __s.m_id.clone()) } == { RHS.with(|__s| __s.m_id.clone()) });
 }
@@ -74,6 +104,11 @@ pub fn operator_bitor_8(mut LHS: CallType, mut RHS: CallType) -> CallType {
 #[cpp_into(i32, to_i32)]
 #[byte_size(1)]
 pub struct ForwardingCallObject {}
+impl CppMove for ForwardingCallObject {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static last_call_type_9: Value<CallType> = Rc::new(RefCell::new(CallType_CT_None));
 );
@@ -83,75 +118,85 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnFirst {}
+impl CppMove for ReturnFirst {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnArity {}
+impl CppMove for ReturnArity {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_const_lvalue_get_11() {
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "std::get<int>(v) == 42");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(((unimplemented!().read()) == 42));
+        assert!(((({ get_12(v.as_pointer(),) }).read()) == 42));
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42_i64));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "std::get<const long>(v) == 42");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42_i64));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(((unimplemented!().read()) == 42_i64));
+        assert!(((({ get_13(v.as_pointer(),) }).read()) == 42_i64));
     }
 }
-pub fn test_lvalue_get_12() {
+pub fn test_lvalue_get_14() {
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(((unimplemented!().read()) == 42));
+        assert!(((({ get_15(v.as_pointer(),) }).read()) == 42));
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42_i64));
         const _: () = assert!(true, "");;
-        assert!(((unimplemented!().read()) == 42_i64));
-    }
-}
-pub fn test_rvalue_get_13() {
-    {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        assert!(((unimplemented!().read()) == 42));
-    }
-    {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        assert!(((unimplemented!().read()) == 42_i64));
+        assert!(((({ get_16(v.as_pointer(),) }).read()) == 42_i64));
     }
 }
-pub fn test_const_rvalue_get_14() {
+pub fn test_rvalue_get_17() {
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(((unimplemented!().read()) == 42));
+        assert!(((({ get_18(v.as_pointer(),) }).read()) == 42));
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42_i64));
         const _: () = assert!(true, "");;
-        assert!(((unimplemented!().read()) == 42_i64));
+        assert!(((({ get_19(v.as_pointer(),) }).read()) == 42_i64));
     }
 }
-pub fn test_throws_for_all_value_categories_15() {}
+pub fn test_const_rvalue_get_20() {
+    {
+        let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42));
+        const _: () = assert!(true, "");;
+        const _: () = assert!(true, "");;
+        assert!(((({ get_21(v.as_pointer(),) }).read()) == 42));
+    }
+    {
+        let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42_i64));
+        const _: () = assert!(true, "");;
+        assert!(((({ get_22(v.as_pointer(),) }).read()) == 42_i64));
+    }
+}
+pub fn test_throws_for_all_value_categories_23() {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -173,10 +218,10 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_const_lvalue_get_11() });
-    ({ test_lvalue_get_12() });
-    ({ test_rvalue_get_13() });
-    ({ test_const_rvalue_get_14() });
-    ({ test_throws_for_all_value_categories_15() });
+    ({ test_lvalue_get_14() });
+    ({ test_rvalue_get_17() });
+    ({ test_const_rvalue_get_20() });
+    ({ test_throws_for_all_value_categories_23() });
     return 0;
 }
 pub trait ForwardingCallObjectImpl {

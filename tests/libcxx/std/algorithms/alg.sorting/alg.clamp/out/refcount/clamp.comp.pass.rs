@@ -29,6 +29,11 @@ impl Tag {
         }
     }
 }
+impl CppMove for Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Tag {
     fn default() -> Self {
         { Tag::new_1() }
@@ -40,10 +45,6 @@ pub fn eq_0(rhs: Ptr<Tag>, lhs: Ptr<Tag>) -> bool {
 }
 pub fn comp_1(rhs: Ptr<Tag>, lhs: Ptr<Tag>) -> bool {
     return ({ rhs.with(|__s| __s.val) } < { lhs.with(|__s| __s.val) });
-}
-pub fn test_2(v: Ptr<i32>, lo: Ptr<i32>, hi: Ptr<i32>, c: (), x: Ptr<i32>) {
-    let c: Value<()> = Rc::new(RefCell::new(c));
-    assert!(({ (unimplemented!()) } == { (x).clone() }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -72,12 +73,24 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ({
             let _v: Ptr<i32> = x.as_pointer();
             let _x: Ptr<i32> = x.as_pointer();
-            test_2(_v, y.as_pointer(), z.as_pointer(), unimplemented!(), _x)
+            test_2(
+                _v,
+                y.as_pointer(),
+                z.as_pointer(),
+                <std_greater_int_>::default(),
+                _x,
+            )
         });
         ({
             let _v: Ptr<i32> = y.as_pointer();
             let _x: Ptr<i32> = y.as_pointer();
-            test_2(_v, x.as_pointer(), z.as_pointer(), unimplemented!(), _x)
+            test_2(
+                _v,
+                x.as_pointer(),
+                z.as_pointer(),
+                <std_greater_int_>::default(),
+                _x,
+            )
         });
     }
     {
@@ -87,12 +100,24 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ({
             let _v: Ptr<i32> = x.as_pointer();
             let _x: Ptr<i32> = x.as_pointer();
-            test_2(_v, y.as_pointer(), z.as_pointer(), unimplemented!(), _x)
+            test_2(
+                _v,
+                y.as_pointer(),
+                z.as_pointer(),
+                <std_greater_int_>::default(),
+                _x,
+            )
         });
         ({
             let _lo: Ptr<i32> = x.as_pointer();
             let _x: Ptr<i32> = x.as_pointer();
-            test_2(y.as_pointer(), _lo, z.as_pointer(), unimplemented!(), _x)
+            test_2(
+                y.as_pointer(),
+                _lo,
+                z.as_pointer(),
+                <std_greater_int_>::default(),
+                _x,
+            )
         });
     }
     {
@@ -102,12 +127,24 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ({
             let _lo: Ptr<i32> = y.as_pointer();
             let _x: Ptr<i32> = y.as_pointer();
-            test_2(x.as_pointer(), _lo, z.as_pointer(), unimplemented!(), _x)
+            test_2(
+                x.as_pointer(),
+                _lo,
+                z.as_pointer(),
+                <std_greater_int_>::default(),
+                _x,
+            )
         });
         ({
             let _v: Ptr<i32> = y.as_pointer();
             let _x: Ptr<i32> = y.as_pointer();
-            test_2(_v, x.as_pointer(), z.as_pointer(), unimplemented!(), _x)
+            test_2(
+                _v,
+                x.as_pointer(),
+                z.as_pointer(),
+                <std_greater_int_>::default(),
+                _x,
+            )
         });
     }
     {
@@ -125,14 +162,28 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let _dtor_z = ScopedDestructor::new(&z, |__p| __p.destructor());
         assert!(
             ({
-                let _rhs: Ptr<Tag> = unimplemented!();
+                let _rhs: Ptr<Tag> = ({
+                    clamp_3(
+                        x.as_pointer(),
+                        y.as_pointer(),
+                        z.as_pointer(),
+                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                    )
+                });
                 let _lhs: Ptr<Tag> = x.as_pointer();
                 eq_0(_rhs, _lhs)
             })
         );
         assert!(
             ({
-                let _rhs: Ptr<Tag> = unimplemented!();
+                let _rhs: Ptr<Tag> = ({
+                    clamp_3(
+                        y.as_pointer(),
+                        x.as_pointer(),
+                        z.as_pointer(),
+                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                    )
+                });
                 let _lhs: Ptr<Tag> = y.as_pointer();
                 eq_0(_rhs, _lhs)
             })
@@ -153,14 +204,28 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let _dtor_z = ScopedDestructor::new(&z, |__p| __p.destructor());
         assert!(
             ({
-                let _rhs: Ptr<Tag> = unimplemented!();
+                let _rhs: Ptr<Tag> = ({
+                    clamp_3(
+                        x.as_pointer(),
+                        y.as_pointer(),
+                        z.as_pointer(),
+                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                    )
+                });
                 let _lhs: Ptr<Tag> = x.as_pointer();
                 eq_0(_rhs, _lhs)
             })
         );
         assert!(
             ({
-                let _rhs: Ptr<Tag> = unimplemented!();
+                let _rhs: Ptr<Tag> = ({
+                    clamp_3(
+                        y.as_pointer(),
+                        x.as_pointer(),
+                        z.as_pointer(),
+                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                    )
+                });
                 let _lhs: Ptr<Tag> = y.as_pointer();
                 eq_0(_rhs, _lhs)
             })
@@ -181,14 +246,28 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let _dtor_z = ScopedDestructor::new(&z, |__p| __p.destructor());
         assert!(
             ({
-                let _rhs: Ptr<Tag> = unimplemented!();
+                let _rhs: Ptr<Tag> = ({
+                    clamp_3(
+                        x.as_pointer(),
+                        y.as_pointer(),
+                        z.as_pointer(),
+                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                    )
+                });
                 let _lhs: Ptr<Tag> = x.as_pointer();
                 eq_0(_rhs, _lhs)
             })
         );
         assert!(
             ({
-                let _rhs: Ptr<Tag> = unimplemented!();
+                let _rhs: Ptr<Tag> = ({
+                    clamp_3(
+                        z.as_pointer(),
+                        y.as_pointer(),
+                        x.as_pointer(),
+                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                    )
+                });
                 let _lhs: Ptr<Tag> = z.as_pointer();
                 eq_0(_rhs, _lhs)
             })
@@ -209,14 +288,28 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let _dtor_z = ScopedDestructor::new(&z, |__p| __p.destructor());
         assert!(
             ({
-                let _rhs: Ptr<Tag> = unimplemented!();
+                let _rhs: Ptr<Tag> = ({
+                    clamp_3(
+                        x.as_pointer(),
+                        y.as_pointer(),
+                        z.as_pointer(),
+                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                    )
+                });
                 let _lhs: Ptr<Tag> = x.as_pointer();
                 eq_0(_rhs, _lhs)
             })
         );
         assert!(
             ({
-                let _rhs: Ptr<Tag> = unimplemented!();
+                let _rhs: Ptr<Tag> = ({
+                    clamp_3(
+                        y.as_pointer(),
+                        x.as_pointer(),
+                        z.as_pointer(),
+                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                    )
+                });
                 let _lhs: Ptr<Tag> = x.as_pointer();
                 eq_0(_rhs, _lhs)
             })
@@ -237,14 +330,28 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let _dtor_z = ScopedDestructor::new(&z, |__p| __p.destructor());
         assert!(
             ({
-                let _rhs: Ptr<Tag> = unimplemented!();
+                let _rhs: Ptr<Tag> = ({
+                    clamp_3(
+                        x.as_pointer(),
+                        y.as_pointer(),
+                        z.as_pointer(),
+                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                    )
+                });
                 let _lhs: Ptr<Tag> = y.as_pointer();
                 eq_0(_rhs, _lhs)
             })
         );
         assert!(
             ({
-                let _rhs: Ptr<Tag> = unimplemented!();
+                let _rhs: Ptr<Tag> = ({
+                    clamp_3(
+                        y.as_pointer(),
+                        x.as_pointer(),
+                        z.as_pointer(),
+                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                    )
+                });
                 let _lhs: Ptr<Tag> = y.as_pointer();
                 eq_0(_rhs, _lhs)
             })
@@ -265,23 +372,37 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let _dtor_z = ScopedDestructor::new(&z, |__p| __p.destructor());
         assert!(
             ({
-                let _rhs: Ptr<Tag> = unimplemented!();
+                let _rhs: Ptr<Tag> = ({
+                    clamp_3(
+                        x.as_pointer(),
+                        y.as_pointer(),
+                        z.as_pointer(),
+                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                    )
+                });
                 let _lhs: Ptr<Tag> = z.as_pointer();
                 eq_0(_rhs, _lhs)
             })
         );
         assert!(
             ({
-                let _rhs: Ptr<Tag> = unimplemented!();
+                let _rhs: Ptr<Tag> = ({
+                    clamp_3(
+                        y.as_pointer(),
+                        z.as_pointer(),
+                        x.as_pointer(),
+                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                    )
+                });
                 let _lhs: Ptr<Tag> = z.as_pointer();
                 eq_0(_rhs, _lhs)
             })
         );
     }
     {
-        let mut x: i32 = 1;
-        let mut y: i32 = 0;
-        let mut z: i32 = 0;
+        let x: Value<i32> = Rc::new(RefCell::new(1));
+        let y: Value<i32> = Rc::new(RefCell::new(0));
+        let z: Value<i32> = Rc::new(RefCell::new(0));
         const _: () = assert!(true, "std::clamp(x, y, z, std::greater<T>()) == y");;
         const _: () = assert!(true, "std::clamp(y, x, z, std::greater<T>()) == y");;
     }

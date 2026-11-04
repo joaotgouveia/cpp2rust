@@ -7,12 +7,12 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
-    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() > 0_()));
+    let m : Value<std_match_results_const_char_ptr__std_allocator_std_sub_match_const_char_ptr___ > = Rc::new(RefCell::new(<std_match_results_const_char_ptr__std_allocator_std_sub_match_const_char_ptr___  >::default() )) ;
+    assert!(({ (({ (*m.borrow()).max_size() }) > 0_u64) }));
 }
 pub fn test_1() {
-    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() > 0_()));
+    let m : Value<std_match_results_const_wchar_t_ptr__std_allocator_std_sub_match_const_wchar_t_ptr___ > = Rc::new(RefCell::new(<std_match_results_const_wchar_t_ptr__std_allocator_std_sub_match_const_wchar_t_ptr___  >::default() )) ;
+    assert!(({ (({ (*m.borrow()).max_size() }) > 0_u64) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

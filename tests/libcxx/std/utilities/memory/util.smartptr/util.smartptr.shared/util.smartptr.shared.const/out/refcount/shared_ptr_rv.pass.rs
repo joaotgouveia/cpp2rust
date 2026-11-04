@@ -27,6 +27,11 @@ impl Clone for A {
         A::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for A {
     fn default() -> Self {
         { A::new() }
@@ -57,41 +62,106 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let pA: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 1_i64));
+        let pA: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({
+            Ptr::alloc(A::new())
+        })));
+        assert!(
+            ({
+                (({ ((*pA.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() })
+                    == 1_i64)
+            })
+        );
         assert!((count_0.with(|rc| *rc.borrow()) == 1));
         {
-            let mut p: Ptr<A> = unimplemented!();
-            let pA2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut p: Ptr<A> =
+                ({ ((*pA.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() });
+            let pA2: Value<std_shared_ptr_A_> = Rc::new(RefCell::new((*pA.borrow_mut()).clone()));
             assert!((count_0.with(|rc| *rc.borrow()) == 1));
-            assert!((unimplemented!() == 0_i64));
-            assert!((unimplemented!() == 1_i64));
-            assert!(({ unimplemented!() } == { (p).clone() }));
+            assert!(
+                ({
+                    (({ ((*pA.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() })
+                        == 0_i64)
+                })
+            );
+            assert!(
+                ({
+                    (({
+                        ((*pA2.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count()
+                    }) == 1_i64)
+                })
+            );
+            assert!(
+                ({
+                    ({ ({ ((*pA2.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() }) }
+                        == { (p).clone() })
+                })
+            );
         }
-        assert!((unimplemented!() == 0_i64));
+        assert!(
+            ({
+                (({ ((*pA.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() })
+                    == 0_i64)
+            })
+        );
         assert!((count_0.with(|rc| *rc.borrow()) == 0));
     }
     assert!((count_0.with(|rc| *rc.borrow()) == 0));
     {
-        let pA: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 0_i64));
+        let pA: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(<std_shared_ptr_A_>::default()));
+        assert!(
+            ({
+                (({ ((*pA.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() })
+                    == 0_i64)
+            })
+        );
         assert!((count_0.with(|rc| *rc.borrow()) == 0));
         {
-            let pA2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let pA2: Value<std_shared_ptr_A_> = Rc::new(RefCell::new((*pA.borrow_mut()).clone()));
             assert!((count_0.with(|rc| *rc.borrow()) == 0));
-            assert!((unimplemented!() == 0_i64));
-            assert!((unimplemented!() == 0_i64));
-            assert!((unimplemented!() == unimplemented!()));
+            assert!(
+                ({
+                    (({ ((*pA.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() })
+                        == 0_i64)
+                })
+            );
+            assert!(
+                ({
+                    (({
+                        ((*pA2.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count()
+                    }) == 0_i64)
+                })
+            );
+            assert!(
+                ({
+                    (({ ((*pA2.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() })
+                        == ({ ((*pA.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() }))
+                })
+            );
         }
-        assert!((unimplemented!() == 0_i64));
+        assert!(
+            ({
+                (({ ((*pA.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() })
+                    == 0_i64)
+            })
+        );
         assert!((count_0.with(|rc| *rc.borrow()) == 0));
     }
     assert!((count_0.with(|rc| *rc.borrow()) == 0));
     {
-        let pA: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut p: Ptr<A> = unimplemented!();
-        let pA2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ unimplemented!() } == { (p).clone() }));
+        let pA: Value<std_shared_ptr_const_A_> =
+            Rc::new(RefCell::new(std_shared_ptr_const_A_::new_1({
+                Ptr::alloc(A::new())
+            })));
+        let mut p: Ptr<A> =
+            ({ ((*pA.borrow()) as std___shared_ptr_const_A____gnu_cxx__S_atomic_).get() });
+        let pA2: Value<std_shared_ptr_const_A_> = Rc::new(RefCell::new((*pA.borrow_mut()).clone()));
+        assert!(
+            ({
+                ({
+                    ({ ((*pA2.borrow()) as std___shared_ptr_const_A____gnu_cxx__S_atomic_).get() })
+                } == { (p).clone() })
+            })
+        );
     }
     return 0;
 }

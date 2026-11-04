@@ -27,6 +27,11 @@ impl TrackDtor {
         __this
     }
 }
+impl CppMove for TrackDtor {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 const _: () = assert!(true, "!std::is_trivially_destructible<TrackDtor>::value");
 const _: () = assert!(true, "std::is_trivially_destructible<std::tuple<>>::value");
 const _: () = assert!(
@@ -48,10 +53,11 @@ const _: () = assert!(
 pub fn test_0() -> bool {
     let count: Value<i32> = Rc::new(RefCell::new(0));
     {
-        let tuple: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(((*count.borrow()) == 0));
+        let tuple: Value<std_tuple_TrackDtor_> =
+            Rc::new(RefCell::new(TrackDtor::new({ (count.as_pointer()) })));
+        assert!(({ ((*count.borrow()) == 0) }));
     }
-    assert!(((*count.borrow()) == 1));
+    assert!(({ ((*count.borrow()) == 1) }));
     return true;
 }
 pub fn main() {
@@ -84,9 +90,9 @@ pub trait TrackDtorImpl {
 impl TrackDtorImpl for Ptr<TrackDtor> {
     fn destructor(&self) {
         if !((*self).with(|__s| __s.count_.clone())).is_null() {
-            (*self)
-                .with(|__s| __s.count_.clone())
-                .with_mut(|__v| __v.prefix_inc());
+            (*self).with(|__s| __s.count_.clone()).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
     }
 }

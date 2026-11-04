@@ -9,6 +9,11 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(1)]
 pub struct NonTrivial {}
+impl CppMove for NonTrivial {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(
     true,
     "std::is_trivially_destructible_v<std::expected<void, int>>"
@@ -32,16 +37,28 @@ impl TrackedDestroy {
         }
     }
 }
+impl CppMove for TrackedDestroy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0() -> bool {
     {
-        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let e: Value<std_expected_void__TrackedDestroy_> =
+            Rc::new(RefCell::new(std_expected_void__TrackedDestroy_::new_1({
+                (*in_place_1.with(Value::clone).borrow()).clone()
+            })));
     }
     {
-        let mut errorDestroyed: bool = false;
+        let errorDestroyed: Value<bool> = Rc::new(RefCell::new(false));
         {
-            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let e: Value<std_expected_void__TrackedDestroy_> =
+                Rc::new(RefCell::new(std_expected_void__TrackedDestroy_::new_2(
+                    { (*unexpect_2.with(Value::clone).borrow()).clone() },
+                    { errorDestroyed.as_pointer() },
+                )));
         }
-        assert!(errorDestroyed);
+        assert!(({ (*errorDestroyed.borrow()) }));
     }
     return true;
 }

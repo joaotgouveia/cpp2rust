@@ -27,10 +27,66 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
+    assert!(
+        ({
+            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                    { Ptr::<i8>::from_string_literal(b"\\4") },
+                    { awk_0.with(|rc| *rc.borrow()) },
+                )),
+            );
+            regex_match_1(
+                Ptr::<i8>::from_string_literal(b"\x04"),
+                ___re.as_pointer(),
+                None,
+            )
+        })
+    );
+    assert!(
+        ({
+            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                    { Ptr::<i8>::from_string_literal(b"\\41") },
+                    { awk_0.with(|rc| *rc.borrow()) },
+                )),
+            );
+            regex_match_1(
+                Ptr::<i8>::from_string_literal(b"!"),
+                ___re.as_pointer(),
+                None,
+            )
+        })
+    );
+    assert!(
+        ({
+            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                    { Ptr::<i8>::from_string_literal(b"\\141") },
+                    { awk_0.with(|rc| *rc.borrow()) },
+                )),
+            );
+            regex_match_1(
+                Ptr::<i8>::from_string_literal(b"a"),
+                ___re.as_pointer(),
+                None,
+            )
+        })
+    );
+    assert!(
+        ({
+            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                    { Ptr::<i8>::from_string_literal(b"\\1411") },
+                    { awk_0.with(|rc| *rc.borrow()) },
+                )),
+            );
+            regex_match_1(
+                Ptr::<i8>::from_string_literal(b"a1"),
+                ___re.as_pointer(),
+                None,
+            )
+        })
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

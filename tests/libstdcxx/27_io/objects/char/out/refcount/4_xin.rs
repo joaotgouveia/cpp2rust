@@ -14,7 +14,7 @@ pub fn test10_0() {
         });
         __s
     };
-    unimplemented!();
+    ({ (*cin_1.with(Value::clone).borrow()).ignore_30(1_i64) });
     {
         let __s = {
             let __s = {
@@ -24,7 +24,10 @@ pub fn test10_0() {
                 });
                 __s
             };
-            write_int_refcount(&__s, (unimplemented!() as i64));
+            write_int_refcount(
+                &__s,
+                ({ ({ (*cin_1.with(Value::clone).borrow()).gcount() }) }),
+            );
             __s
         };
         libcc2rs::endl_refcount.call(__s)

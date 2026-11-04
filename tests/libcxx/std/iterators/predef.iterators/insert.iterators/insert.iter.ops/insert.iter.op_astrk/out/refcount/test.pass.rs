@@ -18,6 +18,11 @@ impl nasty_vector_int_ {
         Self { v_: Vec::new() }
     }
 }
+impl CppMove for nasty_vector_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for nasty_vector_int_ {
     fn default() -> Self {
         { nasty_vector_int_::new_1() }
@@ -42,6 +47,11 @@ impl Clone for nasty_mutex {
         nasty_mutex::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for nasty_mutex {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for nasty_mutex {
     fn default() -> Self {
         { nasty_mutex::new() }
@@ -56,6 +66,11 @@ pub struct ConstexprFixedCapacityDeque_int__10_ {
     #[offset(40)]
     size_: i32,
 }
+impl CppMove for ConstexprFixedCapacityDeque_int__10_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for ConstexprFixedCapacityDeque_int__10_ {
     fn default() -> Self {
         {
@@ -68,22 +83,38 @@ impl Default for ConstexprFixedCapacityDeque_int__10_ {
 }
 pub fn test_0(c: Vec<i32>) -> bool {
     let c: Value<Vec<i32>> = Rc::new(RefCell::new(c));
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r: Ptr<()> = unimplemented!();
+    let i: Value<std_insert_iterator_std_vector_int__std_allocator_int___> = Rc::new(RefCell::new(
+        std_insert_iterator_std_vector_int__std_allocator_int___::new({ c.as_pointer() }, {
+            CppRange::end(&c.decay())
+        }),
+    ));
+    let r: Ptr<std_insert_iterator_std_vector_int__std_allocator_int___> =
+        (*i.borrow()).iter_deref();
     assert!(({ (r).clone() } == { (i.as_pointer()) }));
     return true;
 }
 pub fn test_1(c: nasty_vector_int_) -> bool {
     let c: Value<nasty_vector_int_> = Rc::new(RefCell::new(c));
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r: Ptr<()> = unimplemented!();
+    let _dtor_c = ScopedDestructor::new(&c, |__p| __p.destructor());
+    let i: Value<std_insert_iterator_nasty_vector_int__> = Rc::new(RefCell::new(
+        std_insert_iterator_nasty_vector_int__::new({ c.as_pointer() }, {
+            ({ nasty_vector_int_Impl::end_14(&c.as_pointer()) })
+        }),
+    ));
+    let r: Ptr<std_insert_iterator_nasty_vector_int__> = (*i.borrow()).iter_deref();
     assert!(({ (r).clone() } == { (i.as_pointer()) }));
     return true;
 }
 pub fn test_2(c: ConstexprFixedCapacityDeque_int__10_) -> bool {
     let c: Value<ConstexprFixedCapacityDeque_int__10_> = Rc::new(RefCell::new(c));
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r: Ptr<()> = unimplemented!();
+    let i: Value<std_insert_iterator_ConstexprFixedCapacityDeque_int__10__> =
+        Rc::new(RefCell::new(
+            std_insert_iterator_ConstexprFixedCapacityDeque_int__10__::new({ c.as_pointer() }, {
+                ({ ConstexprFixedCapacityDeque_int__10_Impl::end_3(&c.as_pointer()) })
+            }),
+        ));
+    let r: Ptr<std_insert_iterator_ConstexprFixedCapacityDeque_int__10__> =
+        (*i.borrow()).iter_deref();
     assert!(({ (r).clone() } == { (i.as_pointer()) }));
     return true;
 }
@@ -197,17 +228,13 @@ pub trait nasty_vector_int_Impl {
     fn end_14(&self) -> RandomAccessIterator<i32>;
     fn end_15(&self) -> RandomAccessIterator<i32> {
         unimplemented!()
-    }
-    fn rbegin_16(&self) -> () {
+    }    fn rbegin_16 ( &self , ) -> std_reverse_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____{
         unimplemented!()
-    }
-    fn rbegin_17(&self) -> () {
+    }    fn rbegin_17 ( &self , ) -> std_reverse_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____{
         unimplemented!()
-    }
-    fn rend_18(&self) -> () {
+    }    fn rend_18 ( &self , ) -> std_reverse_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____{
         unimplemented!()
-    }
-    fn rend_19(&self) -> () {
+    }    fn rend_19 ( &self , ) -> std_reverse_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____{
         unimplemented!()
     }
     fn cbegin(&self) -> RandomAccessIterator<i32> {
@@ -215,11 +242,9 @@ pub trait nasty_vector_int_Impl {
     }
     fn cend(&self) -> RandomAccessIterator<i32> {
         unimplemented!()
-    }
-    fn crbegin(&self) -> () {
+    }    fn crbegin ( &self , ) -> std_reverse_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____{
         unimplemented!()
-    }
-    fn crend(&self) -> () {
+    }    fn crend ( &self , ) -> std_reverse_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____{
         unimplemented!()
     }
     fn size(&self) -> usize {
@@ -328,10 +353,10 @@ pub trait nasty_vector_int_Impl {
 impl nasty_vector_int_Impl for Ptr<nasty_vector_int_> {
     fn destructor(&self) {}
     fn begin_12(&self) -> RandomAccessIterator<i32> {
-        return field_ref!((*self), v_).decay().begin();
+        return CppRange::begin(&field_ref!((*self), v_).decay());
     }
     fn end_14(&self) -> RandomAccessIterator<i32> {
-        return field_ref!((*self), v_).decay().end();
+        return CppRange::end(&field_ref!((*self), v_).decay());
     }
 }
 pub fn __cpp2rust_init_globals() {}

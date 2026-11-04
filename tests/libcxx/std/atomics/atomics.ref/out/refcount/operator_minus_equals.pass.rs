@@ -60,6 +60,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_char_ {}
+impl CppMove for LockFreeStatusInfo_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_2: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i16>() == ::std::mem::size_of::<i8>())
@@ -109,6 +114,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_short_ {}
+impl CppMove for LockFreeStatusInfo_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_4: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i32>() == ::std::mem::size_of::<i8>())
@@ -158,6 +168,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_int_ {}
+impl CppMove for LockFreeStatusInfo_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_6: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i8>())
@@ -207,6 +222,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_long_ {}
+impl CppMove for LockFreeStatusInfo_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_8: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((8usize == ::std::mem::size_of::<i8>()) && (8usize >= 8usize)) {
@@ -244,6 +264,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_void_ptr_ {}
+impl CppMove for LockFreeStatusInfo_void_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static value_10: Value<LockFreeStatus> = Rc::new(RefCell::new(
         ((if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i8>())
@@ -293,6 +318,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct LockFreeStatusInfo_long_long_ {}
+impl CppMove for LockFreeStatusInfo_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 const _: () = assert!(true, "LockFreeStatusInfo<char>::status_known");
 const _: () = assert!(true, "LockFreeStatusInfo<short>::status_known");
 const _: () = assert!(true, "LockFreeStatusInfo<int>::status_known");
@@ -332,6 +362,11 @@ impl UserAtomicType {
 impl CppEq for UserAtomicType {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_12(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for UserAtomicType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for UserAtomicType {
@@ -380,6 +415,11 @@ impl CppEq for LargeUserAtomicType {
         operator_eq_13(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for LargeUserAtomicType {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for LargeUserAtomicType {
     fn default() -> Self {
         { LargeUserAtomicType::new(None) }
@@ -395,6 +435,11 @@ impl Callable0<()> for TestEachIntegralType_TestOperatorMinusEquals_ {
         })
     }
 }
+impl CppMove for TestEachIntegralType_TestOperatorMinusEquals_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestEachPointerType_TestOperatorMinusEquals_ {}
@@ -403,6 +448,11 @@ impl Callable0<()> for TestEachPointerType_TestOperatorMinusEquals_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestEachPointerType_TestOperatorMinusEquals_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestEachPointerType_TestOperatorMinusEquals_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn test_seq_cst_14(store_op: FnPtr<fn(Ptr<()>, i8, i8)>, load_op: FnPtr<fn(Ptr<()>) -> i8>) {
@@ -535,6 +585,11 @@ impl Callable0<()> for TestDoesNotHaveOperatorMinusEquals_bool_ {
         })
     }
 }
+impl CppMove for TestDoesNotHaveOperatorMinusEquals_bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveOperatorMinusEquals_UserAtomicType_ {}
@@ -543,6 +598,11 @@ impl Callable0<()> for TestDoesNotHaveOperatorMinusEquals_UserAtomicType_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestDoesNotHaveOperatorMinusEquals_UserAtomicType_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestDoesNotHaveOperatorMinusEquals_UserAtomicType_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -555,6 +615,11 @@ impl Callable0<()> for TestDoesNotHaveOperatorMinusEquals_LargeUserAtomicType_ {
         })
     }
 }
+impl CppMove for TestDoesNotHaveOperatorMinusEquals_LargeUserAtomicType_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_float_ {}
@@ -563,6 +628,11 @@ impl Callable0<()> for TestOperatorMinusEquals_float_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestOperatorMinusEquals_float_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestOperatorMinusEquals_float_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -575,6 +645,11 @@ impl Callable0<()> for TestOperatorMinusEquals_double_ {
         })
     }
 }
+impl CppMove for TestOperatorMinusEquals_double_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_char_ {}
@@ -583,6 +658,11 @@ impl Callable0<()> for TestOperatorMinusEquals_char_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestOperatorMinusEquals_char_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestOperatorMinusEquals_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -595,6 +675,11 @@ impl Callable0<()> for TestOperatorMinusEquals_signed_char_ {
         })
     }
 }
+impl CppMove for TestOperatorMinusEquals_signed_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_unsigned_char_ {}
@@ -603,6 +688,11 @@ impl Callable0<()> for TestOperatorMinusEquals_unsigned_char_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestOperatorMinusEquals_unsigned_char_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestOperatorMinusEquals_unsigned_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -615,6 +705,11 @@ impl Callable0<()> for TestOperatorMinusEquals_short_ {
         })
     }
 }
+impl CppMove for TestOperatorMinusEquals_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_unsigned_short_ {}
@@ -623,6 +718,11 @@ impl Callable0<()> for TestOperatorMinusEquals_unsigned_short_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestOperatorMinusEquals_unsigned_short_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestOperatorMinusEquals_unsigned_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -635,6 +735,11 @@ impl Callable0<()> for TestOperatorMinusEquals_int_ {
         })
     }
 }
+impl CppMove for TestOperatorMinusEquals_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_unsigned_int_ {}
@@ -643,6 +748,11 @@ impl Callable0<()> for TestOperatorMinusEquals_unsigned_int_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestOperatorMinusEquals_unsigned_int_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestOperatorMinusEquals_unsigned_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -655,6 +765,11 @@ impl Callable0<()> for TestOperatorMinusEquals_long_ {
         })
     }
 }
+impl CppMove for TestOperatorMinusEquals_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_unsigned_long_ {}
@@ -663,6 +778,11 @@ impl Callable0<()> for TestOperatorMinusEquals_unsigned_long_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestOperatorMinusEquals_unsigned_long_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestOperatorMinusEquals_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -675,6 +795,11 @@ impl Callable0<()> for TestOperatorMinusEquals_long_long_ {
         })
     }
 }
+impl CppMove for TestOperatorMinusEquals_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_unsigned_long_long_ {}
@@ -683,6 +808,11 @@ impl Callable0<()> for TestOperatorMinusEquals_unsigned_long_long_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestOperatorMinusEquals_unsigned_long_long_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestOperatorMinusEquals_unsigned_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -695,6 +825,11 @@ impl Callable0<()> for TestOperatorMinusEquals_wchar_t_ {
         })
     }
 }
+impl CppMove for TestOperatorMinusEquals_wchar_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_char8_t_ {}
@@ -703,6 +838,11 @@ impl Callable0<()> for TestOperatorMinusEquals_char8_t_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestOperatorMinusEquals_char8_t_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestOperatorMinusEquals_char8_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -715,6 +855,11 @@ impl Callable0<()> for TestOperatorMinusEquals_char16_t_ {
         })
     }
 }
+impl CppMove for TestOperatorMinusEquals_char16_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_char32_t_ {}
@@ -723,6 +868,11 @@ impl Callable0<()> for TestOperatorMinusEquals_char32_t_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestOperatorMinusEquals_char32_t_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestOperatorMinusEquals_char32_t_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -735,6 +885,11 @@ impl Callable0<()> for TestOperatorMinusEquals_int_ptr_ {
         })
     }
 }
+impl CppMove for TestOperatorMinusEquals_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_const_int_ptr_ {}
@@ -743,6 +898,11 @@ impl Callable0<()> for TestOperatorMinusEquals_const_int_ptr_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             TestOperatorMinusEquals_const_int_ptr_Impl::operator_call(__it)
         })
+    }
+}
+impl CppMove for TestOperatorMinusEquals_const_int_ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

@@ -16,6 +16,11 @@ pub struct Pair {
     #[byte_size(8)]
     pub x2: Ptr<i32>,
 }
+impl CppMove for Pair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn mkPair_0(x1: Ptr<i32>, x2: Ptr<i32>) -> Pair {
     return Pair {
         x1: (x1).clone(),
@@ -39,19 +44,19 @@ pub fn fill_1(arr: Ptr<Option<Value<Box<[Ptr<i32>]>>>>, n1: Ptr<i32>) {
         .write(({ (*pair.borrow()).x2.clone() }).clone());
 }
 pub fn any_2(arr: Ptr<Option<Value<Box<[Ptr<i32>]>>>>, n1: Ptr<i32>) -> bool {
-    let mut out: bool = false;
+    let out: Value<bool> = Rc::new(RefCell::new(false));
     let mut i: i32 = 0;
     'loop_: while ({ i } < { (n1.read()) }) {
-        let __rhs = (out)
+        let __rhs = (*out.borrow())
             || (((((*arr.upgrade().deref()).as_pointer() as Ptr<Ptr<i32>>)
                 .offset((i as usize) as isize)
                 .read())
             .read())
                 == 0);
-        out = __rhs;
+        (*out.borrow_mut()) = __rhs;
         i.prefix_inc();
     }
-    return out;
+    return (*out.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();

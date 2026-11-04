@@ -16,6 +16,11 @@ impl Callable1<Ptr<Vec<i32>>, i32> for detail_parse_integer_impl_int_ {
         })
     }
 }
+impl CppMove for detail_parse_integer_impl_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct detail_parse_integer_impl_long_ {}
@@ -24,6 +29,11 @@ impl Callable1<Ptr<Vec<i32>>, i64> for detail_parse_integer_impl_long_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             detail_parse_integer_impl_long_Impl::operator_call_1_wchar_t(__it, a1)
         })
+    }
+}
+impl CppMove for detail_parse_integer_impl_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -36,6 +46,11 @@ impl Callable1<Ptr<Vec<i32>>, i64> for detail_parse_integer_impl_long_long_ {
         })
     }
 }
+impl CppMove for detail_parse_integer_impl_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct detail_parse_integer_impl_unsigned_int_ {}
@@ -44,6 +59,11 @@ impl Callable1<Ptr<Vec<i32>>, u32> for detail_parse_integer_impl_unsigned_int_ {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             detail_parse_integer_impl_unsigned_int_Impl::operator_call_1_wchar_t(__it, a1)
         })
+    }
+}
+impl CppMove for detail_parse_integer_impl_unsigned_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -56,6 +76,11 @@ impl Callable1<Ptr<Vec<i32>>, u64> for detail_parse_integer_impl_unsigned_long_ 
         })
     }
 }
+impl CppMove for detail_parse_integer_impl_unsigned_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct detail_parse_integer_impl_unsigned_long_long_ {}
@@ -66,7 +91,12 @@ impl Callable1<Ptr<Vec<i32>>, u64> for detail_parse_integer_impl_unsigned_long_l
         })
     }
 }
-pub fn parse_integer_0(str: Ptr<Vec<i32>>) -> i32 {
+impl CppMove for detail_parse_integer_impl_unsigned_long_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
+pub fn parse_integer_5(str: Ptr<Vec<i32>>) -> i32 {
     return ({
         detail_parse_integer_impl_int_Impl::operator_call_1_wchar_t(
             &Rc::new(RefCell::new(<detail_parse_integer_impl_int_>::default())).as_pointer(),
@@ -74,7 +104,7 @@ pub fn parse_integer_0(str: Ptr<Vec<i32>>) -> i32 {
         )
     });
 }
-pub fn parse_integer_1(str: Ptr<Vec<i32>>) -> i64 {
+pub fn parse_integer_6(str: Ptr<Vec<i32>>) -> i64 {
     return ({
         detail_parse_integer_impl_long_Impl::operator_call_1_wchar_t(
             &Rc::new(RefCell::new(<detail_parse_integer_impl_long_>::default())).as_pointer(),
@@ -82,7 +112,7 @@ pub fn parse_integer_1(str: Ptr<Vec<i32>>) -> i64 {
         )
     });
 }
-pub fn parse_integer_2(str: Ptr<Vec<i32>>) -> i64 {
+pub fn parse_integer_7(str: Ptr<Vec<i32>>) -> i64 {
     return ({
         detail_parse_integer_impl_long_long_Impl::operator_call_1_wchar_t(
             &Rc::new(RefCell::new(
@@ -93,7 +123,7 @@ pub fn parse_integer_2(str: Ptr<Vec<i32>>) -> i64 {
         )
     });
 }
-pub fn parse_integer_3(str: Ptr<Vec<i32>>) -> u32 {
+pub fn parse_integer_8(str: Ptr<Vec<i32>>) -> u32 {
     return ({
         detail_parse_integer_impl_unsigned_int_Impl::operator_call_1_wchar_t(
             &Rc::new(RefCell::new(
@@ -104,7 +134,7 @@ pub fn parse_integer_3(str: Ptr<Vec<i32>>) -> u32 {
         )
     });
 }
-pub fn parse_integer_4(str: Ptr<Vec<i32>>) -> u64 {
+pub fn parse_integer_9(str: Ptr<Vec<i32>>) -> u64 {
     return ({
         detail_parse_integer_impl_unsigned_long_Impl::operator_call_1_wchar_t(
             &Rc::new(RefCell::new(
@@ -115,7 +145,7 @@ pub fn parse_integer_4(str: Ptr<Vec<i32>>) -> u64 {
         )
     });
 }
-pub fn parse_integer_5(str: Ptr<Vec<i32>>) -> u64 {
+pub fn parse_integer_10(str: Ptr<Vec<i32>>) -> u64 {
     return ({
         detail_parse_integer_impl_unsigned_long_long_Impl::operator_call_1_wchar_t(
             &Rc::new(RefCell::new(
@@ -126,333 +156,531 @@ pub fn parse_integer_5(str: Ptr<Vec<i32>>) -> u64 {
         )
     });
 }
-pub fn test_signed_6() {
+pub fn test_signed_11() {
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 1_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_12(0) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 1_usize) }));
         assert!(
-            Ptr::<i32>::from_string_literal(&[48 as i32, 0 as i32,])
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[48 as i32, 0 as i32]).with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
+        );
+    }
+    {
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_12(12345) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 5_usize) }));
+        assert!(
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
+                ])
                 .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 5_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_12(-12345_i32) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 6_usize) }));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
         );
-    }
-    {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 6_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                45 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    45 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
+                ])
+                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == ((unimplemented!() + 1) as usize)));
-        let mut t: i32 = ({ parse_integer_0((s.as_pointer()).reinterpret_cast::<Vec<i32>>()) });
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_12(i32::MAX) })));
+        assert!(
+            ({
+                (((*s.borrow()).len() - 1) == ((digits10_13.with(|rc| *rc.borrow()) + 1) as usize))
+            })
+        );
+        let mut t: i32 = ({ parse_integer_5((s.as_pointer()).reinterpret_cast::<Vec<i32>>()) });
         assert!((t == i32::MAX));
     }
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        let mut t: i32 = ({ parse_integer_0((s.as_pointer()).reinterpret_cast::<Vec<i32>>()) });
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_12(i32::MIN) })));
+        let mut t: i32 = ({ parse_integer_5((s.as_pointer()).reinterpret_cast::<Vec<i32>>()) });
         assert!((t == i32::MIN));
     }
 }
-pub fn test_signed_7() {
+pub fn test_signed_14() {
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 1_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_15(0_i64) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 1_usize) }));
         assert!(
-            Ptr::<i32>::from_string_literal(&[48 as i32, 0 as i32,])
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[48 as i32, 0 as i32]).with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
+        );
+    }
+    {
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_15(12345_i64) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 5_usize) }));
+        assert!(
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
+                ])
                 .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 5_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_15((-12345_i32 as i64)) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 6_usize) }));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
         );
-    }
-    {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 6_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                45 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    45 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
+                ])
+                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == ((unimplemented!() + 1) as usize)));
-        let mut t: i64 = ({ parse_integer_1((s.as_pointer()).reinterpret_cast::<Vec<i32>>()) });
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_15(i64::MAX) })));
+        assert!(
+            ({
+                (((*s.borrow()).len() - 1) == ((digits10_16.with(|rc| *rc.borrow()) + 1) as usize))
+            })
+        );
+        let mut t: i64 = ({ parse_integer_6((s.as_pointer()).reinterpret_cast::<Vec<i32>>()) });
         assert!((t == i64::MAX));
     }
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        let mut t: i64 = ({ parse_integer_1((s.as_pointer()).reinterpret_cast::<Vec<i32>>()) });
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_15(i64::MIN) })));
+        let mut t: i64 = ({ parse_integer_6((s.as_pointer()).reinterpret_cast::<Vec<i32>>()) });
         assert!((t == i64::MIN));
     }
 }
-pub fn test_signed_8() {
+pub fn test_signed_17() {
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 1_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_18(0_i64) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 1_usize) }));
         assert!(
-            Ptr::<i32>::from_string_literal(&[48 as i32, 0 as i32,])
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[48 as i32, 0 as i32]).with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
+        );
+    }
+    {
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_18(12345_i64) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 5_usize) }));
+        assert!(
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
+                ])
                 .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 5_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_18((-12345_i32 as i64)) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 6_usize) }));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
         );
-    }
-    {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 6_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                45 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    45 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
+                ])
+                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == ((unimplemented!() + 1) as usize)));
-        let mut t: i64 = ({ parse_integer_2((s.as_pointer()).reinterpret_cast::<Vec<i32>>()) });
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_18(i64::MAX) })));
+        assert!(
+            ({
+                (((*s.borrow()).len() - 1) == ((digits10_19.with(|rc| *rc.borrow()) + 1) as usize))
+            })
+        );
+        let mut t: i64 = ({ parse_integer_7((s.as_pointer()).reinterpret_cast::<Vec<i32>>()) });
         assert!((t == i64::MAX));
     }
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        let mut t: i64 = ({ parse_integer_2((s.as_pointer()).reinterpret_cast::<Vec<i32>>()) });
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_18(i64::MIN) })));
+        let mut t: i64 = ({ parse_integer_7((s.as_pointer()).reinterpret_cast::<Vec<i32>>()) });
         assert!((t == i64::MIN));
     }
 }
-pub fn test_unsigned_9() {
+pub fn test_unsigned_20() {
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 1_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_21(0_u32) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 1_usize) }));
         assert!(
-            Ptr::<i32>::from_string_literal(&[48 as i32, 0 as i32,])
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[48 as i32, 0 as i32]).with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
+        );
+    }
+    {
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_21(12345_u32) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 5_usize) }));
+        assert!(
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
+                ])
                 .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 5_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_21(u32::MAX) })));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                (((*s.borrow()).len() - 1) == ((digits10_22.with(|rc| *rc.borrow()) + 1) as usize))
+            })
         );
-    }
-    {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == ((unimplemented!() + 1) as usize)));
-        let mut t: u32 = ({ parse_integer_3((s.as_pointer()).reinterpret_cast::<Vec<i32>>()) });
+        let mut t: u32 = ({ parse_integer_8((s.as_pointer()).reinterpret_cast::<Vec<i32>>()) });
         assert!((t == u32::MAX));
     }
 }
-pub fn test_unsigned_10() {
+pub fn test_unsigned_23() {
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 1_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_24(0_u64) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 1_usize) }));
         assert!(
-            Ptr::<i32>::from_string_literal(&[48 as i32, 0 as i32,])
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[48 as i32, 0 as i32]).with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
+        );
+    }
+    {
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_24(12345_u64) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 5_usize) }));
+        assert!(
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
+                ])
                 .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 5_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_24(u64::MAX) })));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                (((*s.borrow()).len() - 1) == ((digits10_25.with(|rc| *rc.borrow()) + 1) as usize))
+            })
         );
-    }
-    {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == ((unimplemented!() + 1) as usize)));
-        let mut t: u64 = ({ parse_integer_4((s.as_pointer()).reinterpret_cast::<Vec<i32>>()) });
+        let mut t: u64 = ({ parse_integer_9((s.as_pointer()).reinterpret_cast::<Vec<i32>>()) });
         assert!((t == u64::MAX));
     }
 }
-pub fn test_unsigned_11() {
+pub fn test_unsigned_26() {
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 1_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_27(0_u64) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 1_usize) }));
         assert!(
-            Ptr::<i32>::from_string_literal(&[48 as i32, 0 as i32,])
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[48 as i32, 0 as i32]).with_c_str(|__s| {
+                    (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s
+                })
+            })
+        );
+    }
+    {
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_27(12345_u64) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 5_usize) }));
+        assert!(
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
+                ])
                 .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 5_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_27(<u64>::MAX) })));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                (((*s.borrow()).len() - 1) == ((digits10_28.with(|rc| *rc.borrow()) + 1) as usize))
+            })
         );
-    }
-    {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == ((unimplemented!() + 1) as usize)));
-        let mut t: u64 = ({ parse_integer_5((s.as_pointer()).reinterpret_cast::<Vec<i32>>()) });
-        assert!((t == unimplemented!()));
+        let mut t: u64 = ({ parse_integer_10((s.as_pointer()).reinterpret_cast::<Vec<i32>>()) });
+        assert!((t == <u64>::MAX));
     }
 }
-pub fn test_float_12() {
+pub fn test_float_29() {
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 8_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_30(0_f32) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 8_usize) }));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                48 as i32, 46 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32,
-                48 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    48 as i32, 46 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32,
+                    48 as i32, 0 as i32,
+                ])
+                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 12_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_30(12345_f32) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 12_usize) }));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 46 as i32, 48 as i32,
-                48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 46 as i32, 48 as i32,
+                    48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 0 as i32,
+                ])
+                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 13_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_30((-12345_i32 as f32)) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 13_usize) }));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                45 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 46 as i32,
-                48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
         );
-    }
-}
-pub fn test_float_13() {
-    {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 8_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                48 as i32, 46 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32,
-                48 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
-        );
-    }
-    {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 12_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
-        assert!(
-            Ptr::<i32>::from_string_literal(&[
-                49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 46 as i32, 48 as i32,
-                48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
-        );
-    }
-    {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 13_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
-        assert!(
-            Ptr::<i32>::from_string_literal(&[
-                45 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 46 as i32,
-                48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    45 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 46 as i32,
+                    48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 0 as i32,
+                ])
+                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
 }
-pub fn test_float_14() {
+pub fn test_float_31() {
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 8_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_32(0_f64) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 8_usize) }));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                48 as i32, 46 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32,
-                48 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    48 as i32, 46 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32,
+                    48 as i32, 0 as i32,
+                ])
+                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 12_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_32(12345_f64) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 12_usize) }));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 46 as i32, 48 as i32,
-                48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 46 as i32, 48 as i32,
+                    48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 0 as i32,
+                ])
+                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
     {
-        let s: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*s.borrow()).len() - 1) == 13_usize));
-        assert!((((s.decay().offset(((*s.borrow()).len() - 1) as isize).read()) as i32) == 0));
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_32((-12345_i32 as f64)) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 13_usize) }));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                45 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 46 as i32,
-                48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    45 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 46 as i32,
+                    48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 0 as i32,
+                ])
+                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            })
+        );
+    }
+}
+pub fn test_float_33() {
+    {
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_34(0_f64) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 8_usize) }));
+        assert!(
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    48 as i32, 46 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32,
+                    48 as i32, 0 as i32,
+                ])
+                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            })
+        );
+    }
+    {
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_34(12345_f64) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 12_usize) }));
+        assert!(
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 46 as i32, 48 as i32,
+                    48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 0 as i32,
+                ])
+                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            })
+        );
+    }
+    {
+        let s: Value<Vec<i32>> = Rc::new(RefCell::new(({ to_wstring_34((-12345_i32 as f64)) })));
+        assert!(({ (((*s.borrow()).len() - 1) == 13_usize) }));
+        assert!(
+            (((s.decay()
+                .offset(({ ((*s.borrow()).len() - 1) }) as isize)
+                .read()) as i32)
+                == 0)
+        );
+        assert!(
+            ({
+                Ptr::<i32>::from_string_literal(&[
+                    45 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 46 as i32,
+                    48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 48 as i32, 0 as i32,
+                ])
+                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
+            })
         );
     }
 }
@@ -476,15 +704,15 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_signed_6() });
-    ({ test_signed_7() });
-    ({ test_signed_8() });
-    ({ test_unsigned_9() });
-    ({ test_unsigned_10() });
-    ({ test_unsigned_11() });
-    ({ test_float_12() });
-    ({ test_float_13() });
-    ({ test_float_14() });
+    ({ test_signed_11() });
+    ({ test_signed_14() });
+    ({ test_signed_17() });
+    ({ test_unsigned_20() });
+    ({ test_unsigned_23() });
+    ({ test_unsigned_26() });
+    ({ test_float_29() });
+    ({ test_float_31() });
+    ({ test_float_33() });
     return 0;
 }
 pub trait detail_parse_integer_impl_int_Impl {
@@ -492,7 +720,7 @@ pub trait detail_parse_integer_impl_int_Impl {
 }
 impl detail_parse_integer_impl_int_Impl for Ptr<detail_parse_integer_impl_int_> {
     fn operator_call_1_wchar_t(&self, str: Ptr<Vec<i32>>) -> i32 {
-        return unimplemented!();
+        return ({ stoi_0((str).reinterpret_cast::<Vec<i32>>(), None, None) });
     }
 }
 pub trait detail_parse_integer_impl_long_Impl {
@@ -500,7 +728,7 @@ pub trait detail_parse_integer_impl_long_Impl {
 }
 impl detail_parse_integer_impl_long_Impl for Ptr<detail_parse_integer_impl_long_> {
     fn operator_call_1_wchar_t(&self, str: Ptr<Vec<i32>>) -> i64 {
-        return unimplemented!();
+        return ({ stol_1((str).reinterpret_cast::<Vec<i32>>(), None, None) });
     }
 }
 pub trait detail_parse_integer_impl_long_long_Impl {
@@ -508,7 +736,7 @@ pub trait detail_parse_integer_impl_long_long_Impl {
 }
 impl detail_parse_integer_impl_long_long_Impl for Ptr<detail_parse_integer_impl_long_long_> {
     fn operator_call_1_wchar_t(&self, str: Ptr<Vec<i32>>) -> i64 {
-        return unimplemented!();
+        return ({ stoll_2((str).reinterpret_cast::<Vec<i32>>(), None, None) });
     }
 }
 pub trait detail_parse_integer_impl_unsigned_int_Impl {
@@ -516,7 +744,7 @@ pub trait detail_parse_integer_impl_unsigned_int_Impl {
 }
 impl detail_parse_integer_impl_unsigned_int_Impl for Ptr<detail_parse_integer_impl_unsigned_int_> {
     fn operator_call_1_wchar_t(&self, str: Ptr<Vec<i32>>) -> u32 {
-        return (unimplemented!() as u32);
+        return (({ stoul_3((str).reinterpret_cast::<Vec<i32>>(), None, None) }) as u32);
     }
 }
 pub trait detail_parse_integer_impl_unsigned_long_Impl {
@@ -526,7 +754,7 @@ impl detail_parse_integer_impl_unsigned_long_Impl
     for Ptr<detail_parse_integer_impl_unsigned_long_>
 {
     fn operator_call_1_wchar_t(&self, str: Ptr<Vec<i32>>) -> u64 {
-        return unimplemented!();
+        return ({ stoul_3((str).reinterpret_cast::<Vec<i32>>(), None, None) });
     }
 }
 pub trait detail_parse_integer_impl_unsigned_long_long_Impl {
@@ -536,7 +764,7 @@ impl detail_parse_integer_impl_unsigned_long_long_Impl
     for Ptr<detail_parse_integer_impl_unsigned_long_long_>
 {
     fn operator_call_1_wchar_t(&self, str: Ptr<Vec<i32>>) -> u64 {
-        return unimplemented!();
+        return ({ stoull_4((str).reinterpret_cast::<Vec<i32>>(), None, None) });
     }
 }
 pub fn __cpp2rust_init_globals() {}

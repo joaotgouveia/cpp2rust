@@ -14,23 +14,23 @@ fn f125<T1: ByteRepr + Clone>(a0: Ptr<Vec<T1>>, a1: &mut Vec<T1>) {
 }
 
 fn f129<T1>(a0: Ptr<T1>) -> RandomAccessIterator<T1> {
-    a0.begin()
+    CppRange::begin(&a0)
 }
 
 fn f130<T1>(a0: Ptr<T1>) -> RandomAccessIterator<T1> {
-    a0.begin()
+    CppRange::begin(&a0)
 }
 
 fn f131<T1>(a0: Ptr<T1>) -> RandomAccessIterator<T1> {
-    a0.end()
+    CppRange::end(&a0)
 }
 
 fn f132<T1>(a0: Ptr<T1>) -> RandomAccessIterator<T1> {
-    a0.end()
+    CppRange::end(&a0)
 }
 
 fn f138<T1>(a0: Ptr<T1>) -> RandomAccessIterator<T1> {
-    a0.end()
+    CppRange::end(&a0)
 }
 
 fn f151<T1>(a0: Ptr<T1>, a1: usize) -> Ptr<T1> {

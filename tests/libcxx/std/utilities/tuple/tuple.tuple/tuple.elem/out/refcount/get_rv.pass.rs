@@ -28,8 +28,10 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut p: Option<Value<i32>> = unimplemented!().take();
+        let t: Value<std_tuple_std_unique_ptr_int__std_default_delete_int___> =
+            Rc::new(RefCell::new(Ptr::alloc(3).to_owned_opt()));
+        let mut p: Option<Value<i32>> =
+            ({ get_0(t.as_pointer()) }).with_mut(|__v: &mut Option<Value<i32>>| __v.take());
         assert!(((p.as_pointer().read()) == 3));
     }
     return 0;

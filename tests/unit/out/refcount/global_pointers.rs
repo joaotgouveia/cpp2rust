@@ -16,6 +16,11 @@ pub struct Entry {
     #[byte_size(8)]
     pub p: Ptr<i32>,
 }
+impl CppMove for Entry {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static single_entry_0: Value<Entry> = Rc::new(RefCell::new(Entry {
         name: Ptr::<i8>::from_string_literal(b"alone"),

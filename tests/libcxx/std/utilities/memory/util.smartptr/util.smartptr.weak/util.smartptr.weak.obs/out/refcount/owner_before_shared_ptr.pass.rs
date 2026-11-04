@@ -27,16 +27,58 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let p3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let w1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let w2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let w3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!((unimplemented!()) || (unimplemented!()));
-    assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
+    let p1: Value<std_shared_ptr_int_> = Rc::new(RefCell::new(std_shared_ptr_int_::new_1({
+        Ptr::alloc(Default::default())
+    })));
+    let p2: Value<std_shared_ptr_int_> = Rc::new(RefCell::new((*p1.borrow()).clone()));
+    let p3: Value<std_shared_ptr_int_> = Rc::new(RefCell::new(std_shared_ptr_int_::new_1({
+        Ptr::alloc(Default::default())
+    })));
+    let w1: Value<std_weak_ptr_int_> =
+        Rc::new(RefCell::new(std_weak_ptr_int_::new_1({ p1.as_pointer() })));
+    let w2: Value<std_weak_ptr_int_> =
+        Rc::new(RefCell::new(std_weak_ptr_int_::new_1({ p2.as_pointer() })));
+    let w3: Value<std_weak_ptr_int_> =
+        Rc::new(RefCell::new(std_weak_ptr_int_::new_1({ p3.as_pointer() })));
+    assert!(
+        ({
+            !({
+                ((*w1.borrow()) as std___weak_ptr_int____gnu_cxx__S_atomic_)
+                    .owner_before(p2.as_pointer())
+            })
+        })
+    );
+    assert!(
+        ({
+            !({
+                ((*w2.borrow()) as std___weak_ptr_int____gnu_cxx__S_atomic_)
+                    .owner_before(p1.as_pointer())
+            })
+        })
+    );
+    assert!(
+        ({
+            ({
+                ((*w1.borrow()) as std___weak_ptr_int____gnu_cxx__S_atomic_)
+                    .owner_before(p3.as_pointer())
+            }) || ({
+                ((*w3.borrow()) as std___weak_ptr_int____gnu_cxx__S_atomic_)
+                    .owner_before(p1.as_pointer())
+            })
+        })
+    );
+    assert!(
+        ({
+            ((({
+                ((*w3.borrow()) as std___weak_ptr_int____gnu_cxx__S_atomic_)
+                    .owner_before(p1.as_pointer())
+            }) as i32)
+                == (({
+                    ((*w3.borrow()) as std___weak_ptr_int____gnu_cxx__S_atomic_)
+                        .owner_before(p2.as_pointer())
+                }) as i32))
+        })
+    );
     const _: () = assert!(true, "");;
     return 0;
 }

@@ -9,18 +9,18 @@ use std::rc::{Rc, Weak};
 pub fn tests_0() -> bool {
     {
         let array: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([3.3_f64])));
-        assert!(((unimplemented!().read()) == 3.3_f64));
+        assert!(((array.decay().offset(0 as isize).read()) == 3.3_f64));
     }
     {
         let array: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([3.3_f64, 4.4_f64])));
-        assert!(((unimplemented!().read()) == 3.3_f64));
-        assert!(((unimplemented!().read()) == 4.4_f64));
+        assert!(((array.decay().offset(0 as isize).read()) == 3.3_f64));
+        assert!(((array.decay().offset(1 as isize).read()) == 4.4_f64));
     }
     {
         let array: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([3.3_f64, 4.4_f64, 5.5_f64])));
-        assert!(((unimplemented!().read()) == 3.3_f64));
-        assert!(((unimplemented!().read()) == 4.4_f64));
-        assert!(((unimplemented!().read()) == 5.5_f64));
+        assert!(((array.decay().offset(0 as isize).read()) == 3.3_f64));
+        assert!(((array.decay().offset(1 as isize).read()) == 4.4_f64));
+        assert!(((array.decay().offset(2 as isize).read()) == 5.5_f64));
     }
     {
         let array: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([3.3_f64])));

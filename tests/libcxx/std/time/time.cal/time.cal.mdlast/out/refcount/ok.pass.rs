@@ -11,6 +11,11 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_bool__bool_ {}
+impl CppMove for test_macros_detail_is_same_bool__bool_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -37,14 +42,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "month_day_last{{std::chrono::May}}.ok()");;
     let mut i: u32 = 1_u32;
     'loop_: while (i <= 12_u32) {
-        let mdl: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(unimplemented!());
+        let mdl: Value<std_chrono_month_day_last> = Rc::new(RefCell::new({
+            let __tmp_0: Value<std_chrono_month> =
+                Rc::new(RefCell::new(std_chrono_month::new_1({ i })));
+            std_chrono_month_day_last::new({ __tmp_0.as_pointer() })
+        }));
+        assert!(({ ({ (*mdl.borrow()).ok() }) }));
         i.prefix_inc();
     }
     let mut i: u32 = 13_u32;
     'loop_: while (i <= 50_u32) {
-        let mdl: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(!(unimplemented!()));
+        let mdl: Value<std_chrono_month_day_last> = Rc::new(RefCell::new({
+            let __tmp_1: Value<std_chrono_month> =
+                Rc::new(RefCell::new(std_chrono_month::new_1({ i })));
+            std_chrono_month_day_last::new({ __tmp_1.as_pointer() })
+        }));
+        assert!(({ !({ (*mdl.borrow()).ok() }) }));
         i.prefix_inc();
     }
     return 0;

@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -38,6 +43,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_deleter_base {}
+impl CppMove for test_deleter_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static count_4: Value<i32> = Rc::new(RefCell::new(0));
 );
@@ -79,6 +89,11 @@ impl Clone for test_deleter_A_ {
         test_deleter_A_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for test_deleter_A_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
 #[byte_size(1)]
 pub struct A {}
@@ -98,6 +113,11 @@ impl Clone for A {
     fn clone(&self) -> Self {
         let __src: Value<A> = Rc::new(RefCell::new(A {}));
         A::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for A {
@@ -132,8 +152,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         {
             let mut ptr: Ptr<A> = Ptr::alloc(A::new());
-            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut d: Ptr<test_deleter_A_> = unimplemented!();
+            let p: Value<std_shared_ptr_A_> =
+                Rc::new(RefCell::new(std_shared_ptr_A_::new_1({ (ptr).clone() }, {
+                    test_deleter_A_::new_1({ 3 })
+                })));
+            let mut d: Ptr<test_deleter_A_> = ({ get_deleter_7(p.as_pointer()) });
             assert!((count_4.with(|rc| *rc.borrow()) == 1));
             assert!((dealloc_count_5.with(|rc| *rc.borrow()) == 0));
             assert!(!(d).is_null());
@@ -146,8 +169,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     dealloc_count_5.with(|rc| *rc.borrow_mut() = 0);
     {
         {
-            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut d: Ptr<test_deleter_A_> = unimplemented!();
+            let p: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(std_shared_ptr_A_::new_2(
+                { Default::default() },
+                { test_deleter_A_::new_1({ 3 }) },
+            )));
+            let mut d: Ptr<test_deleter_A_> = ({ get_deleter_7(p.as_pointer()) });
             assert!((count_4.with(|rc| *rc.borrow()) == 1));
             assert!((dealloc_count_5.with(|rc| *rc.borrow()) == 0));
             assert!(!(d).is_null());
@@ -159,8 +185,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     }
     dealloc_count_5.with(|rc| *rc.borrow_mut() = 0);
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut d: Ptr<()> = unimplemented!();
+        let p: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(std_shared_ptr_A_::new_2(
+            { Default::default() },
+            { test_deleter_A_::new_1({ 3 }) },
+        )));
+        let mut d: Ptr<std_default_delete_A_> = ({ get_deleter_8(p.as_pointer()) });
         assert!((d).is_null());
     }
     return 0;

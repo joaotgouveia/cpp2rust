@@ -67,8 +67,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ({ test_basic_string_alias_7() });
     }
     {
-        let mut s: () = vec![i8::default()];
-        assert!((unimplemented!() == unimplemented!()));
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new(vec![i8::default()]));
+        assert!(
+            (({ ({ (*s.borrow()).get_allocator() }).resource() })
+                == ({ get_default_resource_8() }))
+        );
     }
     return 0;
 }

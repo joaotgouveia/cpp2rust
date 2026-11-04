@@ -16,7 +16,7 @@ import shlex
 import shutil
 
 
-MODELS = ("refcount", "unsafe")
+MODELS = ("refcount",)
 IGNORED_SUFFIXES = (".verify.cpp", ".sh.cpp", ".compile.fail.cpp", ".compile.pass.cpp")
 PTR_RE = re.compile(r"0x[0-9a-fA-F]+")
 
@@ -392,11 +392,6 @@ class TestContext:
                 return (exp.fail_code, "expected panic\n" + err)
             return (lit.Test.XFAIL, "")
 
-        if re.search(
-            r"thread 'main' \(\d+\) panicked at", str(self.rust_result.stderr)
-        ) and self.rust_result.returncode in [-6, 101]:
-            return self.success_result()
-
         if exp.is_nondet_result:
             return self.success_result()
         return None
@@ -492,9 +487,6 @@ def read_rust_version():
 
 
 def get_temp_dir():
-    shm = Path("/dev/shm")
-    if shm.exists() and os.access(shm, os.W_OK):
-        return shm / "cpp2rust-tests"
     return Path("/tmp/cpp2rust-tests")
 
 

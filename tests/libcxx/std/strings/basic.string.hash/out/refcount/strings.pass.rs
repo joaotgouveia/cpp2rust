@@ -8,7 +8,11 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
     const _: () = assert!(true, "");;
-    let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let h: Value<std_hash_std_basic_string_char__std_char_traits_char___std_allocator_char___> =
+        Rc::new(RefCell::new(
+            <std_hash_std_basic_string_char__std_char_traits_char___std_allocator_char___>::default(
+            ),
+        ));
     let g1: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __bytes = Ptr::<i8>::from_string_literal(b"1234567890").to_c_bytes();
         __bytes.push(0_i8);
@@ -19,13 +23,37 @@ pub fn test_0() {
         __bytes.push(0_i8);
         __bytes
     }));
-    let mut s1: Vec<i8> = unimplemented!();
-    let mut s2: Vec<i8> = unimplemented!();
-    assert!((unimplemented!() != unimplemented!()));
+    let s1: Value<Vec<i8>> = Rc::new(RefCell::new({
+        use std::io::Read;
+        let mut __bytes: Vec<u8> = Vec::new();
+        let mut __f = &RandomAccessIterator::Vec(g1.decay());
+        __f.read_to_end(&mut __bytes)
+            .expect("couldn't read the file");
+        __bytes.push(0);
+        CChar::from_byte_vec(__bytes)
+    }));
+    let s2: Value<Vec<i8>> = Rc::new(RefCell::new({
+        use std::io::Read;
+        let mut __bytes: Vec<u8> = Vec::new();
+        let mut __f = &RandomAccessIterator::Vec(g2.decay());
+        __f.read_to_end(&mut __bytes)
+            .expect("couldn't read the file");
+        __bytes.push(0);
+        CChar::from_byte_vec(__bytes)
+    }));
+    assert!(
+        ({
+            (({
+                ( (*h.borrow_mut()) as std___str_hash_base_char__std_allocator_char___std_basic_string_char__std_char_traits_char___std_allocator_char___ ) ( s1 .as_pointer()  , )
+            }) != ({
+                ( (*h.borrow_mut()) as std___str_hash_base_char__std_allocator_char___std_basic_string_char__std_char_traits_char___std_allocator_char___ ) ( s2 .as_pointer()  , )
+            }))
+        })
+    );
 }
 pub fn test_1() {
     const _: () = assert!(true, "");;
-    let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let h : Value<std_hash_std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t___ > = Rc::new(RefCell::new(<std_hash_std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t___  >::default() )) ;
     let g1: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __bytes = Ptr::<i8>::from_string_literal(b"1234567890").to_c_bytes();
         __bytes.push(0_i8);
@@ -36,13 +64,37 @@ pub fn test_1() {
         __bytes.push(0_i8);
         __bytes
     }));
-    let mut s1: Vec<u8> = unimplemented!();
-    let mut s2: Vec<u8> = unimplemented!();
-    assert!((unimplemented!() != unimplemented!()));
+    let s1: Value<Vec<u8>> = Rc::new(RefCell::new({
+        use std::io::Read;
+        let mut __bytes: Vec<u8> = Vec::new();
+        let mut __f = &RandomAccessIterator::Vec(g1.decay());
+        __f.read_to_end(&mut __bytes)
+            .expect("couldn't read the file");
+        __bytes.push(0);
+        CChar::from_byte_vec(__bytes)
+    }));
+    let s2: Value<Vec<u8>> = Rc::new(RefCell::new({
+        use std::io::Read;
+        let mut __bytes: Vec<u8> = Vec::new();
+        let mut __f = &RandomAccessIterator::Vec(g2.decay());
+        __f.read_to_end(&mut __bytes)
+            .expect("couldn't read the file");
+        __bytes.push(0);
+        CChar::from_byte_vec(__bytes)
+    }));
+    assert!(
+        ({
+            (({
+                ( (*h.borrow_mut()) as std___str_hash_base_char8_t__std_allocator_char8_t___std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t___ ) ( s1 .as_pointer()  , )
+            }) != ({
+                ( (*h.borrow_mut()) as std___str_hash_base_char8_t__std_allocator_char8_t___std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t___ ) ( s2 .as_pointer()  , )
+            }))
+        })
+    );
 }
 pub fn test_2() {
     const _: () = assert!(true, "");;
-    let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let h : Value<std_hash_std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t___ > = Rc::new(RefCell::new(<std_hash_std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t___  >::default() )) ;
     let g1: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __bytes = Ptr::<i8>::from_string_literal(b"1234567890").to_c_bytes();
         __bytes.push(0_i8);
@@ -53,13 +105,37 @@ pub fn test_2() {
         __bytes.push(0_i8);
         __bytes
     }));
-    let mut s1: Vec<u16> = unimplemented!();
-    let mut s2: Vec<u16> = unimplemented!();
-    assert!((unimplemented!() != unimplemented!()));
+    let s1: Value<Vec<u16>> = Rc::new(RefCell::new({
+        use std::io::Read;
+        let mut __bytes: Vec<u8> = Vec::new();
+        let mut __f = &RandomAccessIterator::Vec(g1.decay());
+        __f.read_to_end(&mut __bytes)
+            .expect("couldn't read the file");
+        __bytes.push(0);
+        CChar::from_byte_vec(__bytes)
+    }));
+    let s2: Value<Vec<u16>> = Rc::new(RefCell::new({
+        use std::io::Read;
+        let mut __bytes: Vec<u8> = Vec::new();
+        let mut __f = &RandomAccessIterator::Vec(g2.decay());
+        __f.read_to_end(&mut __bytes)
+            .expect("couldn't read the file");
+        __bytes.push(0);
+        CChar::from_byte_vec(__bytes)
+    }));
+    assert!(
+        ({
+            (({
+                ( (*h.borrow_mut()) as std___str_hash_base_char16_t__std_allocator_char16_t___std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t___ ) ( s1 .as_pointer()  , )
+            }) != ({
+                ( (*h.borrow_mut()) as std___str_hash_base_char16_t__std_allocator_char16_t___std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t___ ) ( s2 .as_pointer()  , )
+            }))
+        })
+    );
 }
 pub fn test_3() {
     const _: () = assert!(true, "");;
-    let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let h : Value<std_hash_std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t___ > = Rc::new(RefCell::new(<std_hash_std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t___  >::default() )) ;
     let g1: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __bytes = Ptr::<i8>::from_string_literal(b"1234567890").to_c_bytes();
         __bytes.push(0_i8);
@@ -70,13 +146,37 @@ pub fn test_3() {
         __bytes.push(0_i8);
         __bytes
     }));
-    let mut s1: Vec<u32> = unimplemented!();
-    let mut s2: Vec<u32> = unimplemented!();
-    assert!((unimplemented!() != unimplemented!()));
+    let s1: Value<Vec<u32>> = Rc::new(RefCell::new({
+        use std::io::Read;
+        let mut __bytes: Vec<u8> = Vec::new();
+        let mut __f = &RandomAccessIterator::Vec(g1.decay());
+        __f.read_to_end(&mut __bytes)
+            .expect("couldn't read the file");
+        __bytes.push(0);
+        CChar::from_byte_vec(__bytes)
+    }));
+    let s2: Value<Vec<u32>> = Rc::new(RefCell::new({
+        use std::io::Read;
+        let mut __bytes: Vec<u8> = Vec::new();
+        let mut __f = &RandomAccessIterator::Vec(g2.decay());
+        __f.read_to_end(&mut __bytes)
+            .expect("couldn't read the file");
+        __bytes.push(0);
+        CChar::from_byte_vec(__bytes)
+    }));
+    assert!(
+        ({
+            (({
+                ( (*h.borrow_mut()) as std___str_hash_base_char32_t__std_allocator_char32_t___std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t___ ) ( s1 .as_pointer()  , )
+            }) != ({
+                ( (*h.borrow_mut()) as std___str_hash_base_char32_t__std_allocator_char32_t___std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t___ ) ( s2 .as_pointer()  , )
+            }))
+        })
+    );
 }
 pub fn test_4() {
     const _: () = assert!(true, "");;
-    let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let h : Value<std_hash_std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t___ > = Rc::new(RefCell::new(<std_hash_std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t___  >::default() )) ;
     let g1: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __bytes = Ptr::<i8>::from_string_literal(b"1234567890").to_c_bytes();
         __bytes.push(0_i8);
@@ -87,9 +187,33 @@ pub fn test_4() {
         __bytes.push(0_i8);
         __bytes
     }));
-    let mut s1: Vec<i32> = unimplemented!();
-    let mut s2: Vec<i32> = unimplemented!();
-    assert!((unimplemented!() != unimplemented!()));
+    let s1: Value<Vec<i32>> = Rc::new(RefCell::new({
+        use std::io::Read;
+        let mut __bytes: Vec<u8> = Vec::new();
+        let mut __f = &RandomAccessIterator::Vec(g1.decay());
+        __f.read_to_end(&mut __bytes)
+            .expect("couldn't read the file");
+        __bytes.push(0);
+        CChar::from_byte_vec(__bytes)
+    }));
+    let s2: Value<Vec<i32>> = Rc::new(RefCell::new({
+        use std::io::Read;
+        let mut __bytes: Vec<u8> = Vec::new();
+        let mut __f = &RandomAccessIterator::Vec(g2.decay());
+        __f.read_to_end(&mut __bytes)
+            .expect("couldn't read the file");
+        __bytes.push(0);
+        CChar::from_byte_vec(__bytes)
+    }));
+    assert!(
+        ({
+            (({
+                ( (*h.borrow_mut()) as std___str_hash_base_wchar_t__std_allocator_wchar_t___std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t___ ) ( s1 .as_pointer()  , )
+            }) != ({
+                ( (*h.borrow_mut()) as std___str_hash_base_wchar_t__std_allocator_wchar_t___std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t___ ) ( s2 .as_pointer()  , )
+            }))
+        })
+    );
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

@@ -28,8 +28,10 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == (-(f32::INFINITY) as ())));
+        let d: Value<std_cauchy_distribution_double_> = Rc::new(RefCell::new(
+            std_cauchy_distribution_double_::new_1({ 0.5_f64 }, { 0.5_f64 }),
+        ));
+        assert!(({ (({ (*d.borrow()).min() }) == (-(f32::INFINITY) as f64)) }));
     }
     return 0;
 }

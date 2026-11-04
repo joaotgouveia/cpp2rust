@@ -82,6 +82,11 @@ impl CppAdvance for SomeInt {
         __it.operator_dec_5();
     }
 }
+impl CppMove for SomeInt {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for SomeInt {
     fn default() -> Self {
         { SomeInt::new(None) }
@@ -138,6 +143,11 @@ impl CppAdvance for NotIncrementable {
         __it.operator_dec();
     }
 }
+impl CppMove for NotIncrementable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for NotIncrementable {
     fn default() -> Self {
         { NotIncrementable::new(None) }
@@ -192,6 +202,11 @@ impl CppAdvance for NotDecrementable {
         __it.operator_inc_3();
     }
 }
+impl CppMove for NotDecrementable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for NotDecrementable {
     fn default() -> Self {
         { NotDecrementable::new(None) }
@@ -202,16 +217,21 @@ pub const CtorKind_DefaultTo42: CtorKind = 0;
 pub const CtorKind_ValueCtor: CtorKind = 1;
 pub fn test_18() -> bool {
     {
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == 42));
+        let iter: Value<std_ranges_iota_view_int___Iterator> =
+            Rc::new(RefCell::new(std_ranges_iota_view_int___Iterator::new_1({
+                42
+            })));
+        assert!(({ ((*iter.borrow()).iter_deref() == 42) }));
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let iter: Value<std_ranges_iota_view_SomeInt___Iterator> = Rc::new(RefCell::new(
+            std_ranges_iota_view_SomeInt___Iterator::new_1({ SomeInt::new({ Some(42) }) }),
+        ));
         assert!(
             ({
                 let _arg0: Value<SomeInt> = Rc::new(RefCell::new(SomeInt::new({ Some(42) })));
                 SomeIntImpl::operator_eq(
-                    &Rc::new(RefCell::new(unimplemented!())).as_pointer(),
+                    &Rc::new(RefCell::new((*iter.borrow()).iter_deref())).as_pointer(),
                     _arg0.as_pointer(),
                 )
             })
@@ -257,11 +277,15 @@ impl NotDecrementableImpl for Ptr<NotDecrementable> {
         return ({ (*self).with(|__s| __s.value_) } == { _a0.with(|__s| __s.value_) });
     }
     fn operator_inc_3(&self) -> Ptr<NotDecrementable> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_4(&self, mut _a0: i32) {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait NotIncrementableImpl {
@@ -275,14 +299,20 @@ impl NotIncrementableImpl for Ptr<NotIncrementable> {
         return ({ (*self).with(|__s| __s.value_) } == { _a0.with(|__s| __s.value_) });
     }
     fn operator_inc_3(&self) -> Ptr<NotIncrementable> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_4(&self, mut _a0: i32) {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
     fn operator_dec(&self) -> Ptr<NotIncrementable> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
 }
@@ -301,28 +331,36 @@ impl SomeIntImpl for Ptr<SomeInt> {
                 &((*self).with(|__s| __s.value_)),
                 &(_a0.with(|__s| __s.value_)),
             )));
-            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow());
+            if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
+                return ({ (*cmp.borrow()) });
             }
         }
-        return std::cmp::Ordering::Equal;
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_inc_3(&self) -> Ptr<SomeInt> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_4(&self, mut _a0: i32) -> SomeInt {
         let mut tmp: SomeInt = (*(*self).upgrade().deref()).clone();
-        field!((*self), value_).with_mut(|__v| __v.prefix_inc());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return tmp;
     }
     fn operator_dec_5(&self) -> Ptr<SomeInt> {
-        field!((*self), value_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_6(&self, mut _a0: i32) -> SomeInt {
         let mut tmp: SomeInt = (*(*self).upgrade().deref()).clone();
-        field!((*self), value_).with_mut(|__v| __v.prefix_dec());
+        field!((*self), value_).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return tmp;
     }
     fn operator_eq(&self, _a0: Ptr<SomeInt>) -> bool {

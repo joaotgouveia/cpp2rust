@@ -27,20 +27,90 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let cs: Ptr<()> = s.as_pointer();
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(unimplemented!());
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
-    assert!(!(unimplemented!()));
+    let s : Value<std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__ > = Rc::new(RefCell::new(<std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__  >::default() )) ;
+    let i1: Value<std___detail__Node_iterator_int__true__false_> = Rc::new(RefCell::new(
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(1));
+            (*s.borrow()).insert_36(___x.as_pointer())
+        }),
+    ));
+    let i2: Value<std___detail__Node_iterator_int__true__false_> = Rc::new(RefCell::new(
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(1));
+            (*s.borrow()).insert_36(___x.as_pointer())
+        }),
+    ));
+    let i3: Value<std___detail__Node_iterator_int__true__false_> = Rc::new(RefCell::new(
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(2));
+            (*s.borrow()).insert_36(___x.as_pointer())
+        }),
+    ));
+    let cs: Ptr<std_unordered_multiset_int__std_hash_int___std_equal_to_int___std_allocator_int__> =
+        s.as_pointer();
+    assert!(
+        ({
+            let ___x: Ptr<i32> = (*i1.borrow()).iter_deref();
+            let ___y: Ptr<i32> = (*i1.borrow()).iter_deref();
+            ({ (*cs.upgrade().deref()).key_eq() })(___x, ___y)
+        })
+    );
+    assert!(
+        ({
+            let ___x: Ptr<i32> = (*i2.borrow()).iter_deref();
+            let ___y: Ptr<i32> = (*i2.borrow()).iter_deref();
+            ({ (*cs.upgrade().deref()).key_eq() })(___x, ___y)
+        })
+    );
+    assert!(
+        ({
+            let ___x: Ptr<i32> = (*i3.borrow()).iter_deref();
+            let ___y: Ptr<i32> = (*i3.borrow()).iter_deref();
+            ({ (*cs.upgrade().deref()).key_eq() })(___x, ___y)
+        })
+    );
+    assert!(
+        ({
+            let ___x: Ptr<i32> = (*i1.borrow()).iter_deref();
+            let ___y: Ptr<i32> = (*i2.borrow()).iter_deref();
+            ({ (*cs.upgrade().deref()).key_eq() })(___x, ___y)
+        })
+    );
+    assert!(
+        ({
+            let ___x: Ptr<i32> = (*i2.borrow()).iter_deref();
+            let ___y: Ptr<i32> = (*i1.borrow()).iter_deref();
+            ({ (*cs.upgrade().deref()).key_eq() })(___x, ___y)
+        })
+    );
+    assert!(
+        !({
+            let ___x: Ptr<i32> = (*i1.borrow()).iter_deref();
+            let ___y: Ptr<i32> = (*i3.borrow()).iter_deref();
+            ({ (*cs.upgrade().deref()).key_eq() })(___x, ___y)
+        })
+    );
+    assert!(
+        !({
+            let ___x: Ptr<i32> = (*i3.borrow()).iter_deref();
+            let ___y: Ptr<i32> = (*i1.borrow()).iter_deref();
+            ({ (*cs.upgrade().deref()).key_eq() })(___x, ___y)
+        })
+    );
+    assert!(
+        !({
+            let ___x: Ptr<i32> = (*i2.borrow()).iter_deref();
+            let ___y: Ptr<i32> = (*i3.borrow()).iter_deref();
+            ({ (*cs.upgrade().deref()).key_eq() })(___x, ___y)
+        })
+    );
+    assert!(
+        !({
+            let ___x: Ptr<i32> = (*i3.borrow()).iter_deref();
+            let ___y: Ptr<i32> = (*i2.borrow()).iter_deref();
+            ({ (*cs.upgrade().deref()).key_eq() })(___x, ___y)
+        })
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

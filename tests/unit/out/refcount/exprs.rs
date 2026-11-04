@@ -12,6 +12,11 @@ pub struct X {
     #[offset(0)]
     pub x: i32,
 }
+impl CppMove for X {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct Y {
@@ -21,6 +26,11 @@ pub struct Y {
     #[offset(8)]
     #[byte_size(8)]
     pub p: Ptr<X>,
+}
+impl CppMove for Y {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     __cpp2rust_init_globals();

@@ -17,12 +17,16 @@ impl TriviallyCopyable {
         Self { i_: i }
     }
 }
-pub fn test_0(mut t: TriviallyCopyable) {
-    let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+impl CppMove for TriviallyCopyable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
-pub fn test_1(t: ()) {
-    let t: Value<()> = Rc::new(RefCell::new(t));
-    let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_0(mut t: TriviallyCopyable) {
+    let t0: Value<std_atomic_TriviallyCopyable_> =
+        Rc::new(RefCell::new(std_atomic_TriviallyCopyable_::new_1({
+            (t).clone()
+        })));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -45,7 +49,12 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0(TriviallyCopyable::new({ 42 })) });
-    ({ test_1(unimplemented!()) });
+    ({
+        test_1({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(2));
+            std_chrono_duration_long__std_ratio_1__1000000000__::new_1({ __tmp_0.as_pointer() })
+        })
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

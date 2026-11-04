@@ -27,9 +27,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let jb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let jb: Value<Box<[__jmp_buf_tag]>> = Rc::new(RefCell::new(<Box<[__jmp_buf_tag]>>::default()));
     'switch: {
-        match { unimplemented!() } {
+        match { ({ _setjmp_0((jb.as_pointer() as Ptr<__jmp_buf_tag>)) }) } {
             __v if __v == 0 => {
                 break 'switch;
             }
@@ -41,7 +41,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }
         }
     };
-    unimplemented!();
+    ({ longjmp_1((jb.as_pointer() as Ptr<__jmp_buf_tag>), 42) });
     const _: () = assert!(
         true,
         "std::is_same<decltype(std::longjmp(jb, 0)), void>::value"

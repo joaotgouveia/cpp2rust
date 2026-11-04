@@ -6,41 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test0_0(_a0: Ptr<()>) {
-    const _: () = assert!(true, "std::tuple_size<Tuple>::value == 0");;
-}
-pub fn test1a_1(t: Ptr<()>) {
-    const _: () = assert!(true, "std::tuple_size<Tuple>::value == 1");;
-    const _: () = assert!(
-        true,
-        "std::is_same<typename std::tuple_element<0, Tuple>::type, int&&>::value"
-    );;
-    assert!(((unimplemented!().read()) == 1));
-}
-pub fn test1b_2(t: Ptr<()>) {
-    const _: () = assert!(true, "std::tuple_size<Tuple>::value == 1");;
-    const _: () = assert!(
-        true,
-        "std::is_same<typename std::tuple_element<0, Tuple>::type, int&>::value"
-    );;
-    assert!(((unimplemented!().read()) == 2));
-}
-pub fn test2a_3(t: Ptr<()>) {
-    const _: () = assert!(true, "std::tuple_size<Tuple>::value == 2");;
-    const _: () = assert!(
-        true,
-        "std::is_same<typename std::tuple_element<0, Tuple>::type, double&>::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same<typename std::tuple_element<1, Tuple>::type, char&>::value"
-    );;
-    assert!(((unimplemented!().read()) == 2.5_f64));
-    assert!((((unimplemented!().read()) as i32) == (('a' as i8) as i32)));
-}
-pub fn test3_4(_a0: Ptr<()>) -> i32 {
-    return (unimplemented!() as i32);
-}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -63,29 +29,37 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         ({
-            let _arg0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test0_0(_arg0.as_pointer())
+            let _arg0: Value<std_tuple__> = Rc::new(RefCell::new(({ forward_as_tuple_0() })));
+            test0_1(_arg0.as_pointer())
         });
     }
     {
         ({
-            let _t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test1a_1(_t.as_pointer())
+            let _t: Value<std_tuple_int_refref_> = Rc::new(RefCell::new(
+                ({
+                    let ___args: Value<i32> = Rc::new(RefCell::new(1));
+                    forward_as_tuple_2(___args.as_pointer())
+                }),
+            ));
+            test1a_3(_t.as_pointer())
         });
     }
     {
-        let mut i: i32 = 2;
+        let i: Value<i32> = Rc::new(RefCell::new(2));
         ({
-            let _t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test1b_2(_t.as_pointer())
+            let _t: Value<std_tuple_int_ref_> =
+                Rc::new(RefCell::new(({ forward_as_tuple_4(i.as_pointer()) })));
+            test1b_5(_t.as_pointer())
         });
     }
     {
-        let mut i: f64 = 2.5_f64;
+        let i: Value<f64> = Rc::new(RefCell::new(2.5_f64));
         let c: Value<i8> = Rc::new(RefCell::new(('a' as i8)));
         ({
-            let _t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test2a_3(_t.as_pointer())
+            let _t: Value<std_tuple_double_ref__char_ref_> = Rc::new(RefCell::new(
+                ({ forward_as_tuple_6(i.as_pointer(), c.as_pointer()) }),
+            ));
+            test2a_7(_t.as_pointer())
         });
         const _: () = assert!(true, "test3 (std::forward_as_tuple(i, c)) == 2");;
     }

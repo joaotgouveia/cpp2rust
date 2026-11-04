@@ -7,12 +7,12 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let alloc: Value<std_allocator_int_> = Rc::new(RefCell::new(<std_allocator_int_>::default()));
     &(*alloc.borrow_mut());
     return true;
 }
 pub fn test_1() -> bool {
-    let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let alloc: Value<std_allocator_void_> = Rc::new(RefCell::new(<std_allocator_void_>::default()));
     &(*alloc.borrow_mut());
     return true;
 }

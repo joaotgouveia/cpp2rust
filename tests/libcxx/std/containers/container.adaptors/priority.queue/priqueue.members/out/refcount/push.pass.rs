@@ -7,13 +7,26 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    assert!(((unimplemented!().read()) == 1));
-    unimplemented!();
-    assert!(((unimplemented!().read()) == 3));
-    unimplemented!();
-    assert!(((unimplemented!().read()) == 3));
+    let q: Value<std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__> =
+        Rc::new(RefCell::new(
+            <std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__>::default(
+            ),
+        ));
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(1));
+        (*q.borrow()).push_28(___x.as_pointer())
+    });
+    assert!(({ ((({ (*q.borrow()).top() }).read()) == 1) }));
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(3));
+        (*q.borrow()).push_28(___x.as_pointer())
+    });
+    assert!(({ ((({ (*q.borrow()).top() }).read()) == 3) }));
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(2));
+        (*q.borrow()).push_28(___x.as_pointer())
+    });
+    assert!(({ ((({ (*q.borrow()).top() }).read()) == 3) }));
     return true;
 }
 pub fn main() {

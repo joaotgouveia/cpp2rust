@@ -28,23 +28,74 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let sb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == (sb.as_pointer())));
+        let sb: Value<std_basic_stringbuf_char__std_char_traits_char___std_allocator_char__> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<Vec<i8>> = Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"0123456789").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                }));
+                std_basic_stringbuf_char__std_char_traits_char___std_allocator_char__::new_1(
+                    { __tmp_0.as_pointer() },
+                    None,
+                )
+            }));
         assert!(
-            Ptr::<i8>::from_string_literal(b"0123456789").with_c_str(|__s| unimplemented!()
-                [..unimplemented!().len().saturating_sub(1)]
-                == *__s)
+            ({
+                (({ ((*sb.borrow()) as ::std::fs::File).pubsetbuf(Ptr::<i8>::null(), 0_i64) })
+                    == (sb.as_pointer()))
+            })
+        );
+        assert!(
+            match (Rc::new(RefCell::new(({ (*sb.borrow()).str_17() }))).as_pointer(),) {
+                (__tmp_1,) => {
+                    Ptr::<i8>::from_string_literal(b"0123456789").with_c_str(|__s| {
+                        (*__tmp_1.upgrade().deref())
+                            [..(*__tmp_1.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     {
-        let sb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!() == (sb.as_pointer())));
+        let sb: Value<
+            std_basic_stringbuf_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__,
+        > = Rc::new(RefCell::new({
+            let __tmp_2: Value<Vec<i32>> = Rc::new(RefCell::new({
+                let mut __bytes = Ptr::<i32>::from_string_literal(&[
+                    48 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 54 as i32,
+                    55 as i32, 56 as i32, 57 as i32, 0 as i32,
+                ])
+                .to_c_bytes();
+                __bytes.push(0_i32);
+                __bytes
+            }));
+            std_basic_stringbuf_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
+                { __tmp_2.as_pointer() },
+                None,
+            )
+        }));
         assert!(
-            Ptr::<i32>::from_string_literal(&[
-                48 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 54 as i32,
-                55 as i32, 56 as i32, 57 as i32, 0 as i32,
-            ])
-            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+            ({
+                (({ ((*sb.borrow()) as ::std::fs::File).pubsetbuf(Ptr::<i32>::null(), 0_i64) })
+                    == (sb.as_pointer()))
+            })
+        );
+        assert!(
+            match (Rc::new(RefCell::new(({ (*sb.borrow()).str_17() }))).as_pointer(),) {
+                (__tmp_3,) => {
+                    Ptr::<i32>::from_string_literal(&[
+                        48 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32,
+                        54 as i32, 55 as i32, 56 as i32, 57 as i32, 0 as i32,
+                    ])
+                    .with_c_str(|__s| {
+                        (*__tmp_3.upgrade().deref())
+                            [..(*__tmp_3.upgrade().deref()).len().saturating_sub(1)]
+                            == *__s
+                    })
+                }
+            }
         );
     }
     return 0;

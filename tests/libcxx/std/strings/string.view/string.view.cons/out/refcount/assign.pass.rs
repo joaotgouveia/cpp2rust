@@ -6,36 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(sv0: ()) -> bool {
-    let sv0: Value<()> = Rc::new(RefCell::new(sv0));
-    let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
-}
-pub fn test_1(sv0: ()) -> bool {
-    let sv0: Value<()> = Rc::new(RefCell::new(sv0));
-    let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
-}
-pub fn test_2(sv0: ()) -> bool {
-    let sv0: Value<()> = Rc::new(RefCell::new(sv0));
-    let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
-}
-pub fn test_3(sv0: ()) -> bool {
-    let sv0: Value<()> = Rc::new(RefCell::new(sv0));
-    let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
-}
-pub fn test_4(sv0: ()) -> bool {
-    let sv0: Value<()> = Rc::new(RefCell::new(sv0));
-    let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
-}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -56,11 +27,57 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(({ test_0(unimplemented!(),) }));
-    assert!(({ test_1(unimplemented!(),) }));
-    assert!(({ test_2(unimplemented!(),) }));
-    assert!(({ test_3(unimplemented!(),) }));
-    assert!(({ test_4(unimplemented!(),) }));
+    assert!(
+        ({
+            test_0(std_basic_string_view_char__std_char_traits_char__::new_1({
+                Ptr::<i8>::from_string_literal(b"1234")
+            }))
+        })
+    );
+    assert!(
+        ({
+            test_1(
+                std_basic_string_view_char8_t__std_char_traits_char8_t__::new_1({
+                    Ptr::<u8>::from_string_literal(&[
+                        49 as u8, 50 as u8, 51 as u8, 52 as u8, 0 as u8,
+                    ])
+                }),
+            )
+        })
+    );
+    assert!(
+        ({
+            test_2(
+                std_basic_string_view_char16_t__std_char_traits_char16_t__::new_1({
+                    Ptr::<u16>::from_string_literal(&[
+                        49 as u16, 50 as u16, 51 as u16, 52 as u16, 0 as u16,
+                    ])
+                }),
+            )
+        })
+    );
+    assert!(
+        ({
+            test_3(
+                std_basic_string_view_char32_t__std_char_traits_char32_t__::new_1({
+                    Ptr::<u32>::from_string_literal(&[
+                        49 as u32, 50 as u32, 51 as u32, 52 as u32, 0 as u32,
+                    ])
+                }),
+            )
+        })
+    );
+    assert!(
+        ({
+            test_4(
+                std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_1({
+                    Ptr::<i32>::from_string_literal(&[
+                        49 as i32, 50 as i32, 51 as i32, 52 as i32, 0 as i32,
+                    ])
+                }),
+            )
+        })
+    );
     const _: () = assert!(true, "test<std::string_view>({{\"abc\", 3}})");;
     const _: () = assert!(true, "test<std::u8string_view>({{u8\"abc\", 3}})");;
     const _: () = assert!(true, "test<std::u16string_view>({{u\"abc\", 3}})");;

@@ -9,6 +9,7 @@
 #include <clang/Basic/SourceManager.h>
 #include <clang/Sema/Sema.h>
 #include <clang/Sema/Template.h>
+#include <llvm/ADT/ArrayRef.h>
 #include <llvm/ADT/STLExtras.h>
 #include <llvm/ADT/StringExtras.h>
 
@@ -36,21 +37,34 @@ namespace {
 
 Model model_ = Model::kUnsafe;
 clang::Sema *sema_ = nullptr;
+llvm::ArrayRef<std::string> rules_ir_dirs_;
+bool check_used_rules_ = false;
+std::vector<const clang::TypedefNameDecl *> unruled_typedefs_;
 
 std::unordered_multimap<RuleKeys::ExprKey, ExprRuleDecl> exprs_;
 std::unordered_multimap<RuleKeys::TypeKey, TypeRuleDecl> types_;
 
 const llvm::json::Object *findRule(Model model, const std::string &dir,
                                    const std::string &name) {
+  assert(!rules_ir_dirs_.empty());
   static std::unordered_map<std::string, llvm::json::Object> indexes;
-  auto path =
-      std::filesystem::path(RULES_IR_DIR) / dir /
-      (model == Model::kRefCount ? "ir_refcount.json" : "ir_unsafe.json");
-  auto [it, inserted] = indexes.try_emplace(path.string());
-  if (inserted && std::filesystem::exists(path)) {
-    it->second = RulesLoader::ReadIndex(path);
+
+  for (const auto &ir_dir : rules_ir_dirs_) {
+    auto prefix = std::filesystem::path(ir_dir) / dir;
+    if (!std::filesystem::exists(prefix)) {
+      continue;
+    }
+
+    auto path = prefix / (model == Model::kRefCount ? "ir_refcount.json"
+                                                    : "ir_unsafe.json");
+    auto [it, inserted] = indexes.try_emplace(path.string());
+    if (inserted && std::filesystem::exists(path)) {
+      it->second = RulesLoader::ReadIndex(path);
+    }
+    return it->second.getObject(name);
   }
-  return it->second.getObject(name);
+
+  return nullptr;
 }
 
 bool pointsToUserType(clang::QualType type) {
@@ -163,58 +177,31 @@ void checkGenerics(const std::string &dir, const std::string &name,
   }
 }
 
-TranslationRule::TypeRule placeholderTypeRule() {
-  TranslationRule::TypeRule rule;
-  rule.initializer.emplace_back(
-      TranslationRule::TextFragment{"unimplemented!()"});
-  rule.type_info.type = "()";
-  return rule;
-}
-
-TranslationRule::ExprRule placeholderExprRule(const clang::NamedDecl *decl) {
-  unsigned num_params = 0;
-  if (auto function = decl->getAsFunction()) {
-    num_params = function->getNumParams();
-  } else {
-    auto proto = llvm::cast<clang::VarDecl>(decl)
-                     ->getType()
-                     ->getPointeeType()
-                     ->getAs<clang::FunctionProtoType>();
-    assert(proto && "placeholder expression rule is neither a function nor a "
-                    "function pointer");
-    num_params = proto->getNumParams();
-  }
-  TranslationRule::ExprRule rule;
-  rule.params.resize(num_params);
-  for (auto &param : rule.params) {
-    param.type = "()";
-  }
-  rule.return_type.type = "()";
-  rule.body.emplace_back(TranslationRule::TextFragment{"unimplemented!()"});
-  return rule;
-}
-
 void addRule(clang::ASTContext &ctx, const std::string &dir,
              const std::string &name, const clang::NamedDecl *decl) {
-  auto rule = findRule(Model::kUnsafe, dir, name);
-  if (model_ == Model::kRefCount) {
-    if (auto refcount_rule = findRule(model_, dir, name)) {
-      rule = refcount_rule;
+  const llvm::json::Object *rule = nullptr;
+  if (!check_used_rules_) {
+    rule = findRule(Model::kUnsafe, dir, name);
+    if (model_ == Model::kRefCount) {
+      if (auto refcount_rule = findRule(model_, dir, name)) {
+        rule = refcount_rule;
+      }
     }
+  }
+  if (!rule) {
+    return;
   }
   if (!name.starts_with('f')) {
     auto keys = RuleKeys::GetTypeKeys(*sema_, decl);
     assert(!keys.empty() && "type rule has no key");
     for (auto key : keys) {
-      auto type_rule = rule ? TranslationRule::ParseTypeRuleJSON(*rule)
-                            : placeholderTypeRule();
-      types_.emplace(key, TypeRuleDecl{decl, std::move(type_rule)});
+      types_.emplace(
+          key, TypeRuleDecl{decl, TranslationRule::ParseTypeRuleJSON(*rule)});
     }
     return;
   }
   auto make_expr_rule = [&] {
-    return rule ? TranslationRule::ParseExprRuleJSON(*rule)
-                : placeholderExprRule(decl);
+    return TranslationRule::ParseExprRuleJSON(*rule);
   };
   if (auto function = decl->getAsFunction()) {
     checkGenerics(dir, name, function, make_expr_rule());
@@ -341,7 +328,23 @@ ExprMatch findExpr(const clang::Expr *use) {
     }
     consider(base);
   }
-  return most_specialized();
+  auto best = most_specialized();
+  // A rule of the operator a rewritten one calls competes with those written
+  // as rewritten (string != "ab" calls string == const char *, which a rule of
+  // basic_string takes over a != of any sentinel), the use is then converted
+  // in its semantic form.
+  if (auto rewritten = llvm::dyn_cast<clang::CXXRewrittenBinaryOperator>(
+          RuleDecls::SkipImplicit(use));
+      rewritten && best.rule_decl) {
+    auto inner = findExpr(rewritten->getDecomposedForm().InnerBinOp);
+    if (inner.rule_decl &&
+        AstMatcher::MoreSpecialized(*sema_, use, inner.rule_decl->decl,
+                                    best.rule_decl->decl) ==
+            inner.rule_decl->decl) {
+      return {};
+    }
+  }
+  return best;
 }
 
 struct TypeRuleMatch {
@@ -416,6 +419,10 @@ TypeRuleMatch findType(clang::QualType use) {
   if (!best.rule_decl) {
     auto spelled = RuleDecls::SpelledTypedef(ctx, use);
     if (spelled && !IsUserDefinedDecl(spelled)) {
+      if (check_used_rules_) {
+        unruled_typedefs_.push_back(spelled);
+        return best;
+      }
       return findType(use.getCanonicalType());
     }
   }
@@ -456,12 +463,33 @@ Matcher::Bindings getBindings(const clang::NamedDecl *rule,
   return bindings;
 }
 
+std::string ruleUID(const clang::NamedDecl *decl) {
+  llvm::StringRef name = decl->getName();
+  if (const auto *ns =
+          llvm::dyn_cast<clang::NamespaceDecl>(decl->getDeclContext())) {
+    llvm::StringRef dir = ns->getName();
+    dir.consume_front("cpp2rust_rules_");
+    return dir.str() + "/" + name.str();
+  }
+
+  name.consume_front("cpp2rust_rules_");
+  const auto [dir, rule_name] = name.rsplit('_');
+  return dir.str() + "/" + rule_name.str();
+}
+
 } // namespace
+
+void SetCheckUsedRules() { check_used_rules_ = true; }
+
+void SetIRDirs(llvm::ArrayRef<std::string> rules_ir_dirs) {
+  rules_ir_dirs_ = rules_ir_dirs;
+}
 
 void Load(clang::Sema &sema, Model model) {
   auto &ctx = sema.Context;
   sema_ = &sema;
   model_ = model;
+  unruled_typedefs_.clear();
   exprs_.clear();
   types_.clear();
   for (auto decl : ctx.getTranslationUnitDecl()->decls()) {
@@ -530,6 +558,23 @@ clang::QualType iteratorValueType(clang::QualType iterator) {
   auto value = valueTypeMember(record->getDefinition());
   // output iterators declare value_type void
   return value.isNull() || value->isVoidType() ? clang::QualType() : value;
+}
+
+std::string SearchUID(clang::ASTContext &ctx, const clang::Expr *expr) {
+  if (ExprHasUserDefinedDecl(expr)) {
+    return {};
+  }
+  auto match = findExpr(expr);
+  return match.rule_decl ? ruleUID(match.rule_decl->decl) : std::string();
+}
+
+std::string SearchUID(clang::ASTContext &ctx, clang::QualType qual_type) {
+  auto match = findType(qual_type);
+  return match.rule_decl ? ruleUID(match.rule_decl->decl) : std::string();
+}
+
+std::vector<const clang::TypedefNameDecl *> TakeUnruledTypedefs() {
+  return std::exchange(unruled_typedefs_, {});
 }
 
 clang::QualType iteratorElementType(clang::ASTContext &ctx,
@@ -630,6 +675,10 @@ clang::QualType GetInitType(clang::ASTContext &ctx, const clang::Expr *expr) {
 
 std::string InitCppType(Model model, const std::string &dir,
                         const std::string &name) {
+  if (check_used_rules_) {
+    return {};
+  }
+
   auto rule = findRule(model, dir, name);
   if (!rule) {
     rule = findRule(Model::kUnsafe, dir, name);
@@ -772,16 +821,25 @@ bool ParamPointsTo(clang::ASTContext &ctx, const clang::Expr *expr,
   return pointsTo(ctx, rule->params.at(index), bindings, type);
 }
 
+bool ReturnPointsTo(clang::ASTContext &ctx, const clang::Expr *expr,
+                    clang::QualType type) {
+  auto [rule, bindings] = Search(ctx, expr);
+  return rule && pointsTo(ctx, rule->return_type, bindings, type);
+}
+
+bool IsProxyRecord(clang::ASTContext &ctx, clang::QualType type) {
+  return type->isRecordType() && MapsToPointer(ctx, type);
+}
+
 bool ReturnsProxyReference(clang::ASTContext &ctx, const clang::Expr *expr,
                            clang::QualType type) {
   auto *ref = type->getAs<clang::ReferenceType>();
-  if (!ref || !ref->getPointeeType()->isRecordType() ||
-      !MapsToPointer(ctx, ref->getPointeeType())) {
+  if (!ref || !IsProxyRecord(ctx, ref->getPointeeType())) {
     return false;
   }
   auto [rule, bindings] = Search(ctx, expr);
-  return rule && !pointsTo(ctx, rule->return_type, bindings,
-                           ref->getPointeeType());
+  return rule &&
+         !pointsTo(ctx, rule->return_type, bindings, ref->getPointeeType());
 }
 
 clang::Expr *BuildParamConversion(clang::ASTContext &ctx,

@@ -23,6 +23,11 @@ impl malloc_allocator_base {
         dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
+impl CppMove for malloc_allocator_base {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
@@ -53,6 +58,11 @@ impl A_int_ {
         }
     }
 }
+impl CppMove for A_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(i32, new, mut_ptr)]
 #[byte_size(16)]
@@ -72,12 +82,21 @@ impl A_Holder_NS_Incomplete__ptr_ {
         }
     }
 }
+impl CppMove for A_Holder_NS_Incomplete__ptr_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_4() -> bool {
     {
         let called: Value<i32> = Rc::new(RefCell::new(0));
         let a: Value<A_int_> = Rc::new(RefCell::new(A_int_::new({ called.as_pointer() })));
-        unimplemented!();
-        assert!(((*called.borrow()) == 1));
+        ({
+            let ___a: Ptr<A_int_> = a.as_pointer();
+            let ___p: Ptr<i32> = (field_ptr!(a.as_pointer(), storage));
+            std_allocator_traits_A_int__::deallocate(___a, ___p, 10_usize)
+        });
+        assert!(({ ((*called.borrow()) == 1) }));
     }
     {
         let called: Value<i32> = Rc::new(RefCell::new(0));
@@ -85,8 +104,12 @@ pub fn test_4() -> bool {
             Rc::new(RefCell::new(A_Holder_NS_Incomplete__ptr_::new({
                 called.as_pointer()
             })));
-        unimplemented!();
-        assert!(((*called.borrow()) == 1));
+        ({
+            let ___a: Ptr<A_Holder_NS_Incomplete__ptr_> = a.as_pointer();
+            let ___p: Ptr<Ptr<Holder_NS_Incomplete_>> = (field_ptr!(a.as_pointer(), storage));
+            std_allocator_traits_A_Holder_NS_Incomplete__ptr__::deallocate(___a, ___p, 10_usize)
+        });
+        assert!(({ ((*called.borrow()) == 1) }));
     }
     return true;
 }
@@ -124,9 +147,9 @@ impl A_Holder_NS_Incomplete__ptr_Impl for Ptr<A_Holder_NS_Incomplete__ptr_> {
     fn deallocate(&self, mut p: Ptr<Ptr<Holder_NS_Incomplete_>>, mut n: usize) {
         assert!(({ (p).clone() } == { (field_ptr!((*self), storage)) }));
         assert!((n == 10_usize));
-        (*self)
-            .with(|__s| __s.called_.clone())
-            .with_mut(|__v| __v.prefix_inc());
+        (*self).with(|__s| __s.called_.clone()).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub trait A_int_Impl {
@@ -136,9 +159,9 @@ impl A_int_Impl for Ptr<A_int_> {
     fn deallocate(&self, mut p: Ptr<i32>, mut n: usize) {
         assert!(({ (p).clone() } == { (field_ptr!((*self), storage)) }));
         assert!((n == 10_usize));
-        (*self)
-            .with(|__s| __s.called_.clone())
-            .with_mut(|__v| __v.prefix_inc());
+        (*self).with(|__s| __s.called_.clone()).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub fn __cpp2rust_init_globals() {

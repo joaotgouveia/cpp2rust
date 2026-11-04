@@ -6,47 +6,47 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn add_const_0() -> () {
-    return (0_i32 as ());
+pub fn add_const_0() -> i32 {
+    return 0_i32;
 }
-pub fn add_cv_1() -> () {
-    return (0_i32 as ());
+pub fn add_cv_1() -> i32 {
+    return 0_i32;
 }
-pub fn add_lvalue_reference_2() -> () {
+pub fn add_lvalue_reference_2() -> Ptr<i32> {
     return i_3.with(|v| v.as_pointer());
 }
 thread_local!(
     static i_3: Value<i32> = Rc::new(RefCell::new(0_i32));
 );
-pub fn add_pointer_4() -> () {
-    return unimplemented!();
+pub fn add_pointer_4() -> Ptr<i32> {
+    return Ptr::<i32>::null();
 }
-pub fn add_rvalue_reference_5() -> () {
+pub fn add_rvalue_reference_5() -> Ptr<i32> {
     return i_6.with(|v| v.as_pointer());
 }
 thread_local!(
     static i_6: Value<i32> = Rc::new(RefCell::new(0_i32));
 );
-pub fn add_volatile_7() -> () {
-    return (i_8.with(|rc| *rc.borrow()) as ());
+pub fn add_volatile_7() -> i32 {
+    return i_8.with(|rc| *rc.borrow());
 }
 thread_local!(
     static i_8: Value<i32> = Rc::new(RefCell::new(0_i32));
 );
-pub fn decay_9() -> () {
-    return unimplemented!();
+pub fn decay_9() -> i32 {
+    return 0_i32;
 }
 pub fn enable_if_10() -> i32 {
     return 0_i32;
 }
-pub fn make_signed_11() -> () {
-    return unimplemented!();
+pub fn make_signed_11() -> i32 {
+    return 0_i32;
 }
-pub fn make_unsigned_12() -> () {
-    return unimplemented!();
+pub fn make_unsigned_12() -> u32 {
+    return 0_u32;
 }
-pub fn remove_all_extents_13() -> () {
-    return unimplemented!();
+pub fn remove_all_extents_13() -> i32 {
+    return 0_i32;
 }
 pub fn remove_const_14() -> i32 {
     return 0_i32;
@@ -57,11 +57,11 @@ pub fn remove_cv_15() -> i32 {
 pub fn remove_cvref_16() -> i32 {
     return 0_i32;
 }
-pub fn remove_extent_17() -> () {
-    return unimplemented!();
+pub fn remove_extent_17() -> i32 {
+    return 0_i32;
 }
-pub fn remove_pointer_18() -> () {
-    return unimplemented!();
+pub fn remove_pointer_18() -> i32 {
+    return 0_i32;
 }
 pub fn remove_reference_19() -> i32 {
     return 0_i32;
@@ -69,8 +69,8 @@ pub fn remove_reference_19() -> i32 {
 pub fn remove_volatile_20() -> i32 {
     return 0_i32;
 }
-pub fn type_identity_21() -> () {
-    return unimplemented!();
+pub fn type_identity_21() -> i32 {
+    return 0_i32;
 }
 pub fn underlying_type_22() -> i32 {
     return 0_i32;

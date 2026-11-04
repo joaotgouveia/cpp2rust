@@ -7,8 +7,11 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let vec_: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let vec_: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
+    {
+        let a0_clone = true.clone();
+        (*vec_.borrow_mut()).push(a0_clone)
+    };
     let mut ref_: Ptr<bool> = vec_.decay().offset(0_usize as isize);
     let mut ref2: Ptr<bool> = (ref_).clone();
     assert!((ref_.read() == ref2.read()) && (ref2.read()));

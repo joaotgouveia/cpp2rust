@@ -11,23 +11,29 @@ use std::rc::{Rc, Weak};
 #[cpp_into(f64, to_f64_1_double)]
 #[byte_size(1)]
 pub struct NastyConvertible {}
+impl CppMove for NastyConvertible {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_0() {
     let nasty: Value<NastyConvertible> = Rc::new(RefCell::new(<NastyConvertible>::default()));
-    let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_f32));
-    assert!((unimplemented!() == 0_f32));
+    let x: Value<std_complex_float_> = Rc::new(RefCell::new(<std_complex_float_>::default()));
+    assert!(({ (({ (*x.borrow()).real_5() }) == 0_f32) }));
+    assert!(({ (({ (*x.borrow()).imag_6() }) == 0_f32) }));
 }
 pub fn test_1() {
     let nasty: Value<NastyConvertible> = Rc::new(RefCell::new(<NastyConvertible>::default()));
-    let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_f64));
-    assert!((unimplemented!() == 0_f64));
+    let x: Value<std_complex_double_> = Rc::new(RefCell::new(<std_complex_double_>::default()));
+    assert!(({ (({ (*x.borrow()).real_5() }) == 0_f64) }));
+    assert!(({ (({ (*x.borrow()).imag_6() }) == 0_f64) }));
 }
 pub fn test_2() {
     let nasty: Value<NastyConvertible> = Rc::new(RefCell::new(<NastyConvertible>::default()));
-    let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!() == 0_f64));
-    assert!((unimplemented!() == 0_f64));
+    let x: Value<std_complex_long_double_> =
+        Rc::new(RefCell::new(<std_complex_long_double_>::default()));
+    assert!(({ (({ (*x.borrow()).real_5() }) == 0_f64) }));
+    assert!(({ (({ (*x.borrow()).imag_6() }) == 0_f64) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
