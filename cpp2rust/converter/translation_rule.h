@@ -94,7 +94,7 @@ struct Bound {
 bool AnyFragment(const std::vector<BodyFragment> &body,
                  llvm::function_ref<bool(const BodyFragment &)> pred);
 
-enum class ElemsKind { kVec, kArray };
+enum class ElemsKind { kVec, kVecDeque, kArray };
 
 struct Elems {
   ElemsKind kind;

@@ -97,6 +97,7 @@ pub struct Elems {
 #[serde(rename_all = "snake_case")]
 pub enum ElemsKind {
     Vec,
+    VecDeque,
     Array,
 }
 

@@ -49,9 +49,11 @@ TypeInfo ParseTypeInfoJSON(const llvm::json::Object &obj) {
     auto kind = elems->getString("kind");
     auto type = elems->getString("type");
     assert(kind && type);
-    assert(*kind == "vec" || *kind == "array");
-    info.elems = Elems{*kind == "vec" ? ElemsKind::kVec : ElemsKind::kArray,
-                       type->str()};
+    assert(*kind == "vec" || *kind == "vec_deque" || *kind == "array");
+    auto elems_kind = *kind == "vec"         ? ElemsKind::kVec
+                      : *kind == "vec_deque" ? ElemsKind::kVecDeque
+                                             : ElemsKind::kArray;
+    info.elems = Elems{elems_kind, type->str()};
   }
   return info;
 }

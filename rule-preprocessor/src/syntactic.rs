@@ -116,6 +116,10 @@ fn elems(ty: &ast::Type) -> Option<Elems> {
                     kind: ElemsKind::Vec,
                     ty: elem.syntax().text().to_string(),
                 }),
+                ("VecDeque", elem) => Some(Elems {
+                    kind: ElemsKind::VecDeque,
+                    ty: elem.syntax().text().to_string(),
+                }),
                 ("Box", ast::Type::SliceType(slice)) => Some(Elems {
                     kind: ElemsKind::Array,
                     ty: slice.ty()?.syntax().text().to_string(),
