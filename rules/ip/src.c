@@ -2,6 +2,7 @@
 #include <netinet/tcp.h>
 
 typedef struct in_addr t2;
+typedef in_addr_t t5;
 
 int f1(void) { return IPPROTO_TCP; }
 

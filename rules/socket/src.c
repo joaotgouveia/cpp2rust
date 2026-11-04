@@ -5,3 +5,4 @@
 #include <sys/un.h>
 
 typedef struct sockaddr t1;
+typedef sa_family_t t5;

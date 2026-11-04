@@ -5,6 +5,7 @@
 #include <sys/sem.h>
 #include <sys/types.h>
 
+typedef key_t t1;
 typedef struct sembuf t2;
 typedef struct semid_ds t3;
 
