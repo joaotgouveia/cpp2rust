@@ -20,10 +20,9 @@ fn main_0() -> i32 {
         Rc::new(RefCell::new(8)),
     )));
     {
-        let __a1 = ({ (*b.borrow()).clone() });
         a.as_pointer().write((
-            Rc::new(RefCell::new(((__a1.0.as_pointer().read()) as i32))),
-            Rc::new(RefCell::new(((__a1.1.as_pointer().read()) as i64))),
+            Rc::new(RefCell::new((((*b.borrow()).0.as_pointer().read()) as i32))),
+            Rc::new(RefCell::new((((*b.borrow()).1.as_pointer().read()) as i64))),
         ));
         a.as_pointer()
     };

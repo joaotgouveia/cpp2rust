@@ -119,8 +119,7 @@ fn f73<T1: Default>(a0: &mut Vec<T1>, a1: &mut T1) {
 }
 
 fn f74<T1: Default>(a0: &mut Vec<T1>, a1: usize) {
-    let __a0 = a1 as usize;
-    a0.resize_with(__a0, || <T1>::default())
+    a0.resize_with(a1, || <T1>::default())
 }
 
 fn f75<T1>(a0: &mut Vec<T1>) {
@@ -226,8 +225,7 @@ fn f101<T1: Clone + ByteRepr, T2, T3: CppInputIterator<T1>>(
 }
 
 fn f102<T1: Default + Clone>(a0: &mut Vec<T1>, a1: usize, a2: T1) {
-    let __a0 = a1 as usize;
-    a0.resize(__a0, a2)
+    a0.resize(a1, a2)
 }
 
 fn f103<T1: ByteRepr + Clone>(a0: Ptr<Vec<T1>>, a1: &mut Vec<T1>) {
@@ -291,21 +289,18 @@ fn f118<T1>(a0: Ptr<bool>, a1: usize) -> Ptr<bool> {
 }
 
 fn f119(a0: Ptr<bool>, a1: bool) -> Ptr<bool> {
-    let __a0 = a0;
-    __a0.write(a1);
-    __a0
+    a0.write(a1);
+    a0
 }
 
 fn f120(a0: Ptr<bool>, a1: bool) -> Ptr<bool> {
-    let __a0 = a0;
-    __a0.write(a1);
-    __a0
+    a0.write(a1);
+    a0
 }
 
 fn f121(a0: Ptr<bool>, a1: Ptr<bool>) -> Ptr<bool> {
-    let __a0 = a0;
-    __a0.write(a1.read());
-    __a0
+    a0.write(a1.read());
+    a0
 }
 
 fn f122(a0: Ptr<bool>, a1: Ptr<bool>) -> bool {

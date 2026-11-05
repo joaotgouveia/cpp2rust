@@ -29,6 +29,10 @@ fn t6() -> Ptr<::std::fs::File> {
     Ptr::null()
 }
 
+fn t7() -> ::std::fs::File {
+    ::std::fs::File::open("").unwrap()
+}
+
 fn f1(a0: Ptr<i8>) -> ::std::fs::File {
     ::std::fs::File::create(a0.to_string()).expect("Failed to open file")
 }
@@ -41,7 +45,7 @@ fn f3(a0: &mut ::std::fs::File) -> &mut ::std::fs::File {
     a0
 }
 
-fn f4(a0: ::std::fs::File) -> ::std::fs::File {
+fn f4(a0: Ptr<::std::fs::File>) -> Ptr<::std::fs::File> {
     a0
 }
 
@@ -58,5 +62,9 @@ fn f7(a0: Ptr<::std::fs::File>) -> Ptr<::std::fs::File> {
 }
 
 fn f8(a0: Ptr<::std::fs::File>) -> Ptr<::std::fs::File> {
+    a0
+}
+
+fn f9(a0: Ptr<::std::fs::File>) -> Ptr<::std::fs::File> {
     a0
 }
