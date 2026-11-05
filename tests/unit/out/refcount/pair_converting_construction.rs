@@ -203,132 +203,186 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let widened: Value<std_pair_long__unsigned_int_> = Rc::new(RefCell::new({
-        let __tmp_0: Value<i32> = Rc::new(RefCell::new(-1_i32));
-        let __tmp_1: Value<u32> = Rc::new(RefCell::new(2_u32));
-        std_pair_long__unsigned_int_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-    }));
-    ({ cpp2rust_assert_fail_0(({ (*widened.borrow()).first } == -1_i64)) });
-    ({ cpp2rust_assert_fail_0(({ (*widened.borrow()).second } == 2_u32)) });
-    let from_ints: Value<std_pair_Celsius__Celsius_> = Rc::new(RefCell::new({
-        let __tmp_2: Value<i32> = Rc::new(RefCell::new(1));
-        let __tmp_3: Value<i32> = Rc::new(RefCell::new(2));
-        std_pair_Celsius__Celsius_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-    }));
-    ({ cpp2rust_assert_fail_0(({ (*from_ints.borrow()).first.degrees } == 1)) });
-    ({ cpp2rust_assert_fail_0(({ (*from_ints.borrow()).second.degrees } == 2)) });
+    let widened: Value<(Value<i64>, Value<u32>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new((-1_i32 as i64))),
+        Rc::new(RefCell::new(2_u32)),
+    )));
+    assert!(({ ((*(*widened.borrow()).0.borrow()) == -1_i64) }));
+    assert!(({ ((*(*widened.borrow()).1.borrow()) == 2_u32) }));
+    let from_ints: Value<(Value<Celsius>, Value<Celsius>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(Celsius::new({ 1 }))),
+        Rc::new(RefCell::new(Celsius::new({ 2 }))),
+    )));
+    assert!(({ ({ (*(*from_ints.borrow()).0.borrow()).degrees } == 1) }));
+    assert!(({ ({ (*(*from_ints.borrow()).1.borrow()).degrees } == 2) }));
     let m: Value<Meters> = Rc::new(RefCell::new(Meters { value: 7 }));
-    let from_operators: Value<std_pair_int__long_> = Rc::new(RefCell::new(
-        std_pair_int__long_::new_1({ m.as_pointer() }, { m.as_pointer() }),
+    let from_operators: Value<(Value<i32>, Value<i64>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(({ MetersImpl::to_i32(&m.as_pointer()) }))),
+        Rc::new(RefCell::new(
+            (({ MetersImpl::to_i32(&m.as_pointer()) }) as i64),
+        )),
+    )));
+    assert!(({ ((*(*from_operators.borrow()).0.borrow()) == 7) }));
+    assert!(({ ((*(*from_operators.borrow()).1.borrow()) == 7_i64) }));
+    let from_moved_pair: Value<(Value<i64>, Value<f64>)> = Rc::new(RefCell::new(
+        match (Rc::new(RefCell::new((
+            Rc::new(RefCell::new(3)),
+            Rc::new(RefCell::new(4)),
+        )))
+        .as_pointer(),)
+        {
+            (__tmp_0,) => (
+                Rc::new(RefCell::new(
+                    (((*__tmp_0.upgrade().deref()).0.as_pointer().read()) as i64),
+                )),
+                Rc::new(RefCell::new(
+                    (((*__tmp_0.upgrade().deref()).1.as_pointer().read()) as f64),
+                )),
+            ),
+        },
     ));
-    ({ cpp2rust_assert_fail_0(({ (*from_operators.borrow()).first } == 7)) });
-    ({ cpp2rust_assert_fail_0(({ (*from_operators.borrow()).second } == 7_i64)) });
-    let from_moved_pair: Value<std_pair_long__double_> = Rc::new(RefCell::new(
-        ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(3));
-            let ___y: Value<i32> = Rc::new(RefCell::new(4));
-            make_pair_1(___x.as_pointer(), ___y.as_pointer())
-        }),
+    assert!(({ ((*(*from_moved_pair.borrow()).0.borrow()) == 3_i64) }));
+    assert!(({ ((*(*from_moved_pair.borrow()).1.borrow()) == 4_f64) }));
+    let ints: Value<(Value<i32>, Value<i32>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(5)),
+        Rc::new(RefCell::new(6)),
+    )));
+    let from_copied_pair: Value<(Value<Celsius>, Value<i64>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(<Celsius as CppFrom<i32>>::cpp_from(
+            (*ints.borrow()).0.as_pointer(),
+        ))),
+        Rc::new(RefCell::new(
+            (((*ints.borrow()).1.as_pointer().read()) as i64),
+        )),
+    )));
+    assert!(({ ({ (*(*from_copied_pair.borrow()).0.borrow()).degrees } == 5) }));
+    assert!(({ ((*(*from_copied_pair.borrow()).1.borrow()) == 6_i64) }));
+    let meters: Value<(Value<Meters>, Value<Meters>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(Meters { value: 8 })),
+        Rc::new(RefCell::new(Meters { value: 9 })),
+    )));
+    let from_operator_pair: Value<(Value<i32>, Value<i32>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(<i32 as CppFrom<Meters>>::cpp_from(
+            (*meters.borrow()).0.as_pointer(),
+        ))),
+        Rc::new(RefCell::new(<i32 as CppFrom<Meters>>::cpp_from(
+            (*meters.borrow()).1.as_pointer(),
+        ))),
+    )));
+    assert!(({ ((*(*from_operator_pair.borrow()).0.borrow()) == 8) }));
+    assert!(({ ((*(*from_operator_pair.borrow()).1.borrow()) == 9) }));
+    let celsius: Value<(Value<Celsius>, Value<Celsius>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(Celsius::new({ 10 }))),
+        Rc::new(RefCell::new(Celsius::new({ 11 }))),
+    )));
+    let from_record_pair: Value<(Value<Label>, Value<Owner>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(<Label as CppFrom<Celsius>>::cpp_from(
+            (*celsius.borrow()).0.as_pointer(),
+        ))),
+        Rc::new(RefCell::new(<Owner as CppFrom<Celsius>>::cpp_from(
+            (*celsius.borrow()).1.as_pointer(),
+        ))),
+    )));
+    assert!(({ ({ (*(*from_record_pair.borrow()).0.borrow()).id } == 10) }));
+    assert!(({ ({ (*(*from_record_pair.borrow()).1.borrow()).copied } == 11) }));
+    assert!(({ ({ (*(*from_record_pair.borrow()).1.borrow()).taken } == 0) }));
+    let from_moved_record_pair: Value<(Value<Label>, Value<Owner>)> = Rc::new(RefCell::new(
+        match (Rc::new(RefCell::new((
+            Rc::new(RefCell::new(Celsius::new({ 12 }))),
+            Rc::new(RefCell::new(Celsius::new({ 13 }))),
+        )))
+        .as_pointer(),)
+        {
+            (__tmp_1,) => (
+                Rc::new(RefCell::new(<Label as CppFrom<Celsius>>::cpp_from_move(
+                    (*__tmp_1.upgrade().deref()).0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<Owner as CppFrom<Celsius>>::cpp_from_move(
+                    (*__tmp_1.upgrade().deref()).1.as_pointer(),
+                ))),
+            ),
+        },
     ));
-    ({ cpp2rust_assert_fail_0(({ (*from_moved_pair.borrow()).first } == 3_i64)) });
-    ({ cpp2rust_assert_fail_0(({ (*from_moved_pair.borrow()).second } == 4_f64)) });
-    let ints: Value<std_pair_int__int_> = Rc::new(RefCell::new({
-        let __tmp_4: Value<i32> = Rc::new(RefCell::new(5));
-        let __tmp_5: Value<i32> = Rc::new(RefCell::new(6));
-        std_pair_int__int_::new_1({ __tmp_4.as_pointer() }, { __tmp_5.as_pointer() })
-    }));
-    let from_copied_pair: Value<std_pair_Celsius__long_> =
-        Rc::new(RefCell::new(std_pair_Celsius__long_::new_1({
-            ints.as_pointer()
-        })));
-    ({ cpp2rust_assert_fail_0(({ (*from_copied_pair.borrow()).first.degrees } == 5)) });
-    ({ cpp2rust_assert_fail_0(({ (*from_copied_pair.borrow()).second } == 6_i64)) });
-    let meters: Value<std_pair_Meters__Meters_> = Rc::new(RefCell::new({
-        let __tmp_6: Value<Meters> = Rc::new(RefCell::new(Meters { value: 8 }));
-        let __tmp_7: Value<Meters> = Rc::new(RefCell::new(Meters { value: 9 }));
-        std_pair_Meters__Meters_::new_1({ __tmp_6.as_pointer() }, { __tmp_7.as_pointer() })
-    }));
-    let from_operator_pair: Value<std_pair_int__int_> =
-        Rc::new(RefCell::new(std_pair_int__int_::new_2({
-            meters.as_pointer()
-        })));
-    ({ cpp2rust_assert_fail_0(({ (*from_operator_pair.borrow()).first } == 8)) });
-    ({ cpp2rust_assert_fail_0(({ (*from_operator_pair.borrow()).second } == 9)) });
-    let celsius: Value<std_pair_Celsius__Celsius_> = Rc::new(RefCell::new({
-        let __tmp_8: Value<i32> = Rc::new(RefCell::new(10));
-        let __tmp_9: Value<i32> = Rc::new(RefCell::new(11));
-        std_pair_Celsius__Celsius_::new_1({ __tmp_8.as_pointer() }, { __tmp_9.as_pointer() })
-    }));
-    let from_record_pair: Value<std_pair_Label__Owner_> =
-        Rc::new(RefCell::new(std_pair_Label__Owner_::new_1({
-            celsius.as_pointer()
-        })));
-    ({ cpp2rust_assert_fail_0(({ (*from_record_pair.borrow()).first.id } == 10)) });
-    ({ cpp2rust_assert_fail_0(({ (*from_record_pair.borrow()).second.copied } == 11)) });
-    ({ cpp2rust_assert_fail_0(({ (*from_record_pair.borrow()).second.taken } == 0)) });
-    let from_moved_record_pair: Value<std_pair_Label__Owner_> = Rc::new(RefCell::new(
-        ({
-            let ___x: Value<Celsius> = Rc::new(RefCell::new(Celsius::new({ 12 })));
-            let ___y: Value<Celsius> = Rc::new(RefCell::new(Celsius::new({ 13 })));
-            make_pair_2(___x.as_pointer(), ___y.as_pointer())
-        }),
+    assert!(({ ({ (*(*from_moved_record_pair.borrow()).0.borrow()).id } == 12) }));
+    assert!(({ ({ (*(*from_moved_record_pair.borrow()).1.borrow()).taken } == 13) }));
+    assert!(({ ({ (*(*from_moved_record_pair.borrow()).1.borrow()).copied } == 0) }));
+    let from_by_value_pair: Value<(Value<Holder>, Value<Holder>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(<Holder as CppFrom<Celsius>>::cpp_from(
+            (*celsius.borrow()).0.as_pointer(),
+        ))),
+        Rc::new(RefCell::new(<Holder as CppFrom<Celsius>>::cpp_from(
+            (*celsius.borrow()).1.as_pointer(),
+        ))),
+    )));
+    assert!(({ ({ (*(*from_by_value_pair.borrow()).0.borrow()).value } == 10) }));
+    assert!(({ ({ (*(*from_by_value_pair.borrow()).1.borrow()).value } == 11) }));
+    let from_moved_by_value_pair: Value<(Value<Holder>, Value<Holder>)> = Rc::new(RefCell::new(
+        match (Rc::new(RefCell::new((
+            Rc::new(RefCell::new(Celsius::new({ 14 }))),
+            Rc::new(RefCell::new(Celsius::new({ 15 }))),
+        )))
+        .as_pointer(),)
+        {
+            (__tmp_2,) => (
+                Rc::new(RefCell::new(<Holder as CppFrom<Celsius>>::cpp_from_move(
+                    (*__tmp_2.upgrade().deref()).0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<Holder as CppFrom<Celsius>>::cpp_from_move(
+                    (*__tmp_2.upgrade().deref()).1.as_pointer(),
+                ))),
+            ),
+        },
     ));
-    ({ cpp2rust_assert_fail_0(({ (*from_moved_record_pair.borrow()).first.id } == 12)) });
-    ({ cpp2rust_assert_fail_0(({ (*from_moved_record_pair.borrow()).second.taken } == 13)) });
-    ({ cpp2rust_assert_fail_0(({ (*from_moved_record_pair.borrow()).second.copied } == 0)) });
-    let from_by_value_pair: Value<std_pair_Holder__Holder_> =
-        Rc::new(RefCell::new(std_pair_Holder__Holder_::new_1({
-            celsius.as_pointer()
-        })));
-    ({ cpp2rust_assert_fail_0(({ (*from_by_value_pair.borrow()).first.value } == 10)) });
-    ({ cpp2rust_assert_fail_0(({ (*from_by_value_pair.borrow()).second.value } == 11)) });
-    let from_moved_by_value_pair: Value<std_pair_Holder__Holder_> = Rc::new(RefCell::new(
-        ({
-            let ___x: Value<Celsius> = Rc::new(RefCell::new(Celsius::new({ 14 })));
-            let ___y: Value<Celsius> = Rc::new(RefCell::new(Celsius::new({ 15 })));
-            make_pair_2(___x.as_pointer(), ___y.as_pointer())
-        }),
-    ));
-    ({ cpp2rust_assert_fail_0(({ (*from_moved_by_value_pair.borrow()).first.value } == 14)) });
-    ({ cpp2rust_assert_fail_0(({ (*from_moved_by_value_pair.borrow()).second.value } == 15)) });
+    assert!(({ ({ (*(*from_moved_by_value_pair.borrow()).0.borrow()).value } == 14) }));
+    assert!(({ ({ (*(*from_moved_by_value_pair.borrow()).1.borrow()).value } == 15) }));
     let mut defaulted: Fallback = Fallback::new(None);
-    ({ cpp2rust_assert_fail_0((defaulted.value == -1_i32)) });
-    let from_defaulted_ctor: Value<std_pair_Fallback__long_> =
-        Rc::new(RefCell::new(std_pair_Fallback__long_::new_1({
-            ints.as_pointer()
-        })));
-    ({ cpp2rust_assert_fail_0(({ (*from_defaulted_ctor.borrow()).first.value } == 5)) });
-    ({ cpp2rust_assert_fail_0(({ (*from_defaulted_ctor.borrow()).second } == 6_i64)) });
+    assert!((defaulted.value == -1_i32));
+    let from_defaulted_ctor: Value<(Value<Fallback>, Value<i64>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(<Fallback as CppFrom<i32>>::cpp_from(
+            (*ints.borrow()).0.as_pointer(),
+        ))),
+        Rc::new(RefCell::new(
+            (((*ints.borrow()).1.as_pointer().read()) as i64),
+        )),
+    )));
+    assert!(({ ({ (*(*from_defaulted_ctor.borrow()).0.borrow()).value } == 5) }));
+    assert!(({ ((*(*from_defaulted_ctor.borrow()).1.borrow()) == 6_i64) }));
     let counter: Value<Counter> = Rc::new(RefCell::new(Counter { hits: 3 }));
-    let forwarded_mutable_ref: Value<std_pair_Observer__int_> = Rc::new(RefCell::new({
-        let __tmp_10: Value<i32> = Rc::new(RefCell::new(0));
-        std_pair_Observer__int_::new_1({ counter.as_pointer() }, { __tmp_10.as_pointer() })
-    }));
-    ({ cpp2rust_assert_fail_0(({ (*forwarded_mutable_ref.borrow()).first.seen } == 3)) });
-    ({ cpp2rust_assert_fail_0(({ (*counter.borrow()).hits } == 4)) });
-    let from_template_ctor: Value<std_pair_Tag__Tag_> =
-        Rc::new(RefCell::new(std_pair_Tag__Tag_::new_1({
-            celsius.as_pointer()
-        })));
-    ({ cpp2rust_assert_fail_0(({ (*from_template_ctor.borrow()).first.code } == 110)) });
-    ({ cpp2rust_assert_fail_0(({ (*from_template_ctor.borrow()).second.code } == 111)) });
+    let forwarded_mutable_ref: Value<(Value<Observer>, Value<i32>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(Observer::new({ counter.as_pointer() }))),
+        Rc::new(RefCell::new(0)),
+    )));
+    assert!(({ ({ (*(*forwarded_mutable_ref.borrow()).0.borrow()).seen } == 3) }));
+    assert!(({ ({ (*counter.borrow()).hits } == 4) }));
+    let from_template_ctor: Value<(Value<Tag>, Value<Tag>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(<Tag as CppFrom<Celsius>>::cpp_from(
+            (*celsius.borrow()).0.as_pointer(),
+        ))),
+        Rc::new(RefCell::new(<Tag as CppFrom<Celsius>>::cpp_from(
+            (*celsius.borrow()).1.as_pointer(),
+        ))),
+    )));
+    assert!(({ ({ (*(*from_template_ctor.borrow()).0.borrow()).code } == 110) }));
+    assert!(({ ({ (*(*from_template_ctor.borrow()).1.borrow()).code } == 111) }));
     let lvalue_source: Value<Celsius> = Rc::new(RefCell::new(Celsius::new({ 16 })));
     let moved_source: Value<Celsius> = Rc::new(RefCell::new(Celsius::new({ 17 })));
-    let forwarded_records: Value<std_pair_Label__Owner_> = Rc::new(RefCell::new(
-        std_pair_Label__Owner_::new_2({ lvalue_source.as_pointer() }, {
-            moved_source.as_pointer()
-        }),
-    ));
-    ({ cpp2rust_assert_fail_0(({ (*forwarded_records.borrow()).first.id } == 16)) });
-    ({ cpp2rust_assert_fail_0(({ (*forwarded_records.borrow()).second.taken } == 17)) });
-    ({ cpp2rust_assert_fail_0(({ (*forwarded_records.borrow()).second.copied } == 0)) });
-    let from_string_literals: Value<std_pair_Name__Name_> = Rc::new(RefCell::new(
-        std_pair_Name__Name_::new_1({ Ptr::<i8>::from_string_literal(b"ab") }, {
+    let forwarded_records: Value<(Value<Label>, Value<Owner>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(Label::new({ lvalue_source.as_pointer() }))),
+        Rc::new(RefCell::new(Owner::new_2({ moved_source.as_pointer() }))),
+    )));
+    assert!(({ ({ (*(*forwarded_records.borrow()).0.borrow()).id } == 16) }));
+    assert!(({ ({ (*(*forwarded_records.borrow()).1.borrow()).taken } == 17) }));
+    assert!(({ ({ (*(*forwarded_records.borrow()).1.borrow()).copied } == 0) }));
+    let from_string_literals: Value<(Value<Name>, Value<Name>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(Name::new({
+            Ptr::<i8>::from_string_literal(b"ab")
+        }))),
+        Rc::new(RefCell::new(Name::new({
             Ptr::<i8>::from_string_literal(b"cde")
-        }),
-    ));
-    ({ cpp2rust_assert_fail_0(({ (*from_string_literals.borrow()).first.len } == 2)) });
-    ({ cpp2rust_assert_fail_0(({ (*from_string_literals.borrow()).second.len } == 3)) });
+        }))),
+    )));
+    assert!(({ ({ (*(*from_string_literals.borrow()).0.borrow()).len } == 2) }));
+    assert!(({ ({ (*(*from_string_literals.borrow()).1.borrow()).len } == 3) }));
     return 0;
 }
 pub trait MetersImpl {

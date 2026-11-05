@@ -262,7 +262,7 @@ private:
   // borrowed, unless the rule takes a pointer to them, other than to a
   // temporary copy of them, or they are bound to references. A pointer
   // parameter receives the value of an argument that is itself translated to a
-  // pointer.
+  // pointer, unless the rule binds a reference to that argument.
   void AddRuleArgs(clang::Expr *expr, clang::Expr **args, unsigned num_args) {
     auto *rule = RuleRegistry::GetExprRule(ctx_, expr);
     if (!rule) {
@@ -306,7 +306,9 @@ private:
       auto type = arg->getType();
       if ((!rule->params[i].is_pointer() &&
            !RuleRegistry::ParamIsReference(ctx_, expr, i)) ||
-          (type->isPointerType() && !type->isFunctionPointerType()) ||
+          (type->isPointerType() && !type->isFunctionPointerType() &&
+           (!rule->params[i].is_pointer() ||
+            RuleRegistry::ParamTakesPointerValue(expr, i))) ||
           (RuleRegistry::MapsToPointer(ctx_, type) &&
            !RuleRegistry::ParamPointsTo(ctx_, expr, i, type)) ||
           rule->takesTemporaryAddress(ctx_, expr, i, arg)) {

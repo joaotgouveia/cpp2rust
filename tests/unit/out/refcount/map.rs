@@ -314,13 +314,13 @@ fn main_0() -> i32 {
     let r: Ptr<Map<i16, (Value<i16>, Value<u32>)>> = m.as_pointer();
     assert!(({ ((*r.upgrade().deref()).len() == 4_usize) }));
     assert!(
-        ({
+        !(({
             let __tmp_4: Value<i16> = Rc::new(RefCell::new(4_i16));
             m.as_pointer()
                 .with(|__m: &Map<i16, (Value<i16>, Value<u32>)>| __m.find(&__tmp_4.as_pointer()))
-        }) != m
+        }) == m
             .as_pointer()
-            .with(|__m: &Map<i16, (Value<i16>, Value<u32>)>| __m.end())
+            .with(|__m: &Map<i16, (Value<i16>, Value<u32>)>| __m.end()))
     );
     Map::erase((r).clone(), &({ (*it4.borrow()).clone() }));
     assert!(({ ((*r.upgrade().deref()).len() == 3_usize) }));
@@ -391,8 +391,8 @@ fn main_0() -> i32 {
             })
     );
     {
-        let __a1 = Map::erase(m.as_pointer(), &({ (*next.borrow()).clone() }));
-        next.as_pointer().with_mut(|__it| *__it = __a1);
+        next.as_pointer()
+            .write(Map::erase(m.as_pointer(), &({ (*next.borrow()).clone() })));
         next.as_pointer()
     };
     assert!(
@@ -493,11 +493,7 @@ fn main_0() -> i32 {
     let mut i: u32 = 0_u32;
     'loop_: while ((i as usize) < (*indexes.borrow()).len()) {
         let __rhs = ((i).wrapping_rem(2_u32) != 0);
-        Map::subscript(
-            m2.as_pointer(),
-            indexes.decay().offset((i as usize) as isize),
-        )
-        .write(__rhs);
+        Map::subscript(m2.as_pointer(), indexes.decay().offset((i as usize))).write(__rhs);
         i.prefix_inc();
     }
     assert!(({ ((*m2.borrow()).len() == (*indexes.borrow()).len()) }));
@@ -524,12 +520,18 @@ fn main_0() -> i32 {
         Value<BidirectionalIterator<(Value<i32>, Value<i32>)>>,
         Value<bool>,
     )> = Rc::new(RefCell::new({
-        let (__it, __inserted) = Map::emplace(
-            m3.as_pointer(),
-            (Rc::new(RefCell::new(1)), Rc::new(RefCell::new(2))),
-        );
+        let __init = (Rc::new(RefCell::new(1)), Rc::new(RefCell::new(2)));
+        let __key = __init.0.as_pointer();
+        let __inserted = m3
+            .as_pointer()
+            .with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.get(&__key).is_none());
+        if __inserted {
+            Map::subscript(m3.as_pointer().clone(), __key.clone()).write(__init.1.borrow().clone());
+        }
         (
-            Rc::new(RefCell::new(__it)),
+            Rc::new(RefCell::new(m3.as_pointer().with(
+                |__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.find(&__key),
+            ))),
             Rc::new(RefCell::new(__inserted)),
         )
     }));
@@ -549,12 +551,18 @@ fn main_0() -> i32 {
         Value<BidirectionalIterator<(Value<i32>, Value<i32>)>>,
         Value<bool>,
     )> = Rc::new(RefCell::new({
-        let (__it, __inserted) = Map::emplace(
-            m3.as_pointer(),
-            (Rc::new(RefCell::new(1)), Rc::new(RefCell::new(3))),
-        );
+        let __init = (Rc::new(RefCell::new(1)), Rc::new(RefCell::new(3)));
+        let __key = __init.0.as_pointer();
+        let __inserted = m3
+            .as_pointer()
+            .with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.get(&__key).is_none());
+        if __inserted {
+            Map::subscript(m3.as_pointer().clone(), __key.clone()).write(__init.1.borrow().clone());
+        }
         (
-            Rc::new(RefCell::new(__it)),
+            Rc::new(RefCell::new(m3.as_pointer().with(
+                |__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.find(&__key),
+            ))),
             Rc::new(RefCell::new(__inserted)),
         )
     }));
@@ -571,26 +579,32 @@ fn main_0() -> i32 {
         })
     );
     {
-        let (__it, __inserted) = Map::emplace(
-            m3.as_pointer(),
-            match (Rc::new(RefCell::new((
-                Rc::new(RefCell::new(4)),
-                Rc::new(RefCell::new(5)),
-            )))
-            .as_pointer(),)
-            {
-                (__tmp_14,) => (
-                    Rc::new(RefCell::new(
-                        ((*__tmp_14.upgrade().deref()).0.as_pointer().read()),
-                    )),
-                    Rc::new(RefCell::new(
-                        ((*__tmp_14.upgrade().deref()).1.as_pointer().read()),
-                    )),
-                ),
-            },
-        );
+        let __init = match (Rc::new(RefCell::new((
+            Rc::new(RefCell::new(4)),
+            Rc::new(RefCell::new(5)),
+        )))
+        .as_pointer(),)
+        {
+            (__tmp_14,) => (
+                Rc::new(RefCell::new(
+                    ((*__tmp_14.upgrade().deref()).0.as_pointer().read()),
+                )),
+                Rc::new(RefCell::new(
+                    ((*__tmp_14.upgrade().deref()).1.as_pointer().read()),
+                )),
+            ),
+        };
+        let __key = __init.0.as_pointer();
+        let __inserted = m3
+            .as_pointer()
+            .with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.get(&__key).is_none());
+        if __inserted {
+            Map::subscript(m3.as_pointer().clone(), __key.clone()).write(__init.1.borrow().clone());
+        }
         (
-            Rc::new(RefCell::new(__it)),
+            Rc::new(RefCell::new(m3.as_pointer().with(
+                |__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.find(&__key),
+            ))),
             Rc::new(RefCell::new(__inserted)),
         )
     };
@@ -618,11 +632,16 @@ fn main_0() -> i32 {
             m3.as_pointer()
                 .with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.end()),
         );
-        Map::emplace(
-            m3.as_pointer(),
-            (Rc::new(RefCell::new(6)), Rc::new(RefCell::new(7))),
-        )
-        .0
+        let __init = (Rc::new(RefCell::new(6)), Rc::new(RefCell::new(7)));
+        let __key = __init.0.as_pointer();
+        if m3
+            .as_pointer()
+            .with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.get(&__key).is_none())
+        {
+            Map::subscript(m3.as_pointer().clone(), __key.clone()).write(__init.1.borrow().clone());
+        }
+        m3.as_pointer()
+            .with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.find(&__key))
     }));
     assert!(
         ({
@@ -732,15 +751,22 @@ fn main_0() -> i32 {
             == 4)
     );
     {
-        let (__it, __inserted) = Map::emplace(
-            points.as_pointer(),
-            (
-                Rc::new(RefCell::new(({ (*key8.borrow()) }))),
-                Rc::new(RefCell::new(Point::new_2({ 5 }, { 6 }))),
-            ),
+        let __init = (
+            Rc::new(RefCell::new(({ (*key8.borrow()) }))),
+            Rc::new(RefCell::new(Point::new_2({ 5 }, { 6 }))),
         );
+        let __key = __init.0.as_pointer();
+        let __inserted = points
+            .as_pointer()
+            .with(|__m: &Map<i32, (Value<i32>, Value<Point>)>| __m.get(&__key).is_none());
+        if __inserted {
+            Map::subscript(points.as_pointer().clone(), __key.clone())
+                .write(__init.1.borrow().clone());
+        }
         (
-            Rc::new(RefCell::new(__it)),
+            Rc::new(RefCell::new(points.as_pointer().with(
+                |__m: &Map<i32, (Value<i32>, Value<Point>)>| __m.find(&__key),
+            ))),
             Rc::new(RefCell::new(__inserted)),
         )
     };

@@ -327,10 +327,15 @@ ExprRule::argsToBind(clang::ASTContext &ctx, const clang::Expr *expr,
   return bind;
 }
 
-bool ExprRule::takesAddress(clang::ASTContext &ctx, unsigned i,
-                            const clang::Expr *arg) const {
-  return params[i].is_pointer() && !arg->getType()->isPointerType() &&
-         !RuleRegistry::MapsToPointer(ctx, arg->getType());
+bool ExprRule::takesAddress(clang::ASTContext &ctx, const clang::Expr *expr,
+                            unsigned i, const clang::Expr *arg) const {
+  if (!params[i].is_pointer()) {
+    return false;
+  }
+  if (arg->getType()->isPointerType()) {
+    return !RuleRegistry::ParamTakesPointerValue(expr, i);
+  }
+  return !RuleRegistry::MapsToPointer(ctx, arg->getType());
 }
 
 bool ExprRule::takesTemporaryAddress(clang::ASTContext &ctx,
@@ -338,7 +343,7 @@ bool ExprRule::takesTemporaryAddress(clang::ASTContext &ctx,
                                      const clang::Expr *arg) const {
   auto *call = clang::dyn_cast<clang::CallExpr>(expr);
   unsigned first_arg = clang::isa<clang::CXXMemberCallExpr>(expr);
-  return call && i >= first_arg && takesAddress(ctx, i, arg) &&
+  return call && i >= first_arg && takesAddress(ctx, expr, i, arg) &&
          GetRefBindingTempType(ctx, call, i - first_arg).has_value();
 }
 

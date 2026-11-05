@@ -2682,6 +2682,7 @@ bool Converter::VisitImplicitCastExpr(clang::ImplicitCastExpr *expr) {
   case clang::CastKind::CK_ConstructorConversion:
   case clang::CastKind::CK_UserDefinedConversion:
   case clang::CastKind::CK_DerivedToBase:
+  case clang::CastKind::CK_UncheckedDerivedToBase:
     Convert(sub_expr);
     break;
   case clang::CastKind::CK_IntegralToBoolean:
@@ -5493,9 +5494,10 @@ std::string Converter::GetMappedAsString(clang::Expr *expr, clang::Expr **args,
     auto type = arg->getType();
     // A proxy (vector<bool>::reference) is a pointer itself, a copy of it
     // refers to the same object, unless the rule takes a pointer to the proxy.
-    bool by_value = (arg->isPRValue() && !tgt_ir->takesAddress(ctx_, i, arg)) ||
-                    (RuleRegistry::IsProxyRecord(ctx_, type) &&
-                     !RuleRegistry::ParamPointsTo(ctx_, expr, i, type));
+    bool by_value =
+        (arg->isPRValue() && !tgt_ir->takesAddress(ctx_, expr, i, arg)) ||
+        (RuleRegistry::IsProxyRecord(ctx_, type) &&
+         !RuleRegistry::ParamPointsTo(ctx_, expr, i, type));
     if (!by_value && arg->isPRValue()) {
       arg = new (ctx_) clang::MaterializeTemporaryExpr(type, arg, false);
     }
@@ -5602,8 +5604,10 @@ std::string Converter::ConvertIRFragment(
       auto *arg = all_args[arg_idx];
       bool is_receiver = HasReceiver(expr) && arg_idx == 0;
       // a function pointer is converted as a function, not as a pointer
-      bool is_cpp_ptr = arg->getType()->isPointerType() &&
-                        !arg->getType()->isFunctionPointerType();
+      bool cpp_ptr = arg->getType()->isPointerType() &&
+                     !arg->getType()->isFunctionPointerType();
+      bool is_cpp_ptr =
+          cpp_ptr && RuleRegistry::ParamTakesPointerValue(expr, arg_idx);
 
       PlaceholderCtx ph_ctx{
           .arg_idx = arg_idx,
@@ -5618,7 +5622,7 @@ std::string Converter::ConvertIRFragment(
           // object that maps to a pointer is still passed by address to a
           // pointer to its own type (reference_wrapper<reference_wrapper<T>>).
           .maps_to_rust_ptr =
-              !is_cpp_ptr &&
+              !cpp_ptr &&
               RuleRegistry::MapsToPointer(
                   ctx_, arg->IgnoreParenNoopCasts(ctx_)->getType()) &&
               !RuleRegistry::ParamPointsTo(

@@ -14,6 +14,11 @@ pub struct Point {
     #[offset(4)]
     pub y: i32,
 }
+impl CppMove for Point {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(48)]
 pub struct Holder {
@@ -32,6 +37,11 @@ impl Holder {
         }
     }
 }
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn push_and_index_0(v: Ptr<Vec<i32>>) -> i32 {
     {
         let __a1 = 42;
@@ -40,13 +50,13 @@ pub fn push_and_index_0(v: Ptr<Vec<i32>>) -> i32 {
     return (((*v.upgrade().deref()).len() as i32) - 1);
 }
 pub fn sum_ref_1(v: Ptr<Vec<i32>>) -> i32 {
-    let mut s: i32 = 0;
+    let s: Value<i32> = Rc::new(RefCell::new(0));
     let mut i: usize = 0_usize;
     'loop_: while ({ i } < { (*v.upgrade().deref()).len() }) {
-        s += (index!(v, i).read());
+        (*s.borrow_mut()) += (index!(v, i).read());
         i.prefix_inc();
     }
-    return s;
+    return (*s.borrow());
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -86,10 +96,7 @@ fn main_0() -> i32 {
     assert!(({ ({ (*v.borrow())[2_usize] } == 9) }));
     assert!((({ sum_ref_1(v.as_pointer(),) }) == ((((3 + 0) + 9) + 42) + 5)));
     let h: Value<Holder> = Rc::new(RefCell::new(<Holder>::default()));
-    {
-        let __a0 = 2_usize as usize;
-        (*h.borrow_mut()).values.resize_with(__a0, || 0_i32)
-    };
+    (*h.borrow_mut()).values.resize_with(2_usize, || 0_i32);
     vec_elem!(h.as_pointer(), values, 1_usize).write(6);
     {
         let __a1 = Point { x: 1, y: 2 };
@@ -136,7 +143,7 @@ fn main_0() -> i32 {
         ((index!(elem!(grid.decay(), 0_usize), 1_usize).read()) == 8)
             && ((index!(elem!(grid.decay(), 1_usize), 0_usize).read()) == 8)
     );
-    let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::<[i32]>::from([4, 5, 6])));
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([4, 5, 6])));
     let __rhs = ({ (*a.borrow())[0_usize] } + { (*a.borrow())[2_usize] });
     (*a.borrow_mut())[1_usize] = __rhs;
     assert!(({ ({ (*a.borrow())[1_usize] } == 10) }));
