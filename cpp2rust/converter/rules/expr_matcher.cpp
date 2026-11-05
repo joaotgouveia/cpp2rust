@@ -165,7 +165,9 @@ getOperands(clang::ASTContext &ctx, const clang::Expr *use, unsigned arity = 0,
     if (!operands.empty() &&
         llvm::isa_and_nonnull<clang::CXXMethodDecl>(op->getDirectCallee())) {
       operands[0] = getObject(
-          ctx, operands[0]->IgnoreParenImpCasts(),
+          ctx,
+          clang::IgnoreExprNodes(operands[0], clang::IgnoreParensSingleStep,
+                                 clang::IgnoreImplicitCastsSingleStep),
           llvm::cast<clang::CXXMethodDecl>(op->getDirectCallee()), forwarding);
     }
     // A rule written as a0++ has no parameter for the dummy int of a postfix
@@ -583,14 +585,17 @@ deduceFromCallee(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
   if (auto call = llvm::dyn_cast<clang::CallExpr>(returned)) {
     returned = call->getCallee()->IgnoreParenImpCasts();
   }
+  // the rule's call, with the template arguments it writes, if any
   llvm::ArrayRef<clang::TemplateArgumentLoc> written;
-  if (auto overload = llvm::dyn_cast<clang::OverloadExpr>(returned);
-      overload && overload->hasExplicitTemplateArgs()) {
-    written = overload->template_arguments();
+  if (auto overload = llvm::dyn_cast<clang::OverloadExpr>(returned)) {
+    if (overload->hasExplicitTemplateArgs()) {
+      written = overload->template_arguments();
+    }
   } else if (auto ref =
-                 llvm::dyn_cast<clang::DependentScopeDeclRefExpr>(returned);
-             ref && ref->hasExplicitTemplateArgs()) {
-    written = ref->template_arguments();
+                 llvm::dyn_cast<clang::DependentScopeDeclRefExpr>(returned)) {
+    if (ref->hasExplicitTemplateArgs()) {
+      written = ref->template_arguments();
+    }
   } else {
     return std::nullopt;
   }

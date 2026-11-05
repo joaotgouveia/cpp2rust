@@ -168,47 +168,47 @@ fn main_0() -> i32 {
         let s: Value<S> = Rc::new(RefCell::new(<S>::default()));
         let _dtor_s = ScopedDestructor::new(&s, |__p| __p.destructor());
     }
-    assert!((global_0.with(|rc| *rc.borrow()) == 1));
+    ({ cpp2rust_assert_fail_3((global_0.with(|rc| *rc.borrow()) == 1)) });
     {
         let s: Value<S> = Rc::new(RefCell::new(<S>::default()));
         let _dtor_s = ScopedDestructor::new(&s, |__p| __p.destructor());
     }
-    assert!((global_0.with(|rc| *rc.borrow()) == 2));
+    ({ cpp2rust_assert_fail_3((global_0.with(|rc| *rc.borrow()) == 2)) });
     {
         let d: Value<Defaulted> = Rc::new(RefCell::new(<Defaulted>::default()));
         let _dtor_d = ScopedDestructor::new(&d, |__p| __p.destructor());
     }
-    assert!((global_0.with(|rc| *rc.borrow()) == 3));
+    ({ cpp2rust_assert_fail_3((global_0.with(|rc| *rc.borrow()) == 3)) });
     {
         let o: Value<Outer> = Rc::new(RefCell::new(<Outer>::default()));
         let _dtor_o = ScopedDestructor::new(&o, |__p| __p.destructor());
     }
-    assert!((global_0.with(|rc| *rc.borrow()) == 4));
+    ({ cpp2rust_assert_fail_3((global_0.with(|rc| *rc.borrow()) == 4)) });
     {
         let am: Value<ArrayMember> = Rc::new(RefCell::new(<ArrayMember>::default()));
         let _dtor_am = ScopedDestructor::new(&am, |__p| __p.destructor());
     }
-    assert!((global_0.with(|rc| *rc.borrow()) == 7));
+    ({ cpp2rust_assert_fail_3((global_0.with(|rc| *rc.borrow()) == 7)) });
     {
         let e: Value<EmptyBody> = Rc::new(RefCell::new(<EmptyBody>::default()));
         let _dtor_e = ScopedDestructor::new(&e, |__p| __p.destructor());
     }
-    assert!((global_0.with(|rc| *rc.borrow()) == 8));
+    ({ cpp2rust_assert_fail_3((global_0.with(|rc| *rc.borrow()) == 8)) });
     {
         let tc: Value<Templated_char_> = Rc::new(RefCell::new(<Templated_char_>::default()));
         let _dtor_tc = ScopedDestructor::new(&tc, |__p| __p.destructor());
         let ti: Value<Templated_int_> = Rc::new(RefCell::new(<Templated_int_>::default()));
         let _dtor_ti = ScopedDestructor::new(&ti, |__p| __p.destructor());
     }
-    assert!((global_0.with(|rc| *rc.borrow()) == 13));
+    ({ cpp2rust_assert_fail_3((global_0.with(|rc| *rc.borrow()) == 13)) });
     {
         let a: Value<Copied> = Rc::new(RefCell::new(Copied { v: 5 }));
         let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
         let b: Value<Copied> = Rc::new(RefCell::new((*a.borrow()).clone()));
         let _dtor_b = ScopedDestructor::new(&b, |__p| __p.destructor());
-        assert!(({ ({ (*b.borrow()).v } == 5) }));
+        ({ cpp2rust_assert_fail_3(({ (*b.borrow()).v } == 5)) });
     }
-    assert!((global_0.with(|rc| *rc.borrow()) == 15));
+    ({ cpp2rust_assert_fail_3((global_0.with(|rc| *rc.borrow()) == 15)) });
     {
         let o: Value<Ordered> = Rc::new(RefCell::new(Ordered {
             first: Tagged { tag: 1 },
@@ -219,32 +219,38 @@ fn main_0() -> i32 {
         }));
         let _dtor_o = ScopedDestructor::new(&o, |__p| __p.destructor());
     }
-    assert!((order_count_2.with(|rc| *rc.borrow()) == 3));
-    assert!(
-        (({
-            let __idx0 = (0) as usize;
-            order_1.with(|rc| rc.borrow()[__idx0])
-        }) == 3)
-    );
-    assert!(
-        (({
-            let __idx0 = (1) as usize;
-            order_1.with(|rc| rc.borrow()[__idx0])
-        }) == 2)
-    );
-    assert!(
-        (({
-            let __idx0 = (2) as usize;
-            order_1.with(|rc| rc.borrow()[__idx0])
-        }) == 1)
-    );
+    ({ cpp2rust_assert_fail_3((order_count_2.with(|rc| *rc.borrow()) == 3)) });
+    ({
+        cpp2rust_assert_fail_3(
+            (({
+                let __idx0 = (0) as usize;
+                order_1.with(|rc| rc.borrow()[__idx0])
+            }) == 3),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_3(
+            (({
+                let __idx0 = (1) as usize;
+                order_1.with(|rc| rc.borrow()[__idx0])
+            }) == 2),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_3(
+            (({
+                let __idx0 = (2) as usize;
+                order_1.with(|rc| rc.borrow()[__idx0])
+            }) == 1),
+        )
+    });
     let mut before: i32 = global_0.with(|rc| *rc.borrow());
     {
         let cs: Value<S> = Rc::new(RefCell::new(<S>::default()));
         let _dtor_cs = ScopedDestructor::new(&cs, |__p| __p.destructor());
         &(*cs.borrow_mut());
     }
-    assert!((global_0.with(|rc| *rc.borrow()) == (before + 1)));
+    ({ cpp2rust_assert_fail_3((global_0.with(|rc| *rc.borrow()) == (before + 1))) });
     return 0;
 }
 pub trait ArrayMemberImpl {
@@ -335,8 +341,8 @@ impl Templated_char_Impl for Ptr<Templated_char_> {
     fn destructor(&self) {
         global_0.with(|rc| {
             *rc.borrow_mut() = {
-                ((global_0.with(|rc| *rc.borrow()) as usize)
-                    .wrapping_add((::std::mem::size_of::<i8>() as usize))) as i32
+                ((global_0.with(|rc| *rc.borrow()) as u64)
+                    .wrapping_add((::std::mem::size_of::<i8>() as u64))) as i32
             }
         });
     }
@@ -348,8 +354,8 @@ impl Templated_int_Impl for Ptr<Templated_int_> {
     fn destructor(&self) {
         global_0.with(|rc| {
             *rc.borrow_mut() = {
-                ((global_0.with(|rc| *rc.borrow()) as usize)
-                    .wrapping_add((::std::mem::size_of::<i32>() as usize))) as i32
+                ((global_0.with(|rc| *rc.borrow()) as u64)
+                    .wrapping_add((::std::mem::size_of::<i32>() as u64))) as i32
             }
         });
     }

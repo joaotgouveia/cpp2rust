@@ -84,27 +84,31 @@ fn main_0() -> i32 {
     let a: Value<V> = Rc::new(RefCell::new(V { x: 3 }));
     let b: Value<V> = Rc::new(RefCell::new(V { x: 3 }));
     let c: Value<V> = Rc::new(RefCell::new(V { x: 4 }));
-    assert!((({ get_0(a.as_pointer(),) }) == 3));
-    assert!(
-        ({
-            let _a: Ptr<V> = a.as_pointer();
-            operator_eq_1(_a, b.as_pointer())
-        })
-    );
-    assert!(
-        !({
-            let _a: Ptr<V> = a.as_pointer();
-            operator_eq_1(_a, c.as_pointer())
-        })
-    );
-    assert!((({ scaled_2(c.as_pointer(), 2,) }) == 8));
-    assert!((({ scaled_3(c.as_pointer(), 1.5_f64,) }) == 6_f64));
+    ({ cpp2rust_assert_fail_7((({ get_0(a.as_pointer()) }) == 3)) });
+    ({
+        cpp2rust_assert_fail_7(
+            ({
+                let _a: Ptr<V> = a.as_pointer();
+                operator_eq_1(_a, b.as_pointer())
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_7(
+            !({
+                let _a: Ptr<V> = a.as_pointer();
+                operator_eq_1(_a, c.as_pointer())
+            }),
+        )
+    });
+    ({ cpp2rust_assert_fail_7((({ scaled_2(c.as_pointer(), 2) }) == 8)) });
+    ({ cpp2rust_assert_fail_7((({ scaled_3(c.as_pointer(), 1.5_f64) }) == 6_f64)) });
     let wi: Value<W_int_> = Rc::new(RefCell::new(W_int_ { x: 5 }));
     let wl: Value<W_long_> = Rc::new(RefCell::new(W_long_ { x: 6_i64 }));
-    assert!((({ get_4(wi.as_pointer(),) }) == 5));
-    assert!((({ get_5(wl.as_pointer(),) }) == 6_i64));
+    ({ cpp2rust_assert_fail_7((({ get_4(wi.as_pointer()) }) == 5)) });
+    ({ cpp2rust_assert_fail_7((({ get_5(wl.as_pointer()) }) == 6_i64)) });
     let d: Value<D> = Rc::new(RefCell::new(D { x: 7 }));
-    assert!((({ declared_then_defined_6(d.as_pointer(),) }) == 8));
+    ({ cpp2rust_assert_fail_7((({ declared_then_defined_6(d.as_pointer()) }) == 8)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

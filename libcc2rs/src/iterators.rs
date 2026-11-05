@@ -1,14 +1,15 @@
 // Copyright (c) 2022-present INESC-ID.
 // Distributed under the MIT license that can be found in the LICENSE file.
 
-use crate::reinterpret::ByteRepr;
-use crate::{
-    CChar, MapNode, PostfixDec, PostfixInc, PrefixDec, PrefixInc, Ptr, UnsafeMapNode, Value,
-};
 use std::cmp::Ordering;
 use std::convert::Infallible;
 use std::marker::PhantomData;
 use std::rc::Rc;
+
+use crate::{
+    ByteRepr, CChar, CppAdvance, MapNode, PostfixDec, PostfixInc, PrefixDec, PrefixInc, Ptr,
+    UnsafeCppAdvance, UnsafeMapNode, Value,
+};
 
 pub struct CStringIterator<T: CChar = u8> {
     pub(crate) ptr: Ptr<T>,
@@ -35,41 +36,71 @@ impl<T: CChar> Iterator for CStringIterator<T> {
 pub trait CppIterator<T>: Clone {
     fn iter_deref(&self) -> Ptr<T>;
     fn iter_inc(&mut self) -> &mut Self;
-    fn iter_post_inc(&mut self) -> Self;
+    fn iter_post_inc(&mut self) -> Self {
+        let old = self.clone();
+        self.iter_inc();
+        old
+    }
 }
 
 pub trait CppInputIterator<T>: CppIterator<T> + PartialEq {}
 
 pub trait CppBidirectionalIterator<T>: CppInputIterator<T> {
     fn iter_dec(&mut self) -> &mut Self;
-    fn iter_post_dec(&mut self) -> Self;
+    fn iter_post_dec(&mut self) -> Self {
+        let old = self.clone();
+        self.iter_dec();
+        old
+    }
 }
 
 pub trait CppRandomAccessIterator<T>: CppBidirectionalIterator<T> + PartialOrd {
-    fn iter_add(&self, n: isize) -> Self;
+    fn iter_add(&self, n: isize) -> Self {
+        let mut it = self.clone();
+        it.iter_add_assign(n);
+        it
+    }
     fn iter_add_assign(&mut self, n: isize) -> Self;
     fn iter_distance(&self, from: &Self) -> isize;
-    fn iter_at(&self, n: isize) -> Ptr<T>;
+    fn iter_at(&self, n: isize) -> Ptr<T> {
+        self.iter_add(n).iter_deref()
+    }
 }
 
 pub trait UnsafeCppIterator<T>: Clone {
     fn iter_deref(&self) -> *mut T;
     fn iter_inc(&mut self) -> &mut Self;
-    fn iter_post_inc(&mut self) -> Self;
+    fn iter_post_inc(&mut self) -> Self {
+        let old = self.clone();
+        self.iter_inc();
+        old
+    }
 }
 
 pub trait UnsafeCppInputIterator<T>: UnsafeCppIterator<T> + PartialEq {}
 
 pub trait UnsafeCppBidirectionalIterator<T>: UnsafeCppInputIterator<T> {
     fn iter_dec(&mut self) -> &mut Self;
-    fn iter_post_dec(&mut self) -> Self;
+    fn iter_post_dec(&mut self) -> Self {
+        let old = self.clone();
+        self.iter_dec();
+        old
+    }
 }
 
-pub trait UnsafeCppRandomAccessIterator<T>: UnsafeCppBidirectionalIterator<T> + PartialOrd {
-    fn iter_add(&self, n: isize) -> Self;
+pub trait UnsafeCppRandomAccessIterator<T>:
+    UnsafeCppBidirectionalIterator<T> + PartialOrd
+{
+    fn iter_add(&self, n: isize) -> Self {
+        let mut it = self.clone();
+        it.iter_add_assign(n);
+        it
+    }
     fn iter_add_assign(&mut self, n: isize) -> Self;
     fn iter_distance(&self, from: &Self) -> isize;
-    fn iter_at(&self, n: isize) -> *mut T;
+    fn iter_at(&self, n: isize) -> *mut T {
+        self.iter_add(n).iter_deref()
+    }
 }
 
 impl<T> CppIterator<T> for Ptr<T> {
@@ -77,7 +108,8 @@ impl<T> CppIterator<T> for Ptr<T> {
         self.clone()
     }
     fn iter_inc(&mut self) -> &mut Self {
-        PrefixInc::prefix_inc(self)
+        PrefixInc::prefix_inc(self);
+        self
     }
     fn iter_post_inc(&mut self) -> Self {
         PostfixInc::postfix_inc(self)
@@ -88,7 +120,8 @@ impl<T> CppInputIterator<T> for Ptr<T> {}
 
 impl<T> CppBidirectionalIterator<T> for Ptr<T> {
     fn iter_dec(&mut self) -> &mut Self {
-        PrefixDec::prefix_dec(self)
+        PrefixDec::prefix_dec(self);
+        self
     }
     fn iter_post_dec(&mut self) -> Self {
         PostfixDec::postfix_dec(self)
@@ -251,8 +284,6 @@ impl<T> Clone for BidirectionalIterator<T> {
     }
 }
 
-impl<T: 'static> ByteRepr for BidirectionalIterator<T> {}
-
 impl<T> PartialEq for BidirectionalIterator<T> {
     fn eq(&self, other: &Self) -> bool {
         match (self, other) {
@@ -313,6 +344,8 @@ impl<T> Clone for UnsafeBidirectionalIterator<T> {
         }
     }
 }
+
+impl<T> Copy for UnsafeBidirectionalIterator<T> {}
 
 impl<T: 'static> ByteRepr for UnsafeBidirectionalIterator<T> {}
 
@@ -379,8 +412,6 @@ macro_rules! random_access_iterator {
             }
         }
 
-        impl<T: 'static> ByteRepr for $name<T> {}
-
         impl<T> PartialEq for $name<T> {
             fn eq(&self, other: &Self) -> bool {
                 match (self, other) {
@@ -389,10 +420,18 @@ macro_rules! random_access_iterator {
             }
         }
 
+        impl<T> Eq for $name<T> {}
+
         impl<T> PartialOrd for $name<T> {
             fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+                Some(self.cmp(other))
+            }
+        }
+
+        impl<T> Ord for $name<T> {
+            fn cmp(&self, other: &Self) -> Ordering {
                 match (self, other) {
-                    (Self::Vec(a), Self::Vec(b)) => a.partial_cmp(b),
+                    (Self::Vec(a), Self::Vec(b)) => a.cmp(b),
                 }
             }
         }
@@ -489,6 +528,10 @@ random_access_iterator!(
     std::ptr::null_mut()
 );
 
+impl<T> Copy for UnsafeRandomAccessIterator<T> {}
+
+impl<T: 'static> ByteRepr for UnsafeRandomAccessIterator<T> {}
+
 pub trait IterStep: Clone + PartialEq {
     fn iter_step(&mut self);
 }
@@ -514,6 +557,45 @@ iter_step!(BidirectionalIterator<T>, CppIterator);
 iter_step!(UnsafeBidirectionalIterator<T>, UnsafeCppIterator);
 iter_step!(RandomAccessIterator<T>, CppIterator);
 iter_step!(UnsafeRandomAccessIterator<T>, UnsafeCppIterator);
+
+// The library's bidirectional and random access iterators advance in
+// std::next and std::prev.
+macro_rules! cpp_advance {
+    ($name:ty) => {
+        impl<T: 'static> ByteRepr for $name {}
+
+        impl<T: 'static> CppAdvance for $name {
+            fn cpp_inc(it: &Ptr<Self>) {
+                it.with_mut(|i| {
+                    CppIterator::<T>::iter_inc(i);
+                });
+            }
+            fn cpp_dec(it: &Ptr<Self>) {
+                it.with_mut(|i| {
+                    CppBidirectionalIterator::<T>::iter_dec(i);
+                });
+            }
+        }
+    };
+}
+
+macro_rules! unsafe_cpp_advance {
+    ($name:ty) => {
+        impl<T> UnsafeCppAdvance for $name {
+            unsafe fn cpp_inc(&mut self) {
+                UnsafeCppIterator::<T>::iter_inc(self);
+            }
+            unsafe fn cpp_dec(&mut self) {
+                UnsafeCppBidirectionalIterator::<T>::iter_dec(self);
+            }
+        }
+    };
+}
+
+cpp_advance!(BidirectionalIterator<T>);
+cpp_advance!(RandomAccessIterator<T>);
+unsafe_cpp_advance!(UnsafeBidirectionalIterator<T>);
+unsafe_cpp_advance!(UnsafeRandomAccessIterator<T>);
 
 pub struct IterRange<I> {
     cur: I,

@@ -53,9 +53,21 @@ std::string Map(Converter &converter, clang::QualType qual_type) {
   auto [rule, subs] =
       RuleRegistry::Search(converter.GetASTContext(), qual_type);
   if (rule) {
-    return Matcher::InstantiateTgt(converter, subs, rule->type_info.type);
+    return Matcher::InstantiateType(converter, subs, rule->type_info);
   }
   return {};
+}
+
+std::optional<TranslationRule::Elems> Elems(Converter &converter,
+                                            clang::QualType qual_type) {
+  auto [rule, subs] =
+      RuleRegistry::Search(converter.GetASTContext(), qual_type);
+  if (!rule || !rule->type_info.elems) {
+    return std::nullopt;
+  }
+  auto &elems = *rule->type_info.elems;
+  return TranslationRule::Elems{
+      elems.kind, Matcher::InstantiateTgt(converter, subs, elems.type)};
 }
 
 std::string MapInitializer(Converter &converter, clang::QualType qual_type) {
@@ -68,10 +80,25 @@ std::string MapInitializer(Converter &converter, clang::QualType qual_type) {
   return {};
 }
 
+namespace {
+Matcher::Bindings bindIteratorElements(clang::ASTContext &ctx,
+                                       const clang::Expr *expr,
+                                       const TranslationRule::ExprRule &rule,
+                                       Matcher::Bindings subs) {
+  for (unsigned n = subs.size() + 1; n <= rule.generics.size(); ++n) {
+    subs.emplace_back(RuleRegistry::GetGenericType(ctx, expr, n));
+  }
+  return subs;
+}
+} // namespace
+
 std::string GetParamType(Converter &converter, const clang::Expr *expr,
                          unsigned index) {
-  auto [rule, subs] = RuleRegistry::Search(converter.GetASTContext(), expr);
-  return Matcher::InstantiateTgt(converter, subs, rule->params.at(index).type);
+  auto &ctx = converter.GetASTContext();
+  auto [rule, subs] = RuleRegistry::Search(ctx, expr);
+  return Matcher::InstantiateType(
+      converter, bindIteratorElements(ctx, expr, *rule, std::move(subs)),
+      rule->params.at(index));
 }
 
 } // namespace cpp2rust::Mapper

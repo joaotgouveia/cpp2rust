@@ -52,13 +52,13 @@ use std::rc::{Rc, Weak};
 )");
 }
 
-static bool IsBoxedType(std::string_view type) {
-  return type.starts_with("Vec<") || type.starts_with("Box<") ||
-         type.starts_with("VecDeque<");
+bool ConverterRefCount::IsBoxedType(clang::QualType type) {
+  return Mapper::Elems(*this, type.getUnqualifiedType()).has_value();
 }
 
-static bool IsBoxedType(clang::ASTContext &ctx, clang::QualType type) {
-  return IsBoxedType(Mapper::Map(ctx, type.getUnqualifiedType()));
+bool ConverterRefCount::IsVecType(clang::QualType type) {
+  auto elems = Mapper::Elems(*this, type.getUnqualifiedType());
+  return elems && elems->kind == TranslationRule::ElemsKind::kVec;
 }
 
 // A Rust type without whitespace, and with the paths into libcc2rs, which the
@@ -74,11 +74,9 @@ static std::string NormalizeType(std::string type) {
 
 // Virtual methods take &mut self, as the fields of the struct are stored in
 // it.
-static bool NeedsMutAccess(clang::ASTContext &ctx,
-                           const clang::CXXMethodDecl *method,
-                           clang::QualType base_type) {
-  return !method->isConst() &&
-         (IsBoxedType(ctx, base_type) || method->isVirtual());
+bool ConverterRefCount::NeedsMutAccess(const clang::CXXMethodDecl *method,
+                                       clang::QualType base_type) {
+  return !method->isConst() && (IsBoxedType(base_type) || method->isVirtual());
 }
 
 // Whether `expr` is an array field whose elements are accessed through
@@ -134,19 +132,6 @@ void ConverterRefCount::PendingDeref::set_unchecked(std::string str,
   value = std::move(str);
   ptr_is_fresh = fresh;
   type = ComputedExprType::Pending;
-}
-
-std::string ConverterRefCount::GetInnerType(clang::QualType type) {
-  PushConversionKind push(*this, ConversionKind::Unboxed);
-  auto str = ToString(type);
-  auto pos = str.find('<');
-  auto end = str.rfind('>');
-  if (str[pos + 1] == '[' && str[end - 1] == ']') {
-    // Unwrap inner array type
-    pos++;
-    end--;
-  }
-  return std::move(str).substr(pos + 1, end - pos - 1);
 }
 
 std::string
@@ -388,7 +373,7 @@ std::string ConverterRefCount::ConvertObject(clang::Expr *expr,
     if (is_ptr) {
       type = type->getPointeeType();
     }
-    if (IsBoxedType(ctx_, type) || (is_ptr && type->isArrayType())) {
+    if (IsBoxedType(type) || (is_ptr && type->isArrayType())) {
       MarkFresh();
       return std::move(str) + ".decay()";
     }
@@ -398,7 +383,7 @@ std::string ConverterRefCount::ConvertObject(clang::Expr *expr,
 
 std::string ConverterRefCount::AsPointerMethod(clang::QualType type) {
   if (isObject() && object_shape_ == ObjectShape::Element &&
-      type->isRecordType() && IsBoxedType(ctx_, type)) {
+      type->isRecordType() && IsBoxedType(type)) {
     object_shape_ = ObjectShape::Whole;
     return ".decay()";
   }
@@ -424,7 +409,7 @@ bool ConverterRefCount::ParamIsElementPtr(clang::Expr *expr, clang::Expr *arg,
     type = type->getPointeeType();
   }
   type = type.getUnqualifiedType();
-  if (!IsBoxedType(ctx_, type)) {
+  if (!IsBoxedType(type)) {
     return false;
   }
   // The C++ parameter is a reference or pointer to the container, which the
@@ -498,6 +483,9 @@ std::string ConverterRefCount::ConvertFreshRValue(
 
 std::string ConverterRefCount::ConvertFreshPointer(
     clang::Expr *expr, std::optional<clang::QualType> implicit_convert_to) {
+  if (expr->getType()->isArrayType() && IsStringLiteralExpr(expr)) {
+    return MakeFresh(ConvertStringLiteralPtr(expr));
+  }
   return MakeFresh(ConvertPointer(expr, implicit_convert_to));
 }
 
@@ -551,9 +539,9 @@ ConverterRefCount::MaterializeTemp(const std::string &binding_name,
 
 std::string ConverterRefCount::ConvertPtrType(clang::QualType type) {
   std::string str;
-  // decays into Ptr; remove the outer type Vec<>
-  if (IsBoxedType(ctx_, type)) {
-    str = GetInnerType(type);
+  if (auto elems = Mapper::Elems(*this, type.getUnqualifiedType())) {
+    PushConversionKind push(*this, ConversionKind::Unboxed);
+    str = std::move(elems->type);
   } else {
     PushConversionKind push(*this, ConversionKind::Ptr);
     str = ToString(type);
@@ -632,25 +620,113 @@ ConverterRefCount::GetComparisonReceiver(const clang::CXXMethodDecl *,
 // Records implement the comparisons of the standard library (CppLess and
 // CppEq) with their comparison operators, which get pointers to the values.
 // They don't implement Ord and PartialEq, which get references to the values,
-// as passing those to the operators would require copying the values.
+// as passing those to the operators would require copying the values, except
+// for iterators, which the generic algorithms compare as values.
 void ConverterRefCount::ConvertOrdAndPartialOrdTraits(
-    const clang::CXXRecordDecl *decl, const clang::FunctionDecl *eq,
-    const clang::FunctionDecl *lt, const clang::FunctionDecl *cmp) {
+    const clang::CXXRecordDecl *decl, const ComparisonOperators &ops) {
   auto record_name = GetRecordName(decl);
+  if (IsIteratorRecord(decl)) {
+    auto on_copies = [](std::string body) {
+      if (body.empty()) {
+        return body;
+      }
+      return std::format(
+          "libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {})",
+          body);
+    };
+    ConvertOrdAndPartialOrdTraitsBase(
+        on_copies(GetCmpBody(decl, ops, "__lhs", "__rhs")),
+        on_copies(GetEqBody(decl, ops, "__lhs", "__rhs")), record_name);
+    return;
+  }
   auto emit = [&](std::string_view trait, std::string_view fn,
                   std::string_view body) {
     StrCat(std::format("impl {} for {} {{ fn {}(__lhs: &Ptr<Self>, "
                        "__rhs: &Ptr<Self>) -> bool {{ {} }} }}",
                        trait, record_name, fn, body));
   };
-  if (lt) {
-    emit("CppLess", "less", GetComparisonBool(lt, decl, "__lhs", "__rhs"));
-  } else if (cmp) {
+  if (ops.lt) {
+    emit("CppLess", "less", GetComparisonBool(ops.lt, decl, "__lhs", "__rhs"));
+  } else if (ops.cmp) {
     emit("CppLess", "less",
          std::format("{} == std::cmp::Ordering::Less",
-                     GetComparisonCall(cmp, decl, "__lhs", "__rhs")));
+                     GetComparisonCall(ops.cmp, decl, "__lhs", "__rhs")));
   }
-  emit("CppEq", "equal", GetEqBody(decl, eq, lt, cmp, "__lhs", "__rhs"));
+  emit("CppEq", "equal", GetEqBody(decl, ops, "__lhs", "__rhs"));
+}
+
+void ConverterRefCount::ConvertAdvanceTrait(const clang::CXXRecordDecl *decl,
+                                            const clang::CXXMethodDecl *inc,
+                                            const clang::CXXMethodDecl *dec) {
+  StrCat(std::format("impl CppAdvance for {} {{", GetRecordName(decl)));
+  StrCat(std::format("fn cpp_inc(__it: &Ptr<Self>) {{ __it.{}(); }}",
+                     GetMethodName(inc)));
+  if (dec) {
+    StrCat(std::format("fn cpp_dec(__it: &Ptr<Self>) {{ __it.{}(); }}",
+                       GetMethodName(dec)));
+  }
+  StrCat("}");
+}
+
+// The operators get a pointer to the iterator, which the iterator is moved
+// into, or copied into when the operator doesn't change it.
+void ConverterRefCount::ConvertIteratorTraits(const clang::CXXRecordDecl *decl,
+                                              const IteratorOperators &ops) {
+  auto name = GetRecordName(decl);
+  auto value = GetUnboxedTypeAsString(
+      ops.deref->getReturnType().getNonReferenceType().getUnqualifiedType());
+  auto call = [&](const clang::CXXMethodDecl *method,
+                  std::string_view args = "") {
+    return std::format("{}::{}(__it{})", GetUFCSName(method),
+                       GetMethodName(method), args);
+  };
+  StrCat(std::format("impl CppIterator<{}> for {} {{", value, name));
+  StrCat(std::format("fn iter_deref(&self) -> Ptr<{}> {{ "
+                     "libcc2rs::with_record_ptr(&mut self.clone(), |__it| "
+                     "{}) }}",
+                     value, call(ops.deref)));
+  StrCat(std::format("fn iter_inc(&mut self) -> &mut Self {{ "
+                     "libcc2rs::with_record_ptr(self, |__it| {{ {}; }}); "
+                     "self }}",
+                     call(ops.inc)));
+  StrCat("}");
+  if (!ops.equality) {
+    return;
+  }
+  StrCat(std::format("impl CppInputIterator<{}> for {} {{}}", value, name));
+  if (!ops.dec) {
+    return;
+  }
+  StrCat(std::format("impl CppBidirectionalIterator<{}> for {} {{", value,
+                     name));
+  StrCat(std::format("fn iter_dec(&mut self) -> &mut Self {{ "
+                     "libcc2rs::with_record_ptr(self, |__it| {{ {}; }}); "
+                     "self }}",
+                     call(ops.dec)));
+  StrCat("}");
+  if (!ops.ordering || !ops.add_assign || !ops.distance) {
+    return;
+  }
+  StrCat(std::format("impl CppRandomAccessIterator<{}> for {} {{", value,
+                     name));
+  StrCat(std::format("fn iter_add_assign(&mut self, n: isize) -> Self {{ "
+                     "libcc2rs::with_record_ptr(self, |__it| {{ {}; }}); "
+                     "self.clone() }}",
+                     call(ops.add_assign, ", n as _")));
+  StrCat(std::format(
+      "fn iter_distance(&self, from: &Self) -> isize {{ "
+      "libcc2rs::with_record_ptrs(self, from, |__lhs, __rhs| ({}) as "
+      "isize) }}",
+      GetComparisonCall(ops.distance, decl, "__lhs", "__rhs")));
+  StrCat("}");
+}
+
+// The operator gets a pointer to a copy of the function object.
+std::string ConverterRefCount::GetCallableBody(const clang::CXXMethodDecl *call,
+                                               std::string_view args) {
+  return std::format(
+      "libcc2rs::with_record_ptr(&mut self.clone(), |__it| {}::{}(__it{}))",
+      GetUFCSName(call), GetMethodName(call), args);
 }
 
 std::string ConverterRefCount::GetShallowCopy(const clang::RecordDecl *decl,
@@ -801,7 +877,7 @@ void ConverterRefCount::EmitByteSizeAttr(const clang::RecordDecl *decl) {
 
 std::string
 ConverterRefCount::GetSelfMaybeWithMut(const clang::CXXMethodDecl *decl) {
-  return NeedsMutAccess(ctx_, decl, decl->getThisType()->getPointeeType())
+  return NeedsMutAccess(decl, decl->getThisType()->getPointeeType())
              ? "&mut self"
              : "&self";
 }
@@ -872,6 +948,7 @@ void ConverterRefCount::EmitFunctionPreamble(clang::FunctionDecl *decl) {
                        ToString(param->getType()), BoxValue(std::move(init))),
            token::kSemiColon);
   }
+  EmitParamDestructors(decl);
 }
 
 bool ConverterRefCount::ConvertVarDeclSkipInit(clang::VarDecl *decl) {
@@ -923,16 +1000,13 @@ bool ConverterRefCount::VisitVarDecl(clang::VarDecl *decl) {
   return false;
 }
 
-void ConverterRefCount::EmitScopedDestructor(const clang::VarDecl *decl) {
-  if (!NeedsScopedDestructor(decl)) {
-    return;
-  }
+std::string
+ConverterRefCount::ScopedDestructorStmt(const clang::VarDecl *decl) {
   auto destroy = AsLambdaClass(decl->getType())
                      ? std::string("__p.with(|__f| __f.destroy())")
                      : std::format("__p.{}()", kDestructorName);
-  StrCat(token::kSemiColon,
-         std::format("let _dtor_{0} = ScopedDestructor::new(&{0}, |__p| {1})",
-                     GetNamedDeclAsString(decl), destroy));
+  return std::format("let _dtor_{0} = ScopedDestructor::new(&{0}, |__p| {1})",
+                     GetNamedDeclAsString(decl), destroy);
 }
 
 bool ConverterRefCount::ConvertIncAndDec(clang::UnaryOperator *expr) {
@@ -1301,8 +1375,25 @@ void ConverterRefCount::EmitCallResult(clang::CallExpr *expr, std::string str,
     return temps ? temps->Wrap(std::move(s)) : s;
   };
   auto ty = GetReturnTypeOfFunction(expr);
-  if (auto *ref = ty->getAs<clang::ReferenceType>();
-      ref && !isAddrOf() && !isVoid() && !ExprMapsValueToPointer(expr) &&
+  auto *ref = RuleRegistry::ReturnsProxyReference(ctx_, expr, ty)
+                  ? nullptr
+                  : ty->getAs<clang::ReferenceType>();
+  // A rule returns a reference to a class object that is no pointer as a Rust
+  // reference to it, e.g., ++it as &mut Iterator.
+  if (auto *rule = RuleRegistry::GetExprRule(ctx_, expr);
+      ref && rule && ref->getPointeeType()->isRecordType() &&
+      !RuleRegistry::MapsToPointer(ctx_, ref->getPointeeType()) &&
+      !rule->return_type.is_pointer() && !rule->return_type.is_projection &&
+      !isAddrOf() && !isVoid()) {
+    if (isLValue()) {
+      StrCat(wrap(std::move(str)));
+      MarkNotFresh();
+      return;
+    }
+    EmitFresh(std::format("({}).clone()", wrap(std::move(str))));
+    return;
+  }
+  if (ref && !isAddrOf() && !isVoid() && !ExprMapsValueToPointer(expr) &&
       !RuleReturnsReferencedObject(expr)) {
     if (isLValue()) {
       pending_deref_.set(wrap(std::move(str)), /*fresh=*/true);
@@ -1313,6 +1404,20 @@ void ConverterRefCount::EmitCallResult(clang::CallExpr *expr, std::string str,
     auto deref = DerefPtrExpr(str, ref->getPointeeType());
     StrCat(DeferTemporaries(expr, temps) ? deref : wrap(std::move(deref)));
     SetDerefFreshness(ref->getPointeeType());
+    return;
+  }
+
+  // A rule written for the references of a class template returns a pointer
+  // to the value of a specialization whose member returns it by value, e.g.,
+  // the const at() of vector<bool>.
+  // The value is of the canonical type, as the type rule of the spelled one
+  // is written for the references of the other specializations.
+  if (auto value = ty.getCanonicalType();
+      !value->isReferenceType() && !IsPointerType(ctx_, value) && !isVoid() &&
+      RuleRegistry::ReturnPointsTo(ctx_, expr, value)) {
+    auto deref = DerefPtrExpr(str, value);
+    StrCat(DeferTemporaries(expr, temps) ? deref : wrap(std::move(deref)));
+    SetDerefFreshness(value);
     return;
   }
 
@@ -1543,7 +1648,7 @@ void ConverterRefCount::ConvertFunctionToFunctionPointer(
       std::format("FnPtr::<{}>::new({})",
                   ConvertFunctionPointerType(
                       fn_decl->getType()->getAs<clang::FunctionProtoType>()),
-                  GetFunctionRefName(fn_decl)));
+                  GetFunctionPointerTarget(fn_decl)));
 }
 
 std::string ConverterRefCount::ConvertFnPtrPlaceholder(clang::Expr *arg) {
@@ -1591,13 +1696,22 @@ bool ConverterRefCount::VisitExplicitCastExpr(clang::ExplicitCastExpr *expr) {
     EmitFresh(GetDefaultAsString(expr->getType()));
     return false;
   }
+  // A Ptr has no constness, so a cast to a reference to the operand's own
+  // type only rebinds it.
+  if (auto type = expr->getTypeAsWritten();
+      type->isReferenceType() &&
+      ctx_.hasSameUnqualifiedType(type.getNonReferenceType(),
+                                  expr->getSubExpr()->getType())) {
+    Convert(expr->getSubExpr());
+    return false;
+  }
   switch (expr->getStmtClass()) {
   case clang::Stmt::CXXReinterpretCastExprClass:
     assert(expr->getType()->isPointerType() &&
            "Only pointer casts are supported in reinterpret_cast");
-    EmitFresh(
-        std::format("{}.reinterpret_cast::<{}>()", ToString(expr->getSubExpr()),
-                    GetUnsafeTypeAsString(expr->getType()->getPointeeType())));
+    EmitFresh(std::format("{}.reinterpret_cast::<{}>()",
+                          ToString(expr->getSubExpr()),
+                          ConvertPointeeType(expr->getType())));
     return false;
   case clang::Stmt::CStyleCastExprClass:
   case clang::Stmt::CXXStaticCastExprClass:
@@ -1939,7 +2053,7 @@ bool ConverterRefCount::VisitMemberExpr(clang::MemberExpr *expr) {
     if (base_type->isPointerType()) {
       base_type = base_type->getPointeeType();
     }
-    bool needs_mut = NeedsMutAccess(ctx_, method, base_type);
+    bool needs_mut = NeedsMutAccess(method, base_type);
     PushExprKind push(*this, needs_mut ? ExprKind::LValue : ExprKind::RValue);
     Converter::ConvertMemberExpr(expr);
     MarkFresh();
@@ -1962,6 +2076,11 @@ bool ConverterRefCount::VisitMemberExpr(clang::MemberExpr *expr) {
   std::string str;
   if (known) {
     str = GetMappedAsString(expr);
+    // the Value of a reference field holds its pointer, e.g., the first of a
+    // pair<const int &, char>
+    if (member->getType()->isReferenceType()) {
+      str = std::format("{}.borrow().clone()", str);
+    }
   } else if (clang::isa<clang::FieldDecl>(member)) {
     // The pointer that the reference field holds, which is used in place in
     // an unboxed struct.
@@ -2008,7 +2127,7 @@ void ConverterRefCount::ConvertInlineField(clang::MemberExpr *expr) {
     if (type->isArrayType()) {
       StrCat(std::format("array_field_ptr!({}, {})", ConvertRecordPtr(expr),
                          name));
-    } else if (IsBoxedType(ctx_, type)) {
+    } else if (IsBoxedType(type)) {
       StrCat(std::format("field_ref!({}, {}){}", ConvertRecordPtr(expr), name,
                          AsPointerMethod(type)));
     } else {
@@ -2441,6 +2560,25 @@ const char *ConverterRefCount::GetConversionTraitName() const {
   return "CppFrom";
 }
 
+std::string ConverterRefCount::ConvertPtrRead(clang::QualType,
+                                              const std::string &src) {
+  return std::format("{}.read()", src);
+}
+
+std::string ConverterRefCount::ConvertPtrWrite(const std::string &dst,
+                                               const std::string &value) {
+  return std::format("{}.write({})", dst, value);
+}
+
+std::string ConverterRefCount::ConvertPointeeMethodCall(
+    const char *method, const std::string &dst, const std::string &src) {
+  return std::format("{}.{}({})", dst, method, src);
+}
+
+const char *ConverterRefCount::GetMoveCtorTraitName() const {
+  return "MoveCtor";
+}
+
 bool ConverterRefCount::TypeDerivesDefault(clang::QualType qual_type) {
   // Arrays are translated to Value<Box<[T]>>, whose Default is empty
   return !qual_type->isArrayType() && Converter::TypeDerivesDefault(qual_type);
@@ -2642,6 +2780,9 @@ bool ConverterRefCount::ConvertCXXOperatorCallExpr(
 
   case clang::OverloadedOperatorKind::OO_Arrow:
   case clang::OverloadedOperatorKind::OO_Star:
+    if (expr->getNumArgs() != 1) {
+      return Converter::ConvertCXXOperatorCallExpr(expr);
+    }
     if (isLValue()) {
       auto ptr = ToString(expr->getArg(0));
       pending_deref_.set(std::move(ptr), isFresh());
@@ -2656,8 +2797,8 @@ bool ConverterRefCount::ConvertCXXOperatorCallExpr(
 
   case clang::OverloadedOperatorKind::OO_Subscript: {
     bool is_inner_boxed =
-        IsBoxedType(ctx_, expr->getType().getNonReferenceType()) &&
-        IsBoxedType(ctx_, expr->getArg(0)->getType().getNonReferenceType());
+        IsBoxedType(expr->getType().getNonReferenceType()) &&
+        IsBoxedType(expr->getArg(0)->getType().getNonReferenceType());
 
     // An element of an unboxed container is accessed directly, as is one of
     // a container stored in a Value that can be borrowed.
@@ -2756,9 +2897,7 @@ std::string ConverterRefCount::ConvertElemPlace(clang::Expr *container,
                     : nullptr;
   if (field && !field->getType()->isReferenceType() &&
       !field->getParent()->isUnion() && !Mapper::Contains(ctx_, member) &&
-      !IsUnboxedPlace(member) &&
-      Mapper::Map(ctx_, field->getType().getUnqualifiedType())
-          .starts_with("Vec<")) {
+      !IsUnboxedPlace(member) && IsVecType(field->getType())) {
     if (IsFieldOfVectorElem(member)) {
       return std::format("index!({}, {})", ConvertPlace(member),
                          ConvertSubscriptIndex(idx));
@@ -2773,8 +2912,7 @@ std::string ConverterRefCount::ConvertElemPlace(clang::Expr *container,
       container->IgnoreParenNoopCasts(ctx_));
   if ((IsReferenceType(container) ||
        (deref && deref->getOpcode() == clang::UO_Deref)) &&
-      Mapper::Map(ctx_, container->getType().getUnqualifiedType())
-          .starts_with("Vec<")) {
+      IsVecType(container->getType())) {
     ConvertLValue(container);
     if (!pending_deref_.empty()) {
       auto place = pending_deref_.take();

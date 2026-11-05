@@ -3,6 +3,7 @@
 
 use crate::fn_ptr::FnPtr;
 use crate::fn_ptr_arg::FnPtrArg;
+use crate::{ByteRepr, Ptr};
 
 macro_rules! callable {
     ($name:ident; $($a:ident: $A:ident),*) => {
@@ -42,3 +43,73 @@ callable!(Callable0;);
 callable!(Callable1; a1: A1);
 callable!(Callable2; a1: A1, a2: A2);
 callable!(Callable3; a1: A1, a2: A2, a3: A3);
+
+// A comparator handed elements by pointer, whether it takes them by pointer
+// (C++ `const T &`) or by value (C++ `T`).
+pub trait UnsafeComparator<T> {
+    unsafe fn unsafe_less(&self, a: *const T, b: *const T) -> bool;
+}
+
+impl<T, C: Callable2<*const T, *const T, bool>> UnsafeComparator<T> for C {
+    #[inline]
+    unsafe fn unsafe_less(&self, a: *const T, b: *const T) -> bool {
+        self.call(a, b)
+    }
+}
+
+impl<T: Clone + FnPtrArg> UnsafeComparator<T> for FnPtr<fn(T, T) -> bool> {
+    #[inline]
+    unsafe fn unsafe_less(&self, a: *const T, b: *const T) -> bool {
+        unsafe { self.call((*a).clone(), (*b).clone()) }
+    }
+}
+
+pub trait Comparator<T> {
+    fn less(&self, a: Ptr<T>, b: Ptr<T>) -> bool;
+}
+
+impl<T, C: Callable2<Ptr<T>, Ptr<T>, bool>> Comparator<T> for C {
+    #[inline]
+    fn less(&self, a: Ptr<T>, b: Ptr<T>) -> bool {
+        self.call(a, b)
+    }
+}
+
+impl<T: Clone + ByteRepr + FnPtrArg> Comparator<T> for FnPtr<fn(T, T) -> bool> {
+    #[inline]
+    fn less(&self, a: Ptr<T>, b: Ptr<T>) -> bool {
+        self.call(a.read(), b.read())
+    }
+}
+
+// A function object taking the compared elements by value (C++ `bool
+// operator()(T, T)`) is a comparator handed them by pointer.
+#[macro_export]
+macro_rules! value_comparator_unsafe {
+    ($record:ty, $elem:ty) => {
+        impl $crate::UnsafeComparator<$elem> for $record {
+            #[inline]
+            unsafe fn unsafe_less(&self, a: *const $elem, b: *const $elem) -> bool {
+                unsafe {
+                    <Self as $crate::Callable2<$elem, $elem, bool>>::call(
+                        self,
+                        (*a).clone(),
+                        (*b).clone(),
+                    )
+                }
+            }
+        }
+    };
+}
+
+#[macro_export]
+macro_rules! value_comparator {
+    ($record:ty, $elem:ty) => {
+        impl $crate::Comparator<$elem> for $record {
+            #[inline]
+            fn less(&self, a: $crate::Ptr<$elem>, b: $crate::Ptr<$elem>) -> bool {
+                <Self as $crate::Callable2<$elem, $elem, bool>>::call(self, a.read(), b.read())
+            }
+        }
+    };
+}

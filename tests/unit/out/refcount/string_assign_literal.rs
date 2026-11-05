@@ -14,7 +14,7 @@ fn main_0() -> i32 {
     let v: Value<Vec<Vec<i8>>> = Rc::new(RefCell::new(Vec::new()));
     let s: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __bytes = Ptr::<i8>::from_string_literal(b"hi").to_c_bytes();
-        __bytes.push(0);
+        __bytes.push(0_i8);
         __bytes
     }));
     {
@@ -23,13 +23,13 @@ fn main_0() -> i32 {
     };
     {
         let mut __bytes = Ptr::<i8>::from_string_literal(b"changed").to_c_bytes();
-        __bytes.push(0);
+        __bytes.push(0_i8);
         s.as_pointer().write(__bytes);
         s.as_pointer()
     };
     assert!(
         ({
-            match (v.decay().offset(0_usize),) {
+            match (v.decay().offset(0_usize as isize),) {
                 (__tmp_0,) => Ptr::<i8>::from_string_literal(b"hi").with_c_str(|__s| {
                     (*__tmp_0.upgrade().deref())
                         [..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]

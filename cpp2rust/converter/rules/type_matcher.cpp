@@ -62,13 +62,24 @@ bool satisfiesConstraints(clang::Sema &sema,
          !trial.failed();
 }
 
+// The typedef naming a type: its own, or the one an anonymous struct is
+// declared with (glibc's typedef struct { ... } __mbstate_t).
+const clang::TypedefNameDecl *typedefName(const clang::Type *type) {
+  if (auto alias = llvm::dyn_cast<clang::TypedefType>(type)) {
+    return alias->getDecl();
+  }
+  if (auto tag = type->getAsTagDecl(); tag && !tag->getIdentifier()) {
+    return tag->getTypedefNameForAnonDecl();
+  }
+  return nullptr;
+}
+
 bool isSameSugar(const clang::Type *a, const clang::Type *b) {
-  auto a_typedef = llvm::dyn_cast<clang::TypedefType>(a);
-  auto b_typedef = llvm::dyn_cast<clang::TypedefType>(b);
+  auto a_typedef = typedefName(a);
+  auto b_typedef = typedefName(b);
   if (a_typedef || b_typedef) {
     return a_typedef && b_typedef &&
-           a_typedef->getDecl()->getCanonicalDecl() ==
-               b_typedef->getDecl()->getCanonicalDecl();
+           a_typedef->getCanonicalDecl() == b_typedef->getCanonicalDecl();
   }
   return a == b;
 }
@@ -156,6 +167,11 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
     }
     auto args = RuleDecls::DeduceFromClass(
         sema, params, clang::QualType(qualifier, 0), owner);
+    // a member typedef belongs to its own class only (vector<int>::size_type
+    // is not vector<bool, T1>::size_type)
+    if (!args && llvm::isa<clang::TypedefNameDecl>(named)) {
+      return std::nullopt;
+    }
     if (!args) {
       return from_defaults();
     }

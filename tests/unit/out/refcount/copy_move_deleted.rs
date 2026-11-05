@@ -101,7 +101,7 @@ impl CppMove for Container {
 pub struct VecHolder {
     #[offset(0)]
     #[byte_size(24)]
-    pub items: Vec<NoCopy>,
+    pub items: std_vector_NoCopy__std_allocator_NoCopy__,
 }
 impl VecHolder {
     pub fn move_from(_a0: Ptr<VecHolder>) -> Self {
@@ -128,31 +128,35 @@ pub fn main() {
 fn main_0() -> i32 {
     let a: Value<NoCopy> = Rc::new(RefCell::new(NoCopy::new({ 1 })));
     let b: Value<NoCopy> = Rc::new(RefCell::new(NoCopy::move_from({ a.as_pointer() })));
-    assert!(({ ({ (*b.borrow()).v } == 1) && ({ (*a.borrow()).v } == 0) }));
+    ({ cpp2rust_assert_fail_2(({ (*b.borrow()).v } == 1) && ({ (*a.borrow()).v } == 0)) });
     ({ NoCopyImpl::move_assign(&a.as_pointer(), b.as_pointer()) });
-    assert!(({ ({ (*a.borrow()).v } == 1) && ({ (*b.borrow()).v } == 0) }));
+    ({ cpp2rust_assert_fail_2(({ (*a.borrow()).v } == 1) && ({ (*b.borrow()).v } == 0)) });
     ({ bump_0((a.as_pointer())) });
-    assert!(({ ({ (*a.borrow()).v } == 2) }));
+    ({ cpp2rust_assert_fail_2(({ (*a.borrow()).v } == 2)) });
     let p: Value<PrivateCopy> = Rc::new(RefCell::new(PrivateCopy::new()));
     (*p.borrow_mut()).v = 3;
     let q: Value<PrivateCopy> = Rc::new(RefCell::new(PrivateCopy::move_from({ p.as_pointer() })));
-    assert!(({ ({ (*q.borrow()).v } == 3) && ({ (*p.borrow()).v } == 0) }));
+    ({ cpp2rust_assert_fail_2(({ (*q.borrow()).v } == 3) && ({ (*p.borrow()).v } == 0)) });
     ({ PrivateCopyImpl::move_assign(&p.as_pointer(), q.as_pointer()) });
-    assert!(({ ({ (*p.borrow()).v } == 3) && ({ (*q.borrow()).v } == 0) }));
+    ({ cpp2rust_assert_fail_2(({ (*p.borrow()).v } == 3) && ({ (*q.borrow()).v } == 0)) });
     let im: Value<Immovable> = Rc::new(RefCell::new(Immovable::new()));
     (*im.borrow_mut()).v = 4;
     ({ bump_ref_1(im.as_pointer()) });
     let mut pim: Ptr<Immovable> = (im.as_pointer());
-    assert!((pim.with(|__s| __s.v) == 5));
+    ({ cpp2rust_assert_fail_2((pim.with(|__s| __s.v) == 5)) });
     let c: Value<Container> = Rc::new(RefCell::new(Container {
         inner: NoCopy::new({ 6 }),
         tag: 7,
     }));
     let mut d: Container = Container::move_from({ c.as_pointer() });
-    assert!(({ ((d.inner.v == 6) && (d.tag == 7)) && ({ (*c.borrow()).inner.v } == 0) }));
+    ({
+        cpp2rust_assert_fail_2(
+            ((d.inner.v == 6) && (d.tag == 7)) && ({ (*c.borrow()).inner.v } == 0),
+        )
+    });
     let h: Value<VecHolder> = Rc::new(RefCell::new(<VecHolder>::default()));
-    let mut h2: VecHolder = VecHolder::move_from({ h.as_pointer() });
-    assert!((h2.items.len() == 0_usize));
+    let h2: Value<VecHolder> = Rc::new(RefCell::new(VecHolder::move_from({ h.as_pointer() })));
+    ({ cpp2rust_assert_fail_2((({ (*h2.borrow()).items.size() }) == 0_u64)) });
     return 0;
 }
 pub trait ContainerImpl {
@@ -196,9 +200,7 @@ pub trait VecHolderImpl {
 }
 impl VecHolderImpl for Ptr<VecHolder> {
     fn move_assign(&self, _a0: Ptr<VecHolder>) -> Ptr<VecHolder> {
-        field_ref!((*self), items)
-            .as_pointer()
-            .write(field!(_a0, items).with_mut(std::mem::take));
+        field!((*self), items).write({ { (*_a0.upgrade().deref()).items.clone() } });
         return (*self).clone();
     }
 }

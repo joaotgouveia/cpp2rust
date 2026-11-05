@@ -35,14 +35,14 @@ impl CppMove for Flag {
 }
 pub fn use_4(f: Flag) -> i32 {
     let f: Value<Flag> = Rc::new(RefCell::new(f));
-    assert!(({ FlagImpl::to_bool(&f.as_pointer(),) }));
+    ({ cpp2rust_assert_fail_5(({ FlagImpl::to_bool(&f.as_pointer()) })) });
     return { (*f.borrow()).v };
 }
-pub fn checked_5(mut x: i32) -> i32 {
-    assert!((x > 0));
+pub fn checked_6(mut x: i32) -> i32 {
+    ({ cpp2rust_assert_fail_5((x > 0)) });
     return (x + 1);
 }
-pub fn in_constant_context_6() -> bool {
+pub fn in_constant_context_7() -> bool {
     {}
     return (({ runtime_only_0(1) }) == 0);
 }
@@ -63,26 +63,30 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut runtime_context: bool = ({ in_constant_context_6() });
-    assert!(!(runtime_context));
+    let mut runtime_context: bool = ({ in_constant_context_7() });
+    ({ cpp2rust_assert_fail_5(!(runtime_context)) });
     let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([7, 8])));
-    assert!((({ first_1((arr.as_pointer() as Ptr::<i32>),) }) == 7));
-    assert!((({ first_1((arr.as_pointer() as Ptr::<i32>).offset((1) as isize),) }) == 8));
-    assert!((({ scaled_2(3,) }) == 3));
-    assert!((({ scaled_2(-3_i32,) }) == 6));
-    assert!((({ half_3(5_f64,) }) == 2.5_f64));
-    assert!((({ checked_5(1,) }) == 2));
+    ({ cpp2rust_assert_fail_5((({ first_1((arr.as_pointer() as Ptr<i32>)) }) == 7)) });
+    ({
+        cpp2rust_assert_fail_5(
+            (({ first_1((arr.as_pointer() as Ptr<i32>).offset((1) as isize)) }) == 8),
+        )
+    });
+    ({ cpp2rust_assert_fail_5((({ scaled_2(3) }) == 3)) });
+    ({ cpp2rust_assert_fail_5((({ scaled_2(-3_i32) }) == 6)) });
+    ({ cpp2rust_assert_fail_5((({ half_3(5_f64) }) == 2.5_f64)) });
+    ({ cpp2rust_assert_fail_5((({ checked_6(1) }) == 2)) });
     let mut c: i32 = 5;
-    assert!((c == 5));
-    assert!((({ use_4(Flag { v: 2 },) }) == 2));
+    ({ cpp2rust_assert_fail_5((c == 5)) });
+    ({ cpp2rust_assert_fail_5((({ use_4(Flag { v: 2 }) }) == 2)) });
     let mut u: i32 = 3;
-    assert!((u == 3));
+    ({ cpp2rust_assert_fail_5((u == 3)) });
     let mut ptr: Ptr<i32> = (arr.as_pointer() as Ptr<i32>);
-    assert!(!(ptr).is_null());
+    ({ cpp2rust_assert_fail_5(!(ptr).is_null()) });
     let p: Value<P> = Rc::new(RefCell::new(P { v: 9 }));
-    assert!((({ PImpl::get(&p.as_pointer(),) }) == 9));
+    ({ cpp2rust_assert_fail_5((({ PImpl::get(&p.as_pointer()) }) == 9)) });
     let mut k: i32 = 4;
-    assert!((k == 4));
+    ({ cpp2rust_assert_fail_5((k == 4)) });
     return 0;
 }
 pub trait FlagImpl {

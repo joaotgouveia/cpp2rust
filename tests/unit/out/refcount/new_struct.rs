@@ -43,23 +43,23 @@ fn main_0() -> i32 {
     let mut p: Ptr<Pair> = Ptr::alloc(Pair { x: 1, y: 2 });
     let mut out: i32 = ({ p.with(|__s| __s.x) } + { p.with(|__s| __s.y) });
     p.delete();
-    assert!((out == 3));
+    ({ cpp2rust_assert_fail_0((out == 3)) });
     let mut t: Triple = Triple {
         a: 1,
         b: 0_i32,
         p: <Pair>::default(),
     };
-    assert!((t.a == 1));
-    assert!((t.b == 0));
-    assert!((t.p.x == 0) && (t.p.y == 0));
+    ({ cpp2rust_assert_fail_0((t.a == 1)) });
+    ({ cpp2rust_assert_fail_0((t.b == 0)) });
+    ({ cpp2rust_assert_fail_0((t.p.x == 0) && (t.p.y == 0)) });
     let mut q: Ptr<Triple> = Ptr::alloc(Triple {
         a: 2,
         b: 3,
         p: <Pair>::default(),
     });
-    assert!((q.with(|__s| __s.a) == 2));
-    assert!((q.with(|__s| __s.b) == 3));
-    assert!((q.with(|__s| __s.p.x) == 0) && (q.with(|__s| __s.p.y) == 0));
+    ({ cpp2rust_assert_fail_0((q.with(|__s| __s.a) == 2)) });
+    ({ cpp2rust_assert_fail_0((q.with(|__s| __s.b) == 3)) });
+    ({ cpp2rust_assert_fail_0((q.with(|__s| __s.p.x) == 0) && (q.with(|__s| __s.p.y) == 0)) });
     q.delete();
     return 0;
 }

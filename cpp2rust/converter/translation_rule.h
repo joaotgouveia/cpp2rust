@@ -9,6 +9,7 @@
 #include <llvm/Support/JSON.h>
 
 #include <filesystem>
+#include <optional>
 #include <string>
 #include <variant>
 #include <vector>
@@ -93,14 +94,28 @@ struct Bound {
 bool AnyFragment(const std::vector<BodyFragment> &body,
                  llvm::function_ref<bool(const BodyFragment &)> pred);
 
+enum class ElemsKind { kVec, kVecDeque, kArray };
+
+struct Elems {
+  ElemsKind kind;
+  std::string type;
+};
+
 struct TypeInfo {
   std::vector<std::string> derives;
   std::string type;
   std::string cpp_type;
   bool is_refcount_pointer = false;
   bool is_unsafe_pointer = false;
+  bool is_projection = false;
   // Tn the pointer points to (*mut Tn, Ptr<Tn>), 0 otherwise
   unsigned pointee_generic = 0;
+  // Tn the type is, 0 otherwise
+  unsigned generic = 0;
+  // *mut T, *const T
+  bool is_mut_raw_pointer = false;
+  bool is_const_raw_pointer = false;
+  std::optional<Elems> elems;
 
   bool is_pointer() const { return is_refcount_pointer || is_unsafe_pointer; }
 
@@ -142,6 +157,7 @@ struct ExprRule {
 struct TypeRule {
   std::vector<BodyFragment> initializer; // Rust initializer expression
   unsigned generic = 0;
+  std::vector<std::vector<Bound>> generics;
   TypeInfo type_info;
 
   void dump() const;

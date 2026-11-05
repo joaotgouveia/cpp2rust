@@ -32,13 +32,13 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut s: Ptr<S> = libcc2rs::calloc_refcount(1_usize, 12usize).reinterpret_cast::<S>();
-    assert!(!((s).is_null()));
+    let mut s: Ptr<S> = ({ calloc_1(1_u64, (12usize as u64)) }).reinterpret_cast::<S>();
+    ({ cpp2rust_assert_fail_2(!((s).is_null())) });
     field!(s, b).write(1);
     let __rhs = ({ bump_0((s).clone()) });
     field!(s, a).write(__rhs);
-    assert!((s.with(|__s| __s.a) == 11));
-    assert!((s.with(|__s| __s.b) == 11));
+    ({ cpp2rust_assert_fail_2((s.with(|__s| __s.a) == 11)) });
+    ({ cpp2rust_assert_fail_2((s.with(|__s| __s.b) == 11)) });
     field!(s, a).write(1);
     field!(s, b).write(2);
     field!(s, c).write(0);
@@ -47,35 +47,38 @@ fn main_0() -> i32 {
     {
         field!(s, a).write(5);
     }
-    assert!((s.with(|__s| __s.a) == 5) && (s.with(|__s| __s.c) == 1));
+    ({ cpp2rust_assert_fail_2((s.with(|__s| __s.a) == 5) && (s.with(|__s| __s.c) == 1)) });
     if ({ s.with(|__s| __s.a) } < { s.with(|__s| __s.b) })
         && (field!(s, c).with_mut(|__v| __v.postfix_inc()) == 0)
     {
         field!(s, a).write(6);
     }
-    assert!((s.with(|__s| __s.a) == 5) && (s.with(|__s| __s.c) == 1));
+    ({ cpp2rust_assert_fail_2((s.with(|__s| __s.a) == 5) && (s.with(|__s| __s.c) == 1)) });
     let mut x: i32 = ({ s.with(|__s| __s.a) } + {
         ({
             field!(s, b).write(3);
             s.with(|__s| __s.b)
         })
     });
-    assert!((x == 8) && (s.with(|__s| __s.b) == 3));
+    ({ cpp2rust_assert_fail_2((x == 8) && (s.with(|__s| __s.b) == 3)) });
     let mut y: i32 = 0;
     let __rhs = ({
         y = 99;
         y
     });
     field!(s, c).write(__rhs);
-    assert!((s.with(|__s| __s.c) == 99) && (y == 99));
+    ({ cpp2rust_assert_fail_2((s.with(|__s| __s.c) == 99) && (y == 99)) });
     let __rhs = ({ bump_0((s).clone()) });
     {
         field!(s, a).with_mut(|__v| *__v = *__v + __rhs)
     };
-    assert!(
-        ((s.with(|__s| __s.a) == 18) && (s.with(|__s| __s.b) == 13)) && (s.with(|__s| __s.c) == 99)
-    );
-    libcc2rs::free_refcount((s).to_any());
+    ({
+        cpp2rust_assert_fail_2(
+            ((s.with(|__s| __s.a) == 18) && (s.with(|__s| __s.b) == 13))
+                && (s.with(|__s| __s.c) == 99),
+        )
+    });
+    ({ free_3((s).to_any()) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

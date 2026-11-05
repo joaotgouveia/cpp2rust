@@ -25,30 +25,30 @@ fn main_0() -> i32 {
         (*v.borrow_mut()).push(__a1)
     };
     let mut square: i32 = 0;
-    'loop_: for e1 in IterRange::new(v.decay().begin(), v.decay().end()) {
+    'loop_: for e1 in IterRange::new(CppRange::begin(&v.decay()), CppRange::end(&v.decay())) {
         let mut e1: i32 = (e1.iter_deref().read());
-        'loop_: for e2 in IterRange::new(v.decay().begin(), v.decay().end()) {
+        'loop_: for e2 in IterRange::new(CppRange::begin(&v.decay()), CppRange::end(&v.decay())) {
             let mut e2: i32 = (e2.iter_deref().read());
             square += (e1 * e2);
         }
     }
-    'loop_: for e1 in IterRange::new(v.decay().begin(), v.decay().end()) {
+    'loop_: for e1 in IterRange::new(CppRange::begin(&v.decay()), CppRange::end(&v.decay())) {
         let e1: Ptr<i32> = e1.iter_deref();
-        'loop_: for e2 in IterRange::new(v.decay().begin(), v.decay().end()) {
+        'loop_: for e2 in IterRange::new(CppRange::begin(&v.decay()), CppRange::end(&v.decay())) {
             let e2: Ptr<i32> = e2.iter_deref();
             square += { ({ (e1.read()) } * { (e2.read()) }) };
         }
     }
-    'loop_: for e1 in IterRange::new(v.decay().begin(), v.decay().end()) {
+    'loop_: for e1 in IterRange::new(CppRange::begin(&v.decay()), CppRange::end(&v.decay())) {
         let e1: Ptr<i32> = e1.iter_deref();
-        'loop_: for e2 in IterRange::new(v.decay().begin(), v.decay().end()) {
+        'loop_: for e2 in IterRange::new(CppRange::begin(&v.decay()), CppRange::end(&v.decay())) {
             let e2: Ptr<i32> = e2.iter_deref();
             square += { ({ (e1.read()) } * { (e2.read()) }) };
         }
     }
-    'loop_: for e1 in IterRange::new(v.decay().begin(), v.decay().end()) {
+    'loop_: for e1 in IterRange::new(CppRange::begin(&v.decay()), CppRange::end(&v.decay())) {
         let e1: Ptr<i32> = e1.iter_deref();
-        'loop_: for e2 in IterRange::new(v.decay().begin(), v.decay().end()) {
+        'loop_: for e2 in IterRange::new(CppRange::begin(&v.decay()), CppRange::end(&v.decay())) {
             let e2: Ptr<i32> = e2.iter_deref();
             square += { ({ (e1.read()) } * { (e2.read()) }) };
         }
@@ -69,9 +69,11 @@ fn main_0() -> i32 {
         let __a1 = std::mem::take(&mut v3);
         (*m.borrow_mut()).push(__a1)
     };
-    'loop_: for row in IterRange::new(m.decay().begin(), m.decay().end()) {
+    'loop_: for row in IterRange::new(CppRange::begin(&m.decay()), CppRange::end(&m.decay())) {
         let row: Ptr<Vec<i32>> = row.iter_deref();
-        'loop_: for col in IterRange::new(row.decay().begin(), row.decay().end()) {
+        'loop_: for col in
+            IterRange::new(CppRange::begin(&row.decay()), CppRange::end(&row.decay()))
+        {
             let col: Ptr<i32> = col.iter_deref();
             square += { (col.read()) };
         }

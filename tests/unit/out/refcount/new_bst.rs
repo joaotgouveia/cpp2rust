@@ -90,7 +90,7 @@ fn main_0() -> i32 {
         && (({ find_0((root).clone(), 4) }).with(|__s| __s.value) == 4))
         && (({ find_0((root).clone(), 5) }).is_null());
     ({ del_2((root).clone()) });
-    assert!(out);
+    ({ cpp2rust_assert_fail_3(out) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

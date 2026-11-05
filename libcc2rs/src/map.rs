@@ -251,6 +251,15 @@ impl<K: CppLess + 'static, V: 'static> Map<K, Entry<K, V>> {
         })
     }
 
+    // emplace: links the entry itself, unless its key is in the map.
+    pub fn emplace(map: Ptr<Self>, entry: Entry<K, V>) -> (BidirectionalIterator<Entry<K, V>>, bool) {
+        let key = entry.0.as_pointer();
+        map.with_mut(|map| match map.search(&key) {
+            Ok(node) => (BidirectionalIterator::Map(node), false),
+            Err(prev) => (BidirectionalIterator::Map(map.link_after(prev, entry)), true),
+        })
+    }
+
     pub fn erase(
         map: Ptr<Self>,
         it: &BidirectionalIterator<Entry<K, V>>,

@@ -31,10 +31,10 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ stacked_0(1,) }) == 100));
-    assert!((({ stacked_0(3,) }) == 100));
-    assert!((({ stacked_0(5,) }) == 200));
-    assert!((({ stacked_0(9,) }) == 300));
+    ({ cpp2rust_assert_fail_1((({ stacked_0(1) }) == 100)) });
+    ({ cpp2rust_assert_fail_1((({ stacked_0(3) }) == 100)) });
+    ({ cpp2rust_assert_fail_1((({ stacked_0(5) }) == 200)) });
+    ({ cpp2rust_assert_fail_1((({ stacked_0(9) }) == 300)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

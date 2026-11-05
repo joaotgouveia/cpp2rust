@@ -35,13 +35,15 @@ fn main_0() -> i32 {
     if (a != 0) {}
     if (a == b) {}
     if (a < b) {}
-    assert!((a == b));
-    assert!(
-        !(({
-            a = b;
-            a
-        }) != 0)
-    );
+    ({ cpp2rust_assert_fail_3((a == b)) });
+    ({
+        cpp2rust_assert_fail_3(
+            !(({
+                a = b;
+                a
+            }) != 0),
+        )
+    });
     let mut c: bool = false;
     c = ({
         a = b;
@@ -59,39 +61,39 @@ fn main_0() -> i32 {
     let mut eq: i32 = ((x == y) as i32);
     let mut lt: i32 = ((x < y) as i32);
     let mut neq: i32 = ((x != y) as i32);
-    assert!((eq == 1));
-    assert!((lt == 0));
-    assert!((neq == 0));
+    ({ cpp2rust_assert_fail_3((eq == 1)) });
+    ({ cpp2rust_assert_fail_3((lt == 0)) });
+    ({ cpp2rust_assert_fail_3((neq == 0)) });
     let mut p1: Ptr<i8> = Ptr::<i8>::from_string_literal(b"hi");
     let mut p2: Ptr<i8> = Ptr::<i8>::null();
     let mut either: i32 = (((!(p1).is_null()) || (!(p2).is_null())) as i32);
     let mut both: i32 = (((!(p1).is_null()) && (!(p2).is_null())) as i32);
-    assert!((either == 1));
-    assert!((both == 0));
-    assert!((({ cmp_eq_0(-1_i32,) }) == 1));
-    assert!((({ cmp_eq_0(0,) }) == 0));
-    assert!((({ cmp_or_ptr_1((p1).clone(), (p2).clone(),) }) == 1));
-    assert!((({ cmp_or_ptr_1(Ptr::<i8>::null(), Ptr::<i8>::null(),) }) == 0));
-    assert!((({ both_null_2(Ptr::<i8>::null(), Ptr::<i8>::null(),) }) == 1));
-    assert!((({ both_null_2((p1).clone(), Ptr::<i8>::null(),) }) == 0));
+    ({ cpp2rust_assert_fail_3((either == 1)) });
+    ({ cpp2rust_assert_fail_3((both == 0)) });
+    ({ cpp2rust_assert_fail_3((({ cmp_eq_0(-1_i32) }) == 1)) });
+    ({ cpp2rust_assert_fail_3((({ cmp_eq_0(0) }) == 0)) });
+    ({ cpp2rust_assert_fail_3((({ cmp_or_ptr_1((p1).clone(), (p2).clone()) }) == 1)) });
+    ({ cpp2rust_assert_fail_3((({ cmp_or_ptr_1(Ptr::<i8>::null(), Ptr::<i8>::null()) }) == 0)) });
+    ({ cpp2rust_assert_fail_3((({ both_null_2(Ptr::<i8>::null(), Ptr::<i8>::null()) }) == 1)) });
+    ({ cpp2rust_assert_fail_3((({ both_null_2((p1).clone(), Ptr::<i8>::null()) }) == 0)) });
     let mut d: f64 = 0.5_f64;
     let mut taken: i32 = 0;
     if (d != 0.0) {
         taken = 1;
     }
-    assert!((taken == 1));
+    ({ cpp2rust_assert_fail_3((taken == 1)) });
     'loop_: while (d != 0.0) {
         d = 0_f64;
     }
-    assert!((d == 0_f64));
+    ({ cpp2rust_assert_fail_3((d == 0_f64)) });
     let mut f: f32 = 2_f32;
     let mut fb: bool = (f != 0.0);
     let mut nf: bool = !(f != 0.0);
-    assert!(fb);
-    assert!(!(nf));
-    assert!(!(0_f64 != 0.0));
+    ({ cpp2rust_assert_fail_3(fb) });
+    ({ cpp2rust_assert_fail_3(!(nf)) });
+    ({ cpp2rust_assert_fail_3(!(0_f64 != 0.0)) });
     let mut fi: i32 = ((f != 0.0) as i32);
-    assert!((fi == 1));
+    ({ cpp2rust_assert_fail_3((fi == 1)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

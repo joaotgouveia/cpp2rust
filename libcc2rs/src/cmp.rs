@@ -11,8 +11,6 @@ use crate::reinterpret::ByteRepr;
 use std::cell::RefCell;
 use std::rc::Rc;
 
-impl ByteRepr for Ordering {}
-
 // The std::strong_ordering constants: one object each, so that references
 // bound to them compare equal by address.
 thread_local! {

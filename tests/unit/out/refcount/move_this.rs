@@ -51,29 +51,31 @@ pub fn main() {
 fn main_0() -> i32 {
     let a: Value<Chain> = Rc::new(RefCell::new(Chain::new({ 1 })));
     ({ ChainImpl::add_4(&({ ChainImpl::add_4(&a.as_pointer(), 1) }), 1) });
-    assert!(({ ({ (*a.borrow()).v } == 3) }));
+    ({ cpp2rust_assert_fail_1(({ (*a.borrow()).v } == 3)) });
     let b0: Value<Chain> = Rc::new(RefCell::new(Chain::new({ 5 })));
     let mut b: Chain = Chain::move_from({
         ({ ChainImpl::add_5(&({ ChainImpl::add_5(&b0.as_pointer(), 1) }), 1) })
     });
-    assert!(({ (b.v == 8) && ({ (*b0.borrow()).v } == 0) }));
+    ({ cpp2rust_assert_fail_1((b.v == 8) && ({ (*b0.borrow()).v } == 0)) });
     let c: Value<Chain> = Rc::new(RefCell::new(
         ({ ChainImpl::take(&Rc::new(RefCell::new(Chain::new({ 10 }))).as_pointer()) }),
     ));
-    assert!(({ ({ (*c.borrow()).v } == 11) }));
+    ({ cpp2rust_assert_fail_1(({ (*c.borrow()).v } == 11)) });
     let mut d: Chain = ({ ChainImpl::copy(&c.as_pointer()) });
-    assert!(({ (d.v == 111) && ({ (*c.borrow()).v } == 11) }));
+    ({ cpp2rust_assert_fail_1((d.v == 111) && ({ (*c.borrow()).v } == 11)) });
     let g: Value<Chain> = Rc::new(RefCell::new(Chain::new({ 20 })));
-    assert!(
-        (({
-            consume_0(Chain::move_from({
-                ({ ChainImpl::self_(&g.as_pointer()) })
-            }))
-        }) == 21)
-    );
+    ({
+        cpp2rust_assert_fail_1(
+            (({
+                consume_0(Chain::move_from({
+                    ({ ChainImpl::self_(&g.as_pointer()) })
+                }))
+            }) == 21),
+        )
+    });
     let e: Value<Chain> = Rc::new(RefCell::new(Chain::new({ 30 })));
     let mut f: Chain = ({ ChainImpl::take(&e.as_pointer()) });
-    assert!(({ (f.v == 31) && ({ (*e.borrow()).v } == 0) }));
+    ({ cpp2rust_assert_fail_1((f.v == 31) && ({ (*e.borrow()).v } == 0)) });
     return 0;
 }
 pub trait ChainImpl {

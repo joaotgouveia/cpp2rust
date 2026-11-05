@@ -74,11 +74,11 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let mut l: Local_3 = Local_3 { x: 7 };
-    assert!((({ get_2((l).clone(),) }) == 7));
-    assert!((({ twice_8((l).clone(),) }) == 14));
-    assert!((({ other_11() }) == 7));
-    assert!((({ wrap_9(5,) }) == 5));
-    assert!((({ wrap_10(6_i64,) }) == 6));
+    ({ cpp2rust_assert_fail_12((({ get_2((l).clone()) }) == 7)) });
+    ({ cpp2rust_assert_fail_12((({ twice_8((l).clone()) }) == 14)) });
+    ({ cpp2rust_assert_fail_12((({ other_11() }) == 7)) });
+    ({ cpp2rust_assert_fail_12((({ wrap_9(5) }) == 5)) });
+    ({ cpp2rust_assert_fail_12((({ wrap_10(6_i64) }) == 6)) });
     return 0;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]

@@ -24,12 +24,24 @@ pub fn main() {
 fn main_0() -> i32 {
     let a: Value<S> = Rc::new(RefCell::new(S { v: 12_u32 }));
     let b: Value<S> = Rc::new(RefCell::new(S { v: 10_u32 }));
-    assert!(({ ({ SImpl::operator_bitnot(&a.as_pointer(),) }).v } == !12_u32));
-    assert!(({ ({ SImpl::operator_bitand(&a.as_pointer(), b.as_pointer(),) }).v } == 8_u32));
-    assert!(({ ({ SImpl::operator_bitor(&a.as_pointer(), b.as_pointer(),) }).v } == 14_u32));
-    assert!(({ ({ SImpl::operator_bitxor(&a.as_pointer(), b.as_pointer(),) }).v } == 6_u32));
-    assert!(({ ({ SImpl::operator_shl(&a.as_pointer(), 2,) }).v } == 48_u32));
-    assert!(({ ({ SImpl::operator_shr(&a.as_pointer(), 2,) }).v } == 3_u32));
+    ({ cpp2rust_assert_fail_0(({ ({ SImpl::operator_bitnot(&a.as_pointer()) }).v } == !12_u32)) });
+    ({
+        cpp2rust_assert_fail_0(
+            ({ ({ SImpl::operator_bitand(&a.as_pointer(), b.as_pointer()) }).v } == 8_u32),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({ ({ SImpl::operator_bitor(&a.as_pointer(), b.as_pointer()) }).v } == 14_u32),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({ ({ SImpl::operator_bitxor(&a.as_pointer(), b.as_pointer()) }).v } == 6_u32),
+        )
+    });
+    ({ cpp2rust_assert_fail_0(({ ({ SImpl::operator_shl(&a.as_pointer(), 2) }).v } == 48_u32)) });
+    ({ cpp2rust_assert_fail_0(({ ({ SImpl::operator_shr(&a.as_pointer(), 2) }).v } == 3_u32)) });
     return 0;
 }
 pub trait SImpl {

@@ -33,11 +33,11 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ mixed_literal_cases_0(-1_i32,) }) == 1));
-    assert!((({ mixed_literal_cases_0(16,) }) == 2));
-    assert!((({ mixed_literal_cases_0(65152,) }) == 3));
-    assert!((({ mixed_literal_cases_0(-255_i32,) }) == 4));
-    assert!((({ mixed_literal_cases_0(7,) }) == 0));
+    ({ cpp2rust_assert_fail_1((({ mixed_literal_cases_0(-1_i32) }) == 1)) });
+    ({ cpp2rust_assert_fail_1((({ mixed_literal_cases_0(16) }) == 2)) });
+    ({ cpp2rust_assert_fail_1((({ mixed_literal_cases_0(65152) }) == 3)) });
+    ({ cpp2rust_assert_fail_1((({ mixed_literal_cases_0(-255_i32) }) == 4)) });
+    ({ cpp2rust_assert_fail_1((({ mixed_literal_cases_0(7) }) == 0)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

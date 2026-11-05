@@ -1,0 +1,553 @@
+extern crate libc;
+use libc::*;
+extern crate libcc2rs;
+use libcc2rs::*;
+use std::collections::BTreeMap;
+use std::io::{Read, Seek, Write};
+use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
+use std::rc::Rc;
+pub unsafe fn counted_string_0(calls: *mut i32) -> Vec<libc::c_char> {
+    (*calls).prefix_inc();
+    return std::slice::from_raw_parts(
+        c"hello".as_ptr(),
+        (0..)
+            .take_while(|&i| *c"hello".as_ptr().add(i) != 0)
+            .count()
+            + 1,
+    )
+    .to_vec();
+}
+pub unsafe fn counted_ref_1(s: *mut Vec<libc::c_char>, calls: *mut i32) -> *mut Vec<libc::c_char> {
+    (*calls).prefix_inc();
+    return s;
+}
+pub fn main() {
+    unsafe {
+        __cpp2rust_init_globals();
+        std::process::exit(main_0() as i32);
+    }
+}
+unsafe fn main_0() -> i32 {
+    let mut empty: Vec<libc::c_char> = vec![0];
+    assert!(((empty.len() - 1) == (0_usize)));
+    let mut s1: Vec<libc::c_char> = std::slice::from_raw_parts(
+        c"hello".as_ptr(),
+        (0..)
+            .take_while(|&i| *c"hello".as_ptr().add(i) != 0)
+            .count()
+            + 1,
+    )
+    .to_vec();
+    assert!(((s1.len() - 1) == (5_usize)));
+    assert!(((s1.len() - 1) == (s1.len() - 1)));
+    assert!(((s1[(0_usize)] as i32) == (('h' as libc::c_char) as i32)));
+    assert!(((s1[(1_usize)] as i32) == (('e' as libc::c_char) as i32)));
+    assert!(((s1[(2_usize)] as i32) == (('l' as libc::c_char) as i32)));
+    assert!(((s1[(3_usize)] as i32) == (('l' as libc::c_char) as i32)));
+    assert!(((s1[(4_usize)] as i32) == (('o' as libc::c_char) as i32)));
+    assert!(
+        s1 == {
+            std::slice::from_raw_parts(
+                c"hello".as_ptr(),
+                (0..)
+                    .take_while(|&i| *c"hello".as_ptr().add(i) != 0)
+                    .count()
+                    + 1,
+            )
+            .to_vec()
+        }
+    );
+    assert!(
+        s1 != {
+            std::slice::from_raw_parts(
+                c"world".as_ptr(),
+                (0..)
+                    .take_while(|&i| *c"world".as_ptr().add(i) != 0)
+                    .count()
+                    + 1,
+            )
+            .to_vec()
+        }
+    );
+    assert!(
+        !(s1 != {
+            std::slice::from_raw_parts(
+                c"hello".as_ptr(),
+                (0..)
+                    .take_while(|&i| *c"hello".as_ptr().add(i) != 0)
+                    .count()
+                    + 1,
+            )
+            .to_vec()
+        })
+    );
+    let mut p1: *const libc::c_char = (s1.as_mut_ptr()).cast_const();
+    assert!((((*p1.offset((0) as isize)) as i32) == (('h' as libc::c_char) as i32)));
+    assert!((((*p1.offset((1) as isize)) as i32) == (('e' as libc::c_char) as i32)));
+    assert!((((*p1.offset((2) as isize)) as i32) == (('l' as libc::c_char) as i32)));
+    assert!((((*p1.offset((3) as isize)) as i32) == (('l' as libc::c_char) as i32)));
+    assert!((((*p1.offset((4) as isize)) as i32) == (('o' as libc::c_char) as i32)));
+    let mut s2: Vec<libc::c_char> = vec![('a' as libc::c_char); (10_usize) as usize]
+        .iter()
+        .cloned()
+        .chain(std::iter::once(0))
+        .collect();
+    let mut p2: *const libc::c_char = (s2.as_mut_ptr()).cast_const();
+    let mut i: u32 = 0_u32;
+    'loop_: while ((i as usize) < (s2.len() - 1)) {
+        assert!(
+            (((*p2.offset((i) as isize)) as i32) == (('a' as libc::c_char) as i32))
+                && ((s2[(i as usize)] as i32) == (('a' as libc::c_char) as i32))
+        );
+        i.prefix_inc();
+    }
+    assert!(((s2.len() - 1) == (10_usize)));
+    assert!(((s2.len() - 1) == (s2.len() - 1)));
+    s2[(0_usize)] = ('b' as libc::c_char);
+    s2[(1_usize)] = ('c' as libc::c_char);
+    assert!(((s2[(0_usize)] as i32) == (('b' as libc::c_char) as i32)));
+    assert!(((s2[(1_usize)] as i32) == (('c' as libc::c_char) as i32)));
+    let mut i: u32 = 2_u32;
+    'loop_: while ((i as usize) < (s2.len() - 1)) {
+        assert!(
+            (((*p2.offset((i) as isize)) as i32) == (('a' as libc::c_char) as i32))
+                && ((s2[(i as usize)] as i32) == (('a' as libc::c_char) as i32))
+        );
+        i.prefix_inc();
+    }
+    let mut s3: Vec<libc::c_char> = {
+        let __range = 2_usize
+            ..::std::cmp::min(
+                2_usize + 5_usize,
+                (*(&mut s2 as *const Vec<libc::c_char>)).len() - 1,
+            );
+        let mut __tmp1 = (&*(&mut s2 as *const Vec<libc::c_char>))[__range].to_vec();
+        __tmp1.push(0);
+        __tmp1
+    };
+    assert!(((s3.len() - 1) == (5_usize)));
+    assert!(((s3.len() - 1) == (s3.len() - 1)));
+    let mut p3: *const libc::c_char = (s3.as_mut_ptr()).cast_const();
+    let mut i: u32 = 0_u32;
+    'loop_: while ((i as usize) < (s3.len() - 1)) {
+        assert!((((*p3.offset((i) as isize)) as i32) == (s3[(i as usize)] as i32)));
+        i.prefix_inc();
+    }
+    let mut s4: Vec<libc::c_char> = {
+        let __range = 1_usize
+            ..::std::cmp::min(
+                1_usize
+                    + match s1.iter().rposition(|&c| {
+                        ::std::ffi::CStr::from_ptr(c"l".as_ptr())
+                            .to_str()
+                            .unwrap()
+                            .contains(c as u8 as char)
+                    }) {
+                        Some(idx) => idx,
+                        None => usize::MAX,
+                    },
+                (*(&mut s1 as *const Vec<libc::c_char>)).len() - 1,
+            );
+        let mut __tmp1 = (&*(&mut s1 as *const Vec<libc::c_char>))[__range].to_vec();
+        __tmp1.push(0);
+        __tmp1
+    };
+    assert!(((s4.len() - 1) == (3_usize)));
+    assert!(((s4.len() - 1) == (s4.len() - 1)));
+    let mut p4: *const libc::c_char = (s4.as_mut_ptr()).cast_const();
+    let mut i: u32 = 0_u32;
+    'loop_: while ((i as usize) < (s4.len() - 1)) {
+        assert!((((*p4.offset((i) as isize)) as i32) == (s4[(i as usize)] as i32)));
+        i.prefix_inc();
+    }
+    let mut s5: Vec<libc::c_char> = {
+        let mut __tmp2 = s1.clone();
+        __tmp2.pop();
+        __tmp2.extend_from_slice(::std::slice::from_raw_parts(
+            c", world".as_ptr(),
+            (0..)
+                .position(|i| *c", world".as_ptr().add(i) == 0)
+                .unwrap(),
+        ));
+        __tmp2.push(0);
+        __tmp2
+    };
+    assert!(((s5.len() - 1) == (12_usize)));
+    assert!(((s5.len() - 1) == (s5.len() - 1)));
+    let mut p5: *const libc::c_char = (s5.as_mut_ptr()).cast_const();
+    let mut i: u32 = 0_u32;
+    'loop_: while ((i as usize) < (s5.len() - 1)) {
+        assert!((((*p5.offset((i) as isize)) as i32) == (s5[(i as usize)] as i32)));
+        i.prefix_inc();
+    }
+    let mut arr: [libc::c_char; 7] = [
+        ('b' as libc::c_char),
+        ('a' as libc::c_char),
+        ('r' as libc::c_char),
+        (' ' as libc::c_char),
+        ('f' as libc::c_char),
+        ('o' as libc::c_char),
+        ('o' as libc::c_char),
+    ];
+    let mut string: Vec<libc::c_char> =
+        std::slice::from_raw_parts((arr.as_mut_ptr()).cast_const(), 3_usize as usize)
+            .to_vec()
+            .iter()
+            .copied()
+            .chain(std::iter::once(0))
+            .collect();
+    assert!(((string.len() - 1) == (3_usize)));
+    assert!(((string[(0_usize)] as i32) == (('b' as libc::c_char) as i32)));
+    assert!(((string[(1_usize)] as i32) == (('a' as libc::c_char) as i32)));
+    assert!(((string[(2_usize)] as i32) == (('r' as libc::c_char) as i32)));
+    assert!(
+        string == {
+            std::slice::from_raw_parts(
+                c"bar".as_ptr(),
+                (0..).take_while(|&i| *c"bar".as_ptr().add(i) != 0).count() + 1,
+            )
+            .to_vec()
+        }
+    );
+    {
+        string.pop();
+        string.resize((3_usize) as usize, 0);
+        string.push(0)
+    };
+    assert!(((string.len() - 1) == (3_usize)));
+    assert!(((string[(0_usize)] as i32) == (('b' as libc::c_char) as i32)));
+    assert!(((string[(1_usize)] as i32) == (('a' as libc::c_char) as i32)));
+    assert!(((string[(2_usize)] as i32) == (('r' as libc::c_char) as i32)));
+    assert!(
+        string == {
+            std::slice::from_raw_parts(
+                c"bar".as_ptr(),
+                (0..).take_while(|&i| *c"bar".as_ptr().add(i) != 0).count() + 1,
+            )
+            .to_vec()
+        }
+    );
+    {
+        string.pop();
+        string.resize((5_usize) as usize, 0);
+        string.push(0)
+    };
+    assert!(((string.len() - 1) == (5_usize)));
+    assert!(((string[(0_usize)] as i32) == (('b' as libc::c_char) as i32)));
+    assert!(((string[(1_usize)] as i32) == (('a' as libc::c_char) as i32)));
+    assert!(((string[(2_usize)] as i32) == (('r' as libc::c_char) as i32)));
+    assert!(((string[(3_usize)] as i32) == (0)));
+    assert!(((string[(4_usize)] as i32) == (0)));
+    string[(3_usize)] = ('a' as libc::c_char);
+    string[(4_usize)] = ('b' as libc::c_char);
+    assert!(((string[(3_usize)] as i32) == (('a' as libc::c_char) as i32)));
+    assert!(((string[(4_usize)] as i32) == (('b' as libc::c_char) as i32)));
+    string[(3_usize)] = (0 as libc::c_char);
+    string[(4_usize)] = (0 as libc::c_char);
+    {
+        string.pop();
+        string.resize((4_usize) as usize, 0);
+        string.push(0)
+    };
+    assert!(((string.len() - 1) == (4_usize)));
+    assert!(((string[(0_usize)] as i32) == (('b' as libc::c_char) as i32)));
+    assert!(((string[(1_usize)] as i32) == (('a' as libc::c_char) as i32)));
+    assert!(((string[(2_usize)] as i32) == (('r' as libc::c_char) as i32)));
+    assert!(((string[(3_usize)] as i32) == (0)));
+    let mut result: Vec<libc::c_char> = {
+        let mut __tmp2 = string.clone();
+        __tmp2.pop();
+        __tmp2.extend_from_slice(::std::slice::from_raw_parts(
+            c" foo".as_ptr(),
+            (0..).position(|i| *c" foo".as_ptr().add(i) == 0).unwrap(),
+        ));
+        __tmp2.push(0);
+        __tmp2
+    };
+    assert!(((result.len() - 1) == (8_usize)));
+    assert!(((result[(0_usize)] as i32) == (('b' as libc::c_char) as i32)));
+    assert!(((result[(1_usize)] as i32) == (('a' as libc::c_char) as i32)));
+    assert!(((result[(2_usize)] as i32) == (('r' as libc::c_char) as i32)));
+    assert!(((result[(3_usize)] as i32) == (0)));
+    assert!(((result[(4_usize)] as i32) == ((' ' as libc::c_char) as i32)));
+    assert!(((result[(5_usize)] as i32) == (('f' as libc::c_char) as i32)));
+    assert!(((result[(6_usize)] as i32) == (('o' as libc::c_char) as i32)));
+    assert!(((result[(7_usize)] as i32) == (('o' as libc::c_char) as i32)));
+    let mut substr_0: Vec<libc::c_char> = {
+        let __range = 5_usize
+            ..::std::cmp::min(
+                5_usize + 3_usize,
+                (*(&mut result as *const Vec<libc::c_char>)).len() - 1,
+            );
+        let mut __tmp1 = (&*(&mut result as *const Vec<libc::c_char>))[__range].to_vec();
+        __tmp1.push(0);
+        __tmp1
+    };
+    assert!(((substr_0.len() - 1) == (3_usize)));
+    assert!(((substr_0[(0_usize)] as i32) == (('f' as libc::c_char) as i32)));
+    assert!(((substr_0[(1_usize)] as i32) == (('o' as libc::c_char) as i32)));
+    assert!(((substr_0[(2_usize)] as i32) == (('o' as libc::c_char) as i32)));
+    let mut substr_1: Vec<libc::c_char> = {
+        let __range = 0_usize
+            ..::std::cmp::min(
+                0_usize + 5_usize,
+                (*(&mut result as *const Vec<libc::c_char>)).len() - 1,
+            );
+        let mut __tmp1 = (&*(&mut result as *const Vec<libc::c_char>))[__range].to_vec();
+        __tmp1.push(0);
+        __tmp1
+    };
+    assert!(((substr_1.len() - 1) == (5_usize)));
+    assert!(((substr_1[(0_usize)] as i32) == (('b' as libc::c_char) as i32)));
+    assert!(((substr_1[(1_usize)] as i32) == (('a' as libc::c_char) as i32)));
+    assert!(((substr_1[(2_usize)] as i32) == (('r' as libc::c_char) as i32)));
+    assert!(((substr_1[(3_usize)] as i32) == (0)));
+    assert!(((substr_1[(4_usize)] as i32) == ((' ' as libc::c_char) as i32)));
+    let mut substr_2: Vec<libc::c_char> = {
+        let __range = 0_usize
+            ..::std::cmp::min(
+                0_usize + 15_usize,
+                (*(&mut result as *const Vec<libc::c_char>)).len() - 1,
+            );
+        let mut __tmp1 = (&*(&mut result as *const Vec<libc::c_char>))[__range].to_vec();
+        __tmp1.push(0);
+        __tmp1
+    };
+    assert!(((substr_2.len() - 1) == (8_usize)));
+    assert!(((substr_2[(0_usize)] as i32) == (('b' as libc::c_char) as i32)));
+    assert!(((substr_2[(1_usize)] as i32) == (('a' as libc::c_char) as i32)));
+    assert!(((substr_2[(2_usize)] as i32) == (('r' as libc::c_char) as i32)));
+    assert!(((substr_2[(3_usize)] as i32) == (0)));
+    assert!(((substr_2[(4_usize)] as i32) == ((' ' as libc::c_char) as i32)));
+    assert!(((substr_2[(5_usize)] as i32) == (('f' as libc::c_char) as i32)));
+    assert!(((substr_2[(6_usize)] as i32) == (('o' as libc::c_char) as i32)));
+    assert!(((substr_2[(7_usize)] as i32) == (('o' as libc::c_char) as i32)));
+    let mut pos: usize = match result.iter().rposition(|&c| {
+        ::std::ffi::CStr::from_ptr(c"b".as_ptr())
+            .to_str()
+            .unwrap()
+            .contains(c as u8 as char)
+    }) {
+        Some(idx) => idx,
+        None => usize::MAX,
+    };
+    assert!(((pos) == (0_usize)));
+    pos = match result.iter().rposition(|&c| {
+        ::std::ffi::CStr::from_ptr(c"f".as_ptr())
+            .to_str()
+            .unwrap()
+            .contains(c as u8 as char)
+    }) {
+        Some(idx) => idx,
+        None => usize::MAX,
+    };
+    assert!(((pos) == (5_usize)));
+    pos = match result.iter().rposition(|&c| {
+        ::std::ffi::CStr::from_ptr(c"o".as_ptr())
+            .to_str()
+            .unwrap()
+            .contains(c as u8 as char)
+    }) {
+        Some(idx) => idx,
+        None => usize::MAX,
+    };
+    assert!(((pos) == (7_usize)));
+    pos = match result.iter().rposition(|&c| {
+        ::std::ffi::CStr::from_ptr(c"x".as_ptr())
+            .to_str()
+            .unwrap()
+            .contains(c as u8 as char)
+    }) {
+        Some(idx) => idx,
+        None => usize::MAX,
+    };
+    assert!(((pos) == ((-1_i64 as u64) as usize)));
+    pos = {
+        let __hay = &result[..result.len() - 1];
+        let __needle = ::std::slice::from_raw_parts(c"f".as_ptr(), libc::strlen(c"f".as_ptr()));
+        (0_usize..=__hay.len().saturating_sub(__needle.len()))
+            .find(|&__i| __hay[__i..].starts_with(__needle))
+            .unwrap_or(usize::MAX)
+    };
+    assert!(((pos) == (5_usize)));
+    pos = {
+        let __hay = &result[..result.len() - 1];
+        let __needle = ::std::slice::from_raw_parts(c"oo".as_ptr(), libc::strlen(c"oo".as_ptr()));
+        (0_usize..=__hay.len().saturating_sub(__needle.len()))
+            .find(|&__i| __hay[__i..].starts_with(__needle))
+            .unwrap_or(usize::MAX)
+    };
+    assert!(((pos) == (6_usize)));
+    pos = {
+        let __hay = &result[..result.len() - 1];
+        let __needle = ::std::slice::from_raw_parts(c"x".as_ptr(), libc::strlen(c"x".as_ptr()));
+        (0_usize..=__hay.len().saturating_sub(__needle.len()))
+            .find(|&__i| __hay[__i..].starts_with(__needle))
+            .unwrap_or(usize::MAX)
+    };
+    assert!(((pos) == ((-1_i64 as u64) as usize)));
+    let mut string_to_cast: Vec<libc::c_char> = std::slice::from_raw_parts(
+        c"cast".as_ptr(),
+        (0..).take_while(|&i| *c"cast".as_ptr().add(i) != 0).count() + 1,
+    )
+    .to_vec();
+    let mut output_data: *mut u8 =
+        ((&mut string_to_cast[(0_usize)] as *mut libc::c_char) as *mut libc::c_char as *mut u8);
+    assert!((((*output_data) as i32) == (('c' as libc::c_char) as i32)));
+    assert!((((*output_data.offset((1) as isize)) as i32) == (('a' as libc::c_char) as i32)));
+    assert!((((*output_data.offset((2) as isize)) as i32) == (('s' as libc::c_char) as i32)));
+    assert!((((*output_data.offset((3) as isize)) as i32) == (('t' as libc::c_char) as i32)));
+    let mut diff: i64 = (-3_i32 as i64);
+    assert!(((diff) < (0_i64)));
+    diff += 6_i64;
+    assert!(((diff) == (3_i64)));
+    let mut substr_pos: usize = 1_usize;
+    let mut once: Vec<libc::c_char> = match ({ substr_pos.postfix_inc() },) {
+        (mut __tmp_0,) => {
+            let __range = __tmp_0
+                ..::std::cmp::min(
+                    __tmp_0 + 2_usize,
+                    (*(&mut s1 as *const Vec<libc::c_char>)).len() - 1,
+                );
+            let mut __tmp1 = (&*(&mut s1 as *const Vec<libc::c_char>))[__range].to_vec();
+            __tmp1.push(0);
+            __tmp1
+        }
+    };
+    (unsafe {
+        libc::printf(
+            c"position: %s %zu\n".as_ptr() as *const libc::c_char,
+            (once.as_ptr()),
+            (substr_pos),
+        )
+    });
+    let mut substr_count: usize = 2_usize;
+    once = {
+        let __range = 1_usize
+            ..::std::cmp::min(
+                1_usize + substr_count.postfix_inc(),
+                (*(&mut s1 as *const Vec<libc::c_char>)).len() - 1,
+            );
+        let mut __tmp1 = (&*(&mut s1 as *const Vec<libc::c_char>))[__range].to_vec();
+        __tmp1.push(0);
+        __tmp1
+    };
+    (unsafe {
+        libc::printf(
+            c"count: %s %zu\n".as_ptr() as *const libc::c_char,
+            (once.as_ptr()),
+            (substr_count),
+        )
+    });
+    let mut receiver_calls: i32 = 0;
+    once = match (
+        (&mut (unsafe { counted_string_0(&mut receiver_calls) }) as *const Vec<libc::c_char>),
+    ) {
+        (__tmp_1,) => {
+            let __range = 1_usize
+                ..::std::cmp::min(
+                    1_usize + 2_usize,
+                    (*(__tmp_1 as *const Vec<libc::c_char>)).len() - 1,
+                );
+            let mut __tmp1 = (&*(__tmp_1 as *const Vec<libc::c_char>))[__range].to_vec();
+            __tmp1.push(0);
+            __tmp1
+        }
+    };
+    (unsafe {
+        libc::printf(
+            c"receiver: %s %d\n".as_ptr() as *const libc::c_char,
+            (once.as_ptr()),
+            (receiver_calls),
+        )
+    });
+    let mut ref_calls: i32 = 0;
+    let mut target: Vec<libc::c_char> = std::slice::from_raw_parts(
+        c"ab".as_ptr(),
+        (0..).take_while(|&i| *c"ab".as_ptr().add(i) != 0).count() + 1,
+    )
+    .to_vec();
+    match (((unsafe { counted_ref_1(&mut target, &mut ref_calls) }) as *mut Vec<libc::c_char>),) {
+        (__tmp_2,) => {
+            (*__tmp_2).pop();
+            (*__tmp_2).resize((1_usize) as usize, 0);
+            (*__tmp_2).push(0)
+        }
+    };
+    (*match (((unsafe { counted_ref_1(&mut target, &mut ref_calls) }) as *mut Vec<libc::c_char>),) {
+        (__tmp_3,) => {
+            if 0_usize as usize >= (*__tmp_3).len() - 1 {
+                panic!("out of bounds access")
+            } else {
+                (&mut (&mut (*__tmp_3))[0_usize as usize] as *mut libc::c_char)
+            }
+        }
+    }) = ('A' as libc::c_char);
+    (unsafe {
+        libc::printf(
+            c"reference receiver: %s %d\n".as_ptr() as *const libc::c_char,
+            (target.as_ptr()),
+            (ref_calls),
+        )
+    });
+    (unsafe {
+        libc::printf(
+            c"copy: %s\n".as_ptr() as *const libc::c_char,
+            (target.clone().as_ptr()),
+        )
+    });
+    let mut targets: [Vec<libc::c_char>; 2] = [
+        std::slice::from_raw_parts(
+            c"cd".as_ptr(),
+            (0..).take_while(|&i| *c"cd".as_ptr().add(i) != 0).count() + 1,
+        )
+        .to_vec(),
+        std::slice::from_raw_parts(
+            c"ef".as_ptr(),
+            (0..).take_while(|&i| *c"ef".as_ptr().add(i) != 0).count() + 1,
+        )
+        .to_vec(),
+    ];
+    let mut target_index: i32 = 0;
+    match ((&mut targets[(target_index.postfix_inc()) as usize] as *mut Vec<libc::c_char>),) {
+        (__tmp_4,) => {
+            (*__tmp_4).pop();
+            (*__tmp_4).resize((1_usize) as usize, 0);
+            (*__tmp_4).push(0)
+        }
+    };
+    (unsafe {
+        libc::printf(
+            c"element receiver: %s %s %d\n".as_ptr() as *const libc::c_char,
+            (targets[(0) as usize].as_ptr()),
+            (targets[(1) as usize].as_ptr()),
+            (target_index),
+        )
+    });
+    receiver_calls = 0;
+    let mut before_end: libc::c_char =
+        (*(match (
+            (&mut (unsafe { counted_string_0(&mut receiver_calls) }) as *mut Vec<libc::c_char>),
+        ) {
+            (__tmp_5,) => {
+                UnsafeRandomAccessIterator::Vec((*__tmp_5).as_mut_ptr().add((*__tmp_5).len() - 1))
+            }
+        }
+        .iter_add(-2_isize))
+        .iter_deref());
+    (unsafe {
+        libc::printf(
+            c"temporary end: %c %d\n".as_ptr() as *const libc::c_char,
+            (before_end as i32),
+            (receiver_calls),
+        )
+    });
+    let mut t0: usize = (s1.len() - 1);
+    let mut t1: usize = (t0).wrapping_add(((*p1) as usize));
+    let mut t2: usize = (t1).wrapping_add((s2.len() - 1));
+    let mut t3: usize = (t2).wrapping_add((s3.len() - 1));
+    let mut t4: usize = (t3).wrapping_add((s4.len() - 1));
+    assert!((((t4).wrapping_add((s5.len() - 1))) == (139_usize)));
+    return 0;
+}
+pub unsafe fn __cpp2rust_init_globals() {}

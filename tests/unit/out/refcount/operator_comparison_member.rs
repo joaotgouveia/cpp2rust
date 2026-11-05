@@ -35,14 +35,14 @@ fn main_0() -> i32 {
     let a: Value<S> = Rc::new(RefCell::new(S { v: 1 }));
     let b: Value<S> = Rc::new(RefCell::new(S { v: 2 }));
     let c: Value<S> = Rc::new(RefCell::new(S { v: 1 }));
-    assert!(({ SImpl::operator_eq(&a.as_pointer(), c.as_pointer(),) }));
-    assert!(({ SImpl::operator_ne(&a.as_pointer(), b.as_pointer(),) }));
-    assert!(({ SImpl::operator_lt_3(&a.as_pointer(), b.as_pointer(),) }));
-    assert!(({ SImpl::operator_gt(&b.as_pointer(), a.as_pointer(),) }));
-    assert!(({ SImpl::operator_le(&a.as_pointer(), c.as_pointer(),) }));
-    assert!(({ SImpl::operator_ge(&a.as_pointer(), c.as_pointer(),) }));
-    assert!(!({ SImpl::operator_lt_3(&b.as_pointer(), a.as_pointer(),) }));
-    assert!(({ SImpl::operator_lt_7(&a.as_pointer(), 5,) }));
+    ({ cpp2rust_assert_fail_0(({ SImpl::operator_eq(&a.as_pointer(), c.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(({ SImpl::operator_ne(&a.as_pointer(), b.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(({ SImpl::operator_lt_3(&a.as_pointer(), b.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(({ SImpl::operator_gt(&b.as_pointer(), a.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(({ SImpl::operator_le(&a.as_pointer(), c.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(({ SImpl::operator_ge(&a.as_pointer(), c.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(!({ SImpl::operator_lt_3(&b.as_pointer(), a.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(({ SImpl::operator_lt_7(&a.as_pointer(), 5) })) });
     return 0;
 }
 pub trait SImpl {

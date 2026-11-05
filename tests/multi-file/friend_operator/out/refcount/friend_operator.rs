@@ -27,69 +27,79 @@ fn main_0() -> i32 {
     let s1: Value<S> = Rc::new(RefCell::new(S { a: 1, b: 2 }));
     let s2: Value<S> = Rc::new(RefCell::new(S { a: 1, b: 2 }));
     let s3: Value<S> = Rc::new(RefCell::new(S { a: 1, b: 3 }));
-    assert!(
-        ({
-            let _x: Ptr<S> = s1.as_pointer();
-            operator_eq_0(_x, s2.as_pointer())
-        })
-    );
-    assert!(
-        ({
-            let _x: Ptr<S> = s1.as_pointer();
-            operator_ne_1(_x, s3.as_pointer())
-        })
-    );
-    assert!(
-        !({
-            let _x: Ptr<S> = s1.as_pointer();
-            operator_eq_0(_x, s3.as_pointer())
-        })
-    );
-    assert!(
-        ({
-            let _x: Ptr<S> = s1.as_pointer();
-            operator_lt_2(_x, s3.as_pointer())
-        })
-    );
-    assert!(
-        !({
-            let _x: Ptr<S> = s3.as_pointer();
-            operator_lt_2(_x, s1.as_pointer())
-        })
-    );
-    assert!((({ compare_3(s1.as_pointer(), s3.as_pointer(),) }) == -1_i32));
-    assert!((({ compare_3(s3.as_pointer(), s1.as_pointer(),) }) == 1));
-    assert!((({ compare_3(s1.as_pointer(), s2.as_pointer(),) }) == 0));
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let _x: Ptr<S> = s1.as_pointer();
+                operator_eq_1(_x, s2.as_pointer())
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let _x: Ptr<S> = s1.as_pointer();
+                operator_ne_2(_x, s3.as_pointer())
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            !({
+                let _x: Ptr<S> = s1.as_pointer();
+                operator_eq_1(_x, s3.as_pointer())
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let _x: Ptr<S> = s1.as_pointer();
+                operator_lt_3(_x, s3.as_pointer())
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            !({
+                let _x: Ptr<S> = s3.as_pointer();
+                operator_lt_3(_x, s1.as_pointer())
+            }),
+        )
+    });
+    ({ cpp2rust_assert_fail_0((({ compare_4(s1.as_pointer(), s3.as_pointer()) }) == -1_i32)) });
+    ({ cpp2rust_assert_fail_0((({ compare_4(s3.as_pointer(), s1.as_pointer()) }) == 1)) });
+    ({ cpp2rust_assert_fail_0((({ compare_4(s1.as_pointer(), s2.as_pointer()) }) == 0)) });
     return 0;
 }
-pub fn operator_eq_0(x: Ptr<S>, y: Ptr<S>) -> bool {
+pub fn operator_eq_1(x: Ptr<S>, y: Ptr<S>) -> bool {
     return ({ x.with(|__s| __s.a) } == { y.with(|__s| __s.a) })
         && ({ x.with(|__s| __s.b) } == { y.with(|__s| __s.b) });
 }
-pub fn operator_ne_1(x: Ptr<S>, y: Ptr<S>) -> bool {
+pub fn operator_ne_2(x: Ptr<S>, y: Ptr<S>) -> bool {
     return !({
         let _x: Ptr<S> = (x).clone();
         let _y: Ptr<S> = (y).clone();
-        operator_eq_0(_x, _y)
+        operator_eq_1(_x, _y)
     });
 }
-pub fn operator_lt_2(x: Ptr<S>, y: Ptr<S>) -> bool {
+pub fn operator_lt_3(x: Ptr<S>, y: Ptr<S>) -> bool {
     return ({ x.with(|__s| __s.a) } < { y.with(|__s| __s.a) })
         || (({ x.with(|__s| __s.a) } == { y.with(|__s| __s.a) })
             && ({ x.with(|__s| __s.b) } < { y.with(|__s| __s.b) }));
 }
-pub fn compare_3(x: Ptr<S>, y: Ptr<S>) -> i32 {
+pub fn compare_4(x: Ptr<S>, y: Ptr<S>) -> i32 {
     if ({
         let _x: Ptr<S> = (x).clone();
         let _y: Ptr<S> = (y).clone();
-        operator_lt_2(_x, _y)
+        operator_lt_3(_x, _y)
     }) {
         return -1_i32;
     }
     if ({
         let _x: Ptr<S> = (y).clone();
         let _y: Ptr<S> = (x).clone();
-        operator_lt_2(_x, _y)
+        operator_lt_3(_x, _y)
     }) {
         return 1;
     }

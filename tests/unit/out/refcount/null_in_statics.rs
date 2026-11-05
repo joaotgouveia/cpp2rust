@@ -43,34 +43,38 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!(({ (*p_mut_0.with(Value::clone).borrow()).is_null() }));
-    assert!(({ (*p_const_1.with(Value::clone).borrow()).is_null() }));
-    assert!(({ (*cp_2.with(Value::clone).borrow()).is_null() }));
+    ({ cpp2rust_assert_fail_8((*p_mut_0.with(Value::clone).borrow()).is_null()) });
+    ({ cpp2rust_assert_fail_8((*p_const_1.with(Value::clone).borrow()).is_null()) });
+    ({ cpp2rust_assert_fail_8((*cp_2.with(Value::clone).borrow()).is_null()) });
     let mut i: i32 = 0;
     'loop_: while (i < 4) {
-        assert!(
-            ({
-                let __idx0 = (i) as usize;
-                arr_of_ptr_3.with(|rc| rc.borrow()[__idx0].clone())
-            })
-            .is_null()
-        );
+        ({
+            cpp2rust_assert_fail_8(
+                ({
+                    let __idx0 = (i) as usize;
+                    arr_of_ptr_3.with(|rc| rc.borrow()[__idx0].clone())
+                })
+                .is_null(),
+            )
+        });
         i.prefix_inc();
     }
-    assert!(({ (*pp_4.with(Value::clone).borrow()).is_null() }));
+    ({ cpp2rust_assert_fail_8((*pp_4.with(Value::clone).borrow()).is_null()) });
     let mut i: i32 = 0;
     'loop_: while (i < 3) {
-        assert!(
-            ({
-                let __idx0 = (i) as usize;
-                const_arr_of_ptr_5.with(|rc| rc.borrow()[__idx0].clone())
-            })
-            .is_null()
-        );
+        ({
+            cpp2rust_assert_fail_8(
+                ({
+                    let __idx0 = (i) as usize;
+                    const_arr_of_ptr_5.with(|rc| rc.borrow()[__idx0].clone())
+                })
+                .is_null(),
+            )
+        });
         i.prefix_inc();
     }
-    assert!(({ (*cp_explicit_null_6.with(Value::clone).borrow()).is_null() }));
-    assert!(({ (*p_zero_7.with(Value::clone).borrow()).is_null() }));
+    ({ cpp2rust_assert_fail_8((*cp_explicit_null_6.with(Value::clone).borrow()).is_null()) });
+    ({ cpp2rust_assert_fail_8((*p_zero_7.with(Value::clone).borrow()).is_null()) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {

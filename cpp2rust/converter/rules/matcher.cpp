@@ -50,4 +50,23 @@ std::string InstantiateTgt(Converter &converter, const Bindings &bindings,
   return instantiated_template;
 }
 
+// A pointer to a generic is the converter's pointer to its binding when the
+// binding changes the pointer's kind: a function type makes it the function
+// pointer itself, as functions are not objects (Ptr<T1> of void() is
+// FnPtr<fn()>), and a const one makes a raw pointer *const.
+std::string InstantiateType(Converter &converter, const Bindings &bindings,
+                            const TranslationRule::TypeInfo &info) {
+  if (auto n = info.pointee_generic; n && n <= bindings.size() &&
+      bindings[n - 1].getKind() == clang::TemplateArgument::Type) {
+    auto pointee = bindings[n - 1].getAsType();
+    if (pointee->isFunctionType() ||
+        (info.is_unsafe_pointer && pointee.isConstQualified())) {
+      auto &ctx = converter.GetASTContext();
+      return converter.GetTemplateArgumentAsString(
+          clang::TemplateArgument(ctx.getPointerType(pointee)));
+    }
+  }
+  return InstantiateTgt(converter, bindings, info.type);
+}
+
 } // namespace cpp2rust::Matcher

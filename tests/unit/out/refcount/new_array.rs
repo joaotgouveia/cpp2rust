@@ -20,11 +20,9 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut array: Ptr<i32> =
-        Ptr::alloc_array((0..100_usize).map(|_| 0_i32).collect::<Box<[i32]>>());
+    let mut array: Ptr<i32> = Ptr::alloc_array((0..100_u64).map(|_| 0_i32).collect::<Box<[i32]>>());
     array.delete();
-    let mut filled: Ptr<i32> =
-        Ptr::alloc_array((0..4_usize).map(|_| 0_i32).collect::<Box<[i32]>>());
+    let mut filled: Ptr<i32> = Ptr::alloc_array((0..4_u64).map(|_| 0_i32).collect::<Box<[i32]>>());
     let mut i: i32 = 0;
     'loop_: while (i < 4) {
         elem!(filled, i).write({ (i + 1) });

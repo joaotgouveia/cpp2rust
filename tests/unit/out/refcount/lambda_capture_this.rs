@@ -26,10 +26,10 @@ pub fn main() {
 fn main_0() -> i32 {
     let s: Value<S> = Rc::new(RefCell::new(S { n: 0, step: 2 }));
     ({ SImpl::bump(&s.as_pointer(), 3) });
-    assert!(({ ({ (*s.borrow()).n } == 6) }));
+    ({ cpp2rust_assert_fail_0(({ (*s.borrow()).n } == 6)) });
     ({ SImpl::bump_via_method(&s.as_pointer(), 4) });
-    assert!(({ ({ (*s.borrow()).n } == 10) }));
-    assert!((({ SImpl::read_scaled(&s.as_pointer(),) }) == 20));
+    ({ cpp2rust_assert_fail_0(({ (*s.borrow()).n } == 10)) });
+    ({ cpp2rust_assert_fail_0((({ SImpl::read_scaled(&s.as_pointer()) }) == 20)) });
     return 0;
 }
 pub trait SImpl {

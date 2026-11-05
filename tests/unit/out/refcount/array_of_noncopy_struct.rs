@@ -11,7 +11,7 @@ use std::rc::{Rc, Weak};
 pub struct NonCopy {
     #[offset(0)]
     #[byte_size(24)]
-    pub data: Vec<i32>,
+    pub data: std_vector_int__std_allocator_int__,
     #[offset(24)]
     pub tag: i32,
 }
@@ -32,7 +32,7 @@ impl Default for NonCopy {
     fn default() -> Self {
         {
             NonCopy {
-                data: Default::default(),
+                data: <std_vector_int__std_allocator_int__>::default(),
                 tag: 0,
             }
         }
@@ -43,17 +43,32 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut arr: [NonCopy; 3] = std::array::from_fn::<_, 3, _>(|_| <NonCopy>::default());
-    arr[(0) as usize].tag = 7;
-    {
-        let __a1 = 42;
-        arr[(1) as usize].data.push(__a1)
-    };
-    assert!((arr[(0) as usize].tag == 7));
-    assert!((arr[(1) as usize].data.len() == 1_usize));
-    assert!((arr[(1) as usize].data[0_usize] == 42));
-    assert!((arr[(2) as usize].tag == 0));
-    assert!((arr[(2) as usize].data.len() == 0_usize));
+    let arr: Value<Box<[NonCopy]>> = Rc::new(RefCell::new(
+        (0..3)
+            .map(|_| <NonCopy>::default())
+            .collect::<Box<[NonCopy]>>(),
+    ));
+    (*arr.borrow_mut())[(0) as usize].tag = 7;
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(42));
+        (*arr.borrow())[(1) as usize]
+            .data
+            .push_back_60(___x.as_pointer())
+    });
+    ({ cpp2rust_assert_fail_0(({ (*arr.borrow())[(0) as usize].tag } == 7)) });
+    ({ cpp2rust_assert_fail_0((({ (*arr.borrow())[(1) as usize].data.size() }) == 1_u64)) });
+    ({
+        cpp2rust_assert_fail_0(
+            ((elem!(
+                field_ptr!((arr.as_pointer() as Ptr<NonCopy>).offset(1), data),
+                0_u64
+            )
+            .read())
+                == 42),
+        )
+    });
+    ({ cpp2rust_assert_fail_0(({ (*arr.borrow())[(2) as usize].tag } == 0)) });
+    ({ cpp2rust_assert_fail_0((({ (*arr.borrow())[(2) as usize].data.size() }) == 0_u64)) });
     return 0;
 }
 pub trait NonCopyImpl {
@@ -61,9 +76,7 @@ pub trait NonCopyImpl {
 }
 impl NonCopyImpl for Ptr<NonCopy> {
     fn move_assign(&self, _a0: Ptr<NonCopy>) -> Ptr<NonCopy> {
-        field_ref!((*self), data)
-            .as_pointer()
-            .write(field!(_a0, data).with_mut(std::mem::take));
+        field!((*self), data).write({ { (*_a0.upgrade().deref()).data.clone() } });
         field!((*self), tag).write({ { (*_a0.upgrade().deref()).tag } });
         return (*self).clone();
     }

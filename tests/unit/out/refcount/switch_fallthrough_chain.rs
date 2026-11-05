@@ -34,11 +34,11 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ fallthrough_chain_0(1,) }) == 15));
-    assert!((({ fallthrough_chain_0(2,) }) == 14));
-    assert!((({ fallthrough_chain_0(3,) }) == 12));
-    assert!((({ fallthrough_chain_0(4,) }) == 8));
-    assert!((({ fallthrough_chain_0(99,) }) == -1_i32));
+    ({ cpp2rust_assert_fail_1((({ fallthrough_chain_0(1) }) == 15)) });
+    ({ cpp2rust_assert_fail_1((({ fallthrough_chain_0(2) }) == 14)) });
+    ({ cpp2rust_assert_fail_1((({ fallthrough_chain_0(3) }) == 12)) });
+    ({ cpp2rust_assert_fail_1((({ fallthrough_chain_0(4) }) == 8)) });
+    ({ cpp2rust_assert_fail_1((({ fallthrough_chain_0(99) }) == -1_i32)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

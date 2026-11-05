@@ -89,15 +89,15 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let mut s: S = <S>::default();
-    assert!((s.a == 1));
-    assert!(((s.b as i32) == 2));
-    assert!((s.c.x == 3));
-    assert!((s.c.y == 4));
-    assert!((s.d.x == 3));
-    assert!((s.d.y == 4));
+    ({ cpp2rust_assert_fail_0((s.a == 1)) });
+    ({ cpp2rust_assert_fail_0(((s.b as i32) == 2)) });
+    ({ cpp2rust_assert_fail_0((s.c.x == 3)) });
+    ({ cpp2rust_assert_fail_0((s.c.y == 4)) });
+    ({ cpp2rust_assert_fail_0((s.d.x == 3)) });
+    ({ cpp2rust_assert_fail_0((s.d.y == 4)) });
     let mut boxed: Boxed_int_ = Boxed_int_::new({ 5 }, { 9 });
-    assert!((boxed.v == 5));
-    assert!((boxed.tag == 9));
+    ({ cpp2rust_assert_fail_0((boxed.v == 5)) });
+    ({ cpp2rust_assert_fail_0((boxed.tag == 9)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

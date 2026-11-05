@@ -37,7 +37,9 @@ pub fn main() {
 fn main_0() -> i32 {
     let pair1: Value<Pair> = Rc::new(RefCell::new(Pair { x: 1, y: 2 }));
     let pair2: Value<Pair> = Rc::new(RefCell::new(Pair { x: 1, y: 3 }));
-    assert!(({ PairImpl::operator_lt(&pair1.as_pointer(), pair2.as_pointer(),) }));
+    ({
+        cpp2rust_assert_fail_0(({ PairImpl::operator_lt(&pair1.as_pointer(), pair2.as_pointer()) }))
+    });
     return 0;
 }
 pub trait PairImpl {

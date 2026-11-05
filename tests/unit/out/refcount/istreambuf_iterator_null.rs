@@ -11,23 +11,25 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut first: Ptr<::std::fs::File> = Ptr::<::std::fs::File>::null();
-    let mut last: Ptr<::std::fs::File> = Ptr::<::std::fs::File>::null();
-    let mut s: Vec<i8> = match ({ (first).clone() },) {
-        (mut __tmp_0,) => {
-            let mut __bytes: Vec<u8> = Vec::new();
-            if !__tmp_0.is_null() {
-                __tmp_0
-                    .with_mut(|__f: &mut std::fs::File| {
-                        std::io::Read::read_to_end(__f, &mut __bytes)
-                    })
-                    .expect("couldn't read the file");
-            }
-            __bytes.push(0);
-            CChar::from_byte_vec(__bytes)
-        }
-    };
-    assert!(s.len() <= 1);
+    let first: Value<std_istreambuf_iterator_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_istreambuf_iterator_char__std_char_traits_char__::new_1({
+            Ptr::<std_basic_streambuf_char__std_char_traits_char__>::null()
+        }),
+    ));
+    let last: Value<std_istreambuf_iterator_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_istreambuf_iterator_char__std_char_traits_char__::new_1({
+            Ptr::<std_basic_streambuf_char__std_char_traits_char__>::null()
+        }),
+    ));
+    let s: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
+        Rc::new(RefCell::new(
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                { (*first.borrow()).clone() },
+                { (*last.borrow()).clone() },
+                None,
+            ),
+        ));
+    ({ cpp2rust_assert_fail_0(({ (*s.borrow()).empty() })) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

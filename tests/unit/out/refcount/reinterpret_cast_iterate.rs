@@ -18,7 +18,11 @@ fn main_0() -> i32 {
     let mut words: Ptr<u16> = (arr.as_pointer() as Ptr<u64>).reinterpret_cast::<u16>();
     let mut i: i32 = 0;
     'loop_: while (i < 8) {
-        assert!(({ ((elem!(words, i).read()) as i32) } == { (((i + 1) as u16) as i32) }));
+        ({
+            cpp2rust_assert_fail_0(
+                ({ ((elem!(words, i).read()) as i32) } == { (((i + 1) as u16) as i32) }),
+            )
+        });
         i.postfix_inc();
     }
     return 0;

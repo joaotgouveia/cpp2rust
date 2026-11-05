@@ -1183,13 +1183,16 @@ fn root_address(root: &SliceRoot) -> *const () {
 
 // Moves the element at(order[i]) to at(i), for every i, as std::sort does
 // once it knows the order. The elements are swapped, which moves them instead
-// of copying them.
-pub fn reorder<T: Clone + ByteRepr>(mut order: Vec<isize>, at: impl Fn(isize) -> Ptr<T>) {
+// of copying them, so move-only types can be reordered. The elements are in
+// the same array, which swaps them without a temporary.
+pub fn reorder<T: ByteRepr>(mut order: Vec<isize>, at: impl Fn(isize) -> Ptr<T>) {
     for i in 0..order.len() {
         let mut cur = i;
         while order[cur] as usize != i {
             let next = order[cur] as usize;
-            at(cur as isize).swap_with(&at(next as isize), Ptr::read);
+            at(cur as isize).swap_with(&at(next as isize), |_| {
+                unreachable!("the elements of a range are in the same array")
+            });
             order[cur] = cur as isize;
             cur = next;
         }
@@ -1378,6 +1381,13 @@ impl<T: 'static> Decay<T> for Rc<RefCell<Vec<T>>> {
     #[inline]
     fn decay(&self) -> Ptr<T> {
         self.as_pointer().decay()
+    }
+}
+
+impl<T> Decay<T> for Rc<RefCell<Box<[T]>>> {
+    #[inline]
+    fn decay(&self) -> Ptr<T> {
+        AsPointer::<T>::as_pointer(self)
     }
 }
 

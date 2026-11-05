@@ -138,43 +138,47 @@ fn main_0() -> i32 {
     o.anon_3.i = 9;
     o.anon_3.inner_named.j = 10;
     o.anon_3.anon_5.k = 11;
-    assert!((o.named.a == 1));
-    assert!((o.named.b == 2));
-    assert!((o.anonymous_named_0.c == 3));
-    assert!((o.anonymous_named_0.d == 4));
-    assert!((o.anonymous_named_1.g == 5));
-    assert!((o.anonymous_named_1.h == 6));
-    assert!((o.anon_2.e == 7));
-    assert!((o.anon_2.f == 8));
-    assert!((o.anon_3.i == 9));
-    assert!((o.anon_3.inner_named.j == 10));
-    assert!((o.anon_3.anon_5.k == 11));
-    let mut s: anon_6 = <anon_6>::default();
+    ({ cpp2rust_assert_fail_6((o.named.a == 1)) });
+    ({ cpp2rust_assert_fail_6((o.named.b == 2)) });
+    ({ cpp2rust_assert_fail_6((o.anonymous_named_0.c == 3)) });
+    ({ cpp2rust_assert_fail_6((o.anonymous_named_0.d == 4)) });
+    ({ cpp2rust_assert_fail_6((o.anonymous_named_1.g == 5)) });
+    ({ cpp2rust_assert_fail_6((o.anonymous_named_1.h == 6)) });
+    ({ cpp2rust_assert_fail_6((o.anon_2.e == 7)) });
+    ({ cpp2rust_assert_fail_6((o.anon_2.f == 8)) });
+    ({ cpp2rust_assert_fail_6((o.anon_3.i == 9)) });
+    ({ cpp2rust_assert_fail_6((o.anon_3.inner_named.j == 10)) });
+    ({ cpp2rust_assert_fail_6((o.anon_3.anon_5.k == 11)) });
+    let mut s: anon_7 = <anon_7>::default();
     s.x = 1;
     s.z = 2;
-    assert!(
-        ({
-            s.x = 1;
-            s.x
-        } != 0)
-    );
-    assert!(
-        ({
-            s.z = 2;
-            s.z
-        } != 0)
-    );
+    ({
+        cpp2rust_assert_fail_6(
+            ({
+                s.x = 1;
+                s.x
+            } != 0),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_6(
+            ({
+                s.z = 2;
+                s.z
+            } != 0),
+        )
+    });
     return 0;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
-pub struct anon_6 {
+pub struct anon_7 {
     #[offset(0)]
     pub x: i32,
     #[offset(4)]
     pub z: i32,
 }
-impl CppMove for anon_6 {
+impl CppMove for anon_7 {
     fn cpp_move(src: Ptr<Self>) -> Self {
         src.read()
     }

@@ -32,7 +32,7 @@ fn main_0() -> i32 {
         ptr.with(|__s| __s.x)
     };
     let mut p: Ptr<i32> = (field_ptr!(obj.as_pointer(), x));
-    assert!((({ (p.read()) } + { r }) == 4));
+    ({ cpp2rust_assert_fail_0((({ (p.read()) } + { r }) == 4)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

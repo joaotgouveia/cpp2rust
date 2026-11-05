@@ -83,14 +83,14 @@ pub fn main() {
 fn main_0() -> i32 {
     let mut p1: FnPtr<fn(i32) -> i32> = (FnPtr::<fn(i32) -> i32>::new(S::pick_1));
     let mut p2: FnPtr<fn(i32) -> i32> = FnPtr::<fn(i32) -> i32>::new(S::solo);
-    assert!((({ p1.call(5,) }) == 6));
-    assert!((({ p2.call(5,) }) == 8));
-    assert!((({ S::pick_2(5_i64,) }) == 7));
+    ({ cpp2rust_assert_fail_4((({ p1.call(5) }) == 6)) });
+    ({ cpp2rust_assert_fail_4((({ p2.call(5) }) == 8)) });
+    ({ cpp2rust_assert_fail_4((({ S::pick_2(5_i64) }) == 7)) });
     let mut h3: Handler = Handler {
         tag: 3,
         cb: (FnPtr::<fn(i32) -> i32>::new(S::pick_1)),
     };
-    assert!((({ h3.cb.call(1,) }) == 2));
+    ({ cpp2rust_assert_fail_4((({ h3.cb.call(1) }) == 2)) });
     let mut h1: Handler = Handler {
         tag: 1,
         cb: FnPtr::<fn(i32) -> i32>::new(double_it_0),
@@ -99,22 +99,22 @@ fn main_0() -> i32 {
         tag: 2,
         cb: FnPtr::<fn(i32) -> i32>::new(negate_1),
     };
-    assert!(!((h1.cb).is_null()));
-    assert!((({ h1.cb.call(5,) }) == 10));
-    assert!((({ h2.cb.call(7,) }) == -7_i32));
+    ({ cpp2rust_assert_fail_4(!((h1.cb).is_null())) });
+    ({ cpp2rust_assert_fail_4((({ h1.cb.call(5) }) == 10)) });
+    ({ cpp2rust_assert_fail_4((({ h2.cb.call(7) }) == -7_i32)) });
     h1.cb = FnPtr::<fn(i32) -> i32>::new(negate_1);
-    assert!((({ h1.cb.call(3,) }) == -3_i32));
-    assert!(({ (h1.cb).clone() } == { (h2.cb).clone() }));
+    ({ cpp2rust_assert_fail_4((({ h1.cb.call(3) }) == -3_i32)) });
+    ({ cpp2rust_assert_fail_4(({ (h1.cb).clone() } == { (h2.cb).clone() })) });
     let mut mk: FnPtr<fn() -> MoveOnly> = FnPtr::<fn() -> MoveOnly>::new(make_move_only_2);
     let m: Value<MoveOnly> = Rc::new(RefCell::new(({ mk.call() })));
-    assert!((({ MoveOnlyImpl::get(&m.as_pointer(),) }) == 4));
+    ({ cpp2rust_assert_fail_4((({ MoveOnlyImpl::get(&m.as_pointer()) }) == 4)) });
     let mut sc: FnPtr<fn(MoveOnly) -> MoveOnly> =
         FnPtr::<fn(MoveOnly) -> MoveOnly>::new(scale_move_only_3);
     let n: Value<MoveOnly> = Rc::new(RefCell::new(
         ({ sc.call(MoveOnly::move_from({ m.as_pointer() })) }),
     ));
-    assert!((({ MoveOnlyImpl::get(&n.as_pointer(),) }) == 40));
-    assert!((({ MoveOnlyImpl::get(&m.as_pointer(),) }) == 0));
+    ({ cpp2rust_assert_fail_4((({ MoveOnlyImpl::get(&n.as_pointer()) }) == 40)) });
+    ({ cpp2rust_assert_fail_4((({ MoveOnlyImpl::get(&m.as_pointer()) }) == 0)) });
     return 0;
 }
 pub trait MoveOnlyImpl {

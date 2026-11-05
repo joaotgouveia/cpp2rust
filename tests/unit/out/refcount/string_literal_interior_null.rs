@@ -26,15 +26,15 @@ pub fn main() {
 fn main_0() -> i32 {
     let mut a: i32 = ({ sum_bytes_0(Ptr::<i8>::from_string_literal(b"\x01\0"), 2_u32) });
     let mut b: i32 = ({ sum_bytes_0((*g_packet_1.with(Value::clone).borrow()).clone(), 2_u32) });
-    assert!((a == b));
-    assert!((a == 1));
+    ({ cpp2rust_assert_fail_2((a == b)) });
+    ({ cpp2rust_assert_fail_2((a == 1)) });
     let mut high: i32 = ({ sum_bytes_0(Ptr::<i8>::from_string_literal(b"\xc2\0A"), 3_u32) });
-    assert!((high == (194 + 65)));
+    ({ cpp2rust_assert_fail_2((high == (194 + 65))) });
     let mut c: i32 = ((b"\r\n.\r\n"[(0) as usize] as i32) + (b"\r\n.\r\n"[(3) as usize] as i32));
-    assert!((c == ((('\r' as i8) as i32) + (('\r' as i8) as i32))));
+    ({ cpp2rust_assert_fail_2((c == ((('\r' as i8) as i32) + (('\r' as i8) as i32)))) });
     let mut idx: i32 = 1;
     let mut d: i32 = (b"abcd"[(idx) as usize] as i32);
-    assert!((d == (('b' as i8) as i32)));
+    ({ cpp2rust_assert_fail_2((d == (('b' as i8) as i32))) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {

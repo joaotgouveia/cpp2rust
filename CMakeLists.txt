@@ -154,6 +154,8 @@ add_custom_target("check-unit"
                           "${PROJECT_SOURCE_DIR}/tests/unit"
                           "${PROJECT_SOURCE_DIR}/tests/ub"
                           "${PROJECT_SOURCE_DIR}/tests/multi-file"
+                          "${PROJECT_SOURCE_DIR}/tests/libcxx"
+                          "${PROJECT_SOURCE_DIR}/tests/libstdcxx"
                   DEPENDS cpp2rust libcc2rs
                   USES_TERMINAL
                  )
@@ -179,9 +181,6 @@ file(GLOB_RECURSE rule_preprocessor_sources
 file(GLOB_RECURSE libcc2rs_sources CONFIGURE_DEPENDS
      ${PROJECT_SOURCE_DIR}/libcc2rs/src/*.rs
      ${PROJECT_SOURCE_DIR}/libcc2rs-macros/src/*.rs)
-file(GLOB rule_shim_sources CONFIGURE_DEPENDS
-     ${PROJECT_SOURCE_DIR}/rules/*/shim.rs)
-list(APPEND libcc2rs_sources ${rule_shim_sources})
 list(APPEND libcc2rs_sources
      ${PROJECT_SOURCE_DIR}/libcc2rs/Cargo.toml
      ${PROJECT_SOURCE_DIR}/libcc2rs-macros/Cargo.toml)

@@ -11,15 +11,17 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
+    let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+        <std_vector_int__std_allocator_int__>::default(),
+    ));
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(10));
+        (*v.borrow()).push_back_60(___x.as_pointer())
+    });
     {
-        let __a1 = 10;
-        (*v.borrow_mut()).push(__a1)
+        ({ (*v.borrow()).front_53() }).with_mut(|__v| *__v = *__v + 5)
     };
-    {
-        v.decay().with_mut(|__v| *__v = *__v + 5)
-    };
-    assert!(((v.decay().read()) == 15));
+    ({ cpp2rust_assert_fail_0(((({ (*v.borrow()).front_53() }).read()) == 15)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

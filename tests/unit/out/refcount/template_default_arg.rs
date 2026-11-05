@@ -106,14 +106,18 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ used_0(None,) }) == 1));
-    assert!((({ used_0(Some(A::new_1({ 5 },)),) }) == 5));
-    assert!((({ used_1(None,) }) == 2));
-    assert!((({ scaled_2(A::new_1({ 3 },), None,) }) == (3 * (4usize as i32))));
-    assert!((({ scaled_2(A::new_1({ 3 },), Some(2),) }) == 6));
-    assert!((({ always_given_3(NoDefault::new({ 3 },),) }) == 3));
+    ({ cpp2rust_assert_fail_4((({ used_0(None) }) == 1)) });
+    ({ cpp2rust_assert_fail_4((({ used_0(Some(A::new_1({ 5 }))) }) == 5)) });
+    ({ cpp2rust_assert_fail_4((({ used_1(None) }) == 2)) });
+    ({ cpp2rust_assert_fail_4((({ scaled_2(A::new_1({ 3 }), None) }) == (3 * (4usize as i32)))) });
+    ({ cpp2rust_assert_fail_4((({ scaled_2(A::new_1({ 3 }), Some(2)) }) == 6)) });
+    ({ cpp2rust_assert_fail_4((({ always_given_3(NoDefault::new({ 3 })) }) == 3)) });
     let s: Value<S_NoDefault_> = Rc::new(RefCell::new(S_NoDefault_::new({ 1 })));
-    assert!((({ S_NoDefault_Impl::get(&s.as_pointer(), NoDefault::new({ 4 },),) }) == 5));
+    ({
+        cpp2rust_assert_fail_4(
+            (({ S_NoDefault_Impl::get(&s.as_pointer(), NoDefault::new({ 4 })) }) == 5),
+        )
+    });
     return 0;
 }
 pub trait S_NoDefault_Impl {

@@ -11,7 +11,7 @@ use std::rc::{Rc, Weak};
 pub struct MyContainer_int_ {
     #[offset(0)]
     #[byte_size(24)]
-    vec_: Vec<i32>,
+    vec_: std_vector_int__std_allocator_int__,
 }
 impl MyContainer_int_ {
     pub fn move_from(_a0: Ptr<MyContainer_int_>) -> Self {
@@ -30,7 +30,7 @@ impl CppMove for MyContainer_int_ {
 pub struct MyContainer_char_ {
     #[offset(0)]
     #[byte_size(24)]
-    vec_: Vec<i8>,
+    vec_: std_vector_char__std_allocator_char__,
 }
 impl MyContainer_char_ {
     pub fn move_from(_a0: Ptr<MyContainer_char_>) -> Self {
@@ -49,7 +49,7 @@ impl CppMove for MyContainer_char_ {
 pub struct MyContainer_float_ {
     #[offset(0)]
     #[byte_size(24)]
-    vec_: Vec<f32>,
+    vec_: std_vector_float__std_allocator_float__,
 }
 impl MyContainer_float_ {
     pub fn move_from(_a0: Ptr<MyContainer_float_>) -> Self {
@@ -188,86 +188,101 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut ev: Vec<Elem> = Vec::new();
-    {
-        let __a1 = Elem { i: 2 };
-        ev.push(__a1)
-    };
-    assert!((ev[0_usize].i == 2));
-    assert!(((({ Boxed_short_::twice(2_i16,) }) as i32) == 4));
+    let ev: Value<std_vector_Elem__std_allocator_Elem__> = Rc::new(RefCell::new(
+        <std_vector_Elem__std_allocator_Elem__>::default(),
+    ));
+    ({
+        let ___x: Value<Elem> = Rc::new(RefCell::new(Elem { i: 2 }));
+        (*ev.borrow()).push_back_60(___x.as_pointer())
+    });
+    ({ cpp2rust_assert_fail_0(({ (*ev.borrow())[0_u64].i } == 2)) });
+    ({ cpp2rust_assert_fail_0(((({ Boxed_short_::twice(2_i16) }) as i32) == 4)) });
     let oi: Value<Outer_int_> = Rc::new(RefCell::new(Outer_int_ { v: 3 }));
-    assert!(
-        (({
-            Outer_int__Inner_int_Impl::sum(
-                &Rc::new(RefCell::new(
-                    ({ Outer_int_Impl::with(&oi.as_pointer(), 4) }),
-                ))
-                .as_pointer(),
-            )
-        }) == 7)
-    );
+    ({
+        cpp2rust_assert_fail_0(
+            (({
+                Outer_int__Inner_int_Impl::sum(
+                    &Rc::new(RefCell::new(
+                        ({ Outer_int_Impl::with(&oi.as_pointer(), 4) }),
+                    ))
+                    .as_pointer(),
+                )
+            }) == 7),
+        )
+    });
     let ol: Value<Outer_long_> = Rc::new(RefCell::new(Outer_long_ { v: 5_i64 }));
     let ic: Value<Outer_long__Inner_char_> = Rc::new(RefCell::new(Outer_long__Inner_char_ {
         t: 6_i64,
         u: ('a' as i8),
     }));
-    assert!(
-        (({
-            Outer_long__Inner_int_Impl::sum(
-                &Rc::new(RefCell::new(
-                    ({ Outer_long_Impl::with(&ol.as_pointer(), 2) }),
-                ))
-                .as_pointer(),
-            )
-        }) == 7)
-    );
-    assert!(
-        (({ Outer_long__Inner_char_Impl::sum(&ic.as_pointer(),) }) == (6 + (('a' as i8) as i32)))
-    );
-    assert!((({ Boxed_int_::twice(3,) }) == 6));
+    ({
+        cpp2rust_assert_fail_0(
+            (({
+                Outer_long__Inner_int_Impl::sum(
+                    &Rc::new(RefCell::new(
+                        ({ Outer_long_Impl::with(&ol.as_pointer(), 2) }),
+                    ))
+                    .as_pointer(),
+                )
+            }) == 7),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            (({ Outer_long__Inner_char_Impl::sum(&ic.as_pointer()) })
+                == (6 + (('a' as i8) as i32))),
+        )
+    });
+    ({ cpp2rust_assert_fail_0((({ Boxed_int_::twice(3) }) == 6)) });
     let bi: Value<Boxed_int_> = Rc::new(RefCell::new(Boxed_int_ { value: 4 }));
-    assert!((({ Boxed_int_Impl::plus(&bi.as_pointer(), 5,) }) == 9));
-    assert!((({ Boxed_long_::twice(10_i64,) }) == 20_i64));
+    ({ cpp2rust_assert_fail_0((({ Boxed_int_Impl::plus(&bi.as_pointer(), 5) }) == 9)) });
+    ({ cpp2rust_assert_fail_0((({ Boxed_long_::twice(10_i64) }) == 20_i64)) });
     let bl: Value<Boxed_long_> = Rc::new(RefCell::new(Boxed_long_ { value: 7_i64 }));
-    assert!((({ Boxed_long_Impl::plus(&bl.as_pointer(), 1_i64,) }) == 8_i64));
+    ({ cpp2rust_assert_fail_0((({ Boxed_long_Impl::plus(&bl.as_pointer(), 1_i64) }) == 8_i64)) });
     let imc: Value<MyContainer_int_> = Rc::new(RefCell::new(<MyContainer_int_>::default()));
-    assert!(({ MyContainer_int_Impl::empty(&imc.as_pointer(),) }));
+    ({ cpp2rust_assert_fail_0(({ MyContainer_int_Impl::empty(&imc.as_pointer()) })) });
     ({
         let _item: Value<i32> = Rc::new(RefCell::new(1));
         MyContainer_int_Impl::push_back(&imc.as_pointer(), _item.as_pointer())
     });
-    assert!(
-        (({ MyContainer_int_Impl::size(&imc.as_pointer(),) }) == 1_usize)
-            && ((({ MyContainer_int_Impl::back_4(&imc.as_pointer(),) }).read()) == 1)
-    );
+    ({
+        cpp2rust_assert_fail_0(
+            (({ MyContainer_int_Impl::size(&imc.as_pointer()) }) == 1_u64)
+                && ((({ MyContainer_int_Impl::back_4(&imc.as_pointer()) }).read()) == 1),
+        )
+    });
     ({ MyContainer_int_Impl::pop_back(&imc.as_pointer()) });
-    assert!(({ MyContainer_int_Impl::empty(&imc.as_pointer(),) }));
+    ({ cpp2rust_assert_fail_0(({ MyContainer_int_Impl::empty(&imc.as_pointer()) })) });
     let cmc: Value<MyContainer_char_> = Rc::new(RefCell::new(<MyContainer_char_>::default()));
-    assert!(({ MyContainer_char_Impl::empty(&cmc.as_pointer(),) }));
+    ({ cpp2rust_assert_fail_0(({ MyContainer_char_Impl::empty(&cmc.as_pointer()) })) });
     ({
         let _item: Value<i8> = Rc::new(RefCell::new(('a' as i8)));
         MyContainer_char_Impl::push_back(&cmc.as_pointer(), _item.as_pointer())
     });
-    assert!(
-        (({ MyContainer_char_Impl::size(&cmc.as_pointer(),) }) == 1_usize)
-            && (((({ MyContainer_char_Impl::back_4(&cmc.as_pointer(),) }).read()) as i32)
-                == (('a' as i8) as i32))
-    );
+    ({
+        cpp2rust_assert_fail_0(
+            (({ MyContainer_char_Impl::size(&cmc.as_pointer()) }) == 1_u64)
+                && (((({ MyContainer_char_Impl::back_4(&cmc.as_pointer()) }).read()) as i32)
+                    == (('a' as i8) as i32)),
+        )
+    });
     ({ MyContainer_char_Impl::pop_back(&cmc.as_pointer()) });
-    assert!(({ MyContainer_char_Impl::empty(&cmc.as_pointer(),) }));
+    ({ cpp2rust_assert_fail_0(({ MyContainer_char_Impl::empty(&cmc.as_pointer()) })) });
     let fmc: Value<MyContainer_float_> = Rc::new(RefCell::new(<MyContainer_float_>::default()));
-    assert!(({ MyContainer_float_Impl::empty(&fmc.as_pointer(),) }));
+    ({ cpp2rust_assert_fail_0(({ MyContainer_float_Impl::empty(&fmc.as_pointer()) })) });
     ({
         let _item: Value<f32> = Rc::new(RefCell::new((1_f64 as f32)));
         MyContainer_float_Impl::push_back(&fmc.as_pointer(), _item.as_pointer())
     });
-    assert!(
-        (({ MyContainer_float_Impl::size(&fmc.as_pointer(),) }) == 1_usize)
-            && (((({ MyContainer_float_Impl::back_4(&fmc.as_pointer(),) }).read()) as f64)
-                == 1_f64)
-    );
+    ({
+        cpp2rust_assert_fail_0(
+            (({ MyContainer_float_Impl::size(&fmc.as_pointer()) }) == 1_u64)
+                && (((({ MyContainer_float_Impl::back_4(&fmc.as_pointer()) }).read()) as f64)
+                    == 1_f64),
+        )
+    });
     ({ MyContainer_float_Impl::pop_back(&fmc.as_pointer()) });
-    assert!(({ MyContainer_float_Impl::empty(&fmc.as_pointer(),) }));
+    ({ cpp2rust_assert_fail_0(({ MyContainer_float_Impl::empty(&fmc.as_pointer()) })) });
     return 0;
 }
 pub trait Boxed_int_Impl {
@@ -296,7 +311,7 @@ impl Boxed_short_Impl for Ptr<Boxed_short_> {
 }
 pub trait MyContainer_char_Impl {
     fn empty(&self) -> bool;
-    fn size(&self) -> usize;
+    fn size(&self) -> u64;
     fn back_3(&self) -> Ptr<i8> {
         unimplemented!()
     }
@@ -307,34 +322,32 @@ pub trait MyContainer_char_Impl {
 }
 impl MyContainer_char_Impl for Ptr<MyContainer_char_> {
     fn empty(&self) -> bool {
-        return (*(*self).upgrade().deref()).vec_.is_empty();
+        return ({ (*(*self).upgrade().deref()).vec_.empty() });
     }
-    fn size(&self) -> usize {
-        return (*(*self).upgrade().deref()).vec_.len();
+    fn size(&self) -> u64 {
+        return ({ (*(*self).upgrade().deref()).vec_.size() });
     }
     fn back_4(&self) -> Ptr<i8> {
-        return field_ref!((*self), vec_).decay().to_last();
+        return ({ (*(*self).upgrade().deref()).vec_.back_55() });
     }
     fn pop_back(&self) {
-        field!((*self), vec_).with_mut(|__v: &mut Vec<i8>| __v.pop());
+        ({ (*(*self).upgrade().deref()).vec_.pop_back() });
         return;
     }
     fn push_back(&self, item: Ptr<i8>) {
-        {
-            let a0_clone = (item.read()).clone();
-            field!((*self), vec_).with_mut(|__v: &mut Vec<i8>| __v.push(a0_clone))
-        };
+        ({
+            let ___x: Ptr<i8> = (item).clone();
+            (*(*self).upgrade().deref()).vec_.push_back_59(___x)
+        });
     }
     fn move_assign(&self, _a0: Ptr<MyContainer_char_>) -> Ptr<MyContainer_char_> {
-        field_ref!((*self), vec_)
-            .as_pointer()
-            .write(field!(_a0, vec_).with_mut(std::mem::take));
+        field!((*self), vec_).write({ { (*_a0.upgrade().deref()).vec_.clone() } });
         return (*self).clone();
     }
 }
 pub trait MyContainer_float_Impl {
     fn empty(&self) -> bool;
-    fn size(&self) -> usize;
+    fn size(&self) -> u64;
     fn back_3(&self) -> Ptr<f32> {
         unimplemented!()
     }
@@ -345,34 +358,32 @@ pub trait MyContainer_float_Impl {
 }
 impl MyContainer_float_Impl for Ptr<MyContainer_float_> {
     fn empty(&self) -> bool {
-        return (*(*self).upgrade().deref()).vec_.is_empty();
+        return ({ (*(*self).upgrade().deref()).vec_.empty() });
     }
-    fn size(&self) -> usize {
-        return (*(*self).upgrade().deref()).vec_.len();
+    fn size(&self) -> u64 {
+        return ({ (*(*self).upgrade().deref()).vec_.size() });
     }
     fn back_4(&self) -> Ptr<f32> {
-        return field_ref!((*self), vec_).decay().to_last();
+        return ({ (*(*self).upgrade().deref()).vec_.back_55() });
     }
     fn pop_back(&self) {
-        field!((*self), vec_).with_mut(|__v: &mut Vec<f32>| __v.pop());
+        ({ (*(*self).upgrade().deref()).vec_.pop_back() });
         return;
     }
     fn push_back(&self, item: Ptr<f32>) {
-        {
-            let a0_clone = (item.read()).clone();
-            field!((*self), vec_).with_mut(|__v: &mut Vec<f32>| __v.push(a0_clone))
-        };
+        ({
+            let ___x: Ptr<f32> = (item).clone();
+            (*(*self).upgrade().deref()).vec_.push_back_59(___x)
+        });
     }
     fn move_assign(&self, _a0: Ptr<MyContainer_float_>) -> Ptr<MyContainer_float_> {
-        field_ref!((*self), vec_)
-            .as_pointer()
-            .write(field!(_a0, vec_).with_mut(std::mem::take));
+        field!((*self), vec_).write({ { (*_a0.upgrade().deref()).vec_.clone() } });
         return (*self).clone();
     }
 }
 pub trait MyContainer_int_Impl {
     fn empty(&self) -> bool;
-    fn size(&self) -> usize;
+    fn size(&self) -> u64;
     fn back_3(&self) -> Ptr<i32> {
         unimplemented!()
     }
@@ -383,28 +394,26 @@ pub trait MyContainer_int_Impl {
 }
 impl MyContainer_int_Impl for Ptr<MyContainer_int_> {
     fn empty(&self) -> bool {
-        return (*(*self).upgrade().deref()).vec_.is_empty();
+        return ({ (*(*self).upgrade().deref()).vec_.empty() });
     }
-    fn size(&self) -> usize {
-        return (*(*self).upgrade().deref()).vec_.len();
+    fn size(&self) -> u64 {
+        return ({ (*(*self).upgrade().deref()).vec_.size() });
     }
     fn back_4(&self) -> Ptr<i32> {
-        return field_ref!((*self), vec_).decay().to_last();
+        return ({ (*(*self).upgrade().deref()).vec_.back_55() });
     }
     fn pop_back(&self) {
-        field!((*self), vec_).with_mut(|__v: &mut Vec<i32>| __v.pop());
+        ({ (*(*self).upgrade().deref()).vec_.pop_back() });
         return;
     }
     fn push_back(&self, item: Ptr<i32>) {
-        {
-            let a0_clone = (item.read()).clone();
-            field!((*self), vec_).with_mut(|__v: &mut Vec<i32>| __v.push(a0_clone))
-        };
+        ({
+            let ___x: Ptr<i32> = (item).clone();
+            (*(*self).upgrade().deref()).vec_.push_back_59(___x)
+        });
     }
     fn move_assign(&self, _a0: Ptr<MyContainer_int_>) -> Ptr<MyContainer_int_> {
-        field_ref!((*self), vec_)
-            .as_pointer()
-            .write(field!(_a0, vec_).with_mut(std::mem::take));
+        field!((*self), vec_).write({ { (*_a0.upgrade().deref()).vec_.clone() } });
         return (*self).clone();
     }
 }

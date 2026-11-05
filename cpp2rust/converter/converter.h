@@ -146,6 +146,8 @@ public:
 
   void ConvertBody(clang::Stmt *body);
 
+  void ConvertBodyStmt(clang::Stmt *stmt);
+
   void ConvertBodyStmts(clang::Stmt *body);
 
   void EmitHoistedDecls(clang::CompoundStmt *body);
@@ -217,7 +219,13 @@ public:
 
   bool NeedsScopedDestructor(const clang::VarDecl *decl) const;
 
-  virtual void EmitScopedDestructor(const clang::VarDecl *decl);
+  void EmitScopedDestructor(const clang::VarDecl *decl);
+
+  // The statement that destroys decl at the end of its scope.
+  virtual std::string ScopedDestructorStmt(const clang::VarDecl *decl);
+
+  // Destroys the parameters taken by value when the function returns.
+  void EmitParamDestructors(clang::FunctionDecl *decl);
 
   void EmitDeallocation(clang::CXXDeleteExpr *expr,
                         const std::string &argument_as_string);
@@ -320,6 +328,18 @@ public:
                                 bool is_move, const std::string &ptr);
 
   virtual const char *GetConversionTraitName() const;
+
+  virtual std::string ConvertPtrRead(clang::QualType type,
+                                     const std::string &src);
+
+  virtual std::string ConvertPtrWrite(const std::string &dst,
+                                      const std::string &value);
+
+  virtual std::string ConvertPointeeMethodCall(const char *method,
+                                               const std::string &dst,
+                                               const std::string &src);
+
+  virtual const char *GetMoveCtorTraitName() const;
 
   virtual std::string DerefPtrExpr(std::string_view ptr_expr,
                                    clang::QualType pointee_type);
@@ -441,6 +461,8 @@ public:
   ConvertFunctionToFunctionPointer(const clang::FunctionDecl *fn_decl);
 
   std::string GetFunctionRefName(const clang::FunctionDecl *fn_decl);
+
+  std::string GetFunctionPointerTarget(const clang::FunctionDecl *fn_decl);
 
   std::string ConvertFnPtrCallee(clang::Expr *arg);
   virtual std::string ConvertFnPtrPlaceholder(clang::Expr *arg);
@@ -598,6 +620,10 @@ public:
   virtual void ConvertCapturelessLambda(const clang::CXXRecordDecl *decl);
 
   virtual const char *LambdaMacro() const { return "lambda_unsafe!"; }
+
+  virtual const char *ValueComparatorMacro() const {
+    return "value_comparator_unsafe!";
+  }
 
   virtual void ConvertLambdaCapture(const clang::FieldDecl *field,
                                     clang::Expr *init);
@@ -787,17 +813,59 @@ protected:
 
   bool ConvertOutOfLineVirtualMethod(clang::CXXMethodDecl *decl);
 
+  // The comparison operators of a record, which implement its comparisons.
+  struct ComparisonOperators {
+    const clang::FunctionDecl *eq = nullptr;
+    const clang::FunctionDecl *ne = nullptr;
+    const clang::FunctionDecl *lt = nullptr;
+    const clang::FunctionDecl *cmp = nullptr;
+  };
+
+  // The operators of an iterator record, which implement the iterator traits
+  // of the library's generic algorithms.
+  struct IteratorOperators {
+    const clang::CXXMethodDecl *deref = nullptr;
+    const clang::CXXMethodDecl *inc = nullptr;
+    const clang::CXXMethodDecl *dec = nullptr;
+    const clang::CXXMethodDecl *add_assign = nullptr;
+    const clang::FunctionDecl *distance = nullptr;
+    bool equality = false;
+    bool ordering = false;
+  };
+
+  ComparisonOperators GetComparisonOperators(const clang::CXXRecordDecl *decl);
+
+  // Whether decl implements the iterator traits: it is copied, dereferenced
+  // to an element and incremented.
+  bool IsIteratorRecord(const clang::CXXRecordDecl *decl);
+
   void AddOrdTrait(const clang::CXXRecordDecl *decl);
+  void AddAdvanceTrait(const clang::CXXRecordDecl *decl);
+  void AddIteratorTraits(const clang::CXXRecordDecl *decl);
 
   virtual void ConvertOrdAndPartialOrdTraits(const clang::CXXRecordDecl *decl,
-                                             const clang::FunctionDecl *eq,
-                                             const clang::FunctionDecl *lt,
-                                             const clang::FunctionDecl *cmp);
+                                             const ComparisonOperators &ops);
+
+  virtual void ConvertAdvanceTrait(const clang::CXXRecordDecl *decl,
+                                   const clang::CXXMethodDecl *inc,
+                                   const clang::CXXMethodDecl *dec);
+
+  virtual void ConvertIteratorTraits(const clang::CXXRecordDecl *decl,
+                                     const IteratorOperators &ops);
+
+  void AddCallableTraits(const clang::CXXRecordDecl *decl);
+
+  // The body of the call method of the callable trait of decl, which calls
+  // its operator() with args.
+  virtual std::string GetCallableBody(const clang::CXXMethodDecl *call,
+                                      std::string_view args);
+
+  std::string GetCmpBody(const clang::CXXRecordDecl *decl,
+                         const ComparisonOperators &ops, std::string_view lhs,
+                         std::string_view rhs);
 
   std::string GetEqBody(const clang::CXXRecordDecl *decl,
-                        const clang::FunctionDecl *eq,
-                        const clang::FunctionDecl *lt,
-                        const clang::FunctionDecl *cmp, std::string_view lhs,
+                        const ComparisonOperators &ops, std::string_view lhs,
                         std::string_view rhs);
 
   void ConvertOrdAndPartialOrdTraitsBase(std::string_view cmp_body,
@@ -1188,6 +1256,9 @@ protected:
   virtual std::string
   ConvertPointerReceiver(clang::Expr *arg, std::string_view param_type,
                          std::optional<clang::QualType> implicit_convert_to);
+
+  // A pointer to the first element of the string literal expr.
+  virtual std::string ConvertStringLiteralPtr(clang::Expr *expr);
 
   // A pointer to the elements of the container arg.
   virtual std::string ConvertElementPtr(clang::Expr *arg) {

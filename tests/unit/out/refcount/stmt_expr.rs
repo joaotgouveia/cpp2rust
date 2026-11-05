@@ -16,14 +16,14 @@ fn main_0() -> i32 {
         let mut b: i32 = 2;
         (a + b)
     };
-    assert!((x == 3));
+    ({ cpp2rust_assert_fail_0((x == 3)) });
     let mut counter: i32 = 0;
     let mut y: i32 = {
         counter.postfix_inc();
         (counter * 10)
     };
-    assert!((y == 10));
-    assert!((counter == 1));
+    ({ cpp2rust_assert_fail_0((y == 10)) });
+    ({ cpp2rust_assert_fail_0((counter == 1)) });
     let mut z: i32 = {
         let mut v: i32 = 5;
         if (v > 0) {
@@ -31,16 +31,18 @@ fn main_0() -> i32 {
         }
         v
     };
-    assert!((z == 10));
-    assert!(
-        ({
-            let mut inner: i32 = {
-                let mut a: i32 = 100;
-                a
-            };
-            inner
-        } == 100)
-    );
+    ({ cpp2rust_assert_fail_0((z == 10)) });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let mut inner: i32 = {
+                    let mut a: i32 = 100;
+                    a
+                };
+                inner
+            } == 100),
+        )
+    });
     {
         counter.postfix_inc()
     };
@@ -49,7 +51,7 @@ fn main_0() -> i32 {
             counter = 2;
         }
     };
-    assert!((counter == 2));
+    ({ cpp2rust_assert_fail_0((counter == 2)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

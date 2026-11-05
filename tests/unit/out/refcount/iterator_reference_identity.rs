@@ -12,10 +12,11 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([10, 20, 30, 40])));
-    let i: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(v.decay().end()));
+    let i: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(CppRange::end(&v.decay())));
     let r: Ptr<RandomAccessIterator<i32>> = ({
+        let __a1 = 3_isize;
         i.as_pointer().with_mut(|__it| {
-            __it.iter_add_assign(-3_isize);
+            __it.iter_add_assign(-__a1);
         });
         i.as_pointer()
     });
@@ -38,14 +39,15 @@ fn main_0() -> i32 {
     assert!(({ (t).clone() } == { (i.as_pointer()) }));
     assert!(({ (((*i.borrow()).iter_deref().read()) == 20) }));
     let u: Ptr<RandomAccessIterator<i32>> = ({
+        let __a1 = 2_isize;
         i.as_pointer().with_mut(|__it| {
-            __it.iter_add_assign(2_isize);
+            __it.iter_add_assign(__a1);
         });
         i.as_pointer()
     });
     assert!(({ (u).clone() } == { (i.as_pointer()) }));
     assert!(({ (((*i.borrow()).iter_deref().read()) == 40) }));
-    let j: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(v.decay().begin()));
+    let j: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(CppRange::begin(&v.decay())));
     let mut x: i32 = ((*{
         j.as_pointer().with_mut(|__it| {
             __it.iter_inc();

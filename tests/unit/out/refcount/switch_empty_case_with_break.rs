@@ -30,9 +30,9 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ empty_case_with_break_0(1,) }) == 5));
-    assert!((({ empty_case_with_break_0(2,) }) == 2));
-    assert!((({ empty_case_with_break_0(9,) }) == 9));
+    ({ cpp2rust_assert_fail_1((({ empty_case_with_break_0(1) }) == 5)) });
+    ({ cpp2rust_assert_fail_1((({ empty_case_with_break_0(2) }) == 2)) });
+    ({ cpp2rust_assert_fail_1((({ empty_case_with_break_0(9) }) == 9)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -89,39 +89,49 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let a: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 3 })));
-    assert!(
-        ((({ forward_by_decltype_2(a.as_pointer(),) }) as i32)
-            == (Overload_kLvalueOverload as i32))
-    );
-    assert!(({ ({ (*a.borrow()).v } == 3) }));
-    assert!(
-        ((({
-            let _x: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 4 })));
-            forward_by_decltype_3(_x.as_pointer())
-        }) as i32)
-            == (Overload_kRvalueOverload as i32))
-    );
+    ({
+        cpp2rust_assert_fail_7(
+            ((({ forward_by_decltype_2(a.as_pointer()) }) as i32)
+                == (Overload_kLvalueOverload as i32)),
+        )
+    });
+    ({ cpp2rust_assert_fail_7(({ (*a.borrow()).v } == 3)) });
+    ({
+        cpp2rust_assert_fail_7(
+            ((({
+                let _x: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 4 })));
+                forward_by_decltype_3(_x.as_pointer())
+            }) as i32)
+                == (Overload_kRvalueOverload as i32)),
+        )
+    });
     let b: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 5 })));
-    assert!(
-        ((({ forward_abbreviated_4(b.as_pointer(),) }) as i32)
-            == (Overload_kLvalueOverload as i32))
-    );
-    assert!(({ ({ (*b.borrow()).v } == 5) }));
-    assert!(
-        ((({
-            let _x: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 6 })));
-            forward_abbreviated_5(_x.as_pointer())
-        }) as i32)
-            == (Overload_kRvalueOverload as i32))
-    );
+    ({
+        cpp2rust_assert_fail_7(
+            ((({ forward_abbreviated_4(b.as_pointer()) }) as i32)
+                == (Overload_kLvalueOverload as i32)),
+        )
+    });
+    ({ cpp2rust_assert_fail_7(({ (*b.borrow()).v } == 5)) });
+    ({
+        cpp2rust_assert_fail_7(
+            ((({
+                let _x: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 6 })));
+                forward_abbreviated_5(_x.as_pointer())
+            }) as i32)
+                == (Overload_kRvalueOverload as i32)),
+        )
+    });
     let c: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 7 })));
-    assert!(
-        (({
-            let _args_1: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 8 })));
-            forward_abbreviated_pack_6(c.as_pointer(), _args_1.as_pointer())
-        }) == ((Overload_kLvalueOverload as i32) + (Overload_kRvalueOverload as i32)))
-    );
-    assert!(({ ({ (*c.borrow()).v } == 7) }));
+    ({
+        cpp2rust_assert_fail_7(
+            (({
+                let _args_1: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 8 })));
+                forward_abbreviated_pack_6(c.as_pointer(), _args_1.as_pointer())
+            }) == ((Overload_kLvalueOverload as i32) + (Overload_kRvalueOverload as i32))),
+        )
+    });
+    ({ cpp2rust_assert_fail_7(({ (*c.borrow()).v } == 7)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

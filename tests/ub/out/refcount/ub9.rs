@@ -11,9 +11,9 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut arr: Ptr<i32> = Ptr::alloc_array((0..10_usize).map(|_| 0_i32).collect::<Box<[i32]>>());
-    let mut out: i32 = (elem!(arr, 10).read());
+    let mut arr: Ptr<i32> = Ptr::alloc_array((0..10_u64).map(|_| 0_i32).collect::<Box<[i32]>>());
+    let out: Value<i32> = Rc::new(RefCell::new((elem!(arr, 10).read())));
     arr.delete();
-    return out;
+    return (*out.borrow());
 }
 pub fn __cpp2rust_init_globals() {}

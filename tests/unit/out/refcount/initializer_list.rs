@@ -19,9 +19,14 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     assert!((({ f_0(Vec::from([1, 2, 3,]),) }) == 3_usize));
-    let mut v: Vec<i32> = Vec::from([4, 5, 6]);
-    assert!((v.len() == 3_usize));
-    assert!((((v[0_usize] + v[1_usize]) + v[2_usize]) == 15));
+    let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([4, 5, 6])));
+    assert!(({ ((*v.borrow()).len() == 3_usize) }));
+    assert!(
+        ((((v.decay().offset(0_usize as isize).read())
+            + (v.decay().offset(1_usize as isize).read()))
+            + (v.decay().offset(2_usize as isize).read()))
+            == 15)
+    );
     let l: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([7, 8])));
     assert!(({ ((*l.borrow()).len() == 2_usize) }));
     return 0;

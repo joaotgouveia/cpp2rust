@@ -21,19 +21,19 @@ thread_local!(
     pub static s_0: Value<Ptr<S>> = Rc::new(RefCell::new(Ptr::<S>::null()));
 );
 thread_local!(
-    pub static file_1: Value<Ptr<CFile>> = Rc::new(RefCell::new(Ptr::null()));
+    pub static file_1: Value<Ptr<_IO_FILE>> = Rc::new(RefCell::new(Ptr::<_IO_FILE>::null()));
 );
 thread_local!(
-    pub static size_2: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static size_2: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!(({ (*s_0.with(Value::clone).borrow()).is_null() }));
-    assert!(({ (*file_1.with(Value::clone).borrow()).is_null() }));
-    assert!((size_2.with(|rc| *rc.borrow()) == 0_usize));
+    ({ cpp2rust_assert_fail_3((*s_0.with(Value::clone).borrow()).is_null()) });
+    ({ cpp2rust_assert_fail_3((*file_1.with(Value::clone).borrow()).is_null()) });
+    ({ cpp2rust_assert_fail_3((size_2.with(|rc| *rc.borrow()) == 0_u64)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {

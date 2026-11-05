@@ -11,20 +11,25 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut u: Option<Value<i32>> = Ptr::alloc(3).to_owned_opt();
-    assert!(u.is_some());
-    let mut e: Option<Value<i32>> = None;
-    assert!(!(e.is_some()));
-    if u.is_some() {
-        u.as_pointer().write(4);
+    let u: Value<std_unique_ptr_int__std_default_delete_int__> = Rc::new(RefCell::new(
+        std_unique_ptr_int__std_default_delete_int__::new_1({ Ptr::alloc(3) }),
+    ));
+    ({ cpp2rust_assert_fail_0(({ (*u.borrow())() })) });
+    let e: Value<std_unique_ptr_int__std_default_delete_int__> = Rc::new(RefCell::new(
+        <std_unique_ptr_int__std_default_delete_int__>::default(),
+    ));
+    ({ cpp2rust_assert_fail_0(!({ (*e.borrow())() })) });
+    if ({ (*u.borrow())() }) {
+        (*u.borrow_mut()).write(4);
     }
-    assert!(((u.as_pointer().read()) == 4));
-    let mut a: Option<Value<Box<[i32]>>> = Some(Rc::new(RefCell::new(
-        (0..2_usize).map(|_| 0_i32).collect::<Box<[_]>>(),
-    )));
-    assert!(a.is_some());
-    let mut ea: Option<Value<Box<[i32]>>> = None;
-    assert!(!(ea.is_some()));
+    ({ cpp2rust_assert_fail_0((((*u.borrow()).read()) == 4)) });
+    let a: Value<std_unique_ptr_intarrarr__std_default_delete_intarrarr__> =
+        Rc::new(RefCell::new(({ make_unique_1(2_u64) })));
+    ({ cpp2rust_assert_fail_0(({ (*a.borrow())() })) });
+    let ea: Value<std_unique_ptr_intarrarr__std_default_delete_intarrarr__> = Rc::new(
+        RefCell::new(<std_unique_ptr_intarrarr__std_default_delete_intarrarr__>::default()),
+    );
+    ({ cpp2rust_assert_fail_0(!({ (*ea.borrow())() })) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

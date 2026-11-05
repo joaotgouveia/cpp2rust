@@ -13,11 +13,7 @@ pub fn main() {
 fn main_0() -> i32 {
     let mut fname: Ptr<i8> = Ptr::<i8>::from_string_literal(b"testfile.txt");
     let mut mode: Ptr<i8> = Ptr::<i8>::from_string_literal(b"rb");
-    let mut file_ptr: Ptr<CFile> =
-        match CFile::open(&fname.to_rust_string(), &mode.to_rust_string()) {
-            Some(__f) => Ptr::alloc(__f),
-            None => Ptr::null(),
-        };
+    let mut file_ptr: Ptr<_IO_FILE> = ({ fopen_0((fname).clone(), (mode).clone()) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

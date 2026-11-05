@@ -34,9 +34,9 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ compound_case_body_0(1,) }) == 30));
-    assert!((({ compound_case_body_0(2,) }) == 99));
-    assert!((({ compound_case_body_0(9,) }) == -1_i32));
+    ({ cpp2rust_assert_fail_1((({ compound_case_body_0(1) }) == 30)) });
+    ({ cpp2rust_assert_fail_1((({ compound_case_body_0(2) }) == 99)) });
+    ({ cpp2rust_assert_fail_1((({ compound_case_body_0(9) }) == -1_i32)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

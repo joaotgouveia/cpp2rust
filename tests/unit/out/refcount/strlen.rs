@@ -26,7 +26,11 @@ fn main_0() -> i32 {
         ('o' as i8),
         ('\0' as i8),
     ])));
-    assert!((({ strlen_0(((string.as_pointer() as Ptr<i8>).offset(0)),) }) == 5_u32));
+    ({
+        cpp2rust_assert_fail_1(
+            (({ strlen_0(((string.as_pointer() as Ptr<i8>).offset(0))) }) == 5_u32),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

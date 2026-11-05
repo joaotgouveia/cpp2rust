@@ -145,10 +145,10 @@ std::vector<clang::QualType> resolveMemberType(clang::Sema &sema,
       records.push_back(record);
     } else {
       auto owner_spec = owner->getAs<clang::TemplateSpecializationType>();
-      auto tmpl = owner_spec
-                      ? llvm::dyn_cast_or_null<clang::ClassTemplateDecl>(
-                            owner_spec->getTemplateName().getAsTemplateDecl())
-                      : nullptr;
+      auto tmpl =
+          owner_spec ? llvm::dyn_cast_or_null<clang::ClassTemplateDecl>(
+                           owner_spec->getTemplateName().getAsTemplateDecl())
+                     : nullptr;
       // an owner that is no class template names no member here (an alias
       // template specialization); the keys of a rule needing one fail later
       if (!tmpl) {
@@ -309,6 +309,11 @@ std::optional<ExprKey> GetExprKey(clang::ASTContext &ctx,
     if (operand->isTypeDependent() && llvm::isa<clang::DeclRefExpr>(operand)) {
       if (auto parent = getParent(operand->getType())) {
         return getConstructorKey(parent);
+      }
+      // or of any class (static_cast<bool>(a0) of const N &)
+      if (operand->getType().getNonReferenceType()->getAs<
+              clang::TemplateTypeParmType>()) {
+        return kAnyConstructor;
       }
     }
     return GetExprKey(ctx, cast->getSubExpr());

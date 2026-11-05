@@ -6,26 +6,27 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn All_0(arr: Ptr<Option<Value<Box<[i32]>>>>, mut N: i32, mut element: i32) {
-    let mut all: Option<Value<Box<[i32]>>> = Some(Rc::new(RefCell::new(
-        (0..(N as usize)).map(|_| 0_i32).collect::<Box<[_]>>(),
-    )));
+pub fn All_0(
+    arr: Ptr<std_unique_ptr_intarrarr__std_default_delete_intarrarr__>,
+    mut N: i32,
+    mut element: i32,
+) {
+    let all: Value<std_unique_ptr_intarrarr__std_default_delete_intarrarr__> =
+        Rc::new(RefCell::new(({ make_unique_1((N as u64)) })));
     let mut i: i32 = 0;
     'loop_: while (i < N) {
-        (all.as_pointer() as Ptr<i32>)
-            .offset((i as usize) as isize)
-            .write(element);
+        (*all.borrow_mut())[(i as u64)] = element;
         i.prefix_inc();
     }
-    arr.write(all.take());
+    arr.write({ (*all.borrow()).clone() });
 }
-pub fn Consume_1(mut arr: Option<Value<Box<[i32]>>>, mut N: i32) -> i32 {
+pub fn Consume_2(arr: std_unique_ptr_intarrarr__std_default_delete_intarrarr__, mut N: i32) -> i32 {
+    let arr: Value<std_unique_ptr_intarrarr__std_default_delete_intarrarr__> =
+        Rc::new(RefCell::new(arr));
     let sum: Value<i32> = Rc::new(RefCell::new(0));
     let mut i: i32 = -1_i32;
     'loop_: while ((*i.prefix_inc()) < N) {
-        (*sum.borrow_mut()) += ((arr.as_pointer() as Ptr<i32>)
-            .offset((i as usize) as isize)
-            .read());
+        (*sum.borrow_mut()) += { (*arr.borrow())[(i as u64)] };
     }
     return (*sum.borrow());
 }
@@ -35,11 +36,10 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let mut N: i32 = 10;
-    let arr: Value<Option<Value<Box<[i32]>>>> = Rc::new(RefCell::new(Some(Rc::new(RefCell::new(
-        (0..(N as usize)).map(|_| 0_i32).collect::<Box<[_]>>(),
-    )))));
+    let arr: Value<std_unique_ptr_intarrarr__std_default_delete_intarrarr__> =
+        Rc::new(RefCell::new(({ make_unique_1((N as u64)) })));
     ({ All_0(arr.as_pointer(), N, 1) });
-    assert!(({ (({ Consume_1((*arr.borrow_mut()).take(), N,) }) == 10) }));
+    ({ cpp2rust_assert_fail_3((({ Consume_2((*arr.borrow_mut()).clone(), N) }) == 10)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

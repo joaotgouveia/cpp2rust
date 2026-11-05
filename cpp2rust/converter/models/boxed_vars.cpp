@@ -60,6 +60,17 @@ bool CanUnbox(clang::ASTContext &ctx, const clang::VarDecl *decl) {
          !IsVaListType(decl->getType());
 }
 
+// A user-defined record wrapped in std::move is moved out of a rule argument
+// by a call to its move constructor, which takes a pointer to it.
+bool MovedByConstructor(const clang::Expr *arg) {
+  if (IgnoreTransparentStdCall(arg) == arg) {
+    return false;
+  }
+  auto *record = arg->getType()->getAsCXXRecordDecl();
+  return record && IsUserDefinedDecl(record) &&
+         llvm::any_of(record->ctors(), IsConvertibleMoveConstructor);
+}
+
 template <typename E> E *IgnoreNoOpCasts(E *expr) {
   while (auto *cast = clang::dyn_cast<clang::ImplicitCastExpr>(expr)) {
     if (cast->getCastKind() != clang::CK_NoOp) {
@@ -112,6 +123,10 @@ const clang::Expr *GetEnclosingObject(const clang::Expr *expr) {
   }
   if (auto *op = clang::dyn_cast<clang::CXXOperatorCallExpr>(expr);
       op && op->getOperator() == clang::OO_Subscript) {
+    // A ruled subscript passes the container to its rule like any argument.
+    if (Mapper::Contains(op->getCalleeDecl()->getASTContext(), op)) {
+      return nullptr;
+    }
     auto *vec = IgnoreNoOpCasts(op->getArg(0));
     return IsFlatVec(vec->getType()) ? vec : nullptr;
   }
@@ -265,7 +280,9 @@ private:
         TraverseStmt(init);
         continue;
       }
-
+      if (MovedByConstructor(arg)) {
+        continue;
+      }
       bool moved_by_ctor = false;
       TranslationRule::AnyFragment(
           rule->body, [&](const TranslationRule::BodyFragment &fragment) {
@@ -286,7 +303,14 @@ private:
       if (moved_by_ctor) {
         continue;
       }
-      if (!rule->takesAddress(ctx_, expr, i, arg) ||
+      auto type = arg->getType();
+      if ((!rule->params[i].is_pointer() &&
+           !RuleRegistry::ParamIsReference(ctx_, expr, i)) ||
+          (type->isPointerType() && !type->isFunctionPointerType() &&
+           (!rule->params[i].is_pointer() ||
+            RuleRegistry::ParamTakesPointerValue(expr, i))) ||
+          (RuleRegistry::MapsToPointer(ctx_, type) &&
+           !RuleRegistry::ParamPointsTo(ctx_, expr, i, type)) ||
           rule->takesTemporaryAddress(ctx_, expr, i, arg)) {
         AddValueUse(arg);
       }

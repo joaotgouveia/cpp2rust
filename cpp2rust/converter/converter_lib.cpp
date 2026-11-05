@@ -113,27 +113,6 @@ bool IsBuiltinConstantP(const clang::Expr *expr) {
   return false;
 }
 
-bool IsRustConstEvaluableExpr(const clang::Expr *expr) {
-  expr = expr->IgnoreParenImpCasts();
-  if (clang::isa<clang::IntegerLiteral, clang::ConceptSpecializationExpr>(
-          expr)) {
-    return true;
-  }
-  if (auto *trait = clang::dyn_cast<clang::UnaryExprOrTypeTraitExpr>(expr)) {
-    return trait->getKind() == clang::UnaryExprOrTypeTrait::UETT_SizeOf;
-  }
-  if (auto *unary = clang::dyn_cast<clang::UnaryOperator>(expr)) {
-    return unary->getOpcode() == clang::UO_LNot &&
-           IsRustConstEvaluableExpr(unary->getSubExpr());
-  }
-  if (auto *binary = clang::dyn_cast<clang::BinaryOperator>(expr)) {
-    return (binary->isEqualityOp() || binary->isRelationalOp()) &&
-           IsRustConstEvaluableExpr(binary->getLHS()) &&
-           IsRustConstEvaluableExpr(binary->getRHS());
-  }
-  return false;
-}
-
 std::string GetEscapedCharLiteral(char character) {
   switch (character) {
   case '"':
@@ -230,10 +209,20 @@ bool IsCodeUnitStringLiteral(const clang::StringLiteral *expr) {
 }
 
 std::string GetNumAsString(llvm::APFloat value) {
+  auto non_finite = [&](std::string_view ty) -> std::optional<std::string> {
+    if (value.isNaN()) {
+      return std::format("{}::from_bits({:#x})", ty,
+                         value.bitcastToAPInt().getZExtValue());
+    }
+    if (value.isInfinity()) {
+      return std::format("{}::{}INFINITY", ty, value.isNegative() ? "NEG_" : "");
+    }
+    return std::nullopt;
+  };
   switch (llvm::APFloat::SemanticsToEnum(value.getSemantics())) {
   case llvm::APFloat::S_IEEEsingle:
-    return value.isInfinity() ? "f32::INFINITY"
-                              : std::format("{}_f32", value.convertToFloat());
+    return non_finite("f32").value_or(
+        std::format("{}_f32", value.convertToFloat()));
   case llvm::APFloat::S_x87DoubleExtended: {
     bool loses_info = false;
     value.convert(llvm::APFloat::IEEEdouble(),
@@ -241,8 +230,8 @@ std::string GetNumAsString(llvm::APFloat value) {
   }
     [[fallthrough]];
   case llvm::APFloat::S_IEEEdouble:
-    return value.isInfinity() ? "f64::INFINITY"
-                              : std::format("{}_f64", value.convertToDouble());
+    return non_finite("f64").value_or(
+        std::format("{}_f64", value.convertToDouble()));
   default:
     assert(false && "unsupported floating-point semantics");
     return {};
@@ -1437,6 +1426,14 @@ const char *GetOverloadedOperator(const clang::FunctionDecl *decl) {
     return "operator_call";
   case clang::OO_Subscript:
     return "operator_index";
+  case clang::OO_New:
+    return "operator_new";
+  case clang::OO_Delete:
+    return "operator_delete";
+  case clang::OO_Array_New:
+    return "operator_new_arr";
+  case clang::OO_Array_Delete:
+    return "operator_delete_arr";
   default:
     assert(0 && "unsupported overloaded operator");
     return "";
@@ -1472,6 +1469,30 @@ bool IsSameTypeComparison(const clang::FunctionDecl *fn,
   }
   return fn->getNumParams() == 2 && is_record(fn->getParamDecl(0)->getType()) &&
          is_record(fn->getParamDecl(1)->getType());
+}
+
+const clang::CXXMethodDecl *GetMemberOperator(const clang::CXXRecordDecl *decl,
+                                              clang::OverloadedOperatorKind op,
+                                              unsigned num_params) {
+  const clang::CXXMethodDecl *found = nullptr;
+  for (const auto *method : decl->methods()) {
+    if (method->isImplicit() || method->isDeleted() || !method->hasBody() ||
+        method->getDescribedFunctionTemplate() ||
+        method->getNumParams() != num_params ||
+        method->getOverloadedOperator() != op) {
+      continue;
+    }
+    found = method;
+  }
+  return found;
+}
+
+const clang::CXXMethodDecl *GetIteratorDeref(const clang::CXXRecordDecl *decl) {
+  const auto *deref = GetMemberOperator(decl, clang::OO_Star, 0);
+  if (!deref || !deref->getReturnType()->isLValueReferenceType()) {
+    return nullptr;
+  }
+  return deref;
 }
 
 bool IsImplicitAssignmentCall(const clang::CallExpr *expr) {

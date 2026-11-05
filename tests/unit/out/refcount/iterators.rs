@@ -13,7 +13,7 @@ pub fn main() {
 fn main_0() -> i32 {
     let x: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __bytes = Ptr::<i8>::from_string_literal(b"hello").to_c_bytes();
-        __bytes.push(0);
+        __bytes.push(0_i8);
         __bytes
     }));
     'loop_: for c in IterRange::new(
@@ -48,7 +48,7 @@ fn main_0() -> i32 {
         let __a1 = Ptr::alloc(3);
         (*v.borrow_mut()).push(__a1)
     };
-    'loop_: for p in IterRange::new(v.decay().begin(), v.decay().end()) {
+    'loop_: for p in IterRange::new(CppRange::begin(&v.decay()), CppRange::end(&v.decay())) {
         let mut p: Ptr<i32> = (p.iter_deref().read());
         println!("{}", (p.read()));
     }

@@ -50,9 +50,9 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((0_usize == 0_usize));
-    assert!((4_usize == 4_usize));
-    assert!((8_usize == 8_usize));
+    ({ cpp2rust_assert_fail_0((0_usize == 0_u64)) });
+    ({ cpp2rust_assert_fail_0((4_usize == 4_u64)) });
+    ({ cpp2rust_assert_fail_0((8_usize == 8_u64)) });
     let v: Value<Layout> = Rc::new(RefCell::new(Layout {
         a: 0_u8,
         b: 0_u32,
@@ -61,15 +61,15 @@ fn main_0() -> i32 {
     (*v.borrow_mut()).b = 3735928559_u32;
     let mut base: Ptr<u8> = (v.as_pointer()).reinterpret_cast::<u8>();
     let mut bp: Ptr<u32> = (base.offset((4_usize) as isize)).reinterpret_cast::<u32>();
-    assert!(((bp.read()) == 3735928559_u32));
+    ({ cpp2rust_assert_fail_0(((bp.read()) == 3735928559_u32)) });
     (base.offset((4_usize) as isize))
         .reinterpret_cast::<u32>()
         .write(305419896_u32);
-    assert!(({ ({ (*v.borrow()).b } == 305419896_u32) }));
+    ({ cpp2rust_assert_fail_0(({ (*v.borrow()).b } == 305419896_u32)) });
     let mut text: Ptr<i8> = Ptr::<i8>::from_string_literal(b"example-body");
-    let mut len: usize = (text.to_c_string_iterator().count()).wrapping_add(1_usize);
-    let mut total: usize = ((2_usize as u64).wrapping_add((len as u64)) as usize);
-    assert!((total == (2_usize).wrapping_add(len)));
+    let mut len: u64 = ({ strlen_1((text).clone()) }).wrapping_add(1_u64);
+    let mut total: u64 = (2_usize as u64).wrapping_add(len);
+    ({ cpp2rust_assert_fail_0((total == (2_u64).wrapping_add(len))) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

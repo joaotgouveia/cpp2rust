@@ -17,13 +17,13 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut e: Ptr<i32> = Ptr::alloc_array((0..2_usize).map(|_| 0_i32).collect::<Box<[i32]>>());
+    let mut e: Ptr<i32> = Ptr::alloc_array((0..2_u64).map(|_| 0_i32).collect::<Box<[i32]>>());
     elem!(e, 0).write(6);
     elem!(e, 1).write(7);
     e.delete();
     let mut c: i8 = ({
         let _p: Value<Ptr<i8>> = Rc::new(RefCell::new(Ptr::alloc_array(
-            (0..4_usize).map(|_| 0_i8).collect::<Box<[i8]>>(),
+            (0..4_u64).map(|_| 0_i8).collect::<Box<[i8]>>(),
         )));
         take_0(_p.as_pointer())
     });

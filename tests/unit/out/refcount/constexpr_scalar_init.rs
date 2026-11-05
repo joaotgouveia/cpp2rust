@@ -15,15 +15,15 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let mut ce: bool = true;
-    assert!(ce);
-    let mut rt: bool = false;
-    assert!(!(rt));
+    ({ cpp2rust_assert_fail_1(ce) });
+    let mut rt: bool = ({ __builtin_is_constant_evaluated_2() });
+    ({ cpp2rust_assert_fail_1(!(rt)) });
     let mut n: i32 = -1_i32;
-    assert!((n == -1_i32));
+    ({ cpp2rust_assert_fail_1((n == -1_i32)) });
     let mut d: f64 = 5_f64;
-    assert!((d == 5_f64));
+    ({ cpp2rust_assert_fail_1((d == 5_f64)) });
     let mut big: u64 = 1099511627776_u64;
-    assert!((big == 1099511627776_u64));
+    ({ cpp2rust_assert_fail_1((big == 1099511627776_u64)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

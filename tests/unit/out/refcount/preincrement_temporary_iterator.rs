@@ -26,13 +26,21 @@ fn main_0() -> i32 {
     .write(20);
     Map::erase(
         m.as_pointer(),
-        &({
-            let mut __it = m
-                .as_pointer()
-                .with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.begin());
-            __it.iter_inc();
-            __it
-        })
+        &(*match (Rc::new(RefCell::new(
+            m.as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.begin()),
+        ))
+        .as_pointer(),)
+        {
+            (__tmp_0,) => {
+                __tmp_0.with_mut(|__it| {
+                    __it.iter_inc();
+                });
+                (__tmp_0).clone()
+            }
+        }
+        .upgrade()
+        .deref())
         .clone(),
     );
     assert!(({ ((*m.borrow()).len() == 1_usize) }));

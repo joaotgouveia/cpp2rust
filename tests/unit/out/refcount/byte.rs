@@ -20,13 +20,13 @@ fn main_0() -> i32 {
     assert!((shr1 == ((2) as u8)));
     let mut ushift3: u32 = 5_u32;
     {
-        b1.as_pointer().with_mut(|__b| *__b = *__b << ushift3);
+        b1.as_pointer().write(b1.as_pointer().read() << ushift3);
         b1.as_pointer()
     };
     assert!(({ ((*b1.borrow()) == ((32) as u8)) }));
     let mut ushift4: u32 = 3_u32;
     {
-        b1.as_pointer().with_mut(|__b| *__b = *__b >> ushift4);
+        b1.as_pointer().write(b1.as_pointer().read() >> ushift4);
         b1.as_pointer()
     };
     assert!(({ ((*b1.borrow()) == ((4) as u8)) }));

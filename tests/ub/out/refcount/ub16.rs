@@ -14,7 +14,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut p1: Ptr<i32> = Ptr::alloc_array((0..10_usize).map(|_| 0_i32).collect::<Box<[i32]>>());
+    let mut p1: Ptr<i32> = Ptr::alloc_array((0..10_u64).map(|_| 0_i32).collect::<Box<[i32]>>());
     let mut out: i32 = (elem!(({ foo_0((p1.offset((1) as isize)),) }), 4).read());
     p1.delete();
     return 0;

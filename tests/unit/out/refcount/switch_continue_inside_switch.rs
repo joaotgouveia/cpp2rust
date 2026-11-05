@@ -32,7 +32,9 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ continue_inside_switch_0(6,) }) == (((1 + 3) + 5) + (3 * 1000))));
+    ({
+        cpp2rust_assert_fail_1((({ continue_inside_switch_0(6) }) == (((1 + 3) + 5) + (3 * 1000))))
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

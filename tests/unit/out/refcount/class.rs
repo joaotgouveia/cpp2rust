@@ -101,30 +101,40 @@ fn main_0() -> i32 {
             ({ RouteImpl::SetCost(&route2.as_pointer(), 15_f64) }),
         )
     });
-    assert!(
-        ((((({ RandomRoute_0(route1.as_pointer(),) }) + ({ RandomRoute_0(route2.as_pointer(),) }))
-            as f64)
-            + old_cost)
-            == 9_f64)
-    );
+    ({
+        cpp2rust_assert_fail_1(
+            ((((({ RandomRoute_0(route1.as_pointer()) }) + ({ RandomRoute_0(route2.as_pointer()) }))
+                as f64)
+                + old_cost)
+                == 9_f64),
+        )
+    });
     let c1: Value<Counter> = Rc::new(RefCell::new(Counter { v: 3, calls: 0 }));
     let c2: Value<Counter> = Rc::new(RefCell::new(Counter { v: 3, calls: 0 }));
     let mut pc: Ptr<Counter> = (c1.as_pointer());
-    assert!((({ CounterImpl::Get(&c1.as_pointer(),) }) == 3));
-    assert!((({ CounterImpl::Get(&c2.as_pointer(),) }) == 3));
-    assert!((({ CounterImpl::Get(&pc,) }) == 3));
-    assert!(({ CounterImpl::operator_eq(&c1.as_pointer(), c2.as_pointer(),) }));
-    assert!(({ CounterImpl::operator_eq(&c2.as_pointer(), c1.as_pointer(),) }));
-    assert!(({ ({ (*c1.borrow()).calls } == 3) }));
-    assert!(({ ({ (*c2.borrow()).calls } == 2) }));
+    ({ cpp2rust_assert_fail_1((({ CounterImpl::Get(&c1.as_pointer()) }) == 3)) });
+    ({ cpp2rust_assert_fail_1((({ CounterImpl::Get(&c2.as_pointer()) }) == 3)) });
+    ({ cpp2rust_assert_fail_1((({ CounterImpl::Get(&pc) }) == 3)) });
+    ({ cpp2rust_assert_fail_1(({ CounterImpl::operator_eq(&c1.as_pointer(), c2.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_1(({ CounterImpl::operator_eq(&c2.as_pointer(), c1.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_1(({ (*c1.borrow()).calls } == 3)) });
+    ({ cpp2rust_assert_fail_1(({ (*c2.borrow()).calls } == 2)) });
     let t: Value<Tally> = Rc::new(RefCell::new(Tally { calls: 0 }));
     let ct: Value<Tally> = Rc::new(RefCell::new(Tally { calls: 0 }));
     let rt: Ptr<Tally> = t.as_pointer();
-    assert!((({ TallyImpl::SameNameBetweenConstAndNonConst_1(&t.as_pointer(),) }) == 1));
-    assert!((({ TallyImpl::SameNameBetweenConstAndNonConst_2(&ct.as_pointer(),) }) == 2));
-    assert!((({ TallyImpl::SameNameBetweenConstAndNonConst_2(&rt,) }) == 2));
-    assert!(({ ({ (*t.borrow()).calls } == 11) }));
-    assert!(({ ({ (*ct.borrow()).calls } == 10) }));
+    ({
+        cpp2rust_assert_fail_1(
+            (({ TallyImpl::SameNameBetweenConstAndNonConst_1(&t.as_pointer()) }) == 1),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            (({ TallyImpl::SameNameBetweenConstAndNonConst_2(&ct.as_pointer()) }) == 2),
+        )
+    });
+    ({ cpp2rust_assert_fail_1((({ TallyImpl::SameNameBetweenConstAndNonConst_2(&rt) }) == 2)) });
+    ({ cpp2rust_assert_fail_1(({ (*t.borrow()).calls } == 11)) });
+    ({ cpp2rust_assert_fail_1(({ (*ct.borrow()).calls } == 10)) });
     return 0;
 }
 pub trait CounterImpl {

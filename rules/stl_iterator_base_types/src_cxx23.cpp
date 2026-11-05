@@ -1,0 +1,139 @@
+#include <algorithm>
+#include <utility>
+
+using t1 = std::bidirectional_iterator_tag;
+
+std::bidirectional_iterator_tag f1() {
+  return std::bidirectional_iterator_tag();
+}
+
+std::bidirectional_iterator_tag f2(const std::bidirectional_iterator_tag &a0) {
+  return std::bidirectional_iterator_tag(a0);
+}
+
+std::bidirectional_iterator_tag f3(std::bidirectional_iterator_tag &&a0) {
+  return std::bidirectional_iterator_tag(std::move(a0));
+}
+
+std::bidirectional_iterator_tag &f4(std::bidirectional_iterator_tag &a0,
+                                    const std::bidirectional_iterator_tag &a1) {
+  return a0.operator=(a1);
+}
+
+std::bidirectional_iterator_tag &f5(std::bidirectional_iterator_tag &a0,
+                                    std::bidirectional_iterator_tag &&a1) {
+  return a0.operator=(std::move(a1));
+}
+
+using t2 = std::contiguous_iterator_tag;
+
+std::contiguous_iterator_tag f6() { return std::contiguous_iterator_tag(); }
+
+std::contiguous_iterator_tag f7(const std::contiguous_iterator_tag &a0) {
+  return std::contiguous_iterator_tag(a0);
+}
+
+std::contiguous_iterator_tag f8(std::contiguous_iterator_tag &&a0) {
+  return std::contiguous_iterator_tag(std::move(a0));
+}
+
+std::contiguous_iterator_tag &f9(std::contiguous_iterator_tag &a0,
+                                 const std::contiguous_iterator_tag &a1) {
+  return a0.operator=(a1);
+}
+
+std::contiguous_iterator_tag &f10(std::contiguous_iterator_tag &a0,
+                                  std::contiguous_iterator_tag &&a1) {
+  return a0.operator=(std::move(a1));
+}
+
+using t3 = std::forward_iterator_tag;
+
+std::forward_iterator_tag f11() { return std::forward_iterator_tag(); }
+
+std::forward_iterator_tag f12(const std::forward_iterator_tag &a0) {
+  return std::forward_iterator_tag(a0);
+}
+
+std::forward_iterator_tag f13(std::forward_iterator_tag &&a0) {
+  return std::forward_iterator_tag(std::move(a0));
+}
+
+std::forward_iterator_tag &f14(std::forward_iterator_tag &a0,
+                               const std::forward_iterator_tag &a1) {
+  return a0.operator=(a1);
+}
+
+std::forward_iterator_tag &f15(std::forward_iterator_tag &a0,
+                               std::forward_iterator_tag &&a1) {
+  return a0.operator=(std::move(a1));
+}
+
+using t4 = std::input_iterator_tag;
+
+std::input_iterator_tag f16() { return std::input_iterator_tag(); }
+
+std::input_iterator_tag f17(const std::input_iterator_tag &a0) {
+  return std::input_iterator_tag(a0);
+}
+
+std::input_iterator_tag f18(std::input_iterator_tag &&a0) {
+  return std::input_iterator_tag(std::move(a0));
+}
+
+std::input_iterator_tag &f19(std::input_iterator_tag &a0,
+                             const std::input_iterator_tag &a1) {
+  return a0.operator=(a1);
+}
+
+std::input_iterator_tag &f20(std::input_iterator_tag &a0,
+                             std::input_iterator_tag &&a1) {
+  return a0.operator=(std::move(a1));
+}
+
+using t5 = std::output_iterator_tag;
+
+std::output_iterator_tag f21() { return std::output_iterator_tag(); }
+
+std::output_iterator_tag f22(const std::output_iterator_tag &a0) {
+  return std::output_iterator_tag(a0);
+}
+
+std::output_iterator_tag f23(std::output_iterator_tag &&a0) {
+  return std::output_iterator_tag(std::move(a0));
+}
+
+std::output_iterator_tag &f24(std::output_iterator_tag &a0,
+                              const std::output_iterator_tag &a1) {
+  return a0.operator=(a1);
+}
+
+std::output_iterator_tag &f25(std::output_iterator_tag &a0,
+                              std::output_iterator_tag &&a1) {
+  return a0.operator=(std::move(a1));
+}
+
+using t6 = std::random_access_iterator_tag;
+
+std::random_access_iterator_tag f26() {
+  return std::random_access_iterator_tag();
+}
+
+std::random_access_iterator_tag f27(const std::random_access_iterator_tag &a0) {
+  return std::random_access_iterator_tag(a0);
+}
+
+std::random_access_iterator_tag f28(std::random_access_iterator_tag &&a0) {
+  return std::random_access_iterator_tag(std::move(a0));
+}
+
+std::random_access_iterator_tag &
+f29(std::random_access_iterator_tag &a0,
+    const std::random_access_iterator_tag &a1) {
+  return a0.operator=(a1);
+}
+
+std::random_access_iterator_tag &f30(std::random_access_iterator_tag &a0,
+                                     std::random_access_iterator_tag &&a1) {
+  return a0.operator=(std::move(a1));
+}

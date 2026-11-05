@@ -68,12 +68,37 @@ pub struct TypeInfo {
     pub is_refcount_pointer: bool,
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     pub is_unsafe_pointer: bool,
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub is_projection: bool,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub pointee_generic: Option<i32>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub generic: Option<i32>,
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub is_mut_raw_pointer: bool,
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub is_const_raw_pointer: bool,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub derives: Vec<String>,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub cpp_type: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub elems: Option<Elems>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Elems {
+    pub kind: ElemsKind,
+    #[serde(rename = "type")]
+    pub ty: String,
+}
+
+#[derive(Debug, Clone, Copy, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum ElemsKind {
+    Vec,
+    VecDeque,
+    Array,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -157,6 +182,8 @@ pub struct TypeIr {
     pub init: Vec<BodyFragment>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub generic: Option<i32>,
+    #[serde(skip_serializing_if = "BTreeMap::is_empty", default)]
+    pub generics: BTreeMap<String, Vec<Bound>>,
     #[serde(flatten)]
     pub type_info: TypeInfo,
 }

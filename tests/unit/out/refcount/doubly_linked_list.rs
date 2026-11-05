@@ -170,51 +170,69 @@ fn main_0() -> i32 {
     let __rhs = ({ Delete_3((head).clone(), -2_i32) });
     head = __rhs;
     let mut tail: Ptr<Node> = ({ Tail_4((head).clone()) });
-    assert!((({ Find_0((head).clone(), 0,) }).with(|__s| __s.val) == 4));
-    assert!((({ Find_0((head).clone(), 1,) }).with(|__s| __s.val) == 3));
-    assert!((({ Find_0((head).clone(), 2,) }).with(|__s| __s.val) == 2));
-    assert!((({ Find_0((head).clone(), 3,) }).with(|__s| __s.val) == 1));
-    assert!((({ Find_0((head).clone(), 4,) }).with(|__s| __s.val) == -1_i32));
-    assert!(({ Find_0((head).clone(), 5,) }).is_null());
-    assert!((({ FindBack_1((tail).clone(), 0,) }).with(|__s| __s.val) == -1_i32));
-    assert!((({ FindBack_1((tail).clone(), 1,) }).with(|__s| __s.val) == 1));
-    assert!((({ FindBack_1((tail).clone(), 2,) }).with(|__s| __s.val) == 2));
-    assert!((({ FindBack_1((tail).clone(), 3,) }).with(|__s| __s.val) == 3));
-    assert!((({ FindBack_1((tail).clone(), 4,) }).with(|__s| __s.val) == 4));
-    assert!((({ FindBack_1((tail).clone(), 4,) }).with(|__s| __s.prev.clone())).is_null());
-    assert!(
-        (({ Find_0((head).clone(), 0,) })
-            .with(|__s| __s.next.clone())
-            .with(|__s| __s.val)
-            == 3)
-    );
-    assert!(
-        (({ Find_0((head).clone(), 1,) })
-            .with(|__s| __s.next.clone())
-            .with(|__s| __s.next.clone())
-            .with(|__s| __s.val)
-            == 1)
-    );
-    assert!(
-        (({ Find_0((head).clone(), 2,) })
-            .with(|__s| __s.prev.clone())
-            .with(|__s| __s.val)
-            == 3)
-    );
-    assert!((({ Find_0((head).clone(), 4,) }).with(|__s| __s.next.clone())).is_null());
-    assert!(
-        (({ FindBack_1((tail).clone(), 1,) })
-            .with(|__s| __s.prev.clone())
-            .with(|__s| __s.prev.clone())
-            .with(|__s| __s.val)
-            == 3)
-    );
+    ({ cpp2rust_assert_fail_5((({ Find_0((head).clone(), 0) }).with(|__s| __s.val) == 4)) });
+    ({ cpp2rust_assert_fail_5((({ Find_0((head).clone(), 1) }).with(|__s| __s.val) == 3)) });
+    ({ cpp2rust_assert_fail_5((({ Find_0((head).clone(), 2) }).with(|__s| __s.val) == 2)) });
+    ({ cpp2rust_assert_fail_5((({ Find_0((head).clone(), 3) }).with(|__s| __s.val) == 1)) });
+    ({ cpp2rust_assert_fail_5((({ Find_0((head).clone(), 4) }).with(|__s| __s.val) == -1_i32)) });
+    ({ cpp2rust_assert_fail_5(({ Find_0((head).clone(), 5) }).is_null()) });
+    ({
+        cpp2rust_assert_fail_5((({ FindBack_1((tail).clone(), 0) }).with(|__s| __s.val) == -1_i32))
+    });
+    ({ cpp2rust_assert_fail_5((({ FindBack_1((tail).clone(), 1) }).with(|__s| __s.val) == 1)) });
+    ({ cpp2rust_assert_fail_5((({ FindBack_1((tail).clone(), 2) }).with(|__s| __s.val) == 2)) });
+    ({ cpp2rust_assert_fail_5((({ FindBack_1((tail).clone(), 3) }).with(|__s| __s.val) == 3)) });
+    ({ cpp2rust_assert_fail_5((({ FindBack_1((tail).clone(), 4) }).with(|__s| __s.val) == 4)) });
+    ({
+        cpp2rust_assert_fail_5(
+            (({ FindBack_1((tail).clone(), 4) }).with(|__s| __s.prev.clone())).is_null(),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_5(
+            (({ Find_0((head).clone(), 0) })
+                .with(|__s| __s.next.clone())
+                .with(|__s| __s.val)
+                == 3),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_5(
+            (({ Find_0((head).clone(), 1) })
+                .with(|__s| __s.next.clone())
+                .with(|__s| __s.next.clone())
+                .with(|__s| __s.val)
+                == 1),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_5(
+            (({ Find_0((head).clone(), 2) })
+                .with(|__s| __s.prev.clone())
+                .with(|__s| __s.val)
+                == 3),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_5(
+            (({ Find_0((head).clone(), 4) }).with(|__s| __s.next.clone())).is_null(),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_5(
+            (({ FindBack_1((tail).clone(), 1) })
+                .with(|__s| __s.prev.clone())
+                .with(|__s| __s.prev.clone())
+                .with(|__s| __s.val)
+                == 3),
+        )
+    });
     field!(
         ({ Find_0((head).clone(), 0,) }).with(|__s| __s.next.clone()),
         val
     )
     .write(30);
-    assert!((({ Find_0((head).clone(), 1,) }).with(|__s| __s.val) == 30));
+    ({ cpp2rust_assert_fail_5((({ Find_0((head).clone(), 1) }).with(|__s| __s.val) == 30)) });
     let __rhs = (({ Find_0((head).clone(), 0) }).with(|__s| __s.val)
         + ({ Find_0((head).clone(), 3) }).with(|__s| __s.val));
     field!(
@@ -222,30 +240,36 @@ fn main_0() -> i32 {
         val
     )
     .write(__rhs);
-    assert!((({ Find_0((head).clone(), 2,) }).with(|__s| __s.val) == (4 + 1)));
+    ({ cpp2rust_assert_fail_5((({ Find_0((head).clone(), 2) }).with(|__s| __s.val) == (4 + 1))) });
     let mut sum: i32 = ((((({ Find_0((head).clone(), 0) }).with(|__s| __s.val)
         + ({ Find_0((head).clone(), 1) }).with(|__s| __s.val))
         + ({ Find_0((head).clone(), 2) }).with(|__s| __s.val))
         + ({ Find_0((head).clone(), 3) }).with(|__s| __s.val))
         + ({ Find_0((head).clone(), 4) }).with(|__s| __s.val));
-    assert!((sum == ((((4 + 30) + 5) + 1) + -1_i32)));
-    assert!(
-        (({ ({ Find_0((head).clone(), 0,) }).with(|__s| __s.val) } + {
-            ({ FindBack_1((tail).clone(), 0) }).with(|__s| __s.val)
-        }) == (4 + -1_i32))
-    );
-    assert!(
-        ({
-            ({ Find_0((head).clone(), 2) })
-                .with(|__s| __s.next.clone())
-                .with(|__s| __s.val)
-        } == { ({ FindBack_1((tail).clone(), 1,) }).with(|__s| __s.val) })
-    );
-    assert!(
-        ({ ({ Find_0((head).clone(), 0,) }).with(|__s| __s.prev.clone()) } == {
-            ({ FindBack_1((tail).clone(), 4) }).with(|__s| __s.prev.clone())
-        })
-    );
+    ({ cpp2rust_assert_fail_5((sum == ((((4 + 30) + 5) + 1) + -1_i32))) });
+    ({
+        cpp2rust_assert_fail_5(
+            (({ ({ Find_0((head).clone(), 0) }).with(|__s| __s.val) } + {
+                ({ FindBack_1((tail).clone(), 0) }).with(|__s| __s.val)
+            }) == (4 + -1_i32)),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_5(
+            ({
+                ({ Find_0((head).clone(), 2) })
+                    .with(|__s| __s.next.clone())
+                    .with(|__s| __s.val)
+            } == { ({ FindBack_1((tail).clone(), 1) }).with(|__s| __s.val) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_5(
+            ({ ({ Find_0((head).clone(), 0) }).with(|__s| __s.prev.clone()) } == {
+                ({ FindBack_1((tail).clone(), 4) }).with(|__s| __s.prev.clone())
+            }),
+        )
+    });
     return 0;
 }
 pub trait NodeImpl {

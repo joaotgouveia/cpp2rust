@@ -273,12 +273,12 @@ pub fn swapped_once_6() -> bool {
 pub struct Owner {
     #[offset(0)]
     #[byte_size(8)]
-    pub p: Option<Value<i32>>,
+    pub p: std_unique_ptr_int__std_default_delete_int__,
 }
 impl Owner {
     pub fn move_from(_a0: Ptr<Owner>) -> Self {
         Self {
-            p: field!(_a0, p).with_mut(|__v: &mut Option<Value<i32>>| __v.take()),
+            p: field!(_a0, p).with_mut(std::mem::take),
         }
     }
 }
@@ -294,135 +294,91 @@ pub fn main() {
 fn main_0() -> i32 {
     let a: Value<Tracked> = Rc::new(RefCell::new(Tracked::new_1({ 1 })));
     let b: Value<Tracked> = Rc::new(RefCell::new(Tracked::new_1({ 2 })));
-    cpp_swap!(a.as_pointer(), b.as_pointer());
-    assert!(({ ({ (*a.borrow()).v } == 2) && ({ (*b.borrow()).v } == 1) }));
-    assert!((copies_0.with(|rc| *rc.borrow()) == 0));
-    let m1: Value<Map<i32, (Value<i32>, Value<Tracked>)>> = Rc::new(RefCell::new(Map::new()));
+    ({ swap_7(a.as_pointer(), b.as_pointer()) });
+    ({ cpp2rust_assert_fail_8(({ (*a.borrow()).v } == 2) && ({ (*b.borrow()).v } == 1)) });
+    ({ cpp2rust_assert_fail_8((copies_0.with(|rc| *rc.borrow()) == 0)) });
+    let m1 : Value<std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___ > = Rc::new(RefCell::new(<std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___  >::default() )) ;
     ({
         let _o: Value<Tracked> = Rc::new(RefCell::new(Tracked::new_1({ 10 })));
-        TrackedImpl::move_assign(
-            &Map::subscript_move(
-                m1.as_pointer(),
-                Rc::new(RefCell::new(1)).as_pointer(),
-                |__k| cpp_move!(__k),
-            ),
-            _o.as_pointer(),
-        )
+        TrackedImpl::move_assign(&m1.as_pointer().offset(1), _o.as_pointer())
     });
     ({
         let _o: Value<Tracked> = Rc::new(RefCell::new(Tracked::new_1({ 20 })));
-        TrackedImpl::move_assign(
-            &Map::subscript_move(
-                m1.as_pointer(),
-                Rc::new(RefCell::new(2)).as_pointer(),
-                |__k| cpp_move!(__k),
-            ),
-            _o.as_pointer(),
-        )
+        TrackedImpl::move_assign(&m1.as_pointer().offset(2), _o.as_pointer())
     });
-    let m2: Value<Map<i32, (Value<i32>, Value<Tracked>)>> = Rc::new(RefCell::new(Map::new()));
+    let m2 : Value<std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___ > = Rc::new(RefCell::new(<std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___  >::default() )) ;
     ({
         let _o: Value<Tracked> = Rc::new(RefCell::new(Tracked::new_1({ 30 })));
-        TrackedImpl::move_assign(
-            &Map::subscript_move(
-                m2.as_pointer(),
-                Rc::new(RefCell::new(3)).as_pointer(),
-                |__k| cpp_move!(__k),
-            ),
-            _o.as_pointer(),
+        TrackedImpl::move_assign(&m2.as_pointer().offset(3), _o.as_pointer())
+    });
+    ({ cpp2rust_assert_fail_8((copies_0.with(|rc| *rc.borrow()) == 0)) });
+    ({
+        let ___a: Ptr<Tracked> = m1.as_pointer().offset(1);
+        let ___b: Ptr<Tracked> = m1.as_pointer().offset(2);
+        swap_7(___a, ___b)
+    });
+    ({
+        cpp2rust_assert_fail_8(({ (*m1.borrow())[1].v } == 20) && ({ (*m1.borrow())[2].v } == 10))
+    });
+    ({ cpp2rust_assert_fail_8((copies_0.with(|rc| *rc.borrow()) == 0)) });
+    ({ swap_9(m1.as_pointer(), m2.as_pointer()) });
+    ({
+        cpp2rust_assert_fail_8(
+            (({ (*m1.borrow()).size() }) == 1_u64) && ({ (*m1.borrow())[3].v } == 30),
         )
     });
-    assert!((copies_0.with(|rc| *rc.borrow()) == 0));
-    cpp_swap!(
-        Map::subscript_move(
-            m1.as_pointer(),
-            Rc::new(RefCell::new(1)).as_pointer(),
-            |__k| cpp_move!(__k)
-        ),
-        Map::subscript_move(
-            m1.as_pointer(),
-            Rc::new(RefCell::new(2)).as_pointer(),
-            |__k| cpp_move!(__k)
+    ({
+        cpp2rust_assert_fail_8(
+            ((({ (*m2.borrow()).size() }) == 2_u64) && ({ (*m2.borrow())[1].v } == 20))
+                && ({ (*m2.borrow())[2].v } == 10),
         )
-    );
-    assert!(
-        (Map::subscript_move(
-            m1.as_pointer(),
-            Rc::new(RefCell::new(1)).as_pointer(),
-            |__k| cpp_move!(__k)
-        )
-        .with(|__s| __s.v)
-            == 20)
-            && (Map::subscript_move(
-                m1.as_pointer(),
-                Rc::new(RefCell::new(2)).as_pointer(),
-                |__k| cpp_move!(__k)
-            )
-            .with(|__s| __s.v)
-                == 10)
-    );
-    assert!((copies_0.with(|rc| *rc.borrow()) == 0));
-    cpp_swap!(m1.as_pointer(), m2.as_pointer());
-    assert!(
-        ((*m1.borrow()).len() == 1_usize)
-            && (Map::subscript_move(
-                m1.as_pointer(),
-                Rc::new(RefCell::new(3)).as_pointer(),
-                |__k| cpp_move!(__k)
-            )
-            .with(|__s| __s.v)
-                == 30)
-    );
-    assert!(
-        (((*m2.borrow()).len() == 2_usize)
-            && (Map::subscript_move(
-                m2.as_pointer(),
-                Rc::new(RefCell::new(1)).as_pointer(),
-                |__k| cpp_move!(__k)
-            )
-            .with(|__s| __s.v)
-                == 20))
-            && (Map::subscript_move(
-                m2.as_pointer(),
-                Rc::new(RefCell::new(2)).as_pointer(),
-                |__k| cpp_move!(__k)
-            )
-            .with(|__s| __s.v)
-                == 10)
-    );
-    assert!((copies_0.with(|rc| *rc.borrow()) == 0));
+    });
+    ({ cpp2rust_assert_fail_8((copies_0.with(|rc| *rc.borrow()) == 0)) });
     let arr: Value<Box<[Tracked]>> = Rc::new(RefCell::new(Box::new([
         Tracked::new_1({ 1 }),
         Tracked::new_1({ 2 }),
         Tracked::new_1({ 3 }),
     ])));
-    cpp_swap!(
-        (arr.as_pointer() as Ptr<Tracked>).offset(0),
-        (arr.as_pointer() as Ptr<Tracked>).offset(2)
-    );
-    assert!(
-        ({
-            ({ (*arr.borrow())[(0) as usize].v } == 3) && ({ (*arr.borrow())[(2) as usize].v } == 1)
-        })
-    );
-    cpp_swap!(
-        (arr.as_pointer() as Ptr<Tracked>).offset(1),
-        (arr.as_pointer() as Ptr<Tracked>).offset(1)
-    );
-    assert!(({ ({ (*arr.borrow())[(1) as usize].v } == 2) }));
-    assert!((copies_0.with(|rc| *rc.borrow()) == 0));
-    let vec_: Value<Vec<Tracked>> = Rc::new(RefCell::new(Vec::new()));
-    {
-        let __init = Tracked::new_1({ 4 });
-        (*vec_.borrow_mut()).push(__init)
-    };
-    {
-        let __init = Tracked::new_1({ 5 });
-        (*vec_.borrow_mut()).push(__init)
-    };
-    cpp_swap!(vec_.decay().offset(0_usize), vec_.decay().offset(1_usize));
-    assert!(({ ({ (*vec_.borrow())[0_usize].v } == 5) && ({ (*vec_.borrow())[1_usize].v } == 4) }));
-    assert!((copies_0.with(|rc| *rc.borrow()) == 0));
+    ({
+        let ___a: Ptr<Tracked> = (arr.as_pointer() as Ptr<Tracked>).offset(0);
+        let ___b: Ptr<Tracked> = (arr.as_pointer() as Ptr<Tracked>).offset(2);
+        swap_7(___a, ___b)
+    });
+    ({
+        cpp2rust_assert_fail_8(
+            ({ (*arr.borrow())[(0) as usize].v } == 3)
+                && ({ (*arr.borrow())[(2) as usize].v } == 1),
+        )
+    });
+    ({
+        let ___a: Ptr<Tracked> = (arr.as_pointer() as Ptr<Tracked>).offset(1);
+        let ___b: Ptr<Tracked> = (arr.as_pointer() as Ptr<Tracked>).offset(1);
+        swap_7(___a, ___b)
+    });
+    ({ cpp2rust_assert_fail_8(({ (*arr.borrow())[(1) as usize].v } == 2)) });
+    ({ cpp2rust_assert_fail_8((copies_0.with(|rc| *rc.borrow()) == 0)) });
+    let vec_: Value<std_vector_Tracked__std_allocator_Tracked__> = Rc::new(RefCell::new(
+        <std_vector_Tracked__std_allocator_Tracked__>::default(),
+    ));
+    ({
+        let ___args: Value<i32> = Rc::new(RefCell::new(4));
+        (*vec_.borrow()).emplace_back(___args.as_pointer())
+    });
+    ({
+        let ___args: Value<i32> = Rc::new(RefCell::new(5));
+        (*vec_.borrow()).emplace_back(___args.as_pointer())
+    });
+    ({
+        let ___a: Ptr<Tracked> = vec_.as_pointer().offset(0_u64);
+        let ___b: Ptr<Tracked> = vec_.as_pointer().offset(1_u64);
+        swap_7(___a, ___b)
+    });
+    ({
+        cpp2rust_assert_fail_8(
+            ({ (*vec_.borrow())[0_u64].v } == 5) && ({ (*vec_.borrow())[1_u64].v } == 4),
+        )
+    });
+    ({ cpp2rust_assert_fail_8((copies_0.with(|rc| *rc.borrow()) == 0)) });
     let pairs: Value<Box<[Pair]>> = Rc::new(RefCell::new(Box::new([
         Pair {
             x: Tracked::new_1({ 6 }),
@@ -437,230 +393,260 @@ fn main_0() -> i32 {
         x: Tracked::new_1({ 10 }),
         y: Tracked::new_1({ 11 }),
     }));
-    cpp_swap!(
-        field_ptr!((pairs.as_pointer() as Ptr<Pair>).offset(0), x),
-        field_ptr!(p.as_pointer(), y)
-    );
-    assert!(({ ({ (*pairs.borrow())[(0) as usize].x.v } == 11) && ({ (*p.borrow()).y.v } == 6) }));
-    cpp_swap!(
-        (pairs.as_pointer() as Ptr<Pair>).offset(0),
-        (pairs.as_pointer() as Ptr<Pair>).offset(1)
-    );
-    assert!(
-        ({
+    ({
+        swap_7(
+            field_ptr!((pairs.as_pointer() as Ptr<Pair>).offset(0), x),
+            field_ptr!(p.as_pointer(), y),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_8(
+            ({ (*pairs.borrow())[(0) as usize].x.v } == 11) && ({ (*p.borrow()).y.v } == 6),
+        )
+    });
+    ({
+        let ___a: Ptr<Pair> = (pairs.as_pointer() as Ptr<Pair>).offset(0);
+        let ___b: Ptr<Pair> = (pairs.as_pointer() as Ptr<Pair>).offset(1);
+        swap_10(___a, ___b)
+    });
+    ({
+        cpp2rust_assert_fail_8(
             ({ (*pairs.borrow())[(0) as usize].x.v } == 8)
-                && ({ (*pairs.borrow())[(1) as usize].x.v } == 11)
-        })
-    );
-    assert!((copies_0.with(|rc| *rc.borrow()) == 0));
-    cpp_swap!(field_ptr!(p.as_pointer(), x), field_ptr!(p.as_pointer(), y));
-    assert!(({ ({ (*p.borrow()).x.v } == 6) && ({ (*p.borrow()).y.v } == 10) }));
-    cpp_swap!(
-        field_ptr!((pairs.as_pointer() as Ptr<Pair>).offset(0), x),
-        field_ptr!((pairs.as_pointer() as Ptr<Pair>).offset(1), y)
-    );
-    assert!(
-        ({
+                && ({ (*pairs.borrow())[(1) as usize].x.v } == 11),
+        )
+    });
+    ({ cpp2rust_assert_fail_8((copies_0.with(|rc| *rc.borrow()) == 0)) });
+    ({
+        let ___a: Ptr<Tracked> = field_ptr!(p.as_pointer(), x);
+        let ___b: Ptr<Tracked> = field_ptr!(p.as_pointer(), y);
+        swap_7(___a, ___b)
+    });
+    ({ cpp2rust_assert_fail_8(({ (*p.borrow()).x.v } == 6) && ({ (*p.borrow()).y.v } == 10)) });
+    ({
+        let ___a: Ptr<Tracked> = field_ptr!((pairs.as_pointer() as Ptr<Pair>).offset(0), x);
+        let ___b: Ptr<Tracked> = field_ptr!((pairs.as_pointer() as Ptr<Pair>).offset(1), y);
+        swap_7(___a, ___b)
+    });
+    ({
+        cpp2rust_assert_fail_8(
             ({ (*pairs.borrow())[(0) as usize].x.v } == 7)
-                && ({ (*pairs.borrow())[(1) as usize].y.v } == 8)
-        })
-    );
-    assert!((copies_0.with(|rc| *rc.borrow()) == 0));
+                && ({ (*pairs.borrow())[(1) as usize].y.v } == 8),
+        )
+    });
+    ({ cpp2rust_assert_fail_8((copies_0.with(|rc| *rc.borrow()) == 0)) });
     let arrays: Value<Arrays> = Rc::new(RefCell::new(<Arrays>::default()));
     field!(array_elem!(arrays.as_pointer(), a, 0), v).write(1);
     field!(array_elem!(arrays.as_pointer(), b, 1), v).write(2);
-    cpp_swap!(
-        (array_field_ptr!(arrays.as_pointer(), a) as Ptr<Tracked>).offset((0) as isize),
-        (array_field_ptr!(arrays.as_pointer(), b) as Ptr<Tracked>).offset((1) as isize)
-    );
-    assert!(
-        (array_elem!(arrays.as_pointer(), a, 0).with(|__s| __s.v) == 2)
-            && (array_elem!(arrays.as_pointer(), b, 1).with(|__s| __s.v) == 1)
-    );
-    cpp_swap!(
-        (array_field_ptr!(arrays.as_pointer(), a) as Ptr<Tracked>).offset((0) as isize),
-        (array_field_ptr!(arrays.as_pointer(), a) as Ptr<Tracked>).offset((1) as isize)
-    );
-    assert!(
-        (array_elem!(arrays.as_pointer(), a, 0).with(|__s| __s.v) == 0)
-            && (array_elem!(arrays.as_pointer(), a, 1).with(|__s| __s.v) == 2)
-    );
-    assert!((copies_0.with(|rc| *rc.borrow()) == 0));
-    let grid: Value<Vec<Vec<Tracked>>> = Rc::new(RefCell::new(
-        (0..(2_usize) as usize)
-            .map(|_| Default::default())
-            .collect::<Vec<_>>(),
-    ));
-    {
-        let __init = Tracked::new_1({ 1 });
-        elem!(grid.decay(), 0_usize).with_mut(|__v: &mut Vec<Tracked>| __v.push(__init))
-    };
-    {
-        let __init = Tracked::new_1({ 2 });
-        elem!(grid.decay(), 0_usize).with_mut(|__v: &mut Vec<Tracked>| __v.push(__init))
-    };
-    {
-        let __init = Tracked::new_1({ 3 });
-        elem!(grid.decay(), 1_usize).with_mut(|__v: &mut Vec<Tracked>| __v.push(__init))
-    };
-    cpp_swap!(
-        grid.decay().offset(0_usize).decay().offset(1_usize),
-        grid.decay().offset(1_usize).decay().offset(0_usize)
-    );
-    assert!(
-        (index!(elem!(grid.decay(), 0_usize), 1_usize).with(|__s| __s.v) == 3)
-            && (index!(elem!(grid.decay(), 1_usize), 0_usize).with(|__s| __s.v) == 2)
-    );
-    cpp_swap!(grid.decay().offset(0_usize), grid.decay().offset(1_usize));
-    assert!(
-        ({
-            ((*grid.decay().offset(0_usize).upgrade().deref()).len() == 1_usize)
-                && (index!(elem!(grid.decay(), 0_usize), 0_usize).with(|__s| __s.v) == 2)
-        })
-    );
-    assert!((copies_0.with(|rc| *rc.borrow()) == 0));
-    let maps: Value<Box<[Map<i32, (Value<i32>, Value<Tracked>)>]>> = Rc::new(RefCell::new(
-        (0..2)
-            .map(|_| Map::new())
-            .collect::<Box<[Map<i32, (Value<i32>, Value<Tracked>)>]>>(),
-    ));
+    ({
+        let ___a: Ptr<Tracked> =
+            (array_field_ptr!(arrays.as_pointer(), a) as Ptr<Tracked>).offset((0) as isize);
+        let ___b: Ptr<Tracked> =
+            (array_field_ptr!(arrays.as_pointer(), b) as Ptr<Tracked>).offset((1) as isize);
+        swap_7(___a, ___b)
+    });
+    ({
+        cpp2rust_assert_fail_8(
+            (array_elem!(arrays.as_pointer(), a, 0).with(|__s| __s.v) == 2)
+                && (array_elem!(arrays.as_pointer(), b, 1).with(|__s| __s.v) == 1),
+        )
+    });
+    ({
+        let ___a: Ptr<Tracked> =
+            (array_field_ptr!(arrays.as_pointer(), a) as Ptr<Tracked>).offset((0) as isize);
+        let ___b: Ptr<Tracked> =
+            (array_field_ptr!(arrays.as_pointer(), a) as Ptr<Tracked>).offset((1) as isize);
+        swap_7(___a, ___b)
+    });
+    ({
+        cpp2rust_assert_fail_8(
+            (array_elem!(arrays.as_pointer(), a, 0).with(|__s| __s.v) == 0)
+                && (array_elem!(arrays.as_pointer(), a, 1).with(|__s| __s.v) == 2),
+        )
+    });
+    ({ cpp2rust_assert_fail_8((copies_0.with(|rc| *rc.borrow()) == 0)) });
+    let grid : Value<std_vector_std_vector_Tracked__std_allocator_Tracked____std_allocator_std_vector_Tracked__std_allocator_Tracked____ > = Rc::new(RefCell::new(std_vector_std_vector_Tracked__std_allocator_Tracked____std_allocator_std_vector_Tracked__std_allocator_Tracked____ :: new_1 ( { 2_u64  } , None , )  )) ;
+    ({
+        let ___args: Value<i32> = Rc::new(RefCell::new(1));
+        (*grid.borrow())[0_u64].emplace_back(___args.as_pointer())
+    });
+    ({
+        let ___args: Value<i32> = Rc::new(RefCell::new(2));
+        (*grid.borrow())[0_u64].emplace_back(___args.as_pointer())
+    });
+    ({
+        let ___args: Value<i32> = Rc::new(RefCell::new(3));
+        (*grid.borrow())[1_u64].emplace_back(___args.as_pointer())
+    });
+    ({
+        let ___a: Ptr<Tracked> = grid.as_pointer().offset(0_u64).offset(1_u64);
+        let ___b: Ptr<Tracked> = grid.as_pointer().offset(1_u64).offset(0_u64);
+        swap_7(___a, ___b)
+    });
+    ({
+        cpp2rust_assert_fail_8(
+            (elem!(grid.as_pointer().offset(0_u64), 1_u64).with(|__s| __s.v) == 3)
+                && (elem!(grid.as_pointer().offset(1_u64), 0_u64).with(|__s| __s.v) == 2),
+        )
+    });
+    ({
+        let ___x: Ptr<std_vector_Tracked__std_allocator_Tracked__> =
+            grid.as_pointer().offset(0_u64);
+        let ___y: Ptr<std_vector_Tracked__std_allocator_Tracked__> =
+            grid.as_pointer().offset(1_u64);
+        swap_11(___x, ___y)
+    });
+    ({
+        cpp2rust_assert_fail_8(
+            (({ (*grid.borrow())[0_u64].size() }) == 1_u64)
+                && (elem!(grid.as_pointer().offset(0_u64), 0_u64).with(|__s| __s.v) == 2),
+        )
+    });
+    ({ cpp2rust_assert_fail_8((copies_0.with(|rc| *rc.borrow()) == 0)) });
+    let maps : Value<Box<[ std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___  ]> > = Rc::new(RefCell::new((0..2).map(|_| <std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___  >::default()).collect::<Box<[std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___  ]>>() )) ;
     ({
         let _o: Value<Tracked> = Rc::new(RefCell::new(Tracked::new_1({ 1 })));
-        TrackedImpl::move_assign(
-            &Map::subscript_move(
-                (maps.as_pointer() as Ptr<Map<i32, (Value<i32>, Value<Tracked>)>>).offset(0),
-                Rc::new(RefCell::new(1)).as_pointer(),
-                |__k| cpp_move!(__k),
-            ),
-            _o.as_pointer(),
-        )
+        TrackedImpl :: move_assign ( &(maps .as_pointer()  as Ptr<std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___   >).offset(0 ) .offset(1 )  , _o.as_pointer() , )
     });
     ({
         let _o: Value<Tracked> = Rc::new(RefCell::new(Tracked::new_1({ 2 })));
-        TrackedImpl::move_assign(
-            &Map::subscript_move(
-                (maps.as_pointer() as Ptr<Map<i32, (Value<i32>, Value<Tracked>)>>).offset(1),
-                Rc::new(RefCell::new(2)).as_pointer(),
-                |__k| cpp_move!(__k),
-            ),
-            _o.as_pointer(),
-        )
+        TrackedImpl :: move_assign ( &(maps .as_pointer()  as Ptr<std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___   >).offset(1 ) .offset(2 )  , _o.as_pointer() , )
     });
-    cpp_swap!(
-        (maps.as_pointer() as Ptr<Map<i32, (Value<i32>, Value<Tracked>)>>).offset(0),
-        (maps.as_pointer() as Ptr<Map<i32, (Value<i32>, Value<Tracked>)>>).offset(1)
-    );
-    assert!(
-        ((*maps.borrow())[(0) as usize].len() == 1_usize)
-            && (Map::subscript_move(
-                (maps.as_pointer() as Ptr<Map<i32, (Value<i32>, Value<Tracked>)>>).offset(0),
-                Rc::new(RefCell::new(2)).as_pointer(),
-                |__k| cpp_move!(__k)
-            )
-            .with(|__s| __s.v)
-                == 2)
-    );
-    assert!(
-        ((*maps.borrow())[(1) as usize].len() == 1_usize)
-            && (Map::subscript_move(
-                (maps.as_pointer() as Ptr<Map<i32, (Value<i32>, Value<Tracked>)>>).offset(1),
-                Rc::new(RefCell::new(1)).as_pointer(),
-                |__k| cpp_move!(__k)
-            )
-            .with(|__s| __s.v)
-                == 1)
-    );
-    assert!((copies_0.with(|rc| *rc.borrow()) == 0));
+    ({
+        let ___x: Ptr<
+            std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___,
+        > = (maps.as_pointer()
+            as Ptr<
+                std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___,
+            >)
+            .offset(0);
+        let ___y: Ptr<
+            std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___,
+        > = (maps.as_pointer()
+            as Ptr<
+                std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___,
+            >)
+            .offset(1);
+        swap_9(___x, ___y)
+    });
+    ({
+        cpp2rust_assert_fail_8 ( ( ( ( { (*maps.borrow()) [(0 ) as usize] . size ( ) } )  == 1_u64 ) ) && ( ( elem!((maps .as_pointer()  as Ptr<std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___   >).offset(0 ) , 2 ).with(|__s| __s . v ) == 2 ) )  , )
+    });
+    ({
+        cpp2rust_assert_fail_8 ( ( ( ( { (*maps.borrow()) [(1 ) as usize] . size ( ) } )  == 1_u64 ) ) && ( ( elem!((maps .as_pointer()  as Ptr<std_map_int__Tracked__std_less_int___std_allocator_std_pair_const_int__Tracked___   >).offset(1 ) , 1 ).with(|__s| __s . v ) == 1 ) )  , )
+    });
+    ({ cpp2rust_assert_fail_8((copies_0.with(|rc| *rc.borrow()) == 0)) });
     let c1: Value<CopyOnly> = Rc::new(RefCell::new(CopyOnly::new({ 1 })));
     let _dtor_c1 = ScopedDestructor::new(&c1, |__p| __p.destructor());
     let c2: Value<CopyOnly> = Rc::new(RefCell::new(CopyOnly::new({ 2 })));
     let _dtor_c2 = ScopedDestructor::new(&c2, |__p| __p.destructor());
-    cpp_swap!(c1.as_pointer(), c2.as_pointer());
-    assert!(({ ({ (*c1.borrow()).v } == 2) && ({ (*c2.borrow()).v } == 1) }));
-    assert!(
-        (copy_only_copies_1.with(|rc| *rc.borrow()) == 3)
-            && (copy_only_dtors_2.with(|rc| *rc.borrow()) == 1)
-    );
+    ({ swap_12(c1.as_pointer(), c2.as_pointer()) });
+    ({ cpp2rust_assert_fail_8(({ (*c1.borrow()).v } == 2) && ({ (*c2.borrow()).v } == 1)) });
+    ({
+        cpp2rust_assert_fail_8(
+            (copy_only_copies_1.with(|rc| *rc.borrow()) == 3)
+                && (copy_only_dtors_2.with(|rc| *rc.borrow()) == 1),
+        )
+    });
     let cp: Value<CopyOnlyPair> = Rc::new(RefCell::new(CopyOnlyPair {
         x: CopyOnly::new({ 3 }),
         y: CopyOnly::new({ 4 }),
     }));
     let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
-    cpp_swap!(
-        field_ptr!(cp.as_pointer(), x),
-        field_ptr!(cp.as_pointer(), y)
-    );
-    assert!(({ ({ (*cp.borrow()).x.v } == 4) && ({ (*cp.borrow()).y.v } == 3) }));
-    assert!(
-        (copy_only_copies_1.with(|rc| *rc.borrow()) == 6)
-            && (copy_only_dtors_2.with(|rc| *rc.borrow()) == 2)
-    );
+    ({
+        let ___a: Ptr<CopyOnly> = field_ptr!(cp.as_pointer(), x);
+        let ___b: Ptr<CopyOnly> = field_ptr!(cp.as_pointer(), y);
+        swap_12(___a, ___b)
+    });
+    ({ cpp2rust_assert_fail_8(({ (*cp.borrow()).x.v } == 4) && ({ (*cp.borrow()).y.v } == 3)) });
+    ({
+        cpp2rust_assert_fail_8(
+            (copy_only_copies_1.with(|rc| *rc.borrow()) == 6)
+                && (copy_only_dtors_2.with(|rc| *rc.borrow()) == 2),
+        )
+    });
     let carr: Value<Box<[CopyOnly]>> = Rc::new(RefCell::new(Box::new([
         CopyOnly::new({ 5 }),
         CopyOnly::new({ 6 }),
     ])));
-    cpp_swap!(
-        (carr.as_pointer() as Ptr<CopyOnly>).offset(0),
-        (carr.as_pointer() as Ptr<CopyOnly>).offset(1)
-    );
-    assert!(
-        ({
+    ({
+        let ___a: Ptr<CopyOnly> = (carr.as_pointer() as Ptr<CopyOnly>).offset(0);
+        let ___b: Ptr<CopyOnly> = (carr.as_pointer() as Ptr<CopyOnly>).offset(1);
+        swap_12(___a, ___b)
+    });
+    ({
+        cpp2rust_assert_fail_8(
             ({ (*carr.borrow())[(0) as usize].v } == 6)
-                && ({ (*carr.borrow())[(1) as usize].v } == 5)
-        })
-    );
-    assert!(
-        (copy_only_copies_1.with(|rc| *rc.borrow()) == 9)
-            && (copy_only_dtors_2.with(|rc| *rc.borrow()) == 3)
-    );
+                && ({ (*carr.borrow())[(1) as usize].v } == 5),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_8(
+            (copy_only_copies_1.with(|rc| *rc.borrow()) == 9)
+                && (copy_only_dtors_2.with(|rc| *rc.borrow()) == 3),
+        )
+    });
     let mv1: Value<Moved> = Rc::new(RefCell::new(Moved::new({ 1 })));
     let _dtor_mv1 = ScopedDestructor::new(&mv1, |__p| __p.destructor());
     let mv2: Value<Moved> = Rc::new(RefCell::new(Moved::new({ 2 })));
     let _dtor_mv2 = ScopedDestructor::new(&mv2, |__p| __p.destructor());
-    cpp_swap!(mv1.as_pointer(), mv2.as_pointer());
-    assert!(({ ({ (*mv1.borrow()).v } == 2) && ({ (*mv2.borrow()).v } == 1) }));
-    assert!(({ swapped_once_6() }));
+    ({ swap_13(mv1.as_pointer(), mv2.as_pointer()) });
+    ({ cpp2rust_assert_fail_8(({ (*mv1.borrow()).v } == 2) && ({ (*mv2.borrow()).v } == 1)) });
+    ({ cpp2rust_assert_fail_8(({ swapped_once_6() })) });
     let mp: Value<MovedPair> = Rc::new(RefCell::new(MovedPair {
         x: Moved::new({ 3 }),
         y: Moved::new({ 4 }),
     }));
     let _dtor_mp = ScopedDestructor::new(&mp, |__p| __p.destructor());
-    cpp_swap!(
-        field_ptr!(mp.as_pointer(), x),
-        field_ptr!(mp.as_pointer(), y)
-    );
-    assert!(({ ({ (*mp.borrow()).x.v } == 4) && ({ (*mp.borrow()).y.v } == 3) }));
-    assert!(({ swapped_once_6() }));
+    ({
+        let ___a: Ptr<Moved> = field_ptr!(mp.as_pointer(), x);
+        let ___b: Ptr<Moved> = field_ptr!(mp.as_pointer(), y);
+        swap_13(___a, ___b)
+    });
+    ({ cpp2rust_assert_fail_8(({ (*mp.borrow()).x.v } == 4) && ({ (*mp.borrow()).y.v } == 3)) });
+    ({ cpp2rust_assert_fail_8(({ swapped_once_6() })) });
     let marr: Value<Box<[Moved]>> = Rc::new(RefCell::new(Box::new([
         Moved::new({ 5 }),
         Moved::new({ 6 }),
     ])));
-    cpp_swap!(
-        (marr.as_pointer() as Ptr<Moved>).offset(0),
-        (marr.as_pointer() as Ptr<Moved>).offset(1)
-    );
-    assert!(
-        ({
+    ({
+        let ___a: Ptr<Moved> = (marr.as_pointer() as Ptr<Moved>).offset(0);
+        let ___b: Ptr<Moved> = (marr.as_pointer() as Ptr<Moved>).offset(1);
+        swap_13(___a, ___b)
+    });
+    ({
+        cpp2rust_assert_fail_8(
             ({ (*marr.borrow())[(0) as usize].v } == 6)
-                && ({ (*marr.borrow())[(1) as usize].v } == 5)
-        })
-    );
-    assert!(({ swapped_once_6() }));
-    cpp_swap!(mv1.as_pointer(), mv1.as_pointer());
-    assert!(({ ({ (*mv1.borrow()).v } == 2) }));
-    assert!(({ swapped_once_6() }));
-    assert!((copies_0.with(|rc| *rc.borrow()) == 0));
+                && ({ (*marr.borrow())[(1) as usize].v } == 5),
+        )
+    });
+    ({ cpp2rust_assert_fail_8(({ swapped_once_6() })) });
+    ({
+        let ___a: Ptr<Moved> = mv1.as_pointer();
+        let ___b: Ptr<Moved> = mv1.as_pointer();
+        swap_13(___a, ___b)
+    });
+    ({ cpp2rust_assert_fail_8(({ (*mv1.borrow()).v } == 2)) });
+    ({ cpp2rust_assert_fail_8(({ swapped_once_6() })) });
+    ({ cpp2rust_assert_fail_8((copies_0.with(|rc| *rc.borrow()) == 0)) });
     let o1: Value<Owner> = Rc::new(RefCell::new(Owner {
-        p: Some(Rc::new(RefCell::new(1))),
+        p: ({
+            let ___args: Value<i32> = Rc::new(RefCell::new(1));
+            make_unique_14(___args.as_pointer())
+        }),
     }));
     let o2: Value<Owner> = Rc::new(RefCell::new(Owner {
-        p: Some(Rc::new(RefCell::new(2))),
+        p: ({
+            let ___args: Value<i32> = Rc::new(RefCell::new(2));
+            make_unique_14(___args.as_pointer())
+        }),
     }));
-    cpp_swap!(o1.as_pointer(), o2.as_pointer());
-    assert!(
-        ((({ { (*o1.borrow()).p.clone() } }).as_pointer().read()) == 2)
-            && ((({ { (*o2.borrow()).p.clone() } }).as_pointer().read()) == 1)
-    );
+    ({ swap_15(o1.as_pointer(), o2.as_pointer()) });
+    ({
+        cpp2rust_assert_fail_8(
+            (({ (*o1.borrow()).p.clone() }.read()) == 2)
+                && (({ (*o2.borrow()).p.clone() }.read()) == 1),
+        )
+    });
     return copies_0.with(|rc| *rc.borrow());
 }
 pub trait ArraysImpl {
@@ -669,8 +655,8 @@ pub trait ArraysImpl {
 }
 impl ArraysImpl for Ptr<Arrays> {
     fn copy_assign(&self, _a0: Ptr<Arrays>) -> Ptr<Arrays> {
-        let mut __i0: usize = 0_usize;
-        'loop_: while (__i0 != 2_usize) {
+        let mut __i0: u64 = 0_u64;
+        'loop_: while (__i0 != 2_u64) {
             ({
                 let _o: Ptr<Tracked> =
                     (array_field_ptr!(_a0, a) as Ptr<Tracked>).offset((__i0) as isize);
@@ -681,8 +667,8 @@ impl ArraysImpl for Ptr<Arrays> {
             });
             __i0.prefix_inc();
         }
-        let mut __i0: usize = 0_usize;
-        'loop_: while (__i0 != 2_usize) {
+        let mut __i0: u64 = 0_u64;
+        'loop_: while (__i0 != 2_u64) {
             ({
                 let _o: Ptr<Tracked> =
                     (array_field_ptr!(_a0, b) as Ptr<Tracked>).offset((__i0) as isize);
@@ -696,8 +682,8 @@ impl ArraysImpl for Ptr<Arrays> {
         return (*self).clone();
     }
     fn move_assign(&self, _a0: Ptr<Arrays>) -> Ptr<Arrays> {
-        let mut __i0: usize = 0_usize;
-        'loop_: while (__i0 != 2_usize) {
+        let mut __i0: u64 = 0_u64;
+        'loop_: while (__i0 != 2_u64) {
             ({
                 let _o: Ptr<Tracked> =
                     (array_field_ptr!(_a0, a) as Ptr<Tracked>).offset((__i0) as isize);
@@ -708,8 +694,8 @@ impl ArraysImpl for Ptr<Arrays> {
             });
             __i0.prefix_inc();
         }
-        let mut __i0: usize = 0_usize;
-        'loop_: while (__i0 != 2_usize) {
+        let mut __i0: u64 = 0_u64;
+        'loop_: while (__i0 != 2_u64) {
             ({
                 let _o: Ptr<Tracked> =
                     (array_field_ptr!(_a0, b) as Ptr<Tracked>).offset((__i0) as isize);
@@ -817,8 +803,7 @@ pub trait OwnerImpl {
 }
 impl OwnerImpl for Ptr<Owner> {
     fn move_assign(&self, _a0: Ptr<Owner>) -> Ptr<Owner> {
-        field_ptr!((*self), p)
-            .write(field!(_a0, p).with_mut(|__v: &mut Option<Value<i32>>| __v.take()));
+        field!((*self), p).write({ { (*_a0.upgrade().deref()).p.clone() } });
         return (*self).clone();
     }
 }

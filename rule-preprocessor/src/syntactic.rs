@@ -12,8 +12,8 @@ use std::collections::BTreeMap;
 use std::path::{Path, PathBuf};
 
 use crate::ir::{
-    Access, BodyFragment, Bound, FileIr, FnIr, GenericCallInner, MethodCallInner, Model,
-    PlaceholderInner, RefExprInner, RuleIr, RulesIR, TypeInfo, TypeIr,
+    Access, BodyFragment, Bound, Elems, ElemsKind, FileIr, FnIr, GenericCallInner, MethodCallInner,
+    Model, PlaceholderInner, RefExprInner, RuleIr, RulesIR, TypeInfo, TypeIr,
 };
 
 /// Classify a type AST node as refcount pointer (`Ptr<T>`), unsafe pointer
@@ -43,6 +43,94 @@ fn pointer_flags(ty: &ast::Type) -> (bool, bool) {
     flags
 }
 
+/// Whether the type is itself a `*mut T` or a `*const T` raw pointer.
+fn raw_pointer_flags(ty: &ast::Type) -> (bool, bool) {
+    match ty {
+        ast::Type::PtrType(ptr) => (ptr.mut_token().is_some(), ptr.const_token().is_some()),
+        _ => (false, false),
+    }
+}
+
+/// The generic a pointer type points to (`T1` of `*mut T1`, `Ptr<T1>`), if
+/// the pointee is a bare generic.
+fn pointee_generic(ty: &ast::Type) -> Option<i32> {
+    let pointee = match ty {
+        ast::Type::PtrType(ptr) => ptr.ty()?,
+        ast::Type::PathType(path) => {
+            let segment = path.path()?.segment()?;
+            if segment.name_ref()?.text() != "Ptr" {
+                return None;
+            }
+            match segment.generic_arg_list()?.generic_args().next()? {
+                ast::GenericArg::TypeArg(arg) => arg.ty()?,
+                _ => return None,
+            }
+        }
+        ast::Type::RefType(r) => return pointee_generic(&r.ty()?),
+        _ => return None,
+    };
+    bare_generic(&pointee)
+}
+
+/// The generic the type is (`T1`), if it is a bare generic.
+fn bare_generic(ty: &ast::Type) -> Option<i32> {
+    let ast::Type::PathType(path) = ty else {
+        return None;
+    };
+    let path = path.path()?;
+    if path.qualifier().is_some() {
+        return None;
+    }
+    let segment = path.segment()?;
+    if segment.generic_arg_list().is_some() {
+        return None;
+    }
+    let name = segment.name_ref()?.text().to_string();
+    name.strip_prefix('T')?.parse().ok()
+}
+
+/// Whether the type names an associated type through a `<X as Trait>::` anchor,
+/// which the converter cannot compare with the C++ type textually.
+fn is_projection(ty: &ast::Type) -> bool {
+    ty.syntax()
+        .descendants()
+        .filter_map(ast::PathSegment::cast)
+        .any(|segment| segment.as_token().is_some())
+}
+
+fn elems(ty: &ast::Type) -> Option<Elems> {
+    match ty {
+        ast::Type::ArrayType(array) => Some(Elems {
+            kind: ElemsKind::Array,
+            ty: array.ty()?.syntax().text().to_string(),
+        }),
+        ast::Type::PathType(path) => {
+            let segment = path.path()?.segment()?;
+            let ast::GenericArg::TypeArg(arg) =
+                segment.generic_arg_list()?.generic_args().next()?
+            else {
+                return None;
+            };
+            match (segment.name_ref()?.text().as_str(), arg.ty()?) {
+                ("Vec", elem) => Some(Elems {
+                    kind: ElemsKind::Vec,
+                    ty: elem.syntax().text().to_string(),
+                }),
+                ("VecDeque", elem) => Some(Elems {
+                    kind: ElemsKind::VecDeque,
+                    ty: elem.syntax().text().to_string(),
+                }),
+                ("Box", ast::Type::SliceType(slice)) => Some(Elems {
+                    kind: ElemsKind::Array,
+                    ty: slice.ty()?.syntax().text().to_string(),
+                }),
+                _ => None,
+            }
+        }
+        _ => None,
+    }
+}
+
 fn cpp_type_of(ty: &ast::Type) -> Option<String> {
     let ast::Type::MacroType(macro_type) = ty else {
         return None;
@@ -65,39 +153,6 @@ fn cpp_type_of(ty: &ast::Type) -> Option<String> {
         "cpp_type! literal must not contain escapes"
     );
     Some(text.to_string())
-}
-
-/// The generic a pointer type points to (`T1` of `*mut T1`, `Ptr<T1>`), if
-/// the pointee is a bare generic.
-fn pointee_generic(ty: &ast::Type) -> Option<i32> {
-    let pointee = match ty {
-        ast::Type::PtrType(ptr) => ptr.ty()?,
-        ast::Type::PathType(path) => {
-            let segment = path.path()?.segment()?;
-            if segment.name_ref()?.text() != "Ptr" {
-                return None;
-            }
-            match segment.generic_arg_list()?.generic_args().next()? {
-                ast::GenericArg::TypeArg(arg) => arg.ty()?,
-                _ => return None,
-            }
-        }
-        ast::Type::RefType(r) => return pointee_generic(&r.ty()?),
-        _ => return None,
-    };
-    let ast::Type::PathType(path) = pointee else {
-        return None;
-    };
-    let path = path.path()?;
-    if path.qualifier().is_some() {
-        return None;
-    }
-    let segment = path.segment()?;
-    if segment.generic_arg_list().is_some() {
-        return None;
-    }
-    let name = segment.name_ref()?.text().to_string();
-    name.strip_prefix('T')?.parse().ok()
 }
 
 fn is_va_args_type(ty: &ast::Type) -> bool {
@@ -436,6 +491,9 @@ struct ParamInfo {
     is_refcount_pointer: bool,
     is_unsafe_pointer: bool,
     pointee_generic: Option<i32>,
+    generic: Option<i32>,
+    is_mut_raw_pointer: bool,
+    is_const_raw_pointer: bool,
     is_mut_ref: bool,
     is_va_args: bool,
     is_init: bool,
@@ -475,6 +533,7 @@ impl<'a> FnIrBuilder<'a> {
                 "variadic argument parameter must be named `va`, found `{name}`"
             );
             let is_init = name == "init";
+            let (is_mut_raw_pointer, is_const_raw_pointer) = raw_pointer_flags(&ty);
             let cpp_type = cpp_type_of(&ty);
             assert!(
                 cpp_type.is_none() || is_init,
@@ -486,6 +545,9 @@ impl<'a> FnIrBuilder<'a> {
                 is_refcount_pointer,
                 is_unsafe_pointer,
                 pointee_generic: pointee_generic(&ty),
+                generic: bare_generic(&ty),
+                is_mut_raw_pointer,
+                is_const_raw_pointer,
                 is_mut_ref: matches!(&ty, ast::Type::RefType(r) if r.mut_token().is_some()),
                 is_va_args,
                 is_init,
@@ -510,13 +572,19 @@ impl<'a> FnIrBuilder<'a> {
             None
         } else {
             let (is_refcount_pointer, is_unsafe_pointer) = pointer_flags(&ty);
+            let (is_mut_raw_pointer, is_const_raw_pointer) = raw_pointer_flags(&ty);
             Some(TypeInfo {
                 ty: ty_str,
                 is_refcount_pointer,
                 is_unsafe_pointer,
+                is_projection: is_projection(&ty),
                 pointee_generic: pointee_generic(&ty),
+                generic: bare_generic(&ty),
+                is_mut_raw_pointer,
+                is_const_raw_pointer,
                 derives: Vec::new(),
                 cpp_type: None,
+                elems: None,
             })
         }
     }
@@ -739,9 +807,14 @@ impl<'a> FnIrBuilder<'a> {
                         ty: p.ty.clone(),
                         is_refcount_pointer: p.is_refcount_pointer,
                         is_unsafe_pointer: p.is_unsafe_pointer,
+                        is_projection: false,
                         pointee_generic: p.pointee_generic,
+                        generic: p.generic,
+                        is_mut_raw_pointer: p.is_mut_raw_pointer,
+                        is_const_raw_pointer: p.is_const_raw_pointer,
                         derives: Vec::new(),
                         cpp_type: p.cpp_type.clone(),
+                        elems: None,
                     },
                 )
             })
@@ -844,16 +917,23 @@ impl<'a> TypeIrBuilder<'a> {
         let mut init_ctx = FragmentCtx::new(&builder, &[], &generic_names);
         init_ctx.visit(ra_ap_syntax::NodeOrToken::Node(init.syntax().clone()));
 
+        let (is_mut_raw_pointer, is_const_raw_pointer) = raw_pointer_flags(&ty);
         TypeIr {
             init: init_ctx.finish(),
             generic,
+            generics: builder.generics(),
             type_info: TypeInfo {
                 ty: ty.syntax().text().to_string(),
                 is_refcount_pointer,
                 is_unsafe_pointer,
+                is_projection: false,
                 pointee_generic: pointee_generic(&ty),
+                generic: bare_generic(&ty),
+                is_mut_raw_pointer,
+                is_const_raw_pointer,
                 derives: Vec::new(),
                 cpp_type: None,
+                elems: elems(&ty),
             },
         }
     }

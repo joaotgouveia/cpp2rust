@@ -28,4 +28,7 @@ std::string MapBinding(Converter &converter, const Bindings &bindings,
 
 std::string InstantiateTgt(Converter &converter, const Bindings &bindings,
                            const std::string &tgt_template);
+
+std::string InstantiateType(Converter &converter, const Bindings &bindings,
+                            const TranslationRule::TypeInfo &info);
 } // namespace cpp2rust::Matcher

@@ -35,10 +35,10 @@ pub fn operator_cmp_1(_a0: Ptr<DefaultedOrd>, _a1: Ptr<DefaultedOrd>) -> std::cm
             &(_a1.with(|__s| __s.a)),
         )));
         if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
-            return (*cmp.borrow_mut());
+            return ({ (*cmp.borrow()) });
         }
     }
-    return (*libcc2rs::strong_ordering_equal().upgrade().deref());
+    return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
 }
 pub fn operator_eq_2(_a0: Ptr<DefaultedOrd>, _a1: Ptr<DefaultedOrd>) -> bool {
     return ({ _a0.with(|__s| __s.a) } == { _a1.with(|__s| __s.a) });

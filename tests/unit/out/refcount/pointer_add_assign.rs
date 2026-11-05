@@ -15,42 +15,42 @@ fn main_0() -> i32 {
     {
         let mut p: Ptr<i8> = ((arr.as_pointer() as Ptr<i8>).offset(0));
         p += (1_u8 as i32);
-        assert!((((p.read()) as i32) == 2));
+        ({ cpp2rust_assert_fail_0((((p.read()) as i32) == 2)) });
     }
     {
         let mut p: Ptr<i8> = ((arr.as_pointer() as Ptr<i8>).offset(0));
         p += (1_i8 as i32);
-        assert!((((p.read()) as i32) == 2));
+        ({ cpp2rust_assert_fail_0((((p.read()) as i32) == 2)) });
     }
     {
         let mut p: Ptr<i8> = ((arr.as_pointer() as Ptr<i8>).offset(0));
         p += (1_u16 as i32);
-        assert!((((p.read()) as i32) == 2));
+        ({ cpp2rust_assert_fail_0((((p.read()) as i32) == 2)) });
     }
     {
         let mut p: Ptr<i8> = ((arr.as_pointer() as Ptr<i8>).offset(0));
         p += (1_i16 as i32);
-        assert!((((p.read()) as i32) == 2));
+        ({ cpp2rust_assert_fail_0((((p.read()) as i32) == 2)) });
     }
     {
         let mut p: Ptr<i8> = ((arr.as_pointer() as Ptr<i8>).offset(0));
         p += 1_u32;
-        assert!((((p.read()) as i32) == 2));
+        ({ cpp2rust_assert_fail_0((((p.read()) as i32) == 2)) });
     }
     {
         let mut p: Ptr<i8> = ((arr.as_pointer() as Ptr<i8>).offset(0));
         p += (1 as i32);
-        assert!((((p.read()) as i32) == 2));
+        ({ cpp2rust_assert_fail_0((((p.read()) as i32) == 2)) });
     }
     {
         let mut p: Ptr<i8> = ((arr.as_pointer() as Ptr<i8>).offset(0));
         p += 1_u64;
-        assert!((((p.read()) as i32) == 2));
+        ({ cpp2rust_assert_fail_0((((p.read()) as i32) == 2)) });
     }
     {
         let mut p: Ptr<i8> = ((arr.as_pointer() as Ptr<i8>).offset(0));
         p += 1_i64;
-        assert!((((p.read()) as i32) == 2));
+        ({ cpp2rust_assert_fail_0((((p.read()) as i32) == 2)) });
     }
     return 0;
 }

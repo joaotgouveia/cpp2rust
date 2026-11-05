@@ -20,7 +20,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ test_1(FnPtr::<fn() -> bool>::new(test1_0),) }) == 1));
+    ({ cpp2rust_assert_fail_2((({ test_1(FnPtr::<fn() -> bool>::new(test1_0)) }) == 1)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

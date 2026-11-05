@@ -251,15 +251,15 @@ impl Default for Tracked {
         { Tracked { copied_from: 0 } }
     }
 }
-pub fn touch_1(mut t: Ptr<Tracked>) {
+pub fn touch_2(mut t: Ptr<Tracked>) {
     field!(t, copied_from).with_mut(|__v| {
         __v.prefix_inc();
     });
 }
-pub fn by_value_2(mut c: Counted) -> i32 {
+pub fn by_value_3(mut c: Counted) -> i32 {
     return c.v;
 }
-pub fn make_3(mut v: i32) -> Counted {
+pub fn make_4(mut v: i32) -> Counted {
     let c: Value<Counted> = Rc::new(RefCell::new(Counted::new({ v })));
     return Counted::copy_from({ c.as_pointer() });
 }
@@ -272,63 +272,65 @@ fn main_0() -> i32 {
     let mut b: Counted = Counted::copy_from({ a.as_pointer() });
     let mut c: Counted = Counted::copy_from({ a.as_pointer() });
     let mut d: Counted = Counted::copy_from({ a.as_pointer() });
-    assert!((copies_0.with(|rc| *rc.borrow()) == 3));
-    assert!(((b.v == 1) && (c.v == 1)) && (d.v == 1));
-    assert!((({ by_value_2(Counted::copy_from({ a.as_pointer() },),) }) == 1));
-    assert!((copies_0.with(|rc| *rc.borrow()) == 4));
-    let mut e: Counted = ({ make_3(5) });
-    assert!((e.v == 5));
-    assert!((copies_0.with(|rc| *rc.borrow()) == 5));
+    ({ cpp2rust_assert_fail_5((copies_0.with(|rc| *rc.borrow()) == 3)) });
+    ({ cpp2rust_assert_fail_5(((b.v == 1) && (c.v == 1)) && (d.v == 1)) });
+    ({ cpp2rust_assert_fail_5((({ by_value_3(Counted::copy_from({ a.as_pointer() })) }) == 1)) });
+    ({ cpp2rust_assert_fail_5((copies_0.with(|rc| *rc.borrow()) == 4)) });
+    let mut e: Counted = ({ make_4(5) });
+    ({ cpp2rust_assert_fail_5((e.v == 5)) });
+    ({ cpp2rust_assert_fail_5((copies_0.with(|rc| *rc.borrow()) == 5)) });
     let mut f: Counted = Counted::new({ 6 });
-    assert!((f.v == 6));
-    assert!((copies_0.with(|rc| *rc.borrow()) == 5));
+    ({ cpp2rust_assert_fail_5((f.v == 6)) });
+    ({ cpp2rust_assert_fail_5((copies_0.with(|rc| *rc.borrow()) == 5)) });
     let g: Value<Counted> = Rc::new(RefCell::new(Counted::new({ 7 })));
     let mut h: Counted = Counted::copy_from({ g.as_pointer() });
-    assert!((h.v == 7));
-    assert!((copies_0.with(|rc| *rc.borrow()) == 6));
+    ({ cpp2rust_assert_fail_5((h.v == 7)) });
+    ({ cpp2rust_assert_fail_5((copies_0.with(|rc| *rc.borrow()) == 6)) });
     let hold: Value<Holder> = Rc::new(RefCell::new(Holder {
         c: Counted::new({ 8 }),
         arr: Box::new([Counted::new({ 9 }), Counted::new({ 10 })]),
     }));
     let mut hold2: Holder = (*hold.borrow()).clone();
-    assert!(
-        ((hold2.c.v == 8) && (hold2.arr[(0) as usize].v == 9)) && (hold2.arr[(1) as usize].v == 10)
-    );
-    assert!((copies_0.with(|rc| *rc.borrow()) == 9));
-    let mut vec_: Vec<Counted> = Vec::new();
-    {
-        let a0_clone = (*a.borrow()).clone();
-        vec_.push(a0_clone)
-    };
-    assert!((vec_[0_usize].v == 1));
-    assert!((copies_0.with(|rc| *rc.borrow()) == 10));
+    ({
+        cpp2rust_assert_fail_5(
+            ((hold2.c.v == 8) && (hold2.arr[(0) as usize].v == 9))
+                && (hold2.arr[(1) as usize].v == 10),
+        )
+    });
+    ({ cpp2rust_assert_fail_5((copies_0.with(|rc| *rc.borrow()) == 9)) });
+    let vec_: Value<std_vector_Counted__std_allocator_Counted__> = Rc::new(RefCell::new(
+        <std_vector_Counted__std_allocator_Counted__>::default(),
+    ));
+    ({ (*vec_.borrow()).push_back_59(a.as_pointer()) });
+    ({ cpp2rust_assert_fail_5(({ (*vec_.borrow())[0_u64].v } == 1)) });
+    ({ cpp2rust_assert_fail_5((copies_0.with(|rc| *rc.borrow()) == 10)) });
     let i1: Value<Ignored> = Rc::new(RefCell::new(Ignored::new({ 1 })));
     let mut i2: Ignored = Ignored::copy_from({ i1.as_pointer() });
-    assert!(({ ({ (*i1.borrow()).v } == 1) && (i2.v == -1_i32) }));
-    assert!((copies_0.with(|rc| *rc.borrow()) == 11));
+    ({ cpp2rust_assert_fail_5(({ (*i1.borrow()).v } == 1) && (i2.v == -1_i32)) });
+    ({ cpp2rust_assert_fail_5((copies_0.with(|rc| *rc.borrow()) == 11)) });
     let o: Value<Owner> = Rc::new(RefCell::new(Owner {
         box_: Box_int_::new({ 3 }),
     }));
     let mut o2: Owner = Owner::move_from({ o.as_pointer() });
-    assert!((o2.box_.val == 3));
+    ({ cpp2rust_assert_fail_5((o2.box_.val == 3)) });
     let ol1: Value<OutOfLine> = Rc::new(RefCell::new(OutOfLine::new({ 5 })));
     let mut ol2: OutOfLine = OutOfLine::copy_from({ ol1.as_pointer() });
-    assert!((ol2.v == 105));
-    assert!((copies_0.with(|rc| *rc.borrow()) == 12));
+    ({ cpp2rust_assert_fail_5((ol2.v == 105)) });
+    ({ cpp2rust_assert_fail_5((copies_0.with(|rc| *rc.borrow()) == 12)) });
     let n: Value<NonConst> = Rc::new(RefCell::new(NonConst::new()));
     let mut n1: NonConst = NonConst::new_1({ n.as_pointer() });
     let cn: Value<NonConst> = Rc::new(RefCell::new(NonConst::new()));
     let mut n2: NonConst = NonConst::new_2({ cn.as_pointer() });
-    assert!((n1.mark == 1));
-    assert!((n2.mark == 10));
+    ({ cpp2rust_assert_fail_5((n1.mark == 1)) });
+    ({ cpp2rust_assert_fail_5((n2.mark == 10)) });
     let t1: Value<Tracked> = Rc::new(RefCell::new(<Tracked>::default()));
     let t2: Value<Tracked> = Rc::new(RefCell::new(Tracked::copy_from({ t1.as_pointer() })));
     ({ TrackedImpl::copy_assign(&t2.as_pointer(), t1.as_pointer()) });
-    assert!(({ ({ (*t1.borrow()).copied_from } == 2) }));
+    ({ cpp2rust_assert_fail_5(({ (*t1.borrow()).copied_from } == 2)) });
     let ct: Value<Tracked> = Rc::new(RefCell::new(<Tracked>::default()));
     let mut t3: Tracked = Tracked::copy_from({ ct.as_pointer() });
-    ({ touch_1((ct.as_pointer())) });
-    assert!(({ ({ (*ct.borrow()).copied_from } == 2) }));
+    ({ touch_2((ct.as_pointer())) });
+    ({ cpp2rust_assert_fail_5(({ (*ct.borrow()).copied_from } == 2)) });
     return 0;
 }
 pub trait CountedImpl {
@@ -349,15 +351,11 @@ impl HolderImpl for Ptr<Holder> {
             let _arg0: Ptr<Counted> = field_ptr!(_a0, c);
             CountedImpl::copy_assign(&field_ptr!((*self), c), _arg0)
         });
-        match ({ ((array_field_ptr!((*self), arr)) as Ptr<Counted>).to_any() },) {
-            (mut __tmp_0,) => {
-                __tmp_0.memcpy(
-                    &((array_field_ptr!(_a0, arr)) as Ptr<Counted>).to_any(),
-                    8_usize as usize,
-                );
-                (__tmp_0).clone()
-            }
-        };
+        ({
+            let _arg0: AnyPtr = ((array_field_ptr!((*self), arr)) as Ptr<Counted>).to_any();
+            let _arg1: AnyPtr = ((array_field_ptr!(_a0, arr)) as Ptr<Counted>).to_any();
+            __builtin_memcpy_1(_arg0, _arg1, 8_u64)
+        });
         return (*self).clone();
     }
 }

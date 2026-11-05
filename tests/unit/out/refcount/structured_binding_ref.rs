@@ -42,17 +42,17 @@ fn main_0() -> i32 {
     {
         field!(__decomp_2, c).with_mut(|__v| *__v = *__v + 1)
     };
-    assert!(({ ({ (*t.borrow()).a } == 11) }));
-    assert!(({ { (*t.borrow()).b } }));
-    assert!(({ ({ (*t.borrow()).c } == 21) }));
+    ({ cpp2rust_assert_fail_3(({ (*t.borrow()).a } == 11)) });
+    ({ cpp2rust_assert_fail_3({ (*t.borrow()).b }) });
+    ({ cpp2rust_assert_fail_3(({ (*t.borrow()).c } == 21)) });
     (*t.borrow_mut()).a = 12;
-    assert!((__decomp_2.with(|__s| __s.a) == 12));
-    let __decomp_3: Ptr<Triple> = t.as_pointer();
+    ({ cpp2rust_assert_fail_3((__decomp_2.with(|__s| __s.a) == 12)) });
+    let __decomp_4: Ptr<Triple> = t.as_pointer();
     (*t.borrow_mut()).c = 30;
-    assert!((__decomp_3.with(|__s| __s.a) == 12));
-    assert!(__decomp_3.with(|__s| __s.b));
-    assert!((__decomp_3.with(|__s| __s.c) == 30));
-    assert!((({ sum_0(t.as_pointer(),) }) == 43));
+    ({ cpp2rust_assert_fail_3((__decomp_4.with(|__s| __s.a) == 12)) });
+    ({ cpp2rust_assert_fail_3(__decomp_4.with(|__s| __s.b)) });
+    ({ cpp2rust_assert_fail_3((__decomp_4.with(|__s| __s.c) == 30)) });
+    ({ cpp2rust_assert_fail_3((({ sum_0(t.as_pointer()) }) == 43)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

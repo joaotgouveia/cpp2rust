@@ -19,7 +19,7 @@ fn main_0() -> i32 {
             goto!('body);
         }
         'body: {
-            assert!(((r.read()) == 5));
+            ({ cpp2rust_assert_fail_0(((r.read()) == 5)) });
             return 0;
         }
     });

@@ -56,9 +56,17 @@ public:
                                     std::string_view lhs) override;
 
   void ConvertOrdAndPartialOrdTraits(const clang::CXXRecordDecl *decl,
-                                     const clang::FunctionDecl *eq,
-                                     const clang::FunctionDecl *lt,
-                                     const clang::FunctionDecl *cmp) override;
+                                     const ComparisonOperators &ops) override;
+
+  void ConvertAdvanceTrait(const clang::CXXRecordDecl *decl,
+                           const clang::CXXMethodDecl *inc,
+                           const clang::CXXMethodDecl *dec) override;
+
+  void ConvertIteratorTraits(const clang::CXXRecordDecl *decl,
+                             const IteratorOperators &ops) override;
+
+  std::string GetCallableBody(const clang::CXXMethodDecl *call,
+                              std::string_view args) override;
 
   std::string GetShallowCopy(const clang::RecordDecl *decl,
                              std::string_view src);
@@ -138,6 +146,9 @@ public:
   void ConvertCapturelessLambda(const clang::CXXRecordDecl *decl) override;
 
   const char *LambdaMacro() const override { return "lambda!"; }
+  const char *ValueComparatorMacro() const override {
+    return "value_comparator!";
+  }
 
   void ConvertLambdaCapture(const clang::FieldDecl *field,
                             clang::Expr *init) override;
@@ -355,7 +366,7 @@ private:
 
   std::string DestroyMembers(const clang::CXXRecordDecl *decl) override;
 
-  void EmitScopedDestructor(const clang::VarDecl *decl) override;
+  std::string ScopedDestructorStmt(const clang::VarDecl *decl) override;
 
   std::pair<std::string, std::string>
   MaterializeTemp(const std::string &binding_name, clang::QualType param_type,
@@ -430,7 +441,23 @@ private:
 
   const char *GetConversionTraitName() const override;
 
-  std::string GetInnerType(clang::QualType type);
+  std::string ConvertPtrRead(clang::QualType type,
+                             const std::string &src) override;
+
+  std::string ConvertPtrWrite(const std::string &dst,
+                              const std::string &value) override;
+
+  std::string ConvertPointeeMethodCall(const char *method,
+                                       const std::string &dst,
+                                       const std::string &src) override;
+
+  const char *GetMoveCtorTraitName() const override;
+
+  bool IsBoxedType(clang::QualType type);
+  bool IsVecType(clang::QualType type);
+
+  bool NeedsMutAccess(const clang::CXXMethodDecl *method,
+                      clang::QualType base_type);
 
   // What an Object-kind conversion of a boxed container/array should yield:
   // a pointer to the whole object (Ptr<Vec<T>>), or one to its first
@@ -480,8 +507,7 @@ private:
 
   std::string ConvertSubscriptIndex(clang::Expr *idx);
 
-  // A pointer to the first element of the string literal expr.
-  std::string ConvertStringLiteralPtr(clang::Expr *expr);
+  std::string ConvertStringLiteralPtr(clang::Expr *expr) override;
 
   // Element `idx` of pointer `base`, accessed without creating a pointer to it.
   void ConvertPointerElem(clang::Expr *base, clang::Expr *idx);

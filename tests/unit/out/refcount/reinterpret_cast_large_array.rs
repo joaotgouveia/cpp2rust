@@ -13,7 +13,7 @@ pub fn main() {
 fn main_0() -> i32 {
     let mut N: i32 = 10000;
     let mut arr: Ptr<u32> =
-        Ptr::alloc_array((0..(N as usize)).map(|_| 0_u32).collect::<Box<[u32]>>());
+        Ptr::alloc_array((0..(N as u64)).map(|_| 0_u32).collect::<Box<[u32]>>());
     let mut i: i32 = 0;
     'loop_: while (i < N) {
         elem!(arr, i).write(0_u32);
@@ -21,8 +21,8 @@ fn main_0() -> i32 {
     }
     elem!(arr, (N - 1)).write(3148519816_u32);
     let mut words: Ptr<u16> = arr.reinterpret_cast::<u16>();
-    assert!((((elem!(words, ((N * 2) - 1)).read()) as i32) == 48042));
-    assert!((((elem!(words, ((N * 2) - 2)).read()) as i32) == 39304));
+    ({ cpp2rust_assert_fail_0((((elem!(words, ((N * 2) - 1)).read()) as i32) == 48042)) });
+    ({ cpp2rust_assert_fail_0((((elem!(words, ((N * 2) - 2)).read()) as i32) == 39304)) });
     arr.delete();
     return 0;
 }

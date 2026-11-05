@@ -27,9 +27,9 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ case_then_default_0(1,) }) == 10));
-    assert!((({ case_then_default_0(2,) }) == 20));
-    assert!((({ case_then_default_0(99,) }) == 10));
+    ({ cpp2rust_assert_fail_1((({ case_then_default_0(1) }) == 10)) });
+    ({ cpp2rust_assert_fail_1((({ case_then_default_0(2) }) == 20)) });
+    ({ cpp2rust_assert_fail_1((({ case_then_default_0(99) }) == 10)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

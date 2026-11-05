@@ -46,44 +46,56 @@ pub fn main() {
 fn main_0() -> i32 {
     let s: Value<S> = Rc::new(RefCell::new(S { v: 6 }));
     let t: Value<S> = Rc::new(RefCell::new(S { v: 4 }));
-    assert!((({ SImpl::operator_eq_1(&s.as_pointer(), 6,) }) == 1));
-    assert!((({ SImpl::operator_eq_2(&s.as_pointer(), 6_i64,) }) == 2));
-    assert!((({ SImpl::operator_eq_3(&s.as_pointer(), 6_f64,) }) == 3));
-    assert!((({ SImpl::operator_eq_1(&s.as_pointer(), 7,) }) == 0));
-    assert!((({ SImpl::operator_add(&s.as_pointer(), t.as_pointer(),) }) == 10));
-    assert!(({ (({ SImpl::operator_sub(&s.as_pointer(), (*t.borrow()).clone(),) }) == 2) }));
-    assert!((({ SImpl::operator_mul_6(&s.as_pointer(), t.as_pointer(),) }) == 24));
-    assert!((({ SImpl::operator_mul_7(&s.as_pointer(), 2,) }) == 13));
-    assert!(
-        (({
-            let _a: Ptr<S> = s.as_pointer();
-            operator_div_0(_a, t.as_pointer())
-        }) == 1)
-    );
-    assert!(
-        ({
+    ({ cpp2rust_assert_fail_6((({ SImpl::operator_eq_1(&s.as_pointer(), 6) }) == 1)) });
+    ({ cpp2rust_assert_fail_6((({ SImpl::operator_eq_2(&s.as_pointer(), 6_i64) }) == 2)) });
+    ({ cpp2rust_assert_fail_6((({ SImpl::operator_eq_3(&s.as_pointer(), 6_f64) }) == 3)) });
+    ({ cpp2rust_assert_fail_6((({ SImpl::operator_eq_1(&s.as_pointer(), 7) }) == 0)) });
+    ({
+        cpp2rust_assert_fail_6((({ SImpl::operator_add(&s.as_pointer(), t.as_pointer()) }) == 10))
+    });
+    ({
+        cpp2rust_assert_fail_6(
+            (({ SImpl::operator_sub(&s.as_pointer(), (*t.borrow()).clone()) }) == 2),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_6((({ SImpl::operator_mul_6(&s.as_pointer(), t.as_pointer()) }) == 24))
+    });
+    ({ cpp2rust_assert_fail_6((({ SImpl::operator_mul_7(&s.as_pointer(), 2) }) == 13)) });
+    ({
+        cpp2rust_assert_fail_6(
+            (({
+                let _a: Ptr<S> = s.as_pointer();
+                operator_div_0(_a, t.as_pointer())
+            }) == 1),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_6(
             (({
                 let _a: S = (*s.borrow()).clone();
                 operator_div_1(_a, 4)
-            }) == 2)
-        })
-    );
-    assert!(
-        ({
+            }) == 2),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_6(
             (({
                 let _a: S = (*s.borrow()).clone();
                 operator_rem_2(_a, (*t.borrow()).clone())
-            }) == 2)
-        })
-    );
-    assert!(
-        (({
-            let _a: Ptr<S> = s.as_pointer();
-            operator_rem_3(_a, 4)
-        }) == 3)
-    );
-    assert!(({ (({ operator_eq_4(6, (*s.borrow()).clone(),) }) == 4) }));
-    assert!((({ operator_eq_5(6_i64, s.as_pointer(),) }) == 5));
+            }) == 2),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_6(
+            (({
+                let _a: Ptr<S> = s.as_pointer();
+                operator_rem_3(_a, 4)
+            }) == 3),
+        )
+    });
+    ({ cpp2rust_assert_fail_6((({ operator_eq_4(6, (*s.borrow()).clone()) }) == 4)) });
+    ({ cpp2rust_assert_fail_6((({ operator_eq_5(6_i64, s.as_pointer()) }) == 5)) });
     return 0;
 }
 pub trait SImpl {

@@ -230,6 +230,10 @@ std::string Converter::ConvertFreshObject(clang::Expr *expr) {
   return ConvertFreshPointer(expr);
 }
 
+std::string Converter::ConvertStringLiteralPtr(clang::Expr *expr) {
+  return ToString(expr->IgnoreParens()->IgnoreImplicit()) + ".as_ptr()";
+}
+
 std::string Converter::ConvertPointerReceiver(
     clang::Expr *arg, std::string_view param_type,
     std::optional<clang::QualType> implicit_convert_to) {
@@ -710,7 +714,10 @@ bool Converter::VisitVarDecl(clang::VarDecl *decl) {
 }
 
 bool Converter::NeedsScopedDestructor(const clang::VarDecl *decl) const {
-  if (in_function_formals_ || !decl->isLocalVarDecl() || IsGlobalVar(decl)) {
+  // A parameter taken by value is destroyed when the function returns.
+  if (in_function_formals_ ||
+      (!decl->isLocalVarDecl() && !clang::isa<clang::ParmVarDecl>(decl)) ||
+      IsGlobalVar(decl)) {
     return false;
   }
   auto type = decl->getType();
@@ -723,19 +730,21 @@ bool Converter::NeedsScopedDestructor(const clang::VarDecl *decl) const {
 }
 
 void Converter::EmitScopedDestructor(const clang::VarDecl *decl) {
-  if (!NeedsScopedDestructor(decl)) {
-    return;
+  if (NeedsScopedDestructor(decl)) {
+    StrCat(token::kSemiColon, ScopedDestructorStmt(decl));
   }
+}
+
+std::string Converter::ScopedDestructorStmt(const clang::VarDecl *decl) {
   auto type = decl->getType();
   auto destroy =
       AsLambdaClass(type)
           ? std::string("|__f| __f.destroy()")
           : std::format("{}::{}", GetRecordName(type->getAsCXXRecordDecl()),
                         kDestructorName);
-  StrCat(token::kSemiColon,
-         std::format("let _dtor_{0} = ScopedDestructorUnsafe::new(&raw mut "
-                     "{0}, {1})",
-                     GetNamedDeclAsString(decl), destroy));
+  return std::format(
+      "let _dtor_{0} = ScopedDestructorUnsafe::new(&raw mut {0}, {1})",
+      GetNamedDeclAsString(decl), destroy);
 }
 
 bool Converter::RecordDerivesDefault(const clang::RecordDecl *decl) {
@@ -956,6 +965,9 @@ void Converter::EmitRustStructOrUnion(clang::RecordDecl *decl) {
     ConvertCXXRecordMethods(cxx);
     ConvertVirtualMethods(cxx);
     AddOrdTrait(cxx);
+    AddAdvanceTrait(cxx);
+    AddIteratorTraits(cxx);
+    AddCallableTraits(cxx);
   }
   AddCloneTrait(decl);
   AddMoveTrait(decl);
@@ -1020,6 +1032,12 @@ void Converter::EmitConversionAttrs(clang::CXXRecordDecl *decl) {
   ForEachConvertingConstructor(decl, [&](clang::CXXConstructorDecl *ctor) {
     auto *param = ctor->getParamDecl(0);
     auto type = param->getType();
+    // Every clonable type converts to itself with the blanket conversion.
+    if (ctx_.hasSameUnqualifiedType(type.getNonReferenceType(),
+                                    ctx_.getCanonicalTagType(decl)) &&
+        RecordImplementsClone(decl)) {
+      return;
+    }
     auto source =
         GetUnboxedTypeAsString(type.getNonReferenceType().getUnqualifiedType());
     bool is_move = type->isRValueReferenceType();
@@ -1045,8 +1063,9 @@ void Converter::EmitConversionAttrs(clang::CXXRecordDecl *decl) {
     if (!into_types.insert(target).second) {
       return;
     }
-    StrCat(
-        std::format("#[cpp_into({}, {})]", target, GetMethodName(conversion)));
+    StrCat(std::format("#[cpp_into({}, {}{})]", target,
+                       GetMethodName(conversion),
+                       conversion->isConst() ? "" : ", mut_ptr"));
   });
 }
 
@@ -1344,6 +1363,15 @@ void Converter::EmitFunctionPreamble(clang::FunctionDecl *decl) {
                        name, type, name, keyword_unsafe_, value),
            token::kSemiColon);
   }
+  EmitParamDestructors(decl);
+}
+
+void Converter::EmitParamDestructors(clang::FunctionDecl *decl) {
+  for (auto *param : DefinitionParameters(decl)) {
+    if (NeedsScopedDestructor(param)) {
+      StrCat(ScopedDestructorStmt(param), token::kSemiColon);
+    }
+  }
 }
 
 void Converter::ConvertDeclContext(clang::DeclContext *decl) {
@@ -1379,17 +1407,12 @@ bool Converter::VisitStaticAssertDecl(clang::StaticAssertDecl *decl) {
   if (assert_expr->isValueDependent()) {
     return false;
   }
-  std::string condition;
-  if (assert_expr->getType()->isBooleanType() &&
-      IsRustConstEvaluableExpr(assert_expr)) {
-    condition = ToString(assert_expr);
-  } else {
-    bool value = false;
-    ENSURE(assert_expr->EvaluateAsBooleanCondition(value, ctx_,
-                                                   /*InConstantContext=*/true));
-    condition = value ? keyword::kTrue : keyword::kFalse;
-  }
-  StrCat(std::format("const _: () = assert!({}{});", condition,
+  // Clang computes the condition, so it needs no rules
+  bool value = false;
+  ENSURE(assert_expr->EvaluateAsBooleanCondition(value, ctx_,
+                                                 /*InConstantContext=*/true));
+  StrCat(std::format("const _: () = assert!({}{});",
+                     value ? keyword::kTrue : keyword::kFalse,
                      GetAssertMessageAsString(assert_expr, ctx_)));
   return false;
 }
@@ -1426,10 +1449,21 @@ void Converter::ConvertBody(clang::Stmt *body) {
   ConvertBodyStmts(body);
 }
 
+// The temporaries an expression statement materializes, e.g., for a prvalue
+// bound to a reference parameter, are bound right before it.
+void Converter::ConvertBodyStmt(clang::Stmt *stmt) {
+  if (!clang::isa_and_nonnull<clang::Expr>(stmt)) {
+    Convert(stmt);
+    return;
+  }
+  HoistMaterializedTempBindings hoist_temps(*this);
+  Convert(stmt);
+}
+
 void Converter::ConvertBodyStmts(clang::Stmt *body) {
   auto *compound = clang::dyn_cast_or_null<clang::CompoundStmt>(body);
   if (!compound) {
-    Convert(body);
+    ConvertBodyStmt(body);
     return;
   }
   if (CompoundHasTopLevelLabel(compound)) {
@@ -1437,7 +1471,7 @@ void Converter::ConvertBodyStmts(clang::Stmt *body) {
     return;
   }
   for (auto *child : compound->body()) {
-    Convert(child);
+    ConvertBodyStmt(child);
   }
 }
 
@@ -1903,8 +1937,9 @@ bool Converter::ExprMapsValueToPointer(const clang::CallExpr *expr) const {
 
 void Converter::EmitCallResult(clang::CallExpr *expr, std::string str,
                                const TempMaterializationCtx *temps) {
-  bool deref = (GetReturnTypeOfFunction(expr)->isReferenceType() ||
-                (temps && IsReferenceType(expr))) &&
+  auto ty = GetReturnTypeOfFunction(expr);
+  bool deref = (ty->isReferenceType() || (temps && IsReferenceType(expr))) &&
+               !RuleRegistry::ReturnsProxyReference(ctx_, expr, ty) &&
                !isAddrOf() && !isVoid() && !ExprMapsValueToPointer(expr);
   // The dereference is in the block of the temporaries, so they are still
   // alive, as is the read of a field of the result.
@@ -1973,6 +2008,28 @@ std::string Converter::GetFunctionRefName(const clang::FunctionDecl *fn_decl) {
   return Mapper::MapFunctionName(ctx_, fn_decl);
 }
 
+// A converted function with default arguments takes those parameters as
+// Options, so a pointer to it is a closure that passes each such argument in
+// Some.
+std::string
+Converter::GetFunctionPointerTarget(const clang::FunctionDecl *fn_decl) {
+  auto name = GetFunctionRefName(fn_decl);
+  auto params = DefinitionParameters(fn_decl);
+  if (!IsUserDefinedDecl(fn_decl) ||
+      std::ranges::none_of(params, HasUsableDefaultArg)) {
+    return name;
+  }
+  std::string closure_params;
+  std::string args;
+  for (unsigned i = 0; i < params.size(); ++i) {
+    closure_params += std::format("{}a{}", i ? ", " : "", i);
+    args += HasUsableDefaultArg(params[i]) ? std::format("Some(a{}), ", i)
+                                           : std::format("a{}, ", i);
+  }
+  return std::format("|{}| {} {{ {}({}) }}", closure_params, keyword_unsafe_,
+                     name, args);
+}
+
 void Converter::ConvertFunctionToFunctionPointer(
     const clang::FunctionDecl *fn_decl) {
   if (auto *method = clang::dyn_cast<clang::CXXMethodDecl>(fn_decl);
@@ -1982,7 +2039,7 @@ void Converter::ConvertFunctionToFunctionPointer(
                               method->getParent()->getLambdaCallOperator());
     return;
   }
-  EmitFresh(std::format("Some({})", GetFunctionRefName(fn_decl)));
+  EmitFresh(std::format("Some({})", GetFunctionPointerTarget(fn_decl)));
 }
 
 std::string Converter::ConvertFnPtrCallee(clang::Expr *arg) {
@@ -2623,6 +2680,7 @@ bool Converter::VisitImplicitCastExpr(clang::ImplicitCastExpr *expr) {
     break;
   }
   case clang::CastKind::CK_ConstructorConversion:
+  case clang::CastKind::CK_UserDefinedConversion:
   case clang::CastKind::CK_DerivedToBase:
   case clang::CastKind::CK_UncheckedDerivedToBase:
     Convert(sub_expr);
@@ -2739,6 +2797,24 @@ bool Converter::VisitExplicitCastExpr(clang::ExplicitCastExpr *expr) {
 
 bool Converter::VisitCXXRewrittenBinaryOperator(
     clang::CXXRewrittenBinaryOperator *expr) {
+  // a rule written with the operator as spelled takes the operands as written,
+  // short of the conversion to the base the rewritten callee takes
+  if (Mapper::Contains(ctx_, expr)) {
+    auto operand = [](const clang::Expr *e) {
+      auto *cast = clang::dyn_cast<clang::ImplicitCastExpr>(e);
+      while (cast &&
+             (cast->getCastKind() == clang::CK_DerivedToBase ||
+              cast->getCastKind() == clang::CK_UncheckedDerivedToBase)) {
+        e = cast->getSubExpr();
+        cast = clang::dyn_cast<clang::ImplicitCastExpr>(e);
+      }
+      return const_cast<clang::Expr *>(e);
+    };
+    auto decomposed = expr->getDecomposedForm();
+    clang::Expr *args[] = {operand(decomposed.LHS), operand(decomposed.RHS)};
+    EmitFresh(GetMappedAsString(expr, args, 2, nullptr));
+    return false;
+  }
   Convert(expr->getSemanticForm());
   return false;
 }
@@ -2793,11 +2869,11 @@ void Converter::ConvertBinaryOperator(clang::BinaryOperator *expr) {
     }
   } else if (IsUnsignedArithOp(expr)) {
     if (expr->isCompoundAssignmentOp()) {
-      Convert(lhs);
-      StrCat(token::kAssign);
+      StrCat(ConvertLValue(lhs), token::kAssign);
     }
     {
       PushParen paren(*this);
+      PushExprKind rvalue(*this, ExprKind::RValue);
       ConvertUnsignedArithOperand(lhs, type);
     }
     ConvertUnsignedArithBinaryOperator(expr, rhs);
@@ -3110,12 +3186,7 @@ std::string Converter::ConvertDeclRef(clang::Expr *expr,
   }
 
   if (auto *function = decl->getAsFunction()) {
-    if (auto method = clang::dyn_cast<clang::CXXMethodDecl>(function)) {
-      if (method->isStatic()) {
-        return GetFunctionRefName(method);
-      }
-    }
-    return GetNamedDeclAsString(function->getCanonicalDecl());
+    return GetFunctionRefName(function);
   }
 
   if (auto enum_constant = clang::dyn_cast<clang::EnumConstantDecl>(decl)) {
@@ -3210,12 +3281,27 @@ bool Converter::VisitParenExpr(clang::ParenExpr *expr) {
   return false;
 }
 
+static void ReportUnsupportedOperatorCall(clang::CXXOperatorCallExpr *expr) {
+  // FIXME: improve error handling
+  llvm::errs() << "unsupported CXXOperatorCallExpr: "
+               << clang::getOperatorSpelling(expr->getOperator()) << '\n';
+  expr->dump();
+  if (auto *callee = expr->getCalleeDecl()) {
+    callee->dump();
+  }
+  assert(0);
+}
+
 bool Converter::ConvertCXXOperatorCallExpr(clang::CXXOperatorCallExpr *expr) {
   switch (expr->getOperator()) {
   case clang::OverloadedOperatorKind::OO_Equal:
     ConvertAssignment(expr->getArg(0), expr->getArg(1), "=");
     break;
   case clang::OverloadedOperatorKind::OO_Star: {
+    if (expr->getNumArgs() != 1) {
+      ReportUnsupportedOperatorCall(expr);
+      break;
+    }
     PushParen paren(*this);
     StrCat(token::kStar);
     Convert(expr->getArg(0));
@@ -3275,6 +3361,7 @@ bool Converter::ConvertCXXOperatorCallExpr(clang::CXXOperatorCallExpr *expr) {
       ConvertCallToOstream(expr);
       return false;
     }
+    ReportUnsupportedOperatorCall(expr);
     break;
   case clang::OverloadedOperatorKind::OO_Call:
     ConvertGenericCallExpr(expr);
@@ -3301,14 +3388,7 @@ bool Converter::ConvertCXXOperatorCallExpr(clang::CXXOperatorCallExpr *expr) {
     MarkFresh();
     break;
   default:
-    // FIXME: improve error handling
-    llvm::errs() << "unsupported CXXOperatorCallExpr: "
-                 << clang::getOperatorSpelling(expr->getOperator()) << '\n';
-    expr->dump();
-    if (auto *callee = expr->getCalleeDecl()) {
-      callee->dump();
-    }
-    assert(0);
+    ReportUnsupportedOperatorCall(expr);
   }
   return false;
 }
@@ -3851,7 +3931,9 @@ bool Converter::VisitCXXConstructExpr(clang::CXXConstructExpr *expr) {
   }
   if (IsPassThroughConstructor(ctor)) {
     Convert(expr->getArg(0));
-    if ((ctor->isCopyConstructor() || IsDefaultedMoveConstructor(ctor)) &&
+    // a trivial move copies the object, which is left as it was
+    if ((ctor->isCopyConstructor() || IsDefaultedMoveConstructor(ctor) ||
+         (ctor->isMoveConstructor() && ctor->isTrivial())) &&
         !TypeIsCopyable(expr->getType())) {
       EmitFresh(".clone()");
     }
@@ -4244,13 +4326,16 @@ std::string Converter::GetDefaultAsString(clang::QualType qual_type) {
 }
 
 std::string Converter::GetDefaultAsStringFallback(clang::QualType qual_type) {
-  qual_type = qual_type.getUnqualifiedType().getCanonicalType();
+  // the type as written names the rule (mbstate_t, not glibc's anonymous
+  // struct behind it)
+  auto written = qual_type.getUnqualifiedType();
+  qual_type = written.getCanonicalType();
 
   if (auto record = qual_type->getAsRecordDecl()) {
     if (ctx_.getSourceManager().isInSystemHeader(record->getLocation()) &&
         qual_type.isPODType(ctx_)) {
       return std::format("unsafe {{ std::mem::zeroed::<{}>() }}",
-                         ToString(qual_type));
+                         ToString(written));
     }
   }
 
@@ -4649,11 +4734,8 @@ void Converter::ConvertOrdAndPartialOrdTraitsBase(
     StrCat("}}}");
 
     StrCat(keyword::kImpl, "std::cmp::PartialOrd for", record_name, '{');
-    StrCat(R"(
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-      Some(self.cmp(other))
-    }
-  })");
+    StrCat("fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> "
+           "{ Some(self.cmp(other)) }}");
   }
 
   StrCat(keyword::kImpl, "std::cmp::PartialEq for", record_name, '{');
@@ -4734,82 +4816,71 @@ std::string Converter::GetComparisonReceiver(const clang::CXXMethodDecl *method,
 }
 
 std::string Converter::GetEqBody(const clang::CXXRecordDecl *decl,
-                                 const clang::FunctionDecl *eq,
-                                 const clang::FunctionDecl *lt,
-                                 const clang::FunctionDecl *cmp,
+                                 const ComparisonOperators &ops,
                                  std::string_view lhs, std::string_view rhs) {
-  if (eq) {
-    return GetComparisonBool(eq, decl, lhs, rhs);
+  if (ops.eq) {
+    return GetComparisonBool(ops.eq, decl, lhs, rhs);
   }
-  if (cmp) {
+  if (ops.ne) {
+    return std::format("!({})", GetComparisonBool(ops.ne, decl, lhs, rhs));
+  }
+  if (ops.cmp) {
     return std::format("{} == std::cmp::Ordering::Equal",
-                       GetComparisonCall(cmp, decl, lhs, rhs));
+                       GetComparisonCall(ops.cmp, decl, lhs, rhs));
   }
-  return std::format("!({}) && !({})", GetComparisonBool(lt, decl, lhs, rhs),
-                     GetComparisonBool(lt, decl, rhs, lhs));
+  return std::format("!({}) && !({})",
+                     GetComparisonBool(ops.lt, decl, lhs, rhs),
+                     GetComparisonBool(ops.lt, decl, rhs, lhs));
+}
+
+std::string Converter::GetCmpBody(const clang::CXXRecordDecl *decl,
+                                  const ComparisonOperators &ops,
+                                  std::string_view lhs, std::string_view rhs) {
+  if (ops.cmp) {
+    return GetComparisonCall(ops.cmp, decl, lhs, rhs);
+  }
+  if (ops.lt) {
+    return std::format("if {} {{ std::cmp::Ordering::Less }} else if {} {{ "
+                       "std::cmp::Ordering::Greater }} else {{ "
+                       "std::cmp::Ordering::Equal }}",
+                       GetComparisonBool(ops.lt, decl, lhs, rhs),
+                       GetComparisonBool(ops.lt, decl, rhs, lhs));
+  }
+  return "";
 }
 
 void Converter::ConvertOrdAndPartialOrdTraits(const clang::CXXRecordDecl *decl,
-                                              const clang::FunctionDecl *eq,
-                                              const clang::FunctionDecl *lt,
-                                              const clang::FunctionDecl *cmp) {
-  std::string cmp_body;
-  if (cmp) {
-    cmp_body = GetComparisonCall(cmp, decl, "self", "other");
-  } else if (lt) {
-    cmp_body = std::format("if {} {{ std::cmp::Ordering::Less }} else if {} {{ "
-                           "std::cmp::Ordering::Greater }} else {{ "
-                           "std::cmp::Ordering::Equal }}",
-                           GetComparisonBool(lt, decl, "self", "other"),
-                           GetComparisonBool(lt, decl, "other", "self"));
-  }
-  ConvertOrdAndPartialOrdTraitsBase(
-      cmp_body, GetEqBody(decl, eq, lt, cmp, "self", "other"),
-      GetRecordName(decl));
+                                              const ComparisonOperators &ops) {
+  ConvertOrdAndPartialOrdTraitsBase(GetCmpBody(decl, ops, "self", "other"),
+                                    GetEqBody(decl, ops, "self", "other"),
+                                    GetRecordName(decl));
 }
 
-void Converter::AddOrdTrait(const clang::CXXRecordDecl *decl) {
-  const clang::FunctionDecl *eq = nullptr;
-  const clang::FunctionDecl *lt = nullptr;
-  const clang::FunctionDecl *cmp = nullptr;
-  auto consider = [&](const clang::FunctionDecl *fn) {
-    if (!fn || fn->isImplicit() || fn->isDeleted() || !fn->hasBody() ||
-        fn->getDescribedFunctionTemplate() || !IsSameTypeComparison(fn, decl)) {
-      return;
-    }
-    if (fn->getOverloadedOperator() == clang::OO_Spaceship &&
-        !ctx_.CompCategories.lookupInfoForType(fn->getReturnType())) {
-      return;
-    }
-    switch (fn->getOverloadedOperator()) {
-    case clang::OO_EqualEqual:
-      eq = fn;
-      break;
-    case clang::OO_Less:
-      lt = fn;
-      break;
-    case clang::OO_Spaceship:
-      cmp = fn;
-      break;
-    default:
-      break;
-    }
-  };
+// Calls fn with the functions that may implement the operators ops of decl:
+// its methods, and the operator functions that its context and its friends
+// declare, including the specializations of templates.
+static void ForEachOperatorFunction(
+    const clang::CXXRecordDecl *decl,
+    llvm::ArrayRef<clang::OverloadedOperatorKind> ops,
+    llvm::function_ref<void(const clang::FunctionDecl *)> fn) {
   auto consider_decl = [&](const clang::NamedDecl *found) {
     if (const auto *tmpl =
             clang::dyn_cast<clang::FunctionTemplateDecl>(found)) {
       for (const auto *spec : tmpl->specializations()) {
-        consider(spec);
+        fn(spec);
       }
       return;
     }
-    consider(clang::dyn_cast<clang::FunctionDecl>(found));
+    if (const auto *function = clang::dyn_cast<clang::FunctionDecl>(found)) {
+      fn(function);
+    }
   };
   for (const auto *method : decl->methods()) {
-    consider(method);
+    fn(method);
   }
-  for (auto op : {clang::OO_EqualEqual, clang::OO_Less, clang::OO_Spaceship}) {
-    auto name = ctx_.DeclarationNames.getCXXOperatorName(op);
+  auto &ctx = decl->getASTContext();
+  for (auto op : ops) {
+    auto name = ctx.DeclarationNames.getCXXOperatorName(op);
     for (const auto *found : decl->getDeclContext()->lookup(name)) {
       consider_decl(found);
     }
@@ -4819,12 +4890,211 @@ void Converter::AddOrdTrait(const clang::CXXRecordDecl *decl) {
       consider_decl(found);
     }
   }
+}
 
-  if (!eq && !lt && !cmp) {
+Converter::ComparisonOperators
+Converter::GetComparisonOperators(const clang::CXXRecordDecl *decl) {
+  ComparisonOperators ops;
+  auto consider = [&](const clang::FunctionDecl *fn) {
+    if (fn->isImplicit() || fn->isDeleted() || !fn->hasBody() ||
+        fn->getDescribedFunctionTemplate() || !IsSameTypeComparison(fn, decl)) {
+      return;
+    }
+    if (fn->getOverloadedOperator() == clang::OO_Spaceship &&
+        !ctx_.CompCategories.lookupInfoForType(fn->getReturnType())) {
+      return;
+    }
+    switch (fn->getOverloadedOperator()) {
+    case clang::OO_EqualEqual:
+      ops.eq = fn;
+      break;
+    case clang::OO_ExclaimEqual:
+      ops.ne = fn;
+      break;
+    case clang::OO_Less:
+      ops.lt = fn;
+      break;
+    case clang::OO_Spaceship:
+      ops.cmp = fn;
+      break;
+    default:
+      break;
+    }
+  };
+  ForEachOperatorFunction(decl,
+                          {clang::OO_EqualEqual, clang::OO_ExclaimEqual,
+                           clang::OO_Less, clang::OO_Spaceship},
+                          consider);
+  return ops;
+}
+
+void Converter::AddOrdTrait(const clang::CXXRecordDecl *decl) {
+  auto ops = GetComparisonOperators(decl);
+  if (!ops.eq && !ops.ne && !ops.lt && !ops.cmp) {
     return;
   }
 
-  ConvertOrdAndPartialOrdTraits(decl, eq, lt, cmp);
+  ConvertOrdAndPartialOrdTraits(decl, ops);
+}
+
+// Records with prefix ++ (and --) advance like iterators in the library's
+// generic algorithms (std::next and std::prev used as function values).
+void Converter::AddAdvanceTrait(const clang::CXXRecordDecl *decl) {
+  if (const auto *inc = GetMemberOperator(decl, clang::OO_PlusPlus, 0)) {
+    ConvertAdvanceTrait(decl, inc,
+                        GetMemberOperator(decl, clang::OO_MinusMinus, 0));
+  }
+}
+
+void Converter::ConvertAdvanceTrait(const clang::CXXRecordDecl *decl,
+                                    const clang::CXXMethodDecl *inc,
+                                    const clang::CXXMethodDecl *dec) {
+  StrCat(std::format("impl UnsafeCppAdvance for {} {{", GetRecordName(decl)));
+  StrCat(std::format("unsafe fn cpp_inc(&mut self) {{ self.{}(); }}",
+                     GetMethodName(inc)));
+  if (dec) {
+    StrCat(std::format("unsafe fn cpp_dec(&mut self) {{ self.{}(); }}",
+                       GetMethodName(dec)));
+  }
+  StrCat("}");
+}
+
+bool Converter::IsIteratorRecord(const clang::CXXRecordDecl *decl) {
+  return GetIteratorDeref(decl) &&
+         GetMemberOperator(decl, clang::OO_PlusPlus, 0) &&
+         RecordImplementsClone(decl);
+}
+
+// Iterator records implement the iterator traits that the library's generic
+// algorithms take, up to the category that their operators provide.
+void Converter::AddIteratorTraits(const clang::CXXRecordDecl *decl) {
+  if (!IsIteratorRecord(decl)) {
+    return;
+  }
+  IteratorOperators ops;
+  ops.deref = GetIteratorDeref(decl);
+  ops.inc = GetMemberOperator(decl, clang::OO_PlusPlus, 0);
+  ops.dec = GetMemberOperator(decl, clang::OO_MinusMinus, 0);
+  if (const auto *add_assign = GetMemberOperator(decl, clang::OO_PlusEqual, 1);
+      add_assign && add_assign->getParamDecl(0)->getType()->isIntegerType()) {
+    ops.add_assign = add_assign;
+  }
+  auto comparisons = GetComparisonOperators(decl);
+  ops.equality =
+      comparisons.eq || comparisons.ne || comparisons.lt || comparisons.cmp;
+  ops.ordering = comparisons.lt || comparisons.cmp;
+  ForEachOperatorFunction(
+      decl, {clang::OO_Minus}, [&](const clang::FunctionDecl *fn) {
+        if (fn->getOverloadedOperator() == clang::OO_Minus &&
+            !fn->isDeleted() && fn->hasBody() &&
+            !fn->getDescribedFunctionTemplate() &&
+            IsSameTypeComparison(fn, decl) &&
+            fn->getReturnType()->isIntegerType()) {
+          ops.distance = fn;
+        }
+      });
+  ConvertIteratorTraits(decl, ops);
+}
+
+void Converter::ConvertIteratorTraits(const clang::CXXRecordDecl *decl,
+                                      const IteratorOperators &ops) {
+  auto name = GetRecordName(decl);
+  auto value = GetUnboxedTypeAsString(
+      ops.deref->getReturnType().getNonReferenceType().getUnqualifiedType());
+  auto call = [&](const clang::CXXMethodDecl *method, std::string_view self,
+                  std::string_view args = "") {
+    return std::format("{}::{}({}{})", GetUFCSName(method),
+                       GetMethodName(method), self, args);
+  };
+  StrCat(std::format("impl UnsafeCppIterator<{}> for {} {{", value, name));
+  StrCat(std::format(
+      "fn iter_deref(&self) -> *mut {0} {{ unsafe {{ {1} as *mut {0} }} }}",
+      value, call(ops.deref, GetComparisonReceiver(ops.deref, "self"))));
+  StrCat(std::format("fn iter_inc(&mut self) -> &mut Self {{ unsafe {{ {}; "
+                     "}} self }}",
+                     call(ops.inc, "self")));
+  StrCat("}");
+  if (!ops.equality) {
+    return;
+  }
+  StrCat(
+      std::format("impl UnsafeCppInputIterator<{}> for {} {{}}", value, name));
+  if (!ops.dec) {
+    return;
+  }
+  StrCat(std::format("impl UnsafeCppBidirectionalIterator<{}> for {} {{", value,
+                     name));
+  StrCat(std::format("fn iter_dec(&mut self) -> &mut Self {{ unsafe {{ {}; "
+                     "}} self }}",
+                     call(ops.dec, "self")));
+  StrCat("}");
+  if (!ops.ordering || !ops.add_assign || !ops.distance) {
+    return;
+  }
+  StrCat(std::format("impl UnsafeCppRandomAccessIterator<{}> for {} {{", value,
+                     name));
+  StrCat(std::format("fn iter_add_assign(&mut self, n: isize) -> Self {{ "
+                     "unsafe {{ {}; }} self.clone() }}",
+                     call(ops.add_assign, "self", ", n as _")));
+  StrCat(std::format("fn iter_distance(&self, from: &Self) -> isize {{ "
+                     "unsafe {{ ({}) as isize }} }}",
+                     GetComparisonCall(ops.distance, decl, "self", "from")));
+  StrCat("}");
+}
+
+// Records with operator() implement the callable traits that the library's
+// generic algorithms call their function objects through.
+void Converter::AddCallableTraits(const clang::CXXRecordDecl *decl) {
+  if (decl->isLambda() || !RecordImplementsClone(decl)) {
+    return;
+  }
+  std::unordered_set<std::string> signatures;
+  ForEachMethod(decl, [&](clang::CXXMethodDecl *method) {
+    if (method->getOverloadedOperator() != clang::OO_Call ||
+        !method->isInstance() || method->isVirtual() || method->isDeleted() ||
+        !method->hasBody() || method->getDescribedFunctionTemplate() ||
+        method->isVariadic() || method->getNumParams() > 3) {
+      return;
+    }
+    std::string types;
+    std::string params;
+    std::string args;
+    for (unsigned i = 0; i < method->getNumParams(); ++i) {
+      auto type = GetUnboxedTypeAsString(method->getParamDecl(i)->getType());
+      types += type + ", ";
+      params += std::format(", a{}: {}", i + 1, type);
+      args += std::format(", a{}", i + 1);
+    }
+    auto ret = GetUnboxedTypeAsString(method->getReturnType());
+    if (!signatures.insert(types + ret).second) {
+      return;
+    }
+    StrCat(std::format("impl Callable{}<{}{}> for {} {{",
+                       method->getNumParams(), types, ret,
+                       GetRecordName(decl)));
+    StrCat(std::format("fn call(&self{}) -> {} {{ {} }}", params, ret,
+                       GetCallableBody(method, args)));
+    StrCat("}");
+    // a comparator taking the elements by value (bool operator()(T, T))
+    if (method->getNumParams() != 2 ||
+        !method->getReturnType()->isBooleanType()) {
+      return;
+    }
+    auto lhs = method->getParamDecl(0)->getType();
+    auto rhs = method->getParamDecl(1)->getType();
+    if (lhs->isReferenceType() || !ctx_.hasSameUnqualifiedType(lhs, rhs)) {
+      return;
+    }
+    StrCat(std::format("{}({}, {});", ValueComparatorMacro(),
+                       GetRecordName(decl), GetUnboxedTypeAsString(lhs)));
+  });
+}
+
+std::string Converter::GetCallableBody(const clang::CXXMethodDecl *call,
+                                       std::string_view args) {
+  return std::format("unsafe {{ {}::{}({}{}) }}", GetUFCSName(call),
+                     GetMethodName(call), GetComparisonReceiver(call, "self"),
+                     args);
 }
 
 void Converter::AddCloneTrait(const clang::RecordDecl *decl) {
@@ -5069,13 +5339,17 @@ void Converter::PlaceholderCtx::dump() const {
 
 std::string Converter::ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
                                           const PlaceholderCtx &ph_ctx) {
-  if (arg->getType()->isFunctionPointerType()) {
+  // a rule taking a pointer gets the address of the function pointer object
+  if (arg->getType()->isFunctionPointerType() &&
+      !ph_ctx.declared_in_rule_as_rust_ptr) {
     return ConvertFnPtrPlaceholder(arg);
   }
 
   if (ph_ctx.declared_in_rule_as_rust_ptr && arg->getType()->isArrayType()) {
     auto elem = ctx_.getAsArrayType(arg->getType())->getElementType();
-    return std::format("({} as {})", ConvertFreshPointer(arg),
+    return std::format("({} as {})",
+                       IsStringLiteralExpr(arg) ? ConvertStringLiteralPtr(arg)
+                                                : ConvertFreshPointer(arg),
                        ToStringBase(ctx_.getPointerType(elem)));
   }
 
@@ -5218,11 +5492,12 @@ std::string Converter::GetMappedAsString(clang::Expr *expr, clang::Expr **args,
     // The rule takes the value of a transparent union.
     auto *arg = IgnoreTransparentUnion(all_args[i]);
     auto type = arg->getType();
-    // A proxy record is the pointer it maps to: the proxy is bound, not a
-    // pointer to it.
-    bool proxy = IsProxyReference(ctx_.getLValueReferenceType(type));
-    bool by_value = (arg->isPRValue() || proxy) &&
-                    !tgt_ir->takesAddress(ctx_, expr, i, arg);
+    // A proxy (vector<bool>::reference) is a pointer itself, a copy of it
+    // refers to the same object, unless the rule takes a pointer to the proxy.
+    bool by_value =
+        (arg->isPRValue() && !tgt_ir->takesAddress(ctx_, expr, i, arg)) ||
+        (RuleRegistry::IsProxyRecord(ctx_, type) &&
+         !RuleRegistry::ParamPointsTo(ctx_, expr, i, type));
     if (!by_value && arg->isPRValue()) {
       arg = new (ctx_) clang::MaterializeTemporaryExpr(type, arg, false);
     }
@@ -5274,6 +5549,29 @@ std::string Converter::GetMappedAsString(clang::Expr *expr, clang::Expr **args,
     result = std::format("{}.with_mut(|{}| {})", place, name, result);
   }
   mut_borrows_ = std::move(saved_borrows);
+  // The target returns the scalar of the canonical C type, the expression has
+  // the one of its spelled type:
+  //   it - it    <-- ptrdiff_t -> isize, target returns long -> i64
+  auto type = expr->getType();
+  auto rendered = [&](clang::QualType qual_type) {
+    return llvm::StringRef(ToString(qual_type)).trim().str();
+  };
+  if (!lvalue && expr->isPRValue() && type->isIntegerType() &&
+      tgt_ir->return_type.type == rendered(type.getCanonicalType())) {
+    if (auto spelled = rendered(type); spelled != tgt_ir->return_type.type) {
+      result = std::format("({} as {})", result, spelled);
+    }
+  }
+  // The target returns the raw pointer of the other mutability, which its body
+  // need not spell as it declares:
+  //   std::end(const_array)    <-- T1 * with T1 = const int, *mut T1
+  if (!lvalue && expr->isPRValue() && type->isPointerType()) {
+    bool is_const = type->getPointeeType().isConstQualified();
+    if ((is_const && tgt_ir->return_type.is_mut_raw_pointer) ||
+        (!is_const && tgt_ir->return_type.is_const_raw_pointer)) {
+      result = std::format("({} as {})", result, rendered(type));
+    }
+  }
   // A place is reached through a reference to it, out of the match, so that it
   // can be assigned.
   if (!values.empty()) {
@@ -5305,7 +5603,9 @@ std::string Converter::ConvertIRFragment(
       assert(arg_idx < all_args.size());
       auto *arg = all_args[arg_idx];
       bool is_receiver = HasReceiver(expr) && arg_idx == 0;
-      bool cpp_ptr = arg->getType()->isPointerType();
+      // a function pointer is converted as a function, not as a pointer
+      bool cpp_ptr = arg->getType()->isPointerType() &&
+                     !arg->getType()->isFunctionPointerType();
       bool is_cpp_ptr =
           cpp_ptr && RuleRegistry::ParamTakesPointerValue(expr, arg_idx);
 
@@ -5329,7 +5629,8 @@ std::string Converter::ConvertIRFragment(
                   ctx_, expr, arg_idx,
                   arg->IgnoreParenNoopCasts(ctx_)->getType()),
           .declared_in_rule_as_rust_ptr =
-              RuleRegistry::ParamIsPointer(ctx_, expr, arg_idx),
+              RuleRegistry::ParamIsPointer(ctx_, expr, arg_idx) ||
+              RuleRegistry::ParamIsReference(ctx_, expr, arg_idx),
           .is_index_base = ph->is_index_base,
       };
       // A value is read in a block, which ends its borrows before the rule
@@ -5342,6 +5643,17 @@ std::string Converter::ConvertIRFragment(
         borrows_ = false;
       }
       borrows_ |= outer_borrows;
+      // The target takes *mut T1 where C++ passes a pointer to const:
+      //   unique_ptr<const int>(new int)    <-- T1 * with T1 = const int
+      if (auto pointee = arg->getType()->getPointeeType();
+          is_cpp_ptr && pointee.isConstQualified() &&
+          RuleRegistry::GetExprRule(ctx_, expr)
+              ->params.at(arg_idx)
+              .is_mut_raw_pointer) {
+        value = std::format(
+            "({} as {})", value,
+            ToString(ctx_.getPointerType(pointee.getUnqualifiedType())));
+      }
       result += value;
     } else if (std::get_if<TranslationRule::VaArgsFragment>(&frag)) {
       assert(expr && "variadic arguments outside an expression rule");
@@ -5385,6 +5697,42 @@ std::string Converter::ConvertGenericCall(
     assert(call_args.empty() && "default takes no arguments");
     return GetUnboxedDefaultAsString(type);
   }
+  if (call.method == "move_ctor") {
+    assert(call_args.size() == 1 && "move_ctor takes one argument");
+    auto *record = type->getAsCXXRecordDecl();
+    if (record && HasMoveFromConstructor(record)) {
+      return std::format("{}::move_from({})", GetUnboxedTypeAsString(type),
+                         call_args[0]);
+    }
+    if (record && !IsUserDefinedDecl(record) &&
+        !record->hasTrivialMoveConstructor()) {
+      return std::format("<{} as {}>::move_ctor({})",
+                         GetUnboxedTypeAsString(type), GetMoveCtorTraitName(),
+                         call_args[0]);
+    }
+    return ConvertPtrRead(type, call_args[0]);
+  }
+  if (call.method == "move_assign" || call.method == "copy_assign") {
+    assert(call_args.size() == 2 && "assignments take two arguments");
+    bool is_move = call.method == "move_assign";
+    auto *record = type->getAsCXXRecordDecl();
+    if (record && is_move && HasMoveAssignOperator(record)) {
+      return ConvertPointeeMethodCall("move_assign", call_args[0],
+                                      call_args[1]);
+    }
+    if (record && HasCopyAssignOperator(record)) {
+      return ConvertPointeeMethodCall("copy_assign", call_args[0],
+                                      call_args[1]);
+    }
+    if (is_move && record && !IsUserDefinedDecl(record) &&
+        !record->hasTrivialMoveAssignment()) {
+      return ConvertPtrWrite(call_args[0],
+                             std::format("<{} as {}>::move_ctor({})",
+                                         GetUnboxedTypeAsString(type),
+                                         GetMoveCtorTraitName(), call_args[1]));
+    }
+    return ConvertPtrWrite(call_args[0], ConvertPtrRead(type, call_args[1]));
+  }
   if (call.method == "cpp_from" || call.method == "cpp_from_move") {
     assert(call_args.size() == 1 && "cpp_from takes one argument");
     return ConvertConversion(
@@ -5420,6 +5768,27 @@ std::string Converter::ConvertConversion(clang::QualType to,
 const char *Converter::GetConversionTraitName() const {
   return "CppFromUnsafe";
 }
+
+std::string Converter::ConvertPtrRead(clang::QualType type,
+                                      const std::string &src) {
+  if (type->isScalarType()) {
+    return std::format("(*{})", src);
+  }
+  return std::format("(*{}).clone()", src);
+}
+
+std::string Converter::ConvertPtrWrite(const std::string &dst,
+                                       const std::string &value) {
+  return std::format("*{} = {}", dst, value);
+}
+
+std::string Converter::ConvertPointeeMethodCall(const char *method,
+                                                const std::string &dst,
+                                                const std::string &src) {
+  return std::format("(*{}).{}({})", dst, method, src);
+}
+
+const char *Converter::GetMoveCtorTraitName() const { return "MoveCtorUnsafe"; }
 
 std::string Converter::DerefPtrExpr(std::string_view ptr_expr,
                                     clang::QualType pointee_type) {
@@ -5521,7 +5890,7 @@ bool Converter::isCallee() const {
 
 bool Converter::ShouldReplaceWithMappedBody(
     const clang::ValueDecl *decl) const {
-  return !clang::isa<clang::FunctionDecl>(decl) || !isAddrOf();
+  return !clang::isa<clang::FunctionDecl>(decl) || (!isAddrOf() && !isCallee());
 }
 
 void Converter::EmitFresh(std::string_view str) {

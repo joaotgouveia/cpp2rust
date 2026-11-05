@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static c_0: Value<usize> = Rc::new(RefCell::new(5_usize));
+    pub static c_0: Value<u64> = Rc::new(RefCell::new(5_u64));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -18,7 +18,7 @@ impl CppMove for S {
     }
 }
 thread_local!(
-    pub static table_size_1: Value<usize> = Rc::new(RefCell::new(256_usize));
+    pub static table_size_1: Value<u64> = Rc::new(RefCell::new(256_u64));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -33,10 +33,10 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut pa: Ptr<usize> = (c_0.with(|v| v.as_pointer()));
-    assert!(((pa.read()).wrapping_add(1_usize) == 6_usize));
-    let mut G: Ptr<usize> = (table_size_1.with(|v| v.as_pointer()));
-    assert!(((G.read()) >= 256_usize));
+    let mut pa: Ptr<u64> = (c_0.with(|v| v.as_pointer()));
+    ({ cpp2rust_assert_fail_2(((pa.read()).wrapping_add(1_u64) == 6_u64)) });
+    let mut G: Ptr<u64> = (table_size_1.with(|v| v.as_pointer()));
+    ({ cpp2rust_assert_fail_2(((G.read()) >= 256_u64)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {

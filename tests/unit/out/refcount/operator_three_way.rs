@@ -60,12 +60,12 @@ pub trait SImpl {
 impl SImpl for Ptr<S> {
     fn operator_cmp(&self, o: Ptr<S>) -> std::cmp::Ordering {
         if ({ (*self).with(|__s| __s.v) } < { o.with(|__s| __s.v) }) {
-            return (*libcc2rs::strong_ordering_less().upgrade().deref());
+            return ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) });
         }
         if ({ (*self).with(|__s| __s.v) } > { o.with(|__s| __s.v) }) {
-            return (*libcc2rs::strong_ordering_greater().upgrade().deref());
+            return ({ (*libcc2rs::strong_ordering_greater().upgrade().deref()) });
         }
-        return (*libcc2rs::strong_ordering_equal().upgrade().deref());
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, o: Ptr<S>) -> bool {
         return ({ (*self).with(|__s| __s.v) } == { o.with(|__s| __s.v) });

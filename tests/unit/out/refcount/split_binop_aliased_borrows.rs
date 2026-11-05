@@ -12,11 +12,11 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2])));
-    let p: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(v.decay().begin()));
-    let r: Ptr<i32> = v.decay().offset(1_usize);
+    let p: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(CppRange::begin(&v.decay())));
+    let r: Ptr<i32> = v.decay().offset(1_usize as isize);
     let __rhs = (r.read());
     (*p.borrow()).iter_deref().write(__rhs);
-    assert!(({ ({ (*v.borrow())[0_usize] } == 2) }));
+    assert!(((v.decay().offset(0_usize as isize).read()) == 2));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

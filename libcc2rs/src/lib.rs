@@ -23,7 +23,7 @@ pub mod __field {
 }
 
 mod cstr;
-pub use cstr::CChar;
+pub use cstr::{CChar, PathSource, StreamChar, c_str_len};
 
 mod void;
 pub use void::*;
@@ -84,11 +84,20 @@ pub use rules::*;
 mod io;
 pub use io::*;
 
+mod ios;
+pub use ios::*;
+
+mod advance;
+pub use advance::*;
+
 mod alloc;
 pub use alloc::*;
 
 mod iterators;
 pub use iterators::*;
+
+mod ostream_iterator;
+pub use ostream_iterator::*;
 
 mod compat;
 pub use compat::*;
@@ -143,6 +152,16 @@ pub use pair::*;
 
 mod cpp_array;
 pub use cpp_array::*;
+
+mod allocator_traits;
+pub use allocator_traits::*;
+
+mod cstddef;
+pub use cstddef::*;
+
+mod locale;
+
+mod wchar;
 
 pub use libcc2rs_macros::{
     ByteRepr, CopyAssign, CopyAssignUnsafe, CppFrom, CppFromUnsafe, Destructor, DestructorUnsafe,

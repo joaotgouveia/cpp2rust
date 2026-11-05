@@ -74,9 +74,18 @@ clang::Expr *BuildParamConversion(clang::ASTContext &ctx,
                                   const clang::Expr *expr, unsigned index,
                                   clang::Expr *arg);
 
+// The rule's parameter is a generic bound to a reference, which is a pointer,
+// e.g., T1 of pair<T1, T2>(a0, a1) with T1 = int &.
+bool ParamIsReference(clang::ASTContext &ctx, const clang::Expr *expr,
+                      unsigned index);
+
 // The rule's parameter is a pointer to a generic bound to `type` itself.
 bool ParamPointsTo(clang::ASTContext &ctx, const clang::Expr *expr,
                    unsigned index, clang::QualType type);
+
+// The rule returns a pointer to a generic bound to `type` itself.
+bool ReturnPointsTo(clang::ASTContext &ctx, const clang::Expr *expr,
+                    clang::QualType type);
 
 // A class whose type rule maps it to a pointer (vector<bool>'s reference).
 bool IsProxyRecord(clang::ASTContext &ctx, clang::QualType type);

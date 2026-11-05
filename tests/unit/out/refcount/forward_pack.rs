@@ -163,42 +163,50 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ forward_pack_4() }) == 0));
+    ({ cpp2rust_assert_fail_9((({ forward_pack_4() }) == 0)) });
     let a: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 1 })));
-    assert!((({ forward_pack_5(a.as_pointer(),) }) == (Overload_kLvalueOverload as i32)));
-    assert!(({ ({ (*a.borrow()).v } == 1) }));
-    assert!(
-        (({
-            let _args: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 2 })));
-            forward_pack_6(_args.as_pointer())
-        }) == (Overload_kRvalueOverload as i32))
-    );
+    ({
+        cpp2rust_assert_fail_9(
+            (({ forward_pack_5(a.as_pointer()) }) == (Overload_kLvalueOverload as i32)),
+        )
+    });
+    ({ cpp2rust_assert_fail_9(({ (*a.borrow()).v } == 1)) });
+    ({
+        cpp2rust_assert_fail_9(
+            (({
+                let _args: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 2 })));
+                forward_pack_6(_args.as_pointer())
+            }) == (Overload_kRvalueOverload as i32)),
+        )
+    });
     let i: Value<i32> = Rc::new(RefCell::new(3));
-    assert!(
-        (({
-            let _args_1: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 4 })));
-            let _args_3: Value<i32> = Rc::new(RefCell::new(5));
-            forward_pack_7(
-                a.as_pointer(),
-                _args_1.as_pointer(),
-                i.as_pointer(),
-                _args_3.as_pointer(),
-            )
-        }) == 1234)
-    );
-    assert!(({ ({ (*a.borrow()).v } == 1) }));
-    assert!(({ ((*i.borrow()) == 3) }));
+    ({
+        cpp2rust_assert_fail_9(
+            (({
+                let _args_1: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 4 })));
+                let _args_3: Value<i32> = Rc::new(RefCell::new(5));
+                forward_pack_7(
+                    a.as_pointer(),
+                    _args_1.as_pointer(),
+                    i.as_pointer(),
+                    _args_3.as_pointer(),
+                )
+            }) == 1234),
+        )
+    });
+    ({ cpp2rust_assert_fail_9(({ (*a.borrow()).v } == 1)) });
+    ({ cpp2rust_assert_fail_9(((*i.borrow()) == 3)) });
     let lhs: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 6 })));
     let mut p: Pair = ({
         let _args_1: Value<Tracked> = Rc::new(RefCell::new(Tracked::new({ 7 })));
         forward_pack_into_ctor_8(lhs.as_pointer(), _args_1.as_pointer())
     });
-    assert!((p.a.v == 6));
-    assert!((p.a.copies == 1));
-    assert!((p.b.v == 7));
-    assert!((p.b.copies == 0));
-    assert!((p.b.moves == 1));
-    assert!(({ ({ (*lhs.borrow()).v } == 6) }));
+    ({ cpp2rust_assert_fail_9((p.a.v == 6)) });
+    ({ cpp2rust_assert_fail_9((p.a.copies == 1)) });
+    ({ cpp2rust_assert_fail_9((p.b.v == 7)) });
+    ({ cpp2rust_assert_fail_9((p.b.copies == 0)) });
+    ({ cpp2rust_assert_fail_9((p.b.moves == 1)) });
+    ({ cpp2rust_assert_fail_9(({ (*lhs.borrow()).v } == 6)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

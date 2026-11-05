@@ -1,0 +1,76 @@
+extern crate libc;
+use libc::*;
+extern crate libcc2rs;
+use libcc2rs::*;
+use std::collections::BTreeMap;
+use std::io::{Read, Seek, Write};
+use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
+use std::rc::Rc;
+#[repr(C)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+pub struct Holder {
+    pub v: Vec<i32>,
+}
+impl Holder {
+    pub unsafe fn move_from(_a0: *mut Holder) -> Self {
+        let mut this = Self {
+            v: std::mem::take(&mut (*_a0).v),
+        };
+        this
+    }
+    pub unsafe fn move_assign(&mut self, _a0: *mut Holder) -> *mut Holder {
+        self.v = std::mem::take(&mut (*_a0).v);
+        return &mut (*(self as *mut Holder));
+    }
+}
+pub unsafe fn write_through_0(mut p: *mut i32) {
+    (*p) = 42;
+}
+pub fn main() {
+    unsafe {
+        __cpp2rust_init_globals();
+        std::process::exit(main_0() as i32);
+    }
+}
+unsafe fn main_0() -> i32 {
+    let mut v: Vec<i32> = Vec::new();
+    {
+        let __a1 = 10;
+        v.push(__a1)
+    };
+    {
+        let __a1 = 20;
+        v.push(__a1)
+    };
+    let mut p: *mut Vec<i32> = (&mut v as *mut Vec<i32>);
+    let mut a: i32 = (*(&mut (*p)).as_mut_ptr().add(0_usize as usize));
+    (*(&mut (*p)).as_mut_ptr().add(1_usize as usize)) = 30;
+    let mut h: Holder = <Holder>::default();
+    {
+        let __a1 = 40;
+        h.v.push(__a1)
+    };
+    {
+        let __a1 = 50;
+        h.v.push(__a1)
+    };
+    let mut hp: *mut Holder = (&mut h as *mut Holder);
+    let mut b: i32 = (*(&mut (*hp).v).as_mut_ptr().add(0_usize as usize));
+    (*(&mut (*hp).v).as_mut_ptr().add(1_usize as usize)) = 60;
+    assert!(((a) == (10)));
+    assert!(((*(&mut (*p)).as_mut_ptr().add(1_usize as usize)) == (30)));
+    assert!(((b) == (40)));
+    assert!(((*(&mut (*hp).v).as_mut_ptr().add(1_usize as usize)) == (60)));
+    (unsafe {
+        write_through_0(
+            (if 0_usize as usize >= (&mut (*p)).len() {
+                panic!("out of bounds access")
+            } else {
+                (&mut (*p)).as_mut_ptr().add(0_usize as usize)
+            }),
+        )
+    });
+    assert!(((*(&mut (*p)).as_mut_ptr().add(0_usize as usize)) == (42)));
+    return 0;
+}
+pub unsafe fn __cpp2rust_init_globals() {}

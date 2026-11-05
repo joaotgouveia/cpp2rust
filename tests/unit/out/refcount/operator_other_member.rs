@@ -26,6 +26,23 @@ pub struct S {
     #[offset(0)]
     pub v: i32,
 }
+impl Callable0<i32> for S {
+    fn call(&self) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| SImpl::operator_call_1(__it))
+    }
+}
+impl Callable1<i32, i32> for S {
+    fn call(&self, a1: i32) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| SImpl::operator_call_2(__it, a1))
+    }
+}
+impl Callable2<i32, i32, i32> for S {
+    fn call(&self, a1: i32, a2: i32) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            SImpl::operator_call_3(__it, a1, a2)
+        })
+    }
+}
 impl CppMove for S {
     fn cpp_move(src: Ptr<Self>) -> Self {
         src.read()
@@ -38,28 +55,43 @@ pub fn main() {
 fn main_0() -> i32 {
     let s: Value<S> = Rc::new(RefCell::new(S { v: 3 }));
     let t: Value<S> = Rc::new(RefCell::new(S { v: 4 }));
-    assert!((({ SImpl::operator_call_1(&s.as_pointer(),) }) == 3));
-    assert!((({ SImpl::operator_call_2(&s.as_pointer(), 1,) }) == 4));
-    assert!((({ SImpl::operator_call_3(&s.as_pointer(), 1, 2,) }) == 6));
-    assert!(({ ({ SImpl::operator_comma(&s.as_pointer(), t.as_pointer(),) }).v } == 34));
+    ({ cpp2rust_assert_fail_0((({ SImpl::operator_call_1(&s.as_pointer()) }) == 3)) });
+    ({ cpp2rust_assert_fail_0((({ SImpl::operator_call_2(&s.as_pointer(), 1) }) == 4)) });
+    ({ cpp2rust_assert_fail_0((({ SImpl::operator_call_3(&s.as_pointer(), 1, 2) }) == 6)) });
+    ({
+        cpp2rust_assert_fail_0(
+            ({ ({ SImpl::operator_comma(&s.as_pointer(), t.as_pointer()) }).v } == 34),
+        )
+    });
     let mut i: i32 = ({ SImpl::to_i32(&s.as_pointer()) });
-    assert!((i == 3));
-    assert!(((({ SImpl::to_i32(&s.as_pointer(),) }) + 1) == 4));
+    ({ cpp2rust_assert_fail_0((i == 3)) });
+    ({ cpp2rust_assert_fail_0(((({ SImpl::to_i32(&s.as_pointer()) }) + 1) == 4)) });
     if ({ SImpl::to_bool(&s.as_pointer()) }) {
-        assert!(({ SImpl::to_bool(&s.as_pointer(),) }));
+        ({ cpp2rust_assert_fail_0(({ SImpl::to_bool(&s.as_pointer()) })) });
     } else {
-        assert!(false);
+        ({ cpp2rust_assert_fail_0(false) });
     }
     let z: Value<S> = Rc::new(RefCell::new(S { v: 0 }));
-    assert!(({ SImpl::to_bool(&s.as_pointer(),) }));
-    assert!(!({ SImpl::to_bool(&z.as_pointer(),) }));
-    assert!(({ SImpl::to_bool(&s.as_pointer(),) }) && (!({ SImpl::to_bool(&z.as_pointer(),) })));
+    ({ cpp2rust_assert_fail_0(({ SImpl::to_bool(&s.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(!({ SImpl::to_bool(&z.as_pointer()) })) });
+    ({
+        cpp2rust_assert_fail_0(
+            ({ SImpl::to_bool(&s.as_pointer()) }) && (!({ SImpl::to_bool(&z.as_pointer()) })),
+        )
+    });
     let st: Value<Static> = Rc::new(RefCell::new(<Static>::default()));
-    assert!((({ Static::operator_call(6, 7,) }) == 42));
-    assert!((({ SImpl::operator_call_1(&Rc::new(RefCell::new(S { v: 5 })).as_pointer(),) }) == 5));
-    assert!(
-        (({ SImpl::operator_call_3(&Rc::new(RefCell::new(S { v: 5 })).as_pointer(), 1, 1,) }) == 7)
-    );
+    ({ cpp2rust_assert_fail_0((({ Static::operator_call(6, 7) }) == 42)) });
+    ({
+        cpp2rust_assert_fail_0(
+            (({ SImpl::operator_call_1(&Rc::new(RefCell::new(S { v: 5 })).as_pointer()) }) == 5),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            (({ SImpl::operator_call_3(&Rc::new(RefCell::new(S { v: 5 })).as_pointer(), 1, 1) })
+                == 7),
+        )
+    });
     return 0;
 }
 pub trait SImpl {

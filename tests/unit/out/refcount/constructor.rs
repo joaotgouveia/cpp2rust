@@ -78,16 +78,16 @@ fn main_0() -> i32 {
     {
         let s: Value<S> = Rc::new(RefCell::new(S::new({ 3 })));
         let _dtor_s = ScopedDestructor::new(&s, |__p| __p.destructor());
-        assert!(({ ({ (*s.borrow()).v } == 4) }));
-        assert!((total_0.with(|rc| *rc.borrow()) == 8));
+        ({ cpp2rust_assert_fail_1(({ (*s.borrow()).v } == 4)) });
+        ({ cpp2rust_assert_fail_1((total_0.with(|rc| *rc.borrow()) == 8)) });
     }
-    assert!((total_0.with(|rc| *rc.borrow()) == 18));
+    ({ cpp2rust_assert_fail_1((total_0.with(|rc| *rc.borrow()) == 18)) });
     let mut p: Point = Point::new_3();
-    assert!((p.x == 104));
-    assert!((p.y == 50));
+    ({ cpp2rust_assert_fail_1((p.x == 104)) });
+    ({ cpp2rust_assert_fail_1((p.y == 50)) });
     let mut q: Point = Point::new_1({ 7 });
-    assert!((q.x == 7));
-    assert!((q.y == 80));
+    ({ cpp2rust_assert_fail_1((q.x == 7)) });
+    ({ cpp2rust_assert_fail_1((q.y == 80)) });
     return 0;
 }
 pub trait SImpl {

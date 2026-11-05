@@ -15,16 +15,16 @@ fn main_0() -> i32 {
     let mut p: Ptr<i32> = (storage.as_pointer());
     let mut np: Ptr<i32> = Ptr::<i32>::null();
     if !(p).is_null() {
-        assert!(true);
+        ({ cpp2rust_assert_fail_0(true) });
     }
     if !(!(p).is_null()) {
-        assert!(false);
+        ({ cpp2rust_assert_fail_0(false) });
     }
     if !(np).is_null() {
-        assert!(false);
+        ({ cpp2rust_assert_fail_0(false) });
     }
     if !(!(np).is_null()) {
-        assert!(true);
+        ({ cpp2rust_assert_fail_0(true) });
     }
     let mut iter: Ptr<i32> = (p).clone();
     let mut iters: i32 = 0;
@@ -32,19 +32,19 @@ fn main_0() -> i32 {
         iters.prefix_inc();
         iter = Ptr::<i32>::null();
     }
-    assert!((iters == 1));
+    ({ cpp2rust_assert_fail_0((iters == 1)) });
     let mut t3: i32 = if !(p).is_null() { 1 } else { 0 };
-    assert!((t3 == 1));
+    ({ cpp2rust_assert_fail_0((t3 == 1)) });
     let mut t4: i32 = if !(np).is_null() { 1 } else { 0 };
-    assert!((t4 == 0));
+    ({ cpp2rust_assert_fail_0((t4 == 0)) });
     let mut t5: i32 = (!(!(p).is_null()) as i32);
-    assert!((t5 == 0));
+    ({ cpp2rust_assert_fail_0((t5 == 0)) });
     let mut t6: i32 = (!(!(np).is_null()) as i32);
-    assert!((t6 == 1));
+    ({ cpp2rust_assert_fail_0((t6 == 1)) });
     let mut b2: bool = !(p).is_null();
     let mut b3: bool = !(np).is_null();
-    assert!(b2);
-    assert!(!(b3));
+    ({ cpp2rust_assert_fail_0(b2) });
+    ({ cpp2rust_assert_fail_0(!(b3)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

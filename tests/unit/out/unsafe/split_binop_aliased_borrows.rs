@@ -1,0 +1,23 @@
+extern crate libc;
+use libc::*;
+extern crate libcc2rs;
+use libcc2rs::*;
+use std::collections::BTreeMap;
+use std::io::{Read, Seek, Write};
+use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
+use std::rc::Rc;
+pub fn main() {
+    unsafe {
+        __cpp2rust_init_globals();
+        std::process::exit(main_0() as i32);
+    }
+}
+unsafe fn main_0() -> i32 {
+    let mut v: Vec<i32> = Vec::from([1, 2]);
+    let mut p: UnsafeRandomAccessIterator<i32> = v.begin();
+    let r: *const i32 = &(*(&mut v).as_mut_ptr().add(1_usize as usize));
+    (*p.iter_deref()) = (*r);
+    assert!(((*(&mut v).as_mut_ptr().add(0_usize as usize)) == (2)));
+    return 0;
+}
+pub unsafe fn __cpp2rust_init_globals() {}

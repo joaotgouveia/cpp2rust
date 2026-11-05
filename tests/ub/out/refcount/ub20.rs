@@ -14,7 +14,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut x: Ptr<i32> = Ptr::alloc_array((0..10_usize).map(|_| 0_i32).collect::<Box<[i32]>>());
+    let mut x: Ptr<i32> = Ptr::alloc_array((0..10_u64).map(|_| 0_i32).collect::<Box<[i32]>>());
     ({ foo_0((x).clone()) });
     return 0;
 }

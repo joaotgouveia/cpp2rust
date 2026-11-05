@@ -32,9 +32,9 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ switch_enum_0(Color_kRed,) }) == 10));
-    assert!((({ switch_enum_0(Color_kGreen,) }) == 20));
-    assert!((({ switch_enum_0(Color_kBlue,) }) == 30));
+    ({ cpp2rust_assert_fail_1((({ switch_enum_0(Color_kRed) }) == 10)) });
+    ({ cpp2rust_assert_fail_1((({ switch_enum_0(Color_kGreen) }) == 20)) });
+    ({ cpp2rust_assert_fail_1((({ switch_enum_0(Color_kBlue) }) == 30)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

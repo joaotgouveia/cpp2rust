@@ -25,6 +25,7 @@
 
 #include "converter/converter_lib.h"
 #include "converter/rules/decls.h"
+#include "logging.h"
 #include "converter/rules/expr_matcher.h"
 #include "converter/rules/rule_keys.h"
 #include "converter/rules/rules_loader.h"
@@ -125,12 +126,14 @@ bool isBoundArgument(const TranslationRule::ExprRule &rule, unsigned n) {
   });
 }
 
-unsigned iteratorOverGeneric(const TranslationRule::ExprRule &rule,
-                             unsigned n) {
-  for (unsigned i = 0; i < rule.generics.size(); ++i) {
-    for (const auto &bound : rule.generics[i]) {
+unsigned iteratorOverGeneric(
+    const std::vector<std::vector<TranslationRule::Bound>> &generics,
+    unsigned n) {
+  for (unsigned i = 0; i < generics.size(); ++i) {
+    for (const auto &bound : generics[i]) {
       llvm::StringRef trait = bound.trait_name;
-      if ((trait.ends_with("Iterator") || trait == "CppArray") &&
+      if ((trait.ends_with("Iterator") || trait == "CppAllocator" ||
+           trait == "CppArray") &&
           llvm::is_contained(bound.args, n)) {
         return i + 1;
       }
@@ -174,37 +177,6 @@ void checkGenerics(const std::string &dir, const std::string &name,
   }
 }
 
-TranslationRule::TypeRule placeholderTypeRule() {
-  TranslationRule::TypeRule rule;
-  rule.initializer.emplace_back(
-      TranslationRule::TextFragment{"unimplemented!()"});
-  rule.type_info.type = "()";
-  return rule;
-}
-
-TranslationRule::ExprRule placeholderExprRule(const clang::NamedDecl *decl) {
-  unsigned num_params = 0;
-  if (auto function = decl->getAsFunction()) {
-    num_params = function->getNumParams();
-  } else {
-    auto proto = llvm::cast<clang::VarDecl>(decl)
-                     ->getType()
-                     ->getPointeeType()
-                     ->getAs<clang::FunctionProtoType>();
-    assert(proto && "placeholder expression rule is neither a function nor a "
-                    "function pointer");
-    num_params = proto->getNumParams();
-  }
-  TranslationRule::ExprRule rule;
-  rule.params.resize(num_params);
-  for (auto &param : rule.params) {
-    param.type = "()";
-  }
-  rule.return_type.type = "()";
-  rule.body.emplace_back(TranslationRule::TextFragment{"unimplemented!()"});
-  return rule;
-}
-
 void addRule(clang::ASTContext &ctx, const std::string &dir,
              const std::string &name, const clang::NamedDecl *decl) {
   const llvm::json::Object *rule = nullptr;
@@ -215,21 +187,26 @@ void addRule(clang::ASTContext &ctx, const std::string &dir,
         rule = refcount_rule;
       }
     }
-    assert(rule && "rule has no target");
+  }
+  // Checking which rules a program uses needs no targets, so every rule is
+  // registered then, with an empty translation.
+  if (!rule && !check_used_rules_) {
+    return;
   }
   if (!name.starts_with('f')) {
     auto keys = RuleKeys::GetTypeKeys(*sema_, decl);
     assert(!keys.empty() && "type rule has no key");
     for (auto key : keys) {
-      auto type_rule = rule ? TranslationRule::ParseTypeRuleJSON(*rule)
-                            : placeholderTypeRule();
-      types_.emplace(key, TypeRuleDecl{decl, std::move(type_rule)});
+      types_.emplace(
+          key,
+          TypeRuleDecl{decl, rule ? TranslationRule::ParseTypeRuleJSON(*rule)
+                                  : TranslationRule::TypeRule{}});
     }
     return;
   }
   auto make_expr_rule = [&] {
     return rule ? TranslationRule::ParseExprRuleJSON(*rule)
-                : placeholderExprRule(decl);
+                : TranslationRule::ExprRule{};
   };
   if (auto function = decl->getAsFunction()) {
     if (rule) {
@@ -338,10 +315,9 @@ ExprMatch findExpr(const clang::Expr *use) {
   if (auto member = std::get_if<RuleKeys::Member>(&*key)) {
     consider(RuleKeys::Unqualified{member->name});
   }
-  if (std::holds_alternative<RuleKeys::Constructor>(*key)) {
-    auto type = RuleDecls::SkipImplicit(use)->getType();
-    if (auto record = type.getCanonicalType()->getAsCXXRecordDecl();
-        record && !type->isDependentType() && !IsUserDefinedDecl(record)) {
+  if (auto constructor = std::get_if<RuleKeys::Constructor>(&*key)) {
+    // a constructor or a conversion function of a library class
+    if (constructor->parent && !IsUserDefinedDecl(constructor->parent)) {
       consider(RuleKeys::kAnyConstructor);
     }
   }
@@ -359,7 +335,22 @@ ExprMatch findExpr(const clang::Expr *use) {
     }
     consider(base);
   }
-  return most_specialized();
+  auto best = most_specialized();
+  // A rule of the operator a rewritten one calls competes with those written
+  // as rewritten (string != "ab" calls string == const char *, which a rule of
+  // basic_string takes over a != of any sentinel), the use is then converted
+  // in its semantic form.
+  if (auto rewritten = llvm::dyn_cast<clang::CXXRewrittenBinaryOperator>(
+          RuleDecls::SkipImplicit(use));
+      rewritten && best.rule_decl) {
+    auto inner = findExpr(rewritten->getDecomposedForm().InnerBinOp);
+    if (inner.rule_decl && AstMatcher::MoreSpecialized(
+                               *sema_, use, inner.rule_decl->decl,
+                               best.rule_decl->decl) == inner.rule_decl->decl) {
+      return {};
+    }
+  }
+  return best;
 }
 
 struct TypeRuleMatch {
@@ -447,11 +438,24 @@ TypeRuleMatch findType(clang::QualType use) {
 Matcher::Bindings getBindings(const clang::NamedDecl *rule,
                               llvm::ArrayRef<clang::TemplateArgument> args) {
   Matcher::Bindings bindings;
+  log() << "rule match: " << rule->getQualifiedNameAsString();
   auto tmpl = llvm::dyn_cast<clang::TemplateDecl>(rule);
   if (!tmpl) {
+    log() << '\n';
     return bindings;
   }
   auto params = tmpl->getTemplateParameters();
+  for (unsigned i = 0; i < params->size() && i < args.size(); ++i) {
+    log() << ' ' << params->getParam(i)->getName() << '=';
+    if (args[i].getKind() == clang::TemplateArgument::Type) {
+      log() << args[i].getAsType().getAsString();
+    } else if (args[i].getKind() == clang::TemplateArgument::Integral) {
+      log() << args[i].getAsIntegral();
+    } else {
+      log() << "<non-type>";
+    }
+  }
+  log() << '\n';
   for (unsigned i = 0; i < params->size() && i < args.size(); ++i) {
     auto name = params->getParam(i)->getName();
     unsigned n = 0;
@@ -521,6 +525,47 @@ Matcher::Match<TranslationRule::ExprRule> Search(clang::ASTContext &ctx,
           getBindings(match.rule_decl->decl, match.args)};
 }
 
+// The value_type member of a class or of a base, instantiating bases on the
+// way (_Bit_iterator inherits it from std::iterator<..., bool>).
+clang::QualType valueTypeMember(clang::CXXRecordDecl *record) {
+  auto &ctx = record->getASTContext();
+  for (auto *decl : record->lookup(&ctx.Idents.get("value_type"))) {
+    if (auto *alias = llvm::dyn_cast<clang::TypedefNameDecl>(decl)) {
+      return alias->getUnderlyingType();
+    }
+  }
+  for (const auto &base : record->bases()) {
+    auto type = base.getType();
+    if (!sema_->isCompleteType(clang::SourceLocation(), type)) {
+      continue;
+    }
+    auto *base_record = type->getAsCXXRecordDecl();
+    auto value = base_record ? valueTypeMember(base_record->getDefinition())
+                             : clang::QualType();
+    if (!value.isNull()) {
+      return value;
+    }
+  }
+  return {};
+}
+
+// Element type of an iterator class, read from its value_type member.
+clang::QualType iteratorValueType(clang::QualType iterator) {
+  iterator = iterator.getNonReferenceType().getUnqualifiedType();
+  if (iterator->isPointerType()) {
+    return iterator->getPointeeType().getUnqualifiedType();
+  }
+  if (auto *array = sema_->Context.getAsArrayType(iterator)) {
+    return array->getElementType().getUnqualifiedType();
+  }
+  auto *record = iterator->getAsCXXRecordDecl();
+  assert(record && sema_->isCompleteType(clang::SourceLocation(), iterator) &&
+         "iterator is not a complete class");
+  auto value = valueTypeMember(record->getDefinition());
+  // output iterators declare value_type void
+  return value.isNull() || value->isVoidType() ? clang::QualType() : value;
+}
+
 std::string SearchUID(clang::ASTContext &ctx, const clang::Expr *expr) {
   if (ExprHasUserDefinedDecl(expr)) {
     return {};
@@ -548,9 +593,29 @@ clang::QualType iteratorElementType(clang::ASTContext &ctx,
     return array->getElementType().getUnqualifiedType();
   }
   auto [rule, bindings] = Search(ctx, iterator);
-  assert(rule && !bindings.empty() &&
+  if (!rule) {
+    auto value = iteratorValueType(iterator);
+    assert(!value.isNull() &&
+           "iterator has neither a type rule nor value_type");
+    return value;
+  }
+  // the element generic the rule declares (T1: CppIterator<T2>), else the
+  // iterator class's value_type (the rule names a concrete element), else
+  // the rule's first generic (ostream_iterator<T1> has value_type void)
+  for (unsigned n = 1; n <= rule->generics.size(); ++n) {
+    if (iteratorOverGeneric(rule->generics, n)) {
+      assert(n <= bindings.size() &&
+             bindings[n - 1].getKind() == clang::TemplateArgument::Type &&
+             "iterator element generic is unbound");
+      return bindings[n - 1].getAsType();
+    }
+  }
+  if (auto value = iteratorValueType(iterator); !value.isNull()) {
+    return value;
+  }
+  assert(!bindings.empty() &&
          bindings[0].getKind() == clang::TemplateArgument::Type &&
-         "iterator type rule declares no element generic T1");
+         "iterator type rule declares no element");
   return bindings[0].getAsType();
 }
 
@@ -562,7 +627,7 @@ clang::QualType GetGenericType(clang::ASTContext &ctx, const clang::Expr *expr,
       bindings[n - 1].getKind() == clang::TemplateArgument::Type) {
     return bindings[n - 1].getAsType();
   }
-  auto iterator = iteratorOverGeneric(*rule, n);
+  auto iterator = iteratorOverGeneric(rule->generics, n);
   assert(iterator &&
          "generic is neither bound by the src nor the element of an iterator");
   return iteratorElementType(ctx, GetGenericType(ctx, expr, iterator));
@@ -656,8 +721,27 @@ Matcher::Match<TranslationRule::TypeRule> Search(clang::ASTContext &ctx,
     return {};
   }
   auto bindings = getBindings(match.rule_decl->decl, match.match.args);
+  const auto &generics = match.rule_decl->rule.generics;
+  for (unsigned n = bindings.size() + 1; n <= generics.size(); ++n) {
+    auto owner = iteratorOverGeneric(generics, n);
+    assert(owner && owner < n &&
+           "unbound type rule generic is not the element of an iterator "
+           "or allocator");
+    auto element = iteratorValueType(bindings[owner - 1].getAsType());
+    assert(!element.isNull() &&
+           "owner of an element generic has no value_type");
+    bindings.emplace_back(element);
+  }
   if (auto generic = match.rule_decl->rule.generic) {
-    return Search(ctx, bindings.at(generic - 1).getAsType());
+    auto bound = bindings.at(generic - 1).getAsType();
+    // the alias stands for its own type, which the generic need not be
+    // (remove_reference<T1>::type of T1 = X& is X)
+    if (!ctx.hasSameType(bound, qual_type)) {
+      auto underlying = qual_type.getSingleStepDesugaredType(ctx);
+      assert(underlying != qual_type && "forwarding type rule on a non-alias");
+      return Search(ctx, underlying);
+    }
+    return Search(ctx, bound);
   }
   return {&match.rule_decl->rule, std::move(bindings)};
 }
@@ -736,11 +820,37 @@ static bool pointsTo(clang::ASTContext &ctx,
                                     type.getNonReferenceType());
 }
 
+bool ParamIsReference(clang::ASTContext &ctx, const clang::Expr *expr,
+                      unsigned index) {
+  auto [rule, bindings] = Search(ctx, expr);
+  assert(rule && "expression must have a translation rule");
+  auto n = rule->params.at(index).generic;
+  if (!n || n > bindings.size() ||
+      bindings[n - 1].getKind() != clang::TemplateArgument::Type ||
+      !bindings[n - 1].getAsType()->isReferenceType()) {
+    return false;
+  }
+  // A forwarding reference, Tn &&, binds Tn to a reference to an lvalue
+  // argument, which the target takes as the value.
+  auto *decl = findExpr(expr).rule_decl->decl->getAsFunction();
+  auto *param = decl->getParamDecl(index)
+                    ->getType()
+                    .getNonReferenceType()
+                    ->getAs<clang::TemplateTypeParmType>();
+  return !param || param->getIndex() != n - 1;
+}
+
 bool ParamPointsTo(clang::ASTContext &ctx, const clang::Expr *expr,
                    unsigned index, clang::QualType type) {
   auto [rule, bindings] = Search(ctx, expr);
   assert(rule && "expression must have a translation rule");
   return pointsTo(ctx, rule->params.at(index), bindings, type);
+}
+
+bool ReturnPointsTo(clang::ASTContext &ctx, const clang::Expr *expr,
+                    clang::QualType type) {
+  auto [rule, bindings] = Search(ctx, expr);
+  return rule && pointsTo(ctx, rule->return_type, bindings, type);
 }
 
 bool IsProxyRecord(clang::ASTContext &ctx, clang::QualType type) {
@@ -773,7 +883,7 @@ clang::Expr *BuildParamConversion(clang::ASTContext &ctx,
          "parameter typed by a non-type generic");
   auto target = binding.getAsType();
   if (ctx.hasSameUnqualifiedType(arg->getType().getNonReferenceType(),
-                                 target)) {
+                                 target.getNonReferenceType())) {
     return nullptr;
   }
   auto *init = BuildInitExpr(*sema_, target, arg, arg->getExprLoc());

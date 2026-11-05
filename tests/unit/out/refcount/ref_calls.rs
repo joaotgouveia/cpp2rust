@@ -20,14 +20,15 @@ fn main_0() -> i32 {
     let x: Value<i32> = Rc::new(RefCell::new(5));
     let y: Value<i32> = Rc::new(RefCell::new((({ foo_1(x.as_pointer()) }).read())));
     let z: Ptr<i32> = ({ foo_1(x.as_pointer()) });
-    assert!(
-        (({
-            ({ ((({ foo_1(x.as_pointer()) }).read()) + (({ foo_1(y.as_pointer()) }).read())) } + {
-                (({ foo_1((z).clone()) }).read())
-            })
-        } + { ({ bar_0() }) })
-            == 16)
-    );
+    ({
+        cpp2rust_assert_fail_2(
+            (({
+                ({ ((({ foo_1(x.as_pointer()) }).read()) + (({ foo_1(y.as_pointer()) }).read())) }
+                    + { (({ foo_1((z).clone()) }).read()) })
+            } + { ({ bar_0() }) })
+                == 16),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

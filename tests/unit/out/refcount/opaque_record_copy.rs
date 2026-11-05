@@ -36,7 +36,7 @@ fn main_0() -> i32 {
     let mut a: Wrapper_Probe_ = <Wrapper_Probe_>::default();
     a.tag = 3;
     let mut b: Wrapper_Probe_ = (a).clone();
-    assert!((b.tag == 3));
+    ({ cpp2rust_assert_fail_0((b.tag == 3)) });
     return 0;
 }
 pub trait ProbeImpl {

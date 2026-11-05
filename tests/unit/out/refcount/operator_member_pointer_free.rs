@@ -57,14 +57,16 @@ fn main_0() -> i32 {
         data: Box::new([1, 2, 3]),
         inner: Inner { x: 9 },
     }));
-    assert!(
-        (({
-            let _s: Ptr<S> = s.as_pointer();
-            operator_deref_0(_s)
-        })
-        .with(|__s| (__s).x)
-            == 9)
-    );
+    ({
+        cpp2rust_assert_fail_2(
+            (({
+                let _s: Ptr<S> = s.as_pointer();
+                operator_deref_0(_s)
+            })
+            .with(|__s| (__s).x)
+                == 9),
+        )
+    });
     field!(
         ({
             let _s: Ptr<S> = s.as_pointer();
@@ -73,14 +75,14 @@ fn main_0() -> i32 {
         x
     )
     .write(10);
-    assert!(({ ({ (*s.borrow()).inner.x } == 10) }));
+    ({ cpp2rust_assert_fail_2(({ (*s.borrow()).inner.x } == 10)) });
     let mut p: Ptr<i32> = ({
         let _s: Ptr<S> = s.as_pointer();
         operator_addr_1(_s)
     });
-    assert!(((p.read()) == 1));
+    ({ cpp2rust_assert_fail_2(((p.read()) == 1)) });
     p.write(5);
-    assert!(((array_elem!(s.as_pointer(), data, 0).read()) == 5));
+    ({ cpp2rust_assert_fail_2(((array_elem!(s.as_pointer(), data, 0).read()) == 5)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

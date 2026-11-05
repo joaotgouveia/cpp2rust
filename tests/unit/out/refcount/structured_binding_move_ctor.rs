@@ -101,8 +101,20 @@ fn main_0() -> i32 {
         Rc::new(RefCell::new(({ HolderImpl::extract(&h.as_pointer()) })));
     assert!(({ ((*__decomp_3.borrow()).xs.len() == 3_usize) }));
     assert!(({ ((*__decomp_3.borrow()).ys.len() == 2_usize) }));
-    assert!(((elem!(field_ref!(__decomp_3.as_pointer(), xs).decay(), 2_usize).read()) == 3));
-    assert!(((elem!(field_ref!(__decomp_3.as_pointer(), ys).decay(), 0_usize).read()) == 4));
+    assert!(
+        ((field_ref!(__decomp_3.as_pointer(), xs)
+            .decay()
+            .offset(2_usize as isize)
+            .read())
+            == 3)
+    );
+    assert!(
+        ((field_ref!(__decomp_3.as_pointer(), ys)
+            .decay()
+            .offset(0_usize as isize)
+            .read())
+            == 4)
+    );
     assert!(({ (*h.borrow()).xs.is_empty() }));
     assert!(({ (*h.borrow()).ys.is_empty() }));
     return 0;
@@ -119,12 +131,18 @@ impl HolderImpl for Ptr<Holder> {
         };
     }
     fn move_assign(&self, _a0: Ptr<Holder>) -> Ptr<Holder> {
-        field_ref!((*self), xs)
-            .as_pointer()
-            .write(field!(_a0, xs).with_mut(std::mem::take));
-        field_ref!((*self), ys)
-            .as_pointer()
-            .write(field!(_a0, ys).with_mut(std::mem::take));
+        {
+            field_ref!((*self), xs)
+                .as_pointer()
+                .write(field!(_a0, xs).with_mut(std::mem::take));
+            field_ref!((*self), xs).as_pointer()
+        };
+        {
+            field_ref!((*self), ys)
+                .as_pointer()
+                .write(field!(_a0, ys).with_mut(std::mem::take));
+            field_ref!((*self), ys).as_pointer()
+        };
         return (*self).clone();
     }
 }

@@ -79,62 +79,76 @@ fn main_0() -> i32 {
     }));
     let mut c: Ptr<i32> =
         ((array_field_ptr!(s.as_pointer(), coords) as Ptr<i32>).offset((1) as isize));
-    assert!(((c.read()) == 20));
+    ({ cpp2rust_assert_fail_2(((c.read()) == 20)) });
     c.write(21);
-    assert!(((array_elem!(s.as_pointer(), coords, 1).read()) == 21));
+    ({ cpp2rust_assert_fail_2(((array_elem!(s.as_pointer(), coords, 1).read()) == 21)) });
     c += 2;
-    assert!(((c.read()) == 40));
-    assert!(
-        (((c).clone()
-            - ((array_field_ptr!(s.as_pointer(), coords) as Ptr::<i32>).offset((0) as isize)))
-            as i64
-            == 3_i64)
-    );
-    assert!(((elem!(c, -1_i32).read()) == 30));
-    assert!((({ sum_0((array_field_ptr!(s.as_pointer(), coords) as Ptr::<i32>), 4,) }) == 101));
-    assert!(
-        (({
-            sum_0(
-                ((array_field_ptr!(s.as_pointer(), coords) as Ptr<i32>).offset((2) as isize)),
-                2,
-            )
-        }) == 70)
-    );
+    ({ cpp2rust_assert_fail_2(((c.read()) == 40)) });
+    ({
+        cpp2rust_assert_fail_2(
+            (((c).clone()
+                - ((array_field_ptr!(s.as_pointer(), coords) as Ptr<i32>).offset((0) as isize)))
+                as i64
+                == 3_i64),
+        )
+    });
+    ({ cpp2rust_assert_fail_2(((elem!(c, -1_i32).read()) == 30)) });
+    ({
+        cpp2rust_assert_fail_2(
+            (({ sum_0((array_field_ptr!(s.as_pointer(), coords) as Ptr<i32>), 4) }) == 101),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_2(
+            (({
+                sum_0(
+                    ((array_field_ptr!(s.as_pointer(), coords) as Ptr<i32>).offset((2) as isize)),
+                    2,
+                )
+            }) == 70),
+        )
+    });
     let mut p: Ptr<Point> =
         ((array_field_ptr!(s.as_pointer(), points) as Ptr<Point>).offset((1) as isize));
-    assert!((p.with(|__s| __s.x) == 3));
+    ({ cpp2rust_assert_fail_2((p.with(|__s| __s.x) == 3)) });
     ({ set_y_1(p.offset((1) as isize), 60) });
-    assert!((array_elem!(s.as_pointer(), points, 2).with(|__s| __s.y) == 60));
+    ({ cpp2rust_assert_fail_2((array_elem!(s.as_pointer(), points, 2).with(|__s| __s.y) == 60)) });
     let mut py: Ptr<i32> = (field_ptr!(
         (array_field_ptr!(s.as_pointer(), points) as Ptr<Point>).offset((0) as isize),
         y
     ));
     py.write(7);
-    assert!((array_elem!(s.as_pointer(), points, 0).with(|__s| __s.y) == 7));
+    ({ cpp2rust_assert_fail_2((array_elem!(s.as_pointer(), points, 0).with(|__s| __s.y) == 7)) });
     let mut px: Ptr<i32> = (field_ptr!((p.offset((1) as isize)), x));
     {
         px.with_mut(|__v| *__v = *__v + 50)
     };
-    assert!((array_elem!(s.as_pointer(), points, 2).with(|__s| __s.x) == 55));
+    ({ cpp2rust_assert_fail_2((array_elem!(s.as_pointer(), points, 2).with(|__s| __s.x) == 55)) });
     let mut sp: Ptr<Shape> = (s.as_pointer());
     let mut d: Ptr<i32> = (array_field_ptr!(sp, coords) as Ptr<i32>).offset((3) as isize);
     d.write(41);
-    assert!(((array_elem!(s.as_pointer(), coords, 3).read()) == 41));
+    ({ cpp2rust_assert_fail_2(((array_elem!(s.as_pointer(), coords, 3).read()) == 41)) });
     field!(array_elem!(sp, points, 1), y).write({
         ({ (array_elem!(sp, coords, 0).read()) } + { array_elem!(sp, points, 0).with(|__s| __s.x) })
     });
-    assert!((array_elem!(s.as_pointer(), points, 1).with(|__s| __s.y) == 11));
+    ({ cpp2rust_assert_fail_2((array_elem!(s.as_pointer(), points, 1).with(|__s| __s.y) == 11)) });
     let mut q: Ptr<Point> = (array_field_ptr!(sp, points) as Ptr<Point>);
     field!(elem!(q, 2), x).write(8);
-    assert!((array_elem!(sp, points, 2).with(|__s| __s.x) == 8));
+    ({ cpp2rust_assert_fail_2((array_elem!(sp, points, 2).with(|__s| __s.x) == 8)) });
     let mut t: Shape = (*s.borrow()).clone();
     t.coords[(0) as usize] = 0;
     t.points[(0) as usize].x = 0;
-    assert!(
-        ((array_elem!(s.as_pointer(), coords, 0).read()) == 10)
-            && (array_elem!(s.as_pointer(), points, 0).with(|__s| __s.x) == 1)
-    );
-    assert!(((t.coords[(1) as usize] == 21) && (t.points[(2) as usize].y == 60)) && (t.tail == 99));
+    ({
+        cpp2rust_assert_fail_2(
+            ((array_elem!(s.as_pointer(), coords, 0).read()) == 10)
+                && (array_elem!(s.as_pointer(), points, 0).with(|__s| __s.x) == 1),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_2(
+            ((t.coords[(1) as usize] == 21) && (t.points[(2) as usize].y == 60)) && (t.tail == 99),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

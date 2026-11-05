@@ -35,8 +35,6 @@ bool IsGlobalVar(const clang::VarDecl *decl);
 
 bool IsGlobalVar(const clang::Expr *expr);
 
-bool IsRustConstEvaluableExpr(const clang::Expr *expr);
-
 std::string GetEscapedCharLiteral(char character);
 
 std::string GetAssertMessageAsString(const clang::Expr *expr,
@@ -294,6 +292,15 @@ clang::QualType GetDeclRefType(const clang::FunctionDecl *fn,
 
 bool IsSameTypeComparison(const clang::FunctionDecl *fn,
                           const clang::CXXRecordDecl *record);
+
+// The defined, non-template operator op of decl taking num_params parameters.
+const clang::CXXMethodDecl *GetMemberOperator(const clang::CXXRecordDecl *decl,
+                                              clang::OverloadedOperatorKind op,
+                                              unsigned num_params);
+
+// The operator* of decl that returns a reference to the element, as the
+// operator* of an iterator does.
+const clang::CXXMethodDecl *GetIteratorDeref(const clang::CXXRecordDecl *decl);
 
 clang::CXXDestructorDecl *
 GetUserDefinedDestructor(const clang::CXXRecordDecl *decl);

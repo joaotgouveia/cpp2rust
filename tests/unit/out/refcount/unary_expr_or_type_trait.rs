@@ -20,10 +20,10 @@ impl CppMove for S {
     }
 }
 pub fn pack_size_0() -> u64 {
-    return ((0 as usize).wrapping_add((0 as usize)) as u64);
+    return ((0 as u64).wrapping_add((0 as u64)) as u64);
 }
 pub fn pack_size_1(mut args_0: i32, mut args_1: f64) -> u64 {
-    return ((2 as usize).wrapping_add((2 as usize)) as u64);
+    return ((2 as u64).wrapping_add((2 as u64)) as u64);
 }
 pub fn may_throw_2() {}
 pub fn no_throw_3() {}
@@ -34,19 +34,19 @@ pub fn main() {
 fn main_0() -> i32 {
     let mut arr: [i64; 4] = [0_i64, 0_i64, 0_i64, 0_i64];
     let mut s: S = <S>::default();
-    assert!((::std::mem::size_of::<i32>() == 4_usize));
-    assert!((::std::mem::size_of::<[i64; 4]>() == 32_usize));
-    assert!((16usize == 16_usize));
-    assert!((::std::mem::align_of::<i32>() == 4_usize));
-    assert!((16usize == 16_usize));
-    assert!((::std::mem::align_of::<[i64; 4]>() == 8_usize));
-    assert!((16usize == 16_usize));
-    assert!((({ pack_size_0() }) == 0_u64));
-    assert!((({ pack_size_1(1, 2_f64,) }) == 4_u64));
-    assert!(true);
-    assert!(!(false));
+    ({ cpp2rust_assert_fail_4((::std::mem::size_of::<i32>() == 4_u64)) });
+    ({ cpp2rust_assert_fail_4((::std::mem::size_of::<[i64; 4]>() == 32_u64)) });
+    ({ cpp2rust_assert_fail_4((16usize == 16_u64)) });
+    ({ cpp2rust_assert_fail_4((::std::mem::align_of::<i32>() == 4_u64)) });
+    ({ cpp2rust_assert_fail_4((16usize == 16_u64)) });
+    ({ cpp2rust_assert_fail_4((::std::mem::align_of::<[i64; 4]>() == 8_u64)) });
+    ({ cpp2rust_assert_fail_4((16usize == 16_u64)) });
+    ({ cpp2rust_assert_fail_4((({ pack_size_0() }) == 0_u64)) });
+    ({ cpp2rust_assert_fail_4((({ pack_size_1(1, 2_f64) }) == 4_u64)) });
+    ({ cpp2rust_assert_fail_4(true) });
+    ({ cpp2rust_assert_fail_4(!(false)) });
     let mut may: bool = false;
-    assert!(!(may));
+    ({ cpp2rust_assert_fail_4(!(may)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

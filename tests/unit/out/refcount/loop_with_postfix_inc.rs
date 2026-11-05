@@ -15,7 +15,7 @@ fn main_0() -> i32 {
     'loop_: while (x.postfix_inc() < 100) && (x != 50) {
         x.prefix_inc();
     }
-    assert!((x == 101));
+    ({ cpp2rust_assert_fail_0((x == 101)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

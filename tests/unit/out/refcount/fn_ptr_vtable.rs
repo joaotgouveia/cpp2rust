@@ -47,15 +47,15 @@ fn main_0() -> i32 {
         get: FnPtr::<fn(AnyPtr) -> i32>::new(int_get_2),
         destroy: FnPtr::<fn(AnyPtr)>::new(int_destroy_3),
     };
-    assert!(!((vt.create).is_null()));
-    assert!(!((vt.get).is_null()));
-    assert!(!((vt.destroy).is_null()));
+    ({ cpp2rust_assert_fail_4(!((vt.create).is_null())) });
+    ({ cpp2rust_assert_fail_4(!((vt.get).is_null())) });
+    ({ cpp2rust_assert_fail_4(!((vt.destroy).is_null())) });
     let mut obj: AnyPtr = ({ vt.create.call(42) });
-    assert!((({ vt.get.call((obj).clone(),) }) == 42));
+    ({ cpp2rust_assert_fail_4((({ vt.get.call((obj).clone()) }) == 42)) });
     ({ vt.destroy.call((obj).clone()) });
-    assert!((storage_0.with(|rc| *rc.borrow()) == 0));
+    ({ cpp2rust_assert_fail_4((storage_0.with(|rc| *rc.borrow()) == 0)) });
     vt.get = FnPtr::<fn(AnyPtr) -> i32>::null();
-    assert!((vt.get).is_null());
+    ({ cpp2rust_assert_fail_4((vt.get).is_null()) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {

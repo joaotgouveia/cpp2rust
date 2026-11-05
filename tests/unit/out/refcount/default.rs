@@ -110,19 +110,19 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let mut default_pointers: Ptr<Pointers> = Ptr::alloc_array(
-        (0..10_usize)
+        (0..10_u64)
             .map(|_| <Pointers>::default())
             .collect::<Box<[Pointers]>>(),
     );
     default_pointers.delete();
     let mut small: Ptr<SmallArrays> = Ptr::alloc_array(
-        (0..2_usize)
+        (0..2_u64)
             .map(|_| <SmallArrays>::default())
             .collect::<Box<[SmallArrays]>>(),
     );
     small.delete();
     let mut big: Ptr<BigArray> = Ptr::alloc_array(
-        (0..2_usize)
+        (0..2_u64)
             .map(|_| <BigArray>::default())
             .collect::<Box<[BigArray]>>(),
     );

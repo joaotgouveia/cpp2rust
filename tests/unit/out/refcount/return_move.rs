@@ -89,16 +89,19 @@ pub fn ret_struct_param_10(mut p: pair_t) -> pair_t {
 pub fn ret_struct_ref_11(p: Ptr<pair_t>) -> pair_t {
     return (*p.upgrade().deref()).clone();
 }
-pub fn ret_vec_12(mut v: Vec<i32>) -> Vec<i32> {
-    return std::mem::take(&mut v);
+pub fn ret_vec_12(v: std_vector_int__std_allocator_int__) -> std_vector_int__std_allocator_int__ {
+    let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(v));
+    return (*v.borrow_mut()).clone();
 }
-pub fn ret_vec_local_13() -> Vec<i32> {
-    let mut v: Vec<i32> = Vec::new();
-    {
-        let __a1 = 1;
-        v.push(__a1)
-    };
-    return std::mem::take(&mut v);
+pub fn ret_vec_local_13() -> std_vector_int__std_allocator_int__ {
+    let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+        <std_vector_int__std_allocator_int__>::default(),
+    ));
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(1));
+        (*v.borrow()).push_back_60(___x.as_pointer())
+    });
+    return (*v.borrow_mut()).clone();
 }
 pub fn ret_loop_14(n: Ptr<node>) -> Ptr<node> {
     let n: Value<Ptr<node>> = Rc::new(RefCell::new(n));
@@ -128,25 +131,31 @@ fn main_0() -> i32 {
         next: (b.as_pointer()),
     }));
     global_node_0.with(|rc| *rc.borrow_mut() = (a.as_pointer()));
-    assert!((({ id_1((a.as_pointer()),) }) == (a.as_pointer())));
-    assert!((({ local_ptr_3((a.as_pointer()),) }) == (b.as_pointer())));
-    assert!((({ call_once_4(Ptr::<node>::null(), (b.as_pointer()),) }) == (b.as_pointer())));
-    assert!((({ call_twice_5((c.as_pointer()),) }) == (c.as_pointer())));
-    assert!((({ next_of_6((b.as_pointer()),) }) == (c.as_pointer())));
-    assert!((({ ret_global_7() }) == (a.as_pointer())));
-    assert!((({ address_taken_8((a.as_pointer()),) }) == (a.as_pointer())));
+    ({ cpp2rust_assert_fail_15((({ id_1((a.as_pointer())) }) == (a.as_pointer()))) });
+    ({ cpp2rust_assert_fail_15((({ local_ptr_3((a.as_pointer())) }) == (b.as_pointer()))) });
+    ({
+        cpp2rust_assert_fail_15(
+            (({ call_once_4(Ptr::<node>::null(), (b.as_pointer())) }) == (b.as_pointer())),
+        )
+    });
+    ({ cpp2rust_assert_fail_15((({ call_twice_5((c.as_pointer())) }) == (c.as_pointer()))) });
+    ({ cpp2rust_assert_fail_15((({ next_of_6((b.as_pointer())) }) == (c.as_pointer()))) });
+    ({ cpp2rust_assert_fail_15((({ ret_global_7() }) == (a.as_pointer()))) });
+    ({ cpp2rust_assert_fail_15((({ address_taken_8((a.as_pointer())) }) == (a.as_pointer()))) });
     let mut p: pair_t = ({ ret_struct_9(4, (a.as_pointer())) });
-    assert!((p.a == 4) && ({ (p.n).clone() } == { (a.as_pointer()) }));
+    ({ cpp2rust_assert_fail_15((p.a == 4) && ({ (p.n).clone() } == { (a.as_pointer()) })) });
     let q: Value<pair_t> = Rc::new(RefCell::new(({ ret_struct_param_10((p).clone()) })));
-    assert!(
-        ({
-            ({ (*q.borrow()).a } == 4) && ({ { (*q.borrow()).n.clone() } } == { (a.as_pointer()) })
-        })
-    );
+    ({
+        cpp2rust_assert_fail_15(
+            ({ (*q.borrow()).a } == 4) && ({ { (*q.borrow()).n.clone() } } == { (a.as_pointer()) }),
+        )
+    });
     let mut r: pair_t = ({ ret_struct_ref_11(q.as_pointer()) });
-    assert!((r.a == 4) && ({ (r.n).clone() } == { (a.as_pointer()) }));
-    assert!((({ ret_vec_12(({ ret_vec_local_13() }),) }).len() == 1_usize));
-    assert!((({ ret_loop_14((a.as_pointer()),) }) == (b.as_pointer())));
+    ({ cpp2rust_assert_fail_15((r.a == 4) && ({ (r.n).clone() } == { (a.as_pointer()) })) });
+    ({
+        cpp2rust_assert_fail_15((({ ({ ret_vec_12(({ ret_vec_local_13() })) }).size() }) == 1_u64))
+    });
+    ({ cpp2rust_assert_fail_15((({ ret_loop_14((a.as_pointer())) }) == (b.as_pointer()))) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {

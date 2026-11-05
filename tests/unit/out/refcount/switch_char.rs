@@ -37,11 +37,11 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ switch_char_0(('a' as i8),) }) == 1));
-    assert!((({ switch_char_0(('b' as i8),) }) == 2));
-    assert!((({ switch_char_0(('\n' as i8),) }) == 3));
-    assert!((({ switch_char_0(('\0' as i8),) }) == 4));
-    assert!((({ switch_char_0(('z' as i8),) }) == 0));
+    ({ cpp2rust_assert_fail_1((({ switch_char_0(('a' as i8)) }) == 1)) });
+    ({ cpp2rust_assert_fail_1((({ switch_char_0(('b' as i8)) }) == 2)) });
+    ({ cpp2rust_assert_fail_1((({ switch_char_0(('\n' as i8)) }) == 3)) });
+    ({ cpp2rust_assert_fail_1((({ switch_char_0(('\0' as i8)) }) == 4)) });
+    ({ cpp2rust_assert_fail_1((({ switch_char_0(('z' as i8)) }) == 0)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

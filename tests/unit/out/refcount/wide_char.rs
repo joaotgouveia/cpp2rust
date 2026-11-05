@@ -51,164 +51,223 @@ fn main_0() -> i32 {
     let mut b: Ptr<u8> = Ptr::<u8>::from_string_literal(&[196 as u8, 130 as u8, 0 as u8]);
     let mut s: Ptr<u16> = Ptr::<u16>::from_string_literal(&[65 as u16, 258 as u16, 0 as u16]);
     let mut l: Ptr<u32> = Ptr::<u32>::from_string_literal(&[65 as u32, 258 as u32, 0 as u32]);
-    assert!((((elem!(c, 0).read()) as i32) == (('A' as i8) as i32)));
-    assert!((((elem!(b, 0).read()) as i32) == 196) && (((elem!(b, 1).read()) as i32) == 130));
-    assert!(((elem!(w, 1).read()) == 258));
-    assert!((((elem!(s, 1).read()) as i32) == 258));
-    assert!(((elem!(l, 1).read()) == 258_u32));
-    assert!(
-        (((elem!(w, 2).read()) == 0) && (((elem!(s, 2).read()) as i32) == 0))
-            && ((elem!(l, 2).read()) == 0_u32)
-    );
-    assert!(
-        (((elem!(({ get_0(Ptr::<i8>::from_string_literal(b"A"),) }), 0).read()) as i32)
-            == (('A' as i8) as i32))
-    );
-    assert!(
-        ((elem!(
-            ({ get_1(Ptr::<i32>::from_string_literal(&[258 as i32, 0 as i32,]),) }),
-            0
+    ({ cpp2rust_assert_fail_10((((elem!(c, 0).read()) as i32) == (('A' as i8) as i32))) });
+    ({
+        cpp2rust_assert_fail_10(
+            (((elem!(b, 0).read()) as i32) == 196) && (((elem!(b, 1).read()) as i32) == 130),
         )
-        .read())
-            == 258)
-    );
-    assert!(
-        (((elem!(
-            ({
-                get_2(Ptr::<u8>::from_string_literal(&[
+    });
+    ({ cpp2rust_assert_fail_10(((elem!(w, 1).read()) == 258)) });
+    ({ cpp2rust_assert_fail_10((((elem!(s, 1).read()) as i32) == 258)) });
+    ({ cpp2rust_assert_fail_10(((elem!(l, 1).read()) == 258_u32)) });
+    ({
+        cpp2rust_assert_fail_10(
+            (((elem!(w, 2).read()) == 0) && (((elem!(s, 2).read()) as i32) == 0))
+                && ((elem!(l, 2).read()) == 0_u32),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_10(
+            (((elem!(({ get_0(Ptr::<i8>::from_string_literal(b"A"),) }), 0).read()) as i32)
+                == (('A' as i8) as i32)),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_10(
+            ((elem!(
+                ({ get_1(Ptr::<i32>::from_string_literal(&[258 as i32, 0 as i32,]),) }),
+                0
+            )
+            .read())
+                == 258),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_10(
+            (((elem!(
+                ({
+                    get_2(Ptr::<u8>::from_string_literal(&[
+                        196 as u8, 130 as u8, 0 as u8,
+                    ]))
+                }),
+                0
+            )
+            .read()) as i32)
+                == 196),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_10(
+            (((elem!(
+                ({ get_3(Ptr::<u16>::from_string_literal(&[258 as u16, 0 as u16,]),) }),
+                0
+            )
+            .read()) as i32)
+                == 258),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_10(
+            ((elem!(
+                ({ get_4(Ptr::<u32>::from_string_literal(&[258 as u32, 0 as u32,]),) }),
+                0
+            )
+            .read())
+                == 258_u32),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_10(
+            ((({ second_5(Ptr::<i8>::from_string_literal(b"AB")) }) as i32)
+                == (('B' as i8) as i32)),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_10(
+            (({
+                second_6(Ptr::<i32>::from_string_literal(&[
+                    65 as i32, 258 as i32, 0 as i32,
+                ]))
+            }) == 258),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_10(
+            ((({
+                second_7(Ptr::<u8>::from_string_literal(&[
                     196 as u8, 130 as u8, 0 as u8,
                 ]))
-            }),
-            0
+            }) as i32)
+                == 130),
         )
-        .read()) as i32)
-            == 196)
-    );
-    assert!(
-        (((elem!(
-            ({ get_3(Ptr::<u16>::from_string_literal(&[258 as u16, 0 as u16,]),) }),
-            0
-        )
-        .read()) as i32)
-            == 258)
-    );
-    assert!(
-        ((elem!(
-            ({ get_4(Ptr::<u32>::from_string_literal(&[258 as u32, 0 as u32,]),) }),
-            0
-        )
-        .read())
-            == 258_u32)
-    );
-    assert!(
-        ((({ second_5(Ptr::<i8>::from_string_literal(b"AB"),) }) as i32) == (('B' as i8) as i32))
-    );
-    assert!(
-        (({
-            second_6(Ptr::<i32>::from_string_literal(&[
-                65 as i32, 258 as i32, 0 as i32,
-            ]))
-        }) == 258)
-    );
-    assert!(
-        ((({
-            second_7(Ptr::<u8>::from_string_literal(&[
-                196 as u8, 130 as u8, 0 as u8,
-            ]))
-        }) as i32)
-            == 130)
-    );
-    assert!(
-        ((({
-            second_8(Ptr::<u16>::from_string_literal(&[
-                65 as u16, 258 as u16, 0 as u16,
-            ]))
-        }) as i32)
-            == 258)
-    );
-    assert!(
-        (({
-            second_9(Ptr::<u32>::from_string_literal(&[
-                65 as u32, 258 as u32, 0 as u32,
-            ]))
-        }) == 258_u32)
-    );
-    let mut nw: usize = ((::std::mem::size_of::<[i32; 4]>() as usize)
-        .wrapping_div((::std::mem::size_of::<i32>() as usize)) as usize)
-        .wrapping_sub(1_usize);
-    let mut nb: usize = ((::std::mem::size_of::<[u8; 4]>() as usize)
-        .wrapping_div((::std::mem::size_of::<u8>() as usize)) as usize)
-        .wrapping_sub(1_usize);
-    let mut ns: usize = ((::std::mem::size_of::<[u16; 4]>() as usize)
-        .wrapping_div((::std::mem::size_of::<u16>() as usize)) as usize)
-        .wrapping_sub(1_usize);
-    let mut nl: usize = ((::std::mem::size_of::<[u32; 4]>() as usize)
-        .wrapping_div((::std::mem::size_of::<u32>() as usize)) as usize)
-        .wrapping_sub(1_usize);
-    assert!((((nw == 3_usize) && (nb == 3_usize)) && (ns == 3_usize)) && (nl == 3_usize));
-    let mut pw: [i32; 4] = [258 as i32, 0 as i32, 0 as i32, 0 as i32];
-    let mut ps: [u16; 4] = [258 as u16, 0 as u16, 0 as u16, 0 as u16];
-    assert!(((pw[(0) as usize] == 258) && (pw[(1) as usize] == 0)) && (pw[(3) as usize] == 0));
-    assert!(
-        (((ps[(0) as usize] as i32) == 258) && ((ps[(1) as usize] as i32) == 0))
-            && ((ps[(3) as usize] as i32) == 0)
-    );
-    let mut ew: [i32; 2] = [0 as i32, 0 as i32];
-    assert!((ew[(0) as usize] == 0) && (ew[(1) as usize] == 0));
-    let mut wc: i32 = (258 as i32);
-    let mut bc: u8 = (65 as u8);
-    let mut sc: u16 = (258 as u16);
-    let mut lc: u32 = (258 as u32);
-    assert!((((wc == 258) && ((bc as i32) == 65)) && ((sc as i32) == 258)) && (lc == 258_u32));
-    assert!(
-        (((::std::mem::size_of::<i32>() == ::std::mem::size_of::<i32>())
-            && (::std::mem::size_of::<u8>() == 1_usize))
-            && (::std::mem::size_of::<u16>() == 2_usize))
-            && (::std::mem::size_of::<u32>() == 4_usize)
-    );
-    assert!(
-        (((elem!(w, 1).read()) == (258 as i32))
-            && (((elem!(s, 1).read()) as i32) == ((258 as u16) as i32)))
-            && ((elem!(l, 1).read()) == (258 as u32))
-    );
-    assert!(
-        (((elem!(b, 0).read()) as i32) == ((196 as u8) as i32))
-            && (((elem!(b, 1).read()) as i32) == ((130 as u8) as i32))
-    );
-    assert!(
-        (({
-            second_6(Ptr::<i32>::from_string_literal(&[
-                65 as i32, 258 as i32, 0 as i32,
-            ]))
-        }) == (258 as i32))
-            && ((({
+    });
+    ({
+        cpp2rust_assert_fail_10(
+            ((({
                 second_8(Ptr::<u16>::from_string_literal(&[
                     65 as u16, 258 as u16, 0 as u16,
                 ]))
             }) as i32)
-                == ((258 as u16) as i32))
-    );
-    assert!(
-        ((elem!(
-            ({ get_4(Ptr::<u32>::from_string_literal(&[258 as u32, 0 as u32,]),) }),
-            0
+                == 258),
         )
-        .read())
-            == (258 as u32))
-            && ((elem!(
+    });
+    ({
+        cpp2rust_assert_fail_10(
+            (({
+                second_9(Ptr::<u32>::from_string_literal(&[
+                    65 as u32, 258 as u32, 0 as u32,
+                ]))
+            }) == 258_u32),
+        )
+    });
+    let mut nw: u64 = (((::std::mem::size_of::<[i32; 4]>() as u64)
+        .wrapping_div((::std::mem::size_of::<i32>() as u64)) as u64)
+        .wrapping_sub(1_u64) as u64);
+    let mut nb: u64 = (((::std::mem::size_of::<[u8; 4]>() as u64)
+        .wrapping_div((::std::mem::size_of::<u8>() as u64)) as u64)
+        .wrapping_sub(1_u64) as u64);
+    let mut ns: u64 = (((::std::mem::size_of::<[u16; 4]>() as u64)
+        .wrapping_div((::std::mem::size_of::<u16>() as u64)) as u64)
+        .wrapping_sub(1_u64) as u64);
+    let mut nl: u64 = (((::std::mem::size_of::<[u32; 4]>() as u64)
+        .wrapping_div((::std::mem::size_of::<u32>() as u64)) as u64)
+        .wrapping_sub(1_u64) as u64);
+    ({
+        cpp2rust_assert_fail_10(
+            (((nw == 3_u64) && (nb == 3_u64)) && (ns == 3_u64)) && (nl == 3_u64),
+        )
+    });
+    let mut pw: [i32; 4] = [258 as i32, 0 as i32, 0 as i32, 0 as i32];
+    let mut ps: [u16; 4] = [258 as u16, 0 as u16, 0 as u16, 0 as u16];
+    ({
+        cpp2rust_assert_fail_10(
+            ((pw[(0) as usize] == 258) && (pw[(1) as usize] == 0)) && (pw[(3) as usize] == 0),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_10(
+            (((ps[(0) as usize] as i32) == 258) && ((ps[(1) as usize] as i32) == 0))
+                && ((ps[(3) as usize] as i32) == 0),
+        )
+    });
+    let mut ew: [i32; 2] = [0 as i32, 0 as i32];
+    ({ cpp2rust_assert_fail_10((ew[(0) as usize] == 0) && (ew[(1) as usize] == 0)) });
+    let mut wc: i32 = (258 as i32);
+    let mut bc: u8 = (65 as u8);
+    let mut sc: u16 = (258 as u16);
+    let mut lc: u32 = (258 as u32);
+    ({
+        cpp2rust_assert_fail_10(
+            (((wc == 258) && ((bc as i32) == 65)) && ((sc as i32) == 258)) && (lc == 258_u32),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_10(
+            (((::std::mem::size_of::<i32>() == ::std::mem::size_of::<i32>())
+                && (::std::mem::size_of::<u8>() == 1_u64))
+                && (::std::mem::size_of::<u16>() == 2_u64))
+                && (::std::mem::size_of::<u32>() == 4_u64),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_10(
+            (((elem!(w, 1).read()) == (258 as i32))
+                && (((elem!(s, 1).read()) as i32) == ((258 as u16) as i32)))
+                && ((elem!(l, 1).read()) == (258 as u32)),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_10(
+            (((elem!(b, 0).read()) as i32) == ((196 as u8) as i32))
+                && (((elem!(b, 1).read()) as i32) == ((130 as u8) as i32)),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_10(
+            (({
+                second_6(Ptr::<i32>::from_string_literal(&[
+                    65 as i32, 258 as i32, 0 as i32,
+                ]))
+            }) == (258 as i32))
+                && ((({
+                    second_8(Ptr::<u16>::from_string_literal(&[
+                        65 as u16, 258 as u16, 0 as u16,
+                    ]))
+                }) as i32)
+                    == ((258 as u16) as i32)),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_10(
+            ((elem!(
                 ({ get_4(Ptr::<u32>::from_string_literal(&[258 as u32, 0 as u32,]),) }),
-                1
+                0
             )
             .read())
-                == (0 as u32))
-    );
-    assert!((((10 as i32) == 10) && (((9 as u16) as i32) == 9)) && ((92 as u32) == 92_u32));
-    assert!((((97 as i32) + 1) == (98 as i32)));
-    assert!(((122 as u32).wrapping_sub((97 as u32)) == 25_u32));
+                == (258 as u32))
+                && ((elem!(
+                    ({ get_4(Ptr::<u32>::from_string_literal(&[258 as u32, 0 as u32,]),) }),
+                    1
+                )
+                .read())
+                    == (0 as u32)),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_10(
+            (((10 as i32) == 10) && (((9 as u16) as i32) == 9)) && ((92 as u32) == 92_u32),
+        )
+    });
+    ({ cpp2rust_assert_fail_10((((97 as i32) + 1) == (98 as i32))) });
+    ({ cpp2rust_assert_fail_10(((122 as u32).wrapping_sub((97 as u32)) == 25_u32)) });
     let mut wa: [i32; 3] = [(65 as i32), (258 as i32), (0 as i32)];
-    assert!(((wa[(0) as usize] == 65) && (wa[(1) as usize] == 258)) && (wa[(2) as usize] == 0));
+    ({
+        cpp2rust_assert_fail_10(
+            ((wa[(0) as usize] == 65) && (wa[(1) as usize] == 258)) && (wa[(2) as usize] == 0),
+        )
+    });
     wa[(0) as usize] = (66 as i32);
-    assert!((wa[(0) as usize] == (('B' as i8) as i32)));
+    ({ cpp2rust_assert_fail_10((wa[(0) as usize] == (('B' as i8) as i32))) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

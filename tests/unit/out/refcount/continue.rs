@@ -57,7 +57,7 @@ fn main_0() -> i32 {
         out.prefix_inc();
         k1.postfix_inc();
     }
-    assert!((out == 81));
+    ({ cpp2rust_assert_fail_0((out == 81)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

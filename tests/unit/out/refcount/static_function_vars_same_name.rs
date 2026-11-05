@@ -23,8 +23,8 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ a_0() }) == 1));
-    assert!((({ b_2() }) == 2));
+    ({ cpp2rust_assert_fail_4((({ a_0() }) == 1)) });
+    ({ cpp2rust_assert_fail_4((({ b_2() }) == 2)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

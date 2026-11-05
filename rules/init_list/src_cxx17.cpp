@@ -1,0 +1,17 @@
+// Copyright (c) 2022-present INESC-ID.
+// Distributed under the MIT license that can be found in the LICENSE file.
+
+#include <charconv>
+#include <cstdint>
+#include <filesystem>
+#include <memory_resource>
+#include <system_error>
+
+std::from_chars_result f12(const char *a0, std::errc a1) { return {a0, a1}; }
+
+std::to_chars_result f13(char *a0, std::errc a1) { return {a0, a1}; }
+
+std::filesystem::space_info f17(std::uintmax_t a0, std::uintmax_t a1,
+                                std::uintmax_t a2) {
+  return {a0, a1, a2};
+}

@@ -28,10 +28,10 @@ fn main_0() -> i32 {
     (*p.borrow_mut()).x = 67305985;
     (*p.borrow_mut()).y = 134678021;
     let mut bytes: Ptr<u8> = (p.as_pointer()).reinterpret_cast::<u8>();
-    assert!((((elem!(bytes, 0).read()) as i32) == 1));
-    assert!((((elem!(bytes, 3).read()) as i32) == 4));
-    assert!((((elem!(bytes, 4).read()) as i32) == 5));
-    assert!((((elem!(bytes, 7).read()) as i32) == 8));
+    ({ cpp2rust_assert_fail_0((((elem!(bytes, 0).read()) as i32) == 1)) });
+    ({ cpp2rust_assert_fail_0((((elem!(bytes, 3).read()) as i32) == 4)) });
+    ({ cpp2rust_assert_fail_0((((elem!(bytes, 4).read()) as i32) == 5)) });
+    ({ cpp2rust_assert_fail_0((((elem!(bytes, 7).read()) as i32) == 8)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

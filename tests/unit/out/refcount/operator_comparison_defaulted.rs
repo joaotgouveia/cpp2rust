@@ -293,10 +293,10 @@ impl BothImpl for Ptr<Both> {
                 &(_a0.with(|__s| __s.a)),
             )));
             if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow_mut());
+                return ({ (*cmp.borrow()) });
             }
         }
-        return (*libcc2rs::strong_ordering_equal().upgrade().deref());
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
 }
 pub trait CmpImpl {
@@ -311,7 +311,7 @@ impl CmpImpl for Ptr<Cmp> {
                 &(_a0.with(|__s| __s.a)),
             )));
             if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow_mut());
+                return ({ (*cmp.borrow()) });
             }
         }
         {
@@ -320,10 +320,10 @@ impl CmpImpl for Ptr<Cmp> {
                 &(_a0.with(|__s| __s.b)),
             )));
             if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow_mut());
+                return ({ (*cmp.borrow()) });
             }
         }
-        return (*libcc2rs::strong_ordering_equal().upgrade().deref());
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<Cmp>) -> bool {
         return ({ (*self).with(|__s| __s.a) } == { _a0.with(|__s| __s.a) })
@@ -351,10 +351,10 @@ impl InnerImpl for Ptr<Inner> {
                 &(_a0.with(|__s| __s.x)),
             )));
             if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow_mut());
+                return ({ (*cmp.borrow()) });
             }
         }
-        return (*libcc2rs::strong_ordering_equal().upgrade().deref());
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<Inner>) -> bool {
         return ({ (*self).with(|__s| __s.x) } == { _a0.with(|__s| __s.x) });
@@ -371,10 +371,10 @@ impl OrdOnlyImpl for Ptr<OrdOnly> {
                 &(_a0.with(|__s| __s.a)),
             )));
             if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow_mut());
+                return ({ (*cmp.borrow()) });
             }
         }
-        return (*libcc2rs::strong_ordering_equal().upgrade().deref());
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
 }
 pub trait OuterImpl {
@@ -391,7 +391,7 @@ impl OuterImpl for Ptr<Outer> {
                 }),
             ));
             if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow_mut());
+                return ({ (*cmp.borrow()) });
             }
         }
         {
@@ -400,10 +400,10 @@ impl OuterImpl for Ptr<Outer> {
                 &(_a0.with(|__s| __s.y)),
             )));
             if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow_mut());
+                return ({ (*cmp.borrow()) });
             }
         }
-        return (*libcc2rs::strong_ordering_equal().upgrade().deref());
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<Outer>) -> bool {
         return ({
@@ -424,10 +424,10 @@ impl PtrMemberImpl for Ptr<PtrMember> {
                 &(_a0.with(|__s| __s.p.clone())),
             )));
             if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow_mut());
+                return ({ (*cmp.borrow()) });
             }
         }
-        return (*libcc2rs::strong_ordering_equal().upgrade().deref());
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_eq(&self, _a0: Ptr<PtrMember>) -> bool {
         return ({ (*self).with(|__s| __s.p.clone()) } == { _a0.with(|__s| __s.p.clone()) });
@@ -457,10 +457,10 @@ impl SecondaryImpl for Ptr<Secondary> {
                 &(_a0.with(|__s| __s.a)),
             )));
             if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
-                return (*cmp.borrow_mut());
+                return ({ (*cmp.borrow()) });
             }
         }
-        return (*libcc2rs::strong_ordering_equal().upgrade().deref());
+        return ({ (*libcc2rs::strong_ordering_equal().upgrade().deref()) });
     }
     fn operator_lt(&self, _a0: Ptr<Secondary>) -> bool {
         return ({

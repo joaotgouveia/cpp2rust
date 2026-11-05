@@ -13,7 +13,7 @@ pub struct S {
     pub tag: i32,
     #[offset(8)]
     #[byte_size(24)]
-    pub v: Vec<i32>,
+    pub v: std_vector_int__std_allocator_int__,
 }
 impl S {
     pub fn move_from(_a0: Ptr<S>) -> Self {
@@ -28,31 +28,29 @@ impl CppMove for S {
         Self::move_from(src)
     }
 }
-pub fn add_0(mut v: Ptr<Vec<i32>>, mut k: i32) {
-    {
-        let a0_clone = k.clone();
-        v.with_mut(|__v: &mut Vec<i32>| __v.push(a0_clone))
-    };
+pub fn add_0(mut v: Ptr<std_vector_int__std_allocator_int__>, k: i32) {
+    let k: Value<i32> = Rc::new(RefCell::new(k));
+    ({ (*v.upgrade().deref()).push_back_59(k.as_pointer()) });
 }
 pub fn run_1(mut h: Ptr<S>) {
     ({
-        let _v: Ptr<Vec<i32>> = (field_ref!(h, v).as_pointer());
+        let _v: Ptr<std_vector_int__std_allocator_int__> = (field_ptr!(h, v));
         let _k: i32 = h.with(|__s| __s.tag);
         add_0(_v, _k)
     });
-    let mut pv: Ptr<Vec<i32>> = (field_ref!(h, v).as_pointer());
-    {
-        let __a1 = ((*pv.upgrade().deref()).len() as i32);
-        pv.with_mut(|__v: &mut Vec<i32>| __v.push(__a1))
-    };
-    assert!(
-        ({
-            (((*h.upgrade().deref()).v.len() == 2_usize)
-                && ((vec_elem!(h, v, 0_usize).read()) == 7))
-                && ((vec_elem!(h, v, 1_usize).read()) == 1)
-        })
-    );
-    assert!((h.with(|__s| __s.tag) == 7));
+    let mut pv: Ptr<std_vector_int__std_allocator_int__> = (field_ptr!(h, v));
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new((({ (*pv.upgrade().deref()).size() }) as i32)));
+        (*pv.upgrade().deref()).push_back_60(___x.as_pointer())
+    });
+    ({
+        cpp2rust_assert_fail_2(
+            ((({ (*h.upgrade().deref()).v.size() }) == 2_u64)
+                && ((elem!(field_ptr!(h, v), 0_u64).read()) == 7))
+                && ((elem!(field_ptr!(h, v), 1_u64).read()) == 1),
+        )
+    });
+    ({ cpp2rust_assert_fail_2((h.with(|__s| __s.tag) == 7)) });
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -74,9 +72,7 @@ pub trait SImpl {
 impl SImpl for Ptr<S> {
     fn move_assign(&self, _a0: Ptr<S>) -> Ptr<S> {
         field!((*self), tag).write({ { (*_a0.upgrade().deref()).tag } });
-        field_ref!((*self), v)
-            .as_pointer()
-            .write(field!(_a0, v).with_mut(std::mem::take));
+        field!((*self), v).write({ { (*_a0.upgrade().deref()).v.clone() } });
         return (*self).clone();
     }
 }

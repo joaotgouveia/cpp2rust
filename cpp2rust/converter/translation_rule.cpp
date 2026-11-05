@@ -28,14 +28,32 @@ TypeInfo ParseTypeInfoJSON(const llvm::json::Object &obj) {
     info.is_refcount_pointer = *v;
   if (auto v = obj.getBoolean("is_unsafe_pointer"))
     info.is_unsafe_pointer = *v;
+  if (auto v = obj.getBoolean("is_projection"))
+    info.is_projection = *v;
   if (auto v = obj.getInteger("pointee_generic"))
     info.pointee_generic = *v;
+  if (auto v = obj.getInteger("generic"))
+    info.generic = *v;
+  if (auto v = obj.getBoolean("is_mut_raw_pointer"))
+    info.is_mut_raw_pointer = *v;
+  if (auto v = obj.getBoolean("is_const_raw_pointer"))
+    info.is_const_raw_pointer = *v;
   assert(!(info.is_refcount_pointer && info.is_unsafe_pointer));
   if (auto *arr = obj.getArray("derives")) {
     for (const auto &elem : *arr) {
       if (auto s = elem.getAsString())
         info.derives.emplace_back(s->str());
     }
+  }
+  if (auto *elems = obj.getObject("elems")) {
+    auto kind = elems->getString("kind");
+    auto type = elems->getString("type");
+    assert(kind && type);
+    assert(*kind == "vec" || *kind == "vec_deque" || *kind == "array");
+    auto elems_kind = *kind == "vec"         ? ElemsKind::kVec
+                      : *kind == "vec_deque" ? ElemsKind::kVecDeque
+                                             : ElemsKind::kArray;
+    info.elems = Elems{elems_kind, type->str()};
   }
   return info;
 }
@@ -353,6 +371,8 @@ void TypeInfo::dump() const {
     log() << " [rc_ptr]";
   if (is_unsafe_pointer)
     log() << " [unsafe_ptr]";
+  if (elems)
+    log() << " [elems " << elems->type << ']';
   for (const auto &d : derives)
     log() << " +" << d;
 }
@@ -367,6 +387,42 @@ void TypeRule::dump() const {
       BodyFragmentDump(frag);
     }
   }
+}
+
+std::vector<std::vector<Bound>> ParseGenericsJSON(const llvm::json::Object &obj) {
+  std::vector<std::vector<Bound>> result;
+  if (auto *generics = obj.getObject("generics")) {
+    for (auto &[key, val] : *generics) {
+      auto *arr = val.getAsArray();
+      if (!arr) {
+        continue;
+      }
+      std::vector<Bound> bounds;
+      for (auto &b : *arr) {
+        auto *bound = b.getAsObject();
+        if (!bound) {
+          continue;
+        }
+        Bound parsed;
+        parsed.trait_name = bound->getString("trait").value_or("").str();
+        if (auto *args = bound->getArray("args")) {
+          for (auto &arg : *args) {
+            llvm::StringRef name = arg.getAsString().value_or("");
+            unsigned n = 0;
+            if (name.consume_front("T") && !name.empty() &&
+                !name.getAsInteger(10, n)) {
+              parsed.args.push_back(n);
+            }
+          }
+        }
+        bounds.push_back(std::move(parsed));
+      }
+      size_t id = atoi(llvm::StringRef(key).data() + 1) - 1; // starts in T1
+      result.resize(std::max(result.size(), id + 1));
+      result[id] = std::move(bounds);
+    }
+  }
+  return result;
 }
 
 ExprRule ParseExprRuleJSON(const llvm::json::Object &obj) {
@@ -398,37 +454,7 @@ ExprRule ParseExprRuleJSON(const llvm::json::Object &obj) {
     ir.is_extern = *v;
   }
 
-  if (auto *generics = obj.getObject("generics")) {
-    for (auto &[key, val] : *generics) {
-      auto *arr = val.getAsArray();
-      if (!arr) {
-        continue;
-      }
-      std::vector<Bound> bounds;
-      for (auto &b : *arr) {
-        auto *bound = b.getAsObject();
-        if (!bound) {
-          continue;
-        }
-        Bound parsed;
-        parsed.trait_name = bound->getString("trait").value_or("").str();
-        if (auto *args = bound->getArray("args")) {
-          for (auto &arg : *args) {
-            llvm::StringRef name = arg.getAsString().value_or("");
-            unsigned n = 0;
-            if (name.consume_front("T") && !name.empty() &&
-                !name.getAsInteger(10, n)) {
-              parsed.args.push_back(n);
-            }
-          }
-        }
-        bounds.push_back(std::move(parsed));
-      }
-      size_t id = atoi(llvm::StringRef(key).data() + 1) - 1; // starts in T1
-      ir.generics.resize(std::max(ir.generics.size(), id + 1));
-      ir.generics[id] = std::move(bounds);
-    }
-  }
+  ir.generics = ParseGenericsJSON(obj);
 
   if (auto *body = obj.getArray("body")) {
     ir.body = ParseBodyFragmentsJSON(*body);
@@ -443,6 +469,7 @@ TypeRule ParseTypeRuleJSON(const llvm::json::Object &obj) {
     rule.initializer = ParseBodyFragmentsJSON(*init);
   if (auto generic = obj.getInteger("generic"))
     rule.generic = *generic;
+  rule.generics = ParseGenericsJSON(obj);
   rule.type_info = ParseTypeInfoJSON(obj);
   return rule;
 }
