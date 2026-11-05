@@ -28,6 +28,8 @@ std::add_pointer_t<std::iter_reference_t<T1>> f3(const T1 &a0) {
   return std::to_address(a0);
 }
 
+using t3 = std::default_sentinel_t;
+
 template <typename T1>
   requires std::forward_iterator<T1> && (std::is_class<T1>::value)
 T1 &f11(T1 &a0, T1 &a1) {
@@ -226,3 +228,5 @@ template <typename T1, typename T2>
 auto f45(const T1 &a0, const T2 &a1) -> decltype(a0 <=> a1) {
   return a0 <=> a1;
 }
+
+using t15 = std::unreachable_sentinel_t;

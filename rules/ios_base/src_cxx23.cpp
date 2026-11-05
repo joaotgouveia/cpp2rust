@@ -26,6 +26,8 @@ using t6 = std::ios_base::openmode;
 
 using t7 = std::ios_base::seekdir;
 
+using t8 = std::ios_base::event;
+
 std::ios_base::fmtflags f10(const std::ios_base &a0) { return a0.flags(); }
 
 std::ios_base::fmtflags f11(std::ios_base &a0, std::ios_base::fmtflags a1) {
