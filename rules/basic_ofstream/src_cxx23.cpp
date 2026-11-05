@@ -316,6 +316,19 @@ bool f48(const std::basic_ofstream<T1, T2> &a0) {
 }
 
 template <typename T1, typename T2>
+typename std::basic_ofstream<T1, T2>::iostate
+f49(const std::basic_ofstream<T1, T2> &a0) {
+  return a0.exceptions();
+}
+
+template <typename T1, typename T2>
+void f50(std::basic_ofstream<T1, T2> &a0,
+         typename std::basic_ofstream<T1, T2>::iostate a1) {
+  return a0.exceptions(
+      std::forward<typename std::basic_ofstream<T1, T2>::iostate>(a1));
+}
+
+template <typename T1, typename T2>
 std::basic_ostream<T1, T2> *f51(const std::basic_ofstream<T1, T2> &a0) {
   return a0.tie();
 }
@@ -334,6 +347,29 @@ T1 f53(const std::basic_ofstream<T1, T2> &a0) {
 template <typename T1, typename T2>
 T1 f54(std::basic_ofstream<T1, T2> &a0, T1 a1) {
   return a0.fill(std::move(a1));
+}
+
+template <typename T1, typename T2>
+std::locale f55(std::basic_ofstream<T1, T2> &a0, const std::locale &a1) {
+  return a0.imbue(a1);
+}
+
+template <typename T1, typename T2>
+char f56(const std::basic_ofstream<T1, T2> &a0, T1 a1, char a2) {
+  return a0.narrow(std::move(a1), a2);
+}
+
+template <typename T1, typename T2>
+T1 f57(const std::basic_ofstream<T1, T2> &a0, char a1) {
+  return a0.widen(a1);
+}
+
+template <typename T1, typename T2>
+void f58(std::basic_ofstream<T1, T2> &a0,
+         void (*a1)(typename std::basic_ofstream<T1, T2>::event,
+                    std::basic_ofstream<T1, T2> &, int),
+         int a2) {
+  return a0.register_callback(a1, a2);
 }
 
 template <typename T1, typename T2>
@@ -393,6 +429,25 @@ std::streamsize f67(std::basic_ofstream<T1, T2> &a0, std::streamsize a1) {
 
 template <typename T1, typename T2> bool f68(bool a0) {
   return std::basic_ofstream<T1, T2>::sync_with_stdio(a0);
+}
+
+template <typename T1, typename T2>
+std::locale f69(const std::basic_ofstream<T1, T2> &a0) {
+  return a0.getloc();
+}
+
+template <typename T1, typename T2> int f70() {
+  return std::basic_ofstream<T1, T2>::xalloc();
+}
+
+template <typename T1, typename T2>
+long &f71(std::basic_ofstream<T1, T2> &a0, int a1) {
+  return a0.iword(a1);
+}
+
+template <typename T1, typename T2>
+void *&f72(std::basic_ofstream<T1, T2> &a0, int a1) {
+  return a0.pword(a1);
 }
 
 template <typename T1, typename T2>
