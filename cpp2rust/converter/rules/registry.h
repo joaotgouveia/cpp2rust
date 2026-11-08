@@ -9,6 +9,7 @@
 #include <clang/AST/Type.h>
 #include <clang/Sema/Sema.h>
 
+#include <optional>
 #include <string>
 #include <unordered_map>
 #include <vector>
@@ -34,6 +35,10 @@ Matcher::Match<TranslationRule::ExprRule> Search(clang::ASTContext &ctx,
                                                  const clang::Expr *expr);
 Matcher::Match<TranslationRule::TypeRule> Search(clang::ASTContext &ctx,
                                                  clang::QualType qual_type);
+Matcher::Match<TranslationRule::ExprRule>
+SearchArg(clang::ASTContext &ctx, const clang::Expr *expr, unsigned arg);
+std::optional<unsigned> PackParam(const clang::Expr *expr);
+unsigned ParamIndex(const clang::Expr *expr, unsigned arg);
 
 const TranslationRule::ExprRule *GetExprRule(clang::ASTContext &ctx,
                                              const clang::Expr *expr);

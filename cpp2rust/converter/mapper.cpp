@@ -82,8 +82,11 @@ std::string MapInitializer(Converter &converter, clang::QualType qual_type) {
 
 std::string GetParamType(Converter &converter, const clang::Expr *expr,
                          unsigned index) {
-  auto [rule, subs] = RuleRegistry::Search(converter.GetASTContext(), expr);
-  return Matcher::InstantiateTgt(converter, subs, rule->params.at(index).type);
+  auto [rule, subs] =
+      RuleRegistry::SearchArg(converter.GetASTContext(), expr, index);
+  return Matcher::InstantiateTgt(
+      converter, subs,
+      rule->params.at(RuleRegistry::ParamIndex(expr, index)).type);
 }
 
 } // namespace cpp2rust::Mapper

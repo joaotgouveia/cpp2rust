@@ -371,6 +371,64 @@ Matcher::Bindings getBindings(const clang::NamedDecl *rule,
   return bindings;
 }
 
+std::optional<unsigned> packParam(const ExprMatch &match) {
+  auto function = match.rule_decl->decl->getAsFunction();
+  if (!function) {
+    return std::nullopt;
+  }
+  for (unsigned i = 0; i < function->getNumParams(); ++i) {
+    if (!function->getParamDecl(i)->isParameterPack()) {
+      continue;
+    }
+    assert(i + 1 == function->getNumParams() && "parameter pack is not last");
+    if (i < match.rule_decl->rule.params.size()) {
+      return i;
+    }
+    return std::nullopt;
+  }
+  return std::nullopt;
+}
+
+unsigned genericOfPack(const clang::TemplateParameterList *params,
+                       const clang::UnexpandedParameterPack &pack) {
+  const clang::NamedDecl *param = nullptr;
+  if (auto type =
+          llvm::dyn_cast_if_present<const clang::TemplateTypeParmType *>(
+              pack.first)) {
+    param = params->getParam(type->getIndex());
+  } else {
+    param = llvm::cast<clang::NamedDecl *>(pack.first);
+  }
+  llvm::StringRef name = param->getName();
+  unsigned n = 0;
+  [[maybe_unused]] bool bad =
+      !name.consume_front("T") || name.getAsInteger(10, n);
+  assert(!bad && "pack is not a generic of the rule");
+  return n;
+}
+
+Matcher::Bindings argBindings(const ExprMatch &match, unsigned arg) {
+  auto bindings = getBindings(match.rule_decl->decl, match.args);
+  auto pack = packParam(match);
+  if (!pack || arg < *pack) {
+    return bindings;
+  }
+  auto function = match.rule_decl->decl->getAsFunction();
+  auto tmpl = function->getDescribedFunctionTemplate();
+  assert(tmpl && "parameter pack in a non-template rule");
+  llvm::SmallVector<clang::UnexpandedParameterPack, 2> unexpanded;
+  sema_->collectUnexpandedParameterPacks(
+      function->getParamDecl(*pack)->getType(), unexpanded);
+  for (const auto &unexpanded_pack : unexpanded) {
+    auto n = genericOfPack(tmpl->getTemplateParameters(), unexpanded_pack);
+    auto &binding = bindings.at(n - 1);
+    assert(binding.getKind() == clang::TemplateArgument::Pack &&
+           arg - *pack < binding.pack_size() && "argument beyond the pack");
+    binding = binding.pack_elements()[arg - *pack];
+  }
+  return bindings;
+}
+
 } // namespace
 
 void Load(clang::Sema &sema, Model model) {
@@ -404,6 +462,24 @@ Matcher::Match<TranslationRule::ExprRule> Search(clang::ASTContext &ctx,
   }
   return {&match.rule_decl->rule,
           getBindings(match.rule_decl->decl, match.args)};
+}
+
+Matcher::Match<TranslationRule::ExprRule>
+SearchArg(clang::ASTContext &ctx, const clang::Expr *expr, unsigned arg) {
+  auto match = findExpr(expr);
+  assert(match.rule_decl && "expression must have a translation rule");
+  return {&match.rule_decl->rule, argBindings(match, arg)};
+}
+
+std::optional<unsigned> PackParam(const clang::Expr *expr) {
+  auto match = findExpr(expr);
+  assert(match.rule_decl && "expression must have a translation rule");
+  return packParam(match);
+}
+
+unsigned ParamIndex(const clang::Expr *expr, unsigned arg) {
+  auto pack = PackParam(expr);
+  return pack && arg > *pack ? *pack : arg;
 }
 
 clang::QualType iteratorElementType(clang::ASTContext &ctx,
@@ -520,7 +596,9 @@ Matcher::Match<TranslationRule::TypeRule> Search(clang::ASTContext &ctx,
     return {};
   }
   auto bindings = getBindings(match.rule_decl->decl, match.match.args);
-  if (auto generic = match.rule_decl->rule.generic) {
+  if (auto generic = match.rule_decl->rule.generic;
+      generic &&
+      bindings.at(generic - 1).getKind() == clang::TemplateArgument::Type) {
     return Search(ctx, bindings.at(generic - 1).getAsType());
   }
   return {&match.rule_decl->rule, std::move(bindings)};
@@ -566,20 +644,22 @@ bool ParamIsPointer(clang::ASTContext &ctx, const clang::Expr *expr,
                     unsigned index) {
   auto rule = Search(ctx, expr).first;
   assert(rule && "expression must have a translation rule");
-  return rule->params.at(index).is_pointer();
+  return rule->params.at(ParamIndex(expr, index)).is_pointer();
 }
 
 clang::Expr *BuildParamConversion(clang::ASTContext &ctx,
                                   const clang::Expr *expr, unsigned index,
                                   clang::Expr *arg) {
-  auto [rule, bindings] = Search(ctx, expr);
-  assert(rule && "expression must have a translation rule");
-  llvm::StringRef type = rule->params.at(index).type;
+  auto [rule, bindings] = SearchArg(ctx, expr, index);
+  llvm::StringRef type = rule->params.at(ParamIndex(expr, index)).type;
   unsigned n = 0;
   if (!type.consume_front("T") || type.empty() || type.getAsInteger(10, n)) {
     return nullptr;
   }
   auto &binding = bindings.at(n - 1);
+  if (binding.getKind() == clang::TemplateArgument::Pack) {
+    return nullptr;
+  }
   assert(binding.getKind() == clang::TemplateArgument::Type &&
          "parameter typed by a non-type generic");
   auto target = binding.getAsType();
