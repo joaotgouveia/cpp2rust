@@ -69,6 +69,8 @@ unsafe fn main_0() -> i32 {
     plain.postfix_inc();
     assert!(((plain) == (4)));
     &(::std::mem::size_of::<i32>());
+    let mut typed: i32 = ((plain) + (1));
+    assert!(((typed) == (5)));
     let mut addr: i32 = 0;
     (unsafe { set_0((&mut addr as *mut i32), 5) });
     assert!(((addr) == (5)));
@@ -140,12 +142,10 @@ unsafe fn main_0() -> i32 {
         let a0_clone = four.clone();
         vec_.push(a0_clone)
     };
-    (*(&mut vec_).as_mut_ptr().add(0_usize as usize)) =
-        ((*(&mut vec_).as_mut_ptr().add(3_usize as usize)) + (1));
-    (*(&mut vec_).as_mut_ptr().add(1_usize as usize)).postfix_inc();
+    vec_[(0_usize)] = ((vec_[(3_usize)]) + (1));
+    vec_[(1_usize)].postfix_inc();
     assert!(
-        (((vec_.len()) == (4_usize)) && ((*(&mut vec_).as_mut_ptr().add(0_usize as usize)) == (5)))
-            && ((*(&mut vec_).as_mut_ptr().add(1_usize as usize)) == (2))
+        (((vec_.len()) == (4_usize)) && ((vec_[(0_usize)]) == (5))) && ((vec_[(1_usize)]) == (2))
     );
     let mut high: i32 = 3;
     let mut low: i32 = {
@@ -160,16 +160,11 @@ unsafe fn main_0() -> i32 {
     let mut by_ref: Vec<i32> = vec![3; 2_usize as usize];
     assert!(((unsafe { total_2(&by_ref,) }) == (6)));
     let mut elem_ptr: Vec<i32> = vec![0; 2_usize as usize];
-    (unsafe {
-        set_0(
-            (&mut (*(&mut elem_ptr).as_mut_ptr().add(1_usize as usize)) as *mut i32),
-            7,
-        )
-    });
-    assert!(((*(&mut elem_ptr).as_mut_ptr().add(1_usize as usize)) == (7)));
+    (unsafe { set_0((&mut elem_ptr[(1_usize)] as *mut i32), 7) });
+    assert!(((elem_ptr[(1_usize)]) == (7)));
     let mut data: Vec<i32> = vec![0; 2_usize as usize];
     (unsafe { set_0(data.as_mut_ptr(), 8) });
-    assert!(((*(&mut data).as_mut_ptr().add(0_usize as usize)) == (8)));
+    assert!(((data[(0_usize)]) == (8)));
     let mut square: Square = <Square>::default();
     let mut shape: *mut dyn Shape = (&mut square as *mut Square);
     assert!(((unsafe { (*shape).scale(3,) }) == (6)));

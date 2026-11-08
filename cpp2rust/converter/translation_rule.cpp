@@ -280,7 +280,8 @@ ExprRule::argsToBind(clang::ASTContext &ctx, const clang::Expr *expr,
                      llvm::ArrayRef<clang::Expr *> args) const {
   // The number of evaluations of each argument, two standing for any other
   // than one, and the position of the first.
-  std::vector<unsigned> uses(args.size()), first(args.size());
+  auto size = std::max(args.size(), params.size());
+  std::vector<unsigned> uses(size), first(size);
   unsigned position = 0;
   AnyFragment(body, [&](const BodyFragment &frag) {
     if (auto *ph = std::get_if<PlaceholderFragment>(&frag)) {

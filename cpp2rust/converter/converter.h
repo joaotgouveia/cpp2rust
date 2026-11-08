@@ -936,6 +936,12 @@ protected:
   std::string ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
                                  const PlaceholderCtx &ph_ctx);
 
+  std::string
+  ConvertPlaceholderArg(const TranslationRule::PlaceholderFragment &ph,
+                        unsigned arg_idx, clang::Expr *expr,
+                        llvm::ArrayRef<clang::Expr *> all_args,
+                        TempMaterializationCtx *ctx);
+
   // Moves the value out of `arg`, leaving a default value behind.
   virtual std::string ConvertTake(clang::Expr *arg);
 

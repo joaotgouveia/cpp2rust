@@ -7,6 +7,7 @@ mod assign;
 mod byte_repr;
 mod cpp_from;
 mod destructor;
+mod expand_pack_to_concrete_arity_impl;
 mod fn_ptr_arg;
 mod goto;
 mod lambda;
@@ -97,6 +98,28 @@ pub fn goto(_input: TokenStream) -> TokenStream {
         compile_error!("goto!() can only be used inside goto_block!")
     }
     .into()
+}
+
+// C++ packs become Rust tuples, and Rust has no variadic generics: a trait
+// over tuples needs one impl per arity. This macro writes it once for all
+// arities up to a limit:
+//
+//     expand_pack_to_concrete_arity_impl! { 32;
+//         impl<#(T: Bound),*> Trait for (#(T,)*) {
+//             const VALUE: bool = true #(&& T::VALUE)*;
+//         }
+//     }
+//
+// which for arity 2 is
+//
+//     impl<T0: Bound, T1: Bound> Trait for (T0, T1,) {
+//         const VALUE: bool = true && T0::VALUE && T1::VALUE;
+//     }
+//
+
+#[proc_macro]
+pub fn expand_pack_to_concrete_arity_impl(input: TokenStream) -> TokenStream {
+    expand_pack_to_concrete_arity_impl::expand(input)
 }
 
 //     #[derive(ByteRepr)]

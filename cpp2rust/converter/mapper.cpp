@@ -95,10 +95,10 @@ Matcher::Bindings bindIteratorElements(clang::ASTContext &ctx,
 std::string GetParamType(Converter &converter, const clang::Expr *expr,
                          unsigned index) {
   auto &ctx = converter.GetASTContext();
-  auto [rule, subs] = RuleRegistry::Search(ctx, expr);
+  auto [rule, subs] = RuleRegistry::SearchArg(ctx, expr, index);
   return Matcher::InstantiateType(
       converter, bindIteratorElements(ctx, expr, *rule, std::move(subs)),
-      rule->params.at(index));
+      rule->params.at(RuleRegistry::ParamIndex(expr, index)));
 }
 
 } // namespace cpp2rust::Mapper
