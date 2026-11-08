@@ -13,11 +13,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    let mut two: (i32, f64) = {
-        let mut __tmp_0: i32 = 1;
-        let mut __tmp_1: f64 = 2.5_f64;
-        std_tuple_int__double_::new_1({ &mut __tmp_0 }, { &mut __tmp_1 })
-    };
+    let mut two: (i32, f64) = <(i32, f64)>::tuple_from((1, 2.5_f64));
     assert!(((*two.get_mut::<0>()) == (1)));
     assert!(((*two.get_mut::<1>()) == (2.5_f64)));
     *two.get_mut::<0>() = 7;
@@ -29,11 +25,8 @@ unsafe fn main_0() -> i32 {
     assert!(!((1, 2,) == (2, 1,)));
     let mut single: (i64,) = <(i64,)>::tuple_from((3,));
     assert!(((*single.get_mut::<0>()) == (3_i64)));
-    let mut converted: (i64, f64) = <(i64, f64)>::tuple_from({
-        let mut __tmp_2: i32 = 4;
-        let mut __tmp_3: f32 = 1.5_f32;
-        std_tuple_int__float_::new_1({ &mut __tmp_2 }, { &mut __tmp_3 })
-    });
+    let mut converted: (i64, f64) =
+        <(i64, f64)>::tuple_from(<(i32, f32)>::tuple_from((4, 1.5_f32)));
     assert!(((*converted.get_mut::<0>()) == (4_i64)));
     assert!(((*converted.get_mut::<1>()) == (1.5_f64)));
     let mut empty: () = ();
