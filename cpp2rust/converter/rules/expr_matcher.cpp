@@ -376,6 +376,12 @@ deduceFromCallee(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
   } else if (auto ref = llvm::dyn_cast<clang::DeclRefExpr>(use)) {
     used = ref->getDecl();
   }
+  if (auto variable =
+          llvm::dyn_cast_or_null<clang::VarTemplateSpecializationDecl>(used)) {
+    return RuleDecls::DeduceFromArguments(
+        sema, rule->getTemplateParameters(), written,
+        variable->getTemplateArgs().asArray());
+  }
   auto specialization = llvm::dyn_cast_or_null<clang::FunctionDecl>(used);
   if (!specialization || !specialization->getTemplateSpecializationArgs()) {
     return std::nullopt;
