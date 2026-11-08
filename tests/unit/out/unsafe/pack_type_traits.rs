@@ -14,33 +14,33 @@ pub fn main() {
 }
 unsafe fn main_0() -> i32 {
     assert!(<() as libcc2rs::Conjunction>::VALUE);
-    assert!(<(std_integral_constant_bool__true_,) as libcc2rs::Conjunction>::VALUE);
-    assert!(!(<(std_integral_constant_bool__false_,) as libcc2rs::Conjunction>::VALUE));
+    assert!(<(libcc2rs::IntegralConstant<bool, 1>,) as libcc2rs::Conjunction>::VALUE);
+    assert!(!(<(libcc2rs::IntegralConstant<bool, 0>,) as libcc2rs::Conjunction>::VALUE));
     assert!(
         (<(
-            std_integral_constant_bool__true_,
-            std_integral_constant_bool__true_,
+            libcc2rs::IntegralConstant<bool, 1>,
+            libcc2rs::IntegralConstant<bool, 1>,
         ) as libcc2rs::Conjunction>::VALUE)
     );
     assert!(
         (!(<(
-            std_integral_constant_bool__true_,
-            std_integral_constant_bool__false_,
+            libcc2rs::IntegralConstant<bool, 1>,
+            libcc2rs::IntegralConstant<bool, 0>,
         ) as libcc2rs::Conjunction>::VALUE))
     );
     assert!(!(<() as libcc2rs::Disjunction>::VALUE));
-    assert!(<(std_integral_constant_bool__true_,) as libcc2rs::Disjunction>::VALUE);
-    assert!(!(<(std_integral_constant_bool__false_,) as libcc2rs::Disjunction>::VALUE));
+    assert!(<(libcc2rs::IntegralConstant<bool, 1>,) as libcc2rs::Disjunction>::VALUE);
+    assert!(!(<(libcc2rs::IntegralConstant<bool, 0>,) as libcc2rs::Disjunction>::VALUE));
     assert!(
         (<(
-            std_integral_constant_bool__false_,
-            std_integral_constant_bool__true_,
+            libcc2rs::IntegralConstant<bool, 0>,
+            libcc2rs::IntegralConstant<bool, 1>,
         ) as libcc2rs::Disjunction>::VALUE)
     );
     assert!(
         (!(<(
-            std_integral_constant_bool__false_,
-            std_integral_constant_bool__false_,
+            libcc2rs::IntegralConstant<bool, 0>,
+            libcc2rs::IntegralConstant<bool, 0>,
         ) as libcc2rs::Disjunction>::VALUE))
     );
     return 0;

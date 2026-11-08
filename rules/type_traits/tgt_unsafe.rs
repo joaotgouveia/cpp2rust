@@ -21,10 +21,10 @@ fn f4<T1: libcc2rs::Disjunction>() -> bool {
     <T1 as libcc2rs::Disjunction>::VALUE
 }
 
-fn t15() -> libcc2rs::FalseType {
-    libcc2rs::FalseType
+fn t15() -> libcc2rs::IntegralConstant<bool, 0> {
+    libcc2rs::IntegralConstant(std::marker::PhantomData)
 }
 
-fn t28() -> libcc2rs::TrueType {
-    libcc2rs::TrueType
+fn t28() -> libcc2rs::IntegralConstant<bool, 1> {
+    libcc2rs::IntegralConstant(std::marker::PhantomData)
 }

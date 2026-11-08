@@ -351,14 +351,22 @@ Matcher::Bindings getBindings(const clang::NamedDecl *rule,
     return bindings;
   }
   auto params = tmpl->getTemplateParameters();
+  auto &ctx = rule->getASTContext();
   for (unsigned i = 0; i < params->size() && i < args.size(); ++i) {
-    auto name = params->getParam(i)->getName();
+    auto param = params->getParam(i);
+    auto name = param->getName();
     unsigned n = 0;
     if (!name.consume_front("T") || name.getAsInteger(10, n)) {
       continue;
     }
     bindings.resize(std::max<size_t>(bindings.size(), n));
     bindings[n - 1] = args[i];
+    auto nttp = llvm::dyn_cast<clang::NonTypeTemplateParmDecl>(param);
+    if (nttp && nttp->getType()->isDependentType() &&
+        args[i].getKind() == clang::TemplateArgument::Integral) {
+      bindings[n - 1] = clang::TemplateArgument(
+          ctx, args[i].getAsIntegral().extOrTrunc(128), ctx.Int128Ty);
+    }
   }
   return bindings;
 }
