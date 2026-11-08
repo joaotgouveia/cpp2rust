@@ -438,6 +438,10 @@ std::vector<std::string> DependentExprKeys(const clang::Expr *expr) {
           RulesLoader::MemberName(ref->getDeclName())));
     }
   }
+  if (auto lookup = llvm::dyn_cast<clang::UnresolvedLookupExpr>(expr);
+      lookup && lookup->decls_begin() != lookup->decls_end()) {
+    return RulesLoader::DeclKey((*lookup->decls_begin())->getUnderlyingDecl());
+  }
   return {};
 }
 

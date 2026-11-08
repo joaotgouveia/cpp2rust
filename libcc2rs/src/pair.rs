@@ -2,6 +2,7 @@
 // Distributed under the MIT license that can be found in the LICENSE file.
 
 use crate::Value;
+use libcc2rs_macros::expand_pack_to_concrete_arity_impl;
 
 pub trait TupleElement<const N: usize> {
     type Type;
@@ -44,35 +45,36 @@ pub trait ValueTupleGet {
     }
 }
 
-macro_rules! impl_tuple_get {
-    (@element ($($t:ident),+) $n:tt $element:ident) => {
-        impl<$($t),+> TupleElement<$n> for ($($t,)+) {
-            type Type = $element;
+expand_pack_to_concrete_arity_impl! { 32, each;
+    impl<#(T),*> TupleElement<#i> for (#(T,)*) {
+        type Type = #T;
 
-            fn element(&self) -> &$element {
-                &self.$n
-            }
-
-            fn element_mut(&mut self) -> &mut $element {
-                &mut self.$n
-            }
+        fn element(&self) -> &#T {
+            &self.#i
         }
 
-        impl<$($t),+> TupleElementValue<$n> for ($($t,)+) {
-            type Values = ($(Value<$t>,)+);
-
-            fn value(values: &Self::Values) -> &Value<$element> {
-                &values.$n
-            }
+        fn element_mut(&mut self) -> &mut #T {
+            &mut self.#i
         }
-    };
-    ($tuple:tt; $($n:tt $element:ident),+) => {
-        impl<$($element),+> TupleGet for ($($element,)+) {}
-        impl<$($element),+> ValueTupleGet for ($(Value<$element>,)+) {
-            type Plain = ($($element,)+);
-        }
-        $(impl_tuple_get!(@element $tuple $n $element);)+
-    };
+    }
 }
 
-impl_tuple_get!((T0, T1); 0 T0, 1 T1);
+expand_pack_to_concrete_arity_impl! { 32, each;
+    impl<#(T),*> TupleElementValue<#i> for (#(T,)*) {
+        type Values = (#(Value<T>,)*);
+
+        fn value(values: &Self::Values) -> &Value<#T> {
+            &values.#i
+        }
+    }
+}
+
+expand_pack_to_concrete_arity_impl! { 32;
+    impl<#(T),*> TupleGet for (#(T,)*) {}
+}
+
+expand_pack_to_concrete_arity_impl! { 32;
+    impl<#(T),*> ValueTupleGet for (#(Value<T>,)*) {
+        type Plain = (#(T,)*);
+    }
+}

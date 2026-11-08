@@ -19,46 +19,127 @@ impl Point {
         Self { x: x, y: y }
     }
 }
-impl CppMove for Point {
-    fn cpp_move(src: Ptr<Self>) -> Self {
-        src.read()
-    }
-}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let a: Value<std_any> = Rc::new(RefCell::new(
-        ({
-            let ___args_0: Value<i32> = Rc::new(RefCell::new(3));
-            let ___args_1: Value<i32> = Rc::new(RefCell::new(4));
-            make_any_0(___args_0.as_pointer(), ___args_1.as_pointer())
-        }),
-    ));
-    ({ cpp2rust_assert_fail_1(({ (*a.borrow()).has_value() })) });
-    let mut p: Ptr<Point> = ({ any_cast_2((a.as_pointer())) });
-    ({ cpp2rust_assert_fail_1(!((p).is_null())) });
-    ({ cpp2rust_assert_fail_1((p.with(|__s| __s.x) == 3)) });
-    ({ cpp2rust_assert_fail_1((p.with(|__s| __s.y) == 4)) });
-    ({ cpp2rust_assert_fail_1(({ any_cast_3((a.as_pointer())) }).is_null()) });
-    let q: Ptr<Point> = ({
-        let ___args_0: Value<i32> = Rc::new(RefCell::new(5));
-        let ___args_1: Value<i32> = Rc::new(RefCell::new(6));
-        (*a.borrow()).emplace(___args_0.as_pointer(), ___args_1.as_pointer())
-    });
-    ({ cpp2rust_assert_fail_1((q.with(|__s| __s.x) == 5)) });
-    ({ cpp2rust_assert_fail_1((({ any_cast_2((a.as_pointer())) }).with(|__s| __s.y) == 6)) });
-    let b: Value<std_any> = Rc::new(RefCell::new(
-        ({
-            let ___args: Value<i32> = Rc::new(RefCell::new(7));
-            make_any_4(___args.as_pointer())
-        }),
-    ));
-    ({ cpp2rust_assert_fail_1(((({ any_cast_3((b.as_pointer())) }).read()) == 7)) });
-    ({ (*b.borrow()).reset() });
-    ({ cpp2rust_assert_fail_1(!({ (*b.borrow()).has_value() })) });
-    ({ cpp2rust_assert_fail_1(({ any_cast_3((b.as_pointer())) }).is_null()) });
+    let a: Value<Option<Rc<dyn std::any::Any>>> = Rc::new(RefCell::new(Some(Rc::new(
+        RefCell::new(Point::new({ 3 }, { 4 })),
+    ))));
+    assert!(({ (*a.borrow()).is_some() }));
+    let mut p: Ptr<Point> = match ({ (a.as_pointer()) },) {
+        (mut __tmp_0,) => {
+            if __tmp_0.is_null() {
+                Ptr::null()
+            } else {
+                __tmp_0.with(|__a: &Option<Rc<dyn std::any::Any>>| {
+                    match __a.clone().map(|__r| __r.downcast::<RefCell<Point>>()) {
+                        Some(Ok(__v)) => __v.as_pointer(),
+                        _ => Ptr::null(),
+                    }
+                })
+            }
+        }
+    };
+    assert!(!((p).is_null()));
+    assert!((p.with(|__s| __s.x) == 3));
+    assert!((p.with(|__s| __s.y) == 4));
+    assert!(
+        (match ({ (a.as_pointer()) },) {
+            (mut __tmp_1,) => {
+                if __tmp_1.is_null() {
+                    Ptr::null()
+                } else {
+                    __tmp_1.with(|__a: &Option<Rc<dyn std::any::Any>>| {
+                        match __a.clone().map(|__r| __r.downcast::<RefCell<i32>>()) {
+                            Some(Ok(__v)) => __v.as_pointer(),
+                            _ => Ptr::null(),
+                        }
+                    })
+                }
+            }
+        })
+        .is_null()
+    );
+    let q: Ptr<Point> = {
+        let __value: Value<Point> = Rc::new(RefCell::new(Point::new({ 5 }, { 6 })));
+        let __ptr = __value.as_pointer();
+        (*a.borrow_mut()) = Some(__value);
+        __ptr
+    };
+    assert!((q.with(|__s| __s.x) == 5));
+    assert!(
+        (match ({ (a.as_pointer()) },) {
+            (mut __tmp_2,) => {
+                if __tmp_2.is_null() {
+                    Ptr::null()
+                } else {
+                    __tmp_2.with(|__a: &Option<Rc<dyn std::any::Any>>| {
+                        match __a.clone().map(|__r| __r.downcast::<RefCell<Point>>()) {
+                            Some(Ok(__v)) => __v.as_pointer(),
+                            _ => Ptr::null(),
+                        }
+                    })
+                }
+            }
+        }
+        .with(|__s| __s.y)
+            == 6)
+    );
+    let b: Value<Option<Rc<dyn std::any::Any>>> =
+        Rc::new(RefCell::new(Some(Rc::new(RefCell::new(7)))));
+    assert!(
+        ((match ({ (b.as_pointer()) },) {
+            (mut __tmp_3,) => {
+                if __tmp_3.is_null() {
+                    Ptr::null()
+                } else {
+                    __tmp_3.with(|__a: &Option<Rc<dyn std::any::Any>>| {
+                        match __a.clone().map(|__r| __r.downcast::<RefCell<i32>>()) {
+                            Some(Ok(__v)) => __v.as_pointer(),
+                            _ => Ptr::null(),
+                        }
+                    })
+                }
+            }
+        }
+        .read())
+            == 7)
+    );
+    (*b.borrow_mut()) = None;
+    assert!(({ !((*b.borrow()).is_some()) }));
+    assert!(
+        (match ({ (b.as_pointer()) },) {
+            (mut __tmp_4,) => {
+                if __tmp_4.is_null() {
+                    Ptr::null()
+                } else {
+                    __tmp_4.with(|__a: &Option<Rc<dyn std::any::Any>>| {
+                        match __a.clone().map(|__r| __r.downcast::<RefCell<i32>>()) {
+                            Some(Ok(__v)) => __v.as_pointer(),
+                            _ => Ptr::null(),
+                        }
+                    })
+                }
+            }
+        })
+        .is_null()
+    );
+    let mut n: Ptr<Option<Rc<dyn std::any::Any>>> = Ptr::<Option<Rc<dyn std::any::Any>>>::null();
+    assert!(
+        (if n.is_null() {
+            Ptr::null()
+        } else {
+            n.with(|__a: &Option<Rc<dyn std::any::Any>>| {
+                match __a.clone().map(|__r| __r.downcast::<RefCell<i32>>()) {
+                    Some(Ok(__v)) => __v.as_pointer(),
+                    _ => Ptr::null(),
+                }
+            })
+        })
+        .is_null()
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

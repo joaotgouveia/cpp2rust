@@ -150,6 +150,13 @@ Converter::GetTemplateArgumentAsString(const clang::TemplateArgument &arg) {
     Convert(expr.get());
     return std::move(buf).str();
   }
+  case clang::TemplateArgument::Pack: {
+    std::string tuple = "(";
+    for (const auto &element : arg.pack_elements()) {
+      tuple += GetTemplateArgumentAsString(element) + ",";
+    }
+    return tuple + ")";
+  }
   default:
     assert(0 && "template parameter is not bound to a type or a value");
     return {};
@@ -800,7 +807,7 @@ bool Converter::IsPassThroughRule(clang::Expr *expr) {
     return false;
   }
   auto *ph = std::get_if<TranslationRule::PlaceholderFragment>(&rule->body[0]);
-  if (!ph) {
+  if (!ph || RuleRegistry::PackParam(expr) == ph->n) {
     return false;
   }
   // A pointer to the elements of a container argument is a new pointer.
@@ -5599,62 +5606,16 @@ std::string Converter::ConvertIRFragment(
       result += GetTemplateArgumentAsString(bindings[g->n - 1]);
     } else if (auto *ph = std::get_if<PlaceholderFragment>(&frag)) {
       assert(expr && "placeholder outside an expression rule");
-      auto arg_idx = ph->n;
-      assert(arg_idx < all_args.size());
-      auto *arg = all_args[arg_idx];
-      bool is_receiver = HasReceiver(expr) && arg_idx == 0;
-      // a function pointer is converted as a function, not as a pointer
-      bool cpp_ptr = arg->getType()->isPointerType() &&
-                     !arg->getType()->isFunctionPointerType();
-      bool is_cpp_ptr =
-          cpp_ptr && RuleRegistry::ParamTakesPointerValue(expr, arg_idx);
-
-      PlaceholderCtx ph_ctx{
-          .arg_idx = arg_idx,
-          .implicit_convert_to = GetParamImplicitConvertTarget(expr, arg_idx),
-          .materialize_ctx = ctx,
-          .materialize_idx =
-              is_receiver ? -1 : ((int)arg_idx - HasReceiver(expr)),
-          .access = ph->access,
-          .is_receiver = is_receiver,
-          .is_cpp_ptr = is_cpp_ptr,
-          // Whatever its spelling, a pointer in C++ is converted as one; an
-          // object that maps to a pointer is still passed by address to a
-          // pointer to its own type (reference_wrapper<reference_wrapper<T>>).
-          .maps_to_rust_ptr =
-              !cpp_ptr &&
-              RuleRegistry::MapsToPointer(
-                  ctx_, arg->IgnoreParenNoopCasts(ctx_)->getType()) &&
-              !RuleRegistry::ParamPointsTo(
-                  ctx_, expr, arg_idx,
-                  arg->IgnoreParenNoopCasts(ctx_)->getType()),
-          .declared_in_rule_as_rust_ptr =
-              RuleRegistry::ParamIsPointer(ctx_, expr, arg_idx) ||
-              RuleRegistry::ParamIsReference(ctx_, expr, arg_idx),
-          .is_index_base = ph->is_index_base,
-      };
-      // A value is read in a block, which ends its borrows before the rule
-      // accesses what they borrow, unless it may point to a temporary, which
-      // would end too.
-      auto outer_borrows = std::exchange(borrows_, false);
-      auto value = ConvertPlaceholder(expr, arg, ph_ctx);
-      if (borrows_ && isFresh() && !CreatesTemporary(arg)) {
-        value = std::format("({{ {} }})", value);
-        borrows_ = false;
+      if (RuleRegistry::PackParam(expr) == ph->n) {
+        result += '(';
+        for (unsigned arg_idx = ph->n; arg_idx < all_args.size(); ++arg_idx) {
+          result += ConvertPlaceholderArg(*ph, arg_idx, expr, all_args, ctx);
+          result += ',';
+        }
+        result += ')';
+        continue;
       }
-      borrows_ |= outer_borrows;
-      // The target takes *mut T1 where C++ passes a pointer to const:
-      //   unique_ptr<const int>(new int)    <-- T1 * with T1 = const int
-      if (auto pointee = arg->getType()->getPointeeType();
-          is_cpp_ptr && pointee.isConstQualified() &&
-          RuleRegistry::GetExprRule(ctx_, expr)
-              ->params.at(arg_idx)
-              .is_mut_raw_pointer) {
-        value = std::format(
-            "({} as {})", value,
-            ToString(ctx_.getPointerType(pointee.getUnqualifiedType())));
-      }
-      result += value;
+      result += ConvertPlaceholderArg(*ph, ph->n, expr, all_args, ctx);
     } else if (std::get_if<TranslationRule::VaArgsFragment>(&frag)) {
       assert(expr && "variadic arguments outside an expression rule");
       result += ConvertVariadicTail(expr, all_args);
@@ -5686,6 +5647,19 @@ std::string Converter::ConvertGenericCall(
     call_args.push_back(ConvertIRFragment(arg, bindings, expr, args, ctx));
   }
   clang::QualType type;
+  if (call.generic <= bindings.size() &&
+      bindings[call.generic - 1].getKind() == clang::TemplateArgument::Pack) {
+    const auto &pack = bindings[call.generic - 1];
+    if (call.method != "default") {
+      return std::format("<{}>::{}({})", GetTemplateArgumentAsString(pack),
+                         call.method, llvm::join(call_args, ", "));
+    }
+    std::string tuple = "(";
+    for (const auto &element : pack.pack_elements()) {
+      tuple += GetUnboxedDefaultAsString(element.getAsType()) + ",";
+    }
+    return tuple + ")";
+  }
   if (call.generic <= bindings.size() &&
       bindings[call.generic - 1].getKind() == clang::TemplateArgument::Type) {
     type = bindings[call.generic - 1].getAsType();
@@ -5796,8 +5770,70 @@ std::string Converter::DerefPtrExpr(std::string_view ptr_expr,
 }
 
 std::string
+Converter::ConvertPlaceholderArg(const TranslationRule::PlaceholderFragment &ph,
+                                 unsigned arg_idx, clang::Expr *expr,
+                                 llvm::ArrayRef<clang::Expr *> all_args,
+                                 TempMaterializationCtx *ctx) {
+  assert(arg_idx < all_args.size());
+  auto *arg = all_args[arg_idx];
+  bool is_receiver = HasReceiver(expr) && arg_idx == 0;
+  // a function pointer is converted as a function, not as a pointer
+  bool cpp_ptr = arg->getType()->isPointerType() &&
+                 !arg->getType()->isFunctionPointerType();
+  bool is_cpp_ptr =
+      cpp_ptr && RuleRegistry::ParamTakesPointerValue(expr, arg_idx);
+
+  PlaceholderCtx ph_ctx{
+      .arg_idx = arg_idx,
+      .implicit_convert_to = GetParamImplicitConvertTarget(expr, arg_idx),
+      .materialize_ctx = ctx,
+      .materialize_idx = is_receiver ? -1 : ((int)arg_idx - HasReceiver(expr)),
+      .access = ph.access,
+      .is_receiver = is_receiver,
+      .is_cpp_ptr = is_cpp_ptr,
+      // Whatever its spelling, a pointer in C++ is converted as one; an
+      // object that maps to a pointer is still passed by address to a
+      // pointer to its own type (reference_wrapper<reference_wrapper<T>>).
+      .maps_to_rust_ptr =
+          !cpp_ptr &&
+          RuleRegistry::MapsToPointer(
+              ctx_, arg->IgnoreParenNoopCasts(ctx_)->getType()) &&
+          !RuleRegistry::ParamPointsTo(
+              ctx_, expr, arg_idx, arg->IgnoreParenNoopCasts(ctx_)->getType()),
+      .declared_in_rule_as_rust_ptr =
+          RuleRegistry::ParamIsPointer(ctx_, expr, arg_idx) ||
+          RuleRegistry::ParamIsReference(ctx_, expr, arg_idx),
+      .is_index_base = ph.is_index_base,
+  };
+  // A value is read in a block, which ends its borrows before the rule
+  // accesses what they borrow, unless it may point to a temporary, which
+  // would end too.
+  auto outer_borrows = std::exchange(borrows_, false);
+  auto value = ConvertPlaceholder(expr, arg, ph_ctx);
+  if (borrows_ && isFresh() && !CreatesTemporary(arg)) {
+    value = std::format("({{ {} }})", value);
+    borrows_ = false;
+  }
+  borrows_ |= outer_borrows;
+  // The target takes *mut T1 where C++ passes a pointer to const:
+  //   unique_ptr<const int>(new int)    <-- T1 * with T1 = const int
+  if (auto pointee = arg->getType()->getPointeeType();
+      is_cpp_ptr && pointee.isConstQualified() &&
+      RuleRegistry::GetExprRule(ctx_, expr)
+          ->params.at(RuleRegistry::ParamIndex(expr, arg_idx))
+          .is_mut_raw_pointer) {
+    value = std::format(
+        "({} as {})", value,
+        ToString(ctx_.getPointerType(pointee.getUnqualifiedType())));
+  }
+  return value;
+}
+
+std::string
 Converter::ConvertVariadicTail(clang::Expr *expr,
                                llvm::ArrayRef<clang::Expr *> all_args) {
+  assert(!RuleRegistry::PackParam(expr) &&
+         "variadic rule with a pack parameter");
   const auto *tgt_ir = RuleRegistry::GetExprRule(ctx_, expr);
   unsigned fixed = tgt_ir ? tgt_ir->params.size() : 0;
 
@@ -5816,6 +5852,7 @@ Converter::ConvertInitFragment(clang::Expr *expr,
   if (!tgt_ir || !tgt_ir->usesInit()) {
     llvm::report_fatal_error("expression rule does not use Init");
   }
+  assert(!RuleRegistry::PackParam(expr) && "init rule with a pack parameter");
   auto type = RuleRegistry::GetInitType(ctx_, expr);
 
   Buffer buf(*this);

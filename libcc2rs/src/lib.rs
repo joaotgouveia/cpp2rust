@@ -150,6 +150,15 @@ pub use map::*;
 mod pair;
 pub use pair::*;
 
+mod tuple;
+pub use tuple::*;
+
+mod integral_constant;
+pub use integral_constant::*;
+
+mod type_traits;
+pub use type_traits::*;
+
 mod cpp_array;
 pub use cpp_array::*;
 
@@ -165,6 +174,6 @@ mod wchar;
 
 pub use libcc2rs_macros::{
     ByteRepr, CopyAssign, CopyAssignUnsafe, CppFrom, CppFromUnsafe, Destructor, DestructorUnsafe,
-    FnPtrArg, MoveAssign, MoveAssignUnsafe, MoveCtor, MoveCtorUnsafe, Record, VaArg, goto,
-    goto_block, lambda, lambda_unsafe, switch,
+    FnPtrArg, MoveAssign, MoveAssignUnsafe, MoveCtor, MoveCtorUnsafe, Record, VaArg,
+    expand_pack_to_concrete_arity_impl, goto, goto_block, lambda, lambda_unsafe, switch,
 };

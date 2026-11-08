@@ -170,6 +170,10 @@ public:
         expr->isSemanticForm() ? expr : expr->getSemanticForm(), queue);
   }
 
+  bool TraverseDecltypeTypeLoc(clang::DecltypeTypeLoc, bool) { return true; }
+
+  bool TraverseDecltypeType(clang::DecltypeType *, bool) { return true; }
+
   bool VisitDeclRefExpr(clang::DeclRefExpr *expr) {
     if (!value_uses_.contains(expr)) {
       AddressTaken(expr->getDecl());
@@ -320,7 +324,7 @@ private:
   // An element of an array or vector, or a field of a struct, is accessed
   // without making a pointer to it.
   void AddValueUse(const clang::Expr *expr, bool write = false) {
-    expr = IgnoreTransparentStdCall(expr)->IgnoreParens();
+    expr = IgnoreNoOpCasts(IgnoreTransparentStdCall(expr)->IgnoreParens());
     if (auto *op = clang::dyn_cast<clang::UnaryOperator>(expr);
         op && op->isPrefix() && op->isIncrementDecrementOp()) {
       AddValueUse(op->getSubExpr(), /*write=*/true);

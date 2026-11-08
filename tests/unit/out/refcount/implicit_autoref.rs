@@ -11,18 +11,13 @@ use std::rc::{Rc, Weak};
 pub struct Holder {
     #[offset(0)]
     #[byte_size(24)]
-    pub v: std_vector_int__std_allocator_int__,
+    pub v: Vec<i32>,
 }
 impl Holder {
     pub fn move_from(_a0: Ptr<Holder>) -> Self {
         Self {
             v: field!(_a0, v).with_mut(std::mem::take),
         }
-    }
-}
-impl CppMove for Holder {
-    fn cpp_move(src: Ptr<Self>) -> Self {
-        Self::move_from(src)
     }
 }
 pub fn write_through_0(mut p: Ptr<i32>) {
@@ -33,38 +28,44 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
-        <std_vector_int__std_allocator_int__>::default(),
-    ));
-    ({
-        let ___x: Value<i32> = Rc::new(RefCell::new(10));
-        (*v.borrow()).push_back_60(___x.as_pointer())
-    });
-    ({
-        let ___x: Value<i32> = Rc::new(RefCell::new(20));
-        (*v.borrow()).push_back_60(___x.as_pointer())
-    });
-    let mut p: Ptr<std_vector_int__std_allocator_int__> = (v.as_pointer());
-    let mut a: i32 = (elem!((p), 0_u64).read());
-    elem!((p), 1_u64).write(30);
+    let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
+    {
+        let __a1 = 10;
+        (*v.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = 20;
+        (*v.borrow_mut()).push(__a1)
+    };
+    let mut p: Ptr<Vec<i32>> = (v.as_pointer());
+    let mut a: i32 = (index!(p, 0_usize).read());
+    index!(p, 1_usize).write(30);
     let h: Value<Holder> = Rc::new(RefCell::new(<Holder>::default()));
-    ({
-        let ___x: Value<i32> = Rc::new(RefCell::new(40));
-        (*h.borrow()).v.push_back_60(___x.as_pointer())
-    });
-    ({
-        let ___x: Value<i32> = Rc::new(RefCell::new(50));
-        (*h.borrow()).v.push_back_60(___x.as_pointer())
-    });
+    {
+        let __a1 = 40;
+        (*h.borrow_mut()).v.push(__a1)
+    };
+    {
+        let __a1 = 50;
+        (*h.borrow_mut()).v.push(__a1)
+    };
     let mut hp: Ptr<Holder> = (h.as_pointer());
-    let mut b: i32 = (elem!(field_ptr!((hp), v), 0_u64).read());
-    elem!(field_ptr!((hp), v), 1_u64).write(60);
-    ({ cpp2rust_assert_fail_1((a == 10)) });
-    ({ cpp2rust_assert_fail_1(((elem!((p), 1_u64).read()) == 30)) });
-    ({ cpp2rust_assert_fail_1((b == 40)) });
-    ({ cpp2rust_assert_fail_1(((elem!(field_ptr!((hp), v), 1_u64).read()) == 60)) });
-    ({ write_through_0(({ (*p.upgrade().deref()).at_51(0_u64) })) });
-    ({ cpp2rust_assert_fail_1(((elem!((p), 0_u64).read()) == 42)) });
+    let mut b: i32 = (vec_elem!((hp), v, 0_usize).read());
+    vec_elem!((hp), v, 1_usize).write(60);
+    assert!((a == 10));
+    assert!(((index!(p, 1_usize).read()) == 30));
+    assert!((b == 40));
+    assert!(((vec_elem!((hp), v, 1_usize).read()) == 60));
+    ({
+        write_through_0(
+            (if 0_usize as usize >= p.decay().len() {
+                panic!("out of bounds access")
+            } else {
+                p.decay().offset(0_usize as isize)
+            }),
+        )
+    });
+    assert!(((index!(p, 0_usize).read()) == 42));
     return 0;
 }
 pub trait HolderImpl {
@@ -72,7 +73,9 @@ pub trait HolderImpl {
 }
 impl HolderImpl for Ptr<Holder> {
     fn move_assign(&self, _a0: Ptr<Holder>) -> Ptr<Holder> {
-        field!((*self), v).write({ { (*_a0.upgrade().deref()).v.clone() } });
+        field_ref!((*self), v)
+            .as_pointer()
+            .write(field!(_a0, v).with_mut(std::mem::take));
         return (*self).clone();
     }
 }
