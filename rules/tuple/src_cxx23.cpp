@@ -30,8 +30,17 @@ std::tuple<T1...> f27()
 }
 
 template <typename... T1, typename T2 = void>
-std::tuple<T1...> f36(const T1 &...a0) {
+std::tuple<T1...> f36(const T1 &...a0)
+  requires(sizeof...(T1) >= 1)
+{
   return std::tuple<T1...>(a0...);
+}
+
+template <typename... T1, typename... T2>
+std::tuple<T1...> f37(T2 &&...a0)
+  requires(sizeof...(T1) == sizeof...(T2) && sizeof...(T1) >= 1)
+{
+  return std::tuple<T1...>(std::forward<T2>(a0)...);
 }
 
 template <typename... T1, typename... T2>

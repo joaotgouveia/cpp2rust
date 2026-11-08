@@ -30,10 +30,14 @@ unsafe fn f36<T1>(a0: T1) -> T1 {
     a0
 }
 
+unsafe fn f37<T1: TupleFrom<T2>, T2>(a0: T2) -> T1 {
+    <T1 as libcc2rs::TupleFrom<T2>>::tuple_from(a0)
+}
+
 unsafe fn f39<T1: TupleFrom<T2>, T2>(a0: T2) -> T1 {
-    T1::tuple_from(a0)
+    <T1 as libcc2rs::TupleFrom<T2>>::tuple_from(a0)
 }
 
 unsafe fn f46<T1: TupleFrom<(T2,)>, T2>(a0: T2) -> T1 {
-    T1::tuple_from((a0,))
+    <T1 as libcc2rs::TupleFrom<(T2,)>>::tuple_from((a0,))
 }
