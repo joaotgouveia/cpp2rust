@@ -354,8 +354,7 @@ Matcher::Bindings getBindings(const clang::NamedDecl *rule,
   for (unsigned i = 0; i < params->size() && i < args.size(); ++i) {
     auto name = params->getParam(i)->getName();
     unsigned n = 0;
-    if (!name.consume_front("T") || name.getAsInteger(10, n) ||
-        args[i].getKind() == clang::TemplateArgument::Pack) {
+    if (!name.consume_front("T") || name.getAsInteger(10, n)) {
       continue;
     }
     bindings.resize(std::max<size_t>(bindings.size(), n));

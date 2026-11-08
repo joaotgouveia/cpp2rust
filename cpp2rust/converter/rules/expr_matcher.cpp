@@ -425,12 +425,21 @@ clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
   auto last = static_cast<unsigned>(deducible.find_last_unset());
   for (unsigned i = 0; i < params->size() && i <= last; ++i) {
     auto param = params->getParam(i);
-    if (param->isParameterPack() || deduced[i].isNull()) {
+    if (deduced[i].isNull()) {
       break;
     }
     clang::QualType nttp_type;
     if (auto nttp = llvm::dyn_cast<clang::NonTypeTemplateParmDecl>(param)) {
       nttp_type = nttp->getType();
+    }
+    if (param->isParameterPack()) {
+      if (deduced[i].getKind() == clang::TemplateArgument::Pack) {
+        for (const auto &element : deduced[i].pack_elements()) {
+          explicit_args.addArgument(
+              sema.getTrivialTemplateArgumentLoc(element, nttp_type, loc));
+        }
+      }
+      break;
     }
     explicit_args.addArgument(
         sema.getTrivialTemplateArgumentLoc(deduced[i], nttp_type, loc));

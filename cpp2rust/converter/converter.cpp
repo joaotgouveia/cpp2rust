@@ -149,6 +149,13 @@ Converter::GetTemplateArgumentAsString(const clang::TemplateArgument &arg) {
     Convert(expr.get());
     return std::move(buf).str();
   }
+  case clang::TemplateArgument::Pack: {
+    std::string tuple = "(";
+    for (const auto &element : arg.pack_elements()) {
+      tuple += GetTemplateArgumentAsString(element) + ",";
+    }
+    return tuple + ")";
+  }
   default:
     assert(0 && "template parameter is not bound to a type or a value");
     return {};
