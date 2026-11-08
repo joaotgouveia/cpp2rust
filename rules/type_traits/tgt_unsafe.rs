@@ -14,11 +14,11 @@ fn t3<T1>() -> *mut T1 {
 }
 
 fn f2<T1: libcc2rs::Conjunction>() -> bool {
-    T1::VALUE
+    <T1 as libcc2rs::Conjunction>::VALUE
 }
 
 fn f4<T1: libcc2rs::Disjunction>() -> bool {
-    T1::VALUE
+    <T1 as libcc2rs::Disjunction>::VALUE
 }
 
 fn t15() -> libcc2rs::FalseType {

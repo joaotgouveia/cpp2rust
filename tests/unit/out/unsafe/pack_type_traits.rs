@@ -13,16 +13,36 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> i32 {
-    assert!((*std::cell::LazyCell::force_mut(&mut *&raw mut conjunction_v_0)));
-    assert!((*std::cell::LazyCell::force_mut(&mut *&raw mut conjunction_v_1)));
-    assert!(!(*std::cell::LazyCell::force_mut(&mut *&raw mut conjunction_v_2)));
-    assert!((*std::cell::LazyCell::force_mut(&mut *&raw mut conjunction_v_3)));
-    assert!((!(*std::cell::LazyCell::force_mut(&mut *&raw mut conjunction_v_4))));
-    assert!(!(*std::cell::LazyCell::force_mut(&mut *&raw mut disjunction_v_5)));
-    assert!((*std::cell::LazyCell::force_mut(&mut *&raw mut disjunction_v_6)));
-    assert!(!(*std::cell::LazyCell::force_mut(&mut *&raw mut disjunction_v_7)));
-    assert!((*std::cell::LazyCell::force_mut(&mut *&raw mut disjunction_v_8)));
-    assert!((!(*std::cell::LazyCell::force_mut(&mut *&raw mut disjunction_v_9))));
+    assert!(<() as libcc2rs::Conjunction>::VALUE);
+    assert!(<(std_integral_constant_bool__true_,) as libcc2rs::Conjunction>::VALUE);
+    assert!(!(<(std_integral_constant_bool__false_,) as libcc2rs::Conjunction>::VALUE));
+    assert!(
+        (<(
+            std_integral_constant_bool__true_,
+            std_integral_constant_bool__true_,
+        ) as libcc2rs::Conjunction>::VALUE)
+    );
+    assert!(
+        (!(<(
+            std_integral_constant_bool__true_,
+            std_integral_constant_bool__false_,
+        ) as libcc2rs::Conjunction>::VALUE))
+    );
+    assert!(!(<() as libcc2rs::Disjunction>::VALUE));
+    assert!(<(std_integral_constant_bool__true_,) as libcc2rs::Disjunction>::VALUE);
+    assert!(!(<(std_integral_constant_bool__false_,) as libcc2rs::Disjunction>::VALUE));
+    assert!(
+        (<(
+            std_integral_constant_bool__false_,
+            std_integral_constant_bool__true_,
+        ) as libcc2rs::Disjunction>::VALUE)
+    );
+    assert!(
+        (!(<(
+            std_integral_constant_bool__false_,
+            std_integral_constant_bool__false_,
+        ) as libcc2rs::Disjunction>::VALUE))
+    );
     return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}
