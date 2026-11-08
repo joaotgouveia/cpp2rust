@@ -12,3 +12,19 @@ fn t2<T1>() -> T1 {
 fn t3<T1>() -> *mut T1 {
     ::std::ptr::null_mut()
 }
+
+fn f2<T1: libcc2rs::Conjunction>() -> bool {
+    T1::VALUE
+}
+
+fn f4<T1: libcc2rs::Disjunction>() -> bool {
+    T1::VALUE
+}
+
+fn t15() -> libcc2rs::FalseType {
+    libcc2rs::FalseType
+}
+
+fn t28() -> libcc2rs::TrueType {
+    libcc2rs::TrueType
+}

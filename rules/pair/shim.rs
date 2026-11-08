@@ -75,4 +75,6 @@ macro_rules! impl_tuple_get {
     };
 }
 
+impl_tuple_get!((T0); 0 T0);
 impl_tuple_get!((T0, T1); 0 T0, 1 T1);
+impl_tuple_get!((T0, T1, T2); 0 T0, 1 T1, 2 T2);
