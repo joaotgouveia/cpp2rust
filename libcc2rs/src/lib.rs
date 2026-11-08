@@ -103,6 +103,6 @@ pub use format::*;
 
 pub use libcc2rs_macros::{
     ByteRepr, CopyAssign, CopyAssignUnsafe, CppFrom, CppFromUnsafe, Destructor, DestructorUnsafe,
-    FnPtrArg, MoveAssign, MoveAssignUnsafe, MoveCtor, MoveCtorUnsafe, Record, VaArg, goto,
-    goto_block, lambda, lambda_unsafe, switch,
+    FnPtrArg, MoveAssign, MoveAssignUnsafe, MoveCtor, MoveCtorUnsafe, Record, VaArg,
+    expand_pack_to_concrete_arity_impl, goto, goto_block, lambda, lambda_unsafe, switch,
 };

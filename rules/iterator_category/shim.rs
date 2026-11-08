@@ -42,9 +42,7 @@ pub trait UnsafeCppBidirectionalIterator<T>: UnsafeCppInputIterator<T> {
     fn iter_post_dec(&mut self) -> Self;
 }
 
-pub trait UnsafeCppRandomAccessIterator<T>:
-    UnsafeCppBidirectionalIterator<T> + PartialOrd
-{
+pub trait UnsafeCppRandomAccessIterator<T>: UnsafeCppBidirectionalIterator<T> + PartialOrd {
     fn iter_add(&self, n: isize) -> Self;
     fn iter_add_assign(&mut self, n: isize) -> Self;
     fn iter_distance(&self, from: &Self) -> isize;
